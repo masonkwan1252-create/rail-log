@@ -2,13 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Rail Log 0.05.1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rail Log 0.05.1 iPhone 友好版</title>
 <style>
-body { font-family: sans-serif; margin: 20px; }
-h2 { margin-top: 30px; }
-table { border-collapse: collapse; width: 100%; margin-top: 10px; }
-td, th { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
-button { margin-left: 5px; }
+body { font-family: sans-serif; margin: 15px; }
+h1, h2 { margin-top: 20px; }
+div, select, button { margin: 5px 0; font-size: 16px; }
+select, button { padding: 6px 10px; }
+table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; margin-top: 10px; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; white-space: nowrap; }
+button { cursor: pointer; }
 </style>
 </head>
 <body>
@@ -17,10 +20,8 @@ button { margin-left: 5px; }
 
 <h2>新增乘車紀錄</h2>
 <div>
-  公司: 
-  <select id="companySelect"></select>
-  路線: 
-  <select id="lineSelect"></select>
+  公司: <select id="companySelect"></select>
+  路線: <select id="lineSelect"></select>
   上車站: <select id="fromSelect"></select>
   下車站: <select id="toSelect"></select>
   <button onclick="addRecord()">加入紀錄</button>
@@ -37,7 +38,7 @@ button { margin-left: 5px; }
 </table>
 
 <script>
-// ---- 範例 JSON ----
+// ---- JSON 資料 ----
 const companies = ["JR西日本"];
 const linesStations = [
   {
