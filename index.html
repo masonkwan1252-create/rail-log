@@ -1,11 +1,11 @@
+002"}
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Rail Log V0.01</title>
+<title>Rail Log V0.02</title>
 
 <style>
 
@@ -83,19 +83,16 @@ font-size:14px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>🚆 Rail Log V0.01</header>
+<header>🚆 Rail Log V0.02</header>
 
 <div style="padding:10px">
-
 <a href="map.html">
 <button>🗾 地圖</button>
 </a>
-
 </div>
 
 <div class="container">
@@ -114,7 +111,7 @@ font-size:14px;
 <input id="line" list="lines">
 
 <label>車型</label>
-<input id="train" placeholder="205系3100番台 / E233-1000">
+<input id="train" placeholder="205系3100 / E233-1000">
 
 <label>上車站</label>
 <input id="from" list="stations">
@@ -155,7 +152,6 @@ font-size:14px;
 <script>
 
 let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
-
 let editIndex=null
 
 date.valueAsDate=new Date()
@@ -194,6 +190,28 @@ list.appendChild(opt)
 
 loadData()
 
+function normalizeTrain(train){
+
+if(!train) return ""
+
+let t=train.trim()
+
+let dash=t.match(/^([A-Za-z]\d+)-(\d+)$/)
+
+if(dash){
+return dash[1]+"系"+dash[2]+"番台"
+}
+
+let noSuffix=t.match(/^([A-Za-z]\d+系)(\d+)$/)
+
+if(noSuffix){
+return noSuffix[1]+noSuffix[2]+"番台"
+}
+
+return t
+
+}
+
 function parseTrain(train){
 
 let type=""
@@ -221,7 +239,7 @@ let trip={
 date:date.value,
 company:company.value,
 line:line.value,
-train:train.value,
+train:normalizeTrain(train.value),
 from:from.value,
 to:to.value
 }
@@ -362,7 +380,6 @@ lineCount[t.line]=(lineCount[t.line]||0)+1
 let p=parseTrain(t.train)
 
 let type=p.type
-
 let sub=p.sub
 
 if(type){
@@ -380,17 +397,13 @@ trainSub[type][sub]=(trainSub[type][sub]||0)+1
 }
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
-
 stationCount[t.to]=(stationCount[t.to]||0)+1
 
 })
 
 renderCompany(companyCount)
-
 renderTrain(trainCount,trainSub)
-
 renderLine(lineCount)
-
 renderStation(stationCount)
 
 }
@@ -398,17 +411,13 @@ renderStation(stationCount)
 function renderCompany(data){
 
 let entries=Object.entries(data)
-
 entries.sort((a,b)=>b[1]-a[1])
 
 let html='<div class="statHeader">鉄道公司： <span class="clickable" onclick="toggle(\'companyDetail\')">'+entries.length+'</span></div>'
-
 html+='<div id="companyDetail" style="display:none">'
 
 entries.forEach(e=>{
-
 html+=e[0]+" ("+e[1]+")<br>"
-
 })
 
 html+='</div>'
@@ -420,11 +429,9 @@ companyStats.innerHTML=html
 function renderTrain(trainCount,trainSub){
 
 let entries=Object.entries(trainCount)
-
 entries.sort((a,b)=>b[1]-a[1])
 
 let html='<div class="statHeader">車型： <span class="clickable" onclick="toggle(\'trainDetail\')">'+entries.length+'</span></div>'
-
 html+='<div id="trainDetail" style="display:none">'
 
 entries.forEach(([type,count])=>{
@@ -432,19 +439,15 @@ entries.forEach(([type,count])=>{
 let safe=type.replace(/[^a-zA-Z0-9]/g,"")
 
 html+='<div class="clickable" onclick="toggle(\'sub_'+safe+'\')">'+type+' ('+count+')</div>'
-
 html+='<div id="sub_'+safe+'" class="sub" style="display:none">'
 
 if(trainSub[type]){
 
 let subs=Object.entries(trainSub[type])
-
 subs.sort((a,b)=>b[1]-a[1])
 
 subs.forEach(s=>{
-
 html+=s[0]+"番台 ("+s[1]+")<br>"
-
 })
 
 }
@@ -462,17 +465,13 @@ trainStats.innerHTML=html
 function renderLine(data){
 
 let entries=Object.entries(data)
-
 entries.sort((a,b)=>b[1]-a[1])
 
 let html='<div class="statHeader">路線： <span class="clickable" onclick="toggle(\'lineDetail\')">'+entries.length+'</span></div>'
-
 html+='<div id="lineDetail" style="display:none">'
 
 entries.forEach(e=>{
-
 html+=e[0]+" ("+e[1]+")<br>"
-
 })
 
 html+='</div>'
@@ -484,17 +483,13 @@ lineStats.innerHTML=html
 function renderStation(data){
 
 let entries=Object.entries(data)
-
 entries.sort((a,b)=>b[1]-a[1])
 
 let html='<div class="statHeader">到訪車站： <span class="clickable" onclick="toggle(\'stationDetail\')">'+entries.length+'</span></div>'
-
 html+='<div id="stationDetail" style="display:none">'
 
 entries.slice(0,30).forEach(s=>{
-
 html+=s[0]+" ("+s[1]+")<br>"
-
 })
 
 html+='</div>'
@@ -508,13 +503,9 @@ function toggle(id){
 let el=document.getElementById(id)
 
 if(el.style.display==="none"){
-
 el.style.display="block"
-
 }else{
-
 el.style.display="none"
-
 }
 
 }
@@ -524,5 +515,4 @@ render()
 </script>
 
 </body>
-
-</html>
+<
