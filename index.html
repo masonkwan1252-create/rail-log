@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rail Log V0.07</title>
+<title>Rail Log V1</title>
 <style>
 body{font-family:-apple-system;margin:0;background:#f2f2f2}
 header{background:#222;color:white;padding:16px;text-align:center;font-size:20px}
@@ -20,7 +20,7 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 </head>
 <body>
 
-<header>🚆 Rail Log V0.07.2</header>
+<header>🚆 Rail Log V0.05</header>
 
 <div class="container">
 
@@ -34,33 +34,20 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 <input id="company" list="companyList">
 <datalist id="companyList"></datalist>
 
-<script>
-async function loadCompanies(){
-  const companies = await fetch("companies.json").then(r=>r.json())
-  const list = document.getElementById("companyList")
-  list.innerHTML = ""
-  companies.forEach(c=>{
-    const o=document.createElement("option")
-    o.value=c
-    list.appendChild(o)
-  })
-}
-
-// 初始化：載入公司清單 + 渲染
-loadCompanies().then(()=>render())
-</script>
-  
 <label>路線</label>
-<input id="line">
+<input id="line" list="lineList">
+<datalist id="lineList"></datalist>
 
 <label>車型</label>
-<input id="train">
+<input id="train" list="trainList">
+<datalist id="trainList"></datalist>
 
 <label>上車站</label>
-<input id="from">
+<input id="from" list="stationList">
 
 <label>下車站</label>
-<input id="to">
+<input id="to" list="stationList">
+<datalist id="stationList"></datalist>
 
 <button onclick="saveTrip()">儲存</button>
 </div>
@@ -83,6 +70,9 @@ loadCompanies().then(()=>render())
 </div>
 
 <script>
+// ----------------------
+// 初始化日期與變數
+// ----------------------
 let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 let editIndex=null
 
@@ -95,8 +85,48 @@ const toInput=document.getElementById("to")
 
 dateInput.valueAsDate=new Date()
 
+let companies=[],lines=[],stations=[],trains=[]
+let routeStations={}  // 每條路線的總站數
+
 // ----------------------
-// 標準化車型
+// 載入 JSON 資料
+// ----------------------
+async function loadData(){
+  [companies,lines,stations,trains]=await Promise.all([
+    fetch("companies.json").then(r=>r.json()),
+    fetch("lines.json").then(r=>r.json()),
+    fetch("stations.json").then(r=>r.json()),
+    fetch("trainTypes.json").then(r=>r.json())
+  ])
+  fillDatalist("companyList",companies)
+  fillDatalist("stationList",stations)
+  fillDatalist("trainList",trains)
+}
+
+// 填充 datalist
+function fillDatalist(id,data){
+  const list=document.getElementById(id)
+  list.innerHTML=""
+  data.forEach(v=>{
+    const o=document.createElement("option")
+    o.value=v
+    list.appendChild(o)
+  })
+}
+
+// 公司選擇後篩選路線
+companyInput.addEventListener("input",()=>{
+  const list=document.getElementById("lineList")
+  list.innerHTML=""
+  lines.filter(l=>l.company===companyInput.value).forEach(l=>{
+    const o=document.createElement("option")
+    o.value=l.name
+    list.appendChild(o)
+  })
+})
+
+// ----------------------
+// 輸入標準化車型
 // ----------------------
 function normalizeTrain(t){
   if(!t) return ""
@@ -196,6 +226,7 @@ function stats(){
       if(!trainSub[type]) trainSub[type]={}
       trainSub[type][sub]=(trainSub[type][sub]||0)+1
     }
+    // 記錄路線征服站
     if(!routeStationsUsed[t.line]) routeStationsUsed[t.line]=new Set()
     routeStationsUsed[t.line].add(t.from)
     routeStationsUsed[t.line].add(t.to)
@@ -233,4 +264,37 @@ function renderTrainStat(type,sub){
     html+="</div>"
   })
   html+="</div>"
-  document.getElementById("trainStats").innerHTML=
+  document.getElementById("trainStats").innerHTML=html
+}
+
+function renderStationStat(stationCount){
+  const s=Object.entries(stationCount).sort((a,b)=>b[1]-a[1])
+  let html="<b>車站排行榜</b><br>"
+  s.slice(0,20).forEach((v,i)=>{html+=(i+1)+" "+v[0]+" ("+v[1]+")<br>"})
+  document.getElementById("stationStats").innerHTML=html
+}
+
+function renderRouteCompletion(routeUsed){
+  let html="<b>路線征服率</b><br>"
+  Object.keys(routeUsed).sort().forEach(line=>{
+    let usedCount=routeUsed[line].size
+    let totalCount=stations.length // 暫時用 stations.json 長度，之後可替換成每條路線真實總站數
+    let percent=Math.round(usedCount/totalCount*100)
+    html+=line+" "+usedCount+"/"+totalCount+" ("+percent+"%)<br>"
+  })
+  document.getElementById("routeCompletion").innerHTML=html
+}
+
+function toggle(id){
+  const el=document.getElementById(id)
+  el.style.display=el.style.display==="none"?"block":"none"
+}
+
+// ----------------------
+// 初始化
+// ----------------------
+loadData().then(()=>render())
+</script>
+
+</body>
+</html>
