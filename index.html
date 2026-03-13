@@ -33,7 +33,23 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 <label>鉄道公司</label>
 <input id="company" list="companyList">
 <datalist id="companyList"></datalist>
+  
+<script>
+async function loadCompanies(){
+  const companies = await fetch("companies.json").then(r=>r.json())
+  const list = document.getElementById("companyList")
+  list.innerHTML = ""
+  companies.forEach(c=>{
+    const o=document.createElement("option")
+    o.value=c
+    list.appendChild(o)
+  })
+}
 
+// 初始化：載入公司清單
+loadCompanies()
+</script>
+  
 <label>路線</label>
 <input id="line">
 
@@ -78,24 +94,6 @@ const fromInput=document.getElementById("from")
 const toInput=document.getElementById("to")
 
 dateInput.valueAsDate=new Date()
-
-// ----------------------
-// 載入公司 JSON
-// ----------------------
-async function loadCompanies(){
-  try {
-    const companies=await fetch("companies.json").then(r=>r.json())
-    const list=document.getElementById("companyList")
-    list.innerHTML=""
-    companies.forEach(c=>{
-      const o=document.createElement("option")
-      o.value=c
-      list.appendChild(o)
-    })
-  } catch(e){
-    console.error("載入 companies.json 失敗", e)
-  }
-}
 
 // ----------------------
 // 標準化車型
