@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本鉄道乗車記録 v3</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f5f5f7}
+header{background:black;color:white;padding:16px;font-size:20px}
+.container{padding:16px}
+.card{background:white;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+input{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc;font-size:16px}
+button{padding:10px 14px;border-radius:10px;border:none;background:black;color:white;font-size:16px;margin-top:8px;width:100%}
+.record{padding:10px;border-bottom:1px solid #eee}
+.stat{margin:4px 0}
+#map{height:420px;border-radius:12px}
+.small{color:#666;font-size:13px}
+</style>
+</head>
+
+<body>
+
+<header>🚆 日本鉄道乗車記録</header>
+
+<div class="container">
+
+<div class="card">
+<h3>新增乘車</h3>
+
+<input id="date" type="date">
+<input id="company" placeholder="鉄道公司">
+<input id="line" placeholder="路線">
+<input id="train" placeholder="車型">
+<input id="car" placeholder="車両番号 (可留空)">
+<input id="from" placeholder="由站">
+<input id="to" placeholder="到站">
+
+<button onclick="addRecord()">新增紀錄</button>
+</div>
+
+<div class="card">
+<h3>乘車記錄</h3>
+<div id="records"></div>
+</div>
+
+<div class="card">
+<h3>統計</h3>
+<div id="stats"></div>
+</div>
+
+<div class="card">
+<h3>你坐過的路線圖</h3>
+<div id="map"></div>
+<div class="small">地圖會嘗試自動定位日本車站</div>
+</div>
+
+</div>
+
+<script>
+
+let records = JSON.parse(localStorage.getItem("rail_records_v3") || "[]")
+
+function save(){
+localStorage.setItem("rail_records_v3",JSON.stringify(records))
+}
+
+function addRecord(){
+
+let r={
+date:date.value,
+company:company.value,
+line:line.value,
+train:train.value,
+car:car.value,
+from:from.value,
+to:to.value
+}
+
+if(!r.from||!r.to){
+alert("請輸入車站")
+return
+}
+
+records.push(r)
+save()
+render()
+}
+
+function render(){
+
+let html=""
+
+records.slice().reverse().forEach(r=>{
+
+html+=`<div class="record">
+<b>${r.date||""}</b><br>
+${r.company||""} ${r.line||""}<br>
+🚆 ${r.train||""} ${r.car||""}<br>
+📍 ${r.from} → ${r.to}
+</div>`
+
+})
+
+document.getElementById("records").innerHTML=html
+
+stats()
+drawLines()
+}
+
+function stats(){
+
+let trainCount={}
+let stationCount={}
+let lineCount={}
+let companyCount={}
+
+records.forEach(r=>{
+
+if(r.train){
+trainCount[r.train]=(trainCount[r.train]||0)+1
+}
+
+if(r.line){
+lineCount[r.line]=(lineCount[r.line]||0)+1
+}
+
+if(r.company){
+companyCount[r.company]=(companyCount[r.company]||0)+1
+}
+
+[r.from,r.to].forEach(s=>{
+if(!s)return
+stationCount[s]=(stationCount[s]||0)+1
+})
+
+})
+
+function top(obj){
+let arr=Object.entries(obj).sort((a,b)=>b[1]-a[1])
+return arr.length?arr[0][0]+" ("+arr[0][1]+")":"-"
+}
+
+document.getElementById("stats").innerHTML=`
+<div class="stat">🚆 總乘車: ${records.length}</div>
+<div class="stat">🏢 鉄道公司: ${Object.keys(companyCount).length}</div>
+<div class="stat">🛤 路線數: ${Object.keys(lineCount).length}</div>
+<div class="stat">🚉 車站數: ${Object.keys(stationCount).length}</div>
+<div class="stat">🚄 最多車型: ${top(trainCount)}</div>
+`
+}
+
+let map = L.map('map').setView([36.2,138],5)
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+maxZoom:19
+}).addTo(map)
+
+let layers=[]
+
+function drawLines(){
+
+layers.forEach(l=>map.removeLayer(l))
+layers=[]
+
+records.forEach(r=>{
+
+Promise.all([
+fetch("https://nominatim.openstreetmap.org/search?format=json&q="+encodeURIComponent(r.from+" station japan")).then(res=>res.json()),
+fetch("https://nominatim.openstreetmap.org/search?format=json&q="+encodeURIComponent(r.to+" station japan")).then(res=>res.json())
+]).then(data=>{
+
+let a=data[0][0]
+let b=data[1][0]
+
+if(!a||!b) return
+
+let latlngs=[
+[a.lat,a.lon],
+[b.lat,b.lon]
+]
+
+let line=L.polyline(latlngs).addTo(map)
+
+layers.push(line)
+
+})
+
+})
+
+}
+
+render()
+
+</script>
+
+</body>
+</html>
