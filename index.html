@@ -6,16 +6,17 @@
 <title>Rail Log</title>
 
 <style>
+
 body{
 font-family:-apple-system,BlinkMacSystemFont;
 margin:0;
-background:#f5f5f5;
+background:#f2f2f2;
 }
 
 header{
 background:#222;
 color:white;
-padding:15px;
+padding:16px;
 text-align:center;
 font-size:20px;
 }
@@ -29,13 +30,13 @@ background:white;
 padding:15px;
 margin-bottom:15px;
 border-radius:10px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-input,select,button{
+input,button{
 width:100%;
 padding:10px;
-margin-top:8px;
+margin-top:6px;
 margin-bottom:12px;
 font-size:16px;
 }
@@ -47,14 +48,25 @@ border:none;
 border-radius:8px;
 }
 
-.list-item{
-padding:10px;
+.smallbtn{
+width:auto;
+padding:6px 10px;
+margin-right:8px;
+font-size:14px;
+}
+
+.trip{
 border-bottom:1px solid #eee;
+padding:8px 0;
+}
+
+.dategroup{
+font-weight:bold;
+margin-top:10px;
 }
 
 .stat{
-font-size:18px;
-margin:8px 0;
+margin:6px 0;
 }
 
 </style>
@@ -74,13 +86,13 @@ margin:8px 0;
 <input type="date" id="date">
 
 <label>鉄道公司</label>
-<input id="company" placeholder="JR東日本">
+<input id="company">
 
 <label>路線</label>
-<input id="line" placeholder="中央線">
+<input id="line">
 
 <label>車型</label>
-<input id="train" placeholder="E233-0 或 キハ40">
+<input id="train" placeholder="E233-0 / キハ40">
 
 <label>上車站</label>
 <input id="from">
@@ -88,7 +100,7 @@ margin:8px 0;
 <label>下車站</label>
 <input id="to">
 
-<button onclick="addTrip()">儲存</button>
+<button onclick="saveTrip()">儲存</button>
 
 </div>
 
@@ -103,9 +115,15 @@ margin:8px 0;
 
 <h3>統計</h3>
 
-<div class="stat" id="totalTrips"></div>
-<div class="stat" id="companyStats"></div>
-<div class="stat" id="trainStats"></div>
+<div class="stat" id="total"></div>
+<div class="stat" id="companies"></div>
+<div class="stat" id="trains"></div>
+
+<h4>到訪車站</h4>
+<div class="stat" id="stationCount"></div>
+<div id="stationTop"></div>
+
+<button onclick="exportData()">Export JSON</button>
 
 </div>
 
@@ -113,28 +131,80 @@ margin:8px 0;
 
 <script>
 
-let trips = JSON.parse(localStorage.getItem("railTrips") || "[]")
+let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
+let editIndex=null
 
-document.getElementById("date").valueAsDate = new Date()
+document.getElementById("date").valueAsDate=new Date()
 
-function addTrip(){
+function saveTrip(){
 
-let trip = {
+let trip={
+date:date.value,
+company:company.value,
+line:line.value,
+train:train.value,
+from:from.value,
+to:to.value
+}
 
-date:document.getElementById("date").value,
-company:document.getElementById("company").value,
-line:document.getElementById("line").value,
-train:document.getElementById("train").value,
-from:document.getElementById("from").value,
-to:document.getElementById("to").value
+if(editIndex!==null){
+
+trips[editIndex]=trip
+editIndex=null
+
+}else{
+
+trips.push(trip)
 
 }
 
-trips.push(trip)
+localStorage.setItem("railTrips",JSON.stringify(trips))
+
+clearForm()
+render()
+
+}
+
+function clearForm(){
+
+company.value=""
+line.value=""
+train.value=""
+from.value=""
+to.value=""
+
+date.valueAsDate=new Date()
+
+}
+
+function deleteTrip(i){
+
+if(confirm("刪除記錄？")){
+
+trips.splice(i,1)
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
 
 render()
+
+}
+
+}
+
+function editTrip(i){
+
+let t=trips[i]
+
+date.value=t.date
+company.value=t.company
+line.value=t.line
+train.value=t.train
+from.value=t.from
+to.value=t.to
+
+editIndex=i
+
+window.scrollTo({top:0,behavior:"smooth"})
 
 }
 
@@ -143,54 +213,113 @@ function render(){
 let list=document.getElementById("tripList")
 list.innerHTML=""
 
-trips.forEach(t=>{
+let sorted=[...trips].sort((a,b)=>b.date.localeCompare(a.date))
+
+let lastDate=""
+
+sorted.forEach(t=>{
+
+let i=trips.indexOf(t)
+
+if(t.date!==lastDate){
+
+let d=document.createElement("div")
+d.className="dategroup"
+d.innerText=t.date
+list.appendChild(d)
+
+lastDate=t.date
+
+}
 
 let div=document.createElement("div")
-div.className="list-item"
+div.className="trip"
 
 div.innerHTML=
-t.date+" | "+
-t.company+" "+
-t.line+" "+
-t.train+
-"<br>"+t.from+" → "+t.to
+
+t.company+" "+t.line+" "+t.train+
+"<br>"+t.from+" → "+t.to+
+"<br>"+
+"<button class='smallbtn' onclick='editTrip("+i+")'>✏️修改</button>"+
+"<button class='smallbtn' onclick='deleteTrip("+i+")'>🗑刪除</button>"
 
 list.appendChild(div)
 
 })
 
-document.getElementById("totalTrips").innerText="乘車次數："+trips.length
+stats()
+
+}
+
+function stats(){
+
+document.getElementById("total").innerText="乘車次數："+trips.length
 
 let companyCount={}
 let trainCount={}
+let stationCount={}
 
 trips.forEach(t=>{
 
 companyCount[t.company]=(companyCount[t.company]||0)+1
 
 let type=t.train.split("-")[0]
-
 trainCount[type]=(trainCount[type]||0)+1
+
+stationCount[t.from]=(stationCount[t.from]||0)+1
+stationCount[t.to]=(stationCount[t.to]||0)+1
 
 })
 
-let companyText="鉄道公司： "
+let ctext="鉄道公司： "
+
 for(let c in companyCount){
 
-companyText+=c+"("+companyCount[c]+") "
+ctext+=c+"("+companyCount[c]+") "
 
 }
 
-document.getElementById("companyStats").innerText=companyText
+companies.innerText=ctext
 
-let trainText="車型： "
+let ttext="車型： "
+
 for(let t in trainCount){
 
-trainText+=t+"("+trainCount[t]+") "
+ttext+=t+"("+trainCount[t]+") "
 
 }
 
-document.getElementById("trainStats").innerText=trainText
+trains.innerText=ttext
+
+let stations=Object.entries(stationCount)
+
+stationCountDiv=document.getElementById("stationCount")
+stationCountDiv.innerText="到訪車站："+stations.length
+
+stations.sort((a,b)=>b[1]-a[1])
+
+let topHTML=""
+
+stations.slice(0,10).forEach(s=>{
+
+topHTML+=s[0]+" ("+s[1]+")<br>"
+
+})
+
+document.getElementById("stationTop").innerHTML=topHTML
+
+}
+
+function exportData(){
+
+let dataStr=JSON.stringify(trips,null,2)
+
+let blob=new Blob([dataStr],{type:"application/json"})
+
+let a=document.createElement("a")
+a.href=URL.createObjectURL(blob)
+a.download="rail-log.json"
+a.click()
 
 }
 
