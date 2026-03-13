@@ -1,166 +1,299 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rail Log 0.05.1 iPhone 友好版</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rail Log V0.05</title>
 <style>
-body { font-family: sans-serif; margin: 15px; }
-h1, h2 { margin-top: 20px; }
-div, select, button { margin: 5px 0; font-size: 16px; }
-select, button { padding: 6px 10px; }
-table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; margin-top: 10px; }
-th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; white-space: nowrap; }
-button { cursor: pointer; }
+body{font-family:-apple-system;margin:0;background:#f2f2f2}
+header{background:#222;color:white;padding:16px;text-align:center;font-size:20px}
+.container{padding:15px}
+.card{background:white;padding:15px;margin-bottom:15px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+input,button{width:100%;padding:10px;margin-top:6px;margin-bottom:12px;font-size:16px}
+button{background:#007aff;color:white;border:none;border-radius:8px}
+.smallbtn{width:auto;padding:6px 10px;margin-right:6px;font-size:14px}
+.trip{border-bottom:1px solid #eee;padding:8px 0}
+.dategroup{font-weight:bold;margin-top:10px}
+.clickable{color:#007aff;cursor:pointer}
+.sub{margin-left:16px;font-size:14px}
 </style>
 </head>
 <body>
 
-<h1>Rail Log 0.05.1</h1>
+<header>🚆 Rail Log V0.05</header>
 
-<h2>新增乘車紀錄</h2>
-<div>
-  公司: <select id="companySelect"></select>
-  路線: <select id="lineSelect"></select>
-  上車站: <select id="fromSelect"></select>
-  下車站: <select id="toSelect"></select>
-  <button onclick="addRecord()">加入紀錄</button>
+<div class="container">
+
+<div class="card">
+<h3>新增乘車</h3>
+
+<label>日期</label>
+<input type="date" id="date">
+
+<label>鉄道公司</label>
+<input id="company" list="companyList">
+<datalist id="companyList"></datalist>
+
+<label>路線</label>
+<input id="line" list="lineList">
+<datalist id="lineList"></datalist>
+
+<label>車型</label>
+<input id="train" list="trainList">
+<datalist id="trainList"></datalist>
+
+<label>上車站</label>
+<input id="from" list="stationList">
+
+<label>下車站</label>
+<input id="to" list="stationList">
+<datalist id="stationList"></datalist>
+
+<button onclick="saveTrip()">儲存</button>
 </div>
 
-<h2>乘車紀錄</h2>
-<table id="recordsTable">
-  <tr><th>公司</th><th>路線</th><th>上車站</th><th>下車站</th><th>操作</th></tr>
-</table>
+<div class="card">
+<h3>乘車記錄</h3>
+<div id="tripList"></div>
+</div>
 
-<h2>路線征服率</h2>
-<table id="lineStatsTable">
-  <tr><th>路線</th><th>已征服站數</th><th>總站數</th><th>征服率</th></tr>
-</table>
+<div class="card">
+<h3>統計</h3>
+<div id="total"></div>
+<div id="companyStats"></div>
+<div id="trainStats"></div>
+<div id="lineStats"></div>
+<div id="stationStats"></div>
+<div id="routeCompletion"></div>
+</div>
+
+</div>
 
 <script>
-// ---- JSON 資料 ----
-const companies = ["JR西日本"];
-const linesStations = [
-  {
-    "company": "JR西日本",
-    "line": "加古川線",
-    "stations": [
-      "加古川","日岡","神野","厄神","市場",
-      "小野町","粟生","河合西","青野ヶ原","社町",
-      "滝野","滝","西脇市","新西脇","比延",
-      "日本へそ公園","黒田庄","本黒田","船町口","久下村",
-      "谷川"
-    ]
+// ----------------------
+// 初始化日期與變數
+// ----------------------
+let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
+let editIndex=null
+
+const dateInput=document.getElementById("date")
+const companyInput=document.getElementById("company")
+const lineInput=document.getElementById("line")
+const trainInput=document.getElementById("train")
+const fromInput=document.getElementById("from")
+const toInput=document.getElementById("to")
+
+dateInput.valueAsDate=new Date()
+
+let companies=[],lines=[],stations=[],trains=[]
+let routeStations={}  // 每條路線的總站數
+
+// ----------------------
+// 載入 JSON 資料
+// ----------------------
+async function loadData(){
+  [companies,lines,stations,trains]=await Promise.all([
+    fetch("companies.json").then(r=>r.json()),
+    fetch("lines.json").then(r=>r.json()),
+    fetch("stations.json").then(r=>r.json()),
+    fetch("trainTypes.json").then(r=>r.json())
+  ])
+  fillDatalist("companyList",companies)
+  fillDatalist("stationList",stations)
+  fillDatalist("trainList",trains)
+}
+
+// 填充 datalist
+function fillDatalist(id,data){
+  const list=document.getElementById(id)
+  list.innerHTML=""
+  data.forEach(v=>{
+    const o=document.createElement("option")
+    o.value=v
+    list.appendChild(o)
+  })
+}
+
+// 公司選擇後篩選路線
+companyInput.addEventListener("input",()=>{
+  const list=document.getElementById("lineList")
+  list.innerHTML=""
+  lines.filter(l=>l.company===companyInput.value).forEach(l=>{
+    const o=document.createElement("option")
+    o.value=l.name
+    list.appendChild(o)
+  })
+})
+
+// ----------------------
+// 輸入標準化車型
+// ----------------------
+function normalizeTrain(t){
+  if(!t) return ""
+  let dash=t.match(/^([A-Za-z]*\d+)-(\d+)$/)
+  if(dash) return dash[1]+"系"+dash[2]+"番台"
+  let series=t.match(/^([A-Za-z]*\d+系|\d+形)(\d+)$/)
+  if(series) return series[1]+series[2]+"番台"
+  return t
+}
+
+// ----------------------
+// 儲存/修改/刪除
+// ----------------------
+function saveTrip(){
+  const trip={
+    date:dateInput.value,
+    company:companyInput.value,
+    line:lineInput.value,
+    train:normalizeTrain(trainInput.value),
+    from:fromInput.value,
+    to:toInput.value
   }
-];
-
-// ---- 全局變數 ----
-let records = [];
-let lastToStation = null;
-
-// ---- 初始化選單 ----
-const companySelect = document.getElementById("companySelect");
-const lineSelect = document.getElementById("lineSelect");
-const fromSelect = document.getElementById("fromSelect");
-const toSelect = document.getElementById("toSelect");
-
-companies.forEach(c => {
-  let opt = document.createElement("option");
-  opt.text = c; opt.value = c;
-  companySelect.add(opt);
-});
-
-function updateLineOptions() {
-  lineSelect.innerHTML = "";
-  const selectedCompany = companySelect.value;
-  linesStations.filter(l => l.company === selectedCompany)
-    .forEach(l => {
-      let opt = document.createElement("option");
-      opt.text = l.line; opt.value = l.line;
-      lineSelect.add(opt);
-    });
-  updateStationOptions();
+  if(editIndex!==null){trips[editIndex]=trip;editIndex=null}else{trips.push(trip)}
+  localStorage.setItem("railTrips",JSON.stringify(trips))
+  let lastTo=toInput.value
+  lineInput.value="";trainInput.value="";toInput.value=""
+  if(lastTo) fromInput.value=lastTo
+  render()
 }
 
-function updateStationOptions() {
-  fromSelect.innerHTML = "";
-  toSelect.innerHTML = "";
-  const selectedLine = lineSelect.value;
-  const line = linesStations.find(l => l.line === selectedLine);
-  if(!line) return;
-
-  line.stations.forEach(st => {
-    let opt1 = document.createElement("option");
-    opt1.text = st; opt1.value = st;
-    fromSelect.add(opt1);
-
-    let opt2 = document.createElement("option");
-    opt2.text = st; opt2.value = st;
-    toSelect.add(opt2);
-  });
-
-  if(lastToStation && Array.from(fromSelect.options).some(o=>o.value===lastToStation)) {
-    fromSelect.value = lastToStation;
+function deleteTrip(i){
+  if(confirm("刪除記錄？")){
+    trips.splice(i,1)
+    localStorage.setItem("railTrips",JSON.stringify(trips))
+    render()
   }
 }
 
-companySelect.onchange = updateLineOptions;
-lineSelect.onchange = updateStationOptions;
-
-updateLineOptions(); // 初始載入
-
-// ---- 增加乘車紀錄 ----
-function addRecord() {
-  const rec = {
-    company: companySelect.value,
-    line: lineSelect.value,
-    from: fromSelect.value,
-    to: toSelect.value
-  };
-  records.push(rec);
-  lastToStation = rec.to;
-  renderRecords();
-  renderLineStats();
+function editTrip(i){
+  const t=trips[i]
+  dateInput.value=t.date
+  companyInput.value=t.company
+  lineInput.value=t.line
+  trainInput.value=t.train
+  fromInput.value=t.from
+  toInput.value=t.to
+  editIndex=i
+  window.scrollTo({top:0,behavior:"smooth"})
 }
 
-// ---- 渲染紀錄 ----
-function renderRecords() {
-  const table = document.getElementById("recordsTable");
-  table.innerHTML = `<tr><th>公司</th><th>路線</th><th>上車站</th><th>下車站</th><th>操作</th></tr>`;
-  records.forEach((r,i) => {
-    const tr = table.insertRow();
-    tr.insertCell(0).innerText = r.company;
-    tr.insertCell(1).innerText = r.line;
-    tr.insertCell(2).innerText = r.from;
-    tr.insertCell(3).innerText = r.to;
-    const delBtn = document.createElement("button");
-    delBtn.innerText="刪除"; delBtn.onclick=()=>{records.splice(i,1); renderRecords(); renderLineStats();}
-    tr.insertCell(4).appendChild(delBtn);
-  });
+// ----------------------
+// 渲染乘車紀錄
+// ----------------------
+function render(){
+  const list=document.getElementById("tripList")
+  list.innerHTML=""
+  const sorted=[...trips].sort((a,b)=>b.date.localeCompare(a.date))
+  let lastDate=""
+  sorted.forEach(t=>{
+    const i=trips.indexOf(t)
+    if(t.date!==lastDate){
+      const d=document.createElement("div")
+      d.className="dategroup"
+      d.innerText=t.date
+      list.appendChild(d)
+      lastDate=t.date
+    }
+    const div=document.createElement("div")
+    div.className="trip"
+    div.innerHTML=
+      t.company+" "+t.line+" "+t.train+
+      "<br>"+t.from+" → "+t.to+
+      "<br>"+
+      "<button class='smallbtn' onclick='editTrip("+i+")'>修改</button>"+
+      "<button class='smallbtn' onclick='deleteTrip("+i+")'>刪除</button>"
+    list.appendChild(div)
+  })
+  stats()
 }
 
-// ---- 計算與渲染征服率 ----
-function renderLineStats() {
-  const table = document.getElementById("lineStatsTable");
-  table.innerHTML = `<tr><th>路線</th><th>已征服站數</th><th>總站數</th><th>征服率</th></tr>`;
-  linesStations.forEach(line=>{
-    let conquered = new Set();
-    records.filter(r=>r.line===line.line).forEach(r=>{
-      let stations = line.stations;
-      let start = stations.indexOf(r.from);
-      let end = stations.indexOf(r.to);
-      if(start===-1||end===-1) return;
-      if(start>end) [start,end]=[end,start];
-      for(let i=start;i<=end;i++) conquered.add(stations[i]);
-    });
-    let percent = Math.round(conquered.size/line.stations.length*100);
-    const tr = table.insertRow();
-    tr.insertCell(0).innerText = line.line;
-    tr.insertCell(1).innerText = conquered.size;
-    tr.insertCell(2).innerText = line.stations.length;
-    tr.insertCell(3).innerText = percent+"%";
-  });
+// ----------------------
+// 統計
+// ----------------------
+function stats(){
+  document.getElementById("total").innerText="乘車次數："+trips.length
+  let companyCount={},lineCount={},stationCount={},trainType={},trainSub={},routeStationsUsed={}
+
+  trips.forEach(t=>{
+    companyCount[t.company]=(companyCount[t.company]||0)+1
+    lineCount[t.line]=(lineCount[t.line]||0)+1
+    stationCount[t.from]=(stationCount[t.from]||0)+1
+    stationCount[t.to]=(stationCount[t.to]||0)+1
+    const m=t.train.match(/([A-Za-z]*\d+系|\d+形)(\d+)番台/)
+    if(m){
+      const type=m[1],sub=m[2]
+      trainType[type]=(trainType[type]||0)+1
+      if(!trainSub[type]) trainSub[type]={}
+      trainSub[type][sub]=(trainSub[type][sub]||0)+1
+    }
+    // 記錄路線征服站
+    if(!routeStationsUsed[t.line]) routeStationsUsed[t.line]=new Set()
+    routeStationsUsed[t.line].add(t.from)
+    routeStationsUsed[t.line].add(t.to)
+  })
+
+  renderStat("companyStats","鉄道公司",companyCount)
+  renderStat("lineStats","路線",lineCount)
+  renderTrainStat(trainType,trainSub)
+  renderStationStat(stationCount)
+  renderRouteCompletion(routeStationsUsed)
 }
+
+// ----------------------
+// 統計渲染函數
+// ----------------------
+function renderStat(id,title,data){
+  const entries=Object.entries(data).sort((a,b)=>b[1]-a[1])
+  const block=id+"_detail"
+  let html="<b>"+title+"</b>：<span class='clickable' onclick=\"toggle('"+block+"')\">"+entries.length+"</span>"
+  html+="<div id='"+block+"' style='display:none'>"
+  entries.forEach(e=>{html+=e[0]+" ("+e[1]+")<br>"})
+  html+="</div>"
+  document.getElementById(id).innerHTML=html
+}
+
+function renderTrainStat(type,sub){
+  const entries=Object.entries(type).sort((a,b)=>b[1]-a[1])
+  let html="<b>車型</b>：<span class='clickable' onclick=\"toggle('train_detail')\">"+entries.length+"</span>"
+  html+="<div id='train_detail' style='display:none'>"
+  entries.forEach(e=>{
+    const t=e[0],block="train_"+t
+    html+="<div class='clickable' onclick=\"toggle('"+block+"')\">"+t+" ("+e[1]+")</div>"
+    html+="<div id='"+block+"' class='sub' style='display:none'>"
+    Object.entries(sub[t]).forEach(s=>{html+=s[0]+"番台 ("+s[1]+")<br>"})
+    html+="</div>"
+  })
+  html+="</div>"
+  document.getElementById("trainStats").innerHTML=html
+}
+
+function renderStationStat(stationCount){
+  const s=Object.entries(stationCount).sort((a,b)=>b[1]-a[1])
+  let html="<b>車站排行榜</b><br>"
+  s.slice(0,20).forEach((v,i)=>{html+=(i+1)+" "+v[0]+" ("+v[1]+")<br>"})
+  document.getElementById("stationStats").innerHTML=html
+}
+
+function renderRouteCompletion(routeUsed){
+  let html="<b>路線征服率</b><br>"
+  Object.keys(routeUsed).sort().forEach(line=>{
+    let usedCount=routeUsed[line].size
+    let totalCount=stations.length // 暫時用 stations.json 長度，之後可替換成每條路線真實總站數
+    let percent=Math.round(usedCount/totalCount*100)
+    html+=line+" "+usedCount+"/"+totalCount+" ("+percent+"%)<br>"
+  })
+  document.getElementById("routeCompletion").innerHTML=html
+}
+
+function toggle(id){
+  const el=document.getElementById(id)
+  el.style.display=el.style.display==="none"?"block":"none"
+}
+
+// ----------------------
+// 初始化
+// ----------------------
+loadData().then(()=>render())
 </script>
 
 </body>
