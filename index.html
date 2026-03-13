@@ -3,29 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rail Log V0.042</title>
+<title>Rail Log V0.04.1</title>
 
 <style>
-body{font-family:-apple-system;margin:0;background:#f2f2f2}
-header{background:#222;color:white;padding:16px;text-align:center;font-size:20px}
-.container{padding:15px}
-.card{background:white;padding:15px;margin-bottom:15px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
-input,button{width:100%;padding:10px;margin-top:6px;margin-bottom:12px;font-size:16px}
-button{background:#007aff;color:white;border:none;border-radius:8px}
-.smallbtn{width:auto;padding:6px 10px;margin-right:6px;font-size:14px}
-.trip{border-bottom:1px solid #eee;padding:8px 0}
-.dategroup{font-weight:bold;margin-top:10px}
-.clickable{color:#007aff;cursor:pointer}
-.sub{margin-left:16px;font-size:14px}
+body{
+font-family:-apple-system;
+margin:0;
+background:#f2f2f2;
+}
+
+header{
+background:#222;
+color:white;
+padding:16px;
+text-align:center;
+font-size:20px;
+}
+
+.container{
+padding:15px;
+}
+
+.card{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+input,button{
+width:100%;
+padding:10px;
+margin-top:6px;
+margin-bottom:12px;
+font-size:16px;
+}
+
+button{
+background:#007aff;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+.smallbtn{
+width:auto;
+padding:6px 10px;
+margin-right:6px;
+font-size:14px;
+}
+
+.trip{
+border-bottom:1px solid #eee;
+padding:8px 0;
+}
+
+.dategroup{
+font-weight:bold;
+margin-top:10px;
+}
+
 </style>
 </head>
+
 <body>
 
-<header>🚆 Rail Log V0.042</header>
+<header>🚆 Rail Log V0.04.1</header>
 
 <div class="container">
 
 <div class="card">
+
 <h3>新增乘車</h3>
 
 <label>日期</label>
@@ -51,20 +100,26 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 <datalist id="stationList"></datalist>
 
 <button onclick="saveTrip()">儲存</button>
+
 </div>
 
 <div class="card">
+
 <h3>乘車記錄</h3>
 <div id="tripList"></div>
+
 </div>
 
 <div class="card">
+
 <h3>統計</h3>
+
 <div id="total"></div>
 <div id="companyStats"></div>
 <div id="trainStats"></div>
 <div id="lineStats"></div>
 <div id="stationStats"></div>
+
 </div>
 
 </div>
@@ -90,6 +145,7 @@ const toInput=document.getElementById("to")
 dateInput.valueAsDate=new Date()
 
 async function loadData(){
+
 companies = await (await fetch("companies.json")).json()
 lines = await (await fetch("lines.json")).json()
 stations = await (await fetch("stations.json")).json()
@@ -98,39 +154,64 @@ trains = await (await fetch("trainTypes.json")).json()
 fillList("companyList",companies)
 fillList("stationList",stations)
 fillList("trainList",trains)
+
 }
 
 function fillList(id,data){
-let list=document.getElementById(id)
+
+const list=document.getElementById(id)
+
 list.innerHTML=""
+
 data.forEach(v=>{
+
 let o=document.createElement("option")
 o.value=v
 list.appendChild(o)
+
 })
+
 }
 
 companyInput.addEventListener("input",()=>{
-let list=document.getElementById("lineList")
+
+const list=document.getElementById("lineList")
 list.innerHTML=""
-lines.filter(l=>l.company===companyInput.value)
+
+lines
+.filter(l=>l.company===companyInput.value)
 .forEach(l=>{
+
 let o=document.createElement("option")
 o.value=l.name
 list.appendChild(o)
+
 })
+
 })
 
 function normalizeTrain(t){
+
 if(!t) return ""
+
 let dash=t.match(/^([A-Za-z]\d+)-(\d+)$/)
-if(dash) return dash[1]+"系"+dash[2]+"番台"
+
+if(dash){
+return dash[1]+"系"+dash[2]+"番台"
+}
+
 let series=t.match(/^([A-Za-z]\d+系)(\d+)$/)
-if(series) return series[1]+series[2]+"番台"
+
+if(series){
+return series[1]+series[2]+"番台"
+}
+
 return t
+
 }
 
 function saveTrip(){
+
 let trip={
 date:dateInput.value,
 company:companyInput.value,
@@ -140,127 +221,176 @@ from:fromInput.value,
 to:toInput.value
 }
 
-if(editIndex!==null){trips[editIndex]=trip;editIndex=null}else{trips.push(trip)}
+if(editIndex!==null){
+
+trips[editIndex]=trip
+editIndex=null
+
+}else{
+
+trips.push(trip)
+
+}
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
 
 let lastTo=toInput.value
-lineInput.value="";trainInput.value="";toInput.value=""
-if(lastTo) fromInput.value=lastTo
+
+lineInput.value=""
+trainInput.value=""
+toInput.value=""
+
+if(lastTo){
+fromInput.value=lastTo
+}
 
 render()
+
 }
 
 function deleteTrip(i){
+
 if(confirm("刪除記錄？")){
+
 trips.splice(i,1)
+
 localStorage.setItem("railTrips",JSON.stringify(trips))
+
 render()
+
 }
+
 }
 
 function editTrip(i){
+
 let t=trips[i]
+
 dateInput.value=t.date
 companyInput.value=t.company
 lineInput.value=t.line
 trainInput.value=t.train
 fromInput.value=t.from
 toInput.value=t.to
+
 editIndex=i
+
 window.scrollTo({top:0,behavior:"smooth"})
+
 }
 
 function render(){
+
 const list=document.getElementById("tripList")
+
 list.innerHTML=""
+
 let sorted=[...trips].sort((a,b)=>b.date.localeCompare(a.date))
+
 let lastDate=""
+
 sorted.forEach(t=>{
+
 let i=trips.indexOf(t)
+
 if(t.date!==lastDate){
+
 let d=document.createElement("div")
 d.className="dategroup"
 d.innerText=t.date
 list.appendChild(d)
+
 lastDate=t.date
+
 }
+
 let div=document.createElement("div")
+
 div.className="trip"
+
 div.innerHTML=
+
 t.company+" "+t.line+" "+t.train+
 "<br>"+t.from+" → "+t.to+
 "<br>"+
 "<button class='smallbtn' onclick='editTrip("+i+")'>修改</button>"+
 "<button class='smallbtn' onclick='deleteTrip("+i+")'>刪除</button>"
+
 list.appendChild(div)
+
 })
+
 stats()
+
 }
 
 function stats(){
+
 document.getElementById("total").innerText="乘車次數："+trips.length
 
-let companyCount={},lineCount={},stationCount={},trainType={},trainSub={}
+let companyCount={}
+let trainCount={}
+let lineCount={}
+let stationCount={}
 
 trips.forEach(t=>{
+
 companyCount[t.company]=(companyCount[t.company]||0)+1
 lineCount[t.line]=(lineCount[t.line]||0)+1
+
+let type=t.train.match(/([A-Za-z]*\d+系|\d+形)/)
+
+if(type){
+trainCount[type[0]]=(trainCount[type[0]]||0)+1
+}
+
 stationCount[t.from]=(stationCount[t.from]||0)+1
 stationCount[t.to]=(stationCount[t.to]||0)+1
 
-let m=t.train.match(/([A-Za-z]*\d+系|\d+形)(\d+)番台/)
-if(m){
-let type=m[1],sub=m[2]
-trainType[type]=(trainType[type]||0)+1
-if(!trainSub[type]) trainSub[type]={}
-trainSub[type][sub]=(trainSub[type][sub]||0)+1
-}
 })
 
 renderStat("companyStats","鉄道公司",companyCount)
+renderStat("trainStats","車型",trainCount)
 renderStat("lineStats","路線",lineCount)
-renderTrainStat(trainType,trainSub)
 
-let s=Object.entries(stationCount).sort((a,b)=>b[1]-a[1])
+let s=Object.entries(stationCount)
+
+s.sort((a,b)=>b[1]-a[1])
+
 let html="<b>車站排行榜</b><br>"
-s.slice(0,20).forEach((v,i)=>{html+=(i+1)+" "+v[0]+" ("+v[1]+")<br>"})
+
+s.slice(0,20).forEach((v,i)=>{
+
+html+=(i+1)+" "+v[0]+" ("+v[1]+")<br>"
+
+})
+
 document.getElementById("stationStats").innerHTML=html
+
 }
 
 function renderStat(id,title,data){
-let entries=Object.entries(data).sort((a,b)=>b[1]-a[1])
-let block=id+"detail"
-let html="<b>"+title+"</b>：<span class='clickable' onclick="toggle('"+block+"')">"+entries.length+"</span>"
-html+="<div id='"+block+"' style='display:none'>"
-entries.forEach(e=>{html+=e[0]+" ("+e[1]+")<br>"})
-html+="</div>"
-document.getElementById(id).innerHTML=html
-}
 
-function renderTrainStat(type,sub){
-let entries=Object.entries(type).sort((a,b)=>b[1]-a[1])
-let html="<b>車型</b>：<span class='clickable' onclick="toggle('train_detail')">"+entries.length+"</span>"
-html+="<div id='train_detail' style='display:none'>"
-entries.forEach(e=>{
-let t=e[0],block="train"+t
-html+="<div class='clickable' onclick="toggle('"+block+"')">"+t+" ("+e[1]+")</div>"
-html+="<div id='"+block+"' class='sub' style='display:none'>"
-Object.entries(sub[t]).forEach(s=>{html+=s[0]+"番台 ("+s[1]+")<br>"})
-html+="</div>"
-})
-html+="</div>"
-document.getElementById("trainStats").innerHTML=html
-}
+let entries=Object.entries(data)
 
-function toggle(id){
+entries.sort((a,b)=>b[1]-a[1])
+
 let el=document.getElementById(id)
-el.style.display=el.style.display==="none"?"block":"none"
+
+let html="<b>"+title+"</b>："+entries.length+"<br>"
+
+entries.forEach(e=>{
+html+=e[0]+" ("+e[1]+")<br>"
+})
+
+el.innerHTML=html
+
 }
 
 loadData()
 render()
 
 </script>
+
 </body>
 </html>
