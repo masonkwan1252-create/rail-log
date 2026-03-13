@@ -1,16 +1,16 @@
-"}
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rail Log V6</title>
+<title>Rail Log V6.2</title>
 
 <style>
+
 body{
 font-family:-apple-system,BlinkMacSystemFont;
 margin:0;
-background:#f3f3f3;
+background:#f2f2f2;
 }
 
 header{
@@ -65,12 +65,27 @@ font-weight:bold;
 margin-top:10px;
 }
 
+.statHeader{
+font-weight:bold;
+margin-top:10px;
+}
+
+.clickable{
+color:#007aff;
+cursor:pointer;
+}
+
+.sub{
+margin-left:14px;
+font-size:14px;
+}
+
 </style>
 </head>
 
 <body>
 
-<header>🚆 Rail Log V6</header>
+<header>🚆 Rail Log V6.2</header>
 
 <div class="container">
 
@@ -153,11 +168,9 @@ function fillList(id,data){
 let list=document.getElementById(id)
 
 data.forEach(v=>{
-
 let opt=document.createElement("option")
 opt.value=v
 list.appendChild(opt)
-
 })
 
 }
@@ -286,7 +299,6 @@ let stationCount={}
 trips.forEach(t=>{
 
 companyCount[t.company]=(companyCount[t.company]||0)+1
-
 lineCount[t.line]=(lineCount[t.line]||0)+1
 
 let parts=t.train.split("-")
@@ -306,62 +318,9 @@ stationCount[t.to]=(stationCount[t.to]||0)+1
 
 })
 
-/* 公司 */
-
-let ctext="鉄道公司： "
-
-for(let c in companyCount){
-ctext+=c+"("+companyCount[c]+") "
-}
-
-companyStats.innerText=ctext
-
-
-/* 車型 + 番台 */
-
-let trainEntries=Object.entries(trainCount)
-
-trainEntries.sort((a,b)=>b[1]-a[1])
-
-let trainHTML="車型：<br>"
-
-trainEntries.forEach(([type,count])=>{
-
-trainHTML+=type+" ("+count+")<br>"
-
-if(trainSub[type]){
-
-let subs=Object.entries(trainSub[type])
-
-subs.sort((a,b)=>b[1]-a[1])
-
-subs.forEach(([s,c])=>{
-trainHTML+="&nbsp;&nbsp;"+s+"番台 ("+c+")<br>"
-})
-
-}
-
-})
-
-trainStats.innerHTML=trainHTML
-
-
-/* 路線排行榜 */
-
-let lines=Object.entries(lineCount)
-
-lines.sort((a,b)=>b[1]-a[1])
-
-let lineHTML="<br>路線：<br>"
-
-lines.slice(0,10).forEach(l=>{
-lineHTML+=l[0]+" ("+l[1]+")<br>"
-})
-
-trainStats.innerHTML+=lineHTML
-
-
-/* 車站 */
+renderCompany(companyCount)
+renderTrain(trainCount,trainSub)
+renderLine(lineCount)
 
 let stations=Object.entries(stationCount)
 
@@ -369,13 +328,101 @@ stationCount.innerText="到訪車站："+stations.length
 
 stations.sort((a,b)=>b[1]-a[1])
 
-let topHTML=""
+let html=""
 
 stations.slice(0,10).forEach(s=>{
-topHTML+=s[0]+" ("+s[1]+")<br>"
+html+=s[0]+" ("+s[1]+")<br>"
 })
 
-stationTop.innerHTML=topHTML
+stationTop.innerHTML=html
+
+}
+
+function renderCompany(data){
+
+let entries=Object.entries(data)
+
+companyStats.innerHTML=
+'<div class="statHeader">鉄道公司： <span class="clickable" onclick="toggle(\'companyDetail\')">'+entries.length+'</span></div>'+
+'<div id="companyDetail" style="display:none"></div>'
+
+let html=""
+
+entries.sort((a,b)=>b[1]-a[1])
+
+entries.forEach(e=>{
+html+=e[0]+" ("+e[1]+")<br>"
+})
+
+document.getElementById("companyDetail").innerHTML=html
+
+}
+
+function renderTrain(trainCount,trainSub){
+
+let entries=Object.entries(trainCount)
+
+let html='<div class="statHeader">車型： <span class="clickable" onclick="toggle(\'trainDetail\')">'+entries.length+'</span></div>'
+html+='<div id="trainDetail" style="display:none">'
+
+entries.sort((a,b)=>b[1]-a[1])
+
+entries.forEach(([type,count])=>{
+
+html+='<div class="clickable" onclick="toggle("sub_'+type+'")">'+type+' ('+count+')</div>'
+
+html+='<div id="sub_'+type+'" class="sub" style="display:none">'
+
+if(trainSub[type]){
+
+let subs=Object.entries(trainSub[type])
+
+subs.sort((a,b)=>b[1]-a[1])
+
+subs.forEach(s=>{
+html+=s[0]+"番台 ("+s[1]+")<br>"
+})
+
+}
+
+html+='</div>'
+
+})
+
+html+='</div>'
+
+trainStats.innerHTML=html
+
+}
+
+function renderLine(data){
+
+let entries=Object.entries(data)
+
+let html='<div class="statHeader">路線： <span class="clickable" onclick="toggle(\'lineDetail\')">'+entries.length+'</span></div>'
+html+='<div id="lineDetail" style="display:none">'
+
+entries.sort((a,b)=>b[1]-a[1])
+
+entries.forEach(e=>{
+html+=e[0]+" ("+e[1]+")<br>"
+})
+
+html+='</div>'
+
+trainStats.innerHTML+=html
+
+}
+
+function toggle(id){
+
+let el=document.getElementById(id)
+
+if(el.style.display=="none"){
+el.style.display="block"
+}else{
+el.style.display="none"
+}
 
 }
 
@@ -397,4 +444,4 @@ render()
 </script>
 
 </body>
-</ht
+</html
