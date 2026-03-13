@@ -169,9 +169,17 @@ function fillList(id,data){
 let list=document.getElementById(id)
 
 data.forEach(v=>{
+
 let opt=document.createElement("option")
+
+if(typeof v==="string"){
 opt.value=v
+}else{
+opt.value=v.name
+}
+
 list.appendChild(opt)
+
 })
 
 }
