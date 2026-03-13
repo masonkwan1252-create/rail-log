@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rail Log V6.3</title>
+<title>Rail Log V6.4</title>
 
 <style>
 
@@ -85,7 +85,7 @@ font-size:14px;
 
 <body>
 
-<header>🚆 Rail Log V6.3</header>
+<header>🚆 Rail Log V6.4</header>
 
 <div class="container">
 
@@ -133,7 +133,8 @@ font-size:14px;
 <div id="total"></div>
 <div id="companyStats"></div>
 <div id="trainStats"></div>
-<div id="stationCount"></div>
+<div id="lineStats"></div>
+<div id="stationStats"></div>
 
 <button onclick="exportData()">Export JSON</button>
 
@@ -146,7 +147,7 @@ font-size:14px;
 let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 let editIndex=null
 
-date.valueAsDate=new Date()
+document.getElementById("date").valueAsDate=new Date()
 
 async function loadData(){
 
@@ -215,9 +216,7 @@ function deleteTrip(i){
 if(confirm("刪除記錄？")){
 
 trips.splice(i,1)
-
 localStorage.setItem("railTrips",JSON.stringify(trips))
-
 render()
 
 }
@@ -300,14 +299,16 @@ lineCount[t.line]=(lineCount[t.line]||0)+1
 
 let parts=t.train.split("-")
 let type=parts[0]
-let sub=parts[1]||""
+let sub=parts[1]
 
 trainCount[type]=(trainCount[type]||0)+1
 
+if(sub){
+
 if(!trainSub[type]) trainSub[type]={}
 
-if(sub){
 trainSub[type][sub]=(trainSub[type][sub]||0)+1
+
 }
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
@@ -325,11 +326,10 @@ renderStation(stationCount)
 function renderCompany(data){
 
 let entries=Object.entries(data)
-
-let html='<div class="statHeader">鉄道公司： <span class="clickable" onclick="toggle(\\'companyDetail\\')">'+entries.length+'</span></div>'
-html+='<div id="companyDetail" style="display:none">'
-
 entries.sort((a,b)=>b[1]-a[1])
+
+let html='<div class="statHeader">鉄道公司： <span class="clickable" onclick="toggle(\'companyDetail\')">'+entries.length+'</span></div>'
+html+='<div id="companyDetail" style="display:none">'
 
 entries.forEach(e=>{
 html+=e[0]+" ("+e[1]+")<br>"
@@ -344,17 +344,16 @@ companyStats.innerHTML=html
 function renderTrain(trainCount,trainSub){
 
 let entries=Object.entries(trainCount)
-
-let html='<div class="statHeader">車型： <span class="clickable" onclick="toggle(\\'trainDetail\\')">'+entries.length+'</span></div>'
-html+='<div id="trainDetail" style="display:none">'
-
 entries.sort((a,b)=>b[1]-a[1])
+
+let html='<div class="statHeader">車型： <span class="clickable" onclick="toggle(\'trainDetail\')">'+entries.length+'</span></div>'
+html+='<div id="trainDetail" style="display:none">'
 
 entries.forEach(([type,count])=>{
 
 let safe=type.replace(/[^a-zA-Z0-9]/g,"")
 
-html+='<div class="clickable" onclick="toggle(\\'sub_'+safe+'\\')">'+type+' ('+count+')</div>'
+html+='<div class="clickable" onclick="toggle(\'sub_'+safe+'\')">'+type+' ('+count+')</div>'
 html+='<div id="sub_'+safe+'" class="sub" style="display:none">'
 
 if(trainSub[type]){
@@ -381,11 +380,10 @@ trainStats.innerHTML=html
 function renderLine(data){
 
 let entries=Object.entries(data)
-
-let html='<div class="statHeader">路線： <span class="clickable" onclick="toggle(\\'lineDetail\\')">'+entries.length+'</span></div>'
-html+='<div id="lineDetail" style="display:none">'
-
 entries.sort((a,b)=>b[1]-a[1])
+
+let html='<div class="statHeader">路線： <span class="clickable" onclick="toggle(\'lineDetail\')">'+entries.length+'</span></div>'
+html+='<div id="lineDetail" style="display:none">'
 
 entries.forEach(e=>{
 html+=e[0]+" ("+e[1]+")<br>"
@@ -393,17 +391,16 @@ html+=e[0]+" ("+e[1]+")<br>"
 
 html+='</div>'
 
-trainStats.innerHTML+=html
+lineStats.innerHTML=html
 
 }
 
 function renderStation(data){
 
 let entries=Object.entries(data)
-
 entries.sort((a,b)=>b[1]-a[1])
 
-let html='<div class="statHeader">到訪車站： <span class="clickable" onclick="toggle(\\'stationDetail\\')">'+entries.length+'</span></div>'
+let html='<div class="statHeader">到訪車站： <span class="clickable" onclick="toggle(\'stationDetail\')">'+entries.length+'</span></div>'
 html+='<div id="stationDetail" style="display:none">'
 
 entries.slice(0,30).forEach(s=>{
@@ -412,7 +409,7 @@ html+=s[0]+" ("+s[1]+")<br>"
 
 html+='</div>'
 
-stationCount.innerHTML=html
+stationStats.innerHTML=html
 
 }
 
@@ -446,4 +443,4 @@ render()
 </script>
 
 </body>
-<
+</html>
