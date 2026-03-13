@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rail Log</title>
+<title>Rail Log V6</title>
 
 <style>
-
 body{
 font-family:-apple-system,BlinkMacSystemFont;
 margin:0;
-background:#f2f2f2;
+background:#f3f3f3;
 }
 
 header{
@@ -65,16 +64,12 @@ font-weight:bold;
 margin-top:10px;
 }
 
-.stat{
-margin:6px 0;
-}
-
 </style>
 </head>
 
 <body>
 
-<header>🚆 Rail Log</header>
+<header>🚆 Rail Log V6</header>
 
 <div class="container">
 
@@ -86,19 +81,23 @@ margin:6px 0;
 <input type="date" id="date">
 
 <label>鉄道公司</label>
-<input id="company">
+<input id="company" list="companies">
 
 <label>路線</label>
-<input id="line">
+<input id="line" list="lines">
 
 <label>車型</label>
 <input id="train" placeholder="E233-0 / キハ40">
 
 <label>上車站</label>
-<input id="from">
+<input id="from" list="stations">
 
 <label>下車站</label>
-<input id="to">
+<input id="to" list="stations">
+
+<datalist id="stations"></datalist>
+<datalist id="lines"></datalist>
+<datalist id="companies"></datalist>
 
 <button onclick="saveTrip()">儲存</button>
 
@@ -115,12 +114,12 @@ margin:6px 0;
 
 <h3>統計</h3>
 
-<div class="stat" id="total"></div>
-<div class="stat" id="companies"></div>
-<div class="stat" id="trains"></div>
+<div id="total"></div>
+<div id="companyStats"></div>
+<div id="trainStats"></div>
 
 <h4>到訪車站</h4>
-<div class="stat" id="stationCount"></div>
+<div id="stationCount"></div>
 <div id="stationTop"></div>
 
 <button onclick="exportData()">Export JSON</button>
@@ -134,7 +133,35 @@ margin:6px 0;
 let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 let editIndex=null
 
-document.getElementById("date").valueAsDate=new Date()
+date.valueAsDate=new Date()
+
+async function loadData(){
+
+let stations=await (await fetch("stations.json")).json()
+let lines=await (await fetch("lines.json")).json()
+let companies=await (await fetch("companies.json")).json()
+
+fillList("stations",stations)
+fillList("lines",lines)
+fillList("companies",companies)
+
+}
+
+function fillList(id,data){
+
+let list=document.getElementById(id)
+
+data.forEach(v=>{
+
+let opt=document.createElement("option")
+opt.value=v
+list.appendChild(opt)
+
+})
+
+}
+
+loadData()
 
 function saveTrip(){
 
@@ -148,14 +175,10 @@ to:to.value
 }
 
 if(editIndex!==null){
-
 trips[editIndex]=trip
 editIndex=null
-
 }else{
-
 trips.push(trip)
-
 }
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
@@ -172,7 +195,6 @@ line.value=""
 train.value=""
 from.value=""
 to.value=""
-
 date.valueAsDate=new Date()
 
 }
@@ -236,7 +258,6 @@ let div=document.createElement("div")
 div.className="trip"
 
 div.innerHTML=
-
 t.company+" "+t.line+" "+t.train+
 "<br>"+t.from+" → "+t.to+
 "<br>"+
@@ -253,7 +274,7 @@ stats()
 
 function stats(){
 
-document.getElementById("total").innerText="乘車次數："+trips.length
+total.innerText="乘車次數："+trips.length
 
 let companyCount={}
 let trainCount={}
@@ -274,39 +295,32 @@ stationCount[t.to]=(stationCount[t.to]||0)+1
 let ctext="鉄道公司： "
 
 for(let c in companyCount){
-
 ctext+=c+"("+companyCount[c]+") "
-
 }
 
-companies.innerText=ctext
+companyStats.innerText=ctext
 
 let ttext="車型： "
 
 for(let t in trainCount){
-
 ttext+=t+"("+trainCount[t]+") "
-
 }
 
-trains.innerText=ttext
+trainStats.innerText=ttext
 
 let stations=Object.entries(stationCount)
 
-stationCountDiv=document.getElementById("stationCount")
-stationCountDiv.innerText="到訪車站："+stations.length
+stationCount.innerText="到訪車站："+stations.length
 
 stations.sort((a,b)=>b[1]-a[1])
 
 let topHTML=""
 
 stations.slice(0,10).forEach(s=>{
-
 topHTML+=s[0]+" ("+s[1]+")<br>"
-
 })
 
-document.getElementById("stationTop").innerHTML=topHTML
+stationTop.innerHTML=topHTML
 
 }
 
@@ -328,4 +342,4 @@ render()
 </script>
 
 </body>
-</html>
+</ht
