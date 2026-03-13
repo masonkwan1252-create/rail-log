@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Rail Log V0.03</title>
+<title>Rail Log V0.04</title>
 
 <style>
 
@@ -49,13 +49,6 @@ border:none;
 border-radius:8px;
 }
 
-.smallbtn{
-width:auto;
-padding:6px 10px;
-margin-right:8px;
-font-size:14px;
-}
-
 .trip{
 border-bottom:1px solid #eee;
 padding:8px 0;
@@ -71,22 +64,12 @@ font-weight:bold;
 margin-top:10px;
 }
 
-.clickable{
-color:#007aff;
-cursor:pointer;
-}
-
-.sub{
-margin-left:14px;
-font-size:14px;
-}
-
 </style>
 </head>
 
 <body>
 
-<header>🚆 Rail Log V0.03</header>
+<header>🚆 Rail Log V0.04</header>
 
 <div class="container">
 
@@ -98,36 +81,19 @@ font-size:14px;
 <input type="date" id="date">
 
 <label>鉄道公司</label>
-<input id="company">
+<input id="company" list="companyList">
+
+<datalist id="companyList"></datalist>
 
 <label>路線</label>
-<input id="line">
+<input id="line" list="lineList">
+
+<datalist id="lineList"></datalist>
 
 <label>車型</label>
-<input id="train" list="trainTypes">
+<input id="train" list="trainList">
 
-<datalist id="trainTypes">
-<option value="205系">
-<option value="E231系">
-<option value="E233系">
-<option value="E235系">
-<option value="E217系">
-<option value="E257系">
-<option value="E259系">
-<option value="E353系">
-<option value="E531系">
-<option value="E657系">
-<option value="E7系">
-<option value="N700系">
-<option value="キハ40">
-<option value="キハ47">
-<option value="キハ120">
-<option value="キハ261">
-<option value="キハ283">
-<option value="キハ85">
-<option value="キハ187">
-<option value="キハ189">
-</datalist>
+<datalist id="trainList"></datalist>
 
 <label>上車站</label>
 <input id="from">
@@ -154,7 +120,6 @@ font-size:14px;
 <div id="total"></div>
 <div id="companyStats"></div>
 <div id="trainStats"></div>
-<div id="lineStats"></div>
 <div id="stationStats"></div>
 
 </div>
@@ -164,9 +129,77 @@ font-size:14px;
 <script>
 
 let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
-let editIndex=null
+
+let companies=[]
+let lines=[]
+let trains=[]
 
 date.valueAsDate=new Date()
+
+async function loadData(){
+
+companies=await (await fetch("companies.json")).json()
+lines=await (await fetch("lines.json")).json()
+trains=await (await fetch("trainTypes.json")).json()
+
+fillCompany()
+fillTrain()
+
+}
+
+function fillCompany(){
+
+companyList.innerHTML=""
+
+companies.forEach(c=>{
+
+let opt=document.createElement("option")
+
+opt.value=c
+
+companyList.appendChild(opt)
+
+})
+
+}
+
+function fillTrain(){
+
+trainList.innerHTML=""
+
+trains.forEach(t=>{
+
+let opt=document.createElement("option")
+
+opt.value=t
+
+trainList.appendChild(opt)
+
+})
+
+}
+
+company.addEventListener("input",()=>{
+
+let c=company.value
+
+lineList.innerHTML=""
+
+lines
+.filter(l=>l.company===c)
+.forEach(l=>{
+
+let opt=document.createElement("option")
+
+opt.value=l.name
+
+lineList.appendChild(opt)
+
+})
+
+})
+
+loadData()
 
 function normalizeTrain(train){
 
@@ -184,10 +217,6 @@ let series=t.match(/^([A-Za-z]\d+系)(\d+)$/)
 
 if(series){
 return series[1]+series[2]+"番台"
-}
-
-if(t.includes("番台")){
-return t
 }
 
 return t
@@ -226,12 +255,7 @@ from:from.value,
 to:to.value
 }
 
-if(editIndex!==null){
-trips[editIndex]=trip
-editIndex=null
-}else{
 trips.push(trip)
-}
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
 
@@ -245,65 +269,25 @@ function clearForm(){
 
 let lastTo=to.value
 
-company.value=""
 line.value=""
 train.value=""
 to.value=""
 
-if(lastTo){
 from.value=lastTo
-}else{
-from.value=""
-}
 
 date.valueAsDate=new Date()
 
 }
 
-function deleteTrip(i){
-
-if(confirm("刪除記錄？")){
-
-trips.splice(i,1)
-
-localStorage.setItem("railTrips",JSON.stringify(trips))
-
-render()
-
-}
-
-}
-
-function editTrip(i){
-
-let t=trips[i]
-
-date.value=t.date
-company.value=t.company
-line.value=t.line
-train.value=t.train
-from.value=t.from
-to.value=t.to
-
-editIndex=i
-
-window.scrollTo({top:0,behavior:"smooth"})
-
-}
-
 function render(){
 
-let list=document.getElementById("tripList")
-
-list.innerHTML=""
+tripList.innerHTML=""
 
 let sorted=[...trips].sort((a,b)=>b.date.localeCompare(a.date))
 
 let lastDate=""
 
 sorted.forEach(t=>{
-
-let i=trips.indexOf(t)
 
 if(t.date!==lastDate){
 
@@ -313,7 +297,7 @@ d.className="dategroup"
 
 d.innerText=t.date
 
-list.appendChild(d)
+tripList.appendChild(d)
 
 lastDate=t.date
 
@@ -327,15 +311,9 @@ div.innerHTML=
 
 t.company+" "+t.line+" "+t.train+
 
-"<br>"+t.from+" → "+t.to+
+"<br>"+t.from+" → "+t.to
 
-"<br>"+
-
-"<button class='smallbtn' onclick='editTrip("+i+")'>✏️修改</button>"+
-
-"<button class='smallbtn' onclick='deleteTrip("+i+")'>🗑刪除</button>"
-
-list.appendChild(div)
+tripList.appendChild(div)
 
 })
 
@@ -349,32 +327,16 @@ total.innerText="乘車次數："+trips.length
 
 let companyCount={}
 let trainCount={}
-let trainSub={}
-let lineCount={}
 let stationCount={}
 
 trips.forEach(t=>{
 
 companyCount[t.company]=(companyCount[t.company]||0)+1
-lineCount[t.line]=(lineCount[t.line]||0)+1
 
 let p=parseTrain(t.train)
 
-let type=p.type
-let sub=p.sub
-
-if(type){
-
-trainCount[type]=(trainCount[type]||0)+1
-
-if(sub){
-
-if(!trainSub[type]) trainSub[type]={}
-
-trainSub[type][sub]=(trainSub[type][sub]||0)+1
-
-}
-
+if(p.type){
+trainCount[p.type]=(trainCount[p.type]||0)+1
 }
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
@@ -383,9 +345,7 @@ stationCount[t.to]=(stationCount[t.to]||0)+1
 })
 
 renderCompany(companyCount)
-renderTrain(trainCount,trainSub)
-renderLine(lineCount)
-renderStation(stationCount)
+renderTrain(trainCount)
 renderStationRanking(stationCount)
 
 }
@@ -396,7 +356,7 @@ let entries=Object.entries(data)
 
 entries.sort((a,b)=>b[1]-a[1])
 
-let html="<div class='statHeader'>鉄道公司："+entries.length+"</div>"
+let html="<div class='statHeader'>鉄道公司</div>"
 
 entries.forEach(e=>{
 html+=e[0]+" ("+e[1]+")<br>"
@@ -406,67 +366,19 @@ companyStats.innerHTML=html
 
 }
 
-function renderTrain(trainCount,trainSub){
-
-let entries=Object.entries(trainCount)
-
-entries.sort((a,b)=>b[1]-a[1])
-
-let html="<div class='statHeader'>車型："+entries.length+"</div>"
-
-entries.forEach(([type,count])=>{
-
-let safe=type.replace(/[^a-zA-Z0-9]/g,"")
-
-html+="<div class='clickable' onclick="toggle('sub_"+safe+"')">"+type+" ("+count+")</div>"
-
-html+="<div id='sub_"+safe+"' class='sub' style='display:none'>"
-
-if(trainSub[type]){
-
-let subs=Object.entries(trainSub[type])
-
-subs.sort((a,b)=>b[1]-a[1])
-
-subs.forEach(s=>{
-html+=s[0]+"番台 ("+s[1]+")<br>"
-})
-
-}
-
-html+="</div>"
-
-})
-
-trainStats.innerHTML=html
-
-}
-
-function renderLine(data){
+function renderTrain(data){
 
 let entries=Object.entries(data)
 
 entries.sort((a,b)=>b[1]-a[1])
 
-let html="<div class='statHeader'>路線："+entries.length+"</div>"
+let html="<div class='statHeader'>車型</div>"
 
 entries.forEach(e=>{
 html+=e[0]+" ("+e[1]+")<br>"
 })
 
-lineStats.innerHTML=html
-
-}
-
-function renderStation(data){
-
-let entries=Object.entries(data)
-
-entries.sort((a,b)=>b[1]-a[1])
-
-let html="<div class='statHeader'>到訪車站："+entries.length+"</div>"
-
-stationStats.innerHTML=html
+trainStats.innerHTML=html
 
 }
 
@@ -484,19 +396,7 @@ html+=(i+1)+" "+s[0]+" ("+s[1]+")<br>"
 
 })
 
-stationStats.innerHTML+=html
-
-}
-
-function toggle(id){
-
-let el=document.getElementById(id)
-
-if(el.style.display==="none"){
-el.style.display="block"
-}else{
-el.style.display="none"
-}
+stationStats.innerHTML=html
 
 }
 
