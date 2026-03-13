@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rail Log V6.2</title>
+<title>Rail Log V6.3</title>
 
 <style>
 
@@ -85,7 +85,7 @@ font-size:14px;
 
 <body>
 
-<header>🚆 Rail Log V6.2</header>
+<header>🚆 Rail Log V6.3</header>
 
 <div class="container">
 
@@ -133,10 +133,7 @@ font-size:14px;
 <div id="total"></div>
 <div id="companyStats"></div>
 <div id="trainStats"></div>
-
-<h4>到訪車站</h4>
 <div id="stationCount"></div>
-<div id="stationTop"></div>
 
 <button onclick="exportData()">Export JSON</button>
 
@@ -321,20 +318,7 @@ stationCount[t.to]=(stationCount[t.to]||0)+1
 renderCompany(companyCount)
 renderTrain(trainCount,trainSub)
 renderLine(lineCount)
-
-let stations=Object.entries(stationCount)
-
-stationCount.innerText="到訪車站："+stations.length
-
-stations.sort((a,b)=>b[1]-a[1])
-
-let html=""
-
-stations.slice(0,10).forEach(s=>{
-html+=s[0]+" ("+s[1]+")<br>"
-})
-
-stationTop.innerHTML=html
+renderStation(stationCount)
 
 }
 
@@ -342,11 +326,8 @@ function renderCompany(data){
 
 let entries=Object.entries(data)
 
-companyStats.innerHTML=
-'<div class="statHeader">鉄道公司： <span class="clickable" onclick="toggle(\'companyDetail\')">'+entries.length+'</span></div>'+
-'<div id="companyDetail" style="display:none"></div>'
-
-let html=""
+let html='<div class="statHeader">鉄道公司： <span class="clickable" onclick="toggle(\\'companyDetail\\')">'+entries.length+'</span></div>'
+html+='<div id="companyDetail" style="display:none">'
 
 entries.sort((a,b)=>b[1]-a[1])
 
@@ -354,7 +335,9 @@ entries.forEach(e=>{
 html+=e[0]+" ("+e[1]+")<br>"
 })
 
-document.getElementById("companyDetail").innerHTML=html
+html+='</div>'
+
+companyStats.innerHTML=html
 
 }
 
@@ -362,21 +345,21 @@ function renderTrain(trainCount,trainSub){
 
 let entries=Object.entries(trainCount)
 
-let html='<div class="statHeader">車型： <span class="clickable" onclick="toggle(\'trainDetail\')">'+entries.length+'</span></div>'
+let html='<div class="statHeader">車型： <span class="clickable" onclick="toggle(\\'trainDetail\\')">'+entries.length+'</span></div>'
 html+='<div id="trainDetail" style="display:none">'
 
 entries.sort((a,b)=>b[1]-a[1])
 
 entries.forEach(([type,count])=>{
 
-html+='<div class="clickable" onclick="toggle("sub_'+type+'")">'+type+' ('+count+')</div>'
+let safe=type.replace(/[^a-zA-Z0-9]/g,"")
 
-html+='<div id="sub_'+type+'" class="sub" style="display:none">'
+html+='<div class="clickable" onclick="toggle(\\'sub_'+safe+'\\')">'+type+' ('+count+')</div>'
+html+='<div id="sub_'+safe+'" class="sub" style="display:none">'
 
 if(trainSub[type]){
 
 let subs=Object.entries(trainSub[type])
-
 subs.sort((a,b)=>b[1]-a[1])
 
 subs.forEach(s=>{
@@ -399,7 +382,7 @@ function renderLine(data){
 
 let entries=Object.entries(data)
 
-let html='<div class="statHeader">路線： <span class="clickable" onclick="toggle(\'lineDetail\')">'+entries.length+'</span></div>'
+let html='<div class="statHeader">路線： <span class="clickable" onclick="toggle(\\'lineDetail\\')">'+entries.length+'</span></div>'
 html+='<div id="lineDetail" style="display:none">'
 
 entries.sort((a,b)=>b[1]-a[1])
@@ -414,11 +397,30 @@ trainStats.innerHTML+=html
 
 }
 
+function renderStation(data){
+
+let entries=Object.entries(data)
+
+entries.sort((a,b)=>b[1]-a[1])
+
+let html='<div class="statHeader">到訪車站： <span class="clickable" onclick="toggle(\\'stationDetail\\')">'+entries.length+'</span></div>'
+html+='<div id="stationDetail" style="display:none">'
+
+entries.slice(0,30).forEach(s=>{
+html+=s[0]+" ("+s[1]+")<br>"
+})
+
+html+='</div>'
+
+stationCount.innerHTML=html
+
+}
+
 function toggle(id){
 
 let el=document.getElementById(id)
 
-if(el.style.display=="none"){
+if(el.style.display==="none"){
 el.style.display="block"
 }else{
 el.style.display="none"
@@ -444,4 +446,4 @@ render()
 </script>
 
 </body>
-</html
+<
