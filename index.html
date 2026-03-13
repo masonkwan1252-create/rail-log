@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Rail Log V0.04.4</title>
+<title>Rail Log V0.04.1</title>
 
 <style>
-
 body{
 font-family:-apple-system;
 margin:0;
@@ -66,23 +64,12 @@ font-weight:bold;
 margin-top:10px;
 }
 
-.clickable{
-color:#007aff;
-cursor:pointer;
-}
-
-.sub{
-margin-left:16px;
-font-size:14px;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header>🚆 Rail Log V0.04.4</header>
+<header>🚆 Rail Log V0.04.1</header>
 
 <div class="container">
 
@@ -157,51 +144,48 @@ const toInput=document.getElementById("to")
 
 dateInput.valueAsDate=new Date()
 
-function fillList(id,data){
-
-let list=document.getElementById(id)
-list.innerHTML=""
-
-data.forEach(v=>{
-let o=document.createElement("option")
-o.value=v
-list.appendChild(o)
-})
-
-}
-
 async function loadData(){
 
-try{
-
-companies=await (await fetch("companies.json")).json()
-lines=await (await fetch("lines.json")).json()
-stations=await (await fetch("stations.json")).json()
-trains=await (await fetch("trainTypes.json")).json()
+companies = await (await fetch("companies.json")).json()
+lines = await (await fetch("lines.json")).json()
+stations = await (await fetch("stations.json")).json()
+trains = await (await fetch("trainTypes.json")).json()
 
 fillList("companyList",companies)
 fillList("stationList",stations)
 fillList("trainList",trains)
 
-}catch(e){
-
-console.log("dataset not loaded")
-
 }
+
+function fillList(id,data){
+
+const list=document.getElementById(id)
+
+list.innerHTML=""
+
+data.forEach(v=>{
+
+let o=document.createElement("option")
+o.value=v
+list.appendChild(o)
+
+})
 
 }
 
 companyInput.addEventListener("input",()=>{
 
-let list=document.getElementById("lineList")
+const list=document.getElementById("lineList")
 list.innerHTML=""
 
 lines
 .filter(l=>l.company===companyInput.value)
 .forEach(l=>{
+
 let o=document.createElement("option")
 o.value=l.name
 list.appendChild(o)
+
 })
 
 })
@@ -238,10 +222,14 @@ to:toInput.value
 }
 
 if(editIndex!==null){
+
 trips[editIndex]=trip
 editIndex=null
+
 }else{
+
 trips.push(trip)
+
 }
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
@@ -263,9 +251,13 @@ render()
 function deleteTrip(i){
 
 if(confirm("刪除記錄？")){
+
 trips.splice(i,1)
+
 localStorage.setItem("railTrips",JSON.stringify(trips))
+
 render()
+
 }
 
 }
@@ -289,7 +281,8 @@ window.scrollTo({top:0,behavior:"smooth"})
 
 function render(){
 
-let list=document.getElementById("tripList")
+const list=document.getElementById("tripList")
+
 list.innerHTML=""
 
 let sorted=[...trips].sort((a,b)=>b.date.localeCompare(a.date))
@@ -312,6 +305,7 @@ lastDate=t.date
 }
 
 let div=document.createElement("div")
+
 div.className="trip"
 
 div.innerHTML=
@@ -335,29 +329,19 @@ function stats(){
 document.getElementById("total").innerText="乘車次數："+trips.length
 
 let companyCount={}
+let trainCount={}
 let lineCount={}
 let stationCount={}
-let trainType={}
-let trainSub={}
 
 trips.forEach(t=>{
 
 companyCount[t.company]=(companyCount[t.company]||0)+1
 lineCount[t.line]=(lineCount[t.line]||0)+1
 
-let m=t.train.match(/([A-Za-z]*\d+系|\d+形)(\d+)番台/)
+let type=t.train.match(/([A-Za-z]*\d+系|\d+形)/)
 
-if(m){
-
-let type=m[1]
-let sub=m[2]
-
-trainType[type]=(trainType[type]||0)+1
-
-if(!trainSub[type]) trainSub[type]={}
-
-trainSub[type][sub]=(trainSub[type][sub]||0)+1
-
+if(type){
+trainCount[type[0]]=(trainCount[type[0]]||0)+1
 }
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
@@ -366,15 +350,19 @@ stationCount[t.to]=(stationCount[t.to]||0)+1
 })
 
 renderStat("companyStats","鉄道公司",companyCount)
+renderStat("trainStats","車型",trainCount)
 renderStat("lineStats","路線",lineCount)
-renderTrainStat(trainType,trainSub)
 
-let s=Object.entries(stationCount).sort((a,b)=>b[1]-a[1])
+let s=Object.entries(stationCount)
+
+s.sort((a,b)=>b[1]-a[1])
 
 let html="<b>車站排行榜</b><br>"
 
 s.slice(0,20).forEach((v,i)=>{
+
 html+=(i+1)+" "+v[0]+" ("+v[1]+")<br>"
+
 })
 
 document.getElementById("stationStats").innerHTML=html
@@ -383,59 +371,19 @@ document.getElementById("stationStats").innerHTML=html
 
 function renderStat(id,title,data){
 
-let entries=Object.entries(data).sort((a,b)=>b[1]-a[1])
+let entries=Object.entries(data)
 
-let block=id+"detail"
+entries.sort((a,b)=>b[1]-a[1])
 
-let html="<b>"+title+"</b>："+
-"<span class='clickable' onclick="toggle('"+block+"')">"+
-entries.length+
-"</span>"
+let el=document.getElementById(id)
 
-html+="<div id='"+block+"' style='display:none'>"
+let html="<b>"+title+"</b>："+entries.length+"<br>"
 
 entries.forEach(e=>{
 html+=e[0]+" ("+e[1]+")<br>"
 })
 
-html+="</div>"
-
-document.getElementById(id).innerHTML=html
-
-}
-
-function renderTrainStat(type,sub){
-
-let entries=Object.entries(type).sort((a,b)=>b[1]-a[1])
-
-let html="<b>車型</b>："+entries.length
-
-entries.forEach(e=>{
-
-let t=e[0]
-let block="train"+t
-
-html+="<div class='clickable' onclick="toggle('"+block+"')">"+t+" ("+e[1]+")</div>"
-html+="<div id='"+block+"' class='sub' style='display:none'>"
-
-Object.entries(sub[t]).forEach(s=>{
-html+=s[0]+"番台 ("+s[1]+")<br>"
-})
-
-html+="</div>"
-
-})
-
-document.getElementById("trainStats").innerHTML=html
-
-}
-
-function toggle(id){
-
-let el=document.getElementById(id)
-
-el.style.display=
-el.style.display==="none"?"block":"none"
+el.innerHTML=html
 
 }
 
