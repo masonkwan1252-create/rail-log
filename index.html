@@ -20,7 +20,7 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 </head>
 <body>
 
-<header>🚆 Rail Log V0.07.1</header>
+<header>🚆 Rail Log V0.07.2</header>
 
 <div class="container">
 
@@ -33,7 +33,7 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 <label>鉄道公司</label>
 <input id="company" list="companyList">
 <datalist id="companyList"></datalist>
-  
+
 <script>
 async function loadCompanies(){
   const companies = await fetch("companies.json").then(r=>r.json())
@@ -46,9 +46,10 @@ async function loadCompanies(){
   })
 }
 
-// 初始化：載入公司清單
-loadCompanies()
+// 初始化：載入公司清單 + 渲染
+loadCompanies().then(()=>render())
 </script>
+
   
 <label>路線</label>
 <input id="line">
