@@ -1,10 +1,10 @@
+}
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Rail Log V0.04.3</title>
+<title>Rail Log V0.04.2</title>
 
 <style>
 body{
@@ -64,18 +64,12 @@ padding:8px 0;
 font-weight:bold;
 margin-top:10px;
 }
-
-.clickable{
-color:#007aff;
-cursor:pointer;
-}
-
 </style>
 </head>
 
 <body>
 
-<header>🚆 Rail Log V0.04.3</header>
+<header>🚆 Rail Log V0.04.2</header>
 
 <div class="container">
 
@@ -114,40 +108,29 @@ cursor:pointer;
 <div id="tripList"></div>
 </div>
 
-<div class="card">
-<h3>統計</h3>
-<div id="total"></div>
-<div id="companyStats"></div>
-<div id="trainStats"></div>
-<div id="lineStats"></div>
-<div id="stationStats"></div>
-</div>
-
 </div>
 
 <script>
 
-let trips = JSON.parse(localStorage.getItem("railTrips")||"[]")
+let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 
 let companies=[]
 let lines=[]
 let stations=[]
 let trains=[]
 
-let editIndex=null
-
 date.valueAsDate=new Date()
 
 async function loadData(){
 
-companies = await (await fetch("companies.json")).json()
-lines = await (await fetch("lines.json")).json()
-stations = await (await fetch("stations.json")).json()
-trains = await (await fetch("trainTypes.json")).json()
+companies=await (await fetch("companies.json")).json()
+lines=await (await fetch("lines.json")).json()
+stations=await (await fetch("stations.json")).json()
+trains=await (await fetch("trainTypes.json")).json()
 
 fillCompany()
-fillTrain()
-fillStation()
+fillStations()
+fillTrains()
 
 }
 
@@ -156,42 +139,33 @@ function fillCompany(){
 companyList.innerHTML=""
 
 companies.forEach(c=>{
-
 let o=document.createElement("option")
 o.value=c
-
 companyList.appendChild(o)
-
 })
 
 }
 
-function fillTrain(){
-
-trainList.innerHTML=""
-
-trains.forEach(t=>{
-
-let o=document.createElement("option")
-o.value=t
-
-trainList.appendChild(o)
-
-})
-
-}
-
-function fillStation(){
+function fillStations(){
 
 stationList.innerHTML=""
 
 stations.forEach(s=>{
-
 let o=document.createElement("option")
 o.value=s
-
 stationList.appendChild(o)
+})
 
+}
+
+function fillTrains(){
+
+trainList.innerHTML=""
+
+trains.forEach(t=>{
+let o=document.createElement("option")
+o.value=t
+trainList.appendChild(o)
 })
 
 }
@@ -213,24 +187,14 @@ lineList.appendChild(o)
 
 })
 
-loadData()
-
 function normalizeTrain(t){
 
-if(!t) return ""
+if(!t)return""
 
-t=t.trim()
+let m=t.match(/^([A-Za-z]*\d+系)(\d+)$/)
 
-let dash=t.match(/^([A-Za-z]\d+)-(\d+)$/)
-
-if(dash){
-return dash[1]+"系"+dash[2]+"番台"
-}
-
-let series=t.match(/^([A-Za-z]\d+系)(\d+)$/)
-
-if(series){
-return series[1]+series[2]+"番台"
+if(m){
+return m[1]+m[2]+"番台"
 }
 
 return t
@@ -250,61 +214,11 @@ to:to.value
 
 }
 
-if(editIndex!==null){
-
-trips[editIndex]=trip
-editIndex=null
-
-}else{
-
 trips.push(trip)
 
-}
-
-localStorage.setItem("railTrips",JSON.stringify(trips))
-
-let lastTo=to.value
-
-line.value=""
-train.value=""
-to.value=""
-
-if(lastTo){
-from.value=lastTo
-}
-
-render()
-
-}
-
-function deleteTrip(i){
-
-if(confirm("刪除記錄？")){
-
-trips.splice(i,1)
-
 localStorage.setItem("railTrips",JSON.stringify(trips))
 
 render()
-
-}
-
-}
-
-function editTrip(i){
-
-let t=trips[i]
-
-date.value=t.date
-company.value=t.company
-line.value=t.line
-train.value=t.train
-from.value=t.from
-to.value=t.to
-
-editIndex=i
-
-window.scrollTo({top:0})
 
 }
 
@@ -317,8 +231,6 @@ let sorted=[...trips].sort((a,b)=>b.date.localeCompare(a.date))
 let lastDate=""
 
 sorted.forEach(t=>{
-
-let i=trips.indexOf(t)
 
 if(t.date!==lastDate){
 
@@ -336,98 +248,20 @@ let div=document.createElement("div")
 
 div.className="trip"
 
-div.innerHTML=
+div.innerText=
 t.company+" "+t.line+" "+t.train+
-"<br>"+t.from+" → "+t.to+
-"<br>"+
-"<button class='smallbtn' onclick='editTrip("+i+")'>修改</button>"+
-"<button class='smallbtn' onclick='deleteTrip("+i+")'>刪除</button>"
+" "+t.from+"→"+t.to
 
 tripList.appendChild(div)
 
 })
 
-stats()
-
 }
 
-function stats(){
-
-total.innerText="乘車次數："+trips.length
-
-let companyCount={}
-let trainCount={}
-let lineCount={}
-let stationCount={}
-
-trips.forEach(t=>{
-
-companyCount[t.company]=(companyCount[t.company]||0)+1
-lineCount[t.line]=(lineCount[t.line]||0)+1
-
-let type=t.train.match(/([A-Za-z]*\d+系|\d+形)/)
-
-if(type){
-trainCount[type[0]]=(trainCount[type[0]]||0)+1
-}
-
-stationCount[t.from]=(stationCount[t.from]||0)+1
-stationCount[t.to]=(stationCount[t.to]||0)+1
-
-})
-
-renderStat(companyStats,"鉄道公司",companyCount)
-renderStat(trainStats,"車型",trainCount)
-renderStat(lineStats,"路線",lineCount)
-
-let s=Object.entries(stationCount)
-s.sort((a,b)=>b[1]-a[1])
-
-let html="<b>車站排行榜</b><br>"
-
-s.slice(0,20).forEach((v,i)=>{
-html+=(i+1)+" "+v[0]+" ("+v[1]+")<br>"
-})
-
-stationStats.innerHTML=html
-
-}
-
-function renderStat(el,title,data){
-
-let entries=Object.entries(data)
-
-entries.sort((a,b)=>b[1]-a[1])
-
-let id="stat_"+title
-
-let html="<b>"+title+"</b>："+entries.length+
-" <span class='clickable' onclick="toggle('"+id+"')">查看</span>"
-
-html+="<div id='"+id+"' style='display:none'>"
-
-entries.forEach(e=>{
-html+=e[0]+" ("+e[1]+")<br>"
-})
-
-html+="</div>"
-
-el.innerHTML=html
-
-}
-
-function toggle(id){
-
-let el=document.getElementById(id)
-
-el.style.display=
-el.style.display==="none"?"block":"none"
-
-}
-
+loadData()
 render()
 
 </script>
 
 </body>
-</ht
+</html
