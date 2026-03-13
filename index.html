@@ -243,11 +243,19 @@ render()
 
 function clearForm(){
 
+let lastTo=to.value
+
 company.value=""
 line.value=""
 train.value=""
-from.value=""
 to.value=""
+
+if(lastTo){
+from.value=lastTo
+}else{
+from.value=""
+}
+
 date.valueAsDate=new Date()
 
 }
