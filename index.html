@@ -279,19 +279,34 @@ total.innerText="乘車次數："+trips.length
 
 let companyCount={}
 let trainCount={}
+let trainSub={}
+let lineCount={}
 let stationCount={}
 
 trips.forEach(t=>{
 
 companyCount[t.company]=(companyCount[t.company]||0)+1
 
-let type=t.train.split("-")[0]
+lineCount[t.line]=(lineCount[t.line]||0)+1
+
+let parts=t.train.split("-")
+let type=parts[0]
+let sub=parts[1]||""
+
 trainCount[type]=(trainCount[type]||0)+1
+
+if(!trainSub[type]) trainSub[type]={}
+
+if(sub){
+trainSub[type][sub]=(trainSub[type][sub]||0)+1
+}
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
 stationCount[t.to]=(stationCount[t.to]||0)+1
 
 })
+
+/* 公司 */
 
 let ctext="鉄道公司： "
 
@@ -301,13 +316,52 @@ ctext+=c+"("+companyCount[c]+") "
 
 companyStats.innerText=ctext
 
-let ttext="車型： "
 
-for(let t in trainCount){
-ttext+=t+"("+trainCount[t]+") "
+/* 車型 + 番台 */
+
+let trainEntries=Object.entries(trainCount)
+
+trainEntries.sort((a,b)=>b[1]-a[1])
+
+let trainHTML="車型：<br>"
+
+trainEntries.forEach(([type,count])=>{
+
+trainHTML+=type+" ("+count+")<br>"
+
+if(trainSub[type]){
+
+let subs=Object.entries(trainSub[type])
+
+subs.sort((a,b)=>b[1]-a[1])
+
+subs.forEach(([s,c])=>{
+trainHTML+="&nbsp;&nbsp;"+s+"番台 ("+c+")<br>"
+})
+
 }
 
-trainStats.innerText=ttext
+})
+
+trainStats.innerHTML=trainHTML
+
+
+/* 路線排行榜 */
+
+let lines=Object.entries(lineCount)
+
+lines.sort((a,b)=>b[1]-a[1])
+
+let lineHTML="<br>路線：<br>"
+
+lines.slice(0,10).forEach(l=>{
+lineHTML+=l[0]+" ("+l[1]+")<br>"
+})
+
+trainStats.innerHTML+=lineHTML
+
+
+/* 車站 */
 
 let stations=Object.entries(stationCount)
 
