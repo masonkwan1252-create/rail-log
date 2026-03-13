@@ -20,7 +20,7 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 </head>
 <body>
 
-<header>🚆 Rail Log V0.07</header>
+<header>🚆 Rail Log V0.07.1</header>
 
 <div class="container">
 
@@ -67,9 +67,6 @@ button{background:#007aff;color:white;border:none;border-radius:8px}
 </div>
 
 <script>
-// ----------------------
-// 初始化
-// ----------------------
 let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 let editIndex=null
 
@@ -86,14 +83,18 @@ dateInput.valueAsDate=new Date()
 // 載入公司 JSON
 // ----------------------
 async function loadCompanies(){
-  const companies=await fetch("companies.json").then(r=>r.json())
-  const list=document.getElementById("companyList")
-  list.innerHTML=""
-  companies.forEach(c=>{
-    const o=document.createElement("option")
-    o.value=c
-    list.appendChild(o)
-  })
+  try {
+    const companies=await fetch("companies.json").then(r=>r.json())
+    const list=document.getElementById("companyList")
+    list.innerHTML=""
+    companies.forEach(c=>{
+      const o=document.createElement("option")
+      o.value=c
+      list.appendChild(o)
+    })
+  } catch(e){
+    console.error("載入 companies.json 失敗", e)
+  }
 }
 
 // ----------------------
@@ -234,4 +235,4 @@ function renderTrainStat(type,sub){
     html+="</div>"
   })
   html+="</div>"
-  document
+  document.getElementById("trainStats").innerHTML=
