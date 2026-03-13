@@ -1,195 +1,196 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>日本鉄道乗車記録 v3</title>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<title>Rail Log</title>
 
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f5f5f7}
-header{background:black;color:white;padding:16px;font-size:20px}
-.container{padding:16px}
-.card{background:white;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-input{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc;font-size:16px}
-button{padding:10px 14px;border-radius:10px;border:none;background:black;color:white;font-size:16px;margin-top:8px;width:100%}
-.record{padding:10px;border-bottom:1px solid #eee}
-.stat{margin:4px 0}
-#map{height:420px;border-radius:12px}
-.small{color:#666;font-size:13px}
+body{
+font-family:-apple-system,BlinkMacSystemFont;
+margin:0;
+background:#f5f5f5;
+}
+
+header{
+background:#222;
+color:white;
+padding:15px;
+text-align:center;
+font-size:20px;
+}
+
+.container{
+padding:15px;
+}
+
+.card{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+input,select,button{
+width:100%;
+padding:10px;
+margin-top:8px;
+margin-bottom:12px;
+font-size:16px;
+}
+
+button{
+background:#007aff;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+.list-item{
+padding:10px;
+border-bottom:1px solid #eee;
+}
+
+.stat{
+font-size:18px;
+margin:8px 0;
+}
+
 </style>
 </head>
 
 <body>
 
-<header>🚆 日本鉄道乗車記録</header>
+<header>🚆 Rail Log</header>
 
 <div class="container">
 
 <div class="card">
+
 <h3>新增乘車</h3>
 
-<input id="date" type="date">
-<input id="company" placeholder="鉄道公司">
-<input id="line" placeholder="路線">
-<input id="train" placeholder="車型">
-<input id="car" placeholder="車両番号 (可留空)">
-<input id="from" placeholder="由站">
-<input id="to" placeholder="到站">
+<label>日期</label>
+<input type="date" id="date">
 
-<button onclick="addRecord()">新增紀錄</button>
+<label>鉄道公司</label>
+<input id="company" placeholder="JR東日本">
+
+<label>路線</label>
+<input id="line" placeholder="中央線">
+
+<label>車型</label>
+<input id="train" placeholder="E233-0 或 キハ40">
+
+<label>上車站</label>
+<input id="from">
+
+<label>下車站</label>
+<input id="to">
+
+<button onclick="addTrip()">儲存</button>
+
 </div>
 
 <div class="card">
+
 <h3>乘車記錄</h3>
-<div id="records"></div>
+<div id="tripList"></div>
+
 </div>
 
 <div class="card">
+
 <h3>統計</h3>
-<div id="stats"></div>
-</div>
 
-<div class="card">
-<h3>你坐過的路線圖</h3>
-<div id="map"></div>
-<div class="small">地圖會嘗試自動定位日本車站</div>
+<div class="stat" id="totalTrips"></div>
+<div class="stat" id="companyStats"></div>
+<div class="stat" id="trainStats"></div>
+
 </div>
 
 </div>
 
 <script>
 
-let records = JSON.parse(localStorage.getItem("rail_records_v3") || "[]")
+let trips = JSON.parse(localStorage.getItem("railTrips") || "[]")
 
-function save(){
-localStorage.setItem("rail_records_v3",JSON.stringify(records))
+document.getElementById("date").valueAsDate = new Date()
+
+function addTrip(){
+
+let trip = {
+
+date:document.getElementById("date").value,
+company:document.getElementById("company").value,
+line:document.getElementById("line").value,
+train:document.getElementById("train").value,
+from:document.getElementById("from").value,
+to:document.getElementById("to").value
+
 }
 
-function addRecord(){
+trips.push(trip)
 
-let r={
-date:date.value,
-company:company.value,
-line:line.value,
-train:train.value,
-car:car.value,
-from:from.value,
-to:to.value
-}
+localStorage.setItem("railTrips",JSON.stringify(trips))
 
-if(!r.from||!r.to){
-alert("請輸入車站")
-return
-}
-
-records.push(r)
-save()
 render()
+
 }
 
 function render(){
 
-let html=""
+let list=document.getElementById("tripList")
+list.innerHTML=""
 
-records.slice().reverse().forEach(r=>{
+trips.forEach(t=>{
 
-html+=`<div class="record">
-<b>${r.date||""}</b><br>
-${r.company||""} ${r.line||""}<br>
-🚆 ${r.train||""} ${r.car||""}<br>
-📍 ${r.from} → ${r.to}
-</div>`
+let div=document.createElement("div")
+div.className="list-item"
+
+div.innerHTML=
+t.date+" | "+
+t.company+" "+
+t.line+" "+
+t.train+
+"<br>"+t.from+" → "+t.to
+
+list.appendChild(div)
 
 })
 
-document.getElementById("records").innerHTML=html
+document.getElementById("totalTrips").innerText="乘車次數："+trips.length
 
-stats()
-drawLines()
-}
-
-function stats(){
-
-let trainCount={}
-let stationCount={}
-let lineCount={}
 let companyCount={}
+let trainCount={}
 
-records.forEach(r=>{
+trips.forEach(t=>{
 
-if(r.train){
-trainCount[r.train]=(trainCount[r.train]||0)+1
-}
+companyCount[t.company]=(companyCount[t.company]||0)+1
 
-if(r.line){
-lineCount[r.line]=(lineCount[r.line]||0)+1
-}
+let type=t.train.split("-")[0]
 
-if(r.company){
-companyCount[r.company]=(companyCount[r.company]||0)+1
-}
-
-[r.from,r.to].forEach(s=>{
-if(!s)return
-stationCount[s]=(stationCount[s]||0)+1
-})
+trainCount[type]=(trainCount[type]||0)+1
 
 })
 
-function top(obj){
-let arr=Object.entries(obj).sort((a,b)=>b[1]-a[1])
-return arr.length?arr[0][0]+" ("+arr[0][1]+")":"-"
+let companyText="鉄道公司： "
+for(let c in companyCount){
+
+companyText+=c+"("+companyCount[c]+") "
+
 }
 
-document.getElementById("stats").innerHTML=`
-<div class="stat">🚆 總乘車: ${records.length}</div>
-<div class="stat">🏢 鉄道公司: ${Object.keys(companyCount).length}</div>
-<div class="stat">🛤 路線數: ${Object.keys(lineCount).length}</div>
-<div class="stat">🚉 車站數: ${Object.keys(stationCount).length}</div>
-<div class="stat">🚄 最多車型: ${top(trainCount)}</div>
-`
+document.getElementById("companyStats").innerText=companyText
+
+let trainText="車型： "
+for(let t in trainCount){
+
+trainText+=t+"("+trainCount[t]+") "
+
 }
 
-let map = L.map('map').setView([36.2,138],5)
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-maxZoom:19
-}).addTo(map)
-
-let layers=[]
-
-function drawLines(){
-
-layers.forEach(l=>map.removeLayer(l))
-layers=[]
-
-records.forEach(r=>{
-
-Promise.all([
-fetch("https://nominatim.openstreetmap.org/search?format=json&q="+encodeURIComponent(r.from+" station japan")).then(res=>res.json()),
-fetch("https://nominatim.openstreetmap.org/search?format=json&q="+encodeURIComponent(r.to+" station japan")).then(res=>res.json())
-]).then(data=>{
-
-let a=data[0][0]
-let b=data[1][0]
-
-if(!a||!b) return
-
-let latlngs=[
-[a.lat,a.lon],
-[b.lat,b.lon]
-]
-
-let line=L.polyline(latlngs).addTo(map)
-
-layers.push(line)
-
-})
-
-})
+document.getElementById("trainStats").innerText=trainText
 
 }
 
