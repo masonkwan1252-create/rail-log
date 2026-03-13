@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Rail Log V0.04.1</title>
+<title>Rail Log V0.04.2</title>
 
 <style>
 
 body{
-font-family:-apple-system
+font-family:-apple-system;
 margin:0;
 background:#f2f2f2;
 }
@@ -86,7 +86,7 @@ font-size:14px;
 
 <body>
 
-<header>🚆 Rail Log V0.04.1</header>
+<header>🚆 Rail Log V0.04.2</header>
 
 <div class="container">
 
@@ -113,10 +113,12 @@ font-size:14px;
 <datalist id="trainList"></datalist>
 
 <label>上車站</label>
-<input id="from">
+<input id="from" list="stationList">
 
 <label>下車站</label>
-<input id="to">
+<input id="to" list="stationList">
+
+<datalist id="stationList"></datalist>
 
 <button onclick="saveTrip()">儲存</button>
 
@@ -150,6 +152,7 @@ let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 
 let companies=[]
 let lines=[]
+let stations=[]
 let trains=[]
 
 let editIndex=null
@@ -160,9 +163,11 @@ async function loadData(){
 
 companies=await (await fetch("companies.json")).json()
 lines=await (await fetch("lines.json")).json()
+stations=await (await fetch("stations.json")).json()
 trains=await (await fetch("trainTypes.json")).json()
 
 fillList(companyList,companies)
+fillList(stationList,stations)
 fillList(trainList,trains)
 
 }
@@ -174,6 +179,7 @@ list.innerHTML=""
 data.forEach(v=>{
 
 let opt=document.createElement("option")
+
 opt.value=v
 
 list.appendChild(opt)
@@ -236,10 +242,14 @@ to:to.value
 }
 
 if(editIndex!==null){
+
 trips[editIndex]=trip
 editIndex=null
+
 }else{
+
 trips.push(trip)
+
 }
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
@@ -258,7 +268,9 @@ line.value=""
 train.value=""
 to.value=""
 
+if(lastTo){
 from.value=lastTo
+}
 
 date.valueAsDate=new Date()
 
@@ -310,6 +322,7 @@ let i=trips.indexOf(t)
 if(t.date!==lastDate){
 
 let d=document.createElement("div")
+
 d.className="dategroup"
 d.innerText=t.date
 
@@ -320,6 +333,7 @@ lastDate=t.date
 }
 
 let div=document.createElement("div")
+
 div.className="trip"
 
 div.innerHTML=
@@ -428,3 +442,4 @@ render()
 </script>
 
 </body>
+</html
