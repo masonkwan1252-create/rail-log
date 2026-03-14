@@ -6,13 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Rail Log V0.05.3c</title>
+<title>Rail Log V0.05.3d</title>
 
 <style>
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 :root{
 --bg:#f2f2f2;
@@ -68,12 +66,6 @@ margin-top:6px;
 margin-bottom:10px;
 }
 
-input[type="date"]{
-width:100%;
-max-width:100%;
-display:block;
-}
-
 button{
 background:#007aff;
 color:white;
@@ -83,9 +75,9 @@ border-radius:8px;
 
 .smallbtn{
 width:auto;
-padding:5px 10px;
+padding:4px 8px;
+margin-right:6px;
 font-size:14px;
-margin-right:5px;
 }
 
 .trip{
@@ -113,7 +105,7 @@ cursor:pointer;
 
 <body>
 
-<header>🚆 Rail Log V0.05.3c</header>
+<header>🚆 Rail Log V0.05.3d</header>
 
 <div class="container">
 
@@ -187,7 +179,9 @@ cursor:pointer;
 
 <script>
 
-let trips = JSON.parse(localStorage.getItem("railTrips") || "[]")
+let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
+let editIndex=null
+let lastTo=""
 
 let companies=[]
 let lines=[]
@@ -195,7 +189,6 @@ let stations=[]
 
 date.valueAsDate=new Date()
 
-// 載入資料庫
 async function loadData(){
 
 companies=await fetch("companies.json").then(r=>r.json())
@@ -214,16 +207,13 @@ const list=document.getElementById(id)
 list.innerHTML=""
 
 data.forEach(v=>{
-
 const o=document.createElement("option")
 o.value=v
 list.appendChild(o)
-
 })
 
 }
 
-// 公司篩選路線
 company.addEventListener("input",()=>{
 
 const list=document.getElementById("lineList")
@@ -231,16 +221,13 @@ const list=document.getElementById("lineList")
 list.innerHTML=""
 
 lines.filter(l=>l.company===company.value).forEach(l=>{
-
 const o=document.createElement("option")
 o.value=l.name
 list.appendChild(o)
-
 })
 
 })
 
-// 直通功能
 function addThrough(){
 
 const div=document.createElement("div")
@@ -259,15 +246,11 @@ throughContainer.appendChild(div)
 
 }
 
-// 儲存
 function saveTrip(){
 
 let routes=[]
 
-routes.push({
-company:company.value,
-line:line.value
-})
+routes.push({company:company.value,line:line.value})
 
 document.querySelectorAll(".throughCompany").forEach((c,i)=>{
 
@@ -279,16 +262,76 @@ line:document.querySelectorAll(".throughLine")[i].value
 })
 
 const trip={
-
 date:date.value,
 routes:routes,
 train:train.value,
 from:from.value,
 to:to.value
+}
+
+if(editIndex!==null){
+
+trips[editIndex]=trip
+editIndex=null
+
+}else{
+
+trips.push(trip)
 
 }
 
-trips.push(trip)
+localStorage.setItem("railTrips",JSON.stringify(trips))
+
+lastTo=to.value
+
+// 清空輸入
+company.value=""
+line.value=""
+train.value=""
+to.value=""
+
+from.value=lastTo
+
+throughContainer.innerHTML=""
+
+render()
+
+}
+
+function editTrip(i){
+
+const t=trips[i]
+
+date.value=t.date
+company.value=t.routes[0].company
+line.value=t.routes[0].line
+train.value=t.train
+from.value=t.from
+to.value=t.to
+
+throughContainer.innerHTML=""
+
+t.routes.slice(1).forEach(r=>{
+
+addThrough()
+
+const c=document.querySelectorAll(".throughCompany")
+const l=document.querySelectorAll(".throughLine")
+
+c[c.length-1].value=r.company
+l[l.length-1].value=r.line
+
+})
+
+editIndex=i
+
+}
+
+function deleteTrip(i){
+
+if(confirm("刪除記錄？")){
+
+trips.splice(i,1)
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
 
@@ -296,12 +339,13 @@ render()
 
 }
 
-// render
+}
+
 function render(){
 
 tripList.innerHTML=""
 
-trips.forEach(t=>{
+trips.forEach((t,i)=>{
 
 const div=document.createElement("div")
 
@@ -315,7 +359,11 @@ div.innerHTML=`
 
 ${t.train}<br>
 
-${t.from} → ${t.to}
+${t.from} → ${t.to}<br>
+
+<button class="smallbtn" onclick="editTrip(${i})">修改</button>
+
+<button class="smallbtn" onclick="deleteTrip(${i})">刪除</button>
 
 `
 
@@ -335,7 +383,6 @@ e.style.display=e.style.display==="none"?"block":"none"
 
 }
 
-// 統計
 function stats(){
 
 total.innerText="乘車次數："+trips.length
@@ -348,10 +395,8 @@ let stationCount={}
 trips.forEach(t=>{
 
 t.routes.forEach(r=>{
-
 companyCount[r.company]=(companyCount[r.company]||0)+1
 lineCount[r.line]=(lineCount[r.line]||0)+1
-
 })
 
 trainCount[t.train]=(trainCount[t.train]||0)+1
@@ -379,9 +424,7 @@ let html=`<b>${title}</b>：<span class="clickable" onclick="toggle('${block}')"
 html+=`<div id="${block}" style="display:none">`
 
 entries.forEach(e=>{
-
 html+=`${e[0]} (${e[1]})<br>`
-
 })
 
 html+="</div>"
@@ -390,7 +433,6 @@ document.getElementById(id).innerHTML=html
 
 }
 
-// 匯出
 function exportData(){
 
 const blob=new Blob([JSON.stringify(trips,null,2)],{type:"application/json"})
@@ -405,7 +447,6 @@ a.click()
 
 }
 
-// 匯入
 function importData(){
 
 const file=document.getElementById("importFile").files[0]
@@ -429,11 +470,9 @@ reader.readAsText(file)
 }
 
 loadData()
-
 render()
 
 </script>
 
 </body>
-
 </html>
