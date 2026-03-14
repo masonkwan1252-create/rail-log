@@ -3,11 +3,16 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Rail Log V0.05.3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Rail Log V0.05.3a</title>
 
 <style>
+
+*{
+box-sizing:border-box;
+}
 
 :root{
 --bg:#f2f2f2;
@@ -44,6 +49,8 @@ font-size:20px;
 
 .container{
 padding:15px;
+max-width:600px;
+margin:auto;
 }
 
 .card{
@@ -100,7 +107,7 @@ cursor:pointer;
 
 <body>
 
-<header>🚆 Rail Log V0.05.3</header>
+<header>🚆 Rail Log V0.05.3a</header>
 
 <div class="container">
 
@@ -174,53 +181,57 @@ cursor:pointer;
 
 <script>
 
-let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
+let trips=JSON.parse(localStorage.getItem("railTrips")||[])
 
-let editIndex=null
+let companies=[]
+let lines=[]
+let stations=[]
 
 date.valueAsDate=new Date()
 
-// 匯出
-function exportData(){
+async function loadData(){
 
-const dataStr=JSON.stringify(trips,null,2)
+companies=await fetch("companies.json").then(r=>r.json())
+lines=await fetch("lines.json").then(r=>r.json())
+stations=await fetch("stations.json").then(r=>r.json())
 
-const blob=new Blob([dataStr],{type:"application/json"})
-
-const a=document.createElement("a")
-
-a.href=URL.createObjectURL(blob)
-
-a.download="rail-log-backup.json"
-
-a.click()
+fillList("companyList",companies)
+fillList("stationList",stations)
 
 }
 
-// 匯入
-function importData(){
+function fillList(id,data){
 
-const file=document.getElementById("importFile").files[0]
+const list=document.getElementById(id)
 
-if(!file)return
+list.innerHTML=""
 
-const reader=new FileReader()
+data.forEach(v=>{
 
-reader.onload=e=>{
+const o=document.createElement("option")
+o.value=v
+list.appendChild(o)
 
-trips=JSON.parse(e.target.result)
-
-localStorage.setItem("railTrips",JSON.stringify(trips))
-
-render()
+})
 
 }
 
-reader.readAsText(file)
+company.addEventListener("input",()=>{
 
-}
+const list=document.getElementById("lineList")
 
-// 直通
+list.innerHTML=""
+
+lines.filter(l=>l.company===company.value).forEach(l=>{
+
+const o=document.createElement("option")
+o.value=l.name
+list.appendChild(o)
+
+})
+
+})
+
 function addThrough(){
 
 const div=document.createElement("div")
@@ -239,18 +250,6 @@ throughContainer.appendChild(div)
 
 }
 
-// 車型標準化
-function normalizeTrain(t){
-
-let m=t.match(/^([A-Za-z]*\d+)[\-]?(\d+)$/)
-
-if(m)return m[1]+"系"+m[2]+"番台"
-
-return t
-
-}
-
-// 儲存
 function saveTrip(){
 
 let routes=[]
@@ -272,51 +271,25 @@ const trip={
 
 date:date.value,
 routes:routes,
-train:normalizeTrain(train.value),
+train:train.value,
 from:from.value,
 to:to.value
 
 }
 
-if(editIndex!==null){
-
-trips[editIndex]=trip
-editIndex=null
-
-}else{
-
 trips.push(trip)
 
-}
-
 localStorage.setItem("railTrips",JSON.stringify(trips))
-
-throughContainer.innerHTML=""
 
 render()
 
 }
 
-// render
 function render(){
 
 tripList.innerHTML=""
 
-let lastDate=""
-
-trips.forEach((t,i)=>{
-
-if(t.date!==lastDate){
-
-const d=document.createElement("div")
-d.className="date"
-d.innerText=t.date
-
-tripList.appendChild(d)
-
-lastDate=t.date
-
-}
+trips.forEach(t=>{
 
 const div=document.createElement("div")
 
@@ -324,15 +297,13 @@ div.className="trip"
 
 div.innerHTML=`
 
+<div class="date">${t.date}</div>
+
 <div class="route">${t.routes.map(r=>r.company+" "+r.line).join(" → ")}</div>
 
 ${t.train}<br>
 
-${t.from} → ${t.to}<br>
-
-<button class="smallbtn" onclick="editTrip(${i})">修改</button>
-
-<button class="smallbtn" onclick="deleteTrip(${i})">刪除</button>
+${t.from} → ${t.to}
 
 `
 
@@ -344,22 +315,6 @@ stats()
 
 }
 
-// 刪除
-function deleteTrip(i){
-
-if(confirm("刪除記錄？")){
-
-trips.splice(i,1)
-
-localStorage.setItem("railTrips",JSON.stringify(trips))
-
-render()
-
-}
-
-}
-
-// toggle
 function toggle(id){
 
 const e=document.getElementById(id)
@@ -368,35 +323,19 @@ e.style.display=e.style.display==="none"?"block":"none"
 
 }
 
-// 統計
 function stats(){
 
 total.innerText="乘車次數："+trips.length
 
-let companyCount={}
-let lineCount={}
-let trainCount={}
 let stationCount={}
 
 trips.forEach(t=>{
-
-t.routes.forEach(r=>{
-
-companyCount[r.company]=(companyCount[r.company]||0)+1
-lineCount[r.line]=(lineCount[r.line]||0)+1
-
-})
-
-trainCount[t.train]=(trainCount[t.train]||0)+1
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
 stationCount[t.to]=(stationCount[t.to]||0)+1
 
 })
 
-renderStat("companyStats","鉄道公司",companyCount)
-renderStat("lineStats","路線",lineCount)
-renderStat("trainStats","車型",trainCount)
 renderStat("stationStats","車站",stationCount)
 
 }
@@ -422,6 +361,44 @@ html+="</div>"
 document.getElementById(id).innerHTML=html
 
 }
+
+function exportData(){
+
+const blob=new Blob([JSON.stringify(trips)],{type:"application/json"})
+
+const a=document.createElement("a")
+
+a.href=URL.createObjectURL(blob)
+
+a.download="rail-log-backup.json"
+
+a.click()
+
+}
+
+function importData(){
+
+const file=document.getElementById("importFile").files[0]
+
+if(!file)return
+
+const reader=new FileReader()
+
+reader.onload=e=>{
+
+trips=JSON.parse(e.target.result)
+
+localStorage.setItem("railTrips",JSON.stringify(trips))
+
+render()
+
+}
+
+reader.readAsText(file)
+
+}
+
+loadData()
 
 render()
 
