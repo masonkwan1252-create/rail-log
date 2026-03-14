@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Rail Log V0.05.2</title>
+<title>Rail Log V0.05.3</title>
 
 <style>
 
+:root{
+--bg:#f2f2f2;
+--card:#ffffff;
+--text:#000;
+--border:#eee;
+}
+
+@media (prefers-color-scheme: dark){
+
+:root{
+--bg:#000;
+--card:#1c1c1e;
+--text:#fff;
+--border:#333;
+}
+
+}
+
 body{
 font-family:-apple-system;
-background:#f2f2f2;
+background:var(--bg);
+color:var(--text);
 margin:0;
 }
 
@@ -27,11 +47,10 @@ padding:15px;
 }
 
 .card{
-background:white;
+background:var(--card);
 padding:15px;
 margin-bottom:15px;
 border-radius:10px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 input,button{
@@ -57,7 +76,7 @@ font-size:14px;
 }
 
 .trip{
-border-bottom:1px solid #eee;
+border-bottom:1px solid var(--border);
 padding:8px 0;
 }
 
@@ -65,14 +84,14 @@ padding:8px 0;
 font-weight:bold;
 }
 
-.clickable{
-color:#007aff;
-cursor:pointer;
-}
-
 .date{
 font-weight:bold;
 margin-top:10px;
+}
+
+.clickable{
+color:#007aff;
+cursor:pointer;
 }
 
 </style>
@@ -81,7 +100,7 @@ margin-top:10px;
 
 <body>
 
-<header>🚆 Rail Log V0.05.2</header>
+<header>🚆 Rail Log V0.05.3</header>
 
 <div class="container">
 
@@ -128,12 +147,22 @@ margin-top:10px;
 <h3>統計</h3>
 
 <div id="total"></div>
-
 <div id="companyStats"></div>
-
 <div id="lineStats"></div>
-
 <div id="trainStats"></div>
+<div id="stationStats"></div>
+
+</div>
+
+<div class="card">
+
+<h3>資料管理</h3>
+
+<button onclick="exportData()">匯出資料</button>
+
+<input type="file" id="importFile">
+
+<button onclick="importData()">匯入資料</button>
 
 </div>
 
@@ -145,64 +174,51 @@ margin-top:10px;
 
 <script>
 
-let trips = JSON.parse(localStorage.getItem("railTrips") || "[]")
+let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 
 let editIndex=null
 
-let companies=[]
-let lines=[]
-let stations=[]
-
-const companyColor={}
-
-// 日期預設今日
 date.valueAsDate=new Date()
 
-// 載入資料
-async function loadData(){
+// 匯出
+function exportData(){
 
-companies=await fetch("companies.json").then(r=>r.json())
-lines=await fetch("lines.json").then(r=>r.json())
-stations=await fetch("stations.json").then(r=>r.json())
+const dataStr=JSON.stringify(trips,null,2)
 
-fillList("companyList",companies)
-fillList("stationList",stations)
+const blob=new Blob([dataStr],{type:"application/json"})
 
-}
+const a=document.createElement("a")
 
-// datalist
-function fillList(id,data){
+a.href=URL.createObjectURL(blob)
 
-const list=document.getElementById(id)
+a.download="rail-log-backup.json"
 
-list.innerHTML=""
-
-data.forEach(v=>{
-
-const o=document.createElement("option")
-o.value=v
-list.appendChild(o)
-
-})
+a.click()
 
 }
 
-// 公司→路線
-company.addEventListener("input",()=>{
+// 匯入
+function importData(){
 
-const list=document.getElementById("lineList")
+const file=document.getElementById("importFile").files[0]
 
-list.innerHTML=""
+if(!file)return
 
-lines.filter(l=>l.company===company.value).forEach(l=>{
+const reader=new FileReader()
 
-const o=document.createElement("option")
-o.value=l.name
-list.appendChild(o)
+reader.onload=e=>{
 
-})
+trips=JSON.parse(e.target.result)
 
-})
+localStorage.setItem("railTrips",JSON.stringify(trips))
+
+render()
+
+}
+
+reader.readAsText(file)
+
+}
 
 // 直通
 function addThrough(){
@@ -210,9 +226,13 @@ function addThrough(){
 const div=document.createElement("div")
 
 div.innerHTML=`
+
 <input class="throughCompany" list="companyList" placeholder="直通公司">
+
 <input class="throughLine" list="lineList" placeholder="直通路線">
+
 <button onclick="addThrough()">直通</button>
+
 `
 
 throughContainer.appendChild(div)
@@ -277,19 +297,6 @@ render()
 
 }
 
-// 顏色
-function getColor(c){
-
-if(!companyColor[c]){
-
-companyColor[c]="hsl("+Math.floor(Math.random()*360)+",60%,60%)"
-
-}
-
-return companyColor[c]
-
-}
-
 // render
 function render(){
 
@@ -311,23 +318,13 @@ lastDate=t.date
 
 }
 
-let routeHTML=""
-
-t.routes.forEach((r,idx)=>{
-
-routeHTML+=`<span style="color:${getColor(r.company)}">${r.company} ${r.line}</span>`
-
-if(idx<t.routes.length-1)routeHTML+=" → "
-
-})
-
 const div=document.createElement("div")
 
 div.className="trip"
 
 div.innerHTML=`
 
-<div class="route">${routeHTML}</div>
+<div class="route">${t.routes.map(r=>r.company+" "+r.line).join(" → ")}</div>
 
 ${t.train}<br>
 
@@ -344,36 +341,6 @@ tripList.appendChild(div)
 })
 
 stats()
-
-}
-
-// 修改
-function editTrip(i){
-
-const t=trips[i]
-
-date.value=t.date
-company.value=t.routes[0].company
-line.value=t.routes[0].line
-train.value=t.train
-from.value=t.from
-to.value=t.to
-
-throughContainer.innerHTML=""
-
-t.routes.slice(1).forEach(r=>{
-
-addThrough()
-
-let c=document.querySelectorAll(".throughCompany")
-let l=document.querySelectorAll(".throughLine")
-
-c[c.length-1].value=r.company
-l[l.length-1].value=r.line
-
-})
-
-editIndex=i
 
 }
 
@@ -395,9 +362,9 @@ render()
 // toggle
 function toggle(id){
 
-const el=document.getElementById(id)
+const e=document.getElementById(id)
 
-el.style.display=el.style.display==="none"?"block":"none"
+e.style.display=e.style.display==="none"?"block":"none"
 
 }
 
@@ -409,6 +376,7 @@ total.innerText="乘車次數："+trips.length
 let companyCount={}
 let lineCount={}
 let trainCount={}
+let stationCount={}
 
 trips.forEach(t=>{
 
@@ -421,11 +389,15 @@ lineCount[r.line]=(lineCount[r.line]||0)+1
 
 trainCount[t.train]=(trainCount[t.train]||0)+1
 
+stationCount[t.from]=(stationCount[t.from]||0)+1
+stationCount[t.to]=(stationCount[t.to]||0)+1
+
 })
 
 renderStat("companyStats","鉄道公司",companyCount)
 renderStat("lineStats","路線",lineCount)
 renderStat("trainStats","車型",trainCount)
+renderStat("stationStats","車站",stationCount)
 
 }
 
@@ -451,7 +423,7 @@ document.getElementById(id).innerHTML=html
 
 }
 
-loadData().then(render)
+render()
 
 </script>
 
