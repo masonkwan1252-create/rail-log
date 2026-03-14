@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Rail Log V0.05.1</title>
+<title>Rail Log V0.05.2</title>
 
 <style>
 
@@ -70,13 +70,18 @@ color:#007aff;
 cursor:pointer;
 }
 
+.date{
+font-weight:bold;
+margin-top:10px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>🚆 Rail Log V0.05.1</header>
+<header>🚆 Rail Log V0.05.2</header>
 
 <div class="container">
 
@@ -123,8 +128,11 @@ cursor:pointer;
 <h3>統計</h3>
 
 <div id="total"></div>
+
 <div id="companyStats"></div>
+
 <div id="lineStats"></div>
+
 <div id="trainStats"></div>
 
 </div>
@@ -139,33 +147,30 @@ cursor:pointer;
 
 let trips = JSON.parse(localStorage.getItem("railTrips") || "[]")
 
-let editIndex = null
+let editIndex=null
 
 let companies=[]
 let lines=[]
 let stations=[]
 
-let lastTo=""
-
-// 顏色表
 const companyColor={}
 
-function randomColor(){
-return "hsl("+Math.floor(Math.random()*360)+",60%,60%)"
-}
+// 日期預設今日
+date.valueAsDate=new Date()
 
-// 初始化
+// 載入資料
 async function loadData(){
 
-companies = await fetch("companies.json").then(r=>r.json())
-lines = await fetch("lines.json").then(r=>r.json())
-stations = await fetch("stations.json").then(r=>r.json())
+companies=await fetch("companies.json").then(r=>r.json())
+lines=await fetch("lines.json").then(r=>r.json())
+stations=await fetch("stations.json").then(r=>r.json())
 
 fillList("companyList",companies)
 fillList("stationList",stations)
 
 }
 
+// datalist
 function fillList(id,data){
 
 const list=document.getElementById(id)
@@ -175,17 +180,15 @@ list.innerHTML=""
 data.forEach(v=>{
 
 const o=document.createElement("option")
-
 o.value=v
-
 list.appendChild(o)
 
 })
 
 }
 
-// 公司篩選路線
-document.getElementById("company").addEventListener("input",()=>{
+// 公司→路線
+company.addEventListener("input",()=>{
 
 const list=document.getElementById("lineList")
 
@@ -194,31 +197,25 @@ list.innerHTML=""
 lines.filter(l=>l.company===company.value).forEach(l=>{
 
 const o=document.createElement("option")
-
 o.value=l.name
-
 list.appendChild(o)
 
 })
 
 })
 
-// 新增直通
+// 直通
 function addThrough(){
 
 const div=document.createElement("div")
 
 div.innerHTML=`
-
 <input class="throughCompany" list="companyList" placeholder="直通公司">
-
 <input class="throughLine" list="lineList" placeholder="直通路線">
-
 <button onclick="addThrough()">直通</button>
-
 `
 
-document.getElementById("throughContainer").appendChild(div)
+throughContainer.appendChild(div)
 
 }
 
@@ -227,11 +224,7 @@ function normalizeTrain(t){
 
 let m=t.match(/^([A-Za-z]*\d+)[\-]?(\d+)$/)
 
-if(m) return m[1]+"系"+m[2]+"番台"
-
-let s=t.match(/^(\d+系|\d+形)(\d+)$/)
-
-if(s) return s[1]+s[2]+"番台"
+if(m)return m[1]+"系"+m[2]+"番台"
 
 return t
 
@@ -242,10 +235,7 @@ function saveTrip(){
 
 let routes=[]
 
-routes.push({
-company:company.value,
-line:line.value
-})
+routes.push({company:company.value,line:line.value})
 
 document.querySelectorAll(".throughCompany").forEach((c,i)=>{
 
@@ -281,41 +271,45 @@ trips.push(trip)
 
 localStorage.setItem("railTrips",JSON.stringify(trips))
 
-lastTo=to.value
-
-line.value=""
-train.value=""
-to.value=""
-
-from.value=lastTo
-
-document.getElementById("throughContainer").innerHTML=""
+throughContainer.innerHTML=""
 
 render()
 
 }
 
 // 顏色
-function getColor(company){
+function getColor(c){
 
-if(!companyColor[company]){
+if(!companyColor[c]){
 
-companyColor[company]=randomColor()
-
-}
-
-return companyColor[company]
+companyColor[c]="hsl("+Math.floor(Math.random()*360)+",60%,60%)"
 
 }
 
-// 顯示紀錄
+return companyColor[c]
+
+}
+
+// render
 function render(){
 
-const list=document.getElementById("tripList")
+tripList.innerHTML=""
 
-list.innerHTML=""
+let lastDate=""
 
 trips.forEach((t,i)=>{
+
+if(t.date!==lastDate){
+
+const d=document.createElement("div")
+d.className="date"
+d.innerText=t.date
+
+tripList.appendChild(d)
+
+lastDate=t.date
+
+}
 
 let routeHTML=""
 
@@ -323,11 +317,7 @@ t.routes.forEach((r,idx)=>{
 
 routeHTML+=`<span style="color:${getColor(r.company)}">${r.company} ${r.line}</span>`
 
-if(idx<t.routes.length-1){
-
-routeHTML+=" → "
-
-}
+if(idx<t.routes.length-1)routeHTML+=" → "
 
 })
 
@@ -349,7 +339,7 @@ ${t.from} → ${t.to}<br>
 
 `
 
-list.appendChild(div)
+tripList.appendChild(div)
 
 })
 
@@ -369,17 +359,17 @@ train.value=t.train
 from.value=t.from
 to.value=t.to
 
-document.getElementById("throughContainer").innerHTML=""
+throughContainer.innerHTML=""
 
 t.routes.slice(1).forEach(r=>{
 
 addThrough()
 
-const companies=document.querySelectorAll(".throughCompany")
-const lines=document.querySelectorAll(".throughLine")
+let c=document.querySelectorAll(".throughCompany")
+let l=document.querySelectorAll(".throughLine")
 
-companies[companies.length-1].value=r.company
-lines[lines.length-1].value=r.line
+c[c.length-1].value=r.company
+l[l.length-1].value=r.line
 
 })
 
@@ -402,10 +392,19 @@ render()
 
 }
 
+// toggle
+function toggle(id){
+
+const el=document.getElementById(id)
+
+el.style.display=el.style.display==="none"?"block":"none"
+
+}
+
 // 統計
 function stats(){
 
-document.getElementById("total").innerText="乘車次數："+trips.length
+total.innerText="乘車次數："+trips.length
 
 let companyCount={}
 let lineCount={}
@@ -432,21 +431,25 @@ renderStat("trainStats","車型",trainCount)
 
 function renderStat(id,title,data){
 
-const e=Object.entries(data).sort((a,b)=>b[1]-a[1])
+const entries=Object.entries(data).sort((a,b)=>b[1]-a[1])
 
-let html=`<b>${title}</b><br>`
+const block=id+"_detail"
 
-e.forEach(v=>{
+let html=`<b>${title}</b>：<span class="clickable" onclick="toggle('${block}')">${entries.length}</span>`
 
-html+=v[0]+" ("+v[1]+")<br>"
+html+=`<div id="${block}" style="display:none">`
+
+entries.forEach(e=>{
+
+html+=`${e[0]} (${e[1]})<br>`
 
 })
+
+html+="</div>"
 
 document.getElementById(id).innerHTML=html
 
 }
-
-date.valueAsDate=new Date()
 
 loadData().then(render)
 
