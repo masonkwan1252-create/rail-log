@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Rail Log V0.05.3b</title>
+<title>Rail Log V0.05.3c</title>
 
 <style>
 
@@ -17,7 +18,7 @@ box-sizing:border-box;
 --bg:#f2f2f2;
 --card:#ffffff;
 --text:#000;
---border:#eee;
+--border:#ddd;
 }
 
 @media (prefers-color-scheme: dark){
@@ -32,10 +33,10 @@ box-sizing:border-box;
 }
 
 body{
+margin:0;
 font-family:-apple-system;
 background:var(--bg);
 color:var(--text);
-margin:0;
 }
 
 header{
@@ -47,9 +48,9 @@ font-size:20px;
 }
 
 .container{
-padding:15px;
 max-width:600px;
 margin:auto;
+padding:12px;
 }
 
 .card{
@@ -65,11 +66,12 @@ padding:10px;
 font-size:16px;
 margin-top:6px;
 margin-bottom:10px;
-box-sizing:border-box;
 }
 
-input[type=date]{
+input[type="date"]{
+width:100%;
 max-width:100%;
+display:block;
 }
 
 button{
@@ -82,8 +84,8 @@ border-radius:8px;
 .smallbtn{
 width:auto;
 padding:5px 10px;
-margin-right:6px;
 font-size:14px;
+margin-right:5px;
 }
 
 .trip{
@@ -97,7 +99,7 @@ font-weight:bold;
 
 .date{
 font-weight:bold;
-margin-top:10px;
+margin-top:8px;
 }
 
 .clickable{
@@ -111,7 +113,7 @@ cursor:pointer;
 
 <body>
 
-<header>🚆 Rail Log V0.05.3b</header>
+<header>🚆 Rail Log V0.05.3c</header>
 
 <div class="container">
 
@@ -127,6 +129,10 @@ cursor:pointer;
 
 <label>路線</label>
 <input id="line" list="lineList">
+
+<button onclick="addThrough()">直通</button>
+
+<div id="throughContainer"></div>
 
 <label>車型</label>
 <input id="train">
@@ -161,6 +167,18 @@ cursor:pointer;
 
 </div>
 
+<div class="card">
+
+<h3>資料管理</h3>
+
+<button onclick="exportData()">匯出資料</button>
+
+<input type="file" id="importFile">
+
+<button onclick="importData()">匯入資料</button>
+
+</div>
+
 </div>
 
 <datalist id="companyList"></datalist>
@@ -169,7 +187,7 @@ cursor:pointer;
 
 <script>
 
-let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
+let trips = JSON.parse(localStorage.getItem("railTrips") || "[]")
 
 let companies=[]
 let lines=[]
@@ -177,6 +195,7 @@ let stations=[]
 
 date.valueAsDate=new Date()
 
+// 載入資料庫
 async function loadData(){
 
 companies=await fetch("companies.json").then(r=>r.json())
@@ -204,6 +223,7 @@ list.appendChild(o)
 
 }
 
+// 公司篩選路線
 company.addEventListener("input",()=>{
 
 const list=document.getElementById("lineList")
@@ -220,13 +240,48 @@ list.appendChild(o)
 
 })
 
+// 直通功能
+function addThrough(){
+
+const div=document.createElement("div")
+
+div.innerHTML=`
+
+<input class="throughCompany" list="companyList" placeholder="直通公司">
+
+<input class="throughLine" list="lineList" placeholder="直通路線">
+
+<button onclick="addThrough()">直通</button>
+
+`
+
+throughContainer.appendChild(div)
+
+}
+
+// 儲存
 function saveTrip(){
+
+let routes=[]
+
+routes.push({
+company:company.value,
+line:line.value
+})
+
+document.querySelectorAll(".throughCompany").forEach((c,i)=>{
+
+routes.push({
+company:c.value,
+line:document.querySelectorAll(".throughLine")[i].value
+})
+
+})
 
 const trip={
 
 date:date.value,
-company:company.value,
-line:line.value,
+routes:routes,
 train:train.value,
 from:from.value,
 to:to.value
@@ -241,6 +296,7 @@ render()
 
 }
 
+// render
 function render(){
 
 tripList.innerHTML=""
@@ -255,7 +311,7 @@ div.innerHTML=`
 
 <div class="date">${t.date}</div>
 
-<div class="route">${t.company} ${t.line}</div>
+<div class="route">${t.routes.map(r=>r.company+" "+r.line).join(" → ")}</div>
 
 ${t.train}<br>
 
@@ -279,6 +335,7 @@ e.style.display=e.style.display==="none"?"block":"none"
 
 }
 
+// 統計
 function stats(){
 
 total.innerText="乘車次數："+trips.length
@@ -290,8 +347,13 @@ let stationCount={}
 
 trips.forEach(t=>{
 
-companyCount[t.company]=(companyCount[t.company]||0)+1
-lineCount[t.line]=(lineCount[t.line]||0)+1
+t.routes.forEach(r=>{
+
+companyCount[r.company]=(companyCount[r.company]||0)+1
+lineCount[r.line]=(lineCount[r.line]||0)+1
+
+})
+
 trainCount[t.train]=(trainCount[t.train]||0)+1
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
@@ -328,6 +390,44 @@ document.getElementById(id).innerHTML=html
 
 }
 
+// 匯出
+function exportData(){
+
+const blob=new Blob([JSON.stringify(trips,null,2)],{type:"application/json"})
+
+const a=document.createElement("a")
+
+a.href=URL.createObjectURL(blob)
+
+a.download="rail-log-backup.json"
+
+a.click()
+
+}
+
+// 匯入
+function importData(){
+
+const file=document.getElementById("importFile").files[0]
+
+if(!file)return
+
+const reader=new FileReader()
+
+reader.onload=e=>{
+
+trips=JSON.parse(e.target.result)
+
+localStorage.setItem("railTrips",JSON.stringify(trips))
+
+render()
+
+}
+
+reader.readAsText(file)
+
+}
+
 loadData()
 
 render()
@@ -335,4 +435,5 @@ render()
 </script>
 
 </body>
+
 </html>
