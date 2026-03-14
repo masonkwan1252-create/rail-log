@@ -3,10 +3,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>Rail Log V0.05.3a</title>
+<title>Rail Log V0.05.3b</title>
 
 <style>
 
@@ -63,9 +62,14 @@ border-radius:10px;
 input,button{
 width:100%;
 padding:10px;
+font-size:16px;
 margin-top:6px;
 margin-bottom:10px;
-font-size:16px;
+box-sizing:border-box;
+}
+
+input[type=date]{
+max-width:100%;
 }
 
 button{
@@ -107,7 +111,7 @@ cursor:pointer;
 
 <body>
 
-<header>🚆 Rail Log V0.05.3a</header>
+<header>🚆 Rail Log V0.05.3b</header>
 
 <div class="container">
 
@@ -123,10 +127,6 @@ cursor:pointer;
 
 <label>路線</label>
 <input id="line" list="lineList">
-
-<button onclick="addThrough()">直通</button>
-
-<div id="throughContainer"></div>
 
 <label>車型</label>
 <input id="train">
@@ -161,18 +161,6 @@ cursor:pointer;
 
 </div>
 
-<div class="card">
-
-<h3>資料管理</h3>
-
-<button onclick="exportData()">匯出資料</button>
-
-<input type="file" id="importFile">
-
-<button onclick="importData()">匯入資料</button>
-
-</div>
-
 </div>
 
 <datalist id="companyList"></datalist>
@@ -181,7 +169,7 @@ cursor:pointer;
 
 <script>
 
-let trips=JSON.parse(localStorage.getItem("railTrips")||[])
+let trips=JSON.parse(localStorage.getItem("railTrips")||"[]")
 
 let companies=[]
 let lines=[]
@@ -232,45 +220,13 @@ list.appendChild(o)
 
 })
 
-function addThrough(){
-
-const div=document.createElement("div")
-
-div.innerHTML=`
-
-<input class="throughCompany" list="companyList" placeholder="直通公司">
-
-<input class="throughLine" list="lineList" placeholder="直通路線">
-
-<button onclick="addThrough()">直通</button>
-
-`
-
-throughContainer.appendChild(div)
-
-}
-
 function saveTrip(){
-
-let routes=[]
-
-routes.push({company:company.value,line:line.value})
-
-document.querySelectorAll(".throughCompany").forEach((c,i)=>{
-
-routes.push({
-
-company:c.value,
-line:document.querySelectorAll(".throughLine")[i].value
-
-})
-
-})
 
 const trip={
 
 date:date.value,
-routes:routes,
+company:company.value,
+line:line.value,
 train:train.value,
 from:from.value,
 to:to.value
@@ -299,7 +255,7 @@ div.innerHTML=`
 
 <div class="date">${t.date}</div>
 
-<div class="route">${t.routes.map(r=>r.company+" "+r.line).join(" → ")}</div>
+<div class="route">${t.company} ${t.line}</div>
 
 ${t.train}<br>
 
@@ -327,15 +283,25 @@ function stats(){
 
 total.innerText="乘車次數："+trips.length
 
+let companyCount={}
+let lineCount={}
+let trainCount={}
 let stationCount={}
 
 trips.forEach(t=>{
+
+companyCount[t.company]=(companyCount[t.company]||0)+1
+lineCount[t.line]=(lineCount[t.line]||0)+1
+trainCount[t.train]=(trainCount[t.train]||0)+1
 
 stationCount[t.from]=(stationCount[t.from]||0)+1
 stationCount[t.to]=(stationCount[t.to]||0)+1
 
 })
 
+renderStat("companyStats","鉄道公司",companyCount)
+renderStat("lineStats","路線",lineCount)
+renderStat("trainStats","車型",trainCount)
 renderStat("stationStats","車站",stationCount)
 
 }
@@ -359,42 +325,6 @@ html+=`${e[0]} (${e[1]})<br>`
 html+="</div>"
 
 document.getElementById(id).innerHTML=html
-
-}
-
-function exportData(){
-
-const blob=new Blob([JSON.stringify(trips)],{type:"application/json"})
-
-const a=document.createElement("a")
-
-a.href=URL.createObjectURL(blob)
-
-a.download="rail-log-backup.json"
-
-a.click()
-
-}
-
-function importData(){
-
-const file=document.getElementById("importFile").files[0]
-
-if(!file)return
-
-const reader=new FileReader()
-
-reader.onload=e=>{
-
-trips=JSON.parse(e.target.result)
-
-localStorage.setItem("railTrips",JSON.stringify(trips))
-
-render()
-
-}
-
-reader.readAsText(file)
 
 }
 
