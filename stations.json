@@ -1533,12 +1533,12 @@
  { "id": " STN_HANKYU_ROKKO", "company_id": "HANKYU", "name": "六甲" },
  { "id": " STN_HANKYU_SHIN_OSAKA", "company_id": "HANKYU", "name": "新大阪" },
  { "id": " STN_HANKYU_NISHI_UMEDA", "company_id": "HANKYU", "name": "西梅田" },
- { "id": "S_HOJO_AO", "company_id": "HOJO_RAILWAY", "name": "粟生" },
-{ "id": "S_HOJO_ABIKI", "company_id": "HOJO_RAILWAY", "name": "網引" },
-{ "id": "S_HOJO_TAHARA", "company_id": "HOJO_RAILWAY", "name": "田原" },
-{ "id": "S_HOJO_HOKKE", "company_id": "HOJO_RAILWAY", "name": "法華口" },
-{ "id": "S_HOJO_SHIMOSATO", "company_id": "HOJO_RAILWAY", "name": "播磨下里" },
-{ "id": "S_HOJO_KASA", "company_id": "HOJO_RAILWAY", "name": "長" },
-{ "id": "S_HOJO_YOKOTA", "company_id": "HOJO_RAILWAY", "name": "播磨横田" },
-{ "id": "S_HOJO_HOJOCHO", "company_id": "HOJO_RAILWAY", "name": "北条町" }
+ { "id": "STN_HOJO_AO", "company_id": "HOJO_RAILWAY", "name": "粟生" },
+{ "id": "STN_HOJO_ABIKI", "company_id": "HOJO_RAILWAY", "name": "網引" },
+{ "id": "STN_HOJO_TAHARA", "company_id": "HOJO_RAILWAY", "name": "田原" },
+{ "id": "STN_HOJO_HOKKE", "company_id": "HOJO_RAILWAY", "name": "法華口" },
+{ "id": "STN_HOJO_SHIMOSATO", "company_id": "HOJO_RAILWAY", "name": "播磨下里" },
+{ "id": "STN_HOJO_KASA", "company_id": "HOJO_RAILWAY", "name": "長" },
+{ "id": "STN_HOJO_YOKOTA", "company_id": "HOJO_RAILWAY", "name": "播磨横田" },
+{ "id": "STN_HOJO_HOJOCHO", "company_id": "HOJO_RAILWAY", "name": "北条町" }
  ]
