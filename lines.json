@@ -79,6 +79,6 @@
  { "id": "HANKYU_MINOO", "company_id": "KINTETSU", "name": "箕面線" },
  { "id": "HANKYU_KYOTO HONSEN", "company_id": "KINTETSU", "name": "京都本線" },
  { "id": "HANKYU_SENRI", "company_id": "KINTETSU", "name": "千里線" },
- { "id": "HANKYU_ARASHIYAMA", "company_id": "KINTETSU", "name": "嵐山線" }
+ { "id": "HANKYU_ARASHIYAMA", "company_id": "KINTETSU", "name": "嵐山線" },
  { "id": "HOJO_HOJO", "company_id": "HOJO_RAILWAY", "name": "北条線" }
 ]
