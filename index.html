@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Rail Log V0.07</title>
+<title>Rail Log V0.07.1</title>
 
 <style>
 /* 日系 / iOS 風格 CSS */
@@ -76,6 +76,9 @@ h3 {
     border-bottom: 2px solid var(--tag-bg);
     padding-bottom: 10px;
     margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 label {
@@ -136,7 +139,7 @@ button:active { opacity: 0.7; }
 }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
 
-.trip-header {
+.trip-header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -154,7 +157,7 @@ button:active { opacity: 0.7; }
     margin-top: 10px;
 }
 
-/* 標籤 (Tags) 樣式 - 用於統計 */
+/* 標籤 (Tags) 樣式 */
 .tags-container {
     display: flex;
     flex-wrap: wrap;
@@ -200,7 +203,7 @@ button:active { opacity: 0.7; }
 
 <body>
 
-<header>🚆 Rail Log V0.07</header>
+<header>🚆 Rail Log V0.07.1</header>
 
 <div class="container">
 
@@ -219,7 +222,7 @@ button:active { opacity: 0.7; }
     <div id="throughContainer"></div>
 
     <label>車型</label>
-    <input id="train" list="trainList" placeholder="例如：新快速">
+    <input id="train" list="trainList" placeholder="例如：321系">
 
     <label>上車站</label>
     <input id="from" list="stationList" placeholder="出發站">
@@ -231,7 +234,11 @@ button:active { opacity: 0.7; }
 </div>
 
 <div class="card">
-    <h3>乘車記錄 (<span id="totalCount">0</span>)</h3>
+    <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0;">
+        乘車記錄 (<span id="totalCount">0</span>)
+    </h3>
+    <div id="yearFilterContainer" class="tags-container" style="margin-bottom: 16px;"></div>
+    
     <div id="tripList"></div>
 </div>
 
@@ -240,7 +247,7 @@ button:active { opacity: 0.7; }
     <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司以篩選下方資料，再次點擊取消篩選。</p>
     
     <div class="stat-group">
-        <div class="stat-group-title">鉄道公司</div>
+        <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
         <div id="filterCompanies" class="tags-container"></div>
     </div>
 
@@ -267,6 +274,7 @@ let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
 let editIndex = null;
 let lastTo = "";
 let selectedCompanyFilter = null; // 用於統計篩選
+let selectedYearFilter = "all";   // 用於記錄年份篩選
 
 let db = { companies: [], lines: [], stations: [], trains: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
@@ -318,6 +326,9 @@ function buildMaps() {
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
     fillList("stationList", db.stations.map(s => s._display));
+    
+    // 初始化時顯示全部路線同車型
+    fillList("lineList", db.lines.map(l => l.name));
     fillList("trainList", db.trains.map(t => t._display));
 }
 
@@ -328,8 +339,10 @@ function fillList(listId, dataArray) {
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
 }
 
+// 監聽公司輸入，聯動篩選路線與車型
 document.getElementById("company").addEventListener("input", (e) => {
     updateLineList(e.target.value, "lineList");
+    updateTrainList(e.target.value, "trainList");
 });
 
 function updateLineList(compName, targetListId) {
@@ -337,10 +350,21 @@ function updateLineList(compName, targetListId) {
     const list = document.getElementById(targetListId);
     if(!list) return;
     list.innerHTML = "";
-    if (!compId) return;
-    db.lines.filter(l => l.company_id === compId).forEach(l => {
-        list.appendChild(new Option(l.name));
-    });
+    
+    // 如果有選公司，只顯示該公司路線；如果無/清空，顯示全部
+    let linesToShow = compId ? db.lines.filter(l => l.company_id === compId) : db.lines;
+    linesToShow.forEach(l => list.appendChild(new Option(l.name)));
+}
+
+function updateTrainList(compName, targetListId) {
+    const compId = resolve.company[compName];
+    const list = document.getElementById(targetListId);
+    if(!list) return;
+    list.innerHTML = "";
+    
+    // 如果有選公司，只顯示該公司車型；如果無/清空，顯示全部
+    let trainsToShow = compId ? db.trains.filter(t => t.company_id === compId) : db.trains;
+    trainsToShow.forEach(t => list.appendChild(new Option(t._display)));
 }
 
 function addThrough() {
@@ -360,7 +384,6 @@ function addThrough() {
 
 // 2. 儲存記錄
 function saveTrip() {
-    // 獲取輸入值，並嘗試轉換為 ID
     let getVal = (id) => document.getElementById(id).value;
     
     let mainCompInput = getVal("company");
@@ -396,10 +419,14 @@ function saveTrip() {
     localStorage.setItem("railTrips_V2", JSON.stringify(trips));
     lastTo = trip.to_id;
 
-    // 清空表單
+    // 清空表單，並重置聯動清單
     ["company", "line", "train", "to"].forEach(id => document.getElementById(id).value = "");
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
+    
+    // 儲存後重置下拉清單為顯示全部
+    updateLineList("", "lineList");
+    updateTrainList("", "trainList");
 
     render();
 }
@@ -409,23 +436,55 @@ function getLineName(id) { return maps.line[id]?.name || id; }
 function getStationName(id) { return maps.station[id]?.name || id; }
 function getTrainName(id) { return maps.train[id]?.name || id; }
 
-// 3. 顯示記錄
+// 3. 顯示記錄 (加入年份篩選與新舊排序)
 function render() {
     const listDiv = document.getElementById("tripList");
+    const yearFilterDiv = document.getElementById("yearFilterContainer");
     listDiv.innerHTML = "";
-    document.getElementById("totalCount").innerText = trips.length;
+    yearFilterDiv.innerHTML = "";
 
-    trips.forEach((t, i) => {
+    // 每次渲染前，確保記錄由新至舊排序 (降序)
+    trips.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // 擷取所有記錄包含的年份，並排序
+    let years = new Set(trips.map(t => t.date.split("-")[0]));
+    let yearArray = Array.from(years).sort((a, b) => b - a); // 年份由新至舊
+
+    // 建立 All Time 同年份按鈕
+    if (yearArray.length > 0) {
+        const allBtn = document.createElement("span");
+        allBtn.className = `tag ${selectedYearFilter === "all" ? "active" : ""}`;
+        allBtn.innerText = "All Time";
+        allBtn.onclick = () => { selectedYearFilter = "all"; render(); };
+        yearFilterDiv.appendChild(allBtn);
+
+        yearArray.forEach(year => {
+            const yBtn = document.createElement("span");
+            yBtn.className = `tag ${selectedYearFilter === year ? "active" : ""}`;
+            yBtn.innerText = year;
+            yBtn.onclick = () => { selectedYearFilter = year; render(); };
+            yearFilterDiv.appendChild(yBtn);
+        });
+    }
+
+    // 根據年份過濾要顯示嘅記錄
+    let tripsToDisplay = trips.filter(t => selectedYearFilter === "all" || t.date.startsWith(selectedYearFilter));
+    document.getElementById("totalCount").innerText = tripsToDisplay.length;
+
+    tripsToDisplay.forEach((t) => {
+        // 因為 trips 已經重新排序/過濾，要搵返真實嘅 Index 畀編輯/刪除功能
+        let originalIndex = trips.indexOf(t);
+        
         const div = document.createElement("div");
         div.className = "trip";
         const routeText = t.routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(" → ");
 
         div.innerHTML = `
-            <div class="trip-header">
+            <div class="trip-header-row">
                 <div class="date">${t.date}</div>
                 <div>
-                    <button class="btn-small" onclick="editTrip(${i})">修改</button>
-                    <button class="btn-small btn-delete" style="color:white" onclick="deleteTrip(${i})">刪除</button>
+                    <button class="btn-small" onclick="editTrip(${originalIndex})">修改</button>
+                    <button class="btn-small btn-delete" style="color:white" onclick="deleteTrip(${originalIndex})">刪除</button>
                 </div>
             </div>
             <div class="route">${routeText}</div>
@@ -440,12 +499,15 @@ function render() {
     renderStats();
 }
 
-// 4. 統計與完成率 (V0.07 新邏輯)
+// 4. 統計與完成率 (加入總數顯示)
 function renderStats() {
     let allCompanies = new Set();
     trips.forEach(t => t.routes.forEach(r => allCompanies.add(r.company_id)));
 
-    // 渲染公司 Filter 標籤
+    // 更新公司標題總數
+    let activeCompCount = selectedCompanyFilter ? 1 : allCompanies.size;
+    document.getElementById("companyStatTitle").innerText = `鉄道公司 (${activeCompCount} 間)`;
+
     const filterContainer = document.getElementById("filterCompanies");
     filterContainer.innerHTML = "";
     
@@ -454,14 +516,12 @@ function renderStats() {
         tag.className = `tag ${selectedCompanyFilter === compId ? "active" : ""}`;
         tag.innerText = getCompName(compId);
         tag.onclick = () => {
-            // Toggle filter
             selectedCompanyFilter = selectedCompanyFilter === compId ? null : compId;
-            renderStats(); // 重新渲染統計區塊
+            renderStats(); 
         };
         filterContainer.appendChild(tag);
     });
 
-    // 根據選定公司篩選資料
     let filteredTrips = trips;
     let targetCompanyId = selectedCompanyFilter;
 
@@ -470,7 +530,6 @@ function renderStats() {
     filteredTrips.forEach(t => {
         let isMatch = !targetCompanyId || t.routes.some(r => r.company_id === targetCompanyId);
         if (isMatch) {
-            // 路線只計被 Filter 嘅公司（如果有 Filter）
             t.routes.forEach(r => {
                 if(!targetCompanyId || r.company_id === targetCompanyId) lSet.add(r.line_id);
             });
@@ -480,7 +539,6 @@ function renderStats() {
         }
     });
 
-    // 計算路線完成率 (如果有選定特定公司)
     let completionText = "";
     if (targetCompanyId && db.lines.length > 0) {
         let totalLinesInDb = db.lines.filter(l => l.company_id === targetCompanyId).length;
@@ -490,17 +548,18 @@ function renderStats() {
         }
     }
 
+    // 將集合大小 (size) 放回標題中
     const statsHTML = `
         <div class="stat-group">
-            <div class="stat-group-title">已乘搭路線 ${completionText}</div>
+            <div class="stat-group-title">已乘搭路線 (${lSet.size} 條) ${completionText}</div>
             <div class="tags-container">${Array.from(lSet).map(id => `<span class="tag">${getLineName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
-            <div class="stat-group-title">已乘搭車型</div>
+            <div class="stat-group-title">已乘搭車型 (${tSet.size} 款)</div>
             <div class="tags-container">${Array.from(tSet).map(id => `<span class="tag">${getTrainName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
-            <div class="stat-group-title">已造訪車站</div>
+            <div class="stat-group-title">已造訪車站 (${sSet.size} 個)</div>
             <div class="tags-container">${Array.from(sSet).map(id => `<span class="tag">${getStationName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
     `;
@@ -515,9 +574,12 @@ function editTrip(i) {
     setVal("date", t.date);
     let firstRouteCompName = maps.company[t.routes[0].company_id]?.name || t.routes[0].company_id;
     setVal("company", firstRouteCompName);
-    updateLineList(firstRouteCompName, "lineList");
-    setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
     
+    // 編輯時聯動更新路線同車型列表
+    updateLineList(firstRouteCompName, "lineList");
+    updateTrainList(firstRouteCompName, "trainList");
+    
+    setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
     setVal("train", maps.train[t.train_id]?._display || t.train_id);
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
@@ -535,7 +597,7 @@ function editTrip(i) {
     });
 
     editIndex = i;
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // iPhone 友善：編輯時自動捲動到最頂
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function deleteTrip(i) {
@@ -546,12 +608,13 @@ function deleteTrip(i) {
     }
 }
 
-// 5. 資料匯出入
 function exportData() {
+    // 匯出前將記錄按日期由舊至新排序（如果你想匯出的檔案保持時序順向）
+    // 或者可以直接輸出目前狀態
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.07.json";
+    a.download = "rail-log-V0.07.1.json";
     a.click();
 }
 
