@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>Rail Log V0.08</title>
+<title>鉄道手帳 Rail Log V0.08.5</title>
 
 <style>
 /* 日系 / iOS 風格 CSS */
@@ -40,21 +40,101 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
     background: var(--bg);
     color: var(--text);
-    /* 預留底部 Nav Bar 空間 */
-    padding-bottom: 90px; 
+    /* 預留底部 Nav Bar 和 Version Badge 空間 */
+    padding-bottom: 100px; 
 }
 
+/* 🚅 V0.08.5: HEADER 重新設計 - 模擬205系方向幕 */
 header {
-    background: var(--card);
-    color: var(--text);
-    padding: 18px 15px;
+    background: #ccc; /* 金屬質感底色 */
+    padding: calc(env(safe-area-inset-top) + 15px) 15px 15px 15px; 
+    border-bottom: 2px solid #aaa;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* 方向幕白色圓角顯示區域 */
+.destination-sign {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #aaa;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1); /* 凹槽效果 */
+    width: calc(100% - 30px);
+    max-width: 500px; /* 限制在大螢幕上的寬度 */
+    margin: 0 auto;
+}
+
+/* 左側紅色框「通勤快速」 */
+.sign-type {
+    border: 1.5px solid #ff3b30;
+    color: #ff3b30;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 14px;
+    font-weight: 800;
     text-align: center;
-    font-size: 18px;
+    line-height: 1;
+}
+
+/* 右側大字和英文小字 */
+.sign-main {
+    text-align: right;
+}
+
+.sign-destination {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1f; /* 深藍色/黑色，模擬方向幕 */
+}
+
+.sign-english {
+    font-size: 11px;
+    color: #86868b;
+    margin-top: 1px;
+}
+
+/* 🚩 V0.08.5: 快閃綠色信息toast彈窗 */
+.toast-message {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    top: calc(85px + env(safe-area-inset-top)); /* HEADER 下方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--success);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
     font-weight: 600;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: fadeInOut 2.5s ease; /* 快閃動畫 */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -10px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+
+/* 🏷️ V0.08.5: 超小字體版本號放於右下角 */
+.version-badge {
+    position: fixed;
+    bottom: calc(env(safe-area-inset-bottom) + 8px); 
+    right: 8px;
+    font-size: 10px;
+    color: var(--subtext);
+    background: var(--nav-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2px 6px;
+    z-index: 1001; /* 位於底部導航列上方 */
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
 }
 
 .container {
@@ -200,7 +280,19 @@ button:active { opacity: 0.7; }
 
 <body>
 
-<header>🚆 Rail Log V0.08</header>
+<header>
+    <div class="destination-sign">
+        <div class="sign-type"><div>通勤</div><div>快速</div></div>
+        <div class="sign-main">
+            <div class="sign-destination">鉄道手帳</div>
+            <div class="sign-english">Rail Log</div>
+        </div>
+    </div>
+</header>
+
+<div id="saveMessage" class="toast-message">儲存成功！</div>
+
+<div class="version-badge">V0.08.5</div>
 
 <div class="container">
 
@@ -463,7 +555,7 @@ function addThrough() {
     document.getElementById("throughContainer").appendChild(div);
 }
 
-// 2. 儲存記錄
+// 🚩 V0.08.5: 修正儲存記錄邏輯
 function saveTrip() {
     let getVal = (id) => document.getElementById(id).value;
     let mainCompInput = getVal("company");
@@ -495,6 +587,7 @@ function saveTrip() {
     localStorage.setItem("railTrips_V2", JSON.stringify(trips));
     lastTo = trip.to_id;
 
+    // 清空表單，但保留在主頁，留給用戶繼續輸入
     ["company", "line", "train", "to"].forEach(id => document.getElementById(id).value = "");
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
@@ -505,8 +598,17 @@ function saveTrip() {
 
     render();
     
-    // 儲存後自動跳去「記錄」頁面
-    switchTab('tab-history', document.querySelectorAll('.nav-item')[1]);
+    // 🚩 V0.08.5: 移除自動跳轉到記錄頁面，改為顯示快閃綠色信息
+    // 顯示快閃綠色信息
+    const messageDiv = document.getElementById("saveMessage");
+    messageDiv.style.display = "block";
+    // 2.5秒後自動隱藏，對應 CSS 動態
+    setTimeout(() => {
+        messageDiv.style.display = "none";
+    }, 2500); // 2.5秒後徹底隱藏，即使動畫已結束
+    
+    // 不需要跳轉 tab
+    // switchTab('tab-history', document.querySelectorAll('.nav-item')[1]);
 }
 
 function getCompName(id) { return maps.company[id]?.name || id; }
@@ -520,7 +622,7 @@ function render() {
     const yearFilterDiv = document.getElementById("yearFilterContainer");
     listDiv.innerHTML = ""; yearFilterDiv.innerHTML = "";
 
-    // 自動按日期由新至舊排序 (V0.08 確保每次渲染都排好)
+    // 自動按日期由新至舊排序 (確保每次渲染都排好)
     trips.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     let years = new Set(trips.map(t => t.date.split("-")[0]));
@@ -663,7 +765,8 @@ function editTrip(i) {
     });
 
     editIndex = i;
-    switchTab('tab-add', document.querySelectorAll('.nav-item')[0]); // 跳返去新增頁面編輯
+    // 編輯時回到新增頁面
+    switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
 
 function deleteTrip(i) {
@@ -678,7 +781,7 @@ function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.08.json";
+    a.download = "rail-log-V0.08.5.json";
     a.click();
 }
 

@@ -118,5 +118,5 @@
  { "id": "NANKAI_SHIOMIBASHI", "company_id": "NANKAI", "name": "汐見橋線" },
  { "id": "NANKAI_SEMBOKU", "company_id": "NANKAI", "name": "泉北線" },
  { "id": "EIZANDENSHA_EIZAN", "company_id": "EIZANDENSHA", "name": "叡山本線" },
- { "id": "EIZANDENSHA_KURAMA", "company_id": "EIZANDENSHA", "name": "鞍馬線" }, 
+ { "id": "EIZANDENSHA_KURAMA", "company_id": "EIZANDENSHA", "name": "鞍馬線" }
 ]

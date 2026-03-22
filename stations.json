@@ -1983,5 +1983,5 @@
  { "id": "STN_OSAKA_METRO_FERRY_TERMINAL", "company_id": "OSAKA_METRO", "name": "フェリーターミナル" },
  { "id": "STN_OSAKA_METRO_NANKO_HIGASHI", "company_id": "OSAKA_METRO", "name": "南港東" },
  { "id": "STN_OSAKA_METRO_NANKO_GUCHI", "company_id": "OSAKA_METRO", "name": "南港口" },
- { "id": "STN_OSAKA_METRO_HIRABAYASHI", "company_id": "OSAKA_METRO", "name": "平林" },
+ { "id": "STN_OSAKA_METRO_HIRABAYASHI", "company_id": "OSAKA_METRO", "name": "平林" }
 ]
