@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.08.5C</title>
+<title>鉄道手帳 RAIL LOG V0.08.5D</title>
 
 <style>
 :root {
@@ -52,75 +52,79 @@ header {
     position: sticky; top: 0; z-index: 100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     display: flex; justify-content: center; align-items: center;
-    gap: 20px; /* 🚩 V0.08.5C: 距離留白為 20px */
+    gap: 20px; 
     overflow: hidden;
 }
 
 .header-band { flex: 1; height: 35px; background: var(--primary); }
 
-/* 🚩 V0.08.5C: 方向幕設定 */
+/* 🚩 V0.08.5D: 方向幕設定 */
 .destination-sign-frame {
     background: #fff;
-    border-radius: 12px; /* 圓角圓多啲 */
-    padding: 5px 15px; /* Padding改為 5px 15px */
+    border-radius: 25px; /* 🚩 圓角增加到 25px */
+    padding: 0; /* 🚩 清除 padding，改用 margin 精確控制內部距離 */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px; 
-    border: 5px solid #888; /* 邊框加粗20% */
+    justify-content: flex-start;
+    align-items: stretch; /* 拉伸內部高度以貼合 */
+    border: 5px solid #888; 
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
-    width: 65%; /* 根據畫面調整 */
+    width: 65%; 
     max-width: 320px;
-    aspect-ratio: 4 / 1; /* 比例 4:1 */
+    aspect-ratio: 4 / 1; 
+    overflow: hidden; /* 確保圓角不漏出 */
 }
 
-/* 🚩 V0.08.5C: 通勤快速排版 */
+/* 🚩 V0.08.5D: 通勤快速排版 */
 .sign-type-box {
+    margin: 3px 0 3px 3px; /* 🚩 邊框與方向幕邊框只留 3px */
     border: 1px solid #ff3b30;
-    border-top: 2px solid #ff3b30; /* 上下邊加粗 */
-    border-bottom: 2px solid #ff3b30;
+    border-top: 5px solid #ff3b30; /* 🚩 上下邊加粗 5px */
+    border-bottom: 5px solid #ff3b30;
     color: #ff3b30;
     border-radius: 4px;
-    padding: 2px 4px;
-    font-size: clamp(10px, 3.5vw, 14px); /* 自動縮放盡用空間 */
+    padding: 0 4px; /* 輕微左右留白 */
+    font-size: clamp(10px, 3.5vw, 14px); 
     font-weight: 900;
     line-height: 1.1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-style: italic; /* 微斜體 */
+    font-style: italic; 
+    flex-shrink: 0;
 }
 
 .sign-type-text-1 { text-align: left; }
-.sign-type-text-2 { text-indent: 1em; } /* 「快」字對齊「勤」字下方 */
+.sign-type-text-2 { text-indent: 1em; } 
 
 /* 右側深藍色大字與小英文 */
 .sign-main-content {
+    margin: 1px 10px 1px 10px; /* 🚩 距離紅框/右框 10px，距離頂部/底部 1px */
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center;
+    align-items: center; /* 🚩 中軸對齊 */
+    justify-content: space-between; /* 上下貼邊 */
     color: #001f5c; 
-    flex: 1; /* 盡用左右空間 */
-    height: 100%; /* 盡用上下空間 */
+    flex: 1; 
 }
 
 .sign-destination-text {
-    font-size: clamp(18px, 6vw, 26px); /* 加大並盡用空間 */
+    font-size: clamp(18px, 6vw, 26px); 
     font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.25em; /* 闊啲字距 */
-    margin-left: 0.25em; /* 修正視覺置中 */
+    letter-spacing: 0.15em; /* 調整字距 */
+    margin-top: 0; /* 貼緊父元素嘅 1px top margin */
+    width: 100%;
 }
 
 .sign-english-text {
     font-size: clamp(8px, 2.5vw, 12px);
-    width: 75%; /* 75%闊度 */
-    margin-top: 4px;
+    width: 70%; /* 🚩 維持於鉄道手帳以內，不超過頭尾一半 */
+    margin-bottom: 0; /* 貼緊父元素嘅 1px bottom margin */
     line-height: 1;
-    text-align-last: justify; /* 以鉄道手帳對齊 */
-    font-weight: 600;
+    text-align-last: center; /* 置中對齊 */
+    font-weight: 700;
+    letter-spacing: 0.25em; /* 調整字距填滿 */
 }
 
 .toast-message {
@@ -188,7 +192,6 @@ input, select {
 }
 input:focus { border-color: var(--primary); }
 
-/* 🚩 V0.08.5C: 輸入框容器，用作定位清除按鈕 */
 .input-wrapper { position: relative; display: flex; align-items: center; }
 .clear-input-btn {
     position: absolute; right: 10px; background: none; border: none; font-size: 18px;
@@ -208,10 +211,27 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .btn-delete { background: var(--danger); color: white; border: none; }
 .btn-small { width: auto; padding: 6px 12px; font-size: 13px; border-radius: 4px; margin-top: 8px; margin-right: 6px; background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); }
 
-/* 日期控制列 */
-.date-controls { display: flex; gap: 6px; align-items: center; margin-bottom: 16px; justify-content: center; }
-.date-controls button { margin-top: 0; padding: 8px 10px; font-size: 14px; background: var(--tag-bg); }
-.date-controls button.active-filter { background: var(--primary); color: white; border-color: var(--primary); }
+/* 🚩 V0.08.5D: 日期控制列美化 (Segmented Control + Stepper) */
+.date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
+.date-mode-tabs button {
+    flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600;
+    background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s;
+}
+.date-mode-tabs button.active { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+.date-stepper {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.date-stepper button {
+    margin: 0; padding: 10px 16px; background: transparent; border: none;
+    color: var(--text); font-weight: bold; font-size: 16px; cursor: pointer; border-radius: 0; width: auto;
+}
+.date-stepper button:active { background: var(--bg); }
+.date-stepper .date-label {
+    flex: 1; text-align: center; font-weight: 600; color: var(--text); font-size: 15px; cursor: pointer;
+}
 
 /* 月曆 Modal */
 .calendar-modal {
@@ -265,7 +285,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.08.5C</div>
+<div class="version-badge">V0.08.5D</div>
 
 <div class="container">
 
@@ -306,12 +326,16 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                 乘車記錄 (<span id="totalCount">0</span>)
             </h3>
             
-            <div class="date-controls">
-                <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
-                <button onclick="changeDay(-1)"> &lt; </button>
-                <button id="btnFilterDate" style="flex:1" onclick="openCalendar()">選擇日期</button>
-                <button onclick="changeDay(1)"> &gt; </button>
-                <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
+            <div class="date-controls-wrapper">
+                <div class="date-mode-tabs">
+                    <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
+                    <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
+                </div>
+                <div class="date-stepper">
+                    <button onclick="changeDay(-1)"> &lt; </button>
+                    <div id="btnFilterDate" class="date-label" onclick="openCalendar()">選擇日期</div>
+                    <button onclick="changeDay(1)"> &gt; </button>
+                </div>
             </div>
 
             <div id="tripList"></div>
@@ -393,7 +417,6 @@ let db = { companies: [], lines: [], stations: [], trains: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
 let resolve = { company: {}, station: {}, train: {} };
 
-// 日期與統計過濾狀態
 let currentDateFilter = "all"; 
 let calViewDate = new Date();
 let activeStatFilter = { type: null, id: null };
@@ -497,15 +520,12 @@ function updateTrainList(compName, targetListId) {
     trainsToShow.forEach(t => list.appendChild(new Option(t._display)));
 }
 
-// 🚩 V0.08.5C: 更新上下車站列表 (處理直通路線對應)
 function updateStationLists() {
     const mainCompInput = document.getElementById("company").value;
     const mainCompId = resolve.company[mainCompInput];
     
-    // 處理「上車站」 - 跟隨主公司
     fillStationDatalist("stationListFrom", mainCompId, document.getElementById("line").value);
 
-    // 處理「下車站」 - 檢查有無直通公司，無就跟主公司
     let lastCompId = mainCompId;
     let lastLineInput = document.getElementById("line").value;
     
@@ -603,7 +623,6 @@ function getLineName(id) { return maps.line[id]?.name || id; }
 function getStationName(id) { return maps.station[id]?.name || id; }
 function getTrainName(id) { return maps.train[id]?.name || id; }
 
-/* 🚩 V0.08.5C: 日期過濾與記錄顯示 */
 function getTodayStr() {
     let d = new Date();
     return `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')}`;
@@ -627,14 +646,17 @@ function changeDay(delta) {
 function render() {
     trips.sort((a, b) => new Date(b.date) - new Date(a.date));
     
-    // 更新按鈕樣式
-    document.getElementById('btnFilterAll').className = currentDateFilter === 'all' ? 'active-filter' : '';
-    document.getElementById('btnFilterToday').className = currentDateFilter === getTodayStr() ? 'active-filter' : '';
-    document.getElementById('btnFilterDate').innerText = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
-    if (currentDateFilter !== 'all' && currentDateFilter !== getTodayStr()) {
-        document.getElementById('btnFilterDate').classList.add('active-filter');
+    // 🚩 V0.08.5D: 更新 Segmented Control 樣式
+    document.getElementById('btnFilterAll').className = currentDateFilter === 'all' ? 'active' : '';
+    document.getElementById('btnFilterToday').className = currentDateFilter === getTodayStr() ? 'active' : '';
+    
+    let displayDate = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
+    document.getElementById('btnFilterDate').innerText = displayDate;
+    
+    if (currentDateFilter !== 'all') {
+        document.getElementById('btnFilterDate').style.color = 'var(--primary)';
     } else {
-        document.getElementById('btnFilterDate').classList.remove('active-filter');
+        document.getElementById('btnFilterDate').style.color = 'var(--text)';
     }
 
     const listDiv = document.getElementById("tripList");
@@ -666,7 +688,6 @@ function render() {
     renderStats();
 }
 
-/* 🚩 V0.08.5C: 月曆控制 */
 function openCalendar() {
     if(currentDateFilter !== 'all') {
         let parts = currentDateFilter.split('-');
@@ -705,7 +726,6 @@ function buildCalendar() {
     }
 }
 
-/* 🚩 V0.08.5C: 統計交叉篩選 */
 function setStatFilter(type, id) {
     if (activeStatFilter.type === type && activeStatFilter.id === id) {
         activeStatFilter = { type: null, id: null };
@@ -736,7 +756,6 @@ function renderStats() {
         tSet.add(t.train_id); sSet.add(t.from_id); sSet.add(t.to_id);
     });
 
-    // 渲染公司 Tags
     let allCompaniesSet = new Set();
     trips.forEach(t => t.routes.forEach(r => allCompaniesSet.add(r.company_id)));
     document.getElementById("companyStatTitle").innerText = `鉄道公司 (${allCompaniesSet.size} 間)`;
@@ -745,7 +764,6 @@ function renderStats() {
     filterContainer.innerHTML = "";
     Array.from(allCompaniesSet).forEach(compId => {
         const tag = document.createElement("span");
-        // 變暗未相關的公司
         tag.className = `tag ${activeStatFilter.type === 'company' && activeStatFilter.id === compId ? "active" : ""}`;
         if(activeStatFilter.type && !cSet.has(compId)) tag.style.opacity = "0.4";
         tag.innerText = getCompName(compId);
@@ -827,7 +845,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.08.5C.json"; a.click();
+    a.download = "rail-log-V0.08.5D.json"; a.click();
 }
 
 function importData() {
