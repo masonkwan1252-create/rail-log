@@ -4,18 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.08.5C</title>
+<title>鉄道手帳 RAIL LOG V0.08.5B</title>
 
 <style>
 /* 205系風格 CSS 配色 */
 :root {
-    --bg: #e0e0e0; 
-    --input-bg: #f4f4f4; /* V0.08.5B 淺灰色 */
+    --bg: #e0e0e0; /* 淺金屬銀灰色，模擬車身 */
+    --input-bg: #f4f4f4; /* 🚩 V0.08.5B: 輸入欄灰色調淺10% */
     --card: #ffffff;
     --text: #1d1d1f;
     --subtext: #86868b;
-    --border: #aaa; 
-    --primary: #63BD0F; 
+    --border: #aaa; /* 金屬銀色，模擬框線 */
+    --primary: #63BD0F; /* 山手線綠色 */
     --success: #34c759;
     --danger: #ff3b30;
     --tag-bg: #e5e5ea;
@@ -24,8 +24,8 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #1c1c1e; 
-        --input-bg: #2c2c2e; 
+        --bg: #1c1c1e; /* 深金屬灰色，模擬車身 */
+        --input-bg: #2c2c2e; /* 🚩 V0.08.5B: 暗黑模式輸入欄亦微調 */
         --card: #1c1c1e;
         --text: #f5f5f7;
         --subtext: #98989d;
@@ -45,96 +45,106 @@ body {
     padding-bottom: 100px; 
 }
 
-/* HEADER */
+/* 🚅 V0.08.5B: HEADER 重新設計 - 橫向色帶與留白 */
 header {
-    background: linear-gradient(135deg, #ddd 0%, #aaa 100%);
+    background: linear-gradient(135deg, #ddd 0%, #aaa 100%); /* 金屬銀漸變底色 */
     padding: calc(env(safe-area-inset-top) + 15px) 0 15px 0; 
     border-bottom: 2px solid #aaa;
     position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     display: flex; justify-content: center; align-items: center;
-    gap: 15px; 
+    gap: 15px; /* 🚩 V0.08.5B: 控制色帶與方向幕之間「一指距離」嘅留白 */
     overflow: hidden;
 }
 
+/* 🟢 V0.08.5B: 左右兩側嘅山手線色帶 */
 .header-band {
     flex: 1;
     height: 35px;
     background: var(--primary);
 }
 
-/* 🚩 V0.08.5C: 方向幕邊框加粗 20% (4px -> 5px)，Padding 縮小至 10px */
+/* 🚩 V0.08.5B: 方向幕設定 - 加粗邊框、加多空白 */
 .destination-sign-frame {
     background: #fff;
     border-radius: 6px;
-    padding: 10px; /* 用盡空間，周圍留 10px */
+    padding: 10px 20px; /* 增加頂部及底部空白 */
     display: flex;
-    justify-content: center; 
+    justify-content: center; /* 內容置中對齊 */
     align-items: center;
-    gap: 12px; 
-    border: 5px solid #888; /* 加粗 20% */
+    gap: 15px; /* 左右內容距離 */
+    border: 4px solid #888; /* 邊框加粗，顏色稍微加深增加立體感 */
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: auto;
-    min-width: 220px;
+    max-width: 65%;
 }
 
-/* 🚩 V0.08.5C: 「通勤快速」排版調整 */
+/* 🔴 V0.08.5B: 左側紅色框「通勤快速」 */
 .sign-type-box {
     border: 1.5px solid #ff3b30;
-    border-top-width: 2px; /* 上下邊加粗 10% (約 2px) */
-    border-bottom-width: 2px;
     color: #ff3b30;
-    border-radius: 2px;
-    padding: 2px 4px;
-    font-size: 11px; 
-    font-weight: 900;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 11.2px; /* 🚩 字體縮少 20% (原 14px) */
+    font-weight: 800;
+    text-align: center;
     line-height: 1.1;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    justify-content: center;
 }
 
-/* 🚩 令「快」字喺「勤」字下方 (第二行開始) */
-.sign-type-box div:last-child {
-    padding-left: 1em; 
-}
-
+/* 右側深藍色大字與小英文 */
 .sign-main-content {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* 置中對齊 */
     justify-content: center;
     color: #001f5c; 
-    flex-grow: 1;
 }
 
-/* 🚩 V0.08.5C: 鉄道手帳字體加大並增加字距 */
 .sign-destination-text {
-    font-size: 24px; /* 加大字體 */
-    font-weight: 900;
+    font-size: 16px; /* 🚩 字體縮少 20% (原 20px) */
+    font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.15em; /* 增加字距 */
-    white-space: nowrap;
-}
-
-/* 🚩 V0.08.5C: RAIL LOG 闊度為中文字嘅 75% */
-.sign-english-container {
-    width: 75%; 
-    display: flex;
-    justify-content: space-between; /* 均勻分佈字母以達到 75% 闊度感 */
-    margin-top: 2px;
 }
 
 .sign-english-text {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    transform: scaleX(1.1); /* 稍微拉闊英文感 */
+    font-size: 8.8px; /* 🚩 字體縮少 20% (原 11px) */
+    letter-spacing: 5px; /* 🚩 英文加闊，對齊上面中文字 */
+    margin-top: 4px;
+    line-height: 1;
 }
 
-/* 其他 UI 組件 */
+.toast-message {
+    display: none; 
+    position: fixed;
+    top: calc(85px + env(safe-area-inset-top)); 
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--success);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: fadeInOut 2.5s ease; 
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -10px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+
+/* 🏷️ V0.08.5B: 修正擋住「管理」字眼問題 */
 .version-badge {
     position: fixed;
-    bottom: calc(env(safe-area-inset-bottom) + 65px);
+    bottom: calc(env(safe-area-inset-bottom) + 65px); /* 🚩 提高位置，避開導航列 */
     right: 8px;
     font-size: 10px;
     color: var(--subtext);
@@ -146,37 +156,161 @@ header {
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
 }
 
-.container { max-width: 600px; margin: 15px auto; padding: 0 15px; }
-.card { background: var(--card); padding: 20px; margin-bottom: 16px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+.container {
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 0 15px;
+}
 
+.card {
+    background: var(--card);
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 8px; 
+    border: 1px solid var(--border); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.tab-content { display: none; animation: fadeIn 0.3s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 底部導航列 */
 .bottom-nav {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid var(--border);
-    display: flex; justify-content: space-around;
-    padding-bottom: env(safe-area-inset-bottom);
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 calc(env(safe-area-inset-bottom)); /* 移除預設 padding-top 以配合底線設計 */
     z-index: 1000;
 }
 
 .nav-item {
-    text-align: center; color: var(--subtext); font-size: 11px; flex: 1;
-    display: flex; flex-direction: column; align-items: center; padding: 10px 0;
-    border-bottom: 3px solid transparent;
+    text-align: center;
+    color: var(--subtext);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 0;
+    border-bottom: 3px solid transparent; /* 預留底線空間 */
+    transition: all 0.2s ease;
 }
-.nav-item.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
+
+/* 🚩 V0.08.5B: 山手線色底線 */
+.nav-item.active { 
+    color: var(--primary); 
+    border-bottom: 3px solid var(--primary); 
+}
 .nav-icon { font-size: 22px; }
 
-input, select, button { width: 100%; padding: 12px; border-radius: 4px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); font-size: 16px; outline: none; }
-.btn-primary { background: linear-gradient(#9ae26e, #63BD0F); color: white; border: none; font-weight: 600; margin-top: 10px;}
-.btn-small { width: auto; padding: 6px 12px; font-size: 13px; margin-top: 8px; background: var(--tag-bg); }
+h3 {
+    margin-top: 0;
+    font-size: 17px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border); 
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary); 
+}
 
-.trip { border-bottom: 1px solid var(--border); padding: 15px 0; }
-.route { font-weight: 600; font-size: 16px; color: var(--text); }
-.date { font-size: 12px; color: var(--primary); }
-.tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.tag { background: var(--tag-bg); padding: 4px 10px; border-radius: 12px; font-size: 12px; }
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--subtext);
+    margin-bottom: 6px;
+    margin-top: 12px;
+}
+
+/* 🚩 V0.08.5B: 輸入欄套用新淺灰色 */
+input, select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid var(--border); 
+    border-radius: 4px; 
+    background: var(--input-bg);
+    color: var(--text);
+    appearance: none;
+    outline: none;
+}
+input:focus { border-color: var(--primary); }
+
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+    background: linear-gradient(#f0f0f0, #ccc); 
+    color: var(--text);
+    border: 1px solid var(--border); 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+button:active { background: linear-gradient(#ccc, #b3b3b3); }
+
+.btn-primary {
+    background: linear-gradient(#9ae26e, #63BD0F); 
+    color: white;
+    border: none;
+}
+.btn-primary:active { background: linear-gradient(#63BD0F, #57a80b); }
+.btn-add { background: var(--success); }
+.btn-delete { background: var(--danger); }
+.btn-small {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-right: 6px;
+    background: var(--tag-bg);
+    color: var(--text);
+}
+
+.trip { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.trip:last-child { border-bottom: none; padding-bottom: 0; }
+.trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.date { font-size: 13px; color: var(--primary); font-weight: 500; }
+.route { font-weight: 600; font-size: 16px; margin-bottom: 4px;}
+.trip-detail { font-size: 14px; color: var(--subtext); line-height: 1.5; }
+
+.through-block {
+    background: var(--tag-bg);
+    padding: 12px;
+    border-radius: 4px; 
+    margin-top: 10px;
+    border: 1px solid var(--border); 
+}
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; margin-bottom: 16px; }
+.tag {
+    background: var(--tag-bg);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.tag.active { background: var(--primary); color: white; }
+.stat-group { margin-bottom: 20px; }
+.stat-group-title { font-size: 14px; font-weight: 600; color: var(--subtext); margin-bottom: 8px; }
+.completion-rate { font-size: 13px; color: var(--success); margin-left: 8px; font-weight: 500; }
 </style>
 </head>
 
@@ -185,35 +319,45 @@ input, select, button { width: 100%; padding: 12px; border-radius: 4px; border: 
 <header>
     <div class="header-band"></div>
     <div class="destination-sign-frame">
-        <div class="sign-type-box">
-            <div>通勤</div>
-            <div>快速</div>
-        </div>
+        <div class="sign-type-box"><div>通勤</div><div>快速</div></div>
         
         <div class="sign-main-content">
             <div class="sign-destination-text">鉄道手帳</div>
-            <div class="sign-english-container">
-                <div class="sign-english-text">RAIL LOG</div>
-            </div>
+            <div class="sign-english-text">RAIL LOG</div>
         </div>
     </div>
     <div class="header-band"></div>
 </header>
 
-<div class="version-badge">V0.08.5C</div>
+<div id="saveMessage" class="toast-message">儲存成功！</div>
+
+<div class="version-badge">V0.08.5B</div>
 
 <div class="container">
+
     <div id="tab-add" class="tab-content active">
         <div class="card">
-            <h3 style="color:var(--primary); margin-top:0;">新增乘車</h3>
-            <label style="font-size:12px; color:var(--subtext);">日期</label>
+            <h3>新增乘車</h3>
+            <label>日期</label>
             <input type="date" id="date">
-            
-            <label style="font-size:12px; color:var(--subtext); display:block; margin-top:10px;">鉄道公司</label>
-            <input id="company" list="companyList" placeholder="例如：JR西日本">
-            
-            <label style="font-size:12px; color:var(--subtext); display:block; margin-top:10px;">路線</label>
-            <input id="line" list="lineList" placeholder="例如：大阪環狀線">
+
+            <label>鉄道公司</label>
+            <input id="company" list="companyList" placeholder="選擇或輸入公司">
+
+            <label>路線</label>
+            <input id="line" list="lineList" placeholder="選擇或輸入路線">
+
+            <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
+            <div id="throughContainer"></div>
+
+            <label>車型</label>
+            <input id="train" list="trainList" placeholder="例如：321系">
+
+            <label>上車站</label>
+            <input id="from" list="stationList" placeholder="出發站">
+
+            <label>下車站</label>
+            <input id="to" list="stationList" placeholder="到達站">
 
             <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
         </div>
@@ -221,24 +365,38 @@ input, select, button { width: 100%; padding: 12px; border-radius: 4px; border: 
 
     <div id="tab-history" class="tab-content">
         <div class="card">
-            <h3 style="color:var(--primary); margin-top:0;">歷史記錄</h3>
+            <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0;">
+                乘車記錄 (<span id="totalCount">0</span>)
+            </h3>
+            <div id="yearFilterContainer" class="tags-container" style="margin-bottom: 16px;"></div>
             <div id="tripList"></div>
         </div>
     </div>
 
     <div id="tab-stats" class="tab-content">
         <div class="card">
-            <h3 style="color:var(--primary); margin-top:0;">統計</h3>
-            <p>統計功能開發中...</p>
+            <h3>統計與完成率</h3>
+            <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司以篩選下方資料。</p>
+            
+            <div class="stat-group">
+                <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
+                <div id="filterCompanies" class="tags-container"></div>
+            </div>
+
+            <div id="filteredStatsContainer"></div>
         </div>
     </div>
 
     <div id="tab-settings" class="tab-content">
         <div class="card">
-            <h3 style="color:var(--primary); margin-top:0;">管理</h3>
-            <button class="btn-small" onclick="exportData()">匯出 JSON</button>
+            <h3>資料管理</h3>
+            <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。</p>
+            <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
+            <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
+            <button class="btn-small" onclick="importData()">匯入資料</button>
         </div>
     </div>
+
 </div>
 
 <nav class="bottom-nav">
@@ -262,56 +420,410 @@ input, select, button { width: 100%; padding: 12px; border-radius: 4px; border: 
 
 <datalist id="companyList"></datalist>
 <datalist id="lineList"></datalist>
+<datalist id="stationList"></datalist>
+<datalist id="trainList"></datalist>
 
 <script>
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
+let editIndex = null;
+let lastTo = "";
+let selectedCompanyFilter = null;
+let selectedYearFilter = "all";
+
+let db = { companies: [], lines: [], stations: [], trains: [] };
+let maps = { company: {}, line: {}, station: {}, train: {} };
+let resolve = { company: {}, station: {}, train: {} };
+
 document.getElementById("date").valueAsDate = new Date();
+
+async function loadData() {
+    try {
+        const [compRes, lineRes, staRes, trainRes] = await Promise.all([
+            fetch("companies.json"), fetch("lines.json"), fetch("stations.json"), fetch("traintypes.json")
+        ]);
+
+        if (compRes.ok && lineRes.ok && staRes.ok && trainRes.ok) {
+            db.companies = await compRes.json();
+            db.lines = await lineRes.json();
+            db.stations = await staRes.json();
+            db.trains = await trainRes.json();
+        }
+    } catch (e) {
+        console.log("資料庫載入失敗，將使用純文字模式。");
+    } finally {
+        buildMaps();
+        initUILists();
+        render();
+    }
+}
+
+function buildMaps() {
+    db.companies.forEach(c => { maps.company[c.id] = c; resolve.company[c.name] = c.id; });
+    db.lines.forEach(l => { maps.line[l.id] = l; });
+    
+    db.stations.forEach(s => {
+        maps.station[s.id] = s;
+        let compName = maps.company[s.company_id]?.name || "";
+        let display = compName ? `${s.name} (${compName})` : s.name;
+        resolve.station[display] = s.id;
+        s._display = display;
+    });
+
+    let expandedTrains = [];
+    db.trains.forEach(t => {
+        let compName = maps.company[t.company_id]?.name || "";
+        if (t.variants && t.variants.length > 0) {
+            t.variants.forEach(v => {
+                let fullName = `${t.name}${v}`;
+                let display = compName ? `${fullName} (${compName})` : fullName;
+                let virtualId = `${t.id}:${v}`;
+                let newEntry = { ...t, _display: display, name: fullName, id: virtualId };
+                expandedTrains.push(newEntry);
+                maps.train[virtualId] = newEntry;
+                resolve.train[display] = virtualId;
+            });
+        } else {
+            let display = compName ? `${t.name} (${compName})` : t.name;
+            t._display = display;
+            expandedTrains.push(t);
+            maps.train[t.id] = t;
+            resolve.train[display] = t.id;
+        }
+    });
+    db.trains = expandedTrains;
+}
+
+function initUILists() {
+    fillList("companyList", db.companies.map(c => c.name));
+    fillList("lineList", db.lines.map(l => l.name));
+    fillList("trainList", db.trains.map(t => t._display));
+    fillList("stationList", db.stations.map(s => s._display));
+}
+
+function fillList(listId, dataArray) {
+    const list = document.getElementById(listId);
+    if(!list) return;
+    list.innerHTML = "";
+    dataArray.forEach(val => { list.appendChild(new Option(val)); });
+}
 
 function switchTab(tabId, navElement) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
+    
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
     navElement.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById("company").addEventListener("input", () => {
+    let compName = document.getElementById("company").value;
+    updateLineList(compName, "lineList");
+    updateTrainList(compName, "trainList");
+    updateStationList();
+});
+
+document.getElementById("line").addEventListener("input", updateStationList);
+
+function updateLineList(compName, targetListId) {
+    const compId = resolve.company[compName];
+    const list = document.getElementById(targetListId);
+    if(!list) return;
+    list.innerHTML = "";
+    let linesToShow = compId ? db.lines.filter(l => l.company_id === compId) : db.lines;
+    linesToShow.forEach(l => list.appendChild(new Option(l.name)));
+}
+
+function updateTrainList(compName, targetListId) {
+    const compId = resolve.company[compName];
+    const list = document.getElementById(targetListId);
+    if(!list) return;
+    list.innerHTML = "";
+    let trainsToShow = compId ? db.trains.filter(t => t.company_id === compId) : db.trains;
+    trainsToShow.forEach(t => list.appendChild(new Option(t._display)));
+}
+
+function updateStationList() {
+    const compInput = document.getElementById("company").value;
+    const lineInput = document.getElementById("line").value;
+    const compId = resolve.company[compInput];
+    
+    let lineId = null;
+    if (compId && lineInput) {
+        let matchedLine = db.lines.find(l => l.company_id === compId && l.name === lineInput);
+        if (matchedLine) lineId = matchedLine.id;
+    }
+
+    const list = document.getElementById("stationList");
+    list.innerHTML = "";
+
+    let stationsToShow = db.stations;
+    
+    if (compId) {
+        stationsToShow = stationsToShow.filter(s => s.company_id === compId);
+    }
+    
+    if (lineId && stationsToShow.some(s => s.line_id || s.lines)) {
+        stationsToShow = stationsToShow.filter(s => 
+            s.line_id === lineId || (s.lines && s.lines.includes(lineId))
+        );
+    }
+
+    stationsToShow.forEach(s => list.appendChild(new Option(s._display)));
+}
+
+function addThrough() {
+    const div = document.createElement("div");
+    div.className = "through-block";
+    const uniqueId = "throughLineList_" + Date.now();
+    div.innerHTML = `
+        <label style="margin-top:0;">直通公司</label>
+        <input class="throughCompany" list="companyList" oninput="updateLineList(this.value, '${uniqueId}')">
+        <datalist id="${uniqueId}"></datalist>
+        <label>直通路線</label>
+        <input class="throughLine" list="${uniqueId}">
+        <button class="btn-small btn-delete" style="color:white;" onclick="this.parentElement.remove()">移除</button>
+    `;
+    document.getElementById("throughContainer").appendChild(div);
 }
 
 function saveTrip() {
+    let getVal = (id) => document.getElementById(id).value;
+    let mainCompInput = getVal("company");
+    let mainCompId = resolve.company[mainCompInput] || mainCompInput;
+    let mainLineInput = getVal("line");
+    let mainLineId = db.lines.find(l => l.company_id === mainCompId && l.name === mainLineInput)?.id || mainLineInput;
+
+    let routes = [{ company_id: mainCompId, line_id: mainLineId }];
+
+    document.querySelectorAll(".through-block").forEach(block => {
+        let tcInput = block.querySelector(".throughCompany").value;
+        let tcId = resolve.company[tcInput] || tcInput;
+        let tlInput = block.querySelector(".throughLine").value;
+        let tlId = db.lines.find(l => l.company_id === tcId && l.name === tlInput)?.id || tlInput;
+        if(tcId || tlId) routes.push({ company_id: tcId, line_id: tlId });
+    });
+
     const trip = {
-        date: document.getElementById("date").value,
-        company: document.getElementById("company").value,
-        line: document.getElementById("line").value
+        date: getVal("date"),
+        routes: routes,
+        train_id: resolve.train[getVal("train")] || getVal("train"),
+        from_id: resolve.station[getVal("from")] || getVal("from"),
+        to_id: resolve.station[getVal("to")] || getVal("to")
     };
-    if(!trip.company || !trip.line) return alert("請填寫公司同路線");
-    trips.push(trip);
+
+    if (editIndex !== null) { trips[editIndex] = trip; editIndex = null; } 
+    else { trips.push(trip); }
+
     localStorage.setItem("railTrips_V2", JSON.stringify(trips));
+    lastTo = trip.to_id;
+
+    ["company", "line", "train", "to"].forEach(id => document.getElementById(id).value = "");
+    document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
+    document.getElementById("throughContainer").innerHTML = "";
+    
+    updateLineList("", "lineList");
+    updateTrainList("", "trainList");
+    updateStationList();
+
     render();
-    alert("儲存成功！");
+    
+    const messageDiv = document.getElementById("saveMessage");
+    messageDiv.style.display = "block";
+    setTimeout(() => {
+        messageDiv.style.display = "none";
+    }, 2500);
 }
 
+function getCompName(id) { return maps.company[id]?.name || id; }
+function getLineName(id) { return maps.line[id]?.name || id; }
+function getStationName(id) { return maps.station[id]?.name || id; }
+function getTrainName(id) { return maps.train[id]?.name || id; }
+
 function render() {
-    const list = document.getElementById("tripList");
-    list.innerHTML = "";
-    trips.slice().reverse().forEach(t => {
+    const listDiv = document.getElementById("tripList");
+    const yearFilterDiv = document.getElementById("yearFilterContainer");
+    listDiv.innerHTML = ""; yearFilterDiv.innerHTML = "";
+
+    trips.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    let years = new Set(trips.map(t => t.date.split("-")[0]));
+    let yearArray = Array.from(years).sort((a, b) => b - a);
+
+    if (yearArray.length > 0) {
+        const allBtn = document.createElement("span");
+        allBtn.className = `tag ${selectedYearFilter === "all" ? "active" : ""}`;
+        allBtn.innerText = "All Time";
+        allBtn.onclick = () => { selectedYearFilter = "all"; render(); };
+        yearFilterDiv.appendChild(allBtn);
+
+        yearArray.forEach(year => {
+            const yBtn = document.createElement("span");
+            yBtn.className = `tag ${selectedYearFilter === year ? "active" : ""}`;
+            yBtn.innerText = year;
+            yBtn.onclick = () => { selectedYearFilter = year; render(); };
+            yearFilterDiv.appendChild(yBtn);
+        });
+    }
+
+    let tripsToDisplay = trips.filter(t => selectedYearFilter === "all" || t.date.startsWith(selectedYearFilter));
+    document.getElementById("totalCount").innerText = tripsToDisplay.length;
+
+    tripsToDisplay.forEach((t) => {
+        let originalIndex = trips.indexOf(t);
         const div = document.createElement("div");
         div.className = "trip";
+        const routeText = t.routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(" → ");
+
         div.innerHTML = `
-            <div class="date">${t.date}</div>
-            <div class="route">${t.company} - ${t.line}</div>
+            <div class="trip-header-row">
+                <div class="date">${t.date}</div>
+                <div>
+                    <button class="btn-small" onclick="editTrip(${originalIndex})">修改</button>
+                    <button class="btn-small btn-delete" style="color:white" onclick="deleteTrip(${originalIndex})">刪除</button>
+                </div>
+            </div>
+            <div class="route">${routeText}</div>
+            <div class="trip-detail">
+                🚆 ${getTrainName(t.train_id)}<br>
+                🚉 ${getStationName(t.from_id)} → ${getStationName(t.to_id)}
+            </div>
         `;
-        list.appendChild(div);
+        listDiv.appendChild(div);
     });
+
+    renderStats();
+}
+
+function renderStats() {
+    let allCompanies = new Set();
+    trips.forEach(t => t.routes.forEach(r => allCompanies.add(r.company_id)));
+
+    let activeCompCount = selectedCompanyFilter ? 1 : allCompanies.size;
+    document.getElementById("companyStatTitle").innerText = `鉄道公司 (${activeCompCount} 間)`;
+
+    const filterContainer = document.getElementById("filterCompanies");
+    filterContainer.innerHTML = "";
+    
+    Array.from(allCompanies).forEach(compId => {
+        const tag = document.createElement("span");
+        tag.className = `tag ${selectedCompanyFilter === compId ? "active" : ""}`;
+        tag.innerText = getCompName(compId);
+        tag.onclick = () => {
+            selectedCompanyFilter = selectedCompanyFilter === compId ? null : compId;
+            renderStats(); 
+        };
+        filterContainer.appendChild(tag);
+    });
+
+    let filteredTrips = trips;
+    let targetCompanyId = selectedCompanyFilter;
+    let lSet = new Set(), tSet = new Set(), sSet = new Set();
+    
+    filteredTrips.forEach(t => {
+        let isMatch = !targetCompanyId || t.routes.some(r => r.company_id === targetCompanyId);
+        if (isMatch) {
+            t.routes.forEach(r => { if(!targetCompanyId || r.company_id === targetCompanyId) lSet.add(r.line_id); });
+            tSet.add(t.train_id); sSet.add(t.from_id); sSet.add(t.to_id);
+        }
+    });
+
+    let completionText = "";
+    if (targetCompanyId && db.lines.length > 0) {
+        let totalLinesInDb = db.lines.filter(l => l.company_id === targetCompanyId).length;
+        if (totalLinesInDb > 0) {
+            let percentage = ((lSet.size / totalLinesInDb) * 100).toFixed(0);
+            completionText = `<span class="completion-rate">(完成率：${lSet.size}/${totalLinesInDb} 條，${percentage}%)</span>`;
+        }
+    }
+
+    const statsHTML = `
+        <div class="stat-group">
+            <div class="stat-group-title">已乘搭路線 (${lSet.size} 條) ${completionText}</div>
+            <div class="tags-container">${Array.from(lSet).map(id => `<span class="tag">${getLineName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
+        </div>
+        <div class="stat-group">
+            <div class="stat-group-title">已乘搭車型 (${tSet.size} 款)</div>
+            <div class="tags-container">${Array.from(tSet).map(id => `<span class="tag">${getTrainName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
+        </div>
+        <div class="stat-group">
+            <div class="stat-group-title">已造訪車站 (${sSet.size} 個)</div>
+            <div class="tags-container">${Array.from(sSet).map(id => `<span class="tag">${getStationName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
+        </div>
+    `;
+
+    document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
+}
+
+function editTrip(i) {
+    const t = trips[i];
+    let setVal = (id, val) => document.getElementById(id).value = val || "";
+    
+    setVal("date", t.date);
+    let firstRouteCompName = maps.company[t.routes[0].company_id]?.name || t.routes[0].company_id;
+    setVal("company", firstRouteCompName);
+    
+    updateLineList(firstRouteCompName, "lineList");
+    updateTrainList(firstRouteCompName, "trainList");
+    
+    setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
+    updateStationList(); 
+
+    setVal("train", maps.train[t.train_id]?._display || t.train_id);
+    setVal("from", maps.station[t.from_id]?._display || t.from_id);
+    setVal("to", maps.station[t.to_id]?._display || t.to_id);
+
+    document.getElementById("throughContainer").innerHTML = "";
+    t.routes.slice(1).forEach(r => {
+        addThrough();
+        const blocks = document.querySelectorAll(".through-block");
+        const lastBlock = blocks[blocks.length - 1];
+        const cName = maps.company[r.company_id]?.name || r.company_id;
+        lastBlock.querySelector(".throughCompany").value = cName;
+        const listId = lastBlock.querySelector("datalist").id;
+        updateLineList(cName, listId);
+        lastBlock.querySelector(".throughLine").value = maps.line[r.line_id]?.name || r.line_id;
+    });
+
+    editIndex = i;
+    switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
+}
+
+function deleteTrip(i) {
+    if(confirm("確定刪除此記錄？")) {
+        trips.splice(i, 1);
+        localStorage.setItem("railTrips_V2", JSON.stringify(trips));
+        render();
+    }
 }
 
 function exportData() {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(trips));
-    const downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "rail_log_v0.08.5C.json");
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+    const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "rail-log-V0.08.5B.json";
+    a.click();
 }
 
-render();
+function importData() {
+    const file = document.getElementById("importFile").files[0];
+    if(!file) return alert("請先選擇檔案！");
+    const reader = new FileReader();
+    reader.onload = e => {
+        try {
+            trips = JSON.parse(e.target.result);
+            localStorage.setItem("railTrips_V2", JSON.stringify(trips));
+            render();
+            alert("匯入成功！");
+        } catch(err) {
+            alert("檔案格式錯誤！");
+        }
+    };
+    reader.readAsText(file);
+}
+
+loadData();
+
 </script>
 </body>
 </html>
