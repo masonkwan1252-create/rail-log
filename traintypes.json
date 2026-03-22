@@ -200,5 +200,19 @@
   { "id": "TRN_EIZANDENSHA_700", "company_id": "EIZANDENSHA", "name": "700系", "variants": ["ひえい"] },
   { "id": "TRN_EIZANDENSHA_800", "company_id": "EIZANDENSHA", "name": "800系", "variants": [] },
   { "id": "TRN_EIZANDENSHA_900", "company_id": "EIZANDENSHA", "name": "900系", "variants": [] },
-  { "id": "TRN_EIZANDENSHA_100", "company_id": "EIZANDENSHA", "name": "100系", "variants": [] }
+  { "id": "TRN_EIZANDENSHA_100", "company_id": "EIZANDENSHA", "name": "100系", "variants": [] },
+  { "id": "TRN_SANYO_3000", "company_id": "SANYO_RAILWAY", "name": "3000系", "variants": [] },
+  { "id": "TRN_SANYO_3050", "company_id": "SANYO_RAILWAY", "name": "3050系", "variants": [] },
+  { "id": "TRN_SANYO_5000", "company_id": "SANYO_RAILWAY", "name": "5000系", "variants": [] },
+  { "id": "TRN_SANYO_5030", "company_id": "SANYO_RAILWAY", "name": "5030系", "variants": [] },
+  { "id": "TRN_SANYO_6000", "company_id": "SANYO_RAILWAY", "name": "6000系", "variants": [] },
+  { "id": "TRN_HANKAI_161", "company_id": "HANKAI", "name": "モ161", "variants": [] },
+  { "id": "TRN_HANKAI_351", "company_id": "HANKAI", "name": "モ351", "variants": [] },
+  { "id": "TRN_HANKAI_501", "company_id": "HANKAI", "name": "モ501", "variants": [] },
+  { "id": "TRN_HANKAI_601", "company_id": "HANKAI", "name": "モ601", "variants": [] },
+  { "id": "TRN_HANKAI_701", "company_id": "HANKAI", "name": "モ701", "variants": [] },
+  { "id": "TRN_HANKAI_1001", "company_id": "HANKAI", "name": "1001形", "variants": [] },
+  { "id": "TRN_HANKAI_1101", "company_id": "HANKAI", "name": "1101形", "variants": [] },
+  { "id": "TRN_CITY_KOBE_6000", "company_id": "CITY_KOBE", "name": "6000形", "variants": [] },
+  { "id": "TRN_CITY_KOBE_5000", "company_id": "CITY_KOBE", "name": "5000形", "variants": [] }
 ]
