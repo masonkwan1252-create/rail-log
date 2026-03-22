@@ -1,4 +1,5 @@
 [
+  { "id": "JRW_SANYO_SHINKANSEN", "company_id": "JR_WEST", "name": "山陽新幹線" },
   { "id": "JRW_OSAKA_LOOP", "company_id": "JR_WEST", "name": "大阪環状線" },
   { "id": "JRW_BIWAKO", "company_id": "JR_WEST", "name": "琵琶湖線" },
   { "id": "JRW_JR_KYOTO", "company_id": "JR_WEST", "name": "JR京都線" },
@@ -125,5 +126,6 @@
  { "id": "HANKAI_UEMACHI", "company_id": "HANKAI", "name": "上町線" },
  { "id": "CITY_KOBE_SESHIN_YAMATE", "company_id": "CITY_KOBE", "name": "西神・山手線" },
  { "id": "CITY_KOBE_HOKUSHIN", "company_id": "CITY_KOBE", "name": "北神線" },
- { "id": "CITY_KOBE_KAIGAN", "company_id": "CITY_KOBE", "name": "海岸線" }
+ { "id": "CITY_KOBE_KAIGAN", "company_id": "CITY_KOBE", "name": "海岸線" },
+ { "id": "MIZUSHIMA_HONSEN", "company_id": "MIZURIN", "name": "水島本線" }
 ]

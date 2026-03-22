@@ -2098,5 +2098,15 @@
  { "id": "STN_CITY_KOBE_GAKUEN_TOSHI", "company_id": "CITY_KOBE", "name": "学園都市" },
  { "id": "STN_CITY_KOBE_IKAWADANI", "company_id": "CITY_KOBE", "name": "伊川谷" },
  { "id": "STN_CITY_KOBE_SEISHIN_MINAMI", "company_id": "CITY_KOBE", "name": "西神南" },
- { "id": "STN_CITY_KOBE_SEISHIN_CHUO", "company_id": "CITY_KOBE", "name": "西神中央" }
+ { "id": "STN_CITY_KOBE_SEISHIN_CHUO", "company_id": "CITY_KOBE", "name": "西神中央" },
+ { "id": "STN_MIZURIN_KURASHIKICHI", "company_id": "MIZURIN", "name": "倉敷市" },
+ { "id": "STN_MIZURIN_KYUJO_MAE", "company_id": "MIZURIN", "name": "球場前" },
+ { "id": "STN_MIZURIN_NISHI_TOMII", "company_id": "MIZURIN", "name": "西富井" },
+ { "id": "STN_MIZURIN_FUKUI", "company_id": "MIZURIN", "name": "福井" },
+ { "id": "STN_MIZURIN_URADA", "company_id": "MIZURIN", "name": "浦田" },
+ { "id": "STN_MIZURIN_YAYOI", "company_id": "MIZURIN", "name": "弥生" },
+ { "id": "STN_MIZURIN_SAKAE", "company_id": "MIZURIN", "name": "栄" },
+ { "id": "STN_MIZURIN_TOKIWA", "company_id": "MIZURIN", "name": "常盤" },
+ { "id": "STN_MIZURIN_MIZUSHIMA", "company_id": "MIZURIN", "name": "水島" },
+ { "id": "STN_MIZURIN_MITSUBISHI_JIKO_MAE", "company_id": "MIZURIN", "name": "三菱自工前" }
 ]
