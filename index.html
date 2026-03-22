@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.08.5D</title>
+<title>鉄道手帳 RAIL LOG V0.08.5E</title>
 
 <style>
 :root {
@@ -58,32 +58,32 @@ header {
 
 .header-band { flex: 1; height: 35px; background: var(--primary); }
 
-/* 🚩 V0.08.5D: 方向幕設定 */
+/* 🚩 V0.08.5E: 方向幕設定 */
 .destination-sign-frame {
     background: #fff;
-    border-radius: 25px; /* 🚩 圓角增加到 25px */
-    padding: 0; /* 🚩 清除 padding，改用 margin 精確控制內部距離 */
+    border-radius: 20px; /* 🚩 Req 5: 圓角改到 20px */
+    padding: 0;
     display: flex;
     justify-content: flex-start;
-    align-items: stretch; /* 拉伸內部高度以貼合 */
-    border: 5px solid #888; 
+    align-items: stretch;
+    border: 6px solid #888; /* 🚩 Req 1: 邊框加粗20% (原5px -> 6px) */
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
     max-width: 320px;
-    aspect-ratio: 4 / 1; 
-    overflow: hidden; /* 確保圓角不漏出 */
+    aspect-ratio: 3 / 1; /* 🚩 Req 1: 比例調整為 3:1 */
+    overflow: hidden; 
 }
 
-/* 🚩 V0.08.5D: 通勤快速排版 */
+/* 🚩 V0.08.5E: 通勤快速排版 */
 .sign-type-box {
-    margin: 3px 0 3px 3px; /* 🚩 邊框與方向幕邊框只留 3px */
+    margin: 3px 0 3px 3px; 
     border: 1px solid #ff3b30;
-    border-top: 5px solid #ff3b30; /* 🚩 上下邊加粗 5px */
+    border-top: 5px solid #ff3b30; 
     border-bottom: 5px solid #ff3b30;
     color: #ff3b30;
     border-radius: 4px;
-    padding: 0 4px; /* 輕微左右留白 */
-    font-size: clamp(10px, 3.5vw, 14px); 
+    padding: 0 5px; /* 🚩 Req 4: 左右與字隔開 5px */
+    font-size: clamp(11px, 4vw, 16px); 
     font-weight: 900;
     line-height: 1.1;
     display: flex;
@@ -96,35 +96,40 @@ header {
 .sign-type-text-1 { text-align: left; }
 .sign-type-text-2 { text-indent: 1em; } 
 
-/* 右側深藍色大字與小英文 */
+/* 🚩 V0.08.5E: 右側深藍色大字與小英文精確定位 */
 .sign-main-content {
-    margin: 1px 10px 1px 10px; /* 🚩 距離紅框/右框 10px，距離頂部/底部 1px */
+    margin: 2px 5px 2px 5px; /* 🚩 Req 2: 頂部2px, 右側5px, 底部2px, 左側與紅框5px */
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 🚩 中軸對齊 */
-    justify-content: space-between; /* 上下貼邊 */
+    align-items: center; 
+    justify-content: center; 
     color: #001f5c; 
     flex: 1; 
 }
 
 .sign-destination-text {
-    font-size: clamp(18px, 6vw, 26px); 
+    font-size: clamp(22px, 7.5vw, 40px); /* 因應3:1變高而加大字體 */
     font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.15em; /* 調整字距 */
-    margin-top: 0; /* 貼緊父元素嘅 1px top margin */
+    letter-spacing: 0.1em; /* 調整字距 */
+    margin: 0; 
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* 佔據主體空間 */
 }
 
 .sign-english-text {
-    font-size: clamp(8px, 2.5vw, 12px);
-    width: 70%; /* 🚩 維持於鉄道手帳以內，不超過頭尾一半 */
-    margin-bottom: 0; /* 貼緊父元素嘅 1px bottom margin */
+    font-size: clamp(9px, 3vw, 13px);
+    width: 70%; 
+    margin-top: 2px; /* 🚩 Req 2: 與「鉄道手帳」距離 2px */
+    margin-bottom: 0; /* 底部由父元素 2px margin 控制 */
     line-height: 1;
-    text-align-last: center; /* 置中對齊 */
+    text-align-last: center; 
     font-weight: 700;
-    letter-spacing: 0.25em; /* 調整字距填滿 */
+    letter-spacing: 0.28em; /* 調整英文闊度字距 */
 }
 
 .toast-message {
@@ -211,7 +216,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .btn-delete { background: var(--danger); color: white; border: none; }
 .btn-small { width: auto; padding: 6px 12px; font-size: 13px; border-radius: 4px; margin-top: 8px; margin-right: 6px; background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); }
 
-/* 🚩 V0.08.5D: 日期控制列美化 (Segmented Control + Stepper) */
+/* 日期控制列美化 (Segmented Control + Stepper) */
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
 .date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
 .date-mode-tabs button {
@@ -285,7 +290,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.08.5D</div>
+<div class="version-badge">V0.08.5E</div>
 
 <div class="container">
 
@@ -646,7 +651,6 @@ function changeDay(delta) {
 function render() {
     trips.sort((a, b) => new Date(b.date) - new Date(a.date));
     
-    // 🚩 V0.08.5D: 更新 Segmented Control 樣式
     document.getElementById('btnFilterAll').className = currentDateFilter === 'all' ? 'active' : '';
     document.getElementById('btnFilterToday').className = currentDateFilter === getTodayStr() ? 'active' : '';
     
@@ -845,7 +849,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.08.5D.json"; a.click();
+    a.download = "rail-log-V0.08.5E.json"; a.click();
 }
 
 function importData() {
