@@ -3,13 +3,13 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Rail Log V0.07.1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Rail Log V0.08</title>
 
 <style>
 /* 日系 / iOS 風格 CSS */
 :root {
-    --bg: #f5f5f7;
+    --bg: #f2f2f7;
     --card: #ffffff;
     --text: #1d1d1f;
     --subtext: #86868b;
@@ -17,7 +17,8 @@
     --primary: #007aff;
     --success: #34c759;
     --danger: #ff3b30;
-    --tag-bg: #f0f0f5;
+    --tag-bg: #e5e5ea;
+    --nav-bg: rgba(255, 255, 255, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +29,7 @@
         --subtext: #98989d;
         --border: #38383a;
         --tag-bg: #2c2c2e;
+        --nav-bg: rgba(28, 28, 30, 0.85);
     }
 }
 
@@ -38,7 +40,8 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
     background: var(--bg);
     color: var(--text);
-    padding-bottom: 40px;
+    /* 預留底部 Nav Bar 空間 */
+    padding-bottom: 90px; 
 }
 
 header {
@@ -52,7 +55,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
 .container {
@@ -68,6 +70,43 @@ header {
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
+
+/* 分頁控制 */
+.tab-content { display: none; animation: fadeIn 0.3s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* 底部導航列 */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); /* 適配 iPhone 底部橫條 */
+    z-index: 1000;
+}
+
+.nav-item {
+    text-align: center;
+    color: var(--subtext);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-item.active { color: var(--primary); }
+.nav-icon { font-size: 22px; }
 
 h3 {
     margin-top: 0;
@@ -99,9 +138,7 @@ input, select {
     color: var(--text);
     appearance: none;
     outline: none;
-    transition: border 0.2s;
 }
-
 input:focus { border-color: var(--primary); }
 
 button {
@@ -115,9 +152,7 @@ button {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: opacity 0.2s;
 }
-
 button:active { opacity: 0.7; }
 
 .btn-add { background: var(--success); }
@@ -129,23 +164,13 @@ button:active { opacity: 0.7; }
     border-radius: 8px;
     margin-top: 8px;
     margin-right: 6px;
-    background: var(--border);
+    background: var(--tag-bg);
     color: var(--text);
 }
 
-.trip {
-    border-bottom: 1px solid var(--border);
-    padding: 16px 0;
-}
+.trip { border-bottom: 1px solid var(--border); padding: 16px 0; }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
-
-.trip-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
+.trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .date { font-size: 13px; color: var(--primary); font-weight: 500; }
 .route { font-weight: 600; font-size: 16px; margin-bottom: 4px;}
 .trip-detail { font-size: 14px; color: var(--subtext); line-height: 1.5; }
@@ -157,15 +182,7 @@ button:active { opacity: 0.7; }
     margin-top: 10px;
 }
 
-/* 標籤 (Tags) 樣式 */
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-    margin-bottom: 16px;
-}
-
+.tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; margin-bottom: 16px; }
 .tag {
     background: var(--tag-bg);
     color: var(--text);
@@ -173,96 +190,102 @@ button:active { opacity: 0.7; }
     border-radius: 16px;
     font-size: 13px;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
 }
-
-.tag.active {
-    background: var(--primary);
-    color: white;
-}
-
-.stat-group {
-    margin-bottom: 20px;
-}
-.stat-group-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--subtext);
-    margin-bottom: 8px;
-}
-
-.completion-rate {
-    font-size: 13px;
-    color: var(--success);
-    margin-left: 8px;
-    font-weight: 500;
-}
+.tag.active { background: var(--primary); color: white; }
+.stat-group { margin-bottom: 20px; }
+.stat-group-title { font-size: 14px; font-weight: 600; color: var(--subtext); margin-bottom: 8px; }
+.completion-rate { font-size: 13px; color: var(--success); margin-left: 8px; font-weight: 500; }
 </style>
-
 </head>
 
 <body>
 
-<header>🚆 Rail Log V0.07.1</header>
+<header>🚆 Rail Log V0.08</header>
 
 <div class="container">
 
-<div class="card">
-    <h3>新增乘車</h3>
-    <label>日期</label>
-    <input type="date" id="date">
+    <div id="tab-add" class="tab-content active">
+        <div class="card">
+            <h3>新增乘車</h3>
+            <label>日期</label>
+            <input type="date" id="date">
 
-    <label>鉄道公司</label>
-    <input id="company" list="companyList" placeholder="選擇或輸入公司">
+            <label>鉄道公司</label>
+            <input id="company" list="companyList" placeholder="選擇或輸入公司">
 
-    <label>路線</label>
-    <input id="line" list="lineList" placeholder="選擇或輸入路線">
+            <label>路線</label>
+            <input id="line" list="lineList" placeholder="選擇或輸入路線">
 
-    <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
-    <div id="throughContainer"></div>
+            <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
+            <div id="throughContainer"></div>
 
-    <label>車型</label>
-    <input id="train" list="trainList" placeholder="例如：321系">
+            <label>車型</label>
+            <input id="train" list="trainList" placeholder="例如：321系">
 
-    <label>上車站</label>
-    <input id="from" list="stationList" placeholder="出發站">
+            <label>上車站</label>
+            <input id="from" list="stationList" placeholder="出發站">
 
-    <label>下車站</label>
-    <input id="to" list="stationList" placeholder="到達站">
+            <label>下車站</label>
+            <input id="to" list="stationList" placeholder="到達站">
 
-    <button onclick="saveTrip()">儲存記錄</button>
-</div>
-
-<div class="card">
-    <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0;">
-        乘車記錄 (<span id="totalCount">0</span>)
-    </h3>
-    <div id="yearFilterContainer" class="tags-container" style="margin-bottom: 16px;"></div>
-    
-    <div id="tripList"></div>
-</div>
-
-<div class="card">
-    <h3>統計與完成率</h3>
-    <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司以篩選下方資料，再次點擊取消篩選。</p>
-    
-    <div class="stat-group">
-        <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
-        <div id="filterCompanies" class="tags-container"></div>
+            <button onclick="saveTrip()">儲存記錄</button>
+        </div>
     </div>
 
-    <div id="filteredStatsContainer">
+    <div id="tab-history" class="tab-content">
+        <div class="card">
+            <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0;">
+                乘車記錄 (<span id="totalCount">0</span>)
+            </h3>
+            <div id="yearFilterContainer" class="tags-container" style="margin-bottom: 16px;"></div>
+            <div id="tripList"></div>
         </div>
+    </div>
+
+    <div id="tab-stats" class="tab-content">
+        <div class="card">
+            <h3>統計與完成率</h3>
+            <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司以篩選下方資料。</p>
+            
+            <div class="stat-group">
+                <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
+                <div id="filterCompanies" class="tags-container"></div>
+            </div>
+
+            <div id="filteredStatsContainer"></div>
+        </div>
+    </div>
+
+    <div id="tab-settings" class="tab-content">
+        <div class="card">
+            <h3>資料管理</h3>
+            <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。</p>
+            <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
+            <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
+            <button class="btn-small" onclick="importData()">匯入資料</button>
+        </div>
+    </div>
+
 </div>
 
-<div class="card">
-    <h3>資料管理</h3>
-    <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
-    <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
-    <button class="btn-small" onclick="importData()">匯入資料</button>
-</div>
-
-</div>
+<nav class="bottom-nav">
+    <div class="nav-item active" onclick="switchTab('tab-add', this)">
+        <span class="nav-icon">📝</span>
+        <span>新增</span>
+    </div>
+    <div class="nav-item" onclick="switchTab('tab-history', this)">
+        <span class="nav-icon">🚆</span>
+        <span>記錄</span>
+    </div>
+    <div class="nav-item" onclick="switchTab('tab-stats', this)">
+        <span class="nav-icon">📊</span>
+        <span>統計</span>
+    </div>
+    <div class="nav-item" onclick="switchTab('tab-settings', this)">
+        <span class="nav-icon">⚙️</span>
+        <span>管理</span>
+    </div>
+</nav>
 
 <datalist id="companyList"></datalist>
 <datalist id="lineList"></datalist>
@@ -273,8 +296,8 @@ button:active { opacity: 0.7; }
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
 let editIndex = null;
 let lastTo = "";
-let selectedCompanyFilter = null; // 用於統計篩選
-let selectedYearFilter = "all";   // 用於記錄年份篩選
+let selectedCompanyFilter = null;
+let selectedYearFilter = "all";
 
 let db = { companies: [], lines: [], stations: [], trains: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
@@ -296,7 +319,7 @@ async function loadData() {
             db.trains = await trainRes.json();
         }
     } catch (e) {
-        console.log("外部資料庫載入失敗，將使用純文字模式。");
+        console.log("資料庫載入失敗，將使用純文字模式。");
     } finally {
         buildMaps();
         initUILists();
@@ -307,6 +330,7 @@ async function loadData() {
 function buildMaps() {
     db.companies.forEach(c => { maps.company[c.id] = c; resolve.company[c.name] = c.id; });
     db.lines.forEach(l => { maps.line[l.id] = l; });
+    
     db.stations.forEach(s => {
         maps.station[s.id] = s;
         let compName = maps.company[s.company_id]?.name || "";
@@ -314,22 +338,36 @@ function buildMaps() {
         resolve.station[display] = s.id;
         s._display = display;
     });
+
+    let expandedTrains = [];
     db.trains.forEach(t => {
-        maps.train[t.id] = t;
         let compName = maps.company[t.company_id]?.name || "";
-        let display = compName ? `${t.name} (${compName})` : t.name;
-        resolve.train[display] = t.id;
-        t._display = display;
+        if (t.variants && t.variants.length > 0) {
+            t.variants.forEach(v => {
+                let fullName = `${t.name}${v}`;
+                let display = compName ? `${fullName} (${compName})` : fullName;
+                let virtualId = `${t.id}:${v}`;
+                let newEntry = { ...t, _display: display, name: fullName, id: virtualId };
+                expandedTrains.push(newEntry);
+                maps.train[virtualId] = newEntry;
+                resolve.train[display] = virtualId;
+            });
+        } else {
+            let display = compName ? `${t.name} (${compName})` : t.name;
+            t._display = display;
+            expandedTrains.push(t);
+            maps.train[t.id] = t;
+            resolve.train[display] = t.id;
+        }
     });
+    db.trains = expandedTrains;
 }
 
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
-    fillList("stationList", db.stations.map(s => s._display));
-    
-    // 初始化時顯示全部路線同車型
     fillList("lineList", db.lines.map(l => l.name));
     fillList("trainList", db.trains.map(t => t._display));
+    fillList("stationList", db.stations.map(s => s._display));
 }
 
 function fillList(listId, dataArray) {
@@ -339,19 +377,31 @@ function fillList(listId, dataArray) {
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
 }
 
-// 監聽公司輸入，聯動篩選路線與車型
-document.getElementById("company").addEventListener("input", (e) => {
-    updateLineList(e.target.value, "lineList");
-    updateTrainList(e.target.value, "trainList");
+// 分頁切換功能
+function switchTab(tabId, navElement) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    
+    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+    navElement.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// V0.08: 聯動篩選 - 公司及路線更新時，自動篩選車站
+document.getElementById("company").addEventListener("input", () => {
+    let compName = document.getElementById("company").value;
+    updateLineList(compName, "lineList");
+    updateTrainList(compName, "trainList");
+    updateStationList();
 });
+
+document.getElementById("line").addEventListener("input", updateStationList);
 
 function updateLineList(compName, targetListId) {
     const compId = resolve.company[compName];
     const list = document.getElementById(targetListId);
     if(!list) return;
     list.innerHTML = "";
-    
-    // 如果有選公司，只顯示該公司路線；如果無/清空，顯示全部
     let linesToShow = compId ? db.lines.filter(l => l.company_id === compId) : db.lines;
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
 }
@@ -361,10 +411,41 @@ function updateTrainList(compName, targetListId) {
     const list = document.getElementById(targetListId);
     if(!list) return;
     list.innerHTML = "";
-    
-    // 如果有選公司，只顯示該公司車型；如果無/清空，顯示全部
     let trainsToShow = compId ? db.trains.filter(t => t.company_id === compId) : db.trains;
     trainsToShow.forEach(t => list.appendChild(new Option(t._display)));
+}
+
+// 根據所選公司/路線智能過濾車站
+function updateStationList() {
+    const compInput = document.getElementById("company").value;
+    const lineInput = document.getElementById("line").value;
+    const compId = resolve.company[compInput];
+    
+    // 搵出路線 ID (如果填咗)
+    let lineId = null;
+    if (compId && lineInput) {
+        let matchedLine = db.lines.find(l => l.company_id === compId && l.name === lineInput);
+        if (matchedLine) lineId = matchedLine.id;
+    }
+
+    const list = document.getElementById("stationList");
+    list.innerHTML = "";
+
+    let stationsToShow = db.stations;
+    
+    // 1. 先用公司過濾
+    if (compId) {
+        stationsToShow = stationsToShow.filter(s => s.company_id === compId);
+    }
+    
+    // 2. 如果 JSON 裏面的車站有標明 line_id，再精細過濾 (兼容性寫法)
+    if (lineId && stationsToShow.some(s => s.line_id || s.lines)) {
+        stationsToShow = stationsToShow.filter(s => 
+            s.line_id === lineId || (s.lines && s.lines.includes(lineId))
+        );
+    }
+
+    stationsToShow.forEach(s => list.appendChild(new Option(s._display)));
 }
 
 function addThrough() {
@@ -377,7 +458,7 @@ function addThrough() {
         <datalist id="${uniqueId}"></datalist>
         <label>直通路線</label>
         <input class="throughLine" list="${uniqueId}">
-        <button class="btn-small btn-delete" onclick="this.parentElement.remove()">移除</button>
+        <button class="btn-small btn-delete" style="color:white;" onclick="this.parentElement.remove()">移除</button>
     `;
     document.getElementById("throughContainer").appendChild(div);
 }
@@ -385,7 +466,6 @@ function addThrough() {
 // 2. 儲存記錄
 function saveTrip() {
     let getVal = (id) => document.getElementById(id).value;
-    
     let mainCompInput = getVal("company");
     let mainCompId = resolve.company[mainCompInput] || mainCompInput;
     let mainLineInput = getVal("line");
@@ -409,26 +489,24 @@ function saveTrip() {
         to_id: resolve.station[getVal("to")] || getVal("to")
     };
 
-    if (editIndex !== null) {
-        trips[editIndex] = trip;
-        editIndex = null;
-    } else {
-        trips.push(trip);
-    }
+    if (editIndex !== null) { trips[editIndex] = trip; editIndex = null; } 
+    else { trips.push(trip); }
 
     localStorage.setItem("railTrips_V2", JSON.stringify(trips));
     lastTo = trip.to_id;
 
-    // 清空表單，並重置聯動清單
     ["company", "line", "train", "to"].forEach(id => document.getElementById(id).value = "");
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
     
-    // 儲存後重置下拉清單為顯示全部
     updateLineList("", "lineList");
     updateTrainList("", "trainList");
+    updateStationList(); // 重置車站名單
 
     render();
+    
+    // 儲存後自動跳去「記錄」頁面
+    switchTab('tab-history', document.querySelectorAll('.nav-item')[1]);
 }
 
 function getCompName(id) { return maps.company[id]?.name || id; }
@@ -436,21 +514,18 @@ function getLineName(id) { return maps.line[id]?.name || id; }
 function getStationName(id) { return maps.station[id]?.name || id; }
 function getTrainName(id) { return maps.train[id]?.name || id; }
 
-// 3. 顯示記錄 (加入年份篩選與新舊排序)
+// 3. 顯示記錄
 function render() {
     const listDiv = document.getElementById("tripList");
     const yearFilterDiv = document.getElementById("yearFilterContainer");
-    listDiv.innerHTML = "";
-    yearFilterDiv.innerHTML = "";
+    listDiv.innerHTML = ""; yearFilterDiv.innerHTML = "";
 
-    // 每次渲染前，確保記錄由新至舊排序 (降序)
+    // 自動按日期由新至舊排序 (V0.08 確保每次渲染都排好)
     trips.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // 擷取所有記錄包含的年份，並排序
     let years = new Set(trips.map(t => t.date.split("-")[0]));
-    let yearArray = Array.from(years).sort((a, b) => b - a); // 年份由新至舊
+    let yearArray = Array.from(years).sort((a, b) => b - a);
 
-    // 建立 All Time 同年份按鈕
     if (yearArray.length > 0) {
         const allBtn = document.createElement("span");
         allBtn.className = `tag ${selectedYearFilter === "all" ? "active" : ""}`;
@@ -467,14 +542,11 @@ function render() {
         });
     }
 
-    // 根據年份過濾要顯示嘅記錄
     let tripsToDisplay = trips.filter(t => selectedYearFilter === "all" || t.date.startsWith(selectedYearFilter));
     document.getElementById("totalCount").innerText = tripsToDisplay.length;
 
     tripsToDisplay.forEach((t) => {
-        // 因為 trips 已經重新排序/過濾，要搵返真實嘅 Index 畀編輯/刪除功能
         let originalIndex = trips.indexOf(t);
-        
         const div = document.createElement("div");
         div.className = "trip";
         const routeText = t.routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(" → ");
@@ -499,12 +571,11 @@ function render() {
     renderStats();
 }
 
-// 4. 統計與完成率 (加入總數顯示)
+// 4. 統計與完成率
 function renderStats() {
     let allCompanies = new Set();
     trips.forEach(t => t.routes.forEach(r => allCompanies.add(r.company_id)));
 
-    // 更新公司標題總數
     let activeCompCount = selectedCompanyFilter ? 1 : allCompanies.size;
     document.getElementById("companyStatTitle").innerText = `鉄道公司 (${activeCompCount} 間)`;
 
@@ -524,18 +595,13 @@ function renderStats() {
 
     let filteredTrips = trips;
     let targetCompanyId = selectedCompanyFilter;
-
     let lSet = new Set(), tSet = new Set(), sSet = new Set();
     
     filteredTrips.forEach(t => {
         let isMatch = !targetCompanyId || t.routes.some(r => r.company_id === targetCompanyId);
         if (isMatch) {
-            t.routes.forEach(r => {
-                if(!targetCompanyId || r.company_id === targetCompanyId) lSet.add(r.line_id);
-            });
-            tSet.add(t.train_id);
-            sSet.add(t.from_id);
-            sSet.add(t.to_id);
+            t.routes.forEach(r => { if(!targetCompanyId || r.company_id === targetCompanyId) lSet.add(r.line_id); });
+            tSet.add(t.train_id); sSet.add(t.from_id); sSet.add(t.to_id);
         }
     });
 
@@ -548,7 +614,6 @@ function renderStats() {
         }
     }
 
-    // 將集合大小 (size) 放回標題中
     const statsHTML = `
         <div class="stat-group">
             <div class="stat-group-title">已乘搭路線 (${lSet.size} 條) ${completionText}</div>
@@ -575,11 +640,12 @@ function editTrip(i) {
     let firstRouteCompName = maps.company[t.routes[0].company_id]?.name || t.routes[0].company_id;
     setVal("company", firstRouteCompName);
     
-    // 編輯時聯動更新路線同車型列表
     updateLineList(firstRouteCompName, "lineList");
     updateTrainList(firstRouteCompName, "trainList");
     
     setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
+    updateStationList(); // 更新車站名單
+
     setVal("train", maps.train[t.train_id]?._display || t.train_id);
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
@@ -597,7 +663,7 @@ function editTrip(i) {
     });
 
     editIndex = i;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    switchTab('tab-add', document.querySelectorAll('.nav-item')[0]); // 跳返去新增頁面編輯
 }
 
 function deleteTrip(i) {
@@ -609,12 +675,10 @@ function deleteTrip(i) {
 }
 
 function exportData() {
-    // 匯出前將記錄按日期由舊至新排序（如果你想匯出的檔案保持時序順向）
-    // 或者可以直接輸出目前狀態
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.07.1.json";
+    a.download = "rail-log-V0.08.json";
     a.click();
 }
 

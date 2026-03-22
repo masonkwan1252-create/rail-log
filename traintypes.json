@@ -196,5 +196,9 @@
   { "id": "TRN_NANKAI_12000", "company_id": "NANKAI", "name": "12000系", "variants": [] },
   { "id": "TRN_NANKAI_30000", "company_id": "NANKAI", "name": "30000系", "variants": [] },
   { "id": "TRN_NANKAI_31000", "company_id": "NANKAI", "name": "31000系", "variants": [] },
-  { "id": "TRN_NANKAI_50000", "company_id": "NANKAI", "name": "50000系", "variants": [] }
+  { "id": "TRN_NANKAI_50000", "company_id": "NANKAI", "name": "50000系", "variants": [] },
+  { "id": "TRN_EIZANDENSHA_700", "company_id": "EIZANDENSHA", "name": "700系", "variants": ["ひえい"] },
+  { "id": "TRN_EIZANDENSHA_800", "company_id": "EIZANDENSHA", "name": "800系", "variants": [] },
+  { "id": "TRN_EIZANDENSHA_900", "company_id": "EIZANDENSHA", "name": "900系", "variants": [] },
+  { "id": "TRN_EIZANDENSHA_100", "company_id": "EIZANDENSHA", "name": "100系", "variants": [] }
 ]
