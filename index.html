@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.08.5G</title>
+<title>鉄道手帳 RAIL LOG V0.09</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
@@ -34,6 +34,13 @@
         --tag-bg: #2c2c2e;
         --nav-bg: rgba(28, 28, 30, 0.85);
     }
+    
+    /* 🚩 V0.09: Dark Mode 下清除篩選按鈕轉為山手線綠色 */
+    .btn-clear-stats {
+        background: var(--primary) !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -46,67 +53,56 @@ body {
     padding-bottom: 100px; 
 }
 
-/* HEADER 重新設計 */
+/* HEADER: 整體按比例縮小 */
 header {
     background: linear-gradient(135deg, #ddd 0%, #aaa 100%); 
-    /* 🚩 壓縮整體高度：上下 padding 各減少 5px，總高度壓低 10px */
-    padding: calc(env(safe-area-inset-top) + 10px) 0 10px 0; 
+    padding: calc(env(safe-area-inset-top) + 12px) 0 12px 0; 
     border-bottom: 2px solid #aaa;
     position: sticky; top: 0; z-index: 100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     display: flex; justify-content: center; align-items: center;
-    gap: 20px; 
+    gap: 16px; 
     overflow: hidden;
 }
 
-.header-band { flex: 1; height: 40px; background: var(--primary); }
+.header-band { flex: 1; height: 32px; background: var(--primary); }
 
 .destination-sign-frame {
     background: #fff;
-    border-radius: 22px; 
+    border-radius: 18px; /* 縮小 20% */
     padding: 0; 
     display: flex;
     justify-content: flex-start;
     align-items: stretch; 
-    border: 6px solid #888; 
+    border: 5px solid #888; /* 縮小 20% */
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
-    /* 🚩 max-width 由 320px 縮減至 290px，配合 3:1 比例，完美令實體高度下降約 10px */
-    max-width: 290px;
+    max-width: 256px; /* 🚩 整體縮小 20% (320px * 0.8) */
     aspect-ratio: 3 / 1; 
     overflow: hidden; 
 }
 
-/* 🚩 V0.08.5G: 紅框調整 */
+/* 🚩 V0.09: 沿用 F 版本排版，距離左邊緣精準 5px */
 .sign-type-box {
-    /* 🚩 整個向右移 5px (margin-left: 5px -> 10px) */
-    margin: 2px 0 2px 10px; 
-    border: 1.25px solid #ff3b30; 
-    border-top: 6.25px solid #ff3b30; 
-    border-bottom: 6.25px solid #ff3b30; 
+    margin: 2px 0 2px 5px; 
+    border: 1px solid #ff3b30; 
+    border-top: 5px solid #ff3b30; 
+    border-bottom: 5px solid #ff3b30; 
     color: #ff3b30;
     border-radius: 4px;
-    
-    /* 🚩 與紅框4邊都只距 2px */
-    padding: 2px; 
-    
-    /* 🚩 收窄 5px：以固定寬度比例控制，大幅縮窄 */
-    width: 22%; 
-    
+    padding: 2px 20px; /* 縮小 20% */
+    font-size: clamp(9px, 3vw, 12px); 
+    font-weight: 900;
+    line-height: 1.1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 上下行字撐到最頂底 */
+    justify-content: center;
     font-style: italic; 
     flex-shrink: 0;
 }
 
-.sign-type-text-row {
-    display: flex;
-    justify-content: space-between; /* 左右字撐到最貼邊 */
-    font-size: clamp(14px, 4.5vw, 22px); /* 放大字體填滿空間 */
-    font-weight: 900;
-    line-height: 1;
-}
+.sign-type-text-1 { text-align: left; }
+.sign-type-text-2 { text-indent: 1em; } 
 
 .sign-main-content {
     margin: 2px 5px 2px 5px; 
@@ -121,7 +117,7 @@ header {
 }
 
 .sign-destination-text {
-    font-size: clamp(18px, 6vw, 26px); /* 稍微調細以適應壓縮後嘅高度 */
+    font-size: clamp(16px, 5.2vw, 22px); /* 配合縮小調整字體 */
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.3em; 
@@ -130,7 +126,7 @@ header {
 }
 
 .sign-english-text {
-    font-size: clamp(8px, 2.5vw, 12px); 
+    font-size: clamp(7px, 2.4vw, 10px); 
     width: 80%; 
     margin: 0; 
     line-height: 1;
@@ -140,7 +136,7 @@ header {
 }
 
 .toast-message {
-    display: none; position: fixed; top: calc(85px + env(safe-area-inset-top)); 
+    display: none; position: fixed; top: calc(75px + env(safe-area-inset-top)); 
     left: 50%; transform: translateX(-50%); background: var(--success); color: white;
     padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600;
     z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: fadeInOut 2.5s ease; 
@@ -194,18 +190,17 @@ h3 {
     justify-content: space-between; align-items: center; color: var(--primary); 
 }
 
-/* 🚩 V0.08.5G: 橙色 LED 點陣顯示器 */
 .led-counter {
-    font-family: 'DotGothic16', monospace; /* 8x8 點陣字型 */
+    font-family: 'DotGothic16', monospace; 
     background-color: #111;
-    color: #ff9500; /* 亮橙色 */
+    color: #ff9500; 
     padding: 2px 8px;
     border-radius: 4px;
     font-size: 1.2em;
-    font-weight: normal; /* 點陣字型唔需要粗體 */
-    text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); /* 發光效果 */
+    font-weight: normal; 
+    text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); 
     border: 2px solid #222;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,1); /* 螢幕內凹感 */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,1); 
     margin-left: 6px;
     display: inline-block;
     line-height: 1;
@@ -221,11 +216,15 @@ input, select {
 }
 input:focus { border-color: var(--primary); }
 
+/* 🚩 V0.09: 所有輸入框都有清空小交叉 */
 .input-wrapper { position: relative; display: flex; align-items: center; }
+.input-wrapper input { padding-right: 35px; } /* 預留空間比交叉 */
 .clear-input-btn {
-    position: absolute; right: 10px; background: none; border: none; font-size: 18px;
-    color: var(--subtext); padding: 5px; margin: 0; width: auto; cursor: pointer;
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; font-size: 16px; color: #bbb;
+    padding: 6px; margin: 0; width: auto; cursor: pointer; z-index: 10;
 }
+.clear-input-btn:active { color: var(--text); }
 
 button {
     width: 100%; padding: 14px; font-size: 16px; font-weight: 600; margin-top: 16px;
@@ -239,6 +238,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .btn-add { background: var(--success); color: white; border: none; }
 .btn-delete { background: var(--danger); color: white; border: none; }
 .btn-small { width: auto; padding: 6px 12px; font-size: 13px; border-radius: 4px; margin-top: 8px; margin-right: 6px; background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); }
+.btn-clear-stats { width:100%; text-align:center; background:#fff; color:var(--text); }
 
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
 .date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
@@ -275,12 +275,12 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .cal-day.has-record { background: var(--primary); color: white; font-weight: bold; }
 .cal-day.selected { border: 2px solid var(--text); }
 
-.trip { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.trip { border-bottom: 1px solid var(--border); padding: 12px 0; }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
-.trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.date { font-size: 13px; color: var(--primary); font-weight: 500; }
-.route { font-weight: 600; font-size: 16px; margin-bottom: 4px;}
-.trip-detail { font-size: 14px; color: var(--subtext); line-height: 1.5; }
+.trip-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+.date { font-size: 12px; color: var(--primary); font-weight: 600; }
+.route { font-weight: 600; font-size: 15px; margin-bottom: 4px;}
+.trip-detail { font-size: 13px; color: var(--subtext); display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
 
 .through-block { background: var(--tag-bg); padding: 12px; border-radius: 4px; margin-top: 10px; border: 1px solid var(--border); }
 
@@ -300,8 +300,8 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     <div class="header-band"></div>
     <div class="destination-sign-frame">
         <div class="sign-type-box">
-            <div class="sign-type-text-row"><span>通</span><span>勤</span></div>
-            <div class="sign-type-text-row"><span>快</span><span>速</span></div>
+            <div class="sign-type-text-1">通勤</div>
+            <div class="sign-type-text-2">快速</div>
         </div>
         <div class="sign-main-content">
             <div class="sign-destination-text">鉄道手帳</div>
@@ -312,7 +312,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.08.5G</div>
+<div class="version-badge">V0.09</div>
 
 <div class="container">
 
@@ -323,28 +323,43 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             <input type="date" id="date">
 
             <label>鉄道公司</label>
-            <input id="company" list="companyList" placeholder="選擇或輸入公司">
+            <div class="input-wrapper">
+                <input id="company" list="companyList" placeholder="選擇或輸入公司">
+                <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
+            </div>
 
             <label>路線 (實體路線)</label>
-            <input id="line" list="lineList" placeholder="選擇或輸入路線">
+            <div class="input-wrapper">
+                <input id="line" list="lineList" placeholder="選擇或輸入路線">
+                <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
+            </div>
 
             <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
             <div id="throughContainer"></div>
 
             <label>種別 / 列車名 (運行系統)</label>
-            <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速">
+            <div class="input-wrapper">
+                <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速">
+                <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
+            </div>
 
             <label>車型</label>
-            <input id="train" list="trainList" placeholder="例如：321系">
+            <div class="input-wrapper">
+                <input id="train" list="trainList" placeholder="例如：321系">
+                <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
+            </div>
 
             <label>上車站</label>
             <div class="input-wrapper">
                 <input id="from" list="stationListFrom" placeholder="出發站">
-                <button class="clear-input-btn" onclick="document.getElementById('from').value='';">✕</button>
+                <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
             </div>
 
             <label>下車站</label>
-            <input id="to" list="stationListTo" placeholder="到達站">
+            <div class="input-wrapper">
+                <input id="to" list="stationListTo" placeholder="到達站">
+                <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
+            </div>
 
             <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
         </div>
@@ -461,6 +476,15 @@ let calViewDate = new Date();
 let activeStatFilter = { type: null, id: null };
 
 document.getElementById("date").valueAsDate = new Date();
+
+// 🚩 共用清理 Input 功能
+function clearInput(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.value = '';
+        el.dispatchEvent(new Event('input'));
+    }
+}
 
 async function loadData() {
     try {
@@ -602,18 +626,36 @@ function fillStationDatalist(listId, compId, lineInput) {
 }
 
 function addThrough() {
+    // 🚩 自動獲取對上一次輸入的公司名稱
+    let lastCompName = document.getElementById("company").value;
+    const existingBlocks = document.querySelectorAll(".through-block");
+    if (existingBlocks.length > 0) {
+        const lastTC = existingBlocks[existingBlocks.length - 1].querySelector(".throughCompany").value;
+        if(lastTC) lastCompName = lastTC;
+    }
+
     const div = document.createElement("div");
     div.className = "through-block";
     const uniqueId = "throughLineList_" + Date.now();
+    
     div.innerHTML = `
         <label style="margin-top:0;">直通公司</label>
-        <input class="throughCompany" list="companyList" oninput="updateLineList(this.value, '${uniqueId}'); updateStationLists();">
+        <div class="input-wrapper">
+            <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); updateStationLists();" placeholder="直通公司">
+            <button class="clear-input-btn" onclick="this.previousElementSibling.value=''; this.previousElementSibling.dispatchEvent(new Event('input'));">✕</button>
+        </div>
         <datalist id="${uniqueId}"></datalist>
         <label>直通路線 (實體路線)</label>
-        <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()">
-        <button class="btn-small btn-delete" style="color:white;" onclick="this.parentElement.remove(); updateStationLists();">移除</button>
+        <div class="input-wrapper">
+            <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()" placeholder="直通路線">
+            <button class="clear-input-btn" onclick="this.previousElementSibling.value=''; this.previousElementSibling.dispatchEvent(new Event('input'));">✕</button>
+        </div>
+        <button class="btn-small btn-delete" style="color:white; margin-top:4px;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
     `;
     document.getElementById("throughContainer").appendChild(div);
+    
+    // 🚩 立即更新新直通路線的下拉名單
+    if(lastCompName) updateLineList(lastCompName, uniqueId);
     updateStationLists();
 }
 
@@ -702,29 +744,43 @@ function render() {
     listDiv.innerHTML = "";
 
     let tripsToDisplay = trips.filter(t => currentDateFilter === "all" || t.date === currentDateFilter);
-    
-    // 🚩 乘車記錄數字寫入 LED
     document.getElementById("totalCount").innerText = tripsToDisplay.length;
 
     tripsToDisplay.forEach((t) => {
         let originalIndex = trips.indexOf(t);
         const div = document.createElement("div"); div.className = "trip";
-        const routeText = t.routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(" → ");
         
-        const serviceHtml = t.serviceType ? `<span style="display:inline-block; background:var(--danger); color:white; padding:2px 6px; border-radius:4px; font-size:12px; margin-right:6px; font-weight:bold;">${t.serviceType}</span>` : '';
+        // 🚩 V0.09: 化繁為簡處理直通路線顯示
+        let routeTextArray = [];
+        let lastCompany = "";
+        t.routes.forEach((r) => {
+            let compName = getCompName(r.company_id);
+            let lineName = getLineName(r.line_id);
+            if (compName !== lastCompany) {
+                routeTextArray.push(`${compName} ${lineName}`);
+                lastCompany = compName;
+            } else {
+                routeTextArray.push(lineName); // 相同公司只顯示路線
+            }
+        });
+        const routeText = routeTextArray.join(" <span style='color:var(--border); font-size:12px; margin:0 2px;'>▶</span> ");
         
+        const serviceHtml = t.serviceType ? `<span style="display:inline-block; background:var(--danger); color:white; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:bold;">${t.serviceType}</span>` : '';
+        
+        // 🚩 V0.09: 極致慳位排版 + Icon
         div.innerHTML = `
             <div class="trip-header-row">
                 <div class="date">${t.date}</div>
-                <div>
-                    <button class="btn-small" onclick="editTrip(${originalIndex})">修改</button>
-                    <button class="btn-small btn-delete" onclick="deleteTrip(${originalIndex})">刪除</button>
+                <div style="display:flex; gap:16px;">
+                    <span style="cursor:pointer; font-size:15px; color:var(--subtext);" onclick="editTrip(${originalIndex})">✏️</span>
+                    <span style="cursor:pointer; font-size:15px; color:var(--danger);" onclick="deleteTrip(${originalIndex})">🗑️</span>
                 </div>
             </div>
             <div class="route">${routeText}</div>
-            <div class="trip-detail" style="margin-top:6px;">
-                ${serviceHtml} 🚆 ${getTrainName(t.train_id)}<br>
-                <div style="margin-top:4px;">🚉 ${getStationName(t.from_id)} → ${getStationName(t.to_id)}</div>
+            <div class="trip-detail">
+                ${serviceHtml} <span style="font-weight:600; color:var(--text);">${getTrainName(t.train_id)}</span>
+                <span style="color:var(--border);">|</span>
+                <span>🚉 ${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
             </div>
         `;
         listDiv.appendChild(div);
@@ -842,7 +898,7 @@ function renderStats() {
             <div class="stat-group-title">${titlePrefix}已造訪車站 (${sSet.size} 個)</div>
             <div class="tags-container">${Array.from(sSet).map(id => `<span class="tag">${getStationName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
-        ${activeStatFilter.type ? `<button class="btn-small" style="width:100%; text-align:center; background:#fff;" onclick="setStatFilter(null, null)">清除所有篩選</button>` : ''}
+        ${activeStatFilter.type ? `<button class="btn-small btn-clear-stats" onclick="setStatFilter(null, null)">清除所有篩選</button>` : ''}
     `;
 
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
@@ -891,7 +947,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.08.5G.json"; a.click();
+    a.download = "rail-log-V0.09.json"; a.click();
 }
 
 function importData() {
