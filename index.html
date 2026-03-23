@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.09</title>
+<title>鉄道手帳 RAIL LOG V0.10</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
@@ -78,7 +78,7 @@ header {
     border: 7px solid #888; /* 🚩 邊框加粗20% (原5px -> 6px) */
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
-    max-width: 250px;
+    max-width: 240px;
     aspect-ratio: 3 / 1; 
     overflow: hidden; 
 }
@@ -91,7 +91,7 @@ header {
     border-bottom: 6.25px solid #ff3b30; /* 🚩 下邊紅色框加粗25% (原5px -> 6.25px) */
     color: #ff3b30;
     border-radius: 4px;
-    padding: 0px 3px; /* 🚩 左右隔開25px, 上下邊距2px */
+    padding: 0px 3px; 
     font-size: clamp(16px, 3.5vw, 16px); 
     font-weight: 900;
     line-height: 1.1;
@@ -112,13 +112,13 @@ header {
     flex-direction: column;
     align-items: center; 
     justify-content: center; /* 使用 center 確保間距緊湊 */
-    gap: 3px; /* 🚩 兩行字之間距離2px */
+    gap: 3px; /* 🚩 兩行字之間距離3px */
     color: #001f5c; 
     flex: 1; 
 }
 
 .sign-destination-text {
-    font-size: clamp(20px, 6.5vw, 30px); /* 🚩 調整字闊，略為放大以填補空間 */
+    font-size: clamp(20px, 6.5vw, 28px); /* 🚩 調整字闊，略為放大以填補空間 */
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.3em; /* 🚩 加大字距令文字伸延 */
@@ -128,13 +128,14 @@ header {
 
 .sign-english-text {
     font-size: clamp(10px, 3vw, 16px); /* 🚩 調整字闊 */
-    width: 80%; 
+    width: 100%; 
     margin: 0; 
     line-height: 1;
     text-align-last: center; 
     font-weight: 700;
     letter-spacing: 0.35em; /* 🚩 調整字距填滿 */
 }
+
 
 .toast-message {
     display: none; position: fixed; top: calc(75px + env(safe-area-inset-top)); 
@@ -325,7 +326,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.09</div>
+<div class="version-badge">V0.10</div>
 
 <div class="container">
 
@@ -1059,7 +1060,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.09.json"; a.click();
+    a.download = "rail-log-V0.10.json"; a.click();
 }
 
 function importData() {
