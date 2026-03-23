@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.08.5E</title>
+<title>鉄道手帳 RAIL LOG V0.08.5F</title>
 
 <style>
 :root {
@@ -47,6 +47,7 @@ body {
 /* HEADER 重新設計 */
 header {
     background: linear-gradient(135deg, #ddd 0%, #aaa 100%); 
+    /* 🚩 保持 header 空白地方高度維持不變 */
     padding: calc(env(safe-area-inset-top) + 15px) 0 15px 0; 
     border-bottom: 2px solid #aaa;
     position: sticky; top: 0; z-index: 100;
@@ -56,33 +57,34 @@ header {
     overflow: hidden;
 }
 
-.header-band { flex: 1; height: 35px; background: var(--primary); }
+/* 🚩 左右山手線色帶加粗5px (由 35px 變 40px) */
+.header-band { flex: 1; height: 40px; background: var(--primary); }
 
-/* 🚩 V0.08.5E: 方向幕設定 */
 .destination-sign-frame {
     background: #fff;
-    border-radius: 22px; /* 🚩 圓角增改到 22px */
+    border-radius: 22px; 
     padding: 0; 
     display: flex;
     justify-content: flex-start;
     align-items: stretch; 
-    border: 6px solid #888; /* 🚩 邊框加粗20% (原5px -> 6px) */
+    border: 6px solid #888; 
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
     max-width: 320px;
-    aspect-ratio: 4 / 1; 
+    /* 🚩 方向幕比例改為 3:1 */
+    aspect-ratio: 3 / 1; 
     overflow: hidden; 
 }
 
-/* 🚩 V0.08.5E: 通勤快速排版 */
 .sign-type-box {
-    margin: 3px 0 3px 3px; 
-    border: 1.25px solid #ff3b30; /* 🚩 側邊紅色框加粗25% (原1px -> 1.25px) */
-    border-top: 6.25px solid #ff3b30; /* 🚩 上邊紅色框加粗25% (原5px -> 6.25px) */
-    border-bottom: 6.25px solid #ff3b30; /* 🚩 下邊紅色框加粗25% (原5px -> 6.25px) */
+    /* 🚩 紅框左邊邊線同方向幕邊框距離改為 5px，上下維持 2px */
+    margin: 2px 0 2px 5px; 
+    border: 1.25px solid #ff3b30; 
+    border-top: 6.25px solid #ff3b30; 
+    border-bottom: 6.25px solid #ff3b30; 
     color: #ff3b30;
     border-radius: 4px;
-    padding: 2px 15px; /* 🚩 左右隔開25px, 上下邊距2px */
+    padding: 2px 25px; 
     font-size: clamp(10px, 3.5vw, 14px); 
     font-weight: 900;
     line-height: 1.1;
@@ -96,36 +98,35 @@ header {
 .sign-type-text-1 { text-align: left; }
 .sign-type-text-2 { text-indent: 1em; } 
 
-/* 右側深藍色大字與小英文 */
 .sign-main-content {
-    margin: 2px 5px 2px 5px; /* 🚩 頂邊框2px, 右邊框5px, 底邊框2px, 左紅框5px */
+    margin: 2px 5px 2px 5px; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center; 
-    justify-content: center; /* 使用 center 確保間距緊湊 */
-    gap: 2px; /* 🚩 兩行字之間距離2px */
+    justify-content: center; 
+    gap: 2px; 
     color: #001f5c; 
     flex: 1; 
 }
 
 .sign-destination-text {
-    font-size: clamp(20px, 6.5vw, 28px); /* 🚩 調整字闊，略為放大以填補空間 */
+    font-size: clamp(20px, 6.5vw, 28px); 
     font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.3em; /* 🚩 加大字距令文字伸延 */
+    letter-spacing: 0.3em; 
     margin: 0; 
     width: 100%;
 }
 
 .sign-english-text {
-    font-size: clamp(9px, 3vw, 13px); /* 🚩 調整字闊 */
+    font-size: clamp(9px, 3vw, 13px); 
     width: 80%; 
     margin: 0; 
     line-height: 1;
     text-align-last: center; 
     font-weight: 700;
-    letter-spacing: 0.35em; /* 🚩 調整字距填滿 */
+    letter-spacing: 0.35em; 
 }
 
 .toast-message {
@@ -160,7 +161,6 @@ header {
 .tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-/* 底部導航列 */
 .bottom-nav {
     position: fixed; bottom: 0; left: 0; right: 0; background: var(--nav-bg);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -233,7 +233,6 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     flex: 1; text-align: center; font-weight: 600; color: var(--text); font-size: 15px; cursor: pointer;
 }
 
-/* 月曆 Modal */
 .calendar-modal {
     display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.5); z-index: 3000; justify-content: center; align-items: center;
@@ -285,7 +284,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.08.5E</div>
+<div class="version-badge">V0.08.5F</div>
 
 <div class="container">
 
@@ -298,11 +297,14 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             <label>鉄道公司</label>
             <input id="company" list="companyList" placeholder="選擇或輸入公司">
 
-            <label>路線</label>
+            <label>路線 (實體路線)</label>
             <input id="line" list="lineList" placeholder="選擇或輸入路線">
 
             <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
             <div id="throughContainer"></div>
+
+            <label>種別 / 列車名 (運行系統)</label>
+            <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速">
 
             <label>車型</label>
             <input id="train" list="trainList" placeholder="例如：321系">
@@ -407,6 +409,15 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 <datalist id="stationListFrom"></datalist>
 <datalist id="stationListTo"></datalist>
 <datalist id="trainList"></datalist>
+<datalist id="serviceTypeList">
+    <option value="普通"></option>
+    <option value="快速"></option>
+    <option value="新快速"></option>
+    <option value="関空快速"></option>
+    <option value="紀州路快速"></option>
+    <option value="大和路快速"></option>
+    <option value="特急"></option>
+</datalist>
 
 <script>
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
@@ -570,7 +581,7 @@ function addThrough() {
         <label style="margin-top:0;">直通公司</label>
         <input class="throughCompany" list="companyList" oninput="updateLineList(this.value, '${uniqueId}'); updateStationLists();">
         <datalist id="${uniqueId}"></datalist>
-        <label>直通路線</label>
+        <label>直通路線 (實體路線)</label>
         <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()">
         <button class="btn-small btn-delete" style="color:white;" onclick="this.parentElement.remove(); updateStationLists();">移除</button>
     `;
@@ -594,6 +605,7 @@ function saveTrip() {
 
     const trip = {
         date: getVal("date"),
+        serviceType: getVal("serviceType"), // 🚩 儲存種別/列車名
         routes: routes,
         train_id: resolve.train[getVal("train")] || getVal("train"),
         from_id: resolve.station[getVal("from")] || getVal("from"),
@@ -606,7 +618,8 @@ function saveTrip() {
     localStorage.setItem("railTrips_V2", JSON.stringify(trips));
     lastTo = trip.to_id;
 
-    ["company", "line", "train", "to"].forEach(id => document.getElementById(id).value = "");
+    // 清空輸入框
+    ["company", "line", "serviceType", "train", "to"].forEach(id => document.getElementById(id).value = "");
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
     
@@ -668,6 +681,10 @@ function render() {
         let originalIndex = trips.indexOf(t);
         const div = document.createElement("div"); div.className = "trip";
         const routeText = t.routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(" → ");
+        
+        // 🚩 喺記錄顯示運行系統名稱
+        const serviceHtml = t.serviceType ? `<span style="display:inline-block; background:var(--danger); color:white; padding:2px 6px; border-radius:4px; font-size:12px; margin-right:6px; font-weight:bold;">${t.serviceType}</span>` : '';
+        
         div.innerHTML = `
             <div class="trip-header-row">
                 <div class="date">${t.date}</div>
@@ -677,8 +694,9 @@ function render() {
                 </div>
             </div>
             <div class="route">${routeText}</div>
-            <div class="trip-detail">
-                🚆 ${getTrainName(t.train_id)}<br>🚉 ${getStationName(t.from_id)} → ${getStationName(t.to_id)}
+            <div class="trip-detail" style="margin-top:6px;">
+                ${serviceHtml} 🚆 ${getTrainName(t.train_id)}<br>
+                <div style="margin-top:4px;">🚉 ${getStationName(t.from_id)} → ${getStationName(t.to_id)}</div>
             </div>
         `;
         listDiv.appendChild(div);
@@ -827,6 +845,10 @@ function editTrip(i) {
     });
 
     updateStationLists(); 
+    
+    // 🚩 修改時載入種別
+    setVal("serviceType", t.serviceType); 
+    
     setVal("train", maps.train[t.train_id]?._display || t.train_id);
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
@@ -844,7 +866,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.08.5E.json"; a.click();
+    a.download = "rail-log-V0.08.5F.json"; a.click();
 }
 
 function importData() {
