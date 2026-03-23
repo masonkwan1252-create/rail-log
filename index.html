@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.10</title>
+<title>鉄道手帳 RAIL LOG V0.11</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
@@ -56,8 +56,8 @@ body {
 /* HEADER 重新設計 */
 header {
     background: linear-gradient(135deg, #ddd 0%, #aaa 100%); 
-    padding: calc(env(safe-area-inset-top) + 15px) 0 15px 0; 
-    border-bottom: 2px solid #aaa;
+    padding: calc(env(safe-area-inset-top) + 5px) 0 5px 0; 
+    border-bottom: 1px solid #aaa;
     position: sticky; top: 0; z-index: 100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     display: flex; justify-content: center; align-items: center;
@@ -65,7 +65,7 @@ header {
     overflow: hidden;
 }
 
-.header-band { flex: 1; height: 35px; background: var(--primary); }
+.header-band { flex: 1; height: 30px; background: var(--primary); }
 
 /* 🚩 V0.08.5E: 方向幕設定 */
 .destination-sign-frame {
@@ -78,21 +78,21 @@ header {
     border: 7px solid #888; /* 🚩 邊框加粗20% (原5px -> 6px) */
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
-    max-width: 240px;
+    max-width: 210px;
     aspect-ratio: 3 / 1; 
     overflow: hidden; 
 }
 
 /* 🚩 V0.08.5E: 通勤快速排版 */
 .sign-type-box {
-    margin: 10px 0px 10px 10px; 
+    margin: 5px 0px 5px 10px; 
     border: 2px solid #ff3b30; /* 🚩 側邊紅色框加粗25% (原1px -> 1.25px) */
     border-top: 6.25px solid #ff3b30; /* 🚩 上邊紅色框加粗25% (原5px -> 6.25px) */
     border-bottom: 6.25px solid #ff3b30; /* 🚩 下邊紅色框加粗25% (原5px -> 6.25px) */
     color: #ff3b30;
     border-radius: 4px;
     padding: 0px 3px; 
-    font-size: clamp(16px, 3.5vw, 16px); 
+    font-size: clamp(15px, 3.5vw, 9px); 
     font-weight: 900;
     line-height: 1.1;
     display: flex;
@@ -118,7 +118,7 @@ header {
 }
 
 .sign-destination-text {
-    font-size: clamp(20px, 6.5vw, 28px); /* 🚩 調整字闊，略為放大以填補空間 */
+    font-size: clamp(20px, 6.5vw, 23px); /* 🚩 調整字闊，略為放大以填補空間 */
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.3em; /* 🚩 加大字距令文字伸延 */
@@ -127,7 +127,7 @@ header {
 }
 
 .sign-english-text {
-    font-size: clamp(10px, 3vw, 16px); /* 🚩 調整字闊 */
+    font-size: clamp(10px, 3vw, 13px); /* 🚩 調整字闊 */
     width: 100%; 
     margin: 0; 
     line-height: 1;
@@ -326,7 +326,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.10</div>
+<div class="version-badge">V0.11</div>
 
 <div class="container">
 
@@ -1060,7 +1060,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.10.json"; a.click();
+    a.download = "rail-log-V0.11.json"; a.click();
 }
 
 function importData() {
