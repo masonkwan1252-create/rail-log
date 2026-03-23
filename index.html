@@ -35,7 +35,7 @@
         --nav-bg: rgba(28, 28, 30, 0.85);
     }
     
-    /* 🚩 V0.09: Dark Mode 下清除篩選按鈕轉為山手線綠色 */
+    /* 🚩 Dark Mode 下清除篩選按鈕轉為山手線綠色 */
     .btn-clear-stats {
         background: var(--primary) !important;
         color: #ffffff !important;
@@ -53,10 +53,10 @@ body {
     padding-bottom: 100px; 
 }
 
-/* HEADER: 整體按比例縮小 */
+/* HEADER: 整體按比例縮小 20% 左右 */
 header {
     background: linear-gradient(135deg, #ddd 0%, #aaa 100%); 
-    padding: calc(env(safe-area-inset-top) + 12px) 0 12px 0; 
+    padding: calc(env(safe-area-inset-top) + 10px) 0 10px 0; /* 降低背景高度 */
     border-bottom: 2px solid #aaa;
     position: sticky; top: 0; z-index: 100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
@@ -67,31 +67,32 @@ header {
 
 .header-band { flex: 1; height: 32px; background: var(--primary); }
 
+/* 方向幕整體縮小 20% */
 .destination-sign-frame {
     background: #fff;
-    border-radius: 18px; /* 縮小 20% */
+    border-radius: 18px; 
     padding: 0; 
     display: flex;
     justify-content: flex-start;
     align-items: stretch; 
-    border: 5px solid #888; /* 縮小 20% */
+    border: 5px solid #888; 
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
-    max-width: 256px; /* 🚩 整體縮小 20% (320px * 0.8) */
+    max-width: 256px; /* 原320px * 0.8 */
     aspect-ratio: 3 / 1; 
     overflow: hidden; 
 }
 
-/* 🚩 V0.09: 沿用 F 版本排版，距離左邊緣精準 5px */
+/* 🚩 沿用 F 版本排版，距離左邊緣精準 4px，縮小各項數值 */
 .sign-type-box {
-    margin: 2px 0 2px 5px; 
-    border: 1px solid #ff3b30; 
-    border-top: 5px solid #ff3b30; 
+    margin: 2px 0 2px 4px; /* 🚩 左邊緣距離 4px */
+    border: 1px solid #ff3b30; /* F版比例 */
+    border-top: 5px solid #ff3b30; /* F版比例 (原6.25px縮小) */
     border-bottom: 5px solid #ff3b30; 
     color: #ff3b30;
     border-radius: 4px;
-    padding: 2px 20px; /* 縮小 20% */
-    font-size: clamp(9px, 3vw, 12px); 
+    padding: 2px 20px; /* 從25px縮小20% */
+    font-size: clamp(8px, 2.8vw, 11px); 
     font-weight: 900;
     line-height: 1.1;
     display: flex;
@@ -105,7 +106,7 @@ header {
 .sign-type-text-2 { text-indent: 1em; } 
 
 .sign-main-content {
-    margin: 2px 5px 2px 5px; 
+    margin: 2px 4px 2px 4px; 
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -117,7 +118,7 @@ header {
 }
 
 .sign-destination-text {
-    font-size: clamp(16px, 5.2vw, 22px); /* 配合縮小調整字體 */
+    font-size: clamp(16px, 5.2vw, 22px); 
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0.3em; 
@@ -216,9 +217,9 @@ input, select {
 }
 input:focus { border-color: var(--primary); }
 
-/* 🚩 V0.09: 所有輸入框都有清空小交叉 */
+/* 每一個輸入欄都有清空小交叉 */
 .input-wrapper { position: relative; display: flex; align-items: center; }
-.input-wrapper input { padding-right: 35px; } /* 預留空間比交叉 */
+.input-wrapper input { padding-right: 35px; } 
 .clear-input-btn {
     position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
     background: none; border: none; font-size: 16px; color: #bbb;
@@ -236,9 +237,9 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .btn-primary { background: linear-gradient(#9ae26e, #63BD0F); color: white; border: none; }
 .btn-primary:active { background: linear-gradient(#63BD0F, #57a80b); }
 .btn-add { background: var(--success); color: white; border: none; }
-.btn-delete { background: var(--danger); color: white; border: none; }
 .btn-small { width: auto; padding: 6px 12px; font-size: 13px; border-radius: 4px; margin-top: 8px; margin-right: 6px; background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); }
 .btn-clear-stats { width:100%; text-align:center; background:#fff; color:var(--text); }
+.btn-small:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
 .date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
@@ -275,12 +276,13 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .cal-day.has-record { background: var(--primary); color: white; font-weight: bold; }
 .cal-day.selected { border: 2px solid var(--text); }
 
-.trip { border-bottom: 1px solid var(--border); padding: 12px 0; }
+/* 🚩 乘車記錄極致慳位排版 */
+.trip { border-bottom: 1px solid var(--border); padding: 10px 0; }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
-.trip-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-.date { font-size: 12px; color: var(--primary); font-weight: 600; }
-.route { font-weight: 600; font-size: 15px; margin-bottom: 4px;}
-.trip-detail { font-size: 13px; color: var(--subtext); display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.date { font-size: 11px; color: var(--primary); font-weight: 600; }
+.route { font-weight: 600; font-size: 14px; margin-bottom: 4px; line-height: 1.3;}
+.trip-detail { font-size: 12px; color: var(--subtext); display: flex; align-items: center; flex-wrap: wrap; gap: 6px; line-height: 1.4;}
 
 .through-block { background: var(--tag-bg); padding: 12px; border-radius: 4px; margin-top: 10px; border: 1px solid var(--border); }
 
@@ -290,6 +292,17 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .stat-group { margin-bottom: 20px; }
 .stat-group-title { font-size: 14px; font-weight: 600; color: var(--subtext); margin-bottom: 8px; }
 .completion-rate { font-size: 13px; color: var(--success); margin-left: 8px; font-weight: 500; }
+
+/* 🚩 統計頁直線圖表 CSS */
+.chart-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; margin-bottom: 12px; }
+.chart-tabs button { flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600; background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s; }
+.chart-tabs button.active { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.bar-chart-container { margin-top: 10px; }
+.bar-row { display: flex; align-items: center; margin-bottom: 8px; font-size: 12px; }
+.bar-label { width: 35%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 8px; text-align: right; font-weight: 500;}
+.bar-track { flex: 1; background: var(--tag-bg); height: 14px; border-radius: 4px; overflow: hidden; position: relative; }
+.bar-fill { background: var(--primary); height: 100%; border-radius: 4px; transition: width 0.5s ease-out; }
+.bar-val { width: 30px; text-align: left; padding-left: 8px; font-weight: 600; color: var(--text); }
 
 </style>
 </head>
@@ -384,6 +397,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             </div>
 
             <div id="tripList"></div>
+            <div id="paginationControls" style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;"></div>
         </div>
     </div>
 
@@ -398,6 +412,15 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             </div>
 
             <div id="filteredStatsContainer"></div>
+        </div>
+        
+        <div class="card">
+            <h3>乘搭排行榜 (Top 10)</h3>
+            <div class="chart-tabs">
+                <button id="btnChartCompany" class="active" onclick="switchChartTab('company')">Top 10 公司</button>
+                <button id="btnChartStation" onclick="switchChartTab('station')">Top 10 車站</button>
+            </div>
+            <div id="chartDisplayArea" class="bar-chart-container"></div>
         </div>
     </div>
 
@@ -475,9 +498,13 @@ let currentDateFilter = "all";
 let calViewDate = new Date();
 let activeStatFilter = { type: null, id: null };
 
+// 🚩 分頁變數
+let currentRecordPage = 1;
+const recordsPerPage = 50;
+let currentChartType = 'company';
+
 document.getElementById("date").valueAsDate = new Date();
 
-// 🚩 共用清理 Input 功能
 function clearInput(id) {
     const el = document.getElementById(id);
     if (el) {
@@ -626,7 +653,7 @@ function fillStationDatalist(listId, compId, lineInput) {
 }
 
 function addThrough() {
-    // 🚩 自動獲取對上一次輸入的公司名稱
+    // 🚩 預設選擇上面輸入的公司
     let lastCompName = document.getElementById("company").value;
     const existingBlocks = document.querySelectorAll(".through-block");
     if (existingBlocks.length > 0) {
@@ -650,11 +677,10 @@ function addThrough() {
             <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()" placeholder="直通路線">
             <button class="clear-input-btn" onclick="this.previousElementSibling.value=''; this.previousElementSibling.dispatchEvent(new Event('input'));">✕</button>
         </div>
-        <button class="btn-small btn-delete" style="color:white; margin-top:4px;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
+        <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
     `;
     document.getElementById("throughContainer").appendChild(div);
     
-    // 🚩 立即更新新直通路線的下拉名單
     if(lastCompName) updateLineList(lastCompName, uniqueId);
     updateStationLists();
 }
@@ -693,6 +719,7 @@ function saveTrip() {
     document.getElementById("throughContainer").innerHTML = "";
     
     updateLineList("", "lineList"); updateTrainList("", "trainList"); updateStationLists();
+    currentRecordPage = 1; // 儲存後重設頁數
     render();
     
     const messageDiv = document.getElementById("saveMessage");
@@ -713,6 +740,7 @@ function getTodayStr() {
 function setDateFilter(val) {
     if (val === 'today') currentDateFilter = getTodayStr();
     else currentDateFilter = val;
+    currentRecordPage = 1; // 篩選重設頁數
     render();
 }
 
@@ -723,6 +751,12 @@ function changeDay(delta) {
     d.setDate(d.getDate() + delta);
     let newDateStr = `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')}`;
     setDateFilter(newDateStr);
+}
+
+function changeRecordPage(delta) {
+    currentRecordPage += delta;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function render() {
@@ -741,52 +775,73 @@ function render() {
     }
 
     const listDiv = document.getElementById("tripList");
+    const paginationDiv = document.getElementById("paginationControls");
     listDiv.innerHTML = "";
+    paginationDiv.innerHTML = "";
 
     let tripsToDisplay = trips.filter(t => currentDateFilter === "all" || t.date === currentDateFilter);
     document.getElementById("totalCount").innerText = tripsToDisplay.length;
 
-    tripsToDisplay.forEach((t) => {
+    // 🚩 分頁邏輯
+    let totalPages = Math.ceil(tripsToDisplay.length / recordsPerPage) || 1;
+    if (currentRecordPage > totalPages) currentRecordPage = totalPages;
+    let pagedTrips = tripsToDisplay.slice((currentRecordPage - 1) * recordsPerPage, currentRecordPage * recordsPerPage);
+
+    pagedTrips.forEach((t) => {
         let originalIndex = trips.indexOf(t);
         const div = document.createElement("div"); div.className = "trip";
         
-        // 🚩 V0.09: 化繁為簡處理直通路線顯示
-        let routeTextArray = [];
+        // 🚩 直通相同公司路線化簡
+        let routeHtml = "";
         let lastCompany = "";
-        t.routes.forEach((r) => {
+        t.routes.forEach((r, idx) => {
             let compName = getCompName(r.company_id);
             let lineName = getLineName(r.line_id);
-            if (compName !== lastCompany) {
-                routeTextArray.push(`${compName} ${lineName}`);
+            if (idx === 0) {
+                routeHtml += `${compName} ${lineName}`;
                 lastCompany = compName;
             } else {
-                routeTextArray.push(lineName); // 相同公司只顯示路線
+                if (compName === lastCompany) {
+                    routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}`;
+                } else {
+                    routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}`;
+                    lastCompany = compName;
+                }
             }
         });
-        const routeText = routeTextArray.join(" <span style='color:var(--border); font-size:12px; margin:0 2px;'>▶</span> ");
         
-        const serviceHtml = t.serviceType ? `<span style="display:inline-block; background:var(--danger); color:white; padding:2px 6px; border-radius:4px; font-size:11px; font-weight:bold;">${t.serviceType}</span>` : '';
+        const serviceHtml = t.serviceType ? `<span style="background:var(--danger); color:white; padding:1px 5px; border-radius:3px; font-size:11px; font-weight:bold;">${t.serviceType}</span>` : '';
         
-        // 🚩 V0.09: 極致慳位排版 + Icon
+        // 🚩 Icon 取代文字按鈕，極致慳位
         div.innerHTML = `
             <div class="trip-header-row">
                 <div class="date">${t.date}</div>
                 <div style="display:flex; gap:16px;">
-                    <span style="cursor:pointer; font-size:15px; color:var(--subtext);" onclick="editTrip(${originalIndex})">✏️</span>
-                    <span style="cursor:pointer; font-size:15px; color:var(--danger);" onclick="deleteTrip(${originalIndex})">🗑️</span>
+                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="editTrip(${originalIndex})">✏️</span>
+                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="deleteTrip(${originalIndex})">🗑️</span>
                 </div>
             </div>
-            <div class="route">${routeText}</div>
+            <div class="route">${routeHtml}</div>
             <div class="trip-detail">
                 ${serviceHtml} <span style="font-weight:600; color:var(--text);">${getTrainName(t.train_id)}</span>
                 <span style="color:var(--border);">|</span>
-                <span>🚉 ${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
+                <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
             </div>
         `;
         listDiv.appendChild(div);
     });
 
+    // 🚩 渲染分頁按鈕
+    if (totalPages > 1) {
+        paginationDiv.innerHTML = `
+            <button class="btn-small" style="width:80px; margin:0;" onclick="changeRecordPage(-1)" ${currentRecordPage === 1 ? 'disabled' : ''}>上一頁</button>
+            <span style="font-size:13px; align-self:center; font-weight:600;">${currentRecordPage} / ${totalPages}</span>
+            <button class="btn-small" style="width:80px; margin:0;" onclick="changeRecordPage(1)" ${currentRecordPage === totalPages ? 'disabled' : ''}>下一頁</button>
+        `;
+    }
+
     renderStats();
+    drawBarChart(); // 畫 Top 10 圖表
 }
 
 function openCalendar() {
@@ -902,6 +957,63 @@ function renderStats() {
     `;
 
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
+}
+
+// 🚩 Top 10 圖表切換與繪製
+function switchChartTab(type) {
+    currentChartType = type;
+    document.getElementById("btnChartCompany").className = type === 'company' ? 'active' : '';
+    document.getElementById("btnChartStation").className = type === 'station' ? 'active' : '';
+    drawBarChart();
+}
+
+function drawBarChart() {
+    const container = document.getElementById("chartDisplayArea");
+    container.innerHTML = "";
+    
+    let counts = {};
+    if (currentChartType === 'company') {
+        trips.forEach(t => {
+            // 每一次乘車，紀錄當中有出現過嘅公司（一程車內同公司不重複計算）
+            let comps = new Set(t.routes.map(r => r.company_id));
+            comps.forEach(c => { counts[c] = (counts[c] || 0) + 1; });
+        });
+    } else {
+        trips.forEach(t => {
+            counts[t.from_id] = (counts[t.from_id] || 0) + 1;
+            counts[t.to_id] = (counts[t.to_id] || 0) + 1;
+        });
+    }
+
+    let sortedArray = Object.entries(counts).sort((a,b) => b[1] - a[1]).slice(0, 10);
+    if (sortedArray.length === 0) {
+        container.innerHTML = "<div style='text-align:center; font-size:13px; color:var(--subtext);'>暫無資料</div>";
+        return;
+    }
+
+    let maxVal = sortedArray[0][1];
+
+    sortedArray.forEach(item => {
+        let name = currentChartType === 'company' ? getCompName(item[0]) : getStationName(item[0]);
+        let val = item[1];
+        let pct = (val / maxVal) * 100;
+        
+        const row = document.createElement("div");
+        row.className = "bar-row";
+        row.innerHTML = `
+            <div class="bar-label" title="${name}">${name}</div>
+            <div class="bar-track">
+                <div class="bar-fill" style="width: 0%;"></div>
+            </div>
+            <div class="bar-val">${val}</div>
+        `;
+        container.appendChild(row);
+        
+        // 觸發動畫
+        setTimeout(() => {
+            row.querySelector('.bar-fill').style.width = `${pct}%`;
+        }, 50);
+    });
 }
 
 function editTrip(i) {
