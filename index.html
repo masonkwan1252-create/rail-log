@@ -4,11 +4,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.11</title>
-
+<title>鉄道手帳 RAIL LOG V0.12</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
+/* 🚩 調整回送幕：加大字體並絕對置中 */
+.out-of-service-panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直置中 */
+    align-items: center;     /* 水平置中 */
+    color: #003399;          /* 使用鐵道手帳同款藍色 */
+    text-align: center;
+}
+
+.out-of-service-panel .sign-destination-text {
+    color: #003399;         /* 鐵道手帳同款藍色 */
+    font-size: 32px;        /* 大幅增加字體大小 */
+    font-weight: 900;       /* 加粗字體 */
+    letter-spacing: 30px;   /* 增加字距，顯得更有氣勢 */
+    margin-right: -30px;    /* 抵消末字間距以維持絕對水平置中 */
+    white-space: nowrap;
+    /* 稍微拉高文字，讓它更像真實印刷 */
+    transform: scaleY(1.1); 
+}
+
+/* 🚩 Dark Mode 下的調整 */
+@media (prefers-color-scheme: dark) {
+    .out-of-service-panel .sign-destination-text {
+        color: #002266;     /* 配合暖色背燈稍微深色一點點 */
+        /* 增加一點點文字陰影，模擬光線透過布幕的效果 */
+        text-shadow: 0 0 1px rgba(0,0,0,0.2);
+    }
+}
+
 :root {
     --bg: #e0e0e0; 
     --input-bg: #f4f4f4; 
@@ -56,7 +88,7 @@ body {
 /* HEADER 重新設計 */
 header {
     background: linear-gradient(135deg, #ddd 0%, #aaa 100%); 
-    padding: calc(env(safe-area-inset-top) + 5px) 0 5px 0; 
+    padding: calc(env(safe-area-inset-top) + 8px) 0 8px 0; 
     border-bottom: 1px solid #aaa;
     position: sticky; top: 0; z-index: 100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
@@ -67,20 +99,90 @@ header {
 
 .header-band { flex: 1; height: 30px; background: var(--primary); }
 
-/* 🚩 V0.08.5E: 方向幕設定 */
+/* 🚩 更新：方向幕外框與陰影 */
 .destination-sign-frame {
     background: #fff;
-    border-radius: 22px; /* 🚩 圓角增改到 22px */
+    border-radius: 22px; 
     padding: 0; 
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch; 
-    border: 7px solid #888; /* 🚩 邊框加粗20% (原5px -> 6px) */
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1); 
+    border: 7px solid #888; 
+    /* 加強上下內陰影，模擬真實方向幕與玻璃面嘅距離感 */
+    box-shadow: inset 0 6px 10px rgba(0,0,0,0.4), inset 0 -6px 10px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.1); 
     width: 65%; 
     max-width: 210px;
     aspect-ratio: 3 / 1; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden; /* 確保卷幕唔會超出邊框 */
+}
+
+/* 🚩 新增：卷幕動畫容器 */
+.roll-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* 調整 cubic-bezier 模擬機械停頓嘅回彈感 */
+    animation: rollSign 6s cubic-bezier(1, 1, 1, 1) forwards;
+    animation-delay: 0.5s; /* 載入後停頓半秒先開始轉 */
+    transform: translateY(0);
+}
+
+/* 🚩 新增：每一格方向幕 */
+.sign-panel {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* 獨立排版：回送幕 */
+.sign-panel.out-of-service-panel {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+/* 獨立排版：最終幕 (繼承你原本嘅排版) */
+.sign-panel.final-panel {
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* 🚩 卷幕 keyframes 動畫 */
+@keyframes rollSign {
+    0%   { transform: translateY(0); }             /* 空白 */
+    50%  { transform: translateY(-100%); }         /* 轉到回送 */
+    100% { transform: translateY(-200%); }         /* 轉到最終畫面 */
+}
+
+/* 🚩 更新：Dark Mode 晚黑效果與 90 年代暖色背燈 */
+@media (prefers-color-scheme: dark) {
+    /* ... 保留你原本嘅 dark mode :root ... */
+    
+    header {
+        /* 將 header 轉為黑夜效果 */
+        background: linear-gradient(135deg, #111 0%, #222 100%);
+        border-bottom: 1px solid #000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    .header-band {
+        background: #4a8f09; /* 夜晚嘅山手線綠色可以稍微暗沉少少 */
+    }
+
+    .destination-sign-frame {
+        border-color: #333;
+        /* 90年代鹵素燈/偏暖白光管嘅背燈顏色 */
+        background: #fff3cd; 
+        /* 加強夜間內陰影，並加入微弱嘅光暈向外散發 */
+        box-shadow: inset 0 8px 12px rgba(0,0,0,0.6), inset 0 -8px 12px rgba(0,0,0,0.6), 0 0 15px rgba(255, 230, 150, 0.15);
+    }
+    
+    /* 配合暖色背燈，將文字稍微校深色增加對比度 */
+    .sign-main-content {
+        color: #000a1f; 
+    }
 }
 
 /* 🚩 V0.08.5E: 通勤快速排版 */
@@ -313,13 +415,23 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 <header>
     <div class="header-band"></div>
     <div class="destination-sign-frame">
-        <div class="sign-type-box">
-            <div class="sign-type-text-1">通勤</div>
-            <div class="sign-type-text-2">快速</div>
-        </div>
-        <div class="sign-main-content">
-            <div class="sign-destination-text">鉄道手帳</div>
-            <div class="sign-english-text">RAIL LOG</div>
+        <div class="roll-container">
+            <div class="sign-panel"></div>
+            
+            <div class="sign-panel out-of-service-panel">
+                <div class="sign-destination-text" style="color: #001f5c;">回送</div>
+            </div>
+            
+            <div class="sign-panel final-panel">
+                <div class="sign-type-box">
+                    <div class="sign-type-text-1">通勤</div>
+                    <div class="sign-type-text-2">快速</div>
+                </div>
+                <div class="sign-main-content">
+                    <div class="sign-destination-text">鉄道手帳</div>
+                    <div class="sign-english-text">RAIL LOG</div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="header-band"></div>
