@@ -116,21 +116,23 @@ header {
 
 /* 🚩 新增：卷幕動畫容器 */
 .roll-container {
+    position: absolute; /* 🚩 加入絕對定位，迫使 iOS 準確讀取外框高度 */
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-	align-items: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    /* 調整 cubic-bezier 模擬機械停頓嘅回彈感 */
+    height: 300%; /* 🚩 共有 4 塊幕，總高度設定為 400% */
     animation: rollSign 6s cubic-bezier(1, 1, 1, 1) forwards;
-    animation-delay: 0.5s; /* 載入後停頓半秒先開始轉 */
+    animation-delay: 0.5s;
     transform: translateY(0);
 }
 
 /* 🚩 新增：每一格方向幕 */
 .sign-panel {
     width: 100%;
-    height: 100%;
+    height: 33.33%;
     flex-shrink: 0;
     display: flex;
     box-sizing: border-box;
@@ -152,11 +154,10 @@ header {
     white-space: nowrap;
 }
 
-/* 🚩 卷幕 keyframes 動畫 */
 @keyframes rollSign {
-    0%   { transform: translateY(0); }             /* 空白 */
-    50%  { transform: translateY(-100%); }         /* 轉到回送 */
-    100% { transform: translateY(-200%); }         /* 轉到最終畫面 */
+    0%   { transform: translateY(0); }         /* 第一格：空白 */
+    50%  { transform: translateY(-33.333%); }  /* 第二格：回送 */
+    100% { transform: translateY(-66.666%); }  /* 第三格：山手線 (停止點) */
 }
 
 /* 🚩 更新：Dark Mode 晚黑效果與 90 年代暖色背燈 */
