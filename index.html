@@ -685,14 +685,14 @@ async function loadData() {
     try {
         const [res_companies, res_trains] = await Promise.all([
             fetch('keihan.json'), 
-            fetch('trains.json')
+            fetch('traintypes.json')
         ]);
 
         const companiesData = await res_companies.json();
         const trainsData = await res_trains.json();
 
         // ✅ 清空 db
-        db = { companies: [], lines: [], stations: [], trains: [] };
+        db = { companies: [], lines: [], stations: [], traintypes: [] };
 
         // ✅ 將 company JSON 攤平入 db
         companiesData.forEach(company => {
@@ -739,7 +739,7 @@ async function loadData() {
         });
 
         // 車種
-        db.trains = trainsData;
+        db.traintypes = traintypesData;;
 
         // resolve map（超重要）
         resolve.company = {};
@@ -749,7 +749,7 @@ async function loadData() {
         db.stations.forEach(s => resolve.station[s._display] = s.id);
 
         resolve.train = {};
-        db.trains.forEach(t => resolve.train[t._display] = t.id);
+        db.traintypes.forEach(t => resolve.train[t._display] = t.id);
 
         render();
 
@@ -1270,6 +1270,7 @@ function importData() {
 }
 
 loadData();
+initUILists();
 </script>
 </body>
 </html>
