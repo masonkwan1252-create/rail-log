@@ -97,7 +97,14 @@ header {
     overflow: hidden;
 }
 
-.header-band { flex: 1; height: 30px; background: var(--primary); }
+.header-band { 
+    flex: 1; 
+    height: 30px; 
+    background: var(--primary); 
+    cursor: pointer; /* 滑鼠提示 */
+    transition: filter 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
 
 /* 🚩 更新：方向幕外框與陰影 */
 .destination-sign-frame {
@@ -123,7 +130,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 300%; /* 🚩 共有 4 塊幕，總高度設定為 400% */
+    height: 500%; /* 🚩 共有 4 塊幕，總高度設定為 400% */
     animation: rollSign 6s cubic-bezier(1, 1, 1, 1) forwards;
     animation-delay: 0.5s;
     transform: translateY(0);
@@ -132,7 +139,7 @@ header {
 /* 🚩 新增：每一格方向幕 */
 .sign-panel {
     width: 100%;
-    height: 33.33%;
+    height: 20%;
     flex-shrink: 0;
     display: flex;
     box-sizing: border-box;
@@ -154,11 +161,6 @@ header {
     white-space: nowrap;
 }
 
-@keyframes rollSign {
-    0%   { transform: translateY(0); }         /* 第一格：空白 */
-    50%  { transform: translateY(-33.333%); }  /* 第二格：回送 */
-    100% { transform: translateY(-66.666%); }  /* 第三格：山手線 (停止點) */
-}
 
 /* 🚩 更新：Dark Mode 晚黑效果與 90 年代暖色背燈 */
 @media (prefers-color-scheme: dark) {
@@ -172,7 +174,7 @@ header {
     }
     
     .header-band {
-        background: #4a8f09; /* 夜晚嘅山手線綠色可以稍微暗沉少少 */
+        background: #20330e; /* 夜晚嘅山手線綠色可以稍微暗沉少少 */
     }
 
     .destination-sign-frame {
@@ -422,13 +424,24 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 <body>
 
 <header>
-    <div class="header-band"></div>
+    <div class="header-band" onclick="rollSign(-1)" title="向上捲動"></div>
     <div class="destination-sign-frame">
-        <div class="roll-container">
+        <div class="roll-container" id="rollContainer">
             <div class="sign-panel"></div>
             
             <div class="sign-panel out-of-service-panel">
-                <div class="sign-destination-text" style="color: #001f5c;">回送</div>
+                <div class="sign-destination-text" style="color: #001f5c; font-weight: 900; letter-spacing: 35px; margin-right: -35px;">回送</div>
+            </div>
+
+            <div class="sign-panel out-of-service-panel">
+                <div class="sign-destination-text" style="color: #001f5c; font-weight: 900; letter-spacing: 20px; margin-right: -20px;">試運転</div>
+            </div>
+
+            <div class="sign-panel final-panel">
+                <div class="sign-main-content">
+                    <div class="sign-destination-text" style="color: #001f5c; font-weight: 900; font-size: 33px; letter-spacing: 15px; margin-right: -15px;transform: scaleX(1.1); margin-bottom: 2px;">山手線</div>
+                    <div class="sign-english-text" style="color: #001f5c; letter-spacing: 2px; font-weight: 800; font-size: 11px; transform: scaleX(0.85);">YAMANOTE LINE</div>
+                </div>
             </div>
             
             <div class="sign-panel final-panel">
@@ -443,7 +456,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             </div>
         </div>
     </div>
-    <div class="header-band"></div>
+    <div class="header-band" onclick="rollSign(1)" title="向下捲動"></div>
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
@@ -608,6 +621,39 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </datalist>
 
 <script>
+// ==========================================
+// 🚩 實體方向幕控制邏輯
+// ==========================================
+let currentSignIndex = 0; // 當前幕嘅索引 (0-4)
+const totalSigns = 5;     // 總共有幾多塊幕
+const rollContainer = document.getElementById('rollContainer');
+
+// 載入時自動捲動到最後一幕 (模擬原本嘅開機動畫)
+setTimeout(() => {
+    currentSignIndex = 4; // 捲去第 5 塊幕 (Index 4)
+    updateSignPosition(true); // true 代表係「長途捲動」
+}, 600); 
+
+function updateSignPosition(isLongDistance = false) {
+    if (!rollContainer) return;
+    
+    // 🚩 鐵道迷細節：開機捲幾格需要多啲時間 (2.5秒)，手動捲一格就快啲 (0.6秒)
+    const duration = isLongDistance ? 15 : 3;
+    rollContainer.style.transition = `transform ${duration}s cubic-bezier(1, 1, 1, 1)`;
+    
+    // 因為每塊幕佔容器 20%，所以乘 20
+    rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
+}
+
+function rollSign(direction) {
+    currentSignIndex += direction;
+    
+    // 限制邊界，唔可以捲超過第一塊或最後一塊
+    if (currentSignIndex < 0) currentSignIndex = 0;
+    if (currentSignIndex >= totalSigns) currentSignIndex = totalSigns - 1;
+    
+    updateSignPosition(false); // 手動操作，使用較短嘅過場時間
+}
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
 let editIndex = null;
 let lastTo = "";
@@ -637,51 +683,56 @@ function clearInput(id) {
 
 async function loadData() {
     try {
-        const [compRes, lineRes, staRes, trainRes] = await Promise.all([
-            fetch("companies.json"), fetch("lines.json"), fetch("stations.json"), fetch("traintypes.json")
+        // 載入新的整合格式 JSON (你可以把 keihan.json 改名為 companies.json 方便日後擴充)
+        const [res_companies, res_trains] = await Promise.all([
+            fetch('keihan.json'), 
+            fetch('trains.json')
         ]);
-        if (compRes.ok && lineRes.ok && staRes.ok && trainRes.ok) {
-            db.companies = await compRes.json();
-            db.lines = await lineRes.json();
-            db.stations = await staRes.json();
-            db.trains = await trainRes.json();
-        }
-    } catch (e) { console.log("資料庫載入失敗。"); } 
-    finally {
-        buildMaps(); initUILists(); render(); updateStationLists();
+
+        data.companies = await res_companies.json();
+        data.trains = await res_trains.json();
+
+        buildMaps();
+        render();
+    } catch (e) {
+        console.error("載入資料失敗:", e);
     }
 }
 
 function buildMaps() {
-    db.companies.forEach(c => { maps.company[c.id] = c; resolve.company[c.name] = c.id; });
-    db.lines.forEach(l => { maps.line[l.id] = l; });
-    db.stations.forEach(s => {
-        maps.station[s.id] = s;
-        let compName = maps.company[s.company_id]?.name || "";
-        let display = compName ? `${s.name} (${compName})` : s.name;
-        resolve.station[display] = s.id;
-        s._display = display;
+    maps.line = {};
+    maps.station = {};
+    maps.company = {};
+
+    // 遍歷所有公司
+    data.companies.forEach(company => {
+        maps.company[company.company_id] = {
+            name: company.company_name,
+            lines: []
+        };
+
+        // 處理該公司的路線
+        company.lines.forEach(line => {
+            line.company_id = company.company_id; // 補齊關聯
+            maps.line[line.id] = line;
+            maps.company[company.company_id].lines.push(line.id);
+        });
+
+        // 處理該公司的站點
+        company.stations.forEach(stn => {
+            stn.company_id = company.company_id;
+            // 產生顯示名稱，例如 "淀屋橋 (京阪電鐵)"
+            stn._display = `${stn.name} (${company.company_name})`;
+            maps.station[stn.id] = stn;
+        });
     });
 
-    let expandedTrains = [];
-    db.trains.forEach(t => {
-        let compName = maps.company[t.company_id]?.name || "";
-        if (t.variants && t.variants.length > 0) {
-            t.variants.forEach(v => {
-                let fullName = `${t.name}${v}`;
-                let display = compName ? `${fullName} (${compName})` : fullName;
-                let virtualId = `${t.id}:${v}`;
-                let newEntry = { ...t, _display: display, name: fullName, id: virtualId };
-                expandedTrains.push(newEntry);
-                maps.train[virtualId] = newEntry; resolve.train[display] = virtualId;
-            });
-        } else {
-            let display = compName ? `${t.name} (${compName})` : t.name;
-            t._display = display; expandedTrains.push(t);
-            maps.train[t.id] = t; resolve.train[display] = t.id;
-        }
+    // 處理車種 (原本的 logic)
+    maps.train = {};
+    data.trains.forEach(t => {
+        t._display = `${t.name} (${t.series})`;
+        maps.train[t.id] = t;
     });
-    db.trains = expandedTrains;
 }
 
 function initUILists() {
