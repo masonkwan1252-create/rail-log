@@ -97,14 +97,7 @@ header {
     overflow: hidden;
 }
 
-.header-band { 
-    flex: 1; 
-    height: 30px; 
-    background: var(--primary); 
-    cursor: pointer; /* 滑鼠提示 */
-    transition: filter 0.2s;
-    -webkit-tap-highlight-color: transparent;
-}
+.header-band { flex: 1; height: 30px; background: var(--primary); }
 
 /* 🚩 更新：方向幕外框與陰影 */
 .destination-sign-frame {
@@ -130,7 +123,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 500%; /* 🚩 共有 4 塊幕，總高度設定為 400% */
+    height: 300%; /* 🚩 共有 4 塊幕，總高度設定為 400% */
     animation: rollSign 6s cubic-bezier(1, 1, 1, 1) forwards;
     animation-delay: 0.5s;
     transform: translateY(0);
@@ -139,7 +132,7 @@ header {
 /* 🚩 新增：每一格方向幕 */
 .sign-panel {
     width: 100%;
-    height: 20%;
+    height: 33.33%;
     flex-shrink: 0;
     display: flex;
     box-sizing: border-box;
@@ -161,6 +154,11 @@ header {
     white-space: nowrap;
 }
 
+@keyframes rollSign {
+    0%   { transform: translateY(0); }         /* 第一格：空白 */
+    50%  { transform: translateY(-33.333%); }  /* 第二格：回送 */
+    100% { transform: translateY(-66.666%); }  /* 第三格：山手線 (停止點) */
+}
 
 /* 🚩 更新：Dark Mode 晚黑效果與 90 年代暖色背燈 */
 @media (prefers-color-scheme: dark) {
@@ -174,7 +172,7 @@ header {
     }
     
     .header-band {
-        background: #20330e; /* 夜晚嘅山手線綠色可以稍微暗沉少少 */
+        background: #4a8f09; /* 夜晚嘅山手線綠色可以稍微暗沉少少 */
     }
 
     .destination-sign-frame {
@@ -424,24 +422,13 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 <body>
 
 <header>
-    <div class="header-band" onclick="rollSign(-1)" title="向上捲動"></div>
+    <div class="header-band"></div>
     <div class="destination-sign-frame">
-        <div class="roll-container" id="rollContainer">
+        <div class="roll-container">
             <div class="sign-panel"></div>
             
             <div class="sign-panel out-of-service-panel">
-                <div class="sign-destination-text" style="color: #001f5c; font-weight: 900; letter-spacing: 35px; margin-right: -35px;">回送</div>
-            </div>
-
-            <div class="sign-panel out-of-service-panel">
-                <div class="sign-destination-text" style="color: #001f5c; font-weight: 900; letter-spacing: 20px; margin-right: -20px;">試運転</div>
-            </div>
-
-            <div class="sign-panel final-panel">
-                <div class="sign-main-content">
-                    <div class="sign-destination-text" style="color: #001f5c; font-weight: 900; font-size: 33px; letter-spacing: 15px; margin-right: -15px;transform: scaleX(1.1); margin-bottom: 2px;">山手線</div>
-                    <div class="sign-english-text" style="color: #001f5c; letter-spacing: 2px; font-weight: 800; font-size: 11px; transform: scaleX(0.85);">YAMANOTE LINE</div>
-                </div>
+                <div class="sign-destination-text" style="color: #001f5c;">回送</div>
             </div>
             
             <div class="sign-panel final-panel">
@@ -456,7 +443,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             </div>
         </div>
     </div>
-    <div class="header-band" onclick="rollSign(1)" title="向下捲動"></div>
+    <div class="header-band"></div>
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
@@ -621,39 +608,6 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </datalist>
 
 <script>
-// ==========================================
-// 🚩 實體方向幕控制邏輯
-// ==========================================
-let currentSignIndex = 0; // 當前幕嘅索引 (0-4)
-const totalSigns = 5;     // 總共有幾多塊幕
-const rollContainer = document.getElementById('rollContainer');
-
-// 載入時自動捲動到最後一幕 (模擬原本嘅開機動畫)
-setTimeout(() => {
-    currentSignIndex = 4; // 捲去第 5 塊幕 (Index 4)
-    updateSignPosition(true); // true 代表係「長途捲動」
-}, 600); 
-
-function updateSignPosition(isLongDistance = false) {
-    if (!rollContainer) return;
-    
-    // 🚩 鐵道迷細節：開機捲幾格需要多啲時間 (2.5秒)，手動捲一格就快啲 (0.6秒)
-    const duration = isLongDistance ? 15 : 3;
-    rollContainer.style.transition = `transform ${duration}s cubic-bezier(1, 1, 1, 1)`;
-    
-    // 因為每塊幕佔容器 20%，所以乘 20
-    rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
-}
-
-function rollSign(direction) {
-    currentSignIndex += direction;
-    
-    // 限制邊界，唔可以捲超過第一塊或最後一塊
-    if (currentSignIndex < 0) currentSignIndex = 0;
-    if (currentSignIndex >= totalSigns) currentSignIndex = totalSigns - 1;
-    
-    updateSignPosition(false); // 手動操作，使用較短嘅過場時間
-}
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
 let editIndex = null;
 let lastTo = "";
@@ -683,79 +637,105 @@ function clearInput(id) {
 
 async function loadData() {
     try {
-        const [res_companies, res_trains] = await Promise.all([
-            fetch('keihan.json'), 
-            fetch('traintypes.json')
+        // 1. 載入共用的 companies 與 traintypes
+        const [compRes, trainRes] = await Promise.all([
+            fetch("companies.json"), 
+            fetch("traintypes.json")
         ]);
+        
+        if (compRes.ok && trainRes.ok) {
+            db.companies = await compRes.json();
+            db.trains = await trainRes.json();
+        }
 
-        const companiesData = await res_companies.json();
-        const trainsData = await res_trains.json();
+        db.lines = [];
+        db.stations = [];
 
-        // ✅ 清空 db
-        db = { companies: [], lines: [], stations: [], traintypes: [] };
+        // 2. 載入尚未拆分的舊有綜合檔案 (lines.json, stations.json)
+        // 使用 try-catch 確保就算未來舊檔案全刪了，程式也不會死掉
+        try {
+            const [lineRes, staRes] = await Promise.all([
+                fetch("lines.json"), 
+                fetch("stations.json")
+            ]);
+            if (lineRes.ok) db.lines = await lineRes.json();
+            if (staRes.ok) db.stations = await staRes.json();
+        } catch(e) { 
+            console.log("舊版路線/車站檔案已不存在或載入失敗"); 
+        }
 
-        // ✅ 將 company JSON 攤平入 db
-        companiesData.forEach(company => {
-
-            // 公司
-            db.companies.push({
-                id: company.company_id,
-                name: company.company_name
-            });
-
-            // 路線
-            company.lines.forEach(line => {
-                db.lines.push({
-                    id: line.id,
-                    name: line.name,
-                    company_id: company.company_id
-                });
-
-                // 🔥 將 sequence → station mapping
-                line.sequence.forEach(stnId => {
-                    db.stations.push({
-                        id: stnId,
-                        line_id: line.id,
-                        company_id: company.company_id
-                    });
-                });
-            });
-
-            // station detail（補名稱）
-            company.stations.forEach(stn => {
-                let existing = db.stations.find(s => s.id === stn.id);
-                if (existing) {
-                    existing.name = stn.name;
-                    existing._display = `${stn.name} (${company.company_name})`;
-                } else {
-                    db.stations.push({
-                        id: stn.id,
-                        name: stn.name,
-                        company_id: company.company_id,
-                        _display: `${stn.name} (${company.company_name})`
-                    });
+        // 3. 載入已拆分的新版獨立公司 JSON (例如 keihan.json)
+        // 未來如果有更多公司完成轉換，只需將檔名加進這個 Array，例如: ["keihan.json", "jr_west.json"]
+        const newCompanyFiles = ["keihan.json"]; 
+        
+        for (let file of newCompanyFiles) {
+            try {
+                let res = await fetch(file);
+                if (res.ok) {
+                    let data = await res.json();
+                    
+                    // 因為你的 keihan.json 最外層是一個陣列，所以取 data[0]
+                    let compData = data[0]; 
+                    
+                    // 將獨立 JSON 內的路線壓平，並動態補上 company_id 寫入主 db.lines
+                    if (compData.lines) {
+                        compData.lines.forEach(line => {
+                            line.company_id = compData.company_id;
+                            db.lines.push(line);
+                        });
+                    }
+                    
+                    // 將獨立 JSON 內的車站壓平，並動態補上 company_id 寫入主 db.stations
+                    if (compData.stations) {
+                        compData.stations.forEach(station => {
+                            station.company_id = compData.company_id;
+                            db.stations.push(station);
+                        });
+                    }
                 }
-            });
-        });
+            } catch(e) {
+                console.log(`無法載入獨立公司檔案: ${file}`, e);
+            }
+        }
 
-        // 車種
-        db.traintypes = traintypesData;;
-
-        // resolve map（超重要）
-        resolve.company = {};
-        db.companies.forEach(c => resolve.company[c.name] = c.id);
-
-        resolve.station = {};
-        db.stations.forEach(s => resolve.station[s._display] = s.id);
-
-        resolve.train = {};
-        db.traintypes.forEach(t => resolve.train[t._display] = t.id);
-
-        render();
-
-    } catch (e) {
-        console.error("載入資料失敗:", e);
+    } catch (e) { 
+        console.log("資料庫載入失敗。", e); 
+    } 
+    finally {
+        buildMaps(); initUILists(); render(); updateStationLists();
     }
+}
+
+function buildMaps() {
+    db.companies.forEach(c => { maps.company[c.id] = c; resolve.company[c.name] = c.id; });
+    db.lines.forEach(l => { maps.line[l.id] = l; });
+    db.stations.forEach(s => {
+        maps.station[s.id] = s;
+        let compName = maps.company[s.company_id]?.name || "";
+        let display = compName ? `${s.name} (${compName})` : s.name;
+        resolve.station[display] = s.id;
+        s._display = display;
+    });
+
+    let expandedTrains = [];
+    db.trains.forEach(t => {
+        let compName = maps.company[t.company_id]?.name || "";
+        if (t.variants && t.variants.length > 0) {
+            t.variants.forEach(v => {
+                let fullName = `${t.name}${v}`;
+                let display = compName ? `${fullName} (${compName})` : fullName;
+                let virtualId = `${t.id}:${v}`;
+                let newEntry = { ...t, _display: display, name: fullName, id: virtualId };
+                expandedTrains.push(newEntry);
+                maps.train[virtualId] = newEntry; resolve.train[display] = virtualId;
+            });
+        } else {
+            let display = compName ? `${t.name} (${compName})` : t.name;
+            t._display = display; expandedTrains.push(t);
+            maps.train[t.id] = t; resolve.train[display] = t.id;
+        }
+    });
+    db.trains = expandedTrains;
 }
 
 function initUILists() {
@@ -1270,7 +1250,6 @@ function importData() {
 }
 
 loadData();
-initUILists();
 </script>
 </body>
 </html>
