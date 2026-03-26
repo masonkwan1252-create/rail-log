@@ -683,56 +683,79 @@ function clearInput(id) {
 
 async function loadData() {
     try {
-        // 載入新的整合格式 JSON (你可以把 keihan.json 改名為 companies.json 方便日後擴充)
         const [res_companies, res_trains] = await Promise.all([
             fetch('keihan.json'), 
             fetch('trains.json')
         ]);
 
-        data.companies = await res_companies.json();
-        data.trains = await res_trains.json();
+        const companiesData = await res_companies.json();
+        const trainsData = await res_trains.json();
 
-        buildMaps();
+        // ✅ 清空 db
+        db = { companies: [], lines: [], stations: [], trains: [] };
+
+        // ✅ 將 company JSON 攤平入 db
+        companiesData.forEach(company => {
+
+            // 公司
+            db.companies.push({
+                id: company.company_id,
+                name: company.company_name
+            });
+
+            // 路線
+            company.lines.forEach(line => {
+                db.lines.push({
+                    id: line.id,
+                    name: line.name,
+                    company_id: company.company_id
+                });
+
+                // 🔥 將 sequence → station mapping
+                line.sequence.forEach(stnId => {
+                    db.stations.push({
+                        id: stnId,
+                        line_id: line.id,
+                        company_id: company.company_id
+                    });
+                });
+            });
+
+            // station detail（補名稱）
+            company.stations.forEach(stn => {
+                let existing = db.stations.find(s => s.id === stn.id);
+                if (existing) {
+                    existing.name = stn.name;
+                    existing._display = `${stn.name} (${company.company_name})`;
+                } else {
+                    db.stations.push({
+                        id: stn.id,
+                        name: stn.name,
+                        company_id: company.company_id,
+                        _display: `${stn.name} (${company.company_name})`
+                    });
+                }
+            });
+        });
+
+        // 車種
+        db.trains = trainsData;
+
+        // resolve map（超重要）
+        resolve.company = {};
+        db.companies.forEach(c => resolve.company[c.name] = c.id);
+
+        resolve.station = {};
+        db.stations.forEach(s => resolve.station[s._display] = s.id);
+
+        resolve.train = {};
+        db.trains.forEach(t => resolve.train[t._display] = t.id);
+
         render();
+
     } catch (e) {
         console.error("載入資料失敗:", e);
     }
-}
-
-function buildMaps() {
-    maps.line = {};
-    maps.station = {};
-    maps.company = {};
-
-    // 遍歷所有公司
-    data.companies.forEach(company => {
-        maps.company[company.company_id] = {
-            name: company.company_name,
-            lines: []
-        };
-
-        // 處理該公司的路線
-        company.lines.forEach(line => {
-            line.company_id = company.company_id; // 補齊關聯
-            maps.line[line.id] = line;
-            maps.company[company.company_id].lines.push(line.id);
-        });
-
-        // 處理該公司的站點
-        company.stations.forEach(stn => {
-            stn.company_id = company.company_id;
-            // 產生顯示名稱，例如 "淀屋橋 (京阪電鐵)"
-            stn._display = `${stn.name} (${company.company_name})`;
-            maps.station[stn.id] = stn;
-        });
-    });
-
-    // 處理車種 (原本的 logic)
-    maps.train = {};
-    data.trains.forEach(t => {
-        t._display = `${t.name} (${t.series})`;
-        maps.train[t.id] = t;
-    });
 }
 
 function initUILists() {
