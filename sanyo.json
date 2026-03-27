@@ -1,0 +1,458 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "SANYO",
+    "company_name": "山陽電鉄",
+    "lines": [
+      {
+        "id": "SANYO_ABOSHI",
+        "name": "本線",
+        "sequence": [
+          "STN_SANYO_SHIKAMA",
+          "STN_SANYO_NISHISHIKAMA",
+          "STN_SANYO_YUMESAKIGAWA",
+          "STN_SANYO_SANYO_TEMMA",
+          "STN_SANYO_HIRAMATSU",
+          "STN_SANYO_SANYO_ABOSHI"
+        ]
+      },
+      {
+        "id": "HANKYU_KOBE_KOSOKU",
+        "name": "網干線",
+        "sequence": [
+          "STN_HANKYU_KOBE_SANNOMIYA",
+          "STN_HANKYU_HANAKUMA",
+          "STN_HANKYU_KOSOKU_KOBE",
+          "STN_HANKYU_SHINKAICHI"
+        ]
+      },
+      {
+        "id": "HANKYU_ITAMI",
+        "name": "伊丹線",
+        "sequence": [
+          "STN_HANKYU_TSUKAGUCHI",
+          "STN_HANKYU_INANO",
+          "STN_HANKYU_SHIN_ITAMI",
+          "STN_HANKYU_ITAMI"
+        ]
+      },
+      {
+        "id": "HANKYU_IMAZU",
+        "name": "今津線",
+        "sequence": [
+          "STN_HANKYU_IMAZU",
+          "STN_HANKYU_HANSHIN_KOKUDO",
+          "STN_HANKYU_NISHINOMIYA_KITAGUCHI",
+          "STN_HANKYU_MONDO_YAKUJIN",
+          "STN_HANKYU_KOTOEN",
+          "STN_HANKYU_NIGAWA",
+          "STN_HANKYU_OBAYASHI",
+          "STN_HANKYU_SAKASEGAWA",
+          "STN_HANKYU_TAKARAZUKA_MINAMIGUCHI",
+          "STN_HANKYU_TAKARAZUKA"
+        ]
+      },
+      {
+        "id": "HANKYU_KOYO",
+        "name": "甲陽線",
+        "sequence": [
+          "STN_HANKYU_SHUKUGAWA",
+          "STN_HANKYU_KURAKUEN_GUCHI",
+          "STN_HANKYU_KOYOEN"
+        ]
+      },
+      {
+        "id": "HANKYU_TAKARAZUKA_HONSEN",
+        "name": "宝塚本線",
+        "sequence": [
+          "STN_HANKYU_OSAKA_UMEDA",
+          "STN_HANKYU_NAKATSU",
+          "STN_HANKYU_JUSO",
+          "STN_HANKYU_MIKUNI",
+          "STN_HANKYU_SHONAI",
+          "STN_HANKYU_HATTORI_TENJIN",
+          "STN_HANKYU_SONE",
+          "STN_HANKYU_OKAMACHI",
+          "STN_HANKYU_TOYONAKA",
+          "STN_HANKYU_HOTORUGAIKE",
+          "STN_HANKYU_ISHIBASHI_HANDAI_MAE",
+          "STN_HANKYU_IKEDA",
+          "STN_HANKYU_KAWANISHI_NOSEGUCHI",
+          "STN_HANKYU_HIBARIGAOKA_HANAYASHIKI",
+          "STN_HANKYU_YAMAMOTO",
+          "STN_HANKYU_NAKAYAMA_KANNON",
+          "STN_HANKYU_MEFU_JINJA",
+          "STN_HANKYU_KIYOSHIKOJIN",
+          "STN_HANKYU_TAKARAZUKA"
+        ]
+      },
+      {
+        "id": "HANKYU_MINOO",
+        "name": "箕面線",
+        "sequence": [
+          "STN_HANKYU_ISHIBASHI_HANDAI_MAE",
+          "STN_HANKYU_SAKURAI",
+          "STN_HANKYU_MAKIOCHI",
+          "STN_HANKYU_MINOO"
+        ]
+      },
+      {
+        "id": "HANKYU_KYOTO_HONSEN",
+        "name": "京都本線",
+        "sequence": [
+          "STN_HANKYU_OSAKA_UMEDA",
+          "STN_HANKYU_JUSO",
+          "STN_HANKYU_MINAMIKATA",
+          "STN_HANKYU_SOZENJI",
+          "STN_HANKYU_AWAJI",
+          "STN_HANKYU_KAMI_SHINJO",
+          "STN_HANKYU_AIKAWA",
+          "STN_HANKYU_SHOJAKU",
+          "STN_HANKYU_SETTSU_SHI",
+          "STN_HANKYU_MINAMI_IBARAKI",
+          "STN_HANKYU_IBARAKI_SHI",
+          "STN_HANKYU_SOJIJI",
+          "STN_HANKYU_TONDA",
+          "STN_HANKYU_TAKATSUKI_SHI",
+          "STN_HANKYU_KAMMAKI",
+          "STN_HANKYU_MINASE",
+          "STN_HANKYU_OYAMAZAKI",
+          "STN_HANKYU_NISHIYAMA_TENNOZAN",
+          "STN_HANKYU_NAGAOKA_TENJIN",
+          "STN_HANKYU_NISHI_MUKO",
+          "STN_HANKYU_HIGASHI_MUKO",
+          "STN_HANKYU_RAKUSAIGUCHI",
+          "STN_HANKYU_KATSURA",
+          "STN_HANKYU_NISHI_KYOGOKU",
+          "STN_HANKYU_SAIIN",
+          "STN_HANKYU_OMIYA",
+          "STN_HANKYU_KARASUMA",
+          "STN_HANKYU_KYOTO_KAWARAMACHI"
+        ]
+      },
+      {
+        "id": "HANKYU_SENRI",
+        "name": "千里線",
+        "sequence": [
+          "STN_HANKYU_TENJIMBASHISUJI_ROKUCHOME",
+          "STN_HANKYU_KUNIJIMA",
+          "STN_HANKYU_AWAJI",
+          "STN_HANKYU_SHIMO_SHINJO",
+          "STN_HANKYU_SUITA",
+          "STN_HANKYU_TOYOTSU",
+          "STN_HANKYU_KANDAI_MAE",
+          "STN_HANKYU_SENRIYAMA",
+          "STN_HANKYU_MINAMI_SENRI",
+          "STN_HANKYU_YAMADA",
+          "STN_HANKYU_KITA_SENRI"
+        ]
+      },
+      {
+        "id": "HANKYU_ARASHIYAMA",
+        "name": "嵐山線",
+        "sequence": [
+          "STN_HANKYU_KATSURA",
+          "STN_HANKYU_KAMI_KATSURA",
+          "STN_HANKYU_MATSUO_TAISHA",
+          "STN_HANKYU_ARASHIYAMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SANYO_NISHIDAI",
+        "lat": "34.6624",
+        "lng": "135.14399",
+        "name": "西代"
+      },
+      {
+        "id": "STN_SANYO_ITAYADO",
+        "lat": "34.66016",
+        "lng": "135.133295",
+        "name": "板宿"
+      },
+      {
+        "id": "STN_SANYO_HIGASHISUMA",
+        "lat": "34.655215",
+        "lng": "135.127485",
+        "name": "東須磨"
+      },
+      {
+        "id": "STN_SANYO_TSUKIMIYAMA",
+        "lat": "34.650187",
+        "lng": "135.122119",
+        "name": "月見山"
+      },
+      {
+        "id": "STN_SANYO_SUMADERA",
+        "lat": "34.646025",
+        "lng": "135.11624",
+        "name": "須磨寺"
+      },
+      {
+        "id": "STN_SANYO_SANYO_SUMA",
+        "lat": "34.643575",
+        "lng": "135.112315",
+        "name": "山陽須磨"
+      },
+      {
+        "id": "STN_SANYO_SUMAURA_KOEN",
+        "lat": "34.637935",
+        "lng": "135.10022",
+        "name": "須磨浦公園"
+      },
+      {
+        "id": "STN_SANYO_SANYO_SHIOYA",
+        "lat": "34.633615",
+        "lng": "135.08204",
+        "name": "山陽塩屋"
+      },
+      {
+        "id": "STN_SANYO_TAKINOCHAYA",
+        "lat": "34.631235",
+        "lng": "135.07292",
+        "name": "滝の茶屋"
+      },
+      {
+        "id": "STN_SANYO_HIGASHITARUMI",
+        "lat": "34.629375",
+        "lng": "135.06359",
+        "name": "東垂水"
+      },
+      {
+        "id": "STN_SANYO_SANYO_TARUMI",
+        "lat": "34.629335",
+        "lng": "135.05374",
+        "name": "山陽垂水"
+      },
+      {
+        "id": "STN_SANYO_KASUMIGAOKA",
+        "lat": "34.630325",
+        "lng": "135.04272",
+        "name": "霞ヶ丘"
+      },
+      {
+        "id": "STN_SANYO_MAIKOKOEN",
+        "lat": "34.634225",
+        "lng": "135.033855",
+        "name": "舞子公園"
+      },
+      {
+        "id": "STN_SANYO_NISHIMAIKO",
+        "lat": "34.6387",
+        "lng": "135.02813",
+        "name": "西舞子"
+      },
+      {
+        "id": "STN_SANYO_OKURADANI",
+        "lat": "34.646585",
+        "lng": "135.008405",
+        "name": "大蔵谷"
+      },
+      {
+        "id": "STN_SANYO_HITOMARUMAE",
+        "lat": "34.647545",
+        "lng": "135.0026",
+        "name": "人丸前"
+      },
+      {
+        "id": "STN_SANYO_SANYO_AKASHI",
+        "lat": "34.648798",
+        "lng": "134.99295",
+        "name": "山陽明石"
+      },
+      {
+        "id": "STN_SANYO_NISHISHINMACHI",
+        "lat": "34.649575",
+        "lng": "134.980805",
+        "name": "西新町"
+      },
+      {
+        "id": "STN_SANYO_HAYASHISAKI_MATSUEKAIGAN",
+        "lat": "34.65228",
+        "lng": "134.96508",
+        "name": "林崎松江海岸"
+      },
+      {
+        "id": "STN_SANYO_FUJIE",
+        "lat": "34.663395",
+        "lng": "134.947595",
+        "name": "藤江"
+      },
+      {
+        "id": "STN_SANYO_NAKAYAGI",
+        "lat": "34.6708",
+        "lng": "134.93616",
+        "name": "中八木"
+      },
+      {
+        "id": "STN_SANYO_EIGASHIMA",
+        "lat": "34.67902",
+        "lng": "134.919925",
+        "name": "江井ヶ島"
+      },
+      {
+        "id": "STN_SANYO_NISHIEIGASHIMA",
+        "lat": "34.68573",
+        "lng": "134.90817",
+        "name": "西江井ヶ島"
+      },
+      {
+        "id": "STN_SANYO_SANYO_UOZUMI",
+        "lat": "34.68928",
+        "lng": "134.902025",
+        "name": "山陽魚住"
+      },
+      {
+        "id": "STN_SANYO_HIGASHIFUTAMI",
+        "lat": "34.70025",
+        "lng": "134.888025",
+        "name": "東二見"
+      },
+      {
+        "id": "STN_SANYO_NISHIFUTAMI",
+        "lat": "34.707185",
+        "lng": "134.877065",
+        "name": "西二見"
+      },
+      {
+        "id": "STN_SANYO_HARIMACHO",
+        "lat": "34.716675",
+        "lng": "134.86813",
+        "name": "播磨町"
+      },
+      {
+        "id": "STN_SANYO_BEFU",
+        "lat": "34.730245",
+        "lng": "134.85069",
+        "name": "別府"
+      },
+      {
+        "id": "STN_SANYO_HAMANOMIYA",
+        "lat": "34.740835",
+        "lng": "134.833975",
+        "name": "浜の宮"
+      },
+      {
+        "id": "STN_SANYO_ONONOE_MATSU",
+        "lat": "34.74859",
+        "lng": "134.82093",
+        "name": "尾上の松"
+      },
+      {
+        "id": "STN_SANYO_TAKASAGO",
+        "lat": "34.751975",
+        "lng": "134.80239",
+        "name": "高砂"
+      },
+      {
+        "id": "STN_SANYO_ARAI",
+        "lat": "34.757825",
+        "lng": "134.793645",
+        "name": "荒井"
+      },
+      {
+        "id": "STN_SANYO_IHO",
+        "lat": "34.767096",
+        "lng": "134.787076",
+        "name": "伊保"
+      },
+      {
+        "id": "STN_SANYO_SANYO_SONE",
+        "lat": "34.775513",
+        "lng": "134.773177",
+        "name": "山陽曽根"
+      },
+      {
+        "id": "STN_SANYO_OSHIO",
+        "lat": "34.779374",
+        "lng": "134.75756",
+        "name": "大塩"
+      },
+      {
+        "id": "STN_SANYO_MATOGATA",
+        "lat": "34.780065",
+        "lng": "134.741585",
+        "name": "的形"
+      },
+      {
+        "id": "STN_SANYO_YAKA",
+        "lat": "34.784035",
+        "lng": "134.72259",
+        "name": "八家"
+      },
+      {
+        "id": "STN_SANYO_SHIRAHAMANOMIYA",
+        "lat": "34.786855",
+        "lng": "134.70714",
+        "name": "白浜の宮"
+      },
+      {
+        "id": "STN_SANYO_MEGA",
+        "lat": "34.792086",
+        "lng": "134.693486",
+        "name": "妻鹿"
+      },
+      {
+        "id": "STN_SANYO_SHIKAMA",
+        "lat": "34.79971",
+        "lng": "134.675465",
+        "name": "飾磨"
+      },
+      {
+        "id": "STN_SANYO_KAMEYAMA",
+        "lat": "34.810655",
+        "lng": "134.67675",
+        "name": "亀山"
+      },
+      {
+        "id": "STN_SANYO_TEGARA",
+        "lat": "34.81992",
+        "lng": "134.681395",
+        "name": "手柄"
+      },
+      {
+        "id": "STN_SANYO_SANYO_HIMEJI",
+        "lat": "34.828785",
+        "lng": "134.689335",
+        "name": "山陽姫路"
+      },
+      {
+        "id": "STN_SANYO_NISHISHIKAMA",
+        "lat": "34.803045",
+        "lng": "134.65122",
+        "name": "西飾磨"
+      },
+      {
+        "id": "STN_SANYO_YUMESAKIGAWA",
+        "lat": "34.79841",
+        "lng": "134.639305",
+        "name": "夢前川"
+      },
+      {
+        "id": "STN_SANYO_HIROHATA",
+        "lat": "34.797905",
+        "lng": "134.627565",
+        "name": "広畑"
+      },
+      {
+        "id": "STN_SANYO_SANYO_TEMMA",
+        "lat": "34.796375",
+        "lng": "134.61744",
+        "name": "山陽天満"
+      },
+      {
+        "id": "STN_SANYO_HIRAMATSU",
+        "lat": "34.79074",
+        "lng": "134.601075",
+        "name": "平松"
+      },
+      {
+        "id": "STN_SANYO_SANYO_ABOSHI",
+        "lat": "34.7870459",
+        "lng": "134.58817131",
+        "name": "山陽網干"
+      }
+    ]
+  }
+]

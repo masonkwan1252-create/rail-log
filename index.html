@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.13</title>
+<title>鉄道手帳 RAIL LOG V0.15</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
@@ -17,12 +17,12 @@
     flex-direction: column;
     justify-content: center; /* 垂直置中 */
     align-items: center;     /* 水平置中 */
-    color: #003399;          /* 使用鐵道手帳同款藍色 */
+    color: #001f5c;          /* 使用鐵道手帳同款藍色 */
     text-align: center;
 }
 
 .out-of-service-panel .sign-destination-text {
-    color: #003399;         /* 鐵道手帳同款藍色 */
+    color: #001f5c;         /* 鐵道手帳同款藍色 */
     font-size: 32px;        /* 大幅增加字體大小 */
     font-weight: 900;       /* 加粗字體 */
     letter-spacing: 30px;   /* 增加字距，顯得更有氣勢 */
@@ -32,9 +32,21 @@
     transform: scaleY(1.1); 
 }
 
+/* 山手線英文專用副標題 */
+.out-of-service-panel .sign-yamanote-en {
+    color: #001f5c;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    margin-top: 2px;
+	transform: scaleY(1.1); 
+}
+
 /* 🚩 Dark Mode 下的調整 */
 @media (prefers-color-scheme: dark) {
-    .out-of-service-panel .sign-destination-text {
+    .out-of-service-panel .sign-destination-text,
+    .out-of-service-panel .sign-yamanote-en {
         color: #002266;     /* 配合暖色背燈稍微深色一點點 */
         /* 增加一點點文字陰影，模擬光線透過布幕的效果 */
         text-shadow: 0 0 1px rgba(0,0,0,0.2);
@@ -97,7 +109,16 @@ header {
     overflow: hidden;
 }
 
-.header-band { flex: 1; height: 30px; background: var(--primary); }
+.header-band { 
+    flex: 1; 
+    height: 30px; 
+    background: var(--primary); 
+    cursor: pointer; /* 🚩 加入手型鼠標提示可點擊 */
+    transition: opacity 0.2s;
+}
+.header-band:active {
+    opacity: 0.7;
+}
 
 /* 🚩 更新：方向幕外框與陰影 */
 .destination-sign-frame {
@@ -114,31 +135,29 @@ header {
     overflow: hidden; /* 確保卷幕唔會超出邊框 */
 }
 
-/* 🚩 新增：卷幕動畫容器 */
+/* 🚩 更新：卷幕動畫容器 (改為由JS控制) */
 .roll-container {
-    position: absolute; /* 🚩 加入絕對定位，迫使 iOS 準確讀取外框高度 */
+    position: absolute; 
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 300%; /* 🚩 共有 4 塊幕，總高度設定為 400% */
-    animation: rollSign 6s cubic-bezier(1, 1, 1, 1) forwards;
-    animation-delay: 0.5s;
+    height: 500%; /* 🚩 V0.15 共有 5 塊幕，總高度設定為 500% */
     transform: translateY(0);
 }
 
 /* 🚩 新增：每一格方向幕 */
 .sign-panel {
     width: 100%;
-    height: 33.33%;
+    height: 20%; /* 🚩 100% / 5格 = 20% */
     flex-shrink: 0;
     display: flex;
     box-sizing: border-box;
 }
 
-/* 獨立排版：回送幕 */
+/* 獨立排版：回送幕/純文字幕 */
 .sign-panel.out-of-service-panel {
     flex-direction: column;
     justify-content: center;
@@ -154,16 +173,8 @@ header {
     white-space: nowrap;
 }
 
-@keyframes rollSign {
-    0%   { transform: translateY(0); }         /* 第一格：空白 */
-    50%  { transform: translateY(-33.333%); }  /* 第二格：回送 */
-    100% { transform: translateY(-66.666%); }  /* 第三格：山手線 (停止點) */
-}
-
 /* 🚩 更新：Dark Mode 晚黑效果與 90 年代暖色背燈 */
 @media (prefers-color-scheme: dark) {
-    /* ... 保留你原本嘅 dark mode :root ... */
-    
     header {
         /* 將 header 轉為黑夜效果 */
         background: linear-gradient(135deg, #111 0%, #222 100%);
@@ -172,7 +183,7 @@ header {
     }
     
     .header-band {
-        background: #4a8f09; /* 夜晚嘅山手線綠色可以稍微暗沉少少 */
+        background: #27420e; /* 🚩 V0.15 更新：山手線夜間色帶顏色 */
     }
 
     .destination-sign-frame {
@@ -189,23 +200,23 @@ header {
     }
 }
 
-/* 🚩 V0.13: 通勤快速排版更新 */
+/* 通勤快速排版更新 */
 .sign-type-box {
-    margin: 0 0 0 8px; /* 取消上下 margin，只保留左邊距推開少少 */
-    align-self: center; /* 🚩 取消與方向幕外框嘅連結，令紅框自己垂直置中 */
-    border: 2px solid #ff3b30; /* 保留你原本嘅特別粗幼設定 */
+    margin: 0 0 0 8px; 
+    align-self: center; 
+    border: 2px solid #ff3b30; 
     border-top: 6.25px solid #ff3b30; 
     border-bottom: 6.25px solid #ff3b30; 
     color: #ff3b30;
     border-radius: 4px;
-    padding: 1px 3px; /* 🚩 上下邊框與字留 1px gap，左右留 3px gap */
+    padding: 1px 3px; 
     font-size: clamp(13px, 3.5vw, 15px); 
     font-weight: 900;
     line-height: 1.1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* 🚩 確保裡面四隻字絕對置中對齊 */
+    align-items: center; 
     font-style: italic; 
     flex-shrink: 0;
     box-sizing: border-box;
@@ -216,35 +227,35 @@ header {
 .sign-type-text-2 { text-indent: 1em; width: 100%;} 
 
 .sign-main-content {
-    margin: 0px 5px 0px 0px; /* 🚩 頂邊框2px, 右邊框5px, 底邊框2px, 左紅框5px */
+    margin: 0px 5px 0px 0px; 
     text-align: center;
 	align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center; 
-    justify-content: center; /* 使用 center 確保間距緊湊 */
-    gap: 2px; /* 🚩 兩行字之間距離3px */
+    justify-content: center; 
+    gap: 2px; 
     color: #001f5c; 
     flex: 1; 
 }
 
 .sign-destination-text {
-    font-size: clamp(20px, 6vw, 25px); /* 🚩 調整字闊，略為放大以填補空間 */
+    font-size: clamp(20px, 6vw, 25px); 
     font-weight: 800;
     line-height: 1;
-    letter-spacing: 0.2em; /* 🚩 加大字距令文字伸延 */
+    letter-spacing: 0.2em; 
     margin: 0; 
     width: 100%;
 }
 
 .sign-english-text {
-    font-size: clamp(10px, 3vw, 13px); /* 🚩 調整字闊 */
+    font-size: clamp(10px, 3vw, 13px); 
     width: 100%; 
     margin: 0; 
     line-height: 1;
     text-align-last: center; 
     font-weight: 700;
-    letter-spacing: 0.35em; /* 🚩 調整字距填滿 */
+    letter-spacing: 0.35em; 
 }
 
 
@@ -329,7 +340,6 @@ input, select {
 }
 input:focus { border-color: var(--primary); }
 
-/* 每一個輸入欄都有清空小交叉 */
 .input-wrapper { position: relative; display: flex; align-items: center; }
 .input-wrapper input { padding-right: 35px; } 
 .clear-input-btn {
@@ -388,7 +398,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .cal-day.has-record { background: var(--primary); color: white; font-weight: bold; }
 .cal-day.selected { border: 2px solid var(--text); }
 
-/* 🚩 乘車記錄極致慳位排版 */
+/* 乘車記錄極致慳位排版 */
 .trip { border-bottom: 1px solid var(--border); padding: 10px 0; }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
 .trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
@@ -405,7 +415,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .stat-group-title { font-size: 14px; font-weight: 600; color: var(--subtext); margin-bottom: 8px; }
 .completion-rate { font-size: 13px; color: var(--success); margin-left: 8px; font-weight: 500; }
 
-/* 🚩 統計頁直線圖表 CSS */
+/* 統計頁直線圖表 CSS */
 .chart-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; margin-bottom: 12px; }
 .chart-tabs button { flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600; background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s; }
 .chart-tabs button.active { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
@@ -422,13 +432,23 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 <body>
 
 <header>
-    <div class="header-band"></div>
+    <div class="header-band" onclick="scrollSign('prev')" title="向上捲一格"></div>
+    
     <div class="destination-sign-frame">
-        <div class="roll-container">
+        <div class="roll-container" id="rollContainer">
             <div class="sign-panel"></div>
             
             <div class="sign-panel out-of-service-panel">
-                <div class="sign-destination-text" style="color: #001f5c;">回送</div>
+                <div class="sign-destination-text">回送</div>
+            </div>
+
+            <div class="sign-panel out-of-service-panel">
+                <div class="sign-destination-text">試運転</div>
+            </div>
+
+            <div class="sign-panel out-of-service-panel" style="gap:0;">
+                <div class="sign-destination-text" style="font-size: 28px; letter-spacing: 12px; margin-right: -12px;">山手線</div>
+                <div class="sign-yamanote-en">YAMANOTE LINE</div>
             </div>
             
             <div class="sign-panel final-panel">
@@ -443,11 +463,12 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             </div>
         </div>
     </div>
-    <div class="header-band"></div>
+    
+    <div class="header-band" onclick="scrollSign('next')" title="向下捲一格"></div>
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.13</div>
+<div class="version-badge">V0.15</div>
 
 <div class="container">
 
@@ -608,6 +629,44 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </datalist>
 
 <script>
+// 🚩 V0.15 方向幕動畫控制
+let currentSignIndex = 0;
+const totalSigns = 5; // 共 5 格 (0 至 4)
+const rollContainer = document.getElementById('rollContainer');
+let autoRollInterval = null;
+
+// 頁面載入時啟動 15 秒動畫 (每 3 秒轉一格，轉 4 次)
+setTimeout(() => {
+    autoRollInterval = setInterval(() => {
+        if (currentSignIndex < totalSigns - 1) {
+            currentSignIndex++;
+            rollContainer.style.transition = 'transform 3s cubic-bezier(1, 1, 1, 1)';
+            rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
+        } else {
+            clearInterval(autoRollInterval);
+            autoRollInterval = null;
+        }
+    }, 3000);
+}, 500);
+
+// 手動點擊色帶互動控制
+function scrollSign(direction) {
+    // 如果仲自動轉緊，打斷佢，交由玩家接手
+    if (autoRollInterval) {
+        clearInterval(autoRollInterval);
+        autoRollInterval = null;
+    }
+    
+    rollContainer.style.transition = 'transform 3s cubic-bezier(1, 1, 1, 1)';
+    if (direction === 'prev' && currentSignIndex > 0) {
+        currentSignIndex--;
+    } else if (direction === 'next' && currentSignIndex < totalSigns - 1) {
+        currentSignIndex++;
+    }
+    rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
+}
+
+
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
 let editIndex = null;
 let lastTo = "";
@@ -620,7 +679,7 @@ let currentDateFilter = "all";
 let calViewDate = new Date();
 let activeStatFilter = { type: null, id: null };
 
-// 🚩 分頁變數
+// 分頁變數
 let currentRecordPage = 1;
 const recordsPerPage = 50;
 let currentChartType = 'company';
@@ -637,7 +696,6 @@ function clearInput(id) {
 
 async function loadData() {
     try {
-        // 1. 載入共用的 companies 與 traintypes
         const [compRes, trainRes] = await Promise.all([
             fetch("companies.json"), 
             fetch("traintypes.json")
@@ -651,8 +709,6 @@ async function loadData() {
         db.lines = [];
         db.stations = [];
 
-        // 2. 載入尚未拆分的舊有綜合檔案 (lines.json, stations.json)
-        // 使用 try-catch 確保就算未來舊檔案全刪了，程式也不會死掉
         try {
             const [lineRes, staRes] = await Promise.all([
                 fetch("lines.json"), 
@@ -664,20 +720,15 @@ async function loadData() {
             console.log("舊版路線/車站檔案已不存在或載入失敗"); 
         }
 
-        // 3. 載入已拆分的新版獨立公司 JSON (例如 keihan.json)
-        // 未來如果有更多公司完成轉換，只需將檔名加進這個 Array，例如: ["keihan.json", "jr_west.json"]
-        const newCompanyFiles = ["keihan.json"]; 
+        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json"]; 
         
         for (let file of newCompanyFiles) {
             try {
                 let res = await fetch(file);
                 if (res.ok) {
                     let data = await res.json();
-                    
-                    // 因為你的 keihan.json 最外層是一個陣列，所以取 data[0]
                     let compData = data[0]; 
                     
-                    // 將獨立 JSON 內的路線壓平，並動態補上 company_id 寫入主 db.lines
                     if (compData.lines) {
                         compData.lines.forEach(line => {
                             line.company_id = compData.company_id;
@@ -685,7 +736,6 @@ async function loadData() {
                         });
                     }
                     
-                    // 將獨立 JSON 內的車站壓平，並動態補上 company_id 寫入主 db.stations
                     if (compData.stations) {
                         compData.stations.forEach(station => {
                             station.company_id = compData.company_id;
@@ -741,6 +791,7 @@ function buildMaps() {
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
     fillList("lineList", db.lines.map(l => l.name));
+    // 🚩 V0.15: 預設載入所有車型，不受公司限制
     fillList("trainList", db.trains.map(t => t._display));
 }
 
@@ -762,7 +813,8 @@ function switchTab(tabId, navElement) {
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
     updateLineList(compName, "lineList");
-    updateTrainList(compName, "trainList");
+    // 🚩 V0.15 取消車型聯動篩選，確保轉公司都可以揀其他公司嘅車
+    updateTrainList(); 
     updateStationLists();
 });
 
@@ -777,13 +829,12 @@ function updateLineList(compName, targetListId) {
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
 }
 
-function updateTrainList(compName, targetListId) {
-    const compId = resolve.company[compName];
-    const list = document.getElementById(targetListId);
+// 🚩 V0.15 更新：不再接收 compName 參數，強行顯示全部車型
+function updateTrainList() {
+    const list = document.getElementById("trainList");
     if(!list) return;
     list.innerHTML = "";
-    let trainsToShow = compId ? db.trains.filter(t => t.company_id === compId) : db.trains;
-    trainsToShow.forEach(t => list.appendChild(new Option(t._display)));
+    db.trains.forEach(t => list.appendChild(new Option(t._display)));
 }
 
 function updateStationLists() {
@@ -829,7 +880,6 @@ function fillStationDatalist(listId, compId, lineInput) {
 }
 
 function addThrough() {
-    // 🚩 預設選擇上面輸入的公司
     let lastCompName = document.getElementById("company").value;
     const existingBlocks = document.querySelectorAll(".through-block");
     if (existingBlocks.length > 0) {
@@ -894,8 +944,8 @@ function saveTrip() {
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
     
-    updateLineList("", "lineList"); updateTrainList("", "trainList"); updateStationLists();
-    currentRecordPage = 1; // 儲存後重設頁數
+    updateLineList("", "lineList"); updateTrainList(); updateStationLists();
+    currentRecordPage = 1; 
     render();
     
     const messageDiv = document.getElementById("saveMessage");
@@ -916,7 +966,7 @@ function getTodayStr() {
 function setDateFilter(val) {
     if (val === 'today') currentDateFilter = getTodayStr();
     else currentDateFilter = val;
-    currentRecordPage = 1; // 篩選重設頁數
+    currentRecordPage = 1;
     render();
 }
 
@@ -958,7 +1008,6 @@ function render() {
     let tripsToDisplay = trips.filter(t => currentDateFilter === "all" || t.date === currentDateFilter);
     document.getElementById("totalCount").innerText = tripsToDisplay.length;
 
-    // 🚩 分頁邏輯
     let totalPages = Math.ceil(tripsToDisplay.length / recordsPerPage) || 1;
     if (currentRecordPage > totalPages) currentRecordPage = totalPages;
     let pagedTrips = tripsToDisplay.slice((currentRecordPage - 1) * recordsPerPage, currentRecordPage * recordsPerPage);
@@ -967,7 +1016,6 @@ function render() {
         let originalIndex = trips.indexOf(t);
         const div = document.createElement("div"); div.className = "trip";
         
-        // 🚩 直通相同公司路線化簡
         let routeHtml = "";
         let lastCompany = "";
         t.routes.forEach((r, idx) => {
@@ -988,7 +1036,6 @@ function render() {
         
         const serviceHtml = t.serviceType ? `<span style="background:var(--danger); color:white; padding:1px 5px; border-radius:3px; font-size:11px; font-weight:bold;">${t.serviceType}</span>` : '';
         
-        // 🚩 Icon 取代文字按鈕，極致慳位
         div.innerHTML = `
             <div class="trip-header-row">
                 <div class="date">${t.date}</div>
@@ -1007,7 +1054,6 @@ function render() {
         listDiv.appendChild(div);
     });
 
-    // 🚩 渲染分頁按鈕
     if (totalPages > 1) {
         paginationDiv.innerHTML = `
             <button class="btn-small" style="width:80px; margin:0;" onclick="changeRecordPage(-1)" ${currentRecordPage === 1 ? 'disabled' : ''}>上一頁</button>
@@ -1017,7 +1063,7 @@ function render() {
     }
 
     renderStats();
-    drawBarChart(); // 畫 Top 10 圖表
+    drawBarChart(); 
 }
 
 function openCalendar() {
@@ -1135,7 +1181,6 @@ function renderStats() {
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
 }
 
-// 🚩 Top 10 圖表切換與繪製
 function switchChartTab(type) {
     currentChartType = type;
     document.getElementById("btnChartCompany").className = type === 'company' ? 'active' : '';
@@ -1150,7 +1195,6 @@ function drawBarChart() {
     let counts = {};
     if (currentChartType === 'company') {
         trips.forEach(t => {
-            // 每一次乘車，紀錄當中有出現過嘅公司（一程車內同公司不重複計算）
             let comps = new Set(t.routes.map(r => r.company_id));
             comps.forEach(c => { counts[c] = (counts[c] || 0) + 1; });
         });
@@ -1185,7 +1229,6 @@ function drawBarChart() {
         `;
         container.appendChild(row);
         
-        // 觸發動畫
         setTimeout(() => {
             row.querySelector('.bar-fill').style.width = `${pct}%`;
         }, 50);
@@ -1201,7 +1244,7 @@ function editTrip(i) {
     setVal("company", firstCompName);
     
     updateLineList(firstCompName, "lineList");
-    updateTrainList(firstCompName, "trainList");
+    updateTrainList(); // V0.15 Update
     setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
 
     document.getElementById("throughContainer").innerHTML = "";
@@ -1235,7 +1278,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.13.json"; a.click();
+    a.download = "rail-log-V0.15.json"; a.click();
 }
 
 function importData() {

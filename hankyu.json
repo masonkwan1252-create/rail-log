@@ -1,0 +1,717 @@
+[
+  {
+    "categories": "大手私鉄",
+    "company_id": "HANKYU",
+    "company_name": "阪急電鉄",
+    "lines": [
+      {
+        "id": "HANKYU_KOBE_HONSEN",
+        "name": "神戸本線",
+        "sequence": [
+          "STN_HANKYU_OSAKA_UMEDA",
+          "STN_HANKYU_NAKATSU",
+          "STN_HANKYU_JUSO",
+          "STN_HANKYU_KANZAKIGAWA",
+          "STN_HANKYU_SONODA",
+          "STN_HANKYU_TSUKAGUCHI",
+          "STN_HANKYU_MUKONOSO",
+          "STN_HANKYU_NISHINOMIYA_KITAGUCHI",
+          "STN_HANKYU_SHUKUGAWA",
+          "STN_HANKYU_ASHIYAGAWA",
+          "STN_HANKYU_OKAMOTO",
+          "STN_HANKYU_MIKAGE",
+          "STN_HANKYU_ROKKO",
+          "STN_HANKYU_OJI_KOEN",
+          "STN_HANKYU_KASUGANOMICHI",
+          "STN_HANKYU_KOBE_SANNOMIYA",
+          "STN_HANKYU_HANAKUMA",
+          "STN_HANKYU_KOSOKU_KOBE",
+          "STN_HANKYU_SHINKAICHI"
+        ]
+      },
+      {
+        "id": "HANKYU_KOBE_KOSOKU",
+        "name": "神戸高速線",
+        "sequence": [
+          "STN_HANKYU_KOBE_SANNOMIYA",
+          "STN_HANKYU_HANAKUMA",
+          "STN_HANKYU_KOSOKU_KOBE",
+          "STN_HANKYU_SHINKAICHI"
+        ]
+      },
+      {
+        "id": "HANKYU_ITAMI",
+        "name": "伊丹線",
+        "sequence": [
+          "STN_HANKYU_TSUKAGUCHI",
+          "STN_HANKYU_INANO",
+          "STN_HANKYU_SHIN_ITAMI",
+          "STN_HANKYU_ITAMI"
+        ]
+      },
+      {
+        "id": "HANKYU_IMAZU",
+        "name": "今津線",
+        "sequence": [
+          "STN_HANKYU_IMAZU",
+          "STN_HANKYU_HANSHIN_KOKUDO",
+          "STN_HANKYU_NISHINOMIYA_KITAGUCHI",
+          "STN_HANKYU_MONDO_YAKUJIN",
+          "STN_HANKYU_KOTOEN",
+          "STN_HANKYU_NIGAWA",
+          "STN_HANKYU_OBAYASHI",
+          "STN_HANKYU_SAKASEGAWA",
+          "STN_HANKYU_TAKARAZUKA_MINAMIGUCHI",
+          "STN_HANKYU_TAKARAZUKA"
+        ]
+      },
+      {
+        "id": "HANKYU_KOYO",
+        "name": "甲陽線",
+        "sequence": [
+          "STN_HANKYU_SHUKUGAWA",
+          "STN_HANKYU_KURAKUEN_GUCHI",
+          "STN_HANKYU_KOYOEN"
+        ]
+      },
+      {
+        "id": "HANKYU_TAKARAZUKA_HONSEN",
+        "name": "宝塚本線",
+        "sequence": [
+          "STN_HANKYU_OSAKA_UMEDA",
+          "STN_HANKYU_NAKATSU",
+          "STN_HANKYU_JUSO",
+          "STN_HANKYU_MIKUNI",
+          "STN_HANKYU_SHONAI",
+          "STN_HANKYU_HATTORI_TENJIN",
+          "STN_HANKYU_SONE",
+          "STN_HANKYU_OKAMACHI",
+          "STN_HANKYU_TOYONAKA",
+          "STN_HANKYU_HOTORUGAIKE",
+          "STN_HANKYU_ISHIBASHI_HANDAI_MAE",
+          "STN_HANKYU_IKEDA",
+          "STN_HANKYU_KAWANISHI_NOSEGUCHI",
+          "STN_HANKYU_HIBARIGAOKA_HANAYASHIKI",
+          "STN_HANKYU_YAMAMOTO",
+          "STN_HANKYU_NAKAYAMA_KANNON",
+          "STN_HANKYU_MEFU_JINJA",
+          "STN_HANKYU_KIYOSHIKOJIN",
+          "STN_HANKYU_TAKARAZUKA"
+        ]
+      },
+      {
+        "id": "HANKYU_MINOO",
+        "name": "箕面線",
+        "sequence": [
+          "STN_HANKYU_ISHIBASHI_HANDAI_MAE",
+          "STN_HANKYU_SAKURAI",
+          "STN_HANKYU_MAKIOCHI",
+          "STN_HANKYU_MINOO"
+        ]
+      },
+      {
+        "id": "HANKYU_KYOTO_HONSEN",
+        "name": "京都本線",
+        "sequence": [
+          "STN_HANKYU_OSAKA_UMEDA",
+          "STN_HANKYU_JUSO",
+          "STN_HANKYU_MINAMIKATA",
+          "STN_HANKYU_SOZENJI",
+          "STN_HANKYU_AWAJI",
+          "STN_HANKYU_KAMI_SHINJO",
+          "STN_HANKYU_AIKAWA",
+          "STN_HANKYU_SHOJAKU",
+          "STN_HANKYU_SETTSU_SHI",
+          "STN_HANKYU_MINAMI_IBARAKI",
+          "STN_HANKYU_IBARAKI_SHI",
+          "STN_HANKYU_SOJIJI",
+          "STN_HANKYU_TONDA",
+          "STN_HANKYU_TAKATSUKI_SHI",
+          "STN_HANKYU_KAMMAKI",
+          "STN_HANKYU_MINASE",
+          "STN_HANKYU_OYAMAZAKI",
+          "STN_HANKYU_NISHIYAMA_TENNOZAN",
+          "STN_HANKYU_NAGAOKA_TENJIN",
+          "STN_HANKYU_NISHI_MUKO",
+          "STN_HANKYU_HIGASHI_MUKO",
+          "STN_HANKYU_RAKUSAIGUCHI",
+          "STN_HANKYU_KATSURA",
+          "STN_HANKYU_NISHI_KYOGOKU",
+          "STN_HANKYU_SAIIN",
+          "STN_HANKYU_OMIYA",
+          "STN_HANKYU_KARASUMA",
+          "STN_HANKYU_KYOTO_KAWARAMACHI"
+        ]
+      },
+      {
+        "id": "HANKYU_SENRI",
+        "name": "千里線",
+        "sequence": [
+          "STN_HANKYU_TENJIMBASHISUJI_ROKUCHOME",
+          "STN_HANKYU_KUNIJIMA",
+          "STN_HANKYU_AWAJI",
+          "STN_HANKYU_SHIMO_SHINJO",
+          "STN_HANKYU_SUITA",
+          "STN_HANKYU_TOYOTSU",
+          "STN_HANKYU_KANDAI_MAE",
+          "STN_HANKYU_SENRIYAMA",
+          "STN_HANKYU_MINAMI_SENRI",
+          "STN_HANKYU_YAMADA",
+          "STN_HANKYU_KITA_SENRI"
+        ]
+      },
+      {
+        "id": "HANKYU_ARASHIYAMA",
+        "name": "嵐山線",
+        "sequence": [
+          "STN_HANKYU_KATSURA",
+          "STN_HANKYU_KAMI_KATSURA",
+          "STN_HANKYU_MATSUO_TAISHA",
+          "STN_HANKYU_ARASHIYAMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HANKYU_OSAKA_UMEDA",
+        "lat": "34.70497587",
+        "lng": "135.49817889",
+        "name": "大阪梅田"
+      },
+      {
+        "id": "STN_HANKYU_NAKATSU",
+        "lat": "34.709875",
+        "lng": "135.492525",
+        "name": "中津"
+      },
+      {
+        "id": "STN_HANKYU_JUSO",
+        "lat": "34.720245",
+        "lng": "135.4821",
+        "name": "十三"
+      },
+      {
+        "id": "STN_HANKYU_KANZAKIGAWA",
+        "lat": "34.731979",
+        "lng": "135.473128",
+        "name": "神崎川"
+      },
+      {
+        "id": "STN_HANKYU_SONODA",
+        "lat": "34.751845",
+        "lng": "135.44811",
+        "name": "園田"
+      },
+      {
+        "id": "STN_HANKYU_TSUKAGUCHI",
+        "lat": "34.75286",
+        "lng": "135.4161",
+        "name": "塚口"
+      },
+      {
+        "id": "STN_HANKYU_MUKONOSO",
+        "lat": "34.751655",
+        "lng": "135.39386",
+        "name": "武庫之荘"
+      },
+      {
+        "id": "STN_HANKYU_NISHINOMIYA_KITAGUCHI",
+        "lat": "34.745911",
+        "lng": "135.356455",
+        "name": "西宮北口"
+      },
+      {
+        "id": "STN_HANKYU_SHUKUGAWA",
+        "lat": "34.74226",
+        "lng": "135.3281",
+        "name": "夙川"
+      },
+      {
+        "id": "STN_HANKYU_ASHIYAGAWA",
+        "lat": "34.736362",
+        "lng": "135.300731",
+        "name": "芦屋川"
+      },
+      {
+        "id": "STN_HANKYU_OKAMOTO",
+        "lat": "34.729175",
+        "lng": "135.27594",
+        "name": "岡本"
+      },
+      {
+        "id": "STN_HANKYU_MIKAGE",
+        "lat": "34.72457",
+        "lng": "135.251875",
+        "name": "御影"
+      },
+      {
+        "id": "STN_HANKYU_ROKKO",
+        "lat": "34.719475",
+        "lng": "135.2337",
+        "name": "六甲"
+      },
+      {
+        "id": "STN_HANKYU_OJI_KOEN",
+        "lat": "34.71034",
+        "lng": "135.21864",
+        "name": "王子公園"
+      },
+      {
+        "id": "STN_HANKYU_KASUGANOMICHI",
+        "lat": "34.702994",
+        "lng": "135.205357",
+        "name": "春日野道"
+      },
+      {
+        "id": "STN_HANKYU_KOBE_SANNOMIYA",
+        "lat": "34.693145",
+        "lng": "135.192855",
+        "name": "神戸三宮"
+      },
+      {
+        "id": "STN_HANKYU_HANAKUMA",
+        "lat": "34.68624579",
+        "lng": "135.18139074",
+        "name": "花隈"
+      },
+      {
+        "id": "STN_HANKYU_KOSOKU_KOBE",
+        "lat": "34.6799",
+        "lng": "135.175465",
+        "name": "高速神戸"
+      },
+      {
+        "id": "STN_HANKYU_SHINKAICHI",
+        "lat": "34.676455",
+        "lng": "135.16993",
+        "name": "新開地"
+      },
+      {
+        "id": "STN_HANKYU_INANO",
+        "lat": "34.556253",
+        "lng": "135.506008",
+        "name": "稲野"
+      },
+      {
+        "id": "STN_HANKYU_SHIN_ITAMI",
+        "lat": "34.772365",
+        "lng": "135.41559",
+        "name": "新伊丹"
+      },
+      {
+        "id": "STN_HANKYU_ITAMI",
+        "lat": "34.779915",
+        "lng": "135.41373",
+        "name": "伊丹"
+      },
+      {
+        "id": "STN_HANKYU_IMAZU",
+        "lat": "34.731945",
+        "lng": "135.35162",
+        "name": "今津"
+      },
+      {
+        "id": "STN_HANKYU_HANSHIN_KOKUDO",
+        "lat": "34.73739",
+        "lng": "135.354855",
+        "name": "阪神国道"
+      },
+      {
+        "id": "STN_HANKYU_MONDO_YAKUJIN",
+        "lat": "34.757045",
+        "lng": "135.35824",
+        "name": "門戸厄神"
+      },
+      {
+        "id": "STN_HANKYU_KOTOEN",
+        "lat": "34.766765",
+        "lng": "135.35981",
+        "name": "甲東園"
+      },
+      {
+        "id": "STN_HANKYU_NIGAWA",
+        "lat": "34.77508",
+        "lng": "135.35687",
+        "name": "仁川"
+      },
+      {
+        "id": "STN_HANKYU_OBAYASHI",
+        "lat": "34.78938",
+        "lng": "135.352335",
+        "name": "小林"
+      },
+      {
+        "id": "STN_HANKYU_SAKASEGAWA",
+        "lat": "34.797113",
+        "lng": "135.350878",
+        "name": "逆瀬川"
+      },
+      {
+        "id": "STN_HANKYU_TAKARAZUKA_MINAMIGUCHI",
+        "lat": "34.803795",
+        "lng": "135.34579",
+        "name": "宝塚南口"
+      },
+      {
+        "id": "STN_HANKYU_TAKARAZUKA",
+        "lat": "34.810485",
+        "lng": "135.340895",
+        "name": "宝塚"
+      },
+      {
+        "id": "STN_HANKYU_KURAKUEN_GUCHI",
+        "lat": "34.75006",
+        "lng": "135.32894",
+        "name": "苦楽園口"
+      },
+      {
+        "id": "STN_HANKYU_KOYOEN",
+        "lat": "34.760557",
+        "lng": "135.33072",
+        "name": "甲陽園"
+      },
+      {
+        "id": "STN_HANKYU_MIKUNI",
+        "lat": "34.737499",
+        "lng": "135.482967",
+        "name": "三国"
+      },
+      {
+        "id": "STN_HANKYU_SHONAI",
+        "lat": "34.750345",
+        "lng": "135.47514",
+        "name": "庄内"
+      },
+      {
+        "id": "STN_HANKYU_HATTORI_TENJIN",
+        "lat": "34.76293",
+        "lng": "135.47518",
+        "name": "服部天神"
+      },
+      {
+        "id": "STN_HANKYU_SONE",
+        "lat": "34.77094",
+        "lng": "135.46773",
+        "name": "曽根"
+      },
+      {
+        "id": "STN_HANKYU_OKAMACHI",
+        "lat": "34.77892",
+        "lng": "135.46507",
+        "name": "岡町"
+      },
+      {
+        "id": "STN_HANKYU_TOYONAKA",
+        "lat": "34.787228",
+        "lng": "135.46199",
+        "name": "豊中"
+      },
+      {
+        "id": "STN_HANKYU_HOTORUGAIKE",
+        "lat": "34.794645",
+        "lng": "135.44923",
+        "name": "蛍池"
+      },
+      {
+        "id": "STN_HANKYU_ISHIBASHI_HANDAI_MAE",
+        "lat": "34.808195",
+        "lng": "135.44549",
+        "name": "石橋阪大前"
+      },
+      {
+        "id": "STN_HANKYU_IKEDA",
+        "lat": "34.8216",
+        "lng": "135.42563",
+        "name": "池田"
+      },
+      {
+        "id": "STN_HANKYU_KAWANISHI_NOSEGUCHI",
+        "lat": "34.827463",
+        "lng": "135.413397",
+        "name": "川西能勢口"
+      },
+      {
+        "id": "STN_HANKYU_HIBARIGAOKA_HANAYASHIKI",
+        "lat": "34.82732",
+        "lng": "135.40291",
+        "name": "雲雀丘花屋敷"
+      },
+      {
+        "id": "STN_HANKYU_YAMAMOTO",
+        "lat": "34.82195",
+        "lng": "135.38849",
+        "name": "山本"
+      },
+      {
+        "id": "STN_HANKYU_NAKAYAMA_KANNON",
+        "lat": "34.81954",
+        "lng": "135.36929",
+        "name": "中山観音"
+      },
+      {
+        "id": "STN_HANKYU_MEFU_JINJA",
+        "lat": "34.816221",
+        "lng": "135.361688",
+        "name": "売布神社"
+      },
+      {
+        "id": "STN_HANKYU_KIYOSHIKOJIN",
+        "lat": "34.811195",
+        "lng": "135.353445",
+        "name": "清荒神"
+      },
+      {
+        "id": "STN_HANKYU_SAKURAI",
+        "lat": "34.816695",
+        "lng": "135.46083",
+        "name": "桜井"
+      },
+      {
+        "id": "STN_HANKYU_MAKIOCHI",
+        "lat": "34.82347",
+        "lng": "135.4659",
+        "name": "牧落"
+      },
+      {
+        "id": "STN_HANKYU_MINOO",
+        "lat": "34.834282",
+        "lng": "135.468195",
+        "name": "箕面"
+      },
+      {
+        "id": "STN_HANKYU_MINAMIKATA",
+        "lat": "34.72571",
+        "lng": "135.499295",
+        "name": "南方"
+      },
+      {
+        "id": "STN_HANKYU_SOZENJI",
+        "lat": "34.73101",
+        "lng": "135.510165",
+        "name": "崇禅寺"
+      },
+      {
+        "id": "STN_HANKYU_AWAJI",
+        "lat": "34.73938",
+        "lng": "135.516975",
+        "name": "淡路"
+      },
+      {
+        "id": "STN_HANKYU_KAMI_SHINJO",
+        "lat": "34.750065",
+        "lng": "135.533015",
+        "name": "上新庄"
+      },
+      {
+        "id": "STN_HANKYU_AIKAWA",
+        "lat": "34.757575",
+        "lng": "135.533644",
+        "name": "相川"
+      },
+      {
+        "id": "STN_HANKYU_SHOJAKU",
+        "lat": "34.775456",
+        "lng": "135.545634",
+        "name": "正雀"
+      },
+      {
+        "id": "STN_HANKYU_SETTSU_SHI",
+        "lat": "34.786369",
+        "lng": "135.553684",
+        "name": "摂津市"
+      },
+      {
+        "id": "STN_HANKYU_MINAMI_IBARAKI",
+        "lat": "34.80219",
+        "lng": "135.56501",
+        "name": "南茨木"
+      },
+      {
+        "id": "STN_HANKYU_IBARAKI_SHI",
+        "lat": "34.8165",
+        "lng": "135.57568",
+        "name": "茨木市"
+      },
+      {
+        "id": "STN_HANKYU_SOJIJI",
+        "lat": "34.827165",
+        "lng": "135.58479",
+        "name": "総持寺"
+      },
+      {
+        "id": "STN_HANKYU_TONDA",
+        "lat": "34.83516",
+        "lng": "135.59271",
+        "name": "富田"
+      },
+      {
+        "id": "STN_HANKYU_TAKATSUKI_SHI",
+        "lat": "34.849825",
+        "lng": "135.623145",
+        "name": "高槻市"
+      },
+      {
+        "id": "STN_HANKYU_KAMMAKI",
+        "lat": "34.872035",
+        "lng": "135.6617",
+        "name": "上牧"
+      },
+      {
+        "id": "STN_HANKYU_MINASE",
+        "lat": "34.877808",
+        "lng": "135.667768",
+        "name": "水無瀬"
+      },
+      {
+        "id": "STN_HANKYU_OYAMAZAKI",
+        "lat": "34.89154",
+        "lng": "135.681614",
+        "name": "大山崎"
+      },
+      {
+        "id": "STN_HANKYU_NISHIYAMA_TENNOZAN",
+        "lat": "34.91283056",
+        "lng": "135.68853667",
+        "name": "西山天王山"
+      },
+      {
+        "id": "STN_HANKYU_NAGAOKA_TENJIN",
+        "lat": "34.92488",
+        "lng": "135.69246",
+        "name": "長岡天神"
+      },
+      {
+        "id": "STN_HANKYU_NISHI_MUKO",
+        "lat": "34.93994",
+        "lng": "135.70272",
+        "name": "西向日"
+      },
+      {
+        "id": "STN_HANKYU_HIGASHI_MUKO",
+        "lat": "34.953915",
+        "lng": "135.70466",
+        "name": "東向日"
+      },
+      {
+        "id": "STN_HANKYU_RAKUSAIGUCHI",
+        "lat": "34.96362",
+        "lng": "135.70314",
+        "name": "洛西口"
+      },
+      {
+        "id": "STN_HANKYU_KATSURA",
+        "lat": "34.978893",
+        "lng": "135.703182",
+        "name": "桂"
+      },
+      {
+        "id": "STN_HANKYU_NISHI_KYOGOKU",
+        "lat": "34.99249",
+        "lng": "135.718423",
+        "name": "西京極"
+      },
+      {
+        "id": "STN_HANKYU_SAIIN",
+        "lat": "35.003565",
+        "lng": "135.731965",
+        "name": "西院"
+      },
+      {
+        "id": "STN_HANKYU_OMIYA",
+        "lat": "35.00365",
+        "lng": "135.749565",
+        "name": "大宮"
+      },
+      {
+        "id": "STN_HANKYU_KARASUMA",
+        "lat": "35.0037",
+        "lng": "135.760375",
+        "name": "烏丸"
+      },
+      {
+        "id": "STN_HANKYU_KYOTO_KAWARAMACHI",
+        "lat": "35.00378",
+        "lng": "135.76868",
+        "name": "京都河原町"
+      },
+      {
+        "id": "STN_HANKYU_TENJIMBASHISUJI_ROKUCHOME",
+        "lat": "34.709865",
+        "lng": "135.510754",
+        "name": "天神橋筋六丁目"
+      },
+      {
+        "id": "STN_HANKYU_KUNIJIMA",
+        "lat": "34.72867",
+        "lng": "135.51167",
+        "name": "柴島"
+      },
+      {
+        "id": "STN_HANKYU_SHIMO_SHINJO",
+        "lat": "34.746415",
+        "lng": "135.5199",
+        "name": "下新庄"
+      },
+      {
+        "id": "STN_HANKYU_SUITA",
+        "lat": "34.759605",
+        "lng": "135.517295",
+        "name": "吹田"
+      },
+      {
+        "id": "STN_HANKYU_TOYOTSU",
+        "lat": "34.76453",
+        "lng": "135.508957",
+        "name": "豊津"
+      },
+      {
+        "id": "STN_HANKYU_KANDAI_MAE",
+        "lat": "34.770948",
+        "lng": "135.506042",
+        "name": "関大前"
+      },
+      {
+        "id": "STN_HANKYU_SENRIYAMA",
+        "lat": "34.77898",
+        "lng": "135.50551",
+        "name": "千里山"
+      },
+      {
+        "id": "STN_HANKYU_MINAMI_SENRI",
+        "lat": "34.79241",
+        "lng": "135.50875",
+        "name": "南千里"
+      },
+      {
+        "id": "STN_HANKYU_YAMADA",
+        "lat": "34.80386",
+        "lng": "135.515615",
+        "name": "山田"
+      },
+      {
+        "id": "STN_HANKYU_KITA_SENRI",
+        "lat": "34.819905",
+        "lng": "135.51103",
+        "name": "北千里"
+      },
+      {
+        "id": "STN_HANKYU_KAMI_KATSURA",
+        "lat": "34.990025",
+        "lng": "135.69621",
+        "name": "上桂"
+      },
+      {
+        "id": "STN_HANKYU_MATSUO_TAISHA",
+        "lat": "35.000175",
+        "lng": "135.688285",
+        "name": "松尾大社"
+      },
+      {
+        "id": "STN_HANKYU_ARASHIYAMA",
+        "lat": "35.00987",
+        "lng": "135.68233",
+        "name": "嵐山"
+      }
+    ]
+  }
+]

@@ -1,31 +1,622 @@
 [
-  { "id": "JR_WEST", "name": "JR西日本" },
-  { "id": "KINTETSU", "name": "近畿日本鉄道" },
-  { "id": "HANKYU", "name": "阪急電鉄" },
-  { "id": "IGATETSU", "name": "伊賀鉄道" },
-  { "id": "ISETETSU", "name": "伊勢鉄道" },
-  { "id": "EIZANDENSHA", "name": "叡山電鉄" },
-  { "id": "OHMITETSUDO", "name": "近江鉄道" },
-  { "id": "OSAKA_METRO", "name": "大阪メトロ" },
-  { "id": "KITETSU", "name": "紀州鉄道" },
-  { "id": "KEIFUKU", "name": "京福電気鉄道" },
-  { "id": "KEIHAN", "name": "京阪電鉄" },
-  { "id": "TANTETSU", "name": "京都丹後鉄道" },
-  { "id": "CITY_KYOTO", "name": "京都市営地下鉄" },
-  { "id": "KITAKYU", "name": "北大阪急行電鉄" },
-  { "id": "WAKAYAMA_DENTETSU", "name": "和歌山電鐵" },
-  { "id": "YOKKAICHI_ASUNAROU", "name": "四日市あすなろう鉄道" },
-  { "id": "SUITETSU", "name": "水間鉄道" },
-  { "id": "CITY_KOBE", "name": "神戸市営地下鉄" },
-  { "id": "KNT_LINER", "name": "神戸新交通" },
-  { "id": "SHINTETSU", "name": "神戸電鉄" },
-  { "id": "SANGIRAIL", "name": "三岐鉄道" },
-  { "id": "SANYO_RAILWAY", "name": "山陽電車" },
-  { "id": "SHIGARAKI_KOGEN", "name": "信楽高原鐵道" },
-  { "id": "NANKAI", "name": "南海電鉄" },
-  { "id": "NOSEDEN", "name": "能勢電鉄" },
-  { "id": "HANKAI", "name": "阪堺電気軌道" },
-  { "id": "HANSHIN", "name": "阪神電鉄" },
-  { "id": "HOJO_RAILWAY", "name": "北条鉄道" },
-  { "id": "MIZURIN", "name": "水島臨海鉄道" }
+  {
+    "id": "JR_EAST",
+    "name": "JR東日本"
+  },
+  {
+    "id": "JR_WEST",
+    "name": "JR西日本"
+  },
+  {
+    "id": "JR_CENTRAL",
+    "name": "JR東海"
+  },
+  {
+    "id": "JR_SHIKOKU",
+    "name": "JR四国"
+  },
+  {
+    "id": "JR_KYUSHU",
+    "name": "JR九州"
+  },
+  {
+    "id": "JR_HOKKAIDO",
+    "name": "JR北海道"
+  },
+  {
+    "id": "KINTETSU",
+    "name": "近畿日本鉄道"
+  },
+  {
+    "id": "HANSHIN",
+    "name": "阪神電鉄"
+  },
+  {
+    "id": "KEIHAN",
+    "name": "京阪電鉄"
+  },
+  {
+    "id": "HANKYU",
+    "name": "阪急電鉄"
+  },
+  {
+    "id": "ODAKYU",
+    "name": "小田急電鉄"
+  },
+  {
+    "id": "KEIO",
+    "name": "京王電鉄"
+  },
+  {
+    "id": "KEISEI",
+    "name": "京成電鉄"
+  },
+  {
+    "id": "KEIKYU",
+    "name": "京浜急行電鉄"
+  },
+  {
+    "id": "SAGAMI",
+    "name": "相模鉄道"
+  },
+  {
+    "id": "SEIBU",
+    "name": "西武鉄道"
+  },
+  {
+    "id": "TOKYU",
+    "name": "東急電鉄"
+  },
+  {
+    "id": "TOKYO_METRO",
+    "name": "東京メトロ"
+  },
+  {
+    "id": "TOBU",
+    "name": "東武鉄道"
+  },
+  {
+    "id": "NANKAI",
+    "name": "南海電鉄"
+  },
+  {
+    "id": "NISHITETSU",
+    "name": "西日本鉄道"
+  },
+  {
+    "id": "MEITETSU",
+    "name": "名古屋鉄道"
+  },
+  {
+    "id": "SANYO",
+    "name": "山陽電鉄"
+  },
+  {
+    "id": "KITAKYU",
+    "name": "北大阪急行"
+  },
+  {
+    "id": "SAPPORO",
+    "name": "札幌市電"
+  },
+  {
+    "id": "HAKODATE",
+    "name": "函館市電"
+  },
+  {
+    "id": "SENDAI",
+    "name": "仙台市地下鉄"
+  },
+  {
+    "id": "TOEI",
+    "name": "都営地下鉄"
+  },
+  {
+    "id": "YOKOHAMA_SUBWAY",
+    "name": "横浜市営地下鉄"
+  },
+  {
+    "id": "NAGOYA",
+    "name": "名古屋市営地下鉄"
+  },
+  {
+    "id": "CITY_KOBE",
+    "name": "神戸市営地下鉄"
+  },
+  {
+    "id": "KUMAMOTO_CITY",
+    "name": "熊本市電"
+  },
+  {
+    "id": "KAGOSHIMA",
+    "name": "鹿児島市電"
+  },
+  {
+    "id": "OSAKA_METRO",
+    "name": "Osaka Metro"
+  },
+  {
+    "id": "FUKUOKA_SUBWAY",
+    "name": "福岡市営地下鉄"
+  },
+  {
+    "id": "KYOTO_SUBWAY",
+    "name": "京都市営地下鉄"
+  },
+  {
+    "id": "S_HOKKAIDO",
+    "name": "道南いさりび鉄道"
+  },
+  {
+    "id": "AOIMORI",
+    "name": "青い森鉄道"
+  },
+  {
+    "id": "KONAN",
+    "name": "弘南鉄道"
+  },
+  {
+    "id": "TSUGARU",
+    "name": "津軽鉄道"
+  },
+  {
+    "id": "IGR",
+    "name": "IGRいわて銀河鉄道"
+  },
+  {
+    "id": "SANRIKU",
+    "name": "三陸鉄道"
+  },
+  {
+    "id": "SAT",
+    "name": "仙台空港鉄道"
+  },
+  {
+    "id": "AKITA",
+    "name": "秋田内陸縦貫鉄道"
+  },
+  {
+    "id": "YURI_KOGEN",
+    "name": "由利高原鉄道"
+  },
+  {
+    "id": "YAMAGATA",
+    "name": "山形鉄道"
+  },
+  {
+    "id": "AIZU",
+    "name": "会津鉄道"
+  },
+  {
+    "id": "ABUKUMA",
+    "name": "阿武隈急行"
+  },
+  {
+    "id": "FUKUSHIMA",
+    "name": "福島交通"
+  },
+  {
+    "id": "KRT",
+    "name": "鹿島臨海鉄道"
+  },
+  {
+    "id": "KANTO",
+    "name": "関東鉄道"
+  },
+  {
+    "id": "HITACHINAKA",
+    "name": "ひたちなか海浜鉄道"
+  },
+  {
+    "id": "UTSUNOMIYA_LRT",
+    "name": "宇都宮ライトレール"
+  },
+  {
+    "id": "MOKA",
+    "name": "真岡鐵道"
+  },
+  {
+    "id": "YAGANTETSUDO",
+    "name": "野岩鉄道"
+  },
+  {
+    "id": "JOSHIN",
+    "name": "上信電鉄"
+  },
+  {
+    "id": "JOMO",
+    "name": "上毛電気鉄道"
+  },
+  {
+    "id": "WATARASE",
+    "name": "わたらせ渓谷鐵道"
+  },
+  {
+    "id": "SAITAMA",
+    "name": "埼玉高速鉄道"
+  },
+  {
+    "id": "SAITAMA_URBAN",
+    "name": "埼玉新都市交通"
+  },
+  {
+    "id": "CHICHIBU",
+    "name": "秩父鉄道"
+  },
+  {
+    "id": "ISUMI",
+    "name": "いすみ鉄道"
+  },
+  {
+    "id": "KOMINATO",
+    "name": "小湊鉄道"
+  },
+  {
+    "id": "SHIBAYAMA",
+    "name": "芝山鉄道"
+  },
+  {
+    "id": "CHIBA_MONO",
+    "name": "千葉都市モノレール"
+  },
+  {
+    "id": "CHIBA_NEWTOWN",
+    "name": "千葉ニュータウン鉄道"
+  },
+  {
+    "id": "CHOSHI",
+    "name": "銚子電気鉄道"
+  },
+  {
+    "id": "TOYO",
+    "name": "東葉高速鉄道"
+  },
+  {
+    "id": "HOKUSO",
+    "name": "北総鉄道"
+  },
+  {
+    "id": "RYUTETSU",
+    "name": "流鉄"
+  },
+  {
+    "id": "TSUKUBA",
+    "name": "首都圏新都市鉄道"
+  },
+  {
+    "id": "TAMA_MONO",
+    "name": "多摩都市モノレール"
+  },
+  {
+    "id": "TOKYO_MONO",
+    "name": "東京モノレール"
+  },
+  {
+    "id": "TWR",
+    "name": "東京臨海高速鉄道"
+  },
+  {
+    "id": "YURIKAMOME",
+    "name": "東京臨海新交通"
+  },
+  {
+    "id": "ENOSHIMA",
+    "name": "江ノ島電鉄"
+  },
+  {
+    "id": "ODAKYU_HAKONE",
+    "name": "小田急箱根"
+  },
+  {
+    "id": "SHONAN_MONO",
+    "name": "湘南モノレール"
+  },
+  {
+    "id": "YOKOHAMA",
+    "name": "横浜高速鉄道"
+  },
+  {
+    "id": "YOKOHAMA_SEASIDE",
+    "name": "横浜シーサイドライン"
+  },
+  {
+    "id": "ECHIGO",
+    "name": "えちごトキめき鉄道"
+  },
+  {
+    "id": "HOKUETSU",
+    "name": "北越急行"
+  },
+  {
+    "id": "AINOKAZE",
+    "name": "あいの風とやま鉄道"
+  },
+  {
+    "id": "TOYAMACHIHO",
+    "name": "富山地方鉄道"
+  },
+  {
+    "id": "MANYOSEN",
+    "name": "万葉線"
+  },
+  {
+    "id": "IR",
+    "name": "IRいしかわ鉄道"
+  },
+  {
+    "id": "NOTO",
+    "name": "のと鉄道"
+  },
+  {
+    "id": "HOKURIKU",
+    "name": "北陸鉄道"
+  },
+  {
+    "id": "ECHIZEN",
+    "name": "えちぜん鉄道"
+  },
+  {
+    "id": "HAPI",
+    "name": "ハピラインふくい"
+  },
+  {
+    "id": "FUKUI",
+    "name": "福井鉄道"
+  },
+  {
+    "id": "FUJIKYU",
+    "name": "富士山麓電気鉄道"
+  },
+  {
+    "id": "ALPICO",
+    "name": "アルピコ交通"
+  },
+  {
+    "id": "UEDADENTETSU",
+    "name": "上田電鉄株"
+  },
+  {
+    "id": "SHINANO",
+    "name": "しなの鉄道"
+  },
+  {
+    "id": "NAGANO",
+    "name": "長野電鉄"
+  },
+  {
+    "id": "AKECHI",
+    "name": "明知鉄道"
+  },
+  {
+    "id": "SEINO",
+    "name": "西濃鉄道"
+  },
+  {
+    "id": "TARUMI",
+    "name": "樽見鉄道"
+  },
+  {
+    "id": "NAGARAGAWA",
+    "name": "長良川鉄道"
+  },
+  {
+    "id": "YORO",
+    "name": "養老鉄道"
+  },
+  {
+    "id": "IZUKYU",
+    "name": "伊豆急行"
+  },
+  {
+    "id": "IZUHAKONE",
+    "name": "伊豆箱根鉄道"
+  },
+  {
+    "id": "ENSHU",
+    "name": "遠州鉄道"
+  },
+  {
+    "id": "OIGAWA",
+    "name": "大井川鐵道"
+  },
+  {
+    "id": "GAKUNAN",
+    "name": "岳南電車"
+  },
+  {
+    "id": "SHIZU",
+    "name": "静岡鉄道"
+  },
+  {
+    "id": "TENRYU",
+    "name": "天竜浜名湖鉄道"
+  },
+  {
+    "id": "AICHI_LOOP",
+    "name": "愛知環状鉄道"
+  },
+  {
+    "id": "TKJ",
+    "name": "JR東海交通事業"
+  },
+  {
+    "id": "TOYOHASHI",
+    "name": "豊橋鉄道"
+  },
+  {
+    "id": "NAGOYA_RINKAI",
+    "name": "名古屋臨海高速鉄道"
+  },
+  {
+    "id": "IGA",
+    "name": "伊賀鉄道"
+  },
+  {
+    "id": "ISE",
+    "name": "伊勢鉄道"
+  },
+  {
+    "id": "SANGI",
+    "name": "三岐鉄道"
+  },
+  {
+    "id": "YOKKAICHI",
+    "name": "四日市あすなろう鉄道"
+  },
+  {
+    "id": "HOJO",
+    "name": "北条鉄道"
+  },
+  {
+    "id": "EIZANDENSHA",
+    "name": "叡山電鉄"
+  },
+  {
+    "id": "HANKAI",
+    "name": "阪堺電気軌道"
+  },
+  {
+    "id": "KNT_LINER",
+    "name": "神戸新交通"
+  },
+  {
+    "id": "SHINTETSU",
+    "name": "神戸電鉄"
+  },
+  {
+    "id": "OHMI",
+    "name": "近江鉄道"
+  },
+  {
+    "id": "SHIGARAKI",
+    "name": "信楽高原鐵道"
+  },
+  {
+    "id": "WILLER",
+    "name": "京都丹後鉄道"
+  },
+  {
+    "id": "KEIFUKU",
+    "name": "京福電気鉄道"
+  },
+  {
+    "id": "OSAKA_MONO",
+    "name": "大阪モノレール"
+  },
+  {
+    "id": "MIZUMA",
+    "name": "水間鉄道"
+  },
+  {
+    "id": "NOSE",
+    "name": "能勢電鉄"
+  },
+  {
+    "id": "KISHU",
+    "name": "紀州鉄道"
+  },
+  {
+    "id": "WAKAYAMA",
+    "name": "和歌山電鐵"
+  },
+  {
+    "id": "CHIZU",
+    "name": "智頭急行"
+  },
+  {
+    "id": "WAKASA",
+    "name": "若桜鉄道"
+  },
+  {
+    "id": "ICHIBATA",
+    "name": "一畑電車"
+  },
+  {
+    "id": "IBARA",
+    "name": "井原鉄道"
+  },
+  {
+    "id": "OKAYAMA",
+    "name": "岡山電気軌道"
+  },
+  {
+    "id": "MIZUSHIMA",
+    "name": "水島臨海鉄道"
+  },
+  {
+    "id": "HIROSHIMA_RAPID",
+    "name": "広島高速交通"
+  },
+  {
+    "id": "HIROSHIMA",
+    "name": "広島電鉄"
+  },
+  {
+    "id": "NISHIKIGAWA",
+    "name": "錦川鉄道"
+  },
+  {
+    "id": "ASA",
+    "name": "阿佐海岸鉄道"
+  },
+  {
+    "id": "TAKAMATSU",
+    "name": "高松琴平電気鉄道"
+  },
+  {
+    "id": "IYO",
+    "name": "伊予鉄道"
+  },
+  {
+    "id": "TOSA",
+    "name": "土佐くろしお鉄道"
+  },
+  {
+    "id": "TOSADEN",
+    "name": "とさでん交通"
+  },
+  {
+    "id": "AMAGI",
+    "name": "甘木鉄道"
+  },
+  {
+    "id": "KITAKYUSHU",
+    "name": "北九州高速鉄道"
+  },
+  {
+    "id": "CHIKUHO",
+    "name": "筑豊電気鉄道"
+  },
+  {
+    "id": "HEISEI_CHIKUHO",
+    "name": "平成筑豊鉄道"
+  },
+  {
+    "id": "SHIMABARA",
+    "name": "島原鉄道"
+  },
+  {
+    "id": "NAGASAKI",
+    "name": "長崎電気軌道"
+  },
+  {
+    "id": "MATSUURA",
+    "name": "松浦鉄道"
+  },
+  {
+    "id": "KUMAGAWA",
+    "name": "くま川鉄道"
+  },
+  {
+    "id": "KUMAMOTO",
+    "name": "熊本電鉄"
+  },
+  {
+    "id": "HISATSU",
+    "name": "肥薩おれんじ鉄道"
+  },
+  {
+    "id": "MINAMI_ASO",
+    "name": "南阿蘇鉄道"
+  }
 ]

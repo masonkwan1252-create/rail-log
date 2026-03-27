@@ -1,0 +1,81 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "HOJO",
+    "company_name": "北条鉄道",
+    "lines": [
+      {
+        "id": "HOJO_SEN",
+        "name": "北条線",
+        "sequence": [
+          "STN_HOJO_AO",
+          "STN_HOJO_ABIKI",
+          "STN_HOJO_TAHARA",
+          "STN_HOJO_HOKKEGUCHI",
+          "STN_HOJO_HARIMA_SHIMOSATO",
+          "STN_HOJO_OSAN",
+          "STN_HOJO_HARIMA_YOKOTA",
+          "STN_HOJO_HOJO_MACHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_AO",
+        "lat": 34.8571282,
+        "lng": 134.90943659,
+        "name": "粟生"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_ABIKI",
+        "lat": 34.862035,
+        "lng": 134.878085,
+        "name": "網引"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_TAHARA",
+        "lat": 34.865485,
+        "lng": 134.86684,
+        "name": "田原"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_HOKKEGUCHI",
+        "lat": 34.87527,
+        "lng": 134.856365,
+        "name": "法華口"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_HARIMA_SHIMOSATO",
+        "lat": 34.88628,
+        "lng": 134.840215,
+        "name": "播磨下里"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_OSA",
+        "lat": 34.896415,
+        "lng": 134.825725,
+        "name": "長"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_HARIMA_YOKOTA",
+        "lat": 34.910435,
+        "lng": 134.825335,
+        "name": "播磨横田"
+      },
+      {
+        "company_id": "HOJO",
+        "id": "STN_HOJO_HOJO_MACHI",
+        "lat": 34.929136,
+        "lng": 134.832168,
+        "name": "北条町"
+      }
+    ]
+  }
+]

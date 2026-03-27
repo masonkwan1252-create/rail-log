@@ -1,233 +1,669 @@
 [
   {
+    "categories": "大手私鉄",
     "company_id": "KEIHAN",
     "company_name": "京阪電鉄",
     "lines": [
       {
-		"id": "KEIHAN_OTO",
-        "name": "鴨東線",
-        "sequence": [
-		  "STN_KEIHAN_SANJO",
-		  "STN_KEIHAN_JINGU_MARUTAMACHI",
-		  "STN_KEIHAN_DEMACHIYANAGI"
-		]
-	},
-	{
-		"id": "KEIHAN_OTO",
-        "name": "京津線",
-		"sequence": [
-		  "STN_KEIHAN_MISASAGI",
-		  "STN_KEIHAN_KEIHAN_YAMASHINA",
-		  "STN_KEIHAN_SHINOMIYA",
-		  "STN_KEIHAN_OIWAKE",
-		  "STN_KEIHAN_OTANI",
-		  "STN_KEIHAN_KAMISAKAEMACHI",
-		  "STN_KEIHAN_BIWAKO_HAMAOTSU"
-		]
-	},
-	{
-		"id": "KEIHAN_ISHIYAMA_SAKAMOTO",
-        "name": "石山坂本線",
-        "sequence": [
-		  "STN_KEIHAN_ISHIYAMADERA",
-		  "STN_KEIHAN_KARAHASHIMAE",
-		  "STN_KEIHAN_KEIHAN_ISHIYAMA",
-		  "STN_KEIHAN_AWAZU",
-		  "STN_KEIHAN_KAWARAGAHAMA",
-		  "STN_KEIHAN_NAKANOSHO",
-		  "STN_KEIHAN_ZEZEHOMMACHI",
-		  "STN_KEIHAN_NISHIKI",
-		  "STN_KEIHAN_KEIHAN_ZEZE",
-		  "STN_KEIHAN_ISHIBA",
-		  "STN_KEIHAN_SHIMONOSEKI",
-		  "STN_KEIHAN_BIWAKO_HAMAOTSU",
-		  "STN_KEIHAN_MIIDERA",
-		  "STN_KEIHAN_OTSU_SHIYAKUSHO_MAE",
-		  "STN_KEIHAN_KEIHAN_OTSUKYO",
-		  "STN_KEIHAN_OMI_JINGUMAE",
-		  "STN_KEIHAN_MINAMISHIGA",
-		  "STN_KEIHAN_SHIGASATO",
-		  "STN_KEIHAN_ANOTU",
-		  "STN_KEIHAN_MATSUNOBAMBA",
-		  "STN_KEIHAN_SAKAMOTO_HIEIZANGUCHI"
-		]
-	},
-	{
-		"id": "KEIHAN_UJI",
-        "name": "宇治線",
-        "sequence": [
-		  "STN_KEIHAN_CHUSHUJIMA",
-		  "STN_KEIHAN_KANGETSUBASHI",
-		  "STN_KEIHAN_MOMOYAMA_MINAMIGUCHI",
-		  "STN_KEIHAN_ROKUJIZO",
-		  "STN_KEIHAN_KOHATA",
-		  "STN_KEIHAN_OBAKU",
-		  "STN_KEIHAN_MIMURODO",
-		  "STN_KEIHAN_UJI"
-		]
-	},
-	{
-		"id": "KEIHAN_KATANO",
-        "name": "交野線",
-        "sequence": [
-		  "STN_KEIHAN_HIRAKATASHI",
-		  "STN_KEIHAN_MIYANOSAKA",
-		  "STN_KEIHAN_HOSHIGAOKA",
-		  "STN_KEIHAN_MURANO",
-		  "STN_KEIHAN_KOZU",
-		  "STN_KEIHAN_KATANOSHI",
-		  "STN_KEIHAN_KAWACHIMORI",
-		  "STN_KEIHAN_KISAISHI"
-		]
-	},
-	{
-		"id": "KEIHAN_NAKANOSHIMA",
-        "name": "中之島線",
-		"sequence": [
-		  "STN_KEIHAN_NAKANOSHIMA",
-		  "STN_KEIHAN_WATANABEBASHI",
-		  "STN_KEIHAN_OEBASHI",
-		  "STN_KEIHAN_NANIWABASHI",
-		  "STN_KEIHAN_TEMMABASHI"
-		]
-	},
-	{
-		"id": "KEIHAN_HONSEN",
+        "id": "KEIHAN_HONSEN",
         "name": "京阪本線",
         "sequence": [
-		  "STN_KEIHAN_YODOYABASHI",
-		  "STN_KEIHAN_KITAHAMA",
-		  "STN_KEIHAN_TEMMABASHI",
-		  "STN_KEIHAN_KYOBASHI",
-		  "STN_KEIHAN_NOE",
-		  "STN_KEIHAN_SEKIME",
-		  "STN_KEIHAN_MORISHOJI",
-		  "STN_KEIHAN_SENBAYASHI",
-		  "STN_KEIHAN_TAKII",
-		  "STN_KEIHAN_DOI",
-		  "STN_KEIHAN_MORIGUCHI_SHI",
-		  "STN_KEIHAN_NISHISANSO",
-		  "STN_KEIHAN_KADOMASHI",
-		  "STN_KEIHAN_FURUKUWA_BASHI",
-		  "STN_KEIHAN_OWADA",
-		  "STN_KEIHAN_KAYASHIMA",
-		  "STN_KEIHAN_NEYAGAWASHI",
-		  "STN_KEIHAN_KORIEN",
-		  "STN_KEIHAN_KOZENJI",
-		  "STN_KEIHAN_HIRAKATA_KOEN",
-		  "STN_KEIHAN_HIRAKATASHI",
-		  "STN_KEIHAN_GOTENYAMA",
-		  "STN_KEIHAN_MAKINO",
-		  "STN_KEIHAN_KUZUHA",
-		  "STN_KEIHAN_HASHIMOTO",
-		  "STN_KEIHAN_IWASHIMIZU_HACHIMANGU",
-		  "STN_KEIHAN_YODO",
-		  "STN_KEIHAN_CHUSHUJIMA",
-		  "STN_KEIHAN_FUSHIMI_MOMOYAMA",
-		  "STN_KEIHAN_TAMBABASHI",
-		  "STN_KEIHAN_SUMIZOME",
-		  "STN_KEIHAN_FUJIMORI",
-		  "STN_KEIHAN_RYUKOKUDAI_MAE_FUKAKUSA",
-		  "STN_KEIHAN_FUSHIMI_INARI",
-		  "STN_KEIHAN_TOBA_KAIDO",
-		  "STN_KEIHAN_TOFUKUJI",
-		  "STN_KEIHAN_SHICHIJO",
-		  "STN_KEIHAN_KIYOMIZU_GOJO",
-		  "STN_KEIHAN_GION_SHIJO",
-		  "STN_KEIHAN_SANJO",
-		  "STN_KEIHAN_JINGU_MARUTAMACHI",
-		  "STN_KEIHAN_DEMACHIYANAGI"
-		]
-	}
-	],
-	"stations": [
-	{ "id": "STN_KEIHAN_YODOYABASHI", "name": "淀屋橋", "lat": "34.692267", "lng": "135.502721" },
-{ "id": "STN_KEIHAN_KITAHAMA", "name": "北浜", "lat": "34.691505", "lng": "135.50759" },
-{ "id": "STN_KEIHAN_TEMMABASHI", "name": "天満橋", "lat": "34.690395", "lng": "135.516295" },
-{ "id": "STN_KEIHAN_KYOBASHI", "name": "京橋", "lat": "34.69702", "lng": "135.532415" },
-{ "id": "STN_KEIHAN_NOE", "name": "野江", "lat": "34.7073", "lng": "135.543335" },
-{ "id": "STN_KEIHAN_SEKIME", "name": "関目", "lat": "34.712625", "lng": "135.546985" },
-{ "id": "STN_KEIHAN_MORISHOJI", "name": "森小路", "lat": "34.719455", "lng": "135.55168" },
-{ "id": "STN_KEIHAN_SENBAYASHI", "name": "千林", "lat": "34.724055", "lng": "135.55482" },
-{ "id": "STN_KEIHAN_TAKII", "name": "滝井", "lat": "34.7279", "lng": "135.557445" },
-{ "id": "STN_KEIHAN_DOI", "name": "土居", "lat": "34.730635", "lng": "135.559785" },
-{ "id": "STN_KEIHAN_MORIGUCHI_SHI", "name": "守口市", "lat": "34.735258", "lng": "135.565159" },
-{ "id": "STN_KEIHAN_NISHISANSO", "name": "西三荘", "lat": "34.73734", "lng": "135.57589" },
-{ "id": "STN_KEIHAN_KADOMASHI", "name": "門真市", "lat": "34.7381", "lng": "135.583" },
-{ "id": "STN_KEIHAN_FURUKUWA_BASHI", "name": "古川橋", "lat": "34.73992", "lng": "135.591395" },
-{ "id": "STN_KEIHAN_OWADA", "name": "大和田", "lat": "34.74293", "lng": "135.602596" },
-{ "id": "STN_KEIHAN_KAYASHIMA", "name": "萱島", "lat": "34.747501", "lng": "135.611219" },
-{ "id": "STN_KEIHAN_NEYAGAWASHI", "name": "寝屋川市", "lat": "34.76398", "lng": "135.620736" },
-{ "id": "STN_KEIHAN_KORIEN", "name": "香里園", "lat": "34.78456", "lng": "135.63094" },
-{ "id": "STN_KEIHAN_KOZENJI", "name": "光善寺", "lat": "34.79776", "lng": "135.63017" },
-{ "id": "STN_KEIHAN_HIRAKATA_KOEN", "name": "枚方公園", "lat": "34.811625", "lng": "135.639495" },
-{ "id": "STN_KEIHAN_HIRAKATASHI", "name": "枚方市", "lat": "34.81625728", "lng": "135.64873951" },
-{ "id": "STN_KEIHAN_GOTENYAMA", "name": "御殿山", "lat": "34.829165", "lng": "135.653995" },
-{ "id": "STN_KEIHAN_MAKINO", "name": "牧野", "lat": "34.843832", "lng": "135.665547" },
-{ "id": "STN_KEIHAN_KUZUHA", "name": "樟葉", "lat": "34.861987", "lng": "135.675416" },
-{ "id": "STN_KEIHAN_HASHIMOTO", "name": "橋本", "lat": "34.88198", "lng": "135.684222" },
-{ "id": "STN_KEIHAN_IWASHIMIZU_HACHIMANGU", "name": "石清水八幡宮", "lat": "34.884667", "lng": "135.699876" },
-{ "id": "STN_KEIHAN_YODO", "name": "淀", "lat": "34.906515", "lng": "135.720996" },
-{ "id": "STN_KEIHAN_CHUSHUJIMA", "name": "中書島", "lat": "34.926803", "lng": "135.760314" },
-{ "id": "STN_KEIHAN_FUSHIMI_MOMOYAMA", "name": "伏見桃山", "lat": "34.932505", "lng": "135.76436" },
-{ "id": "STN_KEIHAN_TAMBABASHI", "name": "丹波橋", "lat": "34.93892", "lng": "135.76542" },
-{ "id": "STN_KEIHAN_SUMIZOME", "name": "墨染", "lat": "34.94817", "lng": "135.769105" },
-{ "id": "STN_KEIHAN_FUJIMORI", "name": "藤森", "lat": "34.95688", "lng": "135.77022" },
-{ "id": "STN_KEIHAN_RYUKOKUDAI_MAE_FUKAKUSA", "name": "龍谷大前深草", "lat": "34.964015", "lng": "135.77014" },
-{ "id": "STN_KEIHAN_FUSHIMI_INARI", "name": "伏見稲荷", "lat": "34.96913", "lng": "135.769305" },
-{ "id": "STN_KEIHAN_TOBA_KAIDO", "name": "鳥羽街道", "lat": "34.97382", "lng": "135.770013" },
-{ "id": "STN_KEIHAN_TOFUKUJI", "name": "東福寺", "lat": "34.98143", "lng": "135.77001" },
-{ "id": "STN_KEIHAN_SHICHIJO", "name": "七条", "lat": "34.9901", "lng": "135.767635" },
-{ "id": "STN_KEIHAN_KIYOMIZU_GOJO", "name": "清水五条", "lat": "34.996565", "lng": "135.7687" },
-{ "id": "STN_KEIHAN_GION_SHIJO", "name": "祇園四条", "lat": "35.003347", "lng": "135.771976" },
-{ "id": "STN_KEIHAN_SANJO", "name": "三条", "lat": "35.00879", "lng": "135.772337" },
-{ "id": "STN_KEIHAN_JINGU_MARUTAMACHI", "name": "神宮丸太町", "lat": "35.01836", "lng": "135.772243" },
-{ "id": "STN_KEIHAN_DEMACHIYANAGI", "name": "出町柳", "lat": "35.029914", "lng": "135.772542" },
-{ "id": "STN_KEIHAN_NAKANOSHIMA", "name": "中之島", "lat": "34.69111732", "lng": "135.4870164" },
-{ "id": "STN_KEIHAN_WATANABEBASHI", "name": "渡辺橋", "lat": "34.694045", "lng": "135.495905" },
-{ "id": "STN_KEIHAN_OEBASHI", "name": "大江橋", "lat": "34.69436", "lng": "135.50097" },
-{ "id": "STN_KEIHAN_NANIWABASHI", "name": "なにわ橋", "lat": "34.692285", "lng": "135.50799" },
-{ "id": "STN_KEIHAN_MIYANOSAKA", "name": "宮之阪", "lat": "34.813675", "lng": "135.65669" },
-{ "id": "STN_KEIHAN_HOSHIGAOKA", "name": "星ヶ丘", "lat": "34.807595", "lng": "135.659825" },
-{ "id": "STN_KEIHAN_MURANO", "name": "村野", "lat": "34.80186", "lng": "135.664195" },
-{ "id": "STN_KEIHAN_KOZU", "name": "郡津", "lat": "34.79445", "lng": "135.66989" },
-{ "id": "STN_KEIHAN_KATANOSHI", "name": "交野市", "lat": "34.786915", "lng": "135.67564" },
-{ "id": "STN_KEIHAN_KAWACHIMORI", "name": "河内森", "lat": "34.77383", "lng": "135.685655" },
-{ "id": "STN_KEIHAN_KISAISHI", "name": "私市", "lat": "34.767635", "lng": "135.686565" },
-{ "id": "STN_KEIHAN_KANGETSUBASHI", "name": "観月橋", "lat": "34.92815", "lng": "135.768955" },
-{ "id": "STN_KEIHAN_MOMOYAMA_MINAMIGUCHI", "name": "桃山南口", "lat": "34.931025", "lng": "135.78351" },
-{ "id": "STN_KEIHAN_ROKUJIZO", "name": "六地蔵", "lat": "34.931999", "lng": "135.793242" },
-{ "id": "STN_KEIHAN_KOHATA", "name": "木幡", "lat": "34.92622", "lng": "135.796095" },
-{ "id": "STN_KEIHAN_OBAKU", "name": "黄檗", "lat": "34.913991", "lng": "135.802993" },
-{ "id": "STN_KEIHAN_MIMURODO", "name": "三室戸", "lat": "34.89896", "lng": "135.80637" },
-{ "id": "STN_KEIHAN_UJI", "name": "宇治", "lat": "34.89516", "lng": "135.806335" },
-{ "id": "STN_KEIHAN_ISHIYAMADERA", "name": "石山寺", "lat": "34.96725736", "lng": "135.90338182" },
-{ "id": "STN_KEIHAN_KARAHASHIMAE", "name": "唐橋前", "lat": "34.97337", "lng": "135.903005" },
-{ "id": "STN_KEIHAN_KEIHAN_ISHIYAMA", "name": "京阪石山", "lat": "34.979611", "lng": "135.899664" },
-{ "id": "STN_KEIHAN_AWAZU", "name": "粟津", "lat": "34.98477", "lng": "135.89563" },
-{ "id": "STN_KEIHAN_KAWARAGAHAMA", "name": "瓦ヶ浜", "lat": "34.988325", "lng": "135.89464" },
-{ "id": "STN_KEIHAN_NAKANOSHO", "name": "中ノ庄", "lat": "34.99082", "lng": "135.89154" },
-{ "id": "STN_KEIHAN_ZEZEHOMMACHI", "name": "膳所本町", "lat": "34.99515", "lng": "135.88923" },
-{ "id": "STN_KEIHAN_NISHIKI", "name": "錦", "lat": "34.997625", "lng": "135.88577" },
-{ "id": "STN_KEIHAN_KEIHAN_ZEZE", "name": "京阪膳所", "lat": "34.99978", "lng": "135.88086" },
-{ "id": "STN_KEIHAN_ISHIBA", "name": "石場", "lat": "35.004735", "lng": "135.87554" },
-{ "id": "STN_KEIHAN_SHIMONOSEKI", "name": "島ノ関", "lat": "35.0077", "lng": "135.870965" },
-{ "id": "STN_KEIHAN_BIWAKO_HAMAOTSU", "name": "びわ湖浜大津", "lat": "35.011295", "lng": "135.86401" },
-{ "id": "STN_KEIHAN_MIIDERA", "name": "三井寺", "lat": "35.01286", "lng": "135.85986" },
-{ "id": "STN_KEIHAN_OTSU_SHIYAKUSHO_MAE", "name": "大津市役所前", "lat": "35.018375", "lng": "135.855655" },
-{ "id": "STN_KEIHAN_KEIHAN_OTSUKYO", "name": "京阪大津京", "lat": "35.022435", "lng": "135.85568" },
-{ "id": "STN_KEIHAN_OMI_JINGUMAE", "name": "近江神宮前", "lat": "35.027565", "lng": "135.85574" },
-{ "id": "STN_KEIHAN_MINAMISHIGA", "name": "南滋賀", "lat": "35.0365", "lng": "135.857685" },
-{ "id": "STN_KEIHAN_SHIGASATO", "name": "滋賀里", "lat": "35.04355", "lng": "135.859235" },
-{ "id": "STN_KEIHAN_ANOTU", "name": "穴太", "lat": "35.0556", "lng": "135.864885" },
-{ "id": "STN_KEIHAN_MATSUNOBAMBA", "name": "松ノ馬場", "lat": "35.065445", "lng": "135.870325" },
-{ "id": "STN_KEIHAN_SAKAMOTO_HIEIZANGUCHI", "name": "坂本比叡山口", "lat": "35.070585", "lng": "135.871285" },
-{ "id": "STN_KEIHAN_MISASAGI", "name": "御陵", "lat": "34.99598", "lng": "135.801885" },
-{ "id": "STN_KEIHAN_KEIHAN_YAMASHINA", "name": "京阪山科", "lat": "34.99202", "lng": "135.81696" },
-{ "id": "STN_KEIHAN_SHINOMIYA", "name": "四宮", "lat": "34.991875", "lng": "135.82397" },
-{ "id": "STN_KEIHAN_OIWAKE", "name": "追分", "lat": "34.991355", "lng": "135.8375" },
-{ "id": "STN_KEIHAN_OTANI", "name": "大谷", "lat": "34.99431", "lng": "135.853165" },
-{ "id": "STN_KEIHAN_KAMISAKAEMACHI", "name": "上栄町", "lat": "35.00518", "lng": "135.86019" }
-]
-}
+          "STN_KEIHAN_YODOYABASHI",
+          "STN_KEIHAN_KITAHAMA",
+          "STN_KEIHAN_TEMMABASHI",
+          "STN_KEIHAN_KYOBASHI",
+          "STN_KEIHAN_NOE",
+          "STN_KEIHAN_SEKIME",
+          "STN_KEIHAN_MORISHOJI",
+          "STN_KEIHAN_SENBAYASHI",
+          "STN_KEIHAN_TAKII",
+          "STN_KEIHAN_DOI",
+          "STN_KEIHAN_MORIGUCHI_SHI",
+          "STN_KEIHAN_NISHISANSO",
+          "STN_KEIHAN_KADOMASHI",
+          "STN_KEIHAN_FURUKUWA_BASHI",
+          "STN_KEIHAN_OWADA",
+          "STN_KEIHAN_KAYASHIMA",
+          "STN_KEIHAN_NEYAGAWASHI",
+          "STN_KEIHAN_KORIEN",
+          "STN_KEIHAN_KOZENJI",
+          "STN_KEIHAN_HIRAKATA_KOEN",
+          "STN_KEIHAN_HIRAKATASHI",
+          "STN_KEIHAN_GOTENYAMA",
+          "STN_KEIHAN_MAKINO",
+          "STN_KEIHAN_KUZUHA",
+          "STN_KEIHAN_HASHIMOTO",
+          "STN_KEIHAN_IWASHIMIZU_HACHIMANGU",
+          "STN_KEIHAN_YODO",
+          "STN_KEIHAN_CHUSHUJIMA",
+          "STN_KEIHAN_FUSHIMI_MOMOYAMA",
+          "STN_KEIHAN_TAMBABASHI",
+          "STN_KEIHAN_SUMIZOME",
+          "STN_KEIHAN_FUJIMORI",
+          "STN_KEIHAN_RYUKOKUDAI_MAE_FUKAKUSA",
+          "STN_KEIHAN_FUSHIMI_INARI",
+          "STN_KEIHAN_TOBA_KAIDO",
+          "STN_KEIHAN_TOFUKUJI",
+          "STN_KEIHAN_SHICHIJO",
+          "STN_KEIHAN_KIYOMIZU_GOJO",
+          "STN_KEIHAN_GION_SHIJO",
+          "STN_KEIHAN_SANJO",
+          "STN_KEIHAN_JINGU_MARUTAMACHI",
+          "STN_KEIHAN_DEMACHIYANAGI"
+        ]
+      },
+      {
+        "id": "KEIHAN_OTO",
+        "name": "鴨東線",
+        "sequence": [
+          "STN_KEIHAN_SANJO",
+          "STN_KEIHAN_JINGU_MARUTAMACHI",
+          "STN_KEIHAN_DEMACHIYANAGI"
+        ]
+      },
+      {
+        "id": "KEIHAN_UJI",
+        "name": "宇治線",
+        "sequence": [
+          "STN_KEIHAN_CHUSHUJIMA",
+          "STN_KEIHAN_KANGETSUBASHI",
+          "STN_KEIHAN_MOMOYAMA_MINAMIGUCHI",
+          "STN_KEIHAN_ROKUJIZO",
+          "STN_KEIHAN_KOHATA",
+          "STN_KEIHAN_OBAKU",
+          "STN_KEIHAN_MIMURODO",
+          "STN_KEIHAN_UJI"
+        ]
+      },
+      {
+        "id": "KEIHAN_KATANO",
+        "name": "交野線",
+        "sequence": [
+          "STN_KEIHAN_HIRAKATASHI",
+          "STN_KEIHAN_MIYANOSAKA",
+          "STN_KEIHAN_HOSHIGAOKA",
+          "STN_KEIHAN_MURANO",
+          "STN_KEIHAN_KOZU",
+          "STN_KEIHAN_KATANOSHI",
+          "STN_KEIHAN_KAWACHIMORI",
+          "STN_KEIHAN_KISAISHI"
+        ]
+      },
+      {
+        "id": "KEIHAN_NAKANOSHIMA",
+        "name": "中之島線",
+        "sequence": [
+          "STN_KEIHAN_NAKANOSHIMA",
+          "STN_KEIHAN_WATANABEBASHI",
+          "STN_KEIHAN_OEBASHI",
+          "STN_KEIHAN_NANIWABASHI",
+          "STN_KEIHAN_TEMMABASHI"
+        ]
+      },
+      {
+        "id": "KEIHAN_OTO",
+        "name": "京津線",
+        "sequence": [
+          "STN_KEIHAN_MISASAGI",
+          "STN_KEIHAN_KEIHAN_YAMASHINA",
+          "STN_KEIHAN_SHINOMIYA",
+          "STN_KEIHAN_OIWAKE",
+          "STN_KEIHAN_OTANI",
+          "STN_KEIHAN_KAMISAKAEMACHI",
+          "STN_KEIHAN_BIWAKO_HAMAOTSU"
+        ]
+      },
+      {
+        "id": "KEIHAN_ISHIYAMA_SAKAMOTO",
+        "name": "石山坂本線",
+        "sequence": [
+          "STN_KEIHAN_ISHIYAMADERA",
+          "STN_KEIHAN_KARAHASHIMAE",
+          "STN_KEIHAN_KEIHAN_ISHIYAMA",
+          "STN_KEIHAN_AWAZU",
+          "STN_KEIHAN_KAWARAGAHAMA",
+          "STN_KEIHAN_NAKANOSHO",
+          "STN_KEIHAN_ZEZEHOMMACHI",
+          "STN_KEIHAN_NISHIKI",
+          "STN_KEIHAN_KEIHAN_ZEZE",
+          "STN_KEIHAN_ISHIBA",
+          "STN_KEIHAN_SHIMONOSEKI",
+          "STN_KEIHAN_BIWAKO_HAMAOTSU",
+          "STN_KEIHAN_MIIDERA",
+          "STN_KEIHAN_OTSU_SHIYAKUSHO_MAE",
+          "STN_KEIHAN_KEIHAN_OTSUKYO",
+          "STN_KEIHAN_OMI_JINGUMAE",
+          "STN_KEIHAN_MINAMISHIGA",
+          "STN_KEIHAN_SHIGASATO",
+          "STN_KEIHAN_ANOTU",
+          "STN_KEIHAN_MATSUNOBAMBA",
+          "STN_KEIHAN_SAKAMOTO_HIEIZANGUCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KEIHAN_YODOYABASHI",
+        "lat": "34.692267",
+        "lng": "135.502721",
+        "name": "淀屋橋"
+      },
+      {
+        "id": "STN_KEIHAN_KITAHAMA",
+        "lat": "34.691505",
+        "lng": "135.50759",
+        "name": "北浜"
+      },
+      {
+        "id": "STN_KEIHAN_TEMMABASHI",
+        "lat": "34.690395",
+        "lng": "135.516295",
+        "name": "天満橋"
+      },
+      {
+        "id": "STN_KEIHAN_KYOBASHI",
+        "lat": "34.69702",
+        "lng": "135.532415",
+        "name": "京橋"
+      },
+      {
+        "id": "STN_KEIHAN_NOE",
+        "lat": "34.7073",
+        "lng": "135.543335",
+        "name": "野江"
+      },
+      {
+        "id": "STN_KEIHAN_SEKIME",
+        "lat": "34.712625",
+        "lng": "135.546985",
+        "name": "関目"
+      },
+      {
+        "id": "STN_KEIHAN_MORISHOJI",
+        "lat": "34.719455",
+        "lng": "135.55168",
+        "name": "森小路"
+      },
+      {
+        "id": "STN_KEIHAN_SENBAYASHI",
+        "lat": "34.724055",
+        "lng": "135.55482",
+        "name": "千林"
+      },
+      {
+        "id": "STN_KEIHAN_TAKII",
+        "lat": "34.7279",
+        "lng": "135.557445",
+        "name": "滝井"
+      },
+      {
+        "id": "STN_KEIHAN_DOI",
+        "lat": "34.730635",
+        "lng": "135.559785",
+        "name": "土居"
+      },
+      {
+        "id": "STN_KEIHAN_MORIGUCHI_SHI",
+        "lat": "34.735258",
+        "lng": "135.565159",
+        "name": "守口市"
+      },
+      {
+        "id": "STN_KEIHAN_NISHISANSO",
+        "lat": "34.73734",
+        "lng": "135.57589",
+        "name": "西三荘"
+      },
+      {
+        "id": "STN_KEIHAN_KADOMASHI",
+        "lat": "34.7381",
+        "lng": "135.583",
+        "name": "門真市"
+      },
+      {
+        "id": "STN_KEIHAN_FURUKUWA_BASHI",
+        "lat": "34.73992",
+        "lng": "135.591395",
+        "name": "古川橋"
+      },
+      {
+        "id": "STN_KEIHAN_OWADA",
+        "lat": "34.74293",
+        "lng": "135.602596",
+        "name": "大和田"
+      },
+      {
+        "id": "STN_KEIHAN_KAYASHIMA",
+        "lat": "34.747501",
+        "lng": "135.611219",
+        "name": "萱島"
+      },
+      {
+        "id": "STN_KEIHAN_NEYAGAWASHI",
+        "lat": "34.76398",
+        "lng": "135.620736",
+        "name": "寝屋川市"
+      },
+      {
+        "id": "STN_KEIHAN_KORIEN",
+        "lat": "34.78456",
+        "lng": "135.63094",
+        "name": "香里園"
+      },
+      {
+        "id": "STN_KEIHAN_KOZENJI",
+        "lat": "34.79776",
+        "lng": "135.63017",
+        "name": "光善寺"
+      },
+      {
+        "id": "STN_KEIHAN_HIRAKATA_KOEN",
+        "lat": "34.811625",
+        "lng": "135.639495",
+        "name": "枚方公園"
+      },
+      {
+        "id": "STN_KEIHAN_HIRAKATASHI",
+        "lat": "34.81625728",
+        "lng": "135.64873951",
+        "name": "枚方市"
+      },
+      {
+        "id": "STN_KEIHAN_GOTENYAMA",
+        "lat": "34.829165",
+        "lng": "135.653995",
+        "name": "御殿山"
+      },
+      {
+        "id": "STN_KEIHAN_MAKINO",
+        "lat": "34.843832",
+        "lng": "135.665547",
+        "name": "牧野"
+      },
+      {
+        "id": "STN_KEIHAN_KUZUHA",
+        "lat": "34.861987",
+        "lng": "135.675416",
+        "name": "樟葉"
+      },
+      {
+        "id": "STN_KEIHAN_HASHIMOTO",
+        "lat": "34.88198",
+        "lng": "135.684222",
+        "name": "橋本"
+      },
+      {
+        "id": "STN_KEIHAN_IWASHIMIZU_HACHIMANGU",
+        "lat": "34.884667",
+        "lng": "135.699876",
+        "name": "石清水八幡宮"
+      },
+      {
+        "id": "STN_KEIHAN_YODO",
+        "lat": "34.906515",
+        "lng": "135.720996",
+        "name": "淀"
+      },
+      {
+        "id": "STN_KEIHAN_CHUSHUJIMA",
+        "lat": "34.926803",
+        "lng": "135.760314",
+        "name": "中書島"
+      },
+      {
+        "id": "STN_KEIHAN_FUSHIMI_MOMOYAMA",
+        "lat": "34.932505",
+        "lng": "135.76436",
+        "name": "伏見桃山"
+      },
+      {
+        "id": "STN_KEIHAN_TAMBABASHI",
+        "lat": "34.93892",
+        "lng": "135.76542",
+        "name": "丹波橋"
+      },
+      {
+        "id": "STN_KEIHAN_SUMIZOME",
+        "lat": "34.94817",
+        "lng": "135.769105",
+        "name": "墨染"
+      },
+      {
+        "id": "STN_KEIHAN_FUJIMORI",
+        "lat": "34.95688",
+        "lng": "135.77022",
+        "name": "藤森"
+      },
+      {
+        "id": "STN_KEIHAN_RYUKOKUDAI_MAE_FUKAKUSA",
+        "lat": "34.964015",
+        "lng": "135.77014",
+        "name": "龍谷大前深草"
+      },
+      {
+        "id": "STN_KEIHAN_FUSHIMI_INARI",
+        "lat": "34.96913",
+        "lng": "135.769305",
+        "name": "伏見稲荷"
+      },
+      {
+        "id": "STN_KEIHAN_TOBA_KAIDO",
+        "lat": "34.97382",
+        "lng": "135.770013",
+        "name": "鳥羽街道"
+      },
+      {
+        "id": "STN_KEIHAN_TOFUKUJI",
+        "lat": "34.98143",
+        "lng": "135.77001",
+        "name": "東福寺"
+      },
+      {
+        "id": "STN_KEIHAN_SHICHIJO",
+        "lat": "34.9901",
+        "lng": "135.767635",
+        "name": "七条"
+      },
+      {
+        "id": "STN_KEIHAN_KIYOMIZU_GOJO",
+        "lat": "34.996565",
+        "lng": "135.7687",
+        "name": "清水五条"
+      },
+      {
+        "id": "STN_KEIHAN_GION_SHIJO",
+        "lat": "35.003347",
+        "lng": "135.771976",
+        "name": "祇園四条"
+      },
+      {
+        "id": "STN_KEIHAN_SANJO",
+        "lat": "35.00879",
+        "lng": "135.772337",
+        "name": "三条"
+      },
+      {
+        "id": "STN_KEIHAN_JINGU_MARUTAMACHI",
+        "lat": "35.01836",
+        "lng": "135.772243",
+        "name": "神宮丸太町"
+      },
+      {
+        "id": "STN_KEIHAN_DEMACHIYANAGI",
+        "lat": "35.029914",
+        "lng": "135.772542",
+        "name": "出町柳"
+      },
+      {
+        "id": "STN_KEIHAN_NAKANOSHIMA",
+        "lat": "34.69111732",
+        "lng": "135.4870164",
+        "name": "中之島"
+      },
+      {
+        "id": "STN_KEIHAN_WATANABEBASHI",
+        "lat": "34.694045",
+        "lng": "135.495905",
+        "name": "渡辺橋"
+      },
+      {
+        "id": "STN_KEIHAN_OEBASHI",
+        "lat": "34.69436",
+        "lng": "135.50097",
+        "name": "大江橋"
+      },
+      {
+        "id": "STN_KEIHAN_NANIWABASHI",
+        "lat": "34.692285",
+        "lng": "135.50799",
+        "name": "なにわ橋"
+      },
+      {
+        "id": "STN_KEIHAN_MIYANOSAKA",
+        "lat": "34.813675",
+        "lng": "135.65669",
+        "name": "宮之阪"
+      },
+      {
+        "id": "STN_KEIHAN_HOSHIGAOKA",
+        "lat": "34.807595",
+        "lng": "135.659825",
+        "name": "星ヶ丘"
+      },
+      {
+        "id": "STN_KEIHAN_MURANO",
+        "lat": "34.80186",
+        "lng": "135.664195",
+        "name": "村野"
+      },
+      {
+        "id": "STN_KEIHAN_KOZU",
+        "lat": "34.79445",
+        "lng": "135.66989",
+        "name": "郡津"
+      },
+      {
+        "id": "STN_KEIHAN_KATANOSHI",
+        "lat": "34.786915",
+        "lng": "135.67564",
+        "name": "交野市"
+      },
+      {
+        "id": "STN_KEIHAN_KAWACHIMORI",
+        "lat": "34.77383",
+        "lng": "135.685655",
+        "name": "河内森"
+      },
+      {
+        "id": "STN_KEIHAN_KISAISHI",
+        "lat": "34.767635",
+        "lng": "135.686565",
+        "name": "私市"
+      },
+      {
+        "id": "STN_KEIHAN_KANGETSUBASHI",
+        "lat": "34.92815",
+        "lng": "135.768955",
+        "name": "観月橋"
+      },
+      {
+        "id": "STN_KEIHAN_MOMOYAMA_MINAMIGUCHI",
+        "lat": "34.931025",
+        "lng": "135.78351",
+        "name": "桃山南口"
+      },
+      {
+        "id": "STN_KEIHAN_ROKUJIZO",
+        "lat": "34.931999",
+        "lng": "135.793242",
+        "name": "六地蔵"
+      },
+      {
+        "id": "STN_KEIHAN_KOHATA",
+        "lat": "34.92622",
+        "lng": "135.796095",
+        "name": "木幡"
+      },
+      {
+        "id": "STN_KEIHAN_OBAKU",
+        "lat": "34.913991",
+        "lng": "135.802993",
+        "name": "黄檗"
+      },
+      {
+        "id": "STN_KEIHAN_MIMURODO",
+        "lat": "34.89896",
+        "lng": "135.80637",
+        "name": "三室戸"
+      },
+      {
+        "id": "STN_KEIHAN_UJI",
+        "lat": "34.89516",
+        "lng": "135.806335",
+        "name": "宇治"
+      },
+      {
+        "id": "STN_KEIHAN_ISHIYAMADERA",
+        "lat": "34.96725736",
+        "lng": "135.90338182",
+        "name": "石山寺"
+      },
+      {
+        "id": "STN_KEIHAN_KARAHASHIMAE",
+        "lat": "34.97337",
+        "lng": "135.903005",
+        "name": "唐橋前"
+      },
+      {
+        "id": "STN_KEIHAN_KEIHAN_ISHIYAMA",
+        "lat": "34.979611",
+        "lng": "135.899664",
+        "name": "京阪石山"
+      },
+      {
+        "id": "STN_KEIHAN_AWAZU",
+        "lat": "34.98477",
+        "lng": "135.89563",
+        "name": "粟津"
+      },
+      {
+        "id": "STN_KEIHAN_KAWARAGAHAMA",
+        "lat": "34.988325",
+        "lng": "135.89464",
+        "name": "瓦ヶ浜"
+      },
+      {
+        "id": "STN_KEIHAN_NAKANOSHO",
+        "lat": "34.99082",
+        "lng": "135.89154",
+        "name": "中ノ庄"
+      },
+      {
+        "id": "STN_KEIHAN_ZEZEHOMMACHI",
+        "lat": "34.99515",
+        "lng": "135.88923",
+        "name": "膳所本町"
+      },
+      {
+        "id": "STN_KEIHAN_NISHIKI",
+        "lat": "34.997625",
+        "lng": "135.88577",
+        "name": "錦"
+      },
+      {
+        "id": "STN_KEIHAN_KEIHAN_ZEZE",
+        "lat": "34.99978",
+        "lng": "135.88086",
+        "name": "京阪膳所"
+      },
+      {
+        "id": "STN_KEIHAN_ISHIBA",
+        "lat": "35.004735",
+        "lng": "135.87554",
+        "name": "石場"
+      },
+      {
+        "id": "STN_KEIHAN_SHIMONOSEKI",
+        "lat": "35.0077",
+        "lng": "135.870965",
+        "name": "島ノ関"
+      },
+      {
+        "id": "STN_KEIHAN_BIWAKO_HAMAOTSU",
+        "lat": "35.011295",
+        "lng": "135.86401",
+        "name": "びわ湖浜大津"
+      },
+      {
+        "id": "STN_KEIHAN_MIIDERA",
+        "lat": "35.01286",
+        "lng": "135.85986",
+        "name": "三井寺"
+      },
+      {
+        "id": "STN_KEIHAN_OTSU_SHIYAKUSHO_MAE",
+        "lat": "35.018375",
+        "lng": "135.855655",
+        "name": "大津市役所前"
+      },
+      {
+        "id": "STN_KEIHAN_KEIHAN_OTSUKYO",
+        "lat": "35.022435",
+        "lng": "135.85568",
+        "name": "京阪大津京"
+      },
+      {
+        "id": "STN_KEIHAN_OMI_JINGUMAE",
+        "lat": "35.027565",
+        "lng": "135.85574",
+        "name": "近江神宮前"
+      },
+      {
+        "id": "STN_KEIHAN_MINAMISHIGA",
+        "lat": "35.0365",
+        "lng": "135.857685",
+        "name": "南滋賀"
+      },
+      {
+        "id": "STN_KEIHAN_SHIGASATO",
+        "lat": "35.04355",
+        "lng": "135.859235",
+        "name": "滋賀里"
+      },
+      {
+        "id": "STN_KEIHAN_ANOTU",
+        "lat": "35.0556",
+        "lng": "135.864885",
+        "name": "穴太"
+      },
+      {
+        "id": "STN_KEIHAN_MATSUNOBAMBA",
+        "lat": "35.065445",
+        "lng": "135.870325",
+        "name": "松ノ馬場"
+      },
+      {
+        "id": "STN_KEIHAN_SAKAMOTO_HIEIZANGUCHI",
+        "lat": "35.070585",
+        "lng": "135.871285",
+        "name": "坂本比叡山口"
+      },
+      {
+        "id": "STN_KEIHAN_MISASAGI",
+        "lat": "34.99598",
+        "lng": "135.801885",
+        "name": "御陵"
+      },
+      {
+        "id": "STN_KEIHAN_KEIHAN_YAMASHINA",
+        "lat": "34.99202",
+        "lng": "135.81696",
+        "name": "京阪山科"
+      },
+      {
+        "id": "STN_KEIHAN_SHINOMIYA",
+        "lat": "34.991875",
+        "lng": "135.82397",
+        "name": "四宮"
+      },
+      {
+        "id": "STN_KEIHAN_OIWAKE",
+        "lat": "34.991355",
+        "lng": "135.8375",
+        "name": "追分"
+      },
+      {
+        "id": "STN_KEIHAN_OTANI",
+        "lat": "34.99431",
+        "lng": "135.853165",
+        "name": "大谷"
+      },
+      {
+        "id": "STN_KEIHAN_KAMISAKAEMACHI",
+        "lat": "35.00518",
+        "lng": "135.86019",
+        "name": "上栄町"
+      }
+    ]
+  }
 ]

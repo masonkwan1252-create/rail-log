@@ -1,0 +1,232 @@
+[
+  {
+    "categories": "地下鉄",
+    "company_id": "CITY_KOBE",
+    "company_name": "神戸市営地下鉄",
+    "lines": [
+      {
+        "id": "CITY_KOBE_SEISHIN_YAMATE",
+        "name": "西神・山手線",
+        "sequence": [
+          "STN_CITY_KOBE_TANIGAMI",
+          "STN_CITY_KOBE_SHIN_KOBE",
+          "STN_CITY_KOBE_SANNOMIYA",
+          "STN_CITY_KOBE_KENCHOMAE",
+          "STN_CITY_KOBE_OKURAYAMA",
+          "STN_CITY_KOBE_MINATOGAWA_KOEN",
+          "STN_CITY_KOBE_KAMISAWA",
+          "STN_CITY_KOBE_NAGATA",
+          "STN_CITY_KOBE_SHIN_NAGATA",
+          "STN_CITY_KOBE_ITAYADO",
+          "STN_CITY_KOBE_MYOHOJI",
+          "STN_CITY_KOBE_MYODANI",
+          "STN_CITY_KOBE_SOGO_UNDO_KOEN",
+          "STN_CITY_KOBE_GAKUEN_TOSHI",
+          "STN_CITY_KOBE_IKAWADANI",
+          "STN_CITY_KOBE_SEISHIN_MINAMI",
+          "STN_CITY_KOBE_SEISHIN_CHUO"
+        ]
+      },
+      {
+        "id": "CITY_KOBE_HOKUSHIN",
+        "name": "北神線",
+        "sequence": [
+          "STN_CITY_KOBE_TANIGAMI",
+          "STN_CITY_KOBE_SHIN_KOBE"
+        ]
+      },
+      {
+        "id": "CITY_KOBE_KAIGAN",
+        "name": "海岸線",
+        "sequence": [
+          "STN_CITY_KOBE_SANNOMIYA_HANADOKEIMAE",
+          "STN_CITY_KOBE_KYUKYORYUCHI_DAIMARUMAE",
+          "STN_CITY_KOBE_MINATO_MOTOMACHI",
+          "STN_CITY_KOBE_HARBORLAND",
+          "STN_CITY_KOBE_CHUO_ICHIBAMAE",
+          "STN_CITY_KOBE_WADAMISAKI",
+          "STN_CITY_KOBE_MISAKI_KOEN",
+          "STN_CITY_KOBE_KARUMO",
+          "STN_CITY_KOBE_KOMAGABAYASHI",
+          "STN_CITY_KOBE_SHIN_NAGATA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_CITY_KOBE_TANIGAMI",
+        "lat": "34.76146556",
+        "lng": "135.17136424",
+        "name": "谷上"
+      },
+      {
+        "id": "STN_CITY_KOBE_SHIN_KOBE",
+        "lat": "34.704685",
+        "lng": "135.19566",
+        "name": "新神戸"
+      },
+      {
+        "id": "STN_CITY_KOBE_SANNOMIYA",
+        "lat": "34.693885",
+        "lng": "135.192415",
+        "name": "三宮"
+      },
+      {
+        "id": "STN_CITY_KOBE_KENCHOMAE",
+        "lat": "34.690988",
+        "lng": "135.183967",
+        "name": "県庁前"
+      },
+      {
+        "id": "STN_CITY_KOBE_OKURAYAMA",
+        "lat": "34.6847",
+        "lng": "135.174675",
+        "name": "大倉山"
+      },
+      {
+        "id": "STN_CITY_KOBE_MINATOGAWA_KOEN",
+        "lat": "34.67881",
+        "lng": "135.166625",
+        "name": "湊川公園"
+      },
+      {
+        "id": "STN_CITY_KOBE_KAMISAWA",
+        "lat": "34.673505",
+        "lng": "135.158775",
+        "name": "上沢"
+      },
+      {
+        "id": "STN_CITY_KOBE_NAGATA",
+        "lat": "34.668395",
+        "lng": "135.1513",
+        "name": "長田"
+      },
+      {
+        "id": "STN_CITY_KOBE_SHIN_NAGATA",
+        "lat": "34.658315",
+        "lng": "135.145655",
+        "name": "新長田"
+      },
+      {
+        "id": "STN_CITY_KOBE_ITAYADO",
+        "lat": "34.66012",
+        "lng": "135.134295",
+        "name": "板宿"
+      },
+      {
+        "id": "STN_CITY_KOBE_MYOHOJI",
+        "lat": "34.675",
+        "lng": "135.110365",
+        "name": "妙法寺"
+      },
+      {
+        "id": "STN_CITY_KOBE_MYODANI",
+        "lat": "34.679265",
+        "lng": "135.09438",
+        "name": "名谷"
+      },
+      {
+        "id": "STN_CITY_KOBE_SOGO_UNDO_KOEN",
+        "lat": "34.681655",
+        "lng": "135.075314",
+        "name": "総合運動公園"
+      },
+      {
+        "id": "STN_CITY_KOBE_GAKUEN_TOSHI",
+        "lat": "34.681429",
+        "lng": "135.05747",
+        "name": "学園都市"
+      },
+      {
+        "id": "STN_CITY_KOBE_IKAWADANI",
+        "lat": "34.687823",
+        "lng": "135.041398",
+        "name": "伊川谷"
+      },
+      {
+        "id": "STN_CITY_KOBE_SEISHIN_MINAMI",
+        "lat": "34.6994",
+        "lng": "135.030195",
+        "name": "西神南"
+      },
+      {
+        "id": "STN_CITY_KOBE_SEISHIN_CHUO",
+        "lat": "34.719985",
+        "lng": "135.01716",
+        "name": "西神中央"
+      },
+      {
+        "id": "STN_CITY_KOBE_TANIGAMI",
+        "lat": "34.76146556",
+        "lng": "135.17136424",
+        "name": "谷上"
+      },
+      {
+        "id": "STN_CITY_KOBE_SHIN_KOBE",
+        "lat": "34.704685",
+        "lng": "135.19566",
+        "name": "新神戸"
+      },
+      {
+        "id": "STN_CITY_KOBE_SANNOMIYA_HANADOKEIMAE",
+        "lat": "34.691805",
+        "lng": "135.195975",
+        "name": "三宮・花時計前"
+      },
+      {
+        "id": "STN_CITY_KOBE_KYUKYORYUCHI_DAIMARUMAE",
+        "lat": "34.689494",
+        "lng": "135.190396",
+        "name": "旧居留地・大丸前"
+      },
+      {
+        "id": "STN_CITY_KOBE_MINATO_MOTOMACHI",
+        "lat": "34.68585",
+        "lng": "135.18391",
+        "name": "みなと元町"
+      },
+      {
+        "id": "STN_CITY_KOBE_HARBORLAND",
+        "lat": "34.67808",
+        "lng": "135.178545",
+        "name": "ハーバーランド"
+      },
+      {
+        "id": "STN_CITY_KOBE_CHUO_ICHIBAMAE",
+        "lat": "34.665995",
+        "lng": "135.17588",
+        "name": "中央市場前"
+      },
+      {
+        "id": "STN_CITY_KOBE_WADAMISAKI",
+        "lat": "34.657935",
+        "lng": "135.176055",
+        "name": "和田岬"
+      },
+      {
+        "id": "STN_CITY_KOBE_MISAKI_KOEN",
+        "lat": "34.65472",
+        "lng": "135.165265",
+        "name": "御崎公園"
+      },
+      {
+        "id": "STN_CITY_KOBE_KARUMO",
+        "lat": "34.653715",
+        "lng": "135.156665",
+        "name": "苅藻"
+      },
+      {
+        "id": "STN_CITY_KOBE_KOMAGABAYASHI",
+        "lat": "34.652225",
+        "lng": "135.14949",
+        "name": "駒ヶ林"
+      },
+      {
+        "id": "STN_CITY_KOBE_SHIN_NAGATA",
+        "lat": "34.658315",
+        "lng": "135.145655",
+        "name": "新長田"
+      }
+    ]
+  }
+]

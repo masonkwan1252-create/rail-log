@@ -1,0 +1,735 @@
+[
+  {
+    "categories": "地下鉄",
+    "company_id": "OSAKA_METRO",
+    "company_name": "Osaka Metro",
+    "lines": [
+      {
+        "id": "OSAKA_MIDOSUJI",
+        "name": "御堂筋線",
+        "sequence": [
+          "STN_OSAKA_ESAKA",
+          "STN_OSAKA_HIGASHI_MIKUNI",
+          "STN_OSAKA_SHIN_OSAKA",
+          "STN_OSAKA_NISHINAKAJIMA_MINAMIGATA",
+          "STN_OSAKA_NAKATSU",
+          "STN_OSAKA_UMEDA",
+          "STN_OSAKA_YODOYABASHI",
+          "STN_OSAKA_HOMMACHI",
+          "STN_OSAKA_SHINSAIBASHI",
+          "STN_OSAKA_NAMBA",
+          "STN_OSAKA_DAIKOKUCHO",
+          "STN_OSAKA_DOBUTSUEN_MAE",
+          "STN_OSAKA_TENNOJI",
+          "STN_OSAKA_SHOWACHO",
+          "STN_OSAKA_NISHITANABE",
+          "STN_OSAKA_NAGAI",
+          "STN_OSAKA_ABIKO",
+          "STN_OSAKA_KITAHANADA",
+          "STN_OSAKA_SHINKANAOKA",
+          "STN_OSAKA_NAKAMOZU"
+        ]
+      },
+      {
+        "id": "OSAKA_TANIMACHI",
+        "name": "谷町線",
+        "sequence": [
+          "STN_OSAKA_DAINICHI",
+          "STN_OSAKA_MORIGUCHI",
+          "STN_OSAKA_TAISHIBASHI_IMAICHI",
+          "STN_OSAKA_SEMBAYASHI_OMIYA",
+          "STN_OSAKA_SEKIME_TAKADONO",
+          "STN_OSAKA_NOE_UCHINDAI",
+          "STN_OSAKA_MIYAKOJIMA",
+          "STN_OSAKA_TENJIMBASHISUJI_ROKUCHOME",
+          "STN_OSAKA_NAKAZAKICHO",
+          "STN_OSAKA_HIGASHI_UMEDA",
+          "STN_OSAKA_MINAMI_MORIMACHI",
+          "STN_OSAKA_TEMMABASHI",
+          "STN_OSAKA_TANIMACHI_YONCHOME",
+          "STN_OSAKA_TANIMACHI_ROKUCHOME",
+          "STN_OSAKA_TANIMACHI_KYUCHOME",
+          "STN_OSAKA_SHITENNOJIMAE_YUHIGAOKA",
+          "STN_OSAKA_TENNOJI",
+          "STN_OSAKA_ABENO",
+          "STN_OSAKA_FUMINOSATO",
+          "STN_OSAKA_TANABE",
+          "STN_OSAKA_KOMAGAWA_NAKANO",
+          "STN_OSAKA_HIRANO",
+          "STN_OSAKA_KIRE_URIWARI",
+          "STN_OSAKA_DETO",
+          "STN_OSAKA_NAGAHARA",
+          "STN_OSAKA_YAOMINAMI"
+        ]
+      },
+      {
+        "id": "OSAKA_CHOU",
+        "name": "中央線",
+        "sequence": [
+          "STN_OSAKA_NISHI_UMEDA",
+          "STN_OSAKA_HIGOBASHI",
+          "STN_OSAKA_HOMMACHI",
+          "STN_OSAKA_YOTSUBASHI",
+          "STN_OSAKA_NAMBA",
+          "STN_OSAKA_DAIKOKUCHO",
+          "STN_OSAKA_HANAZONOCHO",
+          "STN_OSAKA_KISHINOSATO",
+          "STN_OSAKA_TAMADE",
+          "STN_OSAKA_KITAKAGAYA",
+          "STN_OSAKA_SUMINOEKOEN"
+        ]
+      },
+      {
+        "id": "OSAKA_SENNICHIMAE",
+        "name": "千日前線",
+        "sequence": [
+          "STN_OSAKA_NODA_HANSHIN",
+          "STN_OSAKA_TAMAGAWA",
+          "STN_OSAKA_AWAZA",
+          "STN_OSAKA_NISHI_NAGAHORI",
+          "STN_OSAKA_SAKURAGAWA",
+          "STN_OSAKA_NAMBA",
+          "STN_OSAKA_NIPPOMBASHI",
+          "STN_OSAKA_TANIMACHI_KYUCHOME",
+          "STN_OSAKA_TSURUHASHI",
+          "STN_OSAKA_IMAZATO",
+          "STN_OSAKA_SHIN_FUKAE",
+          "STN_OSAKA_SHOJI",
+          "STN_OSAKA_KITA_TATSUMI",
+          "STN_OSAKA_MINAMI_TATSUNMI"
+        ]
+      },
+      {
+        "id": "OSAKA_SAKAISUJI",
+        "name": "堺筋線",
+        "sequence": [
+          "STN_OSAKA_TENJIMBASHISUJI_ROKUCHOME",
+          "STN_OSAKA_OGIMACHI",
+          "STN_OSAKA_MINAMI_MORIMACHI",
+          "STN_OSAKA_KITAHAMA",
+          "STN_OSAKA_SAKAISUJI_HOMMACHI",
+          "STN_OSAKA_NAGAHORIBASHI",
+          "STN_OSAKA_NIPPOMBASHI",
+          "STN_OSAKA_EBISUCHO",
+          "STN_OSAKA_DOBUTSUEN_MAE",
+          "STN_OSAKA_TENGACHAYA"
+        ]
+      },
+      {
+        "id": "OSAKA_NAGAHORI_TSURUMI_RYOKUCHI",
+        "name": "長堀鶴見緑地線",
+        "sequence": [
+          "STN_OSAKA_TAISHO",
+          "STN_OSAKA_DOME_MAE_CHIYOZAKI",
+          "STN_OSAKA_NISHI_NAGAHORI",
+          "STN_OSAKA_NISHIOHASHI",
+          "STN_OSAKA_SHINSAIBASHI",
+          "STN_OSAKA_NAGAHORIBASHI",
+          "STN_OSAKA_MATSUYAMACHI",
+          "STN_OSAKA_TANIMACHI_ROKUCHOME",
+          "STN_OSAKA_TAMATSUKURI",
+          "STN_OSAKA_MORINOMIYA",
+          "STN_OSAKA_OSAKA_BUSINESS_PARK",
+          "STN_OSAKA_KYOBASHI",
+          "STN_OSAKA_GAMO_YONCHOME",
+          "STN_OSAKA_IMAFUKU_TSURUMI",
+          "STN_OSAKA_YOKOZUTSUMI",
+          "STN_OSAKA_TSURUMI_RYOKUCHI",
+          "STN_OSAKA_KADOMA_MINAMI"
+        ]
+      },
+      {
+        "id": "OSAKA_SAKAISUJI",
+        "name": "今里筋線",
+        "sequence": [
+          "STN_OSAKA_TENJIMBASHISUJI_ROKUCHOME",
+          "STN_OSAKA_OGIMACHI",
+          "STN_OSAKA_MINAMI_MORIMACHI",
+          "STN_OSAKA_KITAHAMA",
+          "STN_OSAKA_SAKAISUJI_HOMMACHI",
+          "STN_OSAKA_NAGAHORIBASHI",
+          "STN_OSAKA_NIPPOMBASHI",
+          "STN_OSAKA_EBISUCHO",
+          "STN_OSAKA_DOBUTSUEN_MAE",
+          "STN_OSAKA_TENGACHAYA"
+        ]
+      },
+      {
+        "id": "OSAKA_NANKO_PORT_TOWN",
+        "name": "南港ポートタウン線",
+        "sequence": [
+          "STN_OSAKA_COSMOSQUARE",
+          "STN_OSAKA_TRADE_CENTER_MAE",
+          "STN_OSAKA_NAKAFUTO",
+          "STN_OSAKA_PORT_TOWN_NISHI",
+          "STN_OSAKA_PORT_TOWN_HIGASHI",
+          "STN_OSAKA_FERRY_TERMINAL",
+          "STN_OSAKA_NANKO_HIGASHI",
+          "STN_OSAKA_NANKOGUCHI",
+          "STN_OSAKA_HIRABAYASHI",
+          "STN_OSAKA_SUMINOEKOEN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_OSAKA_ESAKA",
+        "lat": "34.75875",
+        "lng": "135.497095",
+        "name": "江坂"
+      },
+      {
+        "id": "STN_OSAKA_HIGASHI_MIKUNI",
+        "lat": "34.7411",
+        "lng": "135.498495",
+        "name": "東三国"
+      },
+      {
+        "id": "STN_OSAKA_SHIN_OSAKA",
+        "lat": "34.73279",
+        "lng": "135.498545",
+        "name": "新大阪"
+      },
+      {
+        "id": "STN_OSAKA_NISHINAKAJIMA_MINAMIGATA",
+        "lat": "34.72655",
+        "lng": "135.498605",
+        "name": "西中島南方"
+      },
+      {
+        "id": "STN_OSAKA_NAKATSU",
+        "lat": "34.711357",
+        "lng": "135.497101",
+        "name": "中津"
+      },
+      {
+        "id": "STN_OSAKA_UMEDA",
+        "lat": "34.70313",
+        "lng": "135.497685",
+        "name": "梅田"
+      },
+      {
+        "id": "STN_OSAKA_YODOYABASHI",
+        "lat": "34.691305",
+        "lng": "135.50095",
+        "name": "淀屋橋"
+      },
+      {
+        "id": "STN_OSAKA_HOMMACHI",
+        "lat": "34.68358",
+        "lng": "135.500675",
+        "name": "本町"
+      },
+      {
+        "id": "STN_OSAKA_SHINSAIBASHI",
+        "lat": "34.6744",
+        "lng": "135.500345",
+        "name": "心斎橋"
+      },
+      {
+        "id": "STN_OSAKA_NAMBA",
+        "lat": "34.666161",
+        "lng": "135.500266",
+        "name": "難波"
+      },
+      {
+        "id": "STN_OSAKA_DAIKOKUCHO",
+        "lat": "34.656295",
+        "lng": "135.49786",
+        "name": "大国町"
+      },
+      {
+        "id": "STN_OSAKA_DOBUTSUEN_MAE",
+        "lat": "34.64873",
+        "lng": "135.50478",
+        "name": "動物園前"
+      },
+      {
+        "id": "STN_OSAKA_TENNOJI",
+        "lat": "34.64626",
+        "lng": "135.51452",
+        "name": "天王寺"
+      },
+      {
+        "id": "STN_OSAKA_SHOWACHO",
+        "lat": "34.632975",
+        "lng": "135.516885",
+        "name": "昭和町"
+      },
+      {
+        "id": "STN_OSAKA_NISHITANABE",
+        "lat": "34.62165",
+        "lng": "135.515175",
+        "name": "西田辺"
+      },
+      {
+        "id": "STN_OSAKA_NAGAI",
+        "lat": "34.609995",
+        "lng": "135.513805",
+        "name": "長居"
+      },
+      {
+        "id": "STN_OSAKA_ABIKO",
+        "lat": "34.599025",
+        "lng": "135.512785",
+        "name": "あびこ"
+      },
+      {
+        "id": "STN_OSAKA_KITAHANADA",
+        "lat": "34.582495",
+        "lng": "135.516395",
+        "name": "北花田"
+      },
+      {
+        "id": "STN_OSAKA_SHINKANAOKA",
+        "lat": "34.5682",
+        "lng": "135.51527",
+        "name": "新金岡"
+      },
+      {
+        "id": "STN_OSAKA_NAKAMOZU",
+        "lat": "34.556253",
+        "lng": "135.506008",
+        "name": "中百舌鳥"
+      },
+      {
+        "id": "STN_OSAKA_DAINICHI",
+        "lat": "34.749495",
+        "lng": "135.578315",
+        "name": "大日"
+      },
+      {
+        "id": "STN_OSAKA_MORIGUCHI",
+        "lat": "34.73844",
+        "lng": "135.564345",
+        "name": "守口"
+      },
+      {
+        "id": "STN_OSAKA_TAISHIBASHI_IMAICHI",
+        "lat": "34.731086",
+        "lng": "135.5545",
+        "name": "太子橋今市"
+      },
+      {
+        "id": "STN_OSAKA_SEMBAYASHI_OMIYA",
+        "lat": "34.724225",
+        "lng": "135.549255",
+        "name": "千林大宮"
+      },
+      {
+        "id": "STN_OSAKA_SEKIME_TAKADONO",
+        "lat": "34.715162",
+        "lng": "135.545419",
+        "name": "関目高殿"
+      },
+      {
+        "id": "STN_OSAKA_NOE_UCHINDAI",
+        "lat": "34.709141",
+        "lng": "135.53833",
+        "name": "野江内代"
+      },
+      {
+        "id": "STN_OSAKA_MIYAKOJIMA",
+        "lat": "34.708978",
+        "lng": "135.526006",
+        "name": "都島"
+      },
+      {
+        "id": "STN_OSAKA_TENJIMBASHISUJI_ROKUCHOME",
+        "lat": "34.710593",
+        "lng": "135.512038",
+        "name": "天神橋筋六丁目"
+      },
+      {
+        "id": "STN_OSAKA_NAKAZAKICHO",
+        "lat": "34.70718",
+        "lng": "135.505565",
+        "name": "中崎町"
+      },
+      {
+        "id": "STN_OSAKA_HIGASHI_UMEDA",
+        "lat": "34.70056",
+        "lng": "135.499825",
+        "name": "東梅田"
+      },
+      {
+        "id": "STN_OSAKA_MINAMI_MORIMACHI",
+        "lat": "34.697582",
+        "lng": "135.51083",
+        "name": "南森町"
+      },
+      {
+        "id": "STN_OSAKA_TEMMABASHI",
+        "lat": "34.689175",
+        "lng": "135.517305",
+        "name": "天満橋"
+      },
+      {
+        "id": "STN_OSAKA_TANIMACHI_YONCHOME",
+        "lat": "34.68216",
+        "lng": "135.517312",
+        "name": "谷町四丁目"
+      },
+      {
+        "id": "STN_OSAKA_TANIMACHI_ROKUCHOME",
+        "lat": "34.675205",
+        "lng": "135.51707",
+        "name": "谷町六丁目"
+      },
+      {
+        "id": "STN_OSAKA_TANIMACHI_KYUCHOME",
+        "lat": "34.667065",
+        "lng": "135.515835",
+        "name": "谷町九丁目"
+      },
+      {
+        "id": "STN_OSAKA_SHITENNOJIMAE_YUHIGAOKA",
+        "lat": "34.65841",
+        "lng": "135.514185",
+        "name": "四天王寺前夕陽ヶ丘"
+      },
+      {
+        "id": "STN_OSAKA_ABENO",
+        "lat": "34.642913",
+        "lng": "135.512143",
+        "name": "阿倍野"
+      },
+      {
+        "id": "STN_OSAKA_FUMINOSATO",
+        "lat": "34.63583",
+        "lng": "135.518285",
+        "name": "文の里"
+      },
+      {
+        "id": "STN_OSAKA_TANABE",
+        "lat": "34.628579",
+        "lng": "135.525213",
+        "name": "田辺"
+      },
+      {
+        "id": "STN_OSAKA_KOMAGAWA_NAKANO",
+        "lat": "34.621537",
+        "lng": "135.532789",
+        "name": "駒川中野"
+      },
+      {
+        "id": "STN_OSAKA_HIRANO",
+        "lat": "34.62109",
+        "lng": "135.548643",
+        "name": "平野"
+      },
+      {
+        "id": "STN_OSAKA_KIRE_URIWARI",
+        "lat": "34.60919",
+        "lng": "135.55209",
+        "name": "喜連瓜破"
+      },
+      {
+        "id": "STN_OSAKA_DETO",
+        "lat": "34.609025",
+        "lng": "135.56544",
+        "name": "出戸"
+      },
+      {
+        "id": "STN_OSAKA_NAGAHARA",
+        "lat": "34.602485",
+        "lng": "135.57376",
+        "name": "長原"
+      },
+      {
+        "id": "STN_OSAKA_YAOMINAMI",
+        "lat": "34.59737154",
+        "lng": "135.58280439",
+        "name": "八尾南"
+      },
+      {
+        "id": "STN_OSAKA_NISHI_UMEDA",
+        "lat": "34.69944",
+        "lng": "135.495645",
+        "name": "西梅田"
+      },
+      {
+        "id": "STN_OSAKA_HIGOBASHI",
+        "lat": "34.691215",
+        "lng": "135.496365",
+        "name": "肥後橋"
+      },
+      {
+        "id": "STN_OSAKA_YOTSUBASHI",
+        "lat": "34.67394",
+        "lng": "135.496745",
+        "name": "四ツ橋"
+      },
+      {
+        "id": "STN_OSAKA_HANAZONOCHO",
+        "lat": "34.644205",
+        "lng": "135.49655",
+        "name": "花園町"
+      },
+      {
+        "id": "STN_OSAKA_KISHINOSATO",
+        "lat": "34.6342",
+        "lng": "135.4938",
+        "name": "岸里"
+      },
+      {
+        "id": "STN_OSAKA_TAMADE",
+        "lat": "34.624085",
+        "lng": "135.49049",
+        "name": "玉出"
+      },
+      {
+        "id": "STN_OSAKA_KITAKAGAYA",
+        "lat": "34.621295",
+        "lng": "135.479355",
+        "name": "北加賀屋"
+      },
+      {
+        "id": "STN_OSAKA_SUMINOEKOEN",
+        "lat": "34.608865",
+        "lng": "135.47311",
+        "name": "住之江公園"
+      },
+      {
+        "id": "STN_OSAKA_NODA_HANSHIN",
+        "lat": "34.694115",
+        "lng": "135.47487",
+        "name": "野田阪神"
+      },
+      {
+        "id": "STN_OSAKA_TAMAGAWA",
+        "lat": "34.68933",
+        "lng": "135.476355",
+        "name": "玉川"
+      },
+      {
+        "id": "STN_OSAKA_AWAZA",
+        "lat": "34.681345",
+        "lng": "135.487925",
+        "name": "阿波座"
+      },
+      {
+        "id": "STN_OSAKA_NISHI_NAGAHORI",
+        "lat": "34.673935",
+        "lng": "135.48701",
+        "name": "西長堀"
+      },
+      {
+        "id": "STN_OSAKA_SAKURAGAWA",
+        "lat": "34.6683",
+        "lng": "135.4903",
+        "name": "桜川"
+      },
+      {
+        "id": "STN_OSAKA_NIPPOMBASHI",
+        "lat": "34.666972",
+        "lng": "135.50644",
+        "name": "日本橋"
+      },
+      {
+        "id": "STN_OSAKA_TSURUHASHI",
+        "lat": "34.665975",
+        "lng": "135.528895",
+        "name": "鶴橋"
+      },
+      {
+        "id": "STN_OSAKA_IMAZATO",
+        "lat": "34.668687",
+        "lng": "135.544133",
+        "name": "今里"
+      },
+      {
+        "id": "STN_OSAKA_SHIN_FUKAE",
+        "lat": "34.668185",
+        "lng": "135.55421",
+        "name": "新深江"
+      },
+      {
+        "id": "STN_OSAKA_SHOJI",
+        "lat": "34.66134",
+        "lng": "135.55627",
+        "name": "小路"
+      },
+      {
+        "id": "STN_OSAKA_KITA_TATSUMI",
+        "lat": "34.65327",
+        "lng": "135.555",
+        "name": "北巽"
+      },
+      {
+        "id": "STN_OSAKA_MINAMI_TATSUNMI",
+        "lat": "34.64281",
+        "lng": "135.553186",
+        "name": "南巽"
+      },
+      {
+        "id": "STN_OSAKA_OGIMACHI",
+        "lat": "34.703825",
+        "lng": "135.51085",
+        "name": "扇町"
+      },
+      {
+        "id": "STN_OSAKA_KITAHAMA",
+        "lat": "34.690695",
+        "lng": "135.506563",
+        "name": "北浜"
+      },
+      {
+        "id": "STN_OSAKA_SAKAISUJI_HOMMACHI",
+        "lat": "34.681871",
+        "lng": "135.5071",
+        "name": "堺筋本町"
+      },
+      {
+        "id": "STN_OSAKA_NAGAHORIBASHI",
+        "lat": "34.674645",
+        "lng": "135.506319",
+        "name": "長堀橋"
+      },
+      {
+        "id": "STN_OSAKA_EBISUCHO",
+        "lat": "34.655713",
+        "lng": "135.50567",
+        "name": "恵美須町"
+      },
+      {
+        "id": "STN_OSAKA_TENGACHAYA",
+        "lat": "34.637035",
+        "lng": "135.496975",
+        "name": "天下茶屋"
+      },
+      {
+        "id": "STN_OSAKA_TAISHO",
+        "lat": "34.665835",
+        "lng": "135.47877",
+        "name": "大正"
+      },
+      {
+        "id": "STN_OSAKA_DOME_MAE_CHIYOZAKI",
+        "lat": "34.670855",
+        "lng": "135.479345",
+        "name": "ドーム前千代崎"
+      },
+      {
+        "id": "STN_OSAKA_NISHIOHASHI",
+        "lat": "34.675535",
+        "lng": "135.49372",
+        "name": "西大橋"
+      },
+      {
+        "id": "STN_OSAKA_MATSUYAMACHI",
+        "lat": "34.675502",
+        "lng": "135.512511",
+        "name": "松屋町"
+      },
+      {
+        "id": "STN_OSAKA_TAMATSUKURI",
+        "lat": "34.674638",
+        "lng": "135.529965",
+        "name": "玉造"
+      },
+      {
+        "id": "STN_OSAKA_MORINOMIYA",
+        "lat": "34.68148",
+        "lng": "135.5323",
+        "name": "森ノ宮"
+      },
+      {
+        "id": "STN_OSAKA_OSAKA_BUSINESS_PARK",
+        "lat": "34.69187",
+        "lng": "135.529765",
+        "name": "大阪ビジネスパーク"
+      },
+      {
+        "id": "STN_OSAKA_KYOBASHI",
+        "lat": "34.69706",
+        "lng": "135.53005",
+        "name": "京橋"
+      },
+      {
+        "id": "STN_OSAKA_GAMO_YONCHOME",
+        "lat": "34.70049",
+        "lng": "135.54775",
+        "name": "蒲生四丁目"
+      },
+      {
+        "id": "STN_OSAKA_IMAFUKU_TSURUMI",
+        "lat": "34.702067",
+        "lng": "135.560278",
+        "name": "今福鶴見"
+      },
+      {
+        "id": "STN_OSAKA_YOKOZUTSUMI",
+        "lat": "34.70354",
+        "lng": "135.572675",
+        "name": "横堤"
+      },
+      {
+        "id": "STN_OSAKA_TSURUMI_RYOKUCHI",
+        "lat": "34.71097",
+        "lng": "135.58071",
+        "name": "鶴見緑地"
+      },
+      {
+        "id": "STN_OSAKA_KADOMA_MINAMI",
+        "lat": "34.716745",
+        "lng": "135.592475",
+        "name": "門真南"
+      },
+      {
+        "id": "STN_OSAKA_COSMOSQUARE",
+        "lat": "34.642575",
+        "lng": "135.41222",
+        "name": "コスモスクエア"
+      },
+      {
+        "id": "STN_OSAKA_TRADE_CENTER_MAE",
+        "lat": "34.638755",
+        "lng": "135.41184",
+        "name": "トレードセンター前"
+      },
+      {
+        "id": "STN_OSAKA_NAKAFUTO",
+        "lat": "34.63393",
+        "lng": "135.41723",
+        "name": "中ふ頭"
+      },
+      {
+        "id": "STN_OSAKA_PORT_TOWN_NISHI",
+        "lat": "34.630881",
+        "lng": "135.42273",
+        "name": "ポートタウン西"
+      },
+      {
+        "id": "STN_OSAKA_PORT_TOWN_HIGASHI",
+        "lat": "34.63088",
+        "lng": "135.429025",
+        "name": "ポートタウン東"
+      },
+      {
+        "id": "STN_OSAKA_FERRY_TERMINAL",
+        "lat": "34.619295",
+        "lng": "135.434935",
+        "name": "フェリーターミナル"
+      },
+      {
+        "id": "STN_OSAKA_NANKO_HIGASHI",
+        "lat": "34.6138",
+        "lng": "135.43832",
+        "name": "南港東"
+      },
+      {
+        "id": "STN_OSAKA_NANKOGUCHI",
+        "lat": "34.61382",
+        "lng": "135.445875",
+        "name": "南港口"
+      },
+      {
+        "id": "STN_OSAKA_HIRABAYASHI",
+        "lat": "34.610595",
+        "lng": "135.45855",
+        "name": "平林"
+      }
+    ]
+  }
+]
