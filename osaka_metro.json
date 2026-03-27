@@ -99,6 +99,23 @@
           "STN_OSAKA_MINAMI_TATSUNMI"
         ]
       },
+	  {
+        "id": "OSAKA_YOTSUBASHI",
+        "name": "四つ橋線",
+        "sequence": [
+  "STN_OSAKA_NISHI_UMEDA",
+  "STN_OSAKA_HIGOBASHI",
+  "STN_OSAKA_HOMMACHI",
+  "STN_OSAKA_YOTSUBASHI",
+  "STN_OSAKA_NAMBA",
+  "STN_OSAKA_DAIKOKUCHO",
+  "STN_OSAKA_HANAZONOCHO",
+  "STN_OSAKA_KISHINOSATO",
+  "STN_OSAKA_TAMADE",
+  "STN_OSAKA_KITAKAGAYA",
+  "STN_OSAKA_SUMINOEKOEN"
+]
+      },
       {
         "id": "OSAKA_SAKAISUJI",
         "name": "堺筋線",
