@@ -818,7 +818,23 @@ document.getElementById("company").addEventListener("input", () => {
     updateStationLists();
 });
 
-document.getElementById("line").addEventListener("input", updateStationLists);
+// 🚩 新增：車型輸入框的「前綴匹配 (Starts with)」篩選邏輯
+document.getElementById("train").addEventListener("input", function() {
+    const keyword = this.value.trim().toLowerCase(); // 轉換為小寫方便比對
+    const list = document.getElementById("trainList");
+    list.innerHTML = ""; // 先清空現存選單
+
+    // 如果有打字，就只保留開頭符合嘅車型；如果清空咗，就顯示全部
+    let filteredTrains = db.trains;
+    if (keyword) {
+        filteredTrains = db.trains.filter(t => 
+            t._display.toLowerCase().startsWith(keyword)
+        );
+    }
+
+    // 將過濾後嘅車型加返入下拉選單
+    filteredTrains.forEach(t => list.appendChild(new Option(t._display)));
+});
 
 function updateLineList(compName, targetListId) {
     const compId = resolve.company[compName];
