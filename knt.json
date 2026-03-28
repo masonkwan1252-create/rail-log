@@ -1,0 +1,149 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "KNT_LINER",
+    "company_name": "神戸新交通",
+    "lines": [
+      {
+        "id": "KNT_PORT",
+        "name": "ポートアイランド線",
+        "sequence": [
+          "STN_KNT_LINER_SANNOMIYA",
+          "STN_KNT_LINER_BOEKI_CENTER",
+          "STN_KNT_LINER_PORT_TERMINAL",
+          "STN_KNT_LINER_NAKA_KOEN",
+          "STN_KNT_LINER_MINATOJIMA",
+          "STN_KNT_LINER_SHIMIN_HIROBA",
+          "STN_KNT_LINER_IRYO_CENTER",
+          "STN_KNT_LINER_KEISAN_KAGAKU_CENTER",
+          "STN_KNT_LINER_KOBE_AUKPORT",
+          "STN_KNT_LINER_MINAMI_KOEN",
+          "STN_KNT_LINER_NAKA_FUTO",
+          "STN_KNT_LINER_KITA_FUTO"
+        ]
+      },
+      {
+        "id": "KNT_ROKKO_ISLAND",
+        "name": "六甲アイランド線",
+        "sequence": [
+          "STN_KNT_LINER_SUMIYOSHI",
+          "STN_KNT_LINER_UOZAKI",
+          "STN_KNT_LINER_MINAMI_UOZAKI",
+          "STN_KNT_LINER_ISLAND_KITAGUCHI",
+          "STN_KNT_LINER_ISLAND_CENTER",
+          "STN_KNT_LINER_MARINE_PARK"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KNT_LINER_SANNOMIYA",
+        "lat": "34.69451",
+        "lng": "135.195295",
+        "name": "三宮"
+      },
+      {
+        "id": "STN_KNT_LINER_BOEKI_CENTER",
+        "lat": "34.689365",
+        "lng": "135.19946",
+        "name": "貿易センター"
+      },
+      {
+        "id": "STN_KNT_LINER_PORT_TERMINAL",
+        "lat": "34.681455",
+        "lng": "135.20222",
+        "name": "ポートターミナル"
+      },
+      {
+        "id": "STN_KNT_LINER_NAKA_KOEN",
+        "lat": "34.673095",
+        "lng": "135.20752",
+        "name": "中公園"
+      },
+      {
+        "id": "STN_KNT_LINER_MINATOJIMA",
+        "lat": "34.669065",
+        "lng": "135.209995",
+        "name": "みなとじま"
+      },
+      {
+        "id": "STN_KNT_LINER_SHIMIN_HIROBA",
+        "lat": "34.66483547",
+        "lng": "135.21260671",
+        "name": "市民広場"
+      },
+      {
+        "id": "STN_KNT_LINER_IRYO_CENTER",
+        "lat": "34.65852",
+        "lng": "135.21641",
+        "name": "医療センター"
+      },
+      {
+        "id": "STN_KNT_LINER_KEISAN_KAGAKU_CENTER",
+        "lat": "34.65481",
+        "lng": "135.221535",
+        "name": "計算科学センター"
+      },
+      {
+        "id": "STN_KNT_LINER_KOBE_AUKPORT",
+        "lat": "34.63728489",
+        "lng": "135.22903199",
+        "name": "神戸空港"
+      },
+      {
+        "id": "STN_KNT_LINER_MINAMI_KOEN",
+        "lat": "34.66467",
+        "lng": "135.21707",
+        "name": "南公園"
+      },
+      {
+        "id": "STN_KNT_LINER_NAKA_FUTO",
+        "lat": "34.66939763",
+        "lng": "135.21721242",
+        "name": "中埠頭"
+      },
+      {
+        "id": "STN_KNT_LINER_KITA_FUTO",
+        "lat": "34.67360824",
+        "lng": "135.21462084",
+        "name": "北埠頭"
+      },
+      {
+        "id": "STN_KNT_LINER_SUMIYOSHI",
+        "lat": "34.71942",
+        "lng": "135.262265",
+        "name": "住吉"
+      },
+      {
+        "id": "STN_KNT_LINER_UOZAKI",
+        "lat": "34.71365",
+        "lng": "135.26863",
+        "name": "魚崎"
+      },
+      {
+        "id": "STN_KNT_LINER_MINAMI_UOZAKI",
+        "lat": "34.706755",
+        "lng": "135.26762",
+        "name": "南魚崎"
+      },
+      {
+        "id": "STN_KNT_LINER_ISLAND_KITAGUCHI",
+        "lat": "34.69292",
+        "lng": "135.268722",
+        "name": "アイランド北口"
+      },
+      {
+        "id": "STN_KNT_LINER_ISLAND_CENTER",
+        "lat": "34.689135",
+        "lng": "135.269295",
+        "name": "アイランドセンター"
+      },
+      {
+        "id": "STN_KNT_LINER_MARINE_PARK",
+        "lat": "34.68422",
+        "lng": "135.270095",
+        "name": "マリンパーク"
+      }
+    ]
+  }
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "EIZAN",
+    "company_name": "叡山電鉄",
+    "lines": [
+      {
+        "id": "EIZAN_HONSEN",
+        "name": "叡山本線",
+        "sequence": [
+          "STN_EIZAN_DEMACHIYANAGI",
+          "STN_EIZAN_MOTOTANAKA",
+          "STN_EIZAN_CHAYAMA_KYOTO_GEIJUTSU_DAIGAKU",
+          "STN_EIZAN_ICHIJOJI",
+          "STN_EIZAN_SHUGAKUIN",
+          "STN_EIZAN_TAKARAGAIKE",
+          "STN_EIZAN_MIYAKE_HACHIMAN",
+          "STN_EIZAN_YASE_HIEIZANGUCHI"
+        ]
+      },
+      {
+        "id": "EIZAN_KURAMA",
+        "name": "鞍馬線",
+        "sequence": [
+          "STN_EIZAN_TAKARAGAIKE",
+          "STN_EIZAN_HACHIMAN_MAE",
+          "STN_EIZAN_IWAKURA",
+          "STN_EIZAN_KINO",
+          "STN_EIZAN_KYOTO_SEIKADAI_MAE",
+          "STN_EIZAN_NIKENCHAYA",
+          "STN_EIZAN_ICHIHARA",
+          "STN_EIZAN_NINOSE",
+          "STN_EIZAN_KIBUNEGUCHI",
+          "STN_EIZAN_KURAMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_EIZAN_DEMACHIYANAGI",
+        "lat": "35.03092",
+        "lng": "135.773545",
+        "name": "出町柳"
+      },
+      {
+        "id": "STN_EIZAN_MOTOTANAKA",
+        "lat": "35.035015",
+        "lng": "135.78163",
+        "name": "元田中"
+      },
+      {
+        "id": "STN_EIZAN_CHAYAMA_KYOTO_GEIJUTSU_DAIGAKU",
+        "lat": "35.038395",
+        "lng": "135.78465",
+        "name": "茶山・京都芸術大学"
+      },
+      {
+        "id": "STN_EIZAN_ICHIJOJI",
+        "lat": "35.04438",
+        "lng": "135.78752",
+        "name": "一乗寺"
+      },
+      {
+        "id": "STN_EIZAN_SHUGAKUIN",
+        "lat": "35.050005",
+        "lng": "135.7903",
+        "name": "修学院"
+      },
+      {
+        "id": "STN_EIZAN_TAKARAGAIKE",
+        "lat": "35.05821419",
+        "lng": "135.79234142",
+        "name": "宝ケ池"
+      },
+      {
+        "id": "STN_EIZAN_MIYAKE_HACHIMAN",
+        "lat": "35.062375",
+        "lng": "135.79619",
+        "name": "三宅八幡"
+      },
+      {
+        "id": "STN_EIZAN_YASE_HIEIZANGUCHI",
+        "lat": "35.06512",
+        "lng": "135.808345",
+        "name": "八瀬比叡山口"
+      },
+      {
+        "id": "STN_EIZAN_HACHIMAN_MAE",
+        "lat": "35.06617",
+        "lng": "135.792445",
+        "name": "八幡前"
+      },
+      {
+        "id": "STN_EIZAN_IWAKURA",
+        "lat": "35.07120877",
+        "lng": "135.78673666",
+        "name": "岩倉"
+      },
+      {
+        "id": "STN_EIZAN_KINO",
+        "lat": "35.071095",
+        "lng": "135.776535",
+        "name": "木野"
+      },
+      {
+        "id": "STN_EIZAN_KYOTO_SEIKADAI_MAE",
+        "lat": "35.073055",
+        "lng": "135.76891",
+        "name": "京都精華大前"
+      },
+      {
+        "id": "STN_EIZAN_NIKENCHAYA",
+        "lat": "35.07803",
+        "lng": "135.765815",
+        "name": "二軒茶屋"
+      },
+      {
+        "id": "STN_EIZAN_ICHIHARA",
+        "lat": "35.08816",
+        "lng": "135.76305",
+        "name": "市原"
+      },
+      {
+        "id": "STN_EIZAN_NINOSE",
+        "lat": "35.09770933",
+        "lng": "135.76312602",
+        "name": "二ノ瀬"
+      },
+      {
+        "id": "STN_EIZAN_KIBUNEGUCHI",
+        "lat": "35.105897",
+        "lng": "135.763615",
+        "name": "貴船口"
+      },
+      {
+        "id": "STN_EIZAN_KURAMA",
+        "lat": "35.1129",
+        "lng": "135.772255",
+        "name": "鞍馬"
+      }
+    ]
+  }
+]

@@ -20,7 +20,16 @@
     color: #001f5c;          /* 使用鐵道手帳同款藍色 */
     text-align: center;
 }
-
+/* 山手線專屬樣式 */
+    .yamanote-panel { justify-content: center; }
+    .yamanote-panel .sign-destination-text {
+        font-size: 48px;
+        letter-spacing: 20px;
+        margin-right: -20px; /* 抵消字距確保置中 */
+        transform: scaleX(1.2); /* 窄身字體效果 */
+        font-weight: 900; color: #001f5c; display: inline-block; white-space: nowrap;
+}
+	
 .out-of-service-panel .sign-destination-text {
     color: #001f5c;         /* 鐵道手帳同款藍色 */
     font-size: 32px;        /* 大幅增加字體大小 */
@@ -693,6 +702,58 @@ function clearInput(id) {
         el.dispatchEvent(new Event('input'));
     }
 }
+// 傳入單次乘車紀錄 (trip) 對象
+function getTripTrainDisplay(trip) {
+    const trainObj = maps.train[trip.train_id];
+    if (!trainObj) return trip.train_id; // 防呆
+
+    const trainCompanyId = trainObj.company_id;
+    const rideCompanyId = trip.company_id; // 乘搭嘅公司
+    const throughCompanyId = trip.throughCompany_id; // 直通嘅公司 (如果有此欄位)
+
+    // 預設當作同一間公司
+    let isSameCompany = (trainCompanyId === rideCompanyId);
+    
+    // 如果有直通路線，而且直通公司 唔等於 車型公司，代表全段唔係同一間
+    if (throughCompanyId && throughCompanyId !== trainCompanyId) {
+         isSameCompany = false;
+    }
+
+    // 根據結果決定點顯示
+    if (isSameCompany) {
+        return trainObj.name; // 條件符合，只顯示「205系」
+    } else {
+        const companyName = maps.company[trainCompanyId]?.name || trainCompanyId;
+        return `${companyName} ${trainObj.name}`; // 條件唔符，顯示「JR西日本 205系」
+    }
+}
+// 傳入 train_id (你想顯示嘅車型) 同埋 trips (所有乘車紀錄 array)
+function getStatTrainDisplay(train_id, trips) {
+    const trainObj = maps.train[train_id];
+    if (!trainObj) return train_id;
+
+    // 第一步：搵出你搭過嘅所有 unique train_id
+    const riddenTrainIds = [...new Set(trips.map(t => t.train_id))];
+    
+    // 第二步：點算每款「車型名稱」出現過幾多款不同嘅 id
+    const nameCounts = {};
+    riddenTrainIds.forEach(id => {
+        const t = maps.train[id];
+        if (t) {
+            nameCounts[t.name] = (nameCounts[t.name] || 0) + 1;
+        }
+    });
+
+    // 第三步：判斷需唔需要加公司名
+    if (nameCounts[trainObj.name] > 1) {
+        // 發現撞名！(例如同時搭過 阪急1000系 同 阪神1000系) -> 顯示公司名
+        const companyName = maps.company[trainObj.company_id]?.name || trainObj.company_id;
+        return `${companyName} ${trainObj.name}`;
+    } else {
+        // 全個紀錄得一款叫呢個名 -> 唔洗顯示公司名
+        return trainObj.name;
+    }
+}
 
 async function loadData() {
     try {
@@ -709,18 +770,7 @@ async function loadData() {
         db.lines = [];
         db.stations = [];
 
-        try {
-            const [lineRes, staRes] = await Promise.all([
-                fetch("lines.json"), 
-                fetch("stations.json")
-            ]);
-            if (lineRes.ok) db.lines = await lineRes.json();
-            if (staRes.ok) db.stations = await staRes.json();
-        } catch(e) { 
-            console.log("舊版路線/車站檔案已不存在或載入失敗"); 
-        }
-
-        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json"]; 
+        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json"]; 
         
         for (let file of newCompanyFiles) {
             try {

@@ -1,0 +1,374 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "SHINTETSU",
+    "company_name": "神戸電鉄",
+    "lines": [
+      {
+        "id": "SHINTETSU_ARIMA",
+        "name": "有馬線",
+        "sequence": [
+          "STN_SHINTETSU_MINATOGAWA",
+          "STN_SHINTETSU_NAGATA",
+          "STN_SHINTETSU_MARUYAMA",
+          "STN_SHINTETSU_HIYODORIGOE",
+          "STN_SHINTETSU_SUZURANDAI",
+          "STN_SHINTETSU_KITA_SUZURANDAI",
+          "STN_SHINTETSU_YAMANOMACHI",
+          "STN_SHINTETSU_MINOTANI",
+          "STN_SHINTETSU_TANIGAMI",
+          "STN_SHINTETSU_HANAYAMA",
+          "STN_SHINTETSU_OIKE",
+          "STN_SHINTETSU_SHINTETSU_ROKKO",
+          "STN_SHINTETSU_KARATODAI",
+          "STN_SHINTETSU_ARIMAGUCHI",
+          "STN_SHINTETSU_ARIMA_ONSEN"
+        ]
+      },
+      {
+        "id": "SHINTETSU_SANDA",
+        "name": "三田線",
+        "sequence": [
+          "STN_SHINTETSU_ARIMAGUCHI",
+          "STN_SHINTETSU_GOSHA",
+          "STN_SHINTETSU_OKABA",
+          "STN_SHINTETSU_TAOJI",
+          "STN_SHINTETSU_NIRO",
+          "STN_SHINTETSU_DOJO_MINAMIGUCHI",
+          "STN_SHINTETSU_SHINTETSU_DOJO",
+          "STN_SHINTETSU_YOKOYAMA",
+          "STN_SHINTETSU_SANDA_HONMACHI",
+          "STN_SHINTETSU_SANDA"
+        ]
+      },
+      {
+        "id": "SHINTETSU_KOEN_TOSHI",
+        "name": "公園都市線",
+        "sequence": [
+          "STN_SHINTETSU_YOKOYAMA",
+          "STN_SHINTETSU_FLOWER_TOWN",
+          "STN_SHINTETSU_MINAMI_WOODY_TOWN",
+          "STN_SHINTETSU_WOODY_TOWN_CHUO"
+        ]
+      },
+      {
+        "id": "SHINTETSU_AO",
+        "name": "粟生線",
+        "sequence": [
+          "STN_SHINTETSU_SUZURANDAI",
+          "STN_SHINTETSU_SUZURANDAI_NISHIGUCHI",
+          "STN_SHINTETSU_NISHI_SUZURANDAI",
+          "STN_SHINTETSU_AINA",
+          "STN_SHINTETSU_KIZU",
+          "STN_SHINTETSU_KOBATA",
+          "STN_SHINTETSU_SAKAE",
+          "STN_SHINTETSU_OSHIBEDANI",
+          "STN_SHINTETSU_MIDORIGAOKA",
+          "STN_SHINTETSU_HIRONO_GOLF_JO_MAE",
+          "STN_SHINTETSU_SHIJIMI",
+          "STN_SHINTETSU_EBISU",
+          "STN_SHINTETSU_MIKI_UENOMARU",
+          "STN_SHINTETSU_MIKI",
+          "STN_SHINTETSU_OMURA",
+          "STN_SHINTETSU_KASHIYAMA",
+          "STN_SHINTETSU_ICHIBA",
+          "STN_SHINTETSU_ONO",
+          "STN_SHINTETSU_HATA",
+          "STN_SHINTETSU_AO"
+        ]
+      },
+      {
+        "id": "SHINTETSU_KOBE_KOSUKU",
+        "name": "神戸高速線",
+        "sequence": [
+          "STN_SHINTETSU_SHINKAICHI",
+          "STN_SHINTETSU_MINATOGAWA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SHINTETSU_MINATOGAWA",
+        "lat": "34.67928",
+        "lng": "135.166115",
+        "name": "湊川"
+      },
+      {
+        "id": "STN_SHINTETSU_NAGATA",
+        "lat": "34.681635",
+        "lng": "135.14955",
+        "name": "長田"
+      },
+      {
+        "id": "STN_SHINTETSU_MARUYAMA",
+        "lat": "34.685915",
+        "lng": "135.14396",
+        "name": "丸山"
+      },
+      {
+        "id": "STN_SHINTETSU_HIYODORIGOE",
+        "lat": "34.69283",
+        "lng": "135.142608",
+        "name": "鵯越"
+      },
+      {
+        "id": "STN_SHINTETSU_SUZURANDAI",
+        "lat": "34.723635",
+        "lng": "135.14588",
+        "name": "鈴蘭台"
+      },
+      {
+        "id": "STN_SHINTETSU_KITA_SUZURANDAI",
+        "lat": "34.739546",
+        "lng": "135.151968",
+        "name": "北鈴蘭台"
+      },
+      {
+        "id": "STN_SHINTETSU_YAMANOMACHI",
+        "lat": "34.746189",
+        "lng": "135.15323",
+        "name": "山の街"
+      },
+      {
+        "id": "STN_SHINTETSU_MINOTANI",
+        "lat": "34.756905",
+        "lng": "135.155755",
+        "name": "箕谷"
+      },
+      {
+        "id": "STN_SHINTETSU_TANIGAMI",
+        "lat": "34.761655",
+        "lng": "135.17127",
+        "name": "谷上"
+      },
+      {
+        "id": "STN_SHINTETSU_HANAYAMA",
+        "lat": "34.769615",
+        "lng": "135.18723",
+        "name": "花山"
+      },
+      {
+        "id": "STN_SHINTETSU_OIKE",
+        "lat": "34.781015",
+        "lng": "135.198895",
+        "name": "大池"
+      },
+      {
+        "id": "STN_SHINTETSU_SHINTETSU_ROKKO",
+        "lat": "34.78525",
+        "lng": "135.206165",
+        "name": "神鉄六甲"
+      },
+      {
+        "id": "STN_SHINTETSU_KARATODAI",
+        "lat": "34.79033",
+        "lng": "135.2116",
+        "name": "唐櫃台"
+      },
+      {
+        "id": "STN_SHINTETSU_ARIMAGUCHI",
+        "lat": "34.796475",
+        "lng": "135.220985",
+        "name": "有馬口"
+      },
+      {
+        "id": "STN_SHINTETSU_ARIMA_ONSEN",
+        "lat": "34.799455",
+        "lng": "135.245635",
+        "name": "有馬温泉"
+      },
+      {
+        "id": "STN_SHINTETSU_GOSHA",
+        "lat": "34.80613",
+        "lng": "135.216355",
+        "name": "五社"
+      },
+      {
+        "id": "STN_SHINTETSU_OKABA",
+        "lat": "34.821775",
+        "lng": "135.22248",
+        "name": "岡場"
+      },
+      {
+        "id": "STN_SHINTETSU_TAOJI",
+        "lat": "34.835585",
+        "lng": "135.22618",
+        "name": "田尾寺"
+      },
+      {
+        "id": "STN_SHINTETSU_NIRO",
+        "lat": "34.84884",
+        "lng": "135.22697",
+        "name": "二郎"
+      },
+      {
+        "id": "STN_SHINTETSU_DOJO_MINAMIGUCHI",
+        "lat": "34.856135",
+        "lng": "135.22318",
+        "name": "道場南口"
+      },
+      {
+        "id": "STN_SHINTETSU_SHINTETSU_DOJO",
+        "lat": "34.866845",
+        "lng": "135.226141",
+        "name": "神鉄道場"
+      },
+      {
+        "id": "STN_SHINTETSU_YOKOYAMA",
+        "lat": "34.87702",
+        "lng": "135.22007",
+        "name": "横山"
+      },
+      {
+        "id": "STN_SHINTETSU_SANDA_HONMACHI",
+        "lat": "34.88175",
+        "lng": "135.229645",
+        "name": "三田本町"
+      },
+      {
+        "id": "STN_SHINTETSU_SANDA",
+        "lat": "34.88836",
+        "lng": "135.230015",
+        "name": "三田"
+      },
+      {
+        "id": "STN_SHINTETSU_FLOWER_TOWN",
+        "lat": "34.885577",
+        "lng": "135.202352",
+        "name": "フラワータウン"
+      },
+      {
+        "id": "STN_SHINTETSU_MINAMI_WOODY_TOWN",
+        "lat": "34.901745",
+        "lng": "135.189695",
+        "name": "南ウッディタウン"
+      },
+      {
+        "id": "STN_SHINTETSU_WOODY_TOWN_CHUO",
+        "lat": "34.90967",
+        "lng": "135.18382",
+        "name": "ウッディタウン中央"
+      },
+      {
+        "id": "STN_SHINTETSU_SUZURANDAI_NISHIGUCHI",
+        "lat": "34.72653",
+        "lng": "135.140765",
+        "name": "鈴蘭台西口"
+      },
+      {
+        "id": "STN_SHINTETSU_NISHI_SUZURANDAI",
+        "lat": "34.725805",
+        "lng": "135.135046",
+        "name": "西鈴蘭台"
+      },
+      {
+        "id": "STN_SHINTETSU_AINA",
+        "lat": "34.73238",
+        "lng": "135.11822",
+        "name": "藍那"
+      },
+      {
+        "id": "STN_SHINTETSU_KIZU",
+        "lat": "34.744081",
+        "lng": "135.088511",
+        "name": "木津"
+      },
+      {
+        "id": "STN_SHINTETSU_KOBATA",
+        "lat": "34.748305",
+        "lng": "135.071385",
+        "name": "木幡"
+      },
+      {
+        "id": "STN_SHINTETSU_SAKAE",
+        "lat": "34.75525",
+        "lng": "135.05653",
+        "name": "栄"
+      },
+      {
+        "id": "STN_SHINTETSU_OSHIBEDANI",
+        "lat": "34.756589",
+        "lng": "135.03926",
+        "name": "押部谷"
+      },
+      {
+        "id": "STN_SHINTETSU_MIDORIGAOKA",
+        "lat": "34.765187",
+        "lng": "135.025808",
+        "name": "緑が丘"
+      },
+      {
+        "id": "STN_SHINTETSU_HIRONO_GOLF_JO_MAE",
+        "lat": "34.770045",
+        "lng": "135.02323",
+        "name": "広野ゴルフ場前"
+      },
+      {
+        "id": "STN_SHINTETSU_SHIJIMI",
+        "lat": "34.782485",
+        "lng": "135.00759",
+        "name": "志染"
+      },
+      {
+        "id": "STN_SHINTETSU_EBISU",
+        "lat": "34.797755",
+        "lng": "134.998575",
+        "name": "恵比須"
+      },
+      {
+        "id": "STN_SHINTETSU_MIKI_UENOMARU",
+        "lat": "34.799965",
+        "lng": "134.988805",
+        "name": "三木上の丸"
+      },
+      {
+        "id": "STN_SHINTETSU_MIKI",
+        "lat": "34.799775",
+        "lng": "134.98183",
+        "name": "三木"
+      },
+      {
+        "id": "STN_SHINTETSU_OMURA",
+        "lat": "34.808645",
+        "lng": "134.97152",
+        "name": "大村"
+      },
+      {
+        "id": "STN_SHINTETSU_KASHIYAMA",
+        "lat": "34.820475",
+        "lng": "134.949805",
+        "name": "樫山"
+      },
+      {
+        "id": "STN_SHINTETSU_ICHIBA",
+        "lat": "34.82431",
+        "lng": "134.944565",
+        "name": "市場"
+      },
+      {
+        "id": "STN_SHINTETSU_ONO",
+        "lat": "34.843135",
+        "lng": "134.934225",
+        "name": "小野"
+      },
+      {
+        "id": "STN_SHINTETSU_HATA",
+        "lat": "34.850125",
+        "lng": "134.91993",
+        "name": "葉多"
+      },
+      {
+        "id": "STN_SHINTETSU_AO",
+        "lat": "34.857124",
+        "lng": "134.909523",
+        "name": "粟生"
+      },
+      {
+        "id": "STN_SHINTETSU_SHINKAICHI",
+        "lat": "34.67662",
+        "lng": "135.16897",
+        "name": "新開地"
+      }
+    ]
+  }
+]

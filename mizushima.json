@@ -1,0 +1,88 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "MIZUSHIMA",
+    "company_name": "水島臨海鉄道",
+    "lines": [
+      {
+        "id": "MIZUSHIMA_HONSEN",
+        "name": "水島本線",
+        "sequence": [
+          "STN_MIZUSHIMA_KURASHIKI_SHI",
+          "STN_MIZUSHIMA_KYU",
+          "STN_MIZUSHIMA_JOMAE",
+          "STN_MIZUSHIMA_NISHITOMII",
+          "STN_MIZUSHIMA_FUKUI",
+          "STN_MIZUSHIMA_URADA",
+          "STN_MIZUSHIMA_YAYOI",
+          "STN_MIZUSHIMA_SAKAE",
+          "STN_MIZUSHIMA_TOKIWA",
+          "STN_MIZUSHIMA_MIZUSHIMA",
+          "STN_MIZUSHIMA_MITSUBISHI_JIKO_MAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_MIZUSHIMA_KURASHIKI_SHI",
+        "lat": "34.6008009",
+        "lng": "133.76473101",
+        "name": "倉敷市"
+      },
+      {
+        "id": "STN_MIZUSHIMA_KYU JOMAE",
+        "lat": "34.59116",
+        "lng": "133.747163",
+        "name": "球場前"
+      },
+      {
+        "id": "STN_MIZUSHIMA_NISHITOMII",
+        "lat": "34.577785",
+        "lng": "133.743415",
+        "name": "西富井"
+      },
+      {
+        "id": "STN_MIZUSHIMA_FUKUI",
+        "lat": "34.57",
+        "lng": "133.74447",
+        "name": "福井"
+      },
+      {
+        "id": "STN_MIZUSHIMA_URADA",
+        "lat": "34.56152",
+        "lng": "133.7497",
+        "name": "浦田"
+      },
+      {
+        "id": "STN_MIZUSHIMA_YAYOI",
+        "lat": "34.54405",
+        "lng": "133.747615",
+        "name": "弥生"
+      },
+      {
+        "id": "STN_MIZUSHIMA_SAKAE",
+        "lat": "34.538025",
+        "lng": "133.74504",
+        "name": "栄"
+      },
+      {
+        "id": "STN_MIZUSHIMA_TOKIWA",
+        "lat": "34.53405",
+        "lng": "133.74334",
+        "name": "常盤"
+      },
+      {
+        "id": "STN_MIZUSHIMA_MIZUSHIMA",
+        "lat": "34.529315",
+        "lng": "133.74135",
+        "name": "水島"
+      },
+      {
+        "id": "STN_MIZUSHIMA_MITSUBISHI_JIKO_MAE",
+        "lat": "34.52291133",
+        "lng": "133.734152",
+        "name": "三菱自工前"
+      }
+    ]
+  }
+]

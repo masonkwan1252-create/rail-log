@@ -1,0 +1,396 @@
+[
+  {
+    "categories": "大手私鉄",
+    "company_id": "HANSHIN",
+    "company_name": "阪神電鉄",
+    "lines": [
+      {
+        "id": "HANSHIN_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_HANSHIN_OSAKA_UMEDA",
+          "STN_HANSHIN_FUKUSHIMA",
+          "STN_HANSHIN_NODA",
+          "STN_HANSHIN_YODOGAWA",
+          "STN_HANSHIN_HIMEJIMA",
+          "STN_HANSHIN_CHIBUNE",
+          "STN_HANSHIN_KUISE",
+          "STN_HANSHIN_DAIMOTSU",
+          "STN_HANSHIN_AMAGASAKI",
+          "STN_HANSHIN_DEYASHIKI",
+          "STN_HANSHIN_AMAGASAKI_CENTER_POOL_MAE",
+          "STN_HANSHIN_MUKOGAWA",
+          "STN_HANSHIN_NARUO_MUKOGAWAJOSHIDAI_MAE",
+          "STN_HANSHIN_KOSHIEN",
+          "STN_HANSHIN_KUSUGAWA",
+          "STN_HANSHIN_IMAZU",
+          "STN_HANSHIN_NISHINOMIYA",
+          "STN_HANSHIN_KOROEN",
+          "STN_HANSHIN_UCHIDE",
+          "STN_HANSHIN_ASHIYA",
+          "STN_HANSHIN_FUKAE",
+          "STN_HANSHIN_OGI",
+          "STN_HANSHIN_UOZAKI",
+          "STN_HANSHIN_SUMIYOSHI",
+          "STN_HANSHIN_MIKAGE",
+          "STN_HANSHIN_ISHIYAGAWA",
+          "STN_HANSHIN_SHINZAIKE",
+          "STN_HANSHIN_OISHI",
+          "STN_HANSHIN_NISHI_NADA",
+          "STN_HANSHIN_IWAYA",
+          "STN_HANSHIN_KASUGANOMICHI",
+          "STN_HANSHIN_KOBE_SANNOMIYA",
+          "STN_HANSHIN_MOTOMACHI"
+        ]
+      },
+      {
+        "id": "HANSHIN_KOBE_KOSUKU",
+        "name": "神戸高速線",
+        "sequence": [
+          "STN_HANSHIN_MOTOMACHI",
+          "STN_HANSHIN_NISHI_MOTOMACHI",
+          "STN_HANSHIN_KOSOKU_KOBE",
+          "STN_HANSHIN_SHINKAICHI",
+          "STN_HANSHIN_DAIKAI",
+          "STN_HANSHIN_KOSOKU_NAGATA",
+          "STN_HANSHIN_NISHIDAI"
+        ]
+      },
+      {
+        "id": "HANSHIN_NAMBA",
+        "name": "なんば線",
+        "sequence": [
+          "STN_HANSHIN_AMAGASAKI",
+          "STN_HANSHIN_DAIMOTSU",
+          "STN_HANSHIN_DEKIJIMA",
+          "STN_HANSHIN_FUKU",
+          "STN_HANSHIN_DEMPO",
+          "STN_HANSHIN_CHIDORIBASHI",
+          "STN_HANSHIN_NISHIKUJO",
+          "STN_HANSHIN_KUJO",
+          "STN_HANSHIN_DOME_MAE",
+          "STN_HANSHIN_SAKURAGAWA",
+          "STN_HANSHIN_OSAKA_NAMBA"
+        ]
+      },
+      {
+        "id": "HANSHIN_MUKOGAWA",
+        "name": "武庫川線",
+        "sequence": [
+          "STN_HANSHIN_MUKOGAWA",
+          "STN_HANSHIN_HIGASHI_NARUO",
+          "STN_HANSHIN_SUZAKI",
+          "STN_HANSHIN_MUKOGAWADANCHIMAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HANSHIN_OSAKA_UMEDA",
+        "lat": "34.70152",
+        "lng": "135.497285",
+        "name": "大阪梅田"
+      },
+      {
+        "id": "STN_HANSHIN_FUKUSHIMA",
+        "lat": "34.69607",
+        "lng": "135.488275",
+        "name": "福島"
+      },
+      {
+        "id": "STN_HANSHIN_NODA",
+        "lat": "34.6944",
+        "lng": "135.47606",
+        "name": "野田"
+      },
+      {
+        "id": "STN_HANSHIN_YODOGAWA",
+        "lat": "34.696195",
+        "lng": "135.465205",
+        "name": "淀川"
+      },
+      {
+        "id": "STN_HANSHIN_HIMEJIMA",
+        "lat": "34.70435",
+        "lng": "135.45819",
+        "name": "姫島"
+      },
+      {
+        "id": "STN_HANSHIN_CHIBUNE",
+        "lat": "34.712255",
+        "lng": "135.44535",
+        "name": "千船"
+      },
+      {
+        "id": "STN_HANSHIN_KUISE",
+        "lat": "34.71831",
+        "lng": "135.43868",
+        "name": "杭瀬"
+      },
+      {
+        "id": "STN_HANSHIN_DAIMOTSU",
+        "lat": "34.71665",
+        "lng": "135.42601",
+        "name": "大物"
+      },
+      {
+        "id": "STN_HANSHIN_AMAGASAKI",
+        "lat": "34.71851",
+        "lng": "135.417315",
+        "name": "尼崎"
+      },
+      {
+        "id": "STN_HANSHIN_DEYASHIKI",
+        "lat": "34.71826",
+        "lng": "135.40461",
+        "name": "出屋敷"
+      },
+      {
+        "id": "STN_HANSHIN_AMAGASAKI_CENTER_POOL_MAE",
+        "lat": "34.717854",
+        "lng": "135.395182",
+        "name": "尼崎センタープール前"
+      },
+      {
+        "id": "STN_HANSHIN_MUKOGAWA",
+        "lat": "34.718546",
+        "lng": "135.382741",
+        "name": "武庫川"
+      },
+      {
+        "id": "STN_HANSHIN_NARUO_MUKOGAWAJOSHIDAI_MAE",
+        "lat": "34.719668",
+        "lng": "135.3704",
+        "name": "鳴尾・武庫川女子大前"
+      },
+      {
+        "id": "STN_HANSHIN_KOSHIEN",
+        "lat": "34.72396",
+        "lng": "135.363275",
+        "name": "甲子園"
+      },
+      {
+        "id": "STN_HANSHIN_KUSUGAWA",
+        "lat": "34.72702",
+        "lng": "135.35689",
+        "name": "久寿川"
+      },
+      {
+        "id": "STN_HANSHIN_IMAZU",
+        "lat": "34.73089",
+        "lng": "135.351735",
+        "name": "今津"
+      },
+      {
+        "id": "STN_HANSHIN_NISHINOMIYA",
+        "lat": "34.73668",
+        "lng": "135.339505",
+        "name": "西宮"
+      },
+      {
+        "id": "STN_HANSHIN_KOROEN",
+        "lat": "34.734315",
+        "lng": "135.32889",
+        "name": "香櫨園"
+      },
+      {
+        "id": "STN_HANSHIN_UCHIDE",
+        "lat": "34.731605",
+        "lng": "135.315565",
+        "name": "打出"
+      },
+      {
+        "id": "STN_HANSHIN_ASHIYA",
+        "lat": "34.72777",
+        "lng": "135.30355",
+        "name": "芦屋"
+      },
+      {
+        "id": "STN_HANSHIN_FUKAE",
+        "lat": "34.72257",
+        "lng": "135.29145",
+        "name": "深江"
+      },
+      {
+        "id": "STN_HANSHIN_OGI",
+        "lat": "34.71698",
+        "lng": "135.28065",
+        "name": "青木"
+      },
+      {
+        "id": "STN_HANSHIN_UOZAKI",
+        "lat": "34.71268",
+        "lng": "135.269685",
+        "name": "魚崎"
+      },
+      {
+        "id": "STN_HANSHIN_SUMIYOSHI",
+        "lat": "34.713055",
+        "lng": "135.261265",
+        "name": "住吉"
+      },
+      {
+        "id": "STN_HANSHIN_MIKAGE",
+        "lat": "34.714937",
+        "lng": "135.255534",
+        "name": "御影"
+      },
+      {
+        "id": "STN_HANSHIN_ISHIYAGAWA",
+        "lat": "34.71332",
+        "lng": "135.249415",
+        "name": "石屋川"
+      },
+      {
+        "id": "STN_HANSHIN_SHINZAIKE",
+        "lat": "34.710605",
+        "lng": "135.24057",
+        "name": "新在家"
+      },
+      {
+        "id": "STN_HANSHIN_OISHI",
+        "lat": "34.707705",
+        "lng": "135.23107",
+        "name": "大石"
+      },
+      {
+        "id": "STN_HANSHIN_NISHI_NADA",
+        "lat": "34.705725",
+        "lng": "135.224335",
+        "name": "西灘"
+      },
+      {
+        "id": "STN_HANSHIN_IWAYA",
+        "lat": "34.7042",
+        "lng": "135.21849",
+        "name": "岩屋"
+      },
+      {
+        "id": "STN_HANSHIN_KASUGANOMICHI",
+        "lat": "34.69913985",
+        "lng": "135.20825529",
+        "name": "春日野道"
+      },
+      {
+        "id": "STN_HANSHIN_KOBE_SANNOMIYA",
+        "lat": "34.69394015",
+        "lng": "135.19603005",
+        "name": "神戸三宮"
+      },
+      {
+        "id": "STN_HANSHIN_MOTOMACHI",
+        "lat": "34.68942904",
+        "lng": "135.18728727",
+        "name": "元町"
+      },
+      {
+        "id": "STN_HANSHIN_NISHI_MOTOMACHI",
+        "lat": "34.68439644",
+        "lng": "135.180059",
+        "name": "西元町"
+      },
+      {
+        "id": "STN_HANSHIN_KOSOKU_KOBE",
+        "lat": "34.6799",
+        "lng": "135.175465",
+        "name": "高速神戸"
+      },
+      {
+        "id": "STN_HANSHIN_SHINKAICHI",
+        "lat": "34.676455",
+        "lng": "135.16993",
+        "name": "新開地"
+      },
+      {
+        "id": "STN_HANSHIN_DAIKAI",
+        "lat": "34.67152",
+        "lng": "135.162155",
+        "name": "大開"
+      },
+      {
+        "id": "STN_HANSHIN_KOSOKU_NAGATA",
+        "lat": "34.666899",
+        "lng": "135.150822",
+        "name": "高速長田"
+      },
+      {
+        "id": "STN_HANSHIN_NISHIDAI",
+        "lat": "34.6624",
+        "lng": "135.14399",
+        "name": "西代"
+      },
+      {
+        "id": "STN_HANSHIN_DEKIJIMA",
+        "lat": "34.70727",
+        "lng": "135.436845",
+        "name": "出来島"
+      },
+      {
+        "id": "STN_HANSHIN_FUKU",
+        "lat": "34.699825",
+        "lng": "135.442735",
+        "name": "福"
+      },
+      {
+        "id": "STN_HANSHIN_DEMPO",
+        "lat": "34.68927",
+        "lng": "135.45161",
+        "name": "伝法"
+      },
+      {
+        "id": "STN_HANSHIN_CHIDORIBASHI",
+        "lat": "34.685375",
+        "lng": "135.457765",
+        "name": "千鳥橋"
+      },
+      {
+        "id": "STN_HANSHIN_NISHIKUJO",
+        "lat": "34.68275",
+        "lng": "135.46558",
+        "name": "西九条"
+      },
+      {
+        "id": "STN_HANSHIN_KUJO",
+        "lat": "34.673449",
+        "lng": "135.474454",
+        "name": "九条"
+      },
+      {
+        "id": "STN_HANSHIN_DOME_MAE",
+        "lat": "34.670313",
+        "lng": "135.478754",
+        "name": "ドーム前"
+      },
+      {
+        "id": "STN_HANSHIN_SAKURAGAWA",
+        "lat": "34.668427",
+        "lng": "135.486525",
+        "name": "桜川"
+      },
+      {
+        "id": "STN_HANSHIN_OSAKA_NAMBA",
+        "lat": "34.667041",
+        "lng": "135.499104",
+        "name": "大阪難波"
+      },
+      {
+        "id": "STN_HANSHIN_HIGASHI_NARUO",
+        "lat": "34.71272",
+        "lng": "135.37915",
+        "name": "東鳴尾"
+      },
+      {
+        "id": "STN_HANSHIN_SUZAKI",
+        "lat": "34.709",
+        "lng": "135.37796",
+        "name": "洲先"
+      },
+      {
+        "id": "STN_HANSHIN_MUKOGAWADANCHIMAE",
+        "lat": "34.70498871",
+        "lng": "135.37468093",
+        "name": "武庫川団地前"
+      }
+    ]
+  }
+]

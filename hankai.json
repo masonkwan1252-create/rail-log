@@ -1,0 +1,304 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "HANKAI",
+    "company_name": "阪堺電車",
+    "lines": [
+      {
+        "id": "HANKAI_LINE",
+        "name": "阪堺線",
+        "sequence": [
+          "STN_HANKAI_EBISUCHO",
+          "STN_HANKAI_SHIN_IMAMIYA_EKIMAE",
+          "STN_HANKAI_IMAIKE",
+          "STN_HANKAI_IMAFUNE",
+          "STN_HANKAI_MATSUDACHO",
+          "STN_HANKAI_KITA_TENGACHAYA",
+          "STN_HANKAI_SHOTENSAKA",
+          "STN_HANKAI_TENJINNOMORI",
+          "STN_HANKAI_HIGASHI_TAMADE",
+          "STN_HANKAI_TSUKANISHI",
+          "STN_HANKAI_HIGASHI_KOHAMA",
+          "STN_HANKAI_SUMIYOSHI",
+          "STN_HANKAI_SUMIYOSHI_TORIIMAE",
+          "STN_HANKAI_HOSOIGAWA",
+          "STN_HANKAI_ANRYUMACHI",
+          "STN_HANKAI_ABIKOMICHI",
+          "STN_HANKAI_YAMATOGAWA",
+          "STN_HANKAI_TAKASU_JINSHA",
+          "STN_HANKAI_AYANOCHO",
+          "STN_HANKAI_SHIMMEICHO",
+          "STN_HANKAI_MYOKOKUJI_MAE",
+          "STN_HANKAI_HANATAGUCHI",
+          "STN_HANKAI_OSHOJI",
+          "STN_HANKAI_SHUKUIN",
+          "STN_HANKAI_TERAJICHO",
+          "STN_HANKAI_GORYOMAE",
+          "STN_HANKAI_HIGASHI_MINATO",
+          "STN_HANKAI_ISHIZU_KITA",
+          "STN_HANKAI_ISHIZU",
+          "STN_HANKAI_FUNAO",
+          "STN_HANKAI_HAMADERA_EKIMAE"
+        ]
+      },
+      {
+        "id": "HANKAI_UEMACHI",
+        "name": "上町線",
+        "sequence": [
+          "STN_HANKAI_TENNOJI_EKIMAE",
+          "STN_HANKAI_ABENO",
+          "STN_HANKAI_MATSUMUSHI",
+          "STN_HANKAI_HIGASHI_TENGACHAYA",
+          "STN_HANKAI_KITABATAKE",
+          "STN_HANKAI_HIMEMATSU",
+          "STN_HANKAI_TEZUKAYAMA_SANCHOME",
+          "STN_HANKAI_TEZUKAYAMA_YONCHOME",
+          "STN_HANKAI_KAMINOKI",
+          "STN_HANKAI_SUMIYOSHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HANKAI_EBISUCHO",
+        "lat": "34.65381896",
+        "lng": "135.50493753",
+        "name": "恵美須町"
+      },
+      {
+        "id": "STN_EIZAN_SHIN_IMAMIYA_EKIMAE",
+        "lat": "34.649541",
+        "lng": "135.50332895",
+        "name": "新今宮駅前"
+      },
+      {
+        "id": "STN_EIZAN_IMAIKE",
+        "lat": "34.64566",
+        "lng": "135.50229",
+        "name": "今池"
+      },
+      {
+        "id": "STN_EIZAN_IMAFUNE",
+        "lat": "34.64302943",
+        "lng": "135.50166046",
+        "name": "今船"
+      },
+      {
+        "id": "STN_EIZAN_MATSUDACHO",
+        "lat": "34.63936046",
+        "lng": "135.50087183",
+        "name": "松田町"
+      },
+      {
+        "id": "STN_EIZAN_KITA_TENGACHAYA",
+        "lat": "34.63645211",
+        "lng": "135.50023384",
+        "name": "北天下茶屋"
+      },
+      {
+        "id": "STN_EIZAN_SHOTENSAKA",
+        "lat": "34.63301152",
+        "lng": "135.49943406",
+        "name": "聖天坂"
+      },
+      {
+        "id": "STN_EIZAN_TENJINNOMORI",
+        "lat": "34.62940044",
+        "lng": "135.49784774",
+        "name": "天神ノ森"
+      },
+      {
+        "id": "STN_EIZAN_HIGASHI_TAMADE",
+        "lat": "34.62677644",
+        "lng": "135.49589512",
+        "name": "東玉出"
+      },
+      {
+        "id": "STN_EIZAN_TSUKANISHI",
+        "lat": "34.623555",
+        "lng": "135.49461",
+        "name": "塚西"
+      },
+      {
+        "id": "STN_EIZAN_HIGASHI_KOHAMA",
+        "lat": "34.6182053",
+        "lng": "135.49266524",
+        "name": "東粉浜"
+      },
+      {
+        "id": "STN_EIZAN_SUMIYOSHI",
+        "lat": "34.61417658",
+        "lng": "135.49176136",
+        "name": "住吉"
+      },
+      {
+        "id": "STN_EIZAN_SUMIYOSHI_TORIIMAE",
+        "lat": "34.612539",
+        "lng": "135.49120311",
+        "name": "住吉鳥居前"
+      },
+      {
+        "id": "STN_EIZAN_HOSOIGAWA",
+        "lat": "34.60971",
+        "lng": "135.49116",
+        "name": "細井川"
+      },
+      {
+        "id": "STN_EIZAN_ANRYUMACHI",
+        "lat": "34.60546",
+        "lng": "135.49009",
+        "name": "安立町"
+      },
+      {
+        "id": "STN_EIZAN_ABIKOMICHI",
+        "lat": "34.60068548",
+        "lng": "135.48889579",
+        "name": "我孫子道"
+      },
+      {
+        "id": "STN_EIZAN_YAMATOGAWA",
+        "lat": "34.59466",
+        "lng": "135.48675",
+        "name": "大和川"
+      },
+      {
+        "id": "STN_EIZAN_TAKASU_JINSHA",
+        "lat": "34.59044084",
+        "lng": "135.48517731",
+        "name": "高須神社"
+      },
+      {
+        "id": "STN_EIZAN_AYANOCHO",
+        "lat": "34.587915",
+        "lng": "135.4832",
+        "name": "綾ノ町"
+      },
+      {
+        "id": "STN_EIZAN_SHIMMEICHO",
+        "lat": "34.58556838",
+        "lng": "135.48041361",
+        "name": "神明町"
+      },
+      {
+        "id": "STN_EIZAN_MYOKOKUJI_MAE",
+        "lat": "34.58372298",
+        "lng": "135.47869144",
+        "name": "妙国寺前"
+      },
+      {
+        "id": "STN_EIZAN_HANATAGUCHI",
+        "lat": "34.58178598",
+        "lng": "135.47688721",
+        "name": "花田口"
+      },
+      {
+        "id": "STN_EIZAN_OSHOJI",
+        "lat": "34.57918343",
+        "lng": "135.47447677",
+        "name": "大小路"
+      },
+      {
+        "id": "STN_EIZAN_SHUKUIN",
+        "lat": "34.57646195",
+        "lng": "135.47195085",
+        "name": "宿院"
+      },
+      {
+        "id": "STN_EIZAN_TERAJICHO",
+        "lat": "34.57364113",
+        "lng": "135.46933573",
+        "name": "寺地町"
+      },
+      {
+        "id": "STN_EIZAN_GORYOMAE",
+        "lat": "34.57080088",
+        "lng": "135.46672344",
+        "name": "御陵前"
+      },
+      {
+        "id": "STN_EIZAN_HIGASHI_MINATO",
+        "lat": "34.56485306",
+        "lng": "135.46262311",
+        "name": "東湊"
+      },
+      {
+        "id": "STN_EIZAN_ISHIZU_KITA",
+        "lat": "34.56038943",
+        "lng": "135.45908562",
+        "name": "石津北"
+      },
+      {
+        "id": "STN_EIZAN_ISHIZU",
+        "lat": "34.5554",
+        "lng": "135.455035",
+        "name": "石津"
+      },
+      {
+        "id": "STN_EIZAN_FUNAO",
+        "lat": "34.54996835",
+        "lng": "135.45058538",
+        "name": "船尾"
+      },
+      {
+        "id": "STN_EIZAN_HAMADERA_EKIMAE",
+        "lat": "34.54171959",
+        "lng": "135.44331298",
+        "name": "浜寺駅前"
+      },
+      {
+        "id": "STN_EIZAN_TENNOJI_EKIMAE",
+        "lat": "34.64606464",
+        "lng": "135.51281184",
+        "name": "天王寺駅前"
+      },
+      {
+        "id": "STN_EIZAN_ABENO",
+        "lat": "34.64181018",
+        "lng": "135.51174291",
+        "name": "阿倍野"
+      },
+      {
+        "id": "STN_EIZAN_MATSUMUSHI",
+        "lat": "34.635485",
+        "lng": "135.509845",
+        "name": "松虫"
+      },
+      {
+        "id": "STN_EIZAN_HIGASHI_TENGACHAYA",
+        "lat": "34.63262693",
+        "lng": "135.5085264",
+        "name": "東天下茶屋"
+      },
+      {
+        "id": "STN_EIZAN_KITABATAKE",
+        "lat": "34.6273",
+        "lng": "135.505485",
+        "name": "北畠"
+      },
+      {
+        "id": "STN_EIZAN_HIMEMATSU",
+        "lat": "34.6241",
+        "lng": "135.50317",
+        "name": "姫松"
+      },
+      {
+        "id": "STN_EIZAN_TEZUKAYAMA_SANCHOME",
+        "lat": "34.62056",
+        "lng": "135.50075",
+        "name": "帝塚山三丁目"
+      },
+      {
+        "id": "STN_EIZAN_TEZUKAYAMA_YONCHOME",
+        "lat": "34.61761974",
+        "lng": "135.49898092",
+        "name": "帝塚山四丁目"
+      },
+      {
+        "id": "STN_EIZAN_KAMINOKI",
+        "lat": "34.61583",
+        "lng": "135.49674",
+        "name": "神ノ木"
+      }
+    ]
+  }
+]

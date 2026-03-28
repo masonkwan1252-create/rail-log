@@ -1,0 +1,1713 @@
+[
+  {
+    "categories": "大手私鉄",
+    "company_id": "KINTETSU",
+    "company_name": "近畿日本鉄道",
+    "lines": [
+      {
+        "id": "KINTETSU_NARA",
+        "name": "奈良線",
+        "sequence": [
+          "STN_KINTETSU_OSAKA_NAMBA",
+          "STN_KINTETSU_KINTETSU_NIPPOMBASHI",
+          "STN_KINTETSU_OSAKA_UEHOMMACHI",
+          "STN_KINTETSU_TSURUHASHI",
+          "STN_KINTETSU_IMAZATO",
+          "STN_KINTETSU_FUSE",
+          "STN_KINTETSU_KAWACHI_EIWA",
+          "STN_KINTETSU_KAWACHI_KOSAKA",
+          "STN_KINTETSU_YAENOSATO",
+          "STN_KINTETSU_WAKAE_IWADA",
+          "STN_KINTETSU_KAWACHI_HANAZONO",
+          "STN_KINTETSU_HIGASHI_HANAZONO",
+          "STN_KINTETSU_HYOTANYAMA",
+          "STN_KINTETSU_HIRAOKA",
+          "STN_KINTETSU_NUKATA",
+          "STN_KINTETSU_ISHIKIRI",
+          "STN_KINTETSU_IKOMA",
+          "STN_KINTETSU_HIGASHI_IKOMA",
+          "STN_KINTETSU_TOMIO",
+          "STN_KINTETSU_GAKUEN_MAE",
+          "STN_KINTETSU_AYAMEYOIKE",
+          "STN_KINTETSU_YAMATO_SAIDAIJI",
+          "STN_KINTETSU_SHIN_OMIYA",
+          "STN_KINTETSU_KINTETSU_NARA"
+        ]
+      },
+      {
+        "id": "KINTETSU_IKOMA",
+        "name": "生駒線",
+        "sequence": [
+          "STN_KINTETSU_IKOMA",
+          "STN_KINTETSU_NABATA",
+          "STN_KINTETSU_ICHIBU",
+          "STN_KINTETSU_MINAMI_IKOMA",
+          "STN_KINTETSU_HAGINODAI",
+          "STN_KINTETSU_HIGASHIYAMA",
+          "STN_KINTETSU_MOTOSANJOGUCHI",
+          "STN_KINTETSU_HEGURI",
+          "STN_KINTETSU_TATSUTAGAWA",
+          "STN_KINTETSU_SEYA_KITAGUCHI",
+          "STN_KINTETSU_SHIGISANSHITA",
+          "STN_KINTETSU_OJI"
+        ]
+      },
+      {
+        "id": "KINTETSU_KEIHANNA",
+        "name": "けいはんな線",
+        "sequence": [
+          "STN_KINTETSU_NAGATA",
+          "STN_KINTETSU_ARAMOTO",
+          "STN_KINTETSU_YOSHITA",
+          "STN_KINTETSU_SHIN_ISHIKIRI",
+          "STN_KINTETSU_IKOMA",
+          "STN_KINTETSU_SHIRANIWADAI",
+          "STN_KINTETSU_GAKKEN_KITA_IKOMA",
+          "STN_KINTETSU_GAKKEN_NARA_TOMIGAOKA"
+        ]
+      },
+      {
+        "id": "KINTETSU_KYOTO",
+        "name": "京都線",
+        "sequence": [
+          "STN_KINTETSU_KYOTO",
+          "STN_KINTETSU_TOJI",
+          "STN_KINTETSU_JUJO",
+          "STN_KINTETSU_KAMITOBAGUCHI",
+          "STN_KINTETSU_TAKEDA",
+          "STN_KINTETSU_FUSHIMI",
+          "STN_KINTETSU_KINTETSU_TAMBABASHI",
+          "STN_KINTETSU_MOMOYAMAGORYOMAE",
+          "STN_KINTETSU_MUKAIJIMA",
+          "STN_KINTETSU_OGURA",
+          "STN_KINTETSU_ISEDA",
+          "STN_KINTETSU_OKUBO",
+          "STN_KINTETSU_KUTSUKAWA",
+          "STN_KINTETSU_TERADA",
+          "STN_KINTETSU_TONOSHO",
+          "STN_KINTETSU_SHIN_TANABE",
+          "STN_KINTETSU_KODO",
+          "STN_KINTETSU_MIYAMAKI",
+          "STN_KINTETSU_KINTETSU_MIYAZU",
+          "STN_KINTETSU_KOMADA",
+          "STN_KINTETSU_SHIN_HOSONO",
+          "STN_KINTETSU_KIZUGAWADAI",
+          "STN_KINTETSU_YAMADAGAWA",
+          "STN_KINTETSU_TAKANOHARA",
+          "STN_KINTETSU_HEIJO",
+          "STN_KINTETSU_YAMATO_SAIDAIJI"
+        ]
+      },
+      {
+        "id": "KINTETSU_KASHIHARA",
+        "name": "橿原線",
+        "sequence": [
+          "STN_KINTETSU_YAMATO_SAIDAIJI",
+          "STN_KINTETSU_AMAGATSUJI",
+          "STN_KINTETSU_NISHINOKYO",
+          "STN_KINTETSU_KUJO",
+          "STN_KINTETSU_KINTETSU_KORIYAMA",
+          "STN_KINTETSU_TSUTSUI",
+          "STN_KINTETSU_HIRAHATA",
+          "STN_KINTETSU_FAMILY_KOEMMAE",
+          "STN_KINTETSU_YUZAKI",
+          "STN_KINTETSU_IWAMI",
+          "STN_KINTETSU_TAWARAMOTO",
+          "STN_KINTETSU_KASANUI",
+          "STN_KINTETSU_NINOKUCHI",
+          "STN_KINTETSU_YAMATO_YAGI",
+          "STN_KINTETSU_YAGI_NISHIGUCHI",
+          "STN_KINTETSU_UNEBIGORYOMAE",
+          "STN_KINTETSU_KASHIHARAJINGU_MAE"
+        ]
+      },
+      {
+        "id": "KINTETSU_TENRI",
+        "name": "天理線",
+        "sequence": [
+          "STN_KINTETSU_HIRAHATA",
+          "STN_KINTETSU_NIKAIDO",
+          "STN_KINTETSU_SENZAI",
+          "STN_KINTETSU_TENRI"
+        ]
+      },
+      {
+        "id": "KINTETSU_TAWARAMOTO",
+        "name": "田原本線",
+        "sequence": [
+          "STN_KINTETSU_NISHI_TAWARAMOTO",
+          "STN_KINTETSU_KURODA",
+          "STN_KINTETSU_TAJIMA",
+          "STN_KINTETSU_HASHIO",
+          "STN_KINTETSU_IKEBE",
+          "STN_KINTETSU_SAMITAGAWA",
+          "STN_KINTETSU_OWADA",
+          "STN_KINTETSU_SHIN_OJI"
+        ]
+      },
+      {
+        "id": "KINTETSU_OSAKA",
+        "name": "大阪線",
+        "sequence": [
+          "STN_KINTETSU_OSAKA_UEHOMMACHI",
+          "STN_KINTETSU_TSURUHASHI",
+          "STN_KINTETSU_IMAZATO",
+          "STN_KINTETSU_FUSE",
+          "STN_KINTETSU_SHUNTOKUMICHI",
+          "STN_KINTETSU_NAGASE",
+          "STN_KINTETSU_MITO",
+          "STN_KINTETSU_KYUHOJIGUCHI",
+          "STN_KINTETSU_KINTETSU_YAO",
+          "STN_KINTETSU_KAWACHI_YAMAMOTO",
+          "STN_KINTETSU_TAKAYASU",
+          "STN_KINTETSU_ONJI",
+          "STN_KINTETSU_HOZENJI",
+          "STN_KINTETSU_KATASHIMO",
+          "STN_KINTETSU_ANDO",
+          "STN_KINTETSU_KAWACHI_KOKUBU",
+          "STN_KINTETSU_OSAKA_KYOIKUDAI_MAE",
+          "STN_KINTETSU_SEKIYA",
+          "STN_KINTETSU_NIJO",
+          "STN_KINTETSU_KINTETSU_SHIMODA",
+          "STN_KINTETSU_GOIDO",
+          "STN_KINTETSU_TSUKIYAMA",
+          "STN_KINTETSU_YAMATO_TAKADA",
+          "STN_KINTETSU_MATSUZUKA",
+          "STN_KINTETSU_MASUGA",
+          "STN_KINTETSU_YAMATO_YAGI",
+          "STN_KINTETSU_MIMINASHI",
+          "STN_KINTETSU_DAIFUKU",
+          "STN_KINTETSU_SAKURAI",
+          "STN_KINTETSU_YAMATO_ASAKURA",
+          "STN_KINTETSU_HASEDERA",
+          "STN_KINTETSU_HAIBARA",
+          "STN_KINTETSU_MUROGUCHI_ONO",
+          "STN_KINTETSU_SAMBOMMATSU",
+          "STN_KINTETSU_AKAMEGUCHI",
+          "STN_KINTETSU_NABARI",
+          "STN_KINTETSU_KIKYOGAOKA",
+          "STN_KINTETSU_MIHATA",
+          "STN_KINTETSU_IGA_KAMBE",
+          "STN_KINTETSU_AOYAMACHO",
+          "STN_KINTETSU_IGA_KOZU",
+          "STN_KINTETSU_NISHI_AOYAMA",
+          "STN_KINTETSU_HIGASHI_AOYAMA",
+          "STN_KINTETSU_SAKAKIBARA_ONSENGUCHI",
+          "STN_KINTETSU_OMITSU",
+          "STN_KINTETSU_ISE_ISHIBASHI",
+          "STN_KINTETSU_KAWAI_TAKAOKA",
+          "STN_KINTETSU_ISE_NAKAGAWA"
+        ]
+      },
+      {
+        "id": "KINTETSU_SHIGI",
+        "name": "信貴線",
+        "sequence": [
+          "STN_KINTETSU_KAWACHI_YAMAMOTO",
+          "STN_KINTETSU_HATTORIGAWA",
+          "STN_KINTETSU_SHIGISANGUCHI"
+        ]
+      },
+      {
+        "id": "KINTETSU_NAGOYA",
+        "name": "名古屋線",
+        "sequence": [
+          "STN_KINTETSU_KINTETSU_NAGOYA",
+          "STN_KINTETSU_KOMENO",
+          "STN_KINTETSU_KOGANE",
+          "STN_KINTETSU_KASUMORI",
+          "STN_KINTETSU_KINTETSU_HATTA",
+          "STN_KINTETSU_FUSHIYA",
+          "STN_KINTETSU_TODA",
+          "STN_KINTETSU_KINTETSU_KANIE",
+          "STN_KINTETSU_TOMIYOSHI",
+          "STN_KINTETSU_SAKOGI",
+          "STN_KINTETSU_KINTETSU_YATOMI",
+          "STN_KINTETSU_KINTETSU_NAGASHIMA",
+          "STN_KINTETSU_KUWANA",
+          "STN_KINTETSU_MASUO",
+          "STN_KINTETSU_ISE_ASAHI",
+          "STN_KINTETSU_KAWAGOE_TOMISUHARA",
+          "STN_KINTETSU_KINTETSU_TOMIDA",
+          "STN_KINTETSU_KASUMIGAURA",
+          "STN_KINTETSU_AKURAGAWA",
+          "STN_KINTETSU_KAWARAMACHI",
+          "STN_KINTETSU_KINTETSU_YOKKAICHI",
+          "STN_KINTETSU_SHINSHO",
+          "STN_KINTETSU_MIYAMADO",
+          "STN_KINTETSU_SHIOHAMA",
+          "STN_KINTETSU_KITA_KUSU",
+          "STN_KINTETSU_KUSU",
+          "STN_KINTETSU_NAGONOURA",
+          "STN_KINTETSU_MIDA",
+          "STN_KINTETSU_ISE_WAKAMATSU",
+          "STN_KINTETSU_CHIYOZAKI",
+          "STN_KINTETSU_SHIROKO",
+          "STN_KINTETSU_TSUZUMIGAURA",
+          "STN_KINTETSU_ISOYAMA",
+          "STN_KINTETSU_CHISATO",
+          "STN_KINTETSU_TOYOTSU_UENO",
+          "STN_KINTETSU_SHIRATSUKA",
+          "STN_KINTETSU_TAKADAHONZAN",
+          "STN_KINTETSU_EDOBASHI",
+          "STN_KINTETSU_TSU",
+          "STN_KINTETSU_TSU_SHIMMACHI",
+          "STN_KINTETSU_MINAMIGAOKA",
+          "STN_KINTETSU_HISAI",
+          "STN_KINTETSU_MOMOZONO",
+          "STN_KINTETSU_ISE_NAKAGAWA"
+        ]
+      },
+      {
+        "id": "KINTETSU_YUNOYAMA",
+        "name": "湯の山線",
+        "sequence": [
+          "STN_KINTETSU_KINTETSU_YOKKAICHI",
+          "STN_KINTETSU_NAKAGAWARA",
+          "STN_KINTETSU_ISE_MATSUMOTO",
+          "STN_KINTETSU_ISE_KAWASHIMA",
+          "STN_KINTETSU_TAKATSUNO",
+          "STN_KINTETSU_SAKURA",
+          "STN_KINTETSU_KOMONO",
+          "STN_KINTETSU_NAKA_KOMONO",
+          "STN_KINTETSU_OBANE_EN",
+          "STN_KINTETSU_YUNOYAMA_ONSEN"
+        ]
+      },
+      {
+        "id": "KINTETSU_SUZUKA",
+        "name": "鈴鹿線",
+        "sequence": [
+          "STN_KINTETSU_ISE_WAKAMATSU",
+          "STN_KINTETSU_YANAGI",
+          "STN_KINTETSU_SUZUKASHI",
+          "STN_KINTETSU_MIKKAICHI",
+          "STN_KINTETSU_HIRATACHO"
+        ]
+      },
+      {
+        "id": "KINTETSU_YAMADA",
+        "name": "山田線",
+        "sequence": [
+          "STN_KINTETSU_ISE_NAKAGAWＡ",
+          "STN_KINTETSU_ISE_NAKAHARA",
+          "STN_KINTETSU_MATSUGASAKI",
+          "STN_KINTETSU_MATSUSAKA",
+          "STN_KINTETSU_HIGASHI_MATSUSAKA",
+          "STN_KINTETSU_KUSHIDA",
+          "STN_KINTETSU_KOISHIRO",
+          "STN_KINTETSU_SAIKU",
+          "STN_KINTETSU_MYOJO",
+          "STN_KINTETSU_AKENO",
+          "STN_KINTETSU_OBATA",
+          "STN_KINTETSU_MIYAMACHI",
+          "STN_KINTETSU_ISESHI",
+          "STN_KINTETSU_UJIYAMADA"
+        ]
+      },
+      {
+        "id": "KINTETSU_SHIMA",
+        "name": "志摩線",
+        "sequence": [
+          "STN_KINTETSU_UJIYAMADA",
+          "STN_KINTETSU_ISUZUGAWA",
+          "STN_KINTETSU_ASAMA",
+          "STN_KINTETSU_IKENOURA",
+          "STN_KINTETSU_TOBA"
+        ]
+      },
+      {
+        "id": "KINTETSU_TOBA",
+        "name": "鳥羽線",
+        "sequence": [
+          "STN_KINTETSU_TOBA",
+          "STN_KINTETSU_NAKANOGO",
+          "STN_KINTETSU_SHIMA_AKASAKI",
+          "STN_KINTETSU_FUNATSU",
+          "STN_KINTETSU_KAMO",
+          "STN_KINTETSU_MATSUO",
+          "STN_KINTETSU_SHIRAKI",
+          "STN_KINTETSU_GOCHI",
+          "STN_KINTETSU_KUTSUKAKE",
+          "STN_KINTETSU_KAMINOGO",
+          "STN_KINTETSU_SHIMA_ISOBE",
+          "STN_KINTETSU_ANAGAWA",
+          "STN_KINTETSU_SHIMA_YOKOYAMA",
+          "STN_KINTETSU_UGATA",
+          "STN_KINTETSU_SHIMA_SHIMMEI",
+          "STN_KINTETSU_KASHIKOJIMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KINTETSU_OSAKA_NAMBA",
+        "lat": "34.667041",
+        "lng": "135.499104",
+        "name": "大阪難波"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_NIPPOMBASHI",
+        "lat": "34.666825",
+        "lng": "135.50623",
+        "name": "近鉄日本橋"
+      },
+      {
+        "id": "STN_KINTETSU_OSAKA_UEHOMMACHI",
+        "lat": "34.665475",
+        "lng": "135.52131",
+        "name": "大阪上本町"
+      },
+      {
+        "id": "STN_KINTETSU_TSURUHASHI",
+        "lat": "34.665217",
+        "lng": "135.531205",
+        "name": "鶴橋"
+      },
+      {
+        "id": "STN_KINTETSU_IMAZATO",
+        "lat": "34.664725",
+        "lng": "135.54991",
+        "name": "今里"
+      },
+      {
+        "id": "STN_KINTETSU_FUSE",
+        "lat": "34.664085",
+        "lng": "135.56357",
+        "name": "布施"
+      },
+      {
+        "id": "STN_KINTETSU_KAWACHI_EIWA",
+        "lat": "34.664245",
+        "lng": "135.57314",
+        "name": "河内永和"
+      },
+      {
+        "id": "STN_KINTETSU_KAWACHI_KOSAKA",
+        "lat": "34.66398",
+        "lng": "135.58132",
+        "name": "河内小阪"
+      },
+      {
+        "id": "STN_KINTETSU_YAENOSATO",
+        "lat": "34.663725",
+        "lng": "135.589415",
+        "name": "八戸ノ里"
+      },
+      {
+        "id": "STN_KINTETSU_WAKAE_IWADA",
+        "lat": "34.66311",
+        "lng": "135.608355",
+        "name": "若江岩田"
+      },
+      {
+        "id": "STN_KINTETSU_KAWACHI_HANAZONO",
+        "lat": "34.662735",
+        "lng": "135.61843",
+        "name": "河内花園"
+      },
+      {
+        "id": "STN_KINTETSU_HIGASHI_HANAZONO",
+        "lat": "34.662365",
+        "lng": "135.62679",
+        "name": "東花園"
+      },
+      {
+        "id": "STN_KINTETSU_HYOTANYAMA",
+        "lat": "34.662128",
+        "lng": "135.639756",
+        "name": "瓢簞山"
+      },
+      {
+        "id": "STN_KINTETSU_HIRAOKA",
+        "lat": "34.66954",
+        "lng": "135.648055",
+        "name": "枚岡"
+      },
+      {
+        "id": "STN_KINTETSU_NUKATA",
+        "lat": "34.675195",
+        "lng": "135.651115",
+        "name": "額田"
+      },
+      {
+        "id": "STN_KINTETSU_ISHIKIRI",
+        "lat": "34.684785",
+        "lng": "135.655008",
+        "name": "石切"
+      },
+      {
+        "id": "STN_KINTETSU_IKOMA",
+        "lat": "34.6931",
+        "lng": "135.698055",
+        "name": "生駒"
+      },
+      {
+        "id": "STN_KINTETSU_HIGASHI_IKOMA",
+        "lat": "34.691823",
+        "lng": "135.709929",
+        "name": "東生駒"
+      },
+      {
+        "id": "STN_KINTETSU_TOMIO",
+        "lat": "34.694205",
+        "lng": "135.73473",
+        "name": "富雄"
+      },
+      {
+        "id": "STN_KINTETSU_GAKUEN_MAE",
+        "lat": "34.697015",
+        "lng": "135.749805",
+        "name": "学園前"
+      },
+      {
+        "id": "STN_KINTETSU_AYAMEYOIKE",
+        "lat": "34.697925",
+        "lng": "135.761275",
+        "name": "菖蒲池"
+      },
+      {
+        "id": "STN_KINTETSU_YAMATO_SAIDAIJI",
+        "lat": "34.69365",
+        "lng": "135.78307",
+        "name": "大和西大寺"
+      },
+      {
+        "id": "STN_KINTETSU_SHIN_OMIYA",
+        "lat": "34.685425",
+        "lng": "135.810685",
+        "name": "新大宮"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_NARA",
+        "lat": "34.68426909",
+        "lng": "135.82789454",
+        "name": "近鉄奈良"
+      },
+      {
+        "id": "STN_KINTETSU_NABATA",
+        "lat": "34.68569952",
+        "lng": "135.70675784",
+        "name": "菜畑"
+      },
+      {
+        "id": "STN_KINTETSU_ICHIBU",
+        "lat": "34.675415",
+        "lng": "135.707975",
+        "name": "一分"
+      },
+      {
+        "id": "STN_KINTETSU_MINAMI_IKOMA",
+        "lat": "34.665505",
+        "lng": "135.70887",
+        "name": "南生駒"
+      },
+      {
+        "id": "STN_KINTETSU_HAGINODAI",
+        "lat": "34.65698",
+        "lng": "135.70898",
+        "name": "萩の台"
+      },
+      {
+        "id": "STN_KINTETSU_HIGASHIYAMA",
+        "lat": "34.648705",
+        "lng": "135.7086",
+        "name": "東山"
+      },
+      {
+        "id": "STN_KINTETSU_MOTOSANJOGUCHI",
+        "lat": "34.640605",
+        "lng": "135.700795",
+        "name": "元山上口"
+      },
+      {
+        "id": "STN_KINTETSU_HEGURI",
+        "lat": "34.62927",
+        "lng": "135.704365",
+        "name": "平群"
+      },
+      {
+        "id": "STN_KINTETSU_TATSUTAGAWA",
+        "lat": "34.61719",
+        "lng": "135.704665",
+        "name": "竜田川"
+      },
+      {
+        "id": "STN_KINTETSU_SEYA_KITAGUCHI",
+        "lat": "34.6061",
+        "lng": "135.701015",
+        "name": "勢野北口"
+      },
+      {
+        "id": "STN_KINTETSU_SHIGISANSHITA",
+        "lat": "34.600905",
+        "lng": "135.695175",
+        "name": "信貴山下"
+      },
+      {
+        "id": "STN_KINTETSU_OJI",
+        "lat": "34.597715",
+        "lng": "135.702735",
+        "name": "王寺"
+      },
+      {
+        "id": "STN_KINTETSU_NAGATA",
+        "lat": "34.678755",
+        "lng": "135.591965",
+        "name": "長田"
+      },
+      {
+        "id": "STN_KINTETSU_ARAMOTO",
+        "lat": "34.678625",
+        "lng": "135.60499",
+        "name": "荒本"
+      },
+      {
+        "id": "STN_KINTETSU_YOSHITA",
+        "lat": "34.680335",
+        "lng": "135.624515",
+        "name": "吉田"
+      },
+      {
+        "id": "STN_KINTETSU_SHIN_ISHIKIRI",
+        "lat": "34.6801",
+        "lng": "135.64082",
+        "name": "新石切"
+      },
+      {
+        "id": "STN_KINTETSU_SHIRANIWADAI",
+        "lat": "34.72103",
+        "lng": "135.71683",
+        "name": "白庭台"
+      },
+      {
+        "id": "STN_KINTETSU_GAKKEN_KITA_IKOMA",
+        "lat": "34.724845",
+        "lng": "135.72342",
+        "name": "学研北生駒"
+      },
+      {
+        "id": "STN_KINTETSU_GAKKEN_NARA_TOMIGAOKA",
+        "lat": "34.72656956",
+        "lng": "135.75240824",
+        "name": "学研奈良登美ヶ丘"
+      },
+      {
+        "id": "STN_KINTETSU_KYOTO",
+        "lat": "34.984624",
+        "lng": "135.759055",
+        "name": "京都"
+      },
+      {
+        "id": "STN_KINTETSU_TOJI",
+        "lat": "34.979985",
+        "lng": "135.752595",
+        "name": "東寺"
+      },
+      {
+        "id": "STN_KINTETSU_JUJO",
+        "lat": "34.973995",
+        "lng": "135.75246",
+        "name": "十条"
+      },
+      {
+        "id": "STN_KINTETSU_KAMITOBAGUCHI",
+        "lat": "34.965015",
+        "lng": "135.75273",
+        "name": "上鳥羽口"
+      },
+      {
+        "id": "STN_KINTETSU_TAKEDA",
+        "lat": "34.95599",
+        "lng": "135.75616",
+        "name": "竹田"
+      },
+      {
+        "id": "STN_KINTETSU_FUSHIMI",
+        "lat": "34.94602",
+        "lng": "135.76149",
+        "name": "伏見"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_TAMBABASHI",
+        "lat": "34.938105",
+        "lng": "135.766425",
+        "name": "近鉄丹波橋"
+      },
+      {
+        "id": "STN_KINTETSU_MOMOYAMAGORYOMAE",
+        "lat": "34.93333",
+        "lng": "135.76555",
+        "name": "桃山御陵前"
+      },
+      {
+        "id": "STN_KINTETSU_MUKAIJIMA",
+        "lat": "34.914725",
+        "lng": "135.76977",
+        "name": "向島"
+      },
+      {
+        "id": "STN_KINTETSU_OGURA",
+        "lat": "34.893005",
+        "lng": "135.78188",
+        "name": "小倉"
+      },
+      {
+        "id": "STN_KINTETSU_ISEDA",
+        "lat": "34.88216",
+        "lng": "135.778995",
+        "name": "伊勢田"
+      },
+      {
+        "id": "STN_KINTETSU_OKUBO",
+        "lat": "34.87463",
+        "lng": "135.77706",
+        "name": "大久保"
+      },
+      {
+        "id": "STN_KINTETSU_KUTSUKAWA",
+        "lat": "34.864955",
+        "lng": "135.774785",
+        "name": "久津川"
+      },
+      {
+        "id": "STN_KINTETSU_TERADA",
+        "lat": "34.85327",
+        "lng": "135.772085",
+        "name": "寺田"
+      },
+      {
+        "id": "STN_KINTETSU_TONOSHO",
+        "lat": "34.84016",
+        "lng": "135.772915",
+        "name": "富野荘"
+      },
+      {
+        "id": "STN_KINTETSU_SHIN_TANABE",
+        "lat": "34.820706",
+        "lng": "135.772816",
+        "name": "新田辺"
+      },
+      {
+        "id": "STN_KINTETSU_KODO",
+        "lat": "34.80832",
+        "lng": "135.77868",
+        "name": "興戸"
+      },
+      {
+        "id": "STN_KINTETSU_MIYAMAKI",
+        "lat": "34.79864",
+        "lng": "135.78609",
+        "name": "三山木"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_MIYAZU",
+        "lat": "34.79162",
+        "lng": "135.787515",
+        "name": "近鉄宮津"
+      },
+      {
+        "id": "STN_KINTETSU_KOMADA",
+        "lat": "34.78044",
+        "lng": "135.78952",
+        "name": "狛田"
+      },
+      {
+        "id": "STN_KINTETSU_SHIN_HOSONO",
+        "lat": "34.760319",
+        "lng": "135.792761",
+        "name": "新祝園"
+      },
+      {
+        "id": "STN_KINTETSU_KIZUGAWADAI",
+        "lat": "34.746648",
+        "lng": "135.796064",
+        "name": "木津川台"
+      },
+      {
+        "id": "STN_KINTETSU_YAMADAGAWA",
+        "lat": "34.737781",
+        "lng": "135.793875",
+        "name": "山田川"
+      },
+      {
+        "id": "STN_KINTETSU_TAKANOHARA",
+        "lat": "34.72371",
+        "lng": "135.79186",
+        "name": "高の原"
+      },
+      {
+        "id": "STN_KINTETSU_HEIJO",
+        "lat": "34.701465",
+        "lng": "135.78465",
+        "name": "平城"
+      },
+      {
+        "id": "STN_KINTETSU_AMAGATSUJI",
+        "lat": "34.681105",
+        "lng": "135.783525",
+        "name": "尼ヶ辻"
+      },
+      {
+        "id": "STN_KINTETSU_NISHINOKYO",
+        "lat": "34.67065",
+        "lng": "135.78317",
+        "name": "西ノ京"
+      },
+      {
+        "id": "STN_KINTETSU_KUJO",
+        "lat": "34.65941",
+        "lng": "135.78296",
+        "name": "九条"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_KORIYAMA",
+        "lat": "34.64605",
+        "lng": "135.780725",
+        "name": "近鉄郡山"
+      },
+      {
+        "id": "STN_KINTETSU_TSUTSUI",
+        "lat": "34.62024",
+        "lng": "135.78066",
+        "name": "筒井"
+      },
+      {
+        "id": "STN_KINTETSU_HIRAHATA",
+        "lat": "34.60671",
+        "lng": "135.78279",
+        "name": "平端"
+      },
+      {
+        "id": "STN_KINTETSU_FAMILY_KOEMMAE",
+        "lat": "34.598065",
+        "lng": "135.785045",
+        "name": "ファミリー公園前"
+      },
+      {
+        "id": "STN_KINTETSU_YUZAKI",
+        "lat": "34.584525",
+        "lng": "135.78484",
+        "name": "結崎"
+      },
+      {
+        "id": "STN_KINTETSU_IWAMI",
+        "lat": "34.57135",
+        "lng": "135.78586",
+        "name": "石見"
+      },
+      {
+        "id": "STN_KINTETSU_TAWARAMOTO",
+        "lat": "34.553085",
+        "lng": "135.790875",
+        "name": "田原本"
+      },
+      {
+        "id": "STN_KINTETSU_KASANUI",
+        "lat": "34.541425",
+        "lng": "135.79411",
+        "name": "笠縫"
+      },
+      {
+        "id": "STN_KINTETSU_NINOKUCHI",
+        "lat": "34.525145",
+        "lng": "135.79466",
+        "name": "新ノ口"
+      },
+      {
+        "id": "STN_KINTETSU_YAMATO_YAGI",
+        "lat": "34.513127",
+        "lng": "135.792156",
+        "name": "大和八木"
+      },
+      {
+        "id": "STN_KINTETSU_YAGI_NISHIGUCHI",
+        "lat": "34.509665",
+        "lng": "135.79075",
+        "name": "八木西口"
+      },
+      {
+        "id": "STN_KINTETSU_UNEBIGORYOMAE",
+        "lat": "34.49277",
+        "lng": "135.794235",
+        "name": "畝傍御陵前"
+      },
+      {
+        "id": "STN_KINTETSU_KASHIHARAJINGU_MAE",
+        "lat": "34.48405",
+        "lng": "135.79431",
+        "name": "橿原神宮前"
+      },
+      {
+        "id": "STN_KINTETSU_NIKAIDO",
+        "lat": "34.60203",
+        "lng": "135.79616",
+        "name": "二階堂"
+      },
+      {
+        "id": "STN_KINTETSU_SENZAI",
+        "lat": "34.601145",
+        "lng": "135.81609",
+        "name": "前栽"
+      },
+      {
+        "id": "STN_KINTETSU_TENRI",
+        "lat": "34.60117742",
+        "lng": "135.82981074",
+        "name": "天理"
+      },
+      {
+        "id": "STN_KINTETSU_NISHI_TAWARAMOTO",
+        "lat": "34.55391",
+        "lng": "135.78955",
+        "name": "西田原本"
+      },
+      {
+        "id": "STN_KINTETSU_KURODA",
+        "lat": "34.568428",
+        "lng": "135.777773",
+        "name": "黒田"
+      },
+      {
+        "id": "STN_KINTETSU_TAJIMA",
+        "lat": "34.569425",
+        "lng": "135.768335",
+        "name": "但馬"
+      },
+      {
+        "id": "STN_KINTETSU_HASHIO",
+        "lat": "34.57028",
+        "lng": "135.75126",
+        "name": "箸尾"
+      },
+      {
+        "id": "STN_KINTETSU_IKEBE",
+        "lat": "34.57877",
+        "lng": "135.737185",
+        "name": "池部"
+      },
+      {
+        "id": "STN_KINTETSU_SAMITAGAWA",
+        "lat": "34.585205",
+        "lng": "135.73108",
+        "name": "佐味田川"
+      },
+      {
+        "id": "STN_KINTETSU_OWADA",
+        "lat": "34.58917",
+        "lng": "135.72038",
+        "name": "大輪田"
+      },
+      {
+        "id": "STN_KINTETSU_SHIN_OJI",
+        "lat": "34.59768",
+        "lng": "135.704705",
+        "name": "新王寺"
+      },
+      {
+        "id": "STN_KINTETSU_SHUNTOKUMICHI",
+        "lat": "34.65858",
+        "lng": "135.571615",
+        "name": "俊徳道"
+      },
+      {
+        "id": "STN_KINTETSU_NAGASE",
+        "lat": "34.649855",
+        "lng": "135.57761",
+        "name": "長瀬"
+      },
+      {
+        "id": "STN_KINTETSU_MITO",
+        "lat": "34.6414",
+        "lng": "135.58339",
+        "name": "弥刀"
+      },
+      {
+        "id": "STN_KINTETSU_KYUHOJIGUCHI",
+        "lat": "34.634585",
+        "lng": "135.590565",
+        "name": "久宝寺口"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_YAO",
+        "lat": "34.62983",
+        "lng": "135.603545",
+        "name": "近鉄八尾"
+      },
+      {
+        "id": "STN_KINTETSU_KAWACHI_YAMAMOTO",
+        "lat": "34.627925",
+        "lng": "135.61917",
+        "name": "河内山本"
+      },
+      {
+        "id": "STN_KINTETSU_TAKAYASU",
+        "lat": "34.61966",
+        "lng": "135.624365",
+        "name": "高安"
+      },
+      {
+        "id": "STN_KINTETSU_ONJI",
+        "lat": "34.609875",
+        "lng": "135.62628",
+        "name": "恩智"
+      },
+      {
+        "id": "STN_KINTETSU_HOZENJI",
+        "lat": "34.59519",
+        "lng": "135.626285",
+        "name": "法善寺"
+      },
+      {
+        "id": "STN_KINTETSU_KATASHIMO",
+        "lat": "34.58843",
+        "lng": "135.627315",
+        "name": "堅下"
+      },
+      {
+        "id": "STN_KINTETSU_ANDO",
+        "lat": "34.5802",
+        "lng": "135.629115",
+        "name": "安堂"
+      },
+      {
+        "id": "STN_KINTETSU_KAWACHI_KOKUBU",
+        "lat": "34.566715",
+        "lng": "135.63573",
+        "name": "河内国分"
+      },
+      {
+        "id": "STN_KINTETSU_OSAKA_KYOIKUDAI_MAE",
+        "lat": "34.555515",
+        "lng": "135.64477",
+        "name": "大阪教育大前"
+      },
+      {
+        "id": "STN_KINTETSU_SEKIYA",
+        "lat": "34.553755",
+        "lng": "135.66792",
+        "name": "関屋"
+      },
+      {
+        "id": "STN_KINTETSU_NIJO",
+        "lat": "34.546565",
+        "lng": "135.68812",
+        "name": "二上"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_SHIMODA",
+        "lat": "34.541395",
+        "lng": "135.70438",
+        "name": "近鉄下田"
+      },
+      {
+        "id": "STN_KINTETSU_GOIDO",
+        "lat": "34.534685",
+        "lng": "135.718195",
+        "name": "五位堂"
+      },
+      {
+        "id": "STN_KINTETSU_TSUKIYAMA",
+        "lat": "34.52633",
+        "lng": "135.73273",
+        "name": "築山"
+      },
+      {
+        "id": "STN_KINTETSU_YAMATO_TAKADA",
+        "lat": "34.51977",
+        "lng": "135.742324",
+        "name": "大和高田"
+      },
+      {
+        "id": "STN_KINTETSU_MATSUZUKA",
+        "lat": "34.52059",
+        "lng": "135.761195",
+        "name": "松塚"
+      },
+      {
+        "id": "STN_KINTETSU_MASUGA",
+        "lat": "34.51959",
+        "lng": "135.772795",
+        "name": "真菅"
+      },
+      {
+        "id": "STN_KINTETSU_MIMINASHI",
+        "lat": "34.512413",
+        "lng": "135.815329",
+        "name": "耳成"
+      },
+      {
+        "id": "STN_KINTETSU_DAIFUKU",
+        "lat": "34.512835",
+        "lng": "135.82987",
+        "name": "大福"
+      },
+      {
+        "id": "STN_KINTETSU_SAKURAI",
+        "lat": "34.515556",
+        "lng": "135.848889",
+        "name": "櫻井"
+      },
+      {
+        "id": "STN_KINTETSU_YAMATO_ASAKURA",
+        "lat": "34.515984",
+        "lng": "135.868918",
+        "name": "大和朝倉"
+      },
+      {
+        "id": "STN_KINTETSU_HASEDERA",
+        "lat": "34.52685",
+        "lng": "135.90648",
+        "name": "長谷寺"
+      },
+      {
+        "id": "STN_KINTETSU_HAIBARA",
+        "lat": "34.52983",
+        "lng": "135.954615",
+        "name": "榛原"
+      },
+      {
+        "id": "STN_KINTETSU_MUROGUCHI_ONO",
+        "lat": "34.566129",
+        "lng": "136.015258",
+        "name": "室生口大野"
+      },
+      {
+        "id": "STN_KINTETSU_SAMBOMMATSU",
+        "lat": "34.57855",
+        "lng": "136.03585",
+        "name": "三本松"
+      },
+      {
+        "id": "STN_KINTETSU_AKAMEGUCHI",
+        "lat": "34.599335",
+        "lng": "136.0737",
+        "name": "赤目口"
+      },
+      {
+        "id": "STN_KINTETSU_NABARI",
+        "lat": "34.621615",
+        "lng": "136.095745",
+        "name": "名張"
+      },
+      {
+        "id": "STN_KINTETSU_KIKYOGAOKA",
+        "lat": "34.641185",
+        "lng": "136.11276",
+        "name": "桔梗が丘"
+      },
+      {
+        "id": "STN_KINTETSU_MIHATA",
+        "lat": "34.662995",
+        "lng": "136.13301",
+        "name": "美旗"
+      },
+      {
+        "id": "STN_KINTETSU_IGA_KAMBE",
+        "lat": "34.67399",
+        "lng": "136.15207",
+        "name": "伊賀神戸"
+      },
+      {
+        "id": "STN_KINTETSU_AOYAMACHO",
+        "lat": "34.67306",
+        "lng": "136.177725",
+        "name": "青山町"
+      },
+      {
+        "id": "STN_KINTETSU_IGA_KOZU",
+        "lat": "34.68256",
+        "lng": "136.204305",
+        "name": "伊賀上津"
+      },
+      {
+        "id": "STN_KINTETSU_NISHI_AOYAMA",
+        "lat": "34.67634",
+        "lng": "136.238135",
+        "name": "西青山"
+      },
+      {
+        "id": "STN_KINTETSU_HIGASHI_AOYAMA",
+        "lat": "34.67564",
+        "lng": "136.321635",
+        "name": "東青山"
+      },
+      {
+        "id": "STN_KINTETSU_SAKAKIBARA_ONSENGUCHI",
+        "lat": "34.674835",
+        "lng": "136.348805",
+        "name": "榊原温泉口"
+      },
+      {
+        "id": "STN_KINTETSU_OMITSU",
+        "lat": "34.664045",
+        "lng": "136.36886",
+        "name": "大三"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_ISHIBASHI",
+        "lat": "34.65689",
+        "lng": "136.40852",
+        "name": "伊勢石橋"
+      },
+      {
+        "id": "STN_KINTETSU_KAWAI_TAKAOKA",
+        "lat": "34.656405",
+        "lng": "136.43677",
+        "name": "川合高岡"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_NAKAGAWA",
+        "lat": "34.635315",
+        "lng": "136.4781",
+        "name": "伊勢中川"
+      },
+      {
+        "id": "STN_KINTETSU_HATTORIGAWA",
+        "lat": "34.626455",
+        "lng": "135.64116",
+        "name": "服部川"
+      },
+      {
+        "id": "STN_KINTETSU_SHIGISANGUCHI",
+        "lat": "34.619939",
+        "lng": "135.642131",
+        "name": "信貴山口"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_NAGOYA",
+        "lat": "35.16936",
+        "lng": "136.88375",
+        "name": "近鉄名古屋"
+      },
+      {
+        "id": "STN_KINTETSU_KOMENO",
+        "lat": "35.16126",
+        "lng": "136.87962",
+        "name": "米野"
+      },
+      {
+        "id": "STN_KINTETSU_KOGANE",
+        "lat": "35.156275",
+        "lng": "136.870805",
+        "name": "黄金"
+      },
+      {
+        "id": "STN_KINTETSU_KASUMORI",
+        "lat": "35.152815",
+        "lng": "136.86381",
+        "name": "烏森"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_HATTA",
+        "lat": "35.149523",
+        "lng": "136.854332",
+        "name": "近鉄八田"
+      },
+      {
+        "id": "STN_KINTETSU_FUSHIYA",
+        "lat": "35.14015",
+        "lng": "136.827825",
+        "name": "伏屋"
+      },
+      {
+        "id": "STN_KINTETSU_TODA",
+        "lat": "35.132605",
+        "lng": "136.807445",
+        "name": "戸田"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_KANIE",
+        "lat": "35.12965",
+        "lng": "136.795215",
+        "name": "近鉄蟹江"
+      },
+      {
+        "id": "STN_KINTETSU_TOMIYOSHI",
+        "lat": "35.12349",
+        "lng": "136.76937",
+        "name": "富吉"
+      },
+      {
+        "id": "STN_KINTETSU_SAKOGI",
+        "lat": "35.11948",
+        "lng": "136.752305",
+        "name": "佐古木"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_YATOMI",
+        "lat": "35.113585",
+        "lng": "136.727765",
+        "name": "近鉄弥富"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_NAGASHIMA",
+        "lat": "35.09763",
+        "lng": "136.69608",
+        "name": "近鉄長島"
+      },
+      {
+        "id": "STN_KINTETSU_KUWANA",
+        "lat": "35.066975",
+        "lng": "136.683375",
+        "name": "桑名"
+      },
+      {
+        "id": "STN_KINTETSU_MASUO",
+        "lat": "35.057785",
+        "lng": "136.678585",
+        "name": "益生"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_ASAHI",
+        "lat": "35.038255",
+        "lng": "136.66887",
+        "name": "伊勢朝日"
+      },
+      {
+        "id": "STN_KINTETSU_KAWAGOE_TOMISUHARA",
+        "lat": "35.016245",
+        "lng": "136.65976",
+        "name": "川越富洲原"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_TOMIDA",
+        "lat": "35.00650219",
+        "lng": "136.64934172",
+        "name": "近鉄富田"
+      },
+      {
+        "id": "STN_KINTETSU_KASUMIGAURA",
+        "lat": "34.993393",
+        "lng": "136.636881",
+        "name": "霞ヶ浦"
+      },
+      {
+        "id": "STN_KINTETSU_AKURAGAWA",
+        "lat": "34.985225",
+        "lng": "136.62943",
+        "name": "阿倉川"
+      },
+      {
+        "id": "STN_KINTETSU_KAWARAMACHI",
+        "lat": "34.977189",
+        "lng": "136.623279",
+        "name": "川原町"
+      },
+      {
+        "id": "STN_KINTETSU_KINTETSU_YOKKAICHI",
+        "lat": "34.966965",
+        "lng": "136.618572",
+        "name": "近鉄四日市"
+      },
+      {
+        "id": "STN_KINTETSU_SHINSHO",
+        "lat": "34.956359",
+        "lng": "136.618438",
+        "name": "新正"
+      },
+      {
+        "id": "STN_KINTETSU_MIYAMADO",
+        "lat": "34.943315",
+        "lng": "136.622959",
+        "name": "海山道"
+      },
+      {
+        "id": "STN_KINTETSU_SHIOHAMA",
+        "lat": "34.93312",
+        "lng": "136.622218",
+        "name": "塩浜"
+      },
+      {
+        "id": "STN_KINTETSU_KITA_KUSU",
+        "lat": "34.9163",
+        "lng": "136.62481",
+        "name": "北楠"
+      },
+      {
+        "id": "STN_KINTETSU_KUSU",
+        "lat": "34.904885",
+        "lng": "136.63117",
+        "name": "楠"
+      },
+      {
+        "id": "STN_KINTETSU_NAGONOURA",
+        "lat": "34.89152",
+        "lng": "136.62635",
+        "name": "長太ノ浦"
+      },
+      {
+        "id": "STN_KINTETSU_MIDA",
+        "lat": "34.87957",
+        "lng": "136.62203",
+        "name": "箕田"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_WAKAMATSU",
+        "lat": "34.869495",
+        "lng": "136.61679",
+        "name": "伊勢若松"
+      },
+      {
+        "id": "STN_KINTETSU_CHIYOZAKI",
+        "lat": "34.85485",
+        "lng": "136.608355",
+        "name": "千代崎"
+      },
+      {
+        "id": "STN_KINTETSU_SHIROKO",
+        "lat": "34.83386",
+        "lng": "136.5895",
+        "name": "白子"
+      },
+      {
+        "id": "STN_KINTETSU_TSUZUMIGAURA",
+        "lat": "34.82619",
+        "lng": "136.58126",
+        "name": "鼓ヶ浦"
+      },
+      {
+        "id": "STN_KINTETSU_ISOYAMA",
+        "lat": "34.81265",
+        "lng": "136.568875",
+        "name": "磯山"
+      },
+      {
+        "id": "STN_KINTETSU_CHISATO",
+        "lat": "34.798515",
+        "lng": "136.556195",
+        "name": "千里"
+      },
+      {
+        "id": "STN_KINTETSU_TOYOTSU_UENO",
+        "lat": "34.78525",
+        "lng": "136.543085",
+        "name": "豊津上野"
+      },
+      {
+        "id": "STN_KINTETSU_SHIRATSUKA",
+        "lat": "34.770705",
+        "lng": "136.532535",
+        "name": "白塚"
+      },
+      {
+        "id": "STN_KINTETSU_TAKADAHONZAN",
+        "lat": "34.755115",
+        "lng": "136.516375",
+        "name": "高田本山"
+      },
+      {
+        "id": "STN_KINTETSU_EDOBASHI",
+        "lat": "34.74444",
+        "lng": "136.51402",
+        "name": "江戸橋"
+      },
+      {
+        "id": "STN_KINTETSU_TSU",
+        "lat": "34.734415",
+        "lng": "136.51023",
+        "name": "津"
+      },
+      {
+        "id": "STN_KINTETSU_TSU_SHIMMACHI",
+        "lat": "34.715688",
+        "lng": "136.499919",
+        "name": "津新町"
+      },
+      {
+        "id": "STN_KINTETSU_MINAMIGAOKA",
+        "lat": "34.692038",
+        "lng": "136.496459",
+        "name": "南が丘"
+      },
+      {
+        "id": "STN_KINTETSU_HISAI",
+        "lat": "34.675565",
+        "lng": "136.477815",
+        "name": "久居"
+      },
+      {
+        "id": "STN_KINTETSU_MOMOZONO",
+        "lat": "34.66338",
+        "lng": "136.477465",
+        "name": "桃園"
+      },
+      {
+        "id": "STN_KINTETSU_NAKAGAWARA",
+        "lat": "34.969325",
+        "lng": "136.603235",
+        "name": "中川原"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_MATSUMOTO",
+        "lat": "34.969635",
+        "lng": "136.59073",
+        "name": "伊勢松本"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_KAWASHIMA",
+        "lat": "34.97766",
+        "lng": "136.56695",
+        "name": "伊勢川島"
+      },
+      {
+        "id": "STN_KINTETSU_TAKATSUNO",
+        "lat": "34.983205",
+        "lng": "136.55446",
+        "name": "高角"
+      },
+      {
+        "id": "STN_KINTETSU_SAKURA",
+        "lat": "34.996465",
+        "lng": "136.541755",
+        "name": "桜"
+      },
+      {
+        "id": "STN_KINTETSU_KOMONO",
+        "lat": "35.00872",
+        "lng": "136.517355",
+        "name": "菰野"
+      },
+      {
+        "id": "STN_KINTETSU_NAKA_KOMONO",
+        "lat": "35.0123",
+        "lng": "136.504245",
+        "name": "中菰野"
+      },
+      {
+        "id": "STN_KINTETSU_OBANE_EN",
+        "lat": "35.012555",
+        "lng": "136.494205",
+        "name": "大羽根園"
+      },
+      {
+        "id": "STN_KINTETSU_YUNOYAMA_ONSEN",
+        "lat": "35.01171075",
+        "lng": "136.4736294",
+        "name": "湯の山温泉"
+      },
+      {
+        "id": "STN_KINTETSU_YANAGI",
+        "lat": "34.87136",
+        "lng": "136.595965",
+        "name": "柳"
+      },
+      {
+        "id": "STN_KINTETSU_SUZUKASHI",
+        "lat": "34.88391",
+        "lng": "136.58279",
+        "name": "鈴鹿市"
+      },
+      {
+        "id": "STN_KINTETSU_MIKKAICHI",
+        "lat": "34.88024",
+        "lng": "136.56223",
+        "name": "三日市"
+      },
+      {
+        "id": "STN_KINTETSU_HIRATACHO",
+        "lat": "34.87514",
+        "lng": "136.54238",
+        "name": "平田町"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_NAKAGAWＡ",
+        "lat": "34.635315",
+        "lng": "136.4781",
+        "name": "伊勢中川"
+      },
+      {
+        "id": "STN_KINTETSU_ISE_NAKAHARA",
+        "lat": "34.614735",
+        "lng": "136.49794",
+        "name": "伊勢中原"
+      },
+      {
+        "id": "STN_KINTETSU_MATSUGASAKI",
+        "lat": "34.596469",
+        "lng": "136.518913",
+        "name": "松ヶ崎"
+      },
+      {
+        "id": "STN_KINTETSU_MATSUSAKA",
+        "lat": "34.577307",
+        "lng": "136.536219",
+        "name": "松阪"
+      },
+      {
+        "id": "STN_KINTETSU_HIGASHI_MATSUSAKA",
+        "lat": "34.56555",
+        "lng": "136.5461",
+        "name": "東松阪"
+      },
+      {
+        "id": "STN_KINTETSU_KUSHIDA",
+        "lat": "34.54889",
+        "lng": "136.58304",
+        "name": "櫛田"
+      },
+      {
+        "id": "STN_KINTETSU_KOISHIRO",
+        "lat": "34.54098",
+        "lng": "136.601055",
+        "name": "漕代"
+      },
+      {
+        "id": "STN_KINTETSU_SAIKU",
+        "lat": "34.537895",
+        "lng": "136.615295",
+        "name": "斎宮"
+      },
+      {
+        "id": "STN_KINTETSU_MYOJO",
+        "lat": "34.531395",
+        "lng": "136.64253",
+        "name": "明星"
+      },
+      {
+        "id": "STN_KINTETSU_AKENO",
+        "lat": "34.52149",
+        "lng": "136.66882",
+        "name": "明野"
+      },
+      {
+        "id": "STN_KINTETSU_OBATA",
+        "lat": "34.512835",
+        "lng": "136.68481",
+        "name": "小俣"
+      },
+      {
+        "id": "STN_KINTETSU_MIYAMACHI",
+        "lat": "34.497845",
+        "lng": "136.698565",
+        "name": "宮町"
+      },
+      {
+        "id": "STN_KINTETSU_ISESHI",
+        "lat": "34.491945",
+        "lng": "136.710485",
+        "name": "伊勢市"
+      },
+      {
+        "id": "STN_KINTETSU_UJIYAMADA",
+        "lat": "34.488319",
+        "lng": "136.714031",
+        "name": "宇治山田"
+      },
+      {
+        "id": "STN_KINTETSU_ISUZUGAWA",
+        "lat": "34.476435",
+        "lng": "136.7273",
+        "name": "五十鈴川"
+      },
+      {
+        "id": "STN_KINTETSU_ASAMA",
+        "lat": "34.477241",
+        "lng": "136.757401",
+        "name": "朝熊"
+      },
+      {
+        "id": "STN_KINTETSU_IKENOURA",
+        "lat": "34.479089",
+        "lng": "136.818356",
+        "name": "池の浦"
+      },
+      {
+        "id": "STN_KINTETSU_TOBA",
+        "lat": "34.48725",
+        "lng": "136.841725",
+        "name": "鳥羽"
+      },
+      {
+        "id": "STN_KINTETSU_NAKANOGO",
+        "lat": "34.47961",
+        "lng": "136.84541",
+        "name": "中之郷"
+      },
+      {
+        "id": "STN_KINTETSU_SHIMA_AKASAKI",
+        "lat": "34.469826",
+        "lng": "136.841708",
+        "name": "志摩赤崎"
+      },
+      {
+        "id": "STN_KINTETSU_FUNATSU",
+        "lat": "34.45687",
+        "lng": "136.842005",
+        "name": "船津"
+      },
+      {
+        "id": "STN_KINTETSU_KAMO",
+        "lat": "34.444205",
+        "lng": "136.84656",
+        "name": "加茂"
+      },
+      {
+        "id": "STN_KINTETSU_MATSUO",
+        "lat": "34.432565",
+        "lng": "136.84006",
+        "name": "松尾"
+      },
+      {
+        "id": "STN_KINTETSU_SHIRAKI",
+        "lat": "34.429205",
+        "lng": "136.83116",
+        "name": "白木"
+      },
+      {
+        "id": "STN_KINTETSU_GOCHI",
+        "lat": "34.40668",
+        "lng": "136.810095",
+        "name": "五知"
+      },
+      {
+        "id": "STN_KINTETSU_KUTSUKAKE",
+        "lat": "34.39413",
+        "lng": "136.81443",
+        "name": "沓掛"
+      },
+      {
+        "id": "STN_KINTETSU_KAMINOGO",
+        "lat": "34.379325",
+        "lng": "136.81152",
+        "name": "上之郷"
+      },
+      {
+        "id": "STN_KINTETSU_SHIMA_ISOBE",
+        "lat": "34.36956",
+        "lng": "136.805795",
+        "name": "志摩磯部"
+      },
+      {
+        "id": "STN_KINTETSU_ANAGAWA",
+        "lat": "34.358895",
+        "lng": "136.81588",
+        "name": "穴川"
+      },
+      {
+        "id": "STN_KINTETSU_SHIMA_YOKOYAMA",
+        "lat": "34.333975",
+        "lng": "136.81836",
+        "name": "志摩横山"
+      },
+      {
+        "id": "STN_KINTETSU_UGATA",
+        "lat": "34.329375",
+        "lng": "136.82573",
+        "name": "鵜方"
+      },
+      {
+        "id": "STN_KINTETSU_SHIMA_SHIMMEI",
+        "lat": "34.316205",
+        "lng": "136.829985",
+        "name": "志摩神明"
+      },
+      {
+        "id": "STN_KINTETSU_KASHIKOJIMA",
+        "lat": "34.30865472",
+        "lng": "136.81957126",
+        "name": "賢島"
+      }
+    ]
+  }
+]

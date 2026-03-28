@@ -1,0 +1,807 @@
+[
+  {
+    "categories": "大手私鉄",
+    "company_id": "NANKAI",
+    "company_name": "南海電鉄",
+    "lines": [
+      {
+        "id": "NANKAI_HONSEN",
+        "name": "南海本線",
+        "sequence": [
+          "STN_NANKAI_NAMBA",
+          "STN_NANKAI_IMAMIYA_EBISU",
+          "STN_NANKAI_SHIN_IMAMIYA",
+          "STN_NANKAI_HAGINOCHAYA",
+          "STN_NANKAI_TENGACHAYA",
+          "STN_NANKAI_KISHINOSATO_TAMADE",
+          "STN_NANKAI_KOHAMA",
+          "STN_NANKAI_SUMIYOSHI_TAISHA",
+          "STN_NANKAI_SUMINOE",
+          "STN_NANKAI_SHICHIDO",
+          "STN_NANKAI_SAKAI",
+          "STN_NANKAI_MINATO",
+          "STN_NANKAI_ISHIZUGAWA",
+          "STN_NANKAI_SUWANOMORI",
+          "STN_NANKAI_HAMADERA_KOEN",
+          "STN_NANKAI_HAGOROMO",
+          "STN_NANKAI_TAKAISHI",
+          "STN_NANKAI_KITA_SUKEMATSU",
+          "STN_NANKAI_MATSUNOHAMA",
+          "STN_NANKAI_IZUMIOTSU",
+          "STN_NANKAI_TADAOKA",
+          "STN_NANKAI_HARUKI",
+          "STN_NANKAI_IZUMI_OMIYA",
+          "STN_NANKAI_KISHIWADA",
+          "STN_NANKAI_TAKOJIZO",
+          "STN_NANKAI_KAIZUKA",
+          "STN_NANKAI_NISHIKINOHAMA",
+          "STN_NANKAI_TSURUHARA",
+          "STN_NANKAI_IHARASATO",
+          "STN_NANKAI_IZUMISANO",
+          "STN_NANKAI_HAGURAZAKI",
+          "STN_NANKAI_YOSHIMINOSATO",
+          "STN_NANKAI_OKADAURA",
+          "STN_NANKAI_TARUI",
+          "STN_NANKAI_OZAKI",
+          "STN_NANKAI_TOTTORINOSHO",
+          "STN_NANKAI_HAKOZUKURI",
+          "STN_NANKAI_TANNOWA",
+          "STN_NANKAI_MISAKI_KOEN",
+          "STN_NANKAI_KYOSHI",
+          "STN_NANKAI_WAKAYAMADAIGAKUMAE",
+          "STN_NANKAI_KINOKAWA",
+          "STN_NANKAI_WAKAYAMASHI"
+        ]
+      },
+      {
+        "id": "NANKAI_TAKASHINOHAMA",
+        "name": "高師浜線",
+        "sequence": [
+          "STN_NANKAI_HAGOROMO",
+          "STN_NANKAI_KYARABASHI",
+          "STN_NANKAI_TAKASHINOHAMA"
+        ]
+      },
+      {
+        "id": "NANKAI_TANAGAWA",
+        "name": "多奈川線",
+        "sequence": [
+          "STN_NANKAI_MISAKI_KOEN",
+          "STN_NANKAI_FUKECHO",
+          "STN_NANKAI_FUKEKO",
+          "STN_NANKAI_TANAGAWA"
+        ]
+      },
+      {
+        "id": "NANKAI_KADA",
+        "name": "加太線",
+        "sequence": [
+          "STN_NANKAI_WAKAYAMASHI",
+          "STN_NANKAI_KINOKAWA",
+          "STN_NANKAI_HIGASHI_MATSUE",
+          "STN_NANKAI_NAKAMATSUE",
+          "STN_NANKAI_HACHIMANMAE",
+          "STN_NANKAI_NISHINOSHO",
+          "STN_NANKAI_NIRIGAHAMA",
+          "STN_NANKAI_ISONOURA",
+          "STN_NANKAI_KADA"
+        ]
+      },
+      {
+        "id": "NANKAI_WAKAYAMAKO",
+        "name": "歌山港線",
+        "sequence": [
+          "STN_NANKAI_WAKAYAMASHI",
+          "STN_NANKAI_WAKAYAMAKO"
+        ]
+      },
+      {
+        "id": "NANKAI_AIRPORT",
+        "name": "空港線",
+        "sequence": [
+          "STN_NANKAI_IZUMISANO",
+          "STN_NANKAI_RINKU_TOWN",
+          "STN_NANKAI_KANSAI_AIRPORT"
+        ]
+      },
+      {
+        "id": "NANKAI_KOYA",
+        "name": "高野線",
+        "sequence": [
+          "STN_NANKAI_NAMBA",
+          "STN_NANKAI_IMAMIYA_EBISU",
+          "STN_NANKAI_SHIN_IMAMIYA",
+          "STN_NANKAI_HAGINOCHAYA",
+          "STN_NANKAI_TENGACHAYA",
+          "STN_NANKAI_KISHINOSATO_TAMADE",
+          "STN_NANKAI_TEZUKAYAMA",
+          "STN_NANKAI_SUMIYOSHIHIGASHI",
+          "STN_NANKAI_SAWANOCHO",
+          "STN_NANKAI_ABIKOMAE",
+          "STN_NANKAI_ASAKAYAMA",
+          "STN_NANKAI_SAKAIHIGASHI",
+          "STN_NANKAI_MIKUNIGAOKA",
+          "STN_NANKAI_MOZUHACHIMAN",
+          "STN_NANKAI_NAKAMOZU",
+          "STN_NANKAI_SHIRASAGI",
+          "STN_NANKAI_HATSUSHIBA",
+          "STN_NANKAI_HAGIWARATENJIN",
+          "STN_NANKAI_KITANODA",
+          "STN_NANKAI_SAYAMA",
+          "STN_NANKAI_OSAKASAYAMASHI",
+          "STN_NANKAI_KONGO",
+          "STN_NANKAI_TAKIDANI",
+          "STN_NANKAI_CHIYODA",
+          "STN_NANKAI_KAWACHINAGANO",
+          "STN_NANKAI_MIKKAICHICHO",
+          "STN_NANKAI_MIKANODAI",
+          "STN_NANKAI_CHIHAYAGUCHI",
+          "STN_NANKAI_AMAMI",
+          "STN_NANKAI_KIMITOGE",
+          "STN_NANKAI_RINKANDEN'ENTOSHI",
+          "STN_NANKAI_MIYUKITSUJI",
+          "STN_NANKAI_HASHIMOTO",
+          "STN_NANKAI_KII_SHIMIZU",
+          "STN_NANKAI_KAMURO",
+          "STN_NANKAI_KUDOYAMA",
+          "STN_NANKAI_KOYASHITA",
+          "STN_NANKAI_SHIMO_KOSAWA",
+          "STN_NANKAI_KAMI_KOSAWA",
+          "STN_NANKAI_KII_HOSOKAWA",
+          "STN_NANKAI_KII_KAMIYA",
+          "STN_NANKAI_GOKURAKUBASHI"
+        ]
+      },
+      {
+        "id": "NANKAI_SHIOMIBASHI",
+        "name": "汐見橋線",
+        "sequence": [
+          "STN_NANKAI_SHIOMIBASHI",
+          "STN_NANKAI_ASHIHARA_CHO",
+          "STN_NANKAI_KIZUGAWA",
+          "STN_NANKAI_TSUMORI",
+          "STN_NANKAI_NISHI_TENGACHAYA",
+          "STN_NANKAI_KISHINOSATO_TAMADE"
+        ]
+      },
+      {
+        "id": "NANKAI_SEMBOKU",
+        "name": "泉北線",
+        "sequence": [
+          "STN_NANKAI_NAKAMOZU",
+          "STN_NANKAI_FUKAI",
+          "STN_NANKAI_IZUMIGAOKA",
+          "STN_NANKAI_TOGA_MIKITA",
+          "STN_NANKAI_KOMYOIKE",
+          "STN_NANKAI_IZUMI_CHUO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NANKAI_NAMBA",
+        "lat": "34.662991",
+        "lng": "135.502347",
+        "name": "難波"
+      },
+      {
+        "id": "STN_NANKAI_IMAMIYA_EBISU",
+        "lat": "34.65486",
+        "lng": "135.501515",
+        "name": "今宮戎"
+      },
+      {
+        "id": "STN_NANKAI_SHIN_IMAMIYA",
+        "lat": "34.65057",
+        "lng": "135.500369",
+        "name": "新今宮"
+      },
+      {
+        "id": "STN_NANKAI_HAGINOCHAYA",
+        "lat": "34.64559",
+        "lng": "135.49905",
+        "name": "萩ノ茶屋"
+      },
+      {
+        "id": "STN_NANKAI_TENGACHAYA",
+        "lat": "34.637125",
+        "lng": "135.49666",
+        "name": "天下茶屋"
+      },
+      {
+        "id": "STN_NANKAI_KISHINOSATO_TAMADE",
+        "lat": "34.62813",
+        "lng": "135.494295",
+        "name": "岸里玉出"
+      },
+      {
+        "id": "STN_NANKAI_KOHAMA",
+        "lat": "34.61809",
+        "lng": "135.49168",
+        "name": "粉浜"
+      },
+      {
+        "id": "STN_NANKAI_SUMIYOSHI_TAISHA",
+        "lat": "34.612575",
+        "lng": "135.490195",
+        "name": "住吉大社"
+      },
+      {
+        "id": "STN_NANKAI_SUMINOE",
+        "lat": "34.60528",
+        "lng": "135.48702",
+        "name": "住ノ江"
+      },
+      {
+        "id": "STN_NANKAI_SHICHIDO",
+        "lat": "34.59219",
+        "lng": "135.48051",
+        "name": "七道"
+      },
+      {
+        "id": "STN_NANKAI_SAKAI",
+        "lat": "34.581816",
+        "lng": "135.46866",
+        "name": "堺"
+      },
+      {
+        "id": "STN_NANKAI_MINATO",
+        "lat": "34.57062",
+        "lng": "135.460095",
+        "name": "湊"
+      },
+      {
+        "id": "STN_NANKAI_ISHIZUGAWA",
+        "lat": "34.55933",
+        "lng": "135.453265",
+        "name": "石津川"
+      },
+      {
+        "id": "STN_NANKAI_SUWANOMORI",
+        "lat": "34.55181",
+        "lng": "135.44918",
+        "name": "諏訪ノ森"
+      },
+      {
+        "id": "STN_NANKAI_HAMADERA_KOEN",
+        "lat": "34.541345",
+        "lng": "135.444685",
+        "name": "浜寺公園"
+      },
+      {
+        "id": "STN_NANKAI_HAGOROMO",
+        "lat": "34.53431",
+        "lng": "135.44172",
+        "name": "羽衣"
+      },
+      {
+        "id": "STN_NANKAI_TAKAISHI",
+        "lat": "34.521475",
+        "lng": "135.43282",
+        "name": "高石"
+      },
+      {
+        "id": "STN_NANKAI_KITA_SUKEMATSU",
+        "lat": "34.51452",
+        "lng": "135.42276",
+        "name": "北助松"
+      },
+      {
+        "id": "STN_NANKAI_MATSUNOHAMA",
+        "lat": "34.508975",
+        "lng": "135.414785",
+        "name": "松ノ浜"
+      },
+      {
+        "id": "STN_NANKAI_IZUMIOTSU",
+        "lat": "34.503382",
+        "lng": "135.406832",
+        "name": "泉大津"
+      },
+      {
+        "id": "STN_NANKAI_TADAOKA",
+        "lat": "34.48858",
+        "lng": "135.39777",
+        "name": "忠岡"
+      },
+      {
+        "id": "STN_NANKAI_HARUKI",
+        "lat": "34.47763",
+        "lng": "135.392145",
+        "name": "春木"
+      },
+      {
+        "id": "STN_NANKAI_IZUMI_OMIYA",
+        "lat": "34.46796",
+        "lng": "135.38502",
+        "name": "和泉大宮"
+      },
+      {
+        "id": "STN_NANKAI_KISHIWADA",
+        "lat": "34.460255",
+        "lng": "135.37813",
+        "name": "岸和田"
+      },
+      {
+        "id": "STN_NANKAI_TAKOJIZO",
+        "lat": "34.45639",
+        "lng": "135.370395",
+        "name": "蛸地蔵"
+      },
+      {
+        "id": "STN_NANKAI_KAIZUKA",
+        "lat": "34.445295",
+        "lng": "135.357345",
+        "name": "貝塚"
+      },
+      {
+        "id": "STN_NANKAI_NISHIKINOHAMA",
+        "lat": "34.432175",
+        "lng": "135.34476",
+        "name": "二色浜"
+      },
+      {
+        "id": "STN_NANKAI_TSURUHARA",
+        "lat": "34.42642",
+        "lng": "135.33831",
+        "name": "鶴原"
+      },
+      {
+        "id": "STN_NANKAI_IHARASATO",
+        "lat": "34.41937",
+        "lng": "135.330475",
+        "name": "井原里"
+      },
+      {
+        "id": "STN_NANKAI_IZUMISANO",
+        "lat": "34.411065",
+        "lng": "135.317375",
+        "name": "泉佐野"
+      },
+      {
+        "id": "STN_NANKAI_HAGURAZAKI",
+        "lat": "34.39952",
+        "lng": "135.300095",
+        "name": "羽倉崎"
+      },
+      {
+        "id": "STN_NANKAI_YOSHIMINOSATO",
+        "lat": "34.3915",
+        "lng": "135.28988",
+        "name": "吉見ノ里"
+      },
+      {
+        "id": "STN_NANKAI_OKADAURA",
+        "lat": "34.384515",
+        "lng": "135.27691",
+        "name": "岡田浦"
+      },
+      {
+        "id": "STN_NANKAI_TARUI",
+        "lat": "34.37417",
+        "lng": "135.261355",
+        "name": "樽井"
+      },
+      {
+        "id": "STN_NANKAI_OZAKI",
+        "lat": "34.36099",
+        "lng": "135.24011",
+        "name": "尾崎"
+      },
+      {
+        "id": "STN_NANKAI_TOTTORINOSHO",
+        "lat": "34.35128",
+        "lng": "135.23182",
+        "name": "鳥取ノ荘"
+      },
+      {
+        "id": "STN_NANKAI_HAKOZUKURI",
+        "lat": "34.34131",
+        "lng": "135.21261",
+        "name": "箱作"
+      },
+      {
+        "id": "STN_NANKAI_TANNOWA",
+        "lat": "34.33137",
+        "lng": "135.17864",
+        "name": "淡輪"
+      },
+      {
+        "id": "STN_NANKAI_MISAKI_KOEN",
+        "lat": "34.323992",
+        "lng": "135.161016",
+        "name": "みさき公園"
+      },
+      {
+        "id": "STN_NANKAI_KYOSHI",
+        "lat": "34.29067",
+        "lng": "135.151035",
+        "name": "孝子"
+      },
+      {
+        "id": "STN_NANKAI_WAKAYAMADAIGAKUMAE",
+        "lat": "34.276382",
+        "lng": "135.14698",
+        "name": "和歌山大学前"
+      },
+      {
+        "id": "STN_NANKAI_KINOKAWA",
+        "lat": "34.254925",
+        "lng": "135.1659",
+        "name": "紀ノ川"
+      },
+      {
+        "id": "STN_NANKAI_WAKAYAMASHI",
+        "lat": "34.23669024",
+        "lng": "135.1663909",
+        "name": "和歌山市"
+      },
+      {
+        "id": "STN_NANKAI_KYARABASHI",
+        "lat": "34.52880904",
+        "lng": "135.43642947",
+        "name": "伽羅橋"
+      },
+      {
+        "id": "STN_NANKAI_TAKASHINOHAMA",
+        "lat": "34.52755496",
+        "lng": "135.43195505",
+        "name": "高師浜"
+      },
+      {
+        "id": "STN_NANKAI_FUKECHO",
+        "lat": "34.31827",
+        "lng": "135.14806",
+        "name": "深日町"
+      },
+      {
+        "id": "STN_NANKAI_FUKEKO",
+        "lat": "34.31743",
+        "lng": "135.14127",
+        "name": "深日港"
+      },
+      {
+        "id": "STN_NANKAI_TANAGAWA",
+        "lat": "34.31674",
+        "lng": "135.13721",
+        "name": "多奈川"
+      },
+      {
+        "id": "STN_NANKAI_HIGASHI_MATSUE",
+        "lat": "34.247775",
+        "lng": "135.141125",
+        "name": "東松江"
+      },
+      {
+        "id": "STN_NANKAI_NAKAMATSUE",
+        "lat": "34.24873",
+        "lng": "135.13295",
+        "name": "中松江"
+      },
+      {
+        "id": "STN_NANKAI_HACHIMANMAE",
+        "lat": "34.252545",
+        "lng": "135.1218",
+        "name": "八幡前"
+      },
+      {
+        "id": "STN_NANKAI_NISHINOSHO",
+        "lat": "34.25546",
+        "lng": "135.110795",
+        "name": "西ノ庄"
+      },
+      {
+        "id": "STN_NANKAI_NIRIGAHAMA",
+        "lat": "34.257525",
+        "lng": "135.10416",
+        "name": "二里ヶ浜"
+      },
+      {
+        "id": "STN_NANKAI_ISONOURA",
+        "lat": "34.260495",
+        "lng": "135.09462",
+        "name": "磯ノ浦"
+      },
+      {
+        "id": "STN_NANKAI_KADA",
+        "lat": "34.275315",
+        "lng": "135.080765",
+        "name": "加太"
+      },
+      {
+        "id": "STN_NANKAI_WAKAYAMAKO",
+        "lat": "34.21728",
+        "lng": "135.14648",
+        "name": "和歌山港"
+      },
+      {
+        "id": "STN_NANKAI_RINKU_TOWN",
+        "lat": "34.410965",
+        "lng": "135.29945",
+        "name": "りんくうタウン"
+      },
+      {
+        "id": "STN_NANKAI_KANSAI_AIRPORT",
+        "lat": "34.435808",
+        "lng": "135.24324",
+        "name": "関西空港"
+      },
+      {
+        "id": "STN_NANKAI_TEZUKAYAMA",
+        "lat": "34.62195",
+        "lng": "135.49835",
+        "name": "帝塚山"
+      },
+      {
+        "id": "STN_NANKAI_SUMIYOSHIHIGASHI",
+        "lat": "34.613365",
+        "lng": "135.49758",
+        "name": "住吉東"
+      },
+      {
+        "id": "STN_NANKAI_SAWANOCHO",
+        "lat": "34.606325",
+        "lng": "135.496875",
+        "name": "沢ノ町"
+      },
+      {
+        "id": "STN_NANKAI_ABIKOMAE",
+        "lat": "34.60002",
+        "lng": "135.496905",
+        "name": "我孫子前"
+      },
+      {
+        "id": "STN_NANKAI_ASAKAYAMA",
+        "lat": "34.589648",
+        "lng": "135.491099",
+        "name": "浅香山"
+      },
+      {
+        "id": "STN_NANKAI_SAKAIHIGASHI",
+        "lat": "34.575855",
+        "lng": "135.48503",
+        "name": "堺東"
+      },
+      {
+        "id": "STN_NANKAI_MIKUNIGAOKA",
+        "lat": "34.565375",
+        "lng": "135.4925",
+        "name": "三国ヶ丘"
+      },
+      {
+        "id": "STN_NANKAI_MOZUHACHIMAN",
+        "lat": "34.560785",
+        "lng": "135.49833",
+        "name": "百舌鳥八幡"
+      },
+      {
+        "id": "STN_NANKAI_NAKAMOZU",
+        "lat": "34.556235",
+        "lng": "135.50428",
+        "name": "中百舌鳥"
+      },
+      {
+        "id": "STN_NANKAI_SHIRASAGI",
+        "lat": "34.550105",
+        "lng": "135.51334",
+        "name": "白鷺"
+      },
+      {
+        "id": "STN_NANKAI_HATSUSHIBA",
+        "lat": "34.542225",
+        "lng": "135.526495",
+        "name": "初芝"
+      },
+      {
+        "id": "STN_NANKAI_HAGIWARATENJIN",
+        "lat": "34.537075",
+        "lng": "135.53503",
+        "name": "萩原天神"
+      },
+      {
+        "id": "STN_NANKAI_KITANODA",
+        "lat": "34.52293",
+        "lng": "135.543205",
+        "name": "北野田"
+      },
+      {
+        "id": "STN_NANKAI_SAYAMA",
+        "lat": "34.51665",
+        "lng": "135.54818",
+        "name": "狭山"
+      },
+      {
+        "id": "STN_NANKAI_OSAKASAYAMASHI",
+        "lat": "34.504745",
+        "lng": "135.55727",
+        "name": "大阪狭山市"
+      },
+      {
+        "id": "STN_NANKAI_KONGO",
+        "lat": "34.495245",
+        "lng": "135.559425",
+        "name": "金剛"
+      },
+      {
+        "id": "STN_NANKAI_TAKIDANI",
+        "lat": "34.479575",
+        "lng": "135.562115",
+        "name": "滝谷"
+      },
+      {
+        "id": "STN_NANKAI_CHIYODA",
+        "lat": "34.469",
+        "lng": "135.566325",
+        "name": "千代田"
+      },
+      {
+        "id": "STN_NANKAI_KAWACHINAGANO",
+        "lat": "34.451105",
+        "lng": "135.573155",
+        "name": "河内長野"
+      },
+      {
+        "id": "STN_NANKAI_MIKKAICHICHO",
+        "lat": "34.436655",
+        "lng": "135.57134",
+        "name": "三日市町"
+      },
+      {
+        "id": "STN_NANKAI_MIKANODAI",
+        "lat": "34.424775",
+        "lng": "135.577015",
+        "name": "美加の台"
+      },
+      {
+        "id": "STN_NANKAI_CHIHAYAGUCHI",
+        "lat": "34.411705",
+        "lng": "135.590125",
+        "name": "千早口"
+      },
+      {
+        "id": "STN_NANKAI_AMAMI",
+        "lat": "34.397625",
+        "lng": "135.595555",
+        "name": "天見"
+      },
+      {
+        "id": "STN_NANKAI_KIMITOGE",
+        "lat": "34.365826",
+        "lng": "135.600239",
+        "name": "紀見峠"
+      },
+      {
+        "id": "STN_NANKAI_RINKANDEN'ENTOSHI",
+        "lat": "34.355397",
+        "lng": "135.6033",
+        "name": "林間田園都市"
+      },
+      {
+        "id": "STN_NANKAI_MIYUKITSUJI",
+        "lat": "34.33782",
+        "lng": "135.602045",
+        "name": "御幸辻"
+      },
+      {
+        "id": "STN_NANKAI_HASHIMOTO",
+        "lat": "34.318365",
+        "lng": "135.614765",
+        "name": "橋本"
+      },
+      {
+        "id": "STN_NANKAI_KII_SHIMIZU",
+        "lat": "34.30745",
+        "lng": "135.604735",
+        "name": "紀伊清水"
+      },
+      {
+        "id": "STN_NANKAI_KAMURO",
+        "lat": "34.296505",
+        "lng": "135.579895",
+        "name": "学文路"
+      },
+      {
+        "id": "STN_NANKAI_KUDOYAMA",
+        "lat": "34.28779",
+        "lng": "135.5645",
+        "name": "九度山"
+      },
+      {
+        "id": "STN_NANKAI_KOYASHITA",
+        "lat": "34.27181",
+        "lng": "135.566365",
+        "name": "高野下"
+      },
+      {
+        "id": "STN_NANKAI_SHIMO_KOSAWA",
+        "lat": "34.26648",
+        "lng": "135.55325",
+        "name": "下古沢"
+      },
+      {
+        "id": "STN_NANKAI_KAMI_KOSAWA",
+        "lat": "34.25733",
+        "lng": "135.54801",
+        "name": "上古沢"
+      },
+      {
+        "id": "STN_NANKAI_KII_HOSOKAWA",
+        "lat": "34.23574",
+        "lng": "135.553685",
+        "name": "紀伊細川"
+      },
+      {
+        "id": "STN_NANKAI_KII_KAMIYA",
+        "lat": "34.242782",
+        "lng": "135.571125",
+        "name": "紀伊神谷"
+      },
+      {
+        "id": "STN_NANKAI_GOKURAKUBASHI",
+        "lat": "34.234385",
+        "lng": "135.58206",
+        "name": "極楽橋"
+      },
+      {
+        "id": "STN_NANKAI_SHIOMIBASHI",
+        "lat": "34.66765008",
+        "lng": "135.4863091",
+        "name": "汐見橋"
+      },
+      {
+        "id": "STN_NANKAI_ASHIHARA_CHO",
+        "lat": "34.66050895",
+        "lng": "135.48642954",
+        "name": "芦原町"
+      },
+      {
+        "id": "STN_NANKAI_KIZUGAWA",
+        "lat": "34.65465",
+        "lng": "135.48309",
+        "name": "木津川"
+      },
+      {
+        "id": "STN_NANKAI_TSUMORI",
+        "lat": "34.647085",
+        "lng": "135.483235",
+        "name": "津守"
+      },
+      {
+        "id": "STN_NANKAI_NISHI_TENGACHAYA",
+        "lat": "34.638585",
+        "lng": "135.4892",
+        "name": "西天下茶屋"
+      },
+      {
+        "id": "STN_NANKAI_FUKAI",
+        "lat": "34.53035",
+        "lng": "135.49755",
+        "name": "深井"
+      },
+      {
+        "id": "STN_NANKAI_IZUMIGAOKA",
+        "lat": "34.496976",
+        "lng": "135.511425",
+        "name": "泉ケ丘"
+      },
+      {
+        "id": "STN_NANKAI_TOGA_MIKITA",
+        "lat": "34.48505",
+        "lng": "135.490225",
+        "name": "栂・美木多"
+      },
+      {
+        "id": "STN_NANKAI_KOMYOIKE",
+        "lat": "34.474647",
+        "lng": "135.475366",
+        "name": "光明池"
+      },
+      {
+        "id": "STN_NANKAI_IZUMI_CHUO",
+        "lat": "34.461412",
+        "lng": "135.456437",
+        "name": "和泉中央"
+      }
+    ]
+  }
+]
