@@ -1,0 +1,212 @@
+[
+  {
+    "categories": "",
+    "company_id": "KONAN",
+    "company_name": "弘南鉄道",
+    "lines": [
+      {
+        "id": "KONAN_LINE",
+        "name": "弘南線",
+        "sequence": [
+          "STN_KONAN_HIROSAKI",
+          "STN_KONAN_HIROSAKI_HIGASHIKO_MAE",
+          "STN_KONAN_UNDO_KOEN_MAE",
+          "STN_KONAN_NISSATO",
+          "STN_KONAN_TACHITA",
+          "STN_KONAN_HIRAKA",
+          "STN_KONAN_HAKUNOKOKO_MAE",
+          "STN_KONAN_TSUGARU_ONOUE",
+          "STN_KONAN_ONOUEKOKO_MAE",
+          "STN_KONAN_TAMBO_ART",
+          "STN_KONAN_INAKADATE",
+          "STN_KONAN_SAKAIMATSU",
+          "STN_KONAN_KUROISHI"
+        ]
+      },
+      {
+        "id": "KONAN_OWANI",
+        "name": "大鰐線",
+        "sequence": [
+          "STN_KONAN_OWANI",
+          "STN_KONAN_SHUKUGAWARA",
+          "STN_KONAN_SABAISHI",
+          "STN_KONAN_ISHIKAWA_POOL_MAE",
+          "STN_KONAN_ISHIKAWA",
+          "STN_KONAN_GIJUKU_KOKO_MAE",
+          "STN_KONAN_TSUGARU_OSAWA",
+          "STN_KONAN_MATSUKIDAI",
+          "STN_KONAN_KOGURIYAMA",
+          "STN_KONAN_CHITOSE",
+          "STN_KONAN_SEIAI_CHUKO_MAE",
+          "STN_KONAN_HIROSAKIGAKUINDAI_MAE",
+          "STN_KONAN_HIROKASHITA",
+          "STN_KONAN_CHUO_HIROSAKI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KONAN_HIROSAKI",
+        "lat": "40.598555",
+        "lng": "140.48584",
+        "name": "弘前"
+      },
+      {
+        "id": "STN_KONAN_HIROSAKI_HIGASHIKO_MAE",
+        "lat": "40.592005",
+        "lng": "140.489095",
+        "name": "弘前東高前"
+      },
+      {
+        "id": "STN_KONAN_UNDO_KOEN_MAE",
+        "lat": "40.5894",
+        "lng": "140.50302",
+        "name": "運動公園前"
+      },
+      {
+        "id": "STN_KONAN_NISSATO",
+        "lat": "40.58739",
+        "lng": "140.52005",
+        "name": "新里"
+      },
+      {
+        "id": "STN_KONAN_TACHITA",
+        "lat": "40.58514",
+        "lng": "140.5387",
+        "name": "館田"
+      },
+      {
+        "id": "STN_KONAN_HIRAKA",
+        "lat": "40.58497",
+        "lng": "140.561085",
+        "name": "平賀"
+      },
+      {
+        "id": "STN_KONAN_HAKUNOKOKO_MAE",
+        "lat": "40.601865",
+        "lng": "140.56445",
+        "name": "柏農高校前"
+      },
+      {
+        "id": "STN_KONAN_TSUGARU_ONOUE",
+        "lat": "40.613905",
+        "lng": "140.576105",
+        "name": "津軽尾上"
+      },
+      {
+        "id": "STN_KONAN_ONOUEKOKO_MAE",
+        "lat": "40.626671",
+        "lng": "140.577036",
+        "name": "尾上高校前"
+      },
+      {
+        "id": "STN_KONAN_TAMBO_ART",
+        "lat": "40.6326515",
+        "lng": "140.57378146",
+        "name": "田んぼアート"
+      },
+      {
+        "id": "STN_KONAN_INAKADATE",
+        "lat": "40.63687",
+        "lng": "140.571265",
+        "name": "田舎館"
+      },
+      {
+        "id": "STN_KONAN_SAKAIMATSU",
+        "lat": "40.64886",
+        "lng": "140.575765",
+        "name": "境松"
+      },
+      {
+        "id": "STN_KONAN_KUROISHI",
+        "lat": "40.648345",
+        "lng": "140.591025",
+        "name": "黒石"
+      },
+      {
+        "id": "STN_KONAN_OWANI",
+        "lat": "40.521815",
+        "lng": "140.56693",
+        "name": "大鰐"
+      },
+      {
+        "id": "STN_KONAN_SHUKUGAWARA",
+        "lat": "40.52529",
+        "lng": "140.5576",
+        "name": "宿川原"
+      },
+      {
+        "id": "STN_KONAN_SABAISHI",
+        "lat": "40.535575",
+        "lng": "140.552745",
+        "name": "鯖石"
+      },
+      {
+        "id": "STN_KONAN_ISHIKAWA_POOL_MAE",
+        "lat": "40.54317",
+        "lng": "140.550465",
+        "name": "石川プール前"
+      },
+      {
+        "id": "STN_KONAN_ISHIKAWA",
+        "lat": "40.550894",
+        "lng": "140.54147",
+        "name": "石川"
+      },
+      {
+        "id": "STN_KONAN_GIJUKU_KOKO_MAE",
+        "lat": "40.555805",
+        "lng": "140.527525",
+        "name": "義塾高校前"
+      },
+      {
+        "id": "STN_KONAN_TSUGARU_OSAWA",
+        "lat": "40.557835",
+        "lng": "140.516525",
+        "name": "津軽大沢"
+      },
+      {
+        "id": "STN_KONAN_MATSUKIDAI",
+        "lat": "40.560675",
+        "lng": "140.497145",
+        "name": "松木平"
+      },
+      {
+        "id": "STN_KONAN_KOGURIYAMA",
+        "lat": "40.564295",
+        "lng": "140.48667",
+        "name": "小栗山"
+      },
+      {
+        "id": "STN_KONAN_CHITOSE",
+        "lat": "40.56729",
+        "lng": "140.480305",
+        "name": "千年"
+      },
+      {
+        "id": "STN_KONAN_SEIAI_CHUKO_MAE",
+        "lat": "40.57716",
+        "lng": "140.472705",
+        "name": "聖愛中高前"
+      },
+      {
+        "id": "STN_KONAN_HIROSAKIGAKUINDAI_MAE",
+        "lat": "40.58337",
+        "lng": "140.47066",
+        "name": "弘前学院大前"
+      },
+      {
+        "id": "STN_KONAN_HIROKASHITA",
+        "lat": "40.592975",
+        "lng": "140.46825",
+        "name": "弘高下"
+      },
+      {
+        "id": "STN_KONAN_CHUO_HIROSAKI",
+        "lat": "40.59921568",
+        "lng": "140.47224665",
+        "name": "中央弘前"
+      }
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "categories": "",
+    "company_id": "KITAKYUSHU",
+    "company_name": "北九州高速鉄道",
+    "lines": [
+      {
+        "id": "KITAKYUSHU_KOKURA",
+        "name": "小倉線",
+        "sequence": [
+          "STN_KITAKYUSHU_KOKURA",
+          "STN_KITAKYUSHU_HEIWADORI",
+          "STN_KITAKYUSHU_TANGA",
+          "STN_KITAKYUSHU_KAWARAGUCHI_MIHAGINO",
+          "STN_KITAKYUSHU_KATANO",
+          "STN_KITAKYUSHU_JONO",
+          "STN_KITAKYUSHU_KITAGATA",
+          "STN_KITAKYUSHU_KEIBAJO_MAE",
+          "STN_KITAKYUSHU_MORITSUNE",
+          "STN_KITAKYUSHU_TOKURIKI_KODAN_MAE",
+          "STN_KITAKYUSHU_TOKURIKI_ARASHIYAMAGUCHI",
+          "STN_KITAKYUSHU_SHII",
+          "STN_KITAKYUSHU_KIKUGAOKA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KITAKYUSHU_KOKURA",
+        "lat": "33.88654",
+        "lng": "130.882065",
+        "name": "小倉"
+      },
+      {
+        "id": "STN_KITAKYUSHU_HEIWADORI",
+        "lat": "33.88294",
+        "lng": "130.88119",
+        "name": "平和通"
+      },
+      {
+        "id": "STN_KITAKYUSHU_TANGA",
+        "lat": "33.88062",
+        "lng": "130.88019",
+        "name": "旦過"
+      },
+      {
+        "id": "STN_KITAKYUSHU_KAWARAGUCHI_MIHAGINO",
+        "lat": "33.873185",
+        "lng": "130.88059",
+        "name": "香春口三萩野"
+      },
+      {
+        "id": "STN_KITAKYUSHU_KATANO",
+        "lat": "33.865475",
+        "lng": "130.88009",
+        "name": "片野"
+      },
+      {
+        "id": "STN_KITAKYUSHU_JONO",
+        "lat": "33.85845",
+        "lng": "130.879625",
+        "name": "城野"
+      },
+      {
+        "id": "STN_KITAKYUSHU_KITAGATA",
+        "lat": "33.849085",
+        "lng": "130.87807",
+        "name": "北方"
+      },
+      {
+        "id": "STN_KITAKYUSHU_KEIBAJO_MAE",
+        "lat": "33.84287",
+        "lng": "130.87661",
+        "name": "競馬場前"
+      },
+      {
+        "id": "STN_KITAKYUSHU_MORITSUNE",
+        "lat": "33.836577",
+        "lng": "130.872994",
+        "name": "守恒"
+      },
+      {
+        "id": "STN_KITAKYUSHU_TOKURIKI_KODAN_MAE",
+        "lat": "33.830385",
+        "lng": "130.86759",
+        "name": "徳力公団前"
+      },
+      {
+        "id": "STN_KITAKYUSHU_TOKURIKI_ARASHIYAMAGUCHI",
+        "lat": "33.8247",
+        "lng": "130.863765",
+        "name": "徳力嵐山口"
+      },
+      {
+        "id": "STN_KITAKYUSHU_SHII",
+        "lat": "33.822515",
+        "lng": "130.871405",
+        "name": "志井"
+      },
+      {
+        "id": "STN_KITAKYUSHU_KIKUGAOKA",
+        "lat": "33.819705",
+        "lng": "130.877605",
+        "name": "企救丘"
+      }
+    ]
+  }
+]

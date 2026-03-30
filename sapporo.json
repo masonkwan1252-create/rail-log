@@ -1,0 +1,185 @@
+[
+  {
+    "categories": "",
+    "company_id": "SAPPORO",
+    "company_name": "札幌市電",
+    "lines": [
+      {
+        "id": "SAPPORO_STREETCAR",
+        "name": "札幌市電",
+        "sequence": [
+          "STN_SAPPORO_NISHI_YON_CHOME",
+          "STN_SAPPORO_NISHI_HACHI_CHOME",
+          "STN_SAPPORO_CHUO_KUYAKUSHO_MAE",
+          "STN_SAPPORO_NISHI_JUGO_CHOME",
+          "STN_SAPPORO_NISHISEN_ROKU_JO",
+          "STN_SAPPORO_NISHISEN_KU_JO_ASAHIYAMA_KOEN_DORI",
+          "STN_SAPPORO_NISHISEN_JUICHI_JO",
+          "STN_SAPPORO_NISHISEN_JYU_YON_JO",
+          "STN_SAPPORO_NISHISEN_JYU_ROKU_JO",
+          "STN_SAPPORO_ROPEWAY_IRIGUCHI",
+          "STN_SAPPORO_DENSHA_JIGYOSHO_MAE",
+          "STN_SAPPORO_CHUO_TOSHOKAN_MAE",
+          "STN_SAPPORO_ISHIYAMA_DORI",
+          "STN_SAPPORO_HIGASHI_TONDEN_DORI",
+          "STN_SAPPORO_KONAN_SHOGAKKO_MAE",
+          "STN_SAPPORO_YAMAHANA_JYU_KU_JO",
+          "STN_SAPPORO_SEISHU_GAKUEN_MAE",
+          "STN_SAPPORO_GYOKEI_DORI",
+          "STN_SAPPORO_NAKAJIMA_KOEN_DORI",
+          "STN_SAPPORO_YAMAHANA_KU_JO",
+          "STN_SAPPORO_HIGASHI_HONGANJI_MAE",
+          "STN_SAPPORO_SHISEIKAN_SHOGAKKO_MAE",
+          "STN_SAPPORO_SUSUKINO",
+          "STN_SAPPORO_TANUKIKOJI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SAPPORO_NISHI_YON_CHOME",
+        "lat": "43.058895",
+        "lng": "141.351845",
+        "name": "西4丁目"
+      },
+      {
+        "id": "STN_SAPPORO_NISHI_HACHI_CHOME",
+        "lat": "43.05818",
+        "lng": "141.34672",
+        "name": "西8丁目"
+      },
+      {
+        "id": "STN_SAPPORO_CHUO_KUYAKUSHO_MAE",
+        "lat": "43.057515",
+        "lng": "141.341975",
+        "name": "中央区役所前"
+      },
+      {
+        "id": "STN_SAPPORO_NISHI_JUGO_CHOME",
+        "lat": "43.05624",
+        "lng": "141.335225",
+        "name": "西15丁目"
+      },
+      {
+        "id": "STN_SAPPORO_NISHISEN_ROKU_JO",
+        "lat": "43.05157",
+        "lng": "141.335035",
+        "name": "西線6条"
+      },
+      {
+        "id": "STN_SAPPORO_NISHISEN_KU_JO_ASAHIYAMA_KOEN_DORI",
+        "lat": "43.048265",
+        "lng": "141.33546",
+        "name": "西線9条旭山公園通"
+      },
+      {
+        "id": "STN_SAPPORO_NISHISEN_JUICHI_JO",
+        "lat": "43.044955",
+        "lng": "141.33587",
+        "name": "西線11条"
+      },
+      {
+        "id": "STN_SAPPORO_NISHISEN_JYU_YON_JO",
+        "lat": "43.04064",
+        "lng": "141.336435",
+        "name": "西線14条"
+      },
+      {
+        "id": "STN_SAPPORO_NISHISEN_JYU_ROKU_JO",
+        "lat": "43.03731",
+        "lng": "141.336845",
+        "name": "西線16条"
+      },
+      {
+        "id": "STN_SAPPORO_ROPEWAY_IRIGUCHI",
+        "lat": "43.033965",
+        "lng": "141.33728",
+        "name": "ロープウェイ入口"
+      },
+      {
+        "id": "STN_SAPPORO_DENSHA_JIGYOSHO_MAE",
+        "lat": "43.03066",
+        "lng": "141.3377",
+        "name": "電車事業所前"
+      },
+      {
+        "id": "STN_SAPPORO_CHUO_TOSHOKAN_MAE",
+        "lat": "43.03042",
+        "lng": "141.34008",
+        "name": "中央図書館前"
+      },
+      {
+        "id": "STN_SAPPORO_ISHIYAMA_DORI",
+        "lat": "43.03071",
+        "lng": "141.34422",
+        "name": "石山通"
+      },
+      {
+        "id": "STN_SAPPORO_HIGASHI_TONDEN_DORI",
+        "lat": "43.031045",
+        "lng": "141.348835",
+        "name": "東屯田通"
+      },
+      {
+        "id": "STN_SAPPORO_KONAN_SHOGAKKO_MAE",
+        "lat": "43.032295",
+        "lng": "141.35191",
+        "name": "幌南小学校前"
+      },
+      {
+        "id": "STN_SAPPORO_YAMAHANA_JYU_KU_JO",
+        "lat": "43.03506",
+        "lng": "141.351565",
+        "name": "山鼻19条"
+      },
+      {
+        "id": "STN_SAPPORO_SEISHU_GAKUEN_MAE",
+        "lat": "43.03831",
+        "lng": "141.351115",
+        "name": "静修学園前"
+      },
+      {
+        "id": "STN_SAPPORO_GYOKEI_DORI",
+        "lat": "43.04167",
+        "lng": "141.35067",
+        "name": "行啓通"
+      },
+      {
+        "id": "STN_SAPPORO_NAKAJIMA_KOEN_DORI",
+        "lat": "43.045905",
+        "lng": "141.350145",
+        "name": "中島公園通"
+      },
+      {
+        "id": "STN_SAPPORO_YAMAHANA_KU_JO",
+        "lat": "43.049015",
+        "lng": "141.349765",
+        "name": "山鼻9条"
+      },
+      {
+        "id": "STN_SAPPORO_HIGASHI_HONGANJI_MAE",
+        "lat": "43.05171",
+        "lng": "141.349355",
+        "name": "東本願寺前"
+      },
+      {
+        "id": "STN_SAPPORO_SHISEIKAN_SHOGAKKO_MAE",
+        "lat": "43.055115",
+        "lng": "141.34926",
+        "name": "資生館小学校前"
+      },
+      {
+        "id": "STN_SAPPORO_SUSUKINO",
+        "lat": "43.05556",
+        "lng": "141.35273",
+        "name": "すすきの"
+      },
+      {
+        "id": "STN_SAPPORO_TANUKIKOJI",
+        "lat": "43.05704411",
+        "lng": "141.35284982",
+        "name": "狸小路"
+      }
+    ]
+  }
+]

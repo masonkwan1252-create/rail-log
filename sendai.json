@@ -1,0 +1,227 @@
+[
+  {
+    "categories": "",
+    "company_id": "SENDAI",
+    "company_name": "仙台市地下鉄",
+    "lines": [
+      {
+        "id": "SENDAI_NANBOKU",
+        "name": "南北線",
+        "sequence": [
+          "STN_SENDAI_IZUMI_CHUO",
+          "STN_SENDAI_YAOTOME",
+          "STN_SENDAI_KUROMATSU",
+          "STN_SENDAI_ASAHIGAOKA",
+          "STN_SENDAI_DAINOHARA",
+          "STN_SENDAI_KITA_SENDAI",
+          "STN_SENDAI_KITA_YOBANCHO",
+          "STN_SENDAI_KOTODAI_KOEN",
+          "STN_SENDAI_HIROSE_DORI",
+          "STN_SENDAI_SENDAI",
+          "STN_SENDAI_ITSUTSUBASHI",
+          "STN_SENDAI_ATAGOBASHI",
+          "STN_SENDAI_KAWARAMACHI",
+          "STN_SENDAI_NAGAMACHI_ITCHOME",
+          "STN_SENDAI_NAGAMACHI",
+          "STN_SENDAI_NAGAMACHI_MINAMI",
+          "STN_SENDAI_TOMIZAWA"
+        ]
+      },
+      {
+        "id": "SENDAI_TOZAI",
+        "name": "東西線",
+        "sequence": [
+          "STN_SENDAI_YAGIYAMA_ZOO",
+          "STN_SENDAI_AOBAYAMA",
+          "STN_SENDAI_KAWAUCHI",
+          "STN_SENDAI_KOKUSAI_CENTER",
+          "STN_SENDAI_OMACHI_NISHI_KOEN",
+          "STN_SENDAI_AOBA_DORI_ICHIBANCHO",
+          "STN_SENDAI_SENDAI",
+          "STN_SENDAI_MIYAGINODORI",
+          "STN_SENDAI_RENBO",
+          "STN_SENDAI_YAKUSHIDO",
+          "STN_SENDAI_OROSHIMACHI",
+          "STN_SENDAI_ROKUCHONOME",
+          "STN_SENDAI_ARAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SENDAI_IZUMI_CHUO",
+        "lat": "38.322965",
+        "lng": "140.880665",
+        "name": "泉中央"
+      },
+      {
+        "id": "STN_SENDAI_YAOTOME",
+        "lat": "38.312941",
+        "lng": "140.884111",
+        "name": "八乙女"
+      },
+      {
+        "id": "STN_SENDAI_KUROMATSU",
+        "lat": "38.303151",
+        "lng": "140.886271",
+        "name": "黒松"
+      },
+      {
+        "id": "STN_SENDAI_ASAHIGAOKA",
+        "lat": "38.29592",
+        "lng": "140.883705",
+        "name": "旭ヶ丘"
+      },
+      {
+        "id": "STN_SENDAI_DAINOHARA",
+        "lat": "38.288274",
+        "lng": "140.878261",
+        "name": "台原"
+      },
+      {
+        "id": "STN_SENDAI_KITA_SENDAI",
+        "lat": "38.28244",
+        "lng": "140.86883",
+        "name": "北仙台"
+      },
+      {
+        "id": "STN_SENDAI_KITA_YOBANCHO",
+        "lat": "38.2721",
+        "lng": "140.86911",
+        "name": "北四番丁"
+      },
+      {
+        "id": "STN_SENDAI_KOTODAI_KOEN",
+        "lat": "38.26673",
+        "lng": "140.8712",
+        "name": "勾当台公園"
+      },
+      {
+        "id": "STN_SENDAI_HIROSE_DORI",
+        "lat": "38.262847",
+        "lng": "140.875635",
+        "name": "広瀬通"
+      },
+      {
+        "id": "STN_SENDAI_SENDAI",
+        "lat": "38.259705",
+        "lng": "140.879925",
+        "name": "仙台"
+      },
+      {
+        "id": "STN_SENDAI_ITSUTSUBASHI",
+        "lat": "38.2518",
+        "lng": "140.881102",
+        "name": "五橋"
+      },
+      {
+        "id": "STN_SENDAI_ATAGOBASHI",
+        "lat": "38.247376",
+        "lng": "140.881583",
+        "name": "愛宕橋"
+      },
+      {
+        "id": "STN_SENDAI_KAWARAMACHI",
+        "lat": "38.240631",
+        "lng": "140.887798",
+        "name": "河原町"
+      },
+      {
+        "id": "STN_SENDAI_NAGAMACHI_ITCHOME",
+        "lat": "38.234289",
+        "lng": "140.887516",
+        "name": "長町一丁目"
+      },
+      {
+        "id": "STN_SENDAI_NAGAMACHI",
+        "lat": "38.228475",
+        "lng": "140.884777",
+        "name": "長町"
+      },
+      {
+        "id": "STN_SENDAI_NAGAMACHI_MINAMI",
+        "lat": "38.224715",
+        "lng": "140.87699",
+        "name": "長町南"
+      },
+      {
+        "id": "STN_SENDAI_TOMIZAWA",
+        "lat": "38.214145",
+        "lng": "140.8706",
+        "name": "富沢"
+      },
+      {
+        "id": "STN_SENDAI_YAGIYAMA_ZOO",
+        "lat": "38.24332893",
+        "lng": "140.84401781",
+        "name": "八木山動物公園"
+      },
+      {
+        "id": "STN_SENDAI_AOBAYAMA",
+        "lat": "38.25515426",
+        "lng": "140.83533694",
+        "name": "青葉山"
+      },
+      {
+        "id": "STN_SENDAI_KAWAUCHI",
+        "lat": "38.26082867",
+        "lng": "140.85036758",
+        "name": "川内"
+      },
+      {
+        "id": "STN_SENDAI_KOKUSAI_CENTER",
+        "lat": "38.2601999",
+        "lng": "140.85683436",
+        "name": "国際センター"
+      },
+      {
+        "id": "STN_SENDAI_OMACHI_NISHI_KOEN",
+        "lat": "38.25892967",
+        "lng": "140.86458585",
+        "name": "大町西公園"
+      },
+      {
+        "id": "STN_SENDAI_AOBA_DORI_ICHIBANCHO",
+        "lat": "38.25967182",
+        "lng": "140.87206152",
+        "name": "青葉通一番町"
+      },
+      {
+        "id": "STN_SENDAI_MIYAGINODORI",
+        "lat": "38.25804796",
+        "lng": "140.88582016",
+        "name": "宮城野通"
+      },
+      {
+        "id": "STN_SENDAI_RENBO",
+        "lat": "38.251138",
+        "lng": "140.89323552",
+        "name": "連坊"
+      },
+      {
+        "id": "STN_SENDAI_YAKUSHIDO",
+        "lat": "38.2495747",
+        "lng": "140.90606176",
+        "name": "薬師堂"
+      },
+      {
+        "id": "STN_SENDAI_OROSHIMACHI",
+        "lat": "38.25155203",
+        "lng": "140.92090817",
+        "name": "卸町"
+      },
+      {
+        "id": "STN_SENDAI_ROKUCHONOME",
+        "lat": "38.25092861",
+        "lng": "140.93568415",
+        "name": "六丁の目"
+      },
+      {
+        "id": "STN_SENDAI_ARAI",
+        "lat": "38.2448943",
+        "lng": "140.94840617",
+        "name": "荒井"
+      }
+    ]
+  }
+]

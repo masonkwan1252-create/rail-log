@@ -1,0 +1,59 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "SHIGARAKI",
+    "company_name": "信楽高原鐵道",
+    "lines": [
+      {
+        "id": "OHMI_MAIN",
+        "name": "信楽線",
+        "sequence": [
+          "STN_OHMI_KIBUKAWA",
+          "STN_OHMI_SHIGARAKIGU_MSKI",
+          "STN_OHMI_KUMOI",
+          "STN_OHMI_CHOKUSHI",
+          "STN_OHMI_GYOKUKEIJI_MAE",
+          "STN_OHMI_SHIGARAKI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SHIGARAKI_KIBUKAWA",
+        "lat": "34.951955",
+        "lng": "136.154165",
+        "name": "貴生川"
+      },
+      {
+        "id": "STN_SHIGARAKI_SHIGARAKIGU_MSKI",
+        "lat": "34.916041",
+        "lng": "136.087944",
+        "name": "紫香楽宮跡"
+      },
+      {
+        "id": "STN_SHIGARAKI_KUMOI",
+        "lat": "34.91124",
+        "lng": "136.08435",
+        "name": "雲井"
+      },
+      {
+        "id": "STN_SHIGARAKI_CHOKUSHI",
+        "lat": "34.893665",
+        "lng": "136.07313",
+        "name": "勅旨"
+      },
+      {
+        "id": "STN_SHIGARAKI_GYOKUKEIJI_MAE",
+        "lat": "34.8855329",
+        "lng": "136.0694061",
+        "name": "玉桂寺前"
+      },
+      {
+        "id": "STN_SHIGARAKI_SHIGARAKI",
+        "lat": "34.87721",
+        "lng": "136.061375",
+        "name": "信楽"
+      }
+    ]
+  }
+]

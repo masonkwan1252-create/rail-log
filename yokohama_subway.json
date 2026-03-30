@@ -1,0 +1,327 @@
+[
+  {
+    "categories": "",
+    "company_id": "YOKOHAMA_SUBWAY",
+    "company_name": "横浜市営地下鉄",
+    "lines": [
+      {
+        "id": "YOKOHAMA_SUBWAY_BLUE",
+        "name": "ブルーライン",
+        "sequence": [
+          "STN_YOKOHAMA_SUBWAY_SHONANDAI",
+          "STN_YOKOHAMA_SUBWAY_SHIMO_IIDA",
+          "STN_YOKOHAMA_SUBWAY_TATEBA",
+          "STN_YOKOHAMA_SUBWAY_NAKADA",
+          "STN_YOKOHAMA_SUBWAY_ODORIBA",
+          "STN_YOKOHAMA_SUBWAY_TOTSUKA",
+          "STN_YOKOHAMA_SUBWAY_MAIOKA",
+          "STN_YOKOHAMA_SUBWAY_SHIMO_NAGAYA",
+          "STN_YOKOHAMA_SUBWAY_KAMI_NAGAYA",
+          "STN_YOKOHAMA_SUBWAY_KONAN_CHUO",
+          "STN_YOKOHAMA_SUBWAY_KAMI_OOKA",
+          "STN_YOKOHAMA_SUBWAY_GUMYOJI",
+          "STN_YOKOHAMA_SUBWAY_MAITA",
+          "STN_YOKOHAMA_SUBWAY_YOSHINOCHO",
+          "STN_YOKOHAMA_SUBWAY_BANDOBASHI",
+          "STN_YOKOHAMA_SUBWAY_ISEZAKI_CHOJAMACHI",
+          "STN_YOKOHAMA_SUBWAY_KANNAI",
+          "STN_YOKOHAMA_SUBWAY_SAKURAGICHO",
+          "STN_YOKOHAMA_SUBWAY_TAKASHIMACHO",
+          "STN_YOKOHAMA_SUBWAY_YOKOHAMA",
+          "STN_YOKOHAMA_SUBWAY_MITSUZAWA_SHIMOMACHI",
+          "STN_YOKOHAMA_SUBWAY_MITSUZAWA_KAMIMACHI",
+          "STN_YOKOHAMA_SUBWAY_KATAKURACHO",
+          "STN_YOKOHAMA_SUBWAY_KISHINE_KOEN",
+          "STN_YOKOHAMA_SUBWAY_SHIN_YOKOHAMA",
+          "STN_YOKOHAMA_SUBWAY_KITA_SHIN_YOKOHAMA",
+          "STN_YOKOHAMA_SUBWAY_NIPPA",
+          "STN_YOKOHAMA_SUBWAY_NAKAMACHIDAI",
+          "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
+          "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
+          "STN_YOKOHAMA_SUBWAY_NAKAGAWA",
+          "STN_YOKOHAMA_SUBWAY_AZAMINO"
+        ]
+      },
+      {
+        "id": "YOKOHAMA_SUBWAY_GREEN",
+        "name": "グリーンライン",
+        "sequence": [
+          "STN_YOKOHAMA_SUBWAY_NAKAYAMA",
+          "STN_YOKOHAMA_SUBWAY_AO_TAKE_IRO",
+          "STN_YOKOHAMA_SUBWAY_KAWAWACHO",
+          "STN_YOKOHAMA_SUBWAY_TSUYUKUSA_IRO",
+          "STN_YOKOHAMA_SUBWAY_TSUZUKI_FUREAI_NO_OKA",
+          "STN_YOKOHAMA_SUBWAY_FUJI_IRO",
+          "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
+          "STN_YOKOHAMA_SUBWAY_SORA_IRO",
+          "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
+          "STN_YOKOHAMA_SUBWAY_BABY_PINK",
+          "STN_YOKOHAMA_SUBWAY_KITA_YAMATA",
+          "STN_YOKOHAMA_SUBWAY_TOMOROKOSHI_IRO",
+          "STN_YOKOHAMA_SUBWAY_HIGASHI_YAMATA",
+          "STN_YOKOHAMA_SUBWAY_KOROHZEN",
+          "STN_YOKOHAMA_SUBWAY_TAKATA",
+          "STN_YOKOHAMA_SUBWAY_KI_SUISEN",
+          "STN_YOKOHAMA_SUBWAY_HIYOSHI_HONCHO",
+          "STN_YOKOHAMA_SUBWAY_WAKABA_IRO",
+          "STN_YOKOHAMA_SUBWAY_HIYOSHI",
+          "STN_YOKOHAMA_SUBWAY_ROSE_RED"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_SHONANDAI",
+        "lat": "35.39661614",
+        "lng": "139.46778868",
+        "name": "湘南台"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_SHIMO_IIDA",
+        "lat": "35.403375",
+        "lng": "139.482885",
+        "name": "下飯田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_TATEBA",
+        "lat": "35.41438",
+        "lng": "139.5007",
+        "name": "立場"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_NAKADA",
+        "lat": "35.411155",
+        "lng": "139.51122",
+        "name": "中田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_ODORIBA",
+        "lat": "35.405666",
+        "lng": "139.518416",
+        "name": "踊場"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_TOTSUKA",
+        "lat": "35.401099",
+        "lng": "139.534884",
+        "name": "戸塚"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_MAIOKA",
+        "lat": "35.402535",
+        "lng": "139.551265",
+        "name": "舞岡"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_SHIMO_NAGAYA",
+        "lat": "35.40276",
+        "lng": "139.559045",
+        "name": "下永谷"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KAMI_NAGAYA",
+        "lat": "35.40137",
+        "lng": "139.57279",
+        "name": "上永谷"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KONAN_CHUO",
+        "lat": "35.40123",
+        "lng": "139.591215",
+        "name": "港南中央"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KAMI_OOKA",
+        "lat": "35.409205",
+        "lng": "139.59598",
+        "name": "上大岡"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_GUMYOJI",
+        "lat": "35.422975",
+        "lng": "139.601981",
+        "name": "弘明寺"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_MAITA",
+        "lat": "35.43031",
+        "lng": "139.61053",
+        "name": "蒔田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_YOSHINOCHO",
+        "lat": "35.435364",
+        "lng": "139.61847",
+        "name": "吉野町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_BANDOBASHI",
+        "lat": "35.437617",
+        "lng": "139.625141",
+        "name": "阪東橋"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_ISEZAKI_CHOJAMACHI",
+        "lat": "35.440992",
+        "lng": "139.632769",
+        "name": "伊勢佐木長者町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KANNAI",
+        "lat": "35.44577",
+        "lng": "139.63602",
+        "name": "関内"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_SAKURAGICHO",
+        "lat": "35.449634",
+        "lng": "139.630744",
+        "name": "桜木町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_TAKASHIMACHO",
+        "lat": "35.458695",
+        "lng": "139.62365",
+        "name": "高島町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_YOKOHAMA",
+        "lat": "35.465403",
+        "lng": "139.620157",
+        "name": "横浜"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_MITSUZAWA_SHIMOMACHI",
+        "lat": "35.476485",
+        "lng": "139.615215",
+        "name": "三ツ沢下町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_MITSUZAWA_KAMIMACHI",
+        "lat": "35.476417",
+        "lng": "139.605455",
+        "name": "三ツ沢上町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KATAKURACHO",
+        "lat": "35.49",
+        "lng": "139.60643",
+        "name": "片倉町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KISHINE_KOEN",
+        "lat": "35.49551",
+        "lng": "139.616545",
+        "name": "岸根公園"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_SHIN_YOKOHAMA",
+        "lat": "35.509055",
+        "lng": "139.617245",
+        "name": "新横浜"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KITA_SHIN_YOKOHAMA",
+        "lat": "35.519215",
+        "lng": "139.61285",
+        "name": "北新横浜"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_NIPPA",
+        "lat": "35.527325",
+        "lng": "139.61204",
+        "name": "新羽"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_NAKAMACHIDAI",
+        "lat": "35.535315",
+        "lng": "139.589515",
+        "name": "仲町台"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
+        "lat": "35.545334",
+        "lng": "139.574302",
+        "name": "センター南"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
+        "lat": "35.553205",
+        "lng": "139.578215",
+        "name": "センター北"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_NAKAGAWA",
+        "lat": "35.563085",
+        "lng": "139.56968",
+        "name": "中川"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_AZAMINO",
+        "lat": "35.56807358",
+        "lng": "139.55368065",
+        "name": "あざみ野"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_NAKAYAMA",
+        "lat": "35.51521087",
+        "lng": "139.54044895",
+        "name": "中山"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KAWAWACHO",
+        "lat": "35.528445",
+        "lng": "139.548975",
+        "name": "川和町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_TSUZUKI_FUREAI_NO_OKA",
+        "lat": "35.536556",
+        "lng": "139.561301",
+        "name": "都筑ふれあいの丘"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
+        "lat": "35.545334",
+        "lng": "139.574302",
+        "name": "センター南"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
+        "lat": "35.553205",
+        "lng": "139.578215",
+        "name": "センター北"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_KITA_YAMATA",
+        "lat": "35.561074",
+        "lng": "139.592867",
+        "name": "北山田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_HIGASHI_YAMATA",
+        "lat": "35.55421",
+        "lng": "139.60604",
+        "name": "東山田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_TAKATA",
+        "lat": "35.54955",
+        "lng": "139.62059",
+        "name": "高田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_HIYOSHI_HONCHO",
+        "lat": "35.549913",
+        "lng": "139.633334",
+        "name": "日吉本町"
+      },
+      {
+        "id": "STN_YOKOHAMA_SUBWAY_HIYOSHI",
+        "lat": "35.553325",
+        "lng": "139.64684",
+        "name": "日吉"
+      }
+    ]
+  }
+]

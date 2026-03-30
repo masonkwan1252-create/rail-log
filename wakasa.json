@@ -1,0 +1,85 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "WAKASA",
+    "company_name": "若桜鉄道",
+    "lines": [
+      {
+        "id": "CHIZU_LINE",
+        "name": "智頭線",
+        "sequence": [
+          "STN_CHIZU_KAMIGORI",
+          "STN_CHIZU_KOKENAWA",
+          "STN_CHIZU_KONOHARA_ENSHIN",
+          "STN_CHIZU_KUZAKI",
+          "STN_CHIZU_SAYO",
+          "STN_CHIZU_HIRAFUKU",
+          "STN_CHIZU_ISHII",
+          "STN_CHIZU_MIYAMOTO_MUSASHI",
+          "STN_CHIZU_OHARA",
+          "STN_CHIZU_NISHI_AWAKURA",
+          "STN_CHIZU_AWAKURA_ONSEN",
+          "STN_CHIZU_YAMASATO",
+          "STN_CHIZU_KOIYAMAGATA",
+          "STN_CHIZU_CHIZU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_WAKASA_KOGE",
+        "lat": "35.41281",
+        "lng": "134.250835",
+        "name": "郡家"
+      },
+      {
+        "id": "STN_WAKASA_YAZU_KOKOMAE",
+        "lat": "35.40533",
+        "lng": "134.246155",
+        "name": "八頭高校前"
+      },
+      {
+        "id": "STN_WAKASA_INABA_FUNAOKA",
+        "lat": "35.395195",
+        "lng": "134.24921",
+        "name": "因幡船岡"
+      },
+      {
+        "id": "STN_WAKASA_HAYABUSA",
+        "lat": "35.388775",
+        "lng": "134.27037",
+        "name": "隼"
+      },
+      {
+        "id": "STN_WAKASA_ABE",
+        "lat": "35.37451",
+        "lng": "134.291655",
+        "name": "安部"
+      },
+      {
+        "id": "STN_WAKASA_HATTO",
+        "lat": "35.363605",
+        "lng": "134.31656",
+        "name": "八東"
+      },
+      {
+        "id": "STN_WAKASA_TOKUMARU",
+        "lat": "35.364405",
+        "lng": "134.335645",
+        "name": "徳丸"
+      },
+      {
+        "id": "STN_WAKASA_TANPI",
+        "lat": "35.360739",
+        "lng": "134.356111",
+        "name": "丹比"
+      },
+      {
+        "id": "STN_WAKASA_WAKASA",
+        "lat": "35.345235",
+        "lng": "134.398365",
+        "name": "若桜"
+      }
+    ]
+  }
+]

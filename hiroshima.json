@@ -1,0 +1,754 @@
+[
+  {
+    "categories": "",
+    "company_id": "HIROSHIMA",
+    "company_name": "広島電鉄",
+    "lines": [
+      {
+        "id": "HIROSHIMA_1",
+        "name": "広島電鉄1号線",
+        "sequence": [
+          "STN_HIROSHIMA_HIROSHIMA_EKI",
+          "STN_HIROSHIMA_ENKOBASHICHO",
+          "STN_HIROSHIMA_MATOBACHO",
+          "STN_HIROSHIMA_INARIMACHI",
+          "STN_HIROSHIMA_KANAYAMACHO",
+          "STN_HIROSHIMA_EBISUCHO",
+          "STN_HIROSHIMA_HATCHOBORI",
+          "STN_HIROSHIMA_TATEMACHI",
+          "STN_HIROSHIMA_KAMIYACHO_HIGASHI",
+          "STN_HIROSHIMA_HONDORI",
+          "STN_HIROSHIMA_FUKUROMACHI",
+          "STN_HIROSHIMA_CHUDEN_MAE",
+          "STN_HIROSHIMA_SHIYAKUSHO_MAE",
+          "STN_HIROSHIMA_TAKANOBASHI",
+          "STN_HIROSHIMA_NISSEKI_BYOIN_MAE",
+          "STN_HIROSHIMA_HIRODEN_HONSHA_MAE",
+          "STN_HIROSHIMA_MIYUKIBASHI",
+          "STN_HIROSHIMA_MINAMIMACHI_6_CHOME",
+          "STN_HIROSHIMA_HIRODAI_FUZOKU_GAKKO_MAE",
+          "STN_HIROSHIMA_KEN_BYOIN_MAE",
+          "STN_HIROSHIMA_UJINA_2_CHOME",
+          "STN_HIROSHIMA_UJINA_3_CHOME",
+          "STN_HIROSHIMA_UJINA_4_CHOME",
+          "STN_HIROSHIMA_UJINA_5_CHOME",
+          "STN_HIROSHIMA_KAIGANDORI",
+          "STN_HIROSHIMA_MOTOUJINAGUCHI",
+          "STN_HIROSHIMA_HIROSHIMA_KO"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_2",
+        "name": "広島電鉄2号線",
+        "sequence": [
+          "STN_HIROSHIMA_HIROSHIMA_EKI",
+          "STN_HIROSHIMA_ENKOBASHICHO",
+          "STN_HIROSHIMA_MATOBACHO",
+          "STN_HIROSHIMA_INARIMACHI",
+          "STN_HIROSHIMA_KANAYAMACHO",
+          "STN_HIROSHIMA_EBISUCHO",
+          "STN_HIROSHIMA_HATCHOBORI",
+          "STN_HIROSHIMA_TATEMACHI",
+          "STN_HIROSHIMA_KAMIYACHO_HIGASHI",
+          "STN_HIROSHIMA_KAMIYACHO_NISHI",
+          "STN_HIROSHIMA_GENBAKU_DOME_MAE",
+          "STN_HIROSHIMA_HONKAWACHO",
+          "STN_HIROSHIMA_TOKAICHIMACHI",
+          "STN_HIROSHIMA_DOBASHI",
+          "STN_HIROSHIMA_KOAMICHO",
+          "STN_HIROSHIMA_TEMMACHO",
+          "STN_HIROSHIMA_KANONMACHI",
+          "STN_HIROSHIMA_NISHIKANONMACHI",
+          "STN_HIROSHIMA_FUKUSHIMACHO",
+          "STN_HIROSHIMA_HIRODEN_NISHI_HIROSHIMA",
+          "STN_HIROSHIMA_HIGASHI_TAKASU",
+          "STN_HIROSHIMA_TAKASU",
+          "STN_HIROSHIMA_FURUE",
+          "STN_HIROSHIMA_KUSATSU",
+          "STN_HIROSHIMA_KUSATSU_MINAMI",
+          "STN_HIROSHIMA_SHOKO_CENTER_IGUCHI",
+          "STN_HIROSHIMA_INOKUCHI",
+          "STN_HIROSHIMA_SHUDAI_KYOSO_CHUKOMAE",
+          "STN_HIROSHIMA_HIRODEN_ITSUKAICHI",
+          "STN_HIROSHIMA_SAEKI_KUYAKUSHOMAE",
+          "STN_HIROSHIMA_RAKURAKUEN",
+          "STN_HIROSHIMA_SANYO_JOGAKUEN_MAE",
+          "STN_HIROSHIMA_HIRODEN_HATSUKAICHI",
+          "STN_HIROSHIMA_HATSUKAICHI_SHIYAKUSHOMAE",
+          "STN_HIROSHIMA_MIYAUCHI",
+          "STN_HIROSHIMA_JA",
+          "STN_HIROSHIMA_JA_HIROSHIMA_BYOIN_MAE",
+          "STN_HIROSHIMA_JIGOZEN",
+          "STN_HIROSHIMA_AJINA_HIGASHI",
+          "STN_HIROSHIMA_HIRODEN_AJINA",
+          "STN_HIROSHIMA_KYOTEIJO_MAE",
+          "STN_HIROSHIMA_HIRODEN_MIYAJIMAGUCHI"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_3",
+        "name": "広島電鉄3号線",
+        "sequence": [
+          "STN_HIROSHIMA_HIRODEN_NISHI_HIROSHIMA",
+          "STN_HIROSHIMA_FUKUSHIMACHO",
+          "STN_HIROSHIMA_NISHIKANONMACHI",
+          "STN_HIROSHIMA_KANONMACHI",
+          "STN_HIROSHIMA_TEMMACHO",
+          "STN_HIROSHIMA_KOAMICHO",
+          "STN_HIROSHIMA_DOBASHI",
+          "STN_HIROSHIMA_TOKAICHIMACHI",
+          "STN_HIROSHIMA_HONKAWACHO",
+          "STN_HIROSHIMA_GENBAKU_DOME_MAE",
+          "STN_HIROSHIMA_KAMIYACHO_NISHI",
+          "STN_HIROSHIMA_HONDORI",
+          "STN_HIROSHIMA_FUKUROMACHI",
+          "STN_HIROSHIMA_CHUDEN_MAE",
+          "STN_HIROSHIMA_SHIYAKUSHO_MAE",
+          "STN_HIROSHIMA_TAKANOBASHI",
+          "STN_HIROSHIMA_NISSEKI_BYOIN_MAE",
+          "STN_HIROSHIMA_HIRODEN_HONSHA_MAE"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_5",
+        "name": "広島電鉄5号線",
+        "sequence": [
+          "STN_HIROSHIMA_HIROSHIMA_EKI",
+          "STN_HIROSHIMA_ENKOBASHICHO",
+          "STN_HIROSHIMA_MATOBACHO",
+          "STN_HIROSHIMA_DANBARA_1_CHOME",
+          "STN_HIROSHIMA_HIJIYAMASHITA",
+          "STN_HIROSHIMA_HIJIYAMABASHI",
+          "STN_HIROSHIMA_MINAMI_KUYAKUSHO_MAE",
+          "STN_HIROSHIMA_MINAMIMACHI_2_CHOME",
+          "STN_HIROSHIMA_MINAMIMACHI_6_CHOME",
+          "STN_HIROSHIMA_HIRODAI_FUZOKU_GAKKO_MAE",
+          "STN_HIROSHIMA_KEN_BYOIN_MAE",
+          "STN_HIROSHIMA_UJINA_2_CHOME",
+          "STN_HIROSHIMA_UJINA_3_CHOME",
+          "STN_HIROSHIMA_UJINA_4_CHOME",
+          "STN_HIROSHIMA_UJINA_5_CHOME",
+          "STN_HIROSHIMA_KAIGANDORI",
+          "STN_HIROSHIMA_MOTOUJINAGUCHI",
+          "STN_HIROSHIMA_HIROSHIMA_KO"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_6",
+        "name": "広島電鉄6号線",
+        "sequence": [
+          "STN_HIROSHIMA_HIROSHIMA_EKI",
+          "STN_HIROSHIMA_ENKOBASHICHO",
+          "STN_HIROSHIMA_MATOBACHO",
+          "STN_HIROSHIMA_INARIMACHI",
+          "STN_HIROSHIMA_KANAYAMACHO",
+          "STN_HIROSHIMA_EBISUCHO",
+          "STN_HIROSHIMA_HATCHOBORI",
+          "STN_HIROSHIMA_TATEMACHI",
+          "STN_HIROSHIMA_KAMIYACHO_HIGASHI",
+          "STN_HIROSHIMA_KAMIYACHO_NISHI",
+          "STN_HIROSHIMA_GENBAKU_DOME_MAE",
+          "STN_HIROSHIMA_HONKAWACHO",
+          "STN_HIROSHIMA_TOKAICHIMACHI",
+          "STN_HIROSHIMA_DOBASHI",
+          "STN_HIROSHIMA_FUNAIRIMACHI",
+          "STN_HIROSHIMA_FUNAIRI_HONMACHI",
+          "STN_HIROSHIMA_FUNAIRI_SAWAIMACHI",
+          "STN_HIROSHIMA_FUNAIRI_KAWAGUCHICHO",
+          "STN_HIROSHIMA_FUNAIRI_MINAMI",
+          "STN_HIROSHIMA_EBA"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_7",
+        "name": "広島電鉄7号線",
+        "sequence": [
+          "STN_HIROSHIMA_YOKOGAWA_EKI",
+          "STN_HIROSHIMA_YOKOGAWA_1_CHOME",
+          "STN_HIROSHIMA_BETSUIN_MAE",
+          "STN_HIROSHIMA_TERAMACHI",
+          "STN_HIROSHIMA_TOKAICHIMACHI",
+          "STN_HIROSHIMA_HONKAWACHO",
+          "STN_HIROSHIMA_GENBAKU_DOME_MAE",
+          "STN_HIROSHIMA_KAMIYACHO_NISHI",
+          "STN_HIROSHIMA_HONDORI",
+          "STN_HIROSHIMA_FUKUROMACHI",
+          "STN_HIROSHIMA_CHUDEN_MAE",
+          "STN_HIROSHIMA_SHIYAKUSHO_MAE",
+          "STN_HIROSHIMA_TAKANOBASHI",
+          "STN_HIROSHIMA_NISSEKI_BYOIN_MAE",
+          "STN_HIROSHIMA_HIRODEN_HONSHA_MAE",
+          "STN_HIROSHIMA_MIYUBASHI",
+          "STN_HIROSHIMA_MINAMIMACHI_6_CHOME",
+          "STN_HIROSHIMA_HIRODAI_FUZOKU_GAKKO_MAE",
+          "STN_HIROSHIMA_KEN_BYOIN_MAE",
+          "STN_HIROSHIMA_UJINA_2_CHOME",
+          "STN_HIROSHIMA_UJINA_3_CHOME",
+          "STN_HIROSHIMA_UJINA_4_CHOME",
+          "STN_HIROSHIMA_UJINA_5_CHOME",
+          "STN_HIROSHIMA_KAIGANDORI",
+          "STN_HIROSHIMA_MOTOUJINAGUCHI",
+          "STN_HIROSHIMA_HIROSHIMA_KO"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_8",
+        "name": "広島電鉄8号線",
+        "sequence": [
+          "STN_HIROSHIMA_YOKOGAWA_EKI",
+          "STN_HIROSHIMA_YOKOGAWA_1_CHOME",
+          "STN_HIROSHIMA_BETSUIN_MAE",
+          "STN_HIROSHIMA_TERAMACHI",
+          "STN_HIROSHIMA_TOKAICHIMACHI",
+          "STN_HIROSHIMA_DOBASHI",
+          "STN_HIROSHIMA_FUNAIRIMACHI",
+          "STN_HIROSHIMA_FUNAIRI_HONMACHI",
+          "STN_HIROSHIMA_FUNAIRI_SAWAIMACHI",
+          "STN_HIROSHIMA_FUNAIRI_KAWAGUCHICHO",
+          "STN_HIROSHIMA_FUNAIRI_MINAMI",
+          "STN_HIROSHIMA_EBA"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_9",
+        "name": "広島電鉄9号線",
+        "sequence": [
+          "STN_HIROSHIMA_EBA",
+          "STN_HIROSHIMA_FUNAIRI_MINAMI",
+          "STN_HIROSHIMA_FUNAIRI_KAWAGUCHICHO",
+          "STN_HIROSHIMA_FUNAIRI_SAWAIMACHI",
+          "STN_HIROSHIMA_FUNAIRI_HONMACHI",
+          "STN_HIROSHIMA_FUNAIRI_",
+          "STN_HIROSHIMA_DOBASHI",
+          "STN_HIROSHIMA_TOKAICHIMACHI",
+          "STN_HIROSHIMA_HONKAWACHO",
+          "STN_HIROSHIMA_GENBAKU_DOME_MAE",
+          "STN_HIROSHIMA_KAMIYACHO_NISHI",
+          "STN_HIROSHIMA_KAMIYACHO_HIGASHI",
+          "STN_HIROSHIMA_TATEMACHI",
+          "STN_HIROSHIMA_HATCHOBORI",
+          "STN_HIROSHIMA_JOGAKUIN_MAE",
+          "STN_HIROSHIMA_SHUKKEIEN_MAE",
+          "STN_HIROSHIMA_KATEI_SAIBANSHO_MAE",
+          "STN_HIROSHIMA_HAKUSHIMA"
+        ]
+      },
+      {
+        "id": "HIROSHIMA_0",
+        "name": "広島電鉄0号線",
+        "sequence": [
+          "STN_HIROSHIMA_HIRODEN_HONSHA_MAE",
+          "STN_HIROSHIMA_MIYUKIBASHI",
+          "STN_HIROSHIMA_MINAMIMACHI_6_CHOME",
+          "STN_HIROSHIMA_MINAMIMACHI_2_CHOME",
+          "STN_HIROSHIMA_MINAMI_KUYAKUSHO_MAE",
+          "STN_HIROSHIMA_HIJIYAMABASHI",
+          "STN_HIROSHIMA_HIJIYAMASHITA",
+          "STN_HIROSHIMA_DANBARA_1_CHOME",
+          "STN_HIROSHIMA_MATOBACHO",
+          "STN_HIROSHIMA_INARIMACHI",
+          "STN_HIROSHIMA_KANAYAMACHO",
+          "STN_HIROSHIMA_EBISUCHO",
+          "STN_HIROSHIMA_HATCHOBORI",
+          "STN_HIROSHIMA_TATEMACHI",
+          "STN_HIROSHIMA_KAMIYACHO_HIGASHI",
+          "STN_HIROSHIMA_HONDORI",
+          "STN_HIROSHIMA_FUKUROMACHI",
+          "STN_HIROSHIMA_CHUDEN_MAE",
+          "STN_HIROSHIMA_SHIYAKUSHO_MAE",
+          "STN_HIROSHIMA_TAKANOBASHI",
+          "STN_HIROSHIMA_NISSEKI_BYOIN_MAE",
+          "STN_HIROSHIMA_HIRODEN_HONSHA_MAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HIROSHIMA_HIROSHIMA_EKI",
+        "lat": "34.39632431",
+        "lng": "132.47530759",
+        "name": "広島駅"
+      },
+      {
+        "id": "STN_HIROSHIMA_ENKOBASHICHO",
+        "lat": "34.395255",
+        "lng": "132.47596",
+        "name": "猿猴橋町"
+      },
+      {
+        "id": "STN_HIROSHIMA_MATOBACHO",
+        "lat": "34.39322",
+        "lng": "132.47463",
+        "name": "的場町"
+      },
+      {
+        "id": "STN_HIROSHIMA_INARIMACHI",
+        "lat": "34.39267626",
+        "lng": "132.47113851",
+        "name": "稲荷町"
+      },
+      {
+        "id": "STN_HIROSHIMA_KANAYAMACHO",
+        "lat": "34.39319915",
+        "lng": "132.46729336",
+        "name": "銀山町"
+      },
+      {
+        "id": "STN_HIROSHIMA_EBISUCHO",
+        "lat": "34.39335364",
+        "lng": "132.46524838",
+        "name": "胡町"
+      },
+      {
+        "id": "STN_HIROSHIMA_HATCHOBORI",
+        "lat": "34.39390028",
+        "lng": "132.46305938",
+        "name": "八丁堀"
+      },
+      {
+        "id": "STN_HIROSHIMA_TATEMACHI",
+        "lat": "34.39443474",
+        "lng": "132.46096421",
+        "name": "立町"
+      },
+      {
+        "id": "STN_HIROSHIMA_KAMIYACHO_HIGASHI",
+        "lat": "34.39513589",
+        "lng": "132.45829985",
+        "name": "紙屋町東"
+      },
+      {
+        "id": "STN_HIROSHIMA_HONDORI",
+        "lat": "34.39328192",
+        "lng": "132.45696155",
+        "name": "本通"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUKUROMACHI",
+        "lat": "34.39110792",
+        "lng": "132.45619923",
+        "name": "袋町"
+      },
+      {
+        "id": "STN_HIROSHIMA_CHUDEN_MAE",
+        "lat": "34.38869551",
+        "lng": "132.45539278",
+        "name": "中電前"
+      },
+      {
+        "id": "STN_HIROSHIMA_SHIYAKUSHO_MAE",
+        "lat": "34.38573636",
+        "lng": "132.45438473",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_HIROSHIMA_TAKANOBASHI",
+        "lat": "34.38324199",
+        "lng": "132.4541423",
+        "name": "鷹野橋"
+      },
+      {
+        "id": "STN_HIROSHIMA_NISSEKI_BYOIN_MAE",
+        "lat": "34.38074",
+        "lng": "132.455935",
+        "name": "日赤病院前"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODEN_HONSHA_MAE",
+        "lat": "34.37747815",
+        "lng": "132.45810222",
+        "name": "広電本社前"
+      },
+      {
+        "id": "STN_HIROSHIMA_MIYUKIBASHI",
+        "lat": "34.37591176",
+        "lng": "132.4592245",
+        "name": "御幸橋"
+      },
+      {
+        "id": "STN_HIROSHIMA_MINAMIMACHI_6_CHOME",
+        "lat": "34.37420048",
+        "lng": "132.46396157",
+        "name": "皆実町六丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODAI_FUZOKU_GAKKO_MAE",
+        "lat": "34.37156",
+        "lng": "132.4646",
+        "name": "広大附属学校前"
+      },
+      {
+        "id": "STN_HIROSHIMA_KEN_BYOIN_MAE",
+        "lat": "34.36848736",
+        "lng": "132.46472245",
+        "name": "県病院前"
+      },
+      {
+        "id": "STN_HIROSHIMA_UJINA_2_CHOME",
+        "lat": "34.36618192",
+        "lng": "132.4645065",
+        "name": "宇品二丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_UJINA_3_CHOME",
+        "lat": "34.36414974",
+        "lng": "132.46431934",
+        "name": "宇品三丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_UJINA_4_CHOME",
+        "lat": "34.36013669",
+        "lng": "132.46397244",
+        "name": "宇品四丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_UJINA_5_CHOME",
+        "lat": "34.35793819",
+        "lng": "132.4637709",
+        "name": "宇品五丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_KAIGANDORI",
+        "lat": "34.35531179",
+        "lng": "132.46299354",
+        "name": "海岸通"
+      },
+      {
+        "id": "STN_HIROSHIMA_MOTOUJINAGUCHI",
+        "lat": "34.35398074",
+        "lng": "132.45965377",
+        "name": "元宇品口"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIROSHIMA_KO",
+        "lat": "34.352694",
+        "lng": "132.455261",
+        "name": "広島港"
+      },
+      {
+        "id": "STN_HIROSHIMA_KAMIYACHO_NISHI",
+        "lat": "34.39544488",
+        "lng": "132.45697487",
+        "name": "紙屋町西"
+      },
+      {
+        "id": "STN_HIROSHIMA_GENBAKU_DOME_MAE",
+        "lat": "34.39616976",
+        "lng": "132.4538651",
+        "name": "原爆ドーム前"
+      },
+      {
+        "id": "STN_HIROSHIMA_HONKAWACHO",
+        "lat": "34.39685902",
+        "lng": "132.45050942",
+        "name": "本川町"
+      },
+      {
+        "id": "STN_HIROSHIMA_TOKAICHIMACHI",
+        "lat": "34.39731064",
+        "lng": "132.44769966",
+        "name": "十日市町"
+      },
+      {
+        "id": "STN_HIROSHIMA_DOBASHI",
+        "lat": "34.39451",
+        "lng": "132.446335",
+        "name": "土橋"
+      },
+      {
+        "id": "STN_HIROSHIMA_KOAMICHO",
+        "lat": "34.394455",
+        "lng": "132.444495",
+        "name": "小網町"
+      },
+      {
+        "id": "STN_HIROSHIMA_TEMMACHO",
+        "lat": "34.39508854",
+        "lng": "132.44102754",
+        "name": "天満町"
+      },
+      {
+        "id": "STN_HIROSHIMA_KANONMACHI",
+        "lat": "34.39550447",
+        "lng": "132.43868009",
+        "name": "観音町"
+      },
+      {
+        "id": "STN_HIROSHIMA_NISHIKANONMACHI",
+        "lat": "34.39398336",
+        "lng": "132.4368799",
+        "name": "西観音町"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUKUSHIMACHO",
+        "lat": "34.39487464",
+        "lng": "132.4340572",
+        "name": "福島町"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODEN_NISHI_HIROSHIMA",
+        "lat": "34.396856",
+        "lng": "132.42795",
+        "name": "広電西広島"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIGASHI_TAKASU",
+        "lat": "34.3920941",
+        "lng": "132.42050164",
+        "name": "東高須"
+      },
+      {
+        "id": "STN_HIROSHIMA_TAKASU",
+        "lat": "34.38983617",
+        "lng": "132.41708858",
+        "name": "高須"
+      },
+      {
+        "id": "STN_HIROSHIMA_FURUE",
+        "lat": "34.38624822",
+        "lng": "132.41136305",
+        "name": "古江"
+      },
+      {
+        "id": "STN_HIROSHIMA_KUSATSU",
+        "lat": "34.38151933",
+        "lng": "132.40384122",
+        "name": "草津"
+      },
+      {
+        "id": "STN_HIROSHIMA_KUSATSU_MINAMI",
+        "lat": "34.378095",
+        "lng": "132.39847",
+        "name": "草津南"
+      },
+      {
+        "id": "STN_HIROSHIMA_SHOKO_CENTER_IGUCHI",
+        "lat": "34.37544892",
+        "lng": "132.39208259",
+        "name": "商工センター入口"
+      },
+      {
+        "id": "STN_HIROSHIMA_INOKUCHI",
+        "lat": "34.371708",
+        "lng": "132.385771",
+        "name": "井口"
+      },
+      {
+        "id": "STN_HIROSHIMA_SHUDAI_KYOSO_CHUKOMAE",
+        "lat": "34.36821418",
+        "lng": "132.37436696",
+        "name": "修大協創中高前"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODEN_ITSUKAICHI",
+        "lat": "34.36645547",
+        "lng": "132.36780183",
+        "name": "広電五日市"
+      },
+      {
+        "id": "STN_HIROSHIMA_SAEKI_KUYAKUSHOMAE",
+        "lat": "34.36545723",
+        "lng": "132.36188473",
+        "name": "佐伯区役所前"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAKURAKUEN",
+        "lat": "34.36425694",
+        "lng": "132.3519941",
+        "name": "楽々園"
+      },
+      {
+        "id": "STN_HIROSHIMA_SANYO_JOGAKUEN_MAE",
+        "lat": "34.36203",
+        "lng": "132.341315",
+        "name": "山陽女学園前"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODEN_HATSUKAICHI",
+        "lat": "34.35696359",
+        "lng": "132.33652857",
+        "name": "広電廿日市"
+      },
+      {
+        "id": "STN_HIROSHIMA_HATSUKAICHI_SHIYAKUSHOMAE",
+        "lat": "34.352922",
+        "lng": "132.329803",
+        "name": "廿日市市役所前"
+      },
+      {
+        "id": "STN_HIROSHIMA_MIYAUCHI",
+        "lat": "34.3473772",
+        "lng": "132.32505294",
+        "name": "宮内"
+      },
+      {
+        "id": "STN_HIROSHIMA_JA_HIROSHIMA_BYOIN_MAE",
+        "lat": "34.34433",
+        "lng": "132.32273",
+        "name": "JA広島病院前"
+      },
+      {
+        "id": "STN_HIROSHIMA_JIGOZEN",
+        "lat": "34.34089787",
+        "lng": "132.32011206",
+        "name": "地御前"
+      },
+      {
+        "id": "STN_HIROSHIMA_AJINA_HIGASHI",
+        "lat": "34.3268149",
+        "lng": "132.31855442",
+        "name": "阿品東"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODEN_AJINA",
+        "lat": "34.32162165",
+        "lng": "132.31445335",
+        "name": "広電阿品"
+      },
+      {
+        "id": "STN_HIROSHIMA_KYOTEIJO_MAE",
+        "lat": "34.31435761",
+        "lng": "132.30496978",
+        "name": "宮島ボートレース場"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIRODEN_MIYAJIMAGUCHI",
+        "lat": "34.31179063",
+        "lng": "132.30491223",
+        "name": "広電宮島口"
+      },
+      {
+        "id": "STN_HIROSHIMA_DANBARA_1_CHOME",
+        "lat": "34.39001452",
+        "lng": "132.47361142",
+        "name": "段原一丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIJIYAMASHITA",
+        "lat": "34.3870435",
+        "lng": "132.47112006",
+        "name": "比治山下"
+      },
+      {
+        "id": "STN_HIROSHIMA_HIJIYAMABASHI",
+        "lat": "34.38337305",
+        "lng": "132.46875474",
+        "name": "比治山橋"
+      },
+      {
+        "id": "STN_HIROSHIMA_MINAMI_KUYAKUSHO_MAE",
+        "lat": "34.38041399",
+        "lng": "132.4670844",
+        "name": "南区役所前"
+      },
+      {
+        "id": "STN_HIROSHIMA_MINAMIMACHI_2_CHOME",
+        "lat": "34.37738353",
+        "lng": "132.46593244",
+        "name": "皆実町二丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_MINAMIMACHI_6_CHOME",
+        "lat": "34.37420048",
+        "lng": "132.46396157",
+        "name": "皆実町六丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUNAIRIMACHI",
+        "lat": "34.38944455",
+        "lng": "132.44501979",
+        "name": "舟入町"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUNAIRI_HONMACHI",
+        "lat": "34.385805",
+        "lng": "132.442785",
+        "name": "舟入本町"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUNAIRI_SAWAIMACHI",
+        "lat": "34.383355",
+        "lng": "132.44128",
+        "name": "舟入幸町"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUNAIRI_KAWAGUCHICHO",
+        "lat": "34.38059278",
+        "lng": "132.43967859",
+        "name": "舟入川口町"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUNAIRI_MINAMI",
+        "lat": "34.37494954",
+        "lng": "132.43716422",
+        "name": "舟入南"
+      },
+      {
+        "id": "STN_HIROSHIMA_EBA",
+        "lat": "34.37232321",
+        "lng": "132.4357388",
+        "name": "江波"
+      },
+      {
+        "id": "STN_HIROSHIMA_YOKOGAWA_EKI",
+        "lat": "34.40958445",
+        "lng": "132.45057183",
+        "name": "横川駅"
+      },
+      {
+        "id": "STN_HIROSHIMA_YOKOGAWA_1_CHOME",
+        "lat": "34.40734047",
+        "lng": "132.44999103",
+        "name": "横川一丁目"
+      },
+      {
+        "id": "STN_HIROSHIMA_BETSUIN_MAE",
+        "lat": "34.40464289",
+        "lng": "132.4494149",
+        "name": "別院前"
+      },
+      {
+        "id": "STN_HIROSHIMA_TERAMACHI",
+        "lat": "34.40081622",
+        "lng": "132.44808978",
+        "name": "寺町"
+      },
+      {
+        "id": "STN_HIROSHIMA_MIYUBASHI",
+        "lat": "34.37591176",
+        "lng": "132.4592245",
+        "name": "御幸橋"
+      },
+      {
+        "id": "STN_HIROSHIMA_FUNAIRI_町",
+        "lat": "34.38944455",
+        "lng": "132.44501979",
+        "name": "舟入町"
+      },
+      {
+        "id": "STN_HIROSHIMA_JOGAKUIN_MAE",
+        "lat": "34.39817777",
+        "lng": "132.46485287",
+        "name": "女学院前"
+      },
+      {
+        "id": "STN_HIROSHIMA_SHUKKEIEN_MAE",
+        "lat": "34.39944941",
+        "lng": "132.46524176",
+        "name": "縮景園前"
+      },
+      {
+        "id": "STN_HIROSHIMA_KATEI_SAIBANSHO_MAE",
+        "lat": "34.4019332",
+        "lng": "132.46597632",
+        "name": "家庭裁判所前"
+      },
+      {
+        "id": "STN_HIROSHIMA_HAKUSHIMA",
+        "lat": "34.40404853",
+        "lng": "132.46563064",
+        "name": "白島"
+      }
+    ]
+  }
+]

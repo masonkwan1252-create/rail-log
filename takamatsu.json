@@ -1,0 +1,404 @@
+[
+  {
+    "categories": "",
+    "company_id": "TAKAMATSU",
+    "company_name": "高松琴平電気鉄道",
+    "lines": [
+      {
+        "id": "TAKAMATSU_SHIDO",
+        "name": "志度線",
+        "sequence": [
+          "STN_TAKAMATSU_KAWARAMACHI",
+          "STN_TAKAMATSU_IMABASHI",
+          "STN_TAKAMATSU_MATSUSHIMA_2_CHOME",
+          "STN_TAKAMATSU_OKIMATSUSHIMA",
+          "STN_TAKAMATSU_KASUGAGAWA",
+          "STN_TAKAMATSU_KATAMOTO",
+          "STN_TAKAMATSU_KOTODEN_YASHIMA",
+          "STN_TAKAMATSU_FURUKATAMAKSU",
+          "STN_TAKAMATSU_YAKURI",
+          "STN_TAKAMATSU_ROKUMANJI",
+          "STN_TAKAMATSU_OMACHI",
+          "STN_TAKAMATSU_YAKURI_SHINMICHI",
+          "STN_TAKAMATSU_SHIOYA",
+          "STN_TAKAMATSU_FUSAZAKI",
+          "STN_TAKAMATSU_HARA",
+          "STN_TAKAMATSU_KOTODEN_SHIDO"
+        ]
+      },
+      {
+        "id": "TAKAMATSU_KOTOHIRA",
+        "name": "琴平線",
+        "sequence": [
+          "STN_TAKAMATSU_TAKAMATSU_CHIKKO",
+          "STN_TAKAMATSU_KATAHARAMACHI",
+          "STN_TAKAMATSU_KAWARAMACHI",
+          "STN_TAKAMATSU_RITSURIN_KOEN",
+          "STN_TAKAMATSU_SANJO",
+          "STN_TAKAMATSU_FUSEISHI",
+          "STN_TAKAMATSU_OTA",
+          "STN_TAKAMATSU_BUSSHOZAN",
+          "STN_TAKAMATSU_KUKO_DORI",
+          "STN_TAKAMATSU_ICHINOMIYA",
+          "STN_TAKAMATSU_ENZA",
+          "STN_TAKAMATSU_OKAMOTO",
+          "STN_TAKAMATSU_KAZASHIGAOKA",
+          "STN_TAKAMATSU_HATADA",
+          "STN_TAKAMATSU_SUE",
+          "STN_TAKAMATSU_AYAGAWA",
+          "STN_TAKAMATSU_TAKINOMIYA",
+          "STN_TAKAMATSU_HAYUKA",
+          "STN_TAKAMATSU_KURIKUMA",
+          "STN_TAKAMATSU_OKADA",
+          "STN_TAKAMATSU_HAZAMA",
+          "STN_TAKAMATSU_ENAI",
+          "STN_TAKAMATSU_KOTODEN_KOTOHIRA"
+        ]
+      },
+      {
+        "id": "TAKAMATSU_NAGAO",
+        "name": "長尾線",
+        "sequence": [
+          "STN_TAKAMATSU_TAKAMATSU_CHIKKO",
+          "STN_TAKAMATSU_KATAHARAMACHI",
+          "STN_TAKAMATSU_KAWARAMACHI",
+          "STN_TAKAMATSU_HANAZONO",
+          "STN_TAKAMATSU_HAYAMICHI",
+          "STN_TAKAMATSU_KITA_HIGASHIGUCHI",
+          "STN_TAKAMATSU_MOTOYAMA",
+          "STN_TAKAMATSU_MIZUTA",
+          "STN_TAKAMATSU_NISHI_MAEDA",
+          "STN_TAKAMATSU_TAKADA",
+          "STN_TAKAMATSU_IKEDO",
+          "STN_TAKAMATSU_NOGAKUBU_MAE",
+          "STN_TAKAMATSU_HIRAGI",
+          "STN_TAKAMATSU_GAKUEN_DORI",
+          "STN_TAKAMATSU_SHIRAYAMA",
+          "STN_TAKAMATSU_IDO",
+          "STN_TAKAMATSU_KUBONMYO",
+          "STN_TAKAMATSU_NAGAO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TAKAMATSU_KAWARAMACHI",
+        "lat": "34.33882",
+        "lng": "134.05258",
+        "name": "瓦町"
+      },
+      {
+        "id": "STN_TAKAMATSU_IMABASHI",
+        "lat": "34.34171855",
+        "lng": "134.05927077",
+        "name": "今橋"
+      },
+      {
+        "id": "STN_TAKAMATSU_MATSUSHIMA_2_CHOME",
+        "lat": "34.34007853",
+        "lng": "134.06448101",
+        "name": "松島二丁目"
+      },
+      {
+        "id": "STN_TAKAMATSU_OKIMATSUSHIMA",
+        "lat": "34.34119565",
+        "lng": "134.07228199",
+        "name": "沖松島"
+      },
+      {
+        "id": "STN_TAKAMATSU_KASUGAGAWA",
+        "lat": "34.34091043",
+        "lng": "134.08359492",
+        "name": "春日川"
+      },
+      {
+        "id": "STN_TAKAMATSU_KATAMOTO",
+        "lat": "34.34119565",
+        "lng": "134.09798787",
+        "name": "潟元"
+      },
+      {
+        "id": "STN_TAKAMATSU_KOTODEN_YASHIMA",
+        "lat": "34.34155217",
+        "lng": "134.10558735",
+        "name": "琴電屋島"
+      },
+      {
+        "id": "STN_TAKAMATSU_FURUKATAMAKSU",
+        "lat": "34.34083894",
+        "lng": "134.11244143",
+        "name": "古高松"
+      },
+      {
+        "id": "STN_TAKAMATSU_YAKURI",
+        "lat": "34.34461807",
+        "lng": "134.12240145",
+        "name": "八栗"
+      },
+      {
+        "id": "STN_TAKAMATSU_ROKUMANJI",
+        "lat": "34.34266913",
+        "lng": "134.13408827",
+        "name": "六万寺"
+      },
+      {
+        "id": "STN_TAKAMATSU_OMACHI",
+        "lat": "34.3373449",
+        "lng": "134.14137116",
+        "name": "大町"
+      },
+      {
+        "id": "STN_TAKAMATSU_YAKURI_SHINMICHI",
+        "lat": "34.33674052",
+        "lng": "134.14741824",
+        "name": "八栗新道"
+      },
+      {
+        "id": "STN_TAKAMATSU_SHIOYA",
+        "lat": "34.3356",
+        "lng": "134.155015",
+        "name": "塩屋"
+      },
+      {
+        "id": "STN_TAKAMATSU_FUSAZAKI",
+        "lat": "34.3324981",
+        "lng": "134.15852556",
+        "name": "房前"
+      },
+      {
+        "id": "STN_TAKAMATSU_HARA",
+        "lat": "34.326515",
+        "lng": "134.16367",
+        "name": "原"
+      },
+      {
+        "id": "STN_TAKAMATSU_KOTODEN_SHIDO",
+        "lat": "34.32249472",
+        "lng": "134.17261901",
+        "name": "琴電志度"
+      },
+      {
+        "id": "STN_TAKAMATSU_TAKAMATSU_CHIKKO",
+        "lat": "34.35048813",
+        "lng": "134.0494377",
+        "name": "高松築港"
+      },
+      {
+        "id": "STN_TAKAMATSU_KATAHARAMACHI",
+        "lat": "34.346025",
+        "lng": "134.054395",
+        "name": "片原町"
+      },
+      {
+        "id": "STN_TAKAMATSU_RITSURIN_KOEN",
+        "lat": "34.32852",
+        "lng": "134.05108",
+        "name": "栗林公園"
+      },
+      {
+        "id": "STN_TAKAMATSU_SANJO",
+        "lat": "34.32011765",
+        "lng": "134.04961177",
+        "name": "三条"
+      },
+      {
+        "id": "STN_TAKAMATSU_FUSEISHI",
+        "lat": "34.30983844",
+        "lng": "134.04782648",
+        "name": "伏石"
+      },
+      {
+        "id": "STN_TAKAMATSU_OTA",
+        "lat": "34.29876652",
+        "lng": "134.04587423",
+        "name": "太田"
+      },
+      {
+        "id": "STN_TAKAMATSU_BUSSHOZAN",
+        "lat": "34.28375722",
+        "lng": "134.04272531",
+        "name": "仏生山"
+      },
+      {
+        "id": "STN_TAKAMATSU_KUKO_DORI",
+        "lat": "34.28102387",
+        "lng": "134.03340524",
+        "name": "空港通り"
+      },
+      {
+        "id": "STN_TAKAMATSU_ICHINOMIYA",
+        "lat": "34.283305",
+        "lng": "134.02221",
+        "name": "一宮"
+      },
+      {
+        "id": "STN_TAKAMATSU_ENZA",
+        "lat": "34.28446",
+        "lng": "134.00907",
+        "name": "円座"
+      },
+      {
+        "id": "STN_TAKAMATSU_OKAMOTO",
+        "lat": "34.27031317",
+        "lng": "133.98946023",
+        "name": "岡本"
+      },
+      {
+        "id": "STN_TAKAMATSU_KAZASHIGAOKA",
+        "lat": "34.261995",
+        "lng": "133.97938",
+        "name": "挿頭丘"
+      },
+      {
+        "id": "STN_TAKAMATSU_HATADA",
+        "lat": "34.25924734",
+        "lng": "133.97209772",
+        "name": "畑田"
+      },
+      {
+        "id": "STN_TAKAMATSU_SUE",
+        "lat": "34.25049702",
+        "lng": "133.94791245",
+        "name": "陶"
+      },
+      {
+        "id": "STN_TAKAMATSU_AYAGAWA",
+        "lat": "34.24953512",
+        "lng": "133.93167513",
+        "name": "綾川"
+      },
+      {
+        "id": "STN_TAKAMATSU_TAKINOMIYA",
+        "lat": "34.24833417",
+        "lng": "133.92252293",
+        "name": "滝宮"
+      },
+      {
+        "id": "STN_TAKAMATSU_HAYUKA",
+        "lat": "34.24097377",
+        "lng": "133.90169881",
+        "name": "羽床"
+      },
+      {
+        "id": "STN_TAKAMATSU_KURIKUMA",
+        "lat": "34.23402908",
+        "lng": "133.88446418",
+        "name": "栗熊"
+      },
+      {
+        "id": "STN_TAKAMATSU_OKADA",
+        "lat": "34.221275",
+        "lng": "133.86171",
+        "name": "岡田"
+      },
+      {
+        "id": "STN_TAKAMATSU_HAZAMA",
+        "lat": "34.209575",
+        "lng": "133.847345",
+        "name": "羽間"
+      },
+      {
+        "id": "STN_TAKAMATSU_ENAI",
+        "lat": "34.19427814",
+        "lng": "133.82926017",
+        "name": "榎井"
+      },
+      {
+        "id": "STN_TAKAMATSU_KOTODEN_KOTOHIRA",
+        "lat": "34.19133084",
+        "lng": "133.81877174",
+        "name": "琴電琴平"
+      },
+      {
+        "id": "STN_TAKAMATSU_HANAZONO",
+        "lat": "34.33413914",
+        "lng": "134.05944216",
+        "name": "花園"
+      },
+      {
+        "id": "STN_TAKAMATSU_HAYAMICHI",
+        "lat": "34.323325",
+        "lng": "134.07324",
+        "name": "林道"
+      },
+      {
+        "id": "STN_TAKAMATSU_KITA_HIGASHIGUCHI",
+        "lat": "34.31972",
+        "lng": "134.079585",
+        "name": "木太東口"
+      },
+      {
+        "id": "STN_TAKAMATSU_MOTOYAMA",
+        "lat": "34.310375",
+        "lng": "134.083765",
+        "name": "元山"
+      },
+      {
+        "id": "STN_TAKAMATSU_MIZUTA",
+        "lat": "34.30297009",
+        "lng": "134.09264307",
+        "name": "水田"
+      },
+      {
+        "id": "STN_TAKAMATSU_NISHI_MAEDA",
+        "lat": "34.2960103",
+        "lng": "134.10461981",
+        "name": "西前田"
+      },
+      {
+        "id": "STN_TAKAMATSU_TAKADA",
+        "lat": "34.28855313",
+        "lng": "134.11192862",
+        "name": "高田"
+      },
+      {
+        "id": "STN_TAKAMATSU_IKEDO",
+        "lat": "34.27877439",
+        "lng": "134.11955374",
+        "name": "池戸"
+      },
+      {
+        "id": "STN_TAKAMATSU_NOGAKUBU_MAE",
+        "lat": "34.27382",
+        "lng": "134.12578",
+        "name": "農学部前"
+      },
+      {
+        "id": "STN_TAKAMATSU_HIRAGI",
+        "lat": "34.27223828",
+        "lng": "134.13114506",
+        "name": "平木"
+      },
+      {
+        "id": "STN_TAKAMATSU_GAKUEN_DORI",
+        "lat": "34.27059824",
+        "lng": "134.13675377",
+        "name": "学園通り"
+      },
+      {
+        "id": "STN_TAKAMATSU_SHIRAYAMA",
+        "lat": "34.26672",
+        "lng": "134.150455",
+        "name": "白山"
+      },
+      {
+        "id": "STN_TAKAMATSU_IDO",
+        "lat": "34.26670555",
+        "lng": "134.15591752",
+        "name": "井戸"
+      },
+      {
+        "id": "STN_TAKAMATSU_KUBONMYO",
+        "lat": "34.26668178",
+        "lng": "134.16207234",
+        "name": "公文明"
+      },
+      {
+        "id": "STN_TAKAMATSU_NAGAO",
+        "lat": "34.26672932",
+        "lng": "134.16932008",
+        "name": "長尾"
+      }
+    ]
+  }
+]

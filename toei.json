@@ -1,0 +1,735 @@
+[
+  {
+    "categories": "",
+    "company_id": "TOEI",
+    "company_name": "都営地下鉄",
+    "lines": [
+      {
+        "id": "TOEI_ASAKUSA",
+        "name": "浅草線",
+        "sequence": [
+          "STN_TOEI_NISHI_MAGOME",
+          "STN_TOEI_MAGOME",
+          "STN_TOEI_NAKANOBU",
+          "STN_TOEI_TOGOSHI",
+          "STN_TOEI_GOTANDA",
+          "STN_TOEI_TAKANAWADAI",
+          "STN_TOEI_SENGAKUJI",
+          "STN_TOEI_MITA",
+          "STN_TOEI_DAIMON",
+          "STN_TOEI_SHIMBASHI",
+          "STN_TOEI_HIGASHI_GINZA",
+          "STN_TOEI_TAKARACHO",
+          "STN_TOEI_NIHOMBASHI",
+          "STN_TOEI_NINGYOCHO",
+          "STN_TOEI_HIGASHI_NIHOMBASHI",
+          "STN_TOEI_ASAKUSABASHI",
+          "STN_TOEI_KURAMAE",
+          "STN_TOEI_ASAKUSA",
+          "STN_TOEI_HONJO_AZUMABASHI",
+          "STN_TOEI_OSHIAGE"
+        ]
+      },
+      {
+        "id": "TOEI_MITA",
+        "name": "三田線",
+        "sequence": [
+          "STN_TOEI_MEGURO",
+          "STN_TOEI_SHIROKANEDAI",
+          "STN_TOEI_SHIROKANE_TAKANAWA",
+          "STN_TOEI_MITA",
+          "STN_TOEI_SHIBA_KOEN",
+          "STN_TOEI_ONARIMON",
+          "STN_TOEI_UCHISAIWAICHO",
+          "STN_TOEI_HIBIYA",
+          "STN_TOEI_OTEMACHI",
+          "STN_TOEI_JIMBOCHO",
+          "STN_TOEI_SUIDOBASHI",
+          "STN_TOEI_KASUGA",
+          "STN_TOEI_HAKUSAN",
+          "STN_TOEI_SENGOKU",
+          "STN_TOEI_SUGAMO",
+          "STN_TOEI_NISHI_SUGAMO",
+          "STN_TOEI_SHIN_ITABASHI",
+          "STN_TOEI_ITABASHIKUYAKUSHO_MAE",
+          "STN_TOEI_ITABASHIHONCHO",
+          "STN_TOEI_MOTOHASUNUMA",
+          "STN_TOEI_SHIMURA_SAKAUE",
+          "STN_TOEI_SHIMURA_SANCHOME",
+          "STN_TOEI_HASUNE",
+          "STN_TOEI_NISHIDAI",
+          "STN_TOEI_TAKASHIMADAIRA",
+          "STN_TOEI_SHIN_TAKASHIMADAIRA",
+          "STN_TOEI_NISHI_TAKASHIMADAIRA"
+        ]
+      },
+      {
+        "id": "TOEI_SHINJUKU",
+        "name": "新宿線",
+        "sequence": [
+          "STN_TOEI_SHINJUKU",
+          "STN_TOEI_SHINJUKU_SANCHOME",
+          "STN_TOEI_AKEBONOBASHI",
+          "STN_TOEI_ICHIGAYA",
+          "STN_TOEI_KUDANSHITA",
+          "STN_TOEI_JIMBOCHO",
+          "STN_TOEI_OGAWA_MACHI",
+          "STN_TOEI_IWAMOTOCHO",
+          "STN_TOEI_BAKURO_YOKOYAMA",
+          "STN_TOEI_HAMACHO",
+          "STN_TOEI_MORISHITA",
+          "STN_TOEI_KIKUKAWA",
+          "STN_TOEI_SUMIYOSHI",
+          "STN_TOEI_NISHI_OJIMA",
+          "STN_TOEI_OJIMA",
+          "STN_TOEI_HIGASHI_OJIMA",
+          "STN_TOEI_FUNABORI",
+          "STN_TOEI_ICHINOE",
+          "STN_TOEI_MIZUE",
+          "STN_TOEI_SHINOZAKI",
+          "STN_TOEI_MOTOYAWATA"
+        ]
+      },
+      {
+        "id": "TOEI_OEDO",
+        "name": "大江戸線",
+        "sequence": [
+          "STN_TOEI_TOCHO_MAE",
+          "STN_TOEI_SHINJUKU_NISHIGUCHI",
+          "STN_TOEI_HIGASHI_SHINJUKU",
+          "STN_TOEI_WAKAMATSU_KAWADA",
+          "STN_TOEI_USHIGOME_YANAGICHO",
+          "STN_TOEI_USHIGOME_KAGURAZAKA",
+          "STN_TOEI_IDABASHI",
+          "STN_TOEI_KASUGA",
+          "STN_TOEI_HONGO_SANCHOME",
+          "STN_TOEI_UENO_OKACHIMACHI",
+          "STN_TOEI_SHIN_OKACHIMACHI",
+          "STN_TOEI_KURAMAE",
+          "STN_TOEI_RYOGOKU",
+          "STN_TOEI_MORISHITA",
+          "STN_TOEI_KIYOSUMI_SHIRAKAWA",
+          "STN_TOEI_MONZEN_NAKACHO",
+          "STN_TOEI_TSUKISHIMA",
+          "STN_TOEI_KACHIDOKI",
+          "STN_TOEI_TSUKIJI_SHIJO",
+          "STN_TOEI_SHIODOME",
+          "STN_TOEI_DAIMON",
+          "STN_TOEI_AKABANEBASHI",
+          "STN_TOEI_AZABU_JUBAN",
+          "STN_TOEI_ROPPONGI",
+          "STN_TOEI_AOYAMA_ITCHOME",
+          "STN_TOEI_KOKURITSU_KYOGIJO",
+          "STN_TOEI_YOYOGI",
+          "STN_TOEI_SHINJUKU",
+          "STN_TOEI_NISHI_SHINJUKU_GOCHOME",
+          "STN_TOEI_NAKANO_SAKAUE",
+          "STN_TOEI_HIGASHI_NAKANO",
+          "STN_TOEI_NAKAI",
+          "STN_TOEI_OCHIAI_MINAMI_NAGASAKI",
+          "STN_TOEI_SHIN_EGOTA",
+          "STN_TOEI_NERIMA",
+          "STN_TOEI_TOSHIMAEN",
+          "STN_TOEI_NERIMA_KASUGACHO",
+          "STN_TOEI_HIKARIGAOKA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TOEI_NISHI_MAGOME",
+        "lat": "35.587305",
+        "lng": "139.70632",
+        "name": "西馬込"
+      },
+      {
+        "id": "STN_TOEI_MAGOME",
+        "lat": "35.596444",
+        "lng": "139.711855",
+        "name": "馬込"
+      },
+      {
+        "id": "STN_TOEI_NAKANOBU",
+        "lat": "35.605175",
+        "lng": "139.71359",
+        "name": "中延"
+      },
+      {
+        "id": "STN_TOEI_TOGOSHI",
+        "lat": "35.614425",
+        "lng": "139.716375",
+        "name": "戸越"
+      },
+      {
+        "id": "STN_TOEI_GOTANDA",
+        "lat": "35.62711",
+        "lng": "139.724185",
+        "name": "五反田"
+      },
+      {
+        "id": "STN_TOEI_TAKANAWADAI",
+        "lat": "35.631673",
+        "lng": "139.73037",
+        "name": "高輪台"
+      },
+      {
+        "id": "STN_TOEI_SENGAKUJI",
+        "lat": "35.63813",
+        "lng": "139.73973",
+        "name": "泉岳寺"
+      },
+      {
+        "id": "STN_TOEI_MITA",
+        "lat": "35.647921",
+        "lng": "139.749462",
+        "name": "三田"
+      },
+      {
+        "id": "STN_TOEI_DAIMON",
+        "lat": "35.656647",
+        "lng": "139.754666",
+        "name": "大門"
+      },
+      {
+        "id": "STN_TOEI_SHIMBASHI",
+        "lat": "35.664887",
+        "lng": "139.758987",
+        "name": "新橋"
+      },
+      {
+        "id": "STN_TOEI_HIGASHI_GINZA",
+        "lat": "35.669633",
+        "lng": "139.767147",
+        "name": "東銀座"
+      },
+      {
+        "id": "STN_TOEI_TAKARACHO",
+        "lat": "35.675684",
+        "lng": "139.77209",
+        "name": "宝町"
+      },
+      {
+        "id": "STN_TOEI_NIHOMBASHI",
+        "lat": "35.681592",
+        "lng": "139.775767",
+        "name": "日本橋"
+      },
+      {
+        "id": "STN_TOEI_NINGYOCHO",
+        "lat": "35.686345",
+        "lng": "139.782172",
+        "name": "人形町"
+      },
+      {
+        "id": "STN_TOEI_HIGASHI_NIHOMBASHI",
+        "lat": "35.691782",
+        "lng": "139.78478",
+        "name": "東日本橋"
+      },
+      {
+        "id": "STN_TOEI_ASAKUSABASHI",
+        "lat": "35.697605",
+        "lng": "139.786455",
+        "name": "浅草橋"
+      },
+      {
+        "id": "STN_TOEI_KURAMAE",
+        "lat": "35.703147",
+        "lng": "139.790853",
+        "name": "蔵前"
+      },
+      {
+        "id": "STN_TOEI_ASAKUSA",
+        "lat": "35.70899",
+        "lng": "139.796595",
+        "name": "浅草"
+      },
+      {
+        "id": "STN_TOEI_HONJO_AZUMABASHI",
+        "lat": "35.708604",
+        "lng": "139.804559",
+        "name": "本所吾妻橋"
+      },
+      {
+        "id": "STN_TOEI_OSHIAGE",
+        "lat": "35.71022",
+        "lng": "139.81241",
+        "name": "押上"
+      },
+      {
+        "id": "STN_TOEI_MEGURO",
+        "lat": "35.632485",
+        "lng": "139.71566",
+        "name": "目黒"
+      },
+      {
+        "id": "STN_TOEI_SHIROKANEDAI",
+        "lat": "35.63777",
+        "lng": "139.72586",
+        "name": "白金台"
+      },
+      {
+        "id": "STN_TOEI_SHIROKANE_TAKANAWA",
+        "lat": "35.643145",
+        "lng": "139.734285",
+        "name": "白金高輪"
+      },
+      {
+        "id": "STN_TOEI_SHIBA_KOEN",
+        "lat": "35.653455",
+        "lng": "139.74972",
+        "name": "芝公園"
+      },
+      {
+        "id": "STN_TOEI_ONARIMON",
+        "lat": "35.660978",
+        "lng": "139.751499",
+        "name": "御成門"
+      },
+      {
+        "id": "STN_TOEI_UCHISAIWAICHO",
+        "lat": "35.66918",
+        "lng": "139.75533",
+        "name": "内幸町"
+      },
+      {
+        "id": "STN_TOEI_HIBIYA",
+        "lat": "35.67662",
+        "lng": "139.760145",
+        "name": "日比谷"
+      },
+      {
+        "id": "STN_TOEI_OTEMACHI",
+        "lat": "35.68407",
+        "lng": "139.76261",
+        "name": "大手町"
+      },
+      {
+        "id": "STN_TOEI_JIMBOCHO",
+        "lat": "35.694929",
+        "lng": "139.75842",
+        "name": "神保町"
+      },
+      {
+        "id": "STN_TOEI_SUIDOBASHI",
+        "lat": "35.703641",
+        "lng": "139.755123",
+        "name": "水道橋"
+      },
+      {
+        "id": "STN_TOEI_KASUGA",
+        "lat": "35.709948",
+        "lng": "139.753237",
+        "name": "春日"
+      },
+      {
+        "id": "STN_TOEI_HAKUSAN",
+        "lat": "35.721334",
+        "lng": "139.752212",
+        "name": "白山"
+      },
+      {
+        "id": "STN_TOEI_SENGOKU",
+        "lat": "35.727965",
+        "lng": "139.744745",
+        "name": "千石"
+      },
+      {
+        "id": "STN_TOEI_SUGAMO",
+        "lat": "35.73378",
+        "lng": "139.738035",
+        "name": "巣鴨"
+      },
+      {
+        "id": "STN_TOEI_NISHI_SUGAMO",
+        "lat": "35.743415",
+        "lng": "139.728725",
+        "name": "西巣鴨"
+      },
+      {
+        "id": "STN_TOEI_SHIN_ITABASHI",
+        "lat": "35.74884",
+        "lng": "139.719365",
+        "name": "新板橋"
+      },
+      {
+        "id": "STN_TOEI_ITABASHIKUYAKUSHO_MAE",
+        "lat": "35.751305",
+        "lng": "139.710055",
+        "name": "板橋区役所前"
+      },
+      {
+        "id": "STN_TOEI_ITABASHIHONCHO",
+        "lat": "35.7611",
+        "lng": "139.705605",
+        "name": "板橋本町"
+      },
+      {
+        "id": "STN_TOEI_MOTOHASUNUMA",
+        "lat": "35.768985",
+        "lng": "139.70211",
+        "name": "本蓮沼"
+      },
+      {
+        "id": "STN_TOEI_SHIMURA_SAKAUE",
+        "lat": "35.77634",
+        "lng": "139.69473",
+        "name": "志村坂上"
+      },
+      {
+        "id": "STN_TOEI_SHIMURA_SANCHOME",
+        "lat": "35.777465",
+        "lng": "139.68586",
+        "name": "志村三丁目"
+      },
+      {
+        "id": "STN_TOEI_HASUNE",
+        "lat": "35.784055",
+        "lng": "139.67906",
+        "name": "蓮根"
+      },
+      {
+        "id": "STN_TOEI_NISHIDAI",
+        "lat": "35.78708",
+        "lng": "139.67268",
+        "name": "西台"
+      },
+      {
+        "id": "STN_TOEI_TAKASHIMADAIRA",
+        "lat": "35.788935",
+        "lng": "139.661295",
+        "name": "高島平"
+      },
+      {
+        "id": "STN_TOEI_SHIN_TAKASHIMADAIRA",
+        "lat": "35.79022",
+        "lng": "139.65433",
+        "name": "新高島平"
+      },
+      {
+        "id": "STN_TOEI_NISHI_TAKASHIMADAIRA",
+        "lat": "35.791895",
+        "lng": "139.645685",
+        "name": "西高島平"
+      },
+      {
+        "id": "STN_TOEI_SHINJUKU",
+        "lat": "35.68843",
+        "lng": "139.698615",
+        "name": "新宿"
+      },
+      {
+        "id": "STN_TOEI_SHINJUKU_SANCHOME",
+        "lat": "35.69084",
+        "lng": "139.706535",
+        "name": "新宿三丁目"
+      },
+      {
+        "id": "STN_TOEI_AKEBONOBASHI",
+        "lat": "35.69233",
+        "lng": "139.72258",
+        "name": "曙橋"
+      },
+      {
+        "id": "STN_TOEI_ICHIGAYA",
+        "lat": "35.691455",
+        "lng": "139.737385",
+        "name": "市ヶ谷"
+      },
+      {
+        "id": "STN_TOEI_KUDANSHITA",
+        "lat": "35.695495",
+        "lng": "139.751118",
+        "name": "九段下"
+      },
+      {
+        "id": "STN_TOEI_OGAWA_MACHI",
+        "lat": "35.695216",
+        "lng": "139.76686",
+        "name": "小川町"
+      },
+      {
+        "id": "STN_TOEI_IWAMOTOCHO",
+        "lat": "35.695577",
+        "lng": "139.775185",
+        "name": "岩本町"
+      },
+      {
+        "id": "STN_TOEI_BAKURO_YOKOYAMA",
+        "lat": "35.692007",
+        "lng": "139.782923",
+        "name": "馬喰横山"
+      },
+      {
+        "id": "STN_TOEI_HAMACHO",
+        "lat": "35.68859",
+        "lng": "139.788125",
+        "name": "浜町"
+      },
+      {
+        "id": "STN_TOEI_MORISHITA",
+        "lat": "35.68805",
+        "lng": "139.798195",
+        "name": "森下"
+      },
+      {
+        "id": "STN_TOEI_KIKUKAWA",
+        "lat": "35.688405",
+        "lng": "139.806125",
+        "name": "菊川"
+      },
+      {
+        "id": "STN_TOEI_SUMIYOSHI",
+        "lat": "35.688954",
+        "lng": "139.815745",
+        "name": "住吉"
+      },
+      {
+        "id": "STN_TOEI_NISHI_OJIMA",
+        "lat": "35.689358",
+        "lng": "139.82632",
+        "name": "西大島"
+      },
+      {
+        "id": "STN_TOEI_OJIMA",
+        "lat": "35.689761",
+        "lng": "139.83436",
+        "name": "大島"
+      },
+      {
+        "id": "STN_TOEI_HIGASHI_OJIMA",
+        "lat": "35.689922",
+        "lng": "139.847307",
+        "name": "東大島"
+      },
+      {
+        "id": "STN_TOEI_FUNABORI",
+        "lat": "35.683785",
+        "lng": "139.863855",
+        "name": "船堀"
+      },
+      {
+        "id": "STN_TOEI_ICHINOE",
+        "lat": "35.68594",
+        "lng": "139.88289",
+        "name": "一之江"
+      },
+      {
+        "id": "STN_TOEI_MIZUE",
+        "lat": "35.69339",
+        "lng": "139.89781",
+        "name": "瑞江"
+      },
+      {
+        "id": "STN_TOEI_SHINOZAKI",
+        "lat": "35.70612",
+        "lng": "139.903885",
+        "name": "篠崎"
+      },
+      {
+        "id": "STN_TOEI_MOTOYAWATA",
+        "lat": "35.72335",
+        "lng": "139.92688",
+        "name": "本八幡"
+      },
+      {
+        "id": "STN_TOEI_TOCHO_MAE",
+        "lat": "35.69059",
+        "lng": "139.692625",
+        "name": "都庁前"
+      },
+      {
+        "id": "STN_TOEI_SHINJUKU_NISHIGUCHI",
+        "lat": "35.69316",
+        "lng": "139.69916",
+        "name": "新宿西口"
+      },
+      {
+        "id": "STN_TOEI_HIGASHI_SHINJUKU",
+        "lat": "35.697895",
+        "lng": "139.70769",
+        "name": "東新宿"
+      },
+      {
+        "id": "STN_TOEI_WAKAMATSU_KAWADA",
+        "lat": "35.699165",
+        "lng": "139.718185",
+        "name": "若松河田"
+      },
+      {
+        "id": "STN_TOEI_USHIGOME_YANAGICHO",
+        "lat": "35.69946",
+        "lng": "139.72519",
+        "name": "牛込柳町"
+      },
+      {
+        "id": "STN_TOEI_USHIGOME_KAGURAZAKA",
+        "lat": "35.700915",
+        "lng": "139.73604",
+        "name": "牛込神楽坂"
+      },
+      {
+        "id": "STN_TOEI_IDABASHI",
+        "lat": "35.703102",
+        "lng": "139.745744",
+        "name": "飯田橋"
+      },
+      {
+        "id": "STN_TOEI_HONGO_SANCHOME",
+        "lat": "35.70758",
+        "lng": "139.760614",
+        "name": "本郷三丁目"
+      },
+      {
+        "id": "STN_TOEI_UENO_OKACHIMACHI",
+        "lat": "35.707959",
+        "lng": "139.773065",
+        "name": "上野御徒町"
+      },
+      {
+        "id": "STN_TOEI_SHIN_OKACHIMACHI",
+        "lat": "35.707",
+        "lng": "139.781909",
+        "name": "新御徒町"
+      },
+      {
+        "id": "STN_TOEI_RYOGOKU",
+        "lat": "35.69677",
+        "lng": "139.797432",
+        "name": "両国"
+      },
+      {
+        "id": "STN_TOEI_KIYOSUMI_SHIRAKAWA",
+        "lat": "35.682944",
+        "lng": "139.798659",
+        "name": "清澄白河"
+      },
+      {
+        "id": "STN_TOEI_MONZEN_NAKACHO",
+        "lat": "35.672756",
+        "lng": "139.795126",
+        "name": "門前仲町"
+      },
+      {
+        "id": "STN_TOEI_TSUKISHIMA",
+        "lat": "35.663896",
+        "lng": "139.784085",
+        "name": "月島"
+      },
+      {
+        "id": "STN_TOEI_KACHIDOKI",
+        "lat": "35.658949",
+        "lng": "139.777152",
+        "name": "勝どき"
+      },
+      {
+        "id": "STN_TOEI_TSUKIJI_SHIJO",
+        "lat": "35.66496",
+        "lng": "139.76675",
+        "name": "築地市場"
+      },
+      {
+        "id": "STN_TOEI_SHIODOME",
+        "lat": "35.66349533",
+        "lng": "139.76001468",
+        "name": "汐留"
+      },
+      {
+        "id": "STN_TOEI_AKABANEBASHI",
+        "lat": "35.65497",
+        "lng": "139.744195",
+        "name": "赤羽橋"
+      },
+      {
+        "id": "STN_TOEI_AZABU_JUBAN",
+        "lat": "35.65649",
+        "lng": "139.736105",
+        "name": "麻布十番"
+      },
+      {
+        "id": "STN_TOEI_ROPPONGI",
+        "lat": "35.664065",
+        "lng": "139.731275",
+        "name": "六本木"
+      },
+      {
+        "id": "STN_TOEI_AOYAMA_ITCHOME",
+        "lat": "35.672921",
+        "lng": "139.723983",
+        "name": "青山一丁目"
+      },
+      {
+        "id": "STN_TOEI_KOKURITSU_KYOGIJO",
+        "lat": "35.679858",
+        "lng": "139.714876",
+        "name": "国立競技場"
+      },
+      {
+        "id": "STN_TOEI_YOYOGI",
+        "lat": "35.68378",
+        "lng": "139.701525",
+        "name": "代々木"
+      },
+      {
+        "id": "STN_TOEI_NISHI_SHINJUKU_GOCHOME",
+        "lat": "35.6899",
+        "lng": "139.684665",
+        "name": "西新宿五丁目"
+      },
+      {
+        "id": "STN_TOEI_NAKANO_SAKAUE",
+        "lat": "35.697875",
+        "lng": "139.68296",
+        "name": "中野坂上"
+      },
+      {
+        "id": "STN_TOEI_HIGASHI_NAKANO",
+        "lat": "35.70737",
+        "lng": "139.68325",
+        "name": "東中野"
+      },
+      {
+        "id": "STN_TOEI_NAKAI",
+        "lat": "35.713865",
+        "lng": "139.68631",
+        "name": "中井"
+      },
+      {
+        "id": "STN_TOEI_OCHIAI_MINAMI_NAGASAKI",
+        "lat": "35.72336",
+        "lng": "139.683472",
+        "name": "落合南長崎"
+      },
+      {
+        "id": "STN_TOEI_SHIN_EGOTA",
+        "lat": "35.732492",
+        "lng": "139.670566",
+        "name": "新江古田"
+      },
+      {
+        "id": "STN_TOEI_NERIMA",
+        "lat": "35.737315",
+        "lng": "139.65457",
+        "name": "練馬"
+      },
+      {
+        "id": "STN_TOEI_TOSHIMAEN",
+        "lat": "35.74161",
+        "lng": "139.649205",
+        "name": "豊島園"
+      },
+      {
+        "id": "STN_TOEI_NERIMA_KASUGACHO",
+        "lat": "35.75136",
+        "lng": "139.64076",
+        "name": "練馬春日町"
+      },
+      {
+        "id": "STN_TOEI_HIKARIGAOKA",
+        "lat": "35.75847",
+        "lng": "139.62924",
+        "name": "光が丘"
+      }
+    ]
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "ICHIBATA",
+    "company_name": "一畑電車",
+    "lines": [
+      {
+        "id": "ICHIBATA_KITA_MATSUE",
+        "name": "北松江線",
+        "sequence": [
+          "STN_ICHIBATA_DENTETSU_IZUMOSHI",
+          "STN_ICHIBATA_IZUMO_KAGAKUKAN_PTM",
+          "STN_ICHIBATA_OTSUCHO",
+          "STN_ICHIBATA_TAKESHI",
+          "STN_ICHIBATA_KAWATO",
+          "STN_ICHIBATA_OTERA",
+          "STN_ICHIBATA_MIDAMI",
+          "STN_ICHIBATA_TABUSHI",
+          "STN_ICHIBATA_UNSHU_HIRATA",
+          "STN_ICHIBATA_NUNOZAKI",
+          "STN_ICHIBATA_KOYUKAN_SHINEKI",
+          "STN_ICHIBATA_SONO",
+          "STN_ICHIBATA_ICHIBATAGUCHI",
+          "STN_ICHIBATA_INONADA",
+          "STN_ICHIBATA_TSUNOMORI",
+          "STN_ICHIBATA_TAKANOMIYA",
+          "STN_ICHIBATA_MATSUE_VOGEL_PARK",
+          "STN_ICHIBATA_AIKAMACHI",
+          "STN_ICHIBATA_NAGAE",
+          "STN_ICHIBATA_ASAHIGAOKA",
+          "STN_ICHIBATA_MATSUE_ENGLISH_GARDEN_MAE",
+          "STN_ICHIBATA_MATSUE_SHINJIKO_ONSEN"
+        ]
+      },
+      {
+        "id": "ICHIBATA_TAISHA",
+        "name": "大社線",
+        "sequence": [
+          "STN_ICHIBATA_KAWATO",
+          "STN_ICHIBATA_TAKAHAMA",
+          "STN_ICHIBATA_YOKAN",
+          "STN_ICHIBATA_HAMAYAMA_KOEN_KITAGUCHI",
+          "STN_ICHIBATA_IZUMO_TAISHA_MAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ICHIBATA_DENTETSU_IZUMOSHI",
+        "lat": "35.36122533",
+        "lng": "132.75849311",
+        "name": "電鉄出雲市"
+      },
+      {
+        "id": "STN_ICHIBATA_IZUMO_KAGAKUKAN_PTM",
+        "lat": "35.363065",
+        "lng": "132.76651",
+        "name": "出雲科学館パークタウン前"
+      },
+      {
+        "id": "STN_ICHIBATA_OTSUCHO",
+        "lat": "35.369095",
+        "lng": "132.774325",
+        "name": "大津町"
+      },
+      {
+        "id": "STN_ICHIBATA_TAKESHI",
+        "lat": "35.388",
+        "lng": "132.77327",
+        "name": "武志"
+      },
+      {
+        "id": "STN_ICHIBATA_KAWATO",
+        "lat": "35.395145",
+        "lng": "132.77641",
+        "name": "川跡"
+      },
+      {
+        "id": "STN_ICHIBATA_OTERA",
+        "lat": "35.40442",
+        "lng": "132.787435",
+        "name": "大寺"
+      },
+      {
+        "id": "STN_ICHIBATA_MIDAMI",
+        "lat": "35.412555",
+        "lng": "132.798105",
+        "name": "美談"
+      },
+      {
+        "id": "STN_ICHIBATA_TABUSHI",
+        "lat": "35.42119",
+        "lng": "132.80686",
+        "name": "旅伏"
+      },
+      {
+        "id": "STN_ICHIBATA_UNSHU_HIRATA",
+        "lat": "35.43231",
+        "lng": "132.82368",
+        "name": "雲州平田"
+      },
+      {
+        "id": "STN_ICHIBATA_NUNOZAKI",
+        "lat": "35.450235",
+        "lng": "132.855005",
+        "name": "布崎"
+      },
+      {
+        "id": "STN_ICHIBATA_KOYUKAN_SHINEKI",
+        "lat": "35.452685",
+        "lng": "132.862145",
+        "name": "湖遊館新駅"
+      },
+      {
+        "id": "STN_ICHIBATA_SONO",
+        "lat": "35.456135",
+        "lng": "132.86813",
+        "name": "園"
+      },
+      {
+        "id": "STN_ICHIBATA_ICHIBATAGUCHI",
+        "lat": "35.46482341",
+        "lng": "132.88275422",
+        "name": "一畑口"
+      },
+      {
+        "id": "STN_ICHIBATA_INONADA",
+        "lat": "35.461245",
+        "lng": "132.900885",
+        "name": "伊野灘"
+      },
+      {
+        "id": "STN_ICHIBATA_TSUNOMORI",
+        "lat": "35.46635",
+        "lng": "132.91905",
+        "name": "津ノ森"
+      },
+      {
+        "id": "STN_ICHIBATA_TAKANOMIYA",
+        "lat": "35.4718",
+        "lng": "132.930435",
+        "name": "高ノ宮"
+      },
+      {
+        "id": "STN_ICHIBATA_MATSUE_VOGEL_PARK",
+        "lat": "35.474905",
+        "lng": "132.9437",
+        "name": "松江フォーゲルパーク"
+      },
+      {
+        "id": "STN_ICHIBATA_AIKAMACHI",
+        "lat": "35.47723",
+        "lng": "132.95673",
+        "name": "秋鹿町"
+      },
+      {
+        "id": "STN_ICHIBATA_NAGAE",
+        "lat": "35.47984",
+        "lng": "132.974315",
+        "name": "長江"
+      },
+      {
+        "id": "STN_ICHIBATA_ASAHIGAOKA",
+        "lat": "35.480907",
+        "lng": "132.987881",
+        "name": "朝日ヶ丘"
+      },
+      {
+        "id": "STN_ICHIBATA_MATSUE_ENGLISH_GARDEN_MAE",
+        "lat": "35.47735",
+        "lng": "133.003985",
+        "name": "松江イングリッシュガーデン前"
+      },
+      {
+        "id": "STN_ICHIBATA_MATSUE_SHINJIKO_ONSEN",
+        "lat": "35.46708",
+        "lng": "133.045395",
+        "name": "松江しんじ湖温泉"
+      },
+      {
+        "id": "STN_ICHIBATA_TAKAHAMA",
+        "lat": "35.390724",
+        "lng": "132.746705",
+        "name": "高浜"
+      },
+      {
+        "id": "STN_ICHIBATA_YOKAN",
+        "lat": "35.38922",
+        "lng": "132.72629",
+        "name": "遙堪"
+      },
+      {
+        "id": "STN_ICHIBATA_HAMAYAMA_KOEN_KITAGUCHI",
+        "lat": "35.38914984",
+        "lng": "132.70815878",
+        "name": "浜山公園北口"
+      },
+      {
+        "id": "STN_ICHIBATA_IZUMO_TAISHA_MAE",
+        "lat": "35.39329798",
+        "lng": "132.68771916",
+        "name": "出雲大社前"
+      }
+    ]
+  }
+]

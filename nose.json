@@ -1,0 +1,129 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "NOSE",
+    "company_name": "能勢電鉄",
+    "lines": [
+      {
+        "id": "NOSE_MYOKEN",
+        "name": "妙見線",
+        "sequence": [
+          "STN_NOSE_KAWANISHI_NOSEGUCHI",
+          "STN_NOSE_KINUNOBEBASHI",
+          "STN_NOSE_TAKIYAMA",
+          "STN_NOSE_UGUISUNOMORI",
+          "STN_NOSE_TSUZUMITAKI",
+          "STN_NOSE_TADA",
+          "STN_NOSE_HIRANO",
+          "STN_NOSE_ICHINOTORII",
+          "STN_NOSE_UNENO",
+          "STN_NOSE_YAMASHITA",
+          "STN_NOSE_SASABE",
+          "STN_NOSE_KOFUDAI",
+          "STN_NOSE_TOKIWADAI",
+          "STN_NOSE_MYOKENGUCHI"
+        ]
+      },
+      {
+        "id": "NOSE_NISSIE",
+        "name": "日生線",
+        "sequence": [
+          "STN_NOSE_YAMASHITA",
+          "STN_NOSE_NISSEI_CHUO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NOSE_KAWANISHI_NOSEGUCHI",
+        "lat": "34.82764",
+        "lng": "135.413196",
+        "name": "川西能勢口"
+      },
+      {
+        "id": "STN_NOSE_KINUNOBEBASHI",
+        "lat": "34.83482",
+        "lng": "135.42307",
+        "name": "絹延橋"
+      },
+      {
+        "id": "STN_NOSE_TAKIYAMA",
+        "lat": "34.843085",
+        "lng": "135.42114",
+        "name": "滝山"
+      },
+      {
+        "id": "STN_NOSE_UGUISUNOMORI",
+        "lat": "34.847745",
+        "lng": "135.418845",
+        "name": "鶯の森"
+      },
+      {
+        "id": "STN_NOSE_TSUZUMITAKI",
+        "lat": "34.854705",
+        "lng": "135.418335",
+        "name": "鼓滝"
+      },
+      {
+        "id": "STN_NOSE_TADA",
+        "lat": "34.86057",
+        "lng": "135.416705",
+        "name": "多田"
+      },
+      {
+        "id": "STN_NOSE_HIRANO",
+        "lat": "34.86876",
+        "lng": "135.41733",
+        "name": "平野"
+      },
+      {
+        "id": "STN_NOSE_ICHINOTORII",
+        "lat": "34.87956",
+        "lng": "135.419935",
+        "name": "一の鳥居"
+      },
+      {
+        "id": "STN_NOSE_UNENO",
+        "lat": "34.884953",
+        "lng": "135.415632",
+        "name": "畦野"
+      },
+      {
+        "id": "STN_NOSE_YAMASHITA",
+        "lat": "34.892935",
+        "lng": "135.41235",
+        "name": "山下"
+      },
+      {
+        "id": "STN_NOSE_SASABE",
+        "lat": "34.893675",
+        "lng": "135.416445",
+        "name": "笹部"
+      },
+      {
+        "id": "STN_NOSE_KOFUDAI",
+        "lat": "34.89991",
+        "lng": "135.43141",
+        "name": "光風台"
+      },
+      {
+        "id": "STN_NOSE_TOKIWADAI",
+        "lat": "34.906175",
+        "lng": "135.43809",
+        "name": "ときわ台"
+      },
+      {
+        "id": "STN_NOSE_MYOKENGUCHI",
+        "lat": "34.911515",
+        "lng": "135.44458",
+        "name": "妙見口"
+      },
+      {
+        "id": "STN_NOSE_NISSEI_CHUO",
+        "lat": "34.90648368",
+        "lng": "135.39314896",
+        "name": "日生中央"
+      }
+    ]
+  }
+]

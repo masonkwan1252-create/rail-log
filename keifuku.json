@@ -1,0 +1,178 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "KEIFUKU",
+    "company_name": "京福電気鉄道",
+    "lines": [
+      {
+        "id": "KEIFUKU_ARASHIYAMA",
+        "name": "嵐山本線",
+        "sequence": [
+          "STN_KEIFUKU_SHIJO_OMIYA",
+          "STN_KEIFUKU_SAI",
+          "STN_KEIFUKU_NISHIOJI_SANJO",
+          "STN_KEIFUKU_YAMANOUCHI",
+          "STN_KEIFUKU_RANDEN_TENJINGAWA",
+          "STN_KEIFUKU_KAIBI_NO_YASHIRO",
+          "STN_KEIFUKU_UZUMASA_KORYUJI",
+          "STN_KEIFUKU_KATABIRA_NO_TSUJI",
+          "STN_KEIFUKU_ARISUGAWA",
+          "STN_KEIFUKU_KURUMAZAKI_JINJA",
+          "STN_KEIFUKU_ROKUOJIN",
+          "STN_KEIFUKU_RANDEN_SAGA",
+          "STN_KEIFUKU_ARASHIYAMA"
+        ]
+      },
+      {
+        "id": "KEIFUKU_KITANO",
+        "name": "北野線",
+        "sequence": [
+          "STN_KEIFUKU_KITANO_HAKUBAICHO",
+          "STN_KEIFUKU_TOJIIN_RITSUMEIKAN",
+          "STN_KEIFUKU_RYOANJI",
+          "STN_KEIFUKU_MYOSHINJI",
+          "STN_KEIFUKU_OMURO_NINNAJI",
+          "STN_KEIFUKU_UTANO",
+          "STN_KEIFUKU_NARUTAKI",
+          "STN_KEIFUKU_TOKIWA",
+          "STN_KEIFUKU_SATSUYEIJO_MAE",
+          "STN_KEIFUKU_KATABIRA_NO_TSUJI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KEIFUKU_SHIJO_OMIYA",
+        "lat": "35.00324657",
+        "lng": "135.74845533",
+        "name": "四条大宮"
+      },
+      {
+        "id": "STN_KEIFUKU_SAI",
+        "lat": "35.00327013",
+        "lng": "135.73423809",
+        "name": "西院"
+      },
+      {
+        "id": "STN_KEIFUKU_NISHIOJI_SANJO",
+        "lat": "35.00790441",
+        "lng": "135.73236898",
+        "name": "西大路三条"
+      },
+      {
+        "id": "STN_KEIFUKU_YAMANOUCHI",
+        "lat": "35.00832",
+        "lng": "135.723215",
+        "name": "山ノ内"
+      },
+      {
+        "id": "STN_KEIFUKU_RANDEN_TENJINGAWA",
+        "lat": "35.01022073",
+        "lng": "135.71503278",
+        "name": "嵐電天神川"
+      },
+      {
+        "id": "STN_KEIFUKU_KAIBI_NO_YASHIRO",
+        "lat": "35.01189641",
+        "lng": "135.71307395",
+        "name": "蚕ノ社"
+      },
+      {
+        "id": "STN_KEIFUKU_UZUMASA_KORYUJI",
+        "lat": "35.01337004",
+        "lng": "135.70846094",
+        "name": "太秦広隆寺"
+      },
+      {
+        "id": "STN_KEIFUKU_KATABIRA_NO_TSUJI",
+        "lat": "35.01521208",
+        "lng": "135.70040768",
+        "name": "帷子ノ辻"
+      },
+      {
+        "id": "STN_KEIFUKU_ARISUGAWA",
+        "lat": "35.01524829",
+        "lng": "135.69418239",
+        "name": "有栖川"
+      },
+      {
+        "id": "STN_KEIFUKU_KURUMAZAKI_JINJA",
+        "lat": "35.016755",
+        "lng": "135.689045",
+        "name": "車折神社"
+      },
+      {
+        "id": "STN_KEIFUKU_ROKUOJIN",
+        "lat": "35.01703086",
+        "lng": "135.68534515",
+        "name": "鹿王院"
+      },
+      {
+        "id": "STN_KEIFUKU_RANDEN_SAGA",
+        "lat": "35.01655552",
+        "lng": "135.68173209",
+        "name": "嵐電嵯峨"
+      },
+      {
+        "id": "STN_KEIFUKU_ARASHIYAMA",
+        "lat": "35.0153196",
+        "lng": "135.678061",
+        "name": "嵐山"
+      },
+      {
+        "id": "STN_KEIFUKU_KITANO_HAKUBAICHO",
+        "lat": "35.027425",
+        "lng": "135.73081",
+        "name": "北野白梅町"
+      },
+      {
+        "id": "STN_KEIFUKU_TOJIIN_RITSUMEIKAN",
+        "lat": "35.02783304",
+        "lng": "135.72373298",
+        "name": "等持院・立命館大学衣笠キャンパス前"
+      },
+      {
+        "id": "STN_KEIFUKU_RYOANJI",
+        "lat": "35.02789246",
+        "lng": "135.72142549",
+        "name": "龍安寺"
+      },
+      {
+        "id": "STN_KEIFUKU_MYOSHINJI",
+        "lat": "35.02628",
+        "lng": "135.71785",
+        "name": "妙心寺"
+      },
+      {
+        "id": "STN_KEIFUKU_OMURO_NINNAJI",
+        "lat": "35.02638325",
+        "lng": "135.71428294",
+        "name": "御室仁和寺"
+      },
+      {
+        "id": "STN_KEIFUKU_UTANO",
+        "lat": "35.02715566",
+        "lng": "135.71001653",
+        "name": "宇多野"
+      },
+      {
+        "id": "STN_KEIFUKU_NARUTAKI",
+        "lat": "35.02353",
+        "lng": "135.7058",
+        "name": "鳴滝"
+      },
+      {
+        "id": "STN_KEIFUKU_TOKIWA",
+        "lat": "35.020477",
+        "lng": "135.70480687",
+        "name": "常盤"
+      },
+      {
+        "id": "STN_KEIFUKU_SATSUYEIJO_MAE",
+        "lat": "35.01566422",
+        "lng": "135.70267082",
+        "name": "撮影所前"
+      }
+    ]
+  }
+]

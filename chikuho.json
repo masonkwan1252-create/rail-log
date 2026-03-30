@@ -1,0 +1,164 @@
+[
+  {
+    "categories": "",
+    "company_id": "CHIKUHO",
+    "company_name": "筑豊電鉄",
+    "lines": [
+      {
+        "id": "CHIKUHO_LINE",
+        "name": "筑豊電気鉄道線",
+        "sequence": [
+          "STN_CHIKUHO_KUROSAKI_EKIMAE",
+          "STN_CHIKUHO_NISHI_KUROSAKI",
+          "STN_CHIKUHO_KUMANISHI",
+          "STN_CHIKUHO_HAGIWARA",
+          "STN_CHIKUHO_ANO",
+          "STN_CHIKUHO_MORISHITA",
+          "STN_CHIKUHO_IMAIKE",
+          "STN_CHIKUHO_EINOUMARU",
+          "STN_CHIKUHO_SANGAMORI",
+          "STN_CHIKUHO_NISHIYAMA",
+          "STN_CHIKUHO_TORITANI",
+          "STN_CHIKUHO_HIGASHI_NAKAMA",
+          "STN_CHIKUHO_CHIKUHO_NAKAMA",
+          "STN_CHIKUHO_KIBOGAOKA_KOKO_MAE",
+          "STN_CHIKUHO_CHIKUHO_KATSUKI",
+          "STN_CHIKUHO_KUSUBASHI",
+          "STN_CHIKUHO_SHIN_KOYANO_SE",
+          "STN_CHIKUHO_KOYANO_SE",
+          "STN_CHIKUHO_ONGANO",
+          "STN_CHIKUHO_GANDA",
+          "STN_CHIKUHO_CHIKUHO_NOGATA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_CHIKUHO_KUROSAKI_EKIMAE",
+        "lat": "33.86660667",
+        "lng": "130.76505413",
+        "name": "黒崎駅前"
+      },
+      {
+        "id": "STN_CHIKUHO_NISHI_KUROSAKI",
+        "lat": "33.86638081",
+        "lng": "130.76223089",
+        "name": "西黒崎"
+      },
+      {
+        "id": "STN_CHIKUHO_KUMANISHI",
+        "lat": "33.86615749",
+        "lng": "130.75832339",
+        "name": "熊西"
+      },
+      {
+        "id": "STN_CHIKUHO_HAGIWARA",
+        "lat": "33.86114",
+        "lng": "130.74917",
+        "name": "萩原"
+      },
+      {
+        "id": "STN_CHIKUHO_ANO",
+        "lat": "33.85737",
+        "lng": "130.744925",
+        "name": "穴生"
+      },
+      {
+        "id": "STN_CHIKUHO_MORISHITA",
+        "lat": "33.853925",
+        "lng": "130.741055",
+        "name": "森下"
+      },
+      {
+        "id": "STN_CHIKUHO_IMAIKE",
+        "lat": "33.845545",
+        "lng": "130.739755",
+        "name": "今池"
+      },
+      {
+        "id": "STN_CHIKUHO_EINOUMARU",
+        "lat": "33.83854199",
+        "lng": "130.73799238",
+        "name": "永犬丸"
+      },
+      {
+        "id": "STN_CHIKUHO_SANGAMORI",
+        "lat": "33.834875",
+        "lng": "130.736095",
+        "name": "三ヶ森"
+      },
+      {
+        "id": "STN_CHIKUHO_NISHIYAMA",
+        "lat": "33.830055",
+        "lng": "130.73242",
+        "name": "西山"
+      },
+      {
+        "id": "STN_CHIKUHO_TORITANI",
+        "lat": "33.82303",
+        "lng": "130.72701",
+        "name": "通谷"
+      },
+      {
+        "id": "STN_CHIKUHO_HIGASHI_NAKAMA",
+        "lat": "33.820485",
+        "lng": "130.72187",
+        "name": "東中間"
+      },
+      {
+        "id": "STN_CHIKUHO_CHIKUHO_NAKAMA",
+        "lat": "33.81650168",
+        "lng": "130.71640592",
+        "name": "筑豊中間"
+      },
+      {
+        "id": "STN_CHIKUHO_KIBOGAOKA_KOKO_MAE",
+        "lat": "33.80877862",
+        "lng": "130.71154297",
+        "name": "希望が丘高校前"
+      },
+      {
+        "id": "STN_CHIKUHO_CHIKUHO_KATSUKI",
+        "lat": "33.799525",
+        "lng": "130.719035",
+        "name": "筑豊香月"
+      },
+      {
+        "id": "STN_CHIKUHO_KUSUBASHI",
+        "lat": "33.789365",
+        "lng": "130.724515",
+        "name": "楠橋"
+      },
+      {
+        "id": "STN_CHIKUHO_SHIN_KOYANO_SE",
+        "lat": "33.783655",
+        "lng": "130.724515",
+        "name": "新木屋瀬"
+      },
+      {
+        "id": "STN_CHIKUHO_KOYANO_SE",
+        "lat": "33.778465",
+        "lng": "130.724955",
+        "name": "木屋瀬"
+      },
+      {
+        "id": "STN_CHIKUHO_ONGANO",
+        "lat": "33.768645",
+        "lng": "130.730935",
+        "name": "遠賀野"
+      },
+      {
+        "id": "STN_CHIKUHO_GANDA",
+        "lat": "33.758865",
+        "lng": "130.73315",
+        "name": "感田"
+      },
+      {
+        "id": "STN_CHIKUHO_CHIKUHO_NOGATA",
+        "lat": "33.75357782",
+        "lng": "130.7263117",
+        "name": "筑豊直方"
+      }
+    ]
+  }
+]

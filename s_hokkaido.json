@@ -1,0 +1,108 @@
+[
+  {
+    "categories": "",
+    "company_id": "S_HOKKAIDO",
+    "company_name": "道南いさりび鉄道",
+    "lines": [
+      {
+        "id": "S_HOKKAIDO_ISARIBI",
+        "name": "道南いさりび鉄道線",
+        "sequence": [
+          "STN_S_HOKKAIDO_HAKODATE",
+          "STN_S_HOKKAIDO_GORYOKAKU",
+          "STN_S_HOKKAIDO_NANAEHAMA",
+          "STN_S_HOKKAIDO_HIGASHI_KUNEBETSU",
+          "STN_S_HOKKAIDO_KUNEBETSU",
+          "STN_S_HOKKAIDO_KIYOKAWAGUCHI",
+          "STN_S_HOKKAIDO_KAMIISO",
+          "STN_S_HOKKAIDO_MOBECHI",
+          "STN_S_HOKKAIDO_OSHIMA_TOBETSU",
+          "STN_S_HOKKAIDO_KAMAYA",
+          "STN_S_HOKKAIDO_IZUMISAWA",
+          "STN_S_HOKKAIDO_SATSUKARI",
+          "STN_S_HOKKAIDO_KIKONAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_S_HOKKAIDO_HAKODATE",
+        "lat": "41.77439004",
+        "lng": "140.72622203",
+        "name": "函館"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_GORYOKAKU",
+        "lat": "41.803525",
+        "lng": "140.73356",
+        "name": "五稜郭"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_NANAEHAMA",
+        "lat": "41.8176",
+        "lng": "140.708095",
+        "name": "七重浜"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_HIGASHI_KUNEBETSU",
+        "lat": "41.826075",
+        "lng": "140.679705",
+        "name": "東久根別"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_KUNEBETSU",
+        "lat": "41.82667",
+        "lng": "140.66654",
+        "name": "久根別"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_KIYOKAWAGUCHI",
+        "lat": "41.82463",
+        "lng": "140.652975",
+        "name": "清川口"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_KAMIISO",
+        "lat": "41.8196",
+        "lng": "140.64063",
+        "name": "上磯"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_MOBECHI",
+        "lat": "41.766545",
+        "lng": "140.60064",
+        "name": "茂辺地"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_OSHIMA_TOBETSU",
+        "lat": "41.73732",
+        "lng": "140.57914",
+        "name": "渡島当別"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_KAMAYA",
+        "lat": "41.71213",
+        "lng": "140.537135",
+        "name": "釜谷"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_IZUMISAWA",
+        "lat": "41.700845",
+        "lng": "140.50672",
+        "name": "泉沢"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_SATSUKARI",
+        "lat": "41.699265",
+        "lng": "140.46811",
+        "name": "札苅"
+      },
+      {
+        "id": "STN_S_HOKKAIDO_KIKONAI",
+        "lat": "41.677595",
+        "lng": "140.43391",
+        "name": "木古内"
+      }
+    ]
+  }
+]

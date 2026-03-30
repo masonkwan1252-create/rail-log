@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "IBARA",
+    "company_name": "井原鉄道",
+    "lines": [
+      {
+        "id": "IBARA_LINE",
+        "name": "井原線",
+        "sequence": [
+          "STN_IBARA_SOJA",
+          "STN_IBARA_KIYONE",
+          "STN_IBARA_KAWABE_JUKU",
+          "STN_IBARA_KIBI_NO_MAKIBI",
+          "STN_IBARA_BITCHU_KURESE",
+          "STN_IBARA_MITANI",
+          "STN_IBARA_YAKAGE",
+          "STN_IBARA_ODA",
+          "STN_IBARA_SOUN_NO_SATO_EBARA",
+          "STN_IBARA_IBARA",
+          "STN_IBARA_IZUE",
+          "STN_IBARA_KOMORIUTA_NO_SATO_TAKAYA",
+          "STN_IBARA_GORYO",
+          "STN_IBARA_YUNO",
+          "STN_IBARA_KANNABE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_IBARA_SOJA",
+        "lat": "34.67418",
+        "lng": "133.738155",
+        "name": "総社"
+      },
+      {
+        "id": "STN_IBARA_KIYONE",
+        "lat": "34.644035",
+        "lng": "133.733505",
+        "name": "清音"
+      },
+      {
+        "id": "STN_IBARA_KAWABE_JUKU",
+        "lat": "34.63241",
+        "lng": "133.71502",
+        "name": "川辺宿"
+      },
+      {
+        "id": "STN_IBARA_KIBI_NO_MAKIBI",
+        "lat": "34.62676",
+        "lng": "133.69206",
+        "name": "吉備真備"
+      },
+      {
+        "id": "STN_IBARA_BITCHU_KURESE",
+        "lat": "34.62162",
+        "lng": "133.661797",
+        "name": "備中呉妹"
+      },
+      {
+        "id": "STN_IBARA_MITANI",
+        "lat": "34.61643",
+        "lng": "133.619625",
+        "name": "三谷"
+      },
+      {
+        "id": "STN_IBARA_YAKAGE",
+        "lat": "34.629305",
+        "lng": "133.590235",
+        "name": "矢掛"
+      },
+      {
+        "id": "STN_IBARA_ODA",
+        "lat": "34.606015",
+        "lng": "133.54241",
+        "name": "小田"
+      },
+      {
+        "id": "STN_IBARA_SOUN_NO_SATO_EBARA",
+        "lat": "34.59662284",
+        "lng": "133.50759081",
+        "name": "早雲の里荏原"
+      },
+      {
+        "id": "STN_IBARA_IBARA",
+        "lat": "34.592775",
+        "lng": "133.46908",
+        "name": "井原"
+      },
+      {
+        "id": "STN_IBARA_IZUE",
+        "lat": "34.587975",
+        "lng": "133.450645",
+        "name": "いずえ"
+      },
+      {
+        "id": "STN_IBARA_KOMORIUTA_NO_SATO_TAKAYA",
+        "lat": "34.58173",
+        "lng": "133.433325",
+        "name": "子守唄の里高屋"
+      },
+      {
+        "id": "STN_IBARA_GORYO",
+        "lat": "34.56490867",
+        "lng": "133.40256237",
+        "name": "御領"
+      },
+      {
+        "id": "STN_IBARA_YUNO",
+        "lat": "34.552842",
+        "lng": "133.386959",
+        "name": "湯野"
+      },
+      {
+        "id": "STN_IBARA_KANNABE",
+        "lat": "34.53744",
+        "lng": "133.37866",
+        "name": "神辺"
+      }
+    ]
+  }
+]

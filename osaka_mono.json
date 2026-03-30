@@ -1,0 +1,150 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "OSAKA_MONO",
+    "company_name": "大阪モノレール",
+    "lines": [
+      {
+        "id": "OSAKA_MONO_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_OSAKA_MONO_OSAKA_KUKO",
+          "STN_OSAKA_MONO_HOTARUGAIKE",
+          "STN_OSAKA_MONO_SHIBAHARA_HANDAIMAE",
+          "STN_OSAKA_MONO_SHOJI",
+          "STN_OSAKA_MONO_SENRI_CHUO",
+          "STN_OSAKA_MONO_YAMADA",
+          "STN_OSAKA_MONO_BANPAKU_KINEN_KOEN",
+          "STN_OSAKA_MONO_UNOBE",
+          "STN_OSAKA_MONO_MINAMI_IBARAKI",
+          "STN_OSAKA_MONO_SAWARAGI",
+          "STN_OSAKA_MONO_SETTSU",
+          "STN_OSAKA_MONO_MINAMI_SETTSU",
+          "STN_OSAKA_MONO_DAINICHI",
+          "STN_OSAKA_MONO_KADOMASHU"
+        ]
+      },
+      {
+        "id": "OSAKA_MONO_SAITO",
+        "name": "彩都線",
+        "sequence": [
+          "STN_OSAKA_MONO_BANPAKU_KINEN_KOEN",
+          "STN_OSAKA_MONO_KOEN_HIGASHIGUCHI",
+          "STN_OSAKA_MONO_HANDAI_BYOIN_MAE",
+          "STN_OSAKA_MONO_TOYOKAWA",
+          "STN_OSAKA_MONO_SAITO_NISHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_OSAKA_MONO_OSAKA_KUKO",
+        "lat": "34.791306",
+        "lng": "135.442001",
+        "name": "大阪空港"
+      },
+      {
+        "id": "STN_OSAKA_MONO_HOTARUGAIKE",
+        "lat": "34.79401876",
+        "lng": "135.44941367",
+        "name": "蛍池"
+      },
+      {
+        "id": "STN_OSAKA_MONO_SHIBAHARA_HANDAIMAE",
+        "lat": "34.80035615",
+        "lng": "135.45867135",
+        "name": "柴原阪大前"
+      },
+      {
+        "id": "STN_OSAKA_MONO_SHOJI",
+        "lat": "34.80426856",
+        "lng": "135.47547236",
+        "name": "少路"
+      },
+      {
+        "id": "STN_OSAKA_MONO_SENRI_CHUO",
+        "lat": "34.807455",
+        "lng": "135.495185",
+        "name": "千里中央"
+      },
+      {
+        "id": "STN_OSAKA_MONO_YAMADA",
+        "lat": "34.80564",
+        "lng": "135.515545",
+        "name": "山田"
+      },
+      {
+        "id": "STN_OSAKA_MONO_BANPAKU_KINEN_KOEN",
+        "lat": "34.80678",
+        "lng": "135.53016",
+        "name": "万博記念公園"
+      },
+      {
+        "id": "STN_OSAKA_MONO_UNOBE",
+        "lat": "34.80804",
+        "lng": "135.55448",
+        "name": "宇野辺"
+      },
+      {
+        "id": "STN_OSAKA_MONO_MINAMI_IBARAKI",
+        "lat": "34.803195",
+        "lng": "135.56476",
+        "name": "南茨木"
+      },
+      {
+        "id": "STN_OSAKA_MONO_SAWARAGI",
+        "lat": "34.79305384",
+        "lng": "135.56575629",
+        "name": "沢良宜"
+      },
+      {
+        "id": "STN_OSAKA_MONO_SETTSU",
+        "lat": "34.780025",
+        "lng": "135.561425",
+        "name": "摂津"
+      },
+      {
+        "id": "STN_OSAKA_MONO_MINAMI_SETTSU",
+        "lat": "34.76541716",
+        "lng": "135.56854009",
+        "name": "南摂津"
+      },
+      {
+        "id": "STN_OSAKA_MONO_DAINICHI",
+        "lat": "34.74894",
+        "lng": "135.578935",
+        "name": "大日"
+      },
+      {
+        "id": "STN_OSAKA_MONO_KADOMASHU",
+        "lat": "34.73731",
+        "lng": "135.582615",
+        "name": "門真市"
+      },
+      {
+        "id": "STN_OSAKA_MONO_KOEN_HIGASHIGUCHI",
+        "lat": "34.81059",
+        "lng": "135.539595",
+        "name": "公園東口"
+      },
+      {
+        "id": "STN_OSAKA_MONO_HANDAI_BYOIN_MAE",
+        "lat": "34.81845",
+        "lng": "135.52974",
+        "name": "阪大病院前"
+      },
+      {
+        "id": "STN_OSAKA_MONO_TOYOKAWA",
+        "lat": "34.834595",
+        "lng": "135.526721",
+        "name": "豊川"
+      },
+      {
+        "id": "STN_OSAKA_MONO_SAITO_NISHI",
+        "lat": "34.85529065",
+        "lng": "135.52284343",
+        "name": "彩都西"
+      }
+    ]
+  }
+]

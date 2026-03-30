@@ -1,0 +1,331 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "TOSA",
+    "company_name": "土佐くろしお鉄道",
+    "lines": [
+      {
+        "id": "TOSA_NAKAMURA",
+        "name": "中村線",
+        "sequence": [
+          "STN_TOSA_KUBOKAWA",
+          "STN_TOSA_WAKAI",
+          "STN_TOSA_KINA",
+          "STN_TOSA_IYOKI",
+          "STN_TOSA_TOSA_SAGA",
+          "STN_TOSA_SAGA_KOEN",
+          "STN_TOSA_TOSA_SHIRAHAMA",
+          "STN_TOSA_ARIIGAWA",
+          "STN_TOSA_TOSA_KAMIKAWAGUCHI",
+          "STN_TOSA_UMI_NO_OKAMUKAE",
+          "STN_TOSA_UKIBUCHI",
+          "STN_TOSA_TOSA_IRINO",
+          "STN_TOSA_NISHI_OGATA",
+          "STN_TOSA_KOTSUKA",
+          "STN_TOSA_NAKAMURA"
+        ]
+      },
+      {
+        "id": "TOSA_SUKUMO",
+        "name": "宿毛線",
+        "sequence": [
+          "STN_TOSA_NAKAMURA",
+          "STN_TOSA_GUDO",
+          "STN_TOSA_KUNIMI",
+          "STN_TOSA_ARIOKA",
+          "STN_TOSA_KOGYO_DANCHI",
+          "STN_TOSA_HIRATA",
+          "STN_TOSA_HIGASHI_SUKUMO",
+          "STN_TOSA_SUKUMO"
+        ]
+      },
+      {
+        "id": "TOSA_ASA",
+        "name": "ごめん・なはり線",
+        "sequence": [
+          "STN_TOSA_GOMEN",
+          "STN_TOSA_GOMENMACHI",
+          "STN_TOSA_TATEDA",
+          "STN_TOSA_NOICHI",
+          "STN_TOSA_YOSHIKAWA",
+          "STN_TOSA_AKAOKA",
+          "STN_TOSA_KAGAMI",
+          "STN_TOSA_YASU",
+          "STN_TOSA_NISHIBUN",
+          "STN_TOSA_WAJIKI",
+          "STN_TOSA_AKANO",
+          "STN_TOSA_ANANAI",
+          "STN_TOSA_KYUJO_MAE",
+          "STN_TOSA_AKI_SOGO_BYOIN_MAE",
+          "STN_TOSA_AKI",
+          "STN_TOSA_IOKI",
+          "STN_TOSA_SHIMOYAMA",
+          "STN_TOSA_KARAHAMA",
+          "STN_TOSA_YASUDA",
+          "STN_TOSA_TANO",
+          "STN_TOSA_NAHARI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TOSA_KUBOKAWA",
+        "lat": "33.212675",
+        "lng": "133.137325",
+        "name": "窪川"
+      },
+      {
+        "id": "STN_TOSA_WAKAI",
+        "lat": "33.188045",
+        "lng": "133.105835",
+        "name": "若井"
+      },
+      {
+        "id": "STN_TOSA_KINA",
+        "lat": "33.13303",
+        "lng": "133.11607",
+        "name": "荷稲"
+      },
+      {
+        "id": "STN_TOSA_IYOKI",
+        "lat": "33.10511806",
+        "lng": "133.09848104",
+        "name": "伊与喜"
+      },
+      {
+        "id": "STN_TOSA_TOSA_SAGA",
+        "lat": "33.081187",
+        "lng": "133.101395",
+        "name": "土佐佐賀"
+      },
+      {
+        "id": "STN_TOSA_SAGA_KOEN",
+        "lat": "33.064216",
+        "lng": "133.106221",
+        "name": "佐賀公園"
+      },
+      {
+        "id": "STN_TOSA_TOSA_SHIRAHAMA",
+        "lat": "33.05663042",
+        "lng": "133.09740355",
+        "name": "土佐白浜"
+      },
+      {
+        "id": "STN_TOSA_ARIIGAWA",
+        "lat": "33.03895459",
+        "lng": "133.07131309",
+        "name": "有井川"
+      },
+      {
+        "id": "STN_TOSA_TOSA_KAMIKAWAGUCHI",
+        "lat": "33.0430476",
+        "lng": "133.05611342",
+        "name": "土佐上川口"
+      },
+      {
+        "id": "STN_TOSA_UMI_NO_OKAMUKAE",
+        "lat": "33.04050434",
+        "lng": "133.04681315",
+        "name": "海の王迎"
+      },
+      {
+        "id": "STN_TOSA_UKIBUCHI",
+        "lat": "33.03954051",
+        "lng": "133.03002506",
+        "name": "浮鞭"
+      },
+      {
+        "id": "STN_TOSA_TOSA_IRINO",
+        "lat": "33.02404752",
+        "lng": "133.01180675",
+        "name": "土佐入野"
+      },
+      {
+        "id": "STN_TOSA_NISHI_OGATA",
+        "lat": "33.00887671",
+        "lng": "132.98693069",
+        "name": "西大方"
+      },
+      {
+        "id": "STN_TOSA_KOTSUKA",
+        "lat": "32.9859991",
+        "lng": "132.96219424",
+        "name": "古津賀"
+      },
+      {
+        "id": "STN_TOSA_NAKAMURA",
+        "lat": "32.984545",
+        "lng": "132.94405",
+        "name": "中村"
+      },
+      {
+        "id": "STN_TOSA_GUDO",
+        "lat": "32.9794",
+        "lng": "132.91492",
+        "name": "具同"
+      },
+      {
+        "id": "STN_TOSA_KUNIMI",
+        "lat": "32.97894061",
+        "lng": "132.88372444",
+        "name": "国見"
+      },
+      {
+        "id": "STN_TOSA_ARIOKA",
+        "lat": "32.96124",
+        "lng": "132.83305",
+        "name": "有岡"
+      },
+      {
+        "id": "STN_TOSA_KOGYO_DANCHI",
+        "lat": "32.95647301",
+        "lng": "132.8016038",
+        "name": "工業団地"
+      },
+      {
+        "id": "STN_TOSA_HIRATA",
+        "lat": "32.95564115",
+        "lng": "132.79480567",
+        "name": "平田"
+      },
+      {
+        "id": "STN_TOSA_HIGASHI_SUKUMO",
+        "lat": "32.933658",
+        "lng": "132.728705",
+        "name": "東宿毛"
+      },
+      {
+        "id": "STN_TOSA_SUKUMO",
+        "lat": "32.93252",
+        "lng": "132.71359",
+        "name": "宿毛"
+      },
+      {
+        "id": "STN_TOSA_GOMEN",
+        "lat": "33.57918",
+        "lng": "133.645135",
+        "name": "後免"
+      },
+      {
+        "id": "STN_TOSA_GOMENMACHI",
+        "lat": "33.574608",
+        "lng": "133.651176",
+        "name": "後免町"
+      },
+      {
+        "id": "STN_TOSA_TATEDA",
+        "lat": "33.57079795",
+        "lng": "133.67034767",
+        "name": "立田"
+      },
+      {
+        "id": "STN_TOSA_NOICHI",
+        "lat": "33.56195879",
+        "lng": "133.69778126",
+        "name": "のいち"
+      },
+      {
+        "id": "STN_TOSA_YOSHIKAWA",
+        "lat": "33.54596929",
+        "lng": "133.71031627",
+        "name": "よしかわ"
+      },
+      {
+        "id": "STN_TOSA_AKAOKA",
+        "lat": "33.53986458",
+        "lng": "133.72217187",
+        "name": "あかおか"
+      },
+      {
+        "id": "STN_TOSA_KAGAMI",
+        "lat": "33.539189",
+        "lng": "133.737364",
+        "name": "香我美"
+      },
+      {
+        "id": "STN_TOSA_YASU",
+        "lat": "33.53447352",
+        "lng": "133.75429784",
+        "name": "夜須"
+      },
+      {
+        "id": "STN_TOSA_NISHIBUN",
+        "lat": "33.51775069",
+        "lng": "133.79048387",
+        "name": "西分"
+      },
+      {
+        "id": "STN_TOSA_WAJIKI",
+        "lat": "33.51794083",
+        "lng": "133.80884321",
+        "name": "和食"
+      },
+      {
+        "id": "STN_TOSA_AKANO",
+        "lat": "33.51603",
+        "lng": "133.82479",
+        "name": "赤野"
+      },
+      {
+        "id": "STN_TOSA_ANANAI",
+        "lat": "33.50616184",
+        "lng": "133.86428929",
+        "name": "穴内"
+      },
+      {
+        "id": "STN_TOSA_KYUJO_MAE",
+        "lat": "33.50267193",
+        "lng": "133.89147005",
+        "name": "球場前"
+      },
+      {
+        "id": "STN_TOSA_AKI_SOGO_BYOIN_MAE",
+        "lat": "33.5043455",
+        "lng": "133.89752972",
+        "name": "あき総合病院前"
+      },
+      {
+        "id": "STN_TOSA_AKI",
+        "lat": "33.50473662",
+        "lng": "133.90641614",
+        "name": "安芸"
+      },
+      {
+        "id": "STN_TOSA_IOKI",
+        "lat": "33.490865",
+        "lng": "133.929225",
+        "name": "伊尾木"
+      },
+      {
+        "id": "STN_TOSA_SHIMOYAMA",
+        "lat": "33.45818406",
+        "lng": "133.94811709",
+        "name": "下山"
+      },
+      {
+        "id": "STN_TOSA_KARAHAMA",
+        "lat": "33.44606162",
+        "lng": "133.96583687",
+        "name": "唐浜"
+      },
+      {
+        "id": "STN_TOSA_YASUDA",
+        "lat": "33.443345",
+        "lng": "133.984255",
+        "name": "安田"
+      },
+      {
+        "id": "STN_TOSA_TANO",
+        "lat": "33.43030419",
+        "lng": "134.00815937",
+        "name": "田野"
+      },
+      {
+        "id": "STN_TOSA_NAHARI",
+        "lat": "33.42512859",
+        "lng": "134.0180844",
+        "name": "奈半利"
+      }
+    ]
+  }
+]

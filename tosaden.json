@@ -1,0 +1,564 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "TOSADEN",
+    "company_name": "とさでん交通",
+    "lines": [
+      {
+        "id": "TOSADEN_INO",
+        "name": "伊野線",
+        "sequence": [
+          "STN_TOSADEN_HARIMAYABASHI",
+          "STN_TOSADEN_HORIZUME",
+          "STN_TOSADEN_OHASHIDORI",
+          "STN_TOSADEN_KOCHICHO_MAE",
+          "STN_TOSADEN_KENCHO_MAE",
+          "STN_TOSADEN_GRAND_DORI",
+          "STN_TOSADEN_MASUGATA",
+          "STN_TOSADEN_KAMIMACHI_1_CHOME",
+          "STN_TOSADEN_KAMIMACHI_2_CHOME",
+          "STN_TOSADEN_KAMIMACHI_4_CHOME",
+          "STN_TOSADEN_KAMIMACHI_5_CHOME",
+          "STN_TOSADEN_ASAHIMACHI_1_CHOME",
+          "STN_TOSADEN_ASAHI_EKIMAE_DORI",
+          "STN_TOSADEN_ASAHIMACHI_3_CHOME",
+          "STN_TOSADEN_HOTARUBASHI",
+          "STN_TOSADEN_KAGAMIGAWABASHI",
+          "STN_TOSADEN_KAMOBE",
+          "STN_TOSADEN_AKEBONOCHO_HIGASHIMACHI",
+          "STN_TOSADEN_AKEBONOCHO",
+          "STN_TOSADEN_ASAKURA",
+          "STN_TOSADEN_ASAKURA_EKIMAE",
+          "STN_TOSADEN_ASAKURA_JINJA_MAE",
+          "STN_TOSADEN_MIYANOKU",
+          "STN_TOSADEN_KOUNAI",
+          "STN_TOSADEN_UJI_DANCHI_MAE",
+          "STN_TOSADEN_YASHIRODORI",
+          "STN_TOSADEN_NAKAYAMA",
+          "STN_TOSADEN_EDAGAWA",
+          "STN_TOSADEN_INO_SHOGYO_MAE",
+          "STN_TOSADEN_KITA_UCHI",
+          "STN_TOSADEN_KITAYAMA",
+          "STN_TOSADEN_NARUTANI",
+          "STN_TOSADEN_INO_EKIMAE",
+          "STN_TOSADEN_INO"
+        ]
+      },
+      {
+        "id": "TOSADEN_GOMEN",
+        "name": "後免線",
+        "sequence": [
+          "STN_TOSADEN_HARIMAYABASHI",
+          "STN_TOSADEN_DENTETSU_TERMINAL_BUILDING_MAE",
+          "STN_TOSADEN_SAIENBACHO",
+          "STN_TOSADEN_HOEICHO",
+          "STN_TOSADEN_CHIYORICHO_1_CHOME",
+          "STN_TOSADEN_CHIYORICHO_2_CHOME",
+          "STN_TOSADEN_CHIYORICHO",
+          "STN_TOSADEN_CHIYORICHO_3_CHOME",
+          "STN_TOSADEN_KAZURASHIMABASHI_HIGASHIZUME",
+          "STN_TOSADEN_NISHI_TAKASU",
+          "STN_TOSADEN_KENRITSU_BIJUTSUKANDORI",
+          "STN_TOSADEN_TAKASU",
+          "STN_TOSADEN_MONJUDORI",
+          "STN_TOSADEN_KEIRA_DORI",
+          "STN_TOSADEN_SHINKI",
+          "STN_TOSADEN_HIGASHI_SHINKI",
+          "STN_TOSADEN_TABENASHIMADORI",
+          "STN_TOSADEN_KAKO",
+          "STN_TOSADEN_FUNATO",
+          "STN_TOSADEN_KITAURA",
+          "STN_TOSADEN_RYOSEIDORI",
+          "STN_TOSADEN_SEIWAGAKUEN_MAE",
+          "STN_TOSADEN_ICHIJOBASHI",
+          "STN_TOSADEN_AKEMIBASHI",
+          "STN_TOSADEN_NAGASAKI",
+          "STN_TOSADEN_KOGOMEDORI",
+          "STN_TOSADEN_SHINOHARA",
+          "STN_TOSADEN_SUMIYOSHIDORI",
+          "STN_TOSADEN_HIGASHI_KOGYO_MAE",
+          "STN_TOSADEN_GOMEN_NISHIMACHI",
+          "STN_TOSADEN_GOMEN_NAKAMACHI",
+          "STN_TOSADEN_GOMEN_HIGASHIMACHI",
+          "STN_TOSADEN_GOMENMACHI"
+        ]
+      },
+      {
+        "id": "TOSADEN_SAMBASHI",
+        "name": "桟橋線",
+        "sequence": [
+          "STN_TOSADEN_HARIMAYABASHI",
+          "STN_TOSADEN_UMENOTSUJI",
+          "STN_TOSADEN_SAMBASHIDORI_1_CHOME",
+          "STN_TOSADEN_SAMBASHIDORI_2_CHOME",
+          "STN_TOSADEN_SAMBASHIDORI_3_CHOME",
+          "STN_TOSADEN_SAMBASHIDORI_4_CHOME",
+          "STN_TOSADEN_SAMBASHI_SHAKO_MAE",
+          "STN_TOSADEN_SAMBASHIDORI_5_CHOME"
+        ]
+      },
+      {
+        "id": "TOSADEN_EKIMAE",
+        "name": "駅前線",
+        "sequence": [
+          "STN_TOSADEN_HARIMAYABASHI",
+          "STN_TOSADEN_HASUIKECHODORI",
+          "STN_TOSADEN_KOCHIBASHI",
+          "STN_TOSADEN_KOCHI_EKIMAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TOSADEN_HARIMAYABASHI",
+        "lat": "33.55956922",
+        "lng": "133.54250289",
+        "name": "はりまや橋"
+      },
+      {
+        "id": "STN_TOSADEN_HORIZUME",
+        "lat": "33.55956922",
+        "lng": "133.53939397",
+        "name": "堀詰"
+      },
+      {
+        "id": "STN_TOSADEN_OHASHIDORI",
+        "lat": "33.55896313",
+        "lng": "133.53637061",
+        "name": "大橋通"
+      },
+      {
+        "id": "STN_TOSADEN_KOCHICHO_MAE",
+        "lat": "33.55851154",
+        "lng": "133.53421719",
+        "name": "高知城前"
+      },
+      {
+        "id": "STN_TOSADEN_KENCHO_MAE",
+        "lat": "33.55814313",
+        "lng": "133.53227768",
+        "name": "県庁前"
+      },
+      {
+        "id": "STN_TOSADEN_GRAND_DORI",
+        "lat": "33.557555",
+        "lng": "133.52939",
+        "name": "グランド通"
+      },
+      {
+        "id": "STN_TOSADEN_MASUGATA",
+        "lat": "33.55737067",
+        "lng": "133.52718616",
+        "name": "枡形"
+      },
+      {
+        "id": "STN_TOSADEN_KAMIMACHI_1_CHOME",
+        "lat": "33.55735878",
+        "lng": "133.52513257",
+        "name": "上町一丁目"
+      },
+      {
+        "id": "STN_TOSADEN_KAMIMACHI_2_CHOME",
+        "lat": "33.5573469",
+        "lng": "133.52306472",
+        "name": "上町二丁目"
+      },
+      {
+        "id": "STN_TOSADEN_KAMIMACHI_4_CHOME",
+        "lat": "33.55732313",
+        "lng": "133.51985598",
+        "name": "上町四丁目"
+      },
+      {
+        "id": "STN_TOSADEN_KAMIMACHI_5_CHOME",
+        "lat": "33.55731125",
+        "lng": "133.51731751",
+        "name": "上町五丁目"
+      },
+      {
+        "id": "STN_TOSADEN_ASAHIMACHI_1_CHOME",
+        "lat": "33.5567408",
+        "lng": "133.51359537",
+        "name": "旭町一丁目"
+      },
+      {
+        "id": "STN_TOSADEN_ASAHI_EKIMAE_DORI",
+        "lat": "33.55599215",
+        "lng": "133.50965726",
+        "name": "旭駅前通"
+      },
+      {
+        "id": "STN_TOSADEN_ASAHIMACHI_3_CHOME",
+        "lat": "33.5556594",
+        "lng": "133.50636303",
+        "name": "旭町三丁目"
+      },
+      {
+        "id": "STN_TOSADEN_HOTARUBASHI",
+        "lat": "33.55540983",
+        "lng": "133.50345384",
+        "name": "蛍橋"
+      },
+      {
+        "id": "STN_TOSADEN_KAGAMIGAWABASHI",
+        "lat": "33.55577824",
+        "lng": "133.4987478",
+        "name": "鏡川橋"
+      },
+      {
+        "id": "STN_TOSADEN_KAMOBE",
+        "lat": "33.55218937",
+        "lng": "133.49687591",
+        "name": "鴨部"
+      },
+      {
+        "id": "STN_TOSADEN_AKEBONOCHO_HIGASHIMACHI",
+        "lat": "33.55160705",
+        "lng": "133.49355332",
+        "name": "曙町東町"
+      },
+      {
+        "id": "STN_TOSADEN_AKEBONOCHO",
+        "lat": "33.55115545",
+        "lng": "133.49085818",
+        "name": "曙町"
+      },
+      {
+        "id": "STN_TOSADEN_ASAKURA",
+        "lat": "33.5507",
+        "lng": "133.48832",
+        "name": "朝倉"
+      },
+      {
+        "id": "STN_TOSADEN_ASAKURA_EKIMAE",
+        "lat": "33.550802",
+        "lng": "133.485831",
+        "name": "朝倉駅前"
+      },
+      {
+        "id": "STN_TOSADEN_ASAKURA_JINJA_MAE",
+        "lat": "33.55195158",
+        "lng": "133.48083415",
+        "name": "朝倉神社前"
+      },
+      {
+        "id": "STN_TOSADEN_MIYANOKU",
+        "lat": "33.55236753",
+        "lng": "133.47577179",
+        "name": "宮の奥"
+      },
+      {
+        "id": "STN_TOSADEN_KOUNAI",
+        "lat": "33.55239133",
+        "lng": "133.4711228",
+        "name": "咥内"
+      },
+      {
+        "id": "STN_TOSADEN_UJI_DANCHI_MAE",
+        "lat": "33.55189219",
+        "lng": "133.46115496",
+        "name": "宇治団地前"
+      },
+      {
+        "id": "STN_TOSADEN_YASHIRODORI",
+        "lat": "33.55216553",
+        "lng": "133.45630651",
+        "name": "八代通"
+      },
+      {
+        "id": "STN_TOSADEN_NAKAYAMA",
+        "lat": "33.55166668",
+        "lng": "133.45245525",
+        "name": "中山"
+      },
+      {
+        "id": "STN_TOSADEN_EDAGAWA",
+        "lat": "33.55132205",
+        "lng": "133.44953202",
+        "name": "枝川"
+      },
+      {
+        "id": "STN_TOSADEN_INO_SHOGYO_MAE",
+        "lat": "33.55020496",
+        "lng": "133.44428447",
+        "name": "伊野商業前"
+      },
+      {
+        "id": "STN_TOSADEN_KITA_UCHI",
+        "lat": "33.5498009",
+        "lng": "133.44184607",
+        "name": "北内"
+      },
+      {
+        "id": "STN_TOSADEN_KITAYAMA",
+        "lat": "33.54909999",
+        "lng": "133.43854068",
+        "name": "北山"
+      },
+      {
+        "id": "STN_TOSADEN_NARUTANI",
+        "lat": "33.5486484",
+        "lng": "133.43286547",
+        "name": "鳴谷"
+      },
+      {
+        "id": "STN_TOSADEN_INO_EKIMAE",
+        "lat": "33.54843449",
+        "lng": "133.42985675",
+        "name": "伊野駅前"
+      },
+      {
+        "id": "STN_TOSADEN_DENTETSU_TERMINAL_BUILDING_MAE",
+        "lat": "33.55940283",
+        "lng": "133.54407283",
+        "name": "デンテツターミナルビル前"
+      },
+      {
+        "id": "STN_TOSADEN_SAIENBACHO",
+        "lat": "33.55909382",
+        "lng": "133.54857439",
+        "name": "菜園場町"
+      },
+      {
+        "id": "STN_TOSADEN_HOEICHO",
+        "lat": "33.55868977",
+        "lng": "133.55369397",
+        "name": "宝永町"
+      },
+      {
+        "id": "STN_TOSADEN_CHIYORICHO_1_CHOME",
+        "lat": "33.55840456",
+        "lng": "133.55671724",
+        "name": "知寄町一丁目"
+      },
+      {
+        "id": "STN_TOSADEN_CHIYORICHO_2_CHOME",
+        "lat": "33.558075",
+        "lng": "133.55992",
+        "name": "知寄町二丁目"
+      },
+      {
+        "id": "STN_TOSADEN_CHIYORICHO",
+        "lat": "33.55789354",
+        "lng": "133.56182147",
+        "name": "知寄町"
+      },
+      {
+        "id": "STN_TOSADEN_CHIYORICHO_3_CHOME",
+        "lat": "33.55752514",
+        "lng": "133.56561478",
+        "name": "知寄町三丁目"
+      },
+      {
+        "id": "STN_TOSADEN_KAZURASHIMABASHI_HIGASHIZUME",
+        "lat": "33.55702602",
+        "lng": "133.56973608",
+        "name": "葛島橋東詰"
+      },
+      {
+        "id": "STN_TOSADEN_NISHI_TAKASU",
+        "lat": "33.55827382",
+        "lng": "133.57307306",
+        "name": "西高須"
+      },
+      {
+        "id": "STN_TOSADEN_KENRITSU_BIJUTSUKANDORI",
+        "lat": "33.55889176",
+        "lng": "133.5751551",
+        "name": "県立美術館通"
+      },
+      {
+        "id": "STN_TOSADEN_TAKASU",
+        "lat": "33.55935522",
+        "lng": "133.57712867",
+        "name": "高須"
+      },
+      {
+        "id": "STN_TOSADEN_MONJUDORI",
+        "lat": "33.55935522",
+        "lng": "133.57921079",
+        "name": "文珠通"
+      },
+      {
+        "id": "STN_TOSADEN_KEIRA_DORI",
+        "lat": "33.56034159",
+        "lng": "133.58356042",
+        "name": "介良通"
+      },
+      {
+        "id": "STN_TOSADEN_SHINKI",
+        "lat": "33.56233805",
+        "lng": "133.58662656",
+        "name": "新木"
+      },
+      {
+        "id": "STN_TOSADEN_HIGASHI_SHINKI",
+        "lat": "33.56458392",
+        "lng": "133.59028993",
+        "name": "東新木"
+      },
+      {
+        "id": "STN_TOSADEN_TABENASHIMADORI",
+        "lat": "33.56650913",
+        "lng": "133.59317088",
+        "name": "田辺島通"
+      },
+      {
+        "id": "STN_TOSADEN_KAKO",
+        "lat": "33.56721027",
+        "lng": "133.59707871",
+        "name": "鹿児"
+      },
+      {
+        "id": "STN_TOSADEN_FUNATO",
+        "lat": "33.57024058",
+        "lng": "133.59950328",
+        "name": "舟戸"
+      },
+      {
+        "id": "STN_TOSADEN_KITAURA",
+        "lat": "33.57373185",
+        "lng": "133.60392419",
+        "name": "北浦"
+      },
+      {
+        "id": "STN_TOSADEN_RYOSEIDORI",
+        "lat": "33.57420721",
+        "lng": "133.60766693",
+        "name": "領石通"
+      },
+      {
+        "id": "STN_TOSADEN_SEIWAGAKUEN_MAE",
+        "lat": "33.57496777",
+        "lng": "133.61283601",
+        "name": "清和学園前"
+      },
+      {
+        "id": "STN_TOSADEN_ICHIJOBASHI",
+        "lat": "33.57476813",
+        "lng": "133.61410474",
+        "name": "一条橋"
+      },
+      {
+        "id": "STN_TOSADEN_AKEMIBASHI",
+        "lat": "33.57468",
+        "lng": "133.617935",
+        "name": "明見橋"
+      },
+      {
+        "id": "STN_TOSADEN_NAGASAKI",
+        "lat": "33.57511989",
+        "lng": "133.6208714",
+        "name": "長崎"
+      },
+      {
+        "id": "STN_TOSADEN_KOGOMEDORI",
+        "lat": "33.57639384",
+        "lng": "133.62604505",
+        "name": "小篭通"
+      },
+      {
+        "id": "STN_TOSADEN_SHINOHARA",
+        "lat": "33.57704033",
+        "lng": "133.63164792",
+        "name": "篠原"
+      },
+      {
+        "id": "STN_TOSADEN_SUMIYOSHIDORI",
+        "lat": "33.57658399",
+        "lng": "133.63649766",
+        "name": "住吉通"
+      },
+      {
+        "id": "STN_TOSADEN_HIGASHI_KOGYO_MAE",
+        "lat": "33.57643187",
+        "lng": "133.63787841",
+        "name": "東工業前"
+      },
+      {
+        "id": "STN_TOSADEN_GOMEN_NISHIMACHI",
+        "lat": "33.5758234",
+        "lng": "133.64299862",
+        "name": "後免西町"
+      },
+      {
+        "id": "STN_TOSADEN_GOMEN_NAKAMACHI",
+        "lat": "33.575461",
+        "lng": "133.646027",
+        "name": "後免中町"
+      },
+      {
+        "id": "STN_TOSADEN_GOMEN_HIGASHIMACHI",
+        "lat": "33.57451141",
+        "lng": "133.64804228",
+        "name": "後免東町"
+      },
+      {
+        "id": "STN_TOSADEN_GOMENMACHI",
+        "lat": "33.57434978",
+        "lng": "133.6504614",
+        "name": "後免町"
+      },
+      {
+        "id": "STN_TOSADEN_UMENOTSUJI",
+        "lat": "33.55413829",
+        "lng": "133.54359261",
+        "name": "梅の辻"
+      },
+      {
+        "id": "STN_TOSADEN_SAMBASHIDORI_1_CHOME",
+        "lat": "33.55029971",
+        "lng": "133.54615943",
+        "name": "桟橋通一丁目"
+      },
+      {
+        "id": "STN_TOSADEN_SAMBASHIDORI_2_CHOME",
+        "lat": "33.54906373",
+        "lng": "133.54701504",
+        "name": "桟橋通二丁目"
+      },
+      {
+        "id": "STN_TOSADEN_SAMBASHIDORI_3_CHOME",
+        "lat": "33.54664046",
+        "lng": "133.54862937",
+        "name": "桟橋通三丁目"
+      },
+      {
+        "id": "STN_TOSADEN_SAMBASHIDORI_4_CHOME",
+        "lat": "33.544635",
+        "lng": "133.54995",
+        "name": "桟橋通四丁目"
+      },
+      {
+        "id": "STN_TOSADEN_SAMBASHI_SHAKO_MAE",
+        "lat": "33.54129257",
+        "lng": "133.5522226",
+        "name": "桟橋車庫前"
+      },
+      {
+        "id": "STN_TOSADEN_SAMBASHIDORI_5_CHOME",
+        "lat": "33.540455",
+        "lng": "133.55277",
+        "name": "桟橋通五丁目"
+      },
+      {
+        "id": "STN_TOSADEN_HASUIKECHODORI",
+        "lat": "33.56208854",
+        "lng": "133.54319413",
+        "name": "蓮池町通"
+      },
+      {
+        "id": "STN_TOSADEN_KOCHIBASHI",
+        "lat": "33.56393058",
+        "lng": "133.54340806",
+        "name": "高知橋"
+      },
+      {
+        "id": "STN_TOSADEN_KOCHI_EKIMAE",
+        "lat": "33.56650937",
+        "lng": "133.54366477",
+        "name": "高知駅前"
+      }
+    ]
+  }
+]

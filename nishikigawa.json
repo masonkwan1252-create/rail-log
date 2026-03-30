@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "",
+    "company_id": "NISHIKIGAWA",
+    "company_name": "錦川鉄道",
+    "lines": [
+      {
+        "id": "NISHIKIGAWA_SEIRYU",
+        "name": "錦川清流線",
+        "sequence": [
+          "STN_NISHIKIGAWA_IWAKUNI",
+          "STN_NISHIKIGAWA_NISHI_IWAKUNI",
+          "STN_NISHIKIGAWA_KAWANISHI",
+          "STN_NISHIKIGAWA_SEIRYU_SHIN_IWAKUNI",
+          "STN_NISHIKIGAWA_SHUCHI_KASAGAMI",
+          "STN_NISHIKIGAWA_MINAMI_GONOCHI",
+          "STN_NISHIKIGAWA_YUKABA",
+          "STN_NISHIKIGAWA_KITA_GONOCHI",
+          "STN_NISHIKIGAWA_MUKUNO",
+          "STN_NISHIKIGAWA_NAGUWA",
+          "STN_NISHIKIGAWA_SEIRYU_MIHARASHI",
+          "STN_NISHIKIGAWA_NEGASA",
+          "STN_NISHIKIGAWA_KAWAYAMA",
+          "STN_NISHIKIGAWA_YANAZE",
+          "STN_NISHIKIGAWA_NISHIKICHO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NISHIKIGAWA_IWAKUNI",
+        "lat": "34.17178",
+        "lng": "132.22561",
+        "name": "岩国"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_NISHI_IWAKUNI",
+        "lat": "34.16298",
+        "lng": "132.195735",
+        "name": "西岩国"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_KAWANISHI",
+        "lat": "34.156595",
+        "lng": "132.17731",
+        "name": "川西"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_SEIRYU_SHIN_IWAKUNI",
+        "lat": "34.162495",
+        "lng": "132.14769",
+        "name": "清流新岩国"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_SHUCHI_KASAGAMI",
+        "lat": "34.17015164",
+        "lng": "132.13566047",
+        "name": "守内かさ神"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_MINAMI_GONOCHI",
+        "lat": "34.165945",
+        "lng": "132.10338",
+        "name": "南河内"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_YUKABA",
+        "lat": "34.163325",
+        "lng": "132.087095",
+        "name": "行波"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_KITA_GONOCHI",
+        "lat": "34.17598",
+        "lng": "132.06458",
+        "name": "北河内"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_MUKUNO",
+        "lat": "34.193665",
+        "lng": "132.0335",
+        "name": "椋野"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_NAGUWA",
+        "lat": "34.20947",
+        "lng": "132.02097",
+        "name": "南桑"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_SEIRYU_MIHARASHI",
+        "lat": "34.21101",
+        "lng": "132.00627",
+        "name": "清流みはらし"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_NEGASA",
+        "lat": "34.21053",
+        "lng": "131.99862",
+        "name": "根笠"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_KAWAYAMA",
+        "lat": "34.23628",
+        "lng": "131.98385",
+        "name": "河山"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_YANAZE",
+        "lat": "34.257375",
+        "lng": "131.976795",
+        "name": "柳瀬"
+      },
+      {
+        "id": "STN_NISHIKIGAWA_NISHIKICHO",
+        "lat": "34.264805",
+        "lng": "131.96304",
+        "name": "錦町"
+      }
+    ]
+  }
+]

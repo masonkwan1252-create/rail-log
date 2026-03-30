@@ -1,0 +1,101 @@
+[
+  {
+    "categories": "",
+    "company_id": "TSUGARU",
+    "company_name": "津軽鉄道",
+    "lines": [
+      {
+        "id": "TSUGARU_LINE",
+        "name": "津軽鉄道線",
+        "sequence": [
+          "STN_TSUGARU_TSUGARU_GOSHOGAWARA",
+          "STN_TSUGARU_TOGAWA",
+          "STN_TSUGARU_GONO_KO_MAE",
+          "STN_TSUGARU_TSUGARU_IIZUME",
+          "STN_TSUGARU_BISHAMON",
+          "STN_TSUGARU_KASE",
+          "STN_TSUGARU_KANAGI",
+          "STN_TSUGARU_ASHINO_KOEN",
+          "STN_TSUGARU_KAWAKURA",
+          "STN_TSUGARU_OSAWANAI",
+          "STN_TSUGARU_FUKODA",
+          "STN_TSUGARU_TSUGARU_NAKAZATO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TSUGARU_TSUGARU_GOSHOGAWARA",
+        "lat": "40.810105",
+        "lng": "140.4487",
+        "name": "津軽五所川原"
+      },
+      {
+        "id": "STN_TSUGARU_TOGAWA",
+        "lat": "40.81754",
+        "lng": "140.457055",
+        "name": "十川"
+      },
+      {
+        "id": "STN_TSUGARU_GONO_KO_MAE",
+        "lat": "40.821025",
+        "lng": "140.478455",
+        "name": "五農校前"
+      },
+      {
+        "id": "STN_TSUGARU_TSUGARU_IIZUME",
+        "lat": "40.829585",
+        "lng": "140.479405",
+        "name": "津軽飯詰"
+      },
+      {
+        "id": "STN_TSUGARU_BISHAMON",
+        "lat": "40.858055",
+        "lng": "140.47774",
+        "name": "毘沙門"
+      },
+      {
+        "id": "STN_TSUGARU_KASE",
+        "lat": "40.880975",
+        "lng": "140.46936",
+        "name": "嘉瀬"
+      },
+      {
+        "id": "STN_TSUGARU_KANAGI",
+        "lat": "40.90295",
+        "lng": "140.459945",
+        "name": "金木"
+      },
+      {
+        "id": "STN_TSUGARU_ASHINO_KOEN",
+        "lat": "40.912235",
+        "lng": "140.45165",
+        "name": "芦野公園"
+      },
+      {
+        "id": "STN_TSUGARU_KAWAKURA",
+        "lat": "40.92633",
+        "lng": "140.44371",
+        "name": "川倉"
+      },
+      {
+        "id": "STN_TSUGARU_OSAWANAI",
+        "lat": "40.940185",
+        "lng": "140.43739",
+        "name": "大沢内"
+      },
+      {
+        "id": "STN_TSUGARU_FUKODA",
+        "lat": "40.95129",
+        "lng": "140.441105",
+        "name": "深郷田"
+      },
+      {
+        "id": "STN_TSUGARU_TSUGARU_NAKAZATO",
+        "lat": "40.964885",
+        "lng": "140.44101",
+        "name": "津軽中里"
+      }
+    ]
+  }
+]

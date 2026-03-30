@@ -1,0 +1,87 @@
+[
+  {
+    "categories": "",
+    "company_id": "MINAMI_ASO",
+    "company_name": "南阿蘇鉄道",
+    "lines": [
+      {
+        "id": "MINAMI_ASO_TAKAMORI",
+        "name": "高森線",
+        "sequence": [
+          "STN_MINAMI_ASO_TATSUNO",
+          "STN_MINAMI_ASO_CHOYO",
+          "STN_MINAMI_ASO_KASE",
+          "STN_MINAMI_ASO_ASO_SHIMODACHO",
+          "STN_MINAMI_ASO_MINAMI_ASO_MIZU_NO_UMARERU_SATO_HAKUSUI_KOGEN",
+          "STN_MINAMI_ASO_NAKAMATSU",
+          "STN_MINAMI_ASO_ASO_SHIRAKAWA",
+          "STN_MINAMI_ASO_MINAMI_ASO_SHIRAKAWA_SUIGEN",
+          "STN_MINAMI_ASO_MIHARASHIDAI",
+          "STN_MINAMI_ASO_TAKAMORI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_MINAMI_ASO_TATSUNO",
+        "lat": "32.87763",
+        "lng": "130.96514",
+        "name": "立野"
+      },
+      {
+        "id": "STN_MINAMI_ASO_CHOYO",
+        "lat": "32.854215",
+        "lng": "131.0039",
+        "name": "長陽"
+      },
+      {
+        "id": "STN_MINAMI_ASO_KASE",
+        "lat": "32.847815",
+        "lng": "131.01011",
+        "name": "加勢"
+      },
+      {
+        "id": "STN_MINAMI_ASO_ASO_SHIMODACHO",
+        "lat": "32.844362",
+        "lng": "131.024543",
+        "name": "阿蘇下田城"
+      },
+      {
+        "id": "STN_MINAMI_ASO_MINAMI_ASO_MIZU_NO_UMARERU_SATO_HAKUSUI_KOGEN",
+        "lat": "32.834215",
+        "lng": "131.040085",
+        "name": "南阿蘇水の生まれる里白水高原"
+      },
+      {
+        "id": "STN_MINAMI_ASO_NAKAMATSU",
+        "lat": "32.827335",
+        "lng": "131.053605",
+        "name": "中松"
+      },
+      {
+        "id": "STN_MINAMI_ASO_ASO_SHIRAKAWA",
+        "lat": "32.82232",
+        "lng": "131.084315",
+        "name": "阿蘇白川"
+      },
+      {
+        "id": "STN_MINAMI_ASO_MINAMI_ASO_SHIRAKAWA_SUIGEN",
+        "lat": "32.822201",
+        "lng": "131.091293",
+        "name": "南阿蘇白川水源"
+      },
+      {
+        "id": "STN_MINAMI_ASO_MIHARASHIDAI",
+        "lat": "32.817545",
+        "lng": "131.10971",
+        "name": "見晴台"
+      },
+      {
+        "id": "STN_MINAMI_ASO_TAKAMORI",
+        "lat": "32.819385",
+        "lng": "131.122435",
+        "name": "高森"
+      }
+    ]
+  }
+]

@@ -1,0 +1,365 @@
+[
+  {
+    "categories": "",
+    "company_id": "NAGASAKI",
+    "company_name": "長崎電気軌道",
+    "lines": [
+      {
+        "id": "NAGASAKI_1",
+        "name": "1号系統",
+        "sequence": [
+          "STN_NAGASAKI_AKASAKO",
+          "STN_NAGASAKI_SUMIYOSHI",
+          "STN_NAGASAKI_SHOWAMACHIDORI",
+          "STN_NAGASAKI_CHITOSEMACHI",
+          "STN_NAGASAKI_WAKABAMACHI",
+          "STN_NAGASAKI_NAGASAKI_DAIGAKU",
+          "STN_NAGASAKI_IWAYABASHI",
+          "STN_NAGASAKI_URAKAMI_SHAKO",
+          "STN_NAGASAKI_OHASHI",
+          "STN_NAGASAKI_HEIWA_KOEN",
+          "STN_NAGASAKI_GENBAKU_SHIRYOKAN",
+          "STN_NAGASAKI_DAIGAKU_BYOIN",
+          "STN_NAGASAKI_URAKAMI_EKIMAE",
+          "STN_NAGASAKI_MORIMACHI",
+          "STN_NAGASAKI_STADIUM_CITY_NORTH",
+          "STN_NAGASAKI_STADIUM_CITY_SOUTH",
+          "STN_NAGASAKI_YACHIYO_MACHI",
+          "STN_NAGASAKI_NAGASAKI_EKIMAE",
+          "STN_NAGASAKI_GOTO_MACHI",
+          "STN_NAGASAKI_OHATO",
+          "STN_NAGASAKI_DEJIMA",
+          "STN_NAGASAKI_SHINCHI_CHUKAGAI",
+          "STN_NAGASAKI_NISHIHAMANO_MACHI",
+          "STN_NAGASAKI_KANKODORI",
+          "STN_NAGASAKI_SHIANBASHI",
+          "STN_NAGASAKI_SOFUKUJI"
+        ]
+      },
+      {
+        "id": "NAGASAKI_2",
+        "name": "2号系統",
+        "sequence": [
+          "STN_NAGASAKI_AKASAKO",
+          "STN_NAGASAKI_SUMIYOSHI",
+          "STN_NAGASAKI_SHOWAMACHIDORI",
+          "STN_NAGASAKI_CHITOSEMACHI",
+          "STN_NAGASAKI_WAKABAMACHI",
+          "STN_NAGASAKI_NAGASAKI_DAIGAKU",
+          "STN_NAGASAKI_IWAYABASHI",
+          "STN_NAGASAKI_URAKAMI_SHAKO",
+          "STN_NAGASAKI_OHASHI",
+          "STN_NAGASAKI_HEIWA_KOEN",
+          "STN_NAGASAKI_GENBAKU_SHIRYOKAN",
+          "STN_NAGASAKI_DAIGAKU_BYOIN",
+          "STN_NAGASAKI_URAKAMI_EKIMAE",
+          "STN_NAGASAKI_MORIMACHI",
+          "STN_NAGASAKI_STADIUM_CITY_NORTH",
+          "STN_NAGASAKI_STADIUM_CITY_SOUTH",
+          "STN_NAGASAKI_YACHIYO_MACHI",
+          "STN_NAGASAKI_NAGASAKI_EKIMAE",
+          "STN_NAGASAKI_SAKURAMACHI",
+          "STN_NAGASAKI_SHIYAKUSHO",
+          "STN_NAGASAKI_SUWA_JINJA",
+          "STN_NAGASAKI_SHIN_DAIKUMACHI",
+          "STN_NAGASAKI_SHIN_NAKAGAWAMACHI",
+          "STN_NAGASAKI_HOTARUJAYA"
+        ]
+      },
+      {
+        "id": "NAGASAKI_3",
+        "name": "3号系統",
+        "sequence": [
+          "STN_NAGASAKI_AKASAKO",
+          "STN_NAGASAKI_SUMIYOSHI",
+          "STN_NAGASAKI_SHOWAMACHIDORI",
+          "STN_NAGASAKI_CHITOSEMACHI",
+          "STN_NAGASAKI_WAKABAMACHI",
+          "STN_NAGASAKI_NAGASAKI_DAIGAKU",
+          "STN_NAGASAKI_IWAYABASHI",
+          "STN_NAGASAKI_URAKAMI_SHAKO",
+          "STN_NAGASAKI_OHASHI",
+          "STN_NAGASAKI_HEIWA_KOEN",
+          "STN_NAGASAKI_GENBAKU_SHIRYOKAN",
+          "STN_NAGASAKI_DAIGAKU_BYOIN",
+          "STN_NAGASAKI_URAKAMI_EKIMAE",
+          "STN_NAGASAKI_MORIMACHI",
+          "STN_NAGASAKI_STADIUM_CITY_NORTH",
+          "STN_NAGASAKI_STADIUM_CITY_SOUTH",
+          "STN_NAGASAKI_YACHIYO_MACHI",
+          "STN_NAGASAKI_NAGASAKI_EKIMAE",
+          "STN_NAGASAKI_SHIYAKUSHO",
+          "STN_NAGASAKI_SUWA_JINJA",
+          "STN_NAGASAKI_SHIN_DAIKUMACHI",
+          "STN_NAGASAKI_SHIN_NAKAGAWAMACHI",
+          "STN_NAGASAKI_HOTARUJAYA"
+        ]
+      },
+      {
+        "id": "NAGASAKI_4",
+        "name": "4号系統",
+        "sequence": [
+          "STN_NAGASAKI_SOFUKUJI",
+          "STN_NAGASAKI_SHIANBASHI",
+          "STN_NAGASAKI_KANKODORI",
+          "STN_NAGASAKI_HAMANOMACHI_ARCADE",
+          "STN_NAGASAKI_MEGANEBASHI",
+          "STN_NAGASAKI_SHIYAKUSHO",
+          "STN_NAGASAKI_SUWA_JINJA",
+          "STN_NAGASAKI_SHIN_DAIKUMACHI",
+          "STN_NAGASAKI_SHIN_NAKAGAWAMACHI",
+          "STN_NAGASAKI_HOTARUJAYA"
+        ]
+      },
+      {
+        "id": "NAGASAKI_5",
+        "name": "5号系統",
+        "sequence": [
+          "STN_NAGASAKI_ISHIBASHI",
+          "STN_NAGASAKI_OURA_TENSHUDO",
+          "STN_NAGASAKI_OURA_KAIGANDORI",
+          "STN_NAGASAKI_MEDICAL_CENTER",
+          "STN_NAGASAKI_SHINCHI_CHUKAGAI",
+          "STN_NAGASAKI_NISHIHAMANO_MACHI",
+          "STN_NAGASAKI_HAMANOMACHI_ARCADE",
+          "STN_NAGASAKI_MEGANEBASHI",
+          "STN_NAGASAKI_SHIYAKUSHO",
+          "STN_NAGASAKI_SUWA_JINJA",
+          "STN_NAGASAKI_SHIN_DAIKUMACHI",
+          "STN_NAGASAKI_SHIN_NAKAGAWAMACHI",
+          "STN_NAGASAKI_HOTARUJAYA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NAGASAKI_AKASAKO",
+        "lat": "32.793985",
+        "lng": "129.85739",
+        "name": "赤迫"
+      },
+      {
+        "id": "STN_NAGASAKI_SUMIYOSHI",
+        "lat": "32.79212106",
+        "lng": "129.85979017",
+        "name": "住吉"
+      },
+      {
+        "id": "STN_NAGASAKI_SHOWAMACHIDORI",
+        "lat": "32.79073064",
+        "lng": "129.86062423",
+        "name": "昭和町通"
+      },
+      {
+        "id": "STN_NAGASAKI_CHITOSEMACHI",
+        "lat": "32.78955411",
+        "lng": "129.8610342",
+        "name": "千歳町"
+      },
+      {
+        "id": "STN_NAGASAKI_WAKABAMACHI",
+        "lat": "32.78780711",
+        "lng": "129.86162794",
+        "name": "若葉町"
+      },
+      {
+        "id": "STN_NAGASAKI_NAGASAKI_DAIGAKU",
+        "lat": "32.784935",
+        "lng": "129.86245",
+        "name": "長崎大学"
+      },
+      {
+        "id": "STN_NAGASAKI_IWAYABASHI",
+        "lat": "32.78243086",
+        "lng": "129.862363",
+        "name": "岩屋橋"
+      },
+      {
+        "id": "STN_NAGASAKI_URAKAMI_SHAKO",
+        "lat": "32.7796619",
+        "lng": "129.86143009",
+        "name": "浦上車庫"
+      },
+      {
+        "id": "STN_NAGASAKI_OHASHI",
+        "lat": "32.77785668",
+        "lng": "129.86142909",
+        "name": "大橋"
+      },
+      {
+        "id": "STN_NAGASAKI_HEIWA_KOEN",
+        "lat": "32.77405388",
+        "lng": "129.86205098",
+        "name": "平和公園"
+      },
+      {
+        "id": "STN_NAGASAKI_GENBAKU_SHIRYOKAN",
+        "lat": "32.77059557",
+        "lng": "129.86373293",
+        "name": "原爆資料館"
+      },
+      {
+        "id": "STN_NAGASAKI_DAIGAKU_BYOIN",
+        "lat": "32.7690887",
+        "lng": "129.86415704",
+        "name": "大学病院"
+      },
+      {
+        "id": "STN_NAGASAKI_URAKAMI_EKIMAE",
+        "lat": "32.76545227",
+        "lng": "129.8641853",
+        "name": "浦上駅前"
+      },
+      {
+        "id": "STN_NAGASAKI_MORIMACHI",
+        "lat": "32.76410937",
+        "lng": "129.86455275",
+        "name": "茂里町"
+      },
+      {
+        "id": "STN_NAGASAKI_STADIUM_CITY_NORTH",
+        "lat": "32.761244",
+        "lng": "129.865861",
+        "name": "スタジアムシティノース"
+      },
+      {
+        "id": "STN_NAGASAKI_STADIUM_CITY_SOUTH",
+        "lat": "32.758133",
+        "lng": "129.868644",
+        "name": "スタジアムシティサウス"
+      },
+      {
+        "id": "STN_NAGASAKI_YACHIYO_MACHI",
+        "lat": "32.75535568",
+        "lng": "129.87027153",
+        "name": "八千代町"
+      },
+      {
+        "id": "STN_NAGASAKI_NAGASAKI_EKIMAE",
+        "lat": "32.75249166",
+        "lng": "129.87185416",
+        "name": "長崎駅前"
+      },
+      {
+        "id": "STN_NAGASAKI_GOTO_MACHI",
+        "lat": "32.74911938",
+        "lng": "129.87227711",
+        "name": "五島町"
+      },
+      {
+        "id": "STN_NAGASAKI_OHATO",
+        "lat": "32.74613651",
+        "lng": "129.87219233",
+        "name": "大波止"
+      },
+      {
+        "id": "STN_NAGASAKI_DEJIMA",
+        "lat": "32.7438666",
+        "lng": "129.87175431",
+        "name": "出島"
+      },
+      {
+        "id": "STN_NAGASAKI_SHINCHI_CHUKAGAI",
+        "lat": "32.74303723",
+        "lng": "129.87510215",
+        "name": "新地中華街"
+      },
+      {
+        "id": "STN_NAGASAKI_NISHIHAMANO_MACHI",
+        "lat": "32.74372",
+        "lng": "129.87604",
+        "name": "西浜町"
+      },
+      {
+        "id": "STN_NAGASAKI_KANKODORI",
+        "lat": "32.74345317",
+        "lng": "129.87778667",
+        "name": "観光通"
+      },
+      {
+        "id": "STN_NAGASAKI_SHIANBASHI",
+        "lat": "32.74272825",
+        "lng": "129.88032989",
+        "name": "思案橋"
+      },
+      {
+        "id": "STN_NAGASAKI_SOFUKUJI",
+        "lat": "32.74112525",
+        "lng": "129.88261492",
+        "name": "崇福寺"
+      },
+      {
+        "id": "STN_NAGASAKI_SAKURAMACHI",
+        "lat": "32.75069991",
+        "lng": "129.8765019",
+        "name": "桜町"
+      },
+      {
+        "id": "STN_NAGASAKI_SHIYAKUSHO",
+        "lat": "32.74966603",
+        "lng": "129.8804017",
+        "name": "市役所"
+      },
+      {
+        "id": "STN_NAGASAKI_SUWA_JINJA",
+        "lat": "32.75258717",
+        "lng": "129.88426056",
+        "name": "諏訪神社"
+      },
+      {
+        "id": "STN_NAGASAKI_SHIN_DAIKUMACHI",
+        "lat": "32.75227819",
+        "lng": "129.886366",
+        "name": "新大工町"
+      },
+      {
+        "id": "STN_NAGASAKI_SHIN_NAKAGAWAMACHI",
+        "lat": "32.75227819",
+        "lng": "129.89066167",
+        "name": "新中川町"
+      },
+      {
+        "id": "STN_NAGASAKI_HOTARUJAYA",
+        "lat": "32.751395",
+        "lng": "129.89364",
+        "name": "蛍茶屋"
+      },
+      {
+        "id": "STN_NAGASAKI_HAMANOMACHI_ARCADE",
+        "lat": "32.74473416",
+        "lng": "129.87679862",
+        "name": "浜町アーケード"
+      },
+      {
+        "id": "STN_NAGASAKI_MEGANEBASHI",
+        "lat": "32.74698028",
+        "lng": "129.87840941",
+        "name": "めがね橋"
+      },
+      {
+        "id": "STN_NAGASAKI_ISHIBASHI",
+        "lat": "32.73442455",
+        "lng": "129.87231781",
+        "name": "石橋"
+      },
+      {
+        "id": "STN_NAGASAKI_OURA_TENSHUDO",
+        "lat": "32.73618343",
+        "lng": "129.87091912",
+        "name": "大浦天主堂"
+      },
+      {
+        "id": "STN_NAGASAKI_OURA_KAIGANDORI",
+        "lat": "32.73778778",
+        "lng": "129.87059417",
+        "name": "大浦海岸通"
+      },
+      {
+        "id": "STN_NAGASAKI_MEDICAL_CENTER",
+        "lat": "32.74044648",
+        "lng": "129.87243177",
+        "name": "メディカルセンター"
+      }
+    ]
+  }
+]

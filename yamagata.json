@@ -1,0 +1,136 @@
+[
+  {
+    "categories": "",
+    "company_id": "YAMAGATA",
+    "company_name": "山形鉄道",
+    "lines": [
+      {
+        "id": "YAMAGATA_FLOWER_NAGAI",
+        "name": "フラワー長井線",
+        "sequence": [
+          "STN_YAMAGATA_AKAYU",
+          "STN_YAMAGATA_NANYO_SHIYAKUSHO",
+          "STN_YAMAGATA_MIYAUCHI",
+          "STN_YAMAGATA_ORIHATA",
+          "STN_YAMAGATA_RINGO",
+          "STN_YAMAGATA_NISHI_OTSUKA",
+          "STN_YAMAGATA_IMAIZUMI",
+          "STN_YAMAGATA_TOKINIWA",
+          "STN_YAMAGATA_MINAMI_NAGAI",
+          "STN_YAMAGATA_NAGAI",
+          "STN_YAMAGATA_AYAME_KOEN",
+          "STN_YAMAGATA_UZEN_NARITA",
+          "STN_YAMAGATA_SHIRAGI",
+          "STN_YAMAGATA_KOKUWA",
+          "STN_YAMAGATA_AYUKAI",
+          "STN_YAMAGATA_SHIKI_NO_SATO",
+          "STN_YAMAGATA_ARATO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YAMAGATA_AKAYU",
+        "lat": "38.04723",
+        "lng": "140.14901",
+        "name": "赤湯"
+      },
+      {
+        "id": "STN_YAMAGATA_NANYO_SHIYAKUSHO",
+        "lat": "38.055505",
+        "lng": "140.149005",
+        "name": "南陽市役所"
+      },
+      {
+        "id": "STN_YAMAGATA_MIYAUCHI",
+        "lat": "38.07086",
+        "lng": "140.1353",
+        "name": "宮内"
+      },
+      {
+        "id": "STN_YAMAGATA_ORIHATA",
+        "lat": "38.066455",
+        "lng": "140.122465",
+        "name": "おりはた"
+      },
+      {
+        "id": "STN_YAMAGATA_RINGO",
+        "lat": "38.05728",
+        "lng": "140.098121",
+        "name": "梨郷"
+      },
+      {
+        "id": "STN_YAMAGATA_NISHI_OTSUKA",
+        "lat": "38.055439",
+        "lng": "140.064655",
+        "name": "西大塚"
+      },
+      {
+        "id": "STN_YAMAGATA_IMAIZUMI",
+        "lat": "38.0567",
+        "lng": "140.04423",
+        "name": "今泉"
+      },
+      {
+        "id": "STN_YAMAGATA_TOKINIWA",
+        "lat": "38.076681",
+        "lng": "140.029598",
+        "name": "時庭"
+      },
+      {
+        "id": "STN_YAMAGATA_MINAMI_NAGAI",
+        "lat": "38.09762",
+        "lng": "140.034549",
+        "name": "南長井"
+      },
+      {
+        "id": "STN_YAMAGATA_NAGAI",
+        "lat": "38.10653",
+        "lng": "140.033565",
+        "name": "長井"
+      },
+      {
+        "id": "STN_YAMAGATA_AYAME_KOEN",
+        "lat": "38.11406",
+        "lng": "140.032794",
+        "name": "あやめ公園"
+      },
+      {
+        "id": "STN_YAMAGATA_UZEN_NARITA",
+        "lat": "38.131054",
+        "lng": "140.035118",
+        "name": "羽前成田"
+      },
+      {
+        "id": "STN_YAMAGATA_SHIRAGI",
+        "lat": "38.149975",
+        "lng": "140.04109",
+        "name": "白兎"
+      },
+      {
+        "id": "STN_YAMAGATA_KOKUWA",
+        "lat": "38.161501",
+        "lng": "140.046789",
+        "name": "蚕桑"
+      },
+      {
+        "id": "STN_YAMAGATA_AYUKAI",
+        "lat": "38.18257",
+        "lng": "140.071035",
+        "name": "鮎貝"
+      },
+      {
+        "id": "STN_YAMAGATA_SHIKI_NO_SATO",
+        "lat": "38.186005",
+        "lng": "140.07862",
+        "name": "四季の郷"
+      },
+      {
+        "id": "STN_YAMAGATA_ARATO",
+        "lat": "38.188035",
+        "lng": "140.09742",
+        "name": "荒砥"
+      }
+    ]
+  }
+]

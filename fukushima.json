@@ -1,0 +1,101 @@
+[
+  {
+    "categories": "",
+    "company_id": "FUKUSHIMA",
+    "company_name": "福島交通",
+    "lines": [
+      {
+        "id": "FUKUSHIMA_IIZAKA",
+        "name": "飯坂線",
+        "sequence": [
+          "STN_FUKUSHIMA_FUKUSHIMA",
+          "STN_FUKUSHIMA_SONEDA",
+          "STN_FUKUSHIMA_BIJUTSUKAN_TOSHOKAN_MAE",
+          "STN_FUKUSHIMA_IWASHIRO_SHIMIZU",
+          "STN_FUKUSHIMA_IZUMI_FUKUSHIMA",
+          "STN_FUKUSHIMA_KAMI_MATSUKAWA",
+          "STN_FUKUSHIMA_SASAYA",
+          "STN_FUKUSHIMA_SAKURAMIZU",
+          "STN_FUKUSHIMA_HIRANO",
+          "STN_FUKUSHIMA_IOJI_MAE",
+          "STN_FUKUSHIMA_HANAMIZU_ZAKA",
+          "STN_FUKUSHIMA_IIZAKA_ONSEN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_FUKUSHIMA_FUKUSHIMA",
+        "lat": "37.75558765",
+        "lng": "140.45997373",
+        "name": "福島"
+      },
+      {
+        "id": "STN_FUKUSHIMA_SONEDA",
+        "lat": "37.760311",
+        "lng": "140.459495",
+        "name": "曽根田"
+      },
+      {
+        "id": "STN_FUKUSHIMA_BIJUTSUKAN_TOSHOKAN_MAE",
+        "lat": "37.767125",
+        "lng": "140.45538",
+        "name": "美術館図書館前"
+      },
+      {
+        "id": "STN_FUKUSHIMA_IWASHIRO_SHIMIZU",
+        "lat": "37.776269",
+        "lng": "140.447659",
+        "name": "岩代清水"
+      },
+      {
+        "id": "STN_FUKUSHIMA_IZUMI_FUKUSHIMA",
+        "lat": "37.778735",
+        "lng": "140.44552",
+        "name": "泉"
+      },
+      {
+        "id": "STN_FUKUSHIMA_KAMI_MATSUKAWA",
+        "lat": "37.783615",
+        "lng": "140.44107",
+        "name": "上松川"
+      },
+      {
+        "id": "STN_FUKUSHIMA_SASAYA",
+        "lat": "37.78731",
+        "lng": "140.439724",
+        "name": "笹谷"
+      },
+      {
+        "id": "STN_FUKUSHIMA_SAKURAMIZU",
+        "lat": "37.795889",
+        "lng": "140.441107",
+        "name": "桜水"
+      },
+      {
+        "id": "STN_FUKUSHIMA_HIRANO",
+        "lat": "37.80507",
+        "lng": "140.442751",
+        "name": "平野"
+      },
+      {
+        "id": "STN_FUKUSHIMA_IOJI_MAE",
+        "lat": "37.81633617",
+        "lng": "140.44616598",
+        "name": "医王寺前"
+      },
+      {
+        "id": "STN_FUKUSHIMA_HANAMIZU_ZAKA",
+        "lat": "37.82712566",
+        "lng": "140.45061408",
+        "name": "花水坂"
+      },
+      {
+        "id": "STN_FUKUSHIMA_IIZAKA_ONSEN",
+        "lat": "37.82992738",
+        "lng": "140.45427569",
+        "name": "飯坂温泉"
+      }
+    ]
+  }
+]

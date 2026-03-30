@@ -1,0 +1,115 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "CHIZU",
+    "company_name": "智頭急行",
+    "lines": [
+      {
+        "id": "CHIZU_LINE",
+        "name": "智頭線",
+        "sequence": [
+          "STN_CHIZU_KAMIGORI",
+          "STN_CHIZU_KOKENAWA",
+          "STN_CHIZU_KONOHARA_ENSHIN",
+          "STN_CHIZU_KUZAKI",
+          "STN_CHIZU_SAYO",
+          "STN_CHIZU_HIRAFUKU",
+          "STN_CHIZU_ISHII",
+          "STN_CHIZU_MIYAMOTO_MUSASHI",
+          "STN_CHIZU_OHARA",
+          "STN_CHIZU_NISHI_AWAKURA",
+          "STN_CHIZU_AWAKURA_ONSEN",
+          "STN_CHIZU_YAMASATO",
+          "STN_CHIZU_KOIYAMAGATA",
+          "STN_CHIZU_CHIZU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_CHIZU_KAMIGORI",
+        "lat": "34.866077",
+        "lng": "134.353556",
+        "name": "上郡"
+      },
+      {
+        "id": "STN_CHIZU_KOKENAWA",
+        "lat": "34.896395",
+        "lng": "134.353875",
+        "name": "苔縄"
+      },
+      {
+        "id": "STN_CHIZU_KONOHARA_ENSHIN",
+        "lat": "34.91881",
+        "lng": "134.35266",
+        "name": "河野原円心"
+      },
+      {
+        "id": "STN_CHIZU_KUZAKI",
+        "lat": "34.96069",
+        "lng": "134.34419",
+        "name": "久崎"
+      },
+      {
+        "id": "STN_CHIZU_SAYO",
+        "lat": "35.00368",
+        "lng": "134.356655",
+        "name": "佐用"
+      },
+      {
+        "id": "STN_CHIZU_HIRAFUKU",
+        "lat": "35.04369",
+        "lng": "134.371875",
+        "name": "平福"
+      },
+      {
+        "id": "STN_CHIZU_ISHII",
+        "lat": "35.08192",
+        "lng": "134.35772",
+        "name": "石井"
+      },
+      {
+        "id": "STN_CHIZU_MIYAMOTO_MUSASHI",
+        "lat": "35.10185",
+        "lng": "134.330475",
+        "name": "宮本武蔵"
+      },
+      {
+        "id": "STN_CHIZU_OHARA",
+        "lat": "35.123905",
+        "lng": "134.327825",
+        "name": "大原"
+      },
+      {
+        "id": "STN_CHIZU_NISHI_AWAKURA",
+        "lat": "35.160345",
+        "lng": "134.33578",
+        "name": "西粟倉"
+      },
+      {
+        "id": "STN_CHIZU_AWAKURA_ONSEN",
+        "lat": "35.188516",
+        "lng": "134.336937",
+        "name": "あわくら温泉"
+      },
+      {
+        "id": "STN_CHIZU_YAMASATO",
+        "lat": "35.23252533",
+        "lng": "134.28895964",
+        "name": "山郷"
+      },
+      {
+        "id": "STN_CHIZU_KOIYAMAGATA",
+        "lat": "35.25588",
+        "lng": "134.27909",
+        "name": "恋山形"
+      },
+      {
+        "id": "STN_CHIZU_CHIZU",
+        "lat": "35.265105",
+        "lng": "134.22558",
+        "name": "智頭"
+      }
+    ]
+  }
+]

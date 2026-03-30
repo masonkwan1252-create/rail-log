@@ -1,0 +1,143 @@
+[
+  {
+    "categories": "",
+    "company_id": "IGR",
+    "company_name": "IGRいわて銀河鉄道",
+    "lines": [
+      {
+        "id": "IGR_LINE",
+        "name": "いわて銀河鉄道線",
+        "sequence": [
+          "STN_IGR_MORIOKA",
+          "STN_IGR_AOYAMA",
+          "STN_IGR_KURIYAGAWA",
+          "STN_IGR_SUGO",
+          "STN_IGR_TAKIZAWA",
+          "STN_IGR_SHIBUTAMI",
+          "STN_IGR_KOMA",
+          "STN_IGR_IWATE_KAWAGUCHI",
+          "STN_IGR_IWATE_NUMAKUNAI",
+          "STN_IGR_MIDO",
+          "STN_IGR_OKUNAKAYAMA_KOGEN",
+          "STN_IGR_KOTSUNAGI",
+          "STN_IGR_KOJOYA",
+          "STN_IGR_ICHINOHE",
+          "STN_IGR_NINOHE",
+          "STN_IGR_TOMAI",
+          "STN_IGR_KINDAICHI_ONSEN",
+          "STN_IGR_METOKI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_IGR_MORIOKA",
+        "lat": "39.701195",
+        "lng": "141.136375",
+        "name": "盛岡"
+      },
+      {
+        "id": "STN_IGR_AOYAMA",
+        "lat": "39.724691",
+        "lng": "141.118322",
+        "name": "青山"
+      },
+      {
+        "id": "STN_IGR_KURIYAGAWA",
+        "lat": "39.74408",
+        "lng": "141.12886",
+        "name": "厨川"
+      },
+      {
+        "id": "STN_IGR_SUGO",
+        "lat": "39.783452",
+        "lng": "141.14883",
+        "name": "巣子"
+      },
+      {
+        "id": "STN_IGR_TAKIZAWA",
+        "lat": "39.799",
+        "lng": "141.149555",
+        "name": "滝沢"
+      },
+      {
+        "id": "STN_IGR_SHIBUTAMI",
+        "lat": "39.834745",
+        "lng": "141.15423",
+        "name": "渋民"
+      },
+      {
+        "id": "STN_IGR_KOMA",
+        "lat": "39.87416",
+        "lng": "141.173675",
+        "name": "好摩"
+      },
+      {
+        "id": "STN_IGR_IWATE_KAWAGUCHI",
+        "lat": "39.919239",
+        "lng": "141.199372",
+        "name": "岩手川口"
+      },
+      {
+        "id": "STN_IGR_IWATE_NUMAKUNAI",
+        "lat": "39.96059",
+        "lng": "141.217075",
+        "name": "いわて沼宮内"
+      },
+      {
+        "id": "STN_IGR_MIDO",
+        "lat": "40.00436",
+        "lng": "141.23705",
+        "name": "御堂"
+      },
+      {
+        "id": "STN_IGR_OKUNAKAYAMA_KOGEN",
+        "lat": "40.066155",
+        "lng": "141.2285",
+        "name": "奥中山高原"
+      },
+      {
+        "id": "STN_IGR_KOTSUNAGI",
+        "lat": "40.123105",
+        "lng": "141.26042",
+        "name": "小繋"
+      },
+      {
+        "id": "STN_IGR_KOJOYA",
+        "lat": "40.17109",
+        "lng": "141.307739",
+        "name": "小鳥谷"
+      },
+      {
+        "id": "STN_IGR_ICHINOHE",
+        "lat": "40.210109",
+        "lng": "141.297414",
+        "name": "一戸"
+      },
+      {
+        "id": "STN_IGR_NINOHE",
+        "lat": "40.25983",
+        "lng": "141.285985",
+        "name": "二戸"
+      },
+      {
+        "id": "STN_IGR_TOMAI",
+        "lat": "40.285502",
+        "lng": "141.290936",
+        "name": "斗米"
+      },
+      {
+        "id": "STN_IGR_KINDAICHI_ONSEN",
+        "lat": "40.32307",
+        "lng": "141.303839",
+        "name": "金田一温泉"
+      },
+      {
+        "id": "STN_IGR_METOKI",
+        "lat": "40.35205",
+        "lng": "141.289575",
+        "name": "目時"
+      }
+    ]
+  }
+]

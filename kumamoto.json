@@ -1,0 +1,150 @@
+[
+  {
+    "categories": "",
+    "company_id": "KUMAMOTO",
+    "company_name": "熊本電鉄",
+    "lines": [
+      {
+        "id": "KUMAMOTO_KIKUCHI",
+        "name": "菊池線",
+        "sequence": [
+          "STN_KUMAMOTO_KAMI_KUMAMOTO",
+          "STN_KUMAMOTO_KANKANZAKA",
+          "STN_KUMAMOTO_IKEDA",
+          "STN_KUMAMOTO_UCHIGOSHI",
+          "STN_KUMAMOTO_TSUBOIGAWA_KOEN",
+          "STN_KUMAMOTO_KITA_KUMAMOTO",
+          "STN_KUMAMOTO_KAMEI",
+          "STN_KUMAMOTO_HAKESU_MITSU",
+          "STN_KUMAMOTO_HORIKAWA",
+          "STN_KUMAMOTO_SHIN_SUYA",
+          "STN_KUMAMOTO_SUYA",
+          "STN_KUMAMOTO_MITSUISHI",
+          "STN_KUMAMOTO_KUROISHI",
+          "STN_KUMAMOTO_KUMAMOTO_KOSEN_MAE",
+          "STN_KUMAMOTO_SAISHUN_IRYO_CENTER_MAE",
+          "STN_KUMAMOTO_MIYOSHI"
+        ]
+      },
+      {
+        "id": "KUMAMOTO_FUJISAKI",
+        "name": "藤崎線",
+        "sequence": [
+          "STN_KUMAMOTO_KITA_KUMAMOTO",
+          "STN_KUMAMOTO_KUROKAMIMACHI",
+          "STN_KUMAMOTO_FUJISAKIGUMAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KUMAMOTO_KAMI_KUMAMOTO",
+        "lat": "32.81852238",
+        "lng": "130.69990027",
+        "name": "上熊本"
+      },
+      {
+        "id": "STN_KUMAMOTO_KANKANZAKA",
+        "lat": "32.82408",
+        "lng": "130.70183",
+        "name": "韓々坂"
+      },
+      {
+        "id": "STN_KUMAMOTO_IKEDA",
+        "lat": "32.82701402",
+        "lng": "130.70754215",
+        "name": "池田"
+      },
+      {
+        "id": "STN_KUMAMOTO_UCHIGOSHI",
+        "lat": "32.82373",
+        "lng": "130.713825",
+        "name": "打越"
+      },
+      {
+        "id": "STN_KUMAMOTO_TSUBOIGAWA_KOEN",
+        "lat": "32.8214267",
+        "lng": "130.71864291",
+        "name": "坪井川公園"
+      },
+      {
+        "id": "STN_KUMAMOTO_KITA_KUMAMOTO",
+        "lat": "32.82780783",
+        "lng": "130.72177359",
+        "name": "北熊本"
+      },
+      {
+        "id": "STN_KUMAMOTO_KAMEI",
+        "lat": "32.83738486",
+        "lng": "130.72221705",
+        "name": "亀井"
+      },
+      {
+        "id": "STN_KUMAMOTO_HAKESU_MITSU",
+        "lat": "32.84133021",
+        "lng": "130.72283938",
+        "name": "八景水谷"
+      },
+      {
+        "id": "STN_KUMAMOTO_HORIKAWA",
+        "lat": "32.8491045",
+        "lng": "130.72531232",
+        "name": "堀川"
+      },
+      {
+        "id": "STN_KUMAMOTO_SHIN_SUYA",
+        "lat": "32.85389923",
+        "lng": "130.73243942",
+        "name": "新須屋"
+      },
+      {
+        "id": "STN_KUMAMOTO_SUYA",
+        "lat": "32.85806714",
+        "lng": "130.73640274",
+        "name": "須屋"
+      },
+      {
+        "id": "STN_KUMAMOTO_MITSUISHI",
+        "lat": "32.86386671",
+        "lng": "130.7382986",
+        "name": "三ツ石"
+      },
+      {
+        "id": "STN_KUMAMOTO_KUROISHI",
+        "lat": "32.87042642",
+        "lng": "130.74217521",
+        "name": "黒石"
+      },
+      {
+        "id": "STN_KUMAMOTO_KUMAMOTO_KOSEN_MAE",
+        "lat": "32.87819623",
+        "lng": "130.74628737",
+        "name": "熊本高専前"
+      },
+      {
+        "id": "STN_KUMAMOTO_SAISHUN_IRYO_CENTER_MAE",
+        "lat": "32.8802991",
+        "lng": "130.74793349",
+        "name": "再春医療センター前"
+      },
+      {
+        "id": "STN_KUMAMOTO_MIYOSHI",
+        "lat": "32.88318743",
+        "lng": "130.74986782",
+        "name": "御代志"
+      },
+      {
+        "id": "STN_KUMAMOTO_KUROKAMIMACHI",
+        "lat": "32.81836",
+        "lng": "130.717245",
+        "name": "黒髪町"
+      },
+      {
+        "id": "STN_KUMAMOTO_FUJISAKIGUMAE",
+        "lat": "32.80901",
+        "lng": "130.71325",
+        "name": "藤崎宮前"
+      }
+    ]
+  }
+]

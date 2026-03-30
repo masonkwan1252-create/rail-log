@@ -1,0 +1,185 @@
+[
+  {
+    "categories": "",
+    "company_id": "SHIMABARA",
+    "company_name": "島原鉄道",
+    "lines": [
+      {
+        "id": "SHIMABARA_LINE",
+        "name": "島原鉄道線",
+        "sequence": [
+          "STN_SHIMABARA_ISAHAYA",
+          "STN_SHIMABARA_HON_ISAHAYA",
+          "STN_SHIMABARA_SAIWAII",
+          "STN_SHIMABARA_ONO",
+          "STN_SHIMABARA_KANTAKU_NO_SATO",
+          "STN_SHIMABARA_MORIYAMA",
+          "STN_SHIMABARA_KAMANOHANA",
+          "STN_SHIMABARA_ISAHAYAHIGASHI_KOKO_MAE",
+          "STN_SHIMABARA_AINO",
+          "STN_SHIMABARA_AMAZAKI",
+          "STN_SHIMABARA_AZUMA",
+          "STN_SHIMABARA_KOBE",
+          "STN_SHIMABARA_TAISHO",
+          "STN_SHIMABARA_SAIGO",
+          "STN_SHIMABARA_KOJIRO",
+          "STN_SHIMABARA_TAIRA",
+          "STN_SHIMABARA_ARIAKE_YUE",
+          "STN_SHIMABARA_OMISAKI",
+          "STN_SHIMABARA_MATSUO",
+          "STN_SHIMABARA_MIE",
+          "STN_SHIMABARA_SHIMABARA",
+          "STN_SHIMABARA_REIKYU_KOEN_TAIUKAN",
+          "STN_SHIMABARA_SHIMABARA_FUNATSU",
+          "STN_SHIMABARA_SHIMABARA_KO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SHIMABARA_ISAHAYA",
+        "lat": "32.85159318",
+        "lng": "130.04129465",
+        "name": "諫早"
+      },
+      {
+        "id": "STN_SHIMABARA_HON_ISAHAYA",
+        "lat": "32.84174654",
+        "lng": "130.05274707",
+        "name": "本諫早"
+      },
+      {
+        "id": "STN_SHIMABARA_SAIWAII",
+        "lat": "32.83718638",
+        "lng": "130.06659612",
+        "name": "幸"
+      },
+      {
+        "id": "STN_SHIMABARA_ONO",
+        "lat": "32.83402752",
+        "lng": "130.08576471",
+        "name": "小野"
+      },
+      {
+        "id": "STN_SHIMABARA_KANTAKU_NO_SATO",
+        "lat": "32.83615",
+        "lng": "130.093165",
+        "name": "干拓の里"
+      },
+      {
+        "id": "STN_SHIMABARA_MORIYAMA",
+        "lat": "32.835005",
+        "lng": "130.113495",
+        "name": "森山"
+      },
+      {
+        "id": "STN_SHIMABARA_KAMANOHANA",
+        "lat": "32.834055",
+        "lng": "130.13554",
+        "name": "釜ノ鼻"
+      },
+      {
+        "id": "STN_SHIMABARA_ISAHAYAHIGASHI_KOKO_MAE",
+        "lat": "32.82344546",
+        "lng": "130.149125",
+        "name": "諫早東高校"
+      },
+      {
+        "id": "STN_SHIMABARA_AINO",
+        "lat": "32.818875",
+        "lng": "130.1558",
+        "name": "愛野"
+      },
+      {
+        "id": "STN_SHIMABARA_AMAZAKI",
+        "lat": "32.83009",
+        "lng": "130.17023",
+        "name": "阿母崎"
+      },
+      {
+        "id": "STN_SHIMABARA_AZUMA",
+        "lat": "32.840375",
+        "lng": "130.18992",
+        "name": "吾妻"
+      },
+      {
+        "id": "STN_SHIMABARA_KOBE",
+        "lat": "32.856355",
+        "lng": "130.21336",
+        "name": "古部"
+      },
+      {
+        "id": "STN_SHIMABARA_TAISHO",
+        "lat": "32.8604",
+        "lng": "130.225625",
+        "name": "大正"
+      },
+      {
+        "id": "STN_SHIMABARA_SAIGO",
+        "lat": "32.872953",
+        "lng": "130.244019",
+        "name": "西郷"
+      },
+      {
+        "id": "STN_SHIMABARA_KOJIRO",
+        "lat": "32.871545",
+        "lng": "130.26983",
+        "name": "神代"
+      },
+      {
+        "id": "STN_SHIMABARA_TAIRA",
+        "lat": "32.87194065",
+        "lng": "130.30883043",
+        "name": "多比良"
+      },
+      {
+        "id": "STN_SHIMABARA_ARIAKE_YUE",
+        "lat": "32.85801226",
+        "lng": "130.32853447",
+        "name": "有明湯江"
+      },
+      {
+        "id": "STN_SHIMABARA_OMISAKI",
+        "lat": "32.8437",
+        "lng": "130.34472",
+        "name": "大三東"
+      },
+      {
+        "id": "STN_SHIMABARA_MATSUO",
+        "lat": "32.83424837",
+        "lng": "130.34761346",
+        "name": "松尾"
+      },
+      {
+        "id": "STN_SHIMABARA_MIE",
+        "lat": "32.814975",
+        "lng": "130.35714",
+        "name": "三会"
+      },
+      {
+        "id": "STN_SHIMABARA_SHIMABARA",
+        "lat": "32.79047497",
+        "lng": "130.37082975",
+        "name": "島原"
+      },
+      {
+        "id": "STN_SHIMABARA_REIKYU_KOEN_TAIUKAN",
+        "lat": "32.78261942",
+        "lng": "130.37418385",
+        "name": "霊丘公園体育館"
+      },
+      {
+        "id": "STN_SHIMABARA_SHIMABARA_FUNATSU",
+        "lat": "32.7758",
+        "lng": "130.375575",
+        "name": "島原船津"
+      },
+      {
+        "id": "STN_SHIMABARA_SHIMABARA_KO",
+        "lat": "32.76864267",
+        "lng": "130.37013168",
+        "name": "島原港"
+      }
+    ]
+  }
+]

@@ -1,0 +1,115 @@
+[
+  {
+    "categories": "",
+    "company_id": "KUMAGAWA",
+    "company_name": "くま川鉄道",
+    "lines": [
+      {
+        "id": "KUMAGAWA_YUNOMAE",
+        "name": "湯前線",
+        "sequence": [
+          "STN_KUMAGAWA_HITOYOSHI_ONSEN",
+          "STN_KUMAGAWA_SAGARAHAN_GANJOJI",
+          "STN_KUMAGAWA_KAWAMURA",
+          "STN_KUMAGAWA_HIGO_NISHIMURA",
+          "STN_KUMAGAWA_ICHIBU",
+          "STN_KUMAGAWA_KINOUE",
+          "STN_KUMAGAWA_OKADOME_KOFUKU",
+          "STN_KUMAGAWA_ASAGIRI",
+          "STN_KUMAGAWA_HIGASHI_MENDA",
+          "STN_KUMAGAWA_KORITSU_BYOIN_MAE",
+          "STN_KUMAGAWA_TARAGI",
+          "STN_KUMAGAWA_HIGASHI_TARAGI",
+          "STN_KUMAGAWA_SHIN_TSURUBA",
+          "STN_KUMAGAWA_YUNOMAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KUMAGAWA_HITOYOSHI_ONSEN",
+        "lat": "32.21614",
+        "lng": "130.753815",
+        "name": "人吉温泉"
+      },
+      {
+        "id": "STN_KUMAGAWA_SAGARAHAN_GANJOJI",
+        "lat": "32.218365",
+        "lng": "130.769635",
+        "name": "相良藩願成寺"
+      },
+      {
+        "id": "STN_KUMAGAWA_KAWAMURA",
+        "lat": "32.207235",
+        "lng": "130.79535",
+        "name": "川村"
+      },
+      {
+        "id": "STN_KUMAGAWA_HIGO_NISHIMURA",
+        "lat": "32.20227",
+        "lng": "130.808865",
+        "name": "肥後西村"
+      },
+      {
+        "id": "STN_KUMAGAWA_ICHIBU",
+        "lat": "32.21456",
+        "lng": "130.83994",
+        "name": "一武"
+      },
+      {
+        "id": "STN_KUMAGAWA_KINOUE",
+        "lat": "32.224275",
+        "lng": "130.85891",
+        "name": "木上"
+      },
+      {
+        "id": "STN_KUMAGAWA_OKADOME_KOFUKU",
+        "lat": "32.23145",
+        "lng": "130.875105",
+        "name": "おかどめ幸福"
+      },
+      {
+        "id": "STN_KUMAGAWA_ASAGIRI",
+        "lat": "32.23625",
+        "lng": "130.89376",
+        "name": "あさぎり"
+      },
+      {
+        "id": "STN_KUMAGAWA_HIGASHI_MENDA",
+        "lat": "32.2502",
+        "lng": "130.91302",
+        "name": "東免田"
+      },
+      {
+        "id": "STN_KUMAGAWA_KORITSU_BYOIN_MAE",
+        "lat": "32.256035",
+        "lng": "130.92189",
+        "name": "公立病院前"
+      },
+      {
+        "id": "STN_KUMAGAWA_TARAGI",
+        "lat": "32.262755",
+        "lng": "130.93319",
+        "name": "多良木"
+      },
+      {
+        "id": "STN_KUMAGAWA_HIGASHI_TARAGI",
+        "lat": "32.272245",
+        "lng": "130.9508",
+        "name": "東多良木"
+      },
+      {
+        "id": "STN_KUMAGAWA_SHIN_TSURUBA",
+        "lat": "32.275445",
+        "lng": "130.96621",
+        "name": "新鶴羽"
+      },
+      {
+        "id": "STN_KUMAGAWA_YUNOMAE",
+        "lat": "32.281365",
+        "lng": "130.979865",
+        "name": "湯前"
+      }
+    ]
+  }
+]

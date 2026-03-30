@@ -1,0 +1,52 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "KISHU",
+    "company_name": "紀州鉄道",
+    "lines": [
+      {
+        "id": "KISHU_MAIN",
+        "name": "紀州鉄道線",
+        "sequence": [
+          "STN_KISHU_GOBO",
+          "STN_KISHU_GAKUMON",
+          "STN_KISHU_KII_GOBO",
+          "STN_KISHU_SHIYAKUSHOMAE",
+          "STN_KISHU_NISHI_GOBO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KISHU_GOBO",
+        "lat": "33.90765611",
+        "lng": "135.15874802",
+        "name": "御坊"
+      },
+      {
+        "id": "STN_KISHU_GAKUMON",
+        "lat": "33.89638237",
+        "lng": "135.1567837",
+        "name": "学門"
+      },
+      {
+        "id": "STN_KISHU_KII_GOBO",
+        "lat": "33.894345",
+        "lng": "135.154765",
+        "name": "紀伊御坊"
+      },
+      {
+        "id": "STN_KISHU_SHIYAKUSHOMAE",
+        "lat": "33.889605",
+        "lng": "135.15298",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_KISHU_NISHI_GOBO",
+        "lat": "33.88684106",
+        "lng": "135.15299",
+        "name": "西御坊"
+      }
+    ]
+  }
+]

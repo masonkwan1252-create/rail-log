@@ -1,222 +1,2471 @@
 [
-  { "id": "TRN_JRW_103", "company_id": "JR_WEST", "name": "103系", "variants": [] },
-  { "id": "TRN_JRW_105", "company_id": "JR_WEST", "name": "105系", "variants": [] },
-  { "id": "TRN_JRW_115", "company_id": "JR_WEST", "name": "115系", "variants": [] },
-  { "id": "TRN_JRW_117", "company_id": "JR_WEST", "name": "117系", "variants": [] },
-  { "id": "TRN_JRW_125", "company_id": "JR_WEST", "name": "125系", "variants": [] },
-  { "id": "TRN_JRW_205", "company_id": "JR_WEST", "name": "205系", "variants": [] },
-  { "id": "TRN_JRW_207", "company_id": "JR_WEST", "name": "207系", "variants": [] },
-  { "id": "TRN_JRW_211", "company_id": "JR_WEST", "name": "211系", "variants": [] },
-  { "id": "TRN_JRW_213", "company_id": "JR_WEST", "name": "213系", "variants": [] },
-  { "id": "TRN_JRW_221", "company_id": "JR_WEST", "name": "221系", "variants": [] },
-  { "id": "TRN_JRW_223", "company_id": "JR_WEST", "name": "223系", "variants": [] },
-  { "id": "TRN_JRW_225", "company_id": "JR_WEST", "name": "225系", "variants": [] },
-  { "id": "TRN_JRW_227", "company_id": "JR_WEST", "name": "227系", "variants": [] },
-  { "id": "TRN_JRW_271", "company_id": "JR_WEST", "name": "271系", "variants": [] },
-  { "id": "TRN_JRW_273", "company_id": "JR_WEST", "name": "273系", "variants": [] },
-  { "id": "TRN_JRW_281", "company_id": "JR_WEST", "name": "281系", "variants": [] },
-  { "id": "TRN_JRW_283", "company_id": "JR_WEST", "name": "283系", "variants": [] },
-  { "id": "TRN_JRW_285", "company_id": "JR_WEST", "name": "285系", "variants": [] },
-  { "id": "TRN_JRW_287", "company_id": "JR_WEST", "name": "287系", "variants": [] },
-  { "id": "TRN_JRW_289", "company_id": "JR_WEST", "name": "289系", "variants": [] },
-  { "id": "TRN_JRW_321", "company_id": "JR_WEST", "name": "321系", "variants": [] },
-  { "id": "TRN_JRW_323", "company_id": "JR_WEST", "name": "323系", "variants": [] },
-  { "id": "TRN_JRW_500", "company_id": "JR_WEST", "name": "500系", "variants": [] },
-  { "id": "TRN_JRW_521", "company_id": "JR_WEST", "name": "521系", "variants": [] },
-  { "id": "TRN_JRW_681", "company_id": "JR_WEST", "name": "681系", "variants": [] },
-  { "id": "TRN_JRW_683", "company_id": "JR_WEST", "name": "683系", "variants": [] },
-  { "id": "TRN_JRW_700", "company_id": "JR_WEST", "name": "700系", "variants": [] },
-  { "id": "TRN_JRW_DEC700", "company_id": "JR_WEST", "name": "DEC700形", "variants": [] },
-  { "id": "TRN_JRW_KIHA120", "company_id": "JR_WEST", "name": "キハ120形", "variants": [] },
-  { "id": "TRN_JRW_KIHA126", "company_id": "JR_WEST", "name": "キハ126系", "variants": [] },
-  { "id": "TRN_JRW_KIHA127", "company_id": "JR_WEST", "name": "キハ127系", "variants": [] },
-  { "id": "TRN_JRW_KIHA187", "company_id": "JR_WEST", "name": "キハ187系", "variants": [] },
-  { "id": "TRN_JRW_KIHA189", "company_id": "JR_WEST", "name": "キハ189系", "variants": [] },
-  { "id": "TRN_JRW_KIHA40", "company_id": "JR_WEST", "name": "キハ40系", "variants": [] },
-  { "id": "TRN_JRW_N700", "company_id": "JR_WEST", "name": "N700系", "variants": [] },
-  { "id": "TRN_JRW_W7", "company_id": "JR_WEST", "name": "W7系", "variants": [] },
-  { "id": "TRN_KEIHAN_1000", "company_id": "KEIHAN", "name": "1000系", "variants": [] },
-  { "id": "TRN_KEIHAN_10000", "company_id": "KEIHAN", "name": "10000系", "variants": [] },
-  { "id": "TRN_KEIHAN_13000", "company_id": "KEIHAN", "name": "13000系", "variants": [] },
-  { "id": "TRN_KEIHAN_2200", "company_id": "KEIHAN", "name": "2200系", "variants": [] },
-  { "id": "TRN_KEIHAN_2400", "company_id": "KEIHAN", "name": "2400系", "variants": [] },
-  { "id": "TRN_KEIHAN_2600", "company_id": "KEIHAN", "name": "2600系", "variants": [] },
-  { "id": "TRN_KEIHAN_3000", "company_id": "KEIHAN", "name": "3000系", "variants": [] },
-  { "id": "TRN_KEIHAN_5000", "company_id": "KEIHAN", "name": "5000系", "variants": [] },
-  { "id": "TRN_KEIHAN_600", "company_id": "KEIHAN", "name": "600形", "variants": [] },
-  { "id": "TRN_KEIHAN_6000", "company_id": "KEIHAN", "name": "6000系", "variants": [] },
-  { "id": "TRN_KEIHAN_700", "company_id": "KEIHAN", "name": "700形", "variants": [] },
-  { "id": "TRN_KEIHAN_7000", "company_id": "KEIHAN", "name": "7000系", "variants": [] },
-  { "id": "TRN_KEIHAN_7200", "company_id": "KEIHAN", "name": "7200系", "variants": [] },
-  { "id": "TRN_KEIHAN_800", "company_id": "KEIHAN", "name": "800系", "variants": [] },
-  { "id": "TRN_KEIHAN_8000", "company_id": "KEIHAN", "name": "8000系", "variants": [] },
-  { "id": "TRN_KEIHAN_9000", "company_id": "KEIHAN", "name": "9000系", "variants": [] },
-  { "id": "TRN_KINTETSU_1000 ", "company_id": "KINTETSU", "name": "1000系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1010 ", "company_id": "KINTETSU", "name": "1010系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1020 ", "company_id": "KINTETSU", "name": "1020系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1021 ", "company_id": "KINTETSU", "name": "1021系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1026 ", "company_id": "KINTETSU", "name": "1026系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1031 ", "company_id": "KINTETSU", "name": "1031系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1200 ", "company_id": "KINTETSU", "name": "1200系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1201 ", "company_id": "KINTETSU", "name": "1201系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1220 ", "company_id": "KINTETSU", "name": "1220系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1230 ", "company_id": "KINTETSU", "name": "1230系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1233 ", "company_id": "KINTETSU", "name": "1233系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1240 ", "company_id": "KINTETSU", "name": "1240系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_12400", "company_id": "KINTETSU", "name": "12400系", "variants": [] },
-  { "id": "TRN_KINTETSU_1249 ", "company_id": "KINTETSU", "name": "1249系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1252 ", "company_id": "KINTETSU", "name": "1252系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1253 ", "company_id": "KINTETSU", "name": "1253系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1254 ", "company_id": "KINTETSU", "name": "1254系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1259 ", "company_id": "KINTETSU", "name": "1259系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1400 ", "company_id": "KINTETSU", "name": "1400系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1420 ", "company_id": "KINTETSU", "name": "1420系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1422 ", "company_id": "KINTETSU", "name": "1422系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1430 ", "company_id": "KINTETSU", "name": "1430系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1435 ", "company_id": "KINTETSU", "name": "1435系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1436 ", "company_id": "KINTETSU", "name": "1436系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1440 ", "company_id": "KINTETSU", "name": "1440系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_1473 ", "company_id": "KINTETSU", "name": "1473系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_16010", "company_id": "KINTETSU", "name": "16010系", "variants": [] },
-  { "id": "TRN_KINTETSU_1620 ", "company_id": "KINTETSU", "name": "1620系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_16200", "company_id": "KINTETSU", "name": "16200系", "variants": [] },
-  { "id": "TRN_KINTETSU_16400", "company_id": "KINTETSU", "name": "16400系", "variants": [] },
-  { "id": "TRN_KINTETSU_16600", "company_id": "KINTETSU", "name": "16600系", "variants": [] },
-  { "id": "TRN_KINTETSU_1800 ", "company_id": "KINTETSU", "name": "1800系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_19200", "company_id": "KINTETSU", "name": "19200系", "variants": [] },
-  { "id": "TRN_KINTETSU_1A", "company_id": "KINTETSU", "name": "1A系", "variants": [] },
-  { "id": "TRN_KINTETSU_2000 ", "company_id": "KINTETSU", "name": "2000系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_20000", "company_id": "KINTETSU", "name": "20000系", "variants": [] },
-  { "id": "TRN_KINTETSU_2050 ", "company_id": "KINTETSU", "name": "2050系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_21000", "company_id": "KINTETSU", "name": "21000系", "variants": [] },
-  { "id": "TRN_KINTETSU_21020", "company_id": "KINTETSU", "name": "21020系", "variants": [] },
-  { "id": "TRN_KINTETSU_22000", "company_id": "KINTETSU", "name": "22000系", "variants": [] },
-  { "id": "TRN_KINTETSU_22600", "company_id": "KINTETSU", "name": "22600系", "variants": [] },
-  { "id": "TRN_KINTETSU_23000", "company_id": "KINTETSU", "name": "23000系", "variants": [] },
-  { "id": "TRN_KINTETSU_2400", "company_id": "KINTETSU", "name": "2400系", "variants": [] },
-  { "id": "TRN_KINTETSU_2430", "company_id": "KINTETSU", "name": "2430系", "variants": [] },
-  { "id": "TRN_KINTETSU_26000", "company_id": "KINTETSU", "name": "26000系", "variants": [] },
-  { "id": "TRN_KINTETSU_2610", "company_id": "KINTETSU", "name": "2610系", "variants": [] },
-  { "id": "TRN_KINTETSU_2800", "company_id": "KINTETSU", "name": "2800系", "variants": [] },
-  { "id": "TRN_KINTETSU_3000", "company_id": "KINTETSU", "name": "3000系", "variants": [] },
-  { "id": "TRN_KINTETSU_30000", "company_id": "KINTETSU", "name": "30000系", "variants": [] },
-  { "id": "TRN_KINTETSU_3200", "company_id": "KINTETSU", "name": "3200系", "variants": [] },
-  { "id": "TRN_KINTETSU_3220", "company_id": "KINTETSU", "name": "3220系", "variants": [] },
-  { "id": "TRN_KINTETSU_50000", "company_id": "KINTETSU", "name": "50000系", "variants": [] },
-  { "id": "TRN_KINTETSU_5200", "company_id": "KINTETSU", "name": "5200系", "variants": [] },
-  { "id": "TRN_KINTETSU_5209", "company_id": "KINTETSU", "name": "5209系", "variants": [] },
-  { "id": "TRN_KINTETSU_5211", "company_id": "KINTETSU", "name": "5211系", "variants": [] },
-  { "id": "TRN_KINTETSU_5800", "company_id": "KINTETSU", "name": "5800系", "variants": [] },
-  { "id": "TRN_KINTETSU_5820", "company_id": "KINTETSU", "name": "5820系", "variants": [] },
-  { "id": "TRN_KINTETSU_6020 ", "company_id": "KINTETSU", "name": "6020系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6200 ", "company_id": "KINTETSU", "name": "6200系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6400 ", "company_id": "KINTETSU", "name": "6400系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6407 ", "company_id": "KINTETSU", "name": "6407系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6413 ", "company_id": "KINTETSU", "name": "6413系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6419 ", "company_id": "KINTETSU", "name": "6419系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6422 ", "company_id": "KINTETSU", "name": "6422系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6432 ", "company_id": "KINTETSU", "name": "6432系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6600 ", "company_id": "KINTETSU", "name": "6600系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6620 ", "company_id": "KINTETSU", "name": "6620系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6820 ", "company_id": "KINTETSU", "name": "6820系 ", "variants": [] },
-  { "id": "TRN_KINTETSU_6A", "company_id": "KINTETSU", "name": "6A系", "variants": [] },
-  { "id": "TRN_KINTETSU_7000", "company_id": "KINTETSU", "name": "7000系", "variants": [] },
-  { "id": "TRN_KINTETSU_7020", "company_id": "KINTETSU", "name": "7020系", "variants": [] },
-  { "id": "TRN_KINTETSU_8000", "company_id": "KINTETSU", "name": "8000系", "variants": [] },
-  { "id": "TRN_KINTETSU_80000", "company_id": "KINTETSU", "name": "80000系", "variants": [] },
-  { "id": "TRN_KINTETSU_8810", "company_id": "KINTETSU", "name": "8810系", "variants": [] },
-  { "id": "TRN_KINTETSU_8A", "company_id": "KINTETSU", "name": "8A系", "variants": [] },
-  { "id": "TRN_KINTETSU_9000", "company_id": "KINTETSU", "name": "9000系", "variants": [] },
-  { "id": "TRN_KINTETSU_9020", "company_id": "KINTETSU", "name": "9020系", "variants": [] },
-  { "id": "TRN_KINTETSU_9200", "company_id": "KINTETSU", "name": "9200系", "variants": [] },
-  { "id": "TRN_KINTETSU_9820", "company_id": "KINTETSU", "name": "9820系", "variants": [] },
-  { "id": "TRN_HANKYU_1000", "company_id": "HANKYU", "name": "1000系", "variants": [] },
-  { "id": "TRN_HANKYU_1300", "company_id": "HANKYU", "name": "1300系", "variants": [] },
-  { "id": "TRN_HANKYU_2000", "company_id": "HANKYU", "name": "2000系", "variants": [] },
-  { "id": "TRN_HANKYU_2300", "company_id": "HANKYU", "name": "2300系", "variants": [] },
-  { "id": "TRN_HANKYU_3300", "company_id": "HANKYU", "name": "3300系", "variants": [] },
-  { "id": "TRN_HANKYU_5000", "company_id": "HANKYU", "name": "5000系", "variants": [] },
-  { "id": "TRN_HANKYU_5100", "company_id": "HANKYU", "name": "5100系", "variants": [] },
-  { "id": "TRN_HANKYU_5300", "company_id": "HANKYU", "name": "5300系", "variants": [] },
-  { "id": "TRN_HANKYU_6000", "company_id": "HANKYU", "name": "6000系", "variants": [] },
-  { "id": "TRN_HANKYU_6300", "company_id": "HANKYU", "name": "6300系", "variants": [] },
-  { "id": "TRN_HANKYU_7000", "company_id": "HANKYU", "name": "7000系", "variants": [] },
-  { "id": "TRN_HANKYU_7300", "company_id": "HANKYU", "name": "7300系", "variants": [] },
-  { "id": "TRN_HANKYU_8000", "company_id": "HANKYU", "name": "8000系", "variants": [] },
-  { "id": "TRN_HANKYU_8200", "company_id": "HANKYU", "name": "8200系", "variants": [] },
-  { "id": "TRN_HANKYU_8300", "company_id": "HANKYU", "name": "8300系", "variants": [] },
-  { "id": "TRN_HANKYU_9000", "company_id": "HANKYU", "name": "9000系", "variants": [] },
-  { "id": "TRN_HANKYU_9300", "company_id": "HANKYU", "name": "9300系", "variants": [] },
-  { "id": "TRN_HANSHIN_5700 ", "company_id": "HANSHIN", "name": "5700系 ", "variants": [] },
-  { "id": "TRN_HANSHIN_1000 ", "company_id": "HANSHIN", "name": "1000系 ", "variants": [] },
-  { "id": "TRN_HANSHIN_9000 ", "company_id": "HANSHIN", "name": "9000系 ", "variants": [] },
-  { "id": "TRN_HANSHIN_9000 ", "company_id": "HANSHIN", "name": "9000系 ", "variants": [] },
-  { "id": "TRN_HANSHIN_8000 ", "company_id": "HANSHIN", "name": "8000系 ", "variants": [] },
-  { "id": "TRN_HANSHIN_5500 ", "company_id": "HANSHIN", "name": "5500系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_200", "company_id": "OSAKA_METRO", "name": "200系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_20", "company_id": "OSAKA_METRO", "name": "20系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_30000", "company_id": "OSAKA_METRO", "name": "30000系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_400", "company_id": "OSAKA_METRO", "name": "400系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_66", "company_id": "OSAKA_METRO", "name": "66系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_70", "company_id": "OSAKA_METRO", "name": "70系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_80", "company_id": "OSAKA_METRO", "name": "80系 ", "variants": [] },
-  { "id": "TRN_OSAKA_METRO_30000A", "company_id": "OSAKA_METRO", "name": "30000A系 ", "variants": [] },
-  { "id": "TRN_HOJO_KIHA40", "company_id": "HOJO", "name": "キハ40形", "variants": [] },
-  { "id": "TRN_HOJO_FLOWER2000", "company_id": "HOJO", "name": "フラワ2000形", "variants": [] },
-  { "id": "TRN_SHINTETSU_6500", "company_id": "SHINTETSU", "name": "6500系", "variants": [] },
-  { "id": "TRN_SHINTETSU_6000", "company_id": "SHINTETSU", "name": "6000系", "variants": [] },
-  { "id": "TRN_SHINTETSU_5000", "company_id": "SHINTETSU", "name": "5000系", "variants": [] },
-  { "id": "TRN_SHINTETSU_2000", "company_id": "SHINTETSU", "name": "2000系", "variants": [] },
-  { "id": "TRN_SHINTETSU_3000", "company_id": "SHINTETSU", "name": "3000系", "variants": [] },
-  { "id": "TRN_SHINTETSU_1300", "company_id": "SHINTETSU", "name": "1300系", "variants": [] },
-  { "id": "TRN_SHINTETSU_1100", "company_id": "SHINTETSU", "name": "1100系", "variants": [] },
-  { "id": "TRN_SHINTETSU_1000", "company_id": "SHINTETSU", "name": "1000系", "variants": [] },
-  { "id": "TRN_KNT_LINER_2000", "company_id": "KNT_LINER", "name": "2000型", "variants": [] },
-  { "id": "TRN_KNT_LINER_2020", "company_id": "KNT_LINER", "name": "2000形", "variants": [] },
-  { "id": "TRN_KNT_LINER_1000", "company_id": "KNT_LINER", "name": "1000型", "variants": [] },
-  { "id": "TRN_KNT_LINER_3020", "company_id": "KNT_LINER", "name": "3000形", "variants": [] },
-  { "id": "TRN_NANKAI_1000", "company_id": "NANKAI", "name": "1000系", "variants": [] },
-  { "id": "TRN_NANKAI_2000", "company_id": "NANKAI", "name": "2000系", "variants": [] },
-  { "id": "TRN_NANKAI_2200", "company_id": "NANKAI", "name": "2200系", "variants": [] },
-  { "id": "TRN_NANKAI_2300", "company_id": "NANKAI", "name": "2300系", "variants": [] },
-  { "id": "TRN_NANKAI_3000", "company_id": "NANKAI", "name": "3000系", "variants": [] },
-  { "id": "TRN_NANKAI_5000", "company_id": "NANKAI", "name": "5000系", "variants": [] },
-  { "id": "TRN_NANKAI_6000", "company_id": "NANKAI", "name": "6000系", "variants": [] },
-  { "id": "TRN_NANKAI_6200", "company_id": "NANKAI", "name": "6200系", "variants": [] },
-  { "id": "TRN_NANKAI_6300", "company_id": "NANKAI", "name": "6300系", "variants": [] },
-  { "id": "TRN_NANKAI_7000", "company_id": "NANKAI", "name": "7000系", "variants": [] },
-  { "id": "TRN_NANKAI_7020", "company_id": "NANKAI", "name": "7020系", "variants": [] },
-  { "id": "TRN_NANKAI_7100", "company_id": "NANKAI", "name": "7100系", "variants": [] },
-  { "id": "TRN_NANKAI_8000", "company_id": "NANKAI", "name": "8000系", "variants": [] },
-  { "id": "TRN_NANKAI_8300", "company_id": "NANKAI", "name": "8300系", "variants": [] },
-  { "id": "TRN_NANKAI_9000", "company_id": "NANKAI", "name": "9000系", "variants": [] },
-  { "id": "TRN_NANKAI_9300", "company_id": "NANKAI", "name": "9300系", "variants": [] },
-  { "id": "TRN_NANKAI_10000", "company_id": "NANKAI", "name": "10000系", "variants": [] },
-  { "id": "TRN_NANKAI_11000", "company_id": "NANKAI", "name": "11000系", "variants": [] },
-  { "id": "TRN_NANKAI_12000", "company_id": "NANKAI", "name": "12000系", "variants": [] },
-  { "id": "TRN_NANKAI_30000", "company_id": "NANKAI", "name": "30000系", "variants": [] },
-  { "id": "TRN_NANKAI_31000", "company_id": "NANKAI", "name": "31000系", "variants": [] },
-  { "id": "TRN_NANKAI_50000", "company_id": "NANKAI", "name": "50000系", "variants": [] },
-  { "id": "TRN_EIZANDENSHA_700", "company_id": "EIZANDENSHA", "name": "700系", "variants": ["", "「ひえい」"] },
-  { "id": "TRN_EIZANDENSHA_800", "company_id": "EIZANDENSHA", "name": "800系", "variants": [] },
-  { "id": "TRN_EIZANDENSHA_900", "company_id": "EIZANDENSHA", "name": "900系", "variants": [] },
-  { "id": "TRN_EIZANDENSHA_100", "company_id": "EIZANDENSHA", "name": "100系", "variants": [] },
-  { "id": "TRN_SANYO_3000", "company_id": "SANYO", "name": "3000系", "variants": [] },
-  { "id": "TRN_SANYO_3050", "company_id": "SANYO", "name": "3050系", "variants": [] },
-  { "id": "TRN_SANYO_5000", "company_id": "SANYO", "name": "5000系", "variants": [] },
-  { "id": "TRN_SANYO_5030", "company_id": "SANYO", "name": "5030系", "variants": [] },
-  { "id": "TRN_SANYO_6000", "company_id": "SANYO", "name": "6000系", "variants": [] },
-  { "id": "TRN_HANKAI_161", "company_id": "HANKAI", "name": "モ161", "variants": [] },
-  { "id": "TRN_HANKAI_351", "company_id": "HANKAI", "name": "モ351", "variants": [] },
-  { "id": "TRN_HANKAI_501", "company_id": "HANKAI", "name": "モ501", "variants": [] },
-  { "id": "TRN_HANKAI_601", "company_id": "HANKAI", "name": "モ601", "variants": [] },
-  { "id": "TRN_HANKAI_701", "company_id": "HANKAI", "name": "モ701", "variants": [] },
-  { "id": "TRN_HANKAI_1001", "company_id": "HANKAI", "name": "1001形", "variants": [] },
-  { "id": "TRN_HANKAI_1101", "company_id": "HANKAI", "name": "1101形", "variants": [] },
-  { "id": "TRN_CITY_KOBE_6000", "company_id": "CITY_KOBE", "name": "6000形", "variants": [] },
-  { "id": "TRN_CITY_KOBE_5000", "company_id": "CITY_KOBE", "name": "5000形", "variants": [] },
-  { "id": "TRN_MIZURIN_MRT300", "company_id": "MIZURIN", "name": "MRT300形", "variants": [] },
-  { "id": "TRN_MIZURIN_KIHA30", "company_id": "MIZURIN", "name": "キハ30形", "variants": [] },
-  { "id": "TRN_MIZURIN_KIHA37", "company_id": "MIZURIN", "name": "キハ37形", "variants": [] },
-  { "id": "TRN_MIZURIN_KIHA38", "company_id": "MIZURIN", "name": "キハ38形", "variants": [] }  
+{ "id":"TRN_NAGOYA_5050","company_id":"NAGOYA","name":"5050形","variants":[] },
+{ "id":"TRN_NAGOYA_N1000","company_id":"NAGOYA","name":"N1000形","variants":[] },
+{ "id":"TRN_NAGOYA_2000","company_id":"NAGOYA","name":"2000形","variants":[] },
+{ "id":"TRN_NAGOYA_3050","company_id":"NAGOYA","name":"3050形","variants":[] },
+{ "id":"TRN_NAGOYA_N3000","company_id":"NAGOYA","name":"N3000形","variants":[] },
+{ "id":"TRN_NAGOYA_6000","company_id":"NAGOYA","name":"6000形","variants":[] },
+{ "id":"TRN_NAGOYA_6050","company_id":"NAGOYA","name":"6050形","variants":[] },
+{ "id":"TRN_NAGOYA_7000","company_id":"NAGOYA","name":"7000形","variants":[] },
+{ "id":"TRN_YOKOHAMA_SUBWAY_3000","company_id":"YOKOHAMA_SUBWAY","name":"3000形","variants":[] },
+{ "id":"TRN_YOKOHAMA_SUBWAY_4000","company_id":"YOKOHAMA_SUBWAY","name":"4000形","variants":[] },
+{ "id":"TRN_KITAKYU_8000","company_id":"KITAKYU","name":"8000形","variants":[] },
+{ "id":"TRN_KITAKYU_9000","company_id":"KITAKYU","name":"9000形","variants":[] },
+{ "id":"TRN_TOEI_5500","company_id":"TOEI","name":"5500形","variants":[] },
+{ "id":"TRN_TOEI_6300","company_id":"TOEI","name":"6300形","variants":[] },
+{ "id":"TRN_TOEI_6500","company_id":"TOEI","name":"6500形","variants":[] },
+{ "id":"TRN_TOEI_10_300","company_id":"TOEI","name":"10-300形","variants":[] },
+{ "id":"TRN_TOEI_12_000","company_id":"TOEI","name":"12-000形","variants":[] },
+{ "id":"TRN_TOEI_12_600","company_id":"TOEI","name":"12-600形","variants":[] },
+{ "id":"TRN_SENDAI_1000N","company_id":"SENDAI","name":"1000N系","variants":[] },
+{ "id":"TRN_SENDAI_3000","company_id":"SENDAI","name":"3000系","variants":[] },
+{ "id":"TRN_SENDAI_2000","company_id":"SENDAI","name":"2000系","variants":[] },
+{ "id":"TRN_HAKODATE_500","company_id":"HAKODATE","name":"500形","variants":[] },
+{ "id":"TRN_HAKODATE_710","company_id":"HAKODATE","name":"710形","variants":[] },
+{ "id":"TRN_HAKODATE_7000","company_id":"HAKODATE","name":"7000形","variants":[] },
+{ "id":"TRN_HAKODATE_800","company_id":"HAKODATE","name":"800形","variants":[] },
+{ "id":"TRN_HAKODATE_2000","company_id":"HAKODATE","name":"2000形","variants":[] },
+{ "id":"TRN_HAKODATE_3000","company_id":"HAKODATE","name":"3000形","variants":[] },
+{ "id":"TRN_HAKODATE_8000","company_id":"HAKODATE","name":"8000形","variants":[] },
+{ "id":"TRN_HAKODATE_8100","company_id":"HAKODATE","name":"8100形","variants":[] },
+{ "id":"TRN_HAKODATE_9600","company_id":"HAKODATE","name":"9600形","variants":[] },
+{ "id":"TRN_SAPPORO_210","company_id":"SAPPORO","name":"210形","variants":[] },
+{ "id":"TRN_SAPPORO_220","company_id":"SAPPORO","name":"220形","variants":[] },
+{ "id":"TRN_SAPPORO_240","company_id":"SAPPORO","name":"240形","variants":[] },
+{ "id":"TRN_SAPPORO_250","company_id":"SAPPORO","name":"250形","variants":[] },
+{ "id":"TRN_SAPPORO_8500","company_id":"SAPPORO","name":"8500形","variants":[] },
+{ "id":"TRN_SAPPORO_8510","company_id":"SAPPORO","name":"8510形","variants":[] },
+{ "id":"TRN_SAPPORO_8520","company_id":"SAPPORO","name":"8520形","variants":[] },
+{ "id":"TRN_SAPPORO_3300","company_id":"SAPPORO","name":"3300形","variants":[] },
+{ "id":"TRN_SAPPORO_A1200","company_id":"SAPPORO","name":"A1200形","variants":[] },
+{ "id":"TRN_SAPPORO_1100","company_id":"SAPPORO","name":"1100形","variants":[] },
+{ "id":"TRN_SAPPORO_A1210","company_id":"SAPPORO","name":"A1210形","variants":[] },
+  {
+    "company_id": "FUKUSHIMA",
+    "id": "TRN_FUKUSHIMA_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "ABUKUMA",
+    "id": "TRN_ABUKUMA_8100",
+    "name": "8100系",
+    "variants": []
+  },
+  {
+    "company_id": "ABUKUMA",
+    "id": "TRN_ABUKUMA_AB900",
+    "name": "AB900系",
+    "variants": []
+  },
+  {
+    "company_id": "AIZU",
+    "id": "TRN_AIZU_AT350",
+    "name": "AT-350形",
+    "variants": []
+  },
+  {
+    "company_id": "AIZU",
+    "id": "TRN_AIZU_AT400",
+    "name": "AT-400形",
+    "variants": []
+  },
+  {
+    "company_id": "AIZU",
+    "id": "TRN_AIZU_AT500",
+    "name": "AT-500形",
+    "variants": []
+  },
+  {
+    "company_id": "AIZU",
+    "id": "TRN_AIZU_AT600",
+    "name": "AT-600形",
+    "variants": []
+  },
+  {
+    "company_id": "AIZU",
+    "id": "TRN_AIZU_AT700",
+    "name": "AT-700形",
+    "variants": []
+  },
+  {
+    "company_id": "YAMAGATA",
+    "id": "TRN_YAMAGATA_YR880",
+    "name": "YR-880形",
+    "variants": []
+  },
+  {
+    "company_id": "YURI_KOGEN",
+    "id": "TRN_YURI_KOGEN_YR2000",
+    "name": "YR-2000形",
+    "variants": []
+  },
+  {
+    "company_id": "YURI_KOGEN",
+    "id": "TRN_YURI_KOGEN_YR3000",
+    "name": "YR-3000形",
+    "variants": []
+  },
+  {
+    "company_id": "AKITA",
+    "id": "TRN_AKITA_AN8800",
+    "name": "AN-8800形",
+    "variants": []
+  },
+  {
+    "company_id": "AKITA",
+    "id": "TRN_AKITA_AN8900",
+    "name": "AN-8900形",
+    "variants": []
+  },
+  {
+    "company_id": "AKITA",
+    "id": "TRN_AKITA_AN2000",
+    "name": "AN-2000形",
+    "variants": []
+  },
+  {
+    "company_id": "SAT",
+    "id": "TRN_SAT_SAT721",
+    "name": "SAT721系",
+    "variants": []
+  },
+  {
+    "company_id": "SANRIKU",
+    "id": "TRN_SANRIKU_36-100",
+    "name": "36-100形",
+    "variants": []
+  },
+  {
+    "company_id": "SANRIKU",
+    "id": "TRN_SANRIKU_36-200",
+    "name": "36-200形",
+    "variants": []
+  },
+  {
+    "company_id": "SANRIKU",
+    "id": "TRN_SANRIKU_36-R",
+    "name": "36-R形",
+    "variants": []
+  },
+  {
+    "company_id": "SANRIKU",
+    "id": "TRN_SANRIKU_36-700",
+    "name": "36-700形",
+    "variants": []
+  },
+  {
+    "company_id": "SANRIKU",
+    "id": "TRN_SANRIKU_36-Z",
+    "name": "36-Z形",
+    "variants": []
+  },
+  {
+    "company_id": "IGR",
+    "id": "TRN_IGR_IGR7000",
+    "name": "IGR7000系",
+    "variants": []
+  },
+  {
+    "company_id": "KONAN",
+    "id": "TRN_KONAN_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "AOIMORI",
+    "id": "TRN_AOIMORI_701",
+    "name": "青い森701系",
+    "variants": []
+  },
+  {
+    "company_id": "AOIMORI",
+    "id": "TRN_AOIMORI_703",
+    "name": "青い森703系",
+    "variants": []
+  },
+  {
+    "company_id": "S_HOKKAIDO",
+    "id": "TRN_S_HOKKAIDO_KIHA40",
+    "name": "キハ40形",
+    "variants": []
+  },
+  {
+    "company_id": "KUMAMOTO",
+    "id": "TRN_KUMAMOTO_6000",
+    "name": "6000形",
+    "variants": []
+  },
+  {
+    "company_id": "KUMAMOTO",
+    "id": "TRN_KUMAMOTO_01",
+    "name": "01形",
+    "variants": []
+  },
+  {
+    "company_id": "KUMAMOTO",
+    "id": "TRN_KUMAMOTO_03",
+    "name": "03形",
+    "variants": []
+  },
+  {
+    "company_id": "KUMAMOTO",
+    "id": "TRN_KUMAMOTO_1000",
+    "name": "1000形",
+    "variants": []
+  },
+  {
+    "company_id": "HISATSU",
+    "id": "TRN_HISATSU_100",
+    "name": "HSOR-100形",
+    "variants": []
+  },
+  {
+    "company_id": "HISATSU",
+    "id": "TRN_HISATSU_150",
+    "name": "HSOR-150形",
+    "variants": []
+  },
+  {
+    "company_id": "MINAMI_ASO",
+    "id": "TRN_MINAMI_ASO_MT300",
+    "name": "MT-3000形",
+    "variants": []
+  },
+  {
+    "company_id": "MINAMI_ASO",
+    "id": "TRN_MINAMI_ASO_MT4000",
+    "name": "MT-4000形",
+    "variants": []
+  },
+  {
+    "company_id": "KUMAGAWA",
+    "id": "TRN_KUMAGAWA_KT500",
+    "name": "KT-500形",
+    "variants": [
+      "「春」",
+      "「夏」",
+      "「秋」",
+      "「冬」",
+      "「白秋」"
+    ]
+  },
+  {
+    "company_id": "MATSUURA",
+    "id": "TRN_MATSUURA_MR400",
+    "name": "MR-400形",
+    "variants": []
+  },
+  {
+    "company_id": "MATSUURA",
+    "id": "TRN_MATSUURA_MR500",
+    "name": "MR-500形",
+    "variants": []
+  },
+  {
+    "company_id": "MATSUURA",
+    "id": "TRN_MATSUURA_MR600",
+    "name": "MR-600形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_160",
+    "name": "160形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_201",
+    "name": "201形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_202",
+    "name": "202形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_211",
+    "name": "211形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_300",
+    "name": "300形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_360",
+    "name": "360形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_370",
+    "name": "370形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_500",
+    "name": "500形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_600",
+    "name": "600形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1200",
+    "name": "1200形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1200A",
+    "name": "1200A形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1300",
+    "name": "1300形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1500",
+    "name": "1500形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1500A",
+    "name": "1500A形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1700",
+    "name": "1700形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_1800",
+    "name": "1800形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_3000",
+    "name": "3000形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_5000",
+    "name": "5000形",
+    "variants": []
+  },
+  {
+    "company_id": "NAGASAKI",
+    "id": "TRN_NAGASAKI_6000",
+    "name": "6000形",
+    "variants": []
+  },
+  {
+    "company_id": "SHIMABARA",
+    "id": "TRN_SHIMABARA_KIHA2550",
+    "name": "キハ2550形",
+    "variants": []
+  },
+  {
+    "company_id": "SHIMABARA",
+    "id": "TRN_SHIMABARA_KIHA2500",
+    "name": "キハ2500形",
+    "variants": []
+  },
+  {
+    "company_id": "HEISEI_CHIKUHO",
+    "id": "TRN_HEISEI_CHIKUHO_400",
+    "name": "400形",
+    "variants": []
+  },
+  {
+    "company_id": "HEISEI_CHIKUHO",
+    "id": "TRN_HEISEI_CHIKUHO_500",
+    "name": "500形",
+    "variants": []
+  },
+  {
+    "company_id": "CHIKUHO",
+    "id": "TRN_CHIKUHO_3000",
+    "name": "3000形",
+    "variants": []
+  },
+  {
+    "company_id": "CHIKUHO",
+    "id": "TRN_CHIKUHO_5000",
+    "name": "5000形",
+    "variants": []
+  },
+  {
+    "company_id": "KITAKYUSHU",
+    "id": "TRN_KITAKYUSHU_1000",
+    "name": "1000形",
+    "variants": []
+  },
+  {
+    "company_id": "AMAGI",
+    "id": "TRN_AMAGI_AR300",
+    "name": "AR300形",
+    "variants": []
+  },
+  {
+    "company_id": "AMAGI",
+    "id": "TRN_AMAGI_ARE500",
+    "name": "ARe500形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_100",
+    "name": "100形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_200",
+    "name": "200形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_590",
+    "name": "590形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_600",
+    "name": "600形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_700",
+    "name": "700形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_800",
+    "name": "800形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_1000",
+    "name": "1000形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_2000",
+    "name": "2000形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_3000",
+    "name": "3000形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_7",
+    "name": "7形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_198",
+    "name": "198形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_320",
+    "name": "320形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSADEN",
+    "id": "TRN_TOSADEN_910",
+    "name": "910形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSA",
+    "id": "TRN_TOSA_2700",
+    "name": "2700系",
+    "variants": []
+  },
+  {
+    "company_id": "TOSA",
+    "id": "TRN_TOSA_TKT8000",
+    "name": "TKT-8000形",
+    "variants": []
+  },
+  {
+    "company_id": "TOSA",
+    "id": "TRN_TOSA_9640",
+    "name": "9640形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_50",
+    "name": "モハ50形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_2000",
+    "name": "モハ2000形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_2100",
+    "name": "モハ2100形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_5000",
+    "name": "モハ5000形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_D1",
+    "name": "D1形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_D2",
+    "name": "D2形",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_700",
+    "name": "700系",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_610",
+    "name": "610系",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "IYO",
+    "id": "TRN_IYO_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_600",
+    "name": "600形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_700",
+    "name": "700形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_1070",
+    "name": "1070形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_1080",
+    "name": "1080形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_1100",
+    "name": "1100形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_1200",
+    "name": "1200形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_1300",
+    "name": "1300形",
+    "variants": []
+  },
+  {
+    "company_id": "TAKAMATSU",
+    "id": "TRN_TAKAMATSU_2000",
+    "name": "2000形",
+    "variants": []
+  },
+  {
+    "company_id": "NISHIKIGAWA",
+    "id": "TRN_NISHIKIGAWA_NT3000",
+    "name": "NT3000形",
+    "variants": []
+  },
+  {
+    "company_id": "NISHIKIGAWA",
+    "id": "TRN_NISHIKIGAWA_KIHA40",
+    "name": "キハ40形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_100",
+    "name": "100形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_150",
+    "name": "150形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_200",
+    "name": "200形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_350",
+    "name": "350形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_570",
+    "name": "570形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_600",
+    "name": "600形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_650",
+    "name": "650形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_700",
+    "name": "700形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_750",
+    "name": "750形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_800",
+    "name": "800形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_900",
+    "name": "900形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_1150",
+    "name": "1150形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_1900",
+    "name": "1900形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_2000",
+    "name": "2000形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3000",
+    "name": "3000形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3100",
+    "name": "3100形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3500",
+    "name": "3500形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3700",
+    "name": "3700形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3800",
+    "name": "3800形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3900",
+    "name": "3900形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_3950",
+    "name": "3950形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_1000",
+    "name": "1000形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_5000",
+    "name": "5000形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_5100",
+    "name": "5100形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA",
+    "id": "TRN_HIROSHIMA_5200",
+    "name": "5200形",
+    "variants": []
+  },
+  {
+    "company_id": "HIROSHIMA_RAPID",
+    "id": "TRN_HIROSHIMA_RAPID_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_3000",
+    "name": "3000形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7000",
+    "name": "7000形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7100",
+    "name": "7100形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7200",
+    "name": "7200形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7300",
+    "name": "7300形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7400",
+    "name": "7400形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7500",
+    "name": "7500形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7600",
+    "name": "7600形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7700",
+    "name": "7700形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_7900",
+    "name": "7900形",
+    "variants": []
+  },
+  {
+    "company_id": "OKAYAMA",
+    "id": "TRN_OKAYAMA_9200",
+    "name": "9200形",
+    "variants": []
+  },
+  {
+    "company_id": "IBARA",
+    "id": "TRN_IBARA_IRT355",
+    "name": "IRT355形",
+    "variants": []
+  },
+  {
+    "company_id": "ICHIBATA",
+    "id": "TRN_ICHIBATA_2100",
+    "name": "2100系",
+    "variants": []
+  },
+  {
+    "company_id": "ICHIBATA",
+    "id": "TRN_ICHIBATA_5000",
+    "name": "5000系",
+    "variants": []
+  },
+  {
+    "company_id": "ICHIBATA",
+    "id": "TRN_ICHIBATA_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "ICHIBATA",
+    "id": "TRN_ICHIBATA_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "ICHIBATA",
+    "id": "TRN_ICHIBATA_8000",
+    "name": "8000系",
+    "variants": []
+  },
+  {
+    "company_id": "WAKASA",
+    "id": "TRN_WAKASA_WT3000",
+    "name": "WT3000形",
+    "variants": []
+  },
+  {
+    "company_id": "WAKASA",
+    "id": "TRN_WAKASA_WT3300",
+    "name": "WT3300形",
+    "variants": []
+  },
+  {
+    "company_id": "CHIZU",
+    "id": "TRN_CHIZU_HOT3500",
+    "name": "HOT3500形",
+    "variants": []
+  },
+  {
+    "company_id": "CHIZU",
+    "id": "TRN_CHIZU_HOT7000",
+    "name": "HOT7000形",
+    "variants": []
+  },
+  {
+    "company_id": "WAKAYAMA",
+    "id": "TRN_WAKAYAMA_2270",
+    "name": "2270系",
+    "variants": [
+      "",
+      "「いちご電車」",
+      "「おもちゃ電車」",
+      "「たま電車」",
+      "「うめ星電車」",
+      "「たま電車ミュージアム号」"
+    ]
+  },
+  {
+    "company_id": "KISHU",
+    "id": "TRN_KISHU_KR301",
+    "name": "KR301",
+    "variants": []
+  },
+  {
+    "company_id": "KISHU",
+    "id": "TRN_KISHU_KR205",
+    "name": "KR205",
+    "variants": []
+  },
+  {
+    "company_id": "NOSE",
+    "id": "TRN_NOSE_1700",
+    "name": "1700系",
+    "variants": []
+  },
+  {
+    "company_id": "NOSE",
+    "id": "TRN_NOSE_5100",
+    "name": "5100系",
+    "variants": []
+  },
+  {
+    "company_id": "NOSE",
+    "id": "TRN_NOSE_6000",
+    "name": "6000系",
+    "variants": []
+  },
+  {
+    "company_id": "NOSE",
+    "id": "TRN_NOSE_7200",
+    "name": "7200系",
+    "variants": []
+  },
+  {
+    "company_id": "MIZUMA",
+    "id": "TRN_MIZUMA_1000",
+    "name": "1000形",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_MONO",
+    "id": "TRN_OSAKA_MONO_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_MONO",
+    "id": "TRN_OSAKA_MONO_2000",
+    "name": "2000系",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_MONO",
+    "id": "TRN_OSAKA_MONO_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "WILLER",
+    "id": "TRN_WILLER_KTR8000",
+    "name": "KTR8000形",
+    "variants": []
+  },
+  {
+    "company_id": "WILLER",
+    "id": "TRN_WILLER_KTR8500",
+    "name": "KTR8500形",
+    "variants": []
+  },
+  {
+    "company_id": "WILLER",
+    "id": "TRN_WILLER_MF100",
+    "name": "MF100形",
+    "variants": []
+  },
+  {
+    "company_id": "WILLER",
+    "id": "TRN_WILLER_KTR300",
+    "name": "KTR300形",
+    "variants": []
+  },
+  {
+    "company_id": "WILLER",
+    "id": "TRN_WILLER_KTR700",
+    "name": "KTR700形",
+    "variants": []
+  },
+  {
+    "company_id": "WILLER",
+    "id": "TRN_WILLER_KTR800",
+    "name": "KTR800形",
+    "variants": []
+  },
+  {
+    "company_id": "SHIGARAKI",
+    "id": "TRN_SHIGARAKI_SKR310",
+    "name": "SKR310形",
+    "variants": []
+  },
+  {
+    "company_id": "SHIGARAKI",
+    "id": "TRN_SHIGARAKI_SKR400",
+    "name": "SKR400形",
+    "variants": []
+  },
+  {
+    "company_id": "SHIGARAKI",
+    "id": "TRN_SHIGARAKI_SKR500",
+    "name": "SKR500形",
+    "variants": []
+  },
+  {
+    "company_id": "OHMI",
+    "id": "TRN_OHMI_800",
+    "name": "800形",
+    "variants": []
+  },
+  {
+    "company_id": "OHMI",
+    "id": "TRN_OHMI_900",
+    "name": "900形",
+    "variants": []
+  },
+  {
+    "company_id": "OHMI",
+    "id": "TRN_OHMI_100",
+    "name": "100形",
+    "variants": []
+  },
+  {
+    "company_id": "OHMI",
+    "id": "TRN_OHMI_300",
+    "name": "300形",
+    "variants": []
+  },
+  {
+    "company_id": "OHMI",
+    "id": "TRN_OHMI_200",
+    "name": "200形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_101",
+    "name": "モボ101形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_301",
+    "name": "モボ301形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_501",
+    "name": "モボ501形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_621",
+    "name": "モボ621形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_611",
+    "name": "モボ611形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_21",
+    "name": "モボ21形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_631",
+    "name": "モボ631形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_2001",
+    "name": "モボ2001形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIFUKU",
+    "id": "TRN_KEIFUKU_1",
+    "name": "モボ1形",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_103",
+    "name": "103系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_105",
+    "name": "105系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_115",
+    "name": "115系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_117",
+    "name": "117系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_125",
+    "name": "125系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_205",
+    "name": "205系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_207",
+    "name": "207系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_211",
+    "name": "211系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_213",
+    "name": "213系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_221",
+    "name": "221系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_223",
+    "name": "223系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_225",
+    "name": "225系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_227",
+    "name": "227系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_271",
+    "name": "271系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_273",
+    "name": "273系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_281",
+    "name": "281系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_283",
+    "name": "283系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_285",
+    "name": "285系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_287",
+    "name": "287系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_289",
+    "name": "289系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_321",
+    "name": "321系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_323",
+    "name": "323系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_500",
+    "name": "500系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_521",
+    "name": "521系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_681",
+    "name": "681系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_683",
+    "name": "683系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_700",
+    "name": "700系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_DEC700",
+    "name": "DEC700形",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_KIHA120",
+    "name": "キハ120形",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_KIHA126",
+    "name": "キハ126系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_KIHA127",
+    "name": "キハ127系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_KIHA187",
+    "name": "キハ187系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_KIHA189",
+    "name": "キハ189系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_KIHA40",
+    "name": "キハ40系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_N700",
+    "name": "N700系",
+    "variants": []
+  },
+  {
+    "company_id": "JR_WEST",
+    "id": "TRN_JRW_W7",
+    "name": "W7系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_10000",
+    "name": "10000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_13000",
+    "name": "13000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_2200",
+    "name": "2200系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_2400",
+    "name": "2400系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_2600",
+    "name": "2600系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_5000",
+    "name": "5000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_600",
+    "name": "600形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_6000",
+    "name": "6000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_700",
+    "name": "700形",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_7200",
+    "name": "7200系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_800",
+    "name": "800系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_8000",
+    "name": "8000系",
+    "variants": []
+  },
+  {
+    "company_id": "KEIHAN",
+    "id": "TRN_KEIHAN_9000",
+    "name": "9000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1000 ",
+    "name": "1000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1010 ",
+    "name": "1010系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1020 ",
+    "name": "1020系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1021 ",
+    "name": "1021系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1026 ",
+    "name": "1026系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1031 ",
+    "name": "1031系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1200 ",
+    "name": "1200系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1201 ",
+    "name": "1201系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1220 ",
+    "name": "1220系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1230 ",
+    "name": "1230系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1233 ",
+    "name": "1233系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1240 ",
+    "name": "1240系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_12400",
+    "name": "12400系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1249 ",
+    "name": "1249系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1252 ",
+    "name": "1252系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1253 ",
+    "name": "1253系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1254 ",
+    "name": "1254系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1259 ",
+    "name": "1259系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1400 ",
+    "name": "1400系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1420 ",
+    "name": "1420系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1422 ",
+    "name": "1422系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1430 ",
+    "name": "1430系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1435 ",
+    "name": "1435系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1436 ",
+    "name": "1436系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1440 ",
+    "name": "1440系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1473 ",
+    "name": "1473系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_16010",
+    "name": "16010系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1620 ",
+    "name": "1620系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_16200",
+    "name": "16200系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_16400",
+    "name": "16400系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_16600",
+    "name": "16600系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1800 ",
+    "name": "1800系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_19200",
+    "name": "19200系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_1A",
+    "name": "1A系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_2000 ",
+    "name": "2000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_20000",
+    "name": "20000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_2050 ",
+    "name": "2050系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_21000",
+    "name": "21000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_21020",
+    "name": "21020系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_22000",
+    "name": "22000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_22600",
+    "name": "22600系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_23000",
+    "name": "23000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_2400",
+    "name": "2400系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_2430",
+    "name": "2430系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_26000",
+    "name": "26000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_2610",
+    "name": "2610系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_2800",
+    "name": "2800系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_30000",
+    "name": "30000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_3200",
+    "name": "3200系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_3220",
+    "name": "3220系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_50000",
+    "name": "50000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_5200",
+    "name": "5200系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_5209",
+    "name": "5209系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_5211",
+    "name": "5211系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_5800",
+    "name": "5800系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_5820",
+    "name": "5820系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6020 ",
+    "name": "6020系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6200 ",
+    "name": "6200系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6400 ",
+    "name": "6400系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6407 ",
+    "name": "6407系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6413 ",
+    "name": "6413系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6419 ",
+    "name": "6419系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6422 ",
+    "name": "6422系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6432 ",
+    "name": "6432系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6600 ",
+    "name": "6600系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6620 ",
+    "name": "6620系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6820 ",
+    "name": "6820系 ",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_6A",
+    "name": "6A系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_7020",
+    "name": "7020系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_8000",
+    "name": "8000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_80000",
+    "name": "80000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_8810",
+    "name": "8810系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_8A",
+    "name": "8A系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_9000",
+    "name": "9000系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_9020",
+    "name": "9020系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_9200",
+    "name": "9200系",
+    "variants": []
+  },
+  {
+    "company_id": "KINTETSU",
+    "id": "TRN_KINTETSU_9820",
+    "name": "9820系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_1300",
+    "name": "1300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_2000",
+    "name": "2000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_2300",
+    "name": "2300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_3300",
+    "name": "3300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_5000",
+    "name": "5000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_5100",
+    "name": "5100系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_5300",
+    "name": "5300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_6000",
+    "name": "6000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_6300",
+    "name": "6300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_7300",
+    "name": "7300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_8000",
+    "name": "8000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_8200",
+    "name": "8200系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_8300",
+    "name": "8300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_9000",
+    "name": "9000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKYU",
+    "id": "TRN_HANKYU_9300",
+    "name": "9300系",
+    "variants": []
+  },
+  {
+    "company_id": "HANSHIN",
+    "id": "TRN_HANSHIN_5700 ",
+    "name": "5700系 ",
+    "variants": []
+  },
+  {
+    "company_id": "HANSHIN",
+    "id": "TRN_HANSHIN_1000 ",
+    "name": "1000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "HANSHIN",
+    "id": "TRN_HANSHIN_9000 ",
+    "name": "9000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "HANSHIN",
+    "id": "TRN_HANSHIN_9000 ",
+    "name": "9000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "HANSHIN",
+    "id": "TRN_HANSHIN_8000 ",
+    "name": "8000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "HANSHIN",
+    "id": "TRN_HANSHIN_5500 ",
+    "name": "5500系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_200",
+    "name": "200系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_20",
+    "name": "20系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_30000",
+    "name": "30000系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_400",
+    "name": "400系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_66",
+    "name": "66系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_70",
+    "name": "70系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_80",
+    "name": "80系 ",
+    "variants": []
+  },
+  {
+    "company_id": "OSAKA_METRO",
+    "id": "TRN_OSAKA_METRO_30000A",
+    "name": "30000A系 ",
+    "variants": []
+  },
+  {
+    "company_id": "HOJO",
+    "id": "TRN_HOJO_KIHA40",
+    "name": "キハ40形",
+    "variants": []
+  },
+  {
+    "company_id": "HOJO",
+    "id": "TRN_HOJO_FLOWER2000",
+    "name": "フラワ2000形",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_6500",
+    "name": "6500系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_6000",
+    "name": "6000系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_5000",
+    "name": "5000系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_2000",
+    "name": "2000系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_1300",
+    "name": "1300系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_1100",
+    "name": "1100系",
+    "variants": []
+  },
+  {
+    "company_id": "SHINTETSU",
+    "id": "TRN_SHINTETSU_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "KNT_LINER",
+    "id": "TRN_KNT_LINER_2000",
+    "name": "2000型",
+    "variants": []
+  },
+  {
+    "company_id": "KNT_LINER",
+    "id": "TRN_KNT_LINER_2020",
+    "name": "2000形",
+    "variants": []
+  },
+  {
+    "company_id": "KNT_LINER",
+    "id": "TRN_KNT_LINER_1000",
+    "name": "1000型",
+    "variants": []
+  },
+  {
+    "company_id": "KNT_LINER",
+    "id": "TRN_KNT_LINER_3020",
+    "name": "3000形",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_1000",
+    "name": "1000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_2000",
+    "name": "2000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_2200",
+    "name": "2200系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_2300",
+    "name": "2300系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_5000",
+    "name": "5000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_6000",
+    "name": "6000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_6200",
+    "name": "6200系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_6300",
+    "name": "6300系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_7000",
+    "name": "7000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_7020",
+    "name": "7020系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_7100",
+    "name": "7100系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_8000",
+    "name": "8000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_8300",
+    "name": "8300系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_9000",
+    "name": "9000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_9300",
+    "name": "9300系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_10000",
+    "name": "10000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_11000",
+    "name": "11000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_12000",
+    "name": "12000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_30000",
+    "name": "30000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_31000",
+    "name": "31000系",
+    "variants": []
+  },
+  {
+    "company_id": "NANKAI",
+    "id": "TRN_NANKAI_50000",
+    "name": "50000系",
+    "variants": []
+  },
+  {
+    "company_id": "EIZANDENSHA",
+    "id": "TRN_EIZANDENSHA_700",
+    "name": "700系",
+    "variants": [
+      "",
+      "「ひえい」"
+    ]
+  },
+  {
+    "company_id": "EIZANDENSHA",
+    "id": "TRN_EIZANDENSHA_800",
+    "name": "800系",
+    "variants": []
+  },
+  {
+    "company_id": "EIZANDENSHA",
+    "id": "TRN_EIZANDENSHA_900",
+    "name": "900系",
+    "variants": []
+  },
+  {
+    "company_id": "EIZANDENSHA",
+    "id": "TRN_EIZANDENSHA_100",
+    "name": "100系",
+    "variants": []
+  },
+  {
+    "company_id": "SANYO",
+    "id": "TRN_SANYO_3000",
+    "name": "3000系",
+    "variants": []
+  },
+  {
+    "company_id": "SANYO",
+    "id": "TRN_SANYO_3050",
+    "name": "3050系",
+    "variants": []
+  },
+  {
+    "company_id": "SANYO",
+    "id": "TRN_SANYO_5000",
+    "name": "5000系",
+    "variants": []
+  },
+  {
+    "company_id": "SANYO",
+    "id": "TRN_SANYO_5030",
+    "name": "5030系",
+    "variants": []
+  },
+  {
+    "company_id": "SANYO",
+    "id": "TRN_SANYO_6000",
+    "name": "6000系",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_161",
+    "name": "モ161",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_351",
+    "name": "モ351",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_501",
+    "name": "モ501",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_601",
+    "name": "モ601",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_701",
+    "name": "モ701",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_1001",
+    "name": "1001形",
+    "variants": []
+  },
+  {
+    "company_id": "HANKAI",
+    "id": "TRN_HANKAI_1101",
+    "name": "1101形",
+    "variants": []
+  },
+  {
+    "company_id": "CITY_KOBE",
+    "id": "TRN_CITY_KOBE_6000",
+    "name": "6000形",
+    "variants": []
+  },
+  {
+    "company_id": "CITY_KOBE",
+    "id": "TRN_CITY_KOBE_5000",
+    "name": "5000形",
+    "variants": []
+  },
+  {
+    "company_id": "MIZURIN",
+    "id": "TRN_MIZURIN_MRT300",
+    "name": "MRT300形",
+    "variants": []
+  },
+  {
+    "company_id": "MIZURIN",
+    "id": "TRN_MIZURIN_KIHA30",
+    "name": "キハ30形",
+    "variants": []
+  },
+  {
+    "company_id": "MIZURIN",
+    "id": "TRN_MIZURIN_KIHA37",
+    "name": "キハ37形",
+    "variants": []
+  },
+  {
+    "company_id": "MIZURIN",
+    "id": "TRN_MIZURIN_KIHA38",
+    "name": "キハ38形",
+    "variants": []
+  }
 ]

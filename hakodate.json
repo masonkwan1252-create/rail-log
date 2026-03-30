@@ -1,0 +1,225 @@
+[
+  {
+    "categories": "",
+    "company_id": "HAKODATE",
+    "company_name": "函館市電",
+    "lines": [
+      {
+        "id": "HAKODATE_2",
+        "name": "函館市電2系統",
+        "sequence": [
+          "STN_HAKODATE_YUNOKAWA",
+          "STN_HAKODATE_YUNOKAWA_ONSEN",
+          "STN_HAKODATE_HAKODATE_ARENA_MAE",
+          "STN_HAKODATE_KOMABA_SHAKO_MAE",
+          "STN_HAKODATE_KEIBAJO_MAE",
+          "STN_HAKODATE_FUKAHORICHO",
+          "STN_HAKODATE_KASHIWAGICHO",
+          "STN_HAKODATE_SUGINAMICHO",
+          "STN_HAKODATE_GORYOKAKU_KOEN_MAE",
+          "STN_HAKODATE_CHUO_BYOIN_MAE",
+          "STN_HAKODATE_CHIYOGADAI",
+          "STN_HAKODATE_HORIKAWACHO",
+          "STN_HAKODATE_SHOWABASHI",
+          "STN_HAKODATE_CHITOSECHO",
+          "STN_HAKODATE_SHINKAWACHO",
+          "STN_HAKODATE_MATSUKAZACHO",
+          "STN_HAKODATE_HAKODATE_EKI_MAE",
+          "STN_HAKODATE_SHIYAKUSHO_MAE",
+          "STN_HAKODATE_UOICHIBA_DORI",
+          "STN_HAKODATE_JUJIGAI",
+          "STN_HAKODATE_HORAICHO",
+          "STN_HAKODATE_AOYAGICHO",
+          "STN_HAKODATE_YACHIGASHIRA"
+        ]
+      },
+      {
+        "id": "HAKODATE_5",
+        "name": "函館市電5系統",
+        "sequence": [
+          "STN_HAKODATE_YUNOKAWA",
+          "STN_HAKODATE_YUNOKAWA_ONSEN",
+          "STN_HAKODATE_HAKODATE_ARENA_MAE",
+          "STN_HAKODATE_KOMABA_SHAKO_MAE",
+          "STN_HAKODATE_KEIBAJO_MAE",
+          "STN_HAKODATE_FUKAHORICHO",
+          "STN_HAKODATE_KASHIWAGICHO",
+          "STN_HAKODATE_SUGINAMICHO",
+          "STN_HAKODATE_GORYOKAKU_KOEN_MAE",
+          "STN_HAKODATE_CHUO_BYOIN_MAE",
+          "STN_HAKODATE_CHIYOGADAI",
+          "STN_HAKODATE_HORIKAWACHO",
+          "STN_HAKODATE_SHOWABASHI",
+          "STN_HAKODATE_CHITOSECHO",
+          "STN_HAKODATE_SHINKAWACHO",
+          "STN_HAKODATE_MATSUKAZACHO",
+          "STN_HAKODATE_HAKODATE_EKI_MAE",
+          "STN_HAKODATE_SHIYAKUSHO_MAE",
+          "STN_HAKODATE_UOICHIBA_DORI",
+          "STN_HAKODATE_JUJIGAI",
+          "STN_HAKODATE_SUEHIROCHO",
+          "STN_HAKODATE_OMACHI",
+          "STN_HAKODATE_HAKODATE_DOCKS_MAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HAKODATE_YUNOKAWA",
+        "lat": "41.78108819",
+        "lng": "140.78999129",
+        "name": "湯の川"
+      },
+      {
+        "id": "STN_HAKODATE_YUNOKAWA_ONSEN",
+        "lat": "41.78005381",
+        "lng": "140.78510575",
+        "name": "湯の川温泉"
+      },
+      {
+        "id": "STN_HAKODATE_HAKODATE_ARENA_MAE",
+        "lat": "41.78194007",
+        "lng": "140.78237509",
+        "name": "函館アリーナ前"
+      },
+      {
+        "id": "STN_HAKODATE_KOMABA_SHAKO_MAE",
+        "lat": "41.78324067",
+        "lng": "140.77927432",
+        "name": "駒場車庫前"
+      },
+      {
+        "id": "STN_HAKODATE_KEIBAJO_MAE",
+        "lat": "41.78444567",
+        "lng": "140.77583231",
+        "name": "競馬場前"
+      },
+      {
+        "id": "STN_HAKODATE_FUKAHORICHO",
+        "lat": "41.78717904",
+        "lng": "140.76996702",
+        "name": "深堀町"
+      },
+      {
+        "id": "STN_HAKODATE_KASHIWAGICHO",
+        "lat": "41.78793964",
+        "lng": "140.76532753",
+        "name": "柏木町"
+      },
+      {
+        "id": "STN_HAKODATE_SUGINAMICHO",
+        "lat": "41.78864076",
+        "lng": "140.75949428",
+        "name": "杉並町"
+      },
+      {
+        "id": "STN_HAKODATE_GORYOKAKU_KOEN_MAE",
+        "lat": "41.78924681",
+        "lng": "140.75219475",
+        "name": "五稜郭公園前"
+      },
+      {
+        "id": "STN_HAKODATE_CHUO_BYOIN_MAE",
+        "lat": "41.78662056",
+        "lng": "140.7509516",
+        "name": "中央病院前"
+      },
+      {
+        "id": "STN_HAKODATE_CHIYOGADAI",
+        "lat": "41.78395854",
+        "lng": "140.74836967",
+        "name": "千代台"
+      },
+      {
+        "id": "STN_HAKODATE_HORIKAWACHO",
+        "lat": "41.7804056",
+        "lng": "140.74396783",
+        "name": "堀川町"
+      },
+      {
+        "id": "STN_HAKODATE_SHOWABASHI",
+        "lat": "41.77802883",
+        "lng": "140.74089216",
+        "name": "昭和橋"
+      },
+      {
+        "id": "STN_HAKODATE_CHITOSECHO",
+        "lat": "41.77573537",
+        "lng": "140.73805343",
+        "name": "千歳町"
+      },
+      {
+        "id": "STN_HAKODATE_SHINKAWACHO",
+        "lat": "41.77350127",
+        "lng": "140.73529675",
+        "name": "新川町"
+      },
+      {
+        "id": "STN_HAKODATE_MATSUKAZACHO",
+        "lat": "41.771481",
+        "lng": "140.73314457",
+        "name": "松風町"
+      },
+      {
+        "id": "STN_HAKODATE_HAKODATE_EKI_MAE",
+        "lat": "41.77232472",
+        "lng": "140.72783869",
+        "name": "函館駅前"
+      },
+      {
+        "id": "STN_HAKODATE_SHIYAKUSHO_MAE",
+        "lat": "41.76947268",
+        "lng": "140.72560799",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_HAKODATE_UOICHIBA_DORI",
+        "lat": "41.76653732",
+        "lng": "140.72266028",
+        "name": "魚市場通"
+      },
+      {
+        "id": "STN_HAKODATE_JUJIGAI",
+        "lat": "41.76415775",
+        "lng": "140.71870936",
+        "name": "十字街"
+      },
+      {
+        "id": "STN_HAKODATE_HORAICHO",
+        "lat": "41.76101184",
+        "lng": "140.71996801",
+        "name": "宝来町"
+      },
+      {
+        "id": "STN_HAKODATE_AOYAGICHO",
+        "lat": "41.75661486",
+        "lng": "140.71859795",
+        "name": "青柳町"
+      },
+      {
+        "id": "STN_HAKODATE_YACHIGASHIRA",
+        "lat": "41.75337041",
+        "lng": "140.71644728",
+        "name": "谷地頭"
+      },
+      {
+        "id": "STN_HAKODATE_SUEHIROCHO",
+        "lat": "41.766655",
+        "lng": "140.71242",
+        "name": "末広町"
+      },
+      {
+        "id": "STN_HAKODATE_OMACHI",
+        "lat": "41.77019515",
+        "lng": "140.70911728",
+        "name": "大町"
+      },
+      {
+        "id": "STN_HAKODATE_HAKODATE_DOCKS_MAE",
+        "lat": "41.77308286",
+        "lng": "140.70441678",
+        "name": "函館どつく前"
+      }
+    ]
+  }
+]

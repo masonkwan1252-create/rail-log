@@ -1,0 +1,255 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "WILLER",
+    "company_name": "京都丹後鉄道",
+    "lines": [
+      {
+        "id": "WILLER_MIFUKU",
+        "name": "宮福線",
+        "sequence": [
+          "STN_WILLER_MIYAZU",
+          "STN_WILLER_MIYAMURA",
+          "STN_WILLER_KITA",
+          "STN_WILLER_KARAKAWA",
+          "STN_WILLER_OEYAMAGUCHI_NAIKU",
+          "STN_WILLER_FUTAMATA",
+          "STN_WILLER_OE_KOKOMAE",
+          "STN_WILLER_OE",
+          "STN_WILLER_GUJO",
+          "STN_WILLER_SHIMO_AMATSU",
+          "STN_WILLER_MAKI",
+          "STN_WILLER_ARAGASHI_KASHINOKIDAI",
+          "STN_WILLER_FUKUCHIYAMA_SHIMIN_BYOINKU",
+          "STN_WILLER_FUKUCHIYAMA"
+        ]
+      },
+      {
+        "id": "WILLER_MIYAMAI",
+        "name": "宮舞線",
+        "sequence": [
+          "STN_WILLER_NISHI_MAIZURU",
+          "STN_WILLER_SHISHO",
+          "STN_WILLER_SHINONOME",
+          "STN_WILLER_TANGO_KANZAKI",
+          "STN_WILLER_TANGO_YURA",
+          "STN_WILLER_KUNDA",
+          "STN_WILLER_MIYAZU"
+        ]
+      },
+      {
+        "id": "WILLER_MIYATOYO",
+        "name": "宮豊線",
+        "sequence": [
+          "STN_WILLER_MIYAZU",
+          "STN_WILLER_AMANOHASHIDATE",
+          "STN_WILLER_IWATAKIGUCHI",
+          "STN_WILLER_YOSANO",
+          "STN_WILLER_KYOTANGO_OMIYA",
+          "STN_WILLER_MINEYAMA",
+          "STN_WILLER_AMINO",
+          "STN_WILLER_YUHIGAURA_KITSU_ONSEN",
+          "STN_WILLER_SHOTENKYO",
+          "STN_WILLER_KABUTOYAMA",
+          "STN_WILLER_KUMIHAMA",
+          "STN_WILLER_KONOTORI_NO_SATO",
+          "STN_WILLER_TOYOOKA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_WILLER_MIYAZU",
+        "lat": "35.53444",
+        "lng": "135.199975",
+        "name": "宮津"
+      },
+      {
+        "id": "STN_WILLER_MIYAMURA",
+        "lat": "35.52329849",
+        "lng": "135.19207496",
+        "name": "宮村"
+      },
+      {
+        "id": "STN_WILLER_KITA",
+        "lat": "35.50925958",
+        "lng": "135.18742444",
+        "name": "喜多"
+      },
+      {
+        "id": "STN_WILLER_KARAKAWA",
+        "lat": "35.46243046",
+        "lng": "135.17318998",
+        "name": "辛皮"
+      },
+      {
+        "id": "STN_WILLER_OEYAMAGUCHI_NAIKU",
+        "lat": "35.432165",
+        "lng": "135.158405",
+        "name": "大江山口内宮"
+      },
+      {
+        "id": "STN_WILLER_FUTAMATA",
+        "lat": "35.413205",
+        "lng": "135.154495",
+        "name": "二俣"
+      },
+      {
+        "id": "STN_WILLER_OE_KOKOMAE",
+        "lat": "35.395769",
+        "lng": "135.152745",
+        "name": "大江高校前"
+      },
+      {
+        "id": "STN_WILLER_OE",
+        "lat": "35.388785",
+        "lng": "135.147505",
+        "name": "大江"
+      },
+      {
+        "id": "STN_WILLER_GUJO",
+        "lat": "35.37187",
+        "lng": "135.129255",
+        "name": "公庄"
+      },
+      {
+        "id": "STN_WILLER_SHIMO_AMATSU",
+        "lat": "35.359304",
+        "lng": "135.111552",
+        "name": "下天津"
+      },
+      {
+        "id": "STN_WILLER_MAKI",
+        "lat": "35.337815",
+        "lng": "135.101675",
+        "name": "牧"
+      },
+      {
+        "id": "STN_WILLER_ARAGASHI_KASHINOKIDAI",
+        "lat": "35.31932",
+        "lng": "135.105775",
+        "name": "荒河かしの木台"
+      },
+      {
+        "id": "STN_WILLER_FUKUCHIYAMA_SHIMIN_BYOINKU",
+        "lat": "35.30658",
+        "lng": "135.108635",
+        "name": "福知山市民病院口"
+      },
+      {
+        "id": "STN_WILLER_FUKUCHIYAMA",
+        "lat": "35.29650723",
+        "lng": "135.11806242",
+        "name": "福知山"
+      },
+      {
+        "id": "STN_WILLER_NISHI_MAIZURU",
+        "lat": "35.441721",
+        "lng": "135.330533",
+        "name": "西舞鶴"
+      },
+      {
+        "id": "STN_WILLER_SHISHO",
+        "lat": "35.446138",
+        "lng": "135.290554",
+        "name": "四所"
+      },
+      {
+        "id": "STN_WILLER_SHINONOME",
+        "lat": "35.47501",
+        "lng": "135.284945",
+        "name": "東雲"
+      },
+      {
+        "id": "STN_WILLER_TANGO_KANZAKI",
+        "lat": "35.50653",
+        "lng": "135.293675",
+        "name": "丹後神崎"
+      },
+      {
+        "id": "STN_WILLER_TANGO_YURA",
+        "lat": "35.515777",
+        "lng": "135.279521",
+        "name": "丹後由良"
+      },
+      {
+        "id": "STN_WILLER_KUNDA",
+        "lat": "35.54368",
+        "lng": "135.235295",
+        "name": "栗田"
+      },
+      {
+        "id": "STN_WILLER_AMANOHASHIDATE",
+        "lat": "35.557375",
+        "lng": "135.182875",
+        "name": "天橋立"
+      },
+      {
+        "id": "STN_WILLER_IWATAKIGUCHI",
+        "lat": "35.550345",
+        "lng": "135.15133",
+        "name": "岩滝口"
+      },
+      {
+        "id": "STN_WILLER_YOSANO",
+        "lat": "35.543465",
+        "lng": "135.1265",
+        "name": "与謝野"
+      },
+      {
+        "id": "STN_WILLER_KYOTANGO_OMIYA",
+        "lat": "35.579665",
+        "lng": "135.093965",
+        "name": "京丹後大宮"
+      },
+      {
+        "id": "STN_WILLER_MINEYAMA",
+        "lat": "35.625965",
+        "lng": "135.07213",
+        "name": "峰山"
+      },
+      {
+        "id": "STN_WILLER_AMINO",
+        "lat": "35.667336",
+        "lng": "135.025607",
+        "name": "網野"
+      },
+      {
+        "id": "STN_WILLER_YUHIGAURA_KITSU_ONSEN",
+        "lat": "35.650057",
+        "lng": "134.972366",
+        "name": "夕日ヶ浦木津温泉"
+      },
+      {
+        "id": "STN_WILLER_SHOTENKYO",
+        "lat": "35.63012",
+        "lng": "134.92848",
+        "name": "小天橋"
+      },
+      {
+        "id": "STN_WILLER_KABUTOYAMA",
+        "lat": "35.60679",
+        "lng": "134.919925",
+        "name": "かぶと山"
+      },
+      {
+        "id": "STN_WILLER_KUMIHAMA",
+        "lat": "35.602298",
+        "lng": "134.895109",
+        "name": "久美浜"
+      },
+      {
+        "id": "STN_WILLER_KONOTORI_NO_SATO",
+        "lat": "35.55283962",
+        "lng": "134.83605797",
+        "name": "コウノトリの郷"
+      },
+      {
+        "id": "STN_WILLER_TOYOOKA",
+        "lat": "35.54428013",
+        "lng": "134.8136628",
+        "name": "豊岡"
+      }
+    ]
+  }
+]

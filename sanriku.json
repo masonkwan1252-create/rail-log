@@ -1,0 +1,304 @@
+[
+  {
+    "categories": "",
+    "company_id": "SANRIKU",
+    "company_name": "三陸鉄道",
+    "lines": [
+      {
+        "id": "SANRIKU_RIAS",
+        "name": "リアス線",
+        "sequence": [
+          "STN_SANRIKU_SAKARI",
+          "STN_SANRIKU_RIKUZEN_AKASAKI",
+          "STN_SANRIKU_RYORI",
+          "STN_SANRIKU_KOISHIHAMA",
+          "STN_SANRIKU_HOREI",
+          "STN_SANRIKU_SANRIKU",
+          "STN_SANRIKU_YOSHIHAMA",
+          "STN_SANRIKU_TONI",
+          "STN_SANRIKU_HEITA",
+          "STN_SANRIKU_KAMAISHI",
+          "STN_SANRIKU_RYOISHI",
+          "STN_SANRIKU_UNOSUMAI",
+          "STN_SANRIKU_OTSUCHI",
+          "STN_SANRIKU_KIRIKIRI",
+          "STN_SANRIKU_NAMIITAKAIGAN",
+          "STN_SANRIKU_IWATE_FUNAKOSHI",
+          "STN_SANRIKU_ORIKASA",
+          "STN_SANRIKU_RIKUCHU_YAMADA",
+          "STN_SANRIKU_TOYOMANE",
+          "STN_SANRIKU_HARAIGAWA",
+          "STN_SANRIKU_TSUGARUISHI",
+          "STN_SANRIKU_YAGISAWA_MIYAKOTANDAI",
+          "STN_SANRIKU_SOTOKEI",
+          "STN_SANRIKU_MIYAKO",
+          "STN_SANRIKU_YAMAGUCHIDANCHI",
+          "STN_SANRIKU_ICHINOWATARI",
+          "STN_SANRIKU_SABANE",
+          "STN_SANRIKU_TARO",
+          "STN_SANRIKU_SHINTARO",
+          "STN_SANRIKU_SETTAI",
+          "STN_SANRIKU_IWAIZUMI_OMOTO",
+          "STN_SANRIKU_SHIMAKOSHI",
+          "STN_SANRIKU_TANOHATA",
+          "STN_SANRIKU_FUDAI",
+          "STN_SANRIKU_SHIRAIKAIGAN",
+          "STN_SANRIKU_HORINAI",
+          "STN_SANRIKU_NODATAMAGAWA",
+          "STN_SANRIKU_TOFUGUURAKAIGAN",
+          "STN_SANRIKU_RIKUCHU_NODA",
+          "STN_SANRIKU_RIKUCHU_UBE",
+          "STN_SANRIKU_KUJI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SANRIKU_SAKARI",
+        "lat": "39.08582566",
+        "lng": "141.71094839",
+        "name": "盛"
+      },
+      {
+        "id": "STN_SANRIKU_RIKUZEN_AKASAKI",
+        "lat": "39.06818902",
+        "lng": "141.74213883",
+        "name": "陸前赤崎"
+      },
+      {
+        "id": "STN_SANRIKU_RYORI",
+        "lat": "39.05424563",
+        "lng": "141.79932516",
+        "name": "綾里"
+      },
+      {
+        "id": "STN_SANRIKU_KOISHIHAMA",
+        "lat": "39.07413909",
+        "lng": "141.81641444",
+        "name": "恋し浜"
+      },
+      {
+        "id": "STN_SANRIKU_HOREI",
+        "lat": "39.09333503",
+        "lng": "141.8065963",
+        "name": "甫嶺"
+      },
+      {
+        "id": "STN_SANRIKU_SANRIKU",
+        "lat": "39.1175651",
+        "lng": "141.80990777",
+        "name": "三陸"
+      },
+      {
+        "id": "STN_SANRIKU_YOSHIHAMA",
+        "lat": "39.15122228",
+        "lng": "141.83640302",
+        "name": "吉浜"
+      },
+      {
+        "id": "STN_SANRIKU_TONI",
+        "lat": "39.20176794",
+        "lng": "141.86128834",
+        "name": "唐丹"
+      },
+      {
+        "id": "STN_SANRIKU_HEITA",
+        "lat": "39.2459584",
+        "lng": "141.88602569",
+        "name": "平田"
+      },
+      {
+        "id": "STN_SANRIKU_KAMAISHI",
+        "lat": "39.2733",
+        "lng": "141.872745",
+        "name": "釜石"
+      },
+      {
+        "id": "STN_SANRIKU_RYOISHI",
+        "lat": "39.30809468",
+        "lng": "141.8890376",
+        "name": "両石"
+      },
+      {
+        "id": "STN_SANRIKU_UNOSUMAI",
+        "lat": "39.32696849",
+        "lng": "141.88808914",
+        "name": "鵜住居"
+      },
+      {
+        "id": "STN_SANRIKU_OTSUCHI",
+        "lat": "39.35654913",
+        "lng": "141.9022079",
+        "name": "大槌"
+      },
+      {
+        "id": "STN_SANRIKU_KIRIKIRI",
+        "lat": "39.36982764",
+        "lng": "141.93886701",
+        "name": "吉里吉里"
+      },
+      {
+        "id": "STN_SANRIKU_NAMIITAKAIGAN",
+        "lat": "39.38365676",
+        "lng": "141.93513044",
+        "name": "浪板海岸"
+      },
+      {
+        "id": "STN_SANRIKU_IWATE_FUNAKOSHI",
+        "lat": "39.431335",
+        "lng": "141.97404",
+        "name": "岩手船越"
+      },
+      {
+        "id": "STN_SANRIKU_ORIKASA",
+        "lat": "39.45381132",
+        "lng": "141.9552694",
+        "name": "織笠"
+      },
+      {
+        "id": "STN_SANRIKU_RIKUCHU_YAMADA",
+        "lat": "39.46379248",
+        "lng": "141.95086764",
+        "name": "陸中山田"
+      },
+      {
+        "id": "STN_SANRIKU_TOYOMANE",
+        "lat": "39.53429078",
+        "lng": "141.92465755",
+        "name": "豊間根"
+      },
+      {
+        "id": "STN_SANRIKU_HARAIGAWA",
+        "lat": "39.56442456",
+        "lng": "141.93283251",
+        "name": "払川"
+      },
+      {
+        "id": "STN_SANRIKU_TSUGARUISHI",
+        "lat": "39.58144348",
+        "lng": "141.93773554",
+        "name": "津軽石"
+      },
+      {
+        "id": "STN_SANRIKU_YAGISAWA_MIYAKOTANDAI",
+        "lat": "39.61926334",
+        "lng": "141.94632695",
+        "name": "八木沢・宮古短大"
+      },
+      {
+        "id": "STN_SANRIKU_SOTOKEI",
+        "lat": "39.63050265",
+        "lng": "141.96100157",
+        "name": "磯鶏"
+      },
+      {
+        "id": "STN_SANRIKU_MIYAKO",
+        "lat": "39.639895",
+        "lng": "141.947365",
+        "name": "宮古"
+      },
+      {
+        "id": "STN_SANRIKU_YAMAGUCHIDANCHI",
+        "lat": "39.646295",
+        "lng": "141.933242",
+        "name": "山口団地"
+      },
+      {
+        "id": "STN_SANRIKU_ICHINOWATARI",
+        "lat": "39.686855",
+        "lng": "141.942665",
+        "name": "一の渡"
+      },
+      {
+        "id": "STN_SANRIKU_SABANE",
+        "lat": "39.711141",
+        "lng": "141.935883",
+        "name": "佐羽根"
+      },
+      {
+        "id": "STN_SANRIKU_TARO",
+        "lat": "39.73185",
+        "lng": "141.964655",
+        "name": "田老"
+      },
+      {
+        "id": "STN_SANRIKU_SHINTARO",
+        "lat": "39.7356",
+        "lng": "141.9673",
+        "name": "新田老"
+      },
+      {
+        "id": "STN_SANRIKU_SETTAI",
+        "lat": "39.80952751",
+        "lng": "141.96220759",
+        "name": "摂待"
+      },
+      {
+        "id": "STN_SANRIKU_IWAIZUMI_OMOTO",
+        "lat": "39.84276899",
+        "lng": "141.95838884",
+        "name": "岩泉小本"
+      },
+      {
+        "id": "STN_SANRIKU_SHIMAKOSHI",
+        "lat": "39.91681902",
+        "lng": "141.93938313",
+        "name": "島越"
+      },
+      {
+        "id": "STN_SANRIKU_TANOHATA",
+        "lat": "39.93428348",
+        "lng": "141.93385756",
+        "name": "田野畑"
+      },
+      {
+        "id": "STN_SANRIKU_FUDAI",
+        "lat": "40.00263531",
+        "lng": "141.88616012",
+        "name": "普代"
+      },
+      {
+        "id": "STN_SANRIKU_SHIRAIKAIGAN",
+        "lat": "40.03256269",
+        "lng": "141.8831525",
+        "name": "白井海岸"
+      },
+      {
+        "id": "STN_SANRIKU_HORINAI",
+        "lat": "40.05177624",
+        "lng": "141.8594121",
+        "name": "堀内"
+      },
+      {
+        "id": "STN_SANRIKU_NODATAMAGAWA",
+        "lat": "40.08273493",
+        "lng": "141.82885326",
+        "name": "野田玉川"
+      },
+      {
+        "id": "STN_SANRIKU_TOFUGUURAKAIGAN",
+        "lat": "40.0968615",
+        "lng": "141.82415379",
+        "name": "十府ヶ浦海岸"
+      },
+      {
+        "id": "STN_SANRIKU_RIKUCHU_NODA",
+        "lat": "40.116075",
+        "lng": "141.81909",
+        "name": "陸中野田"
+      },
+      {
+        "id": "STN_SANRIKU_RIKUCHU_UBE",
+        "lat": "40.13243",
+        "lng": "141.785945",
+        "name": "陸中宇部"
+      },
+      {
+        "id": "STN_SANRIKU_KUJI",
+        "lat": "40.190505",
+        "lng": "141.770845",
+        "name": "久慈"
+      }
+    ]
+  }
+]

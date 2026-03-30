@@ -1,0 +1,59 @@
+[
+  {
+    "categories": "",
+    "company_id": "KITAKYU",
+    "company_name": "北大阪急行",
+    "lines": [
+      {
+        "id": "KITAKYU_NAMBOKU",
+        "name": "南北線",
+        "sequence": [
+          "STN_KITAKYU_MINOH_KAYANO",
+          "STN_KITAKYU_MINOH_SEMBA_HANDAI_MAE",
+          "STN_KITAKYU_SENRI_CHUO",
+          "STN_KITAKYU_MOMOYAMADAI",
+          "STN_KITAKYU_RYOKUCHI_KOEN",
+          "STN_KITAKYU_ESAKA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KITAKYU_MINOH_KAYANO",
+        "lat": "34.83146511",
+        "lng": "135.48906985",
+        "name": "箕面萱野"
+      },
+      {
+        "id": "STN_KITAKYU_MINOH_SEMBA_HANDAI_MAE",
+        "lat": "34.82167497",
+        "lng": "135.49031861",
+        "name": "箕面船場阪大前"
+      },
+      {
+        "id": "STN_KITAKYU_SENRI_CHUO",
+        "lat": "34.81032",
+        "lng": "135.495175",
+        "name": "千里中央"
+      },
+      {
+        "id": "STN_KITAKYU_MOMOYAMADAI",
+        "lat": "34.793287",
+        "lng": "135.497195",
+        "name": "桃山台"
+      },
+      {
+        "id": "STN_KITAKYU_RYOKUCHI_KOEN",
+        "lat": "34.774837",
+        "lng": "135.495268",
+        "name": "緑地公園"
+      },
+      {
+        "id": "STN_KITAKYU_ESAKA",
+        "lat": "34.75875",
+        "lng": "135.497095",
+        "name": "江坂"
+      }
+    ]
+  }
+]

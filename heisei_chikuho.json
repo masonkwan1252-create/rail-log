@@ -1,0 +1,235 @@
+[
+  {
+    "categories": "",
+    "company_id": "HEISEI_CHIKUHO",
+    "company_name": "平成筑豊鉄道",
+    "lines": [
+      {
+        "id": "HEISEI_CHIKUHO_IDA",
+        "name": "伊田線",
+        "sequence": [
+          "STN_HEISEI_CHIKUHO_NOGATA",
+          "STN_HEISEI_CHIKUHO_MINAMI_NOGATA_GOTENGUCHI",
+          "STN_HEISEI_CHIKUHO_AKAJI",
+          "STN_HEISEI_CHIKUHO_FUJIDANA",
+          "STN_HEISEI_CHIKUHO_NAKAIZUMI",
+          "STN_HEISEI_CHIKUHO_ICHABA",
+          "STN_HEISEI_CHIKUHO_FUREAI_SHORYKI",
+          "STN_HEISEI_CHIKUHO_AKAIKE",
+          "STN_HEISEI_CHIKUHO_HITOMI",
+          "STN_HEISEI_CHIKUHO_KANADA",
+          "STN_HEISEI_CHIKUHO_KAMI_KANADA",
+          "STN_HEISEI_CHIKUHO_HOSHII",
+          "STN_HEISEI_CHIKUHO_TAGAWA_SHIRITSU_BYOIN_MAE",
+          "STN_HEISEI_CHIKUHO_SHIMO_ITA",
+          "STN_HEISEI_CHIKUHO_TAGAWA_ITA"
+        ]
+      },
+      {
+        "id": "HEISEI_CHIKUHO_ITODA",
+        "name": "糸田線",
+        "sequence": [
+          "STN_HEISEI_CHIKUHO_KANADA",
+          "STN_HEISEI_CHIKUHO_BUZEN_OKUMA",
+          "STN_HEISEI_CHIKUHO_MATSUYAMA",
+          "STN_HEISEI_CHIKUHO_ITODA",
+          "STN_HEISEI_CHIKUHO_OYABU",
+          "STN_HEISEI_CHIKUHO_TAGAWA_GOTOJI"
+        ]
+      },
+      {
+        "id": "HEISEI_CHIKUHO_TAGAWA",
+        "name": "田川線",
+        "sequence": [
+          "STN_HEISEI_CHIKUHO_YUKUHASHI",
+          "STN_HEISEI_CHIKUHO_REIWA_COSTA_YUKUHASHI",
+          "STN_HEISEI_CHIKUHO_MIYAKOIZUMI",
+          "STN_HEISEI_CHIKUHO_IMAGAWA_KAPPA",
+          "STN_HEISEI_CHIKUHO_TOYOTSU",
+          "STN_HEISEI_CHIKUHO_SHIN_TOYOTSU",
+          "STN_HEISEI_CHIKUHO_HIGASHI_SAIGAWA_SANSHIRO",
+          "STN_HEISEI_CHIKUHO_SAIGAWA",
+          "STN_HEISEI_CHIKUHO_SAKIYAMA",
+          "STN_HEISEI_CHIKUHO_GENJII_NO_MORI",
+          "STN_HEISEI_CHIKUHO_YUSUBARU",
+          "STN_HEISEI_CHIKUHO_AKA",
+          "STN_HEISEI_CHIKUHO_UCHIDA",
+          "STN_HEISEI_CHIKUHO_KAKISHITA_ONSENGUCHI",
+          "STN_HEISEI_CHIKUHO_MAGAKANE",
+          "STN_HEISEI_CHIKUHO_KAMI_ITA",
+          "STN_HEISEI_CHIKUHO_TAGAWA_ITA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HEISEI_CHIKUHO_HITOMI",
+        "lat": "33.68734484",
+        "lng": "130.77110163",
+        "name": "人見"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_KANADA",
+        "lat": "33.68264656",
+        "lng": "130.77689799",
+        "name": "金田"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_KAMI_KANADA",
+        "lat": "33.672425",
+        "lng": "130.789395",
+        "name": "上金田"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_HOSHII",
+        "lat": "33.664805",
+        "lng": "130.79917",
+        "name": "糒"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_TAGAWA_SHIRITSU_BYOIN_MAE",
+        "lat": "33.660547",
+        "lng": "130.802556",
+        "name": "田川市立病院"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_SHIMO_ITA",
+        "lat": "33.652095",
+        "lng": "130.806755",
+        "name": "下伊田"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_TAGAWA_ITA",
+        "lat": "33.642106",
+        "lng": "130.817777",
+        "name": "田川伊田"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_BUZEN_OKUMA",
+        "lat": "33.6726654",
+        "lng": "130.78054201",
+        "name": "豊前大熊"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_MATSUYAMA",
+        "lat": "33.667815",
+        "lng": "130.780825",
+        "name": "松山"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_ITODA",
+        "lat": "33.656625",
+        "lng": "130.78571",
+        "name": "糸田"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_OYABU",
+        "lat": "33.647449",
+        "lng": "130.797366",
+        "name": "大藪"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_TAGAWA_GOTOJI",
+        "lat": "33.63036",
+        "lng": "130.800215",
+        "name": "田川後藤寺"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_YUKUHASHI",
+        "lat": "33.72875",
+        "lng": "130.970255",
+        "name": "行橋"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_REIWA_COSTA_YUKUHASHI",
+        "lat": "33.71754302",
+        "lng": "130.97378229",
+        "name": "令和コスタ行橋"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_MIYAKOIZUMI",
+        "lat": "33.70912",
+        "lng": "130.96909",
+        "name": "美夜古泉"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_IMAGAWA_KAPPA",
+        "lat": "33.70316061",
+        "lng": "130.96560888",
+        "name": "今川河童"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_TOYOTSU",
+        "lat": "33.68729048",
+        "lng": "130.96295271",
+        "name": "豊津"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_SHIN_TOYOTSU",
+        "lat": "33.679645",
+        "lng": "130.963915",
+        "name": "新豊津"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_HIGASHI_SAIGAWA_SANSHIRO",
+        "lat": "33.661385",
+        "lng": "130.949005",
+        "name": "東犀川三四郎"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_SAIGAWA",
+        "lat": "33.650585",
+        "lng": "130.939305",
+        "name": "犀川"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_SAKIYAMA",
+        "lat": "33.636215",
+        "lng": "130.917865",
+        "name": "崎山"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_GENJII_NO_MORI",
+        "lat": "33.615975",
+        "lng": "130.895475",
+        "name": "源じいの森"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_YUSUBARU",
+        "lat": "33.612745",
+        "lng": "130.88431",
+        "name": "油須原"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_AKA",
+        "lat": "33.61805754",
+        "lng": "130.87177299",
+        "name": "赤"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_UCHIDA",
+        "lat": "33.63786",
+        "lng": "130.86421",
+        "name": "内田"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_KAKISHITA_ONSENGUCHI",
+        "lat": "33.65164",
+        "lng": "130.853985",
+        "name": "柿下温泉口"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_MAGAKANE",
+        "lat": "33.65166",
+        "lng": "130.84203",
+        "name": "勾金"
+      },
+      {
+        "id": "STN_HEISEI_CHIKUHO_KAMI_ITA",
+        "lat": "33.64805788",
+        "lng": "130.83002749",
+        "name": "上伊田"
+      }
+    ]
+  }
+]

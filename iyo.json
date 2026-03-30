@@ -1,0 +1,572 @@
+[
+  {
+    "categories": "",
+    "company_id": "IYO",
+    "company_name": "伊予鉄道",
+    "lines": [
+      {
+        "id": "IYO_TAKAHAMA",
+        "name": "高浜線",
+        "sequence": [
+          "STN_IYO_TAKAHAMA",
+          "STN_IYO_BAITSUNJI",
+          "STN_IYO_MINATOYAMA",
+          "STN_IYO_MITSU",
+          "STN_IYO_YAMANISHI",
+          "STN_IYO_NISHI_KINUYAMA",
+          "STN_IYO_KINUYAMA",
+          "STN_IYO_KOMACHI",
+          "STN_IYO_OTEMACHI",
+          "STN_IYO_MATSUYAMA_SHI"
+        ]
+      },
+      {
+        "id": "IYO_YOKOGAWA",
+        "name": "横河原線",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI",
+          "STN_IYO_ISHITEGAWA_KOEN",
+          "STN_IYO_IYO_TACHIBANA",
+          "STN_IYO_FUKUONJI",
+          "STN_IYO_KITA_KUME",
+          "STN_IYO_KUME",
+          "STN_IYO_TAKANOKO",
+          "STN_IYO_HIRAI",
+          "STN_IYO_UMEMOTO",
+          "STN_IYO_USHIBUCHI_DANCHI_MAE",
+          "STN_IYO_USHIBUCHI",
+          "STN_IYO_TABO",
+          "STN_IYO_MINARA",
+          "STN_IYO_AIDAIGAKUBU_MINAMIGUCHI",
+          "STN_IYO_YOKOGAWARA"
+        ]
+      },
+      {
+        "id": "IYO_GUNCHU",
+        "name": "郡中線",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI",
+          "STN_IYO_DOBASHI",
+          "STN_IYO_DOIDA",
+          "STN_IYO_YOGO",
+          "STN_IYO_KAMADA",
+          "STN_IYO_OKADA",
+          "STN_IYO_KOIZUMI",
+          "STN_IYO_MASAKI",
+          "STN_IYO_JIZOMACHI",
+          "STN_IYO_SHINKAWA",
+          "STN_IYO_GUNCHU",
+          "STN_IYO_GUNCHU_KO"
+        ]
+      },
+      {
+        "id": "IYO_1",
+        "name": "１号線",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI_EKI",
+          "STN_IYO_MINAMI_HORIBATA",
+          "STN_IYO_NISHI_HORIBATA",
+          "STN_IYO_HOMMACHI_1_CHOME",
+          "STN_IYO_KAYAMACHI_6_CHOME",
+          "STN_IYO_KOMACHI",
+          "STN_IYO_KIYACHO",
+          "STN_IYO_TAKASAGOMACHI",
+          "STN_IYO_SHIMIZUMACHI",
+          "STN_IYO_TEPPOCHO",
+          "STN_IYO_SEKIJUJI_BYOIN_MAE",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_KEISATSUSHO_MAE",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_OKAIDO",
+          "STN_IYO_KENCHO_MAE",
+          "STN_IYO_SHIYAKUSHO_MAE",
+          "STN_IYO_MINAMI_HORIBATA"
+        ]
+      },
+      {
+        "id": "IYO_2",
+        "name": "２号線",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI_EKI",
+          "STN_IYO_SHIYAKUSHO_MAE",
+          "STN_IYO_KENCHO_MAE",
+          "STN_IYO_OKAIDO",
+          "STN_IYO_KEISATSUSHO_MAE",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_HEIWADORI_1_CHOME",
+          "STN_IYO_SEKIJUJI_BYOIN_MAE",
+          "STN_IYO_TEPPOCHO",
+          "STN_IYO_SHIMIZUMACHI",
+          "STN_IYO_TAKASAGOMACHI",
+          "STN_IYO_KIYACHO",
+          "STN_IYO_HOMMACHI_6_CHOME",
+          "STN_IYO_KAYAMACHI_6_CHOME",
+          "STN_IYO_KOMACHI",
+          "STN_IYO_MIYATACHO",
+          "STN_IYO_JR_JR_MATSUYAMA_EKI_MAE",
+          "STN_IYO_OTEMACHI_EKI_MAE",
+          "STN_IYO_NISHI_HORIBATA",
+          "STN_IYO_MINAMI_HORIBATA",
+          "STN_IYO_MATSUYAMA_SHI_EKI"
+        ]
+      },
+      {
+        "id": "IYO_3",
+        "name": "３号線",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI_EKI",
+          "STN_IYO_SHIYAKUSHO_MAE",
+          "STN_IYO_KENCHO_MAE",
+          "STN_IYO_OKAIDO",
+          "STN_IYO_KATSUYAMACHO",
+          "STN_IYO_KEISATSUSHO_MAE",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_MINAMIMACHI",
+          "STN_IYO_DOGO_KOEN",
+          "STN_IYO_DOGO_ONSEN"
+        ]
+      },
+      {
+        "id": "IYO_5",
+        "name": "５号線",
+        "sequence": [
+          "STN_IYO_JR_JR_MATSUYAMA_EKI_MAE",
+          "STN_IYO_OTEMACHI_EKI_MAE",
+          "STN_IYO_NISHI_HORIBATA",
+          "STN_IYO_MINAMI_HORIBATA",
+          "STN_IYO_SHIYAKUSHO_MAE",
+          "STN_IYO_KENCHO_MAE",
+          "STN_IYO_OKAIDO",
+          "STN_IYO_KATSUYAMACHO",
+          "STN_IYO_KEISATSUSHO_MAE",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_MINAMIMACHI",
+          "STN_IYO_DOGO_KOEN",
+          "STN_IYO_DOGO_ONSEN"
+        ]
+      },
+      {
+        "id": "IYO_6",
+        "name": "６号線",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI_EKI",
+          "STN_IYO_MINAMI_HORIBATA",
+          "STN_IYO_HOMMACHI_1_CHOME",
+          "STN_IYO_HOMMACHI_3_CHOME",
+          "STN_IYO_HOMMACHI_4_CHOME",
+          "STN_IYO_HOMMACHI_5_CHOME",
+          "STN_IYO_HOMMACHI_6_CHOME"
+        ]
+      },
+      {
+        "id": "IYO_BOTCHAN_S1",
+        "name": "坊っちゃん列車１",
+        "sequence": [
+          "STN_IYO_MATSUYAMA_SHI_EKI",
+          "STN_IYO_MINAMI_HORIBATA",
+          "STN_IYO_SHIYAKUSHO_MAE",
+          "STN_IYO_KENCHO_MAE",
+          "STN_IYO_OKAIDO",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_DOGO_ONSEN"
+        ]
+      },
+      {
+        "id": "IYO_BOTCHAN_S2",
+        "name": "坊っちゃん列車２",
+        "sequence": [
+          "STN_IYO_KOMACHI",
+          "STN_IYO_JR_JR_MATSUYAMA_EKI_MAE",
+          "STN_IYO_OTEMACHI_EKI_MAE",
+          "STN_IYO_NISHI_HORIBATA",
+          "STN_IYO_MINAMI_HORIBATA",
+          "STN_IYO_SHIYAKUSHO_MAE",
+          "STN_IYO_KENCHO_MAE",
+          "STN_IYO_OKAIDO",
+          "STN_IYO_KAMI_ICHIMAN",
+          "STN_IYO_DOGO_ONSEN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_IYO_TAKAHAMA",
+        "lat": "33.883445",
+        "lng": "132.70219",
+        "name": "高浜"
+      },
+      {
+        "id": "STN_IYO_BAITSUNJI",
+        "lat": "33.87462",
+        "lng": "132.70763",
+        "name": "梅津寺"
+      },
+      {
+        "id": "STN_IYO_MINATOYAMA",
+        "lat": "33.8695447",
+        "lng": "132.71324799",
+        "name": "港山"
+      },
+      {
+        "id": "STN_IYO_MITSU",
+        "lat": "33.863775",
+        "lng": "132.719955",
+        "name": "三津"
+      },
+      {
+        "id": "STN_IYO_YAMANISHI",
+        "lat": "33.85533567",
+        "lng": "132.72429305",
+        "name": "山西"
+      },
+      {
+        "id": "STN_IYO_NISHI_KINUYAMA",
+        "lat": "33.8502036",
+        "lng": "132.73393615",
+        "name": "西衣山"
+      },
+      {
+        "id": "STN_IYO_KINUYAMA",
+        "lat": "33.8522235",
+        "lng": "132.74389569",
+        "name": "衣山"
+      },
+      {
+        "id": "STN_IYO_KOMACHI",
+        "lat": "33.84744645",
+        "lng": "132.75511378",
+        "name": "古町"
+      },
+      {
+        "id": "STN_IYO_OTEMACHI",
+        "lat": "33.83960852",
+        "lng": "132.75536419",
+        "name": "大手町"
+      },
+      {
+        "id": "STN_IYO_MATSUYAMA_SHI",
+        "lat": "33.83563",
+        "lng": "132.76185",
+        "name": "松山市"
+      },
+      {
+        "id": "STN_IYO_ISHITEGAWA_KOEN",
+        "lat": "33.83124202",
+        "lng": "132.7694426",
+        "name": "石手川公園"
+      },
+      {
+        "id": "STN_IYO_IYO_TACHIBANA",
+        "lat": "33.82761499",
+        "lng": "132.77317873",
+        "name": "いよ立花"
+      },
+      {
+        "id": "STN_IYO_FUKUONJI",
+        "lat": "33.82260007",
+        "lng": "132.7887425",
+        "name": "福音寺"
+      },
+      {
+        "id": "STN_IYO_KITA_KUME",
+        "lat": "33.81932654",
+        "lng": "132.79854598",
+        "name": "北久米"
+      },
+      {
+        "id": "STN_IYO_KUME",
+        "lat": "33.81633189",
+        "lng": "132.80406715",
+        "name": "久米"
+      },
+      {
+        "id": "STN_IYO_TAKANOKO",
+        "lat": "33.812525",
+        "lng": "132.815345",
+        "name": "鷹ノ子"
+      },
+      {
+        "id": "STN_IYO_HIRAI",
+        "lat": "33.80871",
+        "lng": "132.82868",
+        "name": "平井"
+      },
+      {
+        "id": "STN_IYO_UMEMOTO",
+        "lat": "33.80111151",
+        "lng": "132.83891299",
+        "name": "梅本"
+      },
+      {
+        "id": "STN_IYO_USHIBUCHI_DANCHI_MAE",
+        "lat": "33.79771",
+        "lng": "132.846255",
+        "name": "牛渕団地前"
+      },
+      {
+        "id": "STN_IYO_USHIBUCHI",
+        "lat": "33.79531717",
+        "lng": "132.85609387",
+        "name": "牛渕"
+      },
+      {
+        "id": "STN_IYO_TABO",
+        "lat": "33.7929198",
+        "lng": "132.86572643",
+        "name": "田窪"
+      },
+      {
+        "id": "STN_IYO_MINARA",
+        "lat": "33.79263459",
+        "lng": "132.87287622",
+        "name": "見奈良"
+      },
+      {
+        "id": "STN_IYO_AIDAIGAKUBU_MINAMIGUCHI",
+        "lat": "33.798095",
+        "lng": "132.87895",
+        "name": "愛大医学部南口"
+      },
+      {
+        "id": "STN_IYO_YOKOGAWARA",
+        "lat": "33.80342",
+        "lng": "132.88422",
+        "name": "横河原"
+      },
+      {
+        "id": "STN_IYO_DOBASHI",
+        "lat": "33.83271572",
+        "lng": "132.75639432",
+        "name": "土橋"
+      },
+      {
+        "id": "STN_IYO_DOIDA",
+        "lat": "33.82409799",
+        "lng": "132.74399627",
+        "name": "土居田"
+      },
+      {
+        "id": "STN_IYO_YOGO",
+        "lat": "33.816255",
+        "lng": "132.733905",
+        "name": "余戸"
+      },
+      {
+        "id": "STN_IYO_KAMADA",
+        "lat": "33.81012",
+        "lng": "132.7299",
+        "name": "鎌田"
+      },
+      {
+        "id": "STN_IYO_OKADA",
+        "lat": "33.79907128",
+        "lng": "132.72416182",
+        "name": "岡田"
+      },
+      {
+        "id": "STN_IYO_KOIZUMI",
+        "lat": "33.79260646",
+        "lng": "132.7171261",
+        "name": "古泉"
+      },
+      {
+        "id": "STN_IYO_MASAKI",
+        "lat": "33.7860623",
+        "lng": "132.70508563",
+        "name": "松前"
+      },
+      {
+        "id": "STN_IYO_JIZOMACHI",
+        "lat": "33.77988276",
+        "lng": "132.70428495",
+        "name": "地蔵町"
+      },
+      {
+        "id": "STN_IYO_SHINKAWA",
+        "lat": "33.77217126",
+        "lng": "132.70408459",
+        "name": "新川"
+      },
+      {
+        "id": "STN_IYO_GUNCHU",
+        "lat": "33.76066657",
+        "lng": "132.70405564",
+        "name": "郡中"
+      },
+      {
+        "id": "STN_IYO_GUNCHU_KO",
+        "lat": "33.75636475",
+        "lng": "132.70239759",
+        "name": "郡中港"
+      },
+      {
+        "id": "STN_IYO_MATSUYAMA_SHI_EKI",
+        "lat": "33.83615089",
+        "lng": "132.76261686",
+        "name": "松山市駅"
+      },
+      {
+        "id": "STN_IYO_MINAMI_HORIBATA",
+        "lat": "33.83935015",
+        "lng": "132.76180885",
+        "name": "南堀端"
+      },
+      {
+        "id": "STN_IYO_NISHI_HORIBATA",
+        "lat": "33.84011525",
+        "lng": "132.75822667",
+        "name": "西堀端"
+      },
+      {
+        "id": "STN_IYO_HOMMACHI_1_CHOME",
+        "lat": "33.84054877",
+        "lng": "132.75876693",
+        "name": "本町一丁目"
+      },
+      {
+        "id": "STN_IYO_KAYAMACHI_6_CHOME",
+        "lat": "33.85178",
+        "lng": "132.75622",
+        "name": "萱町六丁目"
+      },
+      {
+        "id": "STN_IYO_KOMACHI",
+        "lat": "33.84744645",
+        "lng": "132.75511378",
+        "name": "古町"
+      },
+      {
+        "id": "STN_IYO_KIYACHO",
+        "lat": "33.85352965",
+        "lng": "132.7608684",
+        "name": "木屋町"
+      },
+      {
+        "id": "STN_IYO_TAKASAGOMACHI",
+        "lat": "33.85175",
+        "lng": "132.762395",
+        "name": "高砂町"
+      },
+      {
+        "id": "STN_IYO_SHIMIZUMACHI",
+        "lat": "33.84924",
+        "lng": "132.76426",
+        "name": "清水町"
+      },
+      {
+        "id": "STN_IYO_TEPPOCHO",
+        "lat": "33.84815805",
+        "lng": "132.76893906",
+        "name": "鉄砲町"
+      },
+      {
+        "id": "STN_IYO_SEKIJUJI_BYOIN_MAE",
+        "lat": "33.84806298",
+        "lng": "132.77237339",
+        "name": "赤十字病院前"
+      },
+      {
+        "id": "STN_IYO_KAMI_ICHIMAN",
+        "lat": "33.84673548",
+        "lng": "132.77550023",
+        "name": "上一万"
+      },
+      {
+        "id": "STN_IYO_KEISATSUSHO_MAE",
+        "lat": "33.84450178",
+        "lng": "132.77534211",
+        "name": "警察署前"
+      },
+      {
+        "id": "STN_IYO_OKAIDO",
+        "lat": "33.84117622",
+        "lng": "132.76975883",
+        "name": "大街道"
+      },
+      {
+        "id": "STN_IYO_KENCHO_MAE",
+        "lat": "33.84108115",
+        "lng": "132.766325",
+        "name": "県庁前"
+      },
+      {
+        "id": "STN_IYO_SHIYAKUSHO_MAE",
+        "lat": "33.8397977",
+        "lng": "132.76483701",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_IYO_HEIWADORI_1_CHOME",
+        "lat": "33.847715",
+        "lng": "132.77445",
+        "name": "平和通一丁目"
+      },
+      {
+        "id": "STN_IYO_HOMMACHI_6_CHOME",
+        "lat": "33.85346",
+        "lng": "132.75823",
+        "name": "本町六丁目"
+      },
+      {
+        "id": "STN_IYO_MIYATACHO",
+        "lat": "33.84404726",
+        "lng": "132.75265295",
+        "name": "宮田町"
+      },
+      {
+        "id": "STN_IYO_JR_MATSUYAMA_EKI_MAE",
+        "lat": "33.84077022",
+        "lng": "132.75236304",
+        "name": "JR松山駅前"
+      },
+      {
+        "id": "STN_IYO_OTEMACHI_EKI_MAE",
+        "lat": "33.84012847",
+        "lng": "132.7555967",
+        "name": "大手町駅前"
+      },
+      {
+        "id": "STN_IYO_KATSUYAMACHO",
+        "lat": "33.84175",
+        "lng": "132.77482",
+        "name": "勝山町"
+      },
+      {
+        "id": "STN_IYO_MINAMIMACHI",
+        "lat": "33.84747266",
+        "lng": "132.7798349",
+        "name": "南町"
+      },
+      {
+        "id": "STN_IYO_DOGO_KOEN",
+        "lat": "33.848335",
+        "lng": "132.78495",
+        "name": "道後公園"
+      },
+      {
+        "id": "STN_IYO_DOGO_ONSEN",
+        "lat": "33.85053851",
+        "lng": "132.78475694",
+        "name": "道後温泉"
+      },
+      {
+        "id": "STN_IYO_HOMMACHI_3_CHOME",
+        "lat": "33.84511975",
+        "lng": "132.75880175",
+        "name": "本町三丁目"
+      },
+      {
+        "id": "STN_IYO_HOMMACHI_4_CHOME",
+        "lat": "33.8480733",
+        "lng": "132.75881544",
+        "name": "本町四丁目"
+      },
+      {
+        "id": "STN_IYO_HOMMACHI_5_CHOME",
+        "lat": "33.85077287",
+        "lng": "132.75882608",
+        "name": "本町五丁目"
+      }
+    ]
+  }
+]

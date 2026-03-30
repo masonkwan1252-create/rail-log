@@ -1,0 +1,171 @@
+[
+  {
+    "categories": "",
+    "company_id": "HIROSHIMA_RAPID",
+    "company_name": "広島高速交通",
+    "lines": [
+      {
+        "id": "HIROSHIMA_RAPID_ASTRAM",
+        "name": "広島新交通1号線",
+        "sequence": [
+          "STN_HIROSHIMA_RAPID_HONDORI",
+          "STN_HIROSHIMA_RAPID_KENCHO_MAE",
+          "STN_HIROSHIMA_RAPID_JOHOKU",
+          "STN_HIROSHIMA_RAPID_SHIN_HAKUSHIMA",
+          "STN_HIROSHIMA_RAPID_HAKUSHIMA",
+          "STN_HIROSHIMA_RAPID_USHITA",
+          "STN_HIROSHIMA_RAPID_FUDOIN_MAE",
+          "STN_HIROSHIMA_RAPID_GION_SHINBASHI_KITA",
+          "STN_HIROSHIMA_RAPID_NISHIHARA",
+          "STN_HIROSHIMA_RAPID_NAKASUJI",
+          "STN_HIROSHIMA_RAPID_FURUICHI",
+          "STN_HIROSHIMA_RAPID_OMACHI",
+          "STN_HIROSHIMA_RAPID_BISHAMONDAI",
+          "STN_HIROSHIMA_RAPID_YASUHIGASHI",
+          "STN_HIROSHIMA_RAPID_KAMIYASU",
+          "STN_HIROSHIMA_RAPID_TAKATORI",
+          "STN_HIROSHIMA_RAPID_CHORAKUJI",
+          "STN_HIROSHIMA_RAPID_TOMO",
+          "STN_HIROSHIMA_RAPID_OBARA",
+          "STN_HIROSHIMA_RAPID_TOMO_CHUO",
+          "STN_HIROSHIMA_RAPID_OZUKA",
+          "STN_HIROSHIMA_RAPID_KOEKI_KOEN_MAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HIROSHIMA_RAPID_HONDORI",
+        "lat": "34.39347282",
+        "lng": "132.45707783",
+        "name": "本通"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_KENCHO_MAE",
+        "lat": "34.396705",
+        "lng": "132.458169",
+        "name": "県庁前"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_JOHOKU",
+        "lat": "34.40541066",
+        "lng": "132.45888322",
+        "name": "城北"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_SHIN_HAKUSHIMA",
+        "lat": "34.40747239",
+        "lng": "132.46013516",
+        "name": "新白島"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_HAKUSHIMA",
+        "lat": "34.410995",
+        "lng": "132.46281",
+        "name": "白島"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_USHITA",
+        "lat": "34.41750357",
+        "lng": "132.46474983",
+        "name": "牛田"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_FUDOIN_MAE",
+        "lat": "34.42665",
+        "lng": "132.46906",
+        "name": "不動院前"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_GION_SHINBASHI_KITA",
+        "lat": "34.4354",
+        "lng": "132.471065",
+        "name": "祇園新橋北"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_NISHIHARA",
+        "lat": "34.44333",
+        "lng": "132.47477",
+        "name": "西原"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_NAKASUJI",
+        "lat": "34.451765",
+        "lng": "132.47694",
+        "name": "中筋"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_FURUICHI",
+        "lat": "34.457525",
+        "lng": "132.475365",
+        "name": "古市"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_OMACHI",
+        "lat": "34.461515",
+        "lng": "132.47072",
+        "name": "大町"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_BISHAMONDAI",
+        "lat": "34.469458",
+        "lng": "132.462873",
+        "name": "毘沙門台"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_YASUHIGASHI",
+        "lat": "34.47488",
+        "lng": "132.45349",
+        "name": "安東"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_KAMIYASU",
+        "lat": "34.4757539",
+        "lng": "132.44476353",
+        "name": "上安"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_TAKATORI",
+        "lat": "34.47524",
+        "lng": "132.43841",
+        "name": "高取"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_CHORAKUJI",
+        "lat": "34.472925",
+        "lng": "132.43091",
+        "name": "長楽寺"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_TOMO",
+        "lat": "34.469885",
+        "lng": "132.419185",
+        "name": "伴"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_OBARA",
+        "lat": "34.46311096",
+        "lng": "132.4125881",
+        "name": "大原"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_TOMO_CHUO",
+        "lat": "34.455615",
+        "lng": "132.40504",
+        "name": "伴中央"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_OZUKA",
+        "lat": "34.441805",
+        "lng": "132.40294",
+        "name": "大塚"
+      },
+      {
+        "id": "STN_HIROSHIMA_RAPID_KOEKI_KOEN_MAE",
+        "lat": "34.43544",
+        "lng": "132.40012",
+        "name": "広域公園前"
+      }
+    ]
+  }
+]

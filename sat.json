@@ -1,0 +1,45 @@
+[
+  {
+    "categories": "",
+    "company_id": "SAT",
+    "company_name": "仙台空港鉄道",
+    "lines": [
+      {
+        "id": "SAT_LINE",
+        "name": "仙台空港線",
+        "sequence": [
+          "STN_SAT_NATORI",
+          "STN_SAT_MORI_SEKINOSHITA",
+          "STN_SAT_MITAZONO",
+          "STN_SAT_SENDAI_AIRPORT"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SAT_NATORI",
+        "lat": "38.1731",
+        "lng": "140.88275",
+        "name": "名取"
+      },
+      {
+        "id": "STN_SAT_MORI_SEKINOSHITA",
+        "lat": "38.16537",
+        "lng": "140.895955",
+        "name": "杜せきのした"
+      },
+      {
+        "id": "STN_SAT_MITAZONO",
+        "lat": "38.15969",
+        "lng": "140.917435",
+        "name": "美田園"
+      },
+      {
+        "id": "STN_SAT_SENDAI_AIRPORT",
+        "lat": "38.137275",
+        "lng": "140.92976",
+        "name": "仙台空港"
+      }
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "MIZUMA",
+    "company_name": "水間鉄道",
+    "lines": [
+      {
+        "id": "MIZUMA_LINE",
+        "name": "水間線",
+        "sequence": [
+          "STN_MIZUMA_KAIZUKA",
+          "STN_MIZUMA_KAIZUKA_SHIYAKUSHOMAE",
+          "STN_MIZUMA_KOGI_NO_SATO",
+          "STN_MIZUMA_ISHIZAI",
+          "STN_MIZUMA_SECHIGO",
+          "STN_MIZUMA_NAGOSE",
+          "STN_MIZUMA_MORI",
+          "STN_MIZUMA_MITSUMATSU",
+          "STN_MIZUMA_MIKASAYAMAGUCHI",
+          "STN_MIZUMA_MIZUMA_KANNON"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_MIZUMA_KAIZUKA",
+        "lat": "34.445325",
+        "lng": "135.35789",
+        "name": "貝塚"
+      },
+      {
+        "id": "STN_MIZUMA_KAIZUKA_SHIYAKUSHOMAE",
+        "lat": "34.439425",
+        "lng": "135.36064",
+        "name": "貝塚市役所前"
+      },
+      {
+        "id": "STN_MIZUMA_KOGI_NO_SATO",
+        "lat": "34.4369",
+        "lng": "135.362915",
+        "name": "近義の里"
+      },
+      {
+        "id": "STN_MIZUMA_ISHIZAI",
+        "lat": "34.430595",
+        "lng": "135.36814",
+        "name": "石才"
+      },
+      {
+        "id": "STN_MIZUMA_SECHIGO",
+        "lat": "34.425004",
+        "lng": "135.372228",
+        "name": "清児"
+      },
+      {
+        "id": "STN_MIZUMA_NAGOSE",
+        "lat": "34.42144",
+        "lng": "135.375065",
+        "name": "名越"
+      },
+      {
+        "id": "STN_MIZUMA_MORI",
+        "lat": "34.414175",
+        "lng": "135.381885",
+        "name": "森"
+      },
+      {
+        "id": "STN_MIZUMA_MITSUMATSU",
+        "lat": "34.411035",
+        "lng": "135.38342",
+        "name": "三ツ松"
+      },
+      {
+        "id": "STN_MIZUMA_MIKASAYAMAGUCHI",
+        "lat": "34.40717",
+        "lng": "135.38504",
+        "name": "三ヶ山口"
+      },
+      {
+        "id": "STN_MIZUMA_MIZUMA_KANNON",
+        "lat": "34.403505",
+        "lng": "135.38556",
+        "name": "水間観音"
+      }
+    ]
+  }
+]

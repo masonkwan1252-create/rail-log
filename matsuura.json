@@ -1,0 +1,416 @@
+[
+  {
+    "categories": "",
+    "company_id": "MATSUURA",
+    "company_name": "松浦鉄道",
+    "lines": [
+      {
+        "id": "MATSUURA_NISHI_KYUSHU",
+        "name": "西九州線",
+        "sequence": [
+          "STN_MATSUURA_ARITA",
+          "STN_MATSUURA_SANDAIBASHI",
+          "STN_MATSUURA_KUROGAWA",
+          "STN_MATSUURA_KURAJUKU",
+          "STN_MATSUURA_NISHI_ARITA",
+          "STN_MATSUURA_OGI",
+          "STN_MATSUURA_YAMADANI",
+          "STN_MATSUURA_FUTAU_ISHI",
+          "STN_MATSUURA_KANETAKE",
+          "STN_MATSUURA_KAWAHIGASHI",
+          "STN_MATSUURA_IMARI",
+          "STN_MATSUURA_HIGASHI_YAMASHIRO",
+          "STN_MATSUURA_SATO",
+          "STN_MATSUURA_KUSUKU",
+          "STN_MATSUURA_NARUISHI",
+          "STN_MATSUURA_KUBARA",
+          "STN_MATSUURA_HAZE",
+          "STN_MATSUURA_URANOSAKI",
+          "STN_MATSUURA_FUKUSHIMAGUCHI",
+          "STN_MATSUURA_IMAFUKU",
+          "STN_MATSUURA_TAKASHIMAGUCHI",
+          "STN_MATSUURA_MAEHAMA",
+          "STN_MATSUURA_TSUKIGAWA",
+          "STN_MATSUURA_MATSUURA",
+          "STN_MATSUURA_MATSUURA_HATSUDENSHO_MAE",
+          "STN_MATSUURA_MIKADO",
+          "STN_MATSUURA_NISHI_KOBA",
+          "STN_MATSUURA_HIGASHI_TABIRA",
+          "STN_MATSUURA_NAKA_TABIRA",
+          "STN_MATSUURA_TABIRA_HIRADOGUCHI",
+          "STN_MATSUURA_NISHI_TABIRA",
+          "STN_MATSUURA_SUETACHIBANA",
+          "STN_MATSUURA_EMUKAE_SHIKAMACHI",
+          "STN_MATSUURA_TAKAIWA",
+          "STN_MATSUURA_INOTSUKI",
+          "STN_MATSUURA_SENRYUGATAKI",
+          "STN_MATSUURA_YOSHII",
+          "STN_MATSUURA_KANDA",
+          "STN_MATSUURA_SEIHO_KOKO_MAE",
+          "STN_MATSUURA_SAZA",
+          "STN_MATSUURA_KOURA",
+          "STN_MATSUURA_MAGOTO",
+          "STN_MATSUURA_TANAGATA",
+          "STN_MATSUURA_AINO_URA",
+          "STN_MATSUURA_DAIGAKU",
+          "STN_MATSUURA_KAMI_AINO_URA",
+          "STN_MATSUURA_MOTOYAMA",
+          "STN_MATSUURA_NAKAZATO",
+          "STN_MATSUURA_KAIZE",
+          "STN_MATSUURA_NONAKA",
+          "STN_MATSUURA_SAISHI",
+          "STN_MATSUURA_SENPUKUJI",
+          "STN_MATSUURA_YAMANOTA",
+          "STN_MATSUURA_KITA_SASEBO",
+          "STN_MATSUURA_NAKA_SASEBO",
+          "STN_MATSUURA_SASEBO_CHUO",
+          "STN_MATSUURA_SASEBO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_MATSUURA_ARITA",
+        "lat": "33.18374",
+        "lng": "129.88186",
+        "name": "有田"
+      },
+      {
+        "id": "STN_MATSUURA_SANDAIBASHI",
+        "lat": "33.18907",
+        "lng": "129.865935",
+        "name": "三代橋"
+      },
+      {
+        "id": "STN_MATSUURA_KUROGAWA",
+        "lat": "33.195075",
+        "lng": "129.85533",
+        "name": "黒川"
+      },
+      {
+        "id": "STN_MATSUURA_KURAJUKU",
+        "lat": "33.20199",
+        "lng": "129.850595",
+        "name": "蔵宿"
+      },
+      {
+        "id": "STN_MATSUURA_NISHI_ARITA",
+        "lat": "33.20991",
+        "lng": "129.850015",
+        "name": "西有田"
+      },
+      {
+        "id": "STN_MATSUURA_OGI",
+        "lat": "33.22155",
+        "lng": "129.850135",
+        "name": "大木"
+      },
+      {
+        "id": "STN_MATSUURA_YAMADANI",
+        "lat": "33.22912",
+        "lng": "129.849125",
+        "name": "山谷"
+      },
+      {
+        "id": "STN_MATSUURA_FUTAU_ISHI",
+        "lat": "33.237035",
+        "lng": "129.85063",
+        "name": "夫婦石"
+      },
+      {
+        "id": "STN_MATSUURA_KANETAKE",
+        "lat": "33.25186",
+        "lng": "129.85453",
+        "name": "金武"
+      },
+      {
+        "id": "STN_MATSUURA_KAWAHIGASHI",
+        "lat": "33.267365",
+        "lng": "129.863875",
+        "name": "川東"
+      },
+      {
+        "id": "STN_MATSUURA_IMARI",
+        "lat": "33.27195369",
+        "lng": "129.8757304",
+        "name": "伊万里"
+      },
+      {
+        "id": "STN_MATSUURA_HIGASHI_YAMASHIRO",
+        "lat": "33.277986",
+        "lng": "129.846061",
+        "name": "東山代"
+      },
+      {
+        "id": "STN_MATSUURA_SATO",
+        "lat": "33.28467",
+        "lng": "129.835805",
+        "name": "里"
+      },
+      {
+        "id": "STN_MATSUURA_KUSUKU",
+        "lat": "33.291415",
+        "lng": "129.82689",
+        "name": "楠久"
+      },
+      {
+        "id": "STN_MATSUURA_NARUISHI",
+        "lat": "33.29971091",
+        "lng": "129.8166844",
+        "name": "鳴石"
+      },
+      {
+        "id": "STN_MATSUURA_KUBARA",
+        "lat": "33.31451321",
+        "lng": "129.81153412",
+        "name": "久原"
+      },
+      {
+        "id": "STN_MATSUURA_HAZE",
+        "lat": "33.32295086",
+        "lng": "129.80723918",
+        "name": "波瀬"
+      },
+      {
+        "id": "STN_MATSUURA_URANOSAKI",
+        "lat": "33.335248",
+        "lng": "129.792539",
+        "name": "浦ノ崎"
+      },
+      {
+        "id": "STN_MATSUURA_FUKUSHIMAGUCHI",
+        "lat": "33.338105",
+        "lng": "129.79024",
+        "name": "福島口"
+      },
+      {
+        "id": "STN_MATSUURA_IMAFUKU",
+        "lat": "33.348455",
+        "lng": "129.771735",
+        "name": "今福"
+      },
+      {
+        "id": "STN_MATSUURA_TAKASHIMAGUCHI",
+        "lat": "33.35383",
+        "lng": "129.761705",
+        "name": "鷹島口"
+      },
+      {
+        "id": "STN_MATSUURA_MAEHAMA",
+        "lat": "33.3586051",
+        "lng": "129.73596041",
+        "name": "前浜"
+      },
+      {
+        "id": "STN_MATSUURA_TSUKIGAWA",
+        "lat": "33.35205817",
+        "lng": "129.72761246",
+        "name": "調川"
+      },
+      {
+        "id": "STN_MATSUURA_MATSUURA",
+        "lat": "33.34423",
+        "lng": "129.707825",
+        "name": "松浦"
+      },
+      {
+        "id": "STN_MATSUURA_MATSUURA_HATSUDENSHO_MAE",
+        "lat": "33.347153",
+        "lng": "129.685845",
+        "name": "松浦発電所前"
+      },
+      {
+        "id": "STN_MATSUURA_MIKADO",
+        "lat": "33.365955",
+        "lng": "129.662575",
+        "name": "御厨"
+      },
+      {
+        "id": "STN_MATSUURA_NISHI_KOBA",
+        "lat": "33.355735",
+        "lng": "129.638605",
+        "name": "西木場"
+      },
+      {
+        "id": "STN_MATSUURA_HIGASHI_TABIRA",
+        "lat": "33.357745",
+        "lng": "129.62315",
+        "name": "東田平"
+      },
+      {
+        "id": "STN_MATSUURA_NAKA_TABIRA",
+        "lat": "33.3558",
+        "lng": "129.611175",
+        "name": "中田平"
+      },
+      {
+        "id": "STN_MATSUURA_TABIRA_HIRADOGUCHI",
+        "lat": "33.362505",
+        "lng": "129.58255",
+        "name": "たびら平戸口"
+      },
+      {
+        "id": "STN_MATSUURA_NISHI_TABIRA",
+        "lat": "33.345125",
+        "lng": "129.590495",
+        "name": "西田平"
+      },
+      {
+        "id": "STN_MATSUURA_SUETACHIBANA",
+        "lat": "33.31651",
+        "lng": "129.61386",
+        "name": "すえたちばな"
+      },
+      {
+        "id": "STN_MATSUURA_EMUKAE_SHIKAMACHI",
+        "lat": "33.30678",
+        "lng": "129.627095",
+        "name": "江迎鹿町"
+      },
+      {
+        "id": "STN_MATSUURA_TAKAIWA",
+        "lat": "33.297671",
+        "lng": "129.637223",
+        "name": "高岩"
+      },
+      {
+        "id": "STN_MATSUURA_INOTSUKI",
+        "lat": "33.28261",
+        "lng": "129.667855",
+        "name": "いのつき"
+      },
+      {
+        "id": "STN_MATSUURA_SENRYUGATAKI",
+        "lat": "33.280787",
+        "lng": "129.683551",
+        "name": "潜竜ヶ滝"
+      },
+      {
+        "id": "STN_MATSUURA_YOSHII",
+        "lat": "33.26636083",
+        "lng": "129.68517412",
+        "name": "吉井"
+      },
+      {
+        "id": "STN_MATSUURA_KANDA",
+        "lat": "33.26128",
+        "lng": "129.671265",
+        "name": "神田"
+      },
+      {
+        "id": "STN_MATSUURA_SEIHO_KOKO_MAE",
+        "lat": "33.247745",
+        "lng": "129.65654",
+        "name": "清峰高校前"
+      },
+      {
+        "id": "STN_MATSUURA_SAZA",
+        "lat": "33.236715",
+        "lng": "129.646865",
+        "name": "佐々"
+      },
+      {
+        "id": "STN_MATSUURA_KOURA",
+        "lat": "33.2221684",
+        "lng": "129.64164291",
+        "name": "小浦"
+      },
+      {
+        "id": "STN_MATSUURA_MAGOTO",
+        "lat": "33.20677342",
+        "lng": "129.65120128",
+        "name": "真申"
+      },
+      {
+        "id": "STN_MATSUURA_TANAGATA",
+        "lat": "33.201595",
+        "lng": "129.651795",
+        "name": "棚方"
+      },
+      {
+        "id": "STN_MATSUURA_AINO_URA",
+        "lat": "33.1925",
+        "lng": "129.657105",
+        "name": "相浦"
+      },
+      {
+        "id": "STN_MATSUURA_DAIGAKU",
+        "lat": "33.189395",
+        "lng": "129.66703",
+        "name": "大学"
+      },
+      {
+        "id": "STN_MATSUURA_KAMI_AINO_URA",
+        "lat": "33.195175",
+        "lng": "129.670405",
+        "name": "上相浦"
+      },
+      {
+        "id": "STN_MATSUURA_MOTOYAMA",
+        "lat": "33.207015",
+        "lng": "129.682265",
+        "name": "本山"
+      },
+      {
+        "id": "STN_MATSUURA_NAKAZATO",
+        "lat": "33.20829339",
+        "lng": "129.6879046",
+        "name": "中里"
+      },
+      {
+        "id": "STN_MATSUURA_KAIZE",
+        "lat": "33.213355",
+        "lng": "129.701765",
+        "name": "皆瀬"
+      },
+      {
+        "id": "STN_MATSUURA_NONAKA",
+        "lat": "33.21171",
+        "lng": "129.708465",
+        "name": "野中"
+      },
+      {
+        "id": "STN_MATSUURA_SAISHI",
+        "lat": "33.20891",
+        "lng": "129.722015",
+        "name": "左石"
+      },
+      {
+        "id": "STN_MATSUURA_SENPUKUJI",
+        "lat": "33.20540048",
+        "lng": "129.72690176",
+        "name": "泉福寺"
+      },
+      {
+        "id": "STN_MATSUURA_YAMANOTA",
+        "lat": "33.196455",
+        "lng": "129.72291",
+        "name": "山の田"
+      },
+      {
+        "id": "STN_MATSUURA_KITA_SASEBO",
+        "lat": "33.18696444",
+        "lng": "129.72076639",
+        "name": "北佐世保"
+      },
+      {
+        "id": "STN_MATSUURA_NAKA_SASEBO",
+        "lat": "33.172315",
+        "lng": "129.72272",
+        "name": "中佐世保"
+      },
+      {
+        "id": "STN_MATSUURA_SASEBO_CHUO",
+        "lat": "33.171061",
+        "lng": "129.720835",
+        "name": "佐世保中央"
+      },
+      {
+        "id": "STN_MATSUURA_SASEBO",
+        "lat": "33.16381083",
+        "lng": "129.72587982",
+        "name": "佐世保"
+      }
+    ]
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "categories": "第三セクター",
+    "company_id": "AMAGI",
+    "company_name": "甘木鉄道",
+    "lines": [
+      {
+        "id": "AMAGI_LINE",
+        "name": "甘木線",
+        "sequence": [
+          "STN_AMAGI_KIYAMA",
+          "STN_AMAGI_TATE_NO",
+          "STN_AMAGI_OGORI",
+          "STN_AMAGI_OITAI",
+          "STN_AMAGI_MATSUZAKI",
+          "STN_AMAGI_IMAGUMA",
+          "STN_AMAGI_NISHI_TACHIAWAI",
+          "STN_AMAGI_YAMAGUMA",
+          "STN_AMAGI_TACHIAWAI",
+          "STN_AMAGI_TAKADA",
+          "STN_AMAGI_AMAGI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_AMAGI_KIYAMA",
+        "lat": "33.421214",
+        "lng": "130.532329",
+        "name": "基山"
+      },
+      {
+        "id": "STN_AMAGI_TATE_NO",
+        "lat": "33.412555",
+        "lng": "130.539284",
+        "name": "立野"
+      },
+      {
+        "id": "STN_AMAGI_OGORI",
+        "lat": "33.39759398",
+        "lng": "130.5534052",
+        "name": "小郡"
+      },
+      {
+        "id": "STN_AMAGI_OITAI",
+        "lat": "33.39859227",
+        "lng": "130.56106369",
+        "name": "大板井"
+      },
+      {
+        "id": "STN_AMAGI_MATSUZAKI",
+        "lat": "33.39966158",
+        "lng": "130.58211808",
+        "name": "松崎"
+      },
+      {
+        "id": "STN_AMAGI_IMAGUMA",
+        "lat": "33.404145",
+        "lng": "130.594275",
+        "name": "今隈"
+      },
+      {
+        "id": "STN_AMAGI_NISHI_TACHIAWAI",
+        "lat": "33.4078",
+        "lng": "130.59918",
+        "name": "西太刀洗"
+      },
+      {
+        "id": "STN_AMAGI_YAMAGUMA",
+        "lat": "33.414055",
+        "lng": "130.61007",
+        "name": "山隈"
+      },
+      {
+        "id": "STN_AMAGI_TACHIAWAI",
+        "lat": "33.413925",
+        "lng": "130.618875",
+        "name": "太刀洗"
+      },
+      {
+        "id": "STN_AMAGI_TAKADA",
+        "lat": "33.414205",
+        "lng": "130.63402",
+        "name": "高田"
+      },
+      {
+        "id": "STN_AMAGI_AMAGI",
+        "lat": "33.418964",
+        "lng": "130.652902",
+        "name": "甘木"
+      }
+    ]
+  }
+]

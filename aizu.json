@@ -1,0 +1,178 @@
+[
+  {
+    "categories": "",
+    "company_id": "AIZU",
+    "company_name": "会津鉄道",
+    "lines": [
+      {
+        "id": "AIZU_LINE",
+        "name": "会津線",
+        "sequence": [
+          "STN_AIZU_AIZU_WAKAMATSU",
+          "STN_AIZU_NANOKAMACHI",
+          "STN_AIZU_NISHI_WAKAMATSU",
+          "STN_AIZU_MINAMI_WAKAMATSU",
+          "STN_AIZU_MONDA",
+          "STN_AIZU_AMAYA",
+          "STN_AIZU_ASHINOMAKI_ONSEN",
+          "STN_AIZU_OKAWA_DAM_KOEN",
+          "STN_AIZU_ASHINOMAKI_ONSEN_MINAMI",
+          "STN_AIZU_YUNOKAMI_ONSEN",
+          "STN_AIZU_TONOHETSURI",
+          "STN_AIZU_YAGOSHIMA",
+          "STN_AIZU_AIZU_SHIMOGO",
+          "STN_AIZU_FURUSATO_KOEN",
+          "STN_AIZU_YOSON_KOEN",
+          "STN_AIZU_AIZU_NAGANO",
+          "STN_AIZU_TAJIMAKOKO_MAE",
+          "STN_AIZU_AIZU_TAJIMA",
+          "STN_AIZU_NAKAARAI",
+          "STN_AIZU_AIZU_ARAKAI",
+          "STN_AIZU_AIZU_SANSUN_DOJO",
+          "STN_AIZU_NANATYAGATAKE_TOZANGUCHI",
+          "STN_AIZU_AIZU_KOGEN_OZEGUCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_AIZU_AIZU_WAKAMATSU",
+        "lat": "37.50895",
+        "lng": "139.93017",
+        "name": "会津若松"
+      },
+      {
+        "id": "STN_AIZU_NANOKAMACHI",
+        "lat": "37.501919",
+        "lng": "139.91957",
+        "name": "七日町"
+      },
+      {
+        "id": "STN_AIZU_NISHI_WAKAMATSU",
+        "lat": "37.485941",
+        "lng": "139.914095",
+        "name": "西若松"
+      },
+      {
+        "id": "STN_AIZU_MINAMI_WAKAMATSU",
+        "lat": "37.459085",
+        "lng": "139.914442",
+        "name": "南若松"
+      },
+      {
+        "id": "STN_AIZU_MONDA",
+        "lat": "37.442605",
+        "lng": "139.91378",
+        "name": "門田"
+      },
+      {
+        "id": "STN_AIZU_AMAYA",
+        "lat": "37.41719",
+        "lng": "139.917601",
+        "name": "あまや"
+      },
+      {
+        "id": "STN_AIZU_ASHINOMAKI_ONSEN",
+        "lat": "37.39541",
+        "lng": "139.932245",
+        "name": "芦ノ牧温泉"
+      },
+      {
+        "id": "STN_AIZU_OKAWA_DAM_KOEN",
+        "lat": "37.34682",
+        "lng": "139.920775",
+        "name": "大川ダム公園"
+      },
+      {
+        "id": "STN_AIZU_ASHINOMAKI_ONSEN_MINAMI",
+        "lat": "37.334585",
+        "lng": "139.918655",
+        "name": "芦ノ牧温泉南"
+      },
+      {
+        "id": "STN_AIZU_YUNOKAMI_ONSEN",
+        "lat": "37.304035",
+        "lng": "139.895185",
+        "name": "湯野上温泉"
+      },
+      {
+        "id": "STN_AIZU_TONOHETSURI",
+        "lat": "37.274575",
+        "lng": "139.9015",
+        "name": "塔のへつり"
+      },
+      {
+        "id": "STN_AIZU_YAGOSHIMA",
+        "lat": "37.26634",
+        "lng": "139.88998",
+        "name": "弥五島"
+      },
+      {
+        "id": "STN_AIZU_AIZU_SHIMOGO",
+        "lat": "37.255175",
+        "lng": "139.864945",
+        "name": "会津下郷"
+      },
+      {
+        "id": "STN_AIZU_FURUSATO_KOEN",
+        "lat": "37.24327",
+        "lng": "139.859025",
+        "name": "ふるさと公園"
+      },
+      {
+        "id": "STN_AIZU_YOSON_KOEN",
+        "lat": "37.224515",
+        "lng": "139.84182",
+        "name": "養鱒公園"
+      },
+      {
+        "id": "STN_AIZU_AIZU_NAGANO",
+        "lat": "37.2153",
+        "lng": "139.823845",
+        "name": "会津長野"
+      },
+      {
+        "id": "STN_AIZU_TAJIMAKOKO_MAE",
+        "lat": "37.209555",
+        "lng": "139.80079",
+        "name": "田島高校前"
+      },
+      {
+        "id": "STN_AIZU_AIZU_TAJIMA",
+        "lat": "37.203265",
+        "lng": "139.77431",
+        "name": "会津田島"
+      },
+      {
+        "id": "STN_AIZU_NAKAARAI",
+        "lat": "37.180235",
+        "lng": "139.750935",
+        "name": "中荒井"
+      },
+      {
+        "id": "STN_AIZU_AIZU_ARAKAI",
+        "lat": "37.153314",
+        "lng": "139.733686",
+        "name": "会津荒海"
+      },
+      {
+        "id": "STN_AIZU_AIZU_SANSUN_DOJO",
+        "lat": "37.1442",
+        "lng": "139.73176",
+        "name": "会津山村道場"
+      },
+      {
+        "id": "STN_AIZU_NANATYAGATAKE_TOZANGUCHI",
+        "lat": "37.124182",
+        "lng": "139.717382",
+        "name": "七ヶ岳登山口"
+      },
+      {
+        "id": "STN_AIZU_AIZU_KOGEN_OZEGUCHI",
+        "lat": "37.090026",
+        "lng": "139.705128",
+        "name": "会津高原尾瀬口"
+      }
+    ]
+  }
+]

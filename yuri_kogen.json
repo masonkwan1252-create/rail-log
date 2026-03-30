@@ -1,0 +1,101 @@
+[
+  {
+    "categories": "",
+    "company_id": "YURI_KOGEN",
+    "company_name": "由利高原鉄道",
+    "lines": [
+      {
+        "id": "YURI_KOGEN_CHOKAI_SANROKU",
+        "name": "鳥海山ろく線",
+        "sequence": [
+          "STN_YURI_KOGEN_UGO_HONJO",
+          "STN_YURI_KOGEN_YAKUSHIDO",
+          "STN_YURI_KOGEN_KOYOSHI",
+          "STN_YURI_KOGEN_AYUKAWA",
+          "STN_YURI_KOGEN_KUROSAWA",
+          "STN_YURI_KOGEN_MAGARISAWA",
+          "STN_YURI_KOGEN_MAEGO",
+          "STN_YURI_KOGEN_KUBOTA",
+          "STN_YURI_KOGEN_NISHITAKIZAWA",
+          "STN_YURI_KOGEN_YOSHIZAWA",
+          "STN_YURI_KOGEN_KAWABE",
+          "STN_YURI_KOGEN_YASHIMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YURI_KOGEN_UGO_HONJO",
+        "lat": "39.38686",
+        "lng": "140.0576",
+        "name": "羽後本荘"
+      },
+      {
+        "id": "STN_YURI_KOGEN_YAKUSHIDO",
+        "lat": "39.36808",
+        "lng": "140.048845",
+        "name": "薬師堂"
+      },
+      {
+        "id": "STN_YURI_KOGEN_KOYOSHI",
+        "lat": "39.35043",
+        "lng": "140.05993",
+        "name": "子吉"
+      },
+      {
+        "id": "STN_YURI_KOGEN_AYUKAWA",
+        "lat": "39.328585",
+        "lng": "140.07139",
+        "name": "鮎川"
+      },
+      {
+        "id": "STN_YURI_KOGEN_KUROSAWA",
+        "lat": "39.32042",
+        "lng": "140.09313",
+        "name": "黒沢"
+      },
+      {
+        "id": "STN_YURI_KOGEN_MAGARISAWA",
+        "lat": "39.32085",
+        "lng": "140.102515",
+        "name": "曲沢"
+      },
+      {
+        "id": "STN_YURI_KOGEN_MAEGO",
+        "lat": "39.312825",
+        "lng": "140.11284",
+        "name": "前郷"
+      },
+      {
+        "id": "STN_YURI_KOGEN_KUBOTA",
+        "lat": "39.29621",
+        "lng": "140.11114",
+        "name": "久保田"
+      },
+      {
+        "id": "STN_YURI_KOGEN_NISHITAKIZAWA",
+        "lat": "39.278395",
+        "lng": "140.11647",
+        "name": "西滝沢"
+      },
+      {
+        "id": "STN_YURI_KOGEN_YOSHIZAWA",
+        "lat": "39.268505",
+        "lng": "140.114955",
+        "name": "吉沢"
+      },
+      {
+        "id": "STN_YURI_KOGEN_KAWABE",
+        "lat": "39.24899",
+        "lng": "140.12041",
+        "name": "川辺"
+      },
+      {
+        "id": "STN_YURI_KOGEN_YASHIMA",
+        "lat": "39.230315",
+        "lng": "140.13904",
+        "name": "矢島"
+      }
+    ]
+  }
+]

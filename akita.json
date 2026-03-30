@@ -1,0 +1,220 @@
+[
+  {
+    "categories": "",
+    "company_id": "AKITA",
+    "company_name": "秋田内陸縦貫鉄道",
+    "lines": [
+      {
+        "id": "AKITA_NAIRIKU",
+        "name": "秋田内陸線",
+        "sequence": [
+          "STN_AKITA_TAKANO_SU",
+          "STN_AKITA_NISHI_TAKANO_SU",
+          "STN_AKITA_JOMON_OGATA",
+          "STN_AKITA_ONODAI",
+          "STN_AKITA_AIKAWA",
+          "STN_AKITA_KAMISUGI",
+          "STN_AKITA_YONAIZAWA",
+          "STN_AKITA_KATSURASE",
+          "STN_AKITA_ANI_MAEDA_ONSEN",
+          "STN_AKITA_MAEDA_MINAMI",
+          "STN_AKITA_OBUCHI",
+          "STN_AKITA_ANIAI",
+          "STN_AKITA_ARASE",
+          "STN_AKITA_KAYAKUSA",
+          "STN_AKITA_OKASHINAI",
+          "STN_AKITA_IWANOME",
+          "STN_AKITA_HITACHINAI",
+          "STN_AKITA_OKU_ANI",
+          "STN_AKITA_ANI_MATAGI",
+          "STN_AKITA_TOZAWA",
+          "STN_AKITA_KAMI_HINOKINAI",
+          "STN_AKITA_SADORI",
+          "STN_AKITA_UGO_NAKAZATO",
+          "STN_AKITA_MATSUBA",
+          "STN_AKITA_UGO_NAGATORO",
+          "STN_AKITA_YATSU",
+          "STN_AKITA_SAIMYOJI",
+          "STN_AKITA_UGO_OTA",
+          "STN_AKITA_KAKUNODATE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_AKITA_TAKANO_SU",
+        "lat": "40.232144",
+        "lng": "140.369269",
+        "name": "鷹巣"
+      },
+      {
+        "id": "STN_AKITA_NISHI_TAKANO_SU",
+        "lat": "40.22478",
+        "lng": "140.357985",
+        "name": "西鷹巣"
+      },
+      {
+        "id": "STN_AKITA_JOMON_OGATA",
+        "lat": "40.205065",
+        "lng": "140.349225",
+        "name": "縄文小ヶ田"
+      },
+      {
+        "id": "STN_AKITA_ONODAI",
+        "lat": "40.186915",
+        "lng": "140.340605",
+        "name": "大野台"
+      },
+      {
+        "id": "STN_AKITA_AIKAWA",
+        "lat": "40.1613",
+        "lng": "140.33013",
+        "name": "合川"
+      },
+      {
+        "id": "STN_AKITA_KAMISUGI",
+        "lat": "40.14639",
+        "lng": "140.349775",
+        "name": "上杉"
+      },
+      {
+        "id": "STN_AKITA_YONAIZAWA",
+        "lat": "40.12842",
+        "lng": "140.37341",
+        "name": "米内沢"
+      },
+      {
+        "id": "STN_AKITA_KATSURASE",
+        "lat": "40.101425",
+        "lng": "140.4178",
+        "name": "桂瀬"
+      },
+      {
+        "id": "STN_AKITA_ANI_MAEDA_ONSEN",
+        "lat": "40.061495",
+        "lng": "140.41783",
+        "name": "阿仁前田温泉"
+      },
+      {
+        "id": "STN_AKITA_MAEDA_MINAMI",
+        "lat": "40.050525",
+        "lng": "140.402465",
+        "name": "前田南"
+      },
+      {
+        "id": "STN_AKITA_OBUCHI",
+        "lat": "40.03374",
+        "lng": "140.401195",
+        "name": "小渕"
+      },
+      {
+        "id": "STN_AKITA_ANIAI",
+        "lat": "40.00008",
+        "lng": "140.401225",
+        "name": "阿仁合"
+      },
+      {
+        "id": "STN_AKITA_ARASE",
+        "lat": "39.980035",
+        "lng": "140.4024",
+        "name": "荒瀬"
+      },
+      {
+        "id": "STN_AKITA_KAYAKUSA",
+        "lat": "39.95854",
+        "lng": "140.4124",
+        "name": "萱草"
+      },
+      {
+        "id": "STN_AKITA_OKASHINAI",
+        "lat": "39.93506",
+        "lng": "140.41311",
+        "name": "笑内"
+      },
+      {
+        "id": "STN_AKITA_IWANOME",
+        "lat": "39.92117",
+        "lng": "140.430685",
+        "name": "岩野目"
+      },
+      {
+        "id": "STN_AKITA_HITACHINAI",
+        "lat": "39.90498",
+        "lng": "140.453205",
+        "name": "比立内"
+      },
+      {
+        "id": "STN_AKITA_OKU_ANI",
+        "lat": "39.911",
+        "lng": "140.488463",
+        "name": "奥阿仁"
+      },
+      {
+        "id": "STN_AKITA_ANI_MATAGI",
+        "lat": "39.919536",
+        "lng": "140.515777",
+        "name": "阿仁マタギ"
+      },
+      {
+        "id": "STN_AKITA_TOZAWA",
+        "lat": "39.859065",
+        "lng": "140.581225",
+        "name": "戸沢"
+      },
+      {
+        "id": "STN_AKITA_KAMI_HINOKINAI",
+        "lat": "39.81803",
+        "lng": "140.582545",
+        "name": "上桧木内"
+      },
+      {
+        "id": "STN_AKITA_SADORI",
+        "lat": "39.80191",
+        "lng": "140.586125",
+        "name": "左通"
+      },
+      {
+        "id": "STN_AKITA_UGO_NAKAZATO",
+        "lat": "39.771135",
+        "lng": "140.60276",
+        "name": "羽後中里"
+      },
+      {
+        "id": "STN_AKITA_MATSUBA",
+        "lat": "39.744125",
+        "lng": "140.59032",
+        "name": "松葉"
+      },
+      {
+        "id": "STN_AKITA_UGO_NAGATORO",
+        "lat": "39.72771",
+        "lng": "140.565425",
+        "name": "羽後長戸呂"
+      },
+      {
+        "id": "STN_AKITA_YATSU",
+        "lat": "39.687755",
+        "lng": "140.552825",
+        "name": "八津"
+      },
+      {
+        "id": "STN_AKITA_SAIMYOJI",
+        "lat": "39.653165",
+        "lng": "140.563035",
+        "name": "西明寺"
+      },
+      {
+        "id": "STN_AKITA_UGO_OTA",
+        "lat": "39.627305",
+        "lng": "140.57425",
+        "name": "羽後太田"
+      },
+      {
+        "id": "STN_AKITA_KAKUNODATE",
+        "lat": "39.591795",
+        "lng": "140.57118",
+        "name": "角館"
+      }
+    ]
+  }
+]

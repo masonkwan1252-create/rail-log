@@ -1,0 +1,262 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "OHMI",
+    "company_name": "近江鉄道",
+    "lines": [
+      {
+        "id": "OHMI_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_OHMI_MAIBARA",
+          "STN_OHMI_FUJITEC_MAE",
+          "STN_OHMI_TORIIMOTO",
+          "STN_OHMI_HIKONE",
+          "STN_OHMI_HIKONE_SERIKAWA",
+          "STN_OHMI_HIKONEGUCHI",
+          "STN_OHMI_TAKAMIYA",
+          "STN_OHMI_AMAGO",
+          "STN_OHMI_TOYOSATO",
+          "STN_OHMI_ECHIGAWA",
+          "STN_OHMI_GOKASHO",
+          "STN_OHMI_KAWABE_NO_MORI",
+          "STN_OHMI_YOKAICHI",
+          "STN_OHMI_NAGATANI_NO",
+          "STN_OHMI_DAIGAKUMAE",
+          "STN_OHMI_KYOCERAMAE",
+          "STN_OHMI_SAKURAGAWA",
+          "STN_OHMI_ASAHI_OTSUKA",
+          "STN_OHMI_ASAHINO",
+          "STN_OHMI_HINO",
+          "STN_OHMI_MINAKUCHI_MATSUO",
+          "STN_OHMI_MINAKUCHI",
+          "STN_OHMI_MINAKUCHI_ISHIBASHI",
+          "STN_OHMI_MINAKUCHI_JONAN",
+          "STN_OHMI_KIBUKAWA"
+        ]
+      },
+      {
+        "id": "OHMI_TAGA",
+        "name": "多賀線",
+        "sequence": [
+          "STN_OHMI_TAKAMIYA",
+          "STN_OHMI_SCREEN",
+          "STN_OHMI_TAGA_TAISHA_MAE"
+        ]
+      },
+      {
+        "id": "OHMI_YOKAICHI",
+        "name": "八日市線",
+        "sequence": [
+          "STN_OHMI_YOKAICHI",
+          "STN_OHMI_SHIN_YOKAICHI",
+          "STN_OHMI_TAROBOGU_MAE",
+          "STN_OHMI_ICHIBE",
+          "STN_OHMI_HIRATA",
+          "STN_OHMI_MUSA",
+          "STN_OHMI_OMI_HACHIMAN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_OHMI_MAIBARA",
+        "lat": "35.313984",
+        "lng": "136.290256",
+        "name": "米原"
+      },
+      {
+        "id": "STN_OHMI_FUJITEC_MAE",
+        "lat": "35.29425",
+        "lng": "136.285385",
+        "name": "フジテック前"
+      },
+      {
+        "id": "STN_OHMI_TORIIMOTO",
+        "lat": "35.28454369",
+        "lng": "136.28291234",
+        "name": "鳥居本"
+      },
+      {
+        "id": "STN_OHMI_HIKONE",
+        "lat": "35.272175",
+        "lng": "136.263695",
+        "name": "彦根"
+      },
+      {
+        "id": "STN_OHMI_HIKONE_SERIKAWA",
+        "lat": "35.26198376",
+        "lng": "136.26091934",
+        "name": "ひこね芹川"
+      },
+      {
+        "id": "STN_OHMI_HIKONEGUCHI",
+        "lat": "35.25494838",
+        "lng": "136.25850339",
+        "name": "彦根口"
+      },
+      {
+        "id": "STN_OHMI_TAKAMIYA",
+        "lat": "35.236215",
+        "lng": "136.260605",
+        "name": "高宮"
+      },
+      {
+        "id": "STN_OHMI_AMAGO",
+        "lat": "35.214025",
+        "lng": "136.24618",
+        "name": "尼子"
+      },
+      {
+        "id": "STN_OHMI_TOYOSATO",
+        "lat": "35.197905",
+        "lng": "136.230985",
+        "name": "豊郷"
+      },
+      {
+        "id": "STN_OHMI_ECHIGAWA",
+        "lat": "35.17609125",
+        "lng": "136.21348633",
+        "name": "愛知川"
+      },
+      {
+        "id": "STN_OHMI_GOKASHO",
+        "lat": "35.15472607",
+        "lng": "136.19725294",
+        "name": "五箇荘"
+      },
+      {
+        "id": "STN_OHMI_KAWABE_NO_MORI",
+        "lat": "35.13545254",
+        "lng": "136.19616295",
+        "name": "河辺の森"
+      },
+      {
+        "id": "STN_OHMI_YOKAICHI",
+        "lat": "35.114175",
+        "lng": "136.19454",
+        "name": "八日市"
+      },
+      {
+        "id": "STN_OHMI_NAGATANI_NO",
+        "lat": "35.09558",
+        "lng": "136.18757",
+        "name": "長谷野"
+      },
+      {
+        "id": "STN_OHMI_DAIGAKUMAE",
+        "lat": "35.08778",
+        "lng": "136.184675",
+        "name": "大学前"
+      },
+      {
+        "id": "STN_OHMI_KYOCERAMAE",
+        "lat": "35.07484",
+        "lng": "136.180405",
+        "name": "京セラ前"
+      },
+      {
+        "id": "STN_OHMI_SAKURAGAWA",
+        "lat": "35.064945",
+        "lng": "136.18758",
+        "name": "桜川"
+      },
+      {
+        "id": "STN_OHMI_ASAHI_OTSUKA",
+        "lat": "35.05099",
+        "lng": "136.19358",
+        "name": "朝日大塚"
+      },
+      {
+        "id": "STN_OHMI_ASAHINO",
+        "lat": "35.031481",
+        "lng": "136.205781",
+        "name": "朝日野"
+      },
+      {
+        "id": "STN_OHMI_HINO",
+        "lat": "35.01225",
+        "lng": "136.21946",
+        "name": "日野"
+      },
+      {
+        "id": "STN_OHMI_MINAKUCHI_MATSUO",
+        "lat": "34.98033703",
+        "lng": "136.18640254",
+        "name": "水口松尾"
+      },
+      {
+        "id": "STN_OHMI_MINAKUCHI",
+        "lat": "34.97431184",
+        "lng": "136.17682387",
+        "name": "水口"
+      },
+      {
+        "id": "STN_OHMI_MINAKUCHI_ISHIBASHI",
+        "lat": "34.97000999",
+        "lng": "136.17134203",
+        "name": "水口石橋"
+      },
+      {
+        "id": "STN_OHMI_MINAKUCHI_JONAN",
+        "lat": "34.96820362",
+        "lng": "136.16565715",
+        "name": "水口城南"
+      },
+      {
+        "id": "STN_OHMI_KIBUKAWA",
+        "lat": "34.95249932",
+        "lng": "136.15353737",
+        "name": "貴生川"
+      },
+      {
+        "id": "STN_OHMI_SCREEN",
+        "lat": "35.233305",
+        "lng": "136.267175",
+        "name": "スクリーン"
+      },
+      {
+        "id": "STN_OHMI_TAGA_TAISHA_MAE",
+        "lat": "35.22640292",
+        "lng": "136.28437333",
+        "name": "多賀大社前"
+      },
+      {
+        "id": "STN_OHMI_SHIN_YOKAICHI",
+        "lat": "35.11024336",
+        "lng": "136.19105678",
+        "name": "新八日市"
+      },
+      {
+        "id": "STN_OHMI_TAROBOGU_MAE",
+        "lat": "35.10854",
+        "lng": "136.183985",
+        "name": "太郎坊宮前"
+      },
+      {
+        "id": "STN_OHMI_ICHIBE",
+        "lat": "35.10384",
+        "lng": "136.16562",
+        "name": "市辺"
+      },
+      {
+        "id": "STN_OHMI_HIRATA",
+        "lat": "35.110185",
+        "lng": "136.14664",
+        "name": "平田"
+      },
+      {
+        "id": "STN_OHMI_MUSA",
+        "lat": "35.11487",
+        "lng": "136.130645",
+        "name": "武佐"
+      },
+      {
+        "id": "STN_OHMI_OMI_HACHIMAN",
+        "lat": "35.12221",
+        "lng": "136.102705",
+        "name": "近江八幡"
+      }
+    ]
+  }
+]

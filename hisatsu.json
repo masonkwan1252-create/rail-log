@@ -1,0 +1,213 @@
+[
+  {
+    "categories": "",
+    "company_id": "HISATSU",
+    "company_name": "肥薩おれんじ鉄道",
+    "lines": [
+      {
+        "id": "HISATSU_LINE",
+        "name": "肥薩おれんじ鉄道線",
+        "sequence": [
+          "STN_HISATSU_YATSUSHIRO",
+          "STN_HISATSU_HIGO_KODA",
+          "STN_HISATSU_HINAGU_ONSEN",
+          "STN_HISATSU_HIGO_FUTAMI",
+          "STN_HISATSU_KAMI_TANOURA",
+          "STN_HISATSU_TANOURA_OTACHIMISAKI_KOEN",
+          "STN_HISATSU_HIGO_TANOURA",
+          "STN_HISATSU_UMIURA",
+          "STN_HISATSU_SASHIKI",
+          "STN_HISATSU_YU_NO_URA",
+          "STN_HISATSU_TSUNAGI",
+          "STN_HISATSU_SHIN_MINAMATA",
+          "STN_HISATSU_MINAMATA",
+          "STN_HISATSU_FUKURO",
+          "STN_HISATSU_KOMENOTSU",
+          "STN_HISATSU_IZUMI",
+          "STN_HISATSU_NISHI_IZUMI",
+          "STN_HISATSU_TAKAONO",
+          "STN_HISATSU_NODAGO",
+          "STN_HISATSU_ORIGUCHI",
+          "STN_HISATSU_AKUNE",
+          "STN_HISATSU_USHINOHAMA",
+          "STN_HISATSU_SATSUMA_OKAWA",
+          "STN_HISATSU_NISHIKATA",
+          "STN_HISATSU_SATSUMA_TAKI",
+          "STN_HISATSU_KUSAMICHI",
+          "STN_HISATSU_KAMI_SENDAI",
+          "STN_HISATSU_SENDAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HISATSU_YATSUSHIRO",
+        "lat": "32.504413",
+        "lng": "130.621184",
+        "name": "八代"
+      },
+      {
+        "id": "STN_HISATSU_HIGO_KODA",
+        "lat": "32.475155",
+        "lng": "130.612455",
+        "name": "肥後高田"
+      },
+      {
+        "id": "STN_HISATSU_HINAGU_ONSEN",
+        "lat": "32.436165",
+        "lng": "130.582045",
+        "name": "日奈久温泉"
+      },
+      {
+        "id": "STN_HISATSU_HIGO_FUTAMI",
+        "lat": "32.42013249",
+        "lng": "130.54983936",
+        "name": "肥後二見"
+      },
+      {
+        "id": "STN_HISATSU_KAMI_TANOURA",
+        "lat": "32.39296",
+        "lng": "130.51861",
+        "name": "上田浦"
+      },
+      {
+        "id": "STN_HISATSU_TANOURA_OTACHIMISAKI_KOEN",
+        "lat": "32.363425",
+        "lng": "130.506585",
+        "name": "たのうら御立岬公園"
+      },
+      {
+        "id": "STN_HISATSU_HIGO_TANOURA",
+        "lat": "32.350682",
+        "lng": "130.504748",
+        "name": "肥後田浦"
+      },
+      {
+        "id": "STN_HISATSU_UMIURA",
+        "lat": "32.32797",
+        "lng": "130.48869",
+        "name": "海浦"
+      },
+      {
+        "id": "STN_HISATSU_SASHIKI",
+        "lat": "32.302425",
+        "lng": "130.497315",
+        "name": "佐敷"
+      },
+      {
+        "id": "STN_HISATSU_YU_NO_URA",
+        "lat": "32.271355",
+        "lng": "130.50454",
+        "name": "湯浦"
+      },
+      {
+        "id": "STN_HISATSU_TSUNAGI",
+        "lat": "32.2324",
+        "lng": "130.450215",
+        "name": "津奈木"
+      },
+      {
+        "id": "STN_HISATSU_SHIN_MINAMATA",
+        "lat": "32.21095",
+        "lng": "130.42944",
+        "name": "新水俣"
+      },
+      {
+        "id": "STN_HISATSU_MINAMATA",
+        "lat": "32.20493",
+        "lng": "130.396165",
+        "name": "水俣"
+      },
+      {
+        "id": "STN_HISATSU_FUKURO",
+        "lat": "32.165565",
+        "lng": "130.37427",
+        "name": "袋"
+      },
+      {
+        "id": "STN_HISATSU_KOMENOTSU",
+        "lat": "32.122145",
+        "lng": "130.341985",
+        "name": "米ノ津"
+      },
+      {
+        "id": "STN_HISATSU_IZUMI",
+        "lat": "32.08932",
+        "lng": "130.35797",
+        "name": "出水"
+      },
+      {
+        "id": "STN_HISATSU_NISHI_IZUMI",
+        "lat": "32.075385",
+        "lng": "130.339285",
+        "name": "西出水"
+      },
+      {
+        "id": "STN_HISATSU_TAKAONO",
+        "lat": "32.062485",
+        "lng": "130.301825",
+        "name": "高尾野"
+      },
+      {
+        "id": "STN_HISATSU_NODAGO",
+        "lat": "32.063235",
+        "lng": "130.2674",
+        "name": "野田郷"
+      },
+      {
+        "id": "STN_HISATSU_ORIGUCHI",
+        "lat": "32.060945",
+        "lng": "130.217505",
+        "name": "折口"
+      },
+      {
+        "id": "STN_HISATSU_AKUNE",
+        "lat": "32.02307",
+        "lng": "130.196395",
+        "name": "阿久根"
+      },
+      {
+        "id": "STN_HISATSU_USHINOHAMA",
+        "lat": "31.97402",
+        "lng": "130.207165",
+        "name": "牛ノ浜"
+      },
+      {
+        "id": "STN_HISATSU_SATSUMA_OKAWA",
+        "lat": "31.94941",
+        "lng": "130.21914",
+        "name": "薩摩大川"
+      },
+      {
+        "id": "STN_HISATSU_NISHIKATA",
+        "lat": "31.9164",
+        "lng": "130.223745",
+        "name": "西方"
+      },
+      {
+        "id": "STN_HISATSU_SATSUMA_TAKI",
+        "lat": "31.89254",
+        "lng": "130.22056",
+        "name": "薩摩高城"
+      },
+      {
+        "id": "STN_HISATSU_KUSAMICHI",
+        "lat": "31.854407",
+        "lng": "130.233586",
+        "name": "草道"
+      },
+      {
+        "id": "STN_HISATSU_KAMI_SENDAI",
+        "lat": "31.835945",
+        "lng": "130.291725",
+        "name": "上川内"
+      },
+      {
+        "id": "STN_HISATSU_SENDAI",
+        "lat": "31.81363",
+        "lng": "130.3122",
+        "name": "川内"
+      }
+    ]
+  }
+]

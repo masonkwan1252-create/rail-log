@@ -1,0 +1,115 @@
+[
+  {
+    "categories": "私鉄",
+    "company_id": "WAKAYAMA",
+    "company_name": "和歌山電鐵",
+    "lines": [
+      {
+        "id": "WAKAYAMA_KISHIGAWA",
+        "name": "貴志川線",
+        "sequence": [
+          "STN_WAKAYAMA_WAKAYAMA",
+          "STN_WAKAYAMA_TANAKAGUCHI",
+          "STN_WAKAYAMA_NICHIZENGU",
+          "STN_WAKAYAMA_KOZAKI",
+          "STN_WAKAYAMA_KAMAYAMA",
+          "STN_WAKAYAMA_KOTSU_CENTER_MAE",
+          "STN_WAKAYAMA_OKAZAKIMAE",
+          "STN_WAKAYAMA_KIRE",
+          "STN_WAKAYAMA_IDAKISO",
+          "STN_WAKAYAMA_SANDO",
+          "STN_WAKAYAMA_OIKEYUEN",
+          "STN_WAKAYAMA_NISHIYAMAGUCHI",
+          "STN_WAKAYAMA_KANROJIMAE",
+          "STN_WAKAYAMA_KISHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_WAKAYAMA_WAKAYAMA",
+        "lat": "34.23231",
+        "lng": "135.191875",
+        "name": "和歌山"
+      },
+      {
+        "id": "STN_WAKAYAMA_TANAKAGUCHI",
+        "lat": "34.227215",
+        "lng": "135.192935",
+        "name": "田中口"
+      },
+      {
+        "id": "STN_WAKAYAMA_NICHIZENGU",
+        "lat": "34.22642",
+        "lng": "135.20186",
+        "name": "日前宮"
+      },
+      {
+        "id": "STN_WAKAYAMA_KOZAKI",
+        "lat": "34.212995",
+        "lng": "135.2051",
+        "name": "神前"
+      },
+      {
+        "id": "STN_WAKAYAMA_KAMAYAMA",
+        "lat": "34.207225",
+        "lng": "135.207235",
+        "name": "竈山"
+      },
+      {
+        "id": "STN_WAKAYAMA_KOTSU_CENTER_MAE",
+        "lat": "34.20388",
+        "lng": "135.21837",
+        "name": "交通センター前"
+      },
+      {
+        "id": "STN_WAKAYAMA_OKAZAKIMAE",
+        "lat": "34.20347",
+        "lng": "135.225095",
+        "name": "岡崎前"
+      },
+      {
+        "id": "STN_WAKAYAMA_KIRE",
+        "lat": "34.20332",
+        "lng": "135.23594",
+        "name": "吉礼"
+      },
+      {
+        "id": "STN_WAKAYAMA_IDAKISO",
+        "lat": "34.20412",
+        "lng": "135.251735",
+        "name": "伊太祈曽"
+      },
+      {
+        "id": "STN_WAKAYAMA_SANDO",
+        "lat": "34.205765",
+        "lng": "135.262185",
+        "name": "山東"
+      },
+      {
+        "id": "STN_WAKAYAMA_OIKEYUEN",
+        "lat": "34.20463",
+        "lng": "135.28532",
+        "name": "大池遊園"
+      },
+      {
+        "id": "STN_WAKAYAMA_NISHIYAMAGUCHI",
+        "lat": "34.20956",
+        "lng": "135.290935",
+        "name": "西山口"
+      },
+      {
+        "id": "STN_WAKAYAMA_KANROJIMAE",
+        "lat": "34.21333411",
+        "lng": "135.30145911",
+        "name": "甘露寺前"
+      },
+      {
+        "id": "STN_WAKAYAMA_KISHI",
+        "lat": "34.2093621",
+        "lng": "135.31197177",
+        "name": "貴志"
+      }
+    ]
+  }
+]

@@ -1,0 +1,669 @@
+[
+  {
+    "categories": "",
+    "company_id": "NAGOYA",
+    "company_name": "名古屋市営地下鉄",
+    "lines": [
+      {
+        "id": "NAGOYA_HIGASHIYAMA",
+        "name": "東山線",
+        "sequence": [
+          "STN_NAGOYA_TAKABATA",
+          "STN_NAGOYA_HATTA",
+          "STN_NAGOYA_IWATSUKA",
+          "STN_NAGOYA_NAKAMURA_KOEN",
+          "STN_NAGOYA_NAKAMURA_NISSEKI",
+          "STN_NAGOYA_HONJIN",
+          "STN_NAGOYA_KAMEJIMA",
+          "STN_NAGOYA_NAGOYA",
+          "STN_NAGOYA_FUSHIMI",
+          "STN_NAGOYA_SAKAE",
+          "STN_NAGOYA_SHIN_SAKAEMACHI",
+          "STN_NAGOYA_CHIKUSA",
+          "STN_NAGOYA_IMAIKE",
+          "STN_NAGOYA_IKESHITA",
+          "STN_NAGOYA_KAKUOZAN",
+          "STN_NAGOYA_MOTOYAMA",
+          "STN_NAGOYA_HIGASHIYAMA_KOEN",
+          "STN_NAGOYA_HOSHIGAOKA",
+          "STN_NAGOYA_ISSHA",
+          "STN_NAGOYA_KAMIYASHIRO",
+          "STN_NAGOYA_HONGO",
+          "STN_NAGOYA_FUJIGAOKA"
+        ]
+      },
+      {
+        "id": "NAGOYA_MEIJO",
+        "name": "名城線",
+        "sequence": [
+          "STN_NAGOYA_KANAYAMA",
+          "STN_NAGOYA_HIGASHI_BETSUIN",
+          "STN_NAGOYA_KAMIMAEZU",
+          "STN_NAGOYA_YABA_CHO",
+          "STN_NAGOYA_SAKAE",
+          "STN_NAGOYA_HISAYA_ODORI",
+          "STN_NAGOYA_NAGOYA_JO",
+          "STN_NAGOYA_MEIJO_KOEN",
+          "STN_NAGOYA_KUROKAWA",
+          "STN_NAGOYA_SHIGA_HON_DORI",
+          "STN_NAGOYA_HEIAN_DORI",
+          "STN_NAGOYA_OZONE",
+          "STN_NAGOYA_NAGOYA_DOME_MAE_YADA",
+          "STN_NAGOYA_SUNADABASHI",
+          "STN_NAGOYA_CHAYAGASAKA",
+          "STN_NAGOYA_JIYUGAOKA",
+          "STN_NAGOYA_MOTOYAMA",
+          "STN_NAGOYA_NAGOYA_DAIGAKU",
+          "STN_NAGOYA_YAGOTO_NITSUKI",
+          "STN_NAGOYA_YAGOTO",
+          "STN_NAGOYA_SOGO_REHABILITATION_CENTER",
+          "STN_NAGOYA_MIZUHO_UNDOJO_HIGASHI",
+          "STN_NAGOYA_ARATAMABASHI",
+          "STN_NAGOYA_MYOON_DORI",
+          "STN_NAGOYA_HORITA",
+          "STN_NAGOYA_ATSUTA_JINGU_TEMMACHO",
+          "STN_NAGOYA_ATSUTA_JINGU_NISHI",
+          "STN_NAGOYA_NISHI_TAKAKURA"
+        ]
+      },
+      {
+        "id": "NAGOYA_MEIKO",
+        "name": "名港線",
+        "sequence": [
+          "STN_NAGOYA_KANAYAMA",
+          "STN_NAGOYA_HIBINO",
+          "STN_NAGOYA_ROKUBAN_CHO",
+          "STN_NAGOYA_TOKAI_DORI",
+          "STN_NAGOYA_MINATO_KUYAKUSHO",
+          "STN_NAGOYA_TSUKIGUCHI",
+          "STN_NAGOYA_NAGOYA_KO"
+        ]
+      },
+      {
+        "id": "NAGOYA_TSURUMAI",
+        "name": "鶴舞線",
+        "sequence": [
+          "STN_NAGOYA_KAMI_OTAI",
+          "STN_NAGOYA_SHONAI_RYOKUCHI_KOEN",
+          "STN_NAGOYA_SHONAI_DORI",
+          "STN_NAGOYA_JOSHIN",
+          "STN_NAGOYA_SENGEMMACHI",
+          "STN_NAGOYA_MARUNOUCHI",
+          "STN_NAGOYA_FUSHIMI",
+          "STN_NAGOYA_OSU_KANNON",
+          "STN_NAGOYA_KAMIMAEZU",
+          "STN_NAGOYA_TSURUMAI",
+          "STN_NAGOYA_ARAHATA",
+          "STN_NAGOYA_GOKISO",
+          "STN_NAGOYA_KAWANA",
+          "STN_NAGOYA_IRINAKA",
+          "STN_NAGOYA_YAGOTO",
+          "STN_NAGOYA_SHIOGAMAGUCHI",
+          "STN_NAGOYA_UEDA",
+          "STN_NAGOYA_HARA",
+          "STN_NAGOYA_HIRABARI",
+          "STN_NAGOYA_AKAIKE"
+        ]
+      },
+      {
+        "id": "NAGOYA_SAKURA_DORI",
+        "name": "桜通線",
+        "sequence": [
+          "STN_NAGOYA_TAIKO_DORI",
+          "STN_NAGOYA_NAGOYA",
+          "STN_NAGOYA_KOKUSAI_CENTER",
+          "STN_NAGOYA_MARUNOUCHI",
+          "STN_NAGOYA_HISAYA_ODORI",
+          "STN_NAGOYA_TAKAAOKA",
+          "STN_NAGOYA_KURUMAMICHI",
+          "STN_NAGOYA_IMAIKE",
+          "STN_NAGOYA_FUKIAGE",
+          "STN_NAGOYA_GOKISO",
+          "STN_NAGOYA_SAKURAYAMA",
+          "STN_NAGOYA_MIZUHO_KUYAKUSHO",
+          "STN_NAGOYA_MIZUHO_UNDOJO_NISHI",
+          "STN_NAGOYA_ARATAMABASHI",
+          "STN_NAGOYA_SAKURA_HONMACHI",
+          "STN_NAGOYA_TSURUSATO",
+          "STN_NAGOYA_NONAMI",
+          "STN_NAGOYA_NARUKO_KITA",
+          "STN_NAGOYA_AIOIYAMA",
+          "STN_NAGOYA_KAMISAWA",
+          "STN_NAGOYA_TOKUSHIGE"
+        ]
+      },
+      {
+        "id": "NAGOYA_KAMIIIDA",
+        "name": "上飯田線",
+        "sequence": [
+          "STN_NAGOYA_KAMIIIDA",
+          "STN_NAGOYA_HEIAN_DORI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NAGOYA_TAKABATA",
+        "lat": "35.139085",
+        "lng": "136.853514",
+        "name": "高畑"
+      },
+      {
+        "id": "STN_NAGOYA_HATTA",
+        "lat": "35.148456",
+        "lng": "136.85329",
+        "name": "八田"
+      },
+      {
+        "id": "STN_NAGOYA_IWATSUKA",
+        "lat": "35.158164",
+        "lng": "136.854423",
+        "name": "岩塚"
+      },
+      {
+        "id": "STN_NAGOYA_NAKAMURA_KOEN",
+        "lat": "35.16773",
+        "lng": "136.854925",
+        "name": "中村公園"
+      },
+      {
+        "id": "STN_NAGOYA_NAKAMURA_NISSEKI",
+        "lat": "35.1727",
+        "lng": "136.862295",
+        "name": "中村日赤"
+      },
+      {
+        "id": "STN_NAGOYA_HONJIN",
+        "lat": "35.17699",
+        "lng": "136.867245",
+        "name": "本陣"
+      },
+      {
+        "id": "STN_NAGOYA_KAMEJIMA",
+        "lat": "35.17755",
+        "lng": "136.87746",
+        "name": "亀島"
+      },
+      {
+        "id": "STN_NAGOYA_NAGOYA",
+        "lat": "35.171605",
+        "lng": "136.8837",
+        "name": "名古屋"
+      },
+      {
+        "id": "STN_NAGOYA_FUSHIMI",
+        "lat": "35.169213",
+        "lng": "136.897405",
+        "name": "伏見"
+      },
+      {
+        "id": "STN_NAGOYA_SAKAE",
+        "lat": "35.169951",
+        "lng": "136.908605",
+        "name": "栄"
+      },
+      {
+        "id": "STN_NAGOYA_SHIN_SAKAEMACHI",
+        "lat": "35.17067",
+        "lng": "136.920105",
+        "name": "新栄町"
+      },
+      {
+        "id": "STN_NAGOYA_CHIKUSA",
+        "lat": "35.17066",
+        "lng": "136.92997",
+        "name": "千種"
+      },
+      {
+        "id": "STN_NAGOYA_IMAIKE",
+        "lat": "35.169785",
+        "lng": "136.938075",
+        "name": "今池"
+      },
+      {
+        "id": "STN_NAGOYA_IKESHITA",
+        "lat": "35.167825",
+        "lng": "136.946025",
+        "name": "池下"
+      },
+      {
+        "id": "STN_NAGOYA_KAKUOZAN",
+        "lat": "35.166545",
+        "lng": "136.952505",
+        "name": "覚王山"
+      },
+      {
+        "id": "STN_NAGOYA_MOTOYAMA",
+        "lat": "35.163875",
+        "lng": "136.96371",
+        "name": "本山"
+      },
+      {
+        "id": "STN_NAGOYA_HIGASHIYAMA_KOEN",
+        "lat": "35.16063",
+        "lng": "136.97264",
+        "name": "東山公園"
+      },
+      {
+        "id": "STN_NAGOYA_HOSHIGAOKA",
+        "lat": "35.16277",
+        "lng": "136.98589",
+        "name": "星ヶ丘"
+      },
+      {
+        "id": "STN_NAGOYA_ISSHA",
+        "lat": "35.1683",
+        "lng": "136.99599",
+        "name": "一社"
+      },
+      {
+        "id": "STN_NAGOYA_KAMIYASHIRO",
+        "lat": "35.17348",
+        "lng": "137.00659",
+        "name": "上社"
+      },
+      {
+        "id": "STN_NAGOYA_HONGO",
+        "lat": "35.175325",
+        "lng": "137.01359",
+        "name": "本郷"
+      },
+      {
+        "id": "STN_NAGOYA_FUJIGAOKA",
+        "lat": "35.182555",
+        "lng": "137.021445",
+        "name": "藤が丘"
+      },
+      {
+        "id": "STN_NAGOYA_KANAYAMA",
+        "lat": "35.143875",
+        "lng": "136.901935",
+        "name": "金山"
+      },
+      {
+        "id": "STN_NAGOYA_HIGASHI_BETSUIN",
+        "lat": "35.149935",
+        "lng": "136.904575",
+        "name": "東別院"
+      },
+      {
+        "id": "STN_NAGOYA_KAMIMAEZU",
+        "lat": "35.157356",
+        "lng": "136.90642",
+        "name": "上前津"
+      },
+      {
+        "id": "STN_NAGOYA_YABA_CHO",
+        "lat": "35.163305",
+        "lng": "136.908725",
+        "name": "矢場町"
+      },
+      {
+        "id": "STN_NAGOYA_HISAYA_ODORI",
+        "lat": "35.173886",
+        "lng": "136.908143",
+        "name": "久屋大通"
+      },
+      {
+        "id": "STN_NAGOYA_NAGOYA_JO",
+        "lat": "35.181536",
+        "lng": "136.905378",
+        "name": "名古屋城"
+      },
+      {
+        "id": "STN_NAGOYA_MEIJO_KOEN",
+        "lat": "35.190515",
+        "lng": "136.904792",
+        "name": "名城公園"
+      },
+      {
+        "id": "STN_NAGOYA_KUROKAWA",
+        "lat": "35.19716",
+        "lng": "136.910155",
+        "name": "黒川"
+      },
+      {
+        "id": "STN_NAGOYA_SHIGA_HON_DORI",
+        "lat": "35.196275",
+        "lng": "136.921215",
+        "name": "志賀本通"
+      },
+      {
+        "id": "STN_NAGOYA_HEIAN_DORI",
+        "lat": "35.195885",
+        "lng": "136.929845",
+        "name": "平安通"
+      },
+      {
+        "id": "STN_NAGOYA_OZONE",
+        "lat": "35.192755",
+        "lng": "136.936175",
+        "name": "大曽根"
+      },
+      {
+        "id": "STN_NAGOYA_NAGOYA_DOME_MAE_YADA",
+        "lat": "35.190925",
+        "lng": "136.94399",
+        "name": "ナゴヤドーム前矢田"
+      },
+      {
+        "id": "STN_NAGOYA_SUNADABASHI",
+        "lat": "35.188705",
+        "lng": "136.954635",
+        "name": "砂田橋"
+      },
+      {
+        "id": "STN_NAGOYA_CHAYAGASAKA",
+        "lat": "35.18466",
+        "lng": "136.962125",
+        "name": "茶屋ヶ坂"
+      },
+      {
+        "id": "STN_NAGOYA_JIYUGAOKA",
+        "lat": "35.17539",
+        "lng": "136.966805",
+        "name": "自由ヶ丘"
+      },
+      {
+        "id": "STN_NAGOYA_NAGOYA_DAIGAKU",
+        "lat": "35.154554",
+        "lng": "136.966599",
+        "name": "名古屋大学"
+      },
+      {
+        "id": "STN_NAGOYA_YAGOTO_NITSUKI",
+        "lat": "35.144649",
+        "lng": "136.964898",
+        "name": "八事日赤"
+      },
+      {
+        "id": "STN_NAGOYA_YAGOTO",
+        "lat": "35.137015",
+        "lng": "136.963785",
+        "name": "八事"
+      },
+      {
+        "id": "STN_NAGOYA_SOGO_REHABILITATION_CENTER",
+        "lat": "35.130603",
+        "lng": "136.954518",
+        "name": "総合リハビリセンター"
+      },
+      {
+        "id": "STN_NAGOYA_MIZUHO_UNDOJO_HIGASHI",
+        "lat": "35.123008",
+        "lng": "136.948595",
+        "name": "瑞穂運動場東"
+      },
+      {
+        "id": "STN_NAGOYA_ARATAMABASHI",
+        "lat": "35.11773",
+        "lng": "136.93722",
+        "name": "新瑞橋"
+      },
+      {
+        "id": "STN_NAGOYA_MYOON_DORI",
+        "lat": "35.11712",
+        "lng": "136.92958",
+        "name": "妙音通"
+      },
+      {
+        "id": "STN_NAGOYA_HORITA",
+        "lat": "35.116455",
+        "lng": "136.92146",
+        "name": "堀田"
+      },
+      {
+        "id": "STN_NAGOYA_ATSUTA_JINGU_TEMMACHO",
+        "lat": "35.120833",
+        "lng": "136.910556",
+        "name": "熱田神宮伝馬町"
+      },
+      {
+        "id": "STN_NAGOYA_ATSUTA_JINGU_NISHI",
+        "lat": "35.1279",
+        "lng": "136.9067",
+        "name": "熱田神宮西"
+      },
+      {
+        "id": "STN_NAGOYA_NISHI_TAKAKURA",
+        "lat": "35.134865",
+        "lng": "136.901805",
+        "name": "西高蔵"
+      },
+      {
+        "id": "STN_NAGOYA_HIBINO",
+        "lat": "35.132765",
+        "lng": "136.89309",
+        "name": "日比野"
+      },
+      {
+        "id": "STN_NAGOYA_ROKUBAN_CHO",
+        "lat": "35.124105",
+        "lng": "136.88839",
+        "name": "六番町"
+      },
+      {
+        "id": "STN_NAGOYA_TOKAI_DORI",
+        "lat": "35.113475",
+        "lng": "136.886045",
+        "name": "東海通"
+      },
+      {
+        "id": "STN_NAGOYA_MINATO_KUYAKUSHO",
+        "lat": "35.106505",
+        "lng": "136.884795",
+        "name": "港区役所"
+      },
+      {
+        "id": "STN_NAGOYA_TSUKIGUCHI",
+        "lat": "35.099945",
+        "lng": "136.8832",
+        "name": "築地口"
+      },
+      {
+        "id": "STN_NAGOYA_NAGOYA_KO",
+        "lat": "35.093205",
+        "lng": "136.881915",
+        "name": "名古屋港"
+      },
+      {
+        "id": "STN_NAGOYA_KAMI_OTAI",
+        "lat": "35.2233",
+        "lng": "136.877015",
+        "name": "上小田井"
+      },
+      {
+        "id": "STN_NAGOYA_SHONAI_RYOKUCHI_KOEN",
+        "lat": "35.215025",
+        "lng": "136.886615",
+        "name": "庄内緑地公園"
+      },
+      {
+        "id": "STN_NAGOYA_SHONAI_DORI",
+        "lat": "35.203815",
+        "lng": "136.891005",
+        "name": "庄内通"
+      },
+      {
+        "id": "STN_NAGOYA_JOSHIN",
+        "lat": "35.192095",
+        "lng": "136.89079",
+        "name": "浄心"
+      },
+      {
+        "id": "STN_NAGOYA_SENGEMMACHI",
+        "lat": "35.183315",
+        "lng": "136.890205",
+        "name": "浅間町"
+      },
+      {
+        "id": "STN_NAGOYA_MARUNOUCHI",
+        "lat": "35.174925",
+        "lng": "136.896735",
+        "name": "丸の内"
+      },
+      {
+        "id": "STN_NAGOYA_OSU_KANNON",
+        "lat": "35.16141",
+        "lng": "136.898075",
+        "name": "大須観音"
+      },
+      {
+        "id": "STN_NAGOYA_TSURUMAI",
+        "lat": "35.156155",
+        "lng": "136.91525",
+        "name": "鶴舞"
+      },
+      {
+        "id": "STN_NAGOYA_ARAHATA",
+        "lat": "35.1496",
+        "lng": "136.92523",
+        "name": "荒畑"
+      },
+      {
+        "id": "STN_NAGOYA_GOKISO",
+        "lat": "35.149469",
+        "lng": "136.93402",
+        "name": "御器所"
+      },
+      {
+        "id": "STN_NAGOYA_KAWANA",
+        "lat": "35.148715",
+        "lng": "136.94826",
+        "name": "川名"
+      },
+      {
+        "id": "STN_NAGOYA_IRINAKA",
+        "lat": "35.14387",
+        "lng": "136.95454",
+        "name": "いりなか"
+      },
+      {
+        "id": "STN_NAGOYA_SHIOGAMAGUCHI",
+        "lat": "35.13243",
+        "lng": "136.97863",
+        "name": "塩釜口"
+      },
+      {
+        "id": "STN_NAGOYA_UEDA",
+        "lat": "35.1285",
+        "lng": "136.988555",
+        "name": "植田"
+      },
+      {
+        "id": "STN_NAGOYA_HARA",
+        "lat": "35.126027",
+        "lng": "136.997109",
+        "name": "原"
+      },
+      {
+        "id": "STN_NAGOYA_HIRABARI",
+        "lat": "35.1227",
+        "lng": "137.007215",
+        "name": "平針"
+      },
+      {
+        "id": "STN_NAGOYA_AKAIKE",
+        "lat": "35.121035",
+        "lng": "137.018205",
+        "name": "赤池"
+      },
+      {
+        "id": "STN_NAGOYA_TAIKO_DORI",
+        "lat": "35.16763",
+        "lng": "136.873385",
+        "name": "太閤通"
+      },
+      {
+        "id": "STN_NAGOYA_KOKUSAI_CENTER",
+        "lat": "35.172055",
+        "lng": "136.888975",
+        "name": "国際センター"
+      },
+      {
+        "id": "STN_NAGOYA_TAKAAOKA",
+        "lat": "35.174165",
+        "lng": "136.916185",
+        "name": "高岳"
+      },
+      {
+        "id": "STN_NAGOYA_KURUMAMICHI",
+        "lat": "35.173405",
+        "lng": "136.92949",
+        "name": "車道"
+      },
+      {
+        "id": "STN_NAGOYA_FUKIAGE",
+        "lat": "35.158805",
+        "lng": "136.93522",
+        "name": "吹上"
+      },
+      {
+        "id": "STN_NAGOYA_SAKURAYAMA",
+        "lat": "35.13993",
+        "lng": "136.933321",
+        "name": "桜山"
+      },
+      {
+        "id": "STN_NAGOYA_MIZUHO_KUYAKUSHO",
+        "lat": "35.13203",
+        "lng": "136.93439",
+        "name": "瑞穂区役所"
+      },
+      {
+        "id": "STN_NAGOYA_MIZUHO_UNDOJO_NISHI",
+        "lat": "35.125095",
+        "lng": "136.935435",
+        "name": "瑞穂運動場西"
+      },
+      {
+        "id": "STN_NAGOYA_SAKURA_HONMACHI",
+        "lat": "35.109315",
+        "lng": "136.93684",
+        "name": "桜本町"
+      },
+      {
+        "id": "STN_NAGOYA_TSURUSATO",
+        "lat": "35.105565",
+        "lng": "136.9442",
+        "name": "鶴里"
+      },
+      {
+        "id": "STN_NAGOYA_NONAMI",
+        "lat": "35.102605",
+        "lng": "136.954895",
+        "name": "野並"
+      },
+      {
+        "id": "STN_NAGOYA_NARUKO_KITA",
+        "lat": "35.102695",
+        "lng": "136.966099",
+        "name": "鳴子北"
+      },
+      {
+        "id": "STN_NAGOYA_AIOIYAMA",
+        "lat": "35.102514",
+        "lng": "136.976248",
+        "name": "相生山"
+      },
+      {
+        "id": "STN_NAGOYA_KAMISAWA",
+        "lat": "35.09867",
+        "lng": "136.989347",
+        "name": "神沢"
+      },
+      {
+        "id": "STN_NAGOYA_TOKUSHIGE",
+        "lat": "35.094903",
+        "lng": "136.997635",
+        "name": "徳重"
+      },
+      {
+        "id": "STN_NAGOYA_KAMIIIDA",
+        "lat": "35.2039406",
+        "lng": "136.92966469",
+        "name": "上飯田"
+      }
+    ]
+  }
+]

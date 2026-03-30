@@ -1,0 +1,206 @@
+[
+  {
+    "categories": "",
+    "company_id": "AOIMORI",
+    "company_name": "青い森鉄道",
+    "lines": [
+      {
+        "id": "AOIMORI_LINE",
+        "name": "青い森鉄道線",
+        "sequence": [
+          "STN_AOIMORI_METOKI",
+          "STN_AOIMORI_SANNOHE",
+          "STN_AOIMORI_SUWANOTAIRA",
+          "STN_AOIMORI_KENYOSHI",
+          "STN_AOIMORI_TOMABECHI",
+          "STN_AOIMORI_KITATAKAIWA",
+          "STN_AOIMORI_HACHINOHE",
+          "STN_AOIMORI_MUTSU_ICHIKAWA",
+          "STN_AOIMORI_SHIMODA",
+          "STN_AOIMORI_MUKAIYAMA",
+          "STN_AOIMORI_MISAWA",
+          "STN_AOIMORI_KOGAWARA",
+          "STN_AOIMORI_KAMIKITACHO",
+          "STN_AOIMORI_OTTOMO",
+          "STN_AOIMORI_CHIBIKI",
+          "STN_AOIMORI_NOHEJI",
+          "STN_AOIMORI_KARIBASAWA",
+          "STN_AOIMORI_SHIMIZUGAWA",
+          "STN_AOIMORI_KOMINATO",
+          "STN_AOIMORI_NISHI_HIRANAI",
+          "STN_AOIMORI_ASAMUSHI_ONSEN",
+          "STN_AOIMORI_NOUCHI",
+          "STN_AOIMORI_YADAMAE",
+          "STN_AOIMORI_KOYANAGI",
+          "STN_AOIMORI_HIGASHI_AOMORI",
+          "STN_AOIMORI_TSUTSUI",
+          "STN_AOIMORI_AOMORI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_AOIMORI_METOKI",
+        "lat": "40.35205",
+        "lng": "141.289575",
+        "name": "目時"
+      },
+      {
+        "id": "STN_AOIMORI_SANNOHE",
+        "lat": "40.395745",
+        "lng": "141.27316",
+        "name": "三戸"
+      },
+      {
+        "id": "STN_AOIMORI_SUWANOTAIRA",
+        "lat": "40.414886",
+        "lng": "141.304664",
+        "name": "諏訪ノ平"
+      },
+      {
+        "id": "STN_AOIMORI_KENYOSHI",
+        "lat": "40.44897",
+        "lng": "141.34673",
+        "name": "剣吉"
+      },
+      {
+        "id": "STN_AOIMORI_TOMABECHI",
+        "lat": "40.46692",
+        "lng": "141.37499",
+        "name": "苫米地"
+      },
+      {
+        "id": "STN_AOIMORI_KITATAKAIWA",
+        "lat": "40.475325",
+        "lng": "141.405765",
+        "name": "北高岩"
+      },
+      {
+        "id": "STN_AOIMORI_HACHINOHE",
+        "lat": "40.50919",
+        "lng": "141.43141",
+        "name": "八戸"
+      },
+      {
+        "id": "STN_AOIMORI_MUTSU_ICHIKAWA",
+        "lat": "40.563045",
+        "lng": "141.43906",
+        "name": "陸奥市川"
+      },
+      {
+        "id": "STN_AOIMORI_SHIMODA",
+        "lat": "40.591975",
+        "lng": "141.407735",
+        "name": "下田"
+      },
+      {
+        "id": "STN_AOIMORI_MUKAIYAMA",
+        "lat": "40.630235",
+        "lng": "141.37025",
+        "name": "向山"
+      },
+      {
+        "id": "STN_AOIMORI_MISAWA",
+        "lat": "40.669851",
+        "lng": "141.353628",
+        "name": "三沢"
+      },
+      {
+        "id": "STN_AOIMORI_KOGAWARA",
+        "lat": "40.709795",
+        "lng": "141.299945",
+        "name": "小川原"
+      },
+      {
+        "id": "STN_AOIMORI_KAMIKITACHO",
+        "lat": "40.733225",
+        "lng": "141.26449",
+        "name": "上北町"
+      },
+      {
+        "id": "STN_AOIMORI_OTTOMO",
+        "lat": "40.780115",
+        "lng": "141.213211",
+        "name": "乙供"
+      },
+      {
+        "id": "STN_AOIMORI_CHIBIKI",
+        "lat": "40.8045",
+        "lng": "141.15302",
+        "name": "千曳"
+      },
+      {
+        "id": "STN_AOIMORI_NOHEJI",
+        "lat": "40.855135",
+        "lng": "141.11964",
+        "name": "野辺地"
+      },
+      {
+        "id": "STN_AOIMORI_KARIBASAWA",
+        "lat": "40.90046",
+        "lng": "141.071205",
+        "name": "狩場沢"
+      },
+      {
+        "id": "STN_AOIMORI_SHIMIZUGAWA",
+        "lat": "40.9217",
+        "lng": "141.0248",
+        "name": "清水川"
+      },
+      {
+        "id": "STN_AOIMORI_KOMINATO",
+        "lat": "40.929645",
+        "lng": "140.954045",
+        "name": "小湊"
+      },
+      {
+        "id": "STN_AOIMORI_NISHI_HIRANAI",
+        "lat": "40.918151",
+        "lng": "140.913113",
+        "name": "西平内"
+      },
+      {
+        "id": "STN_AOIMORI_ASAMUSHI_ONSEN",
+        "lat": "40.891405",
+        "lng": "140.86248",
+        "name": "浅虫温泉"
+      },
+      {
+        "id": "STN_AOIMORI_NOUCHI",
+        "lat": "40.846079",
+        "lng": "140.816896",
+        "name": "野内"
+      },
+      {
+        "id": "STN_AOIMORI_YADAMAE",
+        "lat": "40.833785",
+        "lng": "140.80711",
+        "name": "矢田前"
+      },
+      {
+        "id": "STN_AOIMORI_KOYANAGI",
+        "lat": "40.81793",
+        "lng": "140.797705",
+        "name": "小柳"
+      },
+      {
+        "id": "STN_AOIMORI_HIGASHI_AOMORI",
+        "lat": "40.81052",
+        "lng": "140.78337",
+        "name": "東青森"
+      },
+      {
+        "id": "STN_AOIMORI_TSUTSUI",
+        "lat": "40.80572436",
+        "lng": "140.76944231",
+        "name": "筒井"
+      },
+      {
+        "id": "STN_AOIMORI_AOMORI",
+        "lat": "40.83032",
+        "lng": "140.73465",
+        "name": "青森"
+      }
+    ]
+  }
+]

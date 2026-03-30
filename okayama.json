@@ -1,0 +1,136 @@
+[
+  {
+    "categories": "",
+    "company_id": "OKAYAMA",
+    "company_name": "岡山電気軌道",
+    "lines": [
+      {
+        "id": "OKAYAMA_HIGASHIYAMA",
+        "name": "東山本線",
+        "sequence": [
+          "STN_OKAYAMA_OKAYAMA_EKIMAE",
+          "STN_OKAYAMA_NISHIGAWA_RYOKUDO_KOEN",
+          "STN_OKAYAMA_YANAGAWA",
+          "STN_OKAYAMA_SHIROSHITA",
+          "STN_OKAYAMA_KENCHO_DORI",
+          "STN_OKAYAMA_SAIDAIJICHO",
+          "STN_OKAYAMA_KOBASHI",
+          "STN_OKAYAMA_CHUNAGON",
+          "STN_OKAYAMA_KADOTAYASHIKI",
+          "STN_OKAYAMA_HIGASHIYAMA"
+        ]
+      },
+      {
+        "id": "OKAYAMA_SEIKIBASHI",
+        "name": "清輝橋線",
+        "sequence": [
+          "STN_OKAYAMA_YANAGAWA",
+          "STN_OKAYAMA_YUBINKYOKUMAE",
+          "STN_OKAYAMA_TAMACHI",
+          "STN_OKAYAMA_SHINSAIDAIJICHOSUJI",
+          "STN_OKAYAMA_DAIUNJIMAE",
+          "STN_OKAYAMA_HIGASHICHUOCHI",
+          "STN_OKAYAMA_SEIKIBASHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_OKAYAMA_OKAYAMA_EKIMAE",
+        "lat": "34.66554338",
+        "lng": "133.91981104",
+        "name": "岡山駅前"
+      },
+      {
+        "id": "STN_OKAYAMA_NISHIGAWA_RYOKUDO_KOEN",
+        "lat": "34.66554",
+        "lng": "133.923285",
+        "name": "西川緑道公園"
+      },
+      {
+        "id": "STN_OKAYAMA_YANAGAWA",
+        "lat": "34.66563602",
+        "lng": "133.92570619",
+        "name": "柳川"
+      },
+      {
+        "id": "STN_OKAYAMA_SHIROSHITA",
+        "lat": "34.66565034",
+        "lng": "133.92980945",
+        "name": "城下"
+      },
+      {
+        "id": "STN_OKAYAMA_KENCHO_DORI",
+        "lat": "34.66266511",
+        "lng": "133.93044481",
+        "name": "県庁通り"
+      },
+      {
+        "id": "STN_OKAYAMA_SAIDAIJICHO",
+        "lat": "34.65864837",
+        "lng": "133.93051705",
+        "name": "西大寺町"
+      },
+      {
+        "id": "STN_OKAYAMA_KOBASHI",
+        "lat": "34.65767387",
+        "lng": "133.93645511",
+        "name": "小橋"
+      },
+      {
+        "id": "STN_OKAYAMA_CHUNAGON",
+        "lat": "34.65756691",
+        "lng": "133.93753869",
+        "name": "中納言"
+      },
+      {
+        "id": "STN_OKAYAMA_KADOTAYASHIKI",
+        "lat": "34.65621209",
+        "lng": "133.93902682",
+        "name": "門田屋敷"
+      },
+      {
+        "id": "STN_OKAYAMA_HIGASHIYAMA",
+        "lat": "34.65622418",
+        "lng": "133.94286943",
+        "name": "東山"
+      },
+      {
+        "id": "STN_OKAYAMA_YUBINKYOKUMAE",
+        "lat": "34.66279581",
+        "lng": "133.92622633",
+        "name": "郵便局前"
+      },
+      {
+        "id": "STN_OKAYAMA_TAMACHI",
+        "lat": "34.66081116",
+        "lng": "133.92626968",
+        "name": "田町"
+      },
+      {
+        "id": "STN_OKAYAMA_SHINSAIDAIJICHOSUJI",
+        "lat": "34.65872",
+        "lng": "133.92633",
+        "name": "新西大寺町筋"
+      },
+      {
+        "id": "STN_OKAYAMA_DAIUNJIMAE",
+        "lat": "34.65664056",
+        "lng": "133.92629855",
+        "name": "大雲寺前"
+      },
+      {
+        "id": "STN_OKAYAMA_HIGASHICHUOCHI",
+        "lat": "34.65469162",
+        "lng": "133.92619743",
+        "name": "東中央町"
+      },
+      {
+        "id": "STN_OKAYAMA_SEIKIBASHI",
+        "lat": "34.65183943",
+        "lng": "133.92583625",
+        "name": "清輝橋"
+      }
+    ]
+  }
+]
