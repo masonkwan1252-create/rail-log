@@ -1,0 +1,284 @@
+[
+  {
+    "categories": "",
+    "company_id": "KAGOSHIMA",
+    "company_name": "鹿児島市電",
+    "lines": [
+      {
+        "id": "KAGOSHIMA_1",
+        "name": "1系統",
+        "sequence": [
+          "STN_KAGOSHIMA_KAGOSHIMA_EKI_MAE",
+          "STN_KAGOSHIMA_SAKURAJIMA_SAMBASHI_DORI",
+          "STN_KAGOSHIMA_SUIZOKUKAN_GUCHI",
+          "STN_KAGOSHIMA_SHIYAKUSHO_MAE",
+          "STN_KAGOSHIMA_ASAHIDORI",
+          "STN_KAGOSHIMA_IZURO_DORI",
+          "STN_KAGOSHIMA_TEMMONKAN_DORI",
+          "STN_KAGOSHIMA_TAKAMI_BABA",
+          "STN_KAGOSHIMA_KOTO_CHUGAKKO_MAE",
+          "STN_KAGOSHIMA_SHINYASHIKI",
+          "STN_KAGOSHIMA_TAKENOHASHI",
+          "STN_KAGOSHIMA_NICHUDORI",
+          "STN_KAGOSHIMA_ARATA_HACHIMAN",
+          "STN_KAGOSHIMA_KISHABA",
+          "STN_KAGOSHIMA_KAMO_IKE",
+          "STN_KAGOSHIMA_KORIMOTO",
+          "STN_KAGOSHIMA_KORIMOTO_SOUTH",
+          "STN_KAGOSHIMA_NAMIDABASHI",
+          "STN_KAGOSHIMA_MINAMI_KAGOSHIMA_EKI_MAE",
+          "STN_KAGOSHIMA_NIKENJAYA",
+          "STN_KAGOSHIMA_USUKI_ITCHOME",
+          "STN_KAGOSHIMA_WAKIDA",
+          "STN_KAGOSHIMA_SASANUKI",
+          "STN_KAGOSHIMA_KAMISHIOYA",
+          "STN_KAGOSHIMA_TANIYAMA"
+        ]
+      },
+      {
+        "id": "KAGOSHIMA_2",
+        "name": "2系統",
+        "sequence": [
+          "STN_KAGOSHIMA_KAGOSHIMA_EKI_MAE",
+          "STN_KAGOSHIMA_SAKURAJIMA_SAMBASHI_DORI",
+          "STN_KAGOSHIMA_SUIZOKUKAN_GUCHI",
+          "STN_KAGOSHIMA_SHIYAKUSHO_MAE",
+          "STN_KAGOSHIMA_ASAHIDORI",
+          "STN_KAGOSHIMA_IZURO_DORI",
+          "STN_KAGOSHIMA_TEMMONKAN_DORI",
+          "STN_KAGOSHIMA_TAKAMI_BABA",
+          "STN_KAGOSHIMA_KAJIYACHO",
+          "STN_KAGOSHIMA_TAKAMIBASHI",
+          "STN_KAGOSHIMA_KAGOSHIMA_CHUO_EKI_MAE",
+          "STN_KAGOSHIMA_MIYAKODORI",
+          "STN_KAGOSHIMA_NAKASUDORI",
+          "STN_KAGOSHIMA_SHIRITSU_BYOIN_MAE",
+          "STN_KAGOSHIMA_SHINDEN_KOTSUKYOKU_MAE",
+          "STN_KAGOSHIMA_TOSO",
+          "STN_KAGOSHIMA_KOGAKUBU_MAE",
+          "STN_KAGOSHIMA_JUNSHIN_GAKUEN_MAE",
+          "STN_KAGOSHIMA_NAKAGORI",
+          "STN_KAGOSHIMA_KORIMOTO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KAGOSHIMA_KAGOSHIMA_EKI_MAE",
+        "lat": "31.60129057",
+        "lng": "130.56253207",
+        "name": "鹿児島駅前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SAKURAJIMA_SAMBASHI_DORI",
+        "lat": "31.600015",
+        "lng": "130.56099",
+        "name": "桜島桟橋通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SUIZOKUKAN_GUCHI",
+        "lat": "31.59868",
+        "lng": "130.55938",
+        "name": "水族館口"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SHIYAKUSHO_MAE",
+        "lat": "31.59681033",
+        "lng": "130.5578998",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_ASAHIDORI",
+        "lat": "31.59475463",
+        "lng": "130.55727192",
+        "name": "朝日通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_IZURO_DORI",
+        "lat": "31.59156",
+        "lng": "130.55734",
+        "name": "いづろ通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_TEMMONKAN_DORI",
+        "lat": "31.590515",
+        "lng": "130.554745",
+        "name": "天文館通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_TAKAMI_BABA",
+        "lat": "31.58828238",
+        "lng": "130.55126869",
+        "name": "高見馬場"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KOTO_CHUGAKKO_MAE",
+        "lat": "31.58593787",
+        "lng": "130.55294697",
+        "name": "甲東中学校前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SHINYASHIKI",
+        "lat": "31.58334717",
+        "lng": "130.55389561",
+        "name": "新屋敷"
+      },
+      {
+        "id": "STN_KAGOSHIMA_TAKENOHASHI",
+        "lat": "31.57946",
+        "lng": "130.55397",
+        "name": "武之橋"
+      },
+      {
+        "id": "STN_KAGOSHIMA_NICHUDORI",
+        "lat": "31.57753708",
+        "lng": "130.55376992",
+        "name": "二中通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_ARATA_HACHIMAN",
+        "lat": "31.57360572",
+        "lng": "130.55300257",
+        "name": "荒田八幡"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KISHABA",
+        "lat": "31.56960082",
+        "lng": "130.55202617",
+        "name": "騎射場"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KAMO_IKE",
+        "lat": "31.56524283",
+        "lng": "130.55046379",
+        "name": "鴨池"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KORIMOTO",
+        "lat": "31.56298491",
+        "lng": "130.54941775",
+        "name": "郡元"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KORIMOTO_SOUTH",
+        "lat": "31.562028",
+        "lng": "130.548742",
+        "name": "郡元_南側"
+      },
+      {
+        "id": "STN_KAGOSHIMA_NAMIDABASHI",
+        "lat": "31.55951",
+        "lng": "130.546945",
+        "name": "涙橋"
+      },
+      {
+        "id": "STN_KAGOSHIMA_MINAMI_KAGOSHIMA_EKI_MAE",
+        "lat": "31.55533505",
+        "lng": "130.5441454",
+        "name": "南鹿児島駅前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_NIKENJAYA",
+        "lat": "31.5502045",
+        "lng": "130.54131441",
+        "name": "二軒茶屋"
+      },
+      {
+        "id": "STN_KAGOSHIMA_USUKI_ITCHOME",
+        "lat": "31.54644914",
+        "lng": "130.53904135",
+        "name": "宇宿一丁目"
+      },
+      {
+        "id": "STN_KAGOSHIMA_WAKIDA",
+        "lat": "31.54450417",
+        "lng": "130.53788394",
+        "name": "脇田"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SASANUKI",
+        "lat": "31.53940927",
+        "lng": "130.53385412",
+        "name": "笹貫"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KAMISHIOYA",
+        "lat": "31.53555028",
+        "lng": "130.52965718",
+        "name": "上塩屋"
+      },
+      {
+        "id": "STN_KAGOSHIMA_TANIYAMA",
+        "lat": "31.530165",
+        "lng": "130.5235",
+        "name": "谷山"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KAJIYACHO",
+        "lat": "31.58747057",
+        "lng": "130.54842829",
+        "name": "加治屋町"
+      },
+      {
+        "id": "STN_KAGOSHIMA_TAKAMIBASHI",
+        "lat": "31.585736",
+        "lng": "130.54496865",
+        "name": "高見橋"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KAGOSHIMA_CHUO_EKI_MAE",
+        "lat": "31.58370386",
+        "lng": "130.54365732",
+        "name": "鹿児島中央駅前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_MIYAKODORI",
+        "lat": "31.58085304",
+        "lng": "130.54305764",
+        "name": "都通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_NAKASUDORI",
+        "lat": "31.57840498",
+        "lng": "130.54259731",
+        "name": "中洲通"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SHIRITSU_BYOIN_MAE",
+        "lat": "31.57494845",
+        "lng": "130.54153735",
+        "name": "市立病院前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_SHINDEN_KOTSUKYOKU_MAE",
+        "lat": "31.57315401",
+        "lng": "130.54074228",
+        "name": "神田（交通局前）"
+      },
+      {
+        "id": "STN_KAGOSHIMA_TOSO",
+        "lat": "31.57055142",
+        "lng": "130.54111889",
+        "name": "唐湊"
+      },
+      {
+        "id": "STN_KAGOSHIMA_KOGAKUBU_MAE",
+        "lat": "31.56838",
+        "lng": "130.541845",
+        "name": "工学部前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_JUNSHIN_GAKUEN_MAE",
+        "lat": "31.56667991",
+        "lng": "130.54282066",
+        "name": "純心学園前"
+      },
+      {
+        "id": "STN_KAGOSHIMA_NAKAGORI",
+        "lat": "31.56506371",
+        "lng": "130.54503831",
+        "name": "中郡"
+      }
+    ]
+  }
+]

@@ -1,0 +1,283 @@
+[
+  {
+    "categories": "",
+    "company_id": "FUKUOKA_SUBWAY",
+    "company_name": "福岡市営地下鉄",
+    "lines": [
+      {
+        "id": "FUKUOKA_SUBWAY_AIRPORT",
+        "name": "空港線",
+        "sequence": [
+          "STN_FUKUOKA_SUBWAY_MEINOHAMA",
+          "STN_FUKUOKA_SUBWAY_MUROMI",
+          "STN_FUKUOKA_SUBWAY_FUJISAKI",
+          "STN_FUKUOKA_SUBWAY_NISHIJIN",
+          "STN_FUKUOKA_SUBWAY_TOJINMACHI",
+          "STN_FUKUOKA_SUBWAY_OHORI_KOEN",
+          "STN_FUKUOKA_SUBWAY_AKASAKA",
+          "STN_FUKUOKA_SUBWAY_TENJIN",
+          "STN_FUKUOKA_SUBWAY_NAKASU_KAWABATA",
+          "STN_FUKUOKA_SUBWAY_GION",
+          "STN_FUKUOKA_SUBWAY_HAKATA",
+          "STN_FUKUOKA_SUBWAY_HIGASHI_HIE",
+          "STN_FUKUOKA_SUBWAY_FUKUOKA_AIRPORT"
+        ]
+      },
+      {
+        "id": "FUKUOKA_SUBWAY_HAKOZAKI",
+        "name": "箱崎線",
+        "sequence": [
+          "STN_FUKUOKA_SUBWAY_NAKASU_KAWABATA",
+          "STN_FUKUOKA_SUBWAY_GOFUKUMACHI",
+          "STN_FUKUOKA_SUBWAY_CHIYO_KENCHO_GUCHI",
+          "STN_FUKUOKA_SUBWAY_MAIDASHI_KYUDAI_BYOIN_MAE",
+          "STN_FUKUOKA_SUBWAY_HAKOZAKIMIYA_MAE",
+          "STN_FUKUOKA_SUBWAY_HAKOZAKI_KYUDAI_MAE",
+          "STN_FUKUOKA_SUBWAY_KAIZUKA"
+        ]
+      },
+      {
+        "id": "FUKUOKA_SUBWAY_NANAKUMA",
+        "name": "七隈線",
+        "sequence": [
+          "STN_FUKUOKA_SUBWAY_HASHIMOTO",
+          "STN_FUKUOKA_SUBWAY_JIROMARU",
+          "STN_FUKUOKA_SUBWAY_KAMO",
+          "STN_FUKUOKA_SUBWAY_NOKE",
+          "STN_FUKUOKA_SUBWAY_UMEBYASHI",
+          "STN_FUKUOKA_SUBWAY_FUKUDAI_MAE",
+          "STN_FUKUOKA_SUBWAY_NANAKUMA",
+          "STN_FUKUOKA_SUBWAY_KANYAMA",
+          "STN_FUKUOKA_SUBWAY_CHAYAMA",
+          "STN_FUKUOKA_SUBWAY_BEFU",
+          "STN_FUKUOKA_SUBWAY_ROPPONMATSU",
+          "STN_FUKUOKA_SUBWAY_SAKURAZAKA",
+          "STN_FUKUOKA_SUBWAY_YAKUIN_ODORI",
+          "STN_FUKUOKA_SUBWAY_YAKUIN",
+          "STN_FUKUOKA_SUBWAY_WATANABE_DORI",
+          "STN_FUKUOKA_SUBWAY_TENJIN_MINAMI",
+          "STN_FUKUOKA_SUBWAY_KUSHIDA_JINJA_MAE",
+          "STN_FUKUOKA_SUBWAY_HAKATA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_FUKUOKA_SUBWAY_MEINOHAMA",
+        "lat": "33.58370095",
+        "lng": "130.32510339",
+        "name": "姪浜"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_MUROMI",
+        "lat": "33.580675",
+        "lng": "130.33986",
+        "name": "室見"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_FUJISAKI",
+        "lat": "33.581349",
+        "lng": "130.348295",
+        "name": "藤崎"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_NISHIJIN",
+        "lat": "33.583765",
+        "lng": "130.359525",
+        "name": "西新"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_TOJINMACHI",
+        "lat": "33.5901",
+        "lng": "130.369939",
+        "name": "唐人町"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_OHORI_KOEN",
+        "lat": "33.589955",
+        "lng": "130.379615",
+        "name": "大濠公園"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_AKASAKA",
+        "lat": "33.589025",
+        "lng": "130.390515",
+        "name": "赤坂"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_TENJIN",
+        "lat": "33.59126",
+        "lng": "130.39863",
+        "name": "天神"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_NAKASU_KAWABATA",
+        "lat": "33.59461",
+        "lng": "130.406345",
+        "name": "中洲川端"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_GION",
+        "lat": "33.59407",
+        "lng": "130.414385",
+        "name": "祇園"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_HAKATA",
+        "lat": "33.590075",
+        "lng": "130.420745",
+        "name": "博多"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_HIGASHI_HIE",
+        "lat": "33.589765",
+        "lng": "130.43125",
+        "name": "東比恵"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_FUKUOKA_AIRPORT",
+        "lat": "33.597375",
+        "lng": "130.447975",
+        "name": "福岡空港"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_GOFUKUMACHI",
+        "lat": "33.597835",
+        "lng": "130.40957",
+        "name": "呉服町"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_CHIYO_KENCHO_GUCHI",
+        "lat": "33.60231",
+        "lng": "130.41416",
+        "name": "千代県庁口"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_MAIDASHI_KYUDAI_BYOIN_MAE",
+        "lat": "33.60962",
+        "lng": "130.419645",
+        "name": "馬出九大病院前"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_HAKOZAKIMIYA_MAE",
+        "lat": "33.61608",
+        "lng": "130.419365",
+        "name": "箱崎宮前"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_HAKOZAKI_KYUDAI_MAE",
+        "lat": "33.622015",
+        "lng": "130.421065",
+        "name": "箱崎九大前"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_KAIZUKA",
+        "lat": "33.631863",
+        "lng": "130.42559",
+        "name": "貝塚"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_HASHIMOTO",
+        "lat": "33.55534328",
+        "lng": "130.32085427",
+        "name": "橋本"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_JIROMARU",
+        "lat": "33.55241",
+        "lng": "130.329795",
+        "name": "次郎丸"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_KAMO",
+        "lat": "33.550475",
+        "lng": "130.337865",
+        "name": "賀茂"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_NOKE",
+        "lat": "33.54822",
+        "lng": "130.34673",
+        "name": "野芥"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_UMEBYASHI",
+        "lat": "33.545645",
+        "lng": "130.354785",
+        "name": "梅林"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_FUKUDAI_MAE",
+        "lat": "33.547455",
+        "lng": "130.36226",
+        "name": "福大前"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_NANAKUMA",
+        "lat": "33.55293",
+        "lng": "130.3617",
+        "name": "七隈"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_KANYAMA",
+        "lat": "33.55961",
+        "lng": "130.361745",
+        "name": "金山"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_CHAYAMA",
+        "lat": "33.566205",
+        "lng": "130.365465",
+        "name": "茶山"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_BEFU",
+        "lat": "33.574126",
+        "lng": "130.369591",
+        "name": "別府"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_ROPPONMATSU",
+        "lat": "33.5776",
+        "lng": "130.377385",
+        "name": "六本松"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_SAKURAZAKA",
+        "lat": "33.57725",
+        "lng": "130.38713",
+        "name": "桜坂"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_YAKUIN_ODORI",
+        "lat": "33.580555",
+        "lng": "130.396655",
+        "name": "薬院大通"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_YAKUIN",
+        "lat": "33.581755",
+        "lng": "130.4022",
+        "name": "薬院"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_WATANABE_DORI",
+        "lat": "33.584065",
+        "lng": "130.404955",
+        "name": "渡辺通"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_TENJIN_MINAMI",
+        "lat": "33.58871446",
+        "lng": "130.40275924",
+        "name": "天神南"
+      },
+      {
+        "id": "STN_FUKUOKA_SUBWAY_KUSHIDA_JINJA_MAE",
+        "lat": "33.59129827",
+        "lng": "130.41161188",
+        "name": "櫛田神社前"
+      }
+    ]
+  }
+]

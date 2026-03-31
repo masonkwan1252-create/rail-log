@@ -1,0 +1,241 @@
+[
+  {
+    "categories": "",
+    "company_id": "KYOTO_SUBWAY",
+    "company_name": "京都市営地下鉄",
+    "lines": [
+      {
+        "id": "KYOTO_SUBWAY_KARASUMA",
+        "name": "烏丸線",
+        "sequence": [
+          "STN_KYOTO_SUBWAY_KOKUSAI_KAIKAN",
+          "STN_KYOTO_SUBWAY_MATSUGASAKI",
+          "STN_KYOTO_SUBWAY_KITAYAMA",
+          "STN_KYOTO_SUBWAY_KITAOJI",
+          "STN_KYOTO_SUBWAY_KURAMAGUCHI",
+          "STN_KYOTO_SUBWAY_IMADEGAWA",
+          "STN_KYOTO_SUBWAY_MARUTAMACHI",
+          "STN_KYOTO_SUBWAY_KARASUMA_OIKE",
+          "STN_KYOTO_SUBWAY_SHIJO",
+          "STN_KYOTO_SUBWAY_GOJO",
+          "STN_KYOTO_SUBWAY_KYOTO",
+          "STN_KYOTO_SUBWAY_KUJO",
+          "STN_KYOTO_SUBWAY_JUJO",
+          "STN_KYOTO_SUBWAY_KUINABASHI",
+          "STN_KYOTO_SUBWAY_TAKEDA"
+        ]
+      },
+      {
+        "id": "KYOTO_SUBWAY_TOZAI",
+        "name": "東西線",
+        "sequence": [
+          "STN_KYOTO_SUBWAY_ROKUJIZO",
+          "STN_KYOTO_SUBWAY_ISHIDA",
+          "STN_KYOTO_SUBWAY_DAIGO",
+          "STN_KYOTO_SUBWAY_ONO",
+          "STN_KYOTO_SUBWAY_NAGITSUJI",
+          "STN_KYOTO_SUBWAY_HIGASHINO",
+          "STN_KYOTO_SUBWAY_YAMASHINA",
+          "STN_KYOTO_SUBWAY_MISASAGI",
+          "STN_KYOTO_SUBWAY_KEAGE",
+          "STN_KYOTO_SUBWAY_HIGASHIYAMA",
+          "STN_KYOTO_SUBWAY_SANJO_KEIHAN",
+          "STN_KYOTO_SUBWAY_KYOTO_SHIYAKUSHO_MAE",
+          "STN_KYOTO_SUBWAY_KARASUMA_OIKE",
+          "STN_KYOTO_SUBWAY_NIJO_JO_MAE",
+          "STN_KYOTO_SUBWAY_NIJO",
+          "STN_KYOTO_SUBWAY_NISHIOJI_OIKE",
+          "STN_KYOTO_SUBWAY_UZUMASA_TENJINGAWA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KYOTO_SUBWAY_KOKUSAI_KAIKAN",
+        "lat": "35.062876",
+        "lng": "135.785082",
+        "name": "国際会館"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_MATSUGASAKI",
+        "lat": "35.0516",
+        "lng": "135.776775",
+        "name": "松ヶ崎"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KITAYAMA",
+        "lat": "35.051261",
+        "lng": "135.76561",
+        "name": "北山"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KITAOJI",
+        "lat": "35.04435",
+        "lng": "135.75838",
+        "name": "北大路"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KURAMAGUCHI",
+        "lat": "35.03719",
+        "lng": "135.75933",
+        "name": "鞍馬口"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_IMADEGAWA",
+        "lat": "35.02992",
+        "lng": "135.75934",
+        "name": "今出川"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_MARUTAMACHI",
+        "lat": "35.016195",
+        "lng": "135.759502",
+        "name": "丸太町"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KARASUMA_OIKE",
+        "lat": "35.00999",
+        "lng": "135.75963",
+        "name": "烏丸御池"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_SHIJO",
+        "lat": "35.00275",
+        "lng": "135.759673",
+        "name": "四条"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_GOJO",
+        "lat": "34.99535",
+        "lng": "135.759734",
+        "name": "五条"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KYOTO",
+        "lat": "34.986565",
+        "lng": "135.75988",
+        "name": "京都"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KUJO",
+        "lat": "34.979085",
+        "lng": "135.75975",
+        "name": "九条"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_JUJO",
+        "lat": "34.972305",
+        "lng": "135.759731",
+        "name": "十条"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KUINABASHI",
+        "lat": "34.962565",
+        "lng": "135.757415",
+        "name": "くいな橋"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_TAKEDA",
+        "lat": "34.95599",
+        "lng": "135.75616",
+        "name": "竹田"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_ROKUJIZO",
+        "lat": "34.93356731",
+        "lng": "135.79629289",
+        "name": "六地蔵"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_ISHIDA",
+        "lat": "34.94055",
+        "lng": "135.803875",
+        "name": "石田"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_DAIGO",
+        "lat": "34.950434",
+        "lng": "135.810587",
+        "name": "醍醐"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_ONO",
+        "lat": "34.96122",
+        "lng": "135.812721",
+        "name": "小野"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_NAGITSUJI",
+        "lat": "34.972685",
+        "lng": "135.814916",
+        "name": "椥辻"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_HIGASHINO",
+        "lat": "34.982366",
+        "lng": "135.816826",
+        "name": "東野"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_YAMASHINA",
+        "lat": "34.99133",
+        "lng": "135.817355",
+        "name": "山科"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_MISASAGI",
+        "lat": "34.99598",
+        "lng": "135.801885",
+        "name": "御陵"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KEAGE",
+        "lat": "35.008144",
+        "lng": "135.790314",
+        "name": "蹴上"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_HIGASHIYAMA",
+        "lat": "35.00945",
+        "lng": "135.779851",
+        "name": "東山"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_SANJO_KEIHAN",
+        "lat": "35.009226",
+        "lng": "135.773775",
+        "name": "三条京阪"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_KYOTO_SHIYAKUSHO_MAE",
+        "lat": "35.01091",
+        "lng": "135.76895",
+        "name": "京都市役所前"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_NIJO_JO_MAE",
+        "lat": "35.011905",
+        "lng": "135.75039",
+        "name": "二条城前"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_NIJO",
+        "lat": "35.01202",
+        "lng": "135.74177",
+        "name": "二条"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_NISHIOJI_OIKE",
+        "lat": "35.010961",
+        "lng": "135.730617",
+        "name": "西大路御池"
+      },
+      {
+        "id": "STN_KYOTO_SUBWAY_UZUMASA_TENJINGAWA",
+        "lat": "35.01081965",
+        "lng": "135.7156029",
+        "name": "太秦天神川"
+      }
+    ]
+  }
+]

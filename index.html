@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.15</title>
+<title>鉄道手帳 RAIL LOG V0.16</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
@@ -19,15 +19,6 @@
     align-items: center;     /* 水平置中 */
     color: #001f5c;          /* 使用鐵道手帳同款藍色 */
     text-align: center;
-}
-/* 山手線專屬樣式 */
-    .yamanote-panel { justify-content: center; }
-    .yamanote-panel .sign-destination-text {
-        font-size: 48px;
-        letter-spacing: 20px;
-        margin-right: -20px; /* 抵消字距確保置中 */
-        transform: scaleX(1.2); /* 窄身字體效果 */
-        font-weight: 900; color: #001f5c; display: inline-block; white-space: nowrap;
 }
 	
 .out-of-service-panel .sign-destination-text {
@@ -48,7 +39,7 @@
     font-weight: 800;
     letter-spacing: 2px;
     margin-right: -2px;
-    margin-top: 2px;
+    margin-top: 1px;
 	transform: scaleY(1.1); 
 }
 
@@ -153,7 +144,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 500%; /* 🚩 V0.15 共有 5 塊幕，總高度設定為 500% */
+    height: 500%; /* 🚩 V0.16 共有 5 塊幕，總高度設定為 500% */
     transform: translateY(0);
 }
 
@@ -192,7 +183,7 @@ header {
     }
     
     .header-band {
-        background: #27420e; /* 🚩 V0.15 更新：山手線夜間色帶顏色 */
+        background: #27420e; /* 🚩 V0.16 更新：山手線夜間色帶顏色 */
     }
 
     .destination-sign-frame {
@@ -263,8 +254,8 @@ header {
     margin: 0; 
     line-height: 1;
     text-align-last: center; 
-    font-weight: 700;
-    letter-spacing: 0.35em; 
+    font-weight: 800;
+    letter-spacing: 0.3em; 
 }
 
 
@@ -456,7 +447,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             </div>
 
             <div class="sign-panel out-of-service-panel" style="gap:0;">
-                <div class="sign-destination-text" style="font-size: 28px; letter-spacing: 12px; margin-right: -12px;">山手線</div>
+                <div class="sign-destination-text" style="font-size: 32px; letter-spacing: 20px; margin-right: -20px;transform: scaleX(1.1);">山手線</div>
                 <div class="sign-yamanote-en">YAMANOTE LINE</div>
             </div>
             
@@ -477,7 +468,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.15</div>
+<div class="version-badge">V0.16</div>
 
 <div class="container">
 
@@ -638,7 +629,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </datalist>
 
 <script>
-// 🚩 V0.15 方向幕動畫控制
+// 🚩 V0.16 方向幕動畫控制
 let currentSignIndex = 0;
 const totalSigns = 5; // 共 5 格 (0 至 4)
 const rollContainer = document.getElementById('rollContainer');
@@ -770,7 +761,7 @@ async function loadData() {
         db.lines = [];
         db.stations = [];
 
-        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", "hisatsu.json", "kumamoto.json", "s_hokkaido.json", "aoimori.json", "konan.json", "tsugaru.json", "igr.json", "sanriku.json", "sat.json", "akita.json", "yuri_kogen.json", "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", "nagoya.json"]; 
+        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", "hisatsu.json", "kumamoto.json", "s_hokkaido.json", "aoimori.json", "konan.json", "tsugaru.json", "igr.json", "sanriku.json", "sat.json", "akita.json", "yuri_kogen.json", "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json"]; 
         
         for (let file of newCompanyFiles) {
             try {
@@ -841,7 +832,7 @@ function buildMaps() {
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
     fillList("lineList", db.lines.map(l => l.name));
-    // 🚩 V0.15: 預設載入所有車型，不受公司限制
+    // 🚩 V0.16: 預設載入所有車型，不受公司限制
     fillList("trainList", db.trains.map(t => t._display));
 }
 
@@ -863,27 +854,41 @@ function switchTab(tabId, navElement) {
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
     updateLineList(compName, "lineList");
-    // 🚩 V0.15 取消車型聯動篩選，確保轉公司都可以揀其他公司嘅車
+    // 🚩 V0.16 取消車型聯動篩選，確保轉公司都可以揀其他公司嘅車
     updateTrainList(); 
     updateStationLists();
 });
 
 // 🚩 新增：車型輸入框的「前綴匹配 (Starts with)」篩選邏輯
+// 🚩 效能優化版：車型輸入框的「防抖 (Debounce)」與「數量限制」邏輯
+let trainFilterTimeout = null;
+
 document.getElementById("train").addEventListener("input", function() {
-    const keyword = this.value.trim().toLowerCase(); // 轉換為小寫方便比對
+    clearTimeout(trainFilterTimeout); // 如果用家繼續打字，就取消上一次的倒數
+    
+    const keyword = this.value.trim().toLowerCase();
     const list = document.getElementById("trainList");
-    list.innerHTML = ""; // 先清空現存選單
 
-    // 如果有打字，就只保留開頭符合嘅車型；如果清空咗，就顯示全部
-    let filteredTrains = db.trains;
-    if (keyword) {
-        filteredTrains = db.trains.filter(t => 
-            t._display.toLowerCase().startsWith(keyword)
-        );
-    }
+    // 延遲 400 毫秒 (0.4秒) 才執行篩選，1秒手感會太遲鈍，0.4秒最順暢
+    trainFilterTimeout = setTimeout(() => {
+        let filtered = db.trains;
+        if (keyword) {
+            filtered = db.trains.filter(t => 
+                t._display.toLowerCase().startsWith(keyword)
+            );
+        }
 
-    // 將過濾後嘅車型加返入下拉選單
-    filteredTrains.forEach(t => list.appendChild(new Option(t._display)));
+        // 效能關鍵 1：限制最多只渲染 20 個選項 (打字越準，剩餘選項越少)
+        const displayLimit = 20;
+        const limitedResults = filtered.slice(0, displayLimit);
+
+        // 效能關鍵 2：使用 DocumentFragment 一次性打包更新，避免逐個加入導致畫面卡頓
+        const fragment = document.createDocumentFragment();
+        limitedResults.forEach(t => fragment.appendChild(new Option(t._display)));
+        
+        list.innerHTML = ""; // 清空舊列表
+        list.appendChild(fragment); // 一次過貼上新列表
+    }, 400); 
 });
 
 function updateLineList(compName, targetListId) {
@@ -895,7 +900,7 @@ function updateLineList(compName, targetListId) {
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
 }
 
-// 🚩 V0.15 更新：不再接收 compName 參數，強行顯示全部車型
+// 🚩 V0.16 更新：不再接收 compName 參數，強行顯示全部車型
 function updateTrainList() {
     const list = document.getElementById("trainList");
     if(!list) return;
@@ -1310,7 +1315,7 @@ function editTrip(i) {
     setVal("company", firstCompName);
     
     updateLineList(firstCompName, "lineList");
-    updateTrainList(); // V0.15 Update
+    updateTrainList(); // V0.16 Update
     setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
 
     document.getElementById("throughContainer").innerHTML = "";
@@ -1344,7 +1349,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.15.json"; a.click();
+    a.download = "rail-log-V0.16.json"; a.click();
 }
 
 function importData() {

@@ -1,0 +1,288 @@
+[
+  {
+    "categories": "",
+    "company_id": "KUMAMOTO_CITY",
+    "company_name": "熊本市電",
+    "lines": [
+      {
+        "id": "KUMAMOTO_CITY_A",
+        "name": "A系統",
+        "sequence": [
+          "STN_KUMAMOTO_CITY_TASAKIBASHI",
+          "STN_KUMAMOTO_CITY_NIHONGI_GUCHI",
+          "STN_KUMAMOTO_CITY_KUMAMOTO_EKI_MAE",
+          "STN_KUMAMOTO_CITY_GIONBASHI",
+          "STN_KUMAMOTO_CITY_GOFUKUMACHI",
+          "STN_KUMAMOTO_CITY_KAWARAMACHI",
+          "STN_KUMAMOTO_CITY_KEITOKUKO_MAE",
+          "STN_KUMAMOTO_CITY_KARASHIMACHO",
+          "STN_KUMAMOTO_CITY_HANABATACHO",
+          "STN_KUMAMOTO_CITY_KUMAMOTO_JO_SHIYAKUSHO_MAE",
+          "STN_KUMAMOTO_CITY_TORICHO_SUJI",
+          "STN_KUMAMOTO_CITY_SUIDOTCHO",
+          "STN_KUMAMOTO_CITY_KUHONJI_KOSATEN",
+          "STN_KUMAMOTO_CITY_KOTSUKYOKU_MAE",
+          "STN_KUMAMOTO_CITY_MISO_TENJIN_MAE",
+          "STN_KUMAMOTO_CITY_SHIN_SUIZENJI_EKI_MAE",
+          "STN_KUMAMOTO_CITY_KOKUBU",
+          "STN_KUMAMOTO_CITY_SUIZENJI_KOEN",
+          "STN_KUMAMOTO_CITY_SHIRITSU_TAIKUKAN_MAE",
+          "STN_KUMAMOTO_CITY_SHOGYO_KOKO_MAE",
+          "STN_KUMAMOTO_CITY_HATCHOBABA",
+          "STN_KUMAMOTO_CITY_KAMIMIZU_KOSATEN",
+          "STN_KUMAMOTO_CITY_KENGUNKO_MAE",
+          "STN_KUMAMOTO_CITY_DOSHOKUBUTSUEN_IRIGUCHI",
+          "STN_KUMAMOTO_CITY_KENGUN_KOBAN_MAE",
+          "STN_KUMAMOTO_CITY_KENGUNMACHI"
+        ]
+      },
+      {
+        "id": "KUMAMOTO_CITY_B",
+        "name": "B系統",
+        "sequence": [
+          "STN_KUMAMOTO_CITY_UAKAMAMOTO",
+          "STN_KUMAMOTO_CITY_KENRITSU_TAIKUKAN_MAE",
+          "STN_KUMAMOTO_CITY_HOMMYOJI_IRIGUCHI",
+          "STN_KUMAMOTO_CITY_SUGIDOMO",
+          "STN_KUMAMOTO_CITY_DANIYAMACHO",
+          "STN_KUMAMOTO_CITY_URUSANMACHI",
+          "STN_KUMAMOTO_CITY_SHIMMACHI",
+          "STN_KUMAMOTO_CITY_SEM",
+          "STN_KUMAMOTO_CITY_BABASHI",
+          "STN_KUMAMOTO_CITY_NISHI_KARASHIMACHO",
+          "STN_KUMAMOTO_CITY_KARASHIMACHO",
+          "STN_KUMAMOTO_CITY_HANABATACHO",
+          "STN_KUMAMOTO_CITY_KUMAMOTO_JO_SHIYAKUSHO_MAE",
+          "STN_KUMAMOTO_CITY_TORICHO_SUJI",
+          "STN_KUMAMOTO_CITY_SUIDOTCHO",
+          "STN_KUMAMOTO_CITY_KUHONJI_KOSATEN",
+          "STN_KUMAMOTO_CITY_KOTSUKYOKU_MAE",
+          "STN_KUMAMOTO_CITY_MISO_TENJIN_MAE",
+          "STN_KUMAMOTO_CITY_SHIN_SUIZENJI_EKI_MAE",
+          "STN_KUMAMOTO_CITY_KOKUBU",
+          "STN_KUMAMOTO_CITY_SUIZENJI_KOEN",
+          "STN_KUMAMOTO_CITY_SHIRITSU_TAIKUKAN_MAE",
+          "STN_KUMAMOTO_CITY_SHOGYO_KOKO_MAE",
+          "STN_KUMAMOTO_CITY_HATCHOBABA",
+          "STN_KUMAMOTO_CITY_KAMIMIZU_KOSATEN",
+          "STN_KUMAMOTO_CITY_KENGUNKO_MAE",
+          "STN_KUMAMOTO_CITY_DOSHOKUBUTSUEN_IRIGUCHI",
+          "STN_KUMAMOTO_CITY_KENGUN_KOBAN_MAE",
+          "STN_KUMAMOTO_CITY_KENGUNMACHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KUMAMOTO_CITY_TASAKIBASHI",
+        "lat": "32.78556435",
+        "lng": "130.68852526",
+        "name": "田崎橋"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_NIHONGI_GUCHI",
+        "lat": "32.78697855",
+        "lng": "130.68927446",
+        "name": "二本木口"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KUMAMOTO_EKI_MAE",
+        "lat": "32.79010396",
+        "lng": "130.69015089",
+        "name": "熊本駅前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_GIONBASHI",
+        "lat": "32.79287204",
+        "lng": "130.69477328",
+        "name": "祇園橋"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_GOFUKUMACHI",
+        "lat": "32.79558152",
+        "lng": "130.69686552",
+        "name": "呉服町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KAWARAMACHI",
+        "lat": "32.79490416",
+        "lng": "130.70083796",
+        "name": "河原町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KEITOKUKO_MAE",
+        "lat": "32.79704263",
+        "lng": "130.7024504",
+        "name": "慶徳校前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KARASHIMACHO",
+        "lat": "32.79894407",
+        "lng": "130.70500934",
+        "name": "辛島町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_HANABATACHO",
+        "lat": "32.80164122",
+        "lng": "130.70585817",
+        "name": "花畑町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KUMAMOTO_JO_SHIYAKUSHO_MAE",
+        "lat": "32.80389914",
+        "lng": "130.70792236",
+        "name": "熊本城・市役所前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_TORICHO_SUJI",
+        "lat": "32.80331684",
+        "lng": "130.70980275",
+        "name": "通町筋"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SUIDOTCHO",
+        "lat": "32.80243744",
+        "lng": "130.71246074",
+        "name": "水道町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KUHONJI_KOSATEN",
+        "lat": "32.79996612",
+        "lng": "130.71732317",
+        "name": "九品寺交差点"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KOTSUKYOKU_MAE",
+        "lat": "32.79811224",
+        "lng": "130.71938727",
+        "name": "交通局前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_MISO_TENJIN_MAE",
+        "lat": "32.79579485",
+        "lng": "130.72344479",
+        "name": "味噌天神前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SHIN_SUIZENJI_EKI_MAE",
+        "lat": "32.79377524",
+        "lng": "130.72665156",
+        "name": "新水前寺駅前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KOKUBU",
+        "lat": "32.79189759",
+        "lng": "130.72936582",
+        "name": "国府"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SUIZENJI_KOEN",
+        "lat": "32.78965149",
+        "lng": "130.7328576",
+        "name": "水前寺公園"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SHIRITSU_TAIKUKAN_MAE",
+        "lat": "32.78829769",
+        "lng": "130.73487635",
+        "name": "市立体育館前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SHOGYO_KOKO_MAE",
+        "lat": "32.78542178",
+        "lng": "130.73904644",
+        "name": "商業高校前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_HATCHOBABA",
+        "lat": "32.78372233",
+        "lng": "130.74201498",
+        "name": "八丁馬場"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KAMIMIZU_KOSATEN",
+        "lat": "32.78359248",
+        "lng": "130.74554662",
+        "name": "神水交差点"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KENGUNKO_MAE",
+        "lat": "32.78184",
+        "lng": "130.751105",
+        "name": "健軍校前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_DOSHOKUBUTSUEN_IRIGUCHI",
+        "lat": "32.78049074",
+        "lng": "130.75486179",
+        "name": "動植物園入口"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KENGUN_KOBAN_MAE",
+        "lat": "32.77951738",
+        "lng": "130.75744545",
+        "name": "健軍交番前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KENGUNMACHI",
+        "lat": "32.77841217",
+        "lng": "130.76106392",
+        "name": "健軍町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_UAKAMAMOTO",
+        "lat": "32.817427",
+        "lng": "130.699447",
+        "name": "上熊本"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_KENRITSU_TAIKUKAN_MAE",
+        "lat": "32.815055",
+        "lng": "130.69907",
+        "name": "県立体育館前"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_HOMMYOJI_IRIGUCHI",
+        "lat": "32.81375",
+        "lng": "130.69849",
+        "name": "本妙寺入口"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SUGIDOMO",
+        "lat": "32.81049",
+        "lng": "130.697105",
+        "name": "杉塘"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_DANIYAMACHO",
+        "lat": "32.806595",
+        "lng": "130.695505",
+        "name": "段山町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_URUSANMACHI",
+        "lat": "32.80379235",
+        "lng": "130.69696564",
+        "name": "蔚山町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SHIMMACHI",
+        "lat": "32.79963334",
+        "lng": "130.69734666",
+        "name": "新町"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_SEM BABASHI",
+        "lat": "32.79919363",
+        "lng": "130.69887354",
+        "name": "洗馬橋"
+      },
+      {
+        "id": "STN_KUMAMOTO_CITY_NISHI_KARASHIMACHO",
+        "lat": "32.79880147",
+        "lng": "130.70218179",
+        "name": "西辛島町"
+      }
+    ]
+  }
+]
