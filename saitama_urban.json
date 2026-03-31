@@ -1,0 +1,108 @@
+[
+  {
+    "categories": "",
+    "company_id": "SAITAMA_URBAN",
+    "company_name": "埼玉新都市交通",
+    "lines": [
+      {
+        "id": "SAITAMA_URBAN_NEW_SHUTTLE",
+        "name": "伊奈線",
+        "sequence": [
+          "STN_SAITAMA_URBAN_OMIYA",
+          "STN_SAITAMA_URBAN_TETSUDO_HAKUBUTSUKAN",
+          "STN_SAITAMA_URBAN_KAMOMIYA",
+          "STN_SAITAMA_URBAN_HIGASHI_MIYAHARA",
+          "STN_SAITAMA_URBAN_KONBA",
+          "STN_SAITAMA_URBAN_YOSHINOHARA",
+          "STN_SAITAMA_URBAN_HARAICHI",
+          "STN_SAITAMA_URBAN_SHONAN",
+          "STN_SAITAMA_URBAN_MARUYAMA",
+          "STN_SAITAMA_URBAN_SHIKU",
+          "STN_SAITAMA_URBAN_INA_CHUO",
+          "STN_SAITAMA_URBAN_HANUKI",
+          "STN_SAITAMA_URBAN_UCHIJUKU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SAITAMA_URBAN_OMIYA",
+        "lat": "35.90768677",
+        "lng": "139.62228708",
+        "name": "大宮"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_TETSUDO_HAKUBUTSUKAN",
+        "lat": "35.92013883",
+        "lng": "139.61765399",
+        "name": "鉄道博物館"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_KAMOMIYA",
+        "lat": "35.93580188",
+        "lng": "139.6167196",
+        "name": "加茂宮"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_HIGASHI_MIYAHARA",
+        "lat": "35.94269446",
+        "lng": "139.61808464",
+        "name": "東宮原"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_KONBA",
+        "lat": "35.95000683",
+        "lng": "139.61945191",
+        "name": "今羽"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_YOSHINOHARA",
+        "lat": "35.95722575",
+        "lng": "139.62083389",
+        "name": "吉野原"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_HARAICHI",
+        "lat": "35.96384",
+        "lng": "139.622185",
+        "name": "原市"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_SHONAN",
+        "lat": "35.971025",
+        "lng": "139.62352",
+        "name": "沼南"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_MARUYAMA",
+        "lat": "35.9796",
+        "lng": "139.62454",
+        "name": "丸山"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_SHIKU",
+        "lat": "35.991025",
+        "lng": "139.6222",
+        "name": "志久"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_INA_CHUO",
+        "lat": "35.999455",
+        "lng": "139.61703",
+        "name": "伊奈中央"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_HANUKI",
+        "lat": "36.00716",
+        "lng": "139.60852",
+        "name": "羽貫"
+      },
+      {
+        "id": "STN_SAITAMA_URBAN_UCHIJUKU",
+        "lat": "36.01383789",
+        "lng": "139.60008819",
+        "name": "内宿"
+      }
+    ]
+  }
+]

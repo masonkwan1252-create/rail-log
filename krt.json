@@ -1,0 +1,129 @@
+[
+  {
+    "categories": "",
+    "company_id": "KRT",
+    "company_name": "鹿島臨海鉄道",
+    "lines": [
+      {
+        "id": "KRT_OARAI_KASHIMA",
+        "name": "大洗鹿島線",
+        "sequence": [
+          "STN_KRT_MITO",
+          "STN_KRT_HIGASHI_MITO",
+          "STN_KRT_TSUNEZUMI",
+          "STN_KRT_OARAI",
+          "STN_KRT_HINUMA",
+          "STN_KRT_KASHIMA_ASAHI",
+          "STN_KRT_TOKUSHUKU",
+          "STN_KRT_SHIN_HOKOTA",
+          "STN_KRT_KITAURA_KOHAN",
+          "STN_KRT_TAIYO",
+          "STN_KRT_KASHIMANADA",
+          "STN_KRT_KASHIMA_ONO",
+          "STN_KRT_CHOJAGAHAMA_SHIOSAI_HAMANASU_KOEN_MAE",
+          "STN_KRT_KOYADAI",
+          "STN_KRT_KASHIMA_SOCCER_STADIUM",
+          "STN_KRT_KASHIMA_JINGU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KRT_MITO",
+        "lat": "36.37062544",
+        "lng": "140.47666119",
+        "name": "水戸"
+      },
+      {
+        "id": "STN_KRT_HIGASHI_MITO",
+        "lat": "36.361777",
+        "lng": "140.516061",
+        "name": "東水戸"
+      },
+      {
+        "id": "STN_KRT_TSUNEZUMI",
+        "lat": "36.34071",
+        "lng": "140.558915",
+        "name": "常澄"
+      },
+      {
+        "id": "STN_KRT_OARAI",
+        "lat": "36.315365",
+        "lng": "140.562665",
+        "name": "大洗"
+      },
+      {
+        "id": "STN_KRT_HINUMA",
+        "lat": "36.266054",
+        "lng": "140.527371",
+        "name": "涸沼"
+      },
+      {
+        "id": "STN_KRT_KASHIMA_ASAHI",
+        "lat": "36.224495",
+        "lng": "140.51264",
+        "name": "鹿島旭"
+      },
+      {
+        "id": "STN_KRT_TOKUSHUKU",
+        "lat": "36.19034",
+        "lng": "140.514475",
+        "name": "徳宿"
+      },
+      {
+        "id": "STN_KRT_SHIN_HOKOTA",
+        "lat": "36.152665",
+        "lng": "140.520395",
+        "name": "新鉾田"
+      },
+      {
+        "id": "STN_KRT_KITAURA_KOHAN",
+        "lat": "36.120465",
+        "lng": "140.536815",
+        "name": "北浦湖畔"
+      },
+      {
+        "id": "STN_KRT_TAIYO",
+        "lat": "36.108295",
+        "lng": "140.576465",
+        "name": "大洋"
+      },
+      {
+        "id": "STN_KRT_KASHIMANADA",
+        "lat": "36.075575",
+        "lng": "140.596815",
+        "name": "鹿島灘"
+      },
+      {
+        "id": "STN_KRT_KASHIMA_ONO",
+        "lat": "36.050715",
+        "lng": "140.60986",
+        "name": "鹿島大野"
+      },
+      {
+        "id": "STN_KRT_CHOJAGAHAMA_SHIOSAI_HAMANASU_KOEN_MAE",
+        "lat": "36.03129",
+        "lng": "140.618855",
+        "name": "長者ヶ浜潮騒はまなす公園前"
+      },
+      {
+        "id": "STN_KRT_KOYADAI",
+        "lat": "36.016925",
+        "lng": "140.625215",
+        "name": "荒野台"
+      },
+      {
+        "id": "STN_KRT_KASHIMA_SOCCER_STADIUM",
+        "lat": "35.993065",
+        "lng": "140.63591",
+        "name": "鹿島サッカースタジアム"
+      },
+      {
+        "id": "STN_KRT_KASHIMA_JINGU",
+        "lat": "35.970698",
+        "lng": "140.62593",
+        "name": "鹿島神宮"
+      }
+    ]
+  }
+]

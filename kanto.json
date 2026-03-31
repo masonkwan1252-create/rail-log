@@ -1,0 +1,219 @@
+[
+  {
+    "categories": "",
+    "company_id": "KANTO",
+    "company_name": "関東鉄道",
+    "lines": [
+      {
+        "id": "KANTO_JOSO",
+        "name": "常総線",
+        "sequence": [
+          "STN_KANTO_TORIDE",
+          "STN_KANTO_NISHI_TORIDE",
+          "STN_KANTO_TERAHARA",
+          "STN_KANTO_SHIN_TORIDE",
+          "STN_KANTO_YUMEMINO",
+          "STN_KANTO_INADOI",
+          "STN_KANTO_TOGASHIRA",
+          "STN_KANTO_MINAMI_MORIYA",
+          "STN_KANTO_MORIYA",
+          "STN_KANTO_SHIN_MORIYA",
+          "STN_KANTO_KOKINU",
+          "STN_KANTO_MITSUKAIDO",
+          "STN_KANTO_KITA_MITSUKAIDO",
+          "STN_KANTO_NAKATSUMA",
+          "STN_KANTO_MITSUMA",
+          "STN_KANTO_MINAMI_ISHIGE",
+          "STN_KANTO_ISHIGE",
+          "STN_KANTO_TAMAMURA",
+          "STN_KANTO_SODO",
+          "STN_KANTO_SHIMOZUMA",
+          "STN_KANTO_DAIHO",
+          "STN_KANTO_TOBANOE",
+          "STN_KANTO_KUROGO",
+          "STN_KANTO_OTAGO",
+          "STN_KANTO_SHIMODATE"
+        ]
+      },
+      {
+        "id": "KANTO_RYUGASAKI",
+        "name": "竜ヶ崎線",
+        "sequence": [
+          "STN_KANTO_SANUKI",
+          "STN_KANTO_IREJI",
+          "STN_KANTO_RYUGASAKI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KANTO_TORIDE",
+        "lat": "35.89719895",
+        "lng": "140.0636741",
+        "name": "取手"
+      },
+      {
+        "id": "STN_KANTO_NISHI_TORIDE",
+        "lat": "35.90859",
+        "lng": "140.059435",
+        "name": "西取手"
+      },
+      {
+        "id": "STN_KANTO_TERAHARA",
+        "lat": "35.91172",
+        "lng": "140.054805",
+        "name": "寺原"
+      },
+      {
+        "id": "STN_KANTO_SHIN_TORIDE",
+        "lat": "35.91766",
+        "lng": "140.04216",
+        "name": "新取手"
+      },
+      {
+        "id": "STN_KANTO_YUMEMINO",
+        "lat": "35.920913",
+        "lng": "140.035131",
+        "name": "ゆめみ野"
+      },
+      {
+        "id": "STN_KANTO_INADOI",
+        "lat": "35.92612",
+        "lng": "140.02269",
+        "name": "稲戸井"
+      },
+      {
+        "id": "STN_KANTO_TOGASHIRA",
+        "lat": "35.929365",
+        "lng": "140.0143",
+        "name": "戸頭"
+      },
+      {
+        "id": "STN_KANTO_MINAMI_MORIYA",
+        "lat": "35.93409",
+        "lng": "140.00276",
+        "name": "南守谷"
+      },
+      {
+        "id": "STN_KANTO_MORIYA",
+        "lat": "35.95082",
+        "lng": "139.99213",
+        "name": "守谷"
+      },
+      {
+        "id": "STN_KANTO_SHIN_MORIYA",
+        "lat": "35.966407",
+        "lng": "139.985776",
+        "name": "新守谷"
+      },
+      {
+        "id": "STN_KANTO_KOKINU",
+        "lat": "35.98114",
+        "lng": "139.98335",
+        "name": "小絹"
+      },
+      {
+        "id": "STN_KANTO_MITSUKAIDO",
+        "lat": "36.01782",
+        "lng": "139.991395",
+        "name": "水海道"
+      },
+      {
+        "id": "STN_KANTO_KITA_MITSUKAIDO",
+        "lat": "36.03209",
+        "lng": "139.992835",
+        "name": "北水海道"
+      },
+      {
+        "id": "STN_KANTO_NAKATSUMA",
+        "lat": "36.047275",
+        "lng": "139.990705",
+        "name": "中妻"
+      },
+      {
+        "id": "STN_KANTO_MITSUMA",
+        "lat": "36.07346",
+        "lng": "139.983105",
+        "name": "三妻"
+      },
+      {
+        "id": "STN_KANTO_MINAMI_ISHIGE",
+        "lat": "36.102315",
+        "lng": "139.973945",
+        "name": "南石下"
+      },
+      {
+        "id": "STN_KANTO_ISHIGE",
+        "lat": "36.117055",
+        "lng": "139.974385",
+        "name": "石下"
+      },
+      {
+        "id": "STN_KANTO_TAMAMURA",
+        "lat": "36.135515",
+        "lng": "139.969965",
+        "name": "玉村"
+      },
+      {
+        "id": "STN_KANTO_SODO",
+        "lat": "36.15362",
+        "lng": "139.97059",
+        "name": "宗道"
+      },
+      {
+        "id": "STN_KANTO_SHIMOZUMA",
+        "lat": "36.182285",
+        "lng": "139.96448",
+        "name": "下妻"
+      },
+      {
+        "id": "STN_KANTO_DAIHO",
+        "lat": "36.20316",
+        "lng": "139.97019",
+        "name": "大宝"
+      },
+      {
+        "id": "STN_KANTO_TOBANOE",
+        "lat": "36.22323",
+        "lng": "139.976285",
+        "name": "騰波ノ江"
+      },
+      {
+        "id": "STN_KANTO_KUROGO",
+        "lat": "36.2472",
+        "lng": "139.975",
+        "name": "黒子"
+      },
+      {
+        "id": "STN_KANTO_OTAGO",
+        "lat": "36.27827",
+        "lng": "139.959715",
+        "name": "大田郷"
+      },
+      {
+        "id": "STN_KANTO_SHIMODATE",
+        "lat": "36.303865",
+        "lng": "139.978205",
+        "name": "下館"
+      },
+      {
+        "id": "STN_KANTO_SANUKI",
+        "lat": "35.929405",
+        "lng": "140.13826",
+        "name": "佐貫"
+      },
+      {
+        "id": "STN_KANTO_IREJI",
+        "lat": "35.91907209",
+        "lng": "140.15727781",
+        "name": "入地"
+      },
+      {
+        "id": "STN_KANTO_RYUGASAKI",
+        "lat": "35.9086562",
+        "lng": "140.17894556",
+        "name": "竜ヶ崎"
+      }
+    ]
+  }
+]

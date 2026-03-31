@@ -1,0 +1,136 @@
+[
+  {
+    "categories": "",
+    "company_id": "WATARASE",
+    "company_name": "わたらせ渓谷鐵道",
+    "lines": [
+      {
+        "id": "WATARASE_KEISOKU",
+        "name": "わたらせ渓谷線",
+        "sequence": [
+          "STN_WATARASE_KIRYU",
+          "STN_WATARASE_SHIMOSHINDEN",
+          "STN_WATARASE_AIOI",
+          "STN_WATARASE_UNDO_KOEN",
+          "STN_WATARASE_OMAMA",
+          "STN_WATARASE_KAMIKANBAI",
+          "STN_WATARASE_MOTOJUKU",
+          "STN_WATARASE_MIZUNUMA",
+          "STN_WATARASE_HANAWA",
+          "STN_WATARASE_NAKANO",
+          "STN_WATARASE_KONAKA",
+          "STN_WATARASE_GODO",
+          "STN_WATARASE_SORI",
+          "STN_WATARASE_HARAMUKO",
+          "STN_WATARASE_TSUDO",
+          "STN_WATARASE_ASHIO",
+          "STN_WATARASE_MATO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_WATARASE_KIRYU",
+        "lat": "36.411109",
+        "lng": "139.333217",
+        "name": "桐生"
+      },
+      {
+        "id": "STN_WATARASE_SHIMOSHINDEN",
+        "lat": "36.40767772",
+        "lng": "139.31523497",
+        "name": "下新田"
+      },
+      {
+        "id": "STN_WATARASE_AIOI",
+        "lat": "36.410351",
+        "lng": "139.304364",
+        "name": "相老"
+      },
+      {
+        "id": "STN_WATARASE_UNDO_KOEN",
+        "lat": "36.42041",
+        "lng": "139.30086",
+        "name": "運動公園"
+      },
+      {
+        "id": "STN_WATARASE_OMAMA",
+        "lat": "36.434615",
+        "lng": "139.27755",
+        "name": "大間々"
+      },
+      {
+        "id": "STN_WATARASE_KAMIKANBAI",
+        "lat": "36.47007",
+        "lng": "139.257725",
+        "name": "上神梅"
+      },
+      {
+        "id": "STN_WATARASE_MOTOJUKU",
+        "lat": "36.481425",
+        "lng": "139.259345",
+        "name": "本宿"
+      },
+      {
+        "id": "STN_WATARASE_MIZUNUMA",
+        "lat": "36.49985",
+        "lng": "139.277595",
+        "name": "水沼"
+      },
+      {
+        "id": "STN_WATARASE_HANAWA",
+        "lat": "36.52083",
+        "lng": "139.3077",
+        "name": "花輪"
+      },
+      {
+        "id": "STN_WATARASE_NAKANO",
+        "lat": "36.524275",
+        "lng": "139.317165",
+        "name": "中野"
+      },
+      {
+        "id": "STN_WATARASE_KONAKA",
+        "lat": "36.535655",
+        "lng": "139.337795",
+        "name": "小中"
+      },
+      {
+        "id": "STN_WATARASE_GODO",
+        "lat": "36.537505",
+        "lng": "139.356565",
+        "name": "神戸"
+      },
+      {
+        "id": "STN_WATARASE_SORI",
+        "lat": "36.58063",
+        "lng": "139.396285",
+        "name": "沢入"
+      },
+      {
+        "id": "STN_WATARASE_HARAMUKO",
+        "lat": "36.61731",
+        "lng": "139.42053",
+        "name": "原向"
+      },
+      {
+        "id": "STN_WATARASE_TSUDO",
+        "lat": "36.636865",
+        "lng": "139.43965",
+        "name": "通洞"
+      },
+      {
+        "id": "STN_WATARASE_ASHIO",
+        "lat": "36.641915",
+        "lng": "139.447775",
+        "name": "足尾"
+      },
+      {
+        "id": "STN_WATARASE_MATO",
+        "lat": "36.65354",
+        "lng": "139.45009",
+        "name": "間藤"
+      }
+    ]
+  }
+]

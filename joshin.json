@@ -1,0 +1,164 @@
+[
+  {
+    "categories": "",
+    "company_id": "JOSHIN",
+    "company_name": "上信電鉄",
+    "lines": [
+      {
+        "id": "JOSHIN_LINE",
+        "name": "上信線",
+        "sequence": [
+          "STN_JOSHIN_TAKASAKI",
+          "STN_JOSHIN_MINAMI_TAKASAKI",
+          "STN_JOSHIN_SANO_NO_WATASHI",
+          "STN_JOSHIN_NEGOYA",
+          "STN_JOSHIN_TAKASAKI_SHOKA_DAIGAKU_MAE",
+          "STN_JOSHIN_YAMANA",
+          "STN_JOSHIN_NISHI_YAMANA",
+          "STN_JOSHIN_MANIWA",
+          "STN_JOSHIN_YOSHII",
+          "STN_JOSHIN_NISHI_YOSHII",
+          "STN_JOSHIN_JOSHU_NIIYA",
+          "STN_JOSHIN_JOSHU_FUKUSHIMA",
+          "STN_JOSHIN_HIGASHI_TOMIOKA",
+          "STN_JOSHIN_JOSHU_TOMIOKA",
+          "STN_JOSHIN_NISHI_TOMIOKA",
+          "STN_JOSHIN_JOSHU_NANAKAICHI",
+          "STN_JOSHIN_JOSHU_ICHINOMIYA",
+          "STN_JOSHIN_KANO_HARA",
+          "STN_JOSHIN_NANJAI",
+          "STN_JOSHIN_SENDAIRA",
+          "STN_JOSHIN_SHIMONITA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_JOSHIN_TAKASAKI",
+        "lat": "36.32041521",
+        "lng": "139.01221447",
+        "name": "高崎"
+      },
+      {
+        "id": "STN_JOSHIN_MINAMI_TAKASAKI",
+        "lat": "36.31242",
+        "lng": "139.012355",
+        "name": "南高崎"
+      },
+      {
+        "id": "STN_JOSHIN_SANO_NO_WATASHI",
+        "lat": "36.3024832",
+        "lng": "139.01826023",
+        "name": "佐野のわたし"
+      },
+      {
+        "id": "STN_JOSHIN_NEGOYA",
+        "lat": "36.29115",
+        "lng": "139.019055",
+        "name": "根小屋"
+      },
+      {
+        "id": "STN_JOSHIN_TAKASAKI_SHOKA_DAIGAKU_MAE",
+        "lat": "36.28446",
+        "lng": "139.029385",
+        "name": "高崎商科大学前"
+      },
+      {
+        "id": "STN_JOSHIN_YAMANA",
+        "lat": "36.277705",
+        "lng": "139.0381",
+        "name": "山名"
+      },
+      {
+        "id": "STN_JOSHIN_NISHI_YAMANA",
+        "lat": "36.27082",
+        "lng": "139.03207",
+        "name": "西山名"
+      },
+      {
+        "id": "STN_JOSHIN_MANIWA",
+        "lat": "36.26147",
+        "lng": "139.00964",
+        "name": "馬庭"
+      },
+      {
+        "id": "STN_JOSHIN_YOSHII",
+        "lat": "36.25609",
+        "lng": "138.98437",
+        "name": "吉井"
+      },
+      {
+        "id": "STN_JOSHIN_NISHI_YOSHII",
+        "lat": "36.25578",
+        "lng": "138.965865",
+        "name": "西吉井"
+      },
+      {
+        "id": "STN_JOSHIN_JOSHU_NIIYA",
+        "lat": "36.256035",
+        "lng": "138.951825",
+        "name": "上州新屋"
+      },
+      {
+        "id": "STN_JOSHIN_JOSHU_FUKUSHIMA",
+        "lat": "36.25641",
+        "lng": "138.929485",
+        "name": "上州福島"
+      },
+      {
+        "id": "STN_JOSHIN_HIGASHI_TOMIOKA",
+        "lat": "36.26082",
+        "lng": "138.901685",
+        "name": "東富岡"
+      },
+      {
+        "id": "STN_JOSHIN_JOSHU_TOMIOKA",
+        "lat": "36.26051",
+        "lng": "138.891935",
+        "name": "上州富岡"
+      },
+      {
+        "id": "STN_JOSHIN_NISHI_TOMIOKA",
+        "lat": "36.26016",
+        "lng": "138.88278",
+        "name": "西富岡"
+      },
+      {
+        "id": "STN_JOSHIN_JOSHU_NANAKAICHI",
+        "lat": "36.25863",
+        "lng": "138.87456",
+        "name": "上州七日市"
+      },
+      {
+        "id": "STN_JOSHIN_JOSHU_ICHINOMIYA",
+        "lat": "36.253087",
+        "lng": "138.864049",
+        "name": "上州一ノ宮"
+      },
+      {
+        "id": "STN_JOSHIN_KANO_HARA",
+        "lat": "36.24259",
+        "lng": "138.843845",
+        "name": "神農原"
+      },
+      {
+        "id": "STN_JOSHIN_NANJAI",
+        "lat": "36.238175",
+        "lng": "138.81388",
+        "name": "南蛇井"
+      },
+      {
+        "id": "STN_JOSHIN_SENDAIRA",
+        "lat": "36.230021",
+        "lng": "138.798529",
+        "name": "千平"
+      },
+      {
+        "id": "STN_JOSHIN_SHIMONITA",
+        "lat": "36.210505",
+        "lng": "138.78668",
+        "name": "下仁田"
+      }
+    ]
+  }
+]

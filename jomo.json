@@ -1,0 +1,178 @@
+[
+  {
+    "categories": "",
+    "company_id": "JOMO",
+    "company_name": "上毛電気鉄道",
+    "lines": [
+      {
+        "id": "JOMO_LINE",
+        "name": "上毛線",
+        "sequence": [
+          "STN_JOMO_CHUO_MAEBASHI",
+          "STN_JOMO_JOTO",
+          "STN_JOMO_MITSUMATA",
+          "STN_JOMO_KATAKAI",
+          "STN_JOMO_KAMIIZUMI",
+          "STN_JOMO_AKASAKA",
+          "STN_JOMO_SHINZO_KEKKAN_CENTER",
+          "STN_JOMO_EGI",
+          "STN_JOMO_OGO",
+          "STN_JOMO_HIGOSHI",
+          "STN_JOMO_KITAHARA",
+          "STN_JOMO_ARAYA",
+          "STN_JOMO_KASUKAWA",
+          "STN_JOMO_ZEN",
+          "STN_JOMO_NIIZATO",
+          "STN_JOMO_NIIKAWA",
+          "STN_JOMO_HIGASHI_NIIKAWA",
+          "STN_JOMO_AKAGI",
+          "STN_JOMO_KIRYU_KYUJO_MAE",
+          "STN_JOMO_TENNOJUKU",
+          "STN_JOMO_FUJISAN_SHITA",
+          "STN_JOMO_MARUYAMASHITA",
+          "STN_JOMO_NISHI_KIRYU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_JOMO_CHUO_MAEBASHI",
+        "lat": "36.390925",
+        "lng": "139.075365",
+        "name": "中央前橋"
+      },
+      {
+        "id": "STN_JOMO_JOTO",
+        "lat": "36.391215",
+        "lng": "139.08119",
+        "name": "城東"
+      },
+      {
+        "id": "STN_JOMO_MITSUMATA",
+        "lat": "36.393725",
+        "lng": "139.0892",
+        "name": "三俣"
+      },
+      {
+        "id": "STN_JOMO_KATAKAI",
+        "lat": "36.39396262",
+        "lng": "139.09566406",
+        "name": "片貝"
+      },
+      {
+        "id": "STN_JOMO_KAMIIZUMI",
+        "lat": "36.39418",
+        "lng": "139.10656",
+        "name": "上泉"
+      },
+      {
+        "id": "STN_JOMO_AKASAKA",
+        "lat": "36.397235",
+        "lng": "139.11734",
+        "name": "赤坂"
+      },
+      {
+        "id": "STN_JOMO_SHINZO_KEKKAN_CENTER",
+        "lat": "36.405235",
+        "lng": "139.12896",
+        "name": "心臓血管センター"
+      },
+      {
+        "id": "STN_JOMO_EGI",
+        "lat": "36.4072",
+        "lng": "139.133395",
+        "name": "江木"
+      },
+      {
+        "id": "STN_JOMO_OGO",
+        "lat": "36.412695",
+        "lng": "139.15629",
+        "name": "大胡"
+      },
+      {
+        "id": "STN_JOMO_HIGOSHI",
+        "lat": "36.415485",
+        "lng": "139.173275",
+        "name": "樋越"
+      },
+      {
+        "id": "STN_JOMO_KITAHARA",
+        "lat": "36.41364",
+        "lng": "139.18461",
+        "name": "北原"
+      },
+      {
+        "id": "STN_JOMO_ARAYA",
+        "lat": "36.41377932",
+        "lng": "139.19655929",
+        "name": "新屋"
+      },
+      {
+        "id": "STN_JOMO_KASUKAWA",
+        "lat": "36.41690511",
+        "lng": "139.21087697",
+        "name": "粕川"
+      },
+      {
+        "id": "STN_JOMO_ZEN",
+        "lat": "36.41704491",
+        "lng": "139.2220622",
+        "name": "膳"
+      },
+      {
+        "id": "STN_JOMO_NIIZATO",
+        "lat": "36.41855",
+        "lng": "139.236975",
+        "name": "新里"
+      },
+      {
+        "id": "STN_JOMO_NIIKAWA",
+        "lat": "36.418228",
+        "lng": "139.257584",
+        "name": "新川"
+      },
+      {
+        "id": "STN_JOMO_HIGASHI_NIIKAWA",
+        "lat": "36.421975",
+        "lng": "139.26769",
+        "name": "東新川"
+      },
+      {
+        "id": "STN_JOMO_AKAGI",
+        "lat": "36.42562",
+        "lng": "139.27678",
+        "name": "赤城"
+      },
+      {
+        "id": "STN_JOMO_KIRYU_KYUJO_MAE",
+        "lat": "36.419201",
+        "lng": "139.29784",
+        "name": "桐生球場前"
+      },
+      {
+        "id": "STN_JOMO_TENNOJUKU",
+        "lat": "36.414925",
+        "lng": "139.30815",
+        "name": "天王宿"
+      },
+      {
+        "id": "STN_JOMO_FUJISAN_SHITA",
+        "lat": "36.413995",
+        "lng": "139.315845",
+        "name": "富士山下"
+      },
+      {
+        "id": "STN_JOMO_MARUYAMASHITA",
+        "lat": "36.416819",
+        "lng": "139.321317",
+        "name": "丸山下"
+      },
+      {
+        "id": "STN_JOMO_NISHI_KIRYU",
+        "lat": "36.414093",
+        "lng": "139.332825",
+        "name": "西桐生"
+      }
+    ]
+  }
+]

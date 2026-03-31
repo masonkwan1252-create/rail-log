@@ -1,0 +1,150 @@
+[
+  {
+    "categories": "",
+    "company_id": "UTSUNOMIYA_LRT",
+    "company_name": "宇都宮ライトレール",
+    "lines": [
+      {
+        "id": "UTSUNOMIYA_LRT_HAGA_UTSUNOMIYA",
+        "name": "宇都宮芳賀ライトレール線",
+        "sequence": [
+          "STN_UTSUNOMIYA_LRT_UTSUNOMIYA_EKI_HIGASHIGUCHI",
+          "STN_UTSUNOMIYA_LRT_HIGASHISHUKUGO",
+          "STN_UTSUNOMIYA_LRT_EKITO_KOEN_MAE",
+          "STN_UTSUNOMIYA_LRT_MINE",
+          "STN_UTSUNOMIYA_LRT_YOTO_3_CHOME",
+          "STN_UTSUNOMIYA_LRT_UTSUNOMIYA_DAIGAKU_YOTO_CAMPUS",
+          "STN_UTSUNOMIYA_LRT_HIRAISHI",
+          "STN_UTSUNOMIYA_LRT_HIRAISHI_CHUO_SHOGAKKO_MAE",
+          "STN_UTSUNOMIYA_LRT_TOBIYAMA_JOSHI_ATO",
+          "STN_UTSUNOMIYA_LRT_SEIRYO_KOKO_MAE",
+          "STN_UTSUNOMIYA_LRT_KIYOHARA_CHIKU_SHIMIN_CENTER_MAE",
+          "STN_UTSUNOMIYA_LRT_GREEN_STADIUM_MAE",
+          "STN_UTSUNOMIYA_LRT_YUINOMORI_NISHI",
+          "STN_UTSUNOMIYA_LRT_YUINOMORI_CHUO",
+          "STN_UTSUNOMIYA_LRT_YUINOMORI_HIGASHI",
+          "STN_UTSUNOMIYA_LRT_HAGADAI",
+          "STN_UTSUNOMIYA_LRT_HAGAMACHI_KOGYO_DANCHI_KANRI_CENTER_MAE",
+          "STN_UTSUNOMIYA_LRT_KASHINOMORI_KOEN_MAE",
+          "STN_UTSUNOMIYA_LRT_HAGA_TAKANEZAWA_KOGYO_DANCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_UTSUNOMIYA_LRT_UTSUNOMIYA_EKI_HIGASHIGUCHI",
+        "lat": "36.5591076",
+        "lng": "139.89950021",
+        "name": "宇都宮駅東口"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_HIGASHISHUKUGO",
+        "lat": "36.55833182",
+        "lng": "139.90299323",
+        "name": "東宿郷"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_EKITO_KOEN_MAE",
+        "lat": "36.5580215",
+        "lng": "139.90724281",
+        "name": "駅東公園前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_MINE",
+        "lat": "36.55756895",
+        "lng": "139.91492103",
+        "name": "峰"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_YOTO_3_CHOME",
+        "lat": "36.55731047",
+        "lng": "139.92235764",
+        "name": "陽東3丁目"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_UTSUNOMIYA_DAIGAKU_YOTO_CAMPUS",
+        "lat": "36.5570648",
+        "lng": "139.9291505",
+        "name": "宇都宮大学陽東キャンパス"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_HIRAISHI",
+        "lat": "36.55499709",
+        "lng": "139.9392734",
+        "name": "平石"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_HIRAISHI_CHUO_SHOGAKKO_MAE",
+        "lat": "36.554829",
+        "lng": "139.94468169",
+        "name": "平石中央小学校前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_TOBIYAMA_JOSHI_ATO",
+        "lat": "36.54836627",
+        "lng": "139.96344446",
+        "name": "飛山城跡"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_SEIRYO_KOKO_MAE",
+        "lat": "36.54495443",
+        "lng": "139.97633246",
+        "name": "清陵高校前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_KIYOHARA_CHIKU_SHIMIN_CENTER_MAE",
+        "lat": "36.54761793",
+        "lng": "139.98426685",
+        "name": "清原地区市民センター前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_GREEN_STADIUM_MAE",
+        "lat": "36.55578618",
+        "lng": "139.98247399",
+        "name": "グリーンスタジアム前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_YUINOMORI_NISHI",
+        "lat": "36.56718671",
+        "lng": "139.98627306",
+        "name": "ゆいの杜西"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_YUINOMORI_CHUO",
+        "lat": "36.56772977",
+        "lng": "139.9920364",
+        "name": "ゆいの杜中央"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_YUINOMORI_HIGASHI",
+        "lat": "36.56762633",
+        "lng": "139.99778365",
+        "name": "ゆいの杜東"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_HAGADAI",
+        "lat": "36.56641077",
+        "lng": "140.00543171",
+        "name": "芳賀台"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_HAGAMACHI_KOGYO_DANCHI_KANRI_CENTER_MAE",
+        "lat": "36.56494966",
+        "lng": "140.01064776",
+        "name": "芳賀町工業団地管理センター前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_KASHINOMORI_KOEN_MAE",
+        "lat": "36.57238425",
+        "lng": "140.01460809",
+        "name": "かしの森公園前"
+      },
+      {
+        "id": "STN_UTSUNOMIYA_LRT_HAGA_TAKANEZAWA_KOGYO_DANCHI",
+        "lat": "36.57847348",
+        "lng": "140.01205821",
+        "name": "芳賀・高根沢工業団地"
+      }
+    ]
+  }
+]

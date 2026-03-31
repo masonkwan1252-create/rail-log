@@ -1,0 +1,80 @@
+[
+  {
+    "categories": "",
+    "company_id": "YAGANTETSUDO",
+    "company_name": "野岩鉄道",
+    "lines": [
+      {
+        "id": "YAGANTETSUDO_AIZU_KINUGAWA",
+        "name": "会津鬼怒川線",
+        "sequence": [
+          "STN_YAGANTETSUDO_SHIN_FUJIWARA",
+          "STN_YAGANTETSUDO_RYUOKYO",
+          "STN_YAGANTETSUDO_KAWAJI_ONSEN",
+          "STN_YAGANTETSUDO_KAWAJI_YUMOTO",
+          "STN_YAGANTETSUDO_YUNISHIGAWA_ONSEN",
+          "STN_YAGANTETSUDO_NAKAMAYORI_ONSEN",
+          "STN_YAGANTETSUDO_KAMIMAYORI_SHIOBARA_ONSEN_GUCHI",
+          "STN_YAGANTETSUDO_OJAKOGEN",
+          "STN_YAGANTETSUDO_AIZU_KOGEN_OZEGUCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YAGANTETSUDO_SHIN_FUJIWARA",
+        "lat": "36.852455",
+        "lng": "139.73301",
+        "name": "新藤原"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_RYUOKYO",
+        "lat": "36.860933",
+        "lng": "139.718583",
+        "name": "龍王峡"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_KAWAJI_ONSEN",
+        "lat": "36.884145",
+        "lng": "139.70374",
+        "name": "川治温泉"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_KAWAJI_YUMOTO",
+        "lat": "36.895195",
+        "lng": "139.702768",
+        "name": "川治湯元"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_YUNISHIGAWA_ONSEN",
+        "lat": "36.929545",
+        "lng": "139.68861",
+        "name": "湯西川温泉"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_NAKAMAYORI_ONSEN",
+        "lat": "36.9852",
+        "lng": "139.699325",
+        "name": "中三依温泉"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_KAMIMAYORI_SHIOBARA_ONSEN_GUCHI",
+        "lat": "37.01438",
+        "lng": "139.7273",
+        "name": "上三依塩原温泉口"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_OJAKOGEN",
+        "lat": "37.047875",
+        "lng": "139.72392",
+        "name": "男鹿高原"
+      },
+      {
+        "id": "STN_YAGANTETSUDO_AIZU_KOGEN_OZEGUCHI",
+        "lat": "37.090026",
+        "lng": "139.705128",
+        "name": "会津高原尾瀬口"
+      }
+    ]
+  }
+]

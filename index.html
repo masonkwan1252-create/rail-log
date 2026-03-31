@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.16</title>
+<title>鉄道手帳 RAIL LOG V0.17</title>
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
@@ -144,14 +144,14 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 500%; /* 🚩 V0.16 共有 5 塊幕，總高度設定為 500% */
+    height: 500%; /* 共有 5 塊幕，總高度設定為 500% */
     transform: translateY(0);
 }
 
 /* 🚩 新增：每一格方向幕 */
 .sign-panel {
     width: 100%;
-    height: 20%; /* 🚩 100% / 5格 = 20% */
+    height: 20%; /* 100% / 5格 = 20% */
     flex-shrink: 0;
     display: flex;
     box-sizing: border-box;
@@ -183,7 +183,7 @@ header {
     }
     
     .header-band {
-        background: #27420e; /* 🚩 V0.16 更新：山手線夜間色帶顏色 */
+        background: #27420e; /* 山手線夜間色帶顏色 */
     }
 
     .destination-sign-frame {
@@ -257,7 +257,6 @@ header {
     font-weight: 800;
     letter-spacing: 0.3em; 
 }
-
 
 .toast-message {
     display: none; position: fixed; top: calc(75px + env(safe-area-inset-top)); 
@@ -468,7 +467,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </header>
 
 <div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.16</div>
+<div class="version-badge">V0.17</div>
 
 <div class="container">
 
@@ -499,9 +498,23 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                 <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
             </div>
 
+            <div style="background: var(--tag-bg); padding: 10px; border-radius: 6px; margin: 12px 0;">
+                <label style="margin-top: 0; display: flex; align-items: center; gap: 8px; color: var(--text); cursor: pointer; font-weight: 600;">
+                    <input type="checkbox" id="useOtherTrainCompany" onchange="toggleTrainCompanyUI()" style="width: auto; margin: 0;">
+                    車輛屬於其他公司？ (直通運轉)
+                </label>
+                <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
+                    <label style="margin-top: 0;">車輛所屬公司</label>
+                    <div class="input-wrapper">
+                        <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()">
+                        <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
+                    </div>
+                </div>
+            </div>
+
             <label>車型</label>
             <div class="input-wrapper">
-                <input id="train" list="trainList" placeholder="例如：321系">
+                <input id="train" list="trainList" placeholder="輸入車型 (按公司快速過濾)">
                 <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
             </div>
 
@@ -629,13 +642,11 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </datalist>
 
 <script>
-// 🚩 V0.16 方向幕動畫控制
 let currentSignIndex = 0;
-const totalSigns = 5; // 共 5 格 (0 至 4)
+const totalSigns = 5; 
 const rollContainer = document.getElementById('rollContainer');
 let autoRollInterval = null;
 
-// 頁面載入時啟動 15 秒動畫 (每 3 秒轉一格，轉 4 次)
 setTimeout(() => {
     autoRollInterval = setInterval(() => {
         if (currentSignIndex < totalSigns - 1) {
@@ -649,14 +660,11 @@ setTimeout(() => {
     }, 3000);
 }, 500);
 
-// 手動點擊色帶互動控制
 function scrollSign(direction) {
-    // 如果仲自動轉緊，打斷佢，交由玩家接手
     if (autoRollInterval) {
         clearInterval(autoRollInterval);
         autoRollInterval = null;
     }
-    
     rollContainer.style.transition = 'transform 3s cubic-bezier(1, 1, 1, 1)';
     if (direction === 'prev' && currentSignIndex > 0) {
         currentSignIndex--;
@@ -665,7 +673,6 @@ function scrollSign(direction) {
     }
     rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
 }
-
 
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
 let editIndex = null;
@@ -679,7 +686,10 @@ let currentDateFilter = "all";
 let calViewDate = new Date();
 let activeStatFilter = { type: null, id: null };
 
-// 分頁變數
+// 🚩 V0.17 全局變數
+let activeTrainCompanyId = null;
+let currentCompanyTrains = [];
+
 let currentRecordPage = 1;
 const recordsPerPage = 50;
 let currentChartType = 'company';
@@ -693,40 +703,35 @@ function clearInput(id) {
         el.dispatchEvent(new Event('input'));
     }
 }
-// 傳入單次乘車紀錄 (trip) 對象
+
 function getTripTrainDisplay(trip) {
     const trainObj = maps.train[trip.train_id];
-    if (!trainObj) return trip.train_id; // 防呆
+    if (!trainObj) return trip.train_id;
 
     const trainCompanyId = trainObj.company_id;
-    const rideCompanyId = trip.company_id; // 乘搭嘅公司
-    const throughCompanyId = trip.throughCompany_id; // 直通嘅公司 (如果有此欄位)
+    const rideCompanyId = trip.company_id; 
+    const throughCompanyId = trip.throughCompany_id; 
 
-    // 預設當作同一間公司
     let isSameCompany = (trainCompanyId === rideCompanyId);
     
-    // 如果有直通路線，而且直通公司 唔等於 車型公司，代表全段唔係同一間
     if (throughCompanyId && throughCompanyId !== trainCompanyId) {
          isSameCompany = false;
     }
 
-    // 根據結果決定點顯示
     if (isSameCompany) {
-        return trainObj.name; // 條件符合，只顯示「205系」
+        return trainObj.name; 
     } else {
         const companyName = maps.company[trainCompanyId]?.name || trainCompanyId;
-        return `${companyName} ${trainObj.name}`; // 條件唔符，顯示「JR西日本 205系」
+        return `${companyName} ${trainObj.name}`; 
     }
 }
-// 傳入 train_id (你想顯示嘅車型) 同埋 trips (所有乘車紀錄 array)
+
 function getStatTrainDisplay(train_id, trips) {
     const trainObj = maps.train[train_id];
     if (!trainObj) return train_id;
 
-    // 第一步：搵出你搭過嘅所有 unique train_id
     const riddenTrainIds = [...new Set(trips.map(t => t.train_id))];
     
-    // 第二步：點算每款「車型名稱」出現過幾多款不同嘅 id
     const nameCounts = {};
     riddenTrainIds.forEach(id => {
         const t = maps.train[id];
@@ -735,13 +740,10 @@ function getStatTrainDisplay(train_id, trips) {
         }
     });
 
-    // 第三步：判斷需唔需要加公司名
     if (nameCounts[trainObj.name] > 1) {
-        // 發現撞名！(例如同時搭過 阪急1000系 同 阪神1000系) -> 顯示公司名
         const companyName = maps.company[trainObj.company_id]?.name || trainObj.company_id;
         return `${companyName} ${trainObj.name}`;
     } else {
-        // 全個紀錄得一款叫呢個名 -> 唔洗顯示公司名
         return trainObj.name;
     }
 }
@@ -761,7 +763,7 @@ async function loadData() {
         db.lines = [];
         db.stations = [];
 
-        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", "hisatsu.json", "kumamoto.json", "s_hokkaido.json", "aoimori.json", "konan.json", "tsugaru.json", "igr.json", "sanriku.json", "sat.json", "akita.json", "yuri_kogen.json", "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json"]; 
+        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", "hisatsu.json", "kumamoto.json", "s_hokkaido.json", "aoimori.json", "konan.json", "tsugaru.json", "igr.json", "sanriku.json", "sat.json", "akita.json", "yuri_kogen.json", "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json"]; 
         
         for (let file of newCompanyFiles) {
             try {
@@ -832,8 +834,8 @@ function buildMaps() {
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
     fillList("lineList", db.lines.map(l => l.name));
-    // 🚩 V0.16: 預設載入所有車型，不受公司限制
-    fillList("trainList", db.trains.map(t => t._display));
+    // 🚩 V0.17 初始不載入全部車型，等待使用者選擇公司
+    updateTrainDatalist();
 }
 
 function fillList(listId, dataArray) {
@@ -854,41 +856,73 @@ function switchTab(tabId, navElement) {
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
     updateLineList(compName, "lineList");
-    // 🚩 V0.16 取消車型聯動篩選，確保轉公司都可以揀其他公司嘅車
-    updateTrainList(); 
+    // 🚩 V0.17 當主公司變更時，觸發車型選單更新
+    updateTrainDatalist(); 
     updateStationLists();
 });
 
-// 🚩 新增：車型輸入框的「前綴匹配 (Starts with)」篩選邏輯
-// 🚩 效能優化版：車型輸入框的「防抖 (Debounce)」與「數量限制」邏輯
-let trainFilterTimeout = null;
+// 🚩 V0.17 切換直通運轉車輛公司
+function toggleTrainCompanyUI() {
+    const useOther = document.getElementById('useOtherTrainCompany').checked;
+    document.getElementById('otherTrainCompanyWrapper').style.display = useOther ? 'block' : 'none';
+    updateTrainDatalist();
+}
 
+// 🚩 V0.17 核心邏輯：根據「當前選擇的公司」來篩選車型列表
+function updateTrainDatalist() {
+    const useOther = document.getElementById('useOtherTrainCompany').checked;
+    const targetCompanyInputId = useOther ? 'trainOwnerCompany' : 'company';
+    const compName = document.getElementById(targetCompanyInputId).value;
+    
+    activeTrainCompanyId = resolve.company[compName] || null;
+
+    if (activeTrainCompanyId) {
+        // 只保留屬於該公司的車型
+        currentCompanyTrains = db.trains.filter(t => t.company_id === activeTrainCompanyId);
+    } else {
+        // 如果無揀公司，為免 Lag 機，暫時顯示空列表
+        currentCompanyTrains = []; 
+    }
+    
+    // 切換公司時自動清空目前輸入的車型，避免存錯
+    document.getElementById('train').value = '';
+
+    // 更新 Datalist (最多顯示 50 個預設項)
+    const list = document.getElementById("trainList");
+    if(!list) return;
+    list.innerHTML = "";
+    const fragment = document.createDocumentFragment();
+    currentCompanyTrains.slice(0, 50).forEach(t => fragment.appendChild(new Option(t._display)));
+    list.appendChild(fragment);
+}
+
+
+// 🚩 V0.17 激速版：車型輸入框的防抖篩選 (只在已選公司內搜尋)
+let trainFilterTimeout = null;
 document.getElementById("train").addEventListener("input", function() {
-    clearTimeout(trainFilterTimeout); // 如果用家繼續打字，就取消上一次的倒數
+    clearTimeout(trainFilterTimeout);
     
     const keyword = this.value.trim().toLowerCase();
     const list = document.getElementById("trainList");
 
-    // 延遲 400 毫秒 (0.4秒) 才執行篩選，1秒手感會太遲鈍，0.4秒最順暢
+    // 因範圍已縮窄至單一公司，防抖時間可縮短至 0.15 秒，極速反應
     trainFilterTimeout = setTimeout(() => {
-        let filtered = db.trains;
+        let filtered = currentCompanyTrains;
         if (keyword) {
-            filtered = db.trains.filter(t => 
+            filtered = currentCompanyTrains.filter(t => 
                 t._display.toLowerCase().startsWith(keyword)
             );
         }
 
-        // 效能關鍵 1：限制最多只渲染 20 個選項 (打字越準，剩餘選項越少)
         const displayLimit = 20;
         const limitedResults = filtered.slice(0, displayLimit);
 
-        // 效能關鍵 2：使用 DocumentFragment 一次性打包更新，避免逐個加入導致畫面卡頓
         const fragment = document.createDocumentFragment();
         limitedResults.forEach(t => fragment.appendChild(new Option(t._display)));
         
-        list.innerHTML = ""; // 清空舊列表
-        list.appendChild(fragment); // 一次過貼上新列表
-    }, 400); 
+        list.innerHTML = "";
+        list.appendChild(fragment);
+    }, 150); 
 });
 
 function updateLineList(compName, targetListId) {
@@ -898,14 +932,6 @@ function updateLineList(compName, targetListId) {
     list.innerHTML = "";
     let linesToShow = compId ? db.lines.filter(l => l.company_id === compId) : db.lines;
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
-}
-
-// 🚩 V0.16 更新：不再接收 compName 參數，強行顯示全部車型
-function updateTrainList() {
-    const list = document.getElementById("trainList");
-    if(!list) return;
-    list.innerHTML = "";
-    db.trains.forEach(t => list.appendChild(new Option(t._display)));
 }
 
 function updateStationLists() {
@@ -996,11 +1022,24 @@ function saveTrip() {
         if(tcId || tlId) routes.push({ company_id: tcId, line_id: tlId });
     });
 
+    // 🚩 V0.17 雙重驗證：儲存時確保提取屬於已選公司嘅正確車型 ID
+    let trainInput = getVal("train");
+    let finalTrainId = trainInput;
+    if (activeTrainCompanyId) {
+        let matchedTrain = currentCompanyTrains.find(t => t._display === trainInput || t.name === trainInput);
+        if (matchedTrain) {
+            finalTrainId = matchedTrain.id;
+        }
+    } else {
+        // Fallback
+        finalTrainId = resolve.train[trainInput] || trainInput;
+    }
+
     const trip = {
         date: getVal("date"),
         serviceType: getVal("serviceType"), 
         routes: routes,
-        train_id: resolve.train[getVal("train")] || getVal("train"),
+        train_id: finalTrainId,
         from_id: resolve.station[getVal("from")] || getVal("from"),
         to_id: resolve.station[getVal("to")] || getVal("to")
     };
@@ -1015,7 +1054,12 @@ function saveTrip() {
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
     
-    updateLineList("", "lineList"); updateTrainList(); updateStationLists();
+    // 🚩 V0.17 重置直通車輛 Checkbox 狀態
+    document.getElementById("useOtherTrainCompany").checked = false;
+    document.getElementById("otherTrainCompanyWrapper").style.display = "none";
+    document.getElementById("trainOwnerCompany").value = "";
+    
+    updateLineList("", "lineList"); updateTrainDatalist(); updateStationLists();
     currentRecordPage = 1; 
     render();
     
@@ -1117,7 +1161,7 @@ function render() {
             </div>
             <div class="route">${routeHtml}</div>
             <div class="trip-detail">
-                ${serviceHtml} <span style="font-weight:600; color:var(--text);">${getTrainName(t.train_id)}</span>
+                ${serviceHtml} <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
                 <span style="color:var(--border);">|</span>
                 <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
             </div>
@@ -1239,7 +1283,7 @@ function renderStats() {
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已乘搭車型 (${tSet.size} 款)</div>
             <div class="tags-container">${Array.from(tSet).map(id => 
-                `<span class="tag ${activeStatFilter.type === 'train' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('train', '${id}')">${getTrainName(id)}</span>`
+                `<span class="tag ${activeStatFilter.type === 'train' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('train', '${id}')">${getStatTrainDisplay(id, trips)}</span>`
             ).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
@@ -1311,12 +1355,11 @@ function editTrip(i) {
     let setVal = (id, val) => document.getElementById(id).value = val || "";
     setVal("date", t.date);
     
-    let firstCompName = maps.company[t.routes[0].company_id]?.name || t.routes[0].company_id;
+    let firstCompId = t.routes[0].company_id;
+    let firstCompName = maps.company[firstCompId]?.name || firstCompId;
     setVal("company", firstCompName);
     
     updateLineList(firstCompName, "lineList");
-    updateTrainList(); // V0.16 Update
-    setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
 
     document.getElementById("throughContainer").innerHTML = "";
     t.routes.slice(1).forEach(r => {
@@ -1332,7 +1375,21 @@ function editTrip(i) {
 
     updateStationLists(); 
     setVal("serviceType", t.serviceType); 
-    setVal("train", maps.train[t.train_id]?._display || t.train_id);
+    
+    // 🚩 V0.17 編輯時：還原直通車輛公司 Checkbox 狀態
+    const trainObj = maps.train[t.train_id];
+    if (trainObj && trainObj.company_id !== firstCompId) {
+        document.getElementById('useOtherTrainCompany').checked = true;
+        document.getElementById('otherTrainCompanyWrapper').style.display = 'block';
+        document.getElementById('trainOwnerCompany').value = maps.company[trainObj.company_id]?.name || trainObj.company_id;
+    } else {
+        document.getElementById('useOtherTrainCompany').checked = false;
+        document.getElementById('otherTrainCompanyWrapper').style.display = 'none';
+        document.getElementById('trainOwnerCompany').value = '';
+    }
+    updateTrainDatalist();
+
+    setVal("train", trainObj ? trainObj._display : t.train_id);
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
 
@@ -1349,7 +1406,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.16.json"; a.click();
+    a.download = "rail-log-V0.17.json"; a.click();
 }
 
 function importData() {

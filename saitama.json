@@ -1,0 +1,73 @@
+[
+  {
+    "categories": "",
+    "company_id": "SAITAMA",
+    "company_name": "埼玉高速鉄道",
+    "lines": [
+      {
+        "id": "SAITAMA_LINE",
+        "name": "埼玉高速鉄道線",
+        "sequence": [
+          "STN_SAITAMA_AKABANE_IWABUCHI",
+          "STN_SAITAMA_KAWAGUCHI_MOTOGO",
+          "STN_SAITAMA_MINAMI_HATO_GAYA",
+          "STN_SAITAMA_HATO_GAYA",
+          "STN_SAITAMA_ARAIJUKU",
+          "STN_SAITAMA_TOZUKA_ANGYO",
+          "STN_SAITAMA_HIGASHI_KAWAGUCHI",
+          "STN_SAITAMA_URAWA_MISONO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SAITAMA_AKABANE_IWABUCHI",
+        "lat": "35.783355",
+        "lng": "139.72211",
+        "name": "赤羽岩淵"
+      },
+      {
+        "id": "STN_SAITAMA_KAWAGUCHI_MOTOGO",
+        "lat": "35.800084",
+        "lng": "139.729963",
+        "name": "川口元郷"
+      },
+      {
+        "id": "STN_SAITAMA_MINAMI_HATO_GAYA",
+        "lat": "35.81608",
+        "lng": "139.736095",
+        "name": "南鳩ヶ谷"
+      },
+      {
+        "id": "STN_SAITAMA_HATO_GAYA",
+        "lat": "35.8308",
+        "lng": "139.73616",
+        "name": "鳩ヶ谷"
+      },
+      {
+        "id": "STN_SAITAMA_ARAIJUKU",
+        "lat": "35.84295",
+        "lng": "139.738115",
+        "name": "新井宿"
+      },
+      {
+        "id": "STN_SAITAMA_TOZUKA_ANGYO",
+        "lat": "35.85907",
+        "lng": "139.753775",
+        "name": "戸塚安行"
+      },
+      {
+        "id": "STN_SAITAMA_HIGASHI_KAWAGUCHI",
+        "lat": "35.87662",
+        "lng": "139.74367",
+        "name": "東川口"
+      },
+      {
+        "id": "STN_SAITAMA_URAWA_MISONO",
+        "lat": "35.893675",
+        "lng": "139.727825",
+        "name": "浦和美園"
+      }
+    ]
+  }
+]

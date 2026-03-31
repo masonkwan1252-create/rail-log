@@ -1,0 +1,136 @@
+[
+  {
+    "categories": "",
+    "company_id": "MOKA",
+    "company_name": "真岡鐵道",
+    "lines": [
+      {
+        "id": "MOKA_LINE",
+        "name": "真岡線",
+        "sequence": [
+          "STN_MOKA_SHIMODATE",
+          "STN_MOKA_SHIMODATE_NIKO_MAE",
+          "STN_MOKA_ORIMOTO",
+          "STN_MOKA_HIGUCHI",
+          "STN_MOKA_KUGEDA",
+          "STN_MOKA_TERAUCHI",
+          "STN_MOKA_MOKA",
+          "STN_MOKA_KITA_MOKA",
+          "STN_MOKA_NISHITAI",
+          "STN_MOKA_KITAYAMA",
+          "STN_MOKA_MASHIKO",
+          "STN_MOKA_NANAI",
+          "STN_MOKA_TATARA",
+          "STN_MOKA_ICHIHANA",
+          "STN_MOKA_SASAHARADA",
+          "STN_MOKA_TENYABA",
+          "STN_MOKA_MOTEGI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_MOKA_SHIMODATE",
+        "lat": "36.304125",
+        "lng": "139.978185",
+        "name": "下館"
+      },
+      {
+        "id": "STN_MOKA_SHIMODATE_NIKO_MAE",
+        "lat": "36.319325",
+        "lng": "139.97208",
+        "name": "下館二高前"
+      },
+      {
+        "id": "STN_MOKA_ORIMOTO",
+        "lat": "36.340635",
+        "lng": "139.971185",
+        "name": "折本"
+      },
+      {
+        "id": "STN_MOKA_HIGUCHI",
+        "lat": "36.358475",
+        "lng": "139.970375",
+        "name": "ひぐち"
+      },
+      {
+        "id": "STN_MOKA_KUGEDA",
+        "lat": "36.376",
+        "lng": "139.97163",
+        "name": "久下田"
+      },
+      {
+        "id": "STN_MOKA_TERAUCHI",
+        "lat": "36.4109",
+        "lng": "139.980115",
+        "name": "寺内"
+      },
+      {
+        "id": "STN_MOKA_MOKA",
+        "lat": "36.439135",
+        "lng": "140.002625",
+        "name": "真岡"
+      },
+      {
+        "id": "STN_MOKA_KITA_MOKA",
+        "lat": "36.44907",
+        "lng": "140.014015",
+        "name": "北真岡"
+      },
+      {
+        "id": "STN_MOKA_NISHITAI",
+        "lat": "36.45333",
+        "lng": "140.048645",
+        "name": "西田井"
+      },
+      {
+        "id": "STN_MOKA_KITAYAMA",
+        "lat": "36.45565",
+        "lng": "140.067495",
+        "name": "北山"
+      },
+      {
+        "id": "STN_MOKA_MASHIKO",
+        "lat": "36.462855",
+        "lng": "140.088535",
+        "name": "益子"
+      },
+      {
+        "id": "STN_MOKA_NANAI",
+        "lat": "36.491795",
+        "lng": "140.094335",
+        "name": "七井"
+      },
+      {
+        "id": "STN_MOKA_TATARA",
+        "lat": "36.51598",
+        "lng": "140.089845",
+        "name": "多田羅"
+      },
+      {
+        "id": "STN_MOKA_ICHIHANA",
+        "lat": "36.53812",
+        "lng": "140.110195",
+        "name": "市塙"
+      },
+      {
+        "id": "STN_MOKA_SASAHARADA",
+        "lat": "36.53396",
+        "lng": "140.14474",
+        "name": "笹原田"
+      },
+      {
+        "id": "STN_MOKA_TENYABA",
+        "lat": "36.52932",
+        "lng": "140.15601",
+        "name": "天矢場"
+      },
+      {
+        "id": "STN_MOKA_MOTEGI",
+        "lat": "36.530815",
+        "lng": "140.181425",
+        "name": "茂木"
+      }
+    ]
+  }
+]
