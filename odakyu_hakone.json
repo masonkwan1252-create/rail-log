@@ -1,0 +1,94 @@
+[
+  {
+    "categories": "",
+    "company_id": "ODAKYU_HAKONE",
+    "company_name": "箱根登山鉄道",
+    "lines": [
+      {
+        "id": "ODAKYU_HAKONE_LINE",
+        "name": "鉄道線",
+        "sequence": [
+          "STN_ODAKYU_HAKONE_ODAWARA",
+          "STN_ODAKYU_HAKONE_HAKONE_ITABASHI",
+          "STN_ODAKYU_HAKONE_KAZAMATSURI",
+          "STN_ODAKYU_HAKONE_IRIUDA",
+          "STN_ODAKYU_HAKONE_HAKONE_YUMOTO",
+          "STN_ODAKYU_HAKONE_TONOSAWA",
+          "STN_ODAKYU_HAKONE_OHDIRADAI",
+          "STN_ODAKYU_HAKONE_MIYANOSHITA",
+          "STN_ODAKYU_HAKONE_KOWAKIDANI",
+          "STN_ODAKYU_HAKONE_CHOKOKU_NO_MORI",
+          "STN_ODAKYU_HAKONE_GORA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ODAKYU_HAKONE_ODAWARA",
+        "lat": "35.256355",
+        "lng": "139.15543",
+        "name": "小田原"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_HAKONE_ITABASHI",
+        "lat": "35.245155",
+        "lng": "139.145185",
+        "name": "箱根板橋"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_KAZAMATSURI",
+        "lat": "35.24630239",
+        "lng": "139.12957347",
+        "name": "風祭"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_IRIUDA",
+        "lat": "35.24078",
+        "lng": "139.12106",
+        "name": "入生田"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_HAKONE_YUMOTO",
+        "lat": "35.23378227",
+        "lng": "139.10444172",
+        "name": "箱根湯本"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_TONOSAWA",
+        "lat": "35.23454279",
+        "lng": "139.09402554",
+        "name": "塔ノ沢"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_OHDIRADAI",
+        "lat": "35.23867609",
+        "lng": "139.07402176",
+        "name": "大平台"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_MIYANOSHITA",
+        "lat": "35.24199",
+        "lng": "139.063025",
+        "name": "宮ノ下"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_KOWAKIDANI",
+        "lat": "35.24049992",
+        "lng": "139.05286009",
+        "name": "小涌谷"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_CHOKOKU_NO_MORI",
+        "lat": "35.24665",
+        "lng": "139.05076",
+        "name": "彫刻の森"
+      },
+      {
+        "id": "STN_ODAKYU_HAKONE_GORA",
+        "lat": "35.25087",
+        "lng": "139.04826",
+        "name": "強羅"
+      }
+    ]
+  }
+]

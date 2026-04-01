@@ -1,0 +1,31 @@
+[
+  {
+    "categories": "",
+    "company_id": "SHIBAYAMA",
+    "company_name": "芝山鉄道",
+    "lines": [
+      {
+        "id": "SHIBAYAMA_LINE",
+        "name": "芝山鉄道線",
+        "sequence": [
+          "STN_SHIBAYAMA_HIGASHI_NARITA",
+          "STN_SHIBAYAMA_SHIBAYAMA_CHIYODA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SHIBAYAMA_HIGASHI_NARITA",
+        "lat": "35.769685",
+        "lng": "140.38725",
+        "name": "東成田"
+      },
+      {
+        "id": "STN_SHIBAYAMA_SHIBAYAMA_CHIYODA",
+        "lat": "35.75402",
+        "lng": "140.39961",
+        "name": "芝山千代田"
+      }
+    ]
+  }
+]

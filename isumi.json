@@ -1,0 +1,115 @@
+[
+  {
+    "categories": "",
+    "company_id": "ISUMI",
+    "company_name": "いすみ鉄道",
+    "lines": [
+      {
+        "id": "ISUMI_LINE",
+        "name": "いすみ線",
+        "sequence": [
+          "STN_ISUMI_OHARA",
+          "STN_ISUMI_NISHI_OHARA",
+          "STN_ISUMI_KAZUSA_AZUMA",
+          "STN_ISUMI_NITTONO",
+          "STN_ISUMI_KUNIYOSHI",
+          "STN_ISUMI_KAZUSA_NAKAGAWA",
+          "STN_ISUMI_SHIOMIGAOKA",
+          "STN_ISUMI_OTAKI",
+          "STN_ISUMI_KOYANOMATSU",
+          "STN_ISUMI_HIGASHI_FUSAMOTO",
+          "STN_ISUMI_KUGAHARA",
+          "STN_ISUMI_FUSAMOTO",
+          "STN_ISUMI_NISHIHATA",
+          "STN_ISUMI_KAZUSA_NAKANO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ISUMI_OHARA",
+        "lat": "35.25101",
+        "lng": "140.391028",
+        "name": "大原"
+      },
+      {
+        "id": "STN_ISUMI_NISHI_OHARA",
+        "lat": "35.260515",
+        "lng": "140.377975",
+        "name": "西大原"
+      },
+      {
+        "id": "STN_ISUMI_KAZUSA_AZUMA",
+        "lat": "35.26329",
+        "lng": "140.344905",
+        "name": "上総東"
+      },
+      {
+        "id": "STN_ISUMI_NITTONO",
+        "lat": "35.27599",
+        "lng": "140.328525",
+        "name": "新田野"
+      },
+      {
+        "id": "STN_ISUMI_KUNIYOSHI",
+        "lat": "35.280425",
+        "lng": "140.31399",
+        "name": "国吉"
+      },
+      {
+        "id": "STN_ISUMI_KAZUSA_NAKAGAWA",
+        "lat": "35.282705",
+        "lng": "140.28056",
+        "name": "上総中川"
+      },
+      {
+        "id": "STN_ISUMI_SHIOMIGAOKA",
+        "lat": "35.29172",
+        "lng": "140.252465",
+        "name": "城見ヶ丘"
+      },
+      {
+        "id": "STN_ISUMI_OTAKI",
+        "lat": "35.286535",
+        "lng": "140.24384",
+        "name": "大多喜"
+      },
+      {
+        "id": "STN_ISUMI_KOYANOMATSU",
+        "lat": "35.268975",
+        "lng": "140.25104",
+        "name": "小谷松"
+      },
+      {
+        "id": "STN_ISUMI_HIGASHI_FUSAMOTO",
+        "lat": "35.259445",
+        "lng": "140.24763",
+        "name": "東総元"
+      },
+      {
+        "id": "STN_ISUMI_KUGAHARA",
+        "lat": "35.25022",
+        "lng": "140.247665",
+        "name": "久我原"
+      },
+      {
+        "id": "STN_ISUMI_FUSAMOTO",
+        "lat": "35.24057",
+        "lng": "140.24036",
+        "name": "総元"
+      },
+      {
+        "id": "STN_ISUMI_NISHIHATA",
+        "lat": "35.250528",
+        "lng": "140.215163",
+        "name": "西畑"
+      },
+      {
+        "id": "STN_ISUMI_KAZUSA_NAKANO",
+        "lat": "35.25004",
+        "lng": "140.199595",
+        "name": "上総中野"
+      }
+    ]
+  }
+]

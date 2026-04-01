@@ -1,0 +1,129 @@
+[
+  {
+    "categories": "",
+    "company_id": "YURIKAMOME",
+    "company_name": "東京臨海新交通",
+    "lines": [
+      {
+        "id": "YURIKAMOME_LINE",
+        "name": "臨海線",
+        "sequence": [
+          "STN_YURIKAMOME_SHIMBASHI",
+          "STN_YURIKAMOME_SHIODOME",
+          "STN_YURIKAMOME_TAKESHIBA",
+          "STN_YURIKAMOME_HINODE",
+          "STN_YURIKAMOME_SHIBAURA_FUTO",
+          "STN_YURIKAMOME_ODAIBA_KAIHIN_KOEN",
+          "STN_YURIKAMOME_DAIBA",
+          "STN_YURIKAMOME_TOKYO_INTERNATIONAL_CRUISE_TERMINAL",
+          "STN_YURIKAMOME_TELECOM_CENTER",
+          "STN_YURIKAMOME_AOMI",
+          "STN_YURIKAMOME_TOKYO_BIG_SIGHT",
+          "STN_YURIKAMOME_ARIAKE",
+          "STN_YURIKAMOME_ARIAKE_TENNIS_NO_MORI",
+          "STN_YURIKAMOME_ICHIBA_MAE",
+          "STN_YURIKAMOME_SHIN_TOYOSU",
+          "STN_YURIKAMOME_TOYOSU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YURIKAMOME_SHIMBASHI",
+        "lat": "35.66550651",
+        "lng": "139.7596087",
+        "name": "新橋"
+      },
+      {
+        "id": "STN_YURIKAMOME_SHIODOME",
+        "lat": "35.66291584",
+        "lng": "139.76000364",
+        "name": "汐留"
+      },
+      {
+        "id": "STN_YURIKAMOME_TAKESHIBA",
+        "lat": "35.654065",
+        "lng": "139.762015",
+        "name": "竹芝"
+      },
+      {
+        "id": "STN_YURIKAMOME_HINODE",
+        "lat": "35.64926",
+        "lng": "139.75916",
+        "name": "日の出"
+      },
+      {
+        "id": "STN_YURIKAMOME_SHIBAURA_FUTO",
+        "lat": "35.64222",
+        "lng": "139.75787",
+        "name": "芝浦ふ頭"
+      },
+      {
+        "id": "STN_YURIKAMOME_ODAIBA_KAIHIN_KOEN",
+        "lat": "35.62993457",
+        "lng": "139.77877846",
+        "name": "お台場海浜公園"
+      },
+      {
+        "id": "STN_YURIKAMOME_DAIBA",
+        "lat": "35.62592006",
+        "lng": "139.77146705",
+        "name": "台場"
+      },
+      {
+        "id": "STN_YURIKAMOME_TOKYO_INTERNATIONAL_CRUISE_TERMINAL",
+        "lat": "35.62135725",
+        "lng": "139.77310048",
+        "name": "東京国際クルーズターミナル"
+      },
+      {
+        "id": "STN_YURIKAMOME_TELECOM_CENTER",
+        "lat": "35.61754442",
+        "lng": "139.77931653",
+        "name": "テレコムセンター"
+      },
+      {
+        "id": "STN_YURIKAMOME_AOMI",
+        "lat": "35.6248",
+        "lng": "139.781315",
+        "name": "青海"
+      },
+      {
+        "id": "STN_YURIKAMOME_TOKYO_BIG_SIGHT",
+        "lat": "35.63021",
+        "lng": "139.7913",
+        "name": "東京ビッグサイト"
+      },
+      {
+        "id": "STN_YURIKAMOME_ARIAKE",
+        "lat": "35.63455",
+        "lng": "139.79334",
+        "name": "有明"
+      },
+      {
+        "id": "STN_YURIKAMOME_ARIAKE_TENNIS_NO_MORI",
+        "lat": "35.63998",
+        "lng": "139.788895",
+        "name": "有明テニスの森"
+      },
+      {
+        "id": "STN_YURIKAMOME_ICHIBA_MAE",
+        "lat": "35.64569",
+        "lng": "139.78565",
+        "name": "市場前"
+      },
+      {
+        "id": "STN_YURIKAMOME_SHIN_TOYOSU",
+        "lat": "35.64871",
+        "lng": "139.790115",
+        "name": "新豊洲"
+      },
+      {
+        "id": "STN_YURIKAMOME_TOYOSU",
+        "lat": "35.653705",
+        "lng": "139.795435",
+        "name": "豊洲"
+      }
+    ]
+  }
+]

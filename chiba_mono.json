@@ -1,0 +1,155 @@
+[
+  {
+    "categories": "",
+    "company_id": "CHIBA_MONO",
+    "company_name": "千葉都市モノレール",
+    "lines": [
+      {
+        "id": "CHIBA_MONO_1",
+        "name": "1号線",
+        "sequence": [
+          "STN_CHIBA_MONO_CHIBA_MINATO",
+          "STN_CHIBA_MONO_SHIYAKUSHO_MAE",
+          "STN_CHIBA_MONO_CHIBA",
+          "STN_CHIBA_MONO_SAKAEMACHI",
+          "STN_CHIBA_MONO_YOSHIKAWA_KOEN",
+          "STN_CHIBA_MONO_KENCHO_MAE"
+        ]
+      },
+      {
+        "id": "CHIBA_MONO_2",
+        "name": "2号線",
+        "sequence": [
+          "STN_CHIBA_MONO_CHIBA_MINATO",
+          "STN_CHIBA_MONO_SHIYAKUSHO_MAE",
+          "STN_CHIBA_MONO_CHIBA",
+          "STN_CHIBA_MONO_SAKAEMACHI",
+          "STN_CHIBA_MONO_YOSHIKAWA_KOEN",
+          "STN_CHIBA_MONO_KENCHO_MAE",
+          "STN_CHIBA_MONO_CHIBA_KOEN",
+          "STN_CHIBA_MONO_SAKUSABE",
+          "STN_CHIBA_MONO_TENDAI",
+          "STN_CHIBA_MONO_ANAGAWA",
+          "STN_CHIBA_MONO_SPORTS_CENTER",
+          "STN_CHIBA_MONO_DOBUTSU_KOEN",
+          "STN_CHIBA_MONO_MITSUWADAI",
+          "STN_CHIBA_MONO_TSUGA",
+          "STN_CHIBA_MONO_SAKURAGI",
+          "STN_CHIBA_MONO_OGURADAI",
+          "STN_CHIBA_MONO_CHISHIRODAI_KITA",
+          "STN_CHIBA_MONO_CHISHIRODAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_CHIBA_MONO_CHIBA_MINATO",
+        "lat": "35.60760562",
+        "lng": "140.10229661",
+        "name": "千葉みなと"
+      },
+      {
+        "id": "STN_SHIBAYAMA_SHIYAKUSHO_MAE",
+        "lat": "35.60722534",
+        "lng": "140.1078072",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_CHIBA_MONO_CHIBA",
+        "lat": "35.612092",
+        "lng": "140.114028",
+        "name": "千葉"
+      },
+      {
+        "id": "STN_SHIBAYAMA_SAKAEMACHI",
+        "lat": "35.612965",
+        "lng": "140.11867",
+        "name": "栄町"
+      },
+      {
+        "id": "STN_CHIBA_MONO_YOSHIKAWA_KOEN",
+        "lat": "35.608865",
+        "lng": "140.120075",
+        "name": "葭川公園"
+      },
+      {
+        "id": "STN_SHIBAYAMA_KENCHO_MAE",
+        "lat": "35.60362455",
+        "lng": "140.12224378",
+        "name": "県庁前"
+      },
+      {
+        "id": "STN_CHIBA_MONO_CHIBA_KOEN",
+        "lat": "35.61971",
+        "lng": "140.11798",
+        "name": "千葉公園"
+      },
+      {
+        "id": "STN_SHIBAYAMA_SAKUSABE",
+        "lat": "35.62572817",
+        "lng": "140.11534831",
+        "name": "作草部"
+      },
+      {
+        "id": "STN_CHIBA_MONO_TENDAI",
+        "lat": "35.63147",
+        "lng": "140.11284",
+        "name": "天台"
+      },
+      {
+        "id": "STN_SHIBAYAMA_ANAGAWA",
+        "lat": "35.63954",
+        "lng": "140.111885",
+        "name": "穴川"
+      },
+      {
+        "id": "STN_CHIBA_MONO_SPORTS_CENTER",
+        "lat": "35.64334",
+        "lng": "140.116245",
+        "name": "スポーツセンター"
+      },
+      {
+        "id": "STN_SHIBAYAMA_DOBUTSU_KOEN",
+        "lat": "35.642639",
+        "lng": "140.125502",
+        "name": "動物公園"
+      },
+      {
+        "id": "STN_CHIBA_MONO_MITSUWADAI",
+        "lat": "35.63865732",
+        "lng": "140.13497334",
+        "name": "みつわ台"
+      },
+      {
+        "id": "STN_SHIBAYAMA_TSUGA",
+        "lat": "35.63538906",
+        "lng": "140.14864324",
+        "name": "都賀"
+      },
+      {
+        "id": "STN_CHIBA_MONO_SAKURAGI",
+        "lat": "35.63127718",
+        "lng": "140.1609966",
+        "name": "桜木"
+      },
+      {
+        "id": "STN_SHIBAYAMA_OGURADAI",
+        "lat": "35.62774757",
+        "lng": "140.17187153",
+        "name": "小倉台"
+      },
+      {
+        "id": "STN_CHIBA_MONO_CHISHIRODAI_KITA",
+        "lat": "35.62743853",
+        "lng": "140.18197219",
+        "name": "千城台北"
+      },
+      {
+        "id": "STN_SHIBAYAMA_CHISHIRODAI",
+        "lat": "35.62228087",
+        "lng": "140.18860657",
+        "name": "千城台"
+      }
+    ]
+  }
+]

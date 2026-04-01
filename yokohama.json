@@ -1,0 +1,59 @@
+[
+  {
+    "categories": "",
+    "company_id": "YOKOHAMA",
+    "company_name": "横浜高速鉄道",
+    "lines": [
+      {
+        "id": "YOKOHAMA_MINATOMIRAI",
+        "name": "みなとみらい線",
+        "sequence": [
+          "STN_YOKOHAMA_YOKOHAMA",
+          "STN_YOKOHAMA_SHIN_TAKASHIMA",
+          "STN_YOKOHAMA_MINATOMIRAI",
+          "STN_YOKOHAMA_BASHAMICHI",
+          "STN_YOKOHAMA_NIHON_ODORI",
+          "STN_YOKOHAMA_MOTOMACHI_CHUKAGAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YOKOHAMA_YOKOHAMA",
+        "lat": "35.466435",
+        "lng": "139.62235",
+        "name": "横浜"
+      },
+      {
+        "id": "STN_YOKOHAMA_SHIN_TAKASHIMA",
+        "lat": "35.461955",
+        "lng": "139.626485",
+        "name": "新高島"
+      },
+      {
+        "id": "STN_YOKOHAMA_MINATOMIRAI",
+        "lat": "35.457675",
+        "lng": "139.63246",
+        "name": "みなとみらい"
+      },
+      {
+        "id": "STN_YOKOHAMA_BASHAMICHI",
+        "lat": "35.450075",
+        "lng": "139.6362",
+        "name": "馬車道"
+      },
+      {
+        "id": "STN_YOKOHAMA_NIHON_ODORI",
+        "lat": "35.446795",
+        "lng": "139.642725",
+        "name": "日本大通り"
+      },
+      {
+        "id": "STN_YOKOHAMA_MOTOMACHI_CHUKAGAI",
+        "lat": "35.442305",
+        "lng": "139.65074",
+        "name": "元町・中華街"
+      }
+    ]
+  }
+]

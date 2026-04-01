@@ -1,0 +1,33 @@
+[
+  {
+    "categories": "",
+    "company_id": "TWR",
+    "company_name": "東京臨海高速鉄道",
+    "lines": [
+      {
+        "id": "TWR_RINKAI",
+        "name": "りんかい線",
+        "sequence": [
+          "STN_TWR_SHIN_KIBA",
+          "STN_TWR_SHINONOME",
+          "STN_TWR_KOKUSAI_TENJIJO",
+          "STN_TWR_TOKYO_TELEPORT",
+          "STN_TWR_TENNOZU_ISLE",
+          "STN_TWR_SHINAGAWA_SEASIDE",
+          "STN_TWR_OIMACHI",
+          "STN_TWR_OSAKI"
+        ]
+      }
+    ],
+    "stations": [
+      { "name": "新木場", "id": "STN_TWR_SHIN_KIBA", "lat": "35.64583", "lng": "139.8266" },
+{ "name": "東雲", "id": "STN_TWR_SHINONOME", "lat": "35.64082", "lng": "139.80416" },
+{ "name": "国際展示場", "id": "STN_TWR_KOKUSAI_TENJIJO", "lat": "35.63441", "lng": "139.791695" },
+{ "name": "東京テレポート", "id": "STN_TWR_TOKYO_TELEPORT", "lat": "35.627085", "lng": "139.77806" },
+{ "name": "天王洲アイル", "id": "STN_TWR_TENNOZU_ISLE", "lat": "35.62072", "lng": "139.750885" },
+{ "name": "品川シーサイド", "id": "STN_TWR_SHINAGAWA_SEASIDE", "lat": "35.60979", "lng": "139.749795" },
+{ "name": "大井町", "id": "STN_TWR_OIMACHI", "lat": "35.607385", "lng": "139.734355" },
+{ "name": "大崎", "id": "STN_TWR_OSAKI", "lat": "35.61975", "lng": "139.727895" }
+    ]
+  }
+]

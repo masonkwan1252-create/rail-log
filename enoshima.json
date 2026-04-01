@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "",
+    "company_id": "ENOSHIMA",
+    "company_name": "江ノ島電鉄",
+    "lines": [
+      {
+        "id": "ENOSHIMA_LINE",
+        "name": "江ノ島電鉄線",
+        "sequence": [
+          "STN_ENOSHIMA_FUJISAWA",
+          "STN_ENOSHIMA_ISHIGAMI",
+          "STN_ENOSHIMA_YANAGIKOJI",
+          "STN_ENOSHIMA_KUGENUMA",
+          "STN_ENOSHIMA_SHONAN_KAIGAN_KOEN",
+          "STN_ENOSHIMA_ENOSHIMA",
+          "STN_ENOSHIMA_KOSHIGOE",
+          "STN_ENOSHIMA_KAMAKURA_KOKO_MAE",
+          "STN_ENOSHIMA_SHICHIRIGAHAMA",
+          "STN_ENOSHIMA_INAMURAGASAKI",
+          "STN_ENOSHIMA_GOKURAKUJI",
+          "STN_ENOSHIMA_HASE",
+          "STN_ENOSHIMA_YUIGAHAMA",
+          "STN_ENOSHIMA_WADAZUKA",
+          "STN_ENOSHIMA_KAMAKURA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ENOSHIMA_FUJISAWA",
+        "lat": "35.337237",
+        "lng": "139.48726",
+        "name": "藤沢"
+      },
+      {
+        "id": "STN_ENOSHIMA_ISHIGAMI",
+        "lat": "35.33246",
+        "lng": "139.48558",
+        "name": "石上"
+      },
+      {
+        "id": "STN_ENOSHIMA_YANAGIKOJI",
+        "lat": "35.32729",
+        "lng": "139.485225",
+        "name": "柳小路"
+      },
+      {
+        "id": "STN_ENOSHIMA_KUGENUMA",
+        "lat": "35.3214",
+        "lng": "139.48267",
+        "name": "鵠沼"
+      },
+      {
+        "id": "STN_ENOSHIMA_SHONAN_KAIGAN_KOEN",
+        "lat": "35.3152",
+        "lng": "139.48332",
+        "name": "湘南海岸公園"
+      },
+      {
+        "id": "STN_ENOSHIMA_ENOSHIMA",
+        "lat": "35.311025",
+        "lng": "139.487625",
+        "name": "江ノ島"
+      },
+      {
+        "id": "STN_ENOSHIMA_KOSHIGOE",
+        "lat": "35.30834",
+        "lng": "139.493355",
+        "name": "腰越"
+      },
+      {
+        "id": "STN_ENOSHIMA_KAMAKURA_KOKO_MAE",
+        "lat": "35.30676",
+        "lng": "139.500495",
+        "name": "鎌倉高校前"
+      },
+      {
+        "id": "STN_ENOSHIMA_SHICHIRIGAHAMA",
+        "lat": "35.306273",
+        "lng": "139.509996",
+        "name": "七里ヶ浜"
+      },
+      {
+        "id": "STN_ENOSHIMA_INAMURAGASAKI",
+        "lat": "35.30433",
+        "lng": "139.522265",
+        "name": "稲村ヶ崎"
+      },
+      {
+        "id": "STN_ENOSHIMA_GOKURAKUJI",
+        "lat": "35.309205",
+        "lng": "139.52853",
+        "name": "極楽寺"
+      },
+      {
+        "id": "STN_ENOSHIMA_HASE",
+        "lat": "35.311325",
+        "lng": "139.53626",
+        "name": "長谷"
+      },
+      {
+        "id": "STN_ENOSHIMA_YUIGAHAMA",
+        "lat": "35.31288",
+        "lng": "139.541575",
+        "name": "由比ヶ浜"
+      },
+      {
+        "id": "STN_ENOSHIMA_WADAZUKA",
+        "lat": "35.313745",
+        "lng": "139.54538",
+        "name": "和田塚"
+      },
+      {
+        "id": "STN_ENOSHIMA_KAMAKURA",
+        "lat": "35.318295",
+        "lng": "139.55009",
+        "name": "鎌倉"
+      }
+    ]
+  }
+]

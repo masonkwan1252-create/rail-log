@@ -1,0 +1,143 @@
+[
+  {
+    "categories": "",
+    "company_id": "KOMINATO",
+    "company_name": "小湊鉄道",
+    "lines": [
+      {
+        "id": "KOMINATO_LINE",
+        "name": "小湊鉄道線",
+        "sequence": [
+          "STN_KOMINATO_GOI",
+          "STN_KOMINATO_KAZUSA_MURAKAMI",
+          "STN_KOMINATO_AMA_ARIKI",
+          "STN_KOMINATO_KAZUSA_MITSUMATA",
+          "STN_KOMINATO_KAZUSA_YAMADA",
+          "STN_KOMINATO_KOFUDAI",
+          "STN_KOMINATO_UMATATE",
+          "STN_KOMINATO_KAZUSA_USHIKU",
+          "STN_KOMINATO_KAZUSA_KAWAMA",
+          "STN_KOMINATO_KAZUSA_TSURUMAI",
+          "STN_KOMINATO_KAZUSA_KUBO",
+          "STN_KOMINATO_TAKATAKI",
+          "STN_KOMINATO_SATOMI",
+          "STN_KOMINATO_ITABU",
+          "STN_KOMINATO_TSUKIZAKI",
+          "STN_KOMINATO_KAZUSA_OKUBO",
+          "STN_KOMINATO_YORO_KEIKOKU",
+          "STN_KOMINATO_KAZUSA_NAKANO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KOMINATO_GOI",
+        "lat": "35.513115",
+        "lng": "140.089745",
+        "name": "五井"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_MURAKAMI",
+        "lat": "35.49612",
+        "lng": "140.100425",
+        "name": "上総村上"
+      },
+      {
+        "id": "STN_KOMINATO_AMA_ARIKI",
+        "lat": "35.48173",
+        "lng": "140.1243",
+        "name": "海士有木"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_MITSUMATA",
+        "lat": "35.46592",
+        "lng": "140.126755",
+        "name": "上総三又"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_YAMADA",
+        "lat": "35.4541",
+        "lng": "140.126165",
+        "name": "上総山田"
+      },
+      {
+        "id": "STN_KOMINATO_KOFUDAI",
+        "lat": "35.43957",
+        "lng": "140.114165",
+        "name": "光風台"
+      },
+      {
+        "id": "STN_KOMINATO_UMATATE",
+        "lat": "35.42376",
+        "lng": "140.11473",
+        "name": "馬立"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_USHIKU",
+        "lat": "35.4002",
+        "lng": "140.142305",
+        "name": "上総牛久"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_KAWAMA",
+        "lat": "35.388055",
+        "lng": "140.151015",
+        "name": "上総川間"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_TSURUMAI",
+        "lat": "35.381337",
+        "lng": "140.165033",
+        "name": "上総鶴舞"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_KUBO",
+        "lat": "35.367455",
+        "lng": "140.154445",
+        "name": "上総久保"
+      },
+      {
+        "id": "STN_KOMINATO_TAKATAKI",
+        "lat": "35.353085",
+        "lng": "140.150275",
+        "name": "高滝"
+      },
+      {
+        "id": "STN_KOMINATO_SATOMI",
+        "lat": "35.33723",
+        "lng": "140.145525",
+        "name": "里見"
+      },
+      {
+        "id": "STN_KOMINATO_ITABU",
+        "lat": "35.320505",
+        "lng": "140.14238",
+        "name": "飯給"
+      },
+      {
+        "id": "STN_KOMINATO_TSUKIZAKI",
+        "lat": "35.30213",
+        "lng": "140.139605",
+        "name": "月崎"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_OKUBO",
+        "lat": "35.28336",
+        "lng": "140.14593",
+        "name": "上総大久保"
+      },
+      {
+        "id": "STN_KOMINATO_YORO_KEIKOKU",
+        "lat": "35.2664",
+        "lng": "140.159395",
+        "name": "養老渓谷"
+      },
+      {
+        "id": "STN_KOMINATO_KAZUSA_NAKANO",
+        "lat": "35.25004",
+        "lng": "140.199595",
+        "name": "上総中野"
+      }
+    ]
+  }
+]

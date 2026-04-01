@@ -1,0 +1,115 @@
+[
+  {
+    "categories": "",
+    "company_id": "YOKOHAMA_SEASIDE",
+    "company_name": "横浜高速鉄道",
+    "lines": [
+      {
+        "id": "YOKOHAMA_SEASIDE_LINE",
+        "name": "金沢シーサイドライン",
+        "sequence": [
+          "STN_YOKOHAMA_SEASIDE_SHIN_SUGITA",
+          "STN_YOKOHAMA_SEASIDE_NAMBU_ICHIBA",
+          "STN_YOKOHAMA_SEASIDE_TORIHAMA",
+          "STN_YOKOHAMA_SEASIDE_NAMIKI_KITA",
+          "STN_YOKOHAMA_SEASIDE_NAMIKI_CHUO",
+          "STN_YOKOHAMA_SEASIDE_SACHIURA",
+          "STN_YOKOHAMA_SEASIDE_SANGYO_SHINKO_CENTER",
+          "STN_YOKOHAMA_SEASIDE_FUKUURA",
+          "STN_YOKOHAMA_SEASIDE_SHIDAI_IGAKUBU",
+          "STN_YOKOHAMA_SEASIDE_HAKKEIJIMA",
+          "STN_YOKOHAMA_SEASIDE_UMI_NO_KOEN_SHIBAGUCHI",
+          "STN_YOKOHAMA_SEASIDE_UMI_NO_KOEN_MINAMIGUCHI",
+          "STN_YOKOHAMA_SEASIDE_NOJIMA_KOEN",
+          "STN_YOKOHAMA_SEASIDE_KANAZAWA_HAKKEI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_SHIN_SUGITA",
+        "lat": "35.38571",
+        "lng": "139.620745",
+        "name": "新杉田"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_NAMBU_ICHIBA",
+        "lat": "35.380185",
+        "lng": "139.633205",
+        "name": "南部市場"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_TORIHAMA",
+        "lat": "35.37718",
+        "lng": "139.6418",
+        "name": "鳥浜"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_NAMIKI_KITA",
+        "lat": "35.372015",
+        "lng": "139.64273",
+        "name": "並木北"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_NAMIKI_CHUO",
+        "lat": "35.36545",
+        "lng": "139.642985",
+        "name": "並木中央"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_SACHIURA",
+        "lat": "35.358395",
+        "lng": "139.64369",
+        "name": "幸浦"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_SANGYO_SHINKO_CENTER",
+        "lat": "35.353425",
+        "lng": "139.646325",
+        "name": "産業振興センター"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_FUKUURA",
+        "lat": "35.34961",
+        "lng": "139.648535",
+        "name": "福浦"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_SHIDAI_IGAKUBU",
+        "lat": "35.343905",
+        "lng": "139.65013",
+        "name": "市大医学部"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_HAKKEIJIMA",
+        "lat": "35.340895",
+        "lng": "139.64083",
+        "name": "八景島"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_UMI_NO_KOEN_SHIBAGUCHI",
+        "lat": "35.34212",
+        "lng": "139.63591",
+        "name": "海の公園柴口"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_UMI_NO_KOEN_MINAMIGUCHI",
+        "lat": "35.33702872",
+        "lng": "139.63200501",
+        "name": "海の公園南口"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_NOJIMA_KOEN",
+        "lat": "35.3306589",
+        "lng": "139.63177194",
+        "name": "野島公園"
+      },
+      {
+        "id": "STN_YOKOHAMA_SEASIDE_KANAZAWA_HAKKEI",
+        "lat": "35.33157946",
+        "lng": "139.62075702",
+        "name": "金沢八景"
+      }
+    ]
+  }
+]

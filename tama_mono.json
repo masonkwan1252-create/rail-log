@@ -1,0 +1,150 @@
+[
+  {
+    "categories": "",
+    "company_id": "TAMA_MONO",
+    "company_name": "多摩都市モノレール",
+    "lines": [
+      {
+        "id": "TAMA_MONO_LINE",
+        "name": "多摩都市モノレール線",
+        "sequence": [
+          "STN_TAMA_MONO_KAMIKITADAI",
+          "STN_TAMA_MONO_SAKURA_KAIDO",
+          "STN_TAMA_MONO_TAMAGAWA_JOSUI",
+          "STN_TAMA_MONO_SUNAGAWA_NANABAN",
+          "STN_TAMA_MONO_IZUMI_TAIUKAN",
+          "STN_TAMA_MONO_TACHIHI",
+          "STN_TAMA_MONO_TAKAMATSU",
+          "STN_TAMA_MONO_TACHIKAWA_KITA",
+          "STN_TAMA_MONO_TACHIKAWA_MINAMI",
+          "STN_TAMA_MONO_SHIBAZAKI_TAIUKAN",
+          "STN_TAMA_MONO_KOSHU_KAIDO",
+          "STN_TAMA_MONO_MANGANJI",
+          "STN_TAMA_MONO_TAKAHATA_FUDO",
+          "STN_TAMA_MONO_HODOKUBO",
+          "STN_TAMA_MONO_TAMA_DOBUTSU_KOEN",
+          "STN_TAMA_MONO_CHUO_DAIGAKU_MEISEI_DAIGAKU",
+          "STN_TAMA_MONO_OTSUKA_TEIKYO_DAIGAKU",
+          "STN_TAMA_MONO_MATSUGAYA",
+          "STN_TAMA_MONO_TAMA_CENTER"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TAMA_MONO_KAMIKITADAI",
+        "lat": "35.74576",
+        "lng": "139.415865",
+        "name": "上北台"
+      },
+      {
+        "id": "STN_TAMA_MONO_SAKURA_KAIDO",
+        "lat": "35.73903285",
+        "lng": "139.41667332",
+        "name": "桜街道"
+      },
+      {
+        "id": "STN_TAMA_MONO_TAMAGAWA_JOSUI",
+        "lat": "35.73221104",
+        "lng": "139.41787827",
+        "name": "玉川上水"
+      },
+      {
+        "id": "STN_TAMA_MONO_SUNAGAWA_NANABAN",
+        "lat": "35.723385",
+        "lng": "139.418105",
+        "name": "砂川七番"
+      },
+      {
+        "id": "STN_TAMA_MONO_IZUMI_TAIUKAN",
+        "lat": "35.718845",
+        "lng": "139.419565",
+        "name": "泉体育館"
+      },
+      {
+        "id": "STN_TAMA_MONO_TACHIHI",
+        "lat": "35.71427",
+        "lng": "139.41707",
+        "name": "立飛"
+      },
+      {
+        "id": "STN_TAMA_MONO_TAKAMATSU",
+        "lat": "35.710045",
+        "lng": "139.413275",
+        "name": "高松"
+      },
+      {
+        "id": "STN_TAMA_MONO_TACHIKAWA_KITA",
+        "lat": "35.69941854",
+        "lng": "139.41250648",
+        "name": "立川北"
+      },
+      {
+        "id": "STN_TAMA_MONO_TACHIKAWA_MINAMI",
+        "lat": "35.69619417",
+        "lng": "139.41265033",
+        "name": "立川南"
+      },
+      {
+        "id": "STN_TAMA_MONO_SHIBAZAKI_TAIUKAN",
+        "lat": "35.68977536",
+        "lng": "139.4093409",
+        "name": "柴崎体育館"
+      },
+      {
+        "id": "STN_TAMA_MONO_KOSHU_KAIDO",
+        "lat": "35.67825",
+        "lng": "139.409155",
+        "name": "甲州街道"
+      },
+      {
+        "id": "STN_TAMA_MONO_MANGANJI",
+        "lat": "35.67135609",
+        "lng": "139.41995237",
+        "name": "万願寺"
+      },
+      {
+        "id": "STN_TAMA_MONO_TAKAHATA_FUDO",
+        "lat": "35.66129",
+        "lng": "139.415235",
+        "name": "高幡不動"
+      },
+      {
+        "id": "STN_TAMA_MONO_HODOKUBO",
+        "lat": "35.65523",
+        "lng": "139.410755",
+        "name": "程久保"
+      },
+      {
+        "id": "STN_TAMA_MONO_TAMA_DOBUTSU_KOEN",
+        "lat": "35.648535",
+        "lng": "139.403815",
+        "name": "多摩動物公園"
+      },
+      {
+        "id": "STN_TAMA_MONO_CHUO_DAIGAKU_MEISEI_DAIGAKU",
+        "lat": "35.641885",
+        "lng": "139.408725",
+        "name": "中央大学・明星大学"
+      },
+      {
+        "id": "STN_TAMA_MONO_OTSUKA_TEIKYO_DAIGAKU",
+        "lat": "35.63686",
+        "lng": "139.416445",
+        "name": "大塚・帝京大学"
+      },
+      {
+        "id": "STN_TAMA_MONO_MATSUGAYA",
+        "lat": "35.631795",
+        "lng": "139.422035",
+        "name": "松が谷"
+      },
+      {
+        "id": "STN_TAMA_MONO_TAMA_CENTER",
+        "lat": "35.623855",
+        "lng": "139.422785",
+        "name": "多摩センター"
+      }
+    ]
+  }
+]

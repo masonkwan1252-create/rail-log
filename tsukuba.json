@@ -1,0 +1,157 @@
+[
+  {
+    "categories": "",
+    "company_id": "TSUKUBA",
+    "company_name": "首都圏新都市鉄道",
+    "lines": [
+      {
+        "id": "TSUKUBA_EXPRESS",
+        "name": "つくばエクスプレス",
+        "sequence": [
+          "STN_TSUKUBA_AKIHABARA",
+          "STN_TSUKUBA_SHIN_OKACHIMACHI",
+          "STN_TSUKUBA_ASAKUSA",
+          "STN_TSUKUBA_MINAMI_SENJU",
+          "STN_TSUKUBA_KITA_SENJU",
+          "STN_TSUKUBA_AOI",
+          "STN_TSUKUBA_ROKUCHO",
+          "STN_TSUKUBA_YASHIO",
+          "STN_TSUKUBA_MISATO_CHUO",
+          "STN_TSUKUBA_MINAMI_NAGAREYAMA",
+          "STN_TSUKUBA_NAGAREYAMA_CENTRAL_PARK",
+          "STN_TSUKUBA_NAGAREYAMA_OTAKANOMORI",
+          "STN_TSUKUBA_KASHIWANOHA_CAMPUS",
+          "STN_TSUKUBA_KASHIWA_TANAKA",
+          "STN_TSUKUBA_MORIYA",
+          "STN_TSUKUBA_MIRAIDAIRA",
+          "STN_TSUKUBA_MIDORINO",
+          "STN_TSUKUBA_BANPAKU_KINEN_KOEN",
+          "STN_TSUKUBA_KENKYU_GAKUEN",
+          "STN_TSUKUBA_TSUKUBA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_RYUTETSU_AKIHABARA",
+        "lat": "35.699041",
+        "lng": "139.774381",
+        "name": "秋葉原"
+      },
+      {
+        "id": "STN_RYUTETSU_SHIN_OKACHIMACHI",
+        "lat": "35.70688",
+        "lng": "139.78234",
+        "name": "新御徒町"
+      },
+      {
+        "id": "STN_RYUTETSU_ASAKUSA",
+        "lat": "35.71393",
+        "lng": "139.792455",
+        "name": "浅草"
+      },
+      {
+        "id": "STN_RYUTETSU_MINAMI_SENJU",
+        "lat": "35.732985",
+        "lng": "139.79895",
+        "name": "南千住"
+      },
+      {
+        "id": "STN_RYUTETSU_KITA_SENJU",
+        "lat": "35.749865",
+        "lng": "139.805175",
+        "name": "北千住"
+      },
+      {
+        "id": "STN_RYUTETSU_AOI",
+        "lat": "35.772",
+        "lng": "139.820245",
+        "name": "青井"
+      },
+      {
+        "id": "STN_RYUTETSU_ROKUCHO",
+        "lat": "35.78478",
+        "lng": "139.821805",
+        "name": "六町"
+      },
+      {
+        "id": "STN_RYUTETSU_YASHIO",
+        "lat": "35.807765",
+        "lng": "139.844735",
+        "name": "八潮"
+      },
+      {
+        "id": "STN_RYUTETSU_MISATO_CHUO",
+        "lat": "35.824485",
+        "lng": "139.87837",
+        "name": "三郷中央"
+      },
+      {
+        "id": "STN_RYUTETSU_MINAMI_NAGAREYAMA",
+        "lat": "35.83843",
+        "lng": "139.902795",
+        "name": "南流山"
+      },
+      {
+        "id": "STN_RYUTETSU_NAGAREYAMA_CENTRAL_PARK",
+        "lat": "35.85459",
+        "lng": "139.91518",
+        "name": "流山セントラルパーク"
+      },
+      {
+        "id": "STN_RYUTETSU_NAGAREYAMA_OTAKANOMORI",
+        "lat": "35.871755",
+        "lng": "139.924955",
+        "name": "流山おおたかの森"
+      },
+      {
+        "id": "STN_RYUTETSU_KASHIWANOHA_CAMPUS",
+        "lat": "35.893315",
+        "lng": "139.952525",
+        "name": "柏の葉キャンパス"
+      },
+      {
+        "id": "STN_RYUTETSU_KASHIWA_TANAKA",
+        "lat": "35.91086",
+        "lng": "139.957515",
+        "name": "柏たなか"
+      },
+      {
+        "id": "STN_RYUTETSU_MORIYA",
+        "lat": "35.950015",
+        "lng": "139.99201",
+        "name": "守谷"
+      },
+      {
+        "id": "STN_RYUTETSU_MIRAIDAIRA",
+        "lat": "35.994405",
+        "lng": "140.038345",
+        "name": "みらい平"
+      },
+      {
+        "id": "STN_RYUTETSU_MIDORINO",
+        "lat": "36.02992",
+        "lng": "140.056205",
+        "name": "みどりの"
+      },
+      {
+        "id": "STN_RYUTETSU_BANPAKU_KINEN_KOEN",
+        "lat": "36.0584",
+        "lng": "140.059375",
+        "name": "万博記念公園"
+      },
+      {
+        "id": "STN_RYUTETSU_KENKYU_GAKUEN",
+        "lat": "36.082165",
+        "lng": "140.08228",
+        "name": "研究学園"
+      },
+      {
+        "id": "STN_RYUTETSU_TSUKUBA",
+        "lat": "36.082425",
+        "lng": "140.110545",
+        "name": "つくば"
+      }
+    ]
+  }
+]

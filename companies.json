@@ -260,10 +260,6 @@
     "name": "千葉都市モノレール"
   },
   {
-    "id": "CHIBA_NEWTOWN",
-    "name": "千葉ニュータウン鉄道"
-  },
-  {
     "id": "CHOSHI",
     "name": "銚子電気鉄道"
   },
@@ -305,7 +301,7 @@
   },
   {
     "id": "ODAKYU_HAKONE",
-    "name": "小田急箱根"
+    "name": "箱根登山鉄道"
   },
   {
     "id": "SHONAN_MONO",

@@ -1,0 +1,80 @@
+[
+  {
+    "categories": "",
+    "company_id": "TOYO",
+    "company_name": "東葉高速鉄道",
+    "lines": [
+      {
+        "id": "TOYO_RAPID",
+        "name": "東葉高速線",
+        "sequence": [
+          "STN_TOYO_NISHI_FUNABASHI",
+          "STN_TOYO_HIGASHI_KAIJIN",
+          "STN_TOYO_HASAMA",
+          "STN_TOYO_KITA_NARASHINO",
+          "STN_TOYO_FUNABASHI_NICHIDAI_MAE",
+          "STN_TOYO_YACHIYO_MIDORIGAOKA",
+          "STN_TOYO_YACHIYO_CHUO",
+          "STN_TOYO_MURAKAMI",
+          "STN_TOYO_TOYO_KATSUTADAII"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TOYO_NISHI_FUNABASHI",
+        "lat": "35.707265",
+        "lng": "139.958835",
+        "name": "西船橋"
+      },
+      {
+        "id": "",
+        "lat": "35.70596",
+        "lng": "139.980555",
+        "name": "東海神"
+      },
+      {
+        "id": "",
+        "lat": "35.714",
+        "lng": "140.0223",
+        "name": "飯山満"
+      },
+      {
+        "id": "",
+        "lat": "35.721657",
+        "lng": "140.042355",
+        "name": "北習志野"
+      },
+      {
+        "id": "",
+        "lat": "35.727245",
+        "lng": "140.060075",
+        "name": "船橋日大前"
+      },
+      {
+        "id": "",
+        "lat": "35.72894",
+        "lng": "140.073205",
+        "name": "八千代緑が丘"
+      },
+      {
+        "id": "",
+        "lat": "35.727875",
+        "lng": "140.103305",
+        "name": "八千代中央"
+      },
+      {
+        "id": "",
+        "lat": "35.72378",
+        "lng": "140.118635",
+        "name": "村上"
+      },
+      {
+        "id": "",
+        "lat": "35.716704",
+        "lng": "140.125714",
+        "name": "東葉勝田台"
+      }
+    ]
+  }
+]

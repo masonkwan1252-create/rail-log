@@ -1,0 +1,87 @@
+[
+  {
+    "categories": "",
+    "company_id": "CHOSHI",
+    "company_name": "銚子電気鉄道",
+    "lines": [
+      {
+        "id": "CHOSHI_LINE",
+        "name": "銚子電気鉄道線",
+        "sequence": [
+          "STN_CHOSHI_CHOSHI",
+          "STN_CHOSHI_NAKANOMACHI",
+          "STN_CHOSHI_KANNON",
+          "STN_CHOSHI_MOTO_CHOSHI",
+          "STN_CHOSHI_KASAGAMI_KUROHAE",
+          "STN_CHOSHI_NISHI_ASHIKAJIMA",
+          "STN_CHOSHI_ASHIKAJIMA",
+          "STN_CHOSHI_KIMIGAHAMA",
+          "STN_CHOSHI_INUBO",
+          "STN_CHOSHI_TOKOGAWA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_CHOSHI_CHOSHI",
+        "lat": "35.729325",
+        "lng": "140.827465",
+        "name": "銚子"
+      },
+      {
+        "id": "STN_CHOSHI_NAKANOMACHI",
+        "lat": "35.728795",
+        "lng": "140.833765",
+        "name": "仲ノ町"
+      },
+      {
+        "id": "STN_CHOSHI_KANNON",
+        "lat": "35.728905",
+        "lng": "140.839845",
+        "name": "観音"
+      },
+      {
+        "id": "STN_CHOSHI_MOTO_CHOSHI",
+        "lat": "35.730945",
+        "lng": "140.8473",
+        "name": "本銚子"
+      },
+      {
+        "id": "STN_CHOSHI_KASAGAMI_KUROHAE",
+        "lat": "35.72837",
+        "lng": "140.85694",
+        "name": "笠上黒生"
+      },
+      {
+        "id": "STN_CHOSHI_NISHI_ASHIKAJIMA",
+        "lat": "35.72508",
+        "lng": "140.860215",
+        "name": "西海鹿島"
+      },
+      {
+        "id": "STN_CHOSHI_ASHIKAJIMA",
+        "lat": "35.72208",
+        "lng": "140.863125",
+        "name": "海鹿島"
+      },
+      {
+        "id": "STN_CHOSHI_KIMIGAHAMA",
+        "lat": "35.71407",
+        "lng": "140.860545",
+        "name": "君ヶ浜"
+      },
+      {
+        "id": "STN_CHOSHI_INUBO",
+        "lat": "35.70625",
+        "lng": "140.86093",
+        "name": "犬吠"
+      },
+      {
+        "id": "STN_CHOSHI_TOKOGAWA",
+        "lat": "35.69933948",
+        "lng": "140.85722074",
+        "name": "外川"
+      }
+    ]
+  }
+]

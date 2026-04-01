@@ -1,0 +1,73 @@
+[
+  {
+    "categories": "",
+    "company_id": "SHONAN_MONO",
+    "company_name": "湘南モノレール",
+    "lines": [
+      {
+        "id": "SHONAN_MONO_LINE",
+        "name": "江の島線",
+        "sequence": [
+          "STN_SHONAN_MONO_OFUNA",
+          "STN_SHONAN_MONO_FUJIMICHO",
+          "STN_SHONAN_MONO_SHONAN_MACHIYA",
+          "STN_SHONAN_MONO_SHONAN_FUKASAWA",
+          "STN_SHONAN_MONO_NISHI_KAMAKURA",
+          "STN_SHONAN_MONO_KATASEYAMA",
+          "STN_SHONAN_MONO_MEJIRO_YAMASHITA",
+          "STN_SHONAN_MONO_SHONAN_ENOSHIMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SHONAN_MONO_OFUNA",
+        "lat": "35.352459",
+        "lng": "139.531379",
+        "name": "大船"
+      },
+      {
+        "id": "STN_SHONAN_MONO_FUJIMICHO",
+        "lat": "35.34535",
+        "lng": "139.52932",
+        "name": "富士見町"
+      },
+      {
+        "id": "STN_SHONAN_MONO_SHONAN_MACHIYA",
+        "lat": "35.337855",
+        "lng": "139.52272",
+        "name": "湘南町屋"
+      },
+      {
+        "id": "STN_SHONAN_MONO_SHONAN_FUKASAWA",
+        "lat": "35.332975",
+        "lng": "139.51891",
+        "name": "湘南深沢"
+      },
+      {
+        "id": "STN_SHONAN_MONO_NISHI_KAMAKURA",
+        "lat": "35.319413",
+        "lng": "139.504333",
+        "name": "西鎌倉"
+      },
+      {
+        "id": "STN_SHONAN_MONO_KATASEYAMA",
+        "lat": "35.31733191",
+        "lng": "139.49609595",
+        "name": "片瀬山"
+      },
+      {
+        "id": "STN_SHONAN_MONO_MEJIRO_YAMASHITA",
+        "lat": "35.31390937",
+        "lng": "139.49123046",
+        "name": "目白山下"
+      },
+      {
+        "id": "STN_SHONAN_MONO_SHONAN_ENOSHIMA",
+        "lat": "35.311875",
+        "lng": "139.487815",
+        "name": "湘南江の島"
+      }
+    ]
+  }
+]

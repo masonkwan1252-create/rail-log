@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "",
+    "company_id": "HOKUSO",
+    "company_name": "北総鉄道",
+    "lines": [
+      {
+        "id": "HOKUSO_LINE",
+        "name": "北総線",
+        "sequence": [
+          "STN_HOKUSO_KEISEI_TAKASAGO",
+          "STN_HOKUSO_SHIN_SHIBAMATA",
+          "STN_HOKUSO_YAGIRI",
+          "STN_HOKUSO_KITA_KOKUBUN",
+          "STN_HOKUSO_AKIYAMA",
+          "STN_HOKUSO_HIGASHI_MATSUDO",
+          "STN_HOKUSO_MATSUHIDAI",
+          "STN_HOKUSO_OMACHI",
+          "STN_HOKUSO_SHIN_KAMAGAYA",
+          "STN_HOKUSO_NISHI_SHIROI",
+          "STN_HOKUSO_SHIROI",
+          "STN_HOKUSO_KOMURO",
+          "STN_HOKUSO_CHIBA_NEW_TOWN_CHUO",
+          "STN_HOKUSO_INZAI_MAKINOHARA",
+          "STN_HOKUSO_INBA_NIHON_IDAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HOKUSO_KEISEI_TAKASAGO",
+        "lat": "35.75087",
+        "lng": "139.86659",
+        "name": "京成高砂"
+      },
+      {
+        "id": "",
+        "lat": "35.75135",
+        "lng": "139.87982",
+        "name": "新柴又"
+      },
+      {
+        "id": "",
+        "lat": "35.757505",
+        "lng": "139.900555",
+        "name": "矢切"
+      },
+      {
+        "id": "",
+        "lat": "35.76286",
+        "lng": "139.91422",
+        "name": "北国分"
+      },
+      {
+        "id": "",
+        "lat": "35.76543",
+        "lng": "139.931344",
+        "name": "秋山"
+      },
+      {
+        "id": "",
+        "lat": "35.769951",
+        "lng": "139.943019",
+        "name": "東松戸"
+      },
+      {
+        "id": "",
+        "lat": "35.775329",
+        "lng": "139.95756",
+        "name": "松飛台"
+      },
+      {
+        "id": "",
+        "lat": "35.775149",
+        "lng": "139.973405",
+        "name": "大町"
+      },
+      {
+        "id": "",
+        "lat": "35.77961",
+        "lng": "139.998355",
+        "name": "新鎌ヶ谷"
+      },
+      {
+        "id": "",
+        "lat": "35.78444",
+        "lng": "140.031745",
+        "name": "西白井"
+      },
+      {
+        "id": "",
+        "lat": "35.784749",
+        "lng": "140.053975",
+        "name": "白井"
+      },
+      {
+        "id": "",
+        "lat": "35.787032",
+        "lng": "140.07602",
+        "name": "小室"
+      },
+      {
+        "id": "",
+        "lat": "35.800202",
+        "lng": "140.116199",
+        "name": "千葉ニュータウン中央"
+      },
+      {
+        "id": "",
+        "lat": "35.803632",
+        "lng": "140.167125",
+        "name": "印西牧の原"
+      },
+      {
+        "id": "",
+        "lat": "35.787815",
+        "lng": "140.202759",
+        "name": "印旛日本医大"
+      }
+    ]
+  }
+]

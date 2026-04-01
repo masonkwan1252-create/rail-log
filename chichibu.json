@@ -1,0 +1,276 @@
+[
+  {
+    "categories": "",
+    "company_id": "CHICHIBU",
+    "company_name": "秩父鉄道",
+    "lines": [
+      {
+        "id": "CHICHIBU_HONSEN",
+        "name": "秩父本線",
+        "sequence": [
+          "STN_CHICHIBU_HANYU",
+          "STN_CHICHIBU_NISHI_HANYU",
+          "STN_CHICHIBU_SHINGO",
+          "STN_CHICHIBU_BUSHU_ARAKI",
+          "STN_CHICHIBU_HIGASHI_GYODA",
+          "STN_CHICHIBU_GYODASHI",
+          "STN_CHICHIBU_MOCHIDA",
+          "STN_CHICHIBU_SOCIO_RYUTSU_CENTER",
+          "STN_CHICHIBU_KUMAGAYA",
+          "STN_CHICHIBU_KAMI_KUMAGAYA",
+          "STN_CHICHIBU_ISHIWARA",
+          "STN_CHICHIBU_HIROSE_YACHO_NO_MORI",
+          "STN_CHICHIBU_OMASU",
+          "STN_CHICHIBU_AKETO",
+          "STN_CHICHIBU_TAKEKAWA",
+          "STN_CHICHIBU_NAGATA",
+          "STN_CHICHIBU_FUKAYA_HANAZONO",
+          "STN_CHICHIBU_OTAMAEDA",
+          "STN_CHICHIBU_SAKURA_ZAWA",
+          "STN_CHICHIBU_YORII",
+          "STN_CHICHIBU_HAGURE",
+          "STN_CHICHIBU_HIGUCHI",
+          "STN_CHICHIBU_NOGAMI",
+          "STN_CHICHIBU_NAGATORO",
+          "STN_CHICHIBU_KAMI_NAGATORO",
+          "STN_CHICHIBU_OYAHANA",
+          "STN_CHICHIBU_MINANO",
+          "STN_CHICHIBU_WADO_KUROYA",
+          "STN_CHICHIBU_ONOHARA",
+          "STN_CHICHIBU_CHICHIBU",
+          "STN_CHICHIBU_OHANABATAKE",
+          "STN_CHICHIBU_KAGEMORI",
+          "STN_CHICHIBU_URAYAMAGUCHI",
+          "STN_CHICHIBU_BUSHU_NAKAGAWA",
+          "STN_CHICHIBU_BUSHU_HINO",
+          "STN_CHICHIBU_SHIROKU",
+          "STN_CHICHIBU_MITSUMINEGUCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_CHICHIBU_HANYU",
+        "lat": "36.170445",
+        "lng": "139.53362",
+        "name": "羽生"
+      },
+      {
+        "id": "STN_CHICHIBU_NISHI_HANYU",
+        "lat": "36.176585",
+        "lng": "139.52446",
+        "name": "西羽生"
+      },
+      {
+        "id": "STN_CHICHIBU_SHINGO",
+        "lat": "36.17126",
+        "lng": "139.510495",
+        "name": "新郷"
+      },
+      {
+        "id": "STN_CHICHIBU_BUSHU_ARAKI",
+        "lat": "36.16253",
+        "lng": "139.48857",
+        "name": "武州荒木"
+      },
+      {
+        "id": "STN_CHICHIBU_HIGASHI_GYODA",
+        "lat": "36.14733",
+        "lng": "139.468325",
+        "name": "東行田"
+      },
+      {
+        "id": "STN_CHICHIBU_GYODASHI",
+        "lat": "36.14363",
+        "lng": "139.4588",
+        "name": "行田市"
+      },
+      {
+        "id": "STN_CHICHIBU_MOCHIDA",
+        "lat": "36.137615",
+        "lng": "139.4416",
+        "name": "持田"
+      },
+      {
+        "id": "STN_CHICHIBU_SOCIO_RYUTSU_CENTER",
+        "lat": "36.13650511",
+        "lng": "139.42443386",
+        "name": "ソシオ流通センター"
+      },
+      {
+        "id": "STN_CHICHIBU_KUMAGAYA",
+        "lat": "36.139205",
+        "lng": "139.38936",
+        "name": "熊谷"
+      },
+      {
+        "id": "STN_CHICHIBU_KAMI_KUMAGAYA",
+        "lat": "36.14308",
+        "lng": "139.38079",
+        "name": "上熊谷"
+      },
+      {
+        "id": "STN_CHICHIBU_ISHIWARA",
+        "lat": "36.14756",
+        "lng": "139.369005",
+        "name": "石原"
+      },
+      {
+        "id": "STN_CHICHIBU_HIROSE_YACHO_NO_MORI",
+        "lat": "36.146165",
+        "lng": "139.351865",
+        "name": "ひろせ野鳥の森"
+      },
+      {
+        "id": "STN_CHICHIBU_OMASU",
+        "lat": "36.144625",
+        "lng": "139.331905",
+        "name": "大麻生"
+      },
+      {
+        "id": "STN_CHICHIBU_AKETO",
+        "lat": "36.1429",
+        "lng": "139.30329",
+        "name": "明戸"
+      },
+      {
+        "id": "STN_CHICHIBU_TAKEKAWA",
+        "lat": "36.142195",
+        "lng": "139.28174",
+        "name": "武川"
+      },
+      {
+        "id": "STN_CHICHIBU_NAGATA",
+        "lat": "36.13538",
+        "lng": "139.25951",
+        "name": "永田"
+      },
+      {
+        "id": "STN_CHICHIBU_FUKAYA_HANAZONO",
+        "lat": "36.13070328",
+        "lng": "139.24836501",
+        "name": "ふかや花園"
+      },
+      {
+        "id": "STN_CHICHIBU_OTAMAEDA",
+        "lat": "36.12893",
+        "lng": "139.22239",
+        "name": "小前田"
+      },
+      {
+        "id": "STN_CHICHIBU_SAKURA_ZAWA",
+        "lat": "36.12872",
+        "lng": "139.20824",
+        "name": "桜沢"
+      },
+      {
+        "id": "STN_CHICHIBU_YORII",
+        "lat": "36.11756",
+        "lng": "139.193585",
+        "name": "寄居"
+      },
+      {
+        "id": "STN_CHICHIBU_HAGURE",
+        "lat": "36.126805",
+        "lng": "139.15812",
+        "name": "波久礼"
+      },
+      {
+        "id": "STN_CHICHIBU_HIGUCHI",
+        "lat": "36.131075",
+        "lng": "139.12262",
+        "name": "樋口"
+      },
+      {
+        "id": "STN_CHICHIBU_NOGAMI",
+        "lat": "36.11161",
+        "lng": "139.11087",
+        "name": "野上"
+      },
+      {
+        "id": "STN_CHICHIBU_NAGATORO",
+        "lat": "36.0955",
+        "lng": "139.11231",
+        "name": "長瀞"
+      },
+      {
+        "id": "STN_CHICHIBU_KAMI_NAGATORO",
+        "lat": "36.086223",
+        "lng": "139.113251",
+        "name": "上長瀞"
+      },
+      {
+        "id": "STN_CHICHIBU_OYAHANA",
+        "lat": "36.077615",
+        "lng": "139.10618",
+        "name": "親鼻"
+      },
+      {
+        "id": "STN_CHICHIBU_MINANO",
+        "lat": "36.06862",
+        "lng": "139.093995",
+        "name": "皆野"
+      },
+      {
+        "id": "STN_CHICHIBU_WADO_KUROYA",
+        "lat": "36.04676",
+        "lng": "139.101695",
+        "name": "和銅黒谷"
+      },
+      {
+        "id": "STN_CHICHIBU_ONOHARA",
+        "lat": "36.018645",
+        "lng": "139.09411",
+        "name": "大野原"
+      },
+      {
+        "id": "STN_CHICHIBU_CHICHIBU",
+        "lat": "35.998795",
+        "lng": "139.086025",
+        "name": "秩父"
+      },
+      {
+        "id": "STN_CHICHIBU_OHANABATAKE",
+        "lat": "35.99236",
+        "lng": "139.083645",
+        "name": "御花畑"
+      },
+      {
+        "id": "STN_CHICHIBU_KAGEMORI",
+        "lat": "35.971995",
+        "lng": "139.068385",
+        "name": "影森"
+      },
+      {
+        "id": "STN_CHICHIBU_URAYAMAGUCHI",
+        "lat": "35.96392",
+        "lng": "139.05814",
+        "name": "浦山口"
+      },
+      {
+        "id": "STN_CHICHIBU_BUSHU_NAKAGAWA",
+        "lat": "35.958375",
+        "lng": "139.035435",
+        "name": "武州中川"
+      },
+      {
+        "id": "STN_CHICHIBU_BUSHU_HINO",
+        "lat": "35.953865",
+        "lng": "139.022015",
+        "name": "武州日野"
+      },
+      {
+        "id": "STN_CHICHIBU_SHIROKU",
+        "lat": "35.958915",
+        "lng": "138.99328",
+        "name": "白久"
+      },
+      {
+        "id": "STN_CHICHIBU_MITSUMINEGUCHI",
+        "lat": "35.95996446",
+        "lng": "138.97913666",
+        "name": "三峰口"
+      }
+    ]
+  }
+]
