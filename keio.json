@@ -1,0 +1,424 @@
+[
+  {
+    "categories": "",
+    "company_id": "KEIO",
+    "company_name": "京王電鉄",
+    "lines": [
+      {
+        "id": "KEIO_LINE",
+        "name": "京王線",
+        "sequence": [
+          "STN_KEIO_SHINJUKU",
+          "STN_KEIO_SASAZUKA",
+          "STN_KEIO_DAITABASHI",
+          "STN_KEIO_MEIDAI_MAE",
+          "STN_KEIO_SHIMO_TAKAIDO",
+          "STN_KEIO_SAKURA_JOSUI",
+          "STN_KEIO_KAMI_KITAZAWA",
+          "STN_KEIO_HACHIMANYAMA",
+          "STN_KEIO_ROKA_KOEN",
+          "STN_KEIO_CHITOSE_KARASUYAMA",
+          "STN_KEIO_SENGAVA",
+          "STN_KEIO_TSUTSUJIGAOKA",
+          "STN_KEIO_SHIBASAKI",
+          "STN_KEIO_KOKURYO",
+          "STN_KEIO_FUDA",
+          "STN_KEIO_CHOFU",
+          "STN_KEIO_NISHI_CHOFU",
+          "STN_KEIO_TOBITAKYU",
+          "STN_KEIO_MUSASHINODAI",
+          "STN_KEIO_TAMA_REIEN",
+          "STN_KEIO_HIGASHI_FUCHU",
+          "STN_KEIO_FUCHU",
+          "STN_KEIO_BUBAI_KAWARA",
+          "STN_KEIO_NAKAGAWARA",
+          "STN_KEIO_SEISEKI_SAKURAGAOKA",
+          "STN_KEIO_MOGUSAEN",
+          "STN_KEIO_TAKAHATA_FUDO",
+          "STN_KEIO_MINAMIDAIRA",
+          "STN_KEIO_HIRAYAMA_JOSHI_KOEN",
+          "STN_KEIO_NAGANUMA",
+          "STN_KEIO_KITANO",
+          "STN_KEIO_KEIO_HACHIOJI"
+        ]
+      },
+      {
+        "id": "KEIO_NEW_LINE",
+        "name": "京王新線",
+        "sequence": [
+          "STN_KEIO_SHINJUKU",
+          "STN_KEIO_HATSUDAI",
+          "STN_KEIO_HATAGAYA",
+          "STN_KEIO_SASAZUKA"
+        ]
+      },
+      {
+        "id": "KEIO_SAGAMIHARA",
+        "name": "相模原線",
+        "sequence": [
+          "STN_KEIO_CHOFU",
+          "STN_KEIO_KEIO_TAMAGAWA",
+          "STN_KEIO_KEIO_INADAZUTSUMI",
+          "STN_KEIO_KEIO_YOMIURI_LAND",
+          "STN_KEIO_INAGI",
+          "STN_KEIO_WAKABADAI",
+          "STN_KEIO_KEIO_NAGAYAMA",
+          "STN_KEIO_KEIO_TAMA_CENTER",
+          "STN_KEIO_KEIO_HORINOUCHI",
+          "STN_KEIO_MINAMI_OSAWA",
+          "STN_KEIO_TAMA_SAKAI",
+          "STN_KEIO_HASHIMOTO"
+        ]
+      },
+      {
+        "id": "KEIO_KEIBAJO",
+        "name": "競馬場線",
+        "sequence": [
+          "STN_KEIO_HIGASHI_FUCHU",
+          "STN_KEIO_FUCHU_KEIBA_SEIMON_MAE"
+        ]
+      },
+      {
+        "id": "KEIO_DOBUTSUEN",
+        "name": "動物園線",
+        "sequence": [
+          "STN_KEIO_TAKAHATA_FUDO",
+          "STN_KEIO_TAMA_DOBUTSUKOEN"
+        ]
+      },
+      {
+        "id": "KEIO_TAKAO",
+        "name": "高尾線",
+        "sequence": [
+          "STN_KEIO_KITANO",
+          "STN_KEIO_KEIO_KATAKURA",
+          "STN_KEIO_YAMADA",
+          "STN_KEIO_MEJIRODAI",
+          "STN_KEIO_HAZAMA",
+          "STN_KEIO_TAKAO",
+          "STN_KEIO_TAKAOSANGUCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KEIO_SHINJUKU",
+        "lat": "35.689985",
+        "lng": "139.69921",
+        "name": "新宿"
+      },
+      {
+        "id": "STN_KEIO_SASAZUKA",
+        "lat": "35.67366",
+        "lng": "139.667175",
+        "name": "笹塚"
+      },
+      {
+        "id": "STN_KEIO_DAITABASHI",
+        "lat": "35.671075",
+        "lng": "139.659395",
+        "name": "代田橋"
+      },
+      {
+        "id": "STN_KEIO_MEIDAI_MAE",
+        "lat": "35.668358",
+        "lng": "139.650555",
+        "name": "明大前"
+      },
+      {
+        "id": "STN_KEIO_SHIMO_TAKAIDO",
+        "lat": "35.66608",
+        "lng": "139.642028",
+        "name": "下高井戸"
+      },
+      {
+        "id": "STN_KEIO_SAKURA_JOSUI",
+        "lat": "35.66764",
+        "lng": "139.631465",
+        "name": "桜上水"
+      },
+      {
+        "id": "STN_KEIO_KAMI_KITAZAWA",
+        "lat": "35.668845",
+        "lng": "139.623415",
+        "name": "上北沢"
+      },
+      {
+        "id": "STN_KEIO_HACHIMANYAMA",
+        "lat": "35.670075",
+        "lng": "139.61448",
+        "name": "八幡山"
+      },
+      {
+        "id": "STN_KEIO_ROKA_KOEN",
+        "lat": "35.670535",
+        "lng": "139.60825",
+        "name": "芦花公園"
+      },
+      {
+        "id": "STN_KEIO_CHITOSE_KARASUYAMA",
+        "lat": "35.667835",
+        "lng": "139.600375",
+        "name": "千歳烏山"
+      },
+      {
+        "id": "STN_KEIO_SENGAVA",
+        "lat": "35.662377",
+        "lng": "139.585239",
+        "name": "仙川"
+      },
+      {
+        "id": "STN_KEIO_TSUTSUJIGAOKA",
+        "lat": "35.658",
+        "lng": "139.57519",
+        "name": "つつじヶ丘"
+      },
+      {
+        "id": "STN_KEIO_SHIBASAKI",
+        "lat": "35.65399",
+        "lng": "139.566625",
+        "name": "柴崎"
+      },
+      {
+        "id": "STN_KEIO_KOKURYO",
+        "lat": "35.650185",
+        "lng": "139.55843",
+        "name": "国領"
+      },
+      {
+        "id": "STN_KEIO_FUDA",
+        "lat": "35.64986",
+        "lng": "139.551715",
+        "name": "布田"
+      },
+      {
+        "id": "STN_KEIO_CHOFU",
+        "lat": "35.65177",
+        "lng": "139.544735",
+        "name": "調布"
+      },
+      {
+        "id": "STN_KEIO_NISHI_CHOFU",
+        "lat": "35.65732",
+        "lng": "139.529505",
+        "name": "西調布"
+      },
+      {
+        "id": "STN_KEIO_TOBITAKYU",
+        "lat": "35.659985",
+        "lng": "139.52366",
+        "name": "飛田給"
+      },
+      {
+        "id": "STN_KEIO_MUSASHINODAI",
+        "lat": "35.664135",
+        "lng": "139.511305",
+        "name": "武蔵野台"
+      },
+      {
+        "id": "STN_KEIO_TAMA_REIEN",
+        "lat": "35.66636",
+        "lng": "139.50212",
+        "name": "多磨霊園"
+      },
+      {
+        "id": "STN_KEIO_HIGASHI_FUCHU",
+        "lat": "35.66877",
+        "lng": "139.4954",
+        "name": "東府中"
+      },
+      {
+        "id": "STN_KEIO_FUCHU",
+        "lat": "35.67219",
+        "lng": "139.4801",
+        "name": "府中"
+      },
+      {
+        "id": "STN_KEIO_BUBAI_KAWARA",
+        "lat": "35.6681",
+        "lng": "139.468365",
+        "name": "分倍河原"
+      },
+      {
+        "id": "STN_KEIO_NAKAGAWARA",
+        "lat": "35.659536",
+        "lng": "139.457695",
+        "name": "中河原"
+      },
+      {
+        "id": "STN_KEIO_SEISEKI_SAKURAGAOKA",
+        "lat": "35.650799",
+        "lng": "139.44696",
+        "name": "聖蹟桜ヶ丘"
+      },
+      {
+        "id": "STN_KEIO_MOGUSAEN",
+        "lat": "35.657375",
+        "lng": "139.431375",
+        "name": "百草園"
+      },
+      {
+        "id": "STN_KEIO_TAKAHATA_FUDO",
+        "lat": "35.662275",
+        "lng": "139.4131",
+        "name": "高幡不動"
+      },
+      {
+        "id": "STN_KEIO_MINAMIDAIRA",
+        "lat": "35.65514",
+        "lng": "139.392575",
+        "name": "南平"
+      },
+      {
+        "id": "STN_KEIO_HIRAYAMA_JOSHI_KOEN",
+        "lat": "35.64731",
+        "lng": "139.379895",
+        "name": "平山城址公園"
+      },
+      {
+        "id": "STN_KEIO_NAGANUMA",
+        "lat": "35.64278",
+        "lng": "139.36588",
+        "name": "長沼"
+      },
+      {
+        "id": "STN_KEIO_KITANO",
+        "lat": "35.644486",
+        "lng": "139.35418",
+        "name": "北野"
+      },
+      {
+        "id": "STN_KEIO_KEIO_HACHIOJI",
+        "lat": "35.65755",
+        "lng": "139.34365",
+        "name": "京王八王子"
+      },
+      {
+        "id": "STN_KEIO_HATSUDAI",
+        "lat": "35.68142",
+        "lng": "139.68827",
+        "name": "初台"
+      },
+      {
+        "id": "STN_KEIO_HATAGAYA",
+        "lat": "35.67676",
+        "lng": "139.67772",
+        "name": "幡ヶ谷"
+      },
+      {
+        "id": "STN_KEIO_KEIO_TAMAGAWA",
+        "lat": "35.644132",
+        "lng": "139.536307",
+        "name": "京王多摩川"
+      },
+      {
+        "id": "STN_KEIO_KEIO_INADAZUTSUMI",
+        "lat": "35.634127",
+        "lng": "139.531981",
+        "name": "京王稲田堤"
+      },
+      {
+        "id": "STN_KEIO_KEIO_YOMIURI_LAND",
+        "lat": "35.632962",
+        "lng": "139.517291",
+        "name": "京王よみうりランド"
+      },
+      {
+        "id": "STN_KEIO_INAGI",
+        "lat": "35.636156",
+        "lng": "139.500152",
+        "name": "稲城"
+      },
+      {
+        "id": "STN_KEIO_WAKABADAI",
+        "lat": "35.619365",
+        "lng": "139.47234",
+        "name": "若葉台"
+      },
+      {
+        "id": "STN_KEIO_KEIO_NAGAYAMA",
+        "lat": "35.630241",
+        "lng": "139.44821",
+        "name": "京王永山"
+      },
+      {
+        "id": "STN_KEIO_KEIO_TAMA_CENTER",
+        "lat": "35.625225",
+        "lng": "139.424165",
+        "name": "京王多摩センター"
+      },
+      {
+        "id": "STN_KEIO_KEIO_HORINOUCHI",
+        "lat": "35.624475",
+        "lng": "139.400325",
+        "name": "京王堀之内"
+      },
+      {
+        "id": "STN_KEIO_MINAMI_OSAWA",
+        "lat": "35.614078",
+        "lng": "139.379832",
+        "name": "南大沢"
+      },
+      {
+        "id": "STN_KEIO_TAMA_SAKAI",
+        "lat": "35.601736",
+        "lng": "139.36693",
+        "name": "多摩境"
+      },
+      {
+        "id": "STN_KEIO_HASHIMOTO",
+        "lat": "35.59521",
+        "lng": "139.34354",
+        "name": "橋本"
+      },
+      {
+        "id": "STN_KEIO_FUCHU_KEIBA_SEIMON_MAE",
+        "lat": "35.668355",
+        "lng": "139.485165",
+        "name": "府中競馬正門前"
+      },
+      {
+        "id": "STN_KEIO_TAMA_DOBUTSUKOEN",
+        "lat": "35.64936783",
+        "lng": "139.40498572",
+        "name": "多摩動物公園"
+      },
+      {
+        "id": "STN_KEIO_KEIO_KATAKURA",
+        "lat": "35.64436",
+        "lng": "139.33696",
+        "name": "京王片倉"
+      },
+      {
+        "id": "STN_KEIO_YAMADA",
+        "lat": "35.644355",
+        "lng": "139.320755",
+        "name": "山田"
+      },
+      {
+        "id": "STN_KEIO_MEJIRODAI",
+        "lat": "35.643631",
+        "lng": "139.308463",
+        "name": "めじろ台"
+      },
+      {
+        "id": "STN_KEIO_HAZAMA",
+        "lat": "35.64059",
+        "lng": "139.293645",
+        "name": "狭間"
+      },
+      {
+        "id": "STN_KEIO_TAKAO",
+        "lat": "35.641655",
+        "lng": "139.28171",
+        "name": "高尾"
+      },
+      {
+        "id": "STN_KEIO_TAKAOSANGUCHI",
+        "lat": "35.63238",
+        "lng": "139.269815",
+        "name": "高尾山口"
+      }
+    ]
+  }
+]

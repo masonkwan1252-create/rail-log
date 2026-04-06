@@ -1,0 +1,740 @@
+[
+  {
+    "categories": "",
+    "company_id": "SEIBU",
+    "company_name": "西武鉄道",
+    "lines": [
+      {
+        "id": "SEIBU_IKEBUKURO",
+        "name": "池袋線",
+        "sequence": [
+          "STN_SEIBU_IKEBUKURO",
+          "STN_SEIBU_SHIINAMACHI",
+          "STN_SEIBU_HIGASHI_NAGASAKI",
+          "STN_SEIBU_EKODA",
+          "STN_SEIBU_SAKURADAI",
+          "STN_SEIBU_NERIMA",
+          "STN_SEIBU_NAKAMURABASHI",
+          "STN_SEIBU_FUJIMIDAI",
+          "STN_SEIBU_NERIMA_TAKANODAI",
+          "STN_SEIBU_SHAKUJII_KOEN",
+          "STN_SEIBU_OIZUMI_GAKUEN",
+          "STN_SEIBU_HOYA",
+          "STN_SEIBU_HIBARIGAOKA",
+          "STN_SEIBU_HIGASHI_KURUME",
+          "STN_SEIBU_KIYOSE",
+          "STN_SEIBU_AKITSU",
+          "STN_SEIBU_TOKOROZAWA",
+          "STN_SEIBU_NISHI_TOKOROZAWA",
+          "STN_SEIBU_KOTESASHI",
+          "STN_SEIBU_SAYAMAGAOKA",
+          "STN_SEIBU_MUSASHI_FUJISAWA",
+          "STN_SEIBU_INARIYAMA_KOEN",
+          "STN_SEIBU_IRUMASHI",
+          "STN_SEIBU_BUSSHI",
+          "STN_SEIBU_MOTOKAJI",
+          "STN_SEIBU_HANNO",
+          "STN_SEIBU_HIGASHI_HANNO",
+          "STN_SEIBU_KOMA",
+          "STN_SEIBU_MUSASHI_YOKOTE",
+          "STN_SEIBU_HIGASHI_AGANO",
+          "STN_SEIBU_AGANO"
+        ]
+      },
+      {
+        "id": "SEIBU_CHICHIBU",
+        "name": "秩父線",
+        "sequence": [
+          "STN_SEIBU_AGANO",
+          "STN_SEIBU_NISHI_AGANO",
+          "STN_SEIBU_SHOMARU",
+          "STN_SEIBU_ASHIGAKUBO",
+          "STN_SEIBU_YOKOZE",
+          "STN_SEIBU_SEIBU_CHICHIBU"
+        ]
+      },
+      {
+        "id": "SEIBU_YURAKUCHO",
+        "name": "有楽町線",
+        "sequence": [
+          "STN_SEIBU_KOTAKE_MUKAIHARA",
+          "STN_SEIBU_SHIN_SAKURADAI",
+          "STN_SEIBU_NERIMA"
+        ]
+      },
+      {
+        "id": "SEIBU_TOSHIMA",
+        "name": "豊島線",
+        "sequence": [
+          "STN_SEIBU_NERIMA",
+          "STN_SEIBU_TOSHIMAEN"
+        ]
+      },
+      {
+        "id": "SEIBU_SAYAMA",
+        "name": "狭山線",
+        "sequence": [
+          "STN_SEIBU_NISHI_TOKOROZAWA",
+          "STN_SEIBU_SHIMOYAMAGUCHI",
+          "STN_SEIBU_SEIBU_KYUJO_MAE"
+        ]
+      },
+      {
+        "id": "SEIBU_SHINJUKU",
+        "name": "新宿線",
+        "sequence": [
+          "STN_SEIBU_SEIBU_SHINJUKU",
+          "STN_SEIBU_TAKADANOBABA",
+          "STN_SEIBU_SHIMO_OCHIAI",
+          "STN_SEIBU_NAKAI",
+          "STN_SEIBU_ARAIYAKUSHIMAE",
+          "STN_SEIBU_NUMABUKURO",
+          "STN_SEIBU_NOGATA",
+          "STN_SEIBU_TORITSU_KASEI",
+          "STN_SEIBU_SAGINOMIYA",
+          "STN_SEIBU_SHIMO_IGUSA",
+          "STN_SEIBU_IOGI",
+          "STN_SEIBU_KAMI_IGUSA",
+          "STN_SEIBU_KAMI_SHAKUJII",
+          "STN_SEIBU_MUSASHISEKI",
+          "STN_SEIBU_HIGASHI_FUSHIMI",
+          "STN_SEIBU_SEIBU_YAGISAWA",
+          "STN_SEIBU_TANASHI",
+          "STN_SEIBU_HANA_KOGANEI",
+          "STN_SEIBU_KODAIRA",
+          "STN_SEIBU_KUMEGAWA",
+          "STN_SEIBU_HIGASHIMURAYAMA",
+          "STN_SEIBU_TOKOROZAWA",
+          "STN_SEIBU_KOKU_KOEN",
+          "STN_SEIBU_SHIN_TOKOROZAWA",
+          "STN_SEIBU_IRISO",
+          "STN_SEIBU_SAYAMASHI",
+          "STN_SEIBU_SHIN_SAYAMA",
+          "STN_SEIBU_MINAMI_OTSUKA",
+          "STN_SEIBU_HON_KAWAGOE"
+        ]
+      },
+      {
+        "id": "SEIBU_HAIJIMA",
+        "name": "拝島線",
+        "sequence": [
+          "STN_SEIBU_KODAIRA",
+          "STN_SEIBU_HAGIYAMA",
+          "STN_SEIBU_OGAWA",
+          "STN_SEIBU_HIGASHI_YAMATOSHI",
+          "STN_SEIBU_TAMAGAWA_JOSUI",
+          "STN_SEIBU_MUSASHI_SUNAGAWA",
+          "STN_SEIBU_SEIBU_TACHIKAWA",
+          "STN_SEIBU_HAIJIMA"
+        ]
+      },
+      {
+        "id": "SEIBU_TAMAKO",
+        "name": "多摩湖線",
+        "sequence": [
+          "STN_SEIBU_KOKUBUNJI",
+          "STN_SEIBU_HITOTSUBASHI_GAKUEN",
+          "STN_SEIBU_OME_KAIDO",
+          "STN_SEIBU_HAGIYAMA",
+          "STN_SEIBU_YASAKA",
+          "STN_SEIBU_MUSASHI_YAMATO",
+          "STN_SEIBU_TAMAKO"
+        ]
+      },
+      {
+        "id": "SEIBU_KOKUBUNJI",
+        "name": "国分寺線",
+        "sequence": [
+          "STN_SEIBU_KOKUBUNJI",
+          "STN_SEIBU_KOIGAKUBO",
+          "STN_SEIBU_TAKANODAI",
+          "STN_SEIBU_OGAWA",
+          "STN_SEIBU_HIGASHIMURAYAMA"
+        ]
+      },
+      {
+        "id": "SEIBU_SEIBUEN",
+        "name": "西武園線",
+        "sequence": [
+          "STN_SEIBU_HIGASHIMURAYAMA",
+          "STN_SEIBU_SEIBUEN"
+        ]
+      },
+      {
+        "id": "SEIBU_TAMAGAWA",
+        "name": "多摩川線",
+        "sequence": [
+          "STN_SEIBU_MUSASHI_SAKAI",
+          "STN_SEIBU_SHIN_KOGANEI",
+          "STN_SEIBU_TAMA",
+          "STN_SEIBU_SHIRAITODAI",
+          "STN_SEIBU_KYOTEIJO_MAE",
+          "STN_SEIBU_KOREMASA"
+        ]
+      },
+      {
+        "id": "SEIBU_YAMAGUCHI",
+        "name": "山口線",
+        "sequence": [
+          "STN_SEIBU_TAMAKO",
+          "STN_SEIBU_SEIBUEN_YUENCHI",
+          "STN_SEIBU_SEIBU_KYUJO_MAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SEIBU_IKEBUKURO",
+        "lat": "35.72766",
+        "lng": "139.71083",
+        "name": "池袋"
+      },
+      {
+        "id": "STN_SEIBU_SHIINAMACHI",
+        "lat": "35.726495",
+        "lng": "139.694315",
+        "name": "椎名町"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHI_NAGASAKI",
+        "lat": "35.72997",
+        "lng": "139.683185",
+        "name": "東長崎"
+      },
+      {
+        "id": "STN_SEIBU_EKODA",
+        "lat": "35.737465",
+        "lng": "139.672785",
+        "name": "江古田"
+      },
+      {
+        "id": "STN_SEIBU_SAKURADAI",
+        "lat": "35.738745",
+        "lng": "139.6624",
+        "name": "桜台"
+      },
+      {
+        "id": "STN_SEIBU_NERIMA",
+        "lat": "35.737935",
+        "lng": "139.65444",
+        "name": "練馬"
+      },
+      {
+        "id": "STN_SEIBU_NAKAMURABASHI",
+        "lat": "35.73667",
+        "lng": "139.63717",
+        "name": "中村橋"
+      },
+      {
+        "id": "STN_SEIBU_FUJIMIDAI",
+        "lat": "35.73585",
+        "lng": "139.629815",
+        "name": "富士見台"
+      },
+      {
+        "id": "STN_SEIBU_NERIMA_TAKANODAI",
+        "lat": "35.740615",
+        "lng": "139.616835",
+        "name": "練馬高野台"
+      },
+      {
+        "id": "STN_SEIBU_SHAKUJII_KOEN",
+        "lat": "35.74364",
+        "lng": "139.606555",
+        "name": "石神井公園"
+      },
+      {
+        "id": "STN_SEIBU_OIZUMI_GAKUEN",
+        "lat": "35.749353",
+        "lng": "139.586804",
+        "name": "大泉学園"
+      },
+      {
+        "id": "STN_SEIBU_HOYA",
+        "lat": "35.748242",
+        "lng": "139.568035",
+        "name": "保谷"
+      },
+      {
+        "id": "STN_SEIBU_HIBARIGAOKA",
+        "lat": "35.751429",
+        "lng": "139.54577",
+        "name": "ひばりヶ丘"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHI_KURUME",
+        "lat": "35.76045",
+        "lng": "139.53375",
+        "name": "東久留米"
+      },
+      {
+        "id": "STN_SEIBU_KIYOSE",
+        "lat": "35.771963",
+        "lng": "139.519895",
+        "name": "清瀬"
+      },
+      {
+        "id": "STN_SEIBU_AKITSU",
+        "lat": "35.778475",
+        "lng": "139.496905",
+        "name": "秋津"
+      },
+      {
+        "id": "STN_SEIBU_TOKOROZAWA",
+        "lat": "35.786685",
+        "lng": "139.473445",
+        "name": "所沢"
+      },
+      {
+        "id": "STN_SEIBU_NISHI_TOKOROZAWA",
+        "lat": "35.788838",
+        "lng": "139.456146",
+        "name": "西所沢"
+      },
+      {
+        "id": "STN_SEIBU_KOTESASHI",
+        "lat": "35.800585",
+        "lng": "139.43804",
+        "name": "小手指"
+      },
+      {
+        "id": "STN_SEIBU_SAYAMAGAOKA",
+        "lat": "35.810405",
+        "lng": "139.41702",
+        "name": "狭山ヶ丘"
+      },
+      {
+        "id": "STN_SEIBU_MUSASHI_FUJISAWA",
+        "lat": "35.82085",
+        "lng": "139.412755",
+        "name": "武蔵藤沢"
+      },
+      {
+        "id": "STN_SEIBU_INARIYAMA_KOEN",
+        "lat": "35.844706",
+        "lng": "139.399409",
+        "name": "稲荷山公園"
+      },
+      {
+        "id": "STN_SEIBU_IRUMASHI",
+        "lat": "35.842807",
+        "lng": "139.390262",
+        "name": "入間市"
+      },
+      {
+        "id": "STN_SEIBU_BUSSHI",
+        "lat": "35.837675",
+        "lng": "139.36019",
+        "name": "仏子"
+      },
+      {
+        "id": "STN_SEIBU_MOTOKAJI",
+        "lat": "35.840564",
+        "lng": "139.345367",
+        "name": "元加治"
+      },
+      {
+        "id": "STN_SEIBU_HANNO",
+        "lat": "35.85119",
+        "lng": "139.31882",
+        "name": "飯能"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHI_HANNO",
+        "lat": "35.85302",
+        "lng": "139.32598",
+        "name": "東飯能"
+      },
+      {
+        "id": "STN_SEIBU_KOMA",
+        "lat": "35.882059",
+        "lng": "139.304394",
+        "name": "高麗"
+      },
+      {
+        "id": "STN_SEIBU_MUSASHI_YOKOTE",
+        "lat": "35.885255",
+        "lng": "139.280681",
+        "name": "武蔵横手"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHI_AGANO",
+        "lat": "35.89247",
+        "lng": "139.260275",
+        "name": "東吾野"
+      },
+      {
+        "id": "STN_SEIBU_AGANO",
+        "lat": "35.908291",
+        "lng": "139.225904",
+        "name": "吾野"
+      },
+      {
+        "id": "STN_SEIBU_NISHI_AGANO",
+        "lat": "35.926995",
+        "lng": "139.202415",
+        "name": "西吾野"
+      },
+      {
+        "id": "STN_SEIBU_SHOMARU",
+        "lat": "35.9383",
+        "lng": "139.181485",
+        "name": "正丸"
+      },
+      {
+        "id": "STN_SEIBU_ASHIGAKUBO",
+        "lat": "35.976405",
+        "lng": "139.136",
+        "name": "芦ヶ久保"
+      },
+      {
+        "id": "STN_SEIBU_YOKOZE",
+        "lat": "35.9845",
+        "lng": "139.098275",
+        "name": "横瀬"
+      },
+      {
+        "id": "STN_SEIBU_SEIBU_CHICHIBU",
+        "lat": "35.99001",
+        "lng": "139.082995",
+        "name": "西武秩父"
+      },
+      {
+        "id": "STN_SEIBU_KOTAKE_MUKAIHARA",
+        "lat": "35.743395",
+        "lng": "139.67952",
+        "name": "小竹向原"
+      },
+      {
+        "id": "STN_SEIBU_SHIN_SAKURADAI",
+        "lat": "35.741021",
+        "lng": "139.668662",
+        "name": "新桜台"
+      },
+      {
+        "id": "STN_SEIBU_TOSHIMAEN",
+        "lat": "35.742035",
+        "lng": "139.64802",
+        "name": "豊島園"
+      },
+      {
+        "id": "STN_SEIBU_SHIMOYAMAGUCHI",
+        "lat": "35.779445",
+        "lng": "139.441165",
+        "name": "下山口"
+      },
+      {
+        "id": "STN_SEIBU_SEIBU_KYUJO_MAE",
+        "lat": "35.77078",
+        "lng": "139.420235",
+        "name": "西武球場前"
+      },
+      {
+        "id": "STN_SEIBU_SEIBU_SHINJUKU",
+        "lat": "35.696171",
+        "lng": "139.70005",
+        "name": "西武新宿"
+      },
+      {
+        "id": "STN_SEIBU_TAKADANOBABA",
+        "lat": "35.71245",
+        "lng": "139.703961",
+        "name": "高田馬場"
+      },
+      {
+        "id": "STN_SEIBU_SHIMO_OCHIAI",
+        "lat": "35.715686",
+        "lng": "139.6953",
+        "name": "下落合"
+      },
+      {
+        "id": "STN_SEIBU_NAKAI",
+        "lat": "35.71507",
+        "lng": "139.686645",
+        "name": "中井"
+      },
+      {
+        "id": "STN_SEIBU_ARAIYAKUSHIMAE",
+        "lat": "35.715763",
+        "lng": "139.672589",
+        "name": "新井薬師前"
+      },
+      {
+        "id": "STN_SEIBU_NUMABUKURO",
+        "lat": "35.71916",
+        "lng": "139.66484",
+        "name": "沼袋"
+      },
+      {
+        "id": "STN_SEIBU_NOGATA",
+        "lat": "35.71958",
+        "lng": "139.653515",
+        "name": "野方"
+      },
+      {
+        "id": "STN_SEIBU_TORITSU_KASEI",
+        "lat": "35.72219",
+        "lng": "139.64543",
+        "name": "都立家政"
+      },
+      {
+        "id": "STN_SEIBU_SAGINOMIYA",
+        "lat": "35.72262",
+        "lng": "139.639845",
+        "name": "鷺ノ宮"
+      },
+      {
+        "id": "STN_SEIBU_SHIMO_IGUSA",
+        "lat": "35.72387",
+        "lng": "139.624735",
+        "name": "下井草"
+      },
+      {
+        "id": "STN_SEIBU_IOGI",
+        "lat": "35.724661",
+        "lng": "139.615615",
+        "name": "井荻"
+      },
+      {
+        "id": "STN_SEIBU_KAMI_IGUSA",
+        "lat": "35.725255",
+        "lng": "139.602955",
+        "name": "上井草"
+      },
+      {
+        "id": "STN_SEIBU_KAMI_SHAKUJII",
+        "lat": "35.726195",
+        "lng": "139.59229",
+        "name": "上石神井"
+      },
+      {
+        "id": "STN_SEIBU_MUSASHISEKI",
+        "lat": "35.727615",
+        "lng": "139.576365",
+        "name": "武蔵関"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHI_FUSHIMI",
+        "lat": "35.728755",
+        "lng": "139.563575",
+        "name": "東伏見"
+      },
+      {
+        "id": "STN_SEIBU_SEIBU_YAGISAWA",
+        "lat": "35.72858",
+        "lng": "139.5524",
+        "name": "西武柳沢"
+      },
+      {
+        "id": "STN_SEIBU_TANASHI",
+        "lat": "35.727195",
+        "lng": "139.538985",
+        "name": "田無"
+      },
+      {
+        "id": "STN_SEIBU_HANA_KOGANEI",
+        "lat": "35.726145",
+        "lng": "139.51332",
+        "name": "花小金井"
+      },
+      {
+        "id": "STN_SEIBU_KODAIRA",
+        "lat": "35.736915",
+        "lng": "139.488445",
+        "name": "小平"
+      },
+      {
+        "id": "STN_SEIBU_KUMEGAWA",
+        "lat": "35.749525",
+        "lng": "139.472695",
+        "name": "久米川"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHIMURAYAMA",
+        "lat": "35.759965",
+        "lng": "139.46586",
+        "name": "東村山"
+      },
+      {
+        "id": "STN_SEIBU_KOKU_KOEN",
+        "lat": "35.79834",
+        "lng": "139.46559",
+        "name": "航空公園"
+      },
+      {
+        "id": "STN_SEIBU_SHIN_TOKOROZAWA",
+        "lat": "35.805805",
+        "lng": "139.45717",
+        "name": "新所沢"
+      },
+      {
+        "id": "STN_SEIBU_IRISO",
+        "lat": "35.832385",
+        "lng": "139.427185",
+        "name": "入曽"
+      },
+      {
+        "id": "STN_SEIBU_SAYAMASHI",
+        "lat": "35.857279",
+        "lng": "139.413336",
+        "name": "狭山市"
+      },
+      {
+        "id": "STN_SEIBU_SHIN_SAYAMA",
+        "lat": "35.874155",
+        "lng": "139.43379",
+        "name": "新狭山"
+      },
+      {
+        "id": "STN_SEIBU_MINAMI_OTSUKA",
+        "lat": "35.889695",
+        "lng": "139.45419",
+        "name": "南大塚"
+      },
+      {
+        "id": "STN_SEIBU_HON_KAWAGOE",
+        "lat": "35.913675",
+        "lng": "139.48113",
+        "name": "本川越"
+      },
+      {
+        "id": "STN_SEIBU_HAGIYAMA",
+        "lat": "35.740805",
+        "lng": "139.476843",
+        "name": "萩山"
+      },
+      {
+        "id": "STN_SEIBU_OGAWA",
+        "lat": "35.737565",
+        "lng": "139.463495",
+        "name": "小川"
+      },
+      {
+        "id": "STN_SEIBU_HIGASHI_YAMATOSHI",
+        "lat": "35.732905",
+        "lng": "139.434295",
+        "name": "東大和市"
+      },
+      {
+        "id": "STN_SEIBU_TAMAGAWA_JOSUI",
+        "lat": "35.731705",
+        "lng": "139.418775",
+        "name": "玉川上水"
+      },
+      {
+        "id": "STN_SEIBU_MUSASHI_SUNAGAWA",
+        "lat": "35.728825",
+        "lng": "139.392345",
+        "name": "武蔵砂川"
+      },
+      {
+        "id": "STN_SEIBU_SEIBU_TACHIKAWA",
+        "lat": "35.72618",
+        "lng": "139.369655",
+        "name": "西武立川"
+      },
+      {
+        "id": "STN_SEIBU_HAIJIMA",
+        "lat": "35.721069",
+        "lng": "139.344205",
+        "name": "拝島"
+      },
+      {
+        "id": "STN_SEIBU_KOKUBUNJI",
+        "lat": "35.701089",
+        "lng": "139.479255",
+        "name": "国分寺"
+      },
+      {
+        "id": "STN_SEIBU_HITOTSUBASHI_GAKUEN",
+        "lat": "35.722105",
+        "lng": "139.480065",
+        "name": "一橋学園"
+      },
+      {
+        "id": "STN_SEIBU_OME_KAIDO",
+        "lat": "35.73099",
+        "lng": "139.47657",
+        "name": "青梅街道"
+      },
+      {
+        "id": "STN_SEIBU_YASAKA",
+        "lat": "35.74489",
+        "lng": "139.46775",
+        "name": "八坂"
+      },
+      {
+        "id": "STN_SEIBU_MUSASHI_YAMATO",
+        "lat": "35.756435",
+        "lng": "139.44404",
+        "name": "武蔵大和"
+      },
+      {
+        "id": "STN_SEIBU_TAMAKO",
+        "lat": "35.765785",
+        "lng": "139.442715",
+        "name": "多摩湖"
+      },
+      {
+        "id": "STN_SEIBU_KOIGAKUBO",
+        "lat": "35.71135",
+        "lng": "139.46389",
+        "name": "恋ヶ窪"
+      },
+      {
+        "id": "STN_SEIBU_TAKANODAI",
+        "lat": "35.72301",
+        "lng": "139.46106",
+        "name": "鷹の台"
+      },
+      {
+        "id": "STN_SEIBU_SEIBUEN",
+        "lat": "35.767735",
+        "lng": "139.448895",
+        "name": "西武園"
+      },
+      {
+        "id": "STN_SEIBU_MUSASHI_SAKAI",
+        "lat": "35.70191",
+        "lng": "139.544265",
+        "name": "武蔵境"
+      },
+      {
+        "id": "STN_SEIBU_SHIN_KOGANEI",
+        "lat": "35.69592",
+        "lng": "139.526745",
+        "name": "新小金井"
+      },
+      {
+        "id": "STN_SEIBU_TAMA",
+        "lat": "35.676825",
+        "lng": "139.51715",
+        "name": "多磨"
+      },
+      {
+        "id": "STN_SEIBU_SHIRAITODAI",
+        "lat": "35.666305",
+        "lng": "139.509525",
+        "name": "白糸台"
+      },
+      {
+        "id": "STN_SEIBU_KYOTEIJO_MAE",
+        "lat": "35.65621",
+        "lng": "139.49966",
+        "name": "競艇場前"
+      },
+      {
+        "id": "STN_SEIBU_KOREMASA",
+        "lat": "35.656185",
+        "lng": "139.48864",
+        "name": "是政"
+      },
+      {
+        "id": "STN_SEIBU_SEIBUEN_YUENCHI",
+        "lat": "35.76903",
+        "lng": "139.44019",
+        "name": "西武園ゆうえんち"
+      }
+    ]
+  }
+]

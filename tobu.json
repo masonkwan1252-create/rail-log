@@ -1,0 +1,1373 @@
+[
+  {
+    "categories": "",
+    "company_id": "TOBU",
+    "company_name": "東武鉄道",
+    "lines": [
+      {
+        "id": "TOBU_SKYTREE",
+        "name": "伊勢崎線",
+        "sequence": [
+          "STN_TOBU_ASAKUSA",
+          "STN_TOBU_TOKYO_SKYTREE",
+          "STN_TOBU_OSHIAGE",
+          "STN_TOBU_HIKIFUNE",
+          "STN_TOBU_HIGASHI_MUKOJIMA",
+          "STN_TOBU_KANEGAFUCHI",
+          "STN_TOBU_HORIKIRI",
+          "STN_TOBU_USHIDA",
+          "STN_TOBU_KITA_SENJU",
+          "STN_TOBU_KOSUGE",
+          "STN_TOBU_GOTANNO",
+          "STN_TOBU_UMEJIMA",
+          "STN_TOBU_NISHI_ARAI",
+          "STN_TOBU_TAKENOTSUKA",
+          "STN_TOBU_YATSUKA",
+          "STN_TOBU_SOKA",
+          "STN_TOBU_DOKKYO_DAIGAKUMAE",
+          "STN_TOBU_SHINDEN",
+          "STN_TOBU_GAMO",
+          "STN_TOBU_SHIN_KOSHIGAYA",
+          "STN_TOBU_KOSHIGAYA",
+          "STN_TOBU_KITA_KOSHIGAYA",
+          "STN_TOBU_OBUKURO",
+          "STN_TOBU_SENGENTAI",
+          "STN_TOBU_TAKESATO",
+          "STN_TOBU_ICHINOWARI",
+          "STN_TOBU_KASUKABE",
+          "STN_TOBU_KITA_KASUKABE",
+          "STN_TOBU_HIMEMIYA",
+          "STN_TOBU_TOBU_DOBUTSU_KOEN"
+        ]
+      },
+      {
+        "id": "TOBU_KAMEIDO",
+        "name": "亀戸線",
+        "sequence": [
+          "STN_TOBU_HIKIFUNE",
+          "STN_TOBU_OMURAI",
+          "STN_TOBU_HIGASHI_AZUMA",
+          "STN_TOBU_KAMEIDO_SUIJIN",
+          "STN_TOBU_KAMEIDO"
+        ]
+      },
+      {
+        "id": "TOBU_DAISHI",
+        "name": "大師線",
+        "sequence": [
+          "STN_TOBU_NISHI_ARAI",
+          "STN_TOBU_DAISHIMAE"
+        ]
+      },
+      {
+        "id": "TOBU_SANO",
+        "name": "佐野線",
+        "sequence": [
+          "STN_TOBU_TATEBAYASHI",
+          "STN_TOBU_WATAZE",
+          "STN_TOBU_TAJIMA",
+          "STN_TOBU_SANO_SHI",
+          "STN_TOBU_SANO",
+          "STN_TOBU_HORIGOME",
+          "STN_TOBU_YOSHIMIZU",
+          "STN_TOBU_TANUMA",
+          "STN_TOBU_TADA",
+          "STN_TOBU_KUZUU"
+        ]
+      },
+      {
+        "id": "TOBU_KIRYU",
+        "name": "桐生線",
+        "sequence": [
+          "STN_TOBU_OTA",
+          "STN_TOBU_SAMMAIBASHI",
+          "STN_TOBU_JIROMBASHI",
+          "STN_TOBU_YABUZUKA",
+          "STN_TOBU_AZAMI",
+          "STN_TOBU_SHIN_KIRYU",
+          "STN_TOBU_AIOI",
+          "STN_TOBU_AKAGI"
+        ]
+      },
+      {
+        "id": "TOBU_KOIZUMI",
+        "name": "小泉線",
+        "sequence": [
+          "STN_TOBU_TATEBAYASHI",
+          "STN_TOBU_NARUSHIMA",
+          "STN_TOBU_HON_NAKANO",
+          "STN_TOBU_SHINOZUKA",
+          "STN_TOBU_HIGASHI_KOIZUMI",
+          "STN_TOBU_RYUMAI",
+          "STN_TOBU_OTA",
+          "STN_TOBU_KOIZUMIMACHI",
+          "STN_TOBU_NISHI_KOIZUMI"
+        ]
+      },
+      {
+        "id": "TOBU_NIKKO",
+        "name": "日光線",
+        "sequence": [
+          "STN_TOBU_TOBU_DOBUTSU_KOEN",
+          "STN_TOBU_SUGITO_TAKANODAI",
+          "STN_TOBU_SATTE",
+          "STN_TOBU_MINAMI_KURIHASHI",
+          "STN_TOBU_KURIHASHI",
+          "STN_TOBU_SHIN_KOGA",
+          "STN_TOBU_YAGYU",
+          "STN_TOBU_ITAKURA_TOYODAMAE",
+          "STN_TOBU_FUJIOKA",
+          "STN_TOBU_SHIWA",
+          "STN_TOBU_SHIN_OHIRASHITA",
+          "STN_TOBU_TOCHIGI",
+          "STN_TOBU_SHIN_TOCHIGI",
+          "STN_TOBU_KASSENBA",
+          "STN_TOBU_IE_NAKA",
+          "STN_TOBU_TOBU_KANASAKI",
+          "STN_TOBU_NIREGI",
+          "STN_TOBU_MOMIYAMA",
+          "STN_TOBU_SHIN_KANUMA",
+          "STN_TOBU_KITA_KANUMA",
+          "STN_TOBU_ITAGA",
+          "STN_TOBU_SHIMO_KOSHIRO",
+          "STN_TOBU_MYOJIN",
+          "STN_TOBU_SHIMO_IMAICHI",
+          "STN_TOBU_KAMI_IMAICHI",
+          "STN_TOBU_TOBU_NIKKO"
+        ]
+      },
+      {
+        "id": "TOBU_UTSUNOMIYA",
+        "name": "宇都宮線",
+        "sequence": [
+          "STN_TOBU_SHIN_TOCHIGI",
+          "STN_TOBU_YASHU_HIRAKAWA",
+          "STN_TOBU_YASHU_OTSUKA",
+          "STN_TOBU_MIBU",
+          "STN_TOBU_KUNIYA",
+          "STN_TOBU_OMOCHA_NO_MACHI",
+          "STN_TOBU_YASUZUKA",
+          "STN_TOBU_NISHIKAWADA",
+          "STN_TOBU_ESO_JIMA",
+          "STN_TOBU_MINAMI_UTSUNOMIYA",
+          "STN_TOBU_TOBU_UTSUNOMIYA"
+        ]
+      },
+      {
+        "id": "TOBU_KINUGAWA",
+        "name": "鬼怒川線",
+        "sequence": [
+          "STN_TOBU_SHIMO_IMAICHI",
+          "STN_TOBU_DAYA_MUKO",
+          "STN_TOBU_OKUWA",
+          "STN_TOBU_SHIN_KOTOKU",
+          "STN_TOBU_KOSAGOE",
+          "STN_TOBU_TOBU_WORLD_SQUARE",
+          "STN_TOBU_KINUGAWA_ONSEN",
+          "STN_TOBU_KINUGAWA_KOEN",
+          "STN_TOBU_SHIN_FUJIWARA"
+        ]
+      },
+      {
+        "id": "TOBU_NODA",
+        "name": "野田線",
+        "sequence": [
+          "STN_TOBU_OMIYA",
+          "STN_TOBU_KITA_OMIYA",
+          "STN_TOBU_OMIYA_KOEN",
+          "STN_TOBU_OWADA",
+          "STN_TOBU_NANASATO",
+          "STN_TOBU_IWATSUKI",
+          "STN_TOBU_HIGASHI_IWATSUKI",
+          "STN_TOBU_TOYOHARU",
+          "STN_TOBU_YAGISAKI",
+          "STN_TOBU_KASUKABE",
+          "STN_TOBU_FUJINO_USHIJIMA",
+          "STN_TOBU_MINAMI_SAKURAI",
+          "STN_TOBU_KAWAMA",
+          "STN_TOBU_NANAKODAI",
+          "STN_TOBU_SHIMIZU_KOEN",
+          "STN_TOBU_ATAGO",
+          "STN_TOBU_NODASHI",
+          "STN_TOBU_UMESATO",
+          "STN_TOBU_UNGA",
+          "STN_TOBU_EDOGAWADAI",
+          "STN_TOBU_HATSUISHI",
+          "STN_TOBU_NAGAREYAMA_OTAKANOMORI",
+          "STN_TOBU_TOYOSHIKI",
+          "STN_TOBU_KASHIWA",
+          "STN_TOBU_SHINKASHIWA",
+          "STN_TOBU_MASUO",
+          "STN_TOBU_SAKASAI",
+          "STN_TOBU_TAKAYANAGI",
+          "STN_TOBU_MUTSUMI",
+          "STN_TOBU_SHIN_KAMAGAYA",
+          "STN_TOBU_KAMAGAYA",
+          "STN_TOBU_MAGOMEZAWA",
+          "STN_TOBU_TSUKADA",
+          "STN_TOBU_SHIN_FUNABASHI",
+          "STN_TOBU_FUNABASHI"
+        ]
+      },
+      {
+        "id": "TOBU_TOJO",
+        "name": "東上本線",
+        "sequence": [
+          "STN_TOBU_IKEBUKURO",
+          "STN_TOBU_KITA_IKEBUKURO",
+          "STN_TOBU_SHIMO_ITABASHI",
+          "STN_TOBU_OYAMA",
+          "STN_TOBU_NAKA_ITABASHI",
+          "STN_TOBU_TOKIWADAI",
+          "STN_TOBU_KAMI_ITABASHI",
+          "STN_TOBU_TOBU_NERIMA",
+          "STN_TOBU_SHIMO_AKATSUKA",
+          "STN_TOBU_NARIMASU",
+          "STN_TOBU_WAKOSHI",
+          "STN_TOBU_ASAKA",
+          "STN_TOBU_ASAKADAI",
+          "STN_TOBU_SHIKI",
+          "STN_TOBU_YANASEGAWA",
+          "STN_TOBU_MIZUHODAI",
+          "STN_TOBU_TSURUSE",
+          "STN_TOBU_FUJIMINO",
+          "STN_TOBU_KAMIFUOKA",
+          "STN_TOBU_SHINGASHI",
+          "STN_TOBU_KAWAGOE",
+          "STN_TOBU_KAWAGOESHI",
+          "STN_TOBU_KASUMIGASEKI",
+          "STN_TOBU_TSURUGASHIMA",
+          "STN_TOBU_WAKABA",
+          "STN_TOBU_SAKADO",
+          "STN_TOBU_KITASAKADO",
+          "STN_TOBU_TAKASAKA",
+          "STN_TOBU_HIGASHIMATSUYAMA",
+          "STN_TOBU_SHINRIN_KOEN",
+          "STN_TOBU_TSUKINOWA",
+          "STN_TOBU_MUSASHI_RANZAN",
+          "STN_TOBU_OGAWA_MACHI",
+          "STN_TOBU_TOBU_TAKEZAWA",
+          "STN_TOBU_MINAMI_YORII",
+          "STN_TOBU_OBUSUMA",
+          "STN_TOBU_HACHIGATA",
+          "STN_TOBU_TAMAYODO",
+          "STN_TOBU_YORII"
+        ]
+      },
+      {
+        "id": "TOBU_OGOSE",
+        "name": "越生線",
+        "sequence": [
+          "STN_TOBU_SAKADO",
+          "STN_TOBU_IPPOMMATSU",
+          "STN_TOBU_NISHI_OYA",
+          "STN_TOBU_KAWAKADO",
+          "STN_TOBU_BUSHU_NAGASE",
+          "STN_TOBU_HIGASHI_MORO",
+          "STN_TOBU_BUSHU_KARASAWA",
+          "STN_TOBU_OGOSE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TOBU_ASAKUSA",
+        "lat": "35.711912",
+        "lng": "139.798346",
+        "name": "浅草"
+      },
+      {
+        "id": "STN_TOBU_TOKYO_SKYTREE",
+        "lat": "35.710465",
+        "lng": "139.809395",
+        "name": "とうきょうスカイツリー"
+      },
+      {
+        "id": "STN_TOBU_OSHIAGE",
+        "lat": "35.71014604",
+        "lng": "139.8133561",
+        "name": "押上"
+      },
+      {
+        "id": "STN_TOBU_HIKIFUNE",
+        "lat": "35.718315",
+        "lng": "139.816638",
+        "name": "曳舟"
+      },
+      {
+        "id": "STN_TOBU_HIGASHI_MUKOJIMA",
+        "lat": "35.724355",
+        "lng": "139.819335",
+        "name": "東向島"
+      },
+      {
+        "id": "STN_TOBU_KANEGAFUCHI",
+        "lat": "35.73376",
+        "lng": "139.82037",
+        "name": "鐘ヶ淵"
+      },
+      {
+        "id": "STN_TOBU_HORIKIRI",
+        "lat": "35.743345",
+        "lng": "139.81738",
+        "name": "堀切"
+      },
+      {
+        "id": "STN_TOBU_USHIDA",
+        "lat": "35.744545",
+        "lng": "139.81177",
+        "name": "牛田"
+      },
+      {
+        "id": "STN_TOBU_KITA_SENJU",
+        "lat": "35.749904",
+        "lng": "139.805592",
+        "name": "北千住"
+      },
+      {
+        "id": "STN_TOBU_KOSUGE",
+        "lat": "35.758685",
+        "lng": "139.81265",
+        "name": "小菅"
+      },
+      {
+        "id": "STN_TOBU_GOTANNO",
+        "lat": "35.765905",
+        "lng": "139.80963",
+        "name": "五反野"
+      },
+      {
+        "id": "STN_TOBU_UMEJIMA",
+        "lat": "35.772345",
+        "lng": "139.798075",
+        "name": "梅島"
+      },
+      {
+        "id": "STN_TOBU_NISHI_ARAI",
+        "lat": "35.77728",
+        "lng": "139.790365",
+        "name": "西新井"
+      },
+      {
+        "id": "STN_TOBU_TAKENOTSUKA",
+        "lat": "35.79437",
+        "lng": "139.79072",
+        "name": "竹ノ塚"
+      },
+      {
+        "id": "STN_TOBU_YATSUKA",
+        "lat": "35.81486",
+        "lng": "139.801465",
+        "name": "谷塚"
+      },
+      {
+        "id": "STN_TOBU_SOKA",
+        "lat": "35.82838",
+        "lng": "139.803455",
+        "name": "草加"
+      },
+      {
+        "id": "STN_TOBU_DOKKYO_DAIGAKUMAE",
+        "lat": "35.8433",
+        "lng": "139.800675",
+        "name": "獨協大学前"
+      },
+      {
+        "id": "STN_TOBU_SHINDEN",
+        "lat": "35.85411",
+        "lng": "139.795425",
+        "name": "新田"
+      },
+      {
+        "id": "STN_TOBU_GAMO",
+        "lat": "35.86689",
+        "lng": "139.791765",
+        "name": "蒲生"
+      },
+      {
+        "id": "STN_TOBU_SHIN_KOSHIGAYA",
+        "lat": "35.875565",
+        "lng": "139.789815",
+        "name": "新越谷"
+      },
+      {
+        "id": "STN_TOBU_KOSHIGAYA",
+        "lat": "35.88753",
+        "lng": "139.786235",
+        "name": "越谷"
+      },
+      {
+        "id": "STN_TOBU_KITA_KOSHIGAYA",
+        "lat": "35.901715",
+        "lng": "139.77987",
+        "name": "北越谷"
+      },
+      {
+        "id": "STN_TOBU_OBUKURO",
+        "lat": "35.9246",
+        "lng": "139.77794",
+        "name": "大袋"
+      },
+      {
+        "id": "STN_TOBU_SENGENTAI",
+        "lat": "35.935955",
+        "lng": "139.774595",
+        "name": "せんげん台"
+      },
+      {
+        "id": "STN_TOBU_TAKESATO",
+        "lat": "35.94908",
+        "lng": "139.77071",
+        "name": "武里"
+      },
+      {
+        "id": "STN_TOBU_ICHINOWARI",
+        "lat": "35.964875",
+        "lng": "139.76604",
+        "name": "一ノ割"
+      },
+      {
+        "id": "STN_TOBU_KASUKABE",
+        "lat": "35.980127",
+        "lng": "139.752621",
+        "name": "春日部"
+      },
+      {
+        "id": "STN_TOBU_KITA_KASUKABE",
+        "lat": "35.98994",
+        "lng": "139.74432",
+        "name": "北春日部"
+      },
+      {
+        "id": "STN_TOBU_HIMEMIYA",
+        "lat": "36.00442",
+        "lng": "139.738685",
+        "name": "姫宮"
+      },
+      {
+        "id": "STN_TOBU_TOBU_DOBUTSU_KOEN",
+        "lat": "36.0247",
+        "lng": "139.72689",
+        "name": "東武動物公園"
+      },
+      {
+        "id": "STN_TOBU_OMURAI",
+        "lat": "35.71032",
+        "lng": "139.82761",
+        "name": "小村井"
+      },
+      {
+        "id": "STN_TOBU_HIGASHI_AZUMA",
+        "lat": "35.707375",
+        "lng": "139.831595",
+        "name": "東あずま"
+      },
+      {
+        "id": "STN_TOBU_KAMEIDO_SUIJIN",
+        "lat": "35.699945",
+        "lng": "139.83339",
+        "name": "亀戸水神"
+      },
+      {
+        "id": "STN_TOBU_KAMEIDO",
+        "lat": "35.697735",
+        "lng": "139.8272",
+        "name": "亀戸"
+      },
+      {
+        "id": "STN_TOBU_DAISHIMAE",
+        "lat": "35.77895",
+        "lng": "139.781655",
+        "name": "大師前"
+      },
+      {
+        "id": "STN_TOBU_TATEBAYASHI",
+        "lat": "36.246595",
+        "lng": "139.527811",
+        "name": "館林"
+      },
+      {
+        "id": "STN_TOBU_WATAZE",
+        "lat": "36.26184",
+        "lng": "139.53748",
+        "name": "渡瀬"
+      },
+      {
+        "id": "STN_TOBU_TAJIMA",
+        "lat": "36.290225",
+        "lng": "139.564905",
+        "name": "田島"
+      },
+      {
+        "id": "STN_TOBU_SANO_SHI",
+        "lat": "36.30624",
+        "lng": "139.5759",
+        "name": "佐野市"
+      },
+      {
+        "id": "STN_TOBU_SANO",
+        "lat": "36.316845",
+        "lng": "139.579135",
+        "name": "佐野"
+      },
+      {
+        "id": "STN_TOBU_HORIGOME",
+        "lat": "36.32844",
+        "lng": "139.58033",
+        "name": "堀米"
+      },
+      {
+        "id": "STN_TOBU_YOSHIMIZU",
+        "lat": "36.345625",
+        "lng": "139.57935",
+        "name": "吉水"
+      },
+      {
+        "id": "STN_TOBU_TANUMA",
+        "lat": "36.36707",
+        "lng": "139.58191",
+        "name": "田沼"
+      },
+      {
+        "id": "STN_TOBU_TADA",
+        "lat": "36.378075",
+        "lng": "139.59296",
+        "name": "多田"
+      },
+      {
+        "id": "STN_TOBU_KUZUU",
+        "lat": "36.397885",
+        "lng": "139.609285",
+        "name": "葛生"
+      },
+      {
+        "id": "STN_TOBU_OTA",
+        "lat": "36.294191",
+        "lng": "139.378933",
+        "name": "太田"
+      },
+      {
+        "id": "STN_TOBU_SAMMAIBASHI",
+        "lat": "36.3134",
+        "lng": "139.354965",
+        "name": "三枚橋"
+      },
+      {
+        "id": "STN_TOBU_JIROMBASHI",
+        "lat": "36.333025",
+        "lng": "139.341365",
+        "name": "治良門橋"
+      },
+      {
+        "id": "STN_TOBU_YABUZUKA",
+        "lat": "36.358762",
+        "lng": "139.315772",
+        "name": "藪塚"
+      },
+      {
+        "id": "STN_TOBU_AZAMI",
+        "lat": "36.385108",
+        "lng": "139.306529",
+        "name": "阿左美"
+      },
+      {
+        "id": "STN_TOBU_SHIN_KIRYU",
+        "lat": "36.395029",
+        "lng": "139.320106",
+        "name": "新桐生"
+      },
+      {
+        "id": "STN_TOBU_AIOI",
+        "lat": "36.410635",
+        "lng": "139.303915",
+        "name": "相老"
+      },
+      {
+        "id": "STN_TOBU_AKAGI",
+        "lat": "36.42562",
+        "lng": "139.27678",
+        "name": "赤城"
+      },
+      {
+        "id": "STN_TOBU_NARUSHIMA",
+        "lat": "36.24908",
+        "lng": "139.50557",
+        "name": "成島"
+      },
+      {
+        "id": "STN_TOBU_HON_NAKANO",
+        "lat": "36.258445",
+        "lng": "139.46954",
+        "name": "本中野"
+      },
+      {
+        "id": "STN_TOBU_SHINOZUKA",
+        "lat": "36.256815",
+        "lng": "139.44609",
+        "name": "篠塚"
+      },
+      {
+        "id": "STN_TOBU_HIGASHI_KOIZUMI",
+        "lat": "36.259715",
+        "lng": "139.42856",
+        "name": "東小泉"
+      },
+      {
+        "id": "STN_TOBU_KOIZUMIMACHI",
+        "lat": "36.26153",
+        "lng": "139.42025",
+        "name": "小泉町"
+      },
+      {
+        "id": "STN_TOBU_NISHI_KOIZUMI",
+        "lat": "36.258665",
+        "lng": "139.40851",
+        "name": "西小泉"
+      },
+      {
+        "id": "STN_TOBU_RYUMAI",
+        "lat": "36.27885",
+        "lng": "139.4091",
+        "name": "竜舞"
+      },
+      {
+        "id": "STN_TOBU_SUGITO_TAKANODAI",
+        "lat": "36.05135",
+        "lng": "139.714545",
+        "name": "杉戸高野台"
+      },
+      {
+        "id": "STN_TOBU_SATTE",
+        "lat": "36.07407",
+        "lng": "139.71491",
+        "name": "幸手"
+      },
+      {
+        "id": "STN_TOBU_MINAMI_KURIHASHI",
+        "lat": "36.11314",
+        "lng": "139.71283",
+        "name": "南栗橋"
+      },
+      {
+        "id": "STN_TOBU_KURIHASHI",
+        "lat": "36.137855",
+        "lng": "139.694025",
+        "name": "栗橋"
+      },
+      {
+        "id": "STN_TOBU_SHIN_KOGA",
+        "lat": "36.1927",
+        "lng": "139.687015",
+        "name": "新古河"
+      },
+      {
+        "id": "STN_TOBU_YAGYU",
+        "lat": "36.20659",
+        "lng": "139.659955",
+        "name": "柳生"
+      },
+      {
+        "id": "STN_TOBU_ITAKURA_TOYODAMAE",
+        "lat": "36.222205",
+        "lng": "139.648625",
+        "name": "板倉東洋大前"
+      },
+      {
+        "id": "STN_TOBU_FUJIOKA",
+        "lat": "36.255585",
+        "lng": "139.6456",
+        "name": "藤岡"
+      },
+      {
+        "id": "STN_TOBU_SHIWA",
+        "lat": "36.31653",
+        "lng": "139.68493",
+        "name": "静和"
+      },
+      {
+        "id": "STN_TOBU_SHIN_OHIRASHITA",
+        "lat": "36.33897",
+        "lng": "139.701865",
+        "name": "新大平下"
+      },
+      {
+        "id": "STN_TOBU_TOCHIGI",
+        "lat": "36.37167",
+        "lng": "139.73149",
+        "name": "栃木"
+      },
+      {
+        "id": "STN_TOBU_SHIN_TOCHIGI",
+        "lat": "36.39006",
+        "lng": "139.74235",
+        "name": "新栃木"
+      },
+      {
+        "id": "STN_TOBU_KASSENBA",
+        "lat": "36.407585",
+        "lng": "139.74102",
+        "name": "合戦場"
+      },
+      {
+        "id": "STN_TOBU_IE_NAKA",
+        "lat": "36.42979",
+        "lng": "139.74745",
+        "name": "家中"
+      },
+      {
+        "id": "STN_TOBU_TOBU_KANASAKI",
+        "lat": "36.4663",
+        "lng": "139.749485",
+        "name": "東武金崎"
+      },
+      {
+        "id": "STN_TOBU_NIREGI",
+        "lat": "36.507061",
+        "lng": "139.74525",
+        "name": "楡木"
+      },
+      {
+        "id": "STN_TOBU_MOMIYAMA",
+        "lat": "36.533242",
+        "lng": "139.741758",
+        "name": "樅山"
+      },
+      {
+        "id": "STN_TOBU_SHIN_KANUMA",
+        "lat": "36.556985",
+        "lng": "139.74476",
+        "name": "新鹿沼"
+      },
+      {
+        "id": "STN_TOBU_KITA_KANUMA",
+        "lat": "36.580783",
+        "lng": "139.737669",
+        "name": "北鹿沼"
+      },
+      {
+        "id": "STN_TOBU_ITAGA",
+        "lat": "36.6194",
+        "lng": "139.70778",
+        "name": "板荷"
+      },
+      {
+        "id": "STN_TOBU_SHIMO_KOSHIRO",
+        "lat": "36.651375",
+        "lng": "139.713907",
+        "name": "下小代"
+      },
+      {
+        "id": "STN_TOBU_MYOJIN",
+        "lat": "36.676555",
+        "lng": "139.712205",
+        "name": "明神"
+      },
+      {
+        "id": "STN_TOBU_SHIMO_IMAICHI",
+        "lat": "36.7256",
+        "lng": "139.69277",
+        "name": "下今市"
+      },
+      {
+        "id": "STN_TOBU_KAMI_IMAICHI",
+        "lat": "36.72801",
+        "lng": "139.68086",
+        "name": "上今市"
+      },
+      {
+        "id": "STN_TOBU_TOBU_NIKKO",
+        "lat": "36.74824",
+        "lng": "139.61972",
+        "name": "東武日光"
+      },
+      {
+        "id": "STN_TOBU_YASHU_HIRAKAWA",
+        "lat": "36.40156",
+        "lng": "139.75378",
+        "name": "野州平川"
+      },
+      {
+        "id": "STN_TOBU_YASHU_OTSUKA",
+        "lat": "36.408775",
+        "lng": "139.772595",
+        "name": "野州大塚"
+      },
+      {
+        "id": "STN_TOBU_MIBU",
+        "lat": "36.422435",
+        "lng": "139.80501",
+        "name": "壬生"
+      },
+      {
+        "id": "STN_TOBU_KUNIYA",
+        "lat": "36.451455",
+        "lng": "139.82385",
+        "name": "国谷"
+      },
+      {
+        "id": "STN_TOBU_OMOCHA_NO_MACHI",
+        "lat": "36.466745",
+        "lng": "139.829535",
+        "name": "おもちゃのまち"
+      },
+      {
+        "id": "STN_TOBU_YASUZUKA",
+        "lat": "36.485645",
+        "lng": "139.83562",
+        "name": "安塚"
+      },
+      {
+        "id": "STN_TOBU_NISHIKAWADA",
+        "lat": "36.51425",
+        "lng": "139.850305",
+        "name": "西川田"
+      },
+      {
+        "id": "STN_TOBU_ESO_JIMA",
+        "lat": "36.530955",
+        "lng": "139.860815",
+        "name": "江曽島"
+      },
+      {
+        "id": "STN_TOBU_MINAMI_UTSUNOMIYA",
+        "lat": "36.543772",
+        "lng": "139.872069",
+        "name": "南宇都宮"
+      },
+      {
+        "id": "STN_TOBU_TOBU_UTSUNOMIYA",
+        "lat": "36.55866",
+        "lng": "139.8806",
+        "name": "東武宇都宮"
+      },
+      {
+        "id": "STN_TOBU_DAYA_MUKO",
+        "lat": "36.732275",
+        "lng": "139.69194",
+        "name": "大谷向"
+      },
+      {
+        "id": "STN_TOBU_OKUWA",
+        "lat": "36.760806",
+        "lng": "139.71356",
+        "name": "大桑"
+      },
+      {
+        "id": "STN_TOBU_SHIN_KOTOKU",
+        "lat": "36.77977",
+        "lng": "139.71071",
+        "name": "新高徳"
+      },
+      {
+        "id": "STN_TOBU_KOSAGOE",
+        "lat": "36.80224",
+        "lng": "139.7065",
+        "name": "小佐越"
+      },
+      {
+        "id": "STN_TOBU_TOBU_WORLD_SQUARE",
+        "lat": "36.80833",
+        "lng": "139.70903",
+        "name": "東武ワールドスクウェア"
+      },
+      {
+        "id": "STN_TOBU_KINUGAWA_ONSEN",
+        "lat": "36.822525",
+        "lng": "139.71668",
+        "name": "鬼怒川温泉"
+      },
+      {
+        "id": "STN_TOBU_KINUGAWA_KOEN",
+        "lat": "36.841575",
+        "lng": "139.722825",
+        "name": "鬼怒川公園"
+      },
+      {
+        "id": "STN_TOBU_SHIN_FUJIWARA",
+        "lat": "36.852455",
+        "lng": "139.73301",
+        "name": "新藤原"
+      },
+      {
+        "id": "STN_TOBU_OMIYA",
+        "lat": "35.90775",
+        "lng": "139.62425",
+        "name": "大宮"
+      },
+      {
+        "id": "STN_TOBU_KITA_OMIYA",
+        "lat": "35.91794",
+        "lng": "139.624805",
+        "name": "北大宮"
+      },
+      {
+        "id": "STN_TOBU_OMIYA_KOEN",
+        "lat": "35.92388",
+        "lng": "139.63308",
+        "name": "大宮公園"
+      },
+      {
+        "id": "STN_TOBU_OWADA",
+        "lat": "35.92935",
+        "lng": "139.651015",
+        "name": "大和田"
+      },
+      {
+        "id": "STN_TOBU_NANASATO",
+        "lat": "35.93649",
+        "lng": "139.66601",
+        "name": "七里"
+      },
+      {
+        "id": "STN_TOBU_IWATSUKI",
+        "lat": "35.95025",
+        "lng": "139.69313",
+        "name": "岩槻"
+      },
+      {
+        "id": "STN_TOBU_HIGASHI_IWATSUKI",
+        "lat": "35.96329",
+        "lng": "139.71227",
+        "name": "東岩槻"
+      },
+      {
+        "id": "STN_TOBU_TOYOHARU",
+        "lat": "35.968035",
+        "lng": "139.726185",
+        "name": "豊春"
+      },
+      {
+        "id": "STN_TOBU_YAGISAKI",
+        "lat": "35.978575",
+        "lng": "139.7423",
+        "name": "八木崎"
+      },
+      {
+        "id": "STN_TOBU_FUJINO_USHIJIMA",
+        "lat": "35.980335",
+        "lng": "139.77807",
+        "name": "藤の牛島"
+      },
+      {
+        "id": "STN_TOBU_MINAMI_SAKURAI",
+        "lat": "35.9806",
+        "lng": "139.808395",
+        "name": "南桜井"
+      },
+      {
+        "id": "STN_TOBU_KAWAMA",
+        "lat": "35.97919",
+        "lng": "139.834545",
+        "name": "川間"
+      },
+      {
+        "id": "STN_TOBU_NANAKODAI",
+        "lat": "35.97085",
+        "lng": "139.85295",
+        "name": "七光台"
+      },
+      {
+        "id": "STN_TOBU_SHIMIZU_KOEN",
+        "lat": "35.958795",
+        "lng": "139.860305",
+        "name": "清水公園"
+      },
+      {
+        "id": "STN_TOBU_ATAGO",
+        "lat": "35.950615",
+        "lng": "139.864625",
+        "name": "愛宕"
+      },
+      {
+        "id": "STN_TOBU_NODASHI",
+        "lat": "35.943744",
+        "lng": "139.870768",
+        "name": "野田市"
+      },
+      {
+        "id": "STN_TOBU_UMESATO",
+        "lat": "35.93158",
+        "lng": "139.891095",
+        "name": "梅郷"
+      },
+      {
+        "id": "STN_TOBU_UNGA",
+        "lat": "35.91437",
+        "lng": "139.906035",
+        "name": "運河"
+      },
+      {
+        "id": "STN_TOBU_EDOGAWADAI",
+        "lat": "35.89723",
+        "lng": "139.91053",
+        "name": "江戸川台"
+      },
+      {
+        "id": "STN_TOBU_HATSUISHI",
+        "lat": "35.88384",
+        "lng": "139.91791",
+        "name": "初石"
+      },
+      {
+        "id": "STN_TOBU_NAGAREYAMA_OTAKANOMORI",
+        "lat": "35.872085",
+        "lng": "139.92576",
+        "name": "流山おおたかの森"
+      },
+      {
+        "id": "STN_TOBU_TOYOSHIKI",
+        "lat": "35.866535",
+        "lng": "139.93928",
+        "name": "豊四季"
+      },
+      {
+        "id": "STN_TOBU_KASHIWA",
+        "lat": "35.861985",
+        "lng": "139.970465",
+        "name": "柏"
+      },
+      {
+        "id": "STN_TOBU_SHINKASHIWA",
+        "lat": "35.8381",
+        "lng": "139.96704",
+        "name": "新柏"
+      },
+      {
+        "id": "STN_TOBU_MASUO",
+        "lat": "35.82982",
+        "lng": "139.976325",
+        "name": "増尾"
+      },
+      {
+        "id": "STN_TOBU_SAKASAI",
+        "lat": "35.823273",
+        "lng": "139.983708",
+        "name": "逆井"
+      },
+      {
+        "id": "STN_TOBU_TAKAYANAGI",
+        "lat": "35.808305",
+        "lng": "139.99898",
+        "name": "高柳"
+      },
+      {
+        "id": "STN_TOBU_MUTSUMI",
+        "lat": "35.793705",
+        "lng": "139.999245",
+        "name": "六実"
+      },
+      {
+        "id": "STN_TOBU_SHIN_KAMAGAYA",
+        "lat": "35.78078",
+        "lng": "139.99948",
+        "name": "新鎌ヶ谷"
+      },
+      {
+        "id": "STN_TOBU_KAMAGAYA",
+        "lat": "35.763785",
+        "lng": "139.99731",
+        "name": "鎌ヶ谷"
+      },
+      {
+        "id": "STN_TOBU_MAGOMEZAWA",
+        "lat": "35.741655",
+        "lng": "139.992205",
+        "name": "馬込沢"
+      },
+      {
+        "id": "STN_TOBU_TSUKADA",
+        "lat": "35.722125",
+        "lng": "139.982905",
+        "name": "塚田"
+      },
+      {
+        "id": "STN_TOBU_SHIN_FUNABASHI",
+        "lat": "35.711565",
+        "lng": "139.97982",
+        "name": "新船橋"
+      },
+      {
+        "id": "STN_TOBU_FUNABASHI",
+        "lat": "35.7021",
+        "lng": "139.984365",
+        "name": "船橋"
+      },
+      {
+        "id": "STN_TOBU_IKEBUKURO",
+        "lat": "35.73118",
+        "lng": "139.71117",
+        "name": "池袋"
+      },
+      {
+        "id": "STN_TOBU_KITA_IKEBUKURO",
+        "lat": "35.740335",
+        "lng": "139.716395",
+        "name": "北池袋"
+      },
+      {
+        "id": "STN_TOBU_SHIMO_ITABASHI",
+        "lat": "35.745065",
+        "lng": "139.71568",
+        "name": "下板橋"
+      },
+      {
+        "id": "STN_TOBU_OYAMA",
+        "lat": "35.748371",
+        "lng": "139.702647",
+        "name": "大山"
+      },
+      {
+        "id": "STN_TOBU_NAKA_ITABASHI",
+        "lat": "35.75628",
+        "lng": "139.694385",
+        "name": "中板橋"
+      },
+      {
+        "id": "STN_TOBU_TOKIWADAI",
+        "lat": "35.758905",
+        "lng": "139.68876",
+        "name": "ときわ台"
+      },
+      {
+        "id": "STN_TOBU_KAMI_ITABASHI",
+        "lat": "35.763615",
+        "lng": "139.676205",
+        "name": "上板橋"
+      },
+      {
+        "id": "STN_TOBU_TOBU_NERIMA",
+        "lat": "35.76865",
+        "lng": "139.66254",
+        "name": "東武練馬"
+      },
+      {
+        "id": "STN_TOBU_SHIMO_AKATSUKA",
+        "lat": "35.770485",
+        "lng": "139.64485",
+        "name": "下赤塚"
+      },
+      {
+        "id": "STN_TOBU_NARIMASU",
+        "lat": "35.777571",
+        "lng": "139.632947",
+        "name": "成増"
+      },
+      {
+        "id": "STN_TOBU_WAKOSHI",
+        "lat": "35.78835",
+        "lng": "139.612865",
+        "name": "和光市"
+      },
+      {
+        "id": "STN_TOBU_ASAKA",
+        "lat": "35.796765",
+        "lng": "139.6003",
+        "name": "朝霞"
+      },
+      {
+        "id": "STN_TOBU_ASAKADAI",
+        "lat": "35.814345",
+        "lng": "139.5873",
+        "name": "朝霞台"
+      },
+      {
+        "id": "STN_TOBU_SHIKI",
+        "lat": "35.82217",
+        "lng": "139.5753",
+        "name": "志木"
+      },
+      {
+        "id": "STN_TOBU_YANASEGAWA",
+        "lat": "35.83056",
+        "lng": "139.56246",
+        "name": "柳瀬川"
+      },
+      {
+        "id": "STN_TOBU_MIZUHODAI",
+        "lat": "35.8382",
+        "lng": "139.550785",
+        "name": "みずほ台"
+      },
+      {
+        "id": "STN_TOBU_TSURUSE",
+        "lat": "35.845614",
+        "lng": "139.539463",
+        "name": "鶴瀬"
+      },
+      {
+        "id": "STN_TOBU_FUJIMINO",
+        "lat": "35.860745",
+        "lng": "139.52309",
+        "name": "ふじみ野"
+      },
+      {
+        "id": "STN_TOBU_KAMIFUOKA",
+        "lat": "35.87387",
+        "lng": "139.51187",
+        "name": "上福岡"
+      },
+      {
+        "id": "STN_TOBU_SHINGASHI",
+        "lat": "35.89102",
+        "lng": "139.4973",
+        "name": "新河岸"
+      },
+      {
+        "id": "STN_TOBU_KAWAGOE",
+        "lat": "35.907182",
+        "lng": "139.483125",
+        "name": "川越"
+      },
+      {
+        "id": "STN_TOBU_KAWAGOESHI",
+        "lat": "35.914135",
+        "lng": "139.477095",
+        "name": "川越市"
+      },
+      {
+        "id": "STN_TOBU_KASUMIGASEKI",
+        "lat": "35.925401",
+        "lng": "139.444038",
+        "name": "霞ヶ関"
+      },
+      {
+        "id": "STN_TOBU_TSURUGASHIMA",
+        "lat": "35.936721",
+        "lng": "139.424021",
+        "name": "鶴ヶ島"
+      },
+      {
+        "id": "STN_TOBU_WAKABA",
+        "lat": "35.94893",
+        "lng": "139.40866",
+        "name": "若葉"
+      },
+      {
+        "id": "STN_TOBU_SAKADO",
+        "lat": "35.957249",
+        "lng": "139.39416",
+        "name": "坂戸"
+      },
+      {
+        "id": "STN_TOBU_KITASAKADO",
+        "lat": "35.97198",
+        "lng": "139.396845",
+        "name": "北坂戸"
+      },
+      {
+        "id": "STN_TOBU_TAKASAKA",
+        "lat": "36.002957",
+        "lng": "139.397685",
+        "name": "高坂"
+      },
+      {
+        "id": "STN_TOBU_HIGASHIMATSUYAMA",
+        "lat": "36.034816",
+        "lng": "139.401511",
+        "name": "東松山"
+      },
+      {
+        "id": "STN_TOBU_SHINRIN_KOEN",
+        "lat": "36.045165",
+        "lng": "139.37533",
+        "name": "森林公園"
+      },
+      {
+        "id": "STN_TOBU_TSUKINOWA",
+        "lat": "36.043515",
+        "lng": "139.345565",
+        "name": "つきのわ"
+      },
+      {
+        "id": "STN_TOBU_MUSASHI_RANZAN",
+        "lat": "36.044385",
+        "lng": "139.32774",
+        "name": "武蔵嵐山"
+      },
+      {
+        "id": "STN_TOBU_OGAWA_MACHI",
+        "lat": "36.05873",
+        "lng": "139.26065",
+        "name": "小川町"
+      },
+      {
+        "id": "STN_TOBU_TOBU_TAKEZAWA",
+        "lat": "36.07537",
+        "lng": "139.237615",
+        "name": "東武竹沢"
+      },
+      {
+        "id": "STN_TOBU_MINAMI_YORII",
+        "lat": "36.09138313",
+        "lng": "139.23646688",
+        "name": "みなみ寄居"
+      },
+      {
+        "id": "STN_TOBU_OBUSUMA",
+        "lat": "36.107865",
+        "lng": "139.234",
+        "name": "男衾"
+      },
+      {
+        "id": "STN_TOBU_HACHIGATA",
+        "lat": "36.113725",
+        "lng": "139.208635",
+        "name": "鉢形"
+      },
+      {
+        "id": "STN_TOBU_TAMAYODO",
+        "lat": "36.116947",
+        "lng": "139.200212",
+        "name": "玉淀"
+      },
+      {
+        "id": "STN_TOBU_YORII",
+        "lat": "36.11731",
+        "lng": "139.19368",
+        "name": "寄居"
+      },
+      {
+        "id": "STN_TOBU_IPPOMMATSU",
+        "lat": "35.940215",
+        "lng": "139.37008",
+        "name": "一本松"
+      },
+      {
+        "id": "STN_TOBU_NISHI_OYA",
+        "lat": "35.93176",
+        "lng": "139.35646",
+        "name": "西大家"
+      },
+      {
+        "id": "STN_TOBU_KAWAKADO",
+        "lat": "35.937605",
+        "lng": "139.346475",
+        "name": "川角"
+      },
+      {
+        "id": "STN_TOBU_BUSHU_NAGASE",
+        "lat": "35.941995",
+        "lng": "139.32619",
+        "name": "武州長瀬"
+      },
+      {
+        "id": "STN_TOBU_HIGASHI_MORO",
+        "lat": "35.94715",
+        "lng": "139.31533",
+        "name": "東毛呂"
+      },
+      {
+        "id": "STN_TOBU_BUSHU_KARASAWA",
+        "lat": "35.95222",
+        "lng": "139.30927",
+        "name": "武州唐沢"
+      },
+      {
+        "id": "STN_TOBU_OGOSE",
+        "lat": "35.962803",
+        "lng": "139.299609",
+        "name": "越生"
+      }
+    ]
+  }
+]

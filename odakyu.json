@@ -1,0 +1,521 @@
+[
+  {
+    "categories": "",
+    "company_id": "ODAKYU",
+    "company_name": "小田急電鉄",
+    "lines": [
+      {
+        "id": "ODAKYU_ODAWARA",
+        "name": "小田原線",
+        "sequence": [
+          "STN_ODAKYU_SHINJUKU",
+          "STN_ODAKYU_MINAMI_SHINJUKU",
+          "STN_ODAKYU_SANGUBASHI",
+          "STN_ODAKYU_YOYOGI_HACHIMAN",
+          "STN_ODAKYU_YOYOGI_UEHARA",
+          "STN_ODAKYU_HIGASHI_KITAZAWA",
+          "STN_ODAKYU_SHIMOKITA",
+          "STN_ODAKYU_SETAGAYA_DAITA",
+          "STN_ODAKYU_UMEGAOKA",
+          "STN_ODAKYU_GOTOKUJI",
+          "STN_ODAKYU_KYODO",
+          "STN_ODAKYU_CHITOSE_FUNABASHI",
+          "STN_ODAKYU_SOSHIGAYA_OKURA",
+          "STN_ODAKYU_SEIJO_GAKUEN_MAE",
+          "STN_ODAKYU_KITAMI",
+          "STN_ODAKYU_KOMAE",
+          "STN_ODAKYU_IZUMI_TAMAGAWA",
+          "STN_ODAKYU_NOBORITO",
+          "STN_ODAKYU_MUKAOGAOKA_YUEN",
+          "STN_ODAKYU_IKUTA",
+          "STN_ODAKYU_YOMIURILAND_MAE",
+          "STN_ODAKYU_YURIGAOKA",
+          "STN_ODAKYU_SHIN_YURIGAOKA",
+          "STN_ODAKYU_KAKIO",
+          "STN_ODAKYU_TSURUKAWA",
+          "STN_ODAKYU_TAMAGAWA_GAKUEN_MAE",
+          "STN_ODAKYU_MACHIDA",
+          "STN_ODAKYU_SAGAMI_ONO",
+          "STN_ODAKYU_ODAKYU_SAGAMIHARA",
+          "STN_ODAKYU_SOBUDAI_MAE",
+          "STN_ODAKYU_ZAMA",
+          "STN_ODAKYU_EBINA",
+          "STN_ODAKYU_ATSUGI",
+          "STN_ODAKYU_HON_ATSUGI",
+          "STN_ODAKYU_AIKO_ISHIDA",
+          "STN_ODAKYU_ISEHARA",
+          "STN_ODAKYU_TSURUMAKI_ONSEN",
+          "STN_ODAKYU_TOKAI_DAIGAKU_MAE",
+          "STN_ODAKYU_HADANO",
+          "STN_ODAKYU_SHIBUSAWA",
+          "STN_ODAKYU_SHIN_MATSUDA",
+          "STN_ODAKYU_KAISEI",
+          "STN_ODAKYU_KAYAMA",
+          "STN_ODAKYU_TOMIZU",
+          "STN_ODAKYU_HOTARUDA",
+          "STN_ODAKYU_ASHIGARA",
+          "STN_ODAKYU_ODAWARA"
+        ]
+      },
+      {
+        "id": "ODAKYU_ENOSHIMA",
+        "name": "江ノ島線",
+        "sequence": [
+          "STN_ODAKYU_SAGAMI_ONO",
+          "STN_ODAKYU_HIGASHI_RINKAN",
+          "STN_ODAKYU_CHUO_RINKAN",
+          "STN_ODAKYU_MINAMI_RINKAN",
+          "STN_ODAKYU_TSURUMA",
+          "STN_ODAKYU_YAMATO",
+          "STN_ODAKYU_SAKURAGAOKA",
+          "STN_ODAKYU_KOZA_SHIBUYA",
+          "STN_ODAKYU_CHOGO",
+          "STN_ODAKYU_SHONANDAI",
+          "STN_ODAKYU_MUTSUAI_NICHIDAI_MAE",
+          "STN_ODAKYU_ZENGYO",
+          "STN_ODAKYU_FUJISAWA_HONMACHI",
+          "STN_ODAKYU_FUJISAWA",
+          "STN_ODAKYU_HON_KUGENUMA",
+          "STN_ODAKYU_KUGENUMA_KAIGAN",
+          "STN_ODAKYU_KATASE_ENOSHIMA"
+        ]
+      },
+      {
+        "id": "ODAKYU_TAMA",
+        "name": "多摩線",
+        "sequence": [
+          "STN_ODAKYU_SHIN_YURIGAOKA",
+          "STN_ODAKYU_SATSUKIDAI",
+          "STN_ODAKYU_KURIHIRA",
+          "STN_ODAKYU_KUROKAWA",
+          "STN_ODAKYU_HARUHINO",
+          "STN_ODAKYU_ODAKYU_NAGAYAMA",
+          "STN_ODAKYU_ODAKYU_TAMA_CENTER",
+          "STN_ODAKYU_KARAKIDA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ODAKYU_SHINJUKU",
+        "lat": "35.691182",
+        "lng": "139.699648",
+        "name": "新宿"
+      },
+      {
+        "id": "STN_ODAKYU_MINAMI_SHINJUKU",
+        "lat": "35.683555",
+        "lng": "139.69865",
+        "name": "南新宿"
+      },
+      {
+        "id": "STN_ODAKYU_SANGUBASHI",
+        "lat": "35.678605",
+        "lng": "139.693585",
+        "name": "参宮橋"
+      },
+      {
+        "id": "STN_ODAKYU_YOYOGI_HACHIMAN",
+        "lat": "35.669694",
+        "lng": "139.689068",
+        "name": "代々木八幡"
+      },
+      {
+        "id": "STN_ODAKYU_YOYOGI_UEHARA",
+        "lat": "35.66902",
+        "lng": "139.679883",
+        "name": "代々木上原"
+      },
+      {
+        "id": "STN_ODAKYU_HIGASHI_KITAZAWA",
+        "lat": "35.66544",
+        "lng": "139.67304",
+        "name": "東北沢"
+      },
+      {
+        "id": "STN_ODAKYU_SHIMOKITA沢",
+        "lat": "35.661445",
+        "lng": "139.667345",
+        "name": "下北沢"
+      },
+      {
+        "id": "STN_ODAKYU_SETAGAYA_DAITA",
+        "lat": "35.658355",
+        "lng": "139.6616",
+        "name": "世田谷代田"
+      },
+      {
+        "id": "STN_ODAKYU_UMEGAOKA",
+        "lat": "35.65602",
+        "lng": "139.65355",
+        "name": "梅ヶ丘"
+      },
+      {
+        "id": "STN_ODAKYU_GOTOKUJI",
+        "lat": "35.653715",
+        "lng": "139.647105",
+        "name": "豪徳寺"
+      },
+      {
+        "id": "STN_ODAKYU_KYODO",
+        "lat": "35.65119",
+        "lng": "139.636675",
+        "name": "経堂"
+      },
+      {
+        "id": "STN_ODAKYU_CHITOSE_FUNABASHI",
+        "lat": "35.647675",
+        "lng": "139.62453",
+        "name": "千歳船橋"
+      },
+      {
+        "id": "STN_ODAKYU_SOSHIGAYA_OKURA",
+        "lat": "35.643265",
+        "lng": "139.609795",
+        "name": "祖師ヶ谷大蔵"
+      },
+      {
+        "id": "STN_ODAKYU_SEIJO_GAKUEN_MAE",
+        "lat": "35.640135",
+        "lng": "139.59908",
+        "name": "成城学園前"
+      },
+      {
+        "id": "STN_ODAKYU_KITAMI",
+        "lat": "35.636501",
+        "lng": "139.586778",
+        "name": "喜多見"
+      },
+      {
+        "id": "STN_ODAKYU_KOMAE",
+        "lat": "35.632248",
+        "lng": "139.57736",
+        "name": "狛江"
+      },
+      {
+        "id": "STN_ODAKYU_IZUMI_TAMAGAWA",
+        "lat": "35.627415",
+        "lng": "139.57372",
+        "name": "和泉多摩川"
+      },
+      {
+        "id": "STN_ODAKYU_NOBORITO",
+        "lat": "35.620712",
+        "lng": "139.569269",
+        "name": "登戸"
+      },
+      {
+        "id": "STN_ODAKYU_MUKAOGAOKA_YUEN",
+        "lat": "35.61728",
+        "lng": "139.56461",
+        "name": "向ヶ丘遊園"
+      },
+      {
+        "id": "STN_ODAKYU_IKUTA",
+        "lat": "35.61494",
+        "lng": "139.5418",
+        "name": "生田"
+      },
+      {
+        "id": "STN_ODAKYU_YOMIURILAND_MAE",
+        "lat": "35.614735",
+        "lng": "139.52804",
+        "name": "読売ランド前"
+      },
+      {
+        "id": "STN_ODAKYU_YURIGAOKA",
+        "lat": "35.609025",
+        "lng": "139.51608",
+        "name": "百合ヶ丘"
+      },
+      {
+        "id": "STN_ODAKYU_SHIN_YURIGAOKA",
+        "lat": "35.603705",
+        "lng": "139.507475",
+        "name": "新百合ヶ丘"
+      },
+      {
+        "id": "STN_ODAKYU_KAKIO",
+        "lat": "35.58957",
+        "lng": "139.49755",
+        "name": "柿生"
+      },
+      {
+        "id": "STN_ODAKYU_TSURUKAWA",
+        "lat": "35.58311",
+        "lng": "139.481825",
+        "name": "鶴川"
+      },
+      {
+        "id": "STN_ODAKYU_TAMAGAWA_GAKUEN_MAE",
+        "lat": "35.56351",
+        "lng": "139.46344",
+        "name": "玉川学園前"
+      },
+      {
+        "id": "STN_ODAKYU_MACHIDA",
+        "lat": "35.543937",
+        "lng": "139.445059",
+        "name": "町田"
+      },
+      {
+        "id": "STN_ODAKYU_SAGAMI_ONO",
+        "lat": "35.53272",
+        "lng": "139.438265",
+        "name": "相模大野"
+      },
+      {
+        "id": "STN_ODAKYU_ODAKYU_SAGAMIHARA",
+        "lat": "35.515555",
+        "lng": "139.423025",
+        "name": "小田急相模原"
+      },
+      {
+        "id": "STN_ODAKYU_SOBUDAI_MAE",
+        "lat": "35.49936",
+        "lng": "139.408545",
+        "name": "相武台前"
+      },
+      {
+        "id": "STN_ODAKYU_ZAMA",
+        "lat": "35.48099",
+        "lng": "139.399885",
+        "name": "座間"
+      },
+      {
+        "id": "STN_ODAKYU_EBINA",
+        "lat": "35.452833",
+        "lng": "139.390962",
+        "name": "海老名"
+      },
+      {
+        "id": "STN_ODAKYU_ATSUGI",
+        "lat": "35.443062",
+        "lng": "139.377911",
+        "name": "厚木"
+      },
+      {
+        "id": "STN_ODAKYU_HON_ATSUGI",
+        "lat": "35.43921",
+        "lng": "139.364375",
+        "name": "本厚木"
+      },
+      {
+        "id": "STN_ODAKYU_AIKO_ISHIDA",
+        "lat": "35.41777",
+        "lng": "139.344155",
+        "name": "愛甲石田"
+      },
+      {
+        "id": "STN_ODAKYU_ISEHARA",
+        "lat": "35.39609",
+        "lng": "139.313795",
+        "name": "伊勢原"
+      },
+      {
+        "id": "STN_ODAKYU_TSURUMAKI_ONSEN",
+        "lat": "35.380642",
+        "lng": "139.277269",
+        "name": "鶴巻温泉"
+      },
+      {
+        "id": "STN_ODAKYU_TOKAI_DAIGAKU_MAE",
+        "lat": "35.372915",
+        "lng": "139.27094",
+        "name": "東海大学前"
+      },
+      {
+        "id": "STN_ODAKYU_HADANO",
+        "lat": "35.37007",
+        "lng": "139.22608",
+        "name": "秦野"
+      },
+      {
+        "id": "STN_ODAKYU_SHIBUSAWA",
+        "lat": "35.374079",
+        "lng": "139.184499",
+        "name": "渋沢"
+      },
+      {
+        "id": "STN_ODAKYU_SHIN_MATSUDA",
+        "lat": "35.34461",
+        "lng": "139.13945",
+        "name": "新松田"
+      },
+      {
+        "id": "STN_ODAKYU_KAISEI",
+        "lat": "35.326495",
+        "lng": "139.13581",
+        "name": "開成"
+      },
+      {
+        "id": "STN_ODAKYU_KAYAMA",
+        "lat": "35.31065",
+        "lng": "139.142575",
+        "name": "栢山"
+      },
+      {
+        "id": "STN_ODAKYU_TOMIZU",
+        "lat": "35.29677",
+        "lng": "139.14516",
+        "name": "富水"
+      },
+      {
+        "id": "STN_ODAKYU_HOTARUDA",
+        "lat": "35.28507",
+        "lng": "139.151955",
+        "name": "螢田"
+      },
+      {
+        "id": "STN_ODAKYU_ASHIGARA",
+        "lat": "35.27177",
+        "lng": "139.154505",
+        "name": "足柄"
+      },
+      {
+        "id": "STN_ODAKYU_ODAWARA",
+        "lat": "35.256355",
+        "lng": "139.15543",
+        "name": "小田原"
+      },
+      {
+        "id": "STN_ODAKYU_HIGASHI_RINKAN",
+        "lat": "35.52002",
+        "lng": "139.439121",
+        "name": "東林間"
+      },
+      {
+        "id": "STN_ODAKYU_CHUO_RINKAN",
+        "lat": "35.508005",
+        "lng": "139.4441",
+        "name": "中央林間"
+      },
+      {
+        "id": "STN_ODAKYU_MINAMI_RINKAN",
+        "lat": "35.4956",
+        "lng": "139.448005",
+        "name": "南林間"
+      },
+      {
+        "id": "STN_ODAKYU_TSURUMA",
+        "lat": "35.49057",
+        "lng": "139.45064",
+        "name": "鶴間"
+      },
+      {
+        "id": "STN_ODAKYU_YAMATO",
+        "lat": "35.469792",
+        "lng": "139.461493",
+        "name": "大和"
+      },
+      {
+        "id": "STN_ODAKYU_SAKURAGAOKA",
+        "lat": "35.45053",
+        "lng": "139.46574",
+        "name": "桜ヶ丘"
+      },
+      {
+        "id": "STN_ODAKYU_KOZA_SHIBUYA",
+        "lat": "35.432145",
+        "lng": "139.46471",
+        "name": "高座渋谷"
+      },
+      {
+        "id": "STN_ODAKYU_CHOGO",
+        "lat": "35.41225",
+        "lng": "139.465325",
+        "name": "長後"
+      },
+      {
+        "id": "STN_ODAKYU_SHONANDAI",
+        "lat": "35.396545",
+        "lng": "139.46647",
+        "name": "湘南台"
+      },
+      {
+        "id": "STN_ODAKYU_MUTSUAI_NICHIDAI_MAE",
+        "lat": "35.38376",
+        "lng": "139.47072",
+        "name": "六会日大前"
+      },
+      {
+        "id": "STN_ODAKYU_ZENGYO",
+        "lat": "35.36259",
+        "lng": "139.473265",
+        "name": "善行"
+      },
+      {
+        "id": "STN_ODAKYU_FUJISAWA_HONMACHI",
+        "lat": "35.34821",
+        "lng": "139.47584",
+        "name": "藤沢本町"
+      },
+      {
+        "id": "STN_ODAKYU_FUJISAWA",
+        "lat": "35.338595",
+        "lng": "139.48712",
+        "name": "藤沢"
+      },
+      {
+        "id": "STN_ODAKYU_HON_KUGENUMA",
+        "lat": "35.331035",
+        "lng": "139.47529",
+        "name": "本鵠沼"
+      },
+      {
+        "id": "STN_ODAKYU_KUGENUMA_KAIGAN",
+        "lat": "35.32075",
+        "lng": "139.47122",
+        "name": "鵠沼海岸"
+      },
+      {
+        "id": "STN_ODAKYU_KATASE_ENOSHIMA",
+        "lat": "35.30931",
+        "lng": "139.482925",
+        "name": "片瀬江ノ島"
+      },
+      {
+        "id": "STN_ODAKYU_SATSUKIDAI",
+        "lat": "35.60023",
+        "lng": "139.493385",
+        "name": "五月台"
+      },
+      {
+        "id": "STN_ODAKYU_KURIHIRA",
+        "lat": "35.60575",
+        "lng": "139.481295",
+        "name": "栗平"
+      },
+      {
+        "id": "STN_ODAKYU_KUROKAWA",
+        "lat": "35.613137",
+        "lng": "139.470742",
+        "name": "黒川"
+      },
+      {
+        "id": "STN_ODAKYU_HARUHINO",
+        "lat": "35.618405",
+        "lng": "139.464985",
+        "name": "はるひ野"
+      },
+      {
+        "id": "STN_ODAKYU_ODAKYU_NAGAYAMA",
+        "lat": "35.629921",
+        "lng": "139.448062",
+        "name": "小田急永山"
+      },
+      {
+        "id": "STN_ODAKYU_ODAKYU_TAMA_CENTER",
+        "lat": "35.62493",
+        "lng": "139.424375",
+        "name": "小田急多摩センター"
+      },
+      {
+        "id": "STN_ODAKYU_KARAKIDA",
+        "lat": "35.616565",
+        "lng": "139.411675",
+        "name": "唐木田"
+      }
+    ]
+  }
+]

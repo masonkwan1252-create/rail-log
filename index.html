@@ -4,357 +4,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.17</title>
+<title>鉄道手帳 RAIL LOG V0.18</title>
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
-/* 🚩 調整回送幕：加大字體並絕對置中 */
-.out-of-service-panel {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 垂直置中 */
-    align-items: center;     /* 水平置中 */
-    color: #001f5c;          /* 使用鐵道手帳同款藍色 */
-    text-align: center;
+/* 🚩 全新載入畫面 (Web Icon Pixel 風格) */
+#loading-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #ffffff; /* 純白背景 */
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    z-index: 9999; transition: opacity 0.5s ease, visibility 0.5s;
 }
-	
-.out-of-service-panel .sign-destination-text {
-    color: #001f5c;         /* 鐵道手帳同款藍色 */
-    font-size: 32px;        /* 大幅增加字體大小 */
-    font-weight: 900;       /* 加粗字體 */
-    letter-spacing: 30px;   /* 增加字距，顯得更有氣勢 */
-    margin-right: -30px;    /* 抵消末字間距以維持絕對水平置中 */
-    white-space: nowrap;
-    /* 稍微拉高文字，讓它更像真實印刷 */
-    transform: scaleY(1.1); 
+#loading-screen.loaded { opacity: 0; visibility: hidden; }
+
+/* 模擬 Web Icon 的設備外殼 */
+.device-icon {
+    width: 160px; height: 160px;
+    background-color: #d9d9d9;
+    border: 6px solid #999;
+    border-radius: 12px;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* 微微的浮動動畫讓畫面無咁死板 */
+    animation: floatIcon 3s ease-in-out infinite;
+}
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
-/* 山手線英文專用副標題 */
-.out-of-service-panel .sign-yamanote-en {
-    color: #001f5c;
-    font-size: 10px;
-    font-weight: 800;
+/* 黑色螢幕區域 */
+.device-screen {
+    position: absolute; top: 16px; left: 16px; right: 16px; height: 64px;
+    background-color: #111; border-radius: 6px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* LOADING 文字 */
+.device-screen-text {
+    color: #fff9c4; font-family: 'DotGothic16', monospace; font-size: 14px; margin-bottom: 6px;
     letter-spacing: 2px;
-    margin-right: -2px;
-    margin-top: 1px;
-	transform: scaleY(1.1); 
+    animation: blinkText 1s step-end infinite;
+}
+@keyframes blinkText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
-/* 🚩 Dark Mode 下的調整 */
-@media (prefers-color-scheme: dark) {
-    .out-of-service-panel .sign-destination-text,
-    .out-of-service-panel .sign-yamanote-en {
-        color: #002266;     /* 配合暖色背燈稍微深色一點點 */
-        /* 增加一點點文字陰影，模擬光線透過布幕的效果 */
-        text-shadow: 0 0 1px rgba(0,0,0,0.2);
-    }
+/* Pixel 風格 Loading Bar */
+.pixel-bar-container {
+    width: 80%; height: 12px; background-color: #333; border: 2px solid #555; padding: 2px;
+    box-sizing: border-box;
 }
+.pixel-bar-fill {
+    height: 100%; background-color: #63BD0F; width: 0%;
+    /* steps(8) 製造出一格格跳動嘅 Pixel 感，配合 1 秒的等待時間 */
+    animation: fillBar 1s steps(8) forwards;
+}
+@keyframes fillBar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* 山手線綠色色帶 */
+.device-band {
+    position: absolute; top: 96px; left: 0; width: 100%; height: 18px;
+    background-color: #63BD0F;
+}
+
+/* 底部按鈕區 */
+.device-controls {
+    position: absolute; bottom: 12px; left: 16px; right: 16px;
+    display: flex; justify-content: space-between;
+}
+.device-btn {
+    width: 32px; height: 16px; background-color: #555; border-radius: 4px;
+    display: flex; align-items: center; justify-content: space-evenly;
+}
+.device-dot {
+    width: 6px; height: 6px; background-color: #fff9c4; border-radius: 50%;
+}
+
+
+/* 主畫面容器 */
+#main-app { visibility: hidden; opacity: 0; transition: opacity 0.5s ease; }
+#main-app.show { visibility: visible; opacity: 1; }
+
+/* 方向幕樣式 */
+.out-of-service-panel { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #001f5c; text-align: center; }
+.out-of-service-panel .sign-destination-text { color: #001f5c; font-size: 32px; font-weight: 900; letter-spacing: 30px; margin-right: -30px; white-space: nowrap; transform: scaleY(1.1); }
+.out-of-service-panel .sign-yamanote-en { color: #001f5c; font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-right: -2px; margin-top: 1px; transform: scaleY(1.1); }
 
 :root {
-    --bg: #e0e0e0; 
-    --input-bg: #f4f4f4; 
-    --card: #ffffff;
-    --text: #1d1d1f;
-    --subtext: #86868b;
-    --border: #aaa; 
-    --primary: #63BD0F; 
-    --success: #34c759;
-    --danger: #ff3b30;
-    --tag-bg: #e5e5ea;
-    --nav-bg: rgba(255, 255, 255, 0.85);
+    --bg: #e0e0e0; --input-bg: #f4f4f4; --card: #ffffff; --text: #1d1d1f; --subtext: #86868b;
+    --border: #aaa; --primary: #63BD0F; --success: #34c759; --danger: #ff3b30; --tag-bg: #e5e5ea; --nav-bg: rgba(255, 255, 255, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #1c1c1e; 
-        --input-bg: #2c2c2e; 
-        --card: #1c1c1e;
-        --text: #f5f5f7;
-        --subtext: #98989d;
-        --border: #38383a;
-        --tag-bg: #2c2c2e;
-        --nav-bg: rgba(28, 28, 30, 0.85);
+        --bg: #1c1c1e; --input-bg: #2c2c2e; --card: #1c1c1e; --text: #f5f5f7; --subtext: #98989d;
+        --border: #38383a; --tag-bg: #2c2c2e; --nav-bg: rgba(28, 28, 30, 0.85);
     }
-    
-    /* 🚩 Dark Mode 下清除篩選按鈕轉為山手線綠色 */
-    .btn-clear-stats {
-        background: var(--primary) !important;
-        color: #ffffff !important;
-        border: none !important;
-    }
+    .btn-clear-stats { background: var(--primary) !important; color: #ffffff !important; border: none !important; }
+    /* Dark Mode Header Bug Fix */
+    header { background: #000000 !important; border-bottom: 1px solid #222 !important; box-shadow: none !important; }
+    .header-band { background: #27420e; }
+    .destination-sign-frame { border-color: #333; background: #fff3cd; box-shadow: inset 0 8px 12px rgba(0,0,0,0.6), inset 0 -8px 12px rgba(0,0,0,0.6), 0 0 15px rgba(255, 230, 150, 0.15); }
+    .sign-main-content { color: #000a1f; }
+    .out-of-service-panel .sign-destination-text, .out-of-service-panel .sign-yamanote-en { color: #002266; text-shadow: 0 0 1px rgba(0,0,0,0.2); }
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); padding-bottom: 100px; }
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding-bottom: 100px; 
-}
-
-/* HEADER 重新設計 */
-header {
-    background: linear-gradient(135deg, #ddd 0%, #aaa 100%); 
-    padding: calc(env(safe-area-inset-top) + 8px) 0 8px 0; 
-    border-bottom: 1px solid #aaa;
-    position: sticky; top: 0; z-index: 100;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    display: flex; justify-content: center; align-items: center;
-    gap: 20px; 
-    overflow: hidden;
-}
-
-.header-band { 
-    flex: 1; 
-    height: 30px; 
-    background: var(--primary); 
-    cursor: pointer; /* 🚩 加入手型鼠標提示可點擊 */
-    transition: opacity 0.2s;
-}
-.header-band:active {
-    opacity: 0.7;
-}
-
-/* 🚩 更新：方向幕外框與陰影 */
-.destination-sign-frame {
-    background: #fff;
-    border-radius: 22px; 
-    padding: 0; 
-    border: 7px solid #888; 
-    /* 加強上下內陰影，模擬真實方向幕與玻璃面嘅距離感 */
-    box-shadow: inset 0 6px 10px rgba(0,0,0,0.4), inset 0 -6px 10px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.1); 
-    width: 65%; 
-    max-width: 210px;
-    aspect-ratio: 3 / 1; 
-    position: relative;
-    overflow: hidden; /* 確保卷幕唔會超出邊框 */
-}
-
-/* 🚩 更新：卷幕動畫容器 (改為由JS控制) */
-.roll-container {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 500%; /* 共有 5 塊幕，總高度設定為 500% */
-    transform: translateY(0);
-}
-
-/* 🚩 新增：每一格方向幕 */
-.sign-panel {
-    width: 100%;
-    height: 20%; /* 100% / 5格 = 20% */
-    flex-shrink: 0;
-    display: flex;
-    box-sizing: border-box;
-}
-
-/* 獨立排版：回送幕/純文字幕 */
-.sign-panel.out-of-service-panel {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-}
-
-/* 獨立排版：最終幕 (繼承你原本嘅排版) */
-.sign-panel.final-panel {
-    justify-content: center;
-    align-items: center;
-	box-sizing: border-box;
-    white-space: nowrap;
-}
-
-/* 🚩 更新：Dark Mode 晚黑效果與 90 年代暖色背燈 */
-@media (prefers-color-scheme: dark) {
-    header {
-        /* 將 header 轉為黑夜效果 */
-        background: linear-gradient(135deg, #111 0%, #222 100%);
-        border-bottom: 1px solid #000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    
-    .header-band {
-        background: #27420e; /* 山手線夜間色帶顏色 */
-    }
-
-    .destination-sign-frame {
-        border-color: #333;
-        /* 90年代鹵素燈/偏暖白光管嘅背燈顏色 */
-        background: #fff3cd; 
-        /* 加強夜間內陰影，並加入微弱嘅光暈向外散發 */
-        box-shadow: inset 0 8px 12px rgba(0,0,0,0.6), inset 0 -8px 12px rgba(0,0,0,0.6), 0 0 15px rgba(255, 230, 150, 0.15);
-    }
-    
-    /* 配合暖色背燈，將文字稍微校深色增加對比度 */
-    .sign-main-content {
-        color: #000a1f; 
-    }
-}
-
-/* 通勤快速排版更新 */
-.sign-type-box {
-    margin: 0 0 0 8px; 
-    align-self: center; 
-    border: 2px solid #ff3b30; 
-    border-top: 6.25px solid #ff3b30; 
-    border-bottom: 6.25px solid #ff3b30; 
-    color: #ff3b30;
-    border-radius: 4px;
-    padding: 1px 3px; 
-    font-size: clamp(13px, 3.5vw, 15px); 
-    font-weight: 900;
-    line-height: 1.1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    font-style: italic; 
-    flex-shrink: 0;
-    box-sizing: border-box;
-    white-space: nowrap;
-}
-
+header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(env(safe-area-inset-top) + 8px) 0 8px 0; border-bottom: 1px solid #aaa; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; gap: 20px; overflow: hidden; }
+.header-band { flex: 1; height: 30px; background: var(--primary); cursor: pointer; transition: opacity 0.2s; }
+.header-band:active { opacity: 0.7; }
+.destination-sign-frame { background: #fff; border-radius: 22px; padding: 0; border: 7px solid #888; box-shadow: inset 0 6px 10px rgba(0,0,0,0.4), inset 0 -6px 10px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.1); width: 65%; max-width: 210px; aspect-ratio: 3 / 1; position: relative; overflow: hidden; }
+.roll-container { position: absolute; top: 0; left: 0; display: flex; flex-direction: column; align-items: center; width: 100%; height: 500%; transform: translateY(0); }
+.sign-panel { width: 100%; height: 20%; flex-shrink: 0; display: flex; box-sizing: border-box; }
+.sign-panel.final-panel { justify-content: center; align-items: center; box-sizing: border-box; white-space: nowrap; }
+.sign-type-box { margin: 0 0 0 8px; align-self: center; border: 2px solid #ff3b30; border-top: 6.25px solid #ff3b30; border-bottom: 6.25px solid #ff3b30; color: #ff3b30; border-radius: 4px; padding: 1px 3px; font-size: clamp(13px, 3.5vw, 15px); font-weight: 900; line-height: 1.1; display: flex; flex-direction: column; justify-content: center; align-items: center; font-style: italic; flex-shrink: 0; box-sizing: border-box; white-space: nowrap; }
 .sign-type-text-1 { text-align: left; width: 100%;}
 .sign-type-text-2 { text-indent: 1em; width: 100%;} 
-
-.sign-main-content {
-    margin: 0px 5px 0px 0px; 
-    text-align: center;
-	align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    gap: 2px; 
-    color: #001f5c; 
-    flex: 1; 
-}
-
-.sign-destination-text {
-    font-size: clamp(20px, 6vw, 25px); 
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: 0.2em; 
-    margin: 0; 
-    width: 100%;
-}
-
-.sign-english-text {
-    font-size: clamp(10px, 3vw, 13px); 
-    width: 100%; 
-    margin: 0; 
-    line-height: 1;
-    text-align-last: center; 
-    font-weight: 800;
-    letter-spacing: 0.3em; 
-}
-
-.toast-message {
-    display: none; position: fixed; top: calc(75px + env(safe-area-inset-top)); 
-    left: 50%; transform: translateX(-50%); background: var(--success); color: white;
-    padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600;
-    z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: fadeInOut 2.5s ease; 
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translate(-50%, -10px); }
-    10% { opacity: 1; transform: translate(-50%, 0); }
-    90% { opacity: 1; transform: translate(-50%, 0); }
-    100% { opacity: 0; transform: translate(-50%, -10px); }
-}
-
-.version-badge {
-    position: fixed; bottom: calc(env(safe-area-inset-bottom) + 65px); right: 8px;
-    font-size: 10px; color: var(--subtext); background: var(--nav-bg);
-    border: 1px solid var(--border); border-radius: 10px; padding: 2px 6px;
-    z-index: 1001; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-}
+.sign-main-content { margin: 0px 5px 0px 0px; text-align: center; align-self: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: #001f5c; flex: 1; }
+.sign-destination-text { font-size: clamp(20px, 6vw, 25px); font-weight: 800; line-height: 1; letter-spacing: 0.2em; margin: 0; width: 100%; }
+.sign-english-text { font-size: clamp(10px, 3vw, 13px); width: 100%; margin: 0; line-height: 1; text-align-last: center; font-weight: 800; letter-spacing: 0.3em; }
+.toast-message { display: none; position: fixed; top: calc(75px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: fadeInOut 2.5s ease; }
+@keyframes fadeInOut { 0% { opacity: 0; transform: translate(-50%, -10px); } 10% { opacity: 1; transform: translate(-50%, 0); } 90% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, -10px); } }
+.version-badge { position: fixed; bottom: calc(env(safe-area-inset-bottom) + 65px); right: 8px; font-size: 10px; color: var(--subtext); background: var(--nav-bg); border: 1px solid var(--border); border-radius: 10px; padding: 2px 6px; z-index: 1001; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 
 .container { max-width: 600px; margin: 15px auto; padding: 0 15px; }
-
-.card {
-    background: var(--card); padding: 20px; margin-bottom: 16px;
-    border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
+.card { background: var(--card); padding: 20px; margin-bottom: 16px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 .tab-content { display: none; animation: fadeIn 0.3s ease; }
 .tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-.bottom-nav {
-    position: fixed; bottom: 0; left: 0; right: 0; background: var(--nav-bg);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid var(--border); display: flex; justify-content: space-around;
-    padding: 0 0 calc(env(safe-area-inset-bottom)); z-index: 1000;
-}
-
-.nav-item {
-    text-align: center; color: var(--subtext); font-size: 11px; font-weight: 500;
-    cursor: pointer; flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 4px; padding: 10px 0;
-    border-bottom: 3px solid transparent; transition: all 0.2s ease;
-}
-
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 0 0 calc(env(safe-area-inset-bottom)); z-index: 1000; }
+.nav-item { text-align: center; color: var(--subtext); font-size: 11px; font-weight: 500; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 0; border-bottom: 3px solid transparent; transition: all 0.2s ease; }
 .nav-item.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
 .nav-icon { font-size: 22px; }
 
-h3 {
-    margin-top: 0; font-size: 17px; font-weight: 600; border-bottom: 2px solid var(--border); 
-    padding-bottom: 10px; margin-bottom: 16px; display: flex;
-    justify-content: space-between; align-items: center; color: var(--primary); 
-}
-
-.led-counter {
-    font-family: 'DotGothic16', monospace; 
-    background-color: #111;
-    color: #ff9500; 
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 1.2em;
-    font-weight: normal; 
-    text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); 
-    border: 2px solid #222;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,1); 
-    margin-left: 6px;
-    display: inline-block;
-    line-height: 1;
-    letter-spacing: 2px;
-}
+h3 { margin-top: 0; font-size: 17px; font-weight: 600; border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; color: var(--primary); }
+.led-counter { font-family: 'DotGothic16', monospace; background-color: #111; color: #ff9500; padding: 2px 8px; border-radius: 4px; font-size: 1.2em; font-weight: normal; text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); border: 2px solid #222; box-shadow: inset 0 2px 4px rgba(0,0,0,1); margin-left: 6px; display: inline-block; line-height: 1; letter-spacing: 2px; }
 
 label { display: block; font-size: 13px; color: var(--subtext); margin-bottom: 6px; margin-top: 12px; }
-
-input, select {
-    width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid var(--border); 
-    border-radius: 4px; background: var(--input-bg); color: var(--text);
-    appearance: none; outline: none;
-}
+input, select { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--input-bg); color: var(--text); appearance: none; outline: none; }
 input:focus { border-color: var(--primary); }
-
 .input-wrapper { position: relative; display: flex; align-items: center; }
 .input-wrapper input { padding-right: 35px; } 
-.clear-input-btn {
-    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
-    background: none; border: none; font-size: 16px; color: #bbb;
-    padding: 6px; margin: 0; width: auto; cursor: pointer; z-index: 10;
-}
+.clear-input-btn { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 16px; color: #bbb; padding: 6px; margin: 0; width: auto; cursor: pointer; z-index: 10; }
 .clear-input-btn:active { color: var(--text); }
 
-button {
-    width: 100%; padding: 14px; font-size: 16px; font-weight: 600; margin-top: 16px;
-    background: linear-gradient(#f0f0f0, #ccc); color: var(--text); border: 1px solid var(--border); 
-    border-radius: 4px; cursor: pointer;
-}
+button { width: 100%; padding: 14px; font-size: 16px; font-weight: 600; margin-top: 16px; background: linear-gradient(#f0f0f0, #ccc); color: var(--text); border: 1px solid var(--border); border-radius: 4px; cursor: pointer; }
 button:active { background: linear-gradient(#ccc, #b3b3b3); }
-
 .btn-primary { background: linear-gradient(#9ae26e, #63BD0F); color: white; border: none; }
 .btn-primary:active { background: linear-gradient(#63BD0F, #57a80b); }
 .btn-add { background: var(--success); color: white; border: none; }
@@ -364,29 +172,14 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
 .date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
-.date-mode-tabs button {
-    flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600;
-    background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s;
-}
+.date-mode-tabs button { flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600; background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s; }
 .date-mode-tabs button.active { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-
-.date-stepper {
-    display: flex; align-items: center; justify-content: space-between;
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
-}
-.date-stepper button {
-    margin: 0; padding: 10px 16px; background: transparent; border: none;
-    color: var(--text); font-weight: bold; font-size: 16px; cursor: pointer; border-radius: 0; width: auto;
-}
+.date-stepper { display: flex; align-items: center; justify-content: space-between; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.date-stepper button { margin: 0; padding: 10px 16px; background: transparent; border: none; color: var(--text); font-weight: bold; font-size: 16px; cursor: pointer; border-radius: 0; width: auto; }
 .date-stepper button:active { background: var(--bg); }
-.date-stepper .date-label {
-    flex: 1; text-align: center; font-weight: 600; color: var(--text); font-size: 15px; cursor: pointer;
-}
+.date-stepper .date-label { flex: 1; text-align: center; font-weight: 600; color: var(--text); font-size: 15px; cursor: pointer; }
 
-.calendar-modal {
-    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5); z-index: 3000; justify-content: center; align-items: center;
-}
+.calendar-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 3000; justify-content: center; align-items: center; }
 .calendar-content { background: var(--card); padding: 20px; border-radius: 12px; width: 90%; max-width: 320px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
 .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: bold; }
 .calendar-header button { width: auto; margin: 0; padding: 4px 12px; }
@@ -397,16 +190,13 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .cal-day.has-record { background: var(--primary); color: white; font-weight: bold; }
 .cal-day.selected { border: 2px solid var(--text); }
 
-/* 乘車記錄極致慳位排版 */
 .trip { border-bottom: 1px solid var(--border); padding: 10px 0; }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
 .trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
 .date { font-size: 11px; color: var(--primary); font-weight: 600; }
 .route { font-weight: 600; font-size: 14px; margin-bottom: 4px; line-height: 1.3;}
 .trip-detail { font-size: 12px; color: var(--subtext); display: flex; align-items: center; flex-wrap: wrap; gap: 6px; line-height: 1.4;}
-
 .through-block { background: var(--tag-bg); padding: 12px; border-radius: 4px; margin-top: 10px; border: 1px solid var(--border); }
-
 .tags-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; margin-bottom: 16px; }
 .tag { background: var(--tag-bg); color: var(--text); padding: 6px 12px; border-radius: 16px; font-size: 13px; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
 .tag.active { background: var(--primary); color: white; }
@@ -414,7 +204,6 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .stat-group-title { font-size: 14px; font-weight: 600; color: var(--subtext); margin-bottom: 8px; }
 .completion-rate { font-size: 13px; color: var(--success); margin-left: 8px; font-weight: 500; }
 
-/* 統計頁直線圖表 CSS */
 .chart-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; margin-bottom: 12px; }
 .chart-tabs button { flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600; background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s; }
 .chart-tabs button.active { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
@@ -424,224 +213,240 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .bar-track { flex: 1; background: var(--tag-bg); height: 14px; border-radius: 4px; overflow: hidden; position: relative; }
 .bar-fill { background: var(--primary); height: 100%; border-radius: 4px; transition: width 0.5s ease-out; }
 .bar-val { width: 30px; text-align: left; padding-left: 8px; font-weight: 600; color: var(--text); }
-
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-band" onclick="scrollSign('prev')" title="向上捲一格"></div>
-    
-    <div class="destination-sign-frame">
-        <div class="roll-container" id="rollContainer">
-            <div class="sign-panel"></div>
-            
-            <div class="sign-panel out-of-service-panel">
-                <div class="sign-destination-text">回送</div>
-            </div>
-
-            <div class="sign-panel out-of-service-panel">
-                <div class="sign-destination-text">試運転</div>
-            </div>
-
-            <div class="sign-panel out-of-service-panel" style="gap:0;">
-                <div class="sign-destination-text" style="font-size: 32px; letter-spacing: 20px; margin-right: -20px;transform: scaleX(1.1);">山手線</div>
-                <div class="sign-yamanote-en">YAMANOTE LINE</div>
-            </div>
-            
-            <div class="sign-panel final-panel">
-                <div class="sign-type-box">
-                    <div class="sign-type-text-1">通勤</div>
-                    <div class="sign-type-text-2">快速</div>
-                </div>
-                <div class="sign-main-content">
-                    <div class="sign-destination-text">鉄道手帳</div>
-                    <div class="sign-english-text">RAIL LOG</div>
-                </div>
+<div id="loading-screen">
+    <div class="device-icon">
+        <div class="device-screen">
+            <div class="device-screen-text">LOADING</div>
+            <div class="pixel-bar-container">
+                <div class="pixel-bar-fill"></div>
             </div>
         </div>
+        <div class="device-band"></div>
+        <div class="device-controls">
+            <div class="device-btn"><div class="device-dot"></div><div class="device-dot"></div></div>
+            <div class="device-btn"><div class="device-dot"></div><div class="device-dot"></div></div>
+        </div>
     </div>
-    
-    <div class="header-band" onclick="scrollSign('next')" title="向下捲一格"></div>
-</header>
+</div>
 
-<div id="saveMessage" class="toast-message">儲存成功！</div>
-<div class="version-badge">V0.17</div>
+<div id="main-app">
+    <header>
+        <div class="header-band" onclick="scrollSign('prev')" title="向上捲一格"></div>
+        
+        <div class="destination-sign-frame">
+            <div class="roll-container" id="rollContainer">
+                <div class="sign-panel"></div>
+                
+                <div class="sign-panel out-of-service-panel">
+                    <div class="sign-destination-text">回送</div>
+                </div>
 
-<div class="container">
+                <div class="sign-panel out-of-service-panel">
+                    <div class="sign-destination-text">試運転</div>
+                </div>
 
-    <div id="tab-add" class="tab-content active">
-        <div class="card">
-            <h3>新增乘車</h3>
-            <label>日期</label>
-            <input type="date" id="date">
-
-            <label>鉄道公司</label>
-            <div class="input-wrapper">
-                <input id="company" list="companyList" placeholder="選擇或輸入公司">
-                <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
-            </div>
-
-            <label>路線 (實體路線)</label>
-            <div class="input-wrapper">
-                <input id="line" list="lineList" placeholder="選擇或輸入路線">
-                <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
-            </div>
-
-            <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
-            <div id="throughContainer"></div>
-
-            <label>種別 / 列車名 (運行系統)</label>
-            <div class="input-wrapper">
-                <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速">
-                <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
-            </div>
-
-            <div style="background: var(--tag-bg); padding: 10px; border-radius: 6px; margin: 12px 0;">
-                <label style="margin-top: 0; display: flex; align-items: center; gap: 8px; color: var(--text); cursor: pointer; font-weight: 600;">
-                    <input type="checkbox" id="useOtherTrainCompany" onchange="toggleTrainCompanyUI()" style="width: auto; margin: 0;">
-                    車輛屬於其他公司？ (直通運轉)
-                </label>
-                <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
-                    <label style="margin-top: 0;">車輛所屬公司</label>
-                    <div class="input-wrapper">
-                        <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()">
-                        <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
+                <div class="sign-panel out-of-service-panel" style="gap:0;">
+                    <div class="sign-destination-text" style="font-size: 32px; letter-spacing: 20px; margin-right: -20px;transform: scaleX(1.1);">山手線</div>
+                    <div class="sign-yamanote-en">YAMANOTE LINE</div>
+                </div>
+                
+                <div class="sign-panel final-panel">
+                    <div class="sign-type-box">
+                        <div class="sign-type-text-1">通勤</div>
+                        <div class="sign-type-text-2">快速</div>
+                    </div>
+                    <div class="sign-main-content">
+                        <div class="sign-destination-text">鉄道手帳</div>
+                        <div class="sign-english-text">RAIL LOG</div>
                     </div>
                 </div>
             </div>
-
-            <label>車型</label>
-            <div class="input-wrapper">
-                <input id="train" list="trainList" placeholder="輸入車型 (按公司快速過濾)">
-                <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
-            </div>
-
-            <label>上車站</label>
-            <div class="input-wrapper">
-                <input id="from" list="stationListFrom" placeholder="出發站">
-                <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
-            </div>
-
-            <label>下車站</label>
-            <div class="input-wrapper">
-                <input id="to" list="stationListTo" placeholder="到達站">
-                <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
-            </div>
-
-            <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
-        </div>
-    </div>
-
-    <div id="tab-history" class="tab-content">
-        <div class="card">
-            <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
-                乘車記錄 <span id="totalCount" class="led-counter">0</span>
-            </h3>
-            
-            <div class="date-controls-wrapper">
-                <div class="date-mode-tabs">
-                    <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
-                    <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
-                </div>
-                <div class="date-stepper">
-                    <button onclick="changeDay(-1)"> &lt; </button>
-                    <div id="btnFilterDate" class="date-label" onclick="openCalendar()">選擇日期</div>
-                    <button onclick="changeDay(1)"> &gt; </button>
-                </div>
-            </div>
-
-            <div id="tripList"></div>
-            <div id="paginationControls" style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;"></div>
-        </div>
-    </div>
-
-    <div id="tab-stats" class="tab-content">
-        <div class="card">
-            <h3>統計與完成率</h3>
-            <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
-            
-            <div class="stat-group">
-                <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
-                <div id="filterCompanies" class="tags-container"></div>
-            </div>
-
-            <div id="filteredStatsContainer"></div>
         </div>
         
-        <div class="card">
-            <h3>乘搭排行榜 (Top 10)</h3>
-            <div class="chart-tabs">
-                <button id="btnChartCompany" class="active" onclick="switchChartTab('company')">Top 10 公司</button>
-                <button id="btnChartStation" onclick="switchChartTab('station')">Top 10 車站</button>
+        <div class="header-band" onclick="scrollSign('next')" title="向下捲一格"></div>
+    </header>
+
+    <div id="saveMessage" class="toast-message">儲存成功！</div>
+    <div class="version-badge">V0.18</div>
+
+    <div class="container">
+
+        <div id="tab-add" class="tab-content active">
+            <div class="card">
+                <h3>新增乘車</h3>
+                <label>日期</label>
+                <input type="date" id="date">
+
+                <label>鉄道公司</label>
+                <div class="input-wrapper">
+                    <input id="company" list="companyList" placeholder="選擇或輸入公司">
+                    <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
+                </div>
+
+                <label>路線 (實體路線)</label>
+                <div class="input-wrapper">
+                    <input id="line" list="lineList" placeholder="選擇或輸入路線">
+                    <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
+                </div>
+
+                <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
+                <div id="throughContainer"></div>
+
+                <label>種別 / 列車名 (運行系統)</label>
+                <div class="input-wrapper">
+                    <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速">
+                    <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
+                </div>
+
+                <div style="background: var(--tag-bg); padding: 10px; border-radius: 6px; margin: 12px 0;">
+                    <label style="margin-top: 0; display: flex; align-items: center; gap: 8px; color: var(--text); cursor: pointer; font-weight: 600;">
+                        <input type="checkbox" id="useOtherTrainCompany" onchange="toggleTrainCompanyUI()" style="width: auto; margin: 0;">
+                        車輛屬於其他公司？ (直通運轉)
+                    </label>
+                    <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
+                        <label style="margin-top: 0;">車輛所屬公司</label>
+                        <div class="input-wrapper">
+                            <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()">
+                            <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
+                        </div>
+                    </div>
+                </div>
+
+                <label>車型</label>
+                <div class="input-wrapper">
+                    <input id="train" list="trainList" placeholder="輸入車型 (按公司快速過濾)">
+                    <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
+                </div>
+
+                <label>上車站</label>
+                <div class="input-wrapper">
+                    <input id="from" list="stationListFrom" placeholder="出發站">
+                    <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
+                </div>
+
+                <label>下車站</label>
+                <div class="input-wrapper">
+                    <input id="to" list="stationListTo" placeholder="到達站">
+                    <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
+                </div>
+
+                <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
             </div>
-            <div id="chartDisplayArea" class="bar-chart-container"></div>
+        </div>
+
+        <div id="tab-history" class="tab-content">
+            <div class="card">
+                <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
+                    乘車記錄 <span id="totalCount" class="led-counter">0</span>
+                </h3>
+                
+                <div class="date-controls-wrapper">
+                    <div class="date-mode-tabs">
+                        <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
+                        <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
+                    </div>
+                    <div class="date-stepper">
+                        <button onclick="changeDay(-1)"> &lt; </button>
+                        <div id="btnFilterDate" class="date-label" onclick="openCalendar()">選擇日期</div>
+                        <button onclick="changeDay(1)"> &gt; </button>
+                    </div>
+                </div>
+
+                <div id="tripList"></div>
+                <div id="paginationControls" style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;"></div>
+            </div>
+        </div>
+
+        <div id="tab-stats" class="tab-content">
+            <div class="card">
+                <h3>統計與完成率</h3>
+                <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
+                
+                <div class="stat-group">
+                    <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
+                    <div id="filterCompanies" class="tags-container"></div>
+                </div>
+
+                <div id="filteredStatsContainer"></div>
+            </div>
+            
+            <div class="card">
+                <h3>乘搭排行榜 (Top 10)</h3>
+                <div class="chart-tabs">
+                    <button id="btnChartCompany" class="active" onclick="switchChartTab('company')">Top 10 公司</button>
+                    <button id="btnChartStation" onclick="switchChartTab('station')">Top 10 車站</button>
+                </div>
+                <div id="chartDisplayArea" class="bar-chart-container"></div>
+            </div>
+        </div>
+
+        <div id="tab-settings" class="tab-content">
+            <div class="card">
+                <h3>資料管理</h3>
+                <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。</p>
+                <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
+                <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
+                <button class="btn-small" onclick="importData()">匯入資料</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="calendarModal" class="calendar-modal">
+        <div class="calendar-content">
+            <div class="calendar-header">
+                <button class="btn-small" onclick="changeCalMonth(-1)"> &lt; </button>
+                <span id="calMonthYear"></span>
+                <button class="btn-small" onclick="changeCalMonth(1)"> &gt; </button>
+            </div>
+            <div class="calendar-days-header">
+                <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+            </div>
+            <div id="calGrid" class="calendar-grid"></div>
+            <button class="btn-small" style="width:100%; margin-top:15px;" onclick="closeCalendar()">取消</button>
         </div>
     </div>
 
-    <div id="tab-settings" class="tab-content">
-        <div class="card">
-            <h3>資料管理</h3>
-            <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。</p>
-            <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
-            <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
-            <button class="btn-small" onclick="importData()">匯入資料</button>
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="switchTab('tab-add', this)">
+            <span class="nav-icon">📝</span>
+            <span>新增</span>
         </div>
-    </div>
-
-</div>
-
-<div id="calendarModal" class="calendar-modal">
-    <div class="calendar-content">
-        <div class="calendar-header">
-            <button class="btn-small" onclick="changeCalMonth(-1)"> &lt; </button>
-            <span id="calMonthYear"></span>
-            <button class="btn-small" onclick="changeCalMonth(1)"> &gt; </button>
+        <div class="nav-item" onclick="switchTab('tab-history', this)">
+            <span class="nav-icon">🚆</span>
+            <span>記錄</span>
         </div>
-        <div class="calendar-days-header">
-            <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+        <div class="nav-item" onclick="switchTab('tab-stats', this)">
+            <span class="nav-icon">📊</span>
+            <span>統計</span>
         </div>
-        <div id="calGrid" class="calendar-grid"></div>
-        <button class="btn-small" style="width:100%; margin-top:15px;" onclick="closeCalendar()">取消</button>
-    </div>
-</div>
+        <div class="nav-item" onclick="switchTab('tab-settings', this)">
+            <span class="nav-icon">⚙️</span>
+            <span>管理</span>
+        </div>
+    </nav>
 
-<nav class="bottom-nav">
-    <div class="nav-item active" onclick="switchTab('tab-add', this)">
-        <span class="nav-icon">📝</span>
-        <span>新增</span>
-    </div>
-    <div class="nav-item" onclick="switchTab('tab-history', this)">
-        <span class="nav-icon">🚆</span>
-        <span>記錄</span>
-    </div>
-    <div class="nav-item" onclick="switchTab('tab-stats', this)">
-        <span class="nav-icon">📊</span>
-        <span>統計</span>
-    </div>
-    <div class="nav-item" onclick="switchTab('tab-settings', this)">
-        <span class="nav-icon">⚙️</span>
-        <span>管理</span>
-    </div>
-</nav>
+    <datalist id="companyList"></datalist>
+    <datalist id="lineList"></datalist>
+    <datalist id="stationListFrom"></datalist>
+    <datalist id="stationListTo"></datalist>
+    <datalist id="trainList"></datalist>
+    <datalist id="serviceTypeList">
+        <option value="普通"></option>
+        <option value="快速"></option>
+        <option value="新快速"></option>
+        <option value="関空快速"></option>
+        <option value="紀州路快速"></option>
+        <option value="大和路快速"></option>
+        <option value="特急"></option>
+    </datalist>
 
-<datalist id="companyList"></datalist>
-<datalist id="lineList"></datalist>
-<datalist id="stationListFrom"></datalist>
-<datalist id="stationListTo"></datalist>
-<datalist id="trainList"></datalist>
-<datalist id="serviceTypeList">
-    <option value="普通"></option>
-    <option value="快速"></option>
-    <option value="新快速"></option>
-    <option value="関空快速"></option>
-    <option value="紀州路快速"></option>
-    <option value="大和路快速"></option>
-    <option value="特急"></option>
-</datalist>
-
-<script>
+</div> <script>
 let currentSignIndex = 0;
 const totalSigns = 5; 
 const rollContainer = document.getElementById('rollContainer');
@@ -686,7 +491,6 @@ let currentDateFilter = "all";
 let calViewDate = new Date();
 let activeStatFilter = { type: null, id: null };
 
-// 🚩 V0.17 全局變數
 let activeTrainCompanyId = null;
 let currentCompanyTrains = [];
 
@@ -713,7 +517,6 @@ function getTripTrainDisplay(trip) {
     const throughCompanyId = trip.throughCompany_id; 
 
     let isSameCompany = (trainCompanyId === rideCompanyId);
-    
     if (throughCompanyId && throughCompanyId !== trainCompanyId) {
          isSameCompany = false;
     }
@@ -732,20 +535,27 @@ function getStatTrainDisplay(train_id, trips) {
 
     const riddenTrainIds = [...new Set(trips.map(t => t.train_id))];
     
-    const nameCounts = {};
+    const companiesForTrainName = new Set();
     riddenTrainIds.forEach(id => {
         const t = maps.train[id];
-        if (t) {
-            nameCounts[t.name] = (nameCounts[t.name] || 0) + 1;
+        if (t && t.name === trainObj.name) {
+            companiesForTrainName.add(t.company_id);
         }
     });
 
-    if (nameCounts[trainObj.name] > 1) {
+    if (companiesForTrainName.size > 1) {
         const companyName = maps.company[trainObj.company_id]?.name || trainObj.company_id;
         return `${companyName} ${trainObj.name}`;
     } else {
         return trainObj.name;
     }
+}
+
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainApp = document.getElementById('main-app');
+    loadingScreen.classList.add('loaded');
+    mainApp.classList.add('show');
 }
 
 async function loadData() {
@@ -763,39 +573,55 @@ async function loadData() {
         db.lines = [];
         db.stations = [];
 
-        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", "hisatsu.json", "kumamoto.json", "s_hokkaido.json", "aoimori.json", "konan.json", "tsugaru.json", "igr.json", "sanriku.json", "sat.json", "akita.json", "yuri_kogen.json", "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json"]; 
+        const newCompanyFiles = [
+            "keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
+            "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
+            "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", 
+            "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", 
+            "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", 
+            "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", 
+            "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", 
+            "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", 
+            "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", 
+            "hisatsu.json", "kumamoto.json", "s_hokkaido.json", "aoimori.json", "konan.json", 
+            "tsugaru.json", "igr.json", "sanriku.json", "sat.json", "akita.json", "yuri_kogen.json", 
+            "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
+            "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
+            "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json"]; 
         
-        for (let file of newCompanyFiles) {
-            try {
-                let res = await fetch(file);
-                if (res.ok) {
-                    let data = await res.json();
-                    let compData = data[0]; 
-                    
-                    if (compData.lines) {
-                        compData.lines.forEach(line => {
-                            line.company_id = compData.company_id;
-                            db.lines.push(line);
-                        });
-                    }
-                    
-                    if (compData.stations) {
-                        compData.stations.forEach(station => {
-                            station.company_id = compData.company_id;
-                            db.stations.push(station);
-                        });
-                    }
-                }
-            } catch(e) {
-                console.log(`無法載入獨立公司檔案: ${file}`, e);
+        const fetchPromises = newCompanyFiles.map(file => 
+            fetch(file).then(res => res.ok ? res.json() : null).catch(() => null)
+        );
+        
+        const results = await Promise.all(fetchPromises);
+        
+        results.forEach(data => {
+            if (!data) return;
+            let compData = Array.isArray(data) ? data[0] : data; 
+            
+            if (compData.lines) {
+                compData.lines.forEach(line => {
+                    line.company_id = compData.company_id;
+                    db.lines.push(line);
+                });
             }
-        }
+            if (compData.stations) {
+                compData.stations.forEach(station => {
+                    station.company_id = compData.company_id;
+                    db.stations.push(station);
+                });
+            }
+        });
 
     } catch (e) { 
         console.log("資料庫載入失敗。", e); 
+        document.querySelector('.device-screen-text').innerText = "ERROR";
+        document.querySelector('.device-screen-text').style.color = "red";
     } 
     finally {
         buildMaps(); initUILists(); render(); updateStationLists();
+        setTimeout(hideLoadingScreen, 1000);
     }
 }
 
@@ -834,7 +660,6 @@ function buildMaps() {
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
     fillList("lineList", db.lines.map(l => l.name));
-    // 🚩 V0.17 初始不載入全部車型，等待使用者選擇公司
     updateTrainDatalist();
 }
 
@@ -853,22 +678,23 @@ function switchTab(tabId, navElement) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+document.getElementById("line").addEventListener("input", () => {
+    updateStationLists();
+});
+
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
     updateLineList(compName, "lineList");
-    // 🚩 V0.17 當主公司變更時，觸發車型選單更新
     updateTrainDatalist(); 
     updateStationLists();
 });
 
-// 🚩 V0.17 切換直通運轉車輛公司
 function toggleTrainCompanyUI() {
     const useOther = document.getElementById('useOtherTrainCompany').checked;
     document.getElementById('otherTrainCompanyWrapper').style.display = useOther ? 'block' : 'none';
     updateTrainDatalist();
 }
 
-// 🚩 V0.17 核心邏輯：根據「當前選擇的公司」來篩選車型列表
 function updateTrainDatalist() {
     const useOther = document.getElementById('useOtherTrainCompany').checked;
     const targetCompanyInputId = useOther ? 'trainOwnerCompany' : 'company';
@@ -877,17 +703,13 @@ function updateTrainDatalist() {
     activeTrainCompanyId = resolve.company[compName] || null;
 
     if (activeTrainCompanyId) {
-        // 只保留屬於該公司的車型
         currentCompanyTrains = db.trains.filter(t => t.company_id === activeTrainCompanyId);
     } else {
-        // 如果無揀公司，為免 Lag 機，暫時顯示空列表
         currentCompanyTrains = []; 
     }
     
-    // 切換公司時自動清空目前輸入的車型，避免存錯
     document.getElementById('train').value = '';
 
-    // 更新 Datalist (最多顯示 50 個預設項)
     const list = document.getElementById("trainList");
     if(!list) return;
     list.innerHTML = "";
@@ -897,7 +719,6 @@ function updateTrainDatalist() {
 }
 
 
-// 🚩 V0.17 激速版：車型輸入框的防抖篩選 (只在已選公司內搜尋)
 let trainFilterTimeout = null;
 document.getElementById("train").addEventListener("input", function() {
     clearTimeout(trainFilterTimeout);
@@ -905,7 +726,6 @@ document.getElementById("train").addEventListener("input", function() {
     const keyword = this.value.trim().toLowerCase();
     const list = document.getElementById("trainList");
 
-    // 因範圍已縮窄至單一公司，防抖時間可縮短至 0.15 秒，極速反應
     trainFilterTimeout = setTimeout(() => {
         let filtered = currentCompanyTrains;
         if (keyword) {
@@ -937,11 +757,12 @@ function updateLineList(compName, targetListId) {
 function updateStationLists() {
     const mainCompInput = document.getElementById("company").value;
     const mainCompId = resolve.company[mainCompInput];
+    const mainLineInput = document.getElementById("line").value;
     
-    fillStationDatalist("stationListFrom", mainCompId, document.getElementById("line").value);
+    fillStationDatalist("stationListFrom", mainCompId, mainLineInput);
 
     let lastCompId = mainCompId;
-    let lastLineInput = document.getElementById("line").value;
+    let lastLineInput = mainLineInput;
     
     const throughBlocks = document.querySelectorAll(".through-block");
     if (throughBlocks.length > 0) {
@@ -961,18 +782,22 @@ function fillStationDatalist(listId, compId, lineInput) {
     if(!list) return;
     list.innerHTML = "";
 
-    let lineId = null;
+    let stationsToShow = [];
+
     if (compId && lineInput) {
         let matchedLine = db.lines.find(l => l.company_id === compId && l.name === lineInput);
-        if (matchedLine) lineId = matchedLine.id;
+        if (matchedLine && matchedLine.sequence) {
+            stationsToShow = matchedLine.sequence.map(stnId => maps.station[stnId]).filter(Boolean);
+        } else {
+            stationsToShow = db.stations.filter(s => s.company_id === compId);
+        }
+    } else if (compId) {
+        stationsToShow = db.stations.filter(s => s.company_id === compId);
+    } else {
+        stationsToShow = db.stations;
     }
 
-    let stationsToShow = db.stations;
-    if (compId) stationsToShow = stationsToShow.filter(s => s.company_id === compId);
-    if (lineId && stationsToShow.some(s => s.line_id || s.lines)) {
-        stationsToShow = stationsToShow.filter(s => s.line_id === lineId || (s.lines && s.lines.includes(lineId)));
-    }
-
+    stationsToShow = [...new Set(stationsToShow)];
     stationsToShow.forEach(s => list.appendChild(new Option(s._display)));
 }
 
@@ -1022,7 +847,6 @@ function saveTrip() {
         if(tcId || tlId) routes.push({ company_id: tcId, line_id: tlId });
     });
 
-    // 🚩 V0.17 雙重驗證：儲存時確保提取屬於已選公司嘅正確車型 ID
     let trainInput = getVal("train");
     let finalTrainId = trainInput;
     if (activeTrainCompanyId) {
@@ -1031,7 +855,6 @@ function saveTrip() {
             finalTrainId = matchedTrain.id;
         }
     } else {
-        // Fallback
         finalTrainId = resolve.train[trainInput] || trainInput;
     }
 
@@ -1054,7 +877,6 @@ function saveTrip() {
     document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
     document.getElementById("throughContainer").innerHTML = "";
     
-    // 🚩 V0.17 重置直通車輛 Checkbox 狀態
     document.getElementById("useOtherTrainCompany").checked = false;
     document.getElementById("otherTrainCompanyWrapper").style.display = "none";
     document.getElementById("trainOwnerCompany").value = "";
@@ -1376,7 +1198,6 @@ function editTrip(i) {
     updateStationLists(); 
     setVal("serviceType", t.serviceType); 
     
-    // 🚩 V0.17 編輯時：還原直通車輛公司 Checkbox 狀態
     const trainObj = maps.train[t.train_id];
     if (trainObj && trainObj.company_id !== firstCompId) {
         document.getElementById('useOtherTrainCompany').checked = true;
@@ -1406,7 +1227,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.17.json"; a.click();
+    a.download = "rail-log-V0.18.json"; a.click();
 }
 
 function importData() {

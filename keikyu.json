@@ -1,0 +1,557 @@
+[
+  {
+    "categories": "",
+    "company_id": "KEIKYU",
+    "company_name": "京浜急行電鉄",
+    "lines": [
+      {
+        "id": "KEIKYU_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_KEIKYU_SENGAKUJI",
+          "STN_KEIKYU_SHINAGAWA",
+          "STN_KEIKYU_KITA_SHINAGAWA",
+          "STN_KEIKYU_SHIMBAMBA",
+          "STN_KEIKYU_AOMONO_YOKOCHO",
+          "STN_KEIKYU_SAMEZU",
+          "STN_KEIKYU_TACHIAIGAWA",
+          "STN_KEIKYU_OMORIKAIGAN",
+          "STN_KEIKYU_HEIWAJIMA",
+          "STN_KEIKYU_OMORIMACHI",
+          "STN_KEIKYU_UMEYASHIKI",
+          "STN_KEIKYU_KEIKYU_KAMATA",
+          "STN_KEIKYU_ZOSHIKI",
+          "STN_KEIKYU_ROKUGODOTE",
+          "STN_KEIKYU_KEIKYU_KAWASAKI",
+          "STN_KEIKYU_HATCHONAWATE",
+          "STN_KEIKYU_TSURUMI_ICHIBA",
+          "STN_KEIKYU_KEIKYU_TSURUMI",
+          "STN_KEIKYU_KAGETSU_SOJIJI",
+          "STN_KEIKYU_NAMAMUGI",
+          "STN_KEIKYU_KEIKYU_SHINKOYASU",
+          "STN_KEIKYU_KOYASU",
+          "STN_KEIKYU_KANAGAWA_SHINMACHI",
+          "STN_KEIKYU_KEIKYU_HIGASHI_KANAGAWA",
+          "STN_KEIKYU_KANAGAWA",
+          "STN_KEIKYU_YOKOHAMA",
+          "STN_KEIKYU_TOBE",
+          "STN_KEIKYU_HINODECHO",
+          "STN_KEIKYU_KOGANECHO",
+          "STN_KEIKYU_MINAMI_OTA",
+          "STN_KEIKYU_IDOGAYA",
+          "STN_KEIKYU_GUMYOJI",
+          "STN_KEIKYU_KAMI_OOKA",
+          "STN_KEIKYU_BYOBURAGUURA",
+          "STN_KEIKYU_SUGITA",
+          "STN_KEIKYU_KEIKYU_TOMIOKA",
+          "STN_KEIKYU_NOKENDAI",
+          "STN_KEIKYU_KANAZAWA_BUNKO",
+          "STN_KEIKYU_KANAZAWA_HAKKEI",
+          "STN_KEIKYU_OPPAMA",
+          "STN_KEIKYU_KEIKYU_TAURA",
+          "STN_KEIKYU_ANJINZUKA",
+          "STN_KEIKYU_HEMI",
+          "STN_KEIKYU_SHIOIRI",
+          "STN_KEIKYU_YOKOSUKA_CHUO",
+          "STN_KEIKYU_KENRITSU_DAIGAKU",
+          "STN_KEIKYU_HORINOUCHI",
+          "STN_KEIKYU_KEIKYU_OTSU",
+          "STN_KEIKYU_MABORIGAIGAN",
+          "STN_KEIKYU_URAGA"
+        ]
+      },
+      {
+        "id": "KEIKYU_AIRPORT",
+        "name": "空港線",
+        "sequence": [
+          "STN_KEIKYU_KEIKYU_KAMATA",
+          "STN_KEIKYU_KOJIYA",
+          "STN_KEIKYU_OTORII",
+          "STN_KEIKYU_ANAMORI_INARI",
+          "STN_KEIKYU_TENKUBASHI",
+          "STN_KEIKYU_HANEDA_AIRPORT_T3",
+          "STN_KEIKYU_HANEDA_AIRPORT_T1_T2"
+        ]
+      },
+      {
+        "id": "KEIKYU_DAISHI",
+        "name": "大師線",
+        "sequence": [
+          "STN_KEIKYU_KEIKYU_KAWASAKI",
+          "STN_KEIKYU_MINATOMACHI",
+          "STN_KEIKYU_SUZUKICHO",
+          "STN_KEIKYU_KAWASAKI_DAISHI",
+          "STN_KEIKYU_HIGASHIMONZEN",
+          "STN_KEIKYU_DAISHIBASHI",
+          "STN_KEIKYU_KOJIMA_SHINDEN"
+        ]
+      },
+      {
+        "id": "KEIKYU_ZUSHI",
+        "name": "逗子線",
+        "sequence": [
+          "STN_KEIKYU_KANAZAWA_HAKKEI",
+          "STN_KEIKYU_MUTSUURA",
+          "STN_KEIKYU_JIMMUJI",
+          "STN_KEIKYU_ZUSHI_HAYAMA"
+        ]
+      },
+      {
+        "id": "KEIKYU_KURIHAMA",
+        "name": "久里浜線",
+        "sequence": [
+          "STN_KEIKYU_HORINOUCHI",
+          "STN_KEIKYU_SHIN_OTSU",
+          "STN_KEIKYU_KITA_KURIHAMA",
+          "STN_KEIKYU_KEIKYU_KURIHAMA",
+          "STN_KEIKYU_YRP",
+          "STN_KEIKYU_YRP_NOBI",
+          "STN_KEIKYU_KEIKYU_NAGASAWA",
+          "STN_KEIKYU_TSUKUIHAMA",
+          "STN_KEIKYU_MIURA_KAIGAN",
+          "STN_KEIKYU_MISAKIGUCHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KEIKYU_SENGAKUJI",
+        "lat": "35.63813",
+        "lng": "139.73973",
+        "name": "泉岳寺"
+      },
+      {
+        "id": "STN_KEIKYU_SHINAGAWA",
+        "lat": "35.62768",
+        "lng": "139.737982",
+        "name": "品川"
+      },
+      {
+        "id": "STN_KEIKYU_KITA_SHINAGAWA",
+        "lat": "35.62244",
+        "lng": "139.739284",
+        "name": "北品川"
+      },
+      {
+        "id": "STN_KEIKYU_SHIMBAMBA",
+        "lat": "35.61658",
+        "lng": "139.741515",
+        "name": "新馬場"
+      },
+      {
+        "id": "STN_KEIKYU_AOMONO_YOKOCHO",
+        "lat": "35.60919",
+        "lng": "139.743135",
+        "name": "青物横丁"
+      },
+      {
+        "id": "STN_KEIKYU_SAMEZU",
+        "lat": "35.60507",
+        "lng": "139.742445",
+        "name": "鮫洲"
+      },
+      {
+        "id": "STN_KEIKYU_TACHIAIGAWA",
+        "lat": "35.598505",
+        "lng": "139.738945",
+        "name": "立会川"
+      },
+      {
+        "id": "STN_KEIKYU_OMORIKAIGAN",
+        "lat": "35.587579",
+        "lng": "139.735337",
+        "name": "大森海岸"
+      },
+      {
+        "id": "STN_KEIKYU_HEIWAJIMA",
+        "lat": "35.578681",
+        "lng": "139.73497",
+        "name": "平和島"
+      },
+      {
+        "id": "STN_KEIKYU_OMORIMACHI",
+        "lat": "35.5725",
+        "lng": "139.73201",
+        "name": "大森町"
+      },
+      {
+        "id": "STN_KEIKYU_UMEYASHIKI",
+        "lat": "35.566785",
+        "lng": "139.72817",
+        "name": "梅屋敷"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_KAMATA",
+        "lat": "35.56054",
+        "lng": "139.72346",
+        "name": "京急蒲田"
+      },
+      {
+        "id": "STN_KEIKYU_ZOSHIKI",
+        "lat": "35.549775",
+        "lng": "139.715035",
+        "name": "雑色"
+      },
+      {
+        "id": "STN_KEIKYU_ROKUGODOTE",
+        "lat": "35.54053",
+        "lng": "139.707565",
+        "name": "六郷土手"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_KAWASAKI",
+        "lat": "35.53301",
+        "lng": "139.70094",
+        "name": "京急川崎"
+      },
+      {
+        "id": "STN_KEIKYU_HATCHONAWATE",
+        "lat": "35.523025",
+        "lng": "139.69145",
+        "name": "八丁畷"
+      },
+      {
+        "id": "STN_KEIKYU_TSURUMI_ICHIBA",
+        "lat": "35.51759",
+        "lng": "139.68649",
+        "name": "鶴見市場"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_TSURUMI",
+        "lat": "35.506669",
+        "lng": "139.677566",
+        "name": "京急鶴見"
+      },
+      {
+        "id": "STN_KEIKYU_KAGETSU_SOJIJI",
+        "lat": "35.500325",
+        "lng": "139.67286",
+        "name": "花月総持寺"
+      },
+      {
+        "id": "STN_KEIKYU_NAMAMUGI",
+        "lat": "35.4956",
+        "lng": "139.667335",
+        "name": "生麦"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_SHINKOYASU",
+        "lat": "35.48722",
+        "lng": "139.65585",
+        "name": "京急新子安"
+      },
+      {
+        "id": "STN_KEIKYU_KOYASU",
+        "lat": "35.484592",
+        "lng": "139.645022",
+        "name": "子安"
+      },
+      {
+        "id": "STN_KEIKYU_KANAGAWA_SHINMACHI",
+        "lat": "35.481515",
+        "lng": "139.64017",
+        "name": "神奈川新町"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_HIGASHI_KANAGAWA",
+        "lat": "35.477555",
+        "lng": "139.634925",
+        "name": "京急東神奈川"
+      },
+      {
+        "id": "STN_KEIKYU_KANAGAWA",
+        "lat": "35.47125",
+        "lng": "139.627415",
+        "name": "神奈川"
+      },
+      {
+        "id": "STN_KEIKYU_YOKOHAMA",
+        "lat": "35.46625",
+        "lng": "139.623125",
+        "name": "横浜"
+      },
+      {
+        "id": "STN_KEIKYU_TOBE",
+        "lat": "35.45666",
+        "lng": "139.61956",
+        "name": "戸部"
+      },
+      {
+        "id": "STN_KEIKYU_HINODECHO",
+        "lat": "35.44557",
+        "lng": "139.626695",
+        "name": "日ノ出町"
+      },
+      {
+        "id": "STN_KEIKYU_KOGANECHO",
+        "lat": "35.439705",
+        "lng": "139.62256",
+        "name": "黄金町"
+      },
+      {
+        "id": "STN_KEIKYU_MINAMI_OTA",
+        "lat": "35.43689",
+        "lng": "139.613635",
+        "name": "南太田"
+      },
+      {
+        "id": "STN_KEIKYU_IDOGAYA",
+        "lat": "35.433875",
+        "lng": "139.600525",
+        "name": "井土ヶ谷"
+      },
+      {
+        "id": "STN_KEIKYU_GUMYOJI",
+        "lat": "35.4241",
+        "lng": "139.59691",
+        "name": "弘明寺"
+      },
+      {
+        "id": "STN_KEIKYU_KAMI_OOKA",
+        "lat": "35.409345",
+        "lng": "139.59661",
+        "name": "上大岡"
+      },
+      {
+        "id": "STN_KEIKYU_BYOBURAGUURA",
+        "lat": "35.39413",
+        "lng": "139.61044",
+        "name": "屏風浦"
+      },
+      {
+        "id": "STN_KEIKYU_SUGITA",
+        "lat": "35.383905",
+        "lng": "139.61561",
+        "name": "杉田"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_TOMIOKA",
+        "lat": "35.36671",
+        "lng": "139.62976",
+        "name": "京急富岡"
+      },
+      {
+        "id": "STN_KEIKYU_NOKENDAI",
+        "lat": "35.360518",
+        "lng": "139.629237",
+        "name": "能見台"
+      },
+      {
+        "id": "STN_KEIKYU_KANAZAWA_BUNKO",
+        "lat": "35.343244",
+        "lng": "139.621775",
+        "name": "金沢文庫"
+      },
+      {
+        "id": "STN_KEIKYU_KANAZAWA_HAKKEI",
+        "lat": "35.33113",
+        "lng": "139.620125",
+        "name": "金沢八景"
+      },
+      {
+        "id": "STN_KEIKYU_OPPAMA",
+        "lat": "35.315665",
+        "lng": "139.624936",
+        "name": "追浜"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_TAURA",
+        "lat": "35.301017",
+        "lng": "139.625186",
+        "name": "京急田浦"
+      },
+      {
+        "id": "STN_KEIKYU_ANJINZUKA",
+        "lat": "35.286683",
+        "lng": "139.642882",
+        "name": "安針塚"
+      },
+      {
+        "id": "STN_KEIKYU_HEMI",
+        "lat": "35.280653",
+        "lng": "139.652524",
+        "name": "逸見"
+      },
+      {
+        "id": "STN_KEIKYU_SHIOIRI",
+        "lat": "35.280315",
+        "lng": "139.662515",
+        "name": "汐入"
+      },
+      {
+        "id": "STN_KEIKYU_YOKOSUKA_CHUO",
+        "lat": "35.278716",
+        "lng": "139.670054",
+        "name": "横須賀中央"
+      },
+      {
+        "id": "STN_KEIKYU_KENRITSU_DAIGAKU",
+        "lat": "35.269935",
+        "lng": "139.676792",
+        "name": "県立大学"
+      },
+      {
+        "id": "STN_KEIKYU_HORINOUCHI",
+        "lat": "35.26315",
+        "lng": "139.687035",
+        "name": "堀ノ内"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_OTSU",
+        "lat": "35.261005",
+        "lng": "139.69537",
+        "name": "京急大津"
+      },
+      {
+        "id": "STN_KEIKYU_MABORIGAIGAN",
+        "lat": "35.25956",
+        "lng": "139.707915",
+        "name": "馬堀海岸"
+      },
+      {
+        "id": "STN_KEIKYU_URAGA",
+        "lat": "35.251866",
+        "lng": "139.715069",
+        "name": "浦賀"
+      },
+      {
+        "id": "STN_KEIKYU_KOJIYA",
+        "lat": "35.55445",
+        "lng": "139.72959",
+        "name": "糀谷"
+      },
+      {
+        "id": "STN_KEIKYU_OTORII",
+        "lat": "35.55232",
+        "lng": "139.740225",
+        "name": "大鳥居"
+      },
+      {
+        "id": "STN_KEIKYU_ANAMORI_INARI",
+        "lat": "35.550337",
+        "lng": "139.746688",
+        "name": "穴守稲荷"
+      },
+      {
+        "id": "STN_KEIKYU_TENKUBASHI",
+        "lat": "35.54821",
+        "lng": "139.754527",
+        "name": "天空橋"
+      },
+      {
+        "id": "STN_KEIKYU_HANEDA_AIRPORT_T3",
+        "lat": "35.54498",
+        "lng": "139.767067",
+        "name": "羽田空港第3ターミナル"
+      },
+      {
+        "id": "STN_KEIKYU_HANEDA_AIRPORT_T1_T2",
+        "lat": "35.54972",
+        "lng": "139.785858",
+        "name": "羽田空港第1・第2ターミナル"
+      },
+      {
+        "id": "STN_KEIKYU_MINATOMACHI",
+        "lat": "35.535065",
+        "lng": "139.71262",
+        "name": "港町"
+      },
+      {
+        "id": "STN_KEIKYU_SUZUKICHO",
+        "lat": "35.53538",
+        "lng": "139.720655",
+        "name": "鈴木町"
+      },
+      {
+        "id": "STN_KEIKYU_KAWASAKI_DAISHI",
+        "lat": "35.53577",
+        "lng": "139.725995",
+        "name": "川崎大師"
+      },
+      {
+        "id": "STN_KEIKYU_HIGASHIMONZEN",
+        "lat": "35.53659",
+        "lng": "139.734325",
+        "name": "東門前"
+      },
+      {
+        "id": "STN_KEIKYU_DAISHIBASHI",
+        "lat": "35.536605",
+        "lng": "139.740445",
+        "name": "大師橋"
+      },
+      {
+        "id": "STN_KEIKYU_KOJIMA_SHINDEN",
+        "lat": "35.53464",
+        "lng": "139.747555",
+        "name": "小島新田"
+      },
+      {
+        "id": "STN_KEIKYU_MUTSUURA",
+        "lat": "35.322725",
+        "lng": "139.61149",
+        "name": "六浦"
+      },
+      {
+        "id": "STN_KEIKYU_JIMMUJI",
+        "lat": "35.30628",
+        "lng": "139.59289",
+        "name": "神武寺"
+      },
+      {
+        "id": "STN_KEIKYU_ZUSHI_HAYAMA",
+        "lat": "35.29430802",
+        "lng": "139.58036865",
+        "name": "逗子・葉山"
+      },
+      {
+        "id": "STN_KEIKYU_SHIN_OTSU",
+        "lat": "35.256891",
+        "lng": "139.690168",
+        "name": "新大津"
+      },
+      {
+        "id": "STN_KEIKYU_KITA_KURIHAMA",
+        "lat": "35.249094",
+        "lng": "139.686347",
+        "name": "北久里浜"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_KURIHAMA",
+        "lat": "35.23147",
+        "lng": "139.702215",
+        "name": "京急久里浜"
+      },
+      {
+        "id": "STN_KEIKYU_YRP_NOBI",
+        "lat": "35.21257",
+        "lng": "139.685255",
+        "name": "YRP野比"
+      },
+      {
+        "id": "STN_KEIKYU_KEIKYU_NAGASAWA",
+        "lat": "35.205445",
+        "lng": "139.674125",
+        "name": "京急長沢"
+      },
+      {
+        "id": "STN_KEIKYU_TSUKUIHAMA",
+        "lat": "35.19812",
+        "lng": "139.66485",
+        "name": "津久井浜"
+      },
+      {
+        "id": "STN_KEIKYU_MIURA_KAIGAN",
+        "lat": "35.188285",
+        "lng": "139.653375",
+        "name": "三浦海岸"
+      },
+      {
+        "id": "STN_KEIKYU_MISAKIGUCHI",
+        "lat": "35.178216",
+        "lng": "139.633334",
+        "name": "三崎口"
+      }
+    ]
+  }
+]

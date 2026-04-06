@@ -1,0 +1,706 @@
+[
+  {
+    "categories": "",
+    "company_id": "KEISEI",
+    "company_name": "京成電鉄",
+    "lines": [
+      {
+        "id": "KEISEI_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_KEISEI_KEISEI_UENO",
+          "STN_KEISEI_NIPPORI",
+          "STN_KEISEI_SHIN_MIKAWASHIMA",
+          "STN_KEISEI_MACHIYA",
+          "STN_KEISEI_SENJU_OHASHI",
+          "STN_KEISEI_KEISEI_SEKIYA",
+          "STN_KEISEI_HORIKIRI_SHOBUEN",
+          "STN_KEISEI_OHANACHAYA",
+          "STN_KEISEI_AOTO",
+          "STN_KEISEI_KEISEI_TAKASAGO",
+          "STN_KEISEI_KEISEI_KOIWA",
+          "STN_KEISEI_EDOGAWA",
+          "STN_KEISEI_KONODAI",
+          "STN_KEISEI_ICHIKAWA_MAMA",
+          "STN_KEISEI_SUGANO",
+          "STN_KEISEI_KEISEI_YAWATA",
+          "STN_KEISEI_ONIGOE",
+          "STN_KEISEI_KEISEI_NAKAYAMA",
+          "STN_KEISEI_HIGASHI_NAKAYAMA",
+          "STN_KEISEI_KEISEI_NISHIFUNA",
+          "STN_KEISEI_KAIJIN",
+          "STN_KEISEI_KEISEI_FUNABASHI",
+          "STN_KEISEI_DAIJINGU_SHITA",
+          "STN_KEISEI_FUNABASHI_KEIBAJO",
+          "STN_KEISEI_YATSU",
+          "STN_KEISEI_KEISEI_TSUDANUMA",
+          "STN_KEISEI_KEISEI_OKUBO",
+          "STN_KEISEI_MIMOMI",
+          "STN_KEISEI_YACHIYODAI",
+          "STN_KEISEI_KEISEI_OWADA",
+          "STN_KEISEI_KATSUTADAI",
+          "STN_KEISEI_SHIZU",
+          "STN_KEISEI_YUKARIGAOKA",
+          "STN_KEISEI_KEISEI_USUI",
+          "STN_KEISEI_KEISEI_SAKURA",
+          "STN_KEISEI_OSAKURA",
+          "STN_KEISEI_KEISEI_SHISHUI",
+          "STN_KEISEI_SOGO_SANDO",
+          "STN_KEISEI_KOZUNOMORI",
+          "STN_KEISEI_KEISEI_NARITA",
+          "STN_KEISEI_NARITA_AIRPORT_TERMINAL_2_3",
+          "STN_KEISEI_NARITA_AIRPORT_TERMINAL_1"
+        ]
+      },
+      {
+        "id": "KEISEI_NARITA_SKY_ACCESS",
+        "name": "成田空港線",
+        "sequence": [
+          "STN_KEISEI_KEISEI_TAKASAGO",
+          "STN_KEISEI_HIGASHI_MATSUDO",
+          "STN_KEISEI_SHIN_KAMAGAYA",
+          "STN_KEISEI_CHIBA_NEW_TOWN_CHUO",
+          "STN_KEISEI_INBA_NIHONDAL",
+          "STN_KEISEI_NARITA_YUKAWA",
+          "STN_KEISEI_NARITA_AIRPORT_TERMINAL_2_3",
+          "STN_KEISEI_NARITA_AIRPORT_TERMINAL_1"
+        ]
+      },
+      {
+        "id": "KEISEI_OSHIAGE",
+        "name": "押上線",
+        "sequence": [
+          "STN_KEISEI_OSHIAGE",
+          "STN_KEISEI_KEISEI_HIKIFUNE",
+          "STN_KEISEI_YAHIRO",
+          "STN_KEISEI_YOTSUGI",
+          "STN_KEISEI_KEISEI_TATEISHI",
+          "STN_KEISEI_AOTO"
+        ]
+      },
+      {
+        "id": "KEISEI_KANAMACHI",
+        "name": "金町線",
+        "sequence": [
+          "STN_KEISEI_KEISEI_TAKASAGO",
+          "STN_KEISEI_SHIBAMATA",
+          "STN_KEISEI_KEISEI_KANAMACHI"
+        ]
+      },
+      {
+        "id": "KEISEI_CHIBA",
+        "name": "千葉線",
+        "sequence": [
+          "STN_KEISEI_KEISEI_TSUDANUMA",
+          "STN_KEISEI_KEISEI_MAKUHARI_HONGO",
+          "STN_KEISEI_KEISEI_MAKUHARI",
+          "STN_KEISEI_KEMIGAWA",
+          "STN_KEISEI_KEISEI_INAGE",
+          "STN_KEISEI_MIDORIDAI",
+          "STN_KEISEI_NISHI_NOBITO",
+          "STN_KEISEI_SHIN_CHIBA",
+          "STN_KEISEI_KEISEI_CHIBA",
+          "STN_KEISEI_CHIBA_CHUO"
+        ]
+      },
+      {
+        "id": "KEISEI_CHIHARA",
+        "name": "千原線",
+        "sequence": [
+          "STN_KEISEI_CHIBA_CHUO",
+          "STN_KEISEI_CHIBA_DERA",
+          "STN_KEISEI_OMORIDAI",
+          "STN_KEISEI_GAKUEN_MAE",
+          "STN_KEISEI_OYUMINO",
+          "STN_KEISEI_CHIHARADAI"
+        ]
+      },
+      {
+        "id": "KEISEI_HIGASHI_NARITA",
+        "name": "東成田線",
+        "sequence": [
+          "STN_KEISEI_KEISEI_NARITA",
+          "STN_KEISEI_HIGASHI_NARITA"
+        ]
+      },
+      {
+        "id": "KEISEI_MATSUDO",
+        "name": "松戸線",
+        "sequence": [
+          "STN_KEISEI_MATSUDO",
+          "STN_KEISEI_KAMI_HONGO",
+          "STN_KEISEI_MATSUDO_SHINDEN",
+          "STN_KEISEI_MINORIDAI",
+          "STN_KEISEI_YABASHIRA",
+          "STN_KEISEI_TOKIWADAIRA",
+          "STN_KEISEI_GOKO",
+          "STN_KEISEI_MOTOYAMA",
+          "STN_KEISEI_KUNUGIYAMA",
+          "STN_KEISEI_KITA_HATSUTOMI",
+          "STN_KEISEI_SHIN_KAMAGAYA",
+          "STN_KEISEI_HATSUTOMI",
+          "STN_KEISEI_KAMAGAYA_DAIBUTSU",
+          "STN_KEISEI_FUTAWAMUKOUDAI",
+          "STN_KEISEI_MISAKI",
+          "STN_KEISEI_TAKI_FUDO",
+          "STN_KEISEI_TAKANE_KODAN",
+          "STN_KEISEI_TAKANE_KIDO",
+          "STN_KEISEI_KITA_NARASHINO",
+          "STN_KEISEI_NARASHINO",
+          "STN_KEISEI_YAKUENDAL",
+          "STN_KEISEI_MAEBARA",
+          "STN_KEISEI_SHIN_TSUDANUMA",
+          "STN_KEISEI_KEISEI_TSUDANUMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_KEISEI_KEISEI_UENO",
+        "lat": "35.71131",
+        "lng": "139.77351",
+        "name": "京成上野"
+      },
+      {
+        "id": "STN_KEISEI_NIPPORI",
+        "lat": "35.72801",
+        "lng": "139.771505",
+        "name": "日暮里"
+      },
+      {
+        "id": "STN_KEISEI_SHIN_MIKAWASHIMA",
+        "lat": "35.737273",
+        "lng": "139.774048",
+        "name": "新三河島"
+      },
+      {
+        "id": "STN_KEISEI_MACHIYA",
+        "lat": "35.742307",
+        "lng": "139.781524",
+        "name": "町屋"
+      },
+      {
+        "id": "STN_KEISEI_SENJU_OHASHI",
+        "lat": "35.74241",
+        "lng": "139.79705",
+        "name": "千住大橋"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_SEKIYA",
+        "lat": "35.743965",
+        "lng": "139.81185",
+        "name": "京成関屋"
+      },
+      {
+        "id": "STN_KEISEI_HORIKIRI_SHOBUEN",
+        "lat": "35.74765",
+        "lng": "139.82754",
+        "name": "堀切菖蒲園"
+      },
+      {
+        "id": "STN_KEISEI_OHANACHAYA",
+        "lat": "35.747615",
+        "lng": "139.839885",
+        "name": "お花茶屋"
+      },
+      {
+        "id": "STN_KEISEI_AOTO",
+        "lat": "35.74587",
+        "lng": "139.85627",
+        "name": "青砥"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_TAKASAGO",
+        "lat": "35.75087",
+        "lng": "139.86659",
+        "name": "京成高砂"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_KOIWA",
+        "lat": "35.742215",
+        "lng": "139.883615",
+        "name": "京成小岩"
+      },
+      {
+        "id": "STN_KEISEI_EDOGAWA",
+        "lat": "35.737857",
+        "lng": "139.89576",
+        "name": "江戸川"
+      },
+      {
+        "id": "STN_KEISEI_KONODAI",
+        "lat": "35.73631",
+        "lng": "139.90354",
+        "name": "国府台"
+      },
+      {
+        "id": "STN_KEISEI_ICHIKAWA_MAMA",
+        "lat": "35.731259",
+        "lng": "139.911765",
+        "name": "市川真間"
+      },
+      {
+        "id": "STN_KEISEI_SUGANO",
+        "lat": "35.728275",
+        "lng": "139.919395",
+        "name": "菅野"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_YAWATA",
+        "lat": "35.72386",
+        "lng": "139.92817",
+        "name": "京成八幡"
+      },
+      {
+        "id": "STN_KEISEI_ONIGOE",
+        "lat": "35.719765",
+        "lng": "139.937865",
+        "name": "鬼越"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_NAKAYAMA",
+        "lat": "35.71695",
+        "lng": "139.94438",
+        "name": "京成中山"
+      },
+      {
+        "id": "STN_KEISEI_HIGASHI_NAKAYAMA",
+        "lat": "35.71442",
+        "lng": "139.952635",
+        "name": "東中山"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_NISHIFUNA",
+        "lat": "35.71169",
+        "lng": "139.958845",
+        "name": "京成西船"
+      },
+      {
+        "id": "STN_KEISEI_KAIJIN",
+        "lat": "35.705925",
+        "lng": "139.971785",
+        "name": "海神"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_FUNABASHI",
+        "lat": "35.700032",
+        "lng": "139.985178",
+        "name": "京成船橋"
+      },
+      {
+        "id": "STN_KEISEI_DAIJINGU_SHITA",
+        "lat": "35.693968",
+        "lng": "139.991366",
+        "name": "大神宮下"
+      },
+      {
+        "id": "STN_KEISEI_FUNABASHI_KEIBAJO",
+        "lat": "35.689572",
+        "lng": "139.99807",
+        "name": "船橋競馬場"
+      },
+      {
+        "id": "STN_KEISEI_YATSU",
+        "lat": "35.685241",
+        "lng": "140.007708",
+        "name": "谷津"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_TSUDANUMA",
+        "lat": "35.68364",
+        "lng": "140.024845",
+        "name": "京成津田沼"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_OKUBO",
+        "lat": "35.685925",
+        "lng": "140.048605",
+        "name": "京成大久保"
+      },
+      {
+        "id": "STN_KEISEI_MIMOMI",
+        "lat": "35.68685",
+        "lng": "140.06808",
+        "name": "実籾"
+      },
+      {
+        "id": "STN_KEISEI_YACHIYODAI",
+        "lat": "35.701355",
+        "lng": "140.09077",
+        "name": "八千代台"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_OWADA",
+        "lat": "35.71236",
+        "lng": "140.10863",
+        "name": "京成大和田"
+      },
+      {
+        "id": "STN_KEISEI_KATSUTADAI",
+        "lat": "35.71539",
+        "lng": "140.126045",
+        "name": "勝田台"
+      },
+      {
+        "id": "STN_KEISEI_SHIZU",
+        "lat": "35.717405",
+        "lng": "140.14493",
+        "name": "志津"
+      },
+      {
+        "id": "STN_KEISEI_YUKARIGAOKA",
+        "lat": "35.72178",
+        "lng": "140.156164",
+        "name": "ユーカリが丘"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_USUI",
+        "lat": "35.730025",
+        "lng": "140.180805",
+        "name": "京成臼井"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_SAKURA",
+        "lat": "35.725205",
+        "lng": "140.229865",
+        "name": "京成佐倉"
+      },
+      {
+        "id": "STN_KEISEI_OSAKURA",
+        "lat": "35.72993",
+        "lng": "140.25072",
+        "name": "大佐倉"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_SHISHUI",
+        "lat": "35.736915",
+        "lng": "140.270175",
+        "name": "京成酒々井"
+      },
+      {
+        "id": "STN_KEISEI_SOGO_SANDO",
+        "lat": "35.75235",
+        "lng": "140.280705",
+        "name": "宗吾参道"
+      },
+      {
+        "id": "STN_KEISEI_KOZUNOMORI",
+        "lat": "35.76021",
+        "lng": "140.294445",
+        "name": "公津の杜"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_NARITA",
+        "lat": "35.77627",
+        "lng": "140.315465",
+        "name": "京成成田"
+      },
+      {
+        "id": "STN_KEISEI_NARITA_AIRPORT_TERMINAL_2_3",
+        "lat": "35.77296",
+        "lng": "140.38761",
+        "name": "空港第2ビル"
+      },
+      {
+        "id": "STN_KEISEI_NARITA_AIRPORT_TERMINAL_1",
+        "lat": "35.765725",
+        "lng": "140.386305",
+        "name": "成田空港"
+      },
+      {
+        "id": "STN_KEISEI_HIGASHI_MATSUDO",
+        "lat": "35.769951",
+        "lng": "139.943019",
+        "name": "東松戸"
+      },
+      {
+        "id": "STN_KEISEI_SHIN_KAMAGAYA",
+        "lat": "35.77961",
+        "lng": "139.998355",
+        "name": "新鎌ヶ谷"
+      },
+      {
+        "id": "STN_KEISEI_CHIBA_NEW_TOWN_CHUO",
+        "lat": "35.800202",
+        "lng": "140.116199",
+        "name": "千葉ニュータウン中央"
+      },
+      {
+        "id": "STN_KEISEI_INBA_NIHONDAL",
+        "lat": "35.787815",
+        "lng": "140.202759",
+        "name": "印旛日本医大"
+      },
+      {
+        "id": "STN_KEISEI_NARITA_YUKAWA",
+        "lat": "35.79956",
+        "lng": "140.291481",
+        "name": "成田湯川"
+      },
+      {
+        "id": "STN_KEISEI_OSHIAGE",
+        "lat": "35.71022",
+        "lng": "139.81241",
+        "name": "押上"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_HIKIFUNE",
+        "lat": "35.71864",
+        "lng": "139.82028",
+        "name": "京成曳舟"
+      },
+      {
+        "id": "STN_KEISEI_YAHIRO",
+        "lat": "35.72723",
+        "lng": "139.828305",
+        "name": "八広"
+      },
+      {
+        "id": "STN_KEISEI_YOTSUGI",
+        "lat": "35.731715",
+        "lng": "139.834655",
+        "name": "四ツ木"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_TATEISHI",
+        "lat": "35.73819",
+        "lng": "139.84816",
+        "name": "京成立石"
+      },
+      {
+        "id": "STN_KEISEI_SHIBAMATA",
+        "lat": "35.756419",
+        "lng": "139.875299",
+        "name": "柴又"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_KANAMACHI",
+        "lat": "35.76845",
+        "lng": "139.87035",
+        "name": "京成金町"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_MAKUHARI_HONGO",
+        "lat": "35.67292",
+        "lng": "140.041675",
+        "name": "京成幕張本郷"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_MAKUHARI",
+        "lat": "35.660501",
+        "lng": "140.056099",
+        "name": "京成幕張"
+      },
+      {
+        "id": "STN_KEISEI_KEMIGAWA",
+        "lat": "35.65251",
+        "lng": "140.06676",
+        "name": "検見川"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_INAGE",
+        "lat": "35.63725",
+        "lng": "140.08571",
+        "name": "京成稲毛"
+      },
+      {
+        "id": "STN_KEISEI_MIDORIDAI",
+        "lat": "35.625295",
+        "lng": "140.097325",
+        "name": "みどり台"
+      },
+      {
+        "id": "STN_KEISEI_NISHI_NOBITO",
+        "lat": "35.617625",
+        "lng": "140.10287",
+        "name": "西登戸"
+      },
+      {
+        "id": "STN_KEISEI_SHIN_CHIBA",
+        "lat": "35.612465",
+        "lng": "140.108625",
+        "name": "新千葉"
+      },
+      {
+        "id": "STN_KEISEI_KEISEI_CHIBA",
+        "lat": "35.61162",
+        "lng": "140.114355",
+        "name": "京成千葉"
+      },
+      {
+        "id": "STN_KEISEI_CHIBA_CHUO",
+        "lat": "35.607475",
+        "lng": "140.117765",
+        "name": "千葉中央"
+      },
+      {
+        "id": "STN_KEISEI_CHIBA_DERA",
+        "lat": "35.59036",
+        "lng": "140.13217",
+        "name": "千葉寺"
+      },
+      {
+        "id": "STN_KEISEI_OMORIDAI",
+        "lat": "35.58399",
+        "lng": "140.14957",
+        "name": "大森台"
+      },
+      {
+        "id": "STN_KEISEI_GAKUEN_MAE",
+        "lat": "35.560454",
+        "lng": "140.1584",
+        "name": "学園前"
+      },
+      {
+        "id": "STN_KEISEI_OYUMINO",
+        "lat": "35.550016",
+        "lng": "140.166345",
+        "name": "おゆみ野"
+      },
+      {
+        "id": "STN_KEISEI_CHIHARADAI",
+        "lat": "35.533545",
+        "lng": "140.170102",
+        "name": "ちはら台"
+      },
+      {
+        "id": "STN_KEISEI_MATSUDO",
+        "lat": "35.784597",
+        "lng": "139.900819",
+        "name": "松戸"
+      },
+      {
+        "id": "STN_KEISEI_KAMI_HONGO",
+        "lat": "35.78938",
+        "lng": "139.915835",
+        "name": "上本郷"
+      },
+      {
+        "id": "STN_KEISEI_MATSUDO_SHINDEN",
+        "lat": "35.790655",
+        "lng": "139.92233",
+        "name": "松戸新田"
+      },
+      {
+        "id": "STN_KEISEI_MINORIDAI",
+        "lat": "35.789345",
+        "lng": "139.928785",
+        "name": "みのり台"
+      },
+      {
+        "id": "STN_KEISEI_YABASHIRA",
+        "lat": "35.791432",
+        "lng": "139.937552",
+        "name": "八柱"
+      },
+      {
+        "id": "STN_KEISEI_TOKIWADAIRA",
+        "lat": "35.80315",
+        "lng": "139.949435",
+        "name": "常盤平"
+      },
+      {
+        "id": "STN_KEISEI_GOKO",
+        "lat": "35.797285",
+        "lng": "139.96577",
+        "name": "五香"
+      },
+      {
+        "id": "STN_KEISEI_MOTOYAMA",
+        "lat": "35.790325",
+        "lng": "139.975675",
+        "name": "元山"
+      },
+      {
+        "id": "STN_KEISEI_KUNUGIYAMA",
+        "lat": "35.78233",
+        "lng": "139.975675",
+        "name": "くぬぎ山"
+      },
+      {
+        "id": "STN_KEISEI_KITA_HATSUTOMI",
+        "lat": "35.776555",
+        "lng": "139.989805",
+        "name": "北初富"
+      },
+      {
+        "id": "STN_KEISEI_HATSUTOMI",
+        "lat": "35.771975",
+        "lng": "140.00046",
+        "name": "初富"
+      },
+      {
+        "id": "STN_KEISEI_KAMAGAYA_DAIBUTSU",
+        "lat": "35.757855",
+        "lng": "140.01394",
+        "name": "鎌ヶ谷大仏"
+      },
+      {
+        "id": "STN_KEISEI_FUTAWAMUKOUDAI",
+        "lat": "35.753885",
+        "lng": "140.02373",
+        "name": "二和向台"
+      },
+      {
+        "id": "STN_KEISEI_MISAKI",
+        "lat": "35.74918",
+        "lng": "140.02854",
+        "name": "三咲"
+      },
+      {
+        "id": "STN_KEISEI_TAKI_FUDO",
+        "lat": "35.73801",
+        "lng": "140.026285",
+        "name": "滝不動"
+      },
+      {
+        "id": "STN_KEISEI_TAKANE_KODAN",
+        "lat": "35.73042",
+        "lng": "140.029435",
+        "name": "高根公団"
+      },
+      {
+        "id": "STN_KEISEI_TAKANE_KIDO",
+        "lat": "35.726605",
+        "lng": "140.034985",
+        "name": "高根木戸"
+      },
+      {
+        "id": "STN_KEISEI_KITA_NARASHINO",
+        "lat": "35.721325",
+        "lng": "140.042175",
+        "name": "北習志野"
+      },
+      {
+        "id": "STN_KEISEI_NARASHINO",
+        "lat": "35.715375",
+        "lng": "140.042795",
+        "name": "習志野"
+      },
+      {
+        "id": "STN_KEISEI_YAKUENDAL",
+        "lat": "35.7091",
+        "lng": "140.036705",
+        "name": "薬園台"
+      },
+      {
+        "id": "STN_KEISEI_MAEBARA",
+        "lat": "35.700655",
+        "lng": "140.02752",
+        "name": "前原"
+      },
+      {
+        "id": "STN_KEISEI_SHIN_TSUDANUMA",
+        "lat": "35.690173",
+        "lng": "140.023741",
+        "name": "新津田沼"
+      },
+      {
+        "id": "STN_KEISEI_HIGASHI_NARITA",
+        "lat": "35.769685",
+        "lng": "140.38725",
+        "name": "東成田"
+      }
+    ]
+  }
+]
