@@ -1,0 +1,220 @@
+[
+  {
+    "categories": "",
+    "company_id": "SAGAMI",
+    "company_name": "相模鉄道",
+    "lines": [
+      {
+        "id": "SAGAMI_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_SAGAMI_YOKOHAMA",
+          "STN_SAGAMI_HIRANUMABASHI",
+          "STN_SAGAMI_NISHI_YOKOHAMA",
+          "STN_SAGAMI_TENNOCHO",
+          "STN_SAGAMI_HOSHIKAWA",
+          "STN_SAGAMI_WADAMACHI",
+          "STN_SAGAMI_KAMIHOSHIKAWA",
+          "STN_SAGAMI_NISHIYA",
+          "STN_SAGAMI_TSURUGAMINE",
+          "STN_SAGAMI_FUTAMAGAWA",
+          "STN_SAGAMI_KIBOGAOKA",
+          "STN_SAGAMI_MITSUKYO",
+          "STN_SAGAMI_SEYA",
+          "STN_SAGAMI_YAMATO",
+          "STN_SAGAMI_SAGAMI_OTSUKA",
+          "STN_SAGAMI_SAGAMINO",
+          "STN_SAGAMI_KASHIWADAI",
+          "STN_SAGAMI_EBINA"
+        ]
+      },
+      {
+        "id": "SAGAMI_IZUMINO",
+        "name": "いずみ野線",
+        "sequence": [
+          "STN_SAGAMI_FUTAMAGAWA",
+          "STN_SAGAMI_MINAMI_MAKI_GA_HARA",
+          "STN_SAGAMI_RYOKUEN_TOSHI",
+          "STN_SAGAMI_YAYOIDAI",
+          "STN_SAGAMI_IZUMINO",
+          "STN_SAGAMI_IZUMI_CHUO",
+          "STN_SAGAMI_YUME_GA_OKA",
+          "STN_SAGAMI_SHONANDAI"
+        ]
+      },
+      {
+        "id": "SAGAMI_SHIN_YOKOHAMA",
+        "name": "新横浜線",
+        "sequence": [
+          "STN_SAGAMI_NISHIYA",
+          "STN_SAGAMI_HAZAWA_YOKOHAMA_KOKUDAI",
+          "STN_SAGAMI_SHIN_YOKOHAMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SAGAMI_YOKOHAMA",
+        "lat": "35.465901",
+        "lng": "139.622145",
+        "name": "横浜"
+      },
+      {
+        "id": "STN_SAGAMI_HIRANUMABASHI",
+        "lat": "35.459845",
+        "lng": "139.616465",
+        "name": "平沼橋"
+      },
+      {
+        "id": "STN_SAGAMI_NISHI_YOKOHAMA",
+        "lat": "35.453595",
+        "lng": "139.60897",
+        "name": "西横浜"
+      },
+      {
+        "id": "STN_SAGAMI_TENNOCHO",
+        "lat": "35.45401",
+        "lng": "139.60253",
+        "name": "天王町"
+      },
+      {
+        "id": "STN_SAGAMI_HOSHIKAWA",
+        "lat": "35.458235",
+        "lng": "139.595195",
+        "name": "星川"
+      },
+      {
+        "id": "STN_SAGAMI_WADAMACHI",
+        "lat": "35.46371",
+        "lng": "139.58638",
+        "name": "和田町"
+      },
+      {
+        "id": "STN_SAGAMI_KAMIHOSHIKAWA",
+        "lat": "35.46733",
+        "lng": "139.580435",
+        "name": "上星川"
+      },
+      {
+        "id": "STN_SAGAMI_NISHIYA",
+        "lat": "35.47808676",
+        "lng": "139.56562071",
+        "name": "西谷"
+      },
+      {
+        "id": "STN_SAGAMI_TSURUGAMINE",
+        "lat": "35.47509",
+        "lng": "139.549985",
+        "name": "鶴ヶ峰"
+      },
+      {
+        "id": "STN_SAGAMI_FUTAMAGAWA",
+        "lat": "35.46339",
+        "lng": "139.53237",
+        "name": "二俣川"
+      },
+      {
+        "id": "STN_SAGAMI_KIBOGAOKA",
+        "lat": "35.46054",
+        "lng": "139.513475",
+        "name": "希望ヶ丘"
+      },
+      {
+        "id": "STN_SAGAMI_MITSUKYO",
+        "lat": "35.467785",
+        "lng": "139.50257",
+        "name": "三ツ境"
+      },
+      {
+        "id": "STN_SAGAMI_SEYA",
+        "lat": "35.4704",
+        "lng": "139.48259",
+        "name": "瀬谷"
+      },
+      {
+        "id": "STN_SAGAMI_YAMATO",
+        "lat": "35.46993",
+        "lng": "139.461",
+        "name": "大和"
+      },
+      {
+        "id": "STN_SAGAMI_SAGAMI_OTSUKA",
+        "lat": "35.47054",
+        "lng": "139.441155",
+        "name": "相模大塚"
+      },
+      {
+        "id": "STN_SAGAMI_SAGAMINO",
+        "lat": "35.471501",
+        "lng": "139.429035",
+        "name": "さがみ野"
+      },
+      {
+        "id": "STN_SAGAMI_KASHIWADAI",
+        "lat": "35.466845",
+        "lng": "139.415885",
+        "name": "かしわ台"
+      },
+      {
+        "id": "STN_SAGAMI_EBINA",
+        "lat": "35.45344",
+        "lng": "139.392235",
+        "name": "海老名"
+      },
+      {
+        "id": "STN_SAGAMI_MINAMI_MAKI_GA_HARA",
+        "lat": "35.452585",
+        "lng": "139.526342",
+        "name": "南万騎が原"
+      },
+      {
+        "id": "STN_SAGAMI_RYOKUEN_TOSHI",
+        "lat": "35.439372",
+        "lng": "139.52181",
+        "name": "緑園都市"
+      },
+      {
+        "id": "STN_SAGAMI_YAYOIDAI",
+        "lat": "35.42993",
+        "lng": "139.506635",
+        "name": "弥生台"
+      },
+      {
+        "id": "STN_SAGAMI_IZUMINO",
+        "lat": "35.429495",
+        "lng": "139.49512",
+        "name": "いずみ野"
+      },
+      {
+        "id": "STN_SAGAMI_IZUMI_CHUO",
+        "lat": "35.4151",
+        "lng": "139.487185",
+        "name": "いずみ中央"
+      },
+      {
+        "id": "STN_SAGAMI_YUME_GA_OKA",
+        "lat": "35.405645",
+        "lng": "139.48236",
+        "name": "ゆめが丘"
+      },
+      {
+        "id": "STN_SAGAMI_SHONANDAI",
+        "lat": "35.39661614",
+        "lng": "139.46778306",
+        "name": "湘南台"
+      },
+      {
+        "id": "STN_SAGAMI_HAZAWA_YOKOHAMA_KOKUDAI",
+        "lat": "35.48122924",
+        "lng": "139.58613475",
+        "name": "羽沢横浜国大"
+      },
+      {
+        "id": "STN_SAGAMI_SHIN_YOKOHAMA",
+        "lat": "35.50895018",
+        "lng": "139.61725535",
+        "name": "新横浜"
+      }
+    ]
+  }
+]

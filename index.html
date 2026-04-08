@@ -4,90 +4,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.18</title>
+<title>鉄道手帳 RAIL LOG V0.19</title>
 
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
-/* 🚩 全新載入畫面 (Web Icon Pixel 風格) */
+/* 🚩 JR 東日本 LCD 風格載入畫面 */
 #loading-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #ffffff; /* 純白背景 */
+    background-color: #f4f4f4; 
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    z-index: 9999; transition: opacity 0.5s ease, visibility 0.5s;
+    z-index: 9999; transition: opacity 0.6s ease, visibility 0.6s;
 }
 #loading-screen.loaded { opacity: 0; visibility: hidden; }
 
-/* 模擬 Web Icon 的設備外殼 */
-.device-icon {
-    width: 160px; height: 160px;
-    background-color: #d9d9d9;
-    border: 6px solid #999;
-    border-radius: 12px;
-    position: relative;
-    box-sizing: border-box;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    /* 微微的浮動動畫讓畫面無咁死板 */
-    animation: floatIcon 3s ease-in-out infinite;
-}
-@keyframes floatIcon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+.jre-lcd-panel {
+    width: 90%; max-width: 400px; background: #ffffff;
+    border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    overflow: hidden; border: 2px solid #ccc;
 }
 
-/* 黑色螢幕區域 */
-.device-screen {
-    position: absolute; top: 16px; left: 16px; right: 16px; height: 64px;
-    background-color: #111; border-radius: 6px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+.jre-lcd-header {
+    display: flex; align-items: center; padding: 10px 15px;
+    background: #111; color: #fff; border-bottom: 4px solid #63BD0F;
 }
 
-/* LOADING 文字 */
-.device-screen-text {
-    color: #fff9c4; font-family: 'DotGothic16', monospace; font-size: 14px; margin-bottom: 6px;
-    letter-spacing: 2px;
-    animation: blinkText 1s step-end infinite;
-}
-@keyframes blinkText {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+.jre-service-type {
+    border: 2px solid #fff; padding: 2px 6px; font-weight: bold;
+    font-size: 14px; border-radius: 3px; margin-right: 12px;
 }
 
-/* Pixel 風格 Loading Bar */
-.pixel-bar-container {
-    width: 80%; height: 12px; background-color: #333; border: 2px solid #555; padding: 2px;
-    box-sizing: border-box;
+.jre-destination {
+    font-size: 18px; font-weight: 800; display: flex; flex-direction: column; line-height: 1.1;
 }
-.pixel-bar-fill {
-    height: 100%; background-color: #63BD0F; width: 0%;
-    /* steps(8) 製造出一格格跳動嘅 Pixel 感，配合 1 秒的等待時間 */
-    animation: fillBar 1s steps(8) forwards;
+
+.jre-dest-en {
+    font-size: 9px; font-weight: 600; color: #ccc; margin-top: 2px;
 }
-@keyframes fillBar {
+
+.jre-route-container {
+    position: relative; height: 80px; width: 100%; background: #fff;
+    display: flex; align-items: center; padding: 0 20px; box-sizing: border-box;
+}
+
+.jre-line-track {
+    position: absolute; left: 20px; right: 20px; height: 8px;
+    background: #e0e0e0; border-radius: 4px; z-index: 1;
+}
+
+.jre-progress-fill {
+    position: absolute; left: 20px; height: 8px;
+    background: #63BD0F; border-radius: 4px; z-index: 2; width: 0%;
+    animation: jreFill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.jre-station-dot {
+    position: absolute; width: 14px; height: 14px; background: #fff;
+    border: 3px solid #ccc; border-radius: 50%; z-index: 3;
+    transform: translateY(-3px); 
+}
+
+.jre-train-icon {
+    position: absolute; left: 20px; width: 32px; height: 32px; z-index: 4;
+    transform: translate(-16px, -12px); 
+    animation: jreTrainMove 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.jre-lcd-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 15px; background: #f9f9f9; border-top: 1px solid #eee;
+}
+
+.jre-loading-text { font-size: 13px; font-weight: bold; color: #333; }
+.jre-loading-text-en { font-size: 11px; font-weight: bold; color: #888; }
+
+@keyframes jreFill {
     0% { width: 0%; }
-    100% { width: 100%; }
+    100% { width: calc(100% - 40px); } 
 }
 
-/* 山手線綠色色帶 */
-.device-band {
-    position: absolute; top: 96px; left: 0; width: 100%; height: 18px;
-    background-color: #63BD0F;
-}
-
-/* 底部按鈕區 */
-.device-controls {
-    position: absolute; bottom: 12px; left: 16px; right: 16px;
-    display: flex; justify-content: space-between;
-}
-.device-btn {
-    width: 32px; height: 16px; background-color: #555; border-radius: 4px;
-    display: flex; align-items: center; justify-content: space-evenly;
-}
-.device-dot {
-    width: 6px; height: 6px; background-color: #fff9c4; border-radius: 50%;
+@keyframes jreTrainMove {
+    0% { left: 20px; }
+    100% { left: calc(100% - 20px); }
 }
 
 
@@ -105,19 +105,6 @@
     --border: #aaa; --primary: #63BD0F; --success: #34c759; --danger: #ff3b30; --tag-bg: #e5e5ea; --nav-bg: rgba(255, 255, 255, 0.85);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #1c1c1e; --input-bg: #2c2c2e; --card: #1c1c1e; --text: #f5f5f7; --subtext: #98989d;
-        --border: #38383a; --tag-bg: #2c2c2e; --nav-bg: rgba(28, 28, 30, 0.85);
-    }
-    .btn-clear-stats { background: var(--primary) !important; color: #ffffff !important; border: none !important; }
-    /* Dark Mode Header Bug Fix */
-    header { background: #000000 !important; border-bottom: 1px solid #222 !important; box-shadow: none !important; }
-    .header-band { background: #27420e; }
-    .destination-sign-frame { border-color: #333; background: #fff3cd; box-shadow: inset 0 8px 12px rgba(0,0,0,0.6), inset 0 -8px 12px rgba(0,0,0,0.6), 0 0 15px rgba(255, 230, 150, 0.15); }
-    .sign-main-content { color: #000a1f; }
-    .out-of-service-panel .sign-destination-text, .out-of-service-panel .sign-yamanote-en { color: #002266; text-shadow: 0 0 1px rgba(0,0,0,0.2); }
-}
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); padding-bottom: 100px; }
@@ -213,23 +200,71 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .bar-track { flex: 1; background: var(--tag-bg); height: 14px; border-radius: 4px; overflow: hidden; position: relative; }
 .bar-fill { background: var(--primary); height: 100%; border-radius: 4px; transition: width 0.5s ease-out; }
 .bar-val { width: 30px; text-align: left; padding-left: 8px; font-weight: 600; color: var(--text); }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1c1c1e; --input-bg: #2c2c2e; --card: #1c1c1e; --text: #f5f5f7; --subtext: #98989d;
+        --border: #38383a; --tag-bg: #2c2c2e; --nav-bg: rgba(28, 28, 30, 0.85);
+    }
+    .btn-clear-stats { background: var(--primary) !important; color: #ffffff !important; border: none !important; }
+    
+    /* 1. 車身變得更暗，模擬夜晚無光照嘅金屬外殼 */
+    header { 
+        background: linear-gradient(135deg, #222222 0%, #111111 100%) !important; 
+        border-bottom: 1px solid #0a0a0a !important; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+    }
+    
+    /* 2. 山手線色帶變暗，模擬夜晚實體塗裝 */
+    .header-band { 
+        background: #20400d; 
+    }
+    
+    /* 3. 方向幕外框變暗，背燈改成偏暖黃，加強內外光暈對比 */
+    .destination-sign-frame { 
+        border-color: #292929; 
+        background: #fff3d2; /* 暖黃色背燈 */
+        box-shadow: inset 0 10px 15px rgba(0,0,0,0.85), inset 0 -10px 15px rgba(0,0,0,0.85), 0 0 20px rgba(255, 210, 120, 0.2); 
+    }
+		/* 4. 確保所有內容 (包括通勤快速) 喺陰影層下面 */
+    .sign-panel, .roll-container, .sign-main-content, .sign-type-box, .out-of-service-panel {
+        background: transparent !important;
+        position: relative;
+        z-index: 1; 
+    }
+}
+
 </style>
 </head>
 
 <body>
 
 <div id="loading-screen">
-    <div class="device-icon">
-        <div class="device-screen">
-            <div class="device-screen-text">LOADING</div>
-            <div class="pixel-bar-container">
-                <div class="pixel-bar-fill"></div>
-            </div>
+    <div class="jre-lcd-panel">
+        <div class="jre-lcd-header">
+            <div class="jre-service-type">各駅停車</div>
+            <div class="jre-destination">鉄道手帳 RAIL LOG <span class="jre-dest-en">FOR RAIL LOG</span></div>
         </div>
-        <div class="device-band"></div>
-        <div class="device-controls">
-            <div class="device-btn"><div class="device-dot"></div><div class="device-dot"></div></div>
-            <div class="device-btn"><div class="device-dot"></div><div class="device-dot"></div></div>
+        <div class="jre-route-container">
+            <div class="jre-line-track"></div>
+            <div class="jre-station-dot" style="left: 10%;"></div>
+            <div class="jre-station-dot" style="left: 50%;"></div>
+            <div class="jre-station-dot" style="left: 90%;"></div>
+            
+            <div class="jre-train-icon">
+                <svg viewBox="0 0 24 24" fill="#63BD0F" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V17C20 18.1046 19.1046 19 18 19H6C4.89543 19 4 18.1046 4 17V6Z" fill="#e0e0e0"/>
+                    <path d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11H4V6Z" fill="#63BD0F"/>
+                    <rect x="6" y="13" width="4" height="3" rx="1" fill="#333"/>
+                    <rect x="14" y="13" width="4" height="3" rx="1" fill="#333"/>
+                    <circle cx="7" cy="20" r="1.5" fill="#555"/>
+                    <circle cx="17" cy="20" r="1.5" fill="#555"/>
+                </svg>
+            </div>
+            <div class="jre-progress-fill"></div>
+        </div>
+        <div class="jre-lcd-footer">
+            <span class="jre-loading-text">まもなく起動します...</span>
+            <span class="jre-loading-text-en">Now Loading...</span>
         </div>
     </div>
 </div>
@@ -272,7 +307,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     </header>
 
     <div id="saveMessage" class="toast-message">儲存成功！</div>
-    <div class="version-badge">V0.18</div>
+    <div class="version-badge">V0.19</div>
 
     <div class="container">
 
@@ -284,13 +319,13 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
                 <label>鉄道公司</label>
                 <div class="input-wrapper">
-                    <input id="company" list="companyList" placeholder="選擇或輸入公司">
+                    <input id="company" list="companyList" placeholder="選擇或輸入公司" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
                 </div>
 
                 <label>路線 (實體路線)</label>
                 <div class="input-wrapper">
-                    <input id="line" list="lineList" placeholder="選擇或輸入路線">
+                    <input id="line" list="lineList" placeholder="選擇或輸入路線" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
                 </div>
 
@@ -299,7 +334,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
                 <label>種別 / 列車名 (運行系統)</label>
                 <div class="input-wrapper">
-                    <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速">
+                    <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
                 </div>
 
@@ -311,7 +346,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                     <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
                         <label style="margin-top: 0;">車輛所屬公司</label>
                         <div class="input-wrapper">
-                            <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()">
+                            <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()" onclick="this.select()">
                             <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
                         </div>
                     </div>
@@ -319,19 +354,19 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
                 <label>車型</label>
                 <div class="input-wrapper">
-                    <input id="train" list="trainList" placeholder="輸入車型 (按公司快速過濾)">
+                    <input id="train" list="trainList" placeholder="輸入車型 (按公司快速過濾)" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
                 </div>
 
                 <label>上車站</label>
                 <div class="input-wrapper">
-                    <input id="from" list="stationListFrom" placeholder="出發站">
+                    <input id="from" list="stationListFrom" placeholder="出發站" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
                 </div>
 
                 <label>下車站</label>
                 <div class="input-wrapper">
-                    <input id="to" list="stationListTo" placeholder="到達站">
+                    <input id="to" list="stationListTo" placeholder="到達站" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
                 </div>
 
@@ -446,7 +481,9 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         <option value="特急"></option>
     </datalist>
 
-</div> <script>
+</div> 
+
+<script>
 let currentSignIndex = 0;
 const totalSigns = 5; 
 const rollContainer = document.getElementById('rollContainer');
@@ -500,11 +537,21 @@ let currentChartType = 'company';
 
 document.getElementById("date").valueAsDate = new Date();
 
+// 清除輸入欄的共用函數
 function clearInput(id) {
     const el = document.getElementById(id);
     if (el) {
         el.value = '';
         el.dispatchEvent(new Event('input'));
+    }
+}
+
+// 新增：清除相鄰輸入欄的函數 (用於直通運轉等動態生成的元件)
+function clearSiblingInput(btn) {
+    const input = btn.previousElementSibling;
+    if (input) {
+        input.value = '';
+        input.dispatchEvent(new Event('input'));
     }
 }
 
@@ -588,7 +635,7 @@ async function loadData() {
             "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
             "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
-            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json"]; 
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json"]; 
         
         const fetchPromises = newCompanyFiles.map(file => 
             fetch(file).then(res => res.ok ? res.json() : null).catch(() => null)
@@ -616,12 +663,13 @@ async function loadData() {
 
     } catch (e) { 
         console.log("資料庫載入失敗。", e); 
-        document.querySelector('.device-screen-text').innerText = "ERROR";
-        document.querySelector('.device-screen-text').style.color = "red";
+        document.querySelector('.jre-loading-text').innerText = "ERROR";
+        document.querySelector('.jre-loading-text').style.color = "red";
     } 
     finally {
         buildMaps(); initUILists(); render(); updateStationLists();
-        setTimeout(hideLoadingScreen, 1000);
+        // 配合 JRE 動畫，將載入時間設為 1.8 秒
+        setTimeout(hideLoadingScreen, 1800);
     }
 }
 
@@ -816,14 +864,14 @@ function addThrough() {
     div.innerHTML = `
         <label style="margin-top:0;">直通公司</label>
         <div class="input-wrapper">
-            <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); updateStationLists();" placeholder="直通公司">
-            <button class="clear-input-btn" onclick="this.previousElementSibling.value=''; this.previousElementSibling.dispatchEvent(new Event('input'));">✕</button>
+            <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); updateStationLists();" placeholder="直通公司" onclick="this.select()">
+            <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
         </div>
         <datalist id="${uniqueId}"></datalist>
         <label>直通路線 (實體路線)</label>
         <div class="input-wrapper">
-            <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()" placeholder="直通路線">
-            <button class="clear-input-btn" onclick="this.previousElementSibling.value=''; this.previousElementSibling.dispatchEvent(new Event('input'));">✕</button>
+            <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()" placeholder="直通路線" onclick="this.select()">
+            <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
         </div>
         <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
     `;
@@ -834,9 +882,12 @@ function addThrough() {
 }
 
 function saveTrip() {
-    let getVal = (id) => document.getElementById(id).value;
-    let mainCompId = resolve.company[getVal("company")] || getVal("company");
-    let mainLineId = db.lines.find(l => l.company_id === mainCompId && l.name === getVal("line"))?.id || getVal("line");
+    const getVal = (id) => document.getElementById(id).value;
+    const companyInput = getVal("company");
+    const lineInput = getVal("line");
+    
+    let mainCompId = resolve.company[companyInput] || companyInput;
+    let mainLineId = db.lines.find(l => l.company_id === mainCompId && l.name === lineInput)?.id || lineInput;
 
     let routes = [{ company_id: mainCompId, line_id: mainLineId }];
 
@@ -1227,7 +1278,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.18.json"; a.click();
+    a.download = "rail-log-V0.19.json"; a.click();
 }
 
 function importData() {

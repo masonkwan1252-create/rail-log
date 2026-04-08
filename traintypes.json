@@ -1,4 +1,20 @@
 [
+{ "id":"TRN_NISHITETSU_3000","company_id":"NISHITETSU","name":"3000形","variants":[] },
+{ "id":"TRN_NISHITETSU_5000","company_id":"NISHITETSU","name":"5000形","variants":[] },
+{ "id":"TRN_NISHITETSU_6000","company_id":"NISHITETSU","name":"6000形","variants":[] },
+{ "id":"TRN_NISHITETSU_6050","company_id":"NISHITETSU","name":"6050形","variants":[] },
+{ "id":"TRN_NISHITETSU_7000","company_id":"NISHITETSU","name":"7000形","variants":[] },
+{ "id":"TRN_NISHITETSU_7050","company_id":"NISHITETSU","name":"7050形","variants":[] },
+{ "id":"TRN_NISHITETSU_9000","company_id":"NISHITETSU","name":"9000形","variants":[] },
+{ "id":"TRN_NISHITETSU_600","company_id":"NISHITETSU","name":"600形","variants":[] },
+{ "id":"TRN_SAGAMI_20000","company_id":"SAGAMI","name":"20000系","variants":[] },
+{ "id":"TRN_SAGAMI_21000","company_id":"SAGAMI","name":"21000系","variants":[] },
+{ "id":"TRN_SAGAMI_13000","company_id":"SAGAMI","name":"13000系","variants":[] },
+{ "id":"TRN_SAGAMI_12000","company_id":"SAGAMI","name":"12000系","variants":[] },
+{ "id":"TRN_SAGAMI_11000","company_id":"SAGAMI","name":"11000系","variants":[] },
+{ "id":"TRN_SAGAMI_10000","company_id":"SAGAMI","name":"10000系","variants":[] },
+{ "id":"TRN_SAGAMI_9000","company_id":"SAGAMI","name":"9000系","variants":[] },
+{ "id":"TRN_SAGAMI_8000","company_id":"SAGAMI","name":"8000系","variants":[] },
 { "id":"TRN_KEISEI_AE","company_id":"KEISEI","name":"AE形","variants":[] },
 { "id":"TRN_KEISEI_3200","company_id":"KEISEI","name":"3200形","variants":[] },
 { "id":"TRN_KEISEI_3100","company_id":"KEISEI","name":"3100形","variants":[] },
@@ -2328,49 +2344,49 @@
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_200",
-    "name": "200系 ",
+    "name": "200系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_20",
-    "name": "20系 ",
+    "name": "20系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_30000",
-    "name": "30000系 ",
+    "name": "30000系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_400",
-    "name": "400系 ",
+    "name": "400系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_66",
-    "name": "66系 ",
+    "name": "66系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_70",
-    "name": "70系 ",
+    "name": "70系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_80",
-    "name": "80系 ",
+    "name": "80系",
     "variants": []
   },
   {
     "company_id": "OSAKA_METRO",
     "id": "TRN_OSAKA_METRO_30000A",
-    "name": "30000A系 ",
+    "name": "30000A系",
     "variants": []
   },
   {

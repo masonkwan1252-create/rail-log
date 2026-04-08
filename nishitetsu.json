@@ -1,0 +1,548 @@
+[
+  {
+    "categories": "",
+    "company_id": "NISHITETSU",
+    "company_name": "西日本鉄道",
+    "lines": [
+      {
+        "id": "NISHITETSU_TENJIN_OMUTA",
+        "name": "天神大牟田線",
+        "sequence": [
+          "STN_NISHITETSU_NISHITETSU_FUKUOKA",
+          "STN_NISHITETSU_YAKUIN",
+          "STN_NISHITETSU_NISHITETSU_HIRAO",
+          "STN_NISHITETSU_TAKAMIYA",
+          "STN_NISHITETSU_OHASHI",
+          "STN_NISHITETSU_IJIRI",
+          "STN_NISHITETSU_ZASSHONOKUMA",
+          "STN_NISHITETSU_SAKURANAMIKI",
+          "STN_NISHITETSU_KASUGABARU",
+          "STN_NISHITETSU_SHIRAKIBARU",
+          "STN_NISHITETSU_SHIMOORI",
+          "STN_NISHITETSU_TOFURO_MAE",
+          "STN_NISHITETSU_NISHITETSU_FUTSUAICHI",
+          "STN_NISHITETSU_MURASAKI",
+          "STN_NISHITETSU_ASAKURAGAIDO",
+          "STN_NISHITETSU_SAKURADAI",
+          "STN_NISHITETSU_CHIKUSHI",
+          "STN_NISHITETSU_TSUKO",
+          "STN_NISHITETSU_MIKUNIGAOKA",
+          "STN_NISHITETSU_MISAWA",
+          "STN_NISHITETSU_OBO",
+          "STN_NISHITETSU_NISHITETSU_OGORI",
+          "STN_NISHITETSU_HATUMA",
+          "STN_NISHITETSU_AJISAKA",
+          "STN_NISHITETSU_MIYANOJIN",
+          "STN_NISHITETSU_KUSHIWARA",
+          "STN_NISHITETSU_NISHITETSU_KURUME",
+          "STN_NISHITETSU_HANABATAKE",
+          "STN_NISHITETSU_SEI_MARIA_BYOIN_MAE",
+          "STN_NISHITETSU_TSUBUKU",
+          "STN_NISHITETSU_YASUTAKE",
+          "STN_NISHITETSU_DAIZENJI",
+          "STN_NISHITETSU_MIZUMA",
+          "STN_NISHITETSU_INUZUKA",
+          "STN_NISHITETSU_OMIZO",
+          "STN_NISHITETSU_HATCHOMUTA",
+          "STN_NISHITETSU_KAMACHI",
+          "STN_NISHITETSU_YAKABE",
+          "STN_NISHITETSU_NISHITETSU_YANAGAWA",
+          "STN_NISHITETSU_TOKUMASU",
+          "STN_NISHITETSU_SHIOTSUKA",
+          "STN_NISHITETSU_NISHITETSU_NAKAJIMA",
+          "STN_NISHITETSU_ENOURA",
+          "STN_NISHITETSU_HIRAKI",
+          "STN_NISHITETSU_NISHITETSU_WATAZE",
+          "STN_NISHITETSU_KURANAGA",
+          "STN_NISHITETSU_HIGASHI_AMAGI",
+          "STN_NISHITETSU_NISHITETSU_GINSUI",
+          "STN_NISHITETSU_SHIN_SAKAEMACHI",
+          "STN_NISHITETSU_OMUTA"
+        ]
+      },
+      {
+        "id": "NISHITETSU_DAZAIFU",
+        "name": "太宰府線",
+        "sequence": [
+          "STN_NISHITETSU_NISHITETSU_FUTSUAICHI",
+          "STN_NISHITETSU_NISHITETSU_GOJO",
+          "STN_NISHITETSU_DAZAIFU"
+        ]
+      },
+      {
+        "id": "NISHITETSU_AMAGI",
+        "name": "甘木線",
+        "sequence": [
+          "STN_NISHITETSU_MIYANOJIN",
+          "STN_NISHITETSU_GOROMARU",
+          "STN_NISHITETSU_GAKKOMAE",
+          "STN_NISHITETSU_KOGANCHAYA",
+          "STN_NISHITETSU_KITANO",
+          "STN_NISHITETSU_OKI",
+          "STN_NISHITETSU_KANESHIMA",
+          "STN_NISHITETSU_OZEKI",
+          "STN_NISHITETSU_HONGO",
+          "STN_NISHITETSU_KAMIURA",
+          "STN_NISHITETSU_MADA",
+          "STN_NISHITETSU_AMAGI"
+        ]
+      },
+      {
+        "id": "NISHITETSU_KAIZUKA",
+        "name": "貝塚線",
+        "sequence": [
+          "STN_NISHITETSU_KAIZUKA",
+          "STN_NISHITETSU_NAJIMA",
+          "STN_NISHITETSU_NISHITETSU_CHIHAYA",
+          "STN_NISHITETSU_KASHII_MIYAMAE",
+          "STN_NISHITETSU_NISHITETSU_KASHII",
+          "STN_NISHITETSU_KASHII_KAENMAE",
+          "STN_NISHITETSU_TONOHARU",
+          "STN_NISHITETSU_WAJIRO",
+          "STN_NISHITETSU_MITOMA",
+          "STN_NISHITETSU_NISHITETSU_SHINGU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_FUKUOKA",
+        "lat": "33.589371",
+        "lng": "130.399285",
+        "name": "西鉄福岡（天神）"
+      },
+      {
+        "id": "STN_NISHITETSU_YAKUIN",
+        "lat": "33.58191",
+        "lng": "130.40181",
+        "name": "薬院"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_HIRAO",
+        "lat": "33.573805",
+        "lng": "130.40631",
+        "name": "西鉄平尾"
+      },
+      {
+        "id": "STN_NISHITETSU_TAKAMIYA",
+        "lat": "33.56687",
+        "lng": "130.41501",
+        "name": "高宮"
+      },
+      {
+        "id": "STN_NISHITETSU_OHASHI",
+        "lat": "33.559085",
+        "lng": "130.426805",
+        "name": "大橋"
+      },
+      {
+        "id": "STN_NISHITETSU_IJIRI",
+        "lat": "33.552215",
+        "lng": "130.44301",
+        "name": "井尻"
+      },
+      {
+        "id": "STN_NISHITETSU_ZASSHONOKUMA",
+        "lat": "33.547286",
+        "lng": "130.462382",
+        "name": "雑餉隈"
+      },
+      {
+        "id": "STN_NISHITETSU_SAKURANAMIKI",
+        "lat": "33.54462525",
+        "lng": "130.46653095",
+        "name": "桜並木"
+      },
+      {
+        "id": "STN_NISHITETSU_KASUGABARU",
+        "lat": "33.53795",
+        "lng": "130.47311",
+        "name": "春日原"
+      },
+      {
+        "id": "STN_NISHITETSU_SHIRAKIBARU",
+        "lat": "33.528565",
+        "lng": "130.48281",
+        "name": "白木原"
+      },
+      {
+        "id": "STN_NISHITETSU_SHIMOORI",
+        "lat": "33.522495",
+        "lng": "130.489185",
+        "name": "下大利"
+      },
+      {
+        "id": "STN_NISHITETSU_TOFURO_MAE",
+        "lat": "33.51164",
+        "lng": "130.50801",
+        "name": "都府楼前"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_FUTSUAICHI",
+        "lat": "33.502145",
+        "lng": "130.517885",
+        "name": "西鉄二日市"
+      },
+      {
+        "id": "STN_NISHITETSU_MURASAKI",
+        "lat": "33.49603",
+        "lng": "130.522563",
+        "name": "紫"
+      },
+      {
+        "id": "STN_NISHITETSU_ASAKURAGAIDO",
+        "lat": "33.484025",
+        "lng": "130.532605",
+        "name": "朝倉街道"
+      },
+      {
+        "id": "STN_NISHITETSU_SAKURADAI",
+        "lat": "33.471615",
+        "lng": "130.542415",
+        "name": "桜台"
+      },
+      {
+        "id": "STN_NISHITETSU_CHIKUSHI",
+        "lat": "33.46281",
+        "lng": "130.55296",
+        "name": "筑紫"
+      },
+      {
+        "id": "STN_NISHITETSU_TSUKO",
+        "lat": "33.446435",
+        "lng": "130.56557",
+        "name": "津古"
+      },
+      {
+        "id": "STN_NISHITETSU_MIKUNIGAOKA",
+        "lat": "33.436675",
+        "lng": "130.56317",
+        "name": "三国が丘"
+      },
+      {
+        "id": "STN_NISHITETSU_MISAWA",
+        "lat": "33.422815",
+        "lng": "130.560375",
+        "name": "三沢"
+      },
+      {
+        "id": "STN_NISHITETSU_OBO",
+        "lat": "33.411465",
+        "lng": "130.55812",
+        "name": "大保"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_OGORI",
+        "lat": "33.396365",
+        "lng": "130.553645",
+        "name": "西鉄小郡"
+      },
+      {
+        "id": "STN_NISHITETSU_HATUMA",
+        "lat": "33.378881",
+        "lng": "130.550844",
+        "name": "端間"
+      },
+      {
+        "id": "STN_NISHITETSU_AJISAKA",
+        "lat": "33.35296",
+        "lng": "130.540595",
+        "name": "味坂"
+      },
+      {
+        "id": "STN_NISHITETSU_MIYANOJIN",
+        "lat": "33.32935",
+        "lng": "130.530935",
+        "name": "宮の陣"
+      },
+      {
+        "id": "STN_NISHITETSU_KUSHIWARA",
+        "lat": "33.319505",
+        "lng": "130.52433",
+        "name": "櫛原"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_KURUME",
+        "lat": "33.312265",
+        "lng": "130.521045",
+        "name": "西鉄久留米"
+      },
+      {
+        "id": "STN_NISHITETSU_HANABATAKE",
+        "lat": "33.30586",
+        "lng": "130.515035",
+        "name": "花畑"
+      },
+      {
+        "id": "STN_NISHITETSU_SEI_MARIA_BYOIN_MAE",
+        "lat": "33.302",
+        "lng": "130.509915",
+        "name": "聖マリア病院前"
+      },
+      {
+        "id": "STN_NISHITETSU_TSUBUKU",
+        "lat": "33.296537",
+        "lng": "130.497745",
+        "name": "津福"
+      },
+      {
+        "id": "STN_NISHITETSU_YASUTAKE",
+        "lat": "33.28654",
+        "lng": "130.48934",
+        "name": "安武"
+      },
+      {
+        "id": "STN_NISHITETSU_DAIZENJI",
+        "lat": "33.27044",
+        "lng": "130.474065",
+        "name": "大善寺"
+      },
+      {
+        "id": "STN_NISHITETSU_MIZUMA",
+        "lat": "33.256025",
+        "lng": "130.46947",
+        "name": "三潴"
+      },
+      {
+        "id": "STN_NISHITETSU_INUZUKA",
+        "lat": "33.247315",
+        "lng": "130.46287",
+        "name": "犬塚"
+      },
+      {
+        "id": "STN_NISHITETSU_OMIZO",
+        "lat": "33.22694",
+        "lng": "130.44979",
+        "name": "大溝"
+      },
+      {
+        "id": "STN_NISHITETSU_HATCHOMUTA",
+        "lat": "33.20887",
+        "lng": "130.437525",
+        "name": "八丁牟田"
+      },
+      {
+        "id": "STN_NISHITETSU_KAMACHI",
+        "lat": "33.189945",
+        "lng": "130.42287",
+        "name": "蒲池"
+      },
+      {
+        "id": "STN_NISHITETSU_YAKABE",
+        "lat": "33.173865",
+        "lng": "130.415875",
+        "name": "矢加部"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_YANAGAWA",
+        "lat": "33.16511",
+        "lng": "130.419245",
+        "name": "西鉄柳川"
+      },
+      {
+        "id": "STN_NISHITETSU_TOKUMASU",
+        "lat": "33.15544",
+        "lng": "130.42657",
+        "name": "徳益"
+      },
+      {
+        "id": "STN_NISHITETSU_SHIOTSUKA",
+        "lat": "33.14396",
+        "lng": "130.43118",
+        "name": "塩塚"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_NAKAJIMA",
+        "lat": "33.122505",
+        "lng": "130.440075",
+        "name": "西鉄中島"
+      },
+      {
+        "id": "STN_NISHITETSU_ENOURA",
+        "lat": "33.108985",
+        "lng": "130.44661",
+        "name": "江の浦"
+      },
+      {
+        "id": "STN_NISHITETSU_HIRAKI",
+        "lat": "33.097285",
+        "lng": "130.45307",
+        "name": "開"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_WATAZE",
+        "lat": "33.086728",
+        "lng": "130.458787",
+        "name": "西鉄渡瀬"
+      },
+      {
+        "id": "STN_NISHITETSU_KURANAGA",
+        "lat": "33.071875",
+        "lng": "130.463785",
+        "name": "倉永"
+      },
+      {
+        "id": "STN_NISHITETSU_HIGASHI_AMAGI",
+        "lat": "33.062225",
+        "lng": "130.46424",
+        "name": "東甘木"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_GINSUI",
+        "lat": "33.050955",
+        "lng": "130.458165",
+        "name": "西鉄銀水"
+      },
+      {
+        "id": "STN_NISHITETSU_SHIN_SAKAEMACHI",
+        "lat": "33.03843",
+        "lng": "130.4499",
+        "name": "新栄町"
+      },
+      {
+        "id": "STN_NISHITETSU_OMUTA",
+        "lat": "33.03015",
+        "lng": "130.44369",
+        "name": "大牟田"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_GOJO",
+        "lat": "33.511043",
+        "lng": "130.52606",
+        "name": "西鉄五条"
+      },
+      {
+        "id": "STN_NISHITETSU_DAZAIFU",
+        "lat": "33.51834",
+        "lng": "130.5312",
+        "name": "太宰府"
+      },
+      {
+        "id": "STN_NISHITETSU_GOROMARU",
+        "lat": "33.33047",
+        "lng": "130.539935",
+        "name": "五郎丸"
+      },
+      {
+        "id": "STN_NISHITETSU_GAKKOMAE",
+        "lat": "33.3363",
+        "lng": "130.54749",
+        "name": "学校前"
+      },
+      {
+        "id": "STN_NISHITETSU_KOGANCHAYA",
+        "lat": "33.343595",
+        "lng": "130.566995",
+        "name": "古賀茶屋"
+      },
+      {
+        "id": "STN_NISHITETSU_KITANO",
+        "lat": "33.345371",
+        "lng": "130.582731",
+        "name": "北野"
+      },
+      {
+        "id": "STN_NISHITETSU_OKI",
+        "lat": "33.35099",
+        "lng": "130.607815",
+        "name": "大城"
+      },
+      {
+        "id": "STN_NISHITETSU_KANESHIMA",
+        "lat": "33.35324",
+        "lng": "130.623095",
+        "name": "金島"
+      },
+      {
+        "id": "STN_NISHITETSU_OZEKI",
+        "lat": "33.37222",
+        "lng": "130.62406",
+        "name": "大堰"
+      },
+      {
+        "id": "STN_NISHITETSU_HONGO",
+        "lat": "33.384845",
+        "lng": "130.62883",
+        "name": "本郷"
+      },
+      {
+        "id": "STN_NISHITETSU_KAMIURA",
+        "lat": "33.39871",
+        "lng": "130.63715",
+        "name": "上浦"
+      },
+      {
+        "id": "STN_NISHITETSU_MADA",
+        "lat": "33.40754",
+        "lng": "130.640675",
+        "name": "馬田"
+      },
+      {
+        "id": "STN_NISHITETSU_AMAGI",
+        "lat": "33.41826",
+        "lng": "130.654785",
+        "name": "甘木"
+      },
+      {
+        "id": "STN_NISHITETSU_KAIZUKA",
+        "lat": "33.631863",
+        "lng": "130.42559",
+        "name": "貝塚"
+      },
+      {
+        "id": "STN_NISHITETSU_NAJIMA",
+        "lat": "33.642515",
+        "lng": "130.431695",
+        "name": "名島"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_CHIHAYA",
+        "lat": "33.649505",
+        "lng": "130.440405",
+        "name": "西鉄千早"
+      },
+      {
+        "id": "STN_NISHITETSU_KASHII_MIYAMAE",
+        "lat": "33.655125",
+        "lng": "130.442615",
+        "name": "香椎宮前"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_KASHII",
+        "lat": "33.66015",
+        "lng": "130.441405",
+        "name": "西鉄香椎"
+      },
+      {
+        "id": "STN_NISHITETSU_KASHII_KAENMAE",
+        "lat": "33.670047",
+        "lng": "130.434583",
+        "name": "香椎花園前"
+      },
+      {
+        "id": "STN_NISHITETSU_TONOHARU",
+        "lat": "33.680375",
+        "lng": "130.434475",
+        "name": "唐の原"
+      },
+      {
+        "id": "STN_NISHITETSU_WAJIRO",
+        "lat": "33.68847203",
+        "lng": "130.43000951",
+        "name": "和白"
+      },
+      {
+        "id": "STN_NISHITETSU_MITOMA",
+        "lat": "33.70268",
+        "lng": "130.422535",
+        "name": "三苫"
+      },
+      {
+        "id": "STN_NISHITETSU_NISHITETSU_SHINGU",
+        "lat": "33.71412624",
+        "lng": "130.43685735",
+        "name": "西鉄新宮"
+      }
+    ]
+  }
+]
