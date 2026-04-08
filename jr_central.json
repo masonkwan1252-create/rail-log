@@ -1,0 +1,2889 @@
+[
+  {
+    "categories": "",
+    "company_id": "JR_CENTRAL",
+    "company_name": "JR東海",
+    "lines": [
+      {
+        "id": "JR_CENTRAL_TOKAIDO_SHINKANSEN",
+        "name": "東海道新幹線",
+        "sequence": [
+          "STN_JR_CENTRAL_TOKYO",
+          "STN_JR_CENTRAL_SHINAGAWA",
+          "STN_JR_CENTRAL_SHIN_YOKOHAMA",
+          "STN_JR_CENTRAL_ODAWARA",
+          "STN_JR_CENTRAL_ATAMI",
+          "STN_JR_CENTRAL_MISHIMA",
+          "STN_JR_CENTRAL_SHIN_FUJI",
+          "STN_JR_CENTRAL_SHIZUOKA",
+          "STN_JR_CENTRAL_KAKEGAWA",
+          "STN_JR_CENTRAL_HAMAMATSU",
+          "STN_JR_CENTRAL_TOYOHASHI",
+          "STN_JR_CENTRAL_MIKAWA_ANJO",
+          "STN_JR_CENTRAL_NAGOYA",
+          "STN_JR_CENTRAL_GIFU_HASHIMA",
+          "STN_JR_CENTRAL_MAIBARA",
+          "STN_JR_CENTRAL_KYOTO",
+          "STN_JR_CENTRAL_SHIN_OSAKA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_TOKAIDO",
+        "name": "東海道線",
+        "sequence": [
+          "STN_JR_CENTRAL_ATAMI",
+          "STN_JR_CENTRAL_KANNAMI",
+          "STN_JR_CENTRAL_MISHIMA",
+          "STN_JR_CENTRAL_NUMAZU",
+          "STN_JR_CENTRAL_KATAHAMA",
+          "STN_JR_CENTRAL_HARA",
+          "STN_JR_CENTRAL_HIGASHI_TAGONOURA",
+          "STN_JR_CENTRAL_YOSHIWARA",
+          "STN_JR_CENTRAL_FUJI",
+          "STN_JR_CENTRAL_FUJIKAWA",
+          "STN_JR_CENTRAL_SHIN_KAMBARA",
+          "STN_JR_CENTRAL_KAMBARA",
+          "STN_JR_CENTRAL_YUI",
+          "STN_JR_CENTRAL_OKITSU",
+          "STN_JR_CENTRAL_SHIMIZU",
+          "STN_JR_CENTRAL_KUSANAGI",
+          "STN_JR_CENTRAL_HIGASHI_SHIZUOKA",
+          "STN_JR_CENTRAL_SHIZUOKA",
+          "STN_JR_CENTRAL_ABEKAWA",
+          "STN_JR_CENTRAL_MOCHIMUNE",
+          "STN_JR_CENTRAL_YAIZU",
+          "STN_JR_CENTRAL_NISHI_YAIZU",
+          "STN_JR_CENTRAL_FUJIEDA",
+          "STN_JR_CENTRAL_ROKUGO",
+          "STN_JR_CENTRAL_SHIMADA",
+          "STN_JR_CENTRAL_KANAYA",
+          "STN_JR_CENTRAL_KIKUGAWA",
+          "STN_JR_CENTRAL_KAKEGAWA",
+          "STN_JR_CENTRAL_AINO",
+          "STN_JR_CENTRAL_FUKUROI",
+          "STN_JR_CENTRAL_MIKURIYA",
+          "STN_JR_CENTRAL_IWATA",
+          "STN_JR_CENTRAL_TOYODACHO",
+          "STN_JR_CENTRAL_TENRYUGAWA",
+          "STN_JR_CENTRAL_HAMAMATSU",
+          "STN_JR_CENTRAL_TAKATSUKA",
+          "STN_JR_CENTRAL_MAISAKA",
+          "STN_JR_CENTRAL_BENTENJIMA",
+          "STN_JR_CENTRAL_ARAIMACHI",
+          "STN_JR_CENTRAL_WASHIZU",
+          "STN_JR_CENTRAL_SHIN_JOHARA",
+          "STN_JR_CENTRAL_FUTAGAWA",
+          "STN_JR_CENTRAL_TOYOHASHI",
+          "STN_JR_CENTRAL_NISHI_KOZAKAI",
+          "STN_JR_CENTRAL_AICHI_MITO",
+          "STN_JR_CENTRAL_MIKAWA_OTSUKA",
+          "STN_JR_CENTRAL_MIKAWA_MIYA",
+          "STN_JR_CENTRAL_GAMAGORI",
+          "STN_JR_CENTRAL_MIKAWA_SHIO",
+          "STN_JR_CENTRAL_TSU",
+          "STN_JR_CENTRAL_SANGANE",
+          "STN_JR_CENTRAL_KODA",
+          "STN_JR_CENTRAL_AIMI",
+          "STN_JR_CENTRAL_OKAZAKI",
+          "STN_JR_CENTRAL_NISHI_OKAZAKI",
+          "STN_JR_CENTRAL_ANJO",
+          "STN_JR_CENTRAL_MIKAWA_ANJO",
+          "STN_JR_CENTRAL_HIGASHI_KARIYA",
+          "STN_JR_CENTRAL_NODA_SHINMACHI",
+          "STN_JR_CENTRAL_KARIYA",
+          "STN_JR_CENTRAL_AIZUMA",
+          "STN_JR_CENTRAL_OBU",
+          "STN_JR_CENTRAL_KYOWA",
+          "STN_JR_CENTRAL_MINAMI_ODAKA",
+          "STN_JR_CENTRAL_ODAKA",
+          "STN_JR_CENTRAL_KASADERA",
+          "STN_JR_CENTRAL_ATSUTA",
+          "STN_JR_CENTRAL_KANAYAMA",
+          "STN_JR_CENTRAL_OTOBASHI",
+          "STN_JR_CENTRAL_NAGOYA",
+          "STN_JR_CENTRAL_BIWAJIMA",
+          "STN_JR_CENTRAL_KIYOSU",
+          "STN_JR_CENTRAL_INAZAWA",
+          "STN_JR_CENTRAL_OWARI_ICHINOMIYA",
+          "STN_JR_CENTRAL_KISOGAWA",
+          "STN_JR_CENTRAL_GIFU",
+          "STN_JR_CENTRAL_NISHI_GIFU",
+          "STN_JR_CENTRAL_HOZUMI",
+          "STN_JR_CENTRAL_OGAKI",
+          "STN_JR_CENTRAL_TARUI",
+          "STN_JR_CENTRAL_SEKIGAHARA",
+          "STN_JR_CENTRAL_KASHIWABARA",
+          "STN_JR_CENTRAL_OMI_NAGAOKA",
+          "STN_JR_CENTRAL_SAMEGAI",
+          "STN_JR_CENTRAL_MAIBARA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_TOKAIDO_BRANCH",
+        "name": "東海道線（新垂井線）",
+        "sequence": [
+          "STN_JR_CENTRAL_OGAKI",
+          "STN_JR_CENTRAL_SEKIGAHARA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_MINO_AKASAKA",
+        "name": "美濃赤坂線",
+        "sequence": [
+          "STN_JR_CENTRAL_OGAKI",
+          "STN_JR_CENTRAL_ARAO",
+          "STN_JR_CENTRAL_MINO_AKASAKA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_GOTEMBA",
+        "name": "御殿場線",
+        "sequence": [
+          "STN_JR_CENTRAL_KOZU",
+          "STN_JR_CENTRAL_SHIMOSOGA",
+          "STN_JR_CENTRAL_KAMIOI",
+          "STN_JR_CENTRAL_SAGAMI_KANEKO",
+          "STN_JR_CENTRAL_MATSUDA",
+          "STN_JR_CENTRAL_HIGASHI_YAMAKITA",
+          "STN_JR_CENTRAL_YAMAKITA",
+          "STN_JR_CENTRAL_YAGA",
+          "STN_JR_CENTRAL_SURUGA_OYAMA",
+          "STN_JR_CENTRAL_ASHIGARA",
+          "STN_JR_CENTRAL_GOTEMBA",
+          "STN_JR_CENTRAL_MINAMI_GOTEMBA",
+          "STN_JR_CENTRAL_FUJIOKA",
+          "STN_JR_CENTRAL_IWANAMI",
+          "STN_JR_CENTRAL_SUSONO",
+          "STN_JR_CENTRAL_NAGAIZUMI_NAMERI",
+          "STN_JR_CENTRAL_SHIMOTOGARI",
+          "STN_JR_CENTRAL_OOKA",
+          "STN_JR_CENTRAL_NUMAZU"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_CHOU_HONSEN",
+        "name": "中央本線",
+        "sequence": [
+          "STN_JR_CENTRAL_SHIOJIRI",
+          "STN_JR_CENTRAL_SEBA",
+          "STN_JR_CENTRAL_HIDESHIO",
+          "STN_JR_CENTRAL_NIEKAWA",
+          "STN_JR_CENTRAL_KISO_HIRASAWA",
+          "STN_JR_CENTRAL_NARAI",
+          "STN_JR_CENTRAL_YABUHARA",
+          "STN_JR_CENTRAL_MIYANOKOSHI",
+          "STN_JR_CENTRAL_HARANO",
+          "STN_JR_CENTRAL_KISO_FUKUSHIMA",
+          "STN_JR_CENTRAL_AGEMATSU",
+          "STN_JR_CENTRAL_KURAMOTO",
+          "STN_JR_CENTRAL_SUHARA",
+          "STN_JR_CENTRAL_OKUWA",
+          "STN_JR_CENTRAL_NOJIRI",
+          "STN_JR_CENTRAL_JUNIKANE",
+          "STN_JR_CENTRAL_NAGISO",
+          "STN_JR_CENTRAL_TADACHI",
+          "STN_JR_CENTRAL_SAKASHITA",
+          "STN_JR_CENTRAL_OCHIAIGAWA",
+          "STN_JR_CENTRAL_NAKATSUGAWA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_KANSAI",
+        "name": "関西本線",
+        "sequence": [
+          "STN_JR_CENTRAL_NAGOYA",
+          "STN_JR_CENTRAL_HATTA",
+          "STN_JR_CENTRAL_HARUTA",
+          "STN_JR_CENTRAL_KANIE",
+          "STN_JR_CENTRAL_EIWA",
+          "STN_JR_CENTRAL_YATOMI",
+          "STN_JR_CENTRAL_NAGASHIMA",
+          "STN_JR_CENTRAL_KUWANA",
+          "STN_JR_CENTRAL_ASAHI",
+          "STN_JR_CENTRAL_TOMIDA",
+          "STN_JR_CENTRAL_TOMIDAHAMA",
+          "STN_JR_CENTRAL_YOKKAICHI",
+          "STN_JR_CENTRAL_MINAMI_YOKKAICHI",
+          "STN_JR_CENTRAL_KAWARADA",
+          "STN_JR_CENTRAL_KAWANO",
+          "STN_JR_CENTRAL_KASADO",
+          "STN_JR_CENTRAL_IDAGAWA",
+          "STN_JR_CENTRAL_KAMEYAMA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_KISEI",
+        "name": "紀勢本線",
+        "sequence": [
+          "STN_JR_CENTRAL_KAMEYAMA",
+          "STN_JR_CENTRAL_SHIMOSHO",
+          "STN_JR_CENTRAL_ISHINDEN",
+          "STN_JR_CENTRAL_TSU",
+          "STN_JR_CENTRAL_AKOGI",
+          "STN_JR_CENTRAL_TAKACHAYA",
+          "STN_JR_CENTRAL_ROKKEN",
+          "STN_JR_CENTRAL_MATSUZAKA",
+          "STN_JR_CENTRAL_TOKUWA",
+          "STN_JR_CENTRAL_TAKI",
+          "STN_JR_CENTRAL_OKA",
+          "STN_JR_CENTRAL_SANA",
+          "STN_JR_CENTRAL_TOCHIHARA",
+          "STN_JR_CENTRAL_KAWAZOE",
+          "STN_JR_CENTRAL_MITSEDANI",
+          "STN_JR_CENTRAL_TAKIHARA",
+          "STN_JR_CENTRAL_ASO",
+          "STN_JR_CENTRAL_ISE_KASHIWAZAKI",
+          "STN_JR_CENTRAL_OUCHIYAMA",
+          "STN_JR_CENTRAL_UMEGAYANI",
+          "STN_JR_CENTRAL_KII_NAGASHIMA",
+          "STN_JR_CENTRAL_MINOSE",
+          "STN_JR_CENTRAL_FUNATSU",
+          "STN_JR_CENTRAL_AIGA",
+          "STN_JR_CENTRAL_OWASE",
+          "STN_JR_CENTRAL_OZONEURA",
+          "STN_JR_CENTRAL_KUKI",
+          "STN_JR_CENTRAL_MIKISATO",
+          "STN_JR_CENTRAL_KATA",
+          "STN_JR_CENTRAL_NIKISHIMA",
+          "STN_JR_CENTRAL_ATASHIKA",
+          "STN_JR_CENTRAL_HADASU",
+          "STN_JR_CENTRAL_ODOMARI",
+          "STN_JR_CENTRAL_KUMANOSHI",
+          "STN_JR_CENTRAL_ARII",
+          "STN_JR_CENTRAL_KOUSHIYAMA",
+          "STN_JR_CENTRAL_KII_ICHIGI",
+          "STN_JR_CENTRAL_ATAWA",
+          "STN_JR_CENTRAL_KII_IDA",
+          "STN_JR_CENTRAL_UDONO",
+          "STN_JR_CENTRAL_SHINGU"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_MINOBU",
+        "name": "身延線",
+        "sequence": [
+          "STN_JR_CENTRAL_FUJI",
+          "STN_JR_CENTRAL_YUNOKI",
+          "STN_JR_CENTRAL_TATEBORI",
+          "STN_JR_CENTRAL_IRIYAMASE",
+          "STN_JR_CENTRAL_FUJINE",
+          "STN_JR_CENTRAL_GENDOJI",
+          "STN_JR_CENTRAL_FUJINOMIYA",
+          "STN_JR_CENTRAL_NISHI_FUJINOMIYA",
+          "STN_JR_CENTRAL_NUMAKUBO",
+          "STN_JR_CENTRAL_SHIBAKAWA",
+          "STN_JR_CENTRAL_INAKO",
+          "STN_JR_CENTRAL_TOSHIMA",
+          "STN_JR_CENTRAL_IDE",
+          "STN_JR_CENTRAL_YORIHATA",
+          "STN_JR_CENTRAL_UTSUBUNA",
+          "STN_JR_CENTRAL_KAI_OSHIMA",
+          "STN_JR_CENTRAL_MINOBU",
+          "STN_JR_CENTRAL_SHIONOSAWA",
+          "STN_JR_CENTRAL_HADAKAJIMA",
+          "STN_JR_CENTRAL_SHIMOBE_ONSEN",
+          "STN_JR_CENTRAL_KAI_TOKIWA",
+          "STN_JR_CENTRAL_ICHINOSE",
+          "STN_JR_CENTRAL_KUNADO",
+          "STN_JR_CENTRAL_KAI_IWAMA",
+          "STN_JR_CENTRAL_OCHII",
+          "STN_JR_CENTRAL_KAJIKAZAWAGUCHI",
+          "STN_JR_CENTRAL_ICHIKAWA_DAIMON",
+          "STN_JR_CENTRAL_ICHIKAWA_HOMMACHI",
+          "STN_JR_CENTRAL_ASHIGAWA",
+          "STN_JR_CENTRAL_KAI_UENO",
+          "STN_JR_CENTRAL_HIGASHI_HANAWA",
+          "STN_JR_CENTRAL_KOIKAWA",
+          "STN_JR_CENTRAL_JOEI",
+          "STN_JR_CENTRAL_KOKUBO",
+          "STN_JR_CENTRAL_KAI_SUMIYOSHI",
+          "STN_JR_CENTRAL_MINAMI_KOFU",
+          "STN_JR_CENTRAL_ZENKOJI",
+          "STN_JR_CENTRAL_KANENTE",
+          "STN_JR_CENTRAL_KOFU"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_IIDA",
+        "name": "飯田線",
+        "sequence": [
+          "STN_JR_CENTRAL_TOYOHASHI",
+          "STN_JR_CENTRAL_FUNAMACHI",
+          "STN_JR_CENTRAL_SHIMOJI",
+          "STN_JR_CENTRAL_KOZAKAI",
+          "STN_JR_CENTRAL_USHIKUBO",
+          "STN_JR_CENTRAL_TOYOKAWA",
+          "STN_JR_CENTRAL_MIKAWA_ICHINOMIYA",
+          "STN_JR_CENTRAL_NAGAYAMA",
+          "STN_JR_CENTRAL_EJIMA",
+          "STN_JR_CENTRAL_TOJO",
+          "STN_JR_CENTRAL_NODAJO",
+          "STN_JR_CENTRAL_SHINSHIRO",
+          "STN_JR_CENTRAL_HIGASHI_SHINMACHI",
+          "STN_JR_CENTRAL_CHAUSUYAMA",
+          "STN_JR_CENTRAL_MIKAWA_TOGO",
+          "STN_JR_CENTRAL_OMI",
+          "STN_JR_CENTRAL_TORII",
+          "STN_JR_CENTRAL_NAGASHINOJO",
+          "STN_JR_CENTRAL_HON_NAGASHINO",
+          "STN_JR_CENTRAL_MIKAWA_ONO",
+          "STN_JR_CENTRAL_YUYA_ONSEN",
+          "STN_JR_CENTRAL_MIKAWA_MAKIHARA",
+          "STN_JR_CENTRAL_KAKIDAIRA",
+          "STN_JR_CENTRAL_MIKAWA_KAWAI",
+          "STN_JR_CENTRAL_IKEBA",
+          "STN_JR_CENTRAL_TOEI",
+          "STN_JR_CENTRAL_IZUMMA",
+          "STN_JR_CENTRAL_KAMIICHIBA",
+          "STN_JR_CENTRAL_URAKAWA",
+          "STN_JR_CENTRAL_HAYASE",
+          "STN_JR_CENTRAL_SHIMOKAWAI",
+          "STN_JR_CENTRAL_CHUBU_TENRYU",
+          "STN_JR_CENTRAL_SAKUMA",
+          "STN_JR_CENTRAL_AIZUKI",
+          "STN_JR_CENTRAL_SHIRONISHI",
+          "STN_JR_CENTRAL_MUKAICHIBA",
+          "STN_JR_CENTRAL_MISAKUBO",
+          "STN_JR_CENTRAL_OZORE",
+          "STN_JR_CENTRAL_KOWADA",
+          "STN_JR_CENTRAL_NAKAISAMURAI",
+          "STN_JR_CENTRAL_INA_KOZAWA",
+          "STN_JR_CENTRAL_UGUSU",
+          "STN_JR_CENTRAL_HIRAOKA",
+          "STN_JR_CENTRAL_SHITEGURI",
+          "STN_JR_CENTRAL_NUKUTA",
+          "STN_JR_CENTRAL_TAMOTO",
+          "STN_JR_CENTRAL_KADOSHIMA",
+          "STN_JR_CENTRAL_KARAKASA",
+          "STN_JR_CENTRAL_KINNO",
+          "STN_JR_CENTRAL_CHIYO",
+          "STN_JR_CENTRAL_TENRYUKYO",
+          "STN_JR_CENTRAL_KAWAJI",
+          "STN_JR_CENTRAL_TOKIMATA",
+          "STN_JR_CENTRAL_DASHINA",
+          "STN_JR_CENTRAL_KEGA",
+          "STN_JR_CENTRAL_INA_YAHATA",
+          "STN_JR_CENTRAL_SHIMOYAMAMURA",
+          "STN_JR_CENTRAL_KANAE",
+          "STN_JR_CENTRAL_KIRIISHI",
+          "STN_JR_CENTRAL_IIDA",
+          "STN_JR_CENTRAL_SAKURAMACHI",
+          "STN_JR_CENTRAL_INA_KAMIGOU",
+          "STN_JR_CENTRAL_MOTO_ZENKOJI",
+          "STN_JR_CENTRAL_SHIMO_ICHIDA",
+          "STN_JR_CENTRAL_ICHIDA",
+          "STN_JR_CENTRAL_SHIMODAIRA",
+          "STN_JR_CENTRAL_YAMABUKI",
+          "STN_JR_CENTRAL_INA_OSHIMA",
+          "STN_JR_CENTRAL_KAMI_KATAGIRI",
+          "STN_JR_CENTRAL_INA_TAJIMA",
+          "STN_JR_CENTRAL_TAKATO_BARA",
+          "STN_JR_CENTRAL_NANAKUBO",
+          "STN_JR_CENTRAL_INA_HONGO",
+          "STN_JR_CENTRAL_IIJIMA",
+          "STN_JR_CENTRAL_TAGIRI",
+          "STN_JR_CENTRAL_INA_FUKUOKA",
+          "STN_JR_CENTRAL_KOMACHIYA",
+          "STN_JR_CENTRAL_KOMAGANE",
+          "STN_JR_CENTRAL_OTAGIRI",
+          "STN_JR_CENTRAL_MIYADA",
+          "STN_JR_CENTRAL_AKAGI",
+          "STN_JR_CENTRAL_SAWANDO",
+          "STN_JR_CENTRAL_SHIMOJIMA",
+          "STN_JR_CENTRAL_INASHI",
+          "STN_JR_CENTRAL_INA_KITA",
+          "STN_JR_CENTRAL_TABATA",
+          "STN_JR_CENTRAL_KITADONO",
+          "STN_JR_CENTRAL_KINOSHITA",
+          "STN_JR_CENTRAL_INA_MATSUSHIMA",
+          "STN_JR_CENTRAL_SAWA",
+          "STN_JR_CENTRAL_HABA",
+          "STN_JR_CENTRAL_INA_SHINMACHI",
+          "STN_JR_CENTRAL_MIYAKI",
+          "STN_JR_CENTRAL_TATSUNO"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_TAKETOYO",
+        "name": "武豊線",
+        "sequence": [
+          "STN_JR_CENTRAL_OBU",
+          "STN_JR_CENTRAL_OWARI_MORIOKA",
+          "STN_JR_CENTRAL_OGAWA",
+          "STN_JR_CENTRAL_ISHIHAMA",
+          "STN_JR_CENTRAL_HIGASHIURA",
+          "STN_JR_CENTRAL_KAMEZAKI",
+          "STN_JR_CENTRAL_OKKAWA",
+          "STN_JR_CENTRAL_HANDA",
+          "STN_JR_CENTRAL_HIGASHI_NARAWA",
+          "STN_JR_CENTRAL_TAKETOYO"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_TAKAYAMA",
+        "name": "高山本線",
+        "sequence": [
+          "STN_JR_CENTRAL_GIFU",
+          "STN_JR_CENTRAL_NAGAMORI",
+          "STN_JR_CENTRAL_NAKA",
+          "STN_JR_CENTRAL_SOHARA",
+          "STN_JR_CENTRAL_KAGAMIGAHARA",
+          "STN_JR_CENTRAL_UNUMA",
+          "STN_JR_CENTRAL_SAKAHOGI",
+          "STN_JR_CENTRAL_MINO_OTA",
+          "STN_JR_CENTRAL_KKOI",
+          "STN_JR_CENTRAL_NAKA_KAWABE",
+          "STN_JR_CENTRAL_SHIMO_ASO",
+          "STN_JR_CENTRAL_KAMI_ASO",
+          "STN_JR_CENTRAL_SHIRAKAWAGUCHI",
+          "STN_JR_CENTRAL_SHIMO_YUI",
+          "STN_JR_CENTRAL_HIDA_KANAYAMA",
+          "STN_JR_CENTRAL_YAKEISHI",
+          "STN_JR_CENTRAL_GERO",
+          "STN_JR_CENTRAL_ZENSHOJI",
+          "STN_JR_CENTRAL_HIDA_HAGIWARA",
+          "STN_JR_CENTRAL_JORO",
+          "STN_JR_CENTRAL_HIDA_MIYADA",
+          "STN_JR_CENTRAL_HIDA_OSAKA",
+          "STN_JR_CENTRAL_NAGISA",
+          "STN_JR_CENTRAL_KUGUNO",
+          "STN_JR_CENTRAL_HIDA_ICHINOMIYA",
+          "STN_JR_CENTRAL_TAKAYAMA",
+          "STN_JR_CENTRAL_HOZUE",
+          "STN_JR_CENTRAL_HIDA_KOKUFU",
+          "STN_JR_CENTRAL_HIDA_FURUKAWA",
+          "STN_JR_CENTRAL_SUGISAKI",
+          "STN_JR_CENTRAL_HIDA_HOSOE",
+          "STN_JR_CENTRAL_TSUNOGAWA",
+          "STN_JR_CENTRAL_SAKAGAMI",
+          "STN_JR_CENTRAL_UTSUBO",
+          "STN_JR_CENTRAL_SUGIHARA",
+          "STN_JR_CENTRAL_INOTANI"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_TAITA",
+        "name": "太多線",
+        "sequence": [
+          "STN_JR_CENTRAL_TAJIMI",
+          "STN_JR_CENTRAL_KOIZUMI",
+          "STN_JR_CENTRAL_NEMOTO",
+          "STN_JR_CENTRAL_HIME",
+          "STN_JR_CENTRAL_SHIMOGIRI",
+          "STN_JR_CENTRAL_KANI",
+          "STN_JR_CENTRAL_MINO_KAWAI",
+          "STN_JR_CENTRAL_MINO_OTA"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_MEISHO",
+        "name": "名松線",
+        "sequence": [
+          "STN_JR_CENTRAL_MATSUZAKA",
+          "STN_JR_CENTRAL_KAMINO_SHO",
+          "STN_JR_CENTRAL_GONGENMAE",
+          "STN_JR_CENTRAL_ISE_HATA",
+          "STN_JR_CENTRAL_ICHISHI",
+          "STN_JR_CENTRAL_ISEGI",
+          "STN_JR_CENTRAL_ISE_OI",
+          "STN_JR_CENTRAL_ISE_KAWAGUCHI",
+          "STN_JR_CENTRAL_SEKINOMIYA",
+          "STN_JR_CENTRAL_IEKI",
+          "STN_JR_CENTRAL_ISE_TAKEHARA",
+          "STN_JR_CENTRAL_ISE_KAMAKURA",
+          "STN_JR_CENTRAL_ISE_YACHI",
+          "STN_JR_CENTRAL_HITSU",
+          "STN_JR_CENTRAL_ISE_OKITSU"
+        ]
+      },
+      {
+        "id": "JR_CENTRAL_SANGU",
+        "name": "参宮線",
+        "sequence": [
+          "STN_JR_CENTRAL_TAKI",
+          "STN_JR_CENTRAL_TOKIWA",
+          "STN_JR_CENTRAL_TAMARU",
+          "STN_JR_CENTRAL_MIYAGAWA",
+          "STN_JR_CENTRAL_YAMADA_KAMIGUCHI",
+          "STN_JR_CENTRAL_ISESHI",
+          "STN_JR_CENTRAL_ISUZUGAOKA",
+          "STN_JR_CENTRAL_FUTAMIURA",
+          "STN_JR_CENTRAL_MATSUSHITA",
+          "STN_JR_CENTRAL_TOBA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_JR_CENTRAL_TOKYO",
+        "lat": "35.681111",
+        "lng": "139.766667",
+        "name": "東京"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHINAGAWA",
+        "lat": "35.630139",
+        "lng": "139.740417",
+        "name": "品川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIN_YOKOHAMA",
+        "lat": "35.506806",
+        "lng": "139.616944",
+        "name": "新横浜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ODAWARA",
+        "lat": "35.256389",
+        "lng": "139.154861",
+        "name": "小田原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ATAMI",
+        "lat": "35.103884",
+        "lng": "139.077944",
+        "name": "熱海"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MISHIMA",
+        "lat": "35.126186",
+        "lng": "138.910817",
+        "name": "三島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIN_FUJI",
+        "lat": "35.142",
+        "lng": "138.663361",
+        "name": "新富士"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIZUOKA",
+        "lat": "34.971774",
+        "lng": "138.388927",
+        "name": "静岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAKEGAWA",
+        "lat": "34.769407",
+        "lng": "138.014565",
+        "name": "掛川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HAMAMATSU",
+        "lat": "34.704038",
+        "lng": "137.735014",
+        "name": "浜松"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOYOHASHI",
+        "lat": "34.762276",
+        "lng": "137.382542",
+        "name": "豊橋"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_ANJO",
+        "lat": "34.970284",
+        "lng": "137.061417",
+        "name": "三河安城"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGOYA",
+        "lat": "35.171313",
+        "lng": "136.882201",
+        "name": "名古屋"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GIFU_HASHIMA",
+        "lat": "35.315833",
+        "lng": "136.685556",
+        "name": "岐阜羽島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MAIBARA",
+        "lat": "35.31387",
+        "lng": "136.289505",
+        "name": "米原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KYOTO",
+        "lat": "34.985458",
+        "lng": "135.757756",
+        "name": "京都"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIN_OSAKA",
+        "lat": "34.733483",
+        "lng": "135.500114",
+        "name": "新大阪"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANNAMI",
+        "lat": "35.108769",
+        "lng": "138.971228",
+        "name": "函南"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NUMAZU",
+        "lat": "35.103033",
+        "lng": "138.860556",
+        "name": "沼津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KATAHAMA",
+        "lat": "35.118238",
+        "lng": "138.818964",
+        "name": "片浜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HARA",
+        "lat": "35.124935",
+        "lng": "138.793345",
+        "name": "原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_TAGONOURA",
+        "lat": "35.13627",
+        "lng": "138.745485",
+        "name": "東田子の浦"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YOSHIWARA",
+        "lat": "35.143885",
+        "lng": "138.70264",
+        "name": "吉原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUJI",
+        "lat": "35.151265",
+        "lng": "138.652091",
+        "name": "富士"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUJIKAWA",
+        "lat": "35.14113",
+        "lng": "138.61871",
+        "name": "富士川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIN_KAMBARA",
+        "lat": "35.119389",
+        "lng": "138.608046",
+        "name": "新蒲原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMBARA",
+        "lat": "35.114067",
+        "lng": "138.582878",
+        "name": "蒲原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YUI",
+        "lat": "35.097125",
+        "lng": "138.55282",
+        "name": "由比"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OKITSU",
+        "lat": "35.052515",
+        "lng": "138.521905",
+        "name": "興津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMIZU",
+        "lat": "35.0234",
+        "lng": "138.4891",
+        "name": "清水"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KUSANAGI",
+        "lat": "35.002206",
+        "lng": "138.440889",
+        "name": "草薙"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_SHIZUOKA",
+        "lat": "34.983894",
+        "lng": "138.412646",
+        "name": "東静岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ABEKAWA",
+        "lat": "34.94096",
+        "lng": "138.364089",
+        "name": "安倍川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MOCHIMUNE",
+        "lat": "34.921875",
+        "lng": "138.35932",
+        "name": "用宗"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YAIZU",
+        "lat": "34.872285",
+        "lng": "138.31848",
+        "name": "焼津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NISHI_YAIZU",
+        "lat": "34.859805",
+        "lng": "138.285595",
+        "name": "西焼津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUJIEDA",
+        "lat": "34.84957",
+        "lng": "138.25287",
+        "name": "藤枝"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ROKUGO",
+        "lat": "34.836408",
+        "lng": "138.203579",
+        "name": "六合"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMADA",
+        "lat": "34.83015",
+        "lng": "138.173425",
+        "name": "島田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANAYA",
+        "lat": "34.819235",
+        "lng": "138.125825",
+        "name": "金谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KIKUGAWA",
+        "lat": "34.761763",
+        "lng": "138.085674",
+        "name": "菊川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AINO",
+        "lat": "34.752455",
+        "lng": "137.961845",
+        "name": "愛野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUKUROI",
+        "lat": "34.741435",
+        "lng": "137.925995",
+        "name": "袋井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKURIYA",
+        "lat": "34.71865917",
+        "lng": "137.88563162",
+        "name": "御厨"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IWATA",
+        "lat": "34.710215",
+        "lng": "137.85227",
+        "name": "磐田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOYODACHO",
+        "lat": "34.712085",
+        "lng": "137.8198",
+        "name": "豊田町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TENRYUGAWA",
+        "lat": "34.717065",
+        "lng": "137.779405",
+        "name": "天竜川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKATSUKA",
+        "lat": "34.690425",
+        "lng": "137.681345",
+        "name": "高塚"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MAISAKA",
+        "lat": "34.68569",
+        "lng": "137.62633",
+        "name": "舞阪"
+      },
+      {
+        "id": "STN_JR_CENTRAL_BENTENJIMA",
+        "lat": "34.690147",
+        "lng": "137.603091",
+        "name": "弁天島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ARAIMACHI",
+        "lat": "34.694277",
+        "lng": "137.568985",
+        "name": "新居町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_WASHIZU",
+        "lat": "34.71677",
+        "lng": "137.54619",
+        "name": "鷲津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIN_JOHARA",
+        "lat": "34.72326",
+        "lng": "137.484455",
+        "name": "新所原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUTAGAWA",
+        "lat": "34.725795",
+        "lng": "137.43887",
+        "name": "二川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NISHI_KOZAKAI",
+        "lat": "34.797039",
+        "lng": "137.352692",
+        "name": "西小坂井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AICHI_MITO",
+        "lat": "34.812585",
+        "lng": "137.316585",
+        "name": "愛知御津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_OTSUKA",
+        "lat": "34.815755",
+        "lng": "137.282897",
+        "name": "三河大塚"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_MIYA",
+        "lat": "34.818511",
+        "lng": "137.248033",
+        "name": "三河三谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GAMAGORI",
+        "lat": "34.822732",
+        "lng": "137.227382",
+        "name": "蒲郡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_SHIO TSU",
+        "lat": "34.825406",
+        "lng": "137.201482",
+        "name": "三河塩津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SANGANE",
+        "lat": "34.836306",
+        "lng": "137.176669",
+        "name": "三ケ根"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KODA",
+        "lat": "34.859669",
+        "lng": "137.164468",
+        "name": "幸田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AIMI",
+        "lat": "34.888042",
+        "lng": "137.16027",
+        "name": "相見"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OKAZAKI",
+        "lat": "34.925345",
+        "lng": "137.15727",
+        "name": "岡崎"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NISHI_OKAZAKI",
+        "lat": "34.94662",
+        "lng": "137.123155",
+        "name": "西岡崎"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ANJO",
+        "lat": "34.960473",
+        "lng": "137.086348",
+        "name": "安城"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_KARIYA",
+        "lat": "34.977355",
+        "lng": "137.043635",
+        "name": "東刈谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NODA_SHINMACHI",
+        "lat": "34.983509",
+        "lng": "137.028161",
+        "name": "野田新町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KARIYA",
+        "lat": "34.990805",
+        "lng": "137.00971",
+        "name": "刈谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AIZUMA",
+        "lat": "34.998235",
+        "lng": "136.99054",
+        "name": "逢妻"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OBU",
+        "lat": "35.008695",
+        "lng": "136.961805",
+        "name": "大府"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KYOWA",
+        "lat": "35.035365",
+        "lng": "136.95458",
+        "name": "共和"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINAMI_ODAKA",
+        "lat": "35.054463",
+        "lng": "136.94872",
+        "name": "南大高"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ODAKA",
+        "lat": "35.0691",
+        "lng": "136.94028",
+        "name": "大高"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KASADERA",
+        "lat": "35.095104",
+        "lng": "136.926342",
+        "name": "笠寺"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ATSUTA",
+        "lat": "35.129912",
+        "lng": "136.910635",
+        "name": "熱田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANAYAMA",
+        "lat": "35.142837",
+        "lng": "136.900736",
+        "name": "金山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OTOBASHI",
+        "lat": "35.147033",
+        "lng": "136.890984",
+        "name": "尾頭橋"
+      },
+      {
+        "id": "STN_JR_CENTRAL_BIWAJIMA",
+        "lat": "35.199656",
+        "lng": "136.86135",
+        "name": "枇杷島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KIYOSU",
+        "lat": "35.22542",
+        "lng": "136.834519",
+        "name": "清洲"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INAZAWA",
+        "lat": "35.253036",
+        "lng": "136.820963",
+        "name": "稲沢"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OWARI_ICHINOMIYA",
+        "lat": "35.302",
+        "lng": "136.79738",
+        "name": "尾張一宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KISOGAWA",
+        "lat": "35.348071",
+        "lng": "136.781169",
+        "name": "木曽川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GIFU",
+        "lat": "35.409537",
+        "lng": "136.756525",
+        "name": "岐阜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NISHI_GIFU",
+        "lat": "35.404525",
+        "lng": "136.72326",
+        "name": "西岐阜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HOZUMI",
+        "lat": "35.396265",
+        "lng": "136.693635",
+        "name": "穂積"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OGAKI",
+        "lat": "35.367093",
+        "lng": "136.618264",
+        "name": "大垣"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TARUI",
+        "lat": "35.36955",
+        "lng": "136.530962",
+        "name": "垂井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SEKIGAHARA",
+        "lat": "35.363787",
+        "lng": "136.470515",
+        "name": "関ヶ原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KASHIWABARA",
+        "lat": "35.344595",
+        "lng": "136.402325",
+        "name": "柏原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OMI_NAGAOKA",
+        "lat": "35.359033",
+        "lng": "136.373981",
+        "name": "近江長岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAMEGAI",
+        "lat": "35.327705",
+        "lng": "136.34519",
+        "name": "醒ヶ井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ARAO",
+        "lat": "35.373447",
+        "lng": "136.58336",
+        "name": "荒尾"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINO_AKASAKA",
+        "lat": "35.386605",
+        "lng": "136.582195",
+        "name": "美濃赤坂"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOZU",
+        "lat": "35.281395",
+        "lng": "139.214955",
+        "name": "国府津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOSOGA",
+        "lat": "35.30355",
+        "lng": "139.18342",
+        "name": "下曽我"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMIOI",
+        "lat": "35.32179",
+        "lng": "139.16363",
+        "name": "上大井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAGAMI_KANEKO",
+        "lat": "35.333761",
+        "lng": "139.150566",
+        "name": "相模金子"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MATSUDA",
+        "lat": "35.346",
+        "lng": "139.139135",
+        "name": "松田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_YAMAKITA",
+        "lat": "35.357676",
+        "lng": "139.107646",
+        "name": "東山北"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YAMAKITA",
+        "lat": "35.360747",
+        "lng": "139.080336",
+        "name": "山北"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YAGA",
+        "lat": "35.366583",
+        "lng": "139.038298",
+        "name": "谷峨"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SURUGA_OYAMA",
+        "lat": "35.359196",
+        "lng": "138.997752",
+        "name": "駿河小山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ASHIGARA",
+        "lat": "35.332069",
+        "lng": "138.98175",
+        "name": "足柄"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GOTEMBA",
+        "lat": "35.299947",
+        "lng": "138.934218",
+        "name": "御殿場"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINAMI_GOTEMBA",
+        "lat": "35.277223",
+        "lng": "138.925732",
+        "name": "南御殿場"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUJIOKA",
+        "lat": "35.254887",
+        "lng": "138.919639",
+        "name": "富士岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IWANAMI",
+        "lat": "35.214955",
+        "lng": "138.919296",
+        "name": "岩波"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SUSONO",
+        "lat": "35.171326",
+        "lng": "138.909258",
+        "name": "裾野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGAIZUMI_NAMERI",
+        "lat": "35.147345",
+        "lng": "138.899325",
+        "name": "長泉なめり"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOTOGARI",
+        "lat": "35.128608",
+        "lng": "138.89513",
+        "name": "下土狩"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OOKA",
+        "lat": "35.116111",
+        "lng": "138.881948",
+        "name": "大岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIOJIRI",
+        "lat": "36.114805",
+        "lng": "137.947875",
+        "name": "塩尻"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SEBA",
+        "lat": "36.08713",
+        "lng": "137.916815",
+        "name": "洗馬"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDESHIO",
+        "lat": "36.04906",
+        "lng": "137.894855",
+        "name": "日出塩"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NIEKAWA",
+        "lat": "36.013985",
+        "lng": "137.860945",
+        "name": "贄川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KISO_HIRASAWA",
+        "lat": "35.97897",
+        "lng": "137.832355",
+        "name": "木曽平沢"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NARAI",
+        "lat": "35.96947",
+        "lng": "137.81621",
+        "name": "奈良井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YABUHARA",
+        "lat": "35.930159",
+        "lng": "137.784368",
+        "name": "藪原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIYANOKOSHI",
+        "lat": "35.888357",
+        "lng": "137.763899",
+        "name": "宮ノ越"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HARANO",
+        "lat": "35.871265",
+        "lng": "137.74153",
+        "name": "原野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KISO_FUKUSHIMA",
+        "lat": "35.843725",
+        "lng": "137.6934",
+        "name": "木曽福島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AGEMATSU",
+        "lat": "35.784075",
+        "lng": "137.69327",
+        "name": "上松"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KURAMOTO",
+        "lat": "35.73294",
+        "lng": "137.714325",
+        "name": "倉本"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SUHARA",
+        "lat": "35.69785",
+        "lng": "137.69494",
+        "name": "須原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OKUWA",
+        "lat": "35.684422",
+        "lng": "137.664167",
+        "name": "大桑"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NOJIRI",
+        "lat": "35.67304",
+        "lng": "137.636155",
+        "name": "野尻"
+      },
+      {
+        "id": "STN_JR_CENTRAL_JUNIKANE",
+        "lat": "35.645413",
+        "lng": "137.617636",
+        "name": "十二兼"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGISO",
+        "lat": "35.599093",
+        "lng": "137.608703",
+        "name": "南木曽"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TADACHI",
+        "lat": "35.588229",
+        "lng": "137.549025",
+        "name": "田立"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAKASHITA",
+        "lat": "35.574249",
+        "lng": "137.531115",
+        "name": "坂下"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OCHIAIGAWA",
+        "lat": "35.525212",
+        "lng": "137.530011",
+        "name": "落合川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAKATSUGAWA",
+        "lat": "35.500146",
+        "lng": "137.502808",
+        "name": "中津川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HATTA",
+        "lat": "35.148824",
+        "lng": "136.852308",
+        "name": "八田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HARUTA",
+        "lat": "35.14315",
+        "lng": "136.813385",
+        "name": "春田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANIE",
+        "lat": "35.14198",
+        "lng": "136.793475",
+        "name": "蟹江"
+      },
+      {
+        "id": "STN_JR_CENTRAL_EIWA",
+        "lat": "35.13284",
+        "lng": "136.76441",
+        "name": "永和"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YATOMI",
+        "lat": "35.114065",
+        "lng": "136.725845",
+        "name": "弥富"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGASHIMA",
+        "lat": "35.09817",
+        "lng": "136.695655",
+        "name": "長島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KUWANA",
+        "lat": "35.06667",
+        "lng": "136.68374",
+        "name": "桑名"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ASAHI",
+        "lat": "35.033735",
+        "lng": "136.658",
+        "name": "朝日"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOMIDA",
+        "lat": "35.00816",
+        "lng": "136.65316",
+        "name": "富田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOMIDAHAMA",
+        "lat": "34.99656",
+        "lng": "136.650095",
+        "name": "富田浜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YOKKAICHI",
+        "lat": "34.962219",
+        "lng": "136.629926",
+        "name": "四日市"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINAMI_YOKKAICHI",
+        "lat": "34.941553",
+        "lng": "136.609702",
+        "name": "南四日市"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAWARADA",
+        "lat": "34.91099",
+        "lng": "136.59874",
+        "name": "河原田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAWANO",
+        "lat": "34.897885",
+        "lng": "136.568035",
+        "name": "河曲"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KASADO",
+        "lat": "34.89032",
+        "lng": "136.52999",
+        "name": "加佐登"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IDAGAWA",
+        "lat": "34.868265",
+        "lng": "136.492585",
+        "name": "井田川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMEYAMA",
+        "lat": "34.850085",
+        "lng": "136.45052",
+        "name": "亀山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOSHO",
+        "lat": "34.814296",
+        "lng": "136.479575",
+        "name": "下庄"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISHINDEN",
+        "lat": "34.762775",
+        "lng": "136.49939",
+        "name": "一身田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TSU",
+        "lat": "34.73442845",
+        "lng": "136.51051675",
+        "name": "津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AKOGI",
+        "lat": "34.703105",
+        "lng": "136.50451",
+        "name": "阿漕"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKACHAYA",
+        "lat": "34.66728",
+        "lng": "136.51262",
+        "name": "高茶屋"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ROKKEN",
+        "lat": "34.617625",
+        "lng": "136.50759",
+        "name": "六軒"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MATSUZAKA",
+        "lat": "34.576859",
+        "lng": "136.535796",
+        "name": "松阪"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOKUWA",
+        "lat": "34.55403",
+        "lng": "136.55355",
+        "name": "徳和"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKI",
+        "lat": "34.515905",
+        "lng": "136.57311",
+        "name": "多気"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OKA",
+        "lat": "34.503044",
+        "lng": "136.545862",
+        "name": "相可"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SANA",
+        "lat": "34.478465",
+        "lng": "136.53904",
+        "name": "佐奈"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOCHIHARA",
+        "lat": "34.444555",
+        "lng": "136.50934",
+        "name": "栃原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAWAZOE",
+        "lat": "34.419838",
+        "lng": "136.473539",
+        "name": "川添"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MITSEDANI",
+        "lat": "34.39475",
+        "lng": "136.40904",
+        "name": "三瀬谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKIHARA",
+        "lat": "34.360106",
+        "lng": "136.411994",
+        "name": "滝原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ASO",
+        "lat": "34.331295",
+        "lng": "136.41112",
+        "name": "阿曽"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_KASHIWAZAKI",
+        "lat": "34.299577",
+        "lng": "136.395672",
+        "name": "伊勢柏崎"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OUCHIYAMA",
+        "lat": "34.278135",
+        "lng": "136.35924",
+        "name": "大内山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_UMEGAYANI",
+        "lat": "34.258088",
+        "lng": "136.35656",
+        "name": "梅ケ谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KII_NAGASHIMA",
+        "lat": "34.20933",
+        "lng": "136.339935",
+        "name": "紀伊長島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINOSE",
+        "lat": "34.16769",
+        "lng": "136.282385",
+        "name": "三野瀬"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUNATSU",
+        "lat": "34.142205",
+        "lng": "136.228764",
+        "name": "船津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AIGA",
+        "lat": "34.111933",
+        "lng": "136.227153",
+        "name": "相賀"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OWASE",
+        "lat": "34.07433",
+        "lng": "136.190155",
+        "name": "尾鷲"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OZONEURA",
+        "lat": "34.061887",
+        "lng": "136.223009",
+        "name": "大曽根浦"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KUKI",
+        "lat": "34.016067",
+        "lng": "136.242739",
+        "name": "九鬼"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKISATO",
+        "lat": "34.001475",
+        "lng": "136.20255",
+        "name": "三木里"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KATA",
+        "lat": "33.97165",
+        "lng": "136.18974",
+        "name": "賀田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NIKISHIMA",
+        "lat": "33.939405",
+        "lng": "136.18083",
+        "name": "二木島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ATASHIKA",
+        "lat": "33.927864",
+        "lng": "136.144231",
+        "name": "新鹿"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HADASU",
+        "lat": "33.910115",
+        "lng": "136.1381",
+        "name": "波田須"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ODOMARI",
+        "lat": "33.90224",
+        "lng": "136.11807",
+        "name": "大泊"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KUMANOSHI",
+        "lat": "33.889645",
+        "lng": "136.098775",
+        "name": "熊野市"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ARII",
+        "lat": "33.876185",
+        "lng": "136.085595",
+        "name": "有井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOUSHIYAMA",
+        "lat": "33.83977",
+        "lng": "136.06235",
+        "name": "神志山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KII_ICHIGI",
+        "lat": "33.82801",
+        "lng": "136.05543",
+        "name": "紀伊市木"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ATAWA",
+        "lat": "33.80474",
+        "lng": "136.04241",
+        "name": "阿田和"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KII_IDA",
+        "lat": "33.75996",
+        "lng": "136.023955",
+        "name": "紀伊井田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_UDONO",
+        "lat": "33.736725",
+        "lng": "136.015515",
+        "name": "鵜殿"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHINGU",
+        "lat": "33.72433",
+        "lng": "135.994445",
+        "name": "新宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YUNOKI",
+        "lat": "35.15731",
+        "lng": "138.63911",
+        "name": "柚木"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TATEBORI",
+        "lat": "35.168065",
+        "lng": "138.64579",
+        "name": "竪堀"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IRIYAMASE",
+        "lat": "35.18835",
+        "lng": "138.647525",
+        "name": "入山瀬"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUJINE",
+        "lat": "35.20527",
+        "lng": "138.63561",
+        "name": "富士根"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GENDOJI",
+        "lat": "35.214485",
+        "lng": "138.62712",
+        "name": "源道寺"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUJINOMIYA",
+        "lat": "35.221177",
+        "lng": "138.61557",
+        "name": "富士宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NISHI_FUJINOMIYA",
+        "lat": "35.225406",
+        "lng": "138.602525",
+        "name": "西富士宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NUMAKUBO",
+        "lat": "35.19929",
+        "lng": "138.58425",
+        "name": "沼久保"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIBAKAWA",
+        "lat": "35.19725",
+        "lng": "138.56383",
+        "name": "芝川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INAKO",
+        "lat": "35.230535",
+        "lng": "138.536935",
+        "name": "稲子"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOSHIMA",
+        "lat": "35.23019",
+        "lng": "138.515875",
+        "name": "十島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IDE",
+        "lat": "35.247455",
+        "lng": "138.490985",
+        "name": "井出"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YORIHATA",
+        "lat": "35.264835",
+        "lng": "138.474995",
+        "name": "寄畑"
+      },
+      {
+        "id": "STN_JR_CENTRAL_UTSUBUNA",
+        "lat": "35.28221",
+        "lng": "138.46503",
+        "name": "内船"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAI_OSHIMA",
+        "lat": "35.32817",
+        "lng": "138.45214",
+        "name": "甲斐大島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINOBU",
+        "lat": "35.36145",
+        "lng": "138.45306",
+        "name": "身延"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIONOSAWA",
+        "lat": "35.379675",
+        "lng": "138.4539",
+        "name": "塩之沢"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HADAKAJIMA",
+        "lat": "35.41851",
+        "lng": "138.459705",
+        "name": "波高島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOBE_ONSEN",
+        "lat": "35.425785",
+        "lng": "138.47247",
+        "name": "下部温泉"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAI_TOKIWA",
+        "lat": "35.444685",
+        "lng": "138.47697",
+        "name": "甲斐常葉"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ICHINOSE",
+        "lat": "35.46234",
+        "lng": "138.482135",
+        "name": "市ノ瀬"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KUNADO",
+        "lat": "35.481495",
+        "lng": "138.46743",
+        "name": "久那土"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAI_IWAMA",
+        "lat": "35.49251",
+        "lng": "138.463075",
+        "name": "甲斐岩間"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OCHII",
+        "lat": "35.50358",
+        "lng": "138.471245",
+        "name": "落居"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAJIKAZAWAGUCHI",
+        "lat": "35.541415",
+        "lng": "138.47088",
+        "name": "鰍沢口"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ICHIKAWA_DAIMON",
+        "lat": "35.560465",
+        "lng": "138.493205",
+        "name": "市川大門"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ICHIKAWA_HOMMACHI",
+        "lat": "35.56063",
+        "lng": "138.50202",
+        "name": "市川本町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ASHIGAWA",
+        "lat": "35.563075",
+        "lng": "138.511255",
+        "name": "芦川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAI_UENO",
+        "lat": "35.569583",
+        "lng": "138.520495",
+        "name": "甲斐上野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_HANAWA",
+        "lat": "35.59485",
+        "lng": "138.527025",
+        "name": "東花輪"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOIKAWA",
+        "lat": "35.60453",
+        "lng": "138.528545",
+        "name": "小井川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_JOEI",
+        "lat": "35.61704",
+        "lng": "138.533125",
+        "name": "常永"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOKUBO",
+        "lat": "35.63056",
+        "lng": "138.55205",
+        "name": "国母"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAI_SUMIYOSHI",
+        "lat": "35.636595",
+        "lng": "138.56994",
+        "name": "甲斐住吉"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINAMI_KOFU",
+        "lat": "35.643745",
+        "lng": "138.57818",
+        "name": "南甲府"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ZENKOJI",
+        "lat": "35.659835",
+        "lng": "138.589225",
+        "name": "善光寺"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANENTE",
+        "lat": "35.662215",
+        "lng": "138.57887",
+        "name": "金手"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOFU",
+        "lat": "35.66654",
+        "lng": "138.570365",
+        "name": "甲府"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUNAMACHI",
+        "lat": "34.775735",
+        "lng": "137.374065",
+        "name": "船町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOJI",
+        "lat": "34.780954",
+        "lng": "137.370647",
+        "name": "下地"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOZAKAI",
+        "lat": "34.797628",
+        "lng": "137.363118",
+        "name": "小坂井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_USHIKUBO",
+        "lat": "34.80857",
+        "lng": "137.381715",
+        "name": "牛久保"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOYOKAWA",
+        "lat": "34.822568",
+        "lng": "137.397232",
+        "name": "豊川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_ICHINOMIYA",
+        "lat": "34.847929",
+        "lng": "137.414592",
+        "name": "三河一宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGAYAMA",
+        "lat": "34.86443",
+        "lng": "137.431399",
+        "name": "長山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_EJIMA",
+        "lat": "34.867845",
+        "lng": "137.441535",
+        "name": "江島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOJO",
+        "lat": "34.876133",
+        "lng": "137.455185",
+        "name": "東上"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NODAJO",
+        "lat": "34.889295",
+        "lng": "137.47789",
+        "name": "野田城"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHINSHIRO",
+        "lat": "34.90107",
+        "lng": "137.493",
+        "name": "新城"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_SHINMACHI",
+        "lat": "34.90614",
+        "lng": "137.503047",
+        "name": "東新町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_CHAUSUYAMA",
+        "lat": "34.910355",
+        "lng": "137.514435",
+        "name": "茶臼山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_TOGO",
+        "lat": "34.91224",
+        "lng": "137.527315",
+        "name": "三河東郷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OMI",
+        "lat": "34.930155",
+        "lng": "137.54901",
+        "name": "大海"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TORII",
+        "lat": "34.920831",
+        "lng": "137.551511",
+        "name": "鳥居"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGASHINOJO",
+        "lat": "34.925973",
+        "lng": "137.565093",
+        "name": "長篠城"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HON_NAGASHINO",
+        "lat": "34.932626",
+        "lng": "137.576647",
+        "name": "本長篠"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_ONO",
+        "lat": "34.95198",
+        "lng": "137.603",
+        "name": "三河大野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YUYA_ONSEN",
+        "lat": "34.97054",
+        "lng": "137.613045",
+        "name": "湯谷温泉"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_MAKIHARA",
+        "lat": "34.98855",
+        "lng": "137.620905",
+        "name": "三河槙原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAKIDAIRA",
+        "lat": "34.99053",
+        "lng": "137.644035",
+        "name": "柿平"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIKAWA_KAWAI",
+        "lat": "35.001704",
+        "lng": "137.663982",
+        "name": "三河川合"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IKEBA",
+        "lat": "35.024407",
+        "lng": "137.704028",
+        "name": "池場"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOEI",
+        "lat": "35.02897",
+        "lng": "137.713855",
+        "name": "東栄"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IZUMMA",
+        "lat": "35.049345",
+        "lng": "137.74425",
+        "name": "出馬"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMIICHIBA",
+        "lat": "35.050195",
+        "lng": "137.752415",
+        "name": "上市場"
+      },
+      {
+        "id": "STN_JR_CENTRAL_URAKAWA",
+        "lat": "35.05634",
+        "lng": "137.76357",
+        "name": "浦川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HAYASE",
+        "lat": "35.060575",
+        "lng": "137.77509",
+        "name": "早瀬"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOKAWAI",
+        "lat": "35.06933",
+        "lng": "137.78639",
+        "name": "下川合"
+      },
+      {
+        "id": "STN_JR_CENTRAL_CHUBU_TENRYU",
+        "lat": "35.085315",
+        "lng": "137.802855",
+        "name": "中部天竜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAKUMA",
+        "lat": "35.09187",
+        "lng": "137.809725",
+        "name": "佐久間"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AIZUKI",
+        "lat": "35.11491",
+        "lng": "137.85436",
+        "name": "相月"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIRONISHI",
+        "lat": "35.131585",
+        "lng": "137.862025",
+        "name": "城西"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MUKAICHIBA",
+        "lat": "35.154065",
+        "lng": "137.869455",
+        "name": "向市場"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MISAKUBO",
+        "lat": "35.163335",
+        "lng": "137.8705",
+        "name": "水窪"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OZORE",
+        "lat": "35.19046",
+        "lng": "137.81852",
+        "name": "大嵐"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOWADA",
+        "lat": "35.2099",
+        "lng": "137.835995",
+        "name": "小和田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAKAISAMURAI",
+        "lat": "35.23592",
+        "lng": "137.834935",
+        "name": "中井侍"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_KOZAWA",
+        "lat": "35.254095",
+        "lng": "137.83475",
+        "name": "伊那小沢"
+      },
+      {
+        "id": "STN_JR_CENTRAL_UGUSU",
+        "lat": "35.267351",
+        "lng": "137.832589",
+        "name": "鶯巣"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIRAOKA",
+        "lat": "35.273618",
+        "lng": "137.853647",
+        "name": "平岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHITEGURI",
+        "lat": "35.31174",
+        "lng": "137.848594",
+        "name": "為栗"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NUKUTA",
+        "lat": "35.336271",
+        "lng": "137.841364",
+        "name": "温田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAMOTO",
+        "lat": "35.348948",
+        "lng": "137.837904",
+        "name": "田本"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KADOSHIMA",
+        "lat": "35.375355",
+        "lng": "137.81407",
+        "name": "門島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KARAKASA",
+        "lat": "35.402325",
+        "lng": "137.81021",
+        "name": "唐笠"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KINNO",
+        "lat": "35.41915",
+        "lng": "137.817175",
+        "name": "金野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_CHIYO",
+        "lat": "35.42921",
+        "lng": "137.81678",
+        "name": "千代"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TENRYUKYO",
+        "lat": "35.4411",
+        "lng": "137.81734",
+        "name": "天竜峡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAWAJI",
+        "lat": "35.45312",
+        "lng": "137.81575",
+        "name": "川路"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOKIMATA",
+        "lat": "35.46404",
+        "lng": "137.827755",
+        "name": "時又"
+      },
+      {
+        "id": "STN_JR_CENTRAL_DASHINA",
+        "lat": "35.475565",
+        "lng": "137.839815",
+        "name": "駄科"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KEGA",
+        "lat": "35.48744",
+        "lng": "137.839385",
+        "name": "毛賀"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_YAHATA",
+        "lat": "35.49675",
+        "lng": "137.841545",
+        "name": "伊那八幡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOYAMAMURA",
+        "lat": "35.504205",
+        "lng": "137.83974",
+        "name": "下山村"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANAE",
+        "lat": "35.506705",
+        "lng": "137.82836",
+        "name": "鼎"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KIRIISHI",
+        "lat": "35.5124",
+        "lng": "137.809145",
+        "name": "切石"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IIDA",
+        "lat": "35.51972",
+        "lng": "137.821265",
+        "name": "飯田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAKURAMACHI",
+        "lat": "35.52218",
+        "lng": "137.82976",
+        "name": "桜町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_KAMIGOU",
+        "lat": "35.520175",
+        "lng": "137.83903",
+        "name": "伊那上郷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MOTO_ZENKOJI",
+        "lat": "35.533855",
+        "lng": "137.861425",
+        "name": "元善光寺"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMO_ICHIDA",
+        "lat": "35.544175",
+        "lng": "137.87638",
+        "name": "下市田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ICHIDA",
+        "lat": "35.54935",
+        "lng": "137.88658",
+        "name": "市田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMODAIRA",
+        "lat": "35.572585",
+        "lng": "137.89591",
+        "name": "下平"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YAMABUKI",
+        "lat": "35.577775",
+        "lng": "137.903345",
+        "name": "山吹"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_OSHIMA",
+        "lat": "35.5957",
+        "lng": "137.913215",
+        "name": "伊那大島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMI_KATAGIRI",
+        "lat": "35.6175",
+        "lng": "137.90407",
+        "name": "上片桐"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_TAJIMA",
+        "lat": "35.627445",
+        "lng": "137.91024",
+        "name": "伊那田島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKATO_BARA",
+        "lat": "35.64463",
+        "lng": "137.900545",
+        "name": "高遠原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NANAKUBO",
+        "lat": "35.65468",
+        "lng": "137.911375",
+        "name": "七久保"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_HONGO",
+        "lat": "35.665395",
+        "lng": "137.93249",
+        "name": "伊那本郷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IIJIMA",
+        "lat": "35.67759",
+        "lng": "137.928995",
+        "name": "飯島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAGIRI",
+        "lat": "35.695569",
+        "lng": "137.933066",
+        "name": "田切"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_FUKUOKA",
+        "lat": "35.71223",
+        "lng": "137.933965",
+        "name": "伊那福岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOMACHIYA",
+        "lat": "35.726775",
+        "lng": "137.93516",
+        "name": "小町屋"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOMAGANE",
+        "lat": "35.73628",
+        "lng": "137.936855",
+        "name": "駒ヶ根"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OTAGIRI",
+        "lat": "35.748159",
+        "lng": "137.940125",
+        "name": "大田切"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIYADA",
+        "lat": "35.76727",
+        "lng": "137.938875",
+        "name": "宮田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_AKAGI",
+        "lat": "35.77793",
+        "lng": "137.943955",
+        "name": "赤木"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAWANDO",
+        "lat": "35.80372",
+        "lng": "137.944025",
+        "name": "沢渡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOJIMA",
+        "lat": "35.81318",
+        "lng": "137.940145",
+        "name": "下島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INASHI",
+        "lat": "35.838445",
+        "lng": "137.959255",
+        "name": "伊那市"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_KITA",
+        "lat": "35.845235",
+        "lng": "137.96435",
+        "name": "伊那北"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TABATA",
+        "lat": "35.8608",
+        "lng": "137.977835",
+        "name": "田畑"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KITADONO",
+        "lat": "35.87951",
+        "lng": "137.984065",
+        "name": "北殿"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KINOSHITA",
+        "lat": "35.90083",
+        "lng": "137.988005",
+        "name": "木ノ下"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_MATSUSHIMA",
+        "lat": "35.913845",
+        "lng": "137.988665",
+        "name": "伊那松島"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAWA",
+        "lat": "35.93632",
+        "lng": "137.98546",
+        "name": "沢"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HABA",
+        "lat": "35.953065",
+        "lng": "137.985155",
+        "name": "羽場"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INA_SHINMACHI",
+        "lat": "35.968785",
+        "lng": "137.984055",
+        "name": "伊那新町"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIYAKI",
+        "lat": "35.97626",
+        "lng": "137.9905",
+        "name": "宮木"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TATSUNO",
+        "lat": "35.984579",
+        "lng": "137.997318",
+        "name": "辰野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OWARI_MORIOKA",
+        "lat": "34.993859",
+        "lng": "136.970476",
+        "name": "尾張森岡"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OGAWA",
+        "lat": "34.981385",
+        "lng": "136.9719",
+        "name": "緒川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISHIHAMA",
+        "lat": "34.967865",
+        "lng": "136.972905",
+        "name": "石浜"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHIURA",
+        "lat": "34.949595",
+        "lng": "136.9707",
+        "name": "東浦"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMEZAKI",
+        "lat": "34.91901",
+        "lng": "136.961105",
+        "name": "亀崎"
+      },
+      {
+        "id": "STN_JR_CENTRAL_OKKAWA",
+        "lat": "34.903318",
+        "lng": "136.941346",
+        "name": "乙川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HANDA",
+        "lat": "34.89411",
+        "lng": "136.93043",
+        "name": "半田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIGASHI_NARAWA",
+        "lat": "34.874285",
+        "lng": "136.923485",
+        "name": "東成岩"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKETOYO",
+        "lat": "34.85327",
+        "lng": "136.921085",
+        "name": "武豊"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGAMORI",
+        "lat": "35.402085",
+        "lng": "136.802855",
+        "name": "長森"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAKA",
+        "lat": "35.400535",
+        "lng": "136.835575",
+        "name": "那加"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SOHARA",
+        "lat": "35.403266",
+        "lng": "136.87163",
+        "name": "蘇原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAGAMIGAHARA",
+        "lat": "35.403889",
+        "lng": "136.90116",
+        "name": "各務ケ原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_UNUMA",
+        "lat": "35.39756",
+        "lng": "136.94605",
+        "name": "鵜沼"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAKAHOGI",
+        "lat": "35.426395",
+        "lng": "136.97681",
+        "name": "坂祝"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINO_OTA",
+        "lat": "35.445608",
+        "lng": "137.01957",
+        "name": "美濃太田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KKOI",
+        "lat": "35.457359",
+        "lng": "137.047533",
+        "name": "古井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAKA_KAWABE",
+        "lat": "35.48709",
+        "lng": "137.065128",
+        "name": "中川辺"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMO_ASO",
+        "lat": "35.514936",
+        "lng": "137.087119",
+        "name": "下麻生"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMI_ASO",
+        "lat": "35.541348",
+        "lng": "137.118793",
+        "name": "上麻生"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIRAKAWAGUCHI",
+        "lat": "35.579375",
+        "lng": "137.18484",
+        "name": "白川口"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMO_YUI",
+        "lat": "35.63327",
+        "lng": "137.183115",
+        "name": "下油井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_KANAYAMA",
+        "lat": "35.662485",
+        "lng": "137.164385",
+        "name": "飛騨金山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YAKEISHI",
+        "lat": "35.725625",
+        "lng": "137.20061",
+        "name": "焼石"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GERO",
+        "lat": "35.805952",
+        "lng": "137.239506",
+        "name": "下呂"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ZENSHOJI",
+        "lat": "35.849104",
+        "lng": "137.225224",
+        "name": "禅昌寺"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_HAGIWARA",
+        "lat": "35.874606",
+        "lng": "137.213828",
+        "name": "飛騨萩原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_JORO",
+        "lat": "35.91096",
+        "lng": "137.204663",
+        "name": "上呂"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_MIYADA",
+        "lat": "35.928451",
+        "lng": "137.235553",
+        "name": "飛騨宮田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_OSAKA",
+        "lat": "35.950785",
+        "lng": "137.25686",
+        "name": "飛騨小坂"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NAGISA",
+        "lat": "36.001455",
+        "lng": "137.287945",
+        "name": "渚"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KUGUNO",
+        "lat": "36.05234",
+        "lng": "137.276825",
+        "name": "久々野"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_ICHINOMIYA",
+        "lat": "36.088371",
+        "lng": "137.247666",
+        "name": "飛騨一ノ宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAKAYAMA",
+        "lat": "36.14069",
+        "lng": "137.2514",
+        "name": "高山"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HOZUE",
+        "lat": "36.180985",
+        "lng": "137.245835",
+        "name": "上枝"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_KOKUFU",
+        "lat": "36.21112",
+        "lng": "137.21577",
+        "name": "飛騨国府"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_FURUKAWA",
+        "lat": "36.236625",
+        "lng": "137.189985",
+        "name": "飛騨古川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SUGISAKI",
+        "lat": "36.249895",
+        "lng": "137.16899",
+        "name": "杉崎"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIDA_HOSOE",
+        "lat": "36.261125",
+        "lng": "137.14563",
+        "name": "飛騨細江"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TSUNOGAWA",
+        "lat": "36.299905",
+        "lng": "137.113355",
+        "name": "角川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SAKAGAMI",
+        "lat": "36.327548",
+        "lng": "137.140903",
+        "name": "坂上"
+      },
+      {
+        "id": "STN_JR_CENTRAL_UTSUBO",
+        "lat": "36.383935",
+        "lng": "137.181995",
+        "name": "打保"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SUGIHARA",
+        "lat": "36.415855",
+        "lng": "137.19247",
+        "name": "杉原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_INOTANI",
+        "lat": "36.471805",
+        "lng": "137.237845",
+        "name": "猪谷"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAJIMI",
+        "lat": "35.334743",
+        "lng": "137.120116",
+        "name": "多治見"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KOIZUMI",
+        "lat": "35.349155",
+        "lng": "137.10056",
+        "name": "小泉"
+      },
+      {
+        "id": "STN_JR_CENTRAL_NEMOTO",
+        "lat": "35.36147",
+        "lng": "137.090145",
+        "name": "根本"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HIME",
+        "lat": "35.382",
+        "lng": "137.072115",
+        "name": "姫"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SHIMOGIRI",
+        "lat": "35.393735",
+        "lng": "137.063715",
+        "name": "下切"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KANI",
+        "lat": "35.42293",
+        "lng": "137.05535",
+        "name": "可児"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MINO_KAWAI",
+        "lat": "35.444157",
+        "lng": "137.045342",
+        "name": "美濃川合"
+      },
+      {
+        "id": "STN_JR_CENTRAL_KAMINO_SHO",
+        "lat": "34.598",
+        "lng": "136.499325",
+        "name": "上ノ庄"
+      },
+      {
+        "id": "STN_JR_CENTRAL_GONGENMAE",
+        "lat": "34.617745",
+        "lng": "136.482115",
+        "name": "権現前"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_HATA",
+        "lat": "34.647335",
+        "lng": "136.44701",
+        "name": "伊勢八太"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ICHISHI",
+        "lat": "34.654895",
+        "lng": "136.436095",
+        "name": "一志"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISEGI",
+        "lat": "34.642575",
+        "lng": "136.412785",
+        "name": "井関"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_OI",
+        "lat": "34.649995",
+        "lng": "136.385175",
+        "name": "伊勢大井"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_KAWAGUCHI",
+        "lat": "34.647825",
+        "lng": "136.356745",
+        "name": "伊勢川口"
+      },
+      {
+        "id": "STN_JR_CENTRAL_SEKINOMIYA",
+        "lat": "34.637695",
+        "lng": "136.339605",
+        "name": "関ノ宮"
+      },
+      {
+        "id": "STN_JR_CENTRAL_IEKI",
+        "lat": "34.62585",
+        "lng": "136.319225",
+        "name": "家城"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_TAKEHARA",
+        "lat": "34.600035",
+        "lng": "136.309215",
+        "name": "伊勢竹原"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_KAMAKURA",
+        "lat": "34.57402",
+        "lng": "136.278375",
+        "name": "伊勢鎌倉"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_YACHI",
+        "lat": "34.5551",
+        "lng": "136.2638",
+        "name": "伊勢八知"
+      },
+      {
+        "id": "STN_JR_CENTRAL_HITSU",
+        "lat": "34.5323",
+        "lng": "136.270815",
+        "name": "比津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISE_OKITSU",
+        "lat": "34.512165",
+        "lng": "136.259995",
+        "name": "伊勢奥津"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOKIWA",
+        "lat": "34.497665",
+        "lng": "136.59666",
+        "name": "外城田"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TAMARU",
+        "lat": "34.48845",
+        "lng": "136.634005",
+        "name": "田丸"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MIYAGAWA",
+        "lat": "34.503078",
+        "lng": "136.671887",
+        "name": "宮川"
+      },
+      {
+        "id": "STN_JR_CENTRAL_YAMADA_KAMIGUCHI",
+        "lat": "34.495808",
+        "lng": "136.69426",
+        "name": "山田上口"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISESHI",
+        "lat": "34.49133",
+        "lng": "136.70966",
+        "name": "伊勢市"
+      },
+      {
+        "id": "STN_JR_CENTRAL_ISUZUGAOKA",
+        "lat": "34.49588",
+        "lng": "136.73984",
+        "name": "五十鈴ケ丘"
+      },
+      {
+        "id": "STN_JR_CENTRAL_FUTAMIURA",
+        "lat": "34.503709",
+        "lng": "136.777743",
+        "name": "二見浦"
+      },
+      {
+        "id": "STN_JR_CENTRAL_MATSUSHITA",
+        "lat": "34.49615",
+        "lng": "136.79924",
+        "name": "松下"
+      },
+      {
+        "id": "STN_JR_CENTRAL_TOBA",
+        "lat": "34.48707",
+        "lng": "136.84152",
+        "name": "鳥羽"
+      }
+    ]
+  }
+]

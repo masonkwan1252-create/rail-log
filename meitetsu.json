@@ -1,0 +1,2071 @@
+[
+  {
+    "categories": "",
+    "company_id": "MEITETSU",
+    "company_name": "名古屋鉄道",
+    "lines": [
+      {
+        "id": "MEITETSU_HONSEN",
+        "name": "名古屋本線",
+        "sequence": [
+          "STN_MEITETSU_TOYOHASHI",
+          "STN_MEITETSU_INA",
+          "STN_MEITETSU_ODABUCHI",
+          "STN_MEITETSU_KO",
+          "STN_MEITETSU_GOYU",
+          "STN_MEITETSU_MEIDEN_AKASAKA",
+          "STN_MEITETSU_MEIDEN_NAGASAWA",
+          "STN_MEITETSU_MOTOJUKU",
+          "STN_MEITETSU_MEIDEN_YAMANAKA",
+          "STN_MEITETSU_FUJIKAWA",
+          "STN_MEITETSU_MIAI",
+          "STN_MEITETSU_OTOGAWA",
+          "STN_MEITETSU_HIGASHI_OKAZAKI",
+          "STN_MEITETSU_OKAZAKIKOEN_MAE",
+          "STN_MEITETSU_YAHAGIBASHI",
+          "STN_MEITETSU_UTO",
+          "STN_MEITETSU_SHIN_ANJO",
+          "STN_MEITETSU_USHIDA",
+          "STN_MEITETSU_CHIRYU",
+          "STN_MEITETSU_HITOTSUGI",
+          "STN_MEITETSU_FUJIMATSU",
+          "STN_MEITETSU_TOYOAKE",
+          "STN_MEITETSU_ZENGO",
+          "STN_MEITETSU_CHUKYO_KEIBAJO_MAE",
+          "STN_MEITETSU_ARIMATSU",
+          "STN_MEITETSU_SAKYOYAMA",
+          "STN_MEITETSU_NARUMI",
+          "STN_MEITETSU_MOTO_HOSHIZAKI",
+          "STN_MEITETSU_MOTO_KASADERA",
+          "STN_MEITETSU_SAKURA",
+          "STN_MEITETSU_YOBITSUGI",
+          "STN_MEITETSU_HORITA",
+          "STN_MEITETSU_JINGU_MAE",
+          "STN_MEITETSU_KANAYAMA",
+          "STN_MEITETSU_SANNO",
+          "STN_MEITETSU_MEITETSU_NAGOYA",
+          "STN_MEITETSU_SAKO",
+          "STN_MEITETSU_HIGASHI_BIWAJIMA",
+          "STN_MEITETSU_NISHI_BIWAJIMA",
+          "STN_MEITETSU_FUTATSU_IRI",
+          "STN_MEITETSU_SHINKAWABASHI",
+          "STN_MEITETSU_SUKAGUCHI",
+          "STN_MEITETSU_MARUNOUCHI",
+          "STN_MEITETSU_SHIN_KIYOSU",
+          "STN_MEITETSU_OSATO",
+          "STN_MEITETSU_OKUDA",
+          "STN_MEITETSU_KONOMIYA",
+          "STN_MEITETSU_SHIMA_UJINAGA",
+          "STN_MEITETSU_MYOKOJI",
+          "STN_MEITETSU_MEITETSU_ICHINOMIYA",
+          "STN_MEITETSU_IMAISE",
+          "STN_MEITETSU_ISHITO",
+          "STN_MEITETSU_SHIN_KISOGAWA",
+          "STN_MEITETSU_KURODA",
+          "STN_MEITETSU_KISOGAWA_ZUTSUMI",
+          "STN_MEITETSU_KASAMATSU",
+          "STN_MEITETSU_GINAN",
+          "STN_MEITETSU_CHAJO",
+          "STN_MEITETSU_KANO",
+          "STN_MEITETSU_MEITETSU_GIFU"
+        ]
+      },
+      {
+        "id": "MEITETSU_TOYOKAWA",
+        "name": "豊川線",
+        "sequence": [
+          "STN_MEITETSU_KO",
+          "STN_MEITETSU_YAWATA",
+          "STN_MEITETSU_SUWACHO",
+          "STN_MEITETSU_INARIGUCHI",
+          "STN_MEITETSU_TOYOKAWA_INARI"
+        ]
+      },
+      {
+        "id": "MEITETSU_NISHIO",
+        "name": "西尾線",
+        "sequence": [
+          "STN_MEITETSU_SHIN_ANJO",
+          "STN_MEITETSU_KITA_ANJO",
+          "STN_MEITETSU_MINAMI_ANJO",
+          "STN_MEITETSU_HEKIKAI_FURUI",
+          "STN_MEITETSU_HORIUCHI_KOEN",
+          "STN_MEITETSU_SAKURAI",
+          "STN_MEITETSU_MINAMI_SAKURAI",
+          "STN_MEITETSU_YONEZU",
+          "STN_MEITETSU_SAKURAMACHI_MAE",
+          "STN_MEITETSU_NISHIOGUCHI",
+          "STN_MEITETSU_NISHIO",
+          "STN_MEITETSU_FUKUCHI",
+          "STN_MEITETSU_KAMI_YOKOSUKA",
+          "STN_MEITETSU_KIRA_YOSHIDA"
+        ]
+      },
+      {
+        "id": "MEITETSU_GAMAGORI",
+        "name": "蒲郡線",
+        "sequence": [
+          "STN_MEITETSU_KIRA_YOSHIDA",
+          "STN_MEITETSU_MIKAWA_TOBA",
+          "STN_MEITETSU_NISHI_HAZU",
+          "STN_MEITETSU_HIGASHI_HAZU",
+          "STN_MEITETSU_KODOMONOKUNI",
+          "STN_MEITETSU_NISHIURA",
+          "STN_MEITETSU_KATAHARA",
+          "STN_MEITETSU_MIKAWA_KASHIMA",
+          "STN_MEITETSU_GAMAGORI_KYOTEIJO_MAE",
+          "STN_MEITETSU_GAMAGORI"
+        ]
+      },
+      {
+        "id": "MEITETSU_MIKAWA",
+        "name": "三河線",
+        "sequence": [
+          "STN_MEITETSU_SANAGE",
+          "STN_MEITETSU_HIRATOBASHI",
+          "STN_MEITETSU_KOSHIDO",
+          "STN_MEITETSU_UMETSUBO",
+          "STN_MEITETSU_TOYOTASHI",
+          "STN_MEITETSU_UWA_GOROMO",
+          "STN_MEITETSU_TSUCHIHASHI",
+          "STN_MEITETSU_TAKEMURA",
+          "STN_MEITETSU_WAKABAYASHI",
+          "STN_MEITETSU_MIKAWA_YATSUHASHI",
+          "STN_MEITETSU_MIKAWA_CHIRYU",
+          "STN_MEITETSU_CHIRYU",
+          "STN_MEITETSU_SHIGEHARA",
+          "STN_MEITETSU_KARIYA",
+          "STN_MEITETSU_KARIYASHI",
+          "STN_MEITETSU_OGAKIE",
+          "STN_MEITETSU_YOSHIHAMA",
+          "STN_MEITETSU_MIKAWA_TAKAHAMA",
+          "STN_MEITETSU_TAKAHAMA_MINATO",
+          "STN_MEITETSU_KITASHINKAWA",
+          "STN_MEITETSU_SHINKAWAMACHI",
+          "STN_MEITETSU_HEKINAN_CHUO",
+          "STN_MEITETSU_HEKINAN"
+        ]
+      },
+      {
+        "id": "MEITETSU_TOYOTA",
+        "name": "豊田線",
+        "sequence": [
+          "STN_MEITETSU_AKAIKE",
+          "STN_MEITETSU_NISSHIN",
+          "STN_MEITETSU_KOMENOKI",
+          "STN_MEITETSU_KUROZASA",
+          "STN_MEITETSU_MIYOSHIGAOKA",
+          "STN_MEITETSU_JOSUI",
+          "STN_MEITETSU_KAMI_TOYOTA",
+          "STN_MEITETSU_UMETSUBO",
+          "STN_MEITETSU_TOYOTASHI"
+        ]
+      },
+      {
+        "id": "MEITETSU_TOKONAME",
+        "name": "常滑線",
+        "sequence": [
+          "STN_MEITETSU_JINGU_MAE",
+          "STN_MEITETSU_TOYODA_HOMMACHI",
+          "STN_MEITETSU_DOTOKU",
+          "STN_MEITETSU_OE",
+          "STN_MEITETSU_DAIDOCHO",
+          "STN_MEITETSU_SHIBATA",
+          "STN_MEITETSU_NAWA",
+          "STN_MEITETSU_SHURAKUEN",
+          "STN_MEITETSU_SHIN_NITTETSU_MAE",
+          "STN_MEITETSU_OTAGAWA",
+          "STN_MEITETSU_OWARI_YOKOSUKA",
+          "STN_MEITETSU_TERAMOTO",
+          "STN_MEITETSU_ASAKURA",
+          "STN_MEITETSU_KOMI",
+          "STN_MEITETSU_NAGAURA",
+          "STN_MEITETSU_HINAGA",
+          "STN_MEITETSU_SHIN_MAIKO",
+          "STN_MEITETSU_ONO_MACHI",
+          "STN_MEITETSU_NISHINOKUCHI",
+          "STN_MEITETSU_KABAIKE",
+          "STN_MEITETSU_ENOKIDO",
+          "STN_MEITETSU_TAYA",
+          "STN_MEITETSU_TOKONAME"
+        ]
+      },
+      {
+        "id": "MEITETSU_AIRPORT",
+        "name": "空港線",
+        "sequence": [
+          "STN_MEITETSU_TOKONAME",
+          "STN_MEITETSU_RINKU_TOKONAME",
+          "STN_MEITETSU_CHUBU_KOKUSAI_KUKO"
+        ]
+      },
+      {
+        "id": "MEITETSU_CHIKKO",
+        "name": "築港線",
+        "sequence": [
+          "STN_MEITETSU_OE",
+          "STN_MEITETSU_HIGASHI_NAGOYAKO"
+        ]
+      },
+      {
+        "id": "MEITETSU_KOWA",
+        "name": "河和線",
+        "sequence": [
+          "STN_MEITETSU_OTAGAWA",
+          "STN_MEITETSU_TAKA_YOKOSUKA",
+          "STN_MEITETSU_KAGIYA_NAKANOIKE",
+          "STN_MEITETSU_MINAMI_KAGIYA",
+          "STN_MEITETSU_YAWATA_SHINDEN",
+          "STN_MEITETSU_TATSUMIGAOKA",
+          "STN_MEITETSU_SHIRASAWA",
+          "STN_MEITETSU_SAKABE",
+          "STN_MEITETSU_AGUI",
+          "STN_MEITETSU_UEDAI",
+          "STN_MEITETSU_HANDAGUCHI",
+          "STN_MEITETSU_SUMIYOSHICHO",
+          "STN_MEITETSU_CHITA_HANDA",
+          "STN_MEITETSU_NARAWA",
+          "STN_MEITETSU_AOYAMA",
+          "STN_MEITETSU_AGE",
+          "STN_MEITETSU_CHITA_TAKETOYO",
+          "STN_MEITETSU_FUKI",
+          "STN_MEITETSU_KOWAGUCHI",
+          "STN_MEITETSU_KOWA"
+        ]
+      },
+      {
+        "id": "MEITETSU_CHITA_NEW",
+        "name": "知多新線",
+        "sequence": [
+          "STN_MEITETSU_FUKI",
+          "STN_MEITETSU_KAMI_NOMA",
+          "STN_MEITETSU_MIHAMA_RYOKUEN",
+          "STN_MEITETSU_CHITA_OKUDA",
+          "STN_MEITETSU_NOMA",
+          "STN_MEITETSU_UTSUMI"
+        ]
+      },
+      {
+        "id": "MEITETSU_SETO",
+        "name": "瀬戸線",
+        "sequence": [
+          "STN_MEITETSU_SAKAEMACHI",
+          "STN_MEITETSU_HIGASHIOTE",
+          "STN_MEITETSU_SHIMIZU",
+          "STN_MEITETSU_AMAGASAKA",
+          "STN_MEITETSU_MORISHITA",
+          "STN_MEITETSU_OZONE",
+          "STN_MEITETSU_YADA",
+          "STN_MEITETSU_MORIYAMA_JIEITAI_MAE",
+          "STN_MEITETSU_HYOTANYAMA",
+          "STN_MEITETSU_OBATA",
+          "STN_MEITETSU_KITAYAMA",
+          "STN_MEITETSU_OMORI_KINJOGAKUIN_MAE",
+          "STN_MEITETSU_INBA",
+          "STN_MEITETSU_ASAHI_MAE",
+          "STN_MEITETSU_OWARI_ASAHI",
+          "STN_MEITETSU_SANGO",
+          "STN_MEITETSU_MIZUNO",
+          "STN_MEITETSU_SHIN_SETO",
+          "STN_MEITETSU_SETO_SHIYAKUSHO_MAE",
+          "STN_MEITETSU_OWARI_SETO"
+        ]
+      },
+      {
+        "id": "MEITETSU_TSUSHIMA",
+        "name": "津島線",
+        "sequence": [
+          "STN_MEITETSU_SUKAGUCHI",
+          "STN_MEITETSU_JIMOKUJI",
+          "STN_MEITETSU_SHIPPO",
+          "STN_MEITETSU_KIDA",
+          "STN_MEITETSU_AOTSUKA",
+          "STN_MEITETSU_SHOBATA",
+          "STN_MEITETSU_FUJINAMI",
+          "STN_MEITETSU_TSUSHIMA"
+        ]
+      },
+      {
+        "id": "MEITETSU_BISAI",
+        "name": "尾西線",
+        "sequence": [
+          "STN_MEITETSU_YATOMI",
+          "STN_MEITETSU_GONOSAN",
+          "STN_MEITETSU_SAYA",
+          "STN_MEITETSU_HIBINO",
+          "STN_MEITETSU_TSUSHIMA",
+          "STN_MEITETSU_MACHIKATA",
+          "STN_MEITETSU_ROKUWA",
+          "STN_MEITETSU_FUCHIDAKA",
+          "STN_MEITETSU_MARUBUCHI",
+          "STN_MEITETSU_KAMI_MARUBUCHI",
+          "STN_MEITETSU_MORIGAMI",
+          "STN_MEITETSU_YAMAZAKI",
+          "STN_MEITETSU_TAMANO",
+          "STN_MEITETSU_HAGIWARA",
+          "STN_MEITETSU_FUTAGO",
+          "STN_MEITETSU_KARIYASUKA",
+          "STN_MEITETSU_KANNONJI",
+          "STN_MEITETSU_MEITETSU_ICHINOMIYA",
+          "STN_MEITETSU_NISHI_ICHINOMIYA",
+          "STN_MEITETSU_KAIMEI",
+          "STN_MEITETSU_OKUMACHI",
+          "STN_MEITETSU_TAMANOI"
+        ]
+      },
+      {
+        "id": "MEITETSU_INUYAMA",
+        "name": "犬山線",
+        "sequence": [
+          "STN_MEITETSU_SHIMO_OTAI",
+          "STN_MEITETSU_NAKA_OTAI",
+          "STN_MEITETSU_KAMI_OTAI",
+          "STN_MEITETSU_NISHIHARU",
+          "STN_MEITETSU_TOKUSHIGE_NAGOYA_GEIDAI",
+          "STN_MEITETSU_TAISANJI",
+          "STN_MEITETSU_IWAKURA",
+          "STN_MEITETSU_ISHIBOTOKE",
+          "STN_MEITETSU_HOTEI",
+          "STN_MEITETSU_KONAN",
+          "STN_MEITETSU_KASHIMORI",
+          "STN_MEITETSU_FUSO",
+          "STN_MEITETSU_KOTSUYOSUI",
+          "STN_MEITETSU_INAYAMAGUCHI",
+          "STN_MEITETSU_INUYAMA",
+          "STN_MEITETSU_INUYAMA_YUEN",
+          "STN_MEITETSU_SHIN_UNUMA"
+        ]
+      },
+      {
+        "id": "MEITETSU_KAKAMIGAHARA",
+        "name": "各務原線",
+        "sequence": [
+          "STN_MEITETSU_MEITETSU_GIFU",
+          "STN_MEITETSU_TAGAMI",
+          "STN_MEITETSU_HOSOBATA",
+          "STN_MEITETSU_KIRIDOSHI",
+          "STN_MEITETSU_TEJIKARA",
+          "STN_MEITETSU_TAKADA_BASHI",
+          "STN_MEITETSU_SHIN_KANO",
+          "STN_MEITETSU_SHIN_NAKA",
+          "STN_MEITETSU_SHIMINKOEN_MAE",
+          "STN_MEITETSU_KAKAMIGAHARA_SHIYAKUSHO_MAE",
+          "STN_MEITETSU_ROKKEN",
+          "STN_MEITETSU_MIKAKINO",
+          "STN_MEITETSU_NIJIKKEN",
+          "STN_MEITETSU_MEIDEN_KAKAMIGAHARA",
+          "STN_MEITETSU_OGASE",
+          "STN_MEITETSU_HABA",
+          "STN_MEITETSU_UNUMAJUKU",
+          "STN_MEITETSU_SHIN_UNUMA"
+        ]
+      },
+      {
+        "id": "MEITETSU_HIROMI",
+        "name": "広見線",
+        "sequence": [
+          "STN_MEITETSU_INUYAMA",
+          "STN_MEITETSU_TOMIOKA_MAE",
+          "STN_MEITETSU_ZENJINO",
+          "STN_MEITETSU_NISHI_KANI",
+          "STN_MEITETSU_KANIGAWA",
+          "STN_MEITETSU_NIHONRAIN_IMAWATARI",
+          "STN_MEITETSU_SHIN_KANI",
+          "STN_MEITETSU_AKECHI",
+          "STN_MEITETSU_GODO",
+          "STN_MEITETSU_MITAKEGUCHI",
+          "STN_MEITETSU_MITAKE"
+        ]
+      },
+      {
+        "id": "MEITETSU_KOMAKI",
+        "name": "小牧線",
+        "sequence": [
+          "STN_MEITETSU_KAMIIIDA",
+          "STN_MEITETSU_AJIMA",
+          "STN_MEITETSU_AJIYOSHI",
+          "STN_MEITETSU_KASUGAI",
+          "STN_MEITETSU_USHIYAMA",
+          "STN_MEITETSU_MANAI",
+          "STN_MEITETSU_KOMAKIGUCHI",
+          "STN_MEITETSU_KOMAKI",
+          "STN_MEITETSU_KOMAKIHARA",
+          "STN_MEITETSU_AJIOKA",
+          "STN_MEITETSU_TAGATA_JINJA_MAE",
+          "STN_MEITETSU_GAKUDEN",
+          "STN_MEITETSU_HAGURO",
+          "STN_MEITETSU_INUYAMA"
+        ]
+      },
+      {
+        "id": "MEITETSU_TAKEHANA",
+        "name": "竹鼻線",
+        "sequence": [
+          "STN_MEITETSU_KASAMATSU",
+          "STN_MEITETSU_NISHI_KASAMATSU",
+          "STN_MEITETSU_YANAIZU",
+          "STN_MEITETSU_MINAMI_JUKU",
+          "STN_MEITETSU_SUKA",
+          "STN_MEITETSU_FUWA_ISHIKI",
+          "STN_MEITETSU_TAKEHANA",
+          "STN_MEITETSU_HASHIMASHIYAKUSHOMAE",
+          "STN_MEITETSU_EGIRA"
+        ]
+      },
+      {
+        "id": "MEITETSU_HASHIMA",
+        "name": "羽島線",
+        "sequence": [
+          "STN_MEITETSU_EGIRA",
+          "STN_MEITETSU_SHIN_HASHIMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_MEITETSU_TOYOHASHI",
+        "lat": "34.762276",
+        "lng": "137.382542",
+        "name": "豊橋"
+      },
+      {
+        "id": "STN_MEITETSU_INA",
+        "lat": "34.802816",
+        "lng": "137.354817",
+        "name": "伊奈"
+      },
+      {
+        "id": "STN_MEITETSU_ODABUCHI",
+        "lat": "34.814763",
+        "lng": "137.345622",
+        "name": "小田渕"
+      },
+      {
+        "id": "STN_MEITETSU_KO",
+        "lat": "34.83745",
+        "lng": "137.32814",
+        "name": "国府"
+      },
+      {
+        "id": "STN_MEITETSU_GOYU",
+        "lat": "34.84606",
+        "lng": "137.3215",
+        "name": "御油"
+      },
+      {
+        "id": "STN_MEITETSU_MEIDEN_AKASAKA",
+        "lat": "34.859334",
+        "lng": "137.311165",
+        "name": "名電赤坂"
+      },
+      {
+        "id": "STN_MEITETSU_MEIDEN_NAGASAWA",
+        "lat": "34.87147",
+        "lng": "137.28839",
+        "name": "名電長沢"
+      },
+      {
+        "id": "STN_MEITETSU_MOTOJUKU",
+        "lat": "34.89293",
+        "lng": "137.259975",
+        "name": "本宿"
+      },
+      {
+        "id": "STN_MEITETSU_MEIDEN_YAMANAKA",
+        "lat": "34.89952",
+        "lng": "137.242695",
+        "name": "名電山中"
+      },
+      {
+        "id": "STN_MEITETSU_FUJIKAWA",
+        "lat": "34.91324",
+        "lng": "137.21857",
+        "name": "藤川"
+      },
+      {
+        "id": "STN_MEITETSU_MIAI",
+        "lat": "34.923705",
+        "lng": "137.196335",
+        "name": "美合"
+      },
+      {
+        "id": "STN_MEITETSU_OTOGAWA",
+        "lat": "34.937452",
+        "lng": "137.183358",
+        "name": "男川"
+      },
+      {
+        "id": "STN_MEITETSU_HIGASHI_OKAZAKI",
+        "lat": "34.95203",
+        "lng": "137.16745",
+        "name": "東岡崎"
+      },
+      {
+        "id": "STN_MEITETSU_OKAZAKIKOEN_MAE",
+        "lat": "34.954928",
+        "lng": "137.153441",
+        "name": "岡崎公園前"
+      },
+      {
+        "id": "STN_MEITETSU_YAHAGIBASHI",
+        "lat": "34.961065",
+        "lng": "137.13997",
+        "name": "矢作橋"
+      },
+      {
+        "id": "STN_MEITETSU_UTO",
+        "lat": "34.971315",
+        "lng": "137.118105",
+        "name": "宇頭"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_ANJO",
+        "lat": "34.9869",
+        "lng": "137.085515",
+        "name": "新安城"
+      },
+      {
+        "id": "STN_MEITETSU_USHIDA",
+        "lat": "34.99928",
+        "lng": "137.06088",
+        "name": "牛田"
+      },
+      {
+        "id": "STN_MEITETSU_CHIRYU",
+        "lat": "35.00623",
+        "lng": "137.039665",
+        "name": "知立"
+      },
+      {
+        "id": "STN_MEITETSU_HITOTSUGI",
+        "lat": "35.013605",
+        "lng": "137.025455",
+        "name": "一ツ木"
+      },
+      {
+        "id": "STN_MEITETSU_FUJIMATSU",
+        "lat": "35.029805",
+        "lng": "137.01644",
+        "name": "富士松"
+      },
+      {
+        "id": "STN_MEITETSU_TOYOAKE",
+        "lat": "35.041135",
+        "lng": "137.008245",
+        "name": "豊明"
+      },
+      {
+        "id": "STN_MEITETSU_ZENGO",
+        "lat": "35.052075",
+        "lng": "136.995925",
+        "name": "前後"
+      },
+      {
+        "id": "STN_MEITETSU_CHUKYO_KEIBAJO_MAE",
+        "lat": "35.0615",
+        "lng": "136.98089",
+        "name": "中京競馬場前"
+      },
+      {
+        "id": "STN_MEITETSU_ARIMATSU",
+        "lat": "35.06769",
+        "lng": "136.9711",
+        "name": "有松"
+      },
+      {
+        "id": "STN_MEITETSU_SAKYOYAMA",
+        "lat": "35.07052",
+        "lng": "136.96038",
+        "name": "左京山"
+      },
+      {
+        "id": "STN_MEITETSU_NARUMI",
+        "lat": "35.078473",
+        "lng": "136.951151",
+        "name": "鳴海"
+      },
+      {
+        "id": "STN_MEITETSU_MOTO_HOSHIZAKI",
+        "lat": "35.087475",
+        "lng": "136.937335",
+        "name": "本星崎"
+      },
+      {
+        "id": "STN_MEITETSU_MOTO_KASADERA",
+        "lat": "35.09908",
+        "lng": "136.933435",
+        "name": "本笠寺"
+      },
+      {
+        "id": "STN_MEITETSU_SAKURA",
+        "lat": "35.106055",
+        "lng": "136.934625",
+        "name": "桜"
+      },
+      {
+        "id": "STN_MEITETSU_YOBITSUGI",
+        "lat": "35.11476",
+        "lng": "136.93037",
+        "name": "呼続"
+      },
+      {
+        "id": "STN_MEITETSU_HORITA",
+        "lat": "35.120225",
+        "lng": "136.919995",
+        "name": "堀田"
+      },
+      {
+        "id": "STN_MEITETSU_JINGU_MAE",
+        "lat": "35.125567",
+        "lng": "136.91262",
+        "name": "神宮前"
+      },
+      {
+        "id": "STN_MEITETSU_KANAYAMA",
+        "lat": "35.14291",
+        "lng": "136.901205",
+        "name": "金山"
+      },
+      {
+        "id": "STN_MEITETSU_SANNO",
+        "lat": "35.151885",
+        "lng": "136.88877",
+        "name": "山王"
+      },
+      {
+        "id": "STN_MEITETSU_MEITETSU_NAGOYA",
+        "lat": "35.17044",
+        "lng": "136.88387",
+        "name": "名鉄名古屋"
+      },
+      {
+        "id": "STN_MEITETSU_SAKO",
+        "lat": "35.18379",
+        "lng": "136.873065",
+        "name": "栄生"
+      },
+      {
+        "id": "STN_MEITETSU_HIGASHI_BIWAJIMA",
+        "lat": "35.18994",
+        "lng": "136.870315",
+        "name": "東枇杷島"
+      },
+      {
+        "id": "STN_MEITETSU_NISHI_BIWAJIMA",
+        "lat": "35.195085",
+        "lng": "136.86528",
+        "name": "西枇杷島"
+      },
+      {
+        "id": "STN_MEITETSU_FUTATSU_IRI",
+        "lat": "35.19466",
+        "lng": "136.859705",
+        "name": "二ツ杁"
+      },
+      {
+        "id": "STN_MEITETSU_SHINKAWABASHI",
+        "lat": "35.19525",
+        "lng": "136.85262",
+        "name": "新川橋"
+      },
+      {
+        "id": "STN_MEITETSU_SUKAGUCHI",
+        "lat": "35.19893",
+        "lng": "136.845755",
+        "name": "須ヶ口"
+      },
+      {
+        "id": "STN_MEITETSU_MARUNOUCHI",
+        "lat": "35.204205",
+        "lng": "136.84214",
+        "name": "丸ノ内"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_KIYOSU",
+        "lat": "35.21146",
+        "lng": "136.83536",
+        "name": "新清洲"
+      },
+      {
+        "id": "STN_MEITETSU_OSATO",
+        "lat": "35.226405",
+        "lng": "136.818295",
+        "name": "大里"
+      },
+      {
+        "id": "STN_MEITETSU_OKUDA",
+        "lat": "35.235025",
+        "lng": "136.811145",
+        "name": "奥田"
+      },
+      {
+        "id": "STN_MEITETSU_KONOMIYA",
+        "lat": "35.25428",
+        "lng": "136.802935",
+        "name": "国府宮"
+      },
+      {
+        "id": "STN_MEITETSU_SHIMA_UJINAGA",
+        "lat": "35.271204",
+        "lng": "136.800854",
+        "name": "島氏永"
+      },
+      {
+        "id": "STN_MEITETSU_MYOKOJI",
+        "lat": "35.287309",
+        "lng": "136.798209",
+        "name": "妙興寺"
+      },
+      {
+        "id": "STN_MEITETSU_MEITETSU_ICHINOMIYA",
+        "lat": "35.302085",
+        "lng": "136.796975",
+        "name": "名鉄一宮"
+      },
+      {
+        "id": "STN_MEITETSU_IMAISE",
+        "lat": "35.318345",
+        "lng": "136.78913",
+        "name": "今伊勢"
+      },
+      {
+        "id": "STN_MEITETSU_ISHITO",
+        "lat": "35.326185",
+        "lng": "136.78537",
+        "name": "石刀"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_KISOGAWA",
+        "lat": "35.342045",
+        "lng": "136.779385",
+        "name": "新木曽川"
+      },
+      {
+        "id": "STN_MEITETSU_KURODA",
+        "lat": "35.350195",
+        "lng": "136.777515",
+        "name": "黒田"
+      },
+      {
+        "id": "STN_MEITETSU_KISOGAWA_ZUTSUMI",
+        "lat": "35.36501",
+        "lng": "136.770505",
+        "name": "木曽川堤"
+      },
+      {
+        "id": "STN_MEITETSU_KASAMATSU",
+        "lat": "35.374675",
+        "lng": "136.764645",
+        "name": "笠松"
+      },
+      {
+        "id": "STN_MEITETSU_GINAN",
+        "lat": "35.38978",
+        "lng": "136.769245",
+        "name": "岐南"
+      },
+      {
+        "id": "STN_MEITETSU_CHAJO",
+        "lat": "35.40208",
+        "lng": "136.76892",
+        "name": "茶所"
+      },
+      {
+        "id": "STN_MEITETSU_KANO",
+        "lat": "35.405175",
+        "lng": "136.766105",
+        "name": "加納"
+      },
+      {
+        "id": "STN_MEITETSU_MEITETSU_GIFU",
+        "lat": "35.410915",
+        "lng": "136.76023",
+        "name": "名鉄岐阜"
+      },
+      {
+        "id": "STN_MEITETSU_YAWATA",
+        "lat": "34.82908",
+        "lng": "137.352059",
+        "name": "八幡"
+      },
+      {
+        "id": "STN_MEITETSU_SUWACHO",
+        "lat": "34.823537",
+        "lng": "137.370451",
+        "name": "諏訪町"
+      },
+      {
+        "id": "STN_MEITETSU_INARIGUCHI",
+        "lat": "34.818413",
+        "lng": "137.387733",
+        "name": "稲荷口"
+      },
+      {
+        "id": "STN_MEITETSU_TOYOKAWA_INARI",
+        "lat": "34.82177",
+        "lng": "137.39596",
+        "name": "豊川稲荷"
+      },
+      {
+        "id": "STN_MEITETSU_KITA_ANJO",
+        "lat": "34.964645",
+        "lng": "137.09215",
+        "name": "北安城"
+      },
+      {
+        "id": "STN_MEITETSU_MINAMI_ANJO",
+        "lat": "34.951965",
+        "lng": "137.092607",
+        "name": "南安城"
+      },
+      {
+        "id": "STN_MEITETSU_HEKIKAI_FURUI",
+        "lat": "34.9372",
+        "lng": "137.09084",
+        "name": "碧海古井"
+      },
+      {
+        "id": "STN_MEITETSU_HORIUCHI_KOEN",
+        "lat": "34.927695",
+        "lng": "137.089658",
+        "name": "堀内公園"
+      },
+      {
+        "id": "STN_MEITETSU_SAKURAI",
+        "lat": "34.91752",
+        "lng": "137.088375",
+        "name": "桜井"
+      },
+      {
+        "id": "STN_MEITETSU_MINAMI_SAKURAI",
+        "lat": "34.906046",
+        "lng": "137.076988",
+        "name": "南桜井"
+      },
+      {
+        "id": "STN_MEITETSU_YONEZU",
+        "lat": "34.892855",
+        "lng": "137.061075",
+        "name": "米津"
+      },
+      {
+        "id": "STN_MEITETSU_SAKURAMACHI_MAE",
+        "lat": "34.88024",
+        "lng": "137.062455",
+        "name": "桜町前"
+      },
+      {
+        "id": "STN_MEITETSU_NISHIOGUCHI",
+        "lat": "34.87074",
+        "lng": "137.0627",
+        "name": "西尾口"
+      },
+      {
+        "id": "STN_MEITETSU_NISHIO",
+        "lat": "34.86392",
+        "lng": "137.05784",
+        "name": "西尾"
+      },
+      {
+        "id": "STN_MEITETSU_FUKUCHI",
+        "lat": "34.84469",
+        "lng": "137.048555",
+        "name": "福地"
+      },
+      {
+        "id": "STN_MEITETSU_KAMI_YOKOSUKA",
+        "lat": "34.83012",
+        "lng": "137.07214",
+        "name": "上横須賀"
+      },
+      {
+        "id": "STN_MEITETSU_KIRA_YOSHIDA",
+        "lat": "34.79425233",
+        "lng": "137.07114719",
+        "name": "吉良吉田"
+      },
+      {
+        "id": "STN_MEITETSU_MIKAWA_TOBA",
+        "lat": "34.793315",
+        "lng": "137.105055",
+        "name": "三河鳥羽"
+      },
+      {
+        "id": "STN_MEITETSU_NISHI_HAZU",
+        "lat": "34.792475",
+        "lng": "137.12135",
+        "name": "西幡豆"
+      },
+      {
+        "id": "STN_MEITETSU_HIGASHI_HAZU",
+        "lat": "34.78955",
+        "lng": "137.14593",
+        "name": "東幡豆"
+      },
+      {
+        "id": "STN_MEITETSU_KODOMONOKUNI",
+        "lat": "34.7886",
+        "lng": "137.16274",
+        "name": "こどもの国"
+      },
+      {
+        "id": "STN_MEITETSU_NISHIURA",
+        "lat": "34.78997",
+        "lng": "137.17871",
+        "name": "西浦"
+      },
+      {
+        "id": "STN_MEITETSU_KATAHARA",
+        "lat": "34.798405",
+        "lng": "137.184635",
+        "name": "形原"
+      },
+      {
+        "id": "STN_MEITETSU_MIKAWA_KASHIMA",
+        "lat": "34.813329",
+        "lng": "137.189712",
+        "name": "三河鹿島"
+      },
+      {
+        "id": "STN_MEITETSU_GAMAGORI_KYOTEIJO_MAE",
+        "lat": "34.825425",
+        "lng": "137.20212",
+        "name": "蒲郡競艇場前"
+      },
+      {
+        "id": "STN_MEITETSU_GAMAGORI",
+        "lat": "34.822763",
+        "lng": "137.225685",
+        "name": "蒲郡"
+      },
+      {
+        "id": "STN_MEITETSU_SANAGE",
+        "lat": "35.121735",
+        "lng": "137.178705",
+        "name": "猿投"
+      },
+      {
+        "id": "STN_MEITETSU_HIRATOBASHI",
+        "lat": "35.114545",
+        "lng": "137.18459",
+        "name": "平戸橋"
+      },
+      {
+        "id": "STN_MEITETSU_KOSHIDO",
+        "lat": "35.10767",
+        "lng": "137.18013",
+        "name": "越戸"
+      },
+      {
+        "id": "STN_MEITETSU_UMETSUBO",
+        "lat": "35.09967",
+        "lng": "137.162285",
+        "name": "梅坪"
+      },
+      {
+        "id": "STN_MEITETSU_TOYOTASHI",
+        "lat": "35.08726",
+        "lng": "137.15624",
+        "name": "豊田市"
+      },
+      {
+        "id": "STN_MEITETSU_UWA_GOROMO",
+        "lat": "35.07192",
+        "lng": "137.15467",
+        "name": "上挙母"
+      },
+      {
+        "id": "STN_MEITETSU_TSUCHIHASHI",
+        "lat": "35.058225",
+        "lng": "137.12947",
+        "name": "土橋"
+      },
+      {
+        "id": "STN_MEITETSU_TAKEMURA",
+        "lat": "35.040075",
+        "lng": "137.114755",
+        "name": "竹村"
+      },
+      {
+        "id": "STN_MEITETSU_WAKABAYASHI",
+        "lat": "35.026305",
+        "lng": "137.09584",
+        "name": "若林"
+      },
+      {
+        "id": "STN_MEITETSU_MIKAWA_YATSUHASHI",
+        "lat": "35.010945",
+        "lng": "137.07724",
+        "name": "三河八橋"
+      },
+      {
+        "id": "STN_MEITETSU_MIKAWA_CHIRYU",
+        "lat": "35.00567879",
+        "lng": "137.05522632",
+        "name": "三河知立"
+      },
+      {
+        "id": "STN_MEITETSU_SHIGEHARA",
+        "lat": "34.99478",
+        "lng": "137.023775",
+        "name": "重原"
+      },
+      {
+        "id": "STN_MEITETSU_KARIYA",
+        "lat": "34.99053",
+        "lng": "137.009275",
+        "name": "刈谷"
+      },
+      {
+        "id": "STN_MEITETSU_KARIYASHI",
+        "lat": "34.984702",
+        "lng": "136.993925",
+        "name": "刈谷市"
+      },
+      {
+        "id": "STN_MEITETSU_OGAKIE",
+        "lat": "34.96388",
+        "lng": "136.99552",
+        "name": "小垣江"
+      },
+      {
+        "id": "STN_MEITETSU_YOSHIHAMA",
+        "lat": "34.946705",
+        "lng": "136.98944",
+        "name": "吉浜"
+      },
+      {
+        "id": "STN_MEITETSU_MIKAWA_TAKAHAMA",
+        "lat": "34.93077",
+        "lng": "136.98996",
+        "name": "三河高浜"
+      },
+      {
+        "id": "STN_MEITETSU_TAKAHAMA_MINATO",
+        "lat": "34.92153",
+        "lng": "136.98938",
+        "name": "高浜港"
+      },
+      {
+        "id": "STN_MEITETSU_KITASHINKAWA",
+        "lat": "34.905975",
+        "lng": "136.992485",
+        "name": "北新川"
+      },
+      {
+        "id": "STN_MEITETSU_SHINKAWAMACHI",
+        "lat": "34.896605",
+        "lng": "136.990305",
+        "name": "新川町"
+      },
+      {
+        "id": "STN_MEITETSU_HEKINAN_CHUO",
+        "lat": "34.88731",
+        "lng": "136.98944",
+        "name": "碧南中央"
+      },
+      {
+        "id": "STN_MEITETSU_HEKINAN",
+        "lat": "34.874015",
+        "lng": "136.985625",
+        "name": "碧南"
+      },
+      {
+        "id": "STN_MEITETSU_AKAIKE",
+        "lat": "35.121035",
+        "lng": "137.018205",
+        "name": "赤池"
+      },
+      {
+        "id": "STN_MEITETSU_NISSHIN",
+        "lat": "35.11839",
+        "lng": "137.048775",
+        "name": "日進"
+      },
+      {
+        "id": "STN_MEITETSU_KOMENOKI",
+        "lat": "35.1237",
+        "lng": "137.06699",
+        "name": "米野木"
+      },
+      {
+        "id": "STN_MEITETSU_KUROZASA",
+        "lat": "35.12767",
+        "lng": "137.091595",
+        "name": "黒笹"
+      },
+      {
+        "id": "STN_MEITETSU_MIYOSHIGAOKA",
+        "lat": "35.126995",
+        "lng": "137.111415",
+        "name": "三好ヶ丘"
+      },
+      {
+        "id": "STN_MEITETSU_JOSUI",
+        "lat": "35.121285",
+        "lng": "137.137315",
+        "name": "浄水"
+      },
+      {
+        "id": "STN_MEITETSU_KAMI_TOYOTA",
+        "lat": "35.116175",
+        "lng": "137.1551",
+        "name": "上豊田"
+      },
+      {
+        "id": "STN_MEITETSU_TOYODA_HOMMACHI",
+        "lat": "35.113625",
+        "lng": "136.91082",
+        "name": "豊田本町"
+      },
+      {
+        "id": "STN_MEITETSU_DOTOKU",
+        "lat": "35.10565892",
+        "lng": "136.90939709",
+        "name": "道徳"
+      },
+      {
+        "id": "STN_MEITETSU_OE",
+        "lat": "35.09281982",
+        "lng": "136.91262418",
+        "name": "大江"
+      },
+      {
+        "id": "STN_MEITETSU_DAIDOCHO",
+        "lat": "35.080279",
+        "lng": "136.909356",
+        "name": "大同町"
+      },
+      {
+        "id": "STN_MEITETSU_SHIBATA",
+        "lat": "35.072825",
+        "lng": "136.90908",
+        "name": "柴田"
+      },
+      {
+        "id": "STN_MEITETSU_NAWA",
+        "lat": "35.06092",
+        "lng": "136.91169",
+        "name": "名和"
+      },
+      {
+        "id": "STN_MEITETSU_SHURAKUEN",
+        "lat": "35.042915",
+        "lng": "136.903075",
+        "name": "聚楽園"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_NITTETSU_MAE",
+        "lat": "35.03514",
+        "lng": "136.89949",
+        "name": "新日鉄前"
+      },
+      {
+        "id": "STN_MEITETSU_OTAGAWA",
+        "lat": "35.020305",
+        "lng": "136.89257",
+        "name": "太田川"
+      },
+      {
+        "id": "STN_MEITETSU_OWARI_YOKOSUKA",
+        "lat": "35.010015",
+        "lng": "136.88555",
+        "name": "尾張横須賀"
+      },
+      {
+        "id": "STN_MEITETSU_TERAMOTO",
+        "lat": "35.000205",
+        "lng": "136.87544",
+        "name": "寺本"
+      },
+      {
+        "id": "STN_MEITETSU_ASAKURA",
+        "lat": "34.99386",
+        "lng": "136.863455",
+        "name": "朝倉"
+      },
+      {
+        "id": "STN_MEITETSU_KOMI",
+        "lat": "34.98774",
+        "lng": "136.856775",
+        "name": "古見"
+      },
+      {
+        "id": "STN_MEITETSU_NAGAURA",
+        "lat": "34.9784",
+        "lng": "136.847815",
+        "name": "長浦"
+      },
+      {
+        "id": "STN_MEITETSU_HINAGA",
+        "lat": "34.961655",
+        "lng": "136.83217",
+        "name": "日長"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_MAIKO",
+        "lat": "34.949725",
+        "lng": "136.828595",
+        "name": "新舞子"
+      },
+      {
+        "id": "STN_MEITETSU_ONO_MACHI",
+        "lat": "34.93543",
+        "lng": "136.8275",
+        "name": "大野町"
+      },
+      {
+        "id": "STN_MEITETSU_NISHINOKUCHI",
+        "lat": "34.924605",
+        "lng": "136.82676",
+        "name": "西ノ口"
+      },
+      {
+        "id": "STN_MEITETSU_KABAIKE",
+        "lat": "34.915275",
+        "lng": "136.825655",
+        "name": "蒲池"
+      },
+      {
+        "id": "STN_MEITETSU_ENOKIDO",
+        "lat": "34.90495",
+        "lng": "136.8282",
+        "name": "榎戸"
+      },
+      {
+        "id": "STN_MEITETSU_TAYA",
+        "lat": "34.897025",
+        "lng": "136.830695",
+        "name": "多屋"
+      },
+      {
+        "id": "STN_MEITETSU_TOKONAME",
+        "lat": "34.89047775",
+        "lng": "136.83553738",
+        "name": "常滑"
+      },
+      {
+        "id": "STN_MEITETSU_HIGASHI_NAGOYAKO",
+        "lat": "35.08909",
+        "lng": "136.899185",
+        "name": "東名古屋港"
+      },
+      {
+        "id": "STN_MEITETSU_TAKA_YOKOSUKA",
+        "lat": "35.00965",
+        "lng": "136.893735",
+        "name": "高横須賀"
+      },
+      {
+        "id": "STN_MEITETSU_KAGIYA_NAKANOIKE",
+        "lat": "35.00011312",
+        "lng": "136.90224263",
+        "name": "加木屋中ノ池"
+      },
+      {
+        "id": "STN_MEITETSU_MINAMI_KAGIYA",
+        "lat": "34.98927",
+        "lng": "136.906855",
+        "name": "南加木屋"
+      },
+      {
+        "id": "STN_MEITETSU_YAWATA_SHINDEN",
+        "lat": "34.973775",
+        "lng": "136.91262",
+        "name": "八幡新田"
+      },
+      {
+        "id": "STN_MEITETSU_TATSUMIGAOKA",
+        "lat": "34.962205",
+        "lng": "136.91567",
+        "name": "巽ヶ丘"
+      },
+      {
+        "id": "STN_MEITETSU_SHIRASAWA",
+        "lat": "34.95508",
+        "lng": "136.91538",
+        "name": "白沢"
+      },
+      {
+        "id": "STN_MEITETSU_SAKABE",
+        "lat": "34.94097",
+        "lng": "136.916715",
+        "name": "坂部"
+      },
+      {
+        "id": "STN_MEITETSU_AGUI",
+        "lat": "34.931305",
+        "lng": "136.918455",
+        "name": "阿久比"
+      },
+      {
+        "id": "STN_MEITETSU_UEDAI",
+        "lat": "34.917435",
+        "lng": "136.923445",
+        "name": "植大"
+      },
+      {
+        "id": "STN_MEITETSU_HANDAGUCHI",
+        "lat": "34.9091",
+        "lng": "136.925476",
+        "name": "半田口"
+      },
+      {
+        "id": "STN_MEITETSU_SUMIYOSHICHO",
+        "lat": "34.9021",
+        "lng": "136.92574",
+        "name": "住吉町"
+      },
+      {
+        "id": "STN_MEITETSU_CHITA_HANDA",
+        "lat": "34.893983",
+        "lng": "136.925891",
+        "name": "知多半田"
+      },
+      {
+        "id": "STN_MEITETSU_NARAWA",
+        "lat": "34.886195",
+        "lng": "136.921845",
+        "name": "成岩"
+      },
+      {
+        "id": "STN_MEITETSU_AOYAMA",
+        "lat": "34.878668",
+        "lng": "136.917269",
+        "name": "青山"
+      },
+      {
+        "id": "STN_MEITETSU_AGE",
+        "lat": "34.85833",
+        "lng": "136.916455",
+        "name": "上ゲ"
+      },
+      {
+        "id": "STN_MEITETSU_CHITA_TAKETOYO",
+        "lat": "34.850615",
+        "lng": "136.916545",
+        "name": "知多武豊"
+      },
+      {
+        "id": "STN_MEITETSU_FUKI",
+        "lat": "34.829325",
+        "lng": "136.916765",
+        "name": "富貴"
+      },
+      {
+        "id": "STN_MEITETSU_KOWAGUCHI",
+        "lat": "34.79725",
+        "lng": "136.91898",
+        "name": "河和口"
+      },
+      {
+        "id": "STN_MEITETSU_KOWA",
+        "lat": "34.778025",
+        "lng": "136.912265",
+        "name": "河和"
+      },
+      {
+        "id": "STN_MEITETSU_KAMI_NOMA",
+        "lat": "34.80727",
+        "lng": "136.86681",
+        "name": "上野間"
+      },
+      {
+        "id": "STN_MEITETSU_MIHAMA_RYOKUEN",
+        "lat": "34.80029",
+        "lng": "136.86308",
+        "name": "美浜緑苑"
+      },
+      {
+        "id": "STN_MEITETSU_CHITA_OKUDA",
+        "lat": "34.787185",
+        "lng": "136.864485",
+        "name": "知多奥田"
+      },
+      {
+        "id": "STN_MEITETSU_NOMA",
+        "lat": "34.7723",
+        "lng": "136.86075",
+        "name": "野間"
+      },
+      {
+        "id": "STN_MEITETSU_UTSUMI",
+        "lat": "34.744685",
+        "lng": "136.875245",
+        "name": "内海"
+      },
+      {
+        "id": "STN_MEITETSU_SAKAEMACHI",
+        "lat": "35.170485",
+        "lng": "136.908845",
+        "name": "栄町"
+      },
+      {
+        "id": "STN_MEITETSU_HIGASHIOTE",
+        "lat": "35.18345",
+        "lng": "136.908475",
+        "name": "東大手"
+      },
+      {
+        "id": "STN_MEITETSU_SHIMIZU",
+        "lat": "35.187095",
+        "lng": "136.91394",
+        "name": "清水"
+      },
+      {
+        "id": "STN_MEITETSU_AMAGASAKA",
+        "lat": "35.1878",
+        "lng": "136.919175",
+        "name": "尼ヶ坂"
+      },
+      {
+        "id": "STN_MEITETSU_MORISHITA",
+        "lat": "35.188245",
+        "lng": "136.92929",
+        "name": "森下"
+      },
+      {
+        "id": "STN_MEITETSU_OZONE",
+        "lat": "35.191595",
+        "lng": "136.93695",
+        "name": "大曽根"
+      },
+      {
+        "id": "STN_MEITETSU_YADA",
+        "lat": "35.19366",
+        "lng": "136.947995",
+        "name": "矢田"
+      },
+      {
+        "id": "STN_MEITETSU_MORIYAMA_JIEITAI_MAE",
+        "lat": "35.19619",
+        "lng": "136.95757",
+        "name": "守山自衛隊前"
+      },
+      {
+        "id": "STN_MEITETSU_HYOTANYAMA",
+        "lat": "35.197145",
+        "lng": "136.964445",
+        "name": "瓢箪山"
+      },
+      {
+        "id": "STN_MEITETSU_OBATA",
+        "lat": "35.20007",
+        "lng": "136.97556",
+        "name": "小幡"
+      },
+      {
+        "id": "STN_MEITETSU_KITAYAMA",
+        "lat": "35.20506",
+        "lng": "136.98811",
+        "name": "喜多山"
+      },
+      {
+        "id": "STN_MEITETSU_OMORI_KINJOGAKUIN_MAE",
+        "lat": "35.206935",
+        "lng": "136.99659",
+        "name": "大森・金城学院前"
+      },
+      {
+        "id": "STN_MEITETSU_INBA",
+        "lat": "35.211025",
+        "lng": "137.01104",
+        "name": "印場"
+      },
+      {
+        "id": "STN_MEITETSU_ASAHI_MAE",
+        "lat": "35.214155",
+        "lng": "137.01975",
+        "name": "旭前"
+      },
+      {
+        "id": "STN_MEITETSU_OWARI_ASAHI",
+        "lat": "35.216765",
+        "lng": "137.03625",
+        "name": "尾張旭"
+      },
+      {
+        "id": "STN_MEITETSU_SANGO",
+        "lat": "35.216235",
+        "lng": "137.05237",
+        "name": "三郷"
+      },
+      {
+        "id": "STN_MEITETSU_MIZUNO",
+        "lat": "35.224195",
+        "lng": "137.06942",
+        "name": "水野"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_SETO",
+        "lat": "35.225525",
+        "lng": "137.077685",
+        "name": "新瀬戸"
+      },
+      {
+        "id": "STN_MEITETSU_SETO_SHIYAKUSHO_MAE",
+        "lat": "35.224995",
+        "lng": "137.08421",
+        "name": "瀬戸市役所前"
+      },
+      {
+        "id": "STN_MEITETSU_OWARI_SETO",
+        "lat": "35.22489",
+        "lng": "137.09674",
+        "name": "尾張瀬戸"
+      },
+      {
+        "id": "STN_MEITETSU_JIMOKUJI",
+        "lat": "35.195955",
+        "lng": "136.825855",
+        "name": "甚目寺"
+      },
+      {
+        "id": "STN_MEITETSU_SHIPPO",
+        "lat": "35.195795",
+        "lng": "136.806235",
+        "name": "七宝"
+      },
+      {
+        "id": "STN_MEITETSU_KIDA",
+        "lat": "35.1953",
+        "lng": "136.78801",
+        "name": "木田"
+      },
+      {
+        "id": "STN_MEITETSU_AOTSUKA",
+        "lat": "35.198705",
+        "lng": "136.766935",
+        "name": "青塚"
+      },
+      {
+        "id": "STN_MEITETSU_SHOBATA",
+        "lat": "35.195245",
+        "lng": "136.750375",
+        "name": "勝幡"
+      },
+      {
+        "id": "STN_MEITETSU_FUJINAMI",
+        "lat": "35.18883",
+        "lng": "136.738915",
+        "name": "藤浪"
+      },
+      {
+        "id": "STN_MEITETSU_TSUSHIMA",
+        "lat": "35.17803",
+        "lng": "136.73107",
+        "name": "津島"
+      },
+      {
+        "id": "STN_MEITETSU_YATOMI",
+        "lat": "35.114065",
+        "lng": "136.725845",
+        "name": "弥富"
+      },
+      {
+        "id": "STN_MEITETSU_GONOSAN",
+        "lat": "35.129345",
+        "lng": "136.711435",
+        "name": "五ノ三"
+      },
+      {
+        "id": "STN_MEITETSU_SAYA",
+        "lat": "35.14755",
+        "lng": "136.716685",
+        "name": "佐屋"
+      },
+      {
+        "id": "STN_MEITETSU_HIBINO",
+        "lat": "35.163675",
+        "lng": "136.7286",
+        "name": "日比野"
+      },
+      {
+        "id": "STN_MEITETSU_MACHIKATA",
+        "lat": "35.189804",
+        "lng": "136.727093",
+        "name": "町方"
+      },
+      {
+        "id": "STN_MEITETSU_ROKUWA",
+        "lat": "35.202215",
+        "lng": "136.729155",
+        "name": "六輪"
+      },
+      {
+        "id": "STN_MEITETSU_FUCHIDAKA",
+        "lat": "35.213945",
+        "lng": "136.727355",
+        "name": "渕高"
+      },
+      {
+        "id": "STN_MEITETSU_MARUBUCHI",
+        "lat": "35.222525",
+        "lng": "136.72899",
+        "name": "丸渕"
+      },
+      {
+        "id": "STN_MEITETSU_KAMI_MARUBUCHI",
+        "lat": "35.233875",
+        "lng": "136.73252",
+        "name": "上丸渕"
+      },
+      {
+        "id": "STN_MEITETSU_MORIGAMI",
+        "lat": "35.24761",
+        "lng": "136.736955",
+        "name": "森上"
+      },
+      {
+        "id": "STN_MEITETSU_YAMAZAKI",
+        "lat": "35.25644",
+        "lng": "136.739445",
+        "name": "山崎"
+      },
+      {
+        "id": "STN_MEITETSU_TAMANO",
+        "lat": "35.266195",
+        "lng": "136.7478",
+        "name": "玉野"
+      },
+      {
+        "id": "STN_MEITETSU_HAGIWARA",
+        "lat": "35.27717",
+        "lng": "136.757705",
+        "name": "萩原"
+      },
+      {
+        "id": "STN_MEITETSU_FUTAGO",
+        "lat": "35.28376",
+        "lng": "136.76569",
+        "name": "二子"
+      },
+      {
+        "id": "STN_MEITETSU_KARIYASUKA",
+        "lat": "35.28714",
+        "lng": "136.778255",
+        "name": "苅安賀"
+      },
+      {
+        "id": "STN_MEITETSU_KANNONJI",
+        "lat": "35.289715",
+        "lng": "136.786165",
+        "name": "観音寺"
+      },
+      {
+        "id": "STN_MEITETSU_NISHI_ICHINOMIYA",
+        "lat": "35.307485",
+        "lng": "136.79214",
+        "name": "西一宮"
+      },
+      {
+        "id": "STN_MEITETSU_KAIMEI",
+        "lat": "35.31927",
+        "lng": "136.774105",
+        "name": "開明"
+      },
+      {
+        "id": "STN_MEITETSU_OKUMACHI",
+        "lat": "35.32435",
+        "lng": "136.7611",
+        "name": "奥町"
+      },
+      {
+        "id": "STN_MEITETSU_TAMANOI",
+        "lat": "35.334845",
+        "lng": "136.75797",
+        "name": "玉ノ井"
+      },
+      {
+        "id": "STN_MEITETSU_SHIMO_OTAI",
+        "lat": "35.20243",
+        "lng": "136.87081",
+        "name": "下小田井"
+      },
+      {
+        "id": "STN_MEITETSU_NAKA_OTAI",
+        "lat": "35.214755",
+        "lng": "136.876845",
+        "name": "中小田井"
+      },
+      {
+        "id": "STN_MEITETSU_KAMI_OTAI",
+        "lat": "35.2233",
+        "lng": "136.877015",
+        "name": "上小田井"
+      },
+      {
+        "id": "STN_MEITETSU_NISHIHARU",
+        "lat": "35.244685",
+        "lng": "136.871277",
+        "name": "西春"
+      },
+      {
+        "id": "STN_MEITETSU_TOKUSHIGE_NAGOYA_GEIDAI",
+        "lat": "35.255745",
+        "lng": "136.873355",
+        "name": "徳重・名古屋芸大"
+      },
+      {
+        "id": "STN_MEITETSU_TAISANJI",
+        "lat": "35.263305",
+        "lng": "136.87479",
+        "name": "大山寺"
+      },
+      {
+        "id": "STN_MEITETSU_IWAKURA",
+        "lat": "35.27797",
+        "lng": "136.873575",
+        "name": "岩倉"
+      },
+      {
+        "id": "STN_MEITETSU_ISHIBOTOKE",
+        "lat": "35.295535",
+        "lng": "136.871175",
+        "name": "石仏"
+      },
+      {
+        "id": "STN_MEITETSU_HOTEI",
+        "lat": "35.317065",
+        "lng": "136.872935",
+        "name": "布袋"
+      },
+      {
+        "id": "STN_MEITETSU_KONAN",
+        "lat": "35.334705",
+        "lng": "136.872038",
+        "name": "江南"
+      },
+      {
+        "id": "STN_MEITETSU_KASHIMORI",
+        "lat": "35.34482",
+        "lng": "136.900245",
+        "name": "柏森"
+      },
+      {
+        "id": "STN_MEITETSU_FUSO",
+        "lat": "35.35965",
+        "lng": "136.91609",
+        "name": "扶桑"
+      },
+      {
+        "id": "STN_MEITETSU_KOTSUYOSUI",
+        "lat": "35.366835",
+        "lng": "136.926015",
+        "name": "木津用水"
+      },
+      {
+        "id": "STN_MEITETSU_INAYAMAGUCHI",
+        "lat": "35.37423",
+        "lng": "136.93997",
+        "name": "犬山口"
+      },
+      {
+        "id": "STN_MEITETSU_INUYAMA",
+        "lat": "35.3799",
+        "lng": "136.945535",
+        "name": "犬山"
+      },
+      {
+        "id": "STN_MEITETSU_INUYAMA_YUEN",
+        "lat": "35.390405",
+        "lng": "136.946925",
+        "name": "犬山遊園"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_UNUMA",
+        "lat": "35.396835",
+        "lng": "136.94426",
+        "name": "新鵜沼"
+      },
+      {
+        "id": "STN_MEITETSU_TAGAMI",
+        "lat": "35.411285",
+        "lng": "136.77216",
+        "name": "田神"
+      },
+      {
+        "id": "STN_MEITETSU_HOSOBATA",
+        "lat": "35.401577",
+        "lng": "136.78533",
+        "name": "細畑"
+      },
+      {
+        "id": "STN_MEITETSU_KIRIDOSHI",
+        "lat": "35.400275",
+        "lng": "136.79562",
+        "name": "切通"
+      },
+      {
+        "id": "STN_MEITETSU_TEJIKARA",
+        "lat": "35.39826",
+        "lng": "136.80448",
+        "name": "手力"
+      },
+      {
+        "id": "STN_MEITETSU_TAKADA_BASHI",
+        "lat": "35.398405",
+        "lng": "136.81153",
+        "name": "高田橋"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_KANO",
+        "lat": "35.399385",
+        "lng": "136.824395",
+        "name": "新加納"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_NAKA",
+        "lat": "35.40011",
+        "lng": "136.83386",
+        "name": "新那加"
+      },
+      {
+        "id": "STN_MEITETSU_SHIMINKOEN_MAE",
+        "lat": "35.400565",
+        "lng": "136.8419",
+        "name": "市民公園前"
+      },
+      {
+        "id": "STN_MEITETSU_KAKAMIGAHARA_SHIYAKUSHO_MAE",
+        "lat": "35.400845",
+        "lng": "136.847325",
+        "name": "各務原市役所前"
+      },
+      {
+        "id": "STN_MEITETSU_ROKKEN",
+        "lat": "35.401075",
+        "lng": "136.861575",
+        "name": "六軒"
+      },
+      {
+        "id": "STN_MEITETSU_MIKAKINO",
+        "lat": "35.400075",
+        "lng": "136.876165",
+        "name": "三柿野"
+      },
+      {
+        "id": "STN_MEITETSU_NIJIKKEN",
+        "lat": "35.40017",
+        "lng": "136.889295",
+        "name": "二十軒"
+      },
+      {
+        "id": "STN_MEITETSU_MEIDEN_KAKAMIGAHARA",
+        "lat": "35.402555",
+        "lng": "136.90103",
+        "name": "名電各務原"
+      },
+      {
+        "id": "STN_MEITETSU_OGASE",
+        "lat": "35.403323",
+        "lng": "136.912279",
+        "name": "苧ヶ瀬"
+      },
+      {
+        "id": "STN_MEITETSU_HABA",
+        "lat": "35.401197",
+        "lng": "136.921539",
+        "name": "羽場"
+      },
+      {
+        "id": "STN_MEITETSU_UNUMAJUKU",
+        "lat": "35.40010154",
+        "lng": "136.93215332",
+        "name": "鵜沼宿"
+      },
+      {
+        "id": "STN_MEITETSU_TOMIOKA_MAE",
+        "lat": "35.379525",
+        "lng": "136.96218",
+        "name": "富岡前"
+      },
+      {
+        "id": "STN_MEITETSU_ZENJINO",
+        "lat": "35.3898",
+        "lng": "136.980055",
+        "name": "善師野"
+      },
+      {
+        "id": "STN_MEITETSU_NISHI_KANI",
+        "lat": "35.404727",
+        "lng": "137.010673",
+        "name": "西可児"
+      },
+      {
+        "id": "STN_MEITETSU_KANIGAWA",
+        "lat": "35.418155",
+        "lng": "137.018509",
+        "name": "可児川"
+      },
+      {
+        "id": "STN_MEITETSU_NIHONRAIN_IMAWATARI",
+        "lat": "35.432312",
+        "lng": "137.036855",
+        "name": "日本ライン今渡"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_KANI",
+        "lat": "35.423265",
+        "lng": "137.055675",
+        "name": "新可児"
+      },
+      {
+        "id": "STN_MEITETSU_AKECHI",
+        "lat": "35.43335",
+        "lng": "137.087739",
+        "name": "明智"
+      },
+      {
+        "id": "STN_MEITETSU_GODO",
+        "lat": "35.43453",
+        "lng": "137.10514",
+        "name": "顔戸"
+      },
+      {
+        "id": "STN_MEITETSU_MITAKEGUCHI",
+        "lat": "35.43131",
+        "lng": "137.121735",
+        "name": "御嵩口"
+      },
+      {
+        "id": "STN_MEITETSU_MITAKE",
+        "lat": "35.42973",
+        "lng": "137.12754",
+        "name": "御嵩"
+      },
+      {
+        "id": "STN_MEITETSU_KAMIIIDA",
+        "lat": "35.2039401",
+        "lng": "136.92966231",
+        "name": "上飯田"
+      },
+      {
+        "id": "STN_MEITETSU_AJIMA",
+        "lat": "35.222761",
+        "lng": "136.936254",
+        "name": "味鋺"
+      },
+      {
+        "id": "STN_MEITETSU_AJIYOSHI",
+        "lat": "35.235105",
+        "lng": "136.937185",
+        "name": "味美"
+      },
+      {
+        "id": "STN_MEITETSU_KASUGAI",
+        "lat": "35.25036",
+        "lng": "136.936235",
+        "name": "春日井"
+      },
+      {
+        "id": "STN_MEITETSU_USHIYAMA",
+        "lat": "35.26406",
+        "lng": "136.93134",
+        "name": "牛山"
+      },
+      {
+        "id": "STN_MEITETSU_MANAI",
+        "lat": "35.2716",
+        "lng": "136.93119",
+        "name": "間内"
+      },
+      {
+        "id": "STN_MEITETSU_KOMAKIGUCHI",
+        "lat": "35.281763",
+        "lng": "136.927699",
+        "name": "小牧口"
+      },
+      {
+        "id": "STN_MEITETSU_KOMAKI",
+        "lat": "35.288955",
+        "lng": "136.927985",
+        "name": "小牧"
+      },
+      {
+        "id": "STN_MEITETSU_KOMAKIHARA",
+        "lat": "35.298649",
+        "lng": "136.935328",
+        "name": "小牧原"
+      },
+      {
+        "id": "STN_MEITETSU_AJIOKA",
+        "lat": "35.309375",
+        "lng": "136.940335",
+        "name": "味岡"
+      },
+      {
+        "id": "STN_MEITETSU_TAGATA_JINJA_MAE",
+        "lat": "35.3174",
+        "lng": "136.943785",
+        "name": "田県神社前"
+      },
+      {
+        "id": "STN_MEITETSU_GAKUDEN",
+        "lat": "35.330555",
+        "lng": "136.95009",
+        "name": "楽田"
+      },
+      {
+        "id": "STN_MEITETSU_HAGURO",
+        "lat": "35.35161",
+        "lng": "136.952525",
+        "name": "羽黒"
+      },
+      {
+        "id": "STN_MEITETSU_NISHI_KASAMATSU",
+        "lat": "35.368825",
+        "lng": "136.75777",
+        "name": "西笠松"
+      },
+      {
+        "id": "STN_MEITETSU_YANAIZU",
+        "lat": "35.365033",
+        "lng": "136.739948",
+        "name": "柳津"
+      },
+      {
+        "id": "STN_MEITETSU_MINAMI_JUKU",
+        "lat": "35.347875",
+        "lng": "136.728655",
+        "name": "南宿"
+      },
+      {
+        "id": "STN_MEITETSU_SUKA",
+        "lat": "35.33987",
+        "lng": "136.72678",
+        "name": "須賀"
+      },
+      {
+        "id": "STN_MEITETSU_FUWA_ISHIKI",
+        "lat": "35.332965",
+        "lng": "136.72191",
+        "name": "不破一色"
+      },
+      {
+        "id": "STN_MEITETSU_TAKEHANA",
+        "lat": "35.326775",
+        "lng": "136.70644",
+        "name": "竹鼻"
+      },
+      {
+        "id": "STN_MEITETSU_HASHIMASHIYAKUSHOMAE",
+        "lat": "35.321945",
+        "lng": "136.699975",
+        "name": "羽島市役所前"
+      },
+      {
+        "id": "STN_MEITETSU_EGIRA",
+        "lat": "35.315445",
+        "lng": "136.69972",
+        "name": "江吉良"
+      },
+      {
+        "id": "STN_MEITETSU_SHIN_HASHIMA",
+        "lat": "35.31522867",
+        "lng": "136.68691222",
+        "name": "新羽島"
+      }
+    ]
+  }
+]

@@ -226,7 +226,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         box-shadow: inset 0 10px 15px rgba(0,0,0,0.85), inset 0 -10px 15px rgba(0,0,0,0.85), 0 0 20px rgba(255, 210, 120, 0.2); 
     }
 		/* 4. 確保所有內容 (包括通勤快速) 喺陰影層下面 */
-    .sign-panel, .roll-container, .sign-main-content, .sign-type-box, .out-of-service-panel {
+    .sign-panel, .sign-main-content, .sign-type-box, .out-of-service-panel {
         background: transparent !important;
         position: relative;
         z-index: 1; 
@@ -635,7 +635,7 @@ async function loadData() {
             "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
             "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
-            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json"]; 
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json"]; 
         
         const fetchPromises = newCompanyFiles.map(file => 
             fetch(file).then(res => res.ok ? res.json() : null).catch(() => null)
