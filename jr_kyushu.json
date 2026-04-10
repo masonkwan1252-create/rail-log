@@ -1,0 +1,4186 @@
+[
+  {
+    "categories": "",
+    "company_id": "JR_KYUSHU",
+    "company_name": "JR九州",
+    "lines": [
+      {
+        "id": "JR_KYUSHU_KYUSHU_SHINKANSEN",
+        "name": "九州新幹線",
+        "sequence": [
+          "STN_JR_KYUSHU_HAKATA",
+          "STN_JR_KYUSHU_SHIN_TOSU",
+          "STN_JR_KYUSHU_KURUME",
+          "STN_JR_KYUSHU_CHIKUGO_FUNAGOYA",
+          "STN_JR_KYUSHU_SHIN_OMUTA",
+          "STN_JR_KYUSHU_SHIN_TAMANA",
+          "STN_JR_KYUSHU_KUMAMOTO",
+          "STN_JR_KYUSHU_SHIN_YATSUHIRO",
+          "STN_JR_KYUSHU_SHIN_MINAMATA",
+          "STN_JR_KYUSHU_IZUMI",
+          "STN_JR_KYUSHU_SENDAI",
+          "STN_JR_KYUSHU_KAGOSHIMA_CHUO"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_NISHI_KYUSHU_SHINKANSEN",
+        "name": "西九州新幹線",
+        "sequence": [
+          "STN_JR_KYUSHU_TAKEO_ONSEN",
+          "STN_JR_KYUSHU_URESHINO_ONSEN",
+          "STN_JR_KYUSHU_SHIN_OMURA",
+          "STN_JR_KYUSHU_ISAHAYA",
+          "STN_JR_KYUSHU_NAGASAKI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_SANYO_HONSEN",
+        "name": "山陽本線",
+        "sequence": [
+          "STN_JR_KYUSHU_SHIMONOSEKI",
+          "STN_JR_KYUSHU_MOJI",
+          "STN_JR_KYUSHU_KOKURA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_KAGOSHIMA _HONSEN",
+        "name": "鹿児島本線",
+        "sequence": [
+          "STN_JR_KYUSHU_MOJIKO",
+          "STN_JR_KYUSHU_KOMORIE",
+          "STN_JR_KYUSHU_MOJI",
+          "STN_JR_KYUSHU_KOKURA",
+          "STN_JR_KYUSHU_NISHI_KOKURA",
+          "STN_JR_KYUSHU_KYUSHU_KODAI_MAE",
+          "STN_JR_KYUSHU_TOBATA",
+          "STN_JR_KYUSHU_EDAMITSU",
+          "STN_JR_KYUSHU_SPACE_WORLD",
+          "STN_JR_KYUSHU_YAHATA",
+          "STN_JR_KYUSHU_KUROSAKI",
+          "STN_JR_KYUSHU_JINNO",
+          "STN_JR_KYUSHU_HARU",
+          "STN_JR_KYUSHU_ORIO",
+          "STN_JR_KYUSHU_MIZUMAKI",
+          "STN_JR_KYUSHU_ONGAGAWA",
+          "STN_JR_KYUSHU_EBITSU",
+          "STN_JR_KYUSHU_KYOYUKUDAI_MAE",
+          "STN_JR_KYUSHU_AKAMA",
+          "STN_JR_KYUSHU_TOGO",
+          "STN_JR_KYUSHU_HIGASHI_FUKUMA",
+          "STN_JR_KYUSHU_FUKUMA",
+          "STN_JR_KYUSHU_CHIDORI",
+          "STN_JR_KYUSHU_KOGA",
+          "STN_JR_KYUSHU_SHISHIBU",
+          "STN_JR_KYUSHU_SHINGU_CHUO",
+          "STN_JR_KYUSHU_FUKUKODAI_MAE",
+          "STN_JR_KYUSHU_KYUSANDAI_MAE",
+          "STN_JR_KYUSHU_KASHII",
+          "STN_JR_KYUSHU_CHIHAYA",
+          "STN_JR_KYUSHU_HAKOZAKI",
+          "STN_JR_KYUSHU_YOSHIZUKA",
+          "STN_JR_KYUSHU_HAKATA",
+          "STN_JR_KYUSHU_TAKESHITA",
+          "STN_JR_KYUSHU_SASABARU",
+          "STN_JR_KYUSHU_MINAMI_FUKUOKA",
+          "STN_JR_KYUSHU_KASUGA",
+          "STN_JR_KYUSHU_ONOJO",
+          "STN_JR_KYUSHU_MIZUKI",
+          "STN_JR_KYUSHU_TOFURO_MINAMI",
+          "STN_JR_KYUSHU_FUTSUKAICHI",
+          "STN_JR_KYUSHU_TEMPAIZAN",
+          "STN_JR_KYUSHU_HARUDA",
+          "STN_JR_KYUSHU_KEYAKIDAI",
+          "STN_JR_KYUSHU_KIYAMA",
+          "STN_JR_KYUSHU_YAYOIGAOKA",
+          "STN_JR_KYUSHU_TASHIRO",
+          "STN_JR_KYUSHU_TOSU",
+          "STN_JR_KYUSHU_HIZEN_ASAHI",
+          "STN_JR_KYUSHU_KURUME",
+          "STN_JR_KYUSHU_ARAKI",
+          "STN_JR_KYUSHU_NISHIMUTA",
+          "STN_JR_KYUSHU_HAINUZUKA",
+          "STN_JR_KYUSHU_CHIKUGO_FUNAGOYA",
+          "STN_JR_KYUSHU_SETAKA",
+          "STN_JR_KYUSHU_MINAMI_SETAKA",
+          "STN_JR_KYUSHU_WATAZE",
+          "STN_JR_KYUSHU_YOSHINO",
+          "STN_JR_KYUSHU_GINSUI",
+          "STN_JR_KYUSHU_OMUTA",
+          "STN_JR_KYUSHU_ARAO",
+          "STN_JR_KYUSHU_MINAMI_ARAO",
+          "STN_JR_KYUSHU_NAGASU",
+          "STN_JR_KYUSHU_ONOSHITA",
+          "STN_JR_KYUSHU_TAMANA",
+          "STN_JR_KYUSHU_HIGO_IKURA",
+          "STN_JR_KYUSHU_KONOHA",
+          "STN_JR_KYUSHU_TABARUZAKA",
+          "STN_JR_KYUSHU_UEKI",
+          "STN_JR_KYUSHU_NISHISATO",
+          "STN_JR_KYUSHU_SOJODAI_MAE",
+          "STN_JR_KYUSHU_KAMI_KUMAMOTO",
+          "STN_JR_KYUSHU_KUMAMOTO",
+          "STN_JR_KYUSHU_NISHI_KUMAMOTO",
+          "STN_JR_KYUSHU_KAWASHIRI",
+          "STN_JR_KYUSHU_TOMIAI",
+          "STN_JR_KYUSHU_UTO",
+          "STN_JR_KYUSHU_MATSUBASE",
+          "STN_JR_KYUSHU_OGAWA",
+          "STN_JR_KYUSHU_ARISA",
+          "STN_JR_KYUSHU_SENTO",
+          "STN_JR_KYUSHU_SHIN_YATSUHIRO",
+          "STN_JR_KYUSHU_YATSUHIRO",
+          "STN_JR_KYUSHU_SENDAI",
+          "STN_JR_KYUSHU_KUMANOJO",
+          "STN_JR_KYUSHU_KOBAJAYA",
+          "STN_JR_KYUSHU_KUSHIKINO",
+          "STN_JR_KYUSHU_KAMIMURAGAKUEN_MAE",
+          "STN_JR_KYUSHU_ICHIKI",
+          "STN_JR_KYUSHU_YUNOMOTO",
+          "STN_JR_KYUSHU_HIGASHI_ICHIKI",
+          "STN_JR_KYUSHU_IJUIN",
+          "STN_JR_KYUSHU_SATSUMA_MATSUMOTO",
+          "STN_JR_KYUSHU_KAMI_IJUIN",
+          "STN_JR_KYUSHU_HIROKI",
+          "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+          "STN_JR_KYUSHU_KAGOSHIMA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_FUKUHOKU YUTAKA",
+        "name": "福北ゆたか線",
+        "sequence": [
+          "STN_JR_KYUSHU_KUROSAKI",
+          "STN_JR_KYUSHU_JINNO_HARU",
+          "STN_JR_KYUSHU_ORIO",
+          "STN_JR_KYUSHU_HIGASHI_MIZUMAKI",
+          "STN_JR_KYUSHU_NAKAMA",
+          "STN_JR_KYUSHU_CHIKUZEN_HABU",
+          "STN_JR_KYUSHU_KURATE",
+          "STN_JR_KYUSHU_CHIKUZEN_UEKI",
+          "STN_JR_KYUSHU_SHINNYU",
+          "STN_JR_KYUSHU_NOGATA",
+          "STN_JR_KYUSHU_KATSUNO",
+          "STN_JR_KYUSHU_KOTAKE",
+          "STN_JR_KYUSHU_NAMAZUDA",
+          "STN_JR_KYUSHU_URATA",
+          "STN_JR_KYUSHU_SHIN_IIZUKA",
+          "STN_JR_KYUSHU_IIZUKA",
+          "STN_JR_KYUSHU_TENTO",
+          "STN_JR_KYUSHU_KEISEN",
+          "STN_JR_KYUSHU_CHIKUZEN_DAIBU",
+          "STN_JR_KYUSHU_KUROBARU",
+          "STN_JR_KYUSHU_KIDO_NANZOIN_MAE",
+          "STN_JR_KYUSHU_CHIKUZEN_YAMATE",
+          "STN_JR_KYUSHU_SASAGURI",
+          "STN_JR_KYUSHU_KADOMATSU",
+          "STN_JR_KYUSHU_CHOJABARU",
+          "STN_JR_KYUSHU_HARUMACHI",
+          "STN_JR_KYUSHU_YUSU",
+          "STN_JR_KYUSHU_YOSHIZUKA",
+          "STN_JR_KYUSHU_HAKATA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_SASAGURI",
+        "name": "篠栗線",
+        "sequence": [
+          "STN_JR_KYUSHU_KEISEN",
+          "STN_JR_KYUSHU_CHIKUZEN_DAIBU",
+          "STN_JR_KYUSHU_KUROBARU",
+          "STN_JR_KYUSHU_KIDO_NANZOIN_MAE",
+          "STN_JR_KYUSHU_CHIKUZEN_YAMATE",
+          "STN_JR_KYUSHU_SASAGURI",
+          "STN_JR_KYUSHU_KADOMATSU",
+          "STN_JR_KYUSHU_CHOJABARU",
+          "STN_JR_KYUSHU_HARUMACHI",
+          "STN_JR_KYUSHU_YUSU",
+          "STN_JR_KYUSHU_YOSHIZUKA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_NAGASAKI_HONSEN",
+        "name": "長崎本線",
+        "sequence": [
+          "STN_JR_KYUSHU_TOSU",
+          "STN_JR_KYUSHU_SHIN_TOSU",
+          "STN_JR_KYUSHU_HIZEN_FUMOTO",
+          "STN_JR_KYUSHU_NAKABARU",
+          "STN_JR_KYUSHU_YOSHINOGARI_KOEN",
+          "STN_JR_KYUSHU_KANZAKI",
+          "STN_JR_KYUSHU_IGAYA",
+          "STN_JR_KYUSHU_SAGA",
+          "STN_JR_KYUSHU_NABESHIMA",
+          "STN_JR_KYUSHU_BALLOON_SAGA",
+          "STN_JR_KYUSHU_KUBOTA",
+          "STN_JR_KYUSHU_USHIZU",
+          "STN_JR_KYUSHU_KOHOKU",
+          "STN_JR_KYUSHU_HIZEN_SHIROISHI",
+          "STN_JR_KYUSHU_HIZEN_RYUO",
+          "STN_JR_KYUSHU_HIZEN_KASHIMA",
+          "STN_JR_KYUSHU_HIZEN_HAMA",
+          "STN_JR_KYUSHU_HIZEN_NANAURA",
+          "STN_JR_KYUSHU_HIZEN_IIDA",
+          "STN_JR_KYUSHU_TARA",
+          "STN_JR_KYUSHU_HIZEN_OURA",
+          "STN_JR_KYUSHU_KONAGAI",
+          "STN_JR_KYUSHU_NAGASATO",
+          "STN_JR_KYUSHU_YUE",
+          "STN_JR_KYUSHU_OE",
+          "STN_JR_KYUSHU_HIZEN_NAGATA",
+          "STN_JR_KYUSHU_HIGASHI_ISAHAYA",
+          "STN_JR_KYUSHU_ISAHAYA",
+          "STN_JR_KYUSHU_NISHI_ISAHAYA",
+          "STN_JR_KYUSHU_KIKITSU",
+          "STN_JR_KYUSHU_ICHINUNO",
+          "STN_JR_KYUSHU_HIZEN_KOGA",
+          "STN_JR_KYUSHU_UTSUTSUGAWA",
+          "STN_JR_KYUSHU_URAKAMI",
+          "STN_JR_KYUSHU_NAGASAKI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_CHIKUHI",
+        "name": "筑肥線",
+        "sequence": [
+          "STN_JR_KYUSHU_MEINOHAMA",
+          "STN_JR_KYUSHU_SHIMOYAMATO",
+          "STN_JR_KYUSHU_IMAJUKU",
+          "STN_JR_KYUSHU_KYUDAIGAKKENTOSHI",
+          "STN_JR_KYUSHU_SUSENJI",
+          "STN_JR_KYUSHU_HATAE",
+          "STN_JR_KYUSHU_ITOSHIMAKOKO_MAE",
+          "STN_JR_KYUSHU_CHIKUZEN_MAEBARU",
+          "STN_JR_KYUSHU_MISAKIGAOKA",
+          "STN_JR_KYUSHU_KAFURI",
+          "STN_JR_KYUSHU_IKKISAN",
+          "STN_JR_KYUSHU_CHIKUZEN_FUKAE",
+          "STN_JR_KYUSHU_DAINYU",
+          "STN_JR_KYUSHU_FUKUYOSHI",
+          "STN_JR_KYUSHU_SHIKAKA",
+          "STN_JR_KYUSHU_HAMASAKI",
+          "STN_JR_KYUSHU_NIJI_NO_MATSUBARA",
+          "STN_JR_KYUSHU_HIGASHI_KARATSU",
+          "STN_JR_KYUSHU_WATADA",
+          "STN_JR_KYUSHU_KARATSU",
+          "STN_JR_KYUSHU_NISHI_KARATSU",
+          "STN_JR_KYUSHU_YAMAMOTO",
+          "STN_JR_KYUSHU_HIZEN_KUBO",
+          "STN_JR_KYUSHU_NISHI_OCHI",
+          "STN_JR_KYUSHU_SARI",
+          "STN_JR_KYUSHU_KOMANAKI",
+          "STN_JR_KYUSHU_OKAWANO",
+          "STN_JR_KYUSHU_HIZEN_NAGANO",
+          "STN_JR_KYUSHU_MOMOGAWA",
+          "STN_JR_KYUSHU_KANEISHIHARA",
+          "STN_JR_KYUSHU_KAMI_IMARI",
+          "STN_JR_KYUSHU_IMARI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_SASEBO",
+        "name": "佐世保線",
+        "sequence": [
+          "STN_JR_KYUSHU_KOHOKU",
+          "STN_JR_KYUSHU_OMACHI",
+          "STN_JR_KYUSHU_KITAGATA",
+          "STN_JR_KYUSHU_TAKAHASHI",
+          "STN_JR_KYUSHU_TAKEO_ONSEN",
+          "STN_JR_KYUSHU_NAGAO",
+          "STN_JR_KYUSHU_MIMASAKA",
+          "STN_JR_KYUSHU_KAMI_ARITA",
+          "STN_JR_KYUSHU_ARITA",
+          "STN_JR_KYUSHU_MIKAWACHI",
+          "STN_JR_KYUSHU_HAIKI",
+          "STN_JR_KYUSHU_DAITO",
+          "STN_JR_KYUSHU_HIU",
+          "STN_JR_KYUSHU_SASEBO"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_NIPPO_HONSEN",
+        "name": "日豊本線",
+        "sequence": [
+          "STN_JR_KYUSHU_KOKURA",
+          "STN_JR_KYUSHU_NISHI_KOKURA",
+          "STN_JR_KYUSHU_MINAMI_KOKURA",
+          "STN_JR_KYUSHU_JONO",
+          "STN_JR_KYUSHU_ABEYAMAKOEN",
+          "STN_JR_KYUSHU_SHIMOSONE",
+          "STN_JR_KYUSHU_KUSAMI",
+          "STN_JR_KYUSHU_KANDA",
+          "STN_JR_KYUSHU_OBASE_NISHIKODAI_MAE",
+          "STN_JR_KYUSHU_YUKUHASHI",
+          "STN_JR_KYUSHU_MINAMI_YUKUHASHI",
+          "STN_JR_KYUSHU_SHINDENBARU",
+          "STN_JR_KYUSHU_TSUIKI",
+          "STN_JR_KYUSHU_SHIIDA",
+          "STN_JR_KYUSHU_BUZEN_MAEYE",
+          "STN_JR_KYUSHU_UNOSHIMA",
+          "STN_JR_KYUSHU_MIKEKADO",
+          "STN_JR_KYUSHU_YOSHITOMI",
+          "STN_JR_KYUSHU_NAKATSU",
+          "STN_JR_KYUSHU_HIGASHI_NAKATSU",
+          "STN_JR_KYUSHU_IMAZU",
+          "STN_JR_KYUSHU_AMATSU",
+          "STN_JR_KYUSHU_BUZEN_ZENKOJI",
+          "STN_JR_KYUSHU_YANAGIGAURA",
+          "STN_JR_KYUSHU_BUZEN_NAGASU",
+          "STN_JR_KYUSHU_USA",
+          "STN_JR_KYUSHU_NISHIYASHIKI",
+          "STN_JR_KYUSHU_TATEISHI",
+          "STN_JR_KYUSHU_NAKAYAMAGA",
+          "STN_JR_KYUSHU_KITSUKI",
+          "STN_JR_KYUSHU_OGAMI",
+          "STN_JR_KYUSHU_HIJI",
+          "STN_JR_KYUSHU_YOKOKU",
+          "STN_JR_KYUSHU_BUNGO_TOYOKAWA",
+          "STN_JR_KYUSHU_KAMEGAWA",
+          "STN_JR_KYUSHU_BEPPUDAIGAKU",
+          "STN_JR_KYUSHU_BEPPU",
+          "STN_JR_KYUSHU_HIGASHI_BEPPU",
+          "STN_JR_KYUSHU_NISHI_OITA",
+          "STN_JR_KYUSHU_OITA",
+          "STN_JR_KYUSHU_MAKI",
+          "STN_JR_KYUSHU_TAKAJO",
+          "STN_JR_KYUSHU_TSURUSAKI",
+          "STN_JR_KYUSHU_OZAI",
+          "STN_JR_KYUSHU_SAKANOICHI",
+          "STN_JR_KYUSHU_KOZAKI",
+          "STN_JR_KYUSHU_SASHIU",
+          "STN_JR_KYUSHU_SHITANOE",
+          "STN_JR_KYUSHU_KUMASAKI",
+          "STN_JR_KYUSHU_KAMI_USUKI",
+          "STN_JR_KYUSHU_USUKI",
+          "STN_JR_KYUSHU_TSUKUMI",
+          "STN_JR_KYUSHU_HISHIRO",
+          "STN_JR_KYUSHU_AZAMUI",
+          "STN_JR_KYUSHU_KARYU",
+          "STN_JR_KYUSHU_KAIZAKI",
+          "STN_JR_KYUSHU_SAIKI",
+          "STN_JR_KYUSHU_KAMIOKA",
+          "STN_JR_KYUSHU_NAOMI",
+          "STN_JR_KYUSHU_NOGAWAI",
+          "STN_JR_KYUSHU_SHIGEOKA",
+          "STN_JR_KYUSHU_SOTARO",
+          "STN_JR_KYUSHU_ICHITANA",
+          "STN_JR_KYUSHU_KITAGAWA",
+          "STN_JR_KYUSHU_HYUGA_NAGAI",
+          "STN_JR_KYUSHU_KITA_NOBEOKA",
+          "STN_JR_KYUSHU_NOBEOKA",
+          "STN_JR_KYUSHU_MINAMI_NOBEOKA",
+          "STN_JR_KYUSHU_ASAHIGAOKA",
+          "STN_JR_KYUSHU_TOTORO",
+          "STN_JR_KYUSHU_KADOGAWA",
+          "STN_JR_KYUSHU_HYUGASHI",
+          "STN_JR_KYUSHU_ZAIKOJI",
+          "STN_JR_KYUSHU_MINAMI_HYUGA",
+          "STN_JR_KYUSHU_MIMITSU",
+          "STN_JR_KYUSHU_HIGASHI_TSUNO",
+          "STN_JR_KYUSHU_TSUNO",
+          "STN_JR_KYUSHU_KAWANAMI",
+          "STN_JR_KYUSHU_TAKANABE",
+          "STN_JR_KYUSHU_HYUGA_SHINTOMI",
+          "STN_JR_KYUSHU_SADOWARA",
+          "STN_JR_KYUSHU_HYUGA_SUMIYOSHI",
+          "STN_JR_KYUSHU_HASUIKE",
+          "STN_JR_KYUSHU_MIYAZAKI_JINGU",
+          "STN_JR_KYUSHU_MIYAZAKI",
+          "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+          "STN_JR_KYUSHU_KANO",
+          "STN_JR_KYUSHU_KIYOTAKE",
+          "STN_JR_KYUSHU_HYUGA_KUTSUKAKE",
+          "STN_JR_KYUSHU_TANO",
+          "STN_JR_KYUSHU_AOIDAKE",
+          "STN_JR_KYUSHU_YAMANOKUCHI",
+          "STN_JR_KYUSHU_MOCHIBARU",
+          "STN_JR_KYUSHU_MIMATA",
+          "STN_JR_KYUSHU_MIYAKONOJO",
+          "STN_JR_KYUSHU_NISHI_MIYAKONOJO",
+          "STN_JR_KYUSHU_ISOICHI",
+          "STN_JR_KYUSHU_TAKARABE",
+          "STN_JR_KYUSHU_KITAMATA",
+          "STN_JR_KYUSHU_OSUMI_OKAWARA",
+          "STN_JR_KYUSHU_KITA_NAGANODA",
+          "STN_JR_KYUSHU_KIRISHIMA_JINGU",
+          "STN_JR_KYUSHU_KOKUBU",
+          "STN_JR_KYUSHU_HAYATO",
+          "STN_JR_KYUSHU_KAJIKI",
+          "STN_JR_KYUSHU_KINKO",
+          "STN_JR_KYUSHU_CHOSA",
+          "STN_JR_KYUSHU_AIRA",
+          "STN_JR_KYUSHU_SHIGETOMI",
+          "STN_JR_KYUSHU_RYUGAMIZU",
+          "STN_JR_KYUSHU_SENGANEN",
+          "STN_JR_KYUSHU_KAGOSHIMA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_MIYAZAKI_KUKO",
+        "name": "宮崎空港線",
+        "sequence": [
+          "STN_JR_KYUSHU_TAYOSHI",
+          "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_KASHII",
+        "name": "香椎線",
+        "sequence": [
+          "STN_JR_KYUSHU_SAITOZAKI",
+          "STN_JR_KYUSHU_UMINONAKAMICHI",
+          "STN_JR_KYUSHU_GANNOSU",
+          "STN_JR_KYUSHU_NATA",
+          "STN_JR_KYUSHU_WABAJIRO",
+          "STN_JR_KYUSHU_KASHII",
+          "STN_JR_KYUSHU_KASHII_JINGU",
+          "STN_JR_KYUSHU_MAIMATSUBARA",
+          "STN_JR_KYUSHU_DOI",
+          "STN_JR_KYUSHU_IGA",
+          "STN_JR_KYUSHU_CHOJABARU",
+          "STN_JR_KYUSHU_SAKADO",
+          "STN_JR_KYUSHU_SUE",
+          "STN_JR_KYUSHU_SUE_CHUO",
+          "STN_JR_KYUSHU_SHINBARU",
+          "STN_JR_KYUSHU_UMI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_MISUMI",
+        "name": "三角線",
+        "sequence": [
+          "STN_JR_KYUSHU_KUMAMOTO",
+          "STN_JR_KYUSHU_NISHI_KUMAMOTO",
+          "STN_JR_KYUSHU_KAWASHIRI",
+          "STN_JR_KYUSHU_TOMIAI",
+          "STN_JR_KYUSHU_UTO",
+          "STN_JR_KYUSHU_MIDORIKAWA",
+          "STN_JR_KYUSHU_SUMIYOSHI",
+          "STN_JR_KYUSHU_HIGO_NAGAHAMA",
+          "STN_JR_KYUSHU_ODA",
+          "STN_JR_KYUSHU_AKASE",
+          "STN_JR_KYUSHU_ISHIUCHI_DAMU",
+          "STN_JR_KYUSHU_HATAURA",
+          "STN_JR_KYUSHU_MISUMI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_HISATSU",
+        "name": "肥薩線",
+        "sequence": [
+          "STN_JR_KYUSHU_YATSUHIRO",
+          "STN_JR_KYUSHU_DAN",
+          "STN_JR_KYUSHU_SAKAMOTO",
+          "STN_JR_KYUSHU_HAGI",
+          "STN_JR_KYUSHU_KAMASE",
+          "STN_JR_KYUSHU_SETOISHI",
+          "STN_JR_KYUSHU_KAIJI",
+          "STN_JR_KYUSHU_YOSHIO",
+          "STN_JR_KYUSHU_SHIROISHI",
+          "STN_JR_KYUSHU_KYUSENDO",
+          "STN_JR_KYUSHU_ISSHOCHI",
+          "STN_JR_KYUSHU_NARAGUCHI",
+          "STN_JR_KYUSHU_WATARI",
+          "STN_JR_KYUSHU_NISHI_HITOYOSHI",
+          "STN_JR_KYUSHU_HITOYOSHI",
+          "STN_JR_KYUSHU_OKOBA",
+          "STN_JR_KYUSHU_YATAKE",
+          "STN_JR_KYUSHU_MASAKI",
+          "STN_JR_KYUSHU_YOSHIMATSU",
+          "STN_JR_KYUSHU_KURINO",
+          "STN_JR_KYUSHU_OSUMI_YOKOGAWA",
+          "STN_JR_KYUSHU_UEMURA",
+          "STN_JR_KYUSHU_KIRISHIMA_ONSEN",
+          "STN_JR_KYUSHU_KAREIGAWA",
+          "STN_JR_KYUSHU_NAKAFUKURA",
+          "STN_JR_KYUSHU_HYOKIYAMA",
+          "STN_JR_KYUSHU_HINATAYAMA",
+          "STN_JR_KYUSHU_HAYATO"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_IBUSUKI_MAKURAZAKI",
+        "name": "指宿枕崎線",
+        "sequence": [
+          "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+          "STN_JR_KYUSHU_KORIMOTO",
+          "STN_JR_KYUSHU_MINAMI_KAGOSHIMA",
+          "STN_JR_KYUSHU_USUKI",
+          "STN_JR_KYUSHU_TANIYAMA",
+          "STN_JR_KYUSHU_JIGENJI",
+          "STN_JR_KYUSHU_SAKANOUE",
+          "STN_JR_KYUSHU_GOINO",
+          "STN_JR_KYUSHU_HIRAKAWA",
+          "STN_JR_KYUSHU_SESEKUSHI",
+          "STN_JR_KYUSHU_NAKAMYO",
+          "STN_JR_KYUSHU_KIRE",
+          "STN_JR_KYUSHU_MAENOHAMA",
+          "STN_JR_KYUSHU_NUKUMI",
+          "STN_JR_KYUSHU_SATSUMA_IMAIZUMI",
+          "STN_JR_KYUSHU_MIYAGAHAMA",
+          "STN_JR_KYUSHU_NIGATSU_DEN",
+          "STN_JR_KYUSHU_IBUSUKI",
+          "STN_JR_KYUSHU_YAMAKAWA",
+          "STN_JR_KYUSHU_OYAMA",
+          "STN_JR_KYUSHU_NISHI_OYAMA",
+          "STN_JR_KYUSHU_SATSUMA_KAWAJIRI",
+          "STN_JR_KYUSHU_HIGASHI_KAIMON",
+          "STN_JR_KYUSHU_KAIMON",
+          "STN_JR_KYUSHU_IRINO",
+          "STN_JR_KYUSHU_EI",
+          "STN_JR_KYUSHU_NISHI_EI",
+          "STN_JR_KYUSHU_GORYO",
+          "STN_JR_KYUSHU_ISHIGAKI",
+          "STN_JR_KYUSHU_MIZUNARIKAWA",
+          "STN_JR_KYUSHU_EI_OKAWA",
+          "STN_JR_KYUSHU_MATSUGAURA",
+          "STN_JR_KYUSHU_SATSUMA_SHIOYA",
+          "STN_JR_KYUSHU_SHIRASAWA",
+          "STN_JR_KYUSHU_SATSUMA_ITASHIKI",
+          "STN_JR_KYUSHU_MAKURAZAKI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_KARATSU",
+        "name": "唐津線",
+        "sequence": [
+          "STN_JR_KYUSHU_SAGA",
+          "STN_JR_KYUSHU_NABESHIMA",
+          "STN_JR_KYUSHU_BALLOON_SAGA",
+          "STN_JR_KYUSHU_KUBOTA",
+          "STN_JR_KYUSHU_OGI",
+          "STN_JR_KYUSHU_HIGASHI_TAKU",
+          "STN_JR_KYUSHU_NAKA_TAKU",
+          "STN_JR_KYUSHU_TAKU",
+          "STN_JR_KYUSHU_KYURAGI",
+          "STN_JR_KYUSHU_IWAYA",
+          "STN_JR_KYUSHU_OCHI",
+          "STN_JR_KYUSHU_MOTOMUTABE",
+          "STN_JR_KYUSHU_YAMAMOTO",
+          "STN_JR_KYUSHU_ONIZUKA",
+          "STN_JR_KYUSHU_KARATSU",
+          "STN_JR_KYUSHU_NISHI_KARATSU"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_OMURA",
+        "name": "大村線",
+        "sequence": [
+          "STN_JR_KYUSHU_HAIKI",
+          "STN_JR_KYUSHU_HUIS_TEN_BOSCH",
+          "STN_JR_KYUSHU_HAE_NO_SAKI",
+          "STN_JR_KYUSHU_OGUSHIGO",
+          "STN_JR_KYUSHU_KAWATANA",
+          "STN_JR_KYUSHU_SONOGI",
+          "STN_JR_KYUSHU_CHIWATA",
+          "STN_JR_KYUSHU_MATSUBARA",
+          "STN_JR_KYUSHU_OMURA_SHARYOKICHI",
+          "STN_JR_KYUSHU_TAKEMATSU",
+          "STN_JR_KYUSHU_SHIN_OMURA",
+          "STN_JR_KYUSHU_SUWA",
+          "STN_JR_KYUSHU_OMURA",
+          "STN_JR_KYUSHU_IWAMATSU",
+          "STN_JR_KYUSHU_ISAHAYA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_KYUDAI_HONSEN",
+        "name": "久大本線",
+        "sequence": [
+          "STN_JR_KYUSHU_KURUME",
+          "STN_JR_KYUSHU_KURUME_KOKO_MAE",
+          "STN_JR_KYUSHU_MINAMI_KURUME",
+          "STN_JR_KYUSHU_KURUME_DAIGAKU_MAE",
+          "STN_JR_KYUSHU_MII",
+          "STN_JR_KYUSHU_ZENDOJI",
+          "STN_JR_KYUSHU_CHIKUGO_KUSANO",
+          "STN_JR_KYUSHU_TANUSHIMARU",
+          "STN_JR_KYUSHU_CHIKUGO_YOSHII",
+          "STN_JR_KYUSHU_UKIHA",
+          "STN_JR_KYUSHU_CHIKUGO_OISHI",
+          "STN_JR_KYUSHU_YOAKE",
+          "STN_JR_KYUSHU_TERUOKA",
+          "STN_JR_KYUSHU_HITA",
+          "STN_JR_KYUSHU_BUNGO_MIYOSHI",
+          "STN_JR_KYUSHU_BUNGO_NAKAGAWA",
+          "STN_JR_KYUSHU_AMAGASE",
+          "STN_JR_KYUSHU_SUGIGAWACHI",
+          "STN_JR_KYUSHU_KITA_YAMADA",
+          "STN_JR_KYUSHU_BUNGO_MORI",
+          "STN_JR_KYUSHU_ERA",
+          "STN_JR_KYUSHU_HIKIJI",
+          "STN_JR_KYUSHU_BUNGO_NAKAMURA",
+          "STN_JR_KYUSHU_NOYA",
+          "STN_JR_KYUSHU_YUFUIN",
+          "STN_JR_KYUSHU_MINAMI_YUFUIN",
+          "STN_JR_KYUSHU_YUNOHIRA",
+          "STN_JR_KYUSHU_SHONAI",
+          "STN_JR_KYUSHU_TENJINYAMA",
+          "STN_JR_KYUSHU_ONOYA",
+          "STN_JR_KYUSHU_ONIGASE",
+          "STN_JR_KYUSHU_MUKAINOHARU",
+          "STN_JR_KYUSHU_BUNGO_KOKUBU",
+          "STN_JR_KYUSHU_KAKU",
+          "STN_JR_KYUSHU_MINAMI_OITA",
+          "STN_JR_KYUSHU_FURUGO_U",
+          "STN_JR_KYUSHU_OITA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_HOHI_HONSEN",
+        "name": "豊肥本線",
+        "sequence": [
+          "STN_JR_KYUSHU_OITA",
+          "STN_JR_KYUSHU_TAKIO",
+          "STN_JR_KYUSHU_SHIKIDO",
+          "STN_JR_KYUSHU_OITA_DAIGAKU_MAE",
+          "STN_JR_KYUSHU_NAKAHANDA",
+          "STN_JR_KYUSHU_TAKENAKA",
+          "STN_JR_KYUSHU_INUKAI",
+          "STN_JR_KYUSHU_SUGAO",
+          "STN_JR_KYUSHU_MIE_MACHI",
+          "STN_JR_KYUSHU_BUNGO_KIYOKAWA",
+          "STN_JR_KYUSHU_OGATA",
+          "STN_JR_KYUSHU_ASAJI",
+          "STN_JR_KYUSHU_BUNGO_TAKEDA",
+          "STN_JR_KYUSHU_TAMARAI",
+          "STN_JR_KYUSHU_BUNGO_OGI",
+          "STN_JR_KYUSHU_TAKIMIZU",
+          "STN_JR_KYUSHU_NAMINO",
+          "STN_JR_KYUSHU_MIYAJI",
+          "STN_JR_KYUSHU_IKOINO_MURA",
+          "STN_JR_KYUSHU_ASO",
+          "STN_JR_KYUSHU_UCHIMAKI",
+          "STN_JR_KYUSHU_ICHINOKAWA",
+          "STN_JR_KYUSHU_AKAMIZU",
+          "STN_JR_KYUSHU_TATE_NO",
+          "STN_JR_KYUSHU_SETA",
+          "STN_JR_KYUSHU_HIGO_OZU",
+          "STN_JR_KYUSHU_HARAMIZU",
+          "STN_JR_KYUSHU_SANRIGI",
+          "STN_JR_KYUSHU_HIKARI_NO_MORI",
+          "STN_JR_KYUSHU_MUSASHIZUKA",
+          "STN_JR_KYUSHU_TATSUTAGUCHI",
+          "STN_JR_KYUSHU_TOKAIGAKUEN_MAE",
+          "STN_JR_KYUSHU_SUIZENJI",
+          "STN_JR_KYUSHU_SHIN_SUIZENJI",
+          "STN_JR_KYUSHU_MINAMI_KUMAMOTO",
+          "STN_JR_KYUSHU_HEISEI",
+          "STN_JR_KYUSHU_KUMAMOTO"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_HITAHIKOSAN",
+        "name": "日田彦山線",
+        "sequence": [
+          "STN_JR_KYUSHU_KOKURA",
+          "STN_JR_KYUSHU_NISHI_KOKURA",
+          "STN_JR_KYUSHU_MINAMI_KOKURA",
+          "STN_JR_KYUSHU_JONO",
+          "STN_JR_KYUSHU_ISHIDA",
+          "STN_JR_KYUSHU_SHIIKOEN",
+          "STN_JR_KYUSHU_SHII",
+          "STN_JR_KYUSHU_ISHIHARAMACHI",
+          "STN_JR_KYUSHU_YOBUNO",
+          "STN_JR_KYUSHU_SAIDOSHO",
+          "STN_JR_KYUSHU_KAWARU",
+          "STN_JR_KYUSHU_IPPONMATSU",
+          "STN_JR_KYUSHU_TAGAWA_ITA",
+          "STN_JR_KYUSHU_TAGAWA_GOTOJI",
+          "STN_JR_KYUSHU_IKEJIRI",
+          "STN_JR_KYUSHU_BUZEN_KAWASAKI",
+          "STN_JR_KYUSHU_NISHI_SOEDA",
+          "STN_JR_KYUSHU_SOEDA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_NICHINAN",
+        "name": "日南線",
+        "sequence": [
+          "STN_JR_KYUSHU_MIYAZAKI",
+          "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+          "STN_JR_KYUSHU_TAYOSHI",
+          "STN_JR_KYUSHU_MINAMIKATA",
+          "STN_JR_KYUSHU_KIBANA",
+          "STN_JR_KYUSHU_UNDOKOEN",
+          "STN_JR_KYUSHU_SOYANJI",
+          "STN_JR_KYUSHU_KODOMO_NO_KUNI",
+          "STN_JR_KYUSHU_AOSHIMA",
+          "STN_JR_KYUSHU_ORYUZAKO",
+          "STN_JR_KYUSHU_UCHIUMI",
+          "STN_JR_KYUSHU_KOUCHIUMI",
+          "STN_JR_KYUSHU_IBII",
+          "STN_JR_KYUSHU_KITAGO",
+          "STN_JR_KYUSHU_UCHINODA",
+          "STN_JR_KYUSHU_OBI",
+          "STN_JR_KYUSHU_NICHINAN",
+          "STN_JR_KYUSHU_ABURATSU",
+          "STN_JR_KYUSHU_ODOTSU",
+          "STN_JR_KYUSHU_NANGO",
+          "STN_JR_KYUSHU_TANINOKUCHI",
+          "STN_JR_KYUSHU_YOWARA",
+          "STN_JR_KYUSHU_HYUGA_OTSUKA",
+          "STN_JR_KYUSHU_HYUGA_KITAKATA",
+          "STN_JR_KYUSHU_KUSHIMA",
+          "STN_JR_KYUSHU_FUKUSHIMA_IMAMACHI",
+          "STN_JR_KYUSHU_FUKUSHIMA_TAKAMATSU",
+          "STN_JR_KYUSHU_OSUMI_NATSUI",
+          "STN_JR_KYUSHU_SHIBUSHI"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_KITTO",
+        "name": "吉都線",
+        "sequence": [
+          "STN_JR_KYUSHU_YOSHIMATSU",
+          "STN_JR_KYUSHU_TSURUMARU",
+          "STN_JR_KYUSHU_KYOMACHI_ONSEN",
+          "STN_JR_KYUSHU_EBINO",
+          "STN_JR_KYUSHU_EBINO_UWAE",
+          "STN_JR_KYUSHU_EBINO_IINO",
+          "STN_JR_KYUSHU_NISHI_KOBAYASHI",
+          "STN_JR_KYUSHU_KOBAYASHI",
+          "STN_JR_KYUSHU_HIROWARA",
+          "STN_JR_KYUSHU_TAKAHARU",
+          "STN_JR_KYUSHU_HYUGA_MAEDA",
+          "STN_JR_KYUSHU_TAKASAKI_SHINDEN",
+          "STN_JR_KYUSHU_HIGASHI_TAKASAKI",
+          "STN_JR_KYUSHU_MANGAZUKA",
+          "STN_JR_KYUSHU_TANIGASHIRA",
+          "STN_JR_KYUSHU_HYUGA_SHONAI",
+          "STN_JR_KYUSHU_MIYAKONOJO"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_WAKAMATSU",
+        "name": "若松線",
+        "sequence": [
+          "STN_JR_KYUSHU_WAKAMATSU",
+          "STN_JR_KYUSHU_FUJINOKI",
+          "STN_JR_KYUSHU_OKUDOKAI",
+          "STN_JR_KYUSHU_FUTAJIMA",
+          "STN_JR_KYUSHU_HONJO",
+          "STN_JR_KYUSHU_ORIO"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_FUKUHOKU_YUTAKA",
+        "name": "福北ゆたか線",
+        "sequence": [
+          "STN_JR_KYUSHU_ORIO",
+          "STN_JR_KYUSHU_HIGASHI_MIZUMAKI",
+          "STN_JR_KYUSHU_NAKAMA",
+          "STN_JR_KYUSHU_CHIKUZEN_HABU",
+          "STN_JR_KYUSHU_KURATE",
+          "STN_JR_KYUSHU_CHIKUZEN_UEKI",
+          "STN_JR_KYUSHU_SHINNYU",
+          "STN_JR_KYUSHU_NOGATA",
+          "STN_JR_KYUSHU_KATSUNO",
+          "STN_JR_KYUSHU_KOTAKE",
+          "STN_JR_KYUSHU_NAMAZUTA",
+          "STN_JR_KYUSHU_URATA",
+          "STN_JR_KYUSHU_SHIN_IIZUKA",
+          "STN_JR_KYUSHU_IIZUKA",
+          "STN_JR_KYUSHU_TENTO",
+          "STN_JR_KYUSHU_KEISEN"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_HARUDA",
+        "name": "原田線",
+        "sequence": [
+          "STN_JR_KYUSHU_KEISEN",
+          "STN_JR_KYUSHU_KAMI_HONAMI",
+          "STN_JR_KYUSHU_CHIKUZEN_UCHINO",
+          "STN_JR_KYUSHU_CHIKUZEN_YAMAUE",
+          "STN_JR_KYUSHU_HARUDA"
+        ]
+      },
+      {
+        "id": "JR_KYUSHU_GOTOJI",
+        "name": "後藤寺線",
+        "sequence": [
+          "STN_JR_KYUSHU_SHIN_IIZUKA",
+          "STN_JR_KYUSHU_KAMI_MIO",
+          "STN_JR_KYUSHU_SHIMO_KAMO",
+          "STN_JR_KYUSHU_CHIKUZEN_SHONAI",
+          "STN_JR_KYUSHU_FUNAO",
+          "STN_JR_KYUSHU_TAGAWA_GOTOJI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_JR_KYUSHU_HAKATA",
+        "lat": "33.589995",
+        "lng": "130.42056",
+        "name": "博多"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_TOSU",
+        "lat": "33.369696",
+        "lng": "130.490883",
+        "name": "新鳥栖"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KURUME",
+        "lat": "33.320729",
+        "lng": "130.501372",
+        "name": "久留米"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUGO_FUNAGOYA",
+        "lat": "33.177908",
+        "lng": "130.49168",
+        "name": "筑後船小屋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_OMUTA",
+        "lat": "33.07125",
+        "lng": "130.48875",
+        "name": "新大牟田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_TAMANA",
+        "lat": "32.9425",
+        "lng": "130.573556",
+        "name": "新玉名"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUMAMOTO",
+        "lat": "32.78984294",
+        "lng": "130.68852898",
+        "name": "熊本"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_YATSUHIRO",
+        "lat": "32.518284",
+        "lng": "130.634321",
+        "name": "新八代"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_MINAMATA",
+        "lat": "32.211",
+        "lng": "130.429333",
+        "name": "新水俣"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IZUMI",
+        "lat": "32.089586",
+        "lng": "130.358389",
+        "name": "出水"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SENDAI",
+        "lat": "31.81363",
+        "lng": "130.3122",
+        "name": "川内"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+        "lat": "31.583996",
+        "lng": "130.542007",
+        "name": "鹿児島中央"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKEO_ONSEN",
+        "lat": "33.19669",
+        "lng": "130.023475",
+        "name": "武雄温泉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_URESHINO_ONSEN",
+        "lat": "33.106556",
+        "lng": "129.998972",
+        "name": "嬉野温泉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_OMURA",
+        "lat": "32.9324527",
+        "lng": "129.95725379",
+        "name": "新大村"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISAHAYA",
+        "lat": "32.85159318",
+        "lng": "130.04129465",
+        "name": "諫早"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAGASAKI",
+        "lat": "32.75246378",
+        "lng": "129.8686849",
+        "name": "長崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIMONOSEKI",
+        "lat": "33.949289",
+        "lng": "130.921696",
+        "name": "下関"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MOJI",
+        "lat": "33.904191",
+        "lng": "130.932714",
+        "name": "門司"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOKURA",
+        "lat": "33.88693",
+        "lng": "130.883051",
+        "name": "小倉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MOJIKO",
+        "lat": "33.944055",
+        "lng": "130.960505",
+        "name": "門司港"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOMORIE",
+        "lat": "33.916515",
+        "lng": "130.938875",
+        "name": "小森江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_KOKURA",
+        "lat": "33.88872",
+        "lng": "130.87406",
+        "name": "西小倉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYUSHU_KODAI_MAE",
+        "lat": "33.90046",
+        "lng": "130.84016",
+        "name": "九州工大前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TOBATA",
+        "lat": "33.897415",
+        "lng": "130.820915",
+        "name": "戸畑"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EDAMITSU",
+        "lat": "33.879185",
+        "lng": "130.81286",
+        "name": "枝光"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SPACE_WORLD",
+        "lat": "33.871173",
+        "lng": "130.806099",
+        "name": "スペースワールド"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YAHATA",
+        "lat": "33.869267",
+        "lng": "130.795306",
+        "name": "八幡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUROSAKI",
+        "lat": "33.866915",
+        "lng": "130.76656",
+        "name": "黒崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_JINNO HARU",
+        "lat": "33.868237",
+        "lng": "130.742534",
+        "name": "陣原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ORIO",
+        "lat": "33.863881",
+        "lng": "130.714669",
+        "name": "折尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIZUMAKI",
+        "lat": "33.852585",
+        "lng": "130.696285",
+        "name": "水巻"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ONGAGAWA",
+        "lat": "33.84675",
+        "lng": "130.67363",
+        "name": "遠賀川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EBITSU",
+        "lat": "33.84015",
+        "lng": "130.623747",
+        "name": "海老津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYOYUKUDAI_MAE",
+        "lat": "33.808175",
+        "lng": "130.59031",
+        "name": "教育大前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AKAMA",
+        "lat": "33.80823",
+        "lng": "130.56959",
+        "name": "赤間"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TOGO",
+        "lat": "33.79449",
+        "lng": "130.52884",
+        "name": "東郷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_FUKUMA",
+        "lat": "33.773855",
+        "lng": "130.510705",
+        "name": "東福間"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUKUMA",
+        "lat": "33.763755",
+        "lng": "130.48721",
+        "name": "福間"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIDORI",
+        "lat": "33.749055",
+        "lng": "130.47635",
+        "name": "千鳥"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOGA",
+        "lat": "33.73256",
+        "lng": "130.46689",
+        "name": "古賀"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHISHIBU",
+        "lat": "33.720925",
+        "lng": "130.457335",
+        "name": "ししぶ"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHINGU_CHUO",
+        "lat": "33.712026",
+        "lng": "130.449442",
+        "name": "新宮中央"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUKUKODAI_MAE",
+        "lat": "33.698492",
+        "lng": "130.440584",
+        "name": "福工大前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYUSANDAI_MAE",
+        "lat": "33.67373",
+        "lng": "130.441155",
+        "name": "九産大前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KASHII",
+        "lat": "33.659735",
+        "lng": "130.44402",
+        "name": "香椎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIHAYA",
+        "lat": "33.64941",
+        "lng": "130.44068",
+        "name": "千早"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAKOZAKI",
+        "lat": "33.618025",
+        "lng": "130.42655",
+        "name": "箱崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOSHIZUKA",
+        "lat": "33.6072",
+        "lng": "130.423705",
+        "name": "吉塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKESHITA",
+        "lat": "33.56864",
+        "lng": "130.431655",
+        "name": "竹下"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SASABARU",
+        "lat": "33.55326",
+        "lng": "130.44869",
+        "name": "笹原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_FUKUOKA",
+        "lat": "33.54217",
+        "lng": "130.460355",
+        "name": "南福岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KASUGA",
+        "lat": "33.534665",
+        "lng": "130.46938",
+        "name": "春日"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ONOJO",
+        "lat": "33.524965",
+        "lng": "130.48007",
+        "name": "大野城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIZUKI",
+        "lat": "33.517811",
+        "lng": "130.490281",
+        "name": "水城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TOFURO_MINAMI",
+        "lat": "33.503158",
+        "lng": "130.506709",
+        "name": "都府楼南"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUTSUKAICHI",
+        "lat": "33.494455",
+        "lng": "130.518925",
+        "name": "二日市"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TEMPAIZAN",
+        "lat": "33.48161",
+        "lng": "130.53058",
+        "name": "天拝山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HARUDA",
+        "lat": "33.451733",
+        "lng": "130.539408",
+        "name": "原田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KEYAKIDAI",
+        "lat": "33.434115",
+        "lng": "130.53336",
+        "name": "けやき台"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIYAMA",
+        "lat": "33.421214",
+        "lng": "130.532329",
+        "name": "基山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YAYOIGAOKA",
+        "lat": "33.40265",
+        "lng": "130.52863",
+        "name": "弥生が丘"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TASHIRO",
+        "lat": "33.38453",
+        "lng": "130.524855",
+        "name": "田代"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TOSU",
+        "lat": "33.374257",
+        "lng": "130.519892",
+        "name": "鳥栖"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_ASAHI",
+        "lat": "33.34977",
+        "lng": "130.4961",
+        "name": "肥前旭"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ARAKI",
+        "lat": "33.27685",
+        "lng": "130.502695",
+        "name": "荒木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHIMUTA",
+        "lat": "33.24622",
+        "lng": "130.50102",
+        "name": "西牟田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAINUZUKA",
+        "lat": "33.209841",
+        "lng": "130.497632",
+        "name": "羽犬塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SETAKA",
+        "lat": "33.156985",
+        "lng": "130.485445",
+        "name": "瀬高"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_SETAKA",
+        "lat": "33.133365",
+        "lng": "130.471215",
+        "name": "南瀬高"
+      },
+      {
+        "id": "STN_JR_KYUSHU_WATAZE",
+        "lat": "33.099555",
+        "lng": "130.4601",
+        "name": "渡瀬"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOSHINO",
+        "lat": "33.07553",
+        "lng": "130.4664",
+        "name": "吉野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_GINSUI",
+        "lat": "33.05491",
+        "lng": "130.460905",
+        "name": "銀水"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OMUTA",
+        "lat": "33.02939",
+        "lng": "130.443845",
+        "name": "大牟田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ARAO",
+        "lat": "32.994525",
+        "lng": "130.434725",
+        "name": "荒尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_ARAO",
+        "lat": "32.96583",
+        "lng": "130.43313",
+        "name": "南荒尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAGASU",
+        "lat": "32.935145",
+        "lng": "130.455595",
+        "name": "長洲"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ONOSHITA",
+        "lat": "32.92165",
+        "lng": "130.50243",
+        "name": "大野下"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAMANA",
+        "lat": "32.925975",
+        "lng": "130.5487",
+        "name": "玉名"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGO_IKURA",
+        "lat": "32.913265",
+        "lng": "130.586775",
+        "name": "肥後伊倉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KONOHA",
+        "lat": "32.916365",
+        "lng": "130.626345",
+        "name": "木葉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TABARUZAKA",
+        "lat": "32.899335",
+        "lng": "130.6532",
+        "name": "田原坂"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UEKI",
+        "lat": "32.88007",
+        "lng": "130.680895",
+        "name": "植木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHISATO",
+        "lat": "32.85458",
+        "lng": "130.70016",
+        "name": "西里"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SOJODAI_MAE",
+        "lat": "32.830805",
+        "lng": "130.694935",
+        "name": "崇城大学前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_KUMAMOTO",
+        "lat": "32.817354",
+        "lng": "130.699072",
+        "name": "上熊本"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_KUMAMOTO",
+        "lat": "32.762502",
+        "lng": "130.683058",
+        "name": "西熊本"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAWASHIRI",
+        "lat": "32.74352",
+        "lng": "130.67972",
+        "name": "川尻"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TOMIAI",
+        "lat": "32.713702",
+        "lng": "130.672836",
+        "name": "富合"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UTO",
+        "lat": "32.694348",
+        "lng": "130.669071",
+        "name": "宇土"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MATSUBASE",
+        "lat": "32.65253",
+        "lng": "130.67049",
+        "name": "松橋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OGAWA",
+        "lat": "32.60128",
+        "lng": "130.69409",
+        "name": "小川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ARISA",
+        "lat": "32.56284",
+        "lng": "130.67035",
+        "name": "有佐"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SENTO",
+        "lat": "32.532615",
+        "lng": "130.64569",
+        "name": "千丁"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YATSUHIRO",
+        "lat": "32.504413",
+        "lng": "130.621184",
+        "name": "八代"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUMANOJO",
+        "lat": "31.792575",
+        "lng": "130.307075",
+        "name": "隈之城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOBAJAYA",
+        "lat": "31.76612",
+        "lng": "130.30807",
+        "name": "木場茶屋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUSHIKINO",
+        "lat": "31.721856",
+        "lng": "130.274422",
+        "name": "串木野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMIMURAGAKUEN_MAE",
+        "lat": "31.703809",
+        "lng": "130.284002",
+        "name": "神村学園前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ICHIKI",
+        "lat": "31.68993",
+        "lng": "130.302915",
+        "name": "市来"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YUNOMOTO",
+        "lat": "31.67392",
+        "lng": "130.336805",
+        "name": "湯之元"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_ICHIKI",
+        "lat": "31.654995",
+        "lng": "130.34789",
+        "name": "東市来"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IJUIN",
+        "lat": "31.63016",
+        "lng": "130.39581",
+        "name": "伊集院"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SATSUMA_MATSUMOTO",
+        "lat": "31.60538",
+        "lng": "130.438845",
+        "name": "薩摩松元"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_IJUIN",
+        "lat": "31.594186",
+        "lng": "130.458847",
+        "name": "上伊集院"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIROKI",
+        "lat": "31.576607",
+        "lng": "130.504295",
+        "name": "広木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAGOSHIMA",
+        "lat": "31.602186",
+        "lng": "130.564288",
+        "name": "鹿児島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_JINNO_HARU",
+        "lat": "33.868237",
+        "lng": "130.742534",
+        "name": "陣原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_MIZUMAKI",
+        "lat": "33.840321",
+        "lng": "130.708242",
+        "name": "東水巻"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKAMA",
+        "lat": "33.82776",
+        "lng": "130.709355",
+        "name": "中間"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_HABU",
+        "lat": "33.818445",
+        "lng": "130.702375",
+        "name": "筑前垣生"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KURATE",
+        "lat": "33.79804",
+        "lng": "130.699415",
+        "name": "鞍手"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_UEKI",
+        "lat": "33.77708",
+        "lng": "130.70804",
+        "name": "筑前植木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHINNYŪ",
+        "lat": "33.763385",
+        "lng": "130.7142",
+        "name": "新入"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NŌGATA",
+        "lat": "33.74863",
+        "lng": "130.724495",
+        "name": "直方"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KATSUNO",
+        "lat": "33.72834",
+        "lng": "130.716",
+        "name": "勝野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOTAKE",
+        "lat": "33.697215",
+        "lng": "130.71032",
+        "name": "小竹"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAMAZUDA",
+        "lat": "33.669325",
+        "lng": "130.70312",
+        "name": "鯰田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_URATA",
+        "lat": "33.65577",
+        "lng": "130.699305",
+        "name": "浦田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_IIZUKA",
+        "lat": "33.644275",
+        "lng": "130.694315",
+        "name": "新飯塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IIZUKA",
+        "lat": "33.62847",
+        "lng": "130.68956",
+        "name": "飯塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TENTŌ",
+        "lat": "33.605365",
+        "lng": "130.67786",
+        "name": "天道"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KEISEN",
+        "lat": "33.584663",
+        "lng": "130.662416",
+        "name": "桂川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_DAIBU",
+        "lat": "33.590108",
+        "lng": "130.629881",
+        "name": "筑前大分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KURŌBARU",
+        "lat": "33.59242",
+        "lng": "130.612425",
+        "name": "九郎原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIDO_NANZŌIN_MAE",
+        "lat": "33.61796",
+        "lng": "130.57209",
+        "name": "城戸南蔵院前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_YAMATE",
+        "lat": "33.622195",
+        "lng": "130.557215",
+        "name": "筑前山手"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SASAGURI",
+        "lat": "33.623925",
+        "lng": "130.52405",
+        "name": "篠栗"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KADOMATSU",
+        "lat": "33.620495",
+        "lng": "130.495945",
+        "name": "門松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHOJABARU",
+        "lat": "33.61249",
+        "lng": "130.477815",
+        "name": "長者原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HARUMACHI",
+        "lat": "33.611855",
+        "lng": "130.471205",
+        "name": "原町"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YUSU",
+        "lat": "33.61333",
+        "lng": "130.44416",
+        "name": "柚須"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_FUMOTO",
+        "lat": "33.36582",
+        "lng": "130.477515",
+        "name": "肥前麓"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKABARU",
+        "lat": "33.34629",
+        "lng": "130.44012",
+        "name": "中原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOSHINOGARI_KOEN",
+        "lat": "33.324575",
+        "lng": "130.39886",
+        "name": "吉野ケ里公園"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KANZAKI",
+        "lat": "33.31596",
+        "lng": "130.374925",
+        "name": "神埼"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IGAYA",
+        "lat": "33.290255",
+        "lng": "130.33684",
+        "name": "伊賀屋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAGA",
+        "lat": "33.264125",
+        "lng": "130.29737",
+        "name": "佐賀"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NABESHIMA",
+        "lat": "33.25905",
+        "lng": "130.265695",
+        "name": "鍋島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BALLOON_SAGA",
+        "lat": "33.2578",
+        "lng": "130.249",
+        "name": "バルーンさが"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUBOTA",
+        "lat": "33.25569",
+        "lng": "130.229425",
+        "name": "久保田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_USHIZU",
+        "lat": "33.24783",
+        "lng": "130.20133",
+        "name": "牛津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KŌHOKU",
+        "lat": "33.21911",
+        "lng": "130.16111",
+        "name": "江北"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_SHIROISHI",
+        "lat": "33.186925",
+        "lng": "130.1359",
+        "name": "肥前白石"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_RYŪŌ",
+        "lat": "33.146646",
+        "lng": "130.120362",
+        "name": "肥前竜王"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_KASHIMA",
+        "lat": "33.113395",
+        "lng": "130.09805",
+        "name": "肥前鹿島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_HAMA",
+        "lat": "33.09541",
+        "lng": "130.11679",
+        "name": "肥前浜"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_NANAURA",
+        "lat": "33.07087",
+        "lng": "130.14526",
+        "name": "肥前七浦"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_IIDA",
+        "lat": "33.055695",
+        "lng": "130.158785",
+        "name": "肥前飯田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TARA",
+        "lat": "33.02521",
+        "lng": "130.17611",
+        "name": "多良"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_ŌURA",
+        "lat": "32.97507",
+        "lng": "130.207265",
+        "name": "肥前大浦"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KONAGAI",
+        "lat": "32.92418",
+        "lng": "130.186465",
+        "name": "小長井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAGASATO",
+        "lat": "32.9153",
+        "lng": "130.16551",
+        "name": "長里"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YUE",
+        "lat": "32.904835",
+        "lng": "130.14068",
+        "name": "湯江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OE",
+        "lat": "32.891295",
+        "lng": "130.112235",
+        "name": "小江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_NAGATA",
+        "lat": "32.8618",
+        "lng": "130.080045",
+        "name": "肥前長田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_ISAHAYA",
+        "lat": "32.852795",
+        "lng": "130.06161",
+        "name": "東諫早"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_ISAHAYA",
+        "lat": "32.839635",
+        "lng": "130.02133",
+        "name": "西諫早"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIKITSU",
+        "lat": "32.832705",
+        "lng": "129.98649",
+        "name": "喜々津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ICHINUNO",
+        "lat": "32.819135",
+        "lng": "129.966155",
+        "name": "市布"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_KOGA",
+        "lat": "32.798325",
+        "lng": "129.951546",
+        "name": "肥前古賀"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UTSUTSUGAWA",
+        "lat": "32.79113",
+        "lng": "129.926365",
+        "name": "現川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_URAKAMI",
+        "lat": "32.765445",
+        "lng": "129.863285",
+        "name": "浦上"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MEINOHAMA",
+        "lat": "33.58370095",
+        "lng": "130.32510339",
+        "name": "姪浜"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIMOYAMATO",
+        "lat": "33.581732",
+        "lng": "130.308018",
+        "name": "下山門"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IMAJUKU",
+        "lat": "33.579275",
+        "lng": "130.274175",
+        "name": "今宿"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYŪDAIGAKKENTOSHI",
+        "lat": "33.578",
+        "lng": "130.258465",
+        "name": "九大学研都市"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUSENJI",
+        "lat": "33.570725",
+        "lng": "130.246395",
+        "name": "周船寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HATAE",
+        "lat": "33.56376",
+        "lng": "130.226345",
+        "name": "波多江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ITOSHIMAKŌKŌ_MAE",
+        "lat": "33.56072657",
+        "lng": "130.21333321",
+        "name": "糸島高校前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_MAEBARU",
+        "lat": "33.557015",
+        "lng": "130.199175",
+        "name": "筑前前原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MISAKIGAOKA",
+        "lat": "33.55017",
+        "lng": "130.18581",
+        "name": "美咲が丘"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAFURI",
+        "lat": "33.54382",
+        "lng": "130.176775",
+        "name": "加布里"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IKKISAN",
+        "lat": "33.534305",
+        "lng": "130.168315",
+        "name": "一貴山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_FUKAE",
+        "lat": "33.51543",
+        "lng": "130.139805",
+        "name": "筑前深江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_DAINYŪ",
+        "lat": "33.50881",
+        "lng": "130.105585",
+        "name": "大入"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUKUYOSHI",
+        "lat": "33.501645",
+        "lng": "130.080425",
+        "name": "福吉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIKAKA",
+        "lat": "33.484405",
+        "lng": "130.04792",
+        "name": "鹿家"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAMASAKI",
+        "lat": "33.44689",
+        "lng": "130.03731",
+        "name": "浜崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NIJI_NO_MATSUBARA",
+        "lat": "33.44099",
+        "lng": "130.016325",
+        "name": "虹ノ松原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_KARATSU",
+        "lat": "33.439485",
+        "lng": "129.99708",
+        "name": "東唐津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_WATADA",
+        "lat": "33.437065",
+        "lng": "129.980655",
+        "name": "和多田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KARATSU",
+        "lat": "33.445982",
+        "lng": "129.968479",
+        "name": "唐津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_KARATSU",
+        "lat": "33.46147522",
+        "lng": "129.9576079",
+        "name": "西唐津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YAMAMOTO",
+        "lat": "33.39326",
+        "lng": "129.98127",
+        "name": "山本"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_KUBO",
+        "lat": "33.35572",
+        "lng": "130.00015",
+        "name": "肥前久保"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_OCHI",
+        "lat": "33.34749",
+        "lng": "129.99045",
+        "name": "西相知"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SARI",
+        "lat": "33.337645",
+        "lng": "129.978705",
+        "name": "佐里"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOMANAKI",
+        "lat": "33.31942",
+        "lng": "129.97239",
+        "name": "駒鳴"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌKAWANO",
+        "lat": "33.3074",
+        "lng": "129.976665",
+        "name": "大川野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIZEN_NAGANO",
+        "lat": "33.295645",
+        "lng": "129.970995",
+        "name": "肥前長野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MOMOGAWA",
+        "lat": "33.271835",
+        "lng": "129.956665",
+        "name": "桃川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KANEISHIHARA",
+        "lat": "33.26542",
+        "lng": "129.93503",
+        "name": "金石原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_IMARI",
+        "lat": "33.270045",
+        "lng": "129.89254",
+        "name": "上伊万里"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IMARI",
+        "lat": "33.27182772",
+        "lng": "129.87733403",
+        "name": "伊万里"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌMACHI",
+        "lat": "33.212445",
+        "lng": "130.10648",
+        "name": "大町"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITAGATA",
+        "lat": "33.21622",
+        "lng": "130.08327",
+        "name": "北方"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKAHASHI",
+        "lat": "33.208095",
+        "lng": "130.042375",
+        "name": "高橋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAGAO",
+        "lat": "33.193395",
+        "lng": "129.980435",
+        "name": "永尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIMASAKA",
+        "lat": "33.19473",
+        "lng": "129.94778",
+        "name": "三間坂"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_ARITA",
+        "lat": "33.19031",
+        "lng": "129.90532",
+        "name": "上有田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ARITA",
+        "lat": "33.18374",
+        "lng": "129.88186",
+        "name": "有田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIKAWACHI",
+        "lat": "33.150293",
+        "lng": "129.829085",
+        "name": "三河内"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAIKI",
+        "lat": "33.134126",
+        "lng": "129.799324",
+        "name": "早岐"
+      },
+      {
+        "id": "STN_JR_KYUSHU_DAITŌ",
+        "lat": "33.149215",
+        "lng": "129.78205",
+        "name": "大塔"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIŪ",
+        "lat": "33.15742",
+        "lng": "129.758305",
+        "name": "日宇"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SASEBO",
+        "lat": "33.16381083",
+        "lng": "129.72589038",
+        "name": "佐世保"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_KOKURA",
+        "lat": "33.870057",
+        "lng": "130.864809",
+        "name": "南小倉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_JŌNO",
+        "lat": "33.858045",
+        "lng": "130.88637",
+        "name": "城野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ABEYAMAKŌEN",
+        "lat": "33.844005",
+        "lng": "130.904435",
+        "name": "安部山公園"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIMOSONE",
+        "lat": "33.832169",
+        "lng": "130.934893",
+        "name": "下曽根"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUSAMI",
+        "lat": "33.80768",
+        "lng": "130.954795",
+        "name": "朽網"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KANDA",
+        "lat": "33.785129",
+        "lng": "130.978736",
+        "name": "苅田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OBASE_NISHIKŌDAI_MAE",
+        "lat": "33.752634",
+        "lng": "130.97176",
+        "name": "小波瀬西工大前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YUKUHASHI",
+        "lat": "33.72875",
+        "lng": "130.970255",
+        "name": "行橋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_YUKUHASHI",
+        "lat": "33.71631",
+        "lng": "130.98121",
+        "name": "南行橋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHINDENBARU",
+        "lat": "33.695125",
+        "lng": "131.008335",
+        "name": "新田原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TSUIKI",
+        "lat": "33.673085",
+        "lng": "131.037965",
+        "name": "築城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIIDA",
+        "lat": "33.65344",
+        "lng": "131.05791",
+        "name": "椎田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUZEN_MAEYE",
+        "lat": "33.622445",
+        "lng": "131.095365",
+        "name": "豊前松江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UNOSHIMA",
+        "lat": "33.621285",
+        "lng": "131.12648",
+        "name": "宇島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIKEKADO",
+        "lat": "33.614365",
+        "lng": "131.15715",
+        "name": "三毛門"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOSHITOMI",
+        "lat": "33.604915",
+        "lng": "131.17352",
+        "name": "吉富"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKATSU",
+        "lat": "33.599195",
+        "lng": "131.190925",
+        "name": "中津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_NAKATSU",
+        "lat": "33.587715",
+        "lng": "131.238975",
+        "name": "東中津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IMAZU",
+        "lat": "33.571985",
+        "lng": "131.26786",
+        "name": "今津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AMATSU",
+        "lat": "33.56464",
+        "lng": "131.293005",
+        "name": "天津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUZEN_ZENKŌJI",
+        "lat": "33.56644",
+        "lng": "131.322985",
+        "name": "豊前善光寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YANAGIGAURA",
+        "lat": "33.56503",
+        "lng": "131.3627",
+        "name": "柳ケ浦"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUZEN_NAGASU",
+        "lat": "33.564664",
+        "lng": "131.383241",
+        "name": "豊前長洲"
+      },
+      {
+        "id": "STN_JR_KYUSHU_USA",
+        "lat": "33.531445",
+        "lng": "131.41231",
+        "name": "宇佐"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHIYASHIKI",
+        "lat": "33.50443",
+        "lng": "131.429545",
+        "name": "西屋敷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TATEISHI",
+        "lat": "33.48177",
+        "lng": "131.477065",
+        "name": "立石"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKAYAMAGA",
+        "lat": "33.448685",
+        "lng": "131.505735",
+        "name": "中山香"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITSUKI",
+        "lat": "33.41101",
+        "lng": "131.57568",
+        "name": "杵築"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌGAMI",
+        "lat": "33.383605",
+        "lng": "131.57541",
+        "name": "大神"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIJI",
+        "lat": "33.368975",
+        "lng": "131.543105",
+        "name": "日出"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YŌKOKU",
+        "lat": "33.37016",
+        "lng": "131.53063",
+        "name": "暘谷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_TOYOKAWA",
+        "lat": "33.36196",
+        "lng": "131.50141",
+        "name": "豊後豊岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMEGAWA",
+        "lat": "33.330744",
+        "lng": "131.492985",
+        "name": "亀川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BEPPUDAIGAKU",
+        "lat": "33.313265",
+        "lng": "131.499355",
+        "name": "別府大学"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BEPPU",
+        "lat": "33.27947",
+        "lng": "131.500255",
+        "name": "別府"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_BEPPU",
+        "lat": "33.26775",
+        "lng": "131.510525",
+        "name": "東別府"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_OITA",
+        "lat": "33.24465",
+        "lng": "131.58315",
+        "name": "西大分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OITA",
+        "lat": "33.2326",
+        "lng": "131.606695",
+        "name": "大分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MAKI",
+        "lat": "33.237125",
+        "lng": "131.63785",
+        "name": "牧"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKAJŌ",
+        "lat": "33.242845",
+        "lng": "131.65572",
+        "name": "高城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TSURUSAKI",
+        "lat": "33.242815",
+        "lng": "131.686925",
+        "name": "鶴崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌZAI",
+        "lat": "33.24391",
+        "lng": "131.720525",
+        "name": "大在"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAKANOICHI",
+        "lat": "33.236723",
+        "lng": "131.751615",
+        "name": "坂ノ市"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KŌZAKI",
+        "lat": "33.233695",
+        "lng": "131.79525",
+        "name": "幸崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SASHIU",
+        "lat": "33.174918",
+        "lng": "131.817703",
+        "name": "佐志生"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHITANOE",
+        "lat": "33.15864",
+        "lng": "131.811133",
+        "name": "下ノ江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUMASAKI",
+        "lat": "33.13556",
+        "lng": "131.787669",
+        "name": "熊崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_USUKI",
+        "lat": "33.112496",
+        "lng": "131.792979",
+        "name": "上臼杵"
+      },
+      {
+        "id": "STN_JR_KYUSHU_USUKI",
+        "lat": "33.118565",
+        "lng": "131.807645",
+        "name": "臼杵"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TSUKUMI",
+        "lat": "33.07289",
+        "lng": "131.863715",
+        "name": "津久見"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HISHIRO",
+        "lat": "33.06613",
+        "lng": "131.91869",
+        "name": "日代"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AZAMUI",
+        "lat": "33.04357",
+        "lng": "131.91921",
+        "name": "浅海井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KARYŪ",
+        "lat": "33.015365",
+        "lng": "131.904815",
+        "name": "狩生"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAIZAKI",
+        "lat": "32.99608",
+        "lng": "131.88793",
+        "name": "海崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAIKI",
+        "lat": "32.972645",
+        "lng": "131.901815",
+        "name": "佐伯"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMIOKA",
+        "lat": "32.95626",
+        "lng": "131.861595",
+        "name": "上岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAOMI",
+        "lat": "32.92821",
+        "lng": "131.807745",
+        "name": "直見"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NOGAWAI",
+        "lat": "32.898665",
+        "lng": "131.779515",
+        "name": "直川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIGEOKA",
+        "lat": "32.840305",
+        "lng": "131.715595",
+        "name": "重岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SŌTARŌ",
+        "lat": "32.78634",
+        "lng": "131.706665",
+        "name": "宗太郎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ICHITANA",
+        "lat": "32.728279",
+        "lng": "131.710215",
+        "name": "市棚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITAGAWA",
+        "lat": "32.69043",
+        "lng": "131.69766",
+        "name": "北川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_NAGAI",
+        "lat": "32.66423",
+        "lng": "131.70014",
+        "name": "日向長井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITA_NOBEOKA",
+        "lat": "32.630865",
+        "lng": "131.69018",
+        "name": "北延岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NOBEOKA",
+        "lat": "32.589957",
+        "lng": "131.67249",
+        "name": "延岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_NOBEOKA",
+        "lat": "32.559635",
+        "lng": "131.676885",
+        "name": "南延岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ASAHIGAOKA",
+        "lat": "32.52847",
+        "lng": "131.68134",
+        "name": "旭ケ丘"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TOTORO",
+        "lat": "32.50783",
+        "lng": "131.675125",
+        "name": "土々呂"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KADOGAWA",
+        "lat": "32.47754",
+        "lng": "131.654105",
+        "name": "門川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGASHI",
+        "lat": "32.42592",
+        "lng": "131.62783",
+        "name": "日向市"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ZAIKŌJI",
+        "lat": "32.40585",
+        "lng": "131.627625",
+        "name": "財光寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_HYŪGA",
+        "lat": "32.369915",
+        "lng": "131.62781",
+        "name": "南日向"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIMITSU",
+        "lat": "32.32592",
+        "lng": "131.60231",
+        "name": "美々津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_TSUNO",
+        "lat": "32.29025",
+        "lng": "131.582035",
+        "name": "東都農"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TSUNO",
+        "lat": "32.25108",
+        "lng": "131.568455",
+        "name": "都農"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAWANAMI",
+        "lat": "32.19236",
+        "lng": "131.553305",
+        "name": "川南"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKANABE",
+        "lat": "32.122655",
+        "lng": "131.533935",
+        "name": "高鍋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_SHINTOMI",
+        "lat": "32.07231",
+        "lng": "131.501595",
+        "name": "日向新富"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SADOWARA",
+        "lat": "32.022525",
+        "lng": "131.47742",
+        "name": "佐土原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_SUMIYOSHI",
+        "lat": "31.99105",
+        "lng": "131.45788",
+        "name": "日向住吉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HASUIKE",
+        "lat": "31.960075",
+        "lng": "131.44273",
+        "name": "蓮ケ池"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIYAZAKI_JINGŪ",
+        "lat": "31.938685",
+        "lng": "131.430635",
+        "name": "宮崎神宮"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIYAZAKI",
+        "lat": "31.915815",
+        "lng": "131.432005",
+        "name": "宮崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+        "lat": "31.89529",
+        "lng": "131.42286",
+        "name": "南宮崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KANŌ",
+        "lat": "31.876265",
+        "lng": "131.406525",
+        "name": "加納"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIYOTAKE",
+        "lat": "31.858895",
+        "lng": "131.388895",
+        "name": "清武"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_KUTSUKAKE",
+        "lat": "31.8415",
+        "lng": "131.34436",
+        "name": "日向沓掛"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TANO",
+        "lat": "31.83839",
+        "lng": "131.30428",
+        "name": "田野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AOIDAKE",
+        "lat": "31.827859",
+        "lng": "131.218153",
+        "name": "青井岳"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YAMANOKUCHI",
+        "lat": "31.782545",
+        "lng": "131.15281",
+        "name": "山之口"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MOCHIBARU",
+        "lat": "31.757025",
+        "lng": "131.132665",
+        "name": "餅原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIMATA",
+        "lat": "31.73376",
+        "lng": "131.119445",
+        "name": "三股"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIYAKONOJŌ",
+        "lat": "31.7366",
+        "lng": "131.07401",
+        "name": "都城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_MIYAKONOJŌ",
+        "lat": "31.72333",
+        "lng": "131.057",
+        "name": "西都城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISOICHI",
+        "lat": "31.71848",
+        "lng": "131.033905",
+        "name": "五十市"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKARABE",
+        "lat": "31.728775",
+        "lng": "130.99153",
+        "name": "財部"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITAMATA",
+        "lat": "31.74498",
+        "lng": "130.96003",
+        "name": "北俣"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌSUMI_ŌKAWARA",
+        "lat": "31.772785",
+        "lng": "130.92428",
+        "name": "大隅大川原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITA_NAGANODA",
+        "lat": "31.782075",
+        "lng": "130.87456",
+        "name": "北永野田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIRISHIMA_JINGŪ",
+        "lat": "31.818232",
+        "lng": "130.83698",
+        "name": "霧島神宮"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOKUBU",
+        "lat": "31.743644",
+        "lng": "130.763413",
+        "name": "国分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAYATO",
+        "lat": "31.743765",
+        "lng": "130.74021",
+        "name": "隼人"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAJIKI",
+        "lat": "31.73925",
+        "lng": "130.670675",
+        "name": "加治木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KINKŌ",
+        "lat": "31.73688",
+        "lng": "130.6533",
+        "name": "錦江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHŌSA",
+        "lat": "31.72696",
+        "lng": "130.63281",
+        "name": "帖佐"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AIRA",
+        "lat": "31.715245",
+        "lng": "130.623235",
+        "name": "姶良"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIGETOMI",
+        "lat": "31.702785",
+        "lng": "130.614135",
+        "name": "重富"
+      },
+      {
+        "id": "STN_JR_KYUSHU_RYŪGAMIZU",
+        "lat": "31.647435",
+        "lng": "130.60418",
+        "name": "竜ケ水"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SENGANEN",
+        "lat": "31.616611",
+        "lng": "130.576694",
+        "name": "仙巌園"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAYOSHI",
+        "lat": "31.878915",
+        "lng": "131.43041",
+        "name": "田吉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIYAZAKI_AIRPORT",
+        "lat": "31.872458",
+        "lng": "131.439515",
+        "name": "宮崎空港"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAITŌZAKI",
+        "lat": "33.650635",
+        "lng": "130.35807",
+        "name": "西戸崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UMINONAKAMICHI",
+        "lat": "33.66413",
+        "lng": "130.361465",
+        "name": "海ノ中道"
+      },
+      {
+        "id": "STN_JR_KYUSHU_GANNOSU",
+        "lat": "33.683775",
+        "lng": "130.402795",
+        "name": "雁ノ巣"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NATA",
+        "lat": "33.686495",
+        "lng": "130.41223",
+        "name": "奈多"
+      },
+      {
+        "id": "STN_JR_KYUSHU_WABAJIRO",
+        "lat": "33.688795",
+        "lng": "130.42973",
+        "name": "和白"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KASHII_JINGŪ",
+        "lat": "33.649655",
+        "lng": "130.452685",
+        "name": "香椎神宮"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MAIMATSUBARA",
+        "lat": "33.64469",
+        "lng": "130.455595",
+        "name": "舞松原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_DOI",
+        "lat": "33.635115",
+        "lng": "130.466135",
+        "name": "土井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IGA",
+        "lat": "33.62105",
+        "lng": "130.473645",
+        "name": "伊賀"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAKADO",
+        "lat": "33.602615",
+        "lng": "130.486335",
+        "name": "酒殿"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUE",
+        "lat": "33.59683",
+        "lng": "130.49807",
+        "name": "須恵"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUE_CHŪŌ",
+        "lat": "33.587451",
+        "lng": "130.505074",
+        "name": "須恵中央"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHINBARU",
+        "lat": "33.57918",
+        "lng": "130.508785",
+        "name": "新原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UMI",
+        "lat": "33.56923",
+        "lng": "130.513415",
+        "name": "宇美"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIDORIKAWA",
+        "lat": "32.69393",
+        "lng": "130.63135",
+        "name": "緑川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUMIYOSHI",
+        "lat": "32.702041",
+        "lng": "130.597932",
+        "name": "住吉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGO_NAGAHAMA",
+        "lat": "32.690591",
+        "lng": "130.560424",
+        "name": "肥後長浜"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌDA",
+        "lat": "32.667492",
+        "lng": "130.546971",
+        "name": "網田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AKASE",
+        "lat": "32.653256",
+        "lng": "130.510142",
+        "name": "赤瀬"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISHIUCHI_DAMU",
+        "lat": "32.642497",
+        "lng": "130.506911",
+        "name": "石打ダム"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HATAURA",
+        "lat": "32.615355",
+        "lng": "130.488035",
+        "name": "波多浦"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MISUMI",
+        "lat": "32.60788",
+        "lng": "130.46973",
+        "name": "三角"
+      },
+      {
+        "id": "STN_JR_KYUSHU_DAN",
+        "lat": "32.46818",
+        "lng": "130.645765",
+        "name": "段"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAKAMOTO",
+        "lat": "32.435125",
+        "lng": "130.657955",
+        "name": "坂本"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAGI",
+        "lat": "32.41035",
+        "lng": "130.645405",
+        "name": "葉木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMASE",
+        "lat": "32.39105",
+        "lng": "130.65462",
+        "name": "鎌瀬"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SETOISHI",
+        "lat": "32.371565",
+        "lng": "130.64609",
+        "name": "瀬戸石"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAIJI",
+        "lat": "32.349385",
+        "lng": "130.619235",
+        "name": "海路"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOSHIO",
+        "lat": "32.33084",
+        "lng": "130.600305",
+        "name": "吉尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIROISHI",
+        "lat": "32.30574",
+        "lng": "130.60836",
+        "name": "白石"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYŪSENDŌ",
+        "lat": "32.26796",
+        "lng": "130.608165",
+        "name": "球泉洞"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISSHŌCHI",
+        "lat": "32.250215",
+        "lng": "130.652495",
+        "name": "一勝地"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NARAGUCHI",
+        "lat": "32.243645",
+        "lng": "130.66746",
+        "name": "那良口"
+      },
+      {
+        "id": "STN_JR_KYUSHU_WATARI",
+        "lat": "32.23668",
+        "lng": "130.69484",
+        "name": "渡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_HITOYOSHI",
+        "lat": "32.228448",
+        "lng": "130.725751",
+        "name": "西人吉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HITOYOSHI",
+        "lat": "32.21614",
+        "lng": "130.753815",
+        "name": "人吉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OKOBA",
+        "lat": "32.164965",
+        "lng": "130.787805",
+        "name": "大畑"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YATAKE",
+        "lat": "32.10427",
+        "lng": "130.76982",
+        "name": "矢岳"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MASAKI",
+        "lat": "32.074525",
+        "lng": "130.72911",
+        "name": "真幸"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOSHIMATSU",
+        "lat": "32.011865",
+        "lng": "130.738135",
+        "name": "吉松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KURINO",
+        "lat": "31.95051",
+        "lng": "130.72335",
+        "name": "栗野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌSUMI_YOKOGAWA",
+        "lat": "31.90622",
+        "lng": "130.702925",
+        "name": "大隅横川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UEMURA",
+        "lat": "31.890035",
+        "lng": "130.724195",
+        "name": "植村"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIRISHIMA_ONSEN",
+        "lat": "31.868107",
+        "lng": "130.734336",
+        "name": "霧島温泉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAREIGAWA",
+        "lat": "31.826895",
+        "lng": "130.7229",
+        "name": "嘉例川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKAFUKURA",
+        "lat": "31.813895",
+        "lng": "130.733025",
+        "name": "中福良"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŌKIYAMA",
+        "lat": "31.796085",
+        "lng": "130.745175",
+        "name": "表木山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HINATAYAMA",
+        "lat": "31.763525",
+        "lng": "130.74974",
+        "name": "日当山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KORIMOTO",
+        "lat": "31.56564",
+        "lng": "130.541985",
+        "name": "郡元"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_KAGOSHIMA",
+        "lat": "31.5548",
+        "lng": "130.5436",
+        "name": "南鹿児島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_USUKI",
+        "lat": "31.544165",
+        "lng": "130.53632",
+        "name": "宇宿"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TANIYAMA",
+        "lat": "31.52709",
+        "lng": "130.51898",
+        "name": "谷山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_JIGENJI",
+        "lat": "31.51691",
+        "lng": "130.50583",
+        "name": "慈眼寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAKANOUE",
+        "lat": "31.50054",
+        "lng": "130.50766",
+        "name": "坂之上"
+      },
+      {
+        "id": "STN_JR_KYUSHU_GOINO",
+        "lat": "31.475235",
+        "lng": "130.504085",
+        "name": "五位野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIRAKAWA",
+        "lat": "31.44917",
+        "lng": "130.51384",
+        "name": "平川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SESEKUSHI",
+        "lat": "31.42122",
+        "lng": "130.522735",
+        "name": "瀬々串"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKAMYO",
+        "lat": "31.39378",
+        "lng": "130.53505",
+        "name": "中名"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIRE",
+        "lat": "31.371335",
+        "lng": "130.53883",
+        "name": "喜入"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MAENOHAMA",
+        "lat": "31.343035",
+        "lng": "130.557285",
+        "name": "前之浜"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NUKUMI",
+        "lat": "31.307265",
+        "lng": "130.577605",
+        "name": "生見"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SATSUMA_IMAIZUMI",
+        "lat": "31.290685",
+        "lng": "130.598945",
+        "name": "薩摩今和泉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIYAGAHAMA",
+        "lat": "31.27714",
+        "lng": "130.619715",
+        "name": "宮ケ浜"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NIGATSU_DEN",
+        "lat": "31.25432",
+        "lng": "130.6301",
+        "name": "二月田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IBUSUKI",
+        "lat": "31.236884",
+        "lng": "130.642666",
+        "name": "指宿"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YAMAKAWA",
+        "lat": "31.211615",
+        "lng": "130.63",
+        "name": "山川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌYAMA",
+        "lat": "31.194985",
+        "lng": "130.599255",
+        "name": "大山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_ŌYAMA",
+        "lat": "31.190305",
+        "lng": "130.576445",
+        "name": "西大山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SATSUMA_KAWAJIRI",
+        "lat": "31.19478",
+        "lng": "130.565525",
+        "name": "薩摩川尻"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_KAIMON",
+        "lat": "31.200935",
+        "lng": "130.549875",
+        "name": "東開聞"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAIMON",
+        "lat": "31.203975",
+        "lng": "130.534735",
+        "name": "開聞"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IRINO",
+        "lat": "31.204325",
+        "lng": "130.51875",
+        "name": "入野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EI",
+        "lat": "31.229035",
+        "lng": "130.50038",
+        "name": "頴娃"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_EI",
+        "lat": "31.24117",
+        "lng": "130.491415",
+        "name": "西頴娃"
+      },
+      {
+        "id": "STN_JR_KYUSHU_GORYŌ",
+        "lat": "31.25208",
+        "lng": "130.468655",
+        "name": "御領"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISHIGAKI",
+        "lat": "31.259355",
+        "lng": "130.445205",
+        "name": "石垣"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIZUNARIKAWA",
+        "lat": "31.257155",
+        "lng": "130.43056",
+        "name": "水成川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EI_ŌKAWA",
+        "lat": "31.257945",
+        "lng": "130.413425",
+        "name": "頴娃大川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MATSUGAURA",
+        "lat": "31.25889",
+        "lng": "130.394665",
+        "name": "松ケ浦"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SATSUMA_SHIOYA",
+        "lat": "31.25714",
+        "lng": "130.3762",
+        "name": "薩摩塩屋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIRASAWA",
+        "lat": "31.25687",
+        "lng": "130.35665",
+        "name": "白沢"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SATSUMA_ITASHIKI",
+        "lat": "31.262275",
+        "lng": "130.33108",
+        "name": "薩摩板敷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MAKURAZAKI",
+        "lat": "31.27211",
+        "lng": "130.29943",
+        "name": "枕崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OGI",
+        "lat": "33.2855",
+        "lng": "130.199065",
+        "name": "小城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_TAKU",
+        "lat": "33.28541",
+        "lng": "130.143165",
+        "name": "東多久"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKA_TAKU",
+        "lat": "33.28333",
+        "lng": "130.11229",
+        "name": "中多久"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKU",
+        "lat": "33.28838",
+        "lng": "130.09628",
+        "name": "多久"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYŪRAGI",
+        "lat": "33.3234",
+        "lng": "130.0603",
+        "name": "厳木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IWAYA",
+        "lat": "33.330805",
+        "lng": "130.038495",
+        "name": "岩屋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OCHI",
+        "lat": "33.34695",
+        "lng": "130.01974",
+        "name": "相知"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MOTOMUTABE",
+        "lat": "33.372115",
+        "lng": "129.99669",
+        "name": "本牟田部"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ONIZUKA",
+        "lat": "33.421105",
+        "lng": "129.98711",
+        "name": "鬼塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HUIS_TEN_BOSCH",
+        "lat": "33.09223",
+        "lng": "129.796285",
+        "name": "ハウステンボス"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HAE_NO_SAKI",
+        "lat": "33.086993",
+        "lng": "129.801169",
+        "name": "南風崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OGUSHIGŌ",
+        "lat": "33.063725",
+        "lng": "129.834425",
+        "name": "小串郷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAWATANA",
+        "lat": "33.06837",
+        "lng": "129.864085",
+        "name": "川棚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SONOGI",
+        "lat": "33.03982",
+        "lng": "129.914685",
+        "name": "彼杵"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIWATA",
+        "lat": "33.01307",
+        "lng": "129.945605",
+        "name": "千綿"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MATSUBARA",
+        "lat": "32.977455",
+        "lng": "129.94632",
+        "name": "松原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌMURA_SHARYŌKICHI",
+        "lat": "32.95537886",
+        "lng": "129.94447123",
+        "name": "大村車両基地"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKEMATSU",
+        "lat": "32.94006",
+        "lng": "129.95303",
+        "name": "竹松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_ŌMURA",
+        "lat": "32.9324527",
+        "lng": "129.95725379",
+        "name": "新大村"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUWA",
+        "lat": "32.92362",
+        "lng": "129.96027",
+        "name": "諏訪"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌMURA",
+        "lat": "32.91143",
+        "lng": "129.962265",
+        "name": "大村"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IWAMATSU",
+        "lat": "32.89057",
+        "lng": "129.98127",
+        "name": "岩松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KURUME_KŌKŌ_MAE",
+        "lat": "33.298385",
+        "lng": "130.517095",
+        "name": "久留米高校前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_KURUME",
+        "lat": "33.302795",
+        "lng": "130.532165",
+        "name": "南久留米"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KURUME_DAIGAKU_MAE",
+        "lat": "33.310804",
+        "lng": "130.547598",
+        "name": "久留米大学前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MII",
+        "lat": "33.312665",
+        "lng": "130.56266",
+        "name": "御井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ZENDŌJI",
+        "lat": "33.320025",
+        "lng": "130.60874",
+        "name": "善導寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUGO_KUSANO",
+        "lat": "33.322105",
+        "lng": "130.64218",
+        "name": "筑後草野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TANUSHIMARU",
+        "lat": "33.3388",
+        "lng": "130.69245",
+        "name": "田主丸"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUGO_YOSHII",
+        "lat": "33.340955",
+        "lng": "130.752825",
+        "name": "筑後吉井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UKIHA",
+        "lat": "33.33504",
+        "lng": "130.78915",
+        "name": "うきは"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUGO_ŌISHI",
+        "lat": "33.347185",
+        "lng": "130.8169",
+        "name": "筑後大石"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOAKE",
+        "lat": "33.319595",
+        "lng": "130.866215",
+        "name": "夜明"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TERUOKA",
+        "lat": "33.327605",
+        "lng": "130.91992",
+        "name": "光岡"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HITA",
+        "lat": "33.317885",
+        "lng": "130.938135",
+        "name": "日田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_MIYOSHI",
+        "lat": "33.305905",
+        "lng": "130.951505",
+        "name": "豊後三芳"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_NAKAGAWA",
+        "lat": "33.28446",
+        "lng": "131.005875",
+        "name": "豊後中川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AMAGASE",
+        "lat": "33.254846",
+        "lng": "131.023809",
+        "name": "天ケ瀬"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUGIGAWACHI",
+        "lat": "33.26434",
+        "lng": "131.065455",
+        "name": "杉河内"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITA_YAMADA",
+        "lat": "33.28202",
+        "lng": "131.100925",
+        "name": "北山田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_MORI",
+        "lat": "33.28255",
+        "lng": "131.155695",
+        "name": "豊後森"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ERA",
+        "lat": "33.25504",
+        "lng": "131.17442",
+        "name": "恵良"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIKIJI",
+        "lat": "33.228995",
+        "lng": "131.183975",
+        "name": "引治"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_NAKAMURA",
+        "lat": "33.225785",
+        "lng": "131.207635",
+        "name": "豊後中村"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NOYA",
+        "lat": "33.240385",
+        "lng": "131.2519",
+        "name": "野矢"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YUFUIN",
+        "lat": "33.262425",
+        "lng": "131.354963",
+        "name": "由布院"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_YUFUIN",
+        "lat": "33.24219",
+        "lng": "131.333355",
+        "name": "南由布"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YUNOHIRA",
+        "lat": "33.19734",
+        "lng": "131.354305",
+        "name": "湯平"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHŌNAI",
+        "lat": "33.1851",
+        "lng": "131.40191",
+        "name": "庄内"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TENJINYAMA",
+        "lat": "33.187025",
+        "lng": "131.438905",
+        "name": "天神山"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ONOYA",
+        "lat": "33.185165",
+        "lng": "131.452605",
+        "name": "小野屋"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ONIGASE",
+        "lat": "33.195715",
+        "lng": "131.48547",
+        "name": "鬼瀬"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MUKAINOHARU",
+        "lat": "33.19668",
+        "lng": "131.514065",
+        "name": "向之原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_KOKUBU",
+        "lat": "33.19508",
+        "lng": "131.551265",
+        "name": "豊後国分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAKU",
+        "lat": "33.21307",
+        "lng": "131.56262",
+        "name": "賀来"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_ŌITA",
+        "lat": "33.21401",
+        "lng": "131.586285",
+        "name": "南大分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FURUGO_U",
+        "lat": "33.22064",
+        "lng": "131.608305",
+        "name": "古国府"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌITA",
+        "lat": "33.2326",
+        "lng": "131.606695",
+        "name": "大分"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKIO",
+        "lat": "33.2094",
+        "lng": "131.623115",
+        "name": "滝尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIKIDO",
+        "lat": "33.188105",
+        "lng": "131.615125",
+        "name": "敷戸"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌITA_DAIGAKU_MAE",
+        "lat": "33.176785",
+        "lng": "131.619405",
+        "name": "大分大学前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAKAHANDA",
+        "lat": "33.163874",
+        "lng": "131.63873",
+        "name": "中判田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKENAKA",
+        "lat": "33.121285",
+        "lng": "131.649465",
+        "name": "竹中"
+      },
+      {
+        "id": "STN_JR_KYUSHU_INUKAI",
+        "lat": "33.077955",
+        "lng": "131.636635",
+        "name": "犬飼"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUGAO",
+        "lat": "33.01442",
+        "lng": "131.616675",
+        "name": "菅尾"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIE_MACHI",
+        "lat": "32.983645",
+        "lng": "131.583945",
+        "name": "三重町"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_KIYOKAWA",
+        "lat": "32.97284",
+        "lng": "131.52215",
+        "name": "豊後清川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OGATA",
+        "lat": "32.97106",
+        "lng": "131.476755",
+        "name": "緒方"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ASAJI",
+        "lat": "33.00426",
+        "lng": "131.43222",
+        "name": "朝地"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_TAKEDA",
+        "lat": "32.97094",
+        "lng": "131.38983",
+        "name": "豊後竹田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAMARAI",
+        "lat": "32.947755",
+        "lng": "131.376035",
+        "name": "玉来"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUNGO_OGI",
+        "lat": "32.92692",
+        "lng": "131.29762",
+        "name": "豊後荻"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKIMIZU",
+        "lat": "32.9333",
+        "lng": "131.242835",
+        "name": "滝水"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAMINO",
+        "lat": "32.938495",
+        "lng": "131.195255",
+        "name": "波野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MIYAJI",
+        "lat": "32.937035",
+        "lng": "131.11807",
+        "name": "宮地"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IKOINO_MURA",
+        "lat": "32.936555",
+        "lng": "131.09443",
+        "name": "いこいの村"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ASO",
+        "lat": "32.937425",
+        "lng": "131.08011",
+        "name": "阿蘇"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UCHIMAKI",
+        "lat": "32.94214",
+        "lng": "131.043755",
+        "name": "内牧"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ICHINOKAWA",
+        "lat": "32.92807",
+        "lng": "131.00761",
+        "name": "市ノ川"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AKAMIZU",
+        "lat": "32.91315",
+        "lng": "130.99288",
+        "name": "赤水"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TATE_NO",
+        "lat": "32.87763",
+        "lng": "130.96514",
+        "name": "立野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SETA",
+        "lat": "32.8726",
+        "lng": "130.913915",
+        "name": "瀬田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGO_ŌZU",
+        "lat": "32.87749",
+        "lng": "130.86631",
+        "name": "肥後大津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HARAMIZU",
+        "lat": "32.87064",
+        "lng": "130.829055",
+        "name": "原水"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SANRIGI",
+        "lat": "32.861703",
+        "lng": "130.796447",
+        "name": "三里木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIKARI_NO_MORI",
+        "lat": "32.85742",
+        "lng": "130.786035",
+        "name": "光の森"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MUSASHIZUKA",
+        "lat": "32.849959",
+        "lng": "130.770227",
+        "name": "武蔵塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TATSUTAGUCHI",
+        "lat": "32.820493",
+        "lng": "130.747013",
+        "name": "竜田口"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TŌKAIGAKUEN_MAE",
+        "lat": "32.811275",
+        "lng": "130.74266",
+        "name": "東海学園前"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SUIZENJI",
+        "lat": "32.796901",
+        "lng": "130.729768",
+        "name": "水前寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIN_SUIZENJI",
+        "lat": "32.79331",
+        "lng": "130.725855",
+        "name": "新水前寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMI_KUMAMOTO",
+        "lat": "32.78512",
+        "lng": "130.711775",
+        "name": "南熊本"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HEISEI",
+        "lat": "32.781515",
+        "lng": "130.703425",
+        "name": "平成"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISHIDA",
+        "lat": "33.832185",
+        "lng": "130.889145",
+        "name": "石田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIIKŌEN",
+        "lat": "33.81827",
+        "lng": "130.879725",
+        "name": "志井公園"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHII",
+        "lat": "33.803875",
+        "lng": "130.874805",
+        "name": "志井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ISHIHARAMACHI",
+        "lat": "33.784665",
+        "lng": "130.866005",
+        "name": "石原町"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOBUNO",
+        "lat": "33.75505",
+        "lng": "130.86194",
+        "name": "呼野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SAIDŌSHO",
+        "lat": "33.70735",
+        "lng": "130.853135",
+        "name": "採銅所"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAWARU",
+        "lat": "33.665935",
+        "lng": "130.8469",
+        "name": "香春"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IPPONMATSU",
+        "lat": "33.65601",
+        "lng": "130.835505",
+        "name": "一本松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAGAWA_ITA",
+        "lat": "33.642106",
+        "lng": "130.817777",
+        "name": "田川伊田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAGAWA_GOTŌJI",
+        "lat": "33.63036",
+        "lng": "130.800215",
+        "name": "田川後藤寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IKEJIRI",
+        "lat": "33.613005",
+        "lng": "130.805805",
+        "name": "池尻"
+      },
+      {
+        "id": "STN_JR_KYUSHU_BUZEN_KAWASAKI",
+        "lat": "33.596745",
+        "lng": "130.822115",
+        "name": "豊前川崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_SOEDA",
+        "lat": "33.573375",
+        "lng": "130.84715",
+        "name": "西添田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SOEDA",
+        "lat": "33.56732",
+        "lng": "130.85652",
+        "name": "添田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MINAMIKATA",
+        "lat": "31.859445",
+        "lng": "131.434525",
+        "name": "南方"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KIBANA",
+        "lat": "31.83111",
+        "lng": "131.437035",
+        "name": "木花"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UNDŌKŌEN",
+        "lat": "31.81969",
+        "lng": "131.44249",
+        "name": "運動公園"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SOYANJI",
+        "lat": "31.81336",
+        "lng": "131.448345",
+        "name": "曽山寺"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KODOMO_NO_KUNI",
+        "lat": "31.80737",
+        "lng": "131.456965",
+        "name": "子供の国"
+      },
+      {
+        "id": "STN_JR_KYUSHU_AOSHIMA",
+        "lat": "31.799525",
+        "lng": "131.46702",
+        "name": "青島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ORYŪZAKO",
+        "lat": "31.789395",
+        "lng": "131.46748",
+        "name": "折生迫"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UCHIUMI",
+        "lat": "31.758505",
+        "lng": "131.46741",
+        "name": "内海"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOUCHIUMI",
+        "lat": "31.73799",
+        "lng": "131.46606",
+        "name": "小内海"
+      },
+      {
+        "id": "STN_JR_KYUSHU_IBII",
+        "lat": "31.71106",
+        "lng": "131.45614",
+        "name": "伊比井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KITAGŌ",
+        "lat": "31.67836",
+        "lng": "131.373885",
+        "name": "北郷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_UCHINODA",
+        "lat": "31.642455",
+        "lng": "131.372535",
+        "name": "内之田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OBI",
+        "lat": "31.62722",
+        "lng": "131.361655",
+        "name": "飫肥"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NICHINAN",
+        "lat": "31.603025",
+        "lng": "131.38124",
+        "name": "日南"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ABURATSU",
+        "lat": "31.586881",
+        "lng": "131.396025",
+        "name": "油津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌDOTSU",
+        "lat": "31.55691",
+        "lng": "131.382105",
+        "name": "大堂津"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NANGŌ",
+        "lat": "31.535908",
+        "lng": "131.372126",
+        "name": "南郷"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TANINOKUCHI",
+        "lat": "31.533385",
+        "lng": "131.34463",
+        "name": "谷之口"
+      },
+      {
+        "id": "STN_JR_KYUSHU_YOWARA",
+        "lat": "31.534685",
+        "lng": "131.306545",
+        "name": "榎原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_ŌTSUKA",
+        "lat": "31.510605",
+        "lng": "131.248725",
+        "name": "日向大束"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_KITAKATA",
+        "lat": "31.48305",
+        "lng": "131.24311",
+        "name": "日向北方"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KUSHIMA",
+        "lat": "31.462805",
+        "lng": "131.23065",
+        "name": "串間"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUKUSHIMA_IMAMACHI",
+        "lat": "31.45686",
+        "lng": "131.20339",
+        "name": "福島今町"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUKUSHIMA_TAKAMATSU",
+        "lat": "31.45854",
+        "lng": "131.178305",
+        "name": "福島高松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_ŌSUMI_NATSUI",
+        "lat": "31.469765",
+        "lng": "131.13642",
+        "name": "大隅夏井"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIBUSHI",
+        "lat": "31.47314",
+        "lng": "131.09853",
+        "name": "志布志"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TSURUMARU",
+        "lat": "32.03058",
+        "lng": "130.74871",
+        "name": "鶴丸"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KYŌMACHI_ONSEN",
+        "lat": "32.045415",
+        "lng": "130.767925",
+        "name": "京町温泉"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EBINO",
+        "lat": "32.04227",
+        "lng": "130.81617",
+        "name": "えびの"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EBINO_UWAE",
+        "lat": "32.03561",
+        "lng": "130.85003",
+        "name": "えびの上江"
+      },
+      {
+        "id": "STN_JR_KYUSHU_EBINO_IINO",
+        "lat": "32.030325",
+        "lng": "130.871195",
+        "name": "えびの飯野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_KOBAYASHI",
+        "lat": "32.00947",
+        "lng": "130.921795",
+        "name": "西小林"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KOBAYASHI",
+        "lat": "31.99072",
+        "lng": "130.976095",
+        "name": "小林"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIROWARA",
+        "lat": "31.957785",
+        "lng": "130.984875",
+        "name": "広原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKAHARU",
+        "lat": "31.926845",
+        "lng": "130.999",
+        "name": "高原"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_MAEDA",
+        "lat": "31.90864",
+        "lng": "131.040345",
+        "name": "日向前田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TAKASAKI_SHINDEN",
+        "lat": "31.875885",
+        "lng": "131.06265",
+        "name": "高崎新田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HIGASHI_TAKASAKI",
+        "lat": "31.84097",
+        "lng": "131.06502",
+        "name": "東高崎"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MANGAZUKA",
+        "lat": "31.817175",
+        "lng": "131.063955",
+        "name": "万ケ塚"
+      },
+      {
+        "id": "STN_JR_KYUSHU_TANIGASHIRA",
+        "lat": "31.789195",
+        "lng": "131.054005",
+        "name": "谷頭"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HYŪGA_SHŌNAI",
+        "lat": "31.762125",
+        "lng": "131.0615",
+        "name": "日向庄内"
+      },
+      {
+        "id": "STN_JR_KYUSHU_WAKAMATSU",
+        "lat": "33.900325",
+        "lng": "130.80519",
+        "name": "若松"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUJINOKI",
+        "lat": "33.893195",
+        "lng": "130.781875",
+        "name": "藤ノ木"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OKUDŌKAI",
+        "lat": "33.888915",
+        "lng": "130.76408",
+        "name": "奥洞海"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUTAJIMA",
+        "lat": "33.889441",
+        "lng": "130.748782",
+        "name": "二島"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HONJŌ",
+        "lat": "33.874994",
+        "lng": "130.72291",
+        "name": "本城"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAMAZUTA",
+        "lat": "33.669325",
+        "lng": "130.70312",
+        "name": "鯰田"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_HONAMI",
+        "lat": "33.566915",
+        "lng": "130.645275",
+        "name": "上穂波"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_UCHINO",
+        "lat": "33.540028",
+        "lng": "130.63813",
+        "name": "筑前内野"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_YAMAUE",
+        "lat": "33.477365",
+        "lng": "130.574095",
+        "name": "筑前山家"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KAMI_MIO",
+        "lat": "33.62223",
+        "lng": "130.71387",
+        "name": "上三緒"
+      },
+      {
+        "id": "STN_JR_KYUSHU_SHIMO_KAMŌ",
+        "lat": "33.614735",
+        "lng": "130.728345",
+        "name": "下鴨生"
+      },
+      {
+        "id": "STN_JR_KYUSHU_CHIKUZEN_SHŌNAI",
+        "lat": "33.61637",
+        "lng": "130.738623",
+        "name": "筑前庄内"
+      },
+      {
+        "id": "STN_JR_KYUSHU_FUNAO",
+        "lat": "33.63021",
+        "lng": "130.767435",
+        "name": "船尾"
+      }
+    ]
+  }
+]

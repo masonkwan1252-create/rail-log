@@ -1,0 +1,178 @@
+[
+  {
+    "categories": "",
+    "company_id": "AINOKAZE",
+    "company_name": "あいの風とやま鉄道",
+    "lines": [
+      {
+        "id": "AINOKAZE_LINE",
+        "name": "鉄道線",
+        "sequence": [
+          "STN_AINOKAZE_KURIKARA",
+          "STN_AINOKAZE_ISURUGI",
+          "STN_AINOKAZE_FUKUOKA",
+          "STN_AINOKAZE_NISHI_TAKAOKA",
+          "STN_AINOKAZE_TAKAOKA_YABUNAMI",
+          "STN_AINOKAZE_TAKAOKA",
+          "STN_AINOKAZE_ETCHU_DAIMON",
+          "STN_AINOKAZE_KOSUGI",
+          "STN_AINOKAZE_KUREHA",
+          "STN_AINOKAZE_TOYAMA",
+          "STN_AINOKAZE_SHIN_TOYAMAGUCHI",
+          "STN_AINOKAZE_HIGASHI_TOYAMAGUCHI",
+          "STN_AINOKAZE_MIZUHASHI",
+          "STN_AINOKAZE_NAMERIKAWA",
+          "STN_AINOKAZE_HIGASHI_NAMERIKAWA",
+          "STN_AINOKAZE_UOZU",
+          "STN_AINOKAZE_KUROBE",
+          "STN_AINOKAZE_IKUJI",
+          "STN_AINOKAZE_NISHI_NYUZEN",
+          "STN_AINOKAZE_NYUZEN",
+          "STN_AINOKAZE_TOMARI",
+          "STN_AINOKAZE_ETCHU_MIYAZAKI",
+          "STN_AINOKAZE_ICHIBURI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_AINOKAZE_KURIKARA",
+        "lat": "36.67248",
+        "lng": "136.791605",
+        "name": "倶利伽羅"
+      },
+      {
+        "id": "STN_AINOKAZE_ISURUGI",
+        "lat": "36.672438",
+        "lng": "136.865646",
+        "name": "石動"
+      },
+      {
+        "id": "STN_AINOKAZE_FUKUOKA",
+        "lat": "36.708285",
+        "lng": "136.932075",
+        "name": "福岡"
+      },
+      {
+        "id": "STN_AINOKAZE_NISHI_TAKAOKA",
+        "lat": "36.72423017",
+        "lng": "136.96491653",
+        "name": "西高岡"
+      },
+      {
+        "id": "STN_AINOKAZE_TAKAOKA_YABUNAMI",
+        "lat": "36.73723163",
+        "lng": "136.9887063",
+        "name": "高岡やぶなみ"
+      },
+      {
+        "id": "STN_AINOKAZE_TAKAOKA",
+        "lat": "36.7412",
+        "lng": "137.014715",
+        "name": "高岡"
+      },
+      {
+        "id": "STN_AINOKAZE_ETCHŪ_DAIMON",
+        "lat": "36.73435224",
+        "lng": "137.05490197",
+        "name": "越中大門"
+      },
+      {
+        "id": "STN_AINOKAZE_KOSUGI",
+        "lat": "36.72074",
+        "lng": "137.092575",
+        "name": "小杉"
+      },
+      {
+        "id": "STN_AINOKAZE_KUREHA",
+        "lat": "36.71888",
+        "lng": "137.164875",
+        "name": "呉羽"
+      },
+      {
+        "id": "STN_AINOKAZE_TOYAMA",
+        "lat": "36.70169",
+        "lng": "137.21321",
+        "name": "富山"
+      },
+      {
+        "id": "STN_AINOKAZE_SHIN_TOYAMAGUCHI",
+        "lat": "36.71953099",
+        "lng": "137.24035521",
+        "name": "新富山口"
+      },
+      {
+        "id": "STN_AINOKAZE_HIGASHI_TOYAMAGUCHI",
+        "lat": "36.74107",
+        "lng": "137.248915",
+        "name": "東富山"
+      },
+      {
+        "id": "STN_AINOKAZE_MIZUHASHI",
+        "lat": "36.743445",
+        "lng": "137.29843",
+        "name": "水橋"
+      },
+      {
+        "id": "STN_AINOKAZE_NAMERIKAWA",
+        "lat": "36.76946",
+        "lng": "137.34889",
+        "name": "滑川"
+      },
+      {
+        "id": "STN_AINOKAZE_HIGASHI_NAMERIKAWA",
+        "lat": "36.787975",
+        "lng": "137.37786",
+        "name": "東滑川"
+      },
+      {
+        "id": "STN_AINOKAZE_UOZU",
+        "lat": "36.82647",
+        "lng": "137.405705",
+        "name": "魚津"
+      },
+      {
+        "id": "STN_AINOKAZE_KUROBE",
+        "lat": "36.86954",
+        "lng": "137.434405",
+        "name": "黒部"
+      },
+      {
+        "id": "STN_AINOKAZE_IKUJI",
+        "lat": "36.90578",
+        "lng": "137.42658",
+        "name": "生地"
+      },
+      {
+        "id": "STN_AINOKAZE_NISHI_NYŪZEN",
+        "lat": "36.93014",
+        "lng": "137.459285",
+        "name": "西入善"
+      },
+      {
+        "id": "STN_AINOKAZE_NYŪZEN",
+        "lat": "36.94128",
+        "lng": "137.4991",
+        "name": "入善"
+      },
+      {
+        "id": "STN_AINOKAZE_TOMARI",
+        "lat": "36.95192",
+        "lng": "137.55601",
+        "name": "泊"
+      },
+      {
+        "id": "STN_AINOKAZE_ETCHŪ_MIYAZAKI",
+        "lat": "36.973875",
+        "lng": "137.5995",
+        "name": "越中宮崎"
+      },
+      {
+        "id": "STN_AINOKAZE_ICHIBURI",
+        "lat": "36.98043465",
+        "lng": "137.65009862",
+        "name": "市振"
+      }
+    ]
+  }
+]

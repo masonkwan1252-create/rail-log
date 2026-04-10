@@ -1,0 +1,157 @@
+[
+  {
+    "categories": "",
+    "company_id": "HAPI",
+    "company_name": "ハピラインふくい",
+    "lines": [
+      {
+        "id": "HAPI_FUKUI",
+        "name": "ハピラインふくい線",
+        "sequence": [
+          "STN_HAPI_TSURUGA",
+          "STN_HAPI_MINAMI_IMAJO",
+          "STN_HAPI_IMAJO",
+          "STN_HAPI_YUNOO",
+          "STN_HAPI_NANJO",
+          "STN_HAPI_OSHIO",
+          "STN_HAPI_SHIKIBU",
+          "STN_HAPI_TAKEFU",
+          "STN_HAPI_SABAE",
+          "STN_HAPI_KITA_SABAE",
+          "STN_HAPI_OTORO",
+          "STN_HAPI_ECHIZEN_HANANDO",
+          "STN_HAPI_FUKUI",
+          "STN_HAPI_MORITA",
+          "STN_HAPI_HARUE",
+          "STN_HAPI_MARUOKA",
+          "STN_HAPI_AWARA_ONSEN",
+          "STN_HAPI_HOSOROGI",
+          "STN_HAPI_USHINOTANI",
+          "STN_HAPI_DAISHOJI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HAPI_TSURUGA",
+        "lat": "35.644814",
+        "lng": "136.076455",
+        "name": "敦賀"
+      },
+      {
+        "id": "STN_HAPI_MINAMI_IMAJŌ",
+        "lat": "35.757465",
+        "lng": "136.184795",
+        "name": "南今庄"
+      },
+      {
+        "id": "STN_HAPI_IMAJŌ",
+        "lat": "35.773095",
+        "lng": "136.199215",
+        "name": "今庄"
+      },
+      {
+        "id": "STN_HAPI_YUNOO",
+        "lat": "35.80334",
+        "lng": "136.193015",
+        "name": "湯尾"
+      },
+      {
+        "id": "STN_HAPI_NANJŌ",
+        "lat": "35.8318",
+        "lng": "136.193535",
+        "name": "南条"
+      },
+      {
+        "id": "STN_HAPI_OSHIO",
+        "lat": "35.86632",
+        "lng": "136.165555",
+        "name": "王子保"
+      },
+      {
+        "id": "STN_HAPI_SHIKIBU",
+        "lat": "35.887778",
+        "lng": "136.166389",
+        "name": "しきぶ"
+      },
+      {
+        "id": "STN_HAPI_TAKEFU",
+        "lat": "35.903315",
+        "lng": "136.170975",
+        "name": "武生"
+      },
+      {
+        "id": "STN_HAPI_SABAE",
+        "lat": "35.94348",
+        "lng": "136.188915",
+        "name": "鯖江"
+      },
+      {
+        "id": "STN_HAPI_KITA_SABAE",
+        "lat": "35.97164",
+        "lng": "136.19843",
+        "name": "北鯖江"
+      },
+      {
+        "id": "STN_HAPI_ŌTORO",
+        "lat": "36.010545",
+        "lng": "136.216505",
+        "name": "大土呂"
+      },
+      {
+        "id": "STN_HAPI_ECHIZEN_HANANDŌ",
+        "lat": "36.03856",
+        "lng": "136.218035",
+        "name": "越前花堂"
+      },
+      {
+        "id": "STN_HAPI_FUKUI",
+        "lat": "36.061488",
+        "lng": "136.222925",
+        "name": "福井"
+      },
+      {
+        "id": "STN_HAPI_MORITA",
+        "lat": "36.10932",
+        "lng": "136.22251",
+        "name": "森田"
+      },
+      {
+        "id": "STN_HAPI_HARUE",
+        "lat": "36.12976",
+        "lng": "136.228735",
+        "name": "春江"
+      },
+      {
+        "id": "STN_HAPI_MARUOKA",
+        "lat": "36.16254",
+        "lng": "136.233555",
+        "name": "丸岡"
+      },
+      {
+        "id": "STN_HAPI_AWARA_ONSEN",
+        "lat": "36.21541",
+        "lng": "136.235195",
+        "name": "芦原温泉"
+      },
+      {
+        "id": "STN_HAPI_HOSOROGI",
+        "lat": "36.240625",
+        "lng": "136.25671",
+        "name": "細呂木"
+      },
+      {
+        "id": "STN_HAPI_USHINOTANI",
+        "lat": "36.259438",
+        "lng": "136.281756",
+        "name": "牛ノ谷"
+      },
+      {
+        "id": "STN_HAPI_DAISHŌJI",
+        "lat": "36.300338",
+        "lng": "136.314207",
+        "name": "大聖寺"
+      }
+    ]
+  }
+]

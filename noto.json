@@ -1,0 +1,73 @@
+[
+  {
+    "categories": "",
+    "company_id": "NOTO",
+    "company_name": "のと鉄道",
+    "lines": [
+      {
+        "id": "NOTO_NANAO",
+        "name": "七尾線",
+        "sequence": [
+          "STN_NOTO_NANAO",
+          "STN_NOTO_WAKURA_ONSEN",
+          "STN_NOTO_TATSUURAHAMA",
+          "STN_NOTO_KASASHIHO",
+          "STN_NOTO_NOTO_NAKAJIMA",
+          "STN_NOTO_NISHIGISHI",
+          "STN_NOTO_NOTO_KASHIMA",
+          "STN_NOTO_ANAMIZU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NOTO_NANAO",
+        "lat": "37.04178",
+        "lng": "136.96422",
+        "name": "七尾"
+      },
+      {
+        "id": "STN_NOTO_WAKURA_ONSEN",
+        "lat": "37.074688",
+        "lng": "136.925853",
+        "name": "和倉温泉"
+      },
+      {
+        "id": "STN_NOTO_TATSUURAHAMA",
+        "lat": "37.06574",
+        "lng": "136.89147",
+        "name": "田鶴浜"
+      },
+      {
+        "id": "STN_NOTO_KASASHIHO",
+        "lat": "37.079505",
+        "lng": "136.85775",
+        "name": "笠師保"
+      },
+      {
+        "id": "STN_NOTO_NOTO_NAKAJIMA",
+        "lat": "37.109255",
+        "lng": "136.853615",
+        "name": "能登中島"
+      },
+      {
+        "id": "STN_NOTO_NISHIGISHI",
+        "lat": "37.147665",
+        "lng": "136.87416",
+        "name": "西岸"
+      },
+      {
+        "id": "STN_NOTO_NOTO_KASHIMA",
+        "lat": "37.17979",
+        "lng": "136.897855",
+        "name": "能登鹿島"
+      },
+      {
+        "id": "STN_NOTO_ANAMIZU",
+        "lat": "37.228035",
+        "lng": "136.904585",
+        "name": "穴水"
+      }
+    ]
+  }
+]

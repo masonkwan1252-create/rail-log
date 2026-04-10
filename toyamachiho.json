@@ -1,0 +1,619 @@
+[
+  {
+    "categories": "",
+    "company_id": "TOYAMACHIHO",
+    "company_name": "富山地方鉄道",
+    "lines": [
+      {
+        "id": "TOYAMACHIHO_HONSEN",
+        "name": "本線",
+        "sequence": [
+          "STN_TOYAMACHIHO_DENTETSU_TOYAMA",
+          "STN_TOYAMACHIHO_INARIMACHI",
+          "STN_TOYAMACHIHO_SHINJO_TANAKA",
+          "STN_TOYAMACHIHO_HIGASHI_SHINJO",
+          "STN_TOYAMACHIHO_ETCHU_EBARA",
+          "STN_TOYAMACHIHO_ETCHU_SANNO",
+          "STN_TOYAMACHIHO_ETCHU_FUNAHASHI",
+          "STN_TOYAMACHIHO_TERADA",
+          "STN_TOYAMACHIHO_ETCHU_IZUMI",
+          "STN_TOYAMACHIHO_AINOKI",
+          "STN_TOYAMACHIHO_SHIN_AINOKI",
+          "STN_TOYAMACHIHO_KAMIICHI",
+          "STN_TOYAMACHIHO_SHIN_MIYAKAWA",
+          "STN_TOYAMACHIHO_NAKA_KAZUMI",
+          "STN_TOYAMACHIHO_NISHI_KAZUMI",
+          "STN_TOYAMACHIHO_NISHI_NAMERIKAWA",
+          "STN_TOYAMACHIHO_NAKA_NAMERIKAWA",
+          "STN_TOYAMACHIHO_NAMERIKAWA",
+          "STN_TOYAMACHIHO_HAMA_KAZUMI",
+          "STN_TOYAMACHIHO_HAYATSUKI_KAZUMI",
+          "STN_TOYAMACHIHO_ETCHU_NAKAMURA",
+          "STN_TOYAMACHIHO_NISHI_UOZU",
+          "STN_TOYAMACHIHO_DENTETSU_UOZU",
+          "STN_TOYAMACHIHO_SHIN_UOZU",
+          "STN_TOYAMACHIHO_KYODEN",
+          "STN_TOYAMACHIHO_DENTETSU_ISHIDA",
+          "STN_TOYAMACHIHO_DENTETSU_KUROBE",
+          "STN_TOYAMACHIHO_HIGASHI_MIKKAICHI",
+          "STN_TOYAMACHIHO_OGYU",
+          "STN_TOYAMACHIHO_NAGAYA",
+          "STN_TOYAMACHIHO_SHIN_KUROBE",
+          "STN_TOYAMACHIHO_SHITAYAMA",
+          "STN_TOYAMACHIHO_WAKAGURI",
+          "STN_TOYAMACHIHO_TOCHIYA",
+          "STN_TOYAMACHIHO_URAYAMA",
+          "STN_TOYAMACHIHO_ORITATEGUCHI",
+          "STN_TOYAMACHIHO_ORITATE",
+          "STN_TOYAMACHIHO_AIMOTO",
+          "STN_TOYAMACHIHO_UCHIYAMA",
+          "STN_TOYAMACHIHO_OTOZAWA",
+          "STN_TOYAMACHIHO_UNAZUKI_ONSEN"
+        ]
+      },
+      {
+        "id": "TOYAMACHIHO_TATEYAMA",
+        "name": "立山線",
+        "sequence": [
+          "STN_TOYAMACHIHO_TERADA",
+          "STN_TOYAMACHIHO_CHIGOZUKA",
+          "STN_TOYAMACHIHO_TAZOE",
+          "STN_TOYAMACHIHO_GOHYAKUKOKU",
+          "STN_TOYAMACHIHO_ENOMACHI",
+          "STN_TOYAMACHIHO_SHITADAN",
+          "STN_TOYAMACHIHO_KAMAGAFUCHI",
+          "STN_TOYAMACHIHO_SAWANAKAYAMA",
+          "STN_TOYAMACHIHO_IWAKURAJI",
+          "STN_TOYAMACHIHO_YOKOE",
+          "STN_TOYAMACHIHO_CHIGAKI",
+          "STN_TOYAMACHIHO_ARIMEGUCHI",
+          "STN_TOYAMACHIHO_HONGU",
+          "STN_TOYAMACHIHO_TATEYAMA"
+        ]
+      },
+      {
+        "id": "TOYAMACHIHO_FUJIKOSHI",
+        "name": "不二越線",
+        "sequence": [
+          "STN_TOYAMACHIHO_INARIMACHI",
+          "STN_TOYAMACHIHO_SAKAEMACHI",
+          "STN_TOYAMACHIHO_FUJIKOSHI",
+          "STN_TOYAMACHIHO_OIZUMI",
+          "STN_TOYAMACHIHO_MINAMI_TOYAMA"
+        ]
+      },
+      {
+        "id": "TOYAMACHIHO_KAMIDAKI",
+        "name": "上滝線",
+        "sequence": [
+          "STN_TOYAMACHIHO_MINAMI_TOYAMA",
+          "STN_TOYAMACHIHO_ASANAMACHI",
+          "STN_TOYAMACHIHO_KAMIHORI",
+          "STN_TOYAMACHIHO_KOSUGI",
+          "STN_TOYAMACHIHO_NUNOICHI",
+          "STN_TOYAMACHIHO_KAIHATSU",
+          "STN_TOYAMACHIHO_TSUKIOKA",
+          "STN_TOYAMACHIHO_OSHO",
+          "STN_TOYAMACHIHO_KAMI_TAKI",
+          "STN_TOYAMACHIHO_DAIKANJI",
+          "STN_TOYAMACHIHO_IWAKURAJI"
+        ]
+      },
+      {
+        "id": "TOYAMACHIHO_TOYAMAKO",
+        "name": "富山港線",
+        "sequence": [
+          "STN_TOYAMACHIHO_TOYAMA_EKI",
+          "STN_TOYAMACHIHO_OAKS_CANAL_PARK_HOTEL_TOYAMAMAE",
+          "STN_TOYAMACHIHO_INTEC_HONSHAMAE",
+          "STN_TOYAMACHIHO_RYUKOKU_TOYAMA_KOKOMAE",
+          "STN_TOYAMACHIHO_OKUDA_CHUGAKKOMAE",
+          "STN_TOYAMACHIHO_SHIMO_OKUI",
+          "STN_TOYAMACHIHO_AWASHIMA",
+          "STN_TOYAMACHIHO_ETCHU_NAKAJIMA",
+          "STN_TOYAMACHIHO_JOGAWARA",
+          "STN_TOYAMACHIHO_INUJIMA_SHINMACHI",
+          "STN_TOYAMACHIHO_HASUMACHI",
+          "STN_TOYAMACHIHO_HAGIURA_SHOGAKKOMAE",
+          "STN_TOYAMACHIHO_HIGASHI_IWASE",
+          "STN_TOYAMACHIHO_KEIRINJOMAE",
+          "STN_TOYAMACHIHO_IWASEHAMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_TOYAMACHIHO_DENTETSU_TOYAMA",
+        "lat": "36.70052",
+        "lng": "137.21474",
+        "name": "電鉄富山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_INARIMACHI",
+        "lat": "36.69696",
+        "lng": "137.231695",
+        "name": "稲荷町"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHINJŌ_TANAKA",
+        "lat": "36.69792249",
+        "lng": "137.24109546",
+        "name": "新庄田中"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HIGASHI_SHINJŌ",
+        "lat": "36.698684",
+        "lng": "137.253007",
+        "name": "東新庄"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ETCHŪ_EBARA",
+        "lat": "36.698965",
+        "lng": "137.266215",
+        "name": "越中荏原"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ETCHŪ_SANNŌ",
+        "lat": "36.703351",
+        "lng": "137.290816",
+        "name": "越中三郷"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ETCHŪ_FUNAHASHI",
+        "lat": "36.705519",
+        "lng": "137.306591",
+        "name": "越中舟橋"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_TERADA",
+        "lat": "36.69884",
+        "lng": "137.31909",
+        "name": "寺田"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ETCHŪ_IZUMI",
+        "lat": "36.69989",
+        "lng": "137.327285",
+        "name": "越中泉"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_AINOKI",
+        "lat": "36.70198",
+        "lng": "137.33548",
+        "name": "相ノ木"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHIN_AINOKI",
+        "lat": "36.70316076",
+        "lng": "137.34232307",
+        "name": "新相ノ木"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KAMIICHI",
+        "lat": "36.704475",
+        "lng": "137.35708",
+        "name": "上市"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHIN_MIYAKAWA",
+        "lat": "36.71731",
+        "lng": "137.351095",
+        "name": "新宮川"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NAKA_KAZUMI",
+        "lat": "36.73534",
+        "lng": "137.35097",
+        "name": "中加積"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NISHI_KAZUMI",
+        "lat": "36.74634",
+        "lng": "137.340215",
+        "name": "西加積"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NISHI_NAMERIKAWA",
+        "lat": "36.75552",
+        "lng": "137.334605",
+        "name": "西滑川"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NAKA_NAMERIKAWA",
+        "lat": "36.76191",
+        "lng": "137.339925",
+        "name": "中滑川"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NAMERIKAWA",
+        "lat": "36.76909",
+        "lng": "137.348815",
+        "name": "滑川"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HAMA_KAZUMI",
+        "lat": "36.777655",
+        "lng": "137.36194",
+        "name": "浜加積"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HAYATSUKI_KAZUMI",
+        "lat": "36.783725",
+        "lng": "137.3716",
+        "name": "早月加積"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ETCHŪ_NAKAMURA",
+        "lat": "36.79069",
+        "lng": "137.38259",
+        "name": "越中中村"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NISHI_UOZU",
+        "lat": "36.80377",
+        "lng": "137.39462",
+        "name": "西魚津"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_DENTETSU_UOZU",
+        "lat": "36.81531",
+        "lng": "137.400345",
+        "name": "電鉄魚津"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHIN_UOZU",
+        "lat": "36.826665",
+        "lng": "137.40527",
+        "name": "新魚津"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KYŌDEN",
+        "lat": "36.84883",
+        "lng": "137.41619",
+        "name": "経田"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_DENTETSU_ISHIDA",
+        "lat": "36.865865",
+        "lng": "137.423195",
+        "name": "電鉄石田"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_DENTETSU_KUROBE",
+        "lat": "36.874055",
+        "lng": "137.444165",
+        "name": "電鉄黒部"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HIGASHI_MIKKAICHI",
+        "lat": "36.874675",
+        "lng": "137.45091",
+        "name": "東三日市"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_OGYŪ",
+        "lat": "36.87503",
+        "lng": "137.45926",
+        "name": "荻生"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NAGAYA",
+        "lat": "36.873525",
+        "lng": "137.47075",
+        "name": "長屋"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHIN_KUROBE",
+        "lat": "36.87304891",
+        "lng": "137.48121428",
+        "name": "新黒部"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHITAYAMA",
+        "lat": "36.872015",
+        "lng": "137.485845",
+        "name": "舌山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_WAKAGURI",
+        "lat": "36.871145",
+        "lng": "137.49322",
+        "name": "若栗"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_TOCHIYA",
+        "lat": "36.869775",
+        "lng": "137.505965",
+        "name": "栃屋"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_URAYAMA",
+        "lat": "36.863415",
+        "lng": "137.519515",
+        "name": "浦山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ORITATEGUCHI",
+        "lat": "36.85961",
+        "lng": "137.532985",
+        "name": "下立口"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ORITATE",
+        "lat": "36.85773",
+        "lng": "137.54143",
+        "name": "下立"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_AIMOTO",
+        "lat": "36.855775",
+        "lng": "137.55361",
+        "name": "愛本"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_UCHIYAMA",
+        "lat": "36.84682",
+        "lng": "137.556755",
+        "name": "内山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_OTOZAWA",
+        "lat": "36.84074",
+        "lng": "137.55992",
+        "name": "音沢"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_UNAZUKI_ONSEN",
+        "lat": "36.815855",
+        "lng": "137.583585",
+        "name": "宇奈月温泉"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_CHIGOZUKA",
+        "lat": "36.68657",
+        "lng": "137.317535",
+        "name": "稚子塚"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_TAZOE",
+        "lat": "36.67978",
+        "lng": "137.317775",
+        "name": "田添"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_GOHYAKUKOKU",
+        "lat": "36.665395",
+        "lng": "137.314171",
+        "name": "五百石"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ENOMACHI",
+        "lat": "36.657616",
+        "lng": "137.316613",
+        "name": "榎町"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHITADAN",
+        "lat": "36.64788",
+        "lng": "137.31781",
+        "name": "下段"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KAMAGAFUCHI",
+        "lat": "36.633315",
+        "lng": "137.31931",
+        "name": "釜ヶ淵"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SAWANAKAYAMA",
+        "lat": "36.622335",
+        "lng": "137.321005",
+        "name": "沢中山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_IWAKURAJI",
+        "lat": "36.608305",
+        "lng": "137.319875",
+        "name": "岩峅寺"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_YOKOE",
+        "lat": "36.58207",
+        "lng": "137.335655",
+        "name": "横江"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_CHIGAKI",
+        "lat": "36.573745",
+        "lng": "137.3739",
+        "name": "千垣"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ARIMEGUCHI",
+        "lat": "36.572966",
+        "lng": "137.380195",
+        "name": "有峰口"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HONGŪ",
+        "lat": "36.574932",
+        "lng": "137.395839",
+        "name": "本宮"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_TATEYAMA",
+        "lat": "36.58333821",
+        "lng": "137.44554841",
+        "name": "立山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SAKAEMACHI",
+        "lat": "36.691114",
+        "lng": "137.23327838",
+        "name": "栄町"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_FUJIKOSHI",
+        "lat": "36.687865",
+        "lng": "137.23246",
+        "name": "不二越"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ŌIZUMI",
+        "lat": "36.677825",
+        "lng": "137.22913",
+        "name": "大泉"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_MINAMI_TOYAMA",
+        "lat": "36.67014885",
+        "lng": "137.22042533",
+        "name": "南富山"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ASANAMACHI",
+        "lat": "36.66052",
+        "lng": "137.2249",
+        "name": "朝菜町"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KAMIHORI",
+        "lat": "36.653377",
+        "lng": "137.230222",
+        "name": "上堀"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KOSUGI",
+        "lat": "36.64952",
+        "lng": "137.23309",
+        "name": "小杉"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_NUNOICHI",
+        "lat": "36.64513",
+        "lng": "137.23553",
+        "name": "布市"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KAIHATSU",
+        "lat": "36.636192",
+        "lng": "137.242868",
+        "name": "開発"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_TSUKIOKA",
+        "lat": "36.626439",
+        "lng": "137.263529",
+        "name": "月岡"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ŌSHŌ",
+        "lat": "36.619494",
+        "lng": "137.275432",
+        "name": "大庄"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KAMI_TAKI",
+        "lat": "36.60955",
+        "lng": "137.29569",
+        "name": "上滝"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_DAIKANJI",
+        "lat": "36.608224",
+        "lng": "137.308568",
+        "name": "大川寺"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_TOYAMA_EKI",
+        "lat": "36.70161412",
+        "lng": "137.21291026",
+        "name": "富山駅"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_OAKS_CANAL_PARK_HOTEL_TOYAMAMAE",
+        "lat": "36.70366172",
+        "lng": "137.21458652",
+        "name": "オークスカナルパークホテル富山前"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_INTEC_HONSHAMAE",
+        "lat": "36.70360397",
+        "lng": "137.21653109",
+        "name": "インテック本社前"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_RYŪKOKU_TOYAMA_KŌKŌMAE",
+        "lat": "36.70301376",
+        "lng": "137.21985203",
+        "name": "龍谷富山高校前（永楽町）"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_OKUDA_CHŪGAKKŌMAE",
+        "lat": "36.70357",
+        "lng": "137.223605",
+        "name": "奥田中学校前"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_SHIMO_OKUI",
+        "lat": "36.71192",
+        "lng": "137.22459",
+        "name": "下奥井"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_AWASHIMA",
+        "lat": "36.71922108",
+        "lng": "137.22479521",
+        "name": "粟島（大阪屋ショップ前）"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_ETCHŪ_NAKAJIMA",
+        "lat": "36.72235676",
+        "lng": "137.22488525",
+        "name": "越中中島"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_JŌGAWARA",
+        "lat": "36.73112418",
+        "lng": "137.22606156",
+        "name": "城川原"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_INUJIMA_SHINMACHI",
+        "lat": "36.73526061",
+        "lng": "137.22659396",
+        "name": "犬島新町"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HASUMACHI",
+        "lat": "36.74228343",
+        "lng": "137.22752817",
+        "name": "蓮町（馬場記念公園前）"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HAGIURA_SHŌGAKKŌMAE",
+        "lat": "36.74807242",
+        "lng": "137.22833119",
+        "name": "萩浦小学校前"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_HIGASHI_IWASE",
+        "lat": "36.75196101",
+        "lng": "137.23044553",
+        "name": "東岩瀬"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_KEIRINJŌMAE",
+        "lat": "36.75755796",
+        "lng": "137.23388203",
+        "name": "競輪場前"
+      },
+      {
+        "id": "STN_TOYAMACHIHO_IWASEHAMA",
+        "lat": "36.76156751",
+        "lng": "137.23402443",
+        "name": "岩瀬浜"
+      }
+    ]
+  }
+]

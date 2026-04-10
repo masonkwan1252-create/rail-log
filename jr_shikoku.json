@@ -1,0 +1,1928 @@
+[
+  {
+    "categories": "",
+    "company_id": "JR_SHIKOKU",
+    "company_name": "JR四国",
+    "lines": [
+      {
+        "id": "JR_SHIKOKU_YOSAN",
+        "name": "予讃線",
+        "sequence": [
+          "STN_JR_SHIKOKU_TAKAMATSU",
+          "STN_JR_SHIKOKU_KOZAI",
+          "STN_JR_SHIKOKU_KINA",
+          "STN_JR_SHIKOKU_HASHIOKA",
+          "STN_JR_SHIKOKU_KOKUBU",
+          "STN_JR_SHIKOKU_SANUKI_FUCHU",
+          "STN_JR_SHIKOKU_KAMOGAWA",
+          "STN_JR_SHIKOKU_YASOBA",
+          "STN_JR_SHIKOKU_SAKAIDE",
+          "STN_JR_SHIKOKU_UTAZU",
+          "STN_JR_SHIKOKU_MARUGAME",
+          "STN_JR_SHIKOKU_SANUKI_SHIOYA",
+          "STN_JR_SHIKOKU_TADOTSU",
+          "STN_JR_SHIKOKU_KAIGANJI",
+          "STN_JR_SHIKOKU_TSUSHIMANOMIYA",
+          "STN_JR_SHIKOKU_TAKUMA",
+          "STN_JR_SHIKOKU_MINO",
+          "STN_JR_SHIKOKU_TAKASE",
+          "STN_JR_SHIKOKU_HIJIDAI",
+          "STN_JR_SHIKOKU_MOTOYAMA",
+          "STN_JR_SHIKOKU_KANONJI",
+          "STN_JR_SHIKOKU_TOYOHAMA",
+          "STN_JR_SHIKOKU_MINOURA",
+          "STN_JR_SHIKOKU_KAWANOE",
+          "STN_JR_SHIKOKU_IYO_MISHIMA",
+          "STN_JR_SHIKOKU_IYO_SANGAWA",
+          "STN_JR_SHIKOKU_AKABOSHI",
+          "STN_JR_SHIKOKU_IYO_DOI",
+          "STN_JR_SHIKOKU_SEKIGAWA",
+          "STN_JR_SHIKOKU_TAKIHAMA",
+          "STN_JR_SHIKOKU_NIIHAMA",
+          "STN_JR_SHIKOKU_NAKAHAGI",
+          "STN_JR_SHIKOKU_IYO_SAIJO",
+          "STN_JR_SHIKOKU_ISHIZUCHIYAMA",
+          "STN_JR_SHIKOKU_IYO_HIMI",
+          "STN_JR_SHIKOKU_IYO_KOMATSU",
+          "STN_JR_SHIKOKU_TAMANOE",
+          "STN_JR_SHIKOKU_NYUGAWA",
+          "STN_JR_SHIKOKU_IYO_MIYOSHI",
+          "STN_JR_SHIKOKU_IYO_SAKURAI",
+          "STN_JR_SHIKOKU_IYO_TOMIDA",
+          "STN_JR_SHIKOKU_IMABARI",
+          "STN_JR_SHIKOKU_HASHIHAMA",
+          "STN_JR_SHIKOKU_NAMIKATA",
+          "STN_JR_SHIKOKU_ONISHI",
+          "STN_JR_SHIKOKU_IYO_KAMEOKA",
+          "STN_JR_SHIKOKU_KIKUMA",
+          "STN_JR_SHIKOKU_ASANAMI",
+          "STN_JR_SHIKOKU_OURA",
+          "STN_JR_SHIKOKU_IYO_HOJO",
+          "STN_JR_SHIKOKU_YANAGIHARA",
+          "STN_JR_SHIKOKU_AWAI",
+          "STN_JR_SHIKOKU_KOYODAI",
+          "STN_JR_SHIKOKU_HORIE",
+          "STN_JR_SHIKOKU_IYO_WAKE",
+          "STN_JR_SHIKOKU_MITSUBAMA",
+          "STN_JR_SHIKOKU_MATSUYAMA",
+          "STN_JR_SHIKOKU_ICHITSUBO",
+          "STN_JR_SHIKOKU_KITA_IYO",
+          "STN_JR_SHIKOKU_MINAMI_IYO",
+          "STN_JR_SHIKOKU_IYO_YOKOTA",
+          "STN_JR_SHIKOKU_TORINOKI",
+          "STN_JR_SHIKOKU_IYOSHI",
+          "STN_JR_SHIKOKU_MUKAIBARA",
+          "STN_JR_SHIKOKU_IYO_OHIRA",
+          "STN_JR_SHIKOKU_IYO_NAKAYAMA",
+          "STN_JR_SHIKOKU_IYO_TACHIKAWA",
+          "STN_JR_SHIKOKU_UCHIKO",
+          "STN_JR_SHIKOKU_IKAZAKI",
+          "STN_JR_SHIKOKU_KITAYAMA",
+          "STN_JR_SHIKOKU_NIYA",
+          "STN_JR_SHIKOKU_IYO_OZU",
+          "STN_JR_SHIKOKU_NISHI_OZU",
+          "STN_JR_SHIKOKU_IYO_HIRANO",
+          "STN_JR_SHIKOKU_SENJO",
+          "STN_JR_SHIKOKU_YAWATAHAMA",
+          "STN_JR_SHIKOKU_FUTAIWA",
+          "STN_JR_SHIKOKU_IYO_IWAKI",
+          "STN_JR_SHIKOKU_KAMI_UWA",
+          "STN_JR_SHIKOKU_UNOMACHI",
+          "STN_JR_SHIKOKU_SHIMO_UWA",
+          "STN_JR_SHIKOKU_TATCHUMA",
+          "STN_JR_SHIKOKU_IYO_YOSHIDA",
+          "STN_JR_SHIKOKU_TAKAMITSU",
+          "STN_JR_SHIKOKU_KITA_UWAJIMA",
+          "STN_JR_SHIKOKU_UWAJIMA"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_BELOVED_IYONADA",
+        "name": "予讃線（愛ある伊予灘線）",
+        "sequence": [
+          "STN_JR_SHIKOKU_MUKAIBARA",
+          "STN_JR_SHIKOKU_KONOKAWA",
+          "STN_JR_SHIKOKU_IYO_KAMINADA",
+          "STN_JR_SHIKOKU_SHIMONADA",
+          "STN_JR_SHIKOKU_KUSHI",
+          "STN_JR_SHIKOKU_KITANADA",
+          "STN_JR_SHIKOKU_IYO_NAGAHAMA",
+          "STN_JR_SHIKOKU_IYO_IZUSHI",
+          "STN_JR_SHIKOKU_IYO_SHIRATAKI",
+          "STN_JR_SHIKOKU_HATAKI",
+          "STN_JR_SHIKOKU_HARUKA",
+          "STN_JR_SHIKOKU_GORO",
+          "STN_JR_SHIKOKU_IYO_OZU"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_SETO_OHASHI",
+        "name": "瀬戸大橋線",
+        "sequence": [
+          "STN_JR_SHIKOKU_KOJIMA",
+          "STN_JR_SHIKOKU_UTAZU",
+          "STN_JR_SHIKOKU_SAKAIDE",
+          "STN_JR_SHIKOKU_KAMOGAWA",
+          "STN_JR_SHIKOKU_KOKUBU",
+          "STN_JR_SHIKOKU_HASHIOKA",
+          "STN_JR_SHIKOKU_KINA",
+          "STN_JR_SHIKOKU_TAKAMATSU"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_KOTOKU",
+        "name": "高徳線",
+        "sequence": [
+          "STN_JR_SHIKOKU_TAKAMATSU",
+          "STN_JR_SHIKOKU_SHOWACHO",
+          "STN_JR_SHIKOKU_RITSURIN_KOEN_KITAGUCHI",
+          "STN_JR_SHIKOKU_RITSURIN",
+          "STN_JR_SHIKOKU_KITACHO",
+          "STN_JR_SHIKOKU_YASHIMA",
+          "STN_JR_SHIKOKU_FURUTAKAMATSU_MINAMI",
+          "STN_JR_SHIKOKU_YAKURIGUCHI",
+          "STN_JR_SHIKOKU_SANUKI_MURE",
+          "STN_JR_SHIKOKU_SHIDO",
+          "STN_JR_SHIKOKU_ORANGE_TOWN",
+          "STN_JR_SHIKOKU_ZODA",
+          "STN_JR_SHIKOKU_KANZAKI",
+          "STN_JR_SHIKOKU_SANUKI_TSUDA",
+          "STN_JR_SHIKOKU_TSURUWA",
+          "STN_JR_SHIKOKU_NIBU",
+          "STN_JR_SHIKOKU_SAMBOMMATSU",
+          "STN_JR_SHIKOKU_SANUKI_SHIROTORI",
+          "STN_JR_SHIKOKU_HIKETA",
+          "STN_JR_SHIKOKU_SANUKI_AIOI",
+          "STN_JR_SHIKOKU_AWA_OMIYA",
+          "STN_JR_SHIKOKU_ITANO",
+          "STN_JR_SHIKOKU_AWA_KAWABATA",
+          "STN_JR_SHIKOKU_BANDO",
+          "STN_JR_SHIKOKU_IKENOTANI",
+          "STN_JR_SHIKOKU_SHOZUI",
+          "STN_JR_SHIKOKU_YOSHINARI",
+          "STN_JR_SHIKOKU_SAKO",
+          "STN_JR_SHIKOKU_TOKUSHIMA"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_DOSAN",
+        "name": "土讃線",
+        "sequence": [
+          "STN_JR_SHIKOKU_TADOTSU",
+          "STN_JR_SHIKOKU_KONZOJI",
+          "STN_JR_SHIKOKU_ZENTSUJI",
+          "STN_JR_SHIKOKU_KOTOHIRA",
+          "STN_JR_SHIKOKU_SHIOIRI",
+          "STN_JR_SHIKOKU_KUROKAWA",
+          "STN_JR_SHIKOKU_SANUKI_SAIDA",
+          "STN_JR_SHIKOKU_TSUBOJIRI",
+          "STN_JR_SHIKOKU_HASHIKURA",
+          "STN_JR_SHIKOKU_TSUKUDA",
+          "STN_JR_SHIKOKU_AWA_IKEDA",
+          "STN_JR_SHIKOKU_MINAWA",
+          "STN_JR_SHIKOKU_IYAGUCHI",
+          "STN_JR_SHIKOKU_AWA_KAWAGUCHI",
+          "STN_JR_SHIKOKU_KOBOKE",
+          "STN_JR_SHIKOKU_OBOKE",
+          "STN_JR_SHIKOKU_TOSA_IWAHARA",
+          "STN_JR_SHIKOKU_TOYONAGA",
+          "STN_JR_SHIKOKU_OTAGUCHI",
+          "STN_JR_SHIKOKU_TOSA_ANANAI",
+          "STN_JR_SHIKOKU_OSUGI",
+          "STN_JR_SHIKOKU_TOSA_KITAGAWA",
+          "STN_JR_SHIKOKU_KAKUMODANI",
+          "STN_JR_SHIKOKU_SHIGETO",
+          "STN_JR_SHIKOKU_SHINGAI",
+          "STN_JR_SHIKOKU_TOSA_YAMADA",
+          "STN_JR_SHIKOKU_YAMADA_NISHIMACHI",
+          "STN_JR_SHIKOKU_TOSA_NAGAOKA",
+          "STN_JR_SHIKOKU_GOMEN",
+          "STN_JR_SHIKOKU_TOSA_OTSU",
+          "STN_JR_SHIKOKU_NUNOSHIDA",
+          "STN_JR_SHIKOKU_TOSA_ITCHINOMIYA",
+          "STN_JR_SHIKOKU_AZONO",
+          "STN_JR_SHIKOKU_KOCHI",
+          "STN_JR_SHIKOKU_IRIAKE",
+          "STN_JR_SHIKOKU_ENGYOJIGUCHI",
+          "STN_JR_SHIKOKU_ASAHI",
+          "STN_JR_SHIKOKU_KOCHI_SHOGYO_MAE",
+          "STN_JR_SHIKOKU_ASAKURA",
+          "STN_JR_SHIKOKU_EDAGAWA",
+          "STN_JR_SHIKOKU_INO",
+          "STN_JR_SHIKOKU_HAKAWA",
+          "STN_JR_SHIKOKU_OMURA_JINJA_MAE",
+          "STN_JR_SHIKOKU_KUSAKA",
+          "STN_JR_SHIKOKU_OKABANA",
+          "STN_JR_SHIKOKU_TOSA_KAMO",
+          "STN_JR_SHIKOKU_NISHI_SAKAWA",
+          "STN_JR_SHIKOKU_SAKAWA",
+          "STN_JR_SHIKOKU_ERINONO",
+          "STN_JR_SHIKOKU_TOGANO",
+          "STN_JR_SHIKOKU_ASO",
+          "STN_JR_SHIKOKU_ONOGO",
+          "STN_JR_SHIKOKU_OMA",
+          "STN_JR_SHIKOKU_SUSAKI",
+          "STN_JR_SHIKOKU_TOSA_SHINJO",
+          "STN_JR_SHIKOKU_AWA",
+          "STN_JR_SHIKOKU_TOSA_KURE",
+          "STN_JR_SHIKOKU_KAGENO",
+          "STN_JR_SHIKOKU_ROKUTANJI",
+          "STN_JR_SHIKOKU_NIIDA",
+          "STN_JR_SHIKOKU_KUBOKAWA"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_HONSHI_BISAN",
+        "name": "本四備讃線",
+        "sequence": [
+          "STN_JR_SHIKOKU_KOJIMA",
+          "STN_JR_SHIKOKU_UTAZU"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_UCHIKO",
+        "name": "内子線",
+        "sequence": [
+          "STN_JR_SHIKOKU_NIYA",
+          "STN_JR_SHIKOKU_KITAYAMA",
+          "STN_JR_SHIKOKU_IKAZAKI",
+          "STN_JR_SHIKOKU_UCHIKO"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_YODO",
+        "name": "予土線",
+        "sequence": [
+          "STN_JR_SHIKOKU_WAKAI",
+          "STN_JR_SHIKOKU_IEJIGAWA",
+          "STN_JR_SHIKOKU_UTSUIGAWA",
+          "STN_JR_SHIKOKU_TOSA_TAISHO",
+          "STN_JR_SHIKOKU_TOSA_SHOWA",
+          "STN_JR_SHIKOKU_TOGAWA",
+          "STN_JR_SHIKOKU_HAGE",
+          "STN_JR_SHIKOKU_EKAWASAKI",
+          "STN_JR_SHIKOKU_NISHIGAHO",
+          "STN_JR_SHIKOKU_MATUCHI",
+          "STN_JR_SHIKOKU_YOSHINOBU",
+          "STN_JR_SHIKOKU_MATSUMARU",
+          "STN_JR_SHIKOKU_IZUME",
+          "STN_JR_SHIKOKU_CHIKANAGA",
+          "STN_JR_SHIKOKU_FUKATA",
+          "STN_JR_SHIKOKU_OUCHI",
+          "STN_JR_SHIKOKU_FUTANA",
+          "STN_JR_SHIKOKU_IYO_MIYANOSHITA",
+          "STN_JR_SHIKOKU_MUDEN",
+          "STN_JR_SHIKOKU_KITA_UWAJIMA"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_NARUTO",
+        "name": "鳴門線",
+        "sequence": [
+          "STN_JR_SHIKOKU_IKENOTANI",
+          "STN_JR_SHIKOKU_AWA_OTANI",
+          "STN_JR_SHIKOKU_TATSUMICHI",
+          "STN_JR_SHIKOKU_KYOKAIMAE",
+          "STN_JR_SHIKOKU_KONPIRAMAE",
+          "STN_JR_SHIKOKU_MUYA",
+          "STN_JR_SHIKOKU_NARUTO"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_TOKUSHIMA",
+        "name": "徳島線",
+        "sequence": [
+          "STN_JR_SHIKOKU_AWA_IKEDA",
+          "STN_JR_SHIKOKU_TSUKUDA",
+          "STN_JR_SHIKOKU_TSUJI",
+          "STN_JR_SHIKOKU_AWA_KAMO",
+          "STN_JR_SHIKOKU_MIKAMO",
+          "STN_JR_SHIKOKU_EGUCHI",
+          "STN_JR_SHIKOKU_AWA_HANDA",
+          "STN_JR_SHIKOKU_SADAMITSU",
+          "STN_JR_SHIKOKU_OJIMA",
+          "STN_JR_SHIKOKU_ANABUKI",
+          "STN_JR_SHIKOKU_KAWADA",
+          "STN_JR_SHIKOKU_AWA_YAMAKAWA",
+          "STN_JR_SHIKOKU_YAMASE",
+          "STN_JR_SHIKOKU_GAKU",
+          "STN_JR_SHIKOKU_AWA_KAWASHIMA",
+          "STN_JR_SHIKOKU_NISHI_OE",
+          "STN_JR_SHIKOKU_KAMOJIMA",
+          "STN_JR_SHIKOKU_OEZUKA",
+          "STN_JR_SHIKOKU_USHIJIMA",
+          "STN_JR_SHIKOKU_SHIMOURA",
+          "STN_JR_SHIKOKU_ISHII",
+          "STN_JR_SHIKOKU_KO",
+          "STN_JR_SHIKOKU_AKUI",
+          "STN_JR_SHIKOKU_KURAMOTO",
+          "STN_JR_SHIKOKU_SAKO",
+          "STN_JR_SHIKOKU_TOKUSHIMA"
+        ]
+      },
+      {
+        "id": "JR_SHIKOKU_MUGI",
+        "name": "牟岐線",
+        "sequence": [
+          "STN_JR_SHIKOKU_TOKUSHIMA",
+          "STN_JR_SHIKOKU_AWA_TOMIDA",
+          "STN_JR_SHIKOKU_NIKENYA",
+          "STN_JR_SHIKOKU_BUNKA_NO_MORI",
+          "STN_JR_SHIKOKU_JIZOBASHI",
+          "STN_JR_SHIKOKU_CHUDEN",
+          "STN_JR_SHIKOKU_MINAMI_KOMATSUSHIMA",
+          "STN_JR_SHIKOKU_AWA_AKAISHI",
+          "STN_JR_SHIKOKU_TATSUYE",
+          "STN_JR_SHIKOKU_HANOURA",
+          "STN_JR_SHIKOKU_NISHIBARA",
+          "STN_JR_SHIKOKU_AWA_NAKASHIMA",
+          "STN_JR_SHIKOKU_ANAN",
+          "STN_JR_SHIKOKU_MINORABAYASHI",
+          "STN_JR_SHIKOKU_AWA_TACHIBANA",
+          "STN_JR_SHIKOKU_KUWANO",
+          "STN_JR_SHIKOKU_ARATANO",
+          "STN_JR_SHIKOKU_AWA_FUKUI",
+          "STN_JR_SHIKOKU_YUKI",
+          "STN_JR_SHIKOKU_TAINOHAMA",
+          "STN_JR_SHIKOKU_KIKI",
+          "STN_JR_SHIKOKU_KITAGOCHI",
+          "STN_JR_SHIKOKU_HIWASA",
+          "STN_JR_SHIKOKU_YAMAGAWACHI",
+          "STN_JR_SHIKOKU_HEGAWA",
+          "STN_JR_SHIKOKU_MUGI",
+          "STN_JR_SHIKOKU_SABASE",
+          "STN_JR_SHIKOKU_ASAKAWA",
+          "STN_JR_SHIKOKU_AWA_KAINAN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_JR_SHIKOKU_TAKAMATSU",
+        "lat": "34.35056",
+        "lng": "134.045335",
+        "name": "高松"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOZAI",
+        "lat": "34.34136",
+        "lng": "134.01001",
+        "name": "香西"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KINA",
+        "lat": "34.3254",
+        "lng": "133.993735",
+        "name": "鬼無"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HASHIOKA",
+        "lat": "34.30505",
+        "lng": "133.96807",
+        "name": "端岡"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOKUBU",
+        "lat": "34.30058",
+        "lng": "133.941775",
+        "name": "国分"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_FUCHU",
+        "lat": "34.291428",
+        "lng": "133.923864",
+        "name": "讃岐府中"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAMOGAWA",
+        "lat": "34.306905",
+        "lng": "133.905265",
+        "name": "鴨川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YASOBA",
+        "lat": "34.313",
+        "lng": "133.88486",
+        "name": "八十場"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SAKAIDE",
+        "lat": "34.31319",
+        "lng": "133.856785",
+        "name": "坂出"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_UTAZU",
+        "lat": "34.30632",
+        "lng": "133.81375",
+        "name": "宇多津"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MARUGAME",
+        "lat": "34.292",
+        "lng": "133.793215",
+        "name": "丸亀"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_SHIOYA",
+        "lat": "34.285055",
+        "lng": "133.777335",
+        "name": "讃岐塩屋"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TADOTSU",
+        "lat": "34.271245",
+        "lng": "133.75729",
+        "name": "多度津"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAIGANJI",
+        "lat": "34.2537",
+        "lng": "133.72975",
+        "name": "海岸寺"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TSUSHIMANOMIYA",
+        "lat": "34.238249",
+        "lng": "133.704466",
+        "name": "津島ノ宮"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TAKUMA",
+        "lat": "34.221466",
+        "lng": "133.692799",
+        "name": "詫間"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MINO",
+        "lat": "34.205605",
+        "lng": "133.71065",
+        "name": "みの"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TAKASE",
+        "lat": "34.183558",
+        "lng": "133.710763",
+        "name": "高瀬"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HIJIDAI",
+        "lat": "34.16696",
+        "lng": "133.690355",
+        "name": "比地大"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MOTOYAMA",
+        "lat": "34.14676",
+        "lng": "133.6865",
+        "name": "本山"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KANONJI",
+        "lat": "34.12444",
+        "lng": "133.65624",
+        "name": "観音寺"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOYOHAMA",
+        "lat": "34.08039",
+        "lng": "133.644535",
+        "name": "豊浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MINOURA",
+        "lat": "34.048025",
+        "lng": "133.61951",
+        "name": "箕浦"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAWANOE",
+        "lat": "34.014755",
+        "lng": "133.576135",
+        "name": "川之江"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_MISHIMA",
+        "lat": "33.979565",
+        "lng": "133.54249",
+        "name": "伊予三島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_SANGAWA",
+        "lat": "33.96794",
+        "lng": "133.500195",
+        "name": "伊予寒川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AKABOSHI",
+        "lat": "33.966805",
+        "lng": "133.456505",
+        "name": "赤星"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_DOI",
+        "lat": "33.959005",
+        "lng": "133.4276",
+        "name": "伊予土居"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SEKIGAWA",
+        "lat": "33.95577",
+        "lng": "133.392865",
+        "name": "関川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TAKIHAMA",
+        "lat": "33.97053",
+        "lng": "133.325215",
+        "name": "多喜浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NIIHAMA",
+        "lat": "33.948045",
+        "lng": "133.29476",
+        "name": "新居浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NAKAHAGI",
+        "lat": "33.92624",
+        "lng": "133.25324",
+        "name": "中萩"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_SAIJO",
+        "lat": "33.912565",
+        "lng": "133.188255",
+        "name": "伊予西条"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ISHIZUCHIYAMA",
+        "lat": "33.8959",
+        "lng": "133.15761",
+        "name": "石鎚山"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_HIMI",
+        "lat": "33.896745",
+        "lng": "133.13108",
+        "name": "伊予氷見"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_KOMATSU",
+        "lat": "33.8976",
+        "lng": "133.116515",
+        "name": "伊予小松"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TAMANOE",
+        "lat": "33.912735",
+        "lng": "133.09898",
+        "name": "玉之江"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NYUGAWA",
+        "lat": "33.92965",
+        "lng": "133.08558",
+        "name": "壬生川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_MIYOSHI",
+        "lat": "33.95434",
+        "lng": "133.06433",
+        "name": "伊予三芳"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_SAKURAI",
+        "lat": "34.01204",
+        "lng": "133.035545",
+        "name": "伊予桜井"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_TOMIDA",
+        "lat": "34.036325",
+        "lng": "133.009095",
+        "name": "伊予富田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IMABARI",
+        "lat": "34.064105",
+        "lng": "132.993845",
+        "name": "今治"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HASHIHAMA",
+        "lat": "34.09804",
+        "lng": "132.968905",
+        "name": "波止浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NAMIKATA",
+        "lat": "34.095255",
+        "lng": "132.942595",
+        "name": "波方"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ONISHI",
+        "lat": "34.066015",
+        "lng": "132.929115",
+        "name": "大西"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_KAMEOKA",
+        "lat": "34.053845",
+        "lng": "132.874155",
+        "name": "伊予亀岡"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KIKUMA",
+        "lat": "34.03338",
+        "lng": "132.84108",
+        "name": "菊間"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ASANAMI",
+        "lat": "34.00997",
+        "lng": "132.803035",
+        "name": "浅海"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OURA",
+        "lat": "34.000035",
+        "lng": "132.775625",
+        "name": "大浦"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_HOJO",
+        "lat": "33.972905",
+        "lng": "132.775335",
+        "name": "伊予北条"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YANAGIHARA",
+        "lat": "33.953525",
+        "lng": "132.77348",
+        "name": "柳原"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWAI",
+        "lat": "33.942935",
+        "lng": "132.770595",
+        "name": "粟井"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOYODAI",
+        "lat": "33.926845",
+        "lng": "132.760955",
+        "name": "光洋台"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HORIE",
+        "lat": "33.905465",
+        "lng": "132.753545",
+        "name": "堀江"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_WAKE",
+        "lat": "33.88961",
+        "lng": "132.740545",
+        "name": "伊予和気"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MITSUBAMA",
+        "lat": "33.86171",
+        "lng": "132.72879",
+        "name": "三津浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MATSUYAMA",
+        "lat": "33.83988",
+        "lng": "132.750985",
+        "name": "松山"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ICHITSUBO",
+        "lat": "33.80915",
+        "lng": "132.74927",
+        "name": "市坪"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KITA_IYO",
+        "lat": "33.787335",
+        "lng": "132.748795",
+        "name": "北伊予"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MINAMI_IYO",
+        "lat": "33.77757937",
+        "lng": "132.7384298",
+        "name": "南伊予"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_YOKOTA",
+        "lat": "33.772855",
+        "lng": "132.727105",
+        "name": "伊予横田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TORINOKI",
+        "lat": "33.76373",
+        "lng": "132.711385",
+        "name": "鳥ノ木"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYOSHI",
+        "lat": "33.75556",
+        "lng": "132.702605",
+        "name": "伊予市"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MUKAIBARA",
+        "lat": "33.735895",
+        "lng": "132.69569",
+        "name": "向井原"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_OHIRA",
+        "lat": "33.71602",
+        "lng": "132.70841",
+        "name": "伊予大平"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_NAKAYAMA",
+        "lat": "33.6492",
+        "lng": "132.711905",
+        "name": "伊予中山"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_TACHIKAWA",
+        "lat": "33.600745",
+        "lng": "132.677305",
+        "name": "伊予立川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_UCHIKO",
+        "lat": "33.54948",
+        "lng": "132.64626",
+        "name": "内子"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IKAZAKI",
+        "lat": "33.538075",
+        "lng": "132.636355",
+        "name": "五十崎"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KITAYAMA",
+        "lat": "33.533425",
+        "lng": "132.611435",
+        "name": "喜多山"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NIYA",
+        "lat": "33.534155",
+        "lng": "132.59853",
+        "name": "新谷"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_OZU",
+        "lat": "33.51855",
+        "lng": "132.54484",
+        "name": "伊予大洲"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NISHI_OZU",
+        "lat": "33.508175",
+        "lng": "132.527125",
+        "name": "西大洲"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_HIRANO",
+        "lat": "33.49561",
+        "lng": "132.518115",
+        "name": "伊予平野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SENJO",
+        "lat": "33.465435",
+        "lng": "132.45734",
+        "name": "千丈"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YAWATAHAMA",
+        "lat": "33.45803",
+        "lng": "132.43618",
+        "name": "八幡浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_FUTAIWA",
+        "lat": "33.424275",
+        "lng": "132.45789",
+        "name": "双岩"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_IWAKI",
+        "lat": "33.39159",
+        "lng": "132.473055",
+        "name": "伊予石城"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAMI_UWA",
+        "lat": "33.379965",
+        "lng": "132.50138",
+        "name": "上宇和"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_UNOMACHI",
+        "lat": "33.363175",
+        "lng": "132.509775",
+        "name": "卯之町"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHIMO_UWA",
+        "lat": "33.34978",
+        "lng": "132.531085",
+        "name": "下宇和"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TATCHUMA",
+        "lat": "33.296725",
+        "lng": "132.539465",
+        "name": "立間"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_YOSHIDA",
+        "lat": "33.27341",
+        "lng": "132.544315",
+        "name": "伊予吉田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TAKAMITSU",
+        "lat": "33.25598",
+        "lng": "132.573505",
+        "name": "高光"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KITA_UWAJIMA",
+        "lat": "33.23924",
+        "lng": "132.569715",
+        "name": "北宇和島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_UWAJIMA",
+        "lat": "33.226185",
+        "lng": "132.56771",
+        "name": "宇和島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KONOKAWA",
+        "lat": "33.701635",
+        "lng": "132.65877",
+        "name": "高野川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_KAMINADA",
+        "lat": "33.68361",
+        "lng": "132.63296",
+        "name": "伊予上灘"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHIMONADA",
+        "lat": "33.65509",
+        "lng": "132.58914",
+        "name": "下灘"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KUSHI",
+        "lat": "33.647055",
+        "lng": "132.56306",
+        "name": "串"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KITANADA",
+        "lat": "33.637142",
+        "lng": "132.531464",
+        "name": "喜多灘"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_NAGAHAMA",
+        "lat": "33.615015",
+        "lng": "132.48707",
+        "name": "伊予長浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_IZUSHI",
+        "lat": "33.59636",
+        "lng": "132.49885",
+        "name": "伊予出石"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_SHIRATAKI",
+        "lat": "33.57844",
+        "lng": "132.526535",
+        "name": "伊予白滝"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HATAKI",
+        "lat": "33.56245",
+        "lng": "132.540775",
+        "name": "八多喜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HARUKA",
+        "lat": "33.55565",
+        "lng": "132.555305",
+        "name": "春賀"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_GORO",
+        "lat": "33.54133",
+        "lng": "132.570525",
+        "name": "五郎"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOJIMA",
+        "lat": "34.462815",
+        "lng": "133.80769",
+        "name": "児島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHOWACHO",
+        "lat": "34.344075",
+        "lng": "134.032165",
+        "name": "昭和町"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_RITSURIN_KOEN_KITAGUCHI",
+        "lat": "34.33465",
+        "lng": "134.041285",
+        "name": "栗林公園北口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_RITSURIN",
+        "lat": "34.332324",
+        "lng": "134.05354",
+        "name": "栗林"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KITACHO",
+        "lat": "34.33192",
+        "lng": "134.07995",
+        "name": "木太町"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YASHIMA",
+        "lat": "34.336765",
+        "lng": "134.10958",
+        "name": "屋島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_FURUTAKAMATSU_MINAMI",
+        "lat": "34.341096",
+        "lng": "134.121615",
+        "name": "古高松南"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YAKURIGUCHI",
+        "lat": "34.339075",
+        "lng": "134.136805",
+        "name": "八栗口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_MURE",
+        "lat": "34.33636",
+        "lng": "134.14771",
+        "name": "讃岐牟礼"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHIDO",
+        "lat": "34.32142",
+        "lng": "134.17311",
+        "name": "志度"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ORANGE_TOWN",
+        "lat": "34.302373",
+        "lng": "134.18073",
+        "name": "オレンジタウン"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ZODA",
+        "lat": "34.282926",
+        "lng": "134.185857",
+        "name": "造田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KANZAKI",
+        "lat": "34.282845",
+        "lng": "134.20892",
+        "name": "神前"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_TSUDA",
+        "lat": "34.28827",
+        "lng": "134.248275",
+        "name": "讃岐津田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TSURUWA",
+        "lat": "34.280005",
+        "lng": "134.273965",
+        "name": "鶴羽"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NIBU",
+        "lat": "34.25471",
+        "lng": "134.301755",
+        "name": "丹生"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SAMBOMMATSU",
+        "lat": "34.251737",
+        "lng": "134.334155",
+        "name": "三本松"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_SHIROTORI",
+        "lat": "34.24361",
+        "lng": "134.36619",
+        "name": "讃岐白鳥"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HIKETA",
+        "lat": "34.22436",
+        "lng": "134.401785",
+        "name": "引田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_AIOI",
+        "lat": "34.211925",
+        "lng": "134.42438",
+        "name": "讃岐相生"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_OMIYA",
+        "lat": "34.178715",
+        "lng": "134.448655",
+        "name": "阿波大宮"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ITANO",
+        "lat": "34.14195",
+        "lng": "134.465215",
+        "name": "板野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_KAWABATA",
+        "lat": "34.148885",
+        "lng": "134.48375",
+        "name": "阿波川端"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_BANDO",
+        "lat": "34.155295",
+        "lng": "134.506825",
+        "name": "板東"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IKENOTANI",
+        "lat": "34.152925",
+        "lng": "134.528685",
+        "name": "池谷"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHOZUI",
+        "lat": "34.128075",
+        "lng": "134.52826",
+        "name": "勝瑞"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YOSHINARI",
+        "lat": "34.11853",
+        "lng": "134.530805",
+        "name": "吉成"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SAKO",
+        "lat": "34.080713",
+        "lng": "134.538469",
+        "name": "佐古"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOKUSHIMA",
+        "lat": "34.07451",
+        "lng": "134.5515",
+        "name": "徳島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KONZOJI",
+        "lat": "34.248155",
+        "lng": "133.77751",
+        "name": "金蔵寺"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ZENTSUJI",
+        "lat": "34.229965",
+        "lng": "133.78927",
+        "name": "善通寺"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOTOHIRA",
+        "lat": "34.19213",
+        "lng": "133.821315",
+        "name": "琴平"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHIOIRI",
+        "lat": "34.156095",
+        "lng": "133.84994",
+        "name": "塩入"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KUROKAWA",
+        "lat": "34.133085",
+        "lng": "133.82009",
+        "name": "黒川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SANUKI_SAIDA",
+        "lat": "34.11741",
+        "lng": "133.81468",
+        "name": "讃岐財田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TSUBOJIRI",
+        "lat": "34.053865",
+        "lng": "133.82388",
+        "name": "坪尻"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HASHIKURA",
+        "lat": "34.04031",
+        "lng": "133.84876",
+        "name": "箸蔵"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TSUKUDA",
+        "lat": "34.032445",
+        "lng": "133.857665",
+        "name": "佃"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_IKEDA",
+        "lat": "34.02685",
+        "lng": "133.80472",
+        "name": "阿波池田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MINAWA",
+        "lat": "34.00683",
+        "lng": "133.787445",
+        "name": "三縄"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYAGUCHI",
+        "lat": "33.972725",
+        "lng": "133.78042",
+        "name": "祖谷口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_KAWAGUCHI",
+        "lat": "33.963745",
+        "lng": "133.754655",
+        "name": "阿波川口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOBOKE",
+        "lat": "33.923355",
+        "lng": "133.75874",
+        "name": "小歩危"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OBOKE",
+        "lat": "33.876525",
+        "lng": "133.767255",
+        "name": "大歩危"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_IWAHARA",
+        "lat": "33.82265",
+        "lng": "133.78819",
+        "name": "土佐岩原"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOYONAGA",
+        "lat": "33.79688",
+        "lng": "133.75973",
+        "name": "豊永"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OTAGUCHI",
+        "lat": "33.785535",
+        "lng": "133.72658",
+        "name": "大田口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_ANANAI",
+        "lat": "33.77926",
+        "lng": "133.69609",
+        "name": "土佐穴内"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OSUGI",
+        "lat": "33.76095",
+        "lng": "133.664415",
+        "name": "大杉"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_KITAGAWA",
+        "lat": "33.71477",
+        "lng": "133.68632",
+        "name": "土佐北川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAKUMODANI",
+        "lat": "33.69573",
+        "lng": "133.69252",
+        "name": "角茂谷"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHIGETO",
+        "lat": "33.680355",
+        "lng": "133.690215",
+        "name": "繁藤"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHINGAI",
+        "lat": "33.649645",
+        "lng": "133.695805",
+        "name": "新改"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_YAMADA",
+        "lat": "33.607145",
+        "lng": "133.68471",
+        "name": "土佐山田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YAMADA_NISHIMACHI",
+        "lat": "33.604565",
+        "lng": "133.67733",
+        "name": "山田西町"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_NAGAOKA",
+        "lat": "33.591735",
+        "lng": "133.662285",
+        "name": "土佐長岡"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_GOMEN",
+        "lat": "33.57918",
+        "lng": "133.645135",
+        "name": "後免"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_OTSU",
+        "lat": "33.576595",
+        "lng": "133.611985",
+        "name": "土佐大津"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NUNOSHIDA",
+        "lat": "33.57553",
+        "lng": "133.59017",
+        "name": "布師田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_ITCHINOMIYA",
+        "lat": "33.57899",
+        "lng": "133.57723",
+        "name": "土佐一宮"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AZONO",
+        "lat": "33.578371",
+        "lng": "133.560417",
+        "name": "薊野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOCHI",
+        "lat": "33.56692",
+        "lng": "133.54326",
+        "name": "高知"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IRIAKE",
+        "lat": "33.567255",
+        "lng": "133.53032",
+        "name": "入明"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ENGYOJIGUCHI",
+        "lat": "33.565755",
+        "lng": "133.520795",
+        "name": "円行寺口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ASAHI",
+        "lat": "33.558815",
+        "lng": "133.50848",
+        "name": "旭"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KOCHI_SHOGYO_MAE",
+        "lat": "33.558386",
+        "lng": "133.497487",
+        "name": "高知商業前"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ASAKURA",
+        "lat": "33.551566",
+        "lng": "133.485554",
+        "name": "朝倉"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_EDAGAWA",
+        "lat": "33.550675",
+        "lng": "133.448625",
+        "name": "枝川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_INO",
+        "lat": "33.547439",
+        "lng": "133.430404",
+        "name": "伊野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HAKAWA",
+        "lat": "33.543755",
+        "lng": "133.41398",
+        "name": "波川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OMURA_JINJA_MAE",
+        "lat": "33.53983",
+        "lng": "133.392675",
+        "name": "小村神社前"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KUSAKA",
+        "lat": "33.53342",
+        "lng": "133.371305",
+        "name": "日下"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OKABANA",
+        "lat": "33.52992",
+        "lng": "133.351265",
+        "name": "岡花"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_KAMO",
+        "lat": "33.52356",
+        "lng": "133.3211",
+        "name": "土佐加茂"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NISHI_SAKAWA",
+        "lat": "33.512635",
+        "lng": "133.28667",
+        "name": "西佐川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SAKAWA",
+        "lat": "33.500198",
+        "lng": "133.292795",
+        "name": "佐川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ERINONO",
+        "lat": "33.488725",
+        "lng": "133.30052",
+        "name": "襟野々"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOGANO",
+        "lat": "33.47547",
+        "lng": "133.286385",
+        "name": "斗賀野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ASO",
+        "lat": "33.430275",
+        "lng": "133.295665",
+        "name": "吾桑"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ONOGO",
+        "lat": "33.41068",
+        "lng": "133.294635",
+        "name": "多ノ郷"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OMA",
+        "lat": "33.406995",
+        "lng": "133.28775",
+        "name": "大間"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SUSAKI",
+        "lat": "33.392765",
+        "lng": "133.293185",
+        "name": "須崎"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_SHINJO",
+        "lat": "33.386419",
+        "lng": "133.278088",
+        "name": "土佐新荘"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA",
+        "lat": "33.367008",
+        "lng": "133.258998",
+        "name": "安和"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_KURE",
+        "lat": "33.329035",
+        "lng": "133.226455",
+        "name": "土佐久礼"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAGENO",
+        "lat": "33.27596",
+        "lng": "133.173584",
+        "name": "影野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ROKUTANJI",
+        "lat": "33.26203",
+        "lng": "133.1694",
+        "name": "六反地"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NIIDA",
+        "lat": "33.245115",
+        "lng": "133.16124",
+        "name": "仁井田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KUBOKAWA",
+        "lat": "33.212675",
+        "lng": "133.137325",
+        "name": "窪川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_WAKAI",
+        "lat": "33.188045",
+        "lng": "133.105835",
+        "name": "若井"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IEJIGAWA",
+        "lat": "33.16141",
+        "lng": "133.074745",
+        "name": "家地川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_UTSUIGAWA",
+        "lat": "33.1755",
+        "lng": "133.029745",
+        "name": "打井川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_TAISHO",
+        "lat": "33.19476",
+        "lng": "132.975604",
+        "name": "土佐大正"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOSA_SHOWA",
+        "lat": "33.220021",
+        "lng": "132.897567",
+        "name": "土佐昭和"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TOGAWA",
+        "lat": "33.2349",
+        "lng": "132.85594",
+        "name": "十川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HAGE",
+        "lat": "33.20179",
+        "lng": "132.79196",
+        "name": "半家"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_EKAWASAKI",
+        "lat": "33.178215",
+        "lng": "132.78318",
+        "name": "江川崎"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NISHIGAHŌ",
+        "lat": "33.18745",
+        "lng": "132.76716",
+        "name": "西ケ方"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MATUCHI",
+        "lat": "33.22409",
+        "lng": "132.74515",
+        "name": "真土"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YOSHINOBU",
+        "lat": "33.224515",
+        "lng": "132.729315",
+        "name": "吉野生"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MATSUMARU",
+        "lat": "33.22825",
+        "lng": "132.708885",
+        "name": "松丸"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IZUME",
+        "lat": "33.251795",
+        "lng": "132.691935",
+        "name": "出目"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_CHIKANAGA",
+        "lat": "33.25566",
+        "lng": "132.67639",
+        "name": "近永"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_FUKATA",
+        "lat": "33.267635",
+        "lng": "132.660395",
+        "name": "深田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ŌUCHI",
+        "lat": "33.287315",
+        "lng": "132.64176",
+        "name": "大内"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_FUTANA",
+        "lat": "33.29151",
+        "lng": "132.629025",
+        "name": "二名"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_IYO_MIYANOSHITA",
+        "lat": "33.288805",
+        "lng": "132.605855",
+        "name": "伊予宮野下"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MUDEN",
+        "lat": "33.28286",
+        "lng": "132.60061",
+        "name": "務田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_OTANI",
+        "lat": "34.158015",
+        "lng": "134.540225",
+        "name": "阿波大谷"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TATSUMICHI",
+        "lat": "34.162045",
+        "lng": "134.557635",
+        "name": "立道"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KYOKAIMAE",
+        "lat": "34.16759",
+        "lng": "134.577205",
+        "name": "教会前"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KONPIRAMAE",
+        "lat": "34.16974",
+        "lng": "134.58498",
+        "name": "金比羅前"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MUYA",
+        "lat": "34.17316",
+        "lng": "134.60093",
+        "name": "撫養"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NARUTO",
+        "lat": "34.17917",
+        "lng": "134.608675",
+        "name": "鳴門"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TSUJI",
+        "lat": "34.02917",
+        "lng": "133.87386",
+        "name": "辻"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_KAMO",
+        "lat": "34.036745",
+        "lng": "133.92707",
+        "name": "阿波加茂"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MIKAMO",
+        "lat": "34.03581",
+        "lng": "133.94918",
+        "name": "三加茂"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_EGUCHI",
+        "lat": "34.037145",
+        "lng": "133.973685",
+        "name": "江口"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_HANDA",
+        "lat": "34.040983",
+        "lng": "134.036305",
+        "name": "阿波半田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SADAMITSU",
+        "lat": "34.03931",
+        "lng": "134.059315",
+        "name": "貞光"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OJIMA",
+        "lat": "34.050265",
+        "lng": "134.10715",
+        "name": "小島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ANABUKI",
+        "lat": "34.055824",
+        "lng": "134.163937",
+        "name": "穴吹"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAWADA",
+        "lat": "34.061245",
+        "lng": "134.2046",
+        "name": "川田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_YAMAKAWA",
+        "lat": "34.055177",
+        "lng": "134.234365",
+        "name": "阿波山川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YAMASE",
+        "lat": "34.06018",
+        "lng": "134.25626",
+        "name": "山瀬"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_GAKU",
+        "lat": "34.057685",
+        "lng": "134.286775",
+        "name": "学"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_KAWASHIMA",
+        "lat": "34.061885",
+        "lng": "134.321055",
+        "name": "阿波川島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NISHI_OE",
+        "lat": "34.072555",
+        "lng": "134.336505",
+        "name": "西麻植"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KAMOJIMA",
+        "lat": "34.0737",
+        "lng": "134.356214",
+        "name": "鴨島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_OEZUKA",
+        "lat": "34.075105",
+        "lng": "134.37638",
+        "name": "麻植塚"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_USHIJIMA",
+        "lat": "34.076655",
+        "lng": "134.397285",
+        "name": "牛島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SHIMOURA",
+        "lat": "34.067625",
+        "lng": "134.4212",
+        "name": "下浦"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ISHII",
+        "lat": "34.070385",
+        "lng": "134.444335",
+        "name": "石井"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KO",
+        "lat": "34.074285",
+        "lng": "134.48298",
+        "name": "府中"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AKUI",
+        "lat": "34.077455",
+        "lng": "134.50624",
+        "name": "鮎喰"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KURAMOTO",
+        "lat": "34.07941",
+        "lng": "134.518255",
+        "name": "蔵本"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_TOMIDA",
+        "lat": "34.06412",
+        "lng": "134.55571",
+        "name": "阿波富田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NIKENYA",
+        "lat": "34.05505",
+        "lng": "134.54689",
+        "name": "二軒屋"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_BUNKA_NO_MORI",
+        "lat": "34.044375",
+        "lng": "134.543325",
+        "name": "文化の森"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_JIZOBASHI",
+        "lat": "34.026475",
+        "lng": "134.547265",
+        "name": "地蔵橋"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_CHŪDEN",
+        "lat": "34.0103",
+        "lng": "134.56949",
+        "name": "中田"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MINAMI_KOMATSUSHIMA",
+        "lat": "34.00566",
+        "lng": "134.587005",
+        "name": "南小松島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_AKAISHI",
+        "lat": "33.981705",
+        "lng": "134.605865",
+        "name": "阿波赤石"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TATSUYE",
+        "lat": "33.970245",
+        "lng": "134.608855",
+        "name": "立江"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HANOURA",
+        "lat": "33.95734",
+        "lng": "134.62616",
+        "name": "羽ノ浦"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_NISHIBARA",
+        "lat": "33.94831",
+        "lng": "134.644875",
+        "name": "西原"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_NAKASHIMA",
+        "lat": "33.94127",
+        "lng": "134.664635",
+        "name": "阿波中島"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ANAN",
+        "lat": "33.919165",
+        "lng": "134.66227",
+        "name": "阿南"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MINORABAYASHI",
+        "lat": "33.903035",
+        "lng": "134.66704",
+        "name": "見能林"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_TACHIBANA",
+        "lat": "33.8885",
+        "lng": "134.65138",
+        "name": "阿波橘"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KUWANO",
+        "lat": "33.87469",
+        "lng": "134.613345",
+        "name": "桑野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ARATANO",
+        "lat": "33.8468",
+        "lng": "134.60033",
+        "name": "新野"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_FUKUI",
+        "lat": "33.82406",
+        "lng": "134.605285",
+        "name": "阿波福井"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YUKI",
+        "lat": "33.775995",
+        "lng": "134.591875",
+        "name": "由岐"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_TAINOHAMA",
+        "lat": "33.77281",
+        "lng": "134.58417",
+        "name": "田井ノ浜"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KIKI",
+        "lat": "33.7666",
+        "lng": "134.569505",
+        "name": "木岐"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_KITAGŌCHI",
+        "lat": "33.74322",
+        "lng": "134.53522",
+        "name": "北河内"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HIWASA",
+        "lat": "33.728855",
+        "lng": "134.530605",
+        "name": "日和佐"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_YAMAGAWACHI",
+        "lat": "33.71512",
+        "lng": "134.485295",
+        "name": "山河内"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_HEGAWA",
+        "lat": "33.6947",
+        "lng": "134.434875",
+        "name": "辺川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_MUGI",
+        "lat": "33.672145",
+        "lng": "134.418195",
+        "name": "牟岐"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_SABASE",
+        "lat": "33.646456",
+        "lng": "134.385347",
+        "name": "鯖瀬"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_ASAKAWA",
+        "lat": "33.626625",
+        "lng": "134.358635",
+        "name": "浅川"
+      },
+      {
+        "id": "STN_JR_SHIKOKU_AWA_KAINAN",
+        "lat": "33.60671384",
+        "lng": "134.35098178",
+        "name": "阿波海南"
+      }
+    ]
+  }
+]

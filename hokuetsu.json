@@ -1,0 +1,101 @@
+[
+  {
+    "categories": "",
+    "company_id": "HOKUETSU",
+    "company_name": "北越急行",
+    "lines": [
+      {
+        "id": "HOKUETSU_HOKUHOKU",
+        "name": "ほくほく線",
+        "sequence": [
+          "STN_HOKUETSU_MUIKAMACHI",
+          "STN_HOKUETSU_UONUMA_KYURYO",
+          "STN_HOKUETSU_MISAJIMA",
+          "STN_HOKUETSU_SHINZA",
+          "STN_HOKUETSU_TOKAMACHI",
+          "STN_HOKUETSU_MATSUDAI",
+          "STN_HOKUETSU_HOKUHOKU_OSHIMA",
+          "STN_HOKUETSU_MUSHIGAWA_OSUGI",
+          "STN_HOKUETSU_URAGAWARA",
+          "STN_HOKUETSU_OIKE_IKOINOMORI",
+          "STN_HOKUETSU_KUBIKI",
+          "STN_HOKUETSU_SAIGATA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HOKUETSU_MUIKAMACHI",
+        "lat": "37.06734887",
+        "lng": "138.87585294",
+        "name": "六日町"
+      },
+      {
+        "id": "STN_HOKUETSU_UONUMA_KYŪRYŌ",
+        "lat": "37.09612",
+        "lng": "138.877565",
+        "name": "魚沼丘陵"
+      },
+      {
+        "id": "STN_HOKUETSU_MISAJIMA",
+        "lat": "37.13094",
+        "lng": "138.789915",
+        "name": "美佐島"
+      },
+      {
+        "id": "STN_HOKUETSU_SHINZA",
+        "lat": "37.13968",
+        "lng": "138.7684",
+        "name": "しんざ"
+      },
+      {
+        "id": "STN_HOKUETSU_TŌKAMACHI",
+        "lat": "37.13461",
+        "lng": "138.75598",
+        "name": "十日町"
+      },
+      {
+        "id": "STN_HOKUETSU_MATSUDAI",
+        "lat": "37.132195",
+        "lng": "138.613965",
+        "name": "まつだい"
+      },
+      {
+        "id": "STN_HOKUETSU_HOKUHOKU_ŌSHIMA",
+        "lat": "37.147005",
+        "lng": "138.509545",
+        "name": "ほくほく大島"
+      },
+      {
+        "id": "STN_HOKUETSU_MUSHIGAWA_ŌSUGI",
+        "lat": "37.1549",
+        "lng": "138.44145",
+        "name": "虫川大杉"
+      },
+      {
+        "id": "STN_HOKUETSU_URAGAWARA",
+        "lat": "37.1593",
+        "lng": "138.419",
+        "name": "うらがわら"
+      },
+      {
+        "id": "STN_HOKUETSU_ŌIKE_IKOINOMORI",
+        "lat": "37.18439",
+        "lng": "138.373435",
+        "name": "大池いこいの森"
+      },
+      {
+        "id": "STN_HOKUETSU_KUBIKI",
+        "lat": "37.198145",
+        "lng": "138.361635",
+        "name": "くびき"
+      },
+      {
+        "id": "STN_HOKUETSU_SAIGATA",
+        "lat": "37.21064693",
+        "lng": "138.30590858",
+        "name": "犀潟"
+      }
+    ]
+  }
+]

@@ -1,0 +1,2139 @@
+[
+  {
+    "categories": "",
+    "company_id": "JR_HOKKAIDO",
+    "company_name": "JR北海道",
+    "lines": [
+      {
+        "id": "JR_HOKKAIDO_HOKKAIDO_SHINKANSEN",
+        "name": "北海道新幹線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_SHIN_AOMORI",
+          "STN_JR_HOKKAIDO_OKUTSUGARU_IMABETSU",
+          "STN_JR_HOKKAIDO_KIKONAI",
+          "STN_JR_HOKKAIDO_SHIN_HAKODATE_HOKUTO"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+        "name": "函館本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_HAKODATE",
+          "STN_JR_HOKKAIDO_GORYOKAKU",
+          "STN_JR_HOKKAIDO_KIKYO",
+          "STN_JR_HOKKAIDO_ONAKAYAMA",
+          "STN_JR_HOKKAIDO_NANAE",
+          "STN_JR_HOKKAIDO_SHIN_HAKODATE_HOKUTO",
+          "STN_JR_HOKKAIDO_ONUMA",
+          "STN_JR_HOKKAIDO_ONUMA_KOEN",
+          "STN_JR_HOKKAIDO_AKAIGAWA",
+          "STN_JR_HOKKAIDO_KOMAGATAKE",
+          "STN_JR_HOKKAIDO_MORI",
+          "STN_JR_HOKKAIDO_ISHIKURA",
+          "STN_JR_HOKKAIDO_OTOSHIBE",
+          "STN_JR_HOKKAIDO_NODAOI",
+          "STN_JR_HOKKAIDO_YAMAKOSHI",
+          "STN_JR_HOKKAIDO_YAKUMO",
+          "STN_JR_HOKKAIDO_YAMASAKI",
+          "STN_JR_HOKKAIDO_KUROIWA",
+          "STN_JR_HOKKAIDO_KUNNUI",
+          "STN_JR_HOKKAIDO_OSHAMANBE",
+          "STN_JR_HOKKAIDO_OSHAMANBE",
+          "STN_JR_HOKKAIDO_FUTAMATA",
+          "STN_JR_HOKKAIDO_WARABITAI",
+          "STN_JR_HOKKAIDO_KUROMATSUNAI",
+          "STN_JR_HOKKAIDO_NEPPU",
+          "STN_JR_HOKKAIDO_MENA",
+          "STN_JR_HOKKAIDO_RANKOSHI",
+          "STN_JR_HOKKAIDO_KONBU",
+          "STN_JR_HOKKAIDO_NISEKO",
+          "STN_JR_HOKKAIDO_HIRAFU",
+          "STN_JR_HOKKAIDO_KUTCHAN",
+          "STN_JR_HOKKAIDO_KOZAWA",
+          "STN_JR_HOKKAIDO_GINZAN",
+          "STN_JR_HOKKAIDO_SHIKARI_BETSU",
+          "STN_JR_HOKKAIDO_NIKI",
+          "STN_JR_HOKKAIDO_YOICHI",
+          "STN_JR_HOKKAIDO_RANSHIMA",
+          "STN_JR_HOKKAIDO_SHIOYA",
+          "STN_JR_HOKKAIDO_OTARU",
+          "STN_JR_HOKKAIDO_MINAMI_OTARU",
+          "STN_JR_HOKKAIDO_OTARU_CHIKKO",
+          "STN_JR_HOKKAIDO_ASARI",
+          "STN_JR_HOKKAIDO_ZENIBAKO",
+          "STN_JR_HOKKAIDO_HOSHIMI",
+          "STN_JR_HOKKAIDO_HOSHIOKI",
+          "STN_JR_HOKKAIDO_INAHO",
+          "STN_JR_HOKKAIDO_TEINE",
+          "STN_JR_HOKKAIDO_INAZUMI_KOEN",
+          "STN_JR_HOKKAIDO_HASSAMU",
+          "STN_JR_HOKKAIDO_HASSAMU_CHUO",
+          "STN_JR_HOKKAIDO_KOTONI",
+          "STN_JR_HOKKAIDO_SOEN",
+          "STN_JR_HOKKAIDO_SAPPORO",
+          "STN_JR_HOKKAIDO_NAEBO",
+          "STN_JR_HOKKAIDO_SHIROISHI",
+          "STN_JR_HOKKAIDO_ATSUBETSU",
+          "STN_JR_HOKKAIDO_SHINRIN_KOEN",
+          "STN_JR_HOKKAIDO_OASA",
+          "STN_JR_HOKKAIDO_NOPPORO",
+          "STN_JR_HOKKAIDO_TAKASAGO",
+          "STN_JR_HOKKAIDO_EBETSU",
+          "STN_JR_HOKKAIDO_TOYOHORO",
+          "STN_JR_HOKKAIDO_HOROMUI",
+          "STN_JR_HOKKAIDO_KAMI_HOROMUI",
+          "STN_JR_HOKKAIDO_IWAMIZAWA",
+          "STN_JR_HOKKAIDO_MINENOBU",
+          "STN_JR_HOKKAIDO_KOSHUNAI",
+          "STN_JR_HOKKAIDO_BIBAI",
+          "STN_JR_HOKKAIDO_CHASHINAI",
+          "STN_JR_HOKKAIDO_NAIE",
+          "STN_JR_HOKKAIDO_TOYONUMA",
+          "STN_JR_HOKKAIDO_SUNAGAWA",
+          "STN_JR_HOKKAIDO_TAKIKAWA",
+          "STN_JR_HOKKAIDO_EBEOTSU",
+          "STN_JR_HOKKAIDO_MOSEUSHI",
+          "STN_JR_HOKKAIDO_FUKAGAWA",
+          "STN_JR_HOKKAIDO_OSAMUNAI",
+          "STN_JR_HOKKAIDO_CHIKABUMI",
+          "STN_JR_HOKKAIDO_ASAHIKAWA"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_NEMURO_HONSEN",
+        "name": "根室本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_TAKIKAWA",
+          "STN_JR_HOKKAIDO_AKABIRA",
+          "STN_JR_HOKKAIDO_MOSIRI",
+          "STN_JR_HOKKAIDO_HIRAGISHI",
+          "STN_JR_HOKKAIDO_ASHIBETSU",
+          "STN_JR_HOKKAIDO_KAMI_ASHIBETSU",
+          "STN_JR_HOKKAIDO_NOKANAN",
+          "STN_JR_HOKKAIDO_FURANO",
+          "STN_JR_HOKKAIDO_SHINTOKU",
+          "STN_JR_HOKKAIDO_TOKACHI_SHIMIZU",
+          "STN_JR_HOKKAIDO_MIKAGE",
+          "STN_JR_HOKKAIDO_MEMURO",
+          "STN_JR_HOKKAIDO_TAISEI",
+          "STN_JR_HOKKAIDO_NISHI_OBIHIRO",
+          "STN_JR_HOKKAIDO_HAKURINDAI",
+          "STN_JR_HOKKAIDO_OBIHIRO",
+          "STN_JR_HOKKAIDO_SATSU_NAI",
+          "STN_JR_HOKKAIDO_MAKUBETSU",
+          "STN_JR_HOKKAIDO_TOSHIBETSU",
+          "STN_JR_HOKKAIDO_IKEDA",
+          "STN_JR_HOKKAIDO_TOFUTSU",
+          "STN_JR_HOKKAIDO_TOYOKORO",
+          "STN_JR_HOKKAIDO_SHIN_YOSHINO",
+          "STN_JR_HOKKAIDO_URAHORO",
+          "STN_JR_HOKKAIDO_ATSUNAI",
+          "STN_JR_HOKKAIDO_ONBETSU",
+          "STN_JR_HOKKAIDO_SHIRANUKA",
+          "STN_JR_HOKKAIDO_NISHI_SHORO",
+          "STN_JR_HOKKAIDO_SHORO",
+          "STN_JR_HOKKAIDO_OTANOSHIKE",
+          "STN_JR_HOKKAIDO_SHIN_OTANOSHIKE",
+          "STN_JR_HOKKAIDO_SHIN_FUJI",
+          "STN_JR_HOKKAIDO_KUSHIRO"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_HANASAKI",
+        "name": "花咲線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_KUSHIRO",
+          "STN_JR_HOKKAIDO_HIGASHI_KUSHIRO",
+          "STN_JR_HOKKAIDO_MUSA",
+          "STN_JR_HOKKAIDO_BEPPO",
+          "STN_JR_HOKKAIDO_KAMI_OBORO",
+          "STN_JR_HOKKAIDO_OBORO",
+          "STN_JR_HOKKAIDO_MONSHIZU",
+          "STN_JR_HOKKAIDO_AKKESHI",
+          "STN_JR_HOKKAIDO_CHANAI",
+          "STN_JR_HOKKAIDO_HAMANAKA",
+          "STN_JR_HOKKAIDO_ANEBETSU",
+          "STN_JR_HOKKAIDO_ATTOKO",
+          "STN_JR_HOKKAIDO_BETTOGA",
+          "STN_JR_HOKKAIDO_OCHIISHI",
+          "STN_JR_HOKKAIDO_KONBUMORI",
+          "STN_JR_HOKKAIDO_NISHI_WADA",
+          "STN_JR_HOKKAIDO_HIGASHI_NEMURO",
+          "STN_JR_HOKKAIDO_NEMURO"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_CHITOSE",
+        "name": "千歳線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_SAPPORO",
+          "STN_JR_HOKKAIDO_NAEBO",
+          "STN_JR_HOKKAIDO_SHIROISHI",
+          "STN_JR_HOKKAIDO_HEIWA",
+          "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+          "STN_JR_HOKKAIDO_KAMI_NOPPORO",
+          "STN_JR_HOKKAIDO_KITA_HIROSHIMA",
+          "STN_JR_HOKKAIDO_SHIMAMATSU",
+          "STN_JR_HOKKAIDO_MEGUMINO",
+          "STN_JR_HOKKAIDO_ENIWA",
+          "STN_JR_HOKKAIDO_SAPPORO_BEER_TEIEN",
+          "STN_JR_HOKKAIDO_OSATSU",
+          "STN_JR_HOKKAIDO_CHITOSE",
+          "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+          "STN_JR_HOKKAIDO_UENAE",
+          "STN_JR_HOKKAIDO_NUMANOHATA",
+          "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+          "STN_JR_HOKKAIDO_NEW_CHITOSE_AIRPORT"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_MURORAN_HONSEN",
+        "name": "室蘭本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_OSHAMANBE",
+          "STN_JR_HOKKAIDO_SHIZUKARI",
+          "STN_JR_HOKKAIDO_KOBORO",
+          "STN_JR_HOKKAIDO_REBUN",
+          "STN_JR_HOKKAIDO_OGISHI",
+          "STN_JR_HOKKAIDO_TOYOURA",
+          "STN_JR_HOKKAIDO_TOYA",
+          "STN_JR_HOKKAIDO_USU",
+          "STN_JR_HOKKAIDO_NAGAWA",
+          "STN_JR_HOKKAIDO_DATE_MONBETSU",
+          "STN_JR_HOKKAIDO_KITA_FUNAOKA",
+          "STN_JR_HOKKAIDO_MAREPPU",
+          "STN_JR_HOKKAIDO_KOGANE",
+          "STN_JR_HOKKAIDO_SAKIMORI",
+          "STN_JR_HOKKAIDO_MOTO_WANISHI",
+          "STN_JR_HOKKAIDO_HIGASHI_MURORAN",
+          "STN_JR_HOKKAIDO_HIGASHI_MURORAN",
+          "STN_JR_HOKKAIDO_WASHIBETSU",
+          "STN_JR_HOKKAIDO_HOROBETSU",
+          "STN_JR_HOKKAIDO_TOMIURA",
+          "STN_JR_HOKKAIDO_NOBORIBETSU",
+          "STN_JR_HOKKAIDO_KOJOHAMA",
+          "STN_JR_HOKKAIDO_TAKEURA",
+          "STN_JR_HOKKAIDO_KITA_YOSHIHARA",
+          "STN_JR_HOKKAIDO_HAGINO",
+          "STN_JR_HOKKAIDO_SHIRAOI",
+          "STN_JR_HOKKAIDO_SHADAI",
+          "STN_JR_HOKKAIDO_NISHIOKA",
+          "STN_JR_HOKKAIDO_ITOI",
+          "STN_JR_HOKKAIDO_AOBA",
+          "STN_JR_HOKKAIDO_TOMAKOMAI",
+          "STN_JR_HOKKAIDO_NUMANOHATA",
+          "STN_JR_HOKKAIDO_TOASA",
+          "STN_JR_HOKKAIDO_HAYAKITA",
+          "STN_JR_HOKKAIDO_ABIRA",
+          "STN_JR_HOKKAIDO_OIWAKE",
+          "STN_JR_HOKKAIDO_MIKAWA",
+          "STN_JR_HOKKAIDO_FURU_YAMA",
+          "STN_JR_HOKKAIDO_YUNI",
+          "STN_JR_HOKKAIDO_KURIYAMA",
+          "STN_JR_HOKKAIDO_KURI_OKA",
+          "STN_JR_HOKKAIDO_KURISAWA",
+          "STN_JR_HOKKAIDO_SHIBUN",
+          "STN_JR_HOKKAIDO_IWAMIZAWA",
+          "STN_JR_HOKKAIDO_MURORAN",
+          "STN_JR_HOKKAIDO_BOKOI",
+          "STN_JR_HOKKAIDO_MISAKI",
+          "STN_JR_HOKKAIDO_WANISHI",
+          "STN_JR_HOKKAIDO_HIGASHI_MURORAN"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_SEKISHO",
+        "name": "石勝線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_CHITOSE",
+          "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+          "STN_JR_HOKKAIDO_OIWAKE",
+          "STN_JR_HOKKAIDO_KAWABATA",
+          "STN_JR_HOKKAIDO_SHIN_YUBARI",
+          "STN_JR_HOKKAIDO_SHIMUKAPPU",
+          "STN_JR_HOKKAIDO_TOMAMU",
+          "STN_JR_HOKKAIDO_SHINTOKU"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_FURANO",
+        "name": "富良野線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_ASAHIKAWA",
+          "STN_JR_HOKKAIDO_KAGURAOKA",
+          "STN_JR_HOKKAIDO_MIDORIGAOKA",
+          "STN_JR_HOKKAIDO_NISHI_GORYO",
+          "STN_JR_HOKKAIDO_NISHI_MIZUHO",
+          "STN_JR_HOKKAIDO_NISHI_KAGURA",
+          "STN_JR_HOKKAIDO_NISHI_SEIWA",
+          "STN_JR_HOKKAIDO_CHIYOGAOKA",
+          "STN_JR_HOKKAIDO_KITA_BIEI",
+          "STN_JR_HOKKAIDO_BIEI",
+          "STN_JR_HOKKAIDO_BIBASHU",
+          "STN_JR_HOKKAIDO_KAMI_FURANO",
+          "STN_JR_HOKKAIDO_NISHINAKA",
+          "STN_JR_HOKKAIDO_LAVENDER_BATAKE",
+          "STN_JR_HOKKAIDO_NAKA_FURANO",
+          "STN_JR_HOKKAIDO_SHIKA_UCHI",
+          "STN_JR_HOKKAIDO_GAKUDEN",
+          "STN_JR_HOKKAIDO_FURANO"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_SOYA_HONSEN",
+        "name": "宗谷本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_ASAHIKAWA",
+          "STN_JR_HOKKAIDO_ASAHIKAWA_YOJO",
+          "STN_JR_HOKKAIDO_SHIN_ASAHIKAWA",
+          "STN_JR_HOKKAIDO_NAGAYAMA",
+          "STN_JR_HOKKAIDO_KITA_NAGAYAMA",
+          "STN_JR_HOKKAIDO_PIPPU",
+          "STN_JR_HOKKAIDO_RANRU",
+          "STN_JR_HOKKAIDO_SHIOKARI",
+          "STN_JR_HOKKAIDO_WASSAMU",
+          "STN_JR_HOKKAIDO_KENBUCHI",
+          "STN_JR_HOKKAIDO_SHIBETSU",
+          "STN_JR_HOKKAIDO_TAYORO",
+          "STN_JR_HOKKAIDO_MIZUHO",
+          "STN_JR_HOKKAIDO_FUREN",
+          "STN_JR_HOKKAIDO_NAYORO_KOKO",
+          "STN_JR_HOKKAIDO_NAYORO",
+          "STN_JR_HOKKAIDO_NISSIN",
+          "STN_JR_HOKKAIDO_CHIEBUN",
+          "STN_JR_HOKKAIDO_CHIHOKU",
+          "STN_JR_HOKKAIDO_BIFUKA",
+          "STN_JR_HOKKAIDO_TESHIOGAWA_ONSEN",
+          "STN_JR_HOKKAIDO_SAKKURU",
+          "STN_JR_HOKKAIDO_OTOINEPPU",
+          "STN_JR_HOKKAIDO_OSASHIMA",
+          "STN_JR_HOKKAIDO_SAKU",
+          "STN_JR_HOKKAIDO_TESHIO_NAKAGAWA",
+          "STN_JR_HOKKAIDO_TOIKANBETSU",
+          "STN_JR_HOKKAIDO_NUKANAN",
+          "STN_JR_HOKKAIDO_HORONOBE",
+          "STN_JR_HOKKAIDO_SHIMONUMA",
+          "STN_JR_HOKKAIDO_TOYOTOMI",
+          "STN_JR_HOKKAIDO_KABUTONUMA",
+          "STN_JR_HOKKAIDO_YUCHI",
+          "STN_JR_HOKKAIDO_MINAMI_WAKKANAI",
+          "STN_JR_HOKKAIDO_WAKKANAI"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_SENMO_HONSEN",
+        "name": "釧網本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_HIGASHI_KUSHIRO",
+          "STN_JR_HOKKAIDO_TOYA",
+          "STN_JR_HOKKAIDO_KUSHIRO_SHITSUGEN",
+          "STN_JR_HOKKAIDO_HOSOKAOKA",
+          "STN_JR_HOKKAIDO_TORO",
+          "STN_JR_HOKKAIDO_KAYANUMA",
+          "STN_JR_HOKKAIDO_SHIBECHA",
+          "STN_JR_HOKKAIDO_ISOBUNNAI",
+          "STN_JR_HOKKAIDO_MASHU",
+          "STN_JR_HOKKAIDO_BIRUWA",
+          "STN_JR_HOKKAIDO_KAWAYU_ONSEN",
+          "STN_JR_HOKKAIDO_MIDORI",
+          "STN_JR_HOKKAIDO_SATTSURU",
+          "STN_JR_HOKKAIDO_KIYOSATO_CHO",
+          "STN_JR_HOKKAIDO_NAKA_SHARI",
+          "STN_JR_HOKKAIDO_SHIRETOKO_SHARI",
+          "STN_JR_HOKKAIDO_YAMBETSU",
+          "STN_JR_HOKKAIDO_HAMA_KOSHIMIZU",
+          "STN_JR_HOKKAIDO_GENSEI_KAEN",
+          "STN_JR_HOKKAIDO_KITAHAMA",
+          "STN_JR_HOKKAIDO_MOKOTO",
+          "STN_JR_HOKKAIDO_MASUURA",
+          "STN_JR_HOKKAIDO_KATSURADAI",
+          "STN_JR_HOKKAIDO_ABASHIRI"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_SEKIHOKU_HONSEN",
+        "name": "石北本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_SHIN_ASAHIKAWA",
+          "STN_JR_HOKKAIDO_MINAMI_NAGAYAMA",
+          "STN_JR_HOKKAIDO_HIGASHI_ASAHIKAWA",
+          "STN_JR_HOKKAIDO_SAKURAOKA",
+          "STN_JR_HOKKAIDO_TOMA",
+          "STN_JR_HOKKAIDO_IKAGAUSHI",
+          "STN_JR_HOKKAIDO_AIBETSU",
+          "STN_JR_HOKKAIDO_NAKA_AIBETSU",
+          "STN_JR_HOKKAIDO_AN",
+          "STN_JR_HOKKAIDO_TAROMA",
+          "STN_JR_HOKKAIDO_KAMIKAWA",
+          "STN_JR_HOKKAIDO_SHIRATAKI",
+          "STN_JR_HOKKAIDO_MARUSEPPU",
+          "STN_JR_HOKKAIDO_SETOSE",
+          "STN_JR_HOKKAIDO_ENGARU",
+          "STN_JR_HOKKAIDO_YASUKUNI",
+          "STN_JR_HOKKAIDO_IKUTAHARA",
+          "STN_JR_HOKKAIDO_NISHI_RUBESHIBE",
+          "STN_JR_HOKKAIDO_RUBESHIBE",
+          "STN_JR_HOKKAIDO_AINAI",
+          "STN_JR_HOKKAIDO_HIGASHI_AINAI",
+          "STN_JR_HOKKAIDO_NISHI_KITAMI",
+          "STN_JR_HOKKAIDO_KITAMI",
+          "STN_JR_HOKKAIDO_HAKUYO",
+          "STN_JR_HOKKAIDO_ITOSHINO",
+          "STN_JR_HOKKAIDO_TANNO",
+          "STN_JR_HOKKAIDO_HIYUNAI",
+          "STN_JR_HOKKAIDO_BIHORO",
+          "STN_JR_HOKKAIDO_NISHI_MEMAMBETSU",
+          "STN_JR_HOKKAIDO_MEMAMBETSU",
+          "STN_JR_HOKKAIDO_YOBITO",
+          "STN_JR_HOKKAIDO_ABASHIRI"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_SASSHO",
+        "name": "札沼線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_SAPPORO",
+          "STN_JR_HOKKAIDO_SOEN",
+          "STN_JR_HOKKAIDO_HACHIKEN",
+          "STN_JR_HOKKAIDO_SHINKAWA",
+          "STN_JR_HOKKAIDO_SHIN_KOTONI",
+          "STN_JR_HOKKAIDO_TAIHIRA",
+          "STN_JR_HOKKAIDO_YURIGAHARA",
+          "STN_JR_HOKKAIDO_SHINO_RO",
+          "STN_JR_HOKKAIDO_TAKUKOKU",
+          "STN_JR_HOKKAIDO_AINOSATO_KYOIKU_DAI",
+          "STN_JR_HOKKAIDO_AINOSATO_KOEN",
+          "STN_JR_HOKKAIDO_ROYCE_TOWN",
+          "STN_JR_HOKKAIDO_FUTOMI",
+          "STN_JR_HOKKAIDO_TOBETSU",
+          "STN_JR_HOKKAIDO_HOKKAIDO_IRYO_DAIGAKU"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_HIDAKA_HONSEN",
+        "name": "日高本線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_TOMAKOMAI",
+          "STN_JR_HOKKAIDO_YUFUTSU",
+          "STN_JR_HOKKAIDO_HAMA_ATSUMA",
+          "STN_JR_HOKKAIDO_MUKAWA"
+        ]
+      },
+      {
+        "id": "JR_HOKKAIDO_KAIKYO",
+        "name": "海峡線",
+        "sequence": [
+          "STN_JR_HOKKAIDO_NAKA_OGUNI",
+          "STN_JR_HOKKAIDO_OKUTSUGARU_IMABETSU",
+          "STN_JR_HOKKAIDO_KIKONAI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_AOMORI",
+        "lat": "40.8275",
+        "lng": "140.693472",
+        "name": "新青森"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OKUTSUGARU_IMABETSU",
+        "lat": "41.145083",
+        "lng": "140.515444",
+        "name": "奥津軽いまべつ"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KIKONAI",
+        "lat": "41.677722",
+        "lng": "140.434111",
+        "name": "木古内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_HAKODATE_HOKUTO",
+        "lat": "41.9048435",
+        "lng": "140.64881529",
+        "name": "新函館北斗"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HAKODATE",
+        "lat": "41.77439004",
+        "lng": "140.72622203",
+        "name": "函館"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_GORYŌKAKU",
+        "lat": "41.803525",
+        "lng": "140.73356",
+        "name": "五稜郭"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KIKYŌ",
+        "lat": "41.84635",
+        "lng": "140.722985",
+        "name": "桔梗"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ŌNAKAYAMA",
+        "lat": "41.86478",
+        "lng": "140.7135",
+        "name": "大中山"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NANAE",
+        "lat": "41.88701",
+        "lng": "140.68856",
+        "name": "七飯"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ŌNUMA",
+        "lat": "41.97202",
+        "lng": "140.66937",
+        "name": "大沼"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ŌNUMA_KŌEN",
+        "lat": "41.98103",
+        "lng": "140.6698",
+        "name": "大沼公園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AKAIGAWA",
+        "lat": "42.00323",
+        "lng": "140.642725",
+        "name": "赤井川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KOMAGATAKE",
+        "lat": "42.03879",
+        "lng": "140.610515",
+        "name": "駒ヶ岳"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MORI",
+        "lat": "42.108885",
+        "lng": "140.574025",
+        "name": "森"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ISHIKURA",
+        "lat": "42.17288",
+        "lng": "140.45847",
+        "name": "石倉"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OTOSHIBE",
+        "lat": "42.187581",
+        "lng": "140.420874",
+        "name": "落部"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NODAOI",
+        "lat": "42.21703",
+        "lng": "140.375965",
+        "name": "野田生"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YAMAKOSHI",
+        "lat": "42.231115",
+        "lng": "140.326715",
+        "name": "山越"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YAKUMO",
+        "lat": "42.253369",
+        "lng": "140.273369",
+        "name": "八雲"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YAMASAKI",
+        "lat": "42.31461",
+        "lng": "140.274615",
+        "name": "山崎"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KUROIWA",
+        "lat": "42.368355",
+        "lng": "140.28818",
+        "name": "黒岩"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KUNNUI",
+        "lat": "42.43871",
+        "lng": "140.320455",
+        "name": "国縫"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OSHAMANBE",
+        "lat": "42.512508",
+        "lng": "140.375125",
+        "name": "長万部"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_FUTAMATA",
+        "lat": "42.5759",
+        "lng": "140.32077",
+        "name": "二股"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_WARABITAI",
+        "lat": "42.626353",
+        "lng": "140.313353",
+        "name": "蕨岱"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KUROMATSUNAI",
+        "lat": "42.66959",
+        "lng": "140.305735",
+        "name": "黒松内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NEPPU",
+        "lat": "42.6757",
+        "lng": "140.375135",
+        "name": "熱郛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MENA",
+        "lat": "42.761405",
+        "lng": "140.465675",
+        "name": "目名"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_RANKOSHI",
+        "lat": "42.804535",
+        "lng": "140.528955",
+        "name": "蘭越"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KONBU",
+        "lat": "42.797986",
+        "lng": "140.596269",
+        "name": "昆布"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISEKO",
+        "lat": "42.80874",
+        "lng": "140.684595",
+        "name": "ニセコ"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIRAFU",
+        "lat": "42.848545",
+        "lng": "140.72266",
+        "name": "比羅夫"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KUTCHAN",
+        "lat": "42.901685",
+        "lng": "140.74549",
+        "name": "倶知安"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KOZAWA",
+        "lat": "42.971978",
+        "lng": "140.677579",
+        "name": "小沢"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_GINZAN",
+        "lat": "43.040947",
+        "lng": "140.715337",
+        "name": "銀山"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIKARI_BETSU",
+        "lat": "43.12555",
+        "lng": "140.737215",
+        "name": "然別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NIKI",
+        "lat": "43.154087",
+        "lng": "140.770826",
+        "name": "仁木"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YOICHI",
+        "lat": "43.18639",
+        "lng": "140.794685",
+        "name": "余市"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_RANSHIMA",
+        "lat": "43.196535",
+        "lng": "140.854675",
+        "name": "蘭島"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIOYA",
+        "lat": "43.202435",
+        "lng": "140.92451",
+        "name": "塩谷"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OTARU",
+        "lat": "43.19712",
+        "lng": "140.99368",
+        "name": "小樽"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MINAMI_OTARU",
+        "lat": "43.18653",
+        "lng": "141.00789",
+        "name": "南小樽"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OTARU_CHIKKŌ",
+        "lat": "43.180852",
+        "lng": "141.027834",
+        "name": "小樽築港"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ASARI",
+        "lat": "43.17686",
+        "lng": "141.0639",
+        "name": "朝里"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ZENIBAKO",
+        "lat": "43.143415",
+        "lng": "141.159925",
+        "name": "銭函"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HOSHIMI",
+        "lat": "43.13346",
+        "lng": "141.1915",
+        "name": "ほしみ"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HOSHIOKI",
+        "lat": "43.132275",
+        "lng": "141.210645",
+        "name": "星置"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_INAHO",
+        "lat": "43.1284",
+        "lng": "141.22244",
+        "name": "稲穂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TEINE",
+        "lat": "43.120125",
+        "lng": "141.24385",
+        "name": "手稲"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_INAZUMI_KŌEN",
+        "lat": "43.11231",
+        "lng": "141.25676",
+        "name": "稲積公園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HASSAMU",
+        "lat": "43.100185",
+        "lng": "141.27663",
+        "name": "発寒"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HASSAMU_CHŪŌ",
+        "lat": "43.089265",
+        "lng": "141.294575",
+        "name": "発寒中央"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KOTONI",
+        "lat": "43.081506",
+        "lng": "141.307397",
+        "name": "琴似"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SŌEN",
+        "lat": "43.070748",
+        "lng": "141.331919",
+        "name": "桑園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SAPPORO",
+        "lat": "43.068569",
+        "lng": "141.350801",
+        "name": "札幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAEBO",
+        "lat": "43.06858428",
+        "lng": "141.37360715",
+        "name": "苗穂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIROISHI",
+        "lat": "43.05476",
+        "lng": "141.41407",
+        "name": "白石"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ATSUBETSU",
+        "lat": "43.044975",
+        "lng": "141.463235",
+        "name": "厚別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHINRIN_KŌEN",
+        "lat": "43.056445",
+        "lng": "141.481525",
+        "name": "森林公園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ŌASA",
+        "lat": "43.072226",
+        "lng": "141.496718",
+        "name": "大麻"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NOPPORO",
+        "lat": "43.09262",
+        "lng": "141.529805",
+        "name": "野幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TAKASAGO",
+        "lat": "43.10016",
+        "lng": "141.5407",
+        "name": "高砂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_EBETSU",
+        "lat": "43.11014",
+        "lng": "141.556575",
+        "name": "江別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOYOHORO",
+        "lat": "43.136485",
+        "lng": "141.624765",
+        "name": "豊幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HOROMUI",
+        "lat": "43.151592",
+        "lng": "141.655629",
+        "name": "幌向"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAMI_HOROMUI",
+        "lat": "43.18181",
+        "lng": "141.715265",
+        "name": "上幌向"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_IWAMIZAWA",
+        "lat": "43.20411",
+        "lng": "141.75924",
+        "name": "岩見沢"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MINENOBU",
+        "lat": "43.264675",
+        "lng": "141.81468",
+        "name": "峰延"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KŌSHUNAI",
+        "lat": "43.29267",
+        "lng": "141.844685",
+        "name": "光珠内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BIBAI",
+        "lat": "43.330665",
+        "lng": "141.86213",
+        "name": "美唄"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHASHINAI",
+        "lat": "43.369805",
+        "lng": "141.873355",
+        "name": "茶志内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAIE",
+        "lat": "43.42401",
+        "lng": "141.88927",
+        "name": "奈井江"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOYONUMA",
+        "lat": "43.46435",
+        "lng": "141.9011",
+        "name": "豊沼"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SUNAGAWA",
+        "lat": "43.49361",
+        "lng": "141.909715",
+        "name": "砂川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TAKIKAWA",
+        "lat": "43.555215",
+        "lng": "141.900785",
+        "name": "滝川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_EBEOTSU",
+        "lat": "43.62763",
+        "lng": "141.93592",
+        "name": "江部乙"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MOSEUSHI",
+        "lat": "43.690955",
+        "lng": "141.96665",
+        "name": "妹背牛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_FUKAGAWA",
+        "lat": "43.721251",
+        "lng": "142.04145",
+        "name": "深川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OSAMUNAI",
+        "lat": "43.732555",
+        "lng": "142.13005",
+        "name": "納内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHIKABUMI",
+        "lat": "43.789326",
+        "lng": "142.325344",
+        "name": "近文"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+        "lat": "43.76290203",
+        "lng": "142.35851924",
+        "name": "旭川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AKABIRA",
+        "lat": "43.55488",
+        "lng": "142.04866",
+        "name": "赤平"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MOSIRI",
+        "lat": "43.537105",
+        "lng": "142.08213",
+        "name": "茂尻"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIRAGISHI",
+        "lat": "43.541295",
+        "lng": "142.125275",
+        "name": "平岸"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ASHIBETSU",
+        "lat": "43.516655",
+        "lng": "142.184245",
+        "name": "芦別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAMI_ASHIBETSU",
+        "lat": "43.488535",
+        "lng": "142.211075",
+        "name": "上芦別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NOKANAN",
+        "lat": "43.47447",
+        "lng": "142.26175",
+        "name": "野花南"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_FURANO",
+        "lat": "43.3472",
+        "lng": "142.39143",
+        "name": "富良野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHINTOKU",
+        "lat": "43.08183",
+        "lng": "142.832655",
+        "name": "新得"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOKACHI_SHIMIZU",
+        "lat": "43.013015",
+        "lng": "142.879725",
+        "name": "十勝清水"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MIKAGE",
+        "lat": "42.94245",
+        "lng": "142.935735",
+        "name": "御影"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MEMURO",
+        "lat": "42.90986",
+        "lng": "143.04811",
+        "name": "芽室"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TAISEI",
+        "lat": "42.91604",
+        "lng": "143.06972",
+        "name": "大成"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_OBIHIRO",
+        "lat": "42.923935",
+        "lng": "143.126355",
+        "name": "西帯広"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HAKURINDAI",
+        "lat": "42.9289",
+        "lng": "143.16454",
+        "name": "柏林台"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OBIHIRO",
+        "lat": "42.91807",
+        "lng": "143.202105",
+        "name": "帯広"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SATSU_NAI",
+        "lat": "42.912715",
+        "lng": "143.256205",
+        "name": "札内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MAKUBETSU",
+        "lat": "42.907885",
+        "lng": "143.35938",
+        "name": "幕別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOSHIBETSU",
+        "lat": "42.934765",
+        "lng": "143.42434",
+        "name": "利別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_IKEDA",
+        "lat": "42.92207",
+        "lng": "143.45312",
+        "name": "池田"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TŌFUTSU",
+        "lat": "42.8558",
+        "lng": "143.50084",
+        "name": "十弗"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOYOKORO",
+        "lat": "42.81748",
+        "lng": "143.53875",
+        "name": "豊頃"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_YOSHINO",
+        "lat": "42.778245",
+        "lng": "143.608295",
+        "name": "新吉野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_URAHORO",
+        "lat": "42.81043",
+        "lng": "143.651485",
+        "name": "浦幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ATSUNAI",
+        "lat": "42.80952",
+        "lng": "143.814445",
+        "name": "厚内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ONBETSU",
+        "lat": "42.889015",
+        "lng": "143.93247",
+        "name": "音別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIRANUKA",
+        "lat": "42.95617",
+        "lng": "144.0769",
+        "name": "白糠"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_SHORO",
+        "lat": "42.976125",
+        "lng": "144.129815",
+        "name": "西庶路"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHORO",
+        "lat": "42.98359",
+        "lng": "144.15001",
+        "name": "庶路"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OTANOSHIKE",
+        "lat": "43.0091",
+        "lng": "144.273895",
+        "name": "大楽毛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_OTANOSHIKE",
+        "lat": "43.00938",
+        "lng": "144.294765",
+        "name": "新大楽毛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_FUJI",
+        "lat": "43.0016",
+        "lng": "144.350805",
+        "name": "新富士"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KUSHIRO",
+        "lat": "42.99057",
+        "lng": "144.382035",
+        "name": "釧路"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIGASHI_KUSHIRO",
+        "lat": "42.9951",
+        "lng": "144.411375",
+        "name": "東釧路"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MUSA",
+        "lat": "42.99177",
+        "lng": "144.42566",
+        "name": "武佐"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BEPPO",
+        "lat": "42.99429",
+        "lng": "144.469665",
+        "name": "別保"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAMI_OBORO",
+        "lat": "43.03294",
+        "lng": "144.612445",
+        "name": "上尾幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OBORO",
+        "lat": "43.018495",
+        "lng": "144.70385",
+        "name": "尾幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MONSHIZU",
+        "lat": "43.057565",
+        "lng": "144.782725",
+        "name": "門静"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AKKESHI",
+        "lat": "43.056269",
+        "lng": "144.84124",
+        "name": "厚岸"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHANAI",
+        "lat": "43.129195",
+        "lng": "145.02807",
+        "name": "茶内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HAMANAKA",
+        "lat": "43.157665",
+        "lng": "145.099735",
+        "name": "浜中"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ANEBETSU",
+        "lat": "43.19634",
+        "lng": "145.1945",
+        "name": "姉別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ATTOKO",
+        "lat": "43.22822",
+        "lng": "145.25236",
+        "name": "厚床"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BETTOGA",
+        "lat": "43.21842",
+        "lng": "145.42362",
+        "name": "別当賀"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OCHIISHI",
+        "lat": "43.198325",
+        "lng": "145.51946",
+        "name": "落石"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KONBUMORI",
+        "lat": "43.22857",
+        "lng": "145.54248",
+        "name": "昆布盛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_WADA",
+        "lat": "43.268045",
+        "lng": "145.54189",
+        "name": "西和田"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIGASHI_NEMURO",
+        "lat": "43.323555",
+        "lng": "145.59723",
+        "name": "東根室"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NEMURO",
+        "lat": "43.326795",
+        "lng": "145.58304",
+        "name": "根室"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HEIWA",
+        "lat": "43.046995",
+        "lng": "141.438",
+        "name": "平和"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+        "lat": "43.038685",
+        "lng": "141.472515",
+        "name": "新札幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAMI_NOPPORO",
+        "lat": "43.016241",
+        "lng": "141.487136",
+        "name": "上野幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KITA_HIROSHIMA",
+        "lat": "42.97919",
+        "lng": "141.563115",
+        "name": "北広島"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIMAMATSU",
+        "lat": "42.922445",
+        "lng": "141.57314",
+        "name": "島松"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MEGUMINO",
+        "lat": "42.90261",
+        "lng": "141.57442",
+        "name": "恵み野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ENIWA",
+        "lat": "42.883105",
+        "lng": "141.58632",
+        "name": "恵庭"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SAPPORO_BEER_TEIEN",
+        "lat": "42.86697",
+        "lng": "141.60543",
+        "name": "サッポロビール庭園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OSATSU",
+        "lat": "42.85217",
+        "lng": "141.623",
+        "name": "長都"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHITOSE",
+        "lat": "42.828164",
+        "lng": "141.651982",
+        "name": "千歳"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+        "lat": "42.808205",
+        "lng": "141.67521",
+        "name": "南千歳"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_UENAE",
+        "lat": "42.713615",
+        "lng": "141.735285",
+        "name": "植苗"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NUMANOHATA",
+        "lat": "42.671955",
+        "lng": "141.69304",
+        "name": "沼ノ端"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NEW_CHITOSE_AIRPORT",
+        "lat": "42.78754",
+        "lng": "141.68079",
+        "name": "新千歳空港"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIZUKARI",
+        "lat": "42.584065",
+        "lng": "140.46003",
+        "name": "静狩"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KOBORO",
+        "lat": "42.58969",
+        "lng": "140.53735",
+        "name": "小幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_REBUN",
+        "lat": "42.580445",
+        "lng": "140.59502",
+        "name": "礼文"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ŌGISHI",
+        "lat": "42.585793",
+        "lng": "140.638422",
+        "name": "大岸"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOYOURA",
+        "lat": "42.580244",
+        "lng": "140.715458",
+        "name": "豊浦"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TŌYA",
+        "lat": "42.550782",
+        "lng": "140.763754",
+        "name": "洞爺"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_USU",
+        "lat": "42.513235",
+        "lng": "140.794005",
+        "name": "有珠"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAGAWA",
+        "lat": "42.488299",
+        "lng": "140.833664",
+        "name": "長和"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_DATE_MONBETSU",
+        "lat": "42.469412",
+        "lng": "140.855686",
+        "name": "伊達紋別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KITA_FUNAOKA",
+        "lat": "42.45055",
+        "lng": "140.88032",
+        "name": "北舟岡"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MAREPPŪ",
+        "lat": "42.425615",
+        "lng": "140.89887",
+        "name": "稀府"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KOGANE",
+        "lat": "42.38645",
+        "lng": "140.90778",
+        "name": "黄金"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SAKIMORI",
+        "lat": "42.373977",
+        "lng": "140.92722",
+        "name": "崎守"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MOTO_WANISHI",
+        "lat": "42.358745",
+        "lng": "140.97756",
+        "name": "本輪西"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIGASHI_MURORAN",
+        "lat": "42.34929",
+        "lng": "141.02621",
+        "name": "東室蘭"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OIWAKE",
+        "lat": "42.87328",
+        "lng": "141.8107",
+        "name": "追分"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAWABATA",
+        "lat": "42.91468",
+        "lng": "141.89486",
+        "name": "川端"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_YŪBARI",
+        "lat": "42.936375",
+        "lng": "142.035975",
+        "name": "新夕張"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIMUKAPPU",
+        "lat": "42.99298",
+        "lng": "142.40005",
+        "name": "占冠"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOMAMU",
+        "lat": "43.05604",
+        "lng": "142.611155",
+        "name": "トマム"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAGURAOKA",
+        "lat": "43.745066",
+        "lng": "142.358242",
+        "name": "神楽岡"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MIDORIGAOKA",
+        "lat": "43.73114",
+        "lng": "142.36567",
+        "name": "緑が丘"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_GORYŌ",
+        "lat": "43.720845",
+        "lng": "142.37155",
+        "name": "西御料"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_MIZUHO",
+        "lat": "43.702465",
+        "lng": "142.382115",
+        "name": "西瑞穂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_KAGURA",
+        "lat": "43.68224",
+        "lng": "142.39366",
+        "name": "西神楽"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_SEIWA",
+        "lat": "43.669003",
+        "lng": "142.415201",
+        "name": "西聖和"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHIYOGAOKA",
+        "lat": "43.643745",
+        "lng": "142.451115",
+        "name": "千代ヶ岡"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KITA_BIEI",
+        "lat": "43.617891",
+        "lng": "142.479668",
+        "name": "北美瑛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BIEI",
+        "lat": "43.591185",
+        "lng": "142.461695",
+        "name": "美瑛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BIBASHU",
+        "lat": "43.537435",
+        "lng": "142.44714",
+        "name": "美馬牛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAMI_FURANO",
+        "lat": "43.46412",
+        "lng": "142.468805",
+        "name": "上富良野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHINAKA",
+        "lat": "43.42947",
+        "lng": "142.441815",
+        "name": "西中"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_LAVENDER_BATAKE",
+        "lat": "43.416919",
+        "lng": "142.430681",
+        "name": "ラベンダー畑"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAKA_FURANO",
+        "lat": "43.405725",
+        "lng": "142.420915",
+        "name": "中富良野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIKA_UCHI",
+        "lat": "43.387545",
+        "lng": "142.404945",
+        "name": "鹿討"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_GAKUDEN",
+        "lat": "43.36652",
+        "lng": "142.38648",
+        "name": "学田"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ASAHIKAWA_YOJŌ",
+        "lat": "43.764045",
+        "lng": "142.375841",
+        "name": "旭川四条"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_ASAHIKAWA",
+        "lat": "43.780215",
+        "lng": "142.384755",
+        "name": "新旭川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAGAYAMA",
+        "lat": "43.814195",
+        "lng": "142.434395",
+        "name": "永山"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KITA_NAGAYAMA",
+        "lat": "43.826771",
+        "lng": "142.454517",
+        "name": "北永山"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_PIPPU",
+        "lat": "43.874515",
+        "lng": "142.47134",
+        "name": "比布"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_RANRU",
+        "lat": "43.925015",
+        "lng": "142.473465",
+        "name": "蘭留"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIOKARI",
+        "lat": "43.968065",
+        "lng": "142.454915",
+        "name": "塩狩"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_WASSAMU",
+        "lat": "44.027365",
+        "lng": "142.415285",
+        "name": "和寒"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KENBUCHI",
+        "lat": "44.09645",
+        "lng": "142.36461",
+        "name": "剣淵"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIBETSU",
+        "lat": "44.172195",
+        "lng": "142.38794",
+        "name": "士別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TAYORO",
+        "lat": "44.24039",
+        "lng": "142.39636",
+        "name": "多寄"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MIZUHO",
+        "lat": "44.266435",
+        "lng": "142.39638",
+        "name": "瑞穂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_FŪREN",
+        "lat": "44.29231",
+        "lng": "142.421625",
+        "name": "風連"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAYORO_KŌKŌ",
+        "lat": "44.33115109",
+        "lng": "142.46549053",
+        "name": "名寄高校"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAYORO",
+        "lat": "44.34929",
+        "lng": "142.465413",
+        "name": "名寄"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISSIN",
+        "lat": "44.3819",
+        "lng": "142.46716",
+        "name": "日進"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHIEBUN",
+        "lat": "44.45551",
+        "lng": "142.41481",
+        "name": "智恵文"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_CHIHOKU",
+        "lat": "44.461235",
+        "lng": "142.395275",
+        "name": "智北"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BIFUKA",
+        "lat": "44.483096",
+        "lng": "142.350567",
+        "name": "美深"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TESHIOGAWA_ONSEN",
+        "lat": "44.665075",
+        "lng": "142.25872",
+        "name": "天塩川温泉"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SAKKURU",
+        "lat": "44.692703",
+        "lng": "142.267563",
+        "name": "咲来"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OTOINEPPU",
+        "lat": "44.72944",
+        "lng": "142.25988",
+        "name": "音威子府"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_OSASHIMA",
+        "lat": "44.738885",
+        "lng": "142.19785",
+        "name": "筬島"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SAKU",
+        "lat": "44.74407",
+        "lng": "142.04863",
+        "name": "佐久"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TESHIO_NAKAGAWA",
+        "lat": "44.81195",
+        "lng": "142.075355",
+        "name": "天塩中川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOIKANBETSU",
+        "lat": "44.91232",
+        "lng": "142.025585",
+        "name": "問寒別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NUKANAN",
+        "lat": "44.92079",
+        "lng": "142.000985",
+        "name": "糠南"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HORONOBE",
+        "lat": "45.0144",
+        "lng": "141.845985",
+        "name": "幌延"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIMONUMA",
+        "lat": "45.03723",
+        "lng": "141.758205",
+        "name": "下沼"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOYOTOMI",
+        "lat": "45.104421",
+        "lng": "141.772371",
+        "name": "豊富"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KABUTONUMA",
+        "lat": "45.22031",
+        "lng": "141.69747",
+        "name": "兜沼"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YŪCHI",
+        "lat": "45.25923",
+        "lng": "141.68517",
+        "name": "勇知"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MINAMI_WAKKANAI",
+        "lat": "45.397925",
+        "lng": "141.68294",
+        "name": "南稚内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_WAKKANAI",
+        "lat": "45.416338",
+        "lng": "141.67731",
+        "name": "稚内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TŌYA",
+        "lat": "43.04751",
+        "lng": "144.45826",
+        "name": "遠矢"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KUSHIRO_SHITSUGEN",
+        "lat": "43.100465",
+        "lng": "144.44781",
+        "name": "釧路湿原"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HOSOKAOKA",
+        "lat": "43.1053",
+        "lng": "144.4699",
+        "name": "細岡"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TŌRO",
+        "lat": "43.151725",
+        "lng": "144.496785",
+        "name": "塘路"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAYANUMA",
+        "lat": "43.202125",
+        "lng": "144.503775",
+        "name": "茅沼"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIBECHA",
+        "lat": "43.298425",
+        "lng": "144.60844",
+        "name": "標茶"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ISOBUNNAI",
+        "lat": "43.37953",
+        "lng": "144.554175",
+        "name": "磯分内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MASHŪ",
+        "lat": "43.48737",
+        "lng": "144.46374",
+        "name": "摩周"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BIRUWA",
+        "lat": "43.55536",
+        "lng": "144.437675",
+        "name": "美留和"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAWAYU_ONSEN",
+        "lat": "43.616475",
+        "lng": "144.45805",
+        "name": "川湯温泉"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MIDORI",
+        "lat": "43.718285",
+        "lng": "144.50551",
+        "name": "緑"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SATTSURU",
+        "lat": "43.786525",
+        "lng": "144.53162",
+        "name": "札弦"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KIYOSATO_CHŌ",
+        "lat": "43.83869",
+        "lng": "144.59399",
+        "name": "清里町"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAKA_SHARI",
+        "lat": "43.87447",
+        "lng": "144.659095",
+        "name": "中斜里"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIRETOKO_SHARI",
+        "lat": "43.910825",
+        "lng": "144.66164",
+        "name": "知床斜里"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YAMBETSU",
+        "lat": "43.92147",
+        "lng": "144.520045",
+        "name": "止別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HAMA_KOSHIMIZU",
+        "lat": "43.93403",
+        "lng": "144.45313",
+        "name": "浜小清水"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_GENSEI_KAEN",
+        "lat": "43.9408",
+        "lng": "144.4142",
+        "name": "原生花園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KITAHAMA",
+        "lat": "43.958535",
+        "lng": "144.35246",
+        "name": "北浜"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MOKOTO",
+        "lat": "43.968395",
+        "lng": "144.32001",
+        "name": "藻琴"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MASUURA",
+        "lat": "43.98253",
+        "lng": "144.296535",
+        "name": "鱒浦"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KATSURADAI",
+        "lat": "44.01697",
+        "lng": "144.273235",
+        "name": "桂台"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ABASHIRI",
+        "lat": "44.019915",
+        "lng": "144.25418",
+        "name": "網走"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MINAMI_NAGAYAMA",
+        "lat": "43.78055",
+        "lng": "142.408615",
+        "name": "南永山"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIGASHI_ASAHIKAWA",
+        "lat": "43.776605",
+        "lng": "142.441485",
+        "name": "東旭川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SAKURAOKA",
+        "lat": "43.801817",
+        "lng": "142.486893",
+        "name": "桜岡"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TŌMA",
+        "lat": "43.825535",
+        "lng": "142.51703",
+        "name": "当麻"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_IKAGAUSHI",
+        "lat": "43.87606",
+        "lng": "142.52535",
+        "name": "伊香牛"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AIBETSU",
+        "lat": "43.898665",
+        "lng": "142.582195",
+        "name": "愛別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAKA_AIBETSU",
+        "lat": "43.896225",
+        "lng": "142.65548",
+        "name": "中愛別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AN TAROMA",
+        "lat": "43.851985",
+        "lng": "142.69388",
+        "name": "安足間"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KAMIKAWA",
+        "lat": "43.848515",
+        "lng": "142.766795",
+        "name": "上川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIRATAKI",
+        "lat": "43.884527",
+        "lng": "143.180901",
+        "name": "白滝"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MARUSEPPU",
+        "lat": "44.00632",
+        "lng": "143.33581",
+        "name": "丸瀬布"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SETOSE",
+        "lat": "44.008755",
+        "lng": "143.421095",
+        "name": "瀬戸瀬"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ENGARU",
+        "lat": "44.06028",
+        "lng": "143.52068",
+        "name": "遠軽"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YASUKUNI",
+        "lat": "43.993325",
+        "lng": "143.535785",
+        "name": "安国"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_IKUTAHARA",
+        "lat": "43.923695",
+        "lng": "143.534635",
+        "name": "生田原"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_RUBESHIBE",
+        "lat": "43.785315",
+        "lng": "143.603365",
+        "name": "西留辺蘂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_RUBESHIBE",
+        "lat": "43.785531",
+        "lng": "143.621397",
+        "name": "留辺蘂"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AINAI",
+        "lat": "43.795915",
+        "lng": "143.7564",
+        "name": "相内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIGASHI_AINAI",
+        "lat": "43.805445",
+        "lng": "143.809465",
+        "name": "東相内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_KITAMI",
+        "lat": "43.80315",
+        "lng": "143.84158",
+        "name": "西北見"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_KITAMI",
+        "lat": "43.80542",
+        "lng": "143.898135",
+        "name": "北見"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HAKUYŌ",
+        "lat": "43.82502",
+        "lng": "143.916955",
+        "name": "柏陽"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ITOSHINO",
+        "lat": "43.841405",
+        "lng": "143.93281",
+        "name": "愛し野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TANNO",
+        "lat": "43.851365",
+        "lng": "143.94237",
+        "name": "端野"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HIYŪNAI",
+        "lat": "43.8805",
+        "lng": "143.999705",
+        "name": "緋牛内"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_BIHORO",
+        "lat": "43.836993",
+        "lng": "144.105629",
+        "name": "美幌"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NISHI_MEMAMBETSU",
+        "lat": "43.880025",
+        "lng": "144.14829",
+        "name": "西女満別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MEMAMBETSU",
+        "lat": "43.915965",
+        "lng": "144.170805",
+        "name": "女満別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YOBITO",
+        "lat": "43.963785",
+        "lng": "144.218955",
+        "name": "呼人"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HACHIKEN",
+        "lat": "43.086219",
+        "lng": "141.319168",
+        "name": "八軒"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHINKAWA",
+        "lat": "43.098575",
+        "lng": "141.323735",
+        "name": "新川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHIN_KOTONI",
+        "lat": "43.113045",
+        "lng": "141.33514",
+        "name": "新琴似"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TAIHIRA",
+        "lat": "43.123925",
+        "lng": "141.34926",
+        "name": "太平"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YURIGAHARA",
+        "lat": "43.1314",
+        "lng": "141.360685",
+        "name": "百合が原"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_SHINO_RO",
+        "lat": "43.14508",
+        "lng": "141.36424",
+        "name": "篠路"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TAKUKOKU",
+        "lat": "43.155505",
+        "lng": "141.381085",
+        "name": "拓北"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AINOSATO_KYŌIKU_DAI",
+        "lat": "43.155115",
+        "lng": "141.398765",
+        "name": "あいの里教育大"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_AINOSATO_KŌEN",
+        "lat": "43.1609",
+        "lng": "141.41303",
+        "name": "あいの里公園"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_ROYCE_TOWN",
+        "lat": "43.17978343",
+        "lng": "141.43642556",
+        "name": "ロイズタウン"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_FUTOMI",
+        "lat": "43.189855",
+        "lng": "141.449065",
+        "name": "太美"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TŌBETSU",
+        "lat": "43.22214",
+        "lng": "141.51379",
+        "name": "当別"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HOKKAIDO_IRYŌ_DAIGAKU",
+        "lat": "43.231079",
+        "lng": "141.550122",
+        "name": "北海道医療大学"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_TOMAKOMAI",
+        "lat": "42.639292",
+        "lng": "141.595811",
+        "name": "苫小牧"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_YŪFUTSU",
+        "lat": "42.632825",
+        "lng": "141.727655",
+        "name": "勇払"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_HAMA_ATSUMA",
+        "lat": "42.60677",
+        "lng": "141.837005",
+        "name": "浜厚真"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_MUKAWA",
+        "lat": "42.578955",
+        "lng": "141.923955",
+        "name": "鵡川"
+      },
+      {
+        "id": "STN_JR_HOKKAIDO_NAKA_OGUNI",
+        "lat": "41.051633",
+        "lng": "140.596911",
+        "name": "中小国"
+      }
+    ]
+  }
+]

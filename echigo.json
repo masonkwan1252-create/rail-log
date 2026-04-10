@@ -1,0 +1,178 @@
+[
+  {
+    "categories": "",
+    "company_id": "ECHIGO",
+    "company_name": "えちごトキめき鉄道",
+    "lines": [
+      {
+        "id": "ECHIGO_NIHONKAI_HISUI",
+        "name": "日本海ひすいライン",
+        "sequence": [
+          "STN_ECHIGO_ICHIBURI",
+          "STN_ECHIGO_OYADURAZU",
+          "STN_ECHIGO_OMI",
+          "STN_ECHIGO_ITOIGAWA",
+          "STN_ECHIGO_ECHIGO_OSHIAGE_HISUI_KAIGAN",
+          "STN_ECHIGO_KAJIYASHIKI",
+          "STN_ECHIGO_URAMOTO",
+          "STN_ECHIGO_NO",
+          "STN_ECHIGO_TSUTSUISHI",
+          "STN_ECHIGO_NADACHI",
+          "STN_ECHIGO_ARIMAGAWA",
+          "STN_ECHIGO_TANIHAMA",
+          "STN_ECHIGO_NAOETSU"
+        ]
+      },
+      {
+        "id": "ECHIGO_NIHONKAI_HISUI",
+        "name": "妙高はねうまライン",
+        "sequence": [
+          "STN_ECHIGO_MYOKO_KOGEN",
+          "STN_ECHIGO_SEKIYAMA",
+          "STN_ECHIGO_NIHONGI",
+          "STN_ECHIGO_ARAI",
+          "STN_ECHIGO_KITA_ARAI",
+          "STN_ECHIGO_JOETSU_MYOKO",
+          "STN_ECHIGO_MINAMI_TAKADA",
+          "STN_ECHIGO_TAKADA",
+          "STN_ECHIGO_KASUGAYAMA",
+          "STN_ECHIGO_NAOETSU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ECHIGO_ICHIBURI",
+        "lat": "36.98043465",
+        "lng": "137.65009862",
+        "name": "市振"
+      },
+      {
+        "id": "STN_ECHIGO_OYADURAZU",
+        "lat": "37.00685",
+        "lng": "137.73803",
+        "name": "親不知"
+      },
+      {
+        "id": "STN_ECHIGO_ŌMI",
+        "lat": "37.022609",
+        "lng": "137.79578383",
+        "name": "青海"
+      },
+      {
+        "id": "STN_ECHIGO_ITOIGAWA",
+        "lat": "37.04378896",
+        "lng": "137.86250855",
+        "name": "糸魚川"
+      },
+      {
+        "id": "STN_ECHIGO_ECHIGO_OSHIAGE_HISUI_KAIGAN",
+        "lat": "37.04828126",
+        "lng": "137.87844073",
+        "name": "えちご押上ひすい海岸"
+      },
+      {
+        "id": "STN_ECHIGO_KAJIYASHIKI",
+        "lat": "37.056617",
+        "lng": "137.905775",
+        "name": "梶屋敷"
+      },
+      {
+        "id": "STN_ECHIGO_URAMOTO",
+        "lat": "37.07366922",
+        "lng": "137.93922635",
+        "name": "浦本"
+      },
+      {
+        "id": "STN_ECHIGO_NŌ",
+        "lat": "37.096008",
+        "lng": "137.988402",
+        "name": "能生"
+      },
+      {
+        "id": "STN_ECHIGO_TSUTSÜISHI",
+        "lat": "37.127325",
+        "lng": "138.060575",
+        "name": "筒石"
+      },
+      {
+        "id": "STN_ECHIGO_NADACHI",
+        "lat": "37.155816",
+        "lng": "138.092668",
+        "name": "名立"
+      },
+      {
+        "id": "STN_ECHIGO_ARIMAGAWA",
+        "lat": "37.16332",
+        "lng": "138.136665",
+        "name": "有間川"
+      },
+      {
+        "id": "STN_ECHIGO_TANIHAMA",
+        "lat": "37.16239",
+        "lng": "138.173915",
+        "name": "谷浜"
+      },
+      {
+        "id": "STN_ECHIGO_NAOETSU",
+        "lat": "37.170258",
+        "lng": "138.242233",
+        "name": "直江津"
+      },
+      {
+        "id": "STN_ECHIGO_MYŌKŌ_KŌGEN",
+        "lat": "36.872305",
+        "lng": "138.212185",
+        "name": "妙高高原"
+      },
+      {
+        "id": "STN_ECHIGO_SEKIYAMA",
+        "lat": "36.93251",
+        "lng": "138.22678",
+        "name": "関山"
+      },
+      {
+        "id": "STN_ECHIGO_NIHONGI",
+        "lat": "36.989579",
+        "lng": "138.232615",
+        "name": "二本木"
+      },
+      {
+        "id": "STN_ECHIGO_ARAI",
+        "lat": "37.026735",
+        "lng": "138.25563",
+        "name": "新井"
+      },
+      {
+        "id": "STN_ECHIGO_KITA_ARAI",
+        "lat": "37.0529",
+        "lng": "138.25771",
+        "name": "北新井"
+      },
+      {
+        "id": "STN_ECHIGO_JŌETSU_MYŌKŌ",
+        "lat": "37.08134033",
+        "lng": "138.24807941",
+        "name": "上越妙高"
+      },
+      {
+        "id": "STN_ECHIGO_MINAMI_TAKADA",
+        "lat": "37.096795",
+        "lng": "138.243035",
+        "name": "南高田"
+      },
+      {
+        "id": "STN_ECHIGO_TAKADA",
+        "lat": "37.11462",
+        "lng": "138.241965",
+        "name": "高田"
+      },
+      {
+        "id": "STN_ECHIGO_KASUGAYAMA",
+        "lat": "37.14798",
+        "lng": "138.23505",
+        "name": "春日山"
+      }
+    ]
+  }
+]

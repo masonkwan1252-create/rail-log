@@ -1,0 +1,341 @@
+[
+  {
+    "categories": "",
+    "company_id": "ECHIZEN",
+    "company_name": "えちぜん鉄道",
+    "lines": [
+      {
+        "id": "ECHIZEN_KATSUYAMA_EIHEIJI",
+        "name": "勝山永平寺線",
+        "sequence": [
+          "STN_ECHIZEN_FUKUI",
+          "STN_ECHIZEN_SHIN_FUKUI",
+          "STN_ECHIZEN_FUKUIGUCHI",
+          "STN_ECHIZEN_ECHIZEN_KAIHOTSU",
+          "STN_ECHIZEN_ECHIZEN_SHINBO",
+          "STN_ECHIZEN_OIWAKEGUCHI",
+          "STN_ECHIZEN_HIGASHI_FUJISHIMA",
+          "STN_ECHIZEN_ECHIZEN_SHIMABASHI",
+          "STN_ECHIZEN_KANNONMACHI",
+          "STN_ECHIZEN_MATSUOKA",
+          "STN_ECHIZEN_SHIBISAKAI",
+          "STN_ECHIZEN_EIHEIJIGUCHI",
+          "STN_ECHIZEN_SHIMOSHIBI",
+          "STN_ECHIZEN_KOMYOJI",
+          "STN_ECHIZEN_TODOROKI",
+          "STN_ECHIZEN_ECHIZEN_NONAKA",
+          "STN_ECHIZEN_SANNO",
+          "STN_ECHIZEN_ECHIZEN_TAKEHARA",
+          "STN_ECHIZEN_KOBUNATO",
+          "STN_ECHIZEN_HOTA",
+          "STN_ECHIZEN_HASSAKA",
+          "STN_ECHIZEN_HISHIMA",
+          "STN_ECHIZEN_KATSUYAMA"
+        ]
+      },
+      {
+        "id": "ECHIZEN_MIKUNI_AWARA",
+        "name": "三国芦原線",
+        "sequence": [
+          "STN_ECHIZEN_FUKUI",
+          "STN_ECHIZEN_SHIN_FUKUI",
+          "STN_ECHIZEN_FUKUIGUCHI",
+          "STN_ECHIZEN_MATSUMOTO_MACHIYA",
+          "STN_ECHIZEN_NISHIBETSUIN",
+          "STN_ECHIZEN_TAWARAMACHI",
+          "STN_ECHIZEN_FUKUDAIMAE_NISHI_FUKUI",
+          "STN_ECHIZEN_NIKKA_KAGAKUMAE",
+          "STN_ECHIZEN_YATSUSHIMA",
+          "STN_ECHIZEN_NITTANSUKA",
+          "STN_ECHIZEN_NAKAKUNO",
+          "STN_ECHIZEN_JIN_AI_GRAND_MAE",
+          "STN_ECHIZEN_WASHIZUKA_HARIBARA",
+          "STN_ECHIZEN_TAROMARU_ANGELLAND",
+          "STN_ECHIZEN_NISHI_HARUE_HEARTPIA",
+          "STN_ECHIZEN_NISHI_NAGATA_YURINOSATO",
+          "STN_ECHIZEN_SHIMOHYOGO_KOFUKU",
+          "STN_ECHIZEN_OZEKI",
+          "STN_ECHIZEN_HONJO",
+          "STN_ECHIZEN_BANDA",
+          "STN_ECHIZEN_AWARA_YUNOMACHI",
+          "STN_ECHIZEN_MUI",
+          "STN_ECHIZEN_MIKUNI_JINJA",
+          "STN_ECHIZEN_MIKUNI",
+          "STN_ECHIZEN_MIKUNIMINATO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ECHIZEN_FUKUI",
+        "lat": "36.06217279",
+        "lng": "136.22398591",
+        "name": "福井"
+      },
+      {
+        "id": "STN_ECHIZEN_SHIN_FUKUI",
+        "lat": "36.06500859",
+        "lng": "136.22695513",
+        "name": "新福井"
+      },
+      {
+        "id": "STN_ECHIZEN_FUKUIGUCHI",
+        "lat": "36.07038371",
+        "lng": "136.23299182",
+        "name": "福井口"
+      },
+      {
+        "id": "STN_ECHIZEN_ECHIZEN_KAIHOTSU",
+        "lat": "36.07535943",
+        "lng": "136.24133386",
+        "name": "越前開発"
+      },
+      {
+        "id": "STN_ECHIZEN_ECHIZEN_SHINBŌ",
+        "lat": "36.08036326",
+        "lng": "136.25110297",
+        "name": "越前新保"
+      },
+      {
+        "id": "STN_ECHIZEN_OIWAKEGUCHI",
+        "lat": "36.08249",
+        "lng": "136.261375",
+        "name": "追分口"
+      },
+      {
+        "id": "STN_ECHIZEN_HIGASHI_FUJISHIMA",
+        "lat": "36.08663",
+        "lng": "136.269855",
+        "name": "東藤島"
+      },
+      {
+        "id": "STN_ECHIZEN_ECHIZEN_SHIMABASHI",
+        "lat": "36.09012",
+        "lng": "136.277265",
+        "name": "越前島橋"
+      },
+      {
+        "id": "STN_ECHIZEN_KANNONMACHI",
+        "lat": "36.09177546",
+        "lng": "136.28984387",
+        "name": "観音町"
+      },
+      {
+        "id": "STN_ECHIZEN_MATSUOKA",
+        "lat": "36.09397985",
+        "lng": "136.3018819",
+        "name": "松岡"
+      },
+      {
+        "id": "STN_ECHIZEN_SHIBISAKAI",
+        "lat": "36.09795333",
+        "lng": "136.31106347",
+        "name": "志比堺"
+      },
+      {
+        "id": "STN_ECHIZEN_EIHEIJIGUCHI",
+        "lat": "36.09581095",
+        "lng": "136.32663862",
+        "name": "永平寺口"
+      },
+      {
+        "id": "STN_ECHIZEN_SHIMOSHIBI",
+        "lat": "36.09069103",
+        "lng": "136.33626731",
+        "name": "下志比"
+      },
+      {
+        "id": "STN_ECHIZEN_KŌMYŌJI",
+        "lat": "36.08855785",
+        "lng": "136.34426109",
+        "name": "光明寺"
+      },
+      {
+        "id": "STN_ECHIZEN_TODOROKI",
+        "lat": "36.08684",
+        "lng": "136.3611",
+        "name": "轟"
+      },
+      {
+        "id": "STN_ECHIZEN_ECHIZEN_NONAKA",
+        "lat": "36.08292303",
+        "lng": "136.37673317",
+        "name": "越前野中"
+      },
+      {
+        "id": "STN_ECHIZEN_SANNŌ",
+        "lat": "36.07919907",
+        "lng": "136.39258763",
+        "name": "山王"
+      },
+      {
+        "id": "STN_ECHIZEN_ECHIZEN_TAKEHARA",
+        "lat": "36.07403592",
+        "lng": "136.41323021",
+        "name": "越前竹原"
+      },
+      {
+        "id": "STN_ECHIZEN_KOBUNATO",
+        "lat": "36.07551113",
+        "lng": "136.43395557",
+        "name": "小舟渡"
+      },
+      {
+        "id": "STN_ECHIZEN_HOTA",
+        "lat": "36.069915",
+        "lng": "136.451659",
+        "name": "保田"
+      },
+      {
+        "id": "STN_ECHIZEN_HASSAKA",
+        "lat": "36.07265871",
+        "lng": "136.46621542",
+        "name": "発坂"
+      },
+      {
+        "id": "STN_ECHIZEN_HISHIMA",
+        "lat": "36.06598",
+        "lng": "136.48413",
+        "name": "比島"
+      },
+      {
+        "id": "STN_ECHIZEN_KATSUYAMA",
+        "lat": "36.05591782",
+        "lng": "136.49213834",
+        "name": "勝山"
+      },
+      {
+        "id": "STN_ECHIZEN_MATSUMOTO_MACHIYA",
+        "lat": "36.07696455",
+        "lng": "136.22886158",
+        "name": "まつもと町屋"
+      },
+      {
+        "id": "STN_ECHIZEN_NISHIBETSUIN",
+        "lat": "36.075255",
+        "lng": "136.22299",
+        "name": "西別院"
+      },
+      {
+        "id": "STN_ECHIZEN_TAWARAMACHI",
+        "lat": "36.07499",
+        "lng": "136.21764",
+        "name": "田原町"
+      },
+      {
+        "id": "STN_ECHIZEN_FUKUDAIMAE_NISHI_FUKUI",
+        "lat": "36.074405",
+        "lng": "136.21013",
+        "name": "福大前西福井"
+      },
+      {
+        "id": "STN_ECHIZEN_NIKKA_KAGAKUMAE",
+        "lat": "36.08045046",
+        "lng": "136.20650226",
+        "name": "日華化学前"
+      },
+      {
+        "id": "STN_ECHIZEN_YATSUSHIMA",
+        "lat": "36.08619",
+        "lng": "136.205885",
+        "name": "八ツ島"
+      },
+      {
+        "id": "STN_ECHIZEN_NITTANSUKA",
+        "lat": "36.092575",
+        "lng": "136.20528",
+        "name": "新田塚"
+      },
+      {
+        "id": "STN_ECHIZEN_NAKAKUNO",
+        "lat": "36.10112",
+        "lng": "136.204445",
+        "name": "中角"
+      },
+      {
+        "id": "STN_ECHIZEN_JIN_AI_GRAND_MAE",
+        "lat": "36.113611",
+        "lng": "136.204444",
+        "name": "仁愛グランド前"
+      },
+      {
+        "id": "STN_ECHIZEN_WASHIZUKA_HARIBARA",
+        "lat": "36.12024",
+        "lng": "136.20481",
+        "name": "鷲塚針原"
+      },
+      {
+        "id": "STN_ECHIZEN_TARŌMARU_ANGELLAND",
+        "lat": "36.131335",
+        "lng": "136.20569",
+        "name": "太郎丸エンゼルランド"
+      },
+      {
+        "id": "STN_ECHIZEN_NISHI_HARUE_HEARTPIA",
+        "lat": "36.1389",
+        "lng": "136.20622",
+        "name": "西春江ハートピア"
+      },
+      {
+        "id": "STN_ECHIZEN_NISHI_NAGATA_YURINOSATO",
+        "lat": "36.153585",
+        "lng": "136.206495",
+        "name": "西長田ゆりの里"
+      },
+      {
+        "id": "STN_ECHIZEN_SHIMOHYŌGO_KŌFUKU",
+        "lat": "36.17012",
+        "lng": "136.2026",
+        "name": "下兵庫こうふく"
+      },
+      {
+        "id": "STN_ECHIZEN_ŌZEKI",
+        "lat": "36.18663",
+        "lng": "136.20378",
+        "name": "大関"
+      },
+      {
+        "id": "STN_ECHIZEN_HONJŌ",
+        "lat": "36.204625",
+        "lng": "136.20316",
+        "name": "本荘"
+      },
+      {
+        "id": "STN_ECHIZEN_BANDA",
+        "lat": "36.21253",
+        "lng": "136.20252",
+        "name": "番田"
+      },
+      {
+        "id": "STN_ECHIZEN_AWARA_YUNOMACHI",
+        "lat": "36.22296",
+        "lng": "136.1938",
+        "name": "あわら湯のまち"
+      },
+      {
+        "id": "STN_ECHIZEN_MUI",
+        "lat": "36.21921",
+        "lng": "136.172305",
+        "name": "水居"
+      },
+      {
+        "id": "STN_ECHIZEN_MIKUNI_JINJA",
+        "lat": "36.214885",
+        "lng": "136.158335",
+        "name": "三国神社"
+      },
+      {
+        "id": "STN_ECHIZEN_MIKUNI",
+        "lat": "36.21692",
+        "lng": "136.14995",
+        "name": "三国"
+      },
+      {
+        "id": "STN_ECHIZEN_MIKUNIMINATO",
+        "lat": "36.220095",
+        "lng": "136.140355",
+        "name": "三国港"
+      }
+    ]
+  }
+]

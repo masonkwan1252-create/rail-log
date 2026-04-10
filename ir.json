@@ -1,0 +1,150 @@
+[
+  {
+    "categories": "",
+    "company_id": "IR",
+    "company_name": "IRいしかわ鉄道",
+    "lines": [
+      {
+        "id": "IR_LINE",
+        "name": "鉄道線",
+        "sequence": [
+          "STN_IR_DAISHOJI",
+          "STN_IR_KAGA_ONSEN",
+          "STN_IR_IBURIHASHI",
+          "STN_IR_AWAZU",
+          "STN_IR_KOMATSU",
+          "STN_IR_MEIHO",
+          "STN_IR_NOMI_NEAGARI",
+          "STN_IR_KOMAIKO",
+          "STN_IR_MIKAWA",
+          "STN_IR_KAGA_KASAMA",
+          "STN_IR_NISHI_MATTO",
+          "STN_IR_MATTO",
+          "STN_IR_NONOICHI",
+          "STN_IR_NISHI_KANAZAWA",
+          "STN_IR_KANAZAWA",
+          "STN_IR_HIGASHI_KANAZAWA",
+          "STN_IR_MORIMOTO",
+          "STN_IR_TSUBATA",
+          "STN_IR_KURIKARA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_IR_DAISHŌJI",
+        "lat": "36.300338",
+        "lng": "136.314207",
+        "name": "大聖寺"
+      },
+      {
+        "id": "STN_IR_KAGA_ONSEN",
+        "lat": "36.32057",
+        "lng": "136.350365",
+        "name": "加賀温泉"
+      },
+      {
+        "id": "STN_IR_IBURIHASHI",
+        "lat": "36.328387",
+        "lng": "136.383074",
+        "name": "動橋"
+      },
+      {
+        "id": "STN_IR_AWAZU",
+        "lat": "36.35577",
+        "lng": "136.424575",
+        "name": "粟津"
+      },
+      {
+        "id": "STN_IR_KOMATSU",
+        "lat": "36.40269",
+        "lng": "136.45294",
+        "name": "小松"
+      },
+      {
+        "id": "STN_IR_MEIHŌ",
+        "lat": "36.425305",
+        "lng": "136.46316",
+        "name": "明峰"
+      },
+      {
+        "id": "STN_IR_NOMI_NEAGARI",
+        "lat": "36.451504",
+        "lng": "136.459555",
+        "name": "能美根上"
+      },
+      {
+        "id": "STN_IR_KOMAIKO",
+        "lat": "36.476305",
+        "lng": "136.47489",
+        "name": "小舞子"
+      },
+      {
+        "id": "STN_IR_MIKAWA",
+        "lat": "36.486",
+        "lng": "136.48973",
+        "name": "美川"
+      },
+      {
+        "id": "STN_IR_KAGA_KASAMA",
+        "lat": "36.502921",
+        "lng": "136.527384",
+        "name": "加賀笠間"
+      },
+      {
+        "id": "STN_IR_NISHI_MATTŌ",
+        "lat": "36.51810825",
+        "lng": "136.54940053",
+        "name": "西松任"
+      },
+      {
+        "id": "STN_IR_MATTŌ",
+        "lat": "36.526688",
+        "lng": "136.566155",
+        "name": "松任"
+      },
+      {
+        "id": "STN_IR_NONOICHI",
+        "lat": "36.54213",
+        "lng": "136.598935",
+        "name": "野々市"
+      },
+      {
+        "id": "STN_IR_NISHI_KANAZAWA",
+        "lat": "36.553135",
+        "lng": "136.621183",
+        "name": "西金沢"
+      },
+      {
+        "id": "STN_IR_KANAZAWA",
+        "lat": "36.578311",
+        "lng": "136.647782",
+        "name": "金沢"
+      },
+      {
+        "id": "STN_IR_HIGASHI_KANAZAWA",
+        "lat": "36.59345",
+        "lng": "136.66948",
+        "name": "東金沢"
+      },
+      {
+        "id": "STN_IR_MORIMOTO",
+        "lat": "36.61211205",
+        "lng": "136.68931742",
+        "name": "森本"
+      },
+      {
+        "id": "STN_IR_TSUBATA",
+        "lat": "36.65788",
+        "lng": "136.730735",
+        "name": "津幡"
+      },
+      {
+        "id": "STN_IR_KURIKARA",
+        "lat": "36.67248",
+        "lng": "136.791605",
+        "name": "倶利伽羅"
+      }
+    ]
+  }
+]

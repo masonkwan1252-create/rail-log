@@ -1,0 +1,192 @@
+[
+  {
+    "categories": "",
+    "company_id": "MANYOSEN",
+    "company_name": "万葉線",
+    "lines": [
+      {
+  "id": "MANYOSEN_LINE",
+  "name": "万葉線",
+  "sequence": [
+    "STN_MANYOSEN_TAKAOKA_EKI",
+    "STN_MANYOSEN_SUEHIROCHO",
+    "STN_MANYOSEN_KATAHARAMACHI",
+    "STN_MANYOSEN_SAKASHITAMACHI",
+    "STN_MANYOSEN_KYUKAN_IRYO_CENTER_MAE",
+    "STN_MANYOSEN_HIROKOJI",
+    "STN_MANYOSEN_SHIKINO_CHUGAKKOMAE",
+    "STN_MANYOSEN_SHIMIN_BYOIN_MAE",
+    "STN_MANYOSEN_EJIRI",
+    "STN_MANYOSEN_ASAHIGAOKA",
+    "STN_MANYOSEN_OGINO",
+    "STN_MANYOSEN_SHIN_NOMACHI",
+    "STN_MANYOSEN_YONEJIMAGUCHI",
+    "STN_MANYOSEN_NOMACHIGUCHI",
+    "STN_MANYOSEN_SHIN_YOSHIHISA",
+    "STN_MANYOSEN_YOSHIHISA",
+    "STN_MANYOSEN_NAKAFUSHIKI",
+    "STN_MANYOSEN_ROKUDOJI",
+    "STN_MANYOSEN_SHOGAWAGUCHI",
+    "STN_MANYOSEN_DAI_ICHI_INN_SHIN_MINATO_CROSS_BAY_MAE",
+    "STN_MANYOSEN_SHINMACHIGUCHI",
+    "STN_MANYOSEN_NAKA_SHIN_MINATO",
+    "STN_MANYOSEN_HIGASHI_SHIN_MINATO",
+    "STN_MANYOSEN_KAIOMARU",
+    "STN_MANYOSEN_KOSHINOGATA"
+  ]
+}
+    ],
+    "stations": [
+      {
+        "id": "STN_MANYOSEN_TAKAOKA_EKI",
+        "lat": "36.74155319",
+        "lng": "137.01507701",
+        "name": "高岡駅"
+      },
+      {
+        "id": "STN_MANYOSEN_SUEHIROCHŌ",
+        "lat": "36.74456095",
+        "lng": "137.01345768",
+        "name": "末広町"
+      },
+      {
+        "id": "STN_MANYOSEN_KATAHARAMACHI",
+        "lat": "36.74653628",
+        "lng": "137.01308823",
+        "name": "片原町"
+      },
+      {
+        "id": "STN_MANYOSEN_SAKASHITAMACHI",
+        "lat": "36.74751101",
+        "lng": "137.01481576",
+        "name": "坂下町"
+      },
+      {
+        "id": "STN_MANYOSEN_KYŪKAN_IRYŌ_CENTER_MAE",
+        "lat": "36.75065443",
+        "lng": "137.01867055",
+        "name": "急患医療センター前"
+      },
+      {
+        "id": "STN_MANYOSEN_HIROKŌJI",
+        "lat": "36.75254175",
+        "lng": "137.0205782",
+        "name": "広小路"
+      },
+      {
+        "id": "STN_MANYOSEN_SHIKINO_CHŪGAKKŌMAE",
+        "lat": "36.75563661",
+        "lng": "137.02370461",
+        "name": "志貴野中学校前"
+      },
+      {
+        "id": "STN_MANYOSEN_SHIMIN_BYŌIN_MAE",
+        "lat": "36.75839602",
+        "lng": "137.02633166",
+        "name": "市民病院前"
+      },
+      {
+        "id": "STN_MANYOSEN_EJIRI",
+        "lat": "36.7623702",
+        "lng": "137.03072778",
+        "name": "江尻"
+      },
+      {
+        "id": "STN_MANYOSEN_ASAHIGAOKA",
+        "lat": "36.7641385",
+        "lng": "137.03268538",
+        "name": "旭ヶ丘"
+      },
+      {
+        "id": "STN_MANYOSEN_OGINO",
+        "lat": "36.76685847",
+        "lng": "137.03567219",
+        "name": "荻布"
+      },
+      {
+        "id": "STN_MANYOSEN_SHIN_NŌMACHI",
+        "lat": "36.77028146",
+        "lng": "137.03774169",
+        "name": "新能町"
+      },
+      {
+        "id": "STN_MANYOSEN_YONEJIMAGUCHI",
+        "lat": "36.77296129",
+        "lng": "137.03871151",
+        "name": "米島口"
+      },
+      {
+        "id": "STN_MANYOSEN_NŌMACHIGUCHI",
+        "lat": "36.77326491",
+        "lng": "137.04904096",
+        "name": "能町口"
+      },
+      {
+        "id": "STN_MANYOSEN_SHIN_YOSHIHISA",
+        "lat": "36.77614492",
+        "lng": "137.05285807",
+        "name": "新吉久"
+      },
+      {
+        "id": "STN_MANYOSEN_YOSHIHISA",
+        "lat": "36.781937",
+        "lng": "137.05631765",
+        "name": "吉久"
+      },
+      {
+        "id": "STN_MANYOSEN_NAKAFUSHIKI",
+        "lat": "36.78814542",
+        "lng": "137.06155675",
+        "name": "中伏木"
+      },
+      {
+        "id": "STN_MANYOSEN_ROKUDŌJI",
+        "lat": "36.78900958",
+        "lng": "137.06616366",
+        "name": "六渡寺"
+      },
+      {
+        "id": "STN_MANYOSEN_SHŌGAWAGUCHI",
+        "lat": "36.78428901",
+        "lng": "137.07088585",
+        "name": "庄川口"
+      },
+      {
+        "id": "STN_MANYOSEN_DAI_ICHI_INN_SHIN_MINATO_CROSS_BAY_MAE",
+        "lat": "36.78125697",
+        "lng": "137.07849499",
+        "name": "第一イン新湊クロスベイ前"
+      },
+      {
+        "id": "STN_MANYOSEN_SHINMACHIGUCHI",
+        "lat": "36.77891286",
+        "lng": "137.08429745",
+        "name": "新町口"
+      },
+      {
+        "id": "STN_MANYOSEN_NAKA_SHIN_MINATO",
+        "lat": "36.77506503",
+        "lng": "137.08889831",
+        "name": "中新湊"
+      },
+      {
+        "id": "STN_MANYOSEN_HIGASHI_SHIN_MINATO",
+        "lat": "36.77792096",
+        "lng": "137.09901054",
+        "name": "東新湊"
+      },
+      {
+        "id": "STN_MANYOSEN_KAIŌMARU",
+        "lat": "36.77672096",
+        "lng": "137.10553245",
+        "name": "海王丸"
+      },
+      {
+        "id": "STN_MANYOSEN_KOSHINOGATA",
+        "lat": "36.77485689",
+        "lng": "137.1117243",
+        "name": "越ノ潟"
+      }
+    ]
+  }
+]

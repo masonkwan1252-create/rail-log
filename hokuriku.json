@@ -1,0 +1,227 @@
+[
+  {
+    "categories": "",
+    "company_id": "HOKURIKU",
+    "company_name": "北陸鉄道",
+    "lines": [
+      {
+        "id": "HOKURIKU_ISHIKAWA",
+        "name": "石川線",
+        "sequence": [
+          "STN_HOKURIKU_NOMACHI",
+          "STN_HOKURIKU_NISHIIZUMI",
+          "STN_HOKURIKU_SHIN_NISHIKANAZAWA",
+          "STN_HOKURIKU_OSHINO",
+          "STN_HOKURIKU_NONOICHI",
+          "STN_HOKURIKU_NONOICHI_KODAIMAE",
+          "STN_HOKURIKU_MAGAE",
+          "STN_HOKURIKU_NUKAJUTAKUMAE",
+          "STN_HOKURIKU_OTOMARU",
+          "STN_HOKURIKU_SHIJUMA",
+          "STN_HOKURIKU_HIBARI",
+          "STN_HOKURIKU_SOTANI",
+          "STN_HOKURIKU_DOHOJI",
+          "STN_HOKURIKU_INOKUCHI",
+          "STN_HOKURIKU_OYA",
+          "STN_HOKURIKU_NAGI",
+          "STN_HOKURIKU_HIMIKO",
+          "STN_HOKURIKU_TSURUGI"
+        ]
+      },
+      {
+        "id": "HOKURIKU_ASANOGAWA",
+        "name": "浅野川線",
+        "sequence": [
+          "STN_HOKURIKU_HOKUTETSU_KANAZAWA",
+          "STN_HOKURIKU_NANATSUYA",
+          "STN_HOKURIKU_KAMIMOROE",
+          "STN_HOKURIKU_ISOBE",
+          "STN_HOKURIKU_WARIDASHI",
+          "STN_HOKURIKU_MITSUCHI",
+          "STN_HOKURIKU_MITSUYA",
+          "STN_HOKURIKU_OKABATA",
+          "STN_HOKURIKU_KITAMA",
+          "STN_HOKURIKU_KAGATSUME",
+          "STN_HOKURIKU_AWAGASAKI",
+          "STN_HOKURIKU_UCHINADA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_HOKURIKU_NOMACHI",
+        "lat": "36.553695",
+        "lng": "136.64418",
+        "name": "野町"
+      },
+      {
+        "id": "STN_HOKURIKU_NISHIIZUMI",
+        "lat": "36.55338522",
+        "lng": "136.63352619",
+        "name": "西泉"
+      },
+      {
+        "id": "STN_HOKURIKU_SHIN_NISHIKANAZAWA",
+        "lat": "36.55304676",
+        "lng": "136.6227644",
+        "name": "新西金沢"
+      },
+      {
+        "id": "STN_HOKURIKU_OSHINO",
+        "lat": "36.54210234",
+        "lng": "136.62204899",
+        "name": "押野"
+      },
+      {
+        "id": "STN_HOKURIKU_NONOICHI",
+        "lat": "36.53640994",
+        "lng": "136.62091272",
+        "name": "野々市"
+      },
+      {
+        "id": "STN_HOKURIKU_NONOICHI_KŌDAIMAE",
+        "lat": "36.53259712",
+        "lng": "136.62183217",
+        "name": "野々市工大前"
+      },
+      {
+        "id": "STN_HOKURIKU_MAGAE",
+        "lat": "36.52283656",
+        "lng": "136.6205754",
+        "name": "馬替"
+      },
+      {
+        "id": "STN_HOKURIKU_NUKAJŪTAKUMAE",
+        "lat": "36.518497",
+        "lng": "136.618838",
+        "name": "額住宅前"
+      },
+      {
+        "id": "STN_HOKURIKU_OTOMARU",
+        "lat": "36.511849",
+        "lng": "136.61765",
+        "name": "乙丸"
+      },
+      {
+        "id": "STN_HOKURIKU_SHIJŪMA",
+        "lat": "36.498835",
+        "lng": "136.615735",
+        "name": "四十万"
+      },
+      {
+        "id": "STN_HOKURIKU_HIBARI",
+        "lat": "36.49378467",
+        "lng": "136.61492401",
+        "name": "陽羽里"
+      },
+      {
+        "id": "STN_HOKURIKU_SOTANI",
+        "lat": "36.49000753",
+        "lng": "136.61435671",
+        "name": "曽谷"
+      },
+      {
+        "id": "STN_HOKURIKU_DŌHŌJI",
+        "lat": "36.48429159",
+        "lng": "136.6134972",
+        "name": "道法寺"
+      },
+      {
+        "id": "STN_HOKURIKU_INOKUCHI",
+        "lat": "36.47649041",
+        "lng": "136.61233692",
+        "name": "井口"
+      },
+      {
+        "id": "STN_HOKURIKU_OYA NAGI",
+        "lat": "36.4708716",
+        "lng": "136.61149473",
+        "name": "小柳"
+      },
+      {
+        "id": "STN_HOKURIKU_HIMIKO",
+        "lat": "36.46493663",
+        "lng": "136.61509395",
+        "name": "日御子"
+      },
+      {
+        "id": "STN_HOKURIKU_TSURUGI",
+        "lat": "36.45212885",
+        "lng": "136.62385573",
+        "name": "鶴来"
+      },
+      {
+        "id": "STN_HOKURIKU_HOKUTETSU_KANAZAWA",
+        "lat": "36.57853624",
+        "lng": "136.64931925",
+        "name": "北鉄金沢"
+      },
+      {
+        "id": "STN_HOKURIKU_NANATSUYA",
+        "lat": "36.58314944",
+        "lng": "136.65180815",
+        "name": "七ツ屋"
+      },
+      {
+        "id": "STN_HOKURIKU_KAMIMOROE",
+        "lat": "36.59101344",
+        "lng": "136.64892651",
+        "name": "上諸江"
+      },
+      {
+        "id": "STN_HOKURIKU_ISOBE",
+        "lat": "36.59667901",
+        "lng": "136.64833494",
+        "name": "磯部"
+      },
+      {
+        "id": "STN_HOKURIKU_WARIDASHI",
+        "lat": "36.60275677",
+        "lng": "136.64845279",
+        "name": "割出"
+      },
+      {
+        "id": "STN_HOKURIKU_MITSUCHI",
+        "lat": "36.60642645",
+        "lng": "136.64771678",
+        "name": "三口"
+      },
+      {
+        "id": "STN_HOKURIKU_MITSUYA",
+        "lat": "36.61198557",
+        "lng": "136.64555228",
+        "name": "三ツ屋"
+      },
+      {
+        "id": "STN_HOKURIKU_OKABATA",
+        "lat": "36.61659292",
+        "lng": "136.64349534",
+        "name": "大河端"
+      },
+      {
+        "id": "STN_HOKURIKU_KITAMA",
+        "lat": "36.62283714",
+        "lng": "136.6413038",
+        "name": "北間"
+      },
+      {
+        "id": "STN_HOKURIKU_KAGATSUME",
+        "lat": "36.62601795",
+        "lng": "136.64319109",
+        "name": "蚊爪"
+      },
+      {
+        "id": "STN_HOKURIKU_AWAGASAKI",
+        "lat": "36.63048933",
+        "lng": "136.63785926",
+        "name": "粟ヶ崎"
+      },
+      {
+        "id": "STN_HOKURIKU_UCHINADA",
+        "lat": "36.63343189",
+        "lng": "136.63395852",
+        "name": "内灘"
+      }
+    ]
+  }
+]
