@@ -4,91 +4,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.19</title>
+<title>鉄道手帳 RAIL LOG V0.20</title>
 
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
-/* 🚩 JR 東日本 LCD 風格載入畫面 */
+/* =========================================
+   🟩 V0.20 E235系 真實感加強版樣式
+   ========================================= */
 #loading-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #f4f4f4; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    z-index: 9999; transition: opacity 0.6s ease, visibility 0.6s;
-}
-#loading-screen.loaded { opacity: 0; visibility: hidden; }
-
-.jre-lcd-panel {
-    width: 90%; max-width: 400px; background: #ffffff;
-    border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    overflow: hidden; border: 2px solid #ccc;
+    background-color: #f0f0f0; display: flex; flex-direction: column;
+    z-index: 9999; font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+    overflow: hidden; transition: opacity 0.6s ease;
 }
 
-.jre-lcd-header {
-    display: flex; align-items: center; padding: 10px 15px;
-    background: #111; color: #fff; border-bottom: 4px solid #63BD0F;
-}
-
-.jre-service-type {
-    border: 2px solid #fff; padding: 2px 6px; font-weight: bold;
-    font-size: 14px; border-radius: 3px; margin-right: 12px;
-}
-
-.jre-destination {
-    font-size: 18px; font-weight: 800; display: flex; flex-direction: column; line-height: 1.1;
-}
-
-.jre-dest-en {
-    font-size: 9px; font-weight: 600; color: #ccc; margin-top: 2px;
-}
-
-.jre-route-container {
-    position: relative; height: 80px; width: 100%; background: #fff;
-    display: flex; align-items: center; padding: 0 20px; box-sizing: border-box;
-}
-
-.jre-line-track {
-    position: absolute; left: 20px; right: 20px; height: 8px;
-    background: #e0e0e0; border-radius: 4px; z-index: 1;
-}
-
-.jre-progress-fill {
-    position: absolute; left: 20px; height: 8px;
-    background: #63BD0F; border-radius: 4px; z-index: 2; width: 0%;
-    animation: jreFill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.jre-station-dot {
-    position: absolute; width: 14px; height: 14px; background: #fff;
-    border: 3px solid #ccc; border-radius: 50%; z-index: 3;
-    transform: translateY(-3px); 
-}
-
-.jre-train-icon {
-    position: absolute; left: 20px; width: 32px; height: 32px; z-index: 4;
-    transform: translate(-16px, -12px); 
-    animation: jreTrainMove 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.jre-lcd-footer {
+/* 頂部加大版黑色 Bar */
+.e235-header-wide {
+    height: 12vh; min-height: 80px; background: #111; color: white;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 15px; background: #f9f9f9; border-top: 1px solid #eee;
+    padding: 0 25px; border-bottom: 4px solid #333; position: relative;
 }
 
-.jre-loading-text { font-size: 13px; font-weight: bold; color: #333; }
-.jre-loading-text-en { font-size: 11px; font-weight: bold; color: #888; }
-
-@keyframes jreFill {
-    0% { width: 0%; }
-    100% { width: calc(100% - 40px); } 
+/* 垂直山手線色帶 (相中左側那條) */
+.e235-line-color-stripe {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 15px;
+    background-color: #80c241;
 }
 
-@keyframes jreTrainMove {
-    0% { left: 20px; }
-    100% { left: calc(100% - 20px); }
+.e235-header-left { display: flex; align-items: center; margin-left: 10px; }
+
+.e235-type {
+    color: #80c241; border: 2.5px solid #80c241; padding: 2px 10px;
+    font-size: 1.2rem; font-weight: bold; border-radius: 4px; margin-right: 15px;
 }
+
+.e235-destination { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+
+.e235-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+#e235-clock { font-size: 1.4rem; font-weight: bold; font-family: monospace; }
+.e235-car-number { border: 1.5px solid white; padding: 1px 5px; font-size: 0.8rem; border-radius: 3px; }
+
+/* 中央大字站名 */
+.e235-main-content { flex: 1; padding: 8vh 0 0 10%; }
+.e235-next-label { color: #e60012; font-size: 2rem; font-weight: 900; margin-bottom: 5px; }
+.e235-next-en { font-size: 0.6em; margin-left: 10px; color: #b30000; }
+.e235-station { font-size: clamp(50px, 12vw, 90px); font-weight: 900; color: #222; }
+.e235-station-en { font-size: 1.8rem; color: #666; font-weight: bold; margin-top: -5px; }
+
+/* 底部粗身向左彎軌道 */
+.e235-progress-area {
+    position: absolute; bottom: -10px; right: 5%; width: 25%; height: 60%;
+    overflow: hidden; pointer-events: none;
+}
+
+.e235-curve-track {
+    width: 100%; height: 120%; background: #80c241;
+    border-top-left-radius: 120px; /* 控制彎曲弧度 */
+    box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* 向上流動的箭頭動畫 */
+.e235-arrows {
+    position: absolute; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 70 L50 45 L70 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3C/svg%3E");
+    background-size: 100% 100px;
+    animation: e235-flow 1s linear infinite;
+}
+
+@keyframes e235-flow {
+    from { background-position: 0 100px; }
+    to { background-position: 0 0; }
+}
+
+/* 載入完成隱藏 */
+#loading-screen.loaded { opacity: 0; pointer-events: none; }
 
 
 /* 主畫面容器 */
@@ -237,34 +230,31 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </head>
 
 <body>
-
 <div id="loading-screen">
-    <div class="jre-lcd-panel">
-        <div class="jre-lcd-header">
-            <div class="jre-service-type">各駅停車</div>
-            <div class="jre-destination">鉄道手帳 RAIL LOG <span class="jre-dest-en">FOR RAIL LOG</span></div>
-        </div>
-        <div class="jre-route-container">
-            <div class="jre-line-track"></div>
-            <div class="jre-station-dot" style="left: 10%;"></div>
-            <div class="jre-station-dot" style="left: 50%;"></div>
-            <div class="jre-station-dot" style="left: 90%;"></div>
-            
-            <div class="jre-train-icon">
-                <svg viewBox="0 0 24 24" fill="#63BD0F" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V17C20 18.1046 19.1046 19 18 19H6C4.89543 19 4 18.1046 4 17V6Z" fill="#e0e0e0"/>
-                    <path d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11H4V6Z" fill="#63BD0F"/>
-                    <rect x="6" y="13" width="4" height="3" rx="1" fill="#333"/>
-                    <rect x="14" y="13" width="4" height="3" rx="1" fill="#333"/>
-                    <circle cx="7" cy="20" r="1.5" fill="#555"/>
-                    <circle cx="17" cy="20" r="1.5" fill="#555"/>
-                </svg>
+    <div class="e235-header-wide">
+        <div class="e235-header-left">
+            <div class="e235-line-color-stripe"></div> <div class="e235-header-text">
+                <span class="e235-type">各駅停車</span>
+                <span class="e235-destination">鉄道手帳 RAIL LOG</span>
             </div>
-            <div class="jre-progress-fill"></div>
         </div>
-        <div class="jre-lcd-footer">
-            <span class="jre-loading-text">まもなく起動します...</span>
-            <span class="jre-loading-text-en">Now Loading...</span>
+        <div class="e235-header-right">
+            <span id="e235-clock">--:--</span>
+            <span class="e235-car-number">1号車</span>
+        </div>
+    </div>
+
+    <div class="e235-main-content">
+        <div class="e235-next-label">次は<span class="e235-next-en">Next</span></div>
+        <div class="e235-station-box">
+            <div class="e235-station" id="e235-station-name">系統啟動中</div>
+            <div class="e235-station-en" id="e235-station-name-en">System Starting</div>
+        </div>
+    </div>
+
+    <div class="e235-progress-area">
+        <div class="e235-curve-track">
+            <div class="e235-arrows"></div>
         </div>
     </div>
 </div>
@@ -307,7 +297,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     </header>
 
     <div id="saveMessage" class="toast-message">儲存成功！</div>
-    <div class="version-badge">V0.19</div>
+    <div class="version-badge">V0.20</div>
 
     <div class="container">
 
@@ -484,6 +474,83 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 </div> 
 
 <script>
+// =========================================
+// V0.20 E235系 Loading 頁面控制邏輯
+// =========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById('e235-loader');
+    const clockDisplay = document.getElementById('e235-clock');
+    const stationName = document.getElementById('e235-station-name');
+    const stationNameEn = document.getElementById('e235-station-name-en');
+
+    // 1. 更新右上角真實時間
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        clockDisplay.textContent = `${hours}:${minutes}`;
+    }
+    updateClock(); // 立即執行一次
+    const clockInterval = setInterval(updateClock, 1000);
+
+    // 2. 模擬列車行進 (載入進度)
+    // 這裡可以自訂你想要輪播的「站名」(即載入狀態)
+    const loadingStages = [
+        { zh: "讀取資料庫", en: "Loading Database..." },
+        { zh: "準備路線圖", en: "Preparing Maps..." },
+        { zh: "鉄道手帳", en: "RAIL LOG" } // 終點站
+    ];
+    
+    let currentStage = 0;
+    
+    const progressInterval = setInterval(() => {
+        currentStage++;
+        if (currentStage < loadingStages.length) {
+            stationName.textContent = loadingStages[currentStage].zh;
+            stationNameEn.textContent = loadingStages[currentStage].en;
+        } else {
+            // 載入完成，準備隱藏畫面
+            clearInterval(progressInterval);
+            clearInterval(clockInterval);
+            
+            // 加上淡出與微微向上的過場動畫
+            loader.style.opacity = '0';
+            loader.style.transform = 'translateY(-20px)';
+            
+            // 等待動畫播放完畢後移除 DOM
+            setTimeout(() => {
+                loader.style.display = 'none';
+                // 如果你有其他初始化函數，可以在這裡呼叫
+                // initApp(); 
+            }, 500);
+        }
+    }, 800); // 每 800 毫秒跳一站，可自行調整速度
+});
+
+function updateE235Loading() {
+    const clock = document.getElementById('e235-clock');
+    const station = document.getElementById('e235-station-name');
+    const stationEn = document.getElementById('e235-station-name-en');
+
+    // 實時時鐘
+    const now = new Date();
+    clock.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+
+    // 模擬載入進程更改站名
+    setTimeout(() => {
+        station.textContent = "資料讀取中";
+        stationEn.textContent = "Data Loading...";
+    }, 1000);
+    
+    setTimeout(() => {
+        station.textContent = "鉄道手帳";
+        stationEn.textContent = "RAIL LOG";
+    }, 2200);
+}
+
+// 啟動載入畫面邏輯
+document.addEventListener('DOMContentLoaded', updateE235Loading);
+
 let currentSignIndex = 0;
 const totalSigns = 5; 
 const rollContainer = document.getElementById('rollContainer');
@@ -635,7 +702,7 @@ async function loadData() {
             "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
             "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
-            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json"]; 
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json"]; 
         
         const fetchPromises = newCompanyFiles.map(file => 
             fetch(file).then(res => res.ok ? res.json() : null).catch(() => null)
@@ -668,6 +735,35 @@ async function loadData() {
     } 
     finally {
         buildMaps(); initUILists(); render(); updateStationLists();
+        // 配合 JRE 動畫，將載入時間設為 1.8 秒
+        setTimeout(hideLoadingScreen, 1800);
+		
+        // 【V0.20 修正】自動修復舊記錄錯誤的車型 ID (解決帶有括號的殘留數據)
+        let dataModified = false;
+        trips.forEach(t => {
+            if (!maps.train[t.train_id]) {
+                // 如果系統找不到這架車，代表它可能被錯誤儲存為文字 (例如 "1021系 (近畿日本鉄道)")
+                let realId = resolve.train[t.train_id];
+                if (!realId) {
+                    // 嘗試清走尾部括號找出原名
+                    let cleanName = t.train_id.replace(/\s*\(.*?\)$/, '').trim();
+                    let found = db.trains.find(tr => tr.name === cleanName || tr._display === t.train_id);
+                    if (found) realId = found.id;
+                }
+                // 成功對應返正確 ID，執行替換！
+                if (realId) {
+                    t.train_id = realId;
+                    dataModified = true;
+                }
+            }
+        });
+        
+        // 如果有進行過修復，自動幫用戶 Save 返落 LocalStorage
+        if (dataModified) {
+            localStorage.setItem("railTrips_V2", JSON.stringify(trips));
+        }
+
+        render(); updateStationLists();
         // 配合 JRE 動畫，將載入時間設為 1.8 秒
         setTimeout(hideLoadingScreen, 1800);
     }
@@ -767,6 +863,7 @@ function updateTrainDatalist() {
 }
 
 
+// 【V0.20 修正】車型搜尋及過濾邏輯
 let trainFilterTimeout = null;
 document.getElementById("train").addEventListener("input", function() {
     clearTimeout(trainFilterTimeout);
@@ -774,15 +871,21 @@ document.getElementById("train").addEventListener("input", function() {
     const keyword = this.value.trim().toLowerCase();
     const list = document.getElementById("trainList");
 
+    // [關鍵修復] 如果目前輸入嘅字，已經完全吻合選單入面嘅其中一項，
+    // 代表使用者剛剛「點擊」咗選項，此時絕對不能重建選單，否則會打斷輸入！
+    const isSelected = currentCompanyTrains.some(t => t._display.toLowerCase() === keyword);
+    if (isSelected) return; 
+
     trainFilterTimeout = setTimeout(() => {
         let filtered = currentCompanyTrains;
         if (keyword) {
             filtered = currentCompanyTrains.filter(t => 
-                t._display.toLowerCase().startsWith(keyword)
+                // 改用 includes，只要包含關鍵字就會顯示，比 startsWith 更好用
+                t._display.toLowerCase().includes(keyword) 
             );
         }
 
-        const displayLimit = 20;
+        const displayLimit = 30; // 稍微放寬顯示數量
         const limitedResults = filtered.slice(0, displayLimit);
 
         const fragment = document.createDocumentFragment();
@@ -1278,7 +1381,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.19.json"; a.click();
+    a.download = "rail-log-V0.20.json"; a.click();
 }
 
 function importData() {
