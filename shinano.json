@@ -1,0 +1,234 @@
+[
+  {
+    "categories": "",
+    "company_id": "SHINANO",
+    "company_name": "しなの鉄道",
+    "lines": [
+      {
+        "id": "SHINANO_LINE",
+        "name": "鉄道線",
+        "sequence": [
+          "STN_SHINANO_KARUIZAWA",
+          "STN_SHINANO_NAKA_KARUIZAWA",
+          "STN_SHINANO_SHINANO_OIWAKE",
+          "STN_SHINANO_MIYOTA",
+          "STN_SHINANO_HIRAHARA",
+          "STN_SHINANO_KOMORO",
+          "STN_SHINANO_SHIGENO",
+          "STN_SHINANO_TANAKA",
+          "STN_SHINANO_OYA",
+          "STN_SHINANO_SHINANO_KOKUBUNJI",
+          "STN_SHINANO_UEDA",
+          "STN_SHINANO_NISHI_UEDA",
+          "STN_SHINANO_TECHNO_SAKAKI",
+          "STN_SHINANO_SAKAKI",
+          "STN_SHINANO_TOGURA",
+          "STN_SHINANO_CHIKUMA",
+          "STN_SHINANO_YASHIRO",
+          "STN_SHINANO_YASHIRO_KOKOMAE",
+          "STN_SHINANO_SHINONOI",
+          "STN_SHINANO_IMAI",
+          "STN_SHINANO_KAWANAKAJIMA",
+          "STN_SHINANO_AMORI",
+          "STN_SHINANO_NAGANO"
+        ]
+      },
+      {
+        "id": "SHINANO_KITA_SHINANO",
+        "name": "北しなの線",
+        "sequence": [
+          "STN_SHINANO_NAGANO",
+          "STN_SHINANO_KITA_NAGANO",
+          "STN_SHINANO_SANSAI",
+          "STN_SHINANO_TOYONO",
+          "STN_SHINANO_MURE",
+          "STN_SHINANO_FURUMA",
+          "STN_SHINANO_KUROHIME",
+          "STN_SHINANO_MYOKO_KOGEN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_SHINANO_KARUIZAWA",
+        "lat": "36.34278787",
+        "lng": "138.63499149",
+        "name": "軽井沢"
+      },
+      {
+        "id": "STN_SHINANO_NAKA_KARUIZAWA",
+        "lat": "36.34763578",
+        "lng": "138.59273061",
+        "name": "中軽井沢"
+      },
+      {
+        "id": "STN_SHINANO_SHINANO_OIWAKE",
+        "lat": "36.33545",
+        "lng": "138.558495",
+        "name": "信濃追分"
+      },
+      {
+        "id": "STN_SHINANO_MIYOTA",
+        "lat": "36.31892304",
+        "lng": "138.50682439",
+        "name": "御代田"
+      },
+      {
+        "id": "STN_SHINANO_HIRAHARA",
+        "lat": "36.30875868",
+        "lng": "138.45489084",
+        "name": "平原"
+      },
+      {
+        "id": "STN_SHINANO_KOMORO",
+        "lat": "36.32621919",
+        "lng": "138.42226769",
+        "name": "小諸"
+      },
+      {
+        "id": "STN_SHINANO_SHIGENO",
+        "lat": "36.342325",
+        "lng": "138.363941",
+        "name": "滋野"
+      },
+      {
+        "id": "STN_SHINANO_TANAKA",
+        "lat": "36.354415",
+        "lng": "138.32921",
+        "name": "田中"
+      },
+      {
+        "id": "STN_SHINANO_ŌYA",
+        "lat": "36.369744",
+        "lng": "138.29665886",
+        "name": "大屋"
+      },
+      {
+        "id": "STN_SHINANO_SHINANO_KOKUBUNJI",
+        "lat": "36.37845968",
+        "lng": "138.2735608",
+        "name": "信濃国分寺"
+      },
+      {
+        "id": "STN_SHINANO_UEDA",
+        "lat": "36.395752",
+        "lng": "138.250258",
+        "name": "上田"
+      },
+      {
+        "id": "STN_SHINANO_NISHI_UEDA",
+        "lat": "36.416875",
+        "lng": "138.209055",
+        "name": "西上田"
+      },
+      {
+        "id": "STN_SHINANO_TECHNO_SAKAKI",
+        "lat": "36.44058",
+        "lng": "138.1882",
+        "name": "テクノさかき"
+      },
+      {
+        "id": "STN_SHINANO_SAKAKI",
+        "lat": "36.46198",
+        "lng": "138.18145",
+        "name": "坂城"
+      },
+      {
+        "id": "STN_SHINANO_TOGURA",
+        "lat": "36.492968",
+        "lng": "138.153054",
+        "name": "戸倉"
+      },
+      {
+        "id": "STN_SHINANO_CHIKUMA",
+        "lat": "36.509205",
+        "lng": "138.141445",
+        "name": "千曲"
+      },
+      {
+        "id": "STN_SHINANO_YASHIRO",
+        "lat": "36.532556",
+        "lng": "138.128162",
+        "name": "屋代"
+      },
+      {
+        "id": "STN_SHINANO_YASHIRO_KŌKŌMAE",
+        "lat": "36.547955",
+        "lng": "138.13249",
+        "name": "屋代高校前"
+      },
+      {
+        "id": "STN_SHINANO_SHINONOI",
+        "lat": "36.577106",
+        "lng": "138.138127",
+        "name": "篠ノ井"
+      },
+      {
+        "id": "STN_SHINANO_IMAI",
+        "lat": "36.59488",
+        "lng": "138.14508",
+        "name": "今井"
+      },
+      {
+        "id": "STN_SHINANO_KAWANAKAJIMA",
+        "lat": "36.61409",
+        "lng": "138.1507",
+        "name": "川中島"
+      },
+      {
+        "id": "STN_SHINANO_AMORI",
+        "lat": "36.63027",
+        "lng": "138.16182",
+        "name": "安茂里"
+      },
+      {
+        "id": "STN_SHINANO_NAGANO",
+        "lat": "36.64346",
+        "lng": "138.18885",
+        "name": "長野"
+      },
+      {
+        "id": "STN_SHINANO_KITA_NAGANO",
+        "lat": "36.66507",
+        "lng": "138.22265",
+        "name": "北長野"
+      },
+      {
+        "id": "STN_SHINANO_SANSAI",
+        "lat": "36.686641",
+        "lng": "138.243981",
+        "name": "三才"
+      },
+      {
+        "id": "STN_SHINANO_TOYONO",
+        "lat": "36.711095",
+        "lng": "138.27556",
+        "name": "豊野"
+      },
+      {
+        "id": "STN_SHINANO_MURE",
+        "lat": "36.75309939",
+        "lng": "138.24685978",
+        "name": "牟礼"
+      },
+      {
+        "id": "STN_SHINANO_FURUMA",
+        "lat": "36.792435",
+        "lng": "138.230516",
+        "name": "古間"
+      },
+      {
+        "id": "STN_SHINANO_KUROHIME",
+        "lat": "36.80732",
+        "lng": "138.19711",
+        "name": "黒姫"
+      },
+      {
+        "id": "STN_SHINANO_MYŌKŌ_KŌGEN",
+        "lat": "36.872305",
+        "lng": "138.212185",
+        "name": "妙高高原"
+      }
+    ]
+  }
+]

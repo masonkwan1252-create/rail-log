@@ -1,0 +1,115 @@
+[
+  {
+    "categories": "",
+    "company_id": "ALPICO",
+    "company_name": "アルピコ交通",
+    "lines": [
+      {
+        "id": "ALPICO_KAMIKOCHI",
+        "name": "上高地線",
+        "sequence": [
+          "STN_ALPICO_MATSUMOTO",
+          "STN_ALPICO_NISHI_MATSUMOTO",
+          "STN_ALPICO_NAGISA",
+          "STN_ALPICO_SHINANO_ARAI",
+          "STN_ALPICO_ONIWA",
+          "STN_ALPICO_SHIMONIII",
+          "STN_ALPICO_KITASHIN_MATSUMOTO_DAIGAKUMAE",
+          "STN_ALPICO_NIIMURA",
+          "STN_ALPICO_SAMIZO",
+          "STN_ALPICO_MORIGUCHI",
+          "STN_ALPICO_SHIMOJIMA",
+          "STN_ALPICO_HATA",
+          "STN_ALPICO_ENDO",
+          "STN_ALPICO_SHIN_SHIMASHIMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_ALPICO_MATSUMOTO",
+        "lat": "36.231055",
+        "lng": "137.96378",
+        "name": "松本"
+      },
+      {
+        "id": "STN_ALPICO_NISHI_MATSUMOTO",
+        "lat": "36.22711932",
+        "lng": "137.96332176",
+        "name": "西松本"
+      },
+      {
+        "id": "STN_ALPICO_NAGISA",
+        "lat": "36.22710093",
+        "lng": "137.95627186",
+        "name": "渚"
+      },
+      {
+        "id": "STN_ALPICO_SHINANO_ARAI",
+        "lat": "36.22910376",
+        "lng": "137.94937693",
+        "name": "信濃荒井"
+      },
+      {
+        "id": "STN_ALPICO_ŌNIWA",
+        "lat": "36.22697166",
+        "lng": "137.94146687",
+        "name": "大庭"
+      },
+      {
+        "id": "STN_ALPICO_SHIMONIII",
+        "lat": "36.22513512",
+        "lng": "137.92252668",
+        "name": "下新"
+      },
+      {
+        "id": "STN_ALPICO_KITASHIN_MATSUMOTO_DAIGAKUMAE",
+        "lat": "36.21965316",
+        "lng": "137.91372178",
+        "name": "北新・松本大学前"
+      },
+      {
+        "id": "STN_ALPICO_NIIMURA",
+        "lat": "36.21654307",
+        "lng": "137.90538999",
+        "name": "新村"
+      },
+      {
+        "id": "STN_ALPICO_SAMIZO",
+        "lat": "36.21271344",
+        "lng": "137.89123426",
+        "name": "三溝"
+      },
+      {
+        "id": "STN_ALPICO_MORIGUCHI",
+        "lat": "36.20804441",
+        "lng": "137.88132297",
+        "name": "森口"
+      },
+      {
+        "id": "STN_ALPICO_SHIMOJIMA",
+        "lat": "36.20623602",
+        "lng": "137.87174663",
+        "name": "下島"
+      },
+      {
+        "id": "STN_ALPICO_HATA",
+        "lat": "36.200405",
+        "lng": "137.85645",
+        "name": "波田"
+      },
+      {
+        "id": "STN_ALPICO_ENDŌ",
+        "lat": "36.19519",
+        "lng": "137.83994",
+        "name": "渕東"
+      },
+      {
+        "id": "STN_ALPICO_SHIN_SHIMASHIMA",
+        "lat": "36.189805",
+        "lng": "137.821765",
+        "name": "新島々"
+      }
+    ]
+  }
+]

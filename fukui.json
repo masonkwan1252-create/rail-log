@@ -1,0 +1,192 @@
+[
+  {
+    "categories": "",
+    "company_id": "FUKUI",
+    "company_name": "福井鉄道",
+    "lines": [
+      {
+        "id": "FUKUI_FUKUBU",
+        "name": "福武線",
+        "sequence": [
+          "STN_FUKUI_TAKEFU_SHIN",
+          "STN_FUKUI_KITAGO",
+          "STN_FUKUI_SPORTS_KOEN",
+          "STN_FUKUI_IEHISA",
+          "STN_FUKUI_SUNDOME_NISHI",
+          "STN_FUKUI_NISHI_SABAE",
+          "STN_FUKUI_NISHIYAMA_KOEN",
+          "STN_FUKUI_MIZUOCHI",
+          "STN_FUKUI_SHINMEI",
+          "STN_FUKUI_TOBANAKA",
+          "STN_FUKUI_SANJUHASSHA",
+          "STN_FUKUI_TAICHO_NO_SATO",
+          "STN_FUKUI_ASOZU",
+          "STN_FUKUI_HARMONY_HALL",
+          "STN_FUKUI_SEIMEI",
+          "STN_FUKUI_EBATA",
+          "STN_FUKUI_BELL_MAE",
+          "STN_FUKUI_HANANDO",
+          "STN_FUKUI_SEKIJUJIMAE",
+          "STN_FUKUI_SHOKO_KAIGISHOMAE",
+          "STN_FUKUI_ASUWAYAMA_KOENGUCHI",
+          "STN_FUKUI_FUKUI_JOSHI_DAIMYOMACHI",
+          "STN_FUKUI_FUKUI_EKI",
+          "STN_FUKUI_JIN_AI_JOSHI_KOKO",
+          "STN_FUKUI_TAWARAMACHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_FUKUI_TAKEFU_SHIN",
+        "lat": "35.90656127",
+        "lng": "136.17022286",
+        "name": "たけふ新"
+      },
+      {
+        "id": "STN_FUKUI_KITAGO",
+        "lat": "35.91026491",
+        "lng": "136.16658911",
+        "name": "北府"
+      },
+      {
+        "id": "STN_FUKUI_SPORTS_KŌEN",
+        "lat": "35.919484",
+        "lng": "136.168225",
+        "name": "スポーツ公園"
+      },
+      {
+        "id": "STN_FUKUI_IEHISA",
+        "lat": "35.9260398",
+        "lng": "136.17056735",
+        "name": "家久"
+      },
+      {
+        "id": "STN_FUKUI_SUNDOME_NISHI",
+        "lat": "35.93655437",
+        "lng": "136.18056016",
+        "name": "サンドーム西"
+      },
+      {
+        "id": "STN_FUKUI_NISHI_SABAE",
+        "lat": "35.9463322",
+        "lng": "136.18186461",
+        "name": "西鯖江"
+      },
+      {
+        "id": "STN_FUKUI_NISHIYAMA_KŌEN",
+        "lat": "35.95241245",
+        "lng": "136.18576423",
+        "name": "西山公園"
+      },
+      {
+        "id": "STN_FUKUI_MIZÜOCHI",
+        "lat": "35.96230396",
+        "lng": "136.18320692",
+        "name": "水落"
+      },
+      {
+        "id": "STN_FUKUI_SHINMEI",
+        "lat": "35.97290468",
+        "lng": "136.18189776",
+        "name": "神明"
+      },
+      {
+        "id": "STN_FUKUI_TOBANAKA",
+        "lat": "35.9815",
+        "lng": "136.18755",
+        "name": "鳥羽中"
+      },
+      {
+        "id": "STN_FUKUI_SANJŪHASSHA",
+        "lat": "35.98915865",
+        "lng": "136.19380023",
+        "name": "三十八社"
+      },
+      {
+        "id": "STN_FUKUI_TAICHŌ_NO_SATO",
+        "lat": "35.99914064",
+        "lng": "136.19825658",
+        "name": "泰澄の里"
+      },
+      {
+        "id": "STN_FUKUI_ASÖZU",
+        "lat": "36.006765",
+        "lng": "136.201735",
+        "name": "浅水"
+      },
+      {
+        "id": "STN_FUKUI_HARMONY_HALL",
+        "lat": "36.01411",
+        "lng": "136.205365",
+        "name": "ハーモニーホール"
+      },
+      {
+        "id": "STN_FUKUI_SEIMEI",
+        "lat": "36.02239371",
+        "lng": "136.20948264",
+        "name": "清明"
+      },
+      {
+        "id": "STN_FUKUI_EBATA",
+        "lat": "36.0282167",
+        "lng": "136.21236535",
+        "name": "江端"
+      },
+      {
+        "id": "STN_FUKUI_BELL_MAE",
+        "lat": "36.03364511",
+        "lng": "136.21389022",
+        "name": "ベル前"
+      },
+      {
+        "id": "STN_FUKUI_HANANDŌ",
+        "lat": "36.04093",
+        "lng": "136.2152",
+        "name": "花堂"
+      },
+      {
+        "id": "STN_FUKUI_SEKIJŪJIMAE",
+        "lat": "36.048715",
+        "lng": "136.21665",
+        "name": "赤十字前"
+      },
+      {
+        "id": "STN_FUKUI_SHŌKŌ_KAIGISHOMAE",
+        "lat": "36.05461158",
+        "lng": "136.21489842",
+        "name": "商工会議所前"
+      },
+      {
+        "id": "STN_FUKUI_ASUWAYAMA_KŌENGUCHI",
+        "lat": "36.05766317",
+        "lng": "136.215046",
+        "name": "足羽山公園口"
+      },
+      {
+        "id": "STN_FUKUI_FUKUI_JŌSHI_DAIMYŌMACHI",
+        "lat": "36.06390685",
+        "lng": "136.21761242",
+        "name": "福井城址大名町"
+      },
+      {
+        "id": "STN_FUKUI_FUKUI_EKI",
+        "lat": "36.06210936",
+        "lng": "136.22216768",
+        "name": "福井駅"
+      },
+      {
+        "id": "STN_FUKUI_JIN_AI_JOSHI_KŌKŌ",
+        "lat": "36.0687377",
+        "lng": "136.21797865",
+        "name": "仁愛女子高校"
+      },
+      {
+        "id": "STN_FUKUI_TAWARAMACHI",
+        "lat": "36.07478435",
+        "lng": "136.2173392",
+        "name": "田原町"
+      }
+    ]
+  }
+]

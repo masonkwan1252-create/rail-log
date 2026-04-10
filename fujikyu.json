@@ -1,0 +1,150 @@
+[
+  {
+    "categories": "",
+    "company_id": "FUJIKYU",
+    "company_name": "富士山麓電気鉄道",
+    "lines": [
+      {
+        "id": "FUJIKYU_OTSUKI",
+        "name": "大月線",
+        "sequence": [
+          "STN_FUJIKYU_OTSUKI",
+          "STN_FUJIKYU_KAMI_OTSUKI",
+          "STN_FUJIKYU_TANOKURA",
+          "STN_FUJIKYU_KASEI",
+          "STN_FUJIKYU_AKASAKA",
+          "STN_FUJIKYU_TSURUSHI",
+          "STN_FUJIKYU_YAMAMURA_MACHI",
+          "STN_FUJIKYU_TSURU_BUNKA_DAIGAKUMAE",
+          "STN_FUJIKYU_TOKAICHIBA",
+          "STN_FUJIKYU_HIGASHI_KATSURA",
+          "STN_FUJIKYU_MITSUTOGE",
+          "STN_FUJIKYU_KOTOBUKI",
+          "STN_FUJIKYU_YOSHIIKE_ONSENMAE",
+          "STN_FUJIKYU_SHIMO_YOSHIDA",
+          "STN_FUJIKYU_GEKKOJI",
+          "STN_FUJIKYU_FUJISAN"
+        ]
+      },
+      {
+        "id": "FUJIKYU_KAWAGUCHIKO",
+        "name": "河口湖線",
+        "sequence": [
+          "STN_FUJIKYU_FUJISAN",
+          "STN_FUJIKYU_FUJIKYU_HIGHLAND",
+          "STN_FUJIKYU_KAWAGUCHIKO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_FUJIKYU_ŌTSUKI",
+        "lat": "35.612675",
+        "lng": "138.941945",
+        "name": "大月"
+      },
+      {
+        "id": "STN_FUJIKYU_KAMI_ŌTSUKI",
+        "lat": "35.6094",
+        "lng": "138.93807",
+        "name": "上大月"
+      },
+      {
+        "id": "STN_FUJIKYU_TANOKURA",
+        "lat": "35.593475",
+        "lng": "138.931205",
+        "name": "田野倉"
+      },
+      {
+        "id": "STN_FUJIKYU_KASEI",
+        "lat": "35.575195",
+        "lng": "138.92924",
+        "name": "禾生"
+      },
+      {
+        "id": "STN_FUJIKYU_AKASAKA",
+        "lat": "35.56608847",
+        "lng": "138.91601788",
+        "name": "赤坂"
+      },
+      {
+        "id": "STN_FUJIKYU_TSURUSHI",
+        "lat": "35.5572039",
+        "lng": "138.90752726",
+        "name": "都留市"
+      },
+      {
+        "id": "STN_FUJIKYU_YAMAMURA_MACHI",
+        "lat": "35.55062763",
+        "lng": "138.9045397",
+        "name": "谷村町"
+      },
+      {
+        "id": "STN_FUJIKYU_TSURU_BUNKA_DAIGAKUMAE",
+        "lat": "35.54263171",
+        "lng": "138.89656767",
+        "name": "都留文科大学前"
+      },
+      {
+        "id": "STN_FUJIKYU_TŌKAICHIBA",
+        "lat": "35.53887",
+        "lng": "138.887465",
+        "name": "十日市場"
+      },
+      {
+        "id": "STN_FUJIKYU_HIGASHI_KATSURA",
+        "lat": "35.536245",
+        "lng": "138.87045",
+        "name": "東桂"
+      },
+      {
+        "id": "STN_FUJIKYU_MITSUTŌGE",
+        "lat": "35.52422249",
+        "lng": "138.84557189",
+        "name": "三つ峠"
+      },
+      {
+        "id": "STN_FUJIKYU_KOTOBUKI",
+        "lat": "35.50845",
+        "lng": "138.82557",
+        "name": "寿"
+      },
+      {
+        "id": "STN_FUJIKYU_YOSHIIKE_ONSENMAE",
+        "lat": "35.50203321",
+        "lng": "138.81207243",
+        "name": "葭池温泉前"
+      },
+      {
+        "id": "STN_FUJIKYU_SHIMO_YOSHIDA",
+        "lat": "35.497965",
+        "lng": "138.803765",
+        "name": "下吉田"
+      },
+      {
+        "id": "STN_FUJIKYU_GEKKŌJI",
+        "lat": "35.49314682",
+        "lng": "138.79797123",
+        "name": "月江寺"
+      },
+      {
+        "id": "STN_FUJIKYU_FUJISAN",
+        "lat": "35.48358667",
+        "lng": "138.79512435",
+        "name": "富士山"
+      },
+      {
+        "id": "STN_FUJIKYU_FUJIKYŪ_HIGHLAND",
+        "lat": "35.48933155",
+        "lng": "138.78209712",
+        "name": "富士急ハイランド"
+      },
+      {
+        "id": "STN_FUJIKYU_KAWAGUCHIKO",
+        "lat": "35.49798",
+        "lng": "138.76938",
+        "name": "河口湖"
+      }
+    ]
+  }
+]

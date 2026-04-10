@@ -1,0 +1,94 @@
+[
+  {
+    "categories": "",
+    "company_id": "AKECHI",
+    "company_name": "明知鉄道",
+    "lines": [
+      {
+        "id": "AKECHI_LINE",
+        "name": "明知線",
+        "sequence": [
+          "STN_AKECHI_ENA",
+          "STN_AKECHI_HIGASHINO",
+          "STN_AKECHI_IINUMA",
+          "STN_AKECHI_AGI",
+          "STN_AKECHI_IBA_MA",
+          "STN_AKECHI_GOKURAKU",
+          "STN_AKECHI_IWAMURA",
+          "STN_AKECHI_HANASHIRO_ONSEN",
+          "STN_AKECHI_YAMAOKA",
+          "STN_AKECHI_NOSHI",
+          "STN_AKECHI_AKECHI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_AKECHI_ENA",
+        "lat": "35.45509",
+        "lng": "137.407795",
+        "name": "恵那"
+      },
+      {
+        "id": "STN_AKECHI_HIGASHINO",
+        "lat": "35.446265",
+        "lng": "137.428815",
+        "name": "東野"
+      },
+      {
+        "id": "STN_AKECHI_IINUMA",
+        "lat": "35.4186",
+        "lng": "137.461345",
+        "name": "飯沼"
+      },
+      {
+        "id": "STN_AKECHI_AGI",
+        "lat": "35.399595",
+        "lng": "137.45913",
+        "name": "阿木"
+      },
+      {
+        "id": "STN_AKECHI_IBA_MA",
+        "lat": "35.387225",
+        "lng": "137.437485",
+        "name": "飯羽間"
+      },
+      {
+        "id": "STN_AKECHI_GOKURAKU",
+        "lat": "35.379659",
+        "lng": "137.432512",
+        "name": "極楽"
+      },
+      {
+        "id": "STN_AKECHI_IWAMURA",
+        "lat": "35.36862",
+        "lng": "137.434185",
+        "name": "岩村"
+      },
+      {
+        "id": "STN_AKECHI_HANASHIRO_ONSEN",
+        "lat": "35.355022",
+        "lng": "137.407285",
+        "name": "花白温泉"
+      },
+      {
+        "id": "STN_AKECHI_YAMAOKA",
+        "lat": "35.35015",
+        "lng": "137.395705",
+        "name": "山岡"
+      },
+      {
+        "id": "STN_AKECHI_NOSHI",
+        "lat": "35.322157",
+        "lng": "137.389323",
+        "name": "野志"
+      },
+      {
+        "id": "STN_AKECHI_AKECHI",
+        "lat": "35.30596972",
+        "lng": "137.38725407",
+        "name": "明智"
+      }
+    ]
+  }
+]

@@ -1,4 +1,25 @@
 [
+{ "id":"TRN_AKECHI_10","company_id":"AKECHI","name":"アケチ10形","variants":[] },
+{ "id":"TRN_AKECHI_100","company_id":"AKECHI","name":"アケチ100形","variants":[] },
+{ "id":"TRN_NAGANO_1000","company_id":"NAGANO","name":"1000系","variants":[] },
+{ "id":"TRN_NAGANO_2100","company_id":"NAGANO","name":"2100系","variants":[] },
+{ "id":"TRN_NAGANO_8500","company_id":"NAGANO","name":"8500系","variants":[] },
+{ "id":"TRN_NAGANO_3000","company_id":"NAGANO","name":"3000系","variants":[] },
+{ "id":"TRN_SHINANO_SR1","company_id":"SHINANO","name":"SR1系","variants":[] },
+{ "id":"TRN_SHINANO_115","company_id":"SHINANO","name":"115系","variants":[] },
+{ "id":"TRN_UEDADENTETSU_1000","company_id":"UEDADENTETSU","name":"1000系","variants":[] },
+{ "id":"TRN_UEDADENTETSU_6000","company_id":"UEDADENTETSU","name":"6000系","variants":[] },
+{ "id":"TRN_ALPICO_20100","company_id":"ALPICO","name":"20100形","variants":[] },
+{ "id":"TRN_FUJIKYU_8500","company_id":"FUJIKYU","name":"8500系","variants":[] },
+{ "id":"TRN_FUJIKYU_8000","company_id":"FUJIKYU","name":"8000系","variants":[] },
+{ "id":"TRN_FUJIKYU_6000","company_id":"FUJIKYU","name":"6000系","variants":[] },
+{ "id":"TRN_FUJIKYU_1000","company_id":"FUJIKYU","name":"1000系","variants":[] },
+{ "id":"TRN_FUKUI_F2000","company_id":"FUKUI","name":"F2000形","variants":[] },
+{ "id":"TRN_FUKUI_F1000","company_id":"FUKUI","name":"F1000形","variants":[] },
+{ "id":"TRN_FUKUI_880","company_id":"FUKUI","name":"880形","variants":[] },
+{ "id":"TRN_FUKUI_770","company_id":"FUKUI","name":"770形","variants":[] },
+{ "id":"TRN_FUKUI_F10","company_id":"FUKUI","name":"F10形","variants":[] },
+{ "id":"TRN_FUKUI_200","company_id":"FUKUI","name":"200形","variants":[] },
 { "id":"TRN_HAPI_521","company_id":"HAPI","name":"521系","variants":[] },
 { "id":"TRN_ECHIZEN_MC5001","company_id":"ECHIZEN","name":"MC5001形","variants":[] },
 { "id":"TRN_ECHIZEN_MC6001","company_id":"ECHIZEN","name":"MC6001形","variants":[] },
@@ -1859,74 +1880,74 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1000 ",
-    "name": "1000系 ",
+    "id": "TRN_KINTETSU_1000",
+    "name": "1000系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1010 ",
-    "name": "1010系 ",
+    "id": "TRN_KINTETSU_1010",
+    "name": "1010系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1020 ",
-    "name": "1020系 ",
+    "id": "TRN_KINTETSU_1020",
+    "name": "1020系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1021 ",
-    "name": "1021系 ",
+    "id": "TRN_KINTETSU_1021",
+    "name": "1021系" ,
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1026 ",
-    "name": "1026系 ",
+    "id": "TRN_KINTETSU_1026",
+    "name": "1026系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1031 ",
-    "name": "1031系 ",
+    "id": "TRN_KINTETSU_1031",
+    "name": "1031系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1200 ",
-    "name": "1200系 ",
+    "id": "TRN_KINTETSU_1200",
+    "name": "1200系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1201 ",
-    "name": "1201系 ",
+    "id": "TRN_KINTETSU_1201",
+    "name": "1201系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1220 ",
-    "name": "1220系 ",
+    "id": "TRN_KINTETSU_1220",
+    "name": "1220系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1230 ",
-    "name": "1230系 ",
+    "id": "TRN_KINTETSU_1230",
+    "name": "1230系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1233 ",
-    "name": "1233系 ",
+    "id": "TRN_KINTETSU_1233",
+    "name": "1233系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1240 ",
-    "name": "1240系 ",
+    "id": "TRN_KINTETSU_1240",
+    "name": "1240系",
     "variants": []
   },
   {
@@ -1937,80 +1958,80 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1249 ",
-    "name": "1249系 ",
+    "id": "TRN_KINTETSU_1249",
+    "name": "1249系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1252 ",
-    "name": "1252系 ",
+    "id": "TRN_KINTETSU_1252",
+    "name": "1252系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1253 ",
-    "name": "1253系 ",
+    "id": "TRN_KINTETSU_1253",
+    "name": "1253系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1254 ",
-    "name": "1254系 ",
+    "id": "TRN_KINTETSU_1254",
+    "name": "1254系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1259 ",
-    "name": "1259系 ",
+    "id": "TRN_KINTETSU_1259",
+    "name": "1259系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1400 ",
-    "name": "1400系 ",
+    "id": "TRN_KINTETSU_1400",
+    "name": "1400系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1420 ",
-    "name": "1420系 ",
+    "id": "TRN_KINTETSU_1420",
+    "name": "1420系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1422 ",
-    "name": "1422系 ",
+    "id": "TRN_KINTETSU_1422",
+    "name": "1422系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1430 ",
-    "name": "1430系 ",
+    "id": "TRN_KINTETSU_1430",
+    "name": "1430系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1435 ",
-    "name": "1435系 ",
+    "id": "TRN_KINTETSU_1435",
+    "name": "1435系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1436 ",
-    "name": "1436系 ",
+    "id": "TRN_KINTETSU_1436",
+    "name": "1436系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1440 ",
-    "name": "1440系 ",
+    "id": "TRN_KINTETSU_1440",
+    "name": "1440系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1473 ",
-    "name": "1473系 ",
+    "id": "TRN_KINTETSU_1473",
+    "name": "1473系",
     "variants": []
   },
   {
@@ -2021,8 +2042,8 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1620 ",
-    "name": "1620系 ",
+    "id": "TRN_KINTETSU_1620",
+    "name": "1620系",
     "variants": []
   },
   {
@@ -2045,8 +2066,8 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_1800 ",
-    "name": "1800系 ",
+    "id": "TRN_KINTETSU_1800",
+    "name": "1800系",
     "variants": []
   },
   {
@@ -2063,8 +2084,8 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_2000 ",
-    "name": "2000系 ",
+    "id": "TRN_KINTETSU_2000",
+    "name": "2000系",
     "variants": []
   },
   {
@@ -2075,8 +2096,8 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_2050 ",
-    "name": "2050系 ",
+    "id": "TRN_KINTETSU_2050",
+    "name": "2050系",
     "variants": []
   },
   {
@@ -2201,67 +2222,67 @@
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6020 ",
-    "name": "6020系 ",
+    "id": "TRN_KINTETSU_6020",
+    "name": "6020系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6200 ",
-    "name": "6200系 ",
+    "id": "TRN_KINTETSU_6200",
+    "name": "6200系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6400 ",
-    "name": "6400系 ",
+    "id": "TRN_KINTETSU_6400",
+    "name": "6400系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6407 ",
-    "name": "6407系 ",
+    "id": "TRN_KINTETSU_6407",
+    "name": "6407系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6413 ",
-    "name": "6413系 ",
+    "id": "TRN_KINTETSU_6413",
+    "name": "6413系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6419 ",
-    "name": "6419系 ",
+    "id": "TRN_KINTETSU_6419",
+    "name": "6419系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6422 ",
-    "name": "6422系 ",
+    "id": "TRN_KINTETSU_6422",
+    "name": "6422系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6432 ",
-    "name": "6432系 ",
+    "id": "TRN_KINTETSU_6432",
+    "name": "6432系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6600 ",
-    "name": "6600系 ",
+    "id": "TRN_KINTETSU_6600",
+    "name": "6600系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6620 ",
-    "name": "6620系 ",
+    "id": "TRN_KINTETSU_6620",
+    "name": "6620系",
     "variants": []
   },
   {
     "company_id": "KINTETSU",
-    "id": "TRN_KINTETSU_6820 ",
+    "id": "TRN_KINTETSU_6820",
     "name": "6820系 ",
     "variants": []
   },
@@ -2435,38 +2456,32 @@
   },
   {
     "company_id": "HANSHIN",
-    "id": "TRN_HANSHIN_5700 ",
-    "name": "5700系 ",
+    "id": "TRN_HANSHIN_5700",
+    "name": "5700系",
     "variants": []
   },
   {
     "company_id": "HANSHIN",
-    "id": "TRN_HANSHIN_1000 ",
-    "name": "1000系 ",
+    "id": "TRN_HANSHIN_1000",
+    "name": "1000系",
     "variants": []
   },
   {
     "company_id": "HANSHIN",
-    "id": "TRN_HANSHIN_9000 ",
-    "name": "9000系 ",
+    "id": "TRN_HANSHIN_9000",
+    "name": "9000系",
     "variants": []
   },
   {
     "company_id": "HANSHIN",
-    "id": "TRN_HANSHIN_9000 ",
-    "name": "9000系 ",
+    "id": "TRN_HANSHIN_8000",
+    "name": "8000系",
     "variants": []
   },
   {
     "company_id": "HANSHIN",
-    "id": "TRN_HANSHIN_8000 ",
-    "name": "8000系 ",
-    "variants": []
-  },
-  {
-    "company_id": "HANSHIN",
-    "id": "TRN_HANSHIN_5500 ",
-    "name": "5500系 ",
+    "id": "TRN_HANSHIN_5500",
+    "name": "5500系",
     "variants": []
   },
   {

@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "",
+    "company_id": "UEDADENTETSU",
+    "company_name": "上田電鉄",
+    "lines": [
+      {
+        "id": "UEDADENTETSU_BESSHO",
+        "name": "別所線",
+        "sequence": [
+          "STN_UEDADENTETSU_UEDA",
+          "STN_UEDADENTETSU_SHIROSHITA",
+          "STN_UEDADENTETSU_MIYOSHICHO",
+          "STN_UEDADENTETSU_AKASAKAUE",
+          "STN_UEDADENTETSU_UEDA_HARA",
+          "STN_UEDADENTETSU_TERASHITA",
+          "STN_UEDADENTETSU_KABATAKE",
+          "STN_UEDADENTETSU_DAIGAKUMAE",
+          "STN_UEDADENTETSU_SHIMONOGO",
+          "STN_UEDADENTETSU_NAKASHIODA",
+          "STN_UEDADENTETSU_SHIODAMACHI",
+          "STN_UEDADENTETSU_NAKANO",
+          "STN_UEDADENTETSU_MAIDA",
+          "STN_UEDADENTETSU_YAGISAWA",
+          "STN_UEDADENTETSU_BESSHO_ONSEN"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_UEDADENTETSU_UEDA",
+        "lat": "36.39677279",
+        "lng": "138.24850822",
+        "name": "上田"
+      },
+      {
+        "id": "STN_UEDADENTETSU_SHIROSHITA",
+        "lat": "36.39244",
+        "lng": "138.24253351",
+        "name": "城下"
+      },
+      {
+        "id": "STN_UEDADENTETSU_MIYOSHICHŌ",
+        "lat": "36.3917246",
+        "lng": "138.23554783",
+        "name": "三好町"
+      },
+      {
+        "id": "STN_UEDADENTETSU_AKASAKAUE",
+        "lat": "36.39140669",
+        "lng": "138.22717089",
+        "name": "赤坂上"
+      },
+      {
+        "id": "STN_UEDADENTETSU_UEDA_HARA",
+        "lat": "36.39046008",
+        "lng": "138.22167554",
+        "name": "上田原"
+      },
+      {
+        "id": "STN_UEDADENTETSU_TERASHITA",
+        "lat": "36.383895",
+        "lng": "138.216315",
+        "name": "寺下"
+      },
+      {
+        "id": "STN_UEDADENTETSU_KABATAKE",
+        "lat": "36.377845",
+        "lng": "138.216945",
+        "name": "神畑"
+      },
+      {
+        "id": "STN_UEDADENTETSU_DAIGAKUMAE",
+        "lat": "36.37121885",
+        "lng": "138.21508168",
+        "name": "大学前"
+      },
+      {
+        "id": "STN_UEDADENTETSU_SHIMONOGŌ",
+        "lat": "36.36335263",
+        "lng": "138.21723735",
+        "name": "下之郷"
+      },
+      {
+        "id": "STN_UEDADENTETSU_NAKASHIODA",
+        "lat": "36.3631867",
+        "lng": "138.20468173",
+        "name": "中塩田"
+      },
+      {
+        "id": "STN_UEDADENTETSU_SHIODAMACHI",
+        "lat": "36.36103378",
+        "lng": "138.1984438",
+        "name": "塩田町"
+      },
+      {
+        "id": "STN_UEDADENTETSU_NAKANO",
+        "lat": "36.36063638",
+        "lng": "138.19331945",
+        "name": "中野"
+      },
+      {
+        "id": "STN_UEDADENTETSU_MAIDA",
+        "lat": "36.35976963",
+        "lng": "138.18293601",
+        "name": "舞田"
+      },
+      {
+        "id": "STN_UEDADENTETSU_YAGISAWA",
+        "lat": "36.35850568",
+        "lng": "138.17568462",
+        "name": "八木沢"
+      },
+      {
+        "id": "STN_UEDADENTETSU_BESSHO_ONSEN",
+        "lat": "36.35313148",
+        "lng": "138.16180187",
+        "name": "別所温泉"
+      }
+    ]
+  }
+]

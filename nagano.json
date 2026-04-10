@@ -1,0 +1,185 @@
+[
+  {
+    "categories": "",
+    "company_id": "NAGANO",
+    "company_name": "長野電鉄",
+    "lines": [
+      {
+        "id": "NAGANO_LINE",
+        "name": "長野線",
+        "sequence": [
+          "STN_NAGANO_NAGANO",
+          "STN_NAGANO_SHIYAKUSHOMAE",
+          "STN_NAGANO_GONDO",
+          "STN_NAGANO_ZENKOJISHITA",
+          "STN_NAGANO_HONGO",
+          "STN_NAGANO_KIRIHARA",
+          "STN_NAGANO_SHINANO_YOSHIDA",
+          "STN_NAGANO_ASAHI",
+          "STN_NAGANO_FUZOKU_CHUGAKUMAE",
+          "STN_NAGANO_YANAGIHARA",
+          "STN_NAGANO_MURAYAMA",
+          "STN_NAGANO_HINO",
+          "STN_NAGANO_SUZAKA",
+          "STN_NAGANO_KITA_SUZAKA",
+          "STN_NAGANO_OBUSE",
+          "STN_NAGANO_TSUZUMI",
+          "STN_NAGANO_SAKURAZAWA",
+          "STN_NAGANO_ENTOKU",
+          "STN_NAGANO_SHINSHU_NAKANO",
+          "STN_NAGANO_NAKANO_MATSUKAWA",
+          "STN_NAGANO_SHINANO_TAKEHARA",
+          "STN_NAGANO_YOMASE",
+          "STN_NAGANO_KAMIJO",
+          "STN_NAGANO_YUDANAKA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "STN_NAGANO_NAGANO",
+        "lat": "36.64453584",
+        "lng": "138.18874639",
+        "name": "長野"
+      },
+      {
+        "id": "STN_NAGANO_SHIYAKUSHOMAE",
+        "lat": "36.64810894",
+        "lng": "138.19111937",
+        "name": "市役所前"
+      },
+      {
+        "id": "STN_NAGANO_GONDŌ",
+        "lat": "36.65325631",
+        "lng": "138.19196918",
+        "name": "権堂"
+      },
+      {
+        "id": "STN_NAGANO_ZENKŌJISHITA",
+        "lat": "36.65838554",
+        "lng": "138.19350901",
+        "name": "善光寺下"
+      },
+      {
+        "id": "STN_NAGANO_HONGŌ",
+        "lat": "36.66261",
+        "lng": "138.204095",
+        "name": "本郷"
+      },
+      {
+        "id": "STN_NAGANO_KIRIHARA",
+        "lat": "36.66567",
+        "lng": "138.213065",
+        "name": "桐原"
+      },
+      {
+        "id": "STN_NAGANO_SHINANO_YOSHIDA",
+        "lat": "36.66744",
+        "lng": "138.22092",
+        "name": "信濃吉田"
+      },
+      {
+        "id": "STN_NAGANO_ASAHI",
+        "lat": "36.6663152",
+        "lng": "138.24086273",
+        "name": "朝陽"
+      },
+      {
+        "id": "STN_NAGANO_FUZOKU_CHŪGAKUMAE",
+        "lat": "36.662835",
+        "lng": "138.2479",
+        "name": "附属中学前"
+      },
+      {
+        "id": "STN_NAGANO_YANAGIHARA",
+        "lat": "36.66351423",
+        "lng": "138.25834439",
+        "name": "柳原"
+      },
+      {
+        "id": "STN_NAGANO_MURAYAMA",
+        "lat": "36.6592317",
+        "lng": "138.28009332",
+        "name": "村山"
+      },
+      {
+        "id": "STN_NAGANO_HINO",
+        "lat": "36.65588147",
+        "lng": "138.28882162",
+        "name": "日野"
+      },
+      {
+        "id": "STN_NAGANO_SUZAKA",
+        "lat": "36.65695101",
+        "lng": "138.30424657",
+        "name": "須坂"
+      },
+      {
+        "id": "STN_NAGANO_KITA_SUZAKA",
+        "lat": "36.67783385",
+        "lng": "138.30876749",
+        "name": "北須坂"
+      },
+      {
+        "id": "STN_NAGANO_OBUSE",
+        "lat": "36.69899",
+        "lng": "138.312785",
+        "name": "小布施"
+      },
+      {
+        "id": "STN_NAGANO_TSUZUMI",
+        "lat": "36.70411483",
+        "lng": "138.32215949",
+        "name": "都住"
+      },
+      {
+        "id": "STN_NAGANO_SAKURAZAWA",
+        "lat": "36.71245163",
+        "lng": "138.34940779",
+        "name": "桜沢"
+      },
+      {
+        "id": "STN_NAGANO_ENTOKU",
+        "lat": "36.72709829",
+        "lng": "138.36264235",
+        "name": "延徳"
+      },
+      {
+        "id": "STN_NAGANO_SHINSHŪ_NAKANO",
+        "lat": "36.74466165",
+        "lng": "138.36481856",
+        "name": "信州中野"
+      },
+      {
+        "id": "STN_NAGANO_NAKANO_MATSUKAWA",
+        "lat": "36.75060859",
+        "lng": "138.3742439",
+        "name": "中野松川"
+      },
+      {
+        "id": "STN_NAGANO_SHINANO_TAKEHARA",
+        "lat": "36.76102433",
+        "lng": "138.3935598",
+        "name": "信濃竹原"
+      },
+      {
+        "id": "STN_NAGANO_YOMASE",
+        "lat": "36.75997",
+        "lng": "138.40334",
+        "name": "夜間瀬"
+      },
+      {
+        "id": "STN_NAGANO_KAMIJŌ",
+        "lat": "36.7496199",
+        "lng": "138.40752897",
+        "name": "上条"
+      },
+      {
+        "id": "STN_NAGANO_YUDANAKA",
+        "lat": "36.74161399",
+        "lng": "138.41477956",
+        "name": "湯田中"
+      }
+    ]
+  }
+]
