@@ -1,0 +1,49 @@
+[
+  {
+    "categories": "",
+    "company_id": "IZUKYU",
+    "company_name": "伊豆急行",
+    "lines": [
+     {
+  "id": "IZUKYU_LINE",
+  "name": "伊豆急行線",
+  "sequence": [
+    "STN_IZUKYU_ITO",
+    "STN_IZUKYU_MINAMI_ITO",
+    "STN_IZUKYU_KAWANA",
+    "STN_IZUKYU_FUTO",
+    "STN_IZUKYU_JOGSAKI_KAIGAN",
+    "STN_IZUKYU_IZU_KOGEN",
+    "STN_IZUKYU_IZU_OKAWA",
+    "STN_IZUKYU_IZU_HOKKAWA",
+    "STN_IZUKYU_IZU_ATAGAWA",
+    "STN_IZUKYU_KATASE_SHIRADA",
+    "STN_IZUKYU_IZU_INATORI",
+    "STN_IZUKYU_IMAIHAMA_KAIGAN",
+    "STN_IZUKYU_KAWAZU",
+    "STN_IZUKYU_INAZUSA",
+    "STN_IZUKYU_RENDAIJI",
+    "STN_IZUKYU_IZUKYU_SHIMODA"
+  ]
+}
+    ],
+    "stations": [
+      { "name": "伊東", "id": "STN_IZUKYU_ITŌ", "lat": "34.974835", "lng": "139.092105" },
+{ "name": "南伊東", "id": "STN_IZUKYU_MINAMI_ITŌ", "lat": "34.957755", "lng": "139.088035" },
+{ "name": "川奈", "id": "STN_IZUKYU_KAWANA", "lat": "34.950885", "lng": "139.124835" },
+{ "name": "富戸", "id": "STN_IZUKYU_FUTO", "lat": "34.91004", "lng": "139.131685" },
+{ "name": "城ヶ崎海岸", "id": "STN_IZUKYU_JŌGSAKI_KAIGAN", "lat": "34.890129", "lng": "139.121873" },
+{ "name": "伊豆高原", "id": "STN_IZUKYU_IZU_KŌGEN", "lat": "34.87746", "lng": "139.108175" },
+{ "name": "伊豆大川", "id": "STN_IZUKYU_IZU_ŌKAWA", "lat": "34.84335", "lng": "139.07407" },
+{ "name": "伊豆北川", "id": "STN_IZUKYU_IZU_HOKKAWA", "lat": "34.827275", "lng": "139.075725" },
+{ "name": "伊豆熱川", "id": "STN_IZUKYU_IZU_ATAGAWA", "lat": "34.817082", "lng": "139.069293" },
+{ "name": "片瀬白田", "id": "STN_IZUKYU_KATASE_SHIRADA", "lat": "34.80185", "lng": "139.06122" },
+{ "name": "伊豆稲取", "id": "STN_IZUKYU_IZU_INATORI", "lat": "34.774555", "lng": "139.03737" },
+{ "name": "今井浜海岸", "id": "STN_IZUKYU_IMAIHAMA_KAIGAN", "lat": "34.753715", "lng": "139.00467" },
+{ "name": "河津", "id": "STN_IZUKYU_KAWAZU", "lat": "34.74744", "lng": "138.99591" },
+{ "name": "稲梓", "id": "STN_IZUKYU_INAZUSA", "lat": "34.72206", "lng": "138.9494" },
+{ "name": "蓮台寺", "id": "STN_IZUKYU_RENDAIJI", "lat": "34.699465", "lng": "138.94129" },
+{ "name": "伊豆急下田", "id": "STN_IZUKYU_IZUKYŪ_SHIMODA", "lat": "34.67969", "lng": "138.944285" }
+    ]
+  }
+]

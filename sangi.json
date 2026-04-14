@@ -1,0 +1,219 @@
+[
+  {
+    "categories": "",
+    "company_id": "SANGI",
+    "company_name": "三岐鉄道",
+    "lines": [
+      {
+        "id": "SANGI_LINE",
+        "name": "三岐線",
+        "sequence": [
+          "STN_SANGI_KINTETSU_TOMIDA",
+          "STN_SANGI_OYACHI",
+          "STN_SANGI_HEIZU",
+          "STN_SANGI_AKATSUKIGAKUEN_MAE",
+          "STN_SANGI_YAMAJO",
+          "STN_SANGI_HOBO",
+          "STN_SANGI_HOKUSEI_CHUO_KOEN_GUCHI",
+          "STN_SANGI_UMETOI",
+          "STN_SANGI_DAIAN",
+          "STN_SANGI_MISATO",
+          "STN_SANGI_NYUGAWA",
+          "STN_SANGI_ISE_HATTA",
+          "STN_SANGI_HIGASHI_FUJIWARA",
+          "STN_SANGI_NISHI_NOJIRI",
+          "STN_SANGI_NISHI_FUJIWARA"
+        ]
+      },
+      {
+        "id": "SANGI_HOKUSEI",
+        "name": "北勢線",
+        "sequence": [
+          "STN_SANGI_NISHI_KUWANA",
+          "STN_SANGI_UMAMICHI",
+          "STN_SANGI_NISHI_BESSYO",
+          "STN_SANGI_RENGEJI",
+          "STN_SANGI_ARAYOSHI",
+          "STN_SANGI_HOSHIKAWA",
+          "STN_SANGI_NANOWA",
+          "STN_SANGI_ANO",
+          "STN_SANGI_TOIN",
+          "STN_SANGI_OIZUMI",
+          "STN_SANGI_SOHARA",
+          "STN_SANGI_ASODA",
+          "STN_SANGI_AGEKI"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "近鉄富田",
+        "id": "STN_SANGI_KINTETSU_TOMIDA",
+        "lat": "35.00651407",
+        "lng": "136.64934172"
+      },
+      {
+        "name": "大矢知",
+        "id": "STN_SANGI_ŌYACHI",
+        "lat": "35.022145",
+        "lng": "136.633415"
+      },
+      {
+        "name": "平津",
+        "id": "STN_SANGI_HEIZU",
+        "lat": "35.02844",
+        "lng": "136.61843"
+      },
+      {
+        "name": "暁学園前",
+        "id": "STN_SANGI_AKATSUKIGAKUEN_MAE",
+        "lat": "35.03282",
+        "lng": "136.605955"
+      },
+      {
+        "name": "山城",
+        "id": "STN_SANGI_YAMAJŌ",
+        "lat": "35.035275",
+        "lng": "136.588355"
+      },
+      {
+        "name": "保々",
+        "id": "STN_SANGI_HOBO",
+        "lat": "35.046775",
+        "lng": "136.56592"
+      },
+      {
+        "name": "北勢中央公園口",
+        "id": "STN_SANGI_HOKUSEI_CHŪŌ_KŌEN_GUCHI",
+        "lat": "35.060605",
+        "lng": "136.566045"
+      },
+      {
+        "name": "梅戸井",
+        "id": "STN_SANGI_UMETOI",
+        "lat": "35.075055",
+        "lng": "136.557195"
+      },
+      {
+        "name": "大安",
+        "id": "STN_SANGI_DAIAN",
+        "lat": "35.091545",
+        "lng": "136.54576"
+      },
+      {
+        "name": "三里",
+        "id": "STN_SANGI_MISATO",
+        "lat": "35.10725",
+        "lng": "136.53833"
+      },
+      {
+        "name": "丹生川",
+        "id": "STN_SANGI_NYŪGAWA",
+        "lat": "35.122705",
+        "lng": "136.51954"
+      },
+      {
+        "name": "伊勢治田",
+        "id": "STN_SANGI_ISE_HATTA",
+        "lat": "35.132755",
+        "lng": "136.514745"
+      },
+      {
+        "name": "東藤原",
+        "id": "STN_SANGI_HIGASHI_FUJIWARA",
+        "lat": "35.14724684",
+        "lng": "136.49891162"
+      },
+      {
+        "name": "西野尻",
+        "id": "STN_SANGI_NISHI_NOJIRI",
+        "lat": "35.1639238",
+        "lng": "136.48824846"
+      },
+      {
+        "name": "西藤原",
+        "id": "STN_SANGI_NISHI_FUJIWARA",
+        "lat": "35.17010322",
+        "lng": "136.47836343"
+      },
+      {
+        "name": "西桑名",
+        "id": "STN_SANGI_NISHI_KUWANA",
+        "lat": "35.06584733",
+        "lng": "136.68395189"
+      },
+      {
+        "name": "馬道",
+        "id": "STN_SANGI_UMAMICHI",
+        "lat": "35.06068107",
+        "lng": "136.67648452"
+      },
+      {
+        "name": "西別所",
+        "id": "STN_SANGI_NISHI_BESSYO",
+        "lat": "35.05968279",
+        "lng": "136.66565348"
+      },
+      {
+        "name": "蓮花寺",
+        "id": "STN_SANGI_RENGEJI",
+        "lat": "35.05961135",
+        "lng": "136.65107678"
+      },
+      {
+        "name": "在良",
+        "id": "STN_SANGI_ARAYOSHI",
+        "lat": "35.06072848",
+        "lng": "136.64367217"
+      },
+      {
+        "name": "星川",
+        "id": "STN_SANGI_HOSHIKAWA",
+        "lat": "35.06440708",
+        "lng": "136.62985775"
+      },
+      {
+        "name": "七和",
+        "id": "STN_SANGI_NANOWA",
+        "lat": "35.06912",
+        "lng": "136.61549"
+      },
+      {
+        "name": "穴太",
+        "id": "STN_SANGI_ANO",
+        "lat": "35.0729095",
+        "lng": "136.60515295"
+      },
+      {
+        "name": "東員",
+        "id": "STN_SANGI_TŌIN",
+        "lat": "35.07810999",
+        "lng": "136.58729708"
+      },
+      {
+        "name": "大泉",
+        "id": "STN_SANGI_ŌIZUMI",
+        "lat": "35.09542409",
+        "lng": "136.5700282"
+      },
+      {
+        "name": "楚原",
+        "id": "STN_SANGI_SOHARA",
+        "lat": "35.11091337",
+        "lng": "136.56033334"
+      },
+      {
+        "name": "麻生田",
+        "id": "STN_SANGI_ASŌDA",
+        "lat": "35.13359",
+        "lng": "136.53561"
+      },
+      {
+        "name": "阿下喜",
+        "id": "STN_SANGI_AGEKI",
+        "lat": "35.14634124",
+        "lng": "136.51919588"
+      }
+    ]
+  }
+]

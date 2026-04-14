@@ -1,0 +1,233 @@
+[
+  {
+    "categories": "",
+    "company_id": "TOYOHASHI",
+    "company_name": "豊橋鉄道",
+    "lines": [
+      {
+        "id": "TOYOHASHI_ATSUMI",
+        "name": "渥美線",
+        "sequence": [
+          "STN_TOYOHASHI_SHIN_TOYOHASHI",
+          "STN_TOYOHASHI_YAGYUBASHI",
+          "STN_TOYOHASHI_KOIKE",
+          "STN_TOYOHASHI_AICHI_DAIGAKUMAE",
+          "STN_TOYOHASHI_MINAMI_SAKAE",
+          "STN_TOYOHASHI_TAKASHI",
+          "STN_TOYOHASHI_ASHIHARA",
+          "STN_TOYOHASHI_UEDA",
+          "STN_TOYOHASHI_MUKAIGAOKA",
+          "STN_TOYOHASHI_OSHIMIZU",
+          "STN_TOYOHASHI_OKITSU",
+          "STN_TOYOHASHI_SUGIYAMA",
+          "STN_TOYOHASHI_YAGUMADAI",
+          "STN_TOYOHASHI_TOSHIMA",
+          "STN_TOYOHASHI_KANBE",
+          "STN_TOYOHASHI_MIKAWA_TAHARA"
+        ]
+      },
+      {
+        "id": "TOYOHASHI_AZUMADA",
+        "name": "東田本線",
+        "sequence": [
+          "STN_TOYOHASHI_EKIMAE",
+          "STN_TOYOHASHI_EKIMAE_ODORI",
+          "STN_TOYOHASHI_SHINKAWA",
+          "STN_TOYOHASHI_FUDAGI",
+          "STN_TOYOHASHI_SHIYAKUSHOMAE",
+          "STN_TOYOHASHI_TOYOHASHI_KOENMAE",
+          "STN_TOYOHASHI_HIGASHI_HACHO",
+          "STN_TOYOHASHI_MAEHATA",
+          "STN_TOYOHASHI_AZUMADA_SAKAUE",
+          "STN_TOYOHASHI_AZUMADA",
+          "STN_TOYOHASHI_KEIRINJO_MAE",
+          "STN_TOYOHASHI_IHARA",
+          "STN_TOYOHASHI_AKAIWAGUCHI",
+          "STN_TOYOHASHI_UNDO_KOENMAE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "新豊橋",
+        "id": "STN_TOYOHASHI_SHIN_TOYOHASHI",
+        "lat": "34.76206363",
+        "lng": "137.38294995"
+      },
+      {
+        "name": "柳生橋",
+        "id": "STN_TOYOHASHI_YAGYŪBASHI",
+        "lat": "34.75477621",
+        "lng": "137.38856524"
+      },
+      {
+        "name": "小池",
+        "id": "STN_TOYOHASHI_KOIKE",
+        "lat": "34.74907197",
+        "lng": "137.3881024"
+      },
+      {
+        "name": "愛知大学前",
+        "id": "STN_TOYOHASHI_AICHI_DAIGAKUMAE",
+        "lat": "34.74165966",
+        "lng": "137.38568346"
+      },
+      {
+        "name": "南栄",
+        "id": "STN_TOYOHASHI_MINAMI_SAKAE",
+        "lat": "34.73557504",
+        "lng": "137.38550992"
+      },
+      {
+        "name": "高師",
+        "id": "STN_TOYOHASHI_TAKASHI",
+        "lat": "34.727105",
+        "lng": "137.38172"
+      },
+      {
+        "name": "芦原",
+        "id": "STN_TOYOHASHI_ASHIHARA",
+        "lat": "34.71799343",
+        "lng": "137.37979019"
+      },
+      {
+        "name": "植田",
+        "id": "STN_TOYOHASHI_UEDA",
+        "lat": "34.71108463",
+        "lng": "137.37329609"
+      },
+      {
+        "name": "向ヶ丘",
+        "id": "STN_TOYOHASHI_MUKAIGAOKA",
+        "lat": "34.7060932",
+        "lng": "137.36754228"
+      },
+      {
+        "name": "大清水",
+        "id": "STN_TOYOHASHI_ŌSHIMIZU",
+        "lat": "34.69609679",
+        "lng": "137.35917123"
+      },
+      {
+        "name": "老津",
+        "id": "STN_TOYOHASHI_OKITSU",
+        "lat": "34.69229713",
+        "lng": "137.33494211"
+      },
+      {
+        "name": "杉山",
+        "id": "STN_TOYOHASHI_SUGIYAMA",
+        "lat": "34.68031",
+        "lng": "137.320755"
+      },
+      {
+        "name": "やぐま台",
+        "id": "STN_TOYOHASHI_YAGUMADAI",
+        "lat": "34.67379",
+        "lng": "137.309145"
+      },
+      {
+        "name": "豊島",
+        "id": "STN_TOYOHASHI_TOSHIMA",
+        "lat": "34.667635",
+        "lng": "137.293695"
+      },
+      {
+        "name": "神戸",
+        "id": "STN_TOYOHASHI_KANBE",
+        "lat": "34.66826611",
+        "lng": "137.2783653"
+      },
+      {
+        "name": "三河田原",
+        "id": "STN_TOYOHASHI_MIKAWA_TAHARA",
+        "lat": "34.666935",
+        "lng": "137.269025"
+      },
+      {
+        "name": "駅前",
+        "id": "STN_TOYOHASHI_EKIMAE",
+        "lat": "34.76373223",
+        "lng": "137.38317313"
+      },
+      {
+        "name": "駅前大通",
+        "id": "STN_TOYOHASHI_EKIMAE_ŌDŌRI",
+        "lat": "34.76313802",
+        "lng": "137.38592171"
+      },
+      {
+        "name": "新川",
+        "id": "STN_TOYOHASHI_SHINKAWA",
+        "lat": "34.762905",
+        "lng": "137.38948"
+      },
+      {
+        "name": "札木",
+        "id": "STN_TOYOHASHI_FUDAGI",
+        "lat": "34.76601941",
+        "lng": "137.39028605"
+      },
+      {
+        "name": "市役所前",
+        "id": "STN_TOYOHASHI_SHIYAKUSHOMAE",
+        "lat": "34.76729098",
+        "lng": "137.39283213"
+      },
+      {
+        "name": "豊橋公園前",
+        "id": "STN_TOYOHASHI_TOYOHASHI_KŌENMAE",
+        "lat": "34.76673244",
+        "lng": "137.39563861"
+      },
+      {
+        "name": "東八町",
+        "id": "STN_TOYOHASHI_HIGASHI_HACHŌ",
+        "lat": "34.76586958",
+        "lng": "137.4005283"
+      },
+      {
+        "name": "前畑",
+        "id": "STN_TOYOHASHI_MAEHATA",
+        "lat": "34.76576263",
+        "lng": "137.40426058"
+      },
+      {
+        "name": "東田坂上",
+        "id": "STN_TOYOHASHI_AZUMADA_SAKAUE",
+        "lat": "34.76575075",
+        "lng": "137.40825326"
+      },
+      {
+        "name": "東田",
+        "id": "STN_TOYOHASHI_AZUMADA",
+        "lat": "34.76534943",
+        "lng": "137.41372267"
+      },
+      {
+        "name": "競輪場前",
+        "id": "STN_TOYOHASHI_KEIRINJŌ_MAE",
+        "lat": "34.7650761",
+        "lng": "137.41712228"
+      },
+      {
+        "name": "井原",
+        "id": "STN_TOYOHASHI_IHARA",
+        "lat": "34.76416477",
+        "lng": "137.4217606"
+      },
+      {
+        "name": "赤岩口",
+        "id": "STN_TOYOHASHI_AKAIWAGUCHI",
+        "lat": "34.76343513",
+        "lng": "137.42911849"
+      },
+      {
+        "name": "運動公園前",
+        "id": "STN_TOYOHASHI_UNDŌ_KŌENMAE",
+        "lat": "34.75859793",
+        "lng": "137.42233558"
+      }
+    ]
+  }
+]

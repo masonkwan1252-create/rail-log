@@ -1,0 +1,93 @@
+[
+  {
+    "categories": "",
+    "company_id": "YOKKAICHI",
+    "company_name": "四日市あすなろう鉄道",
+    "lines": [
+      {
+        "id": "YOKKAICHI_UTSUBE",
+        "name": "内部線",
+        "sequence": [
+          "STN_YOKKAICHI_ASUNARO_YOKKAICHI",
+          "STN_YOKKAICHI_AKAHORI",
+          "STN_YOKKAICHI_HINAGA",
+          "STN_YOKKAICHI_MINAMI_HINAGA",
+          "STN_YOKKAICHI_TOMARI",
+          "STN_YOKKAICHI_OIVAKE",
+          "STN_YOKKAICHI_OGOSO",
+          "STN_YOKKAICHI_UTSUBE"
+        ]
+      },
+      {
+        "id": "YOKKAICHI_HACHIOJI",
+        "name": "八王子線",
+        "sequence": [
+          "STN_YOKKAICHI_HINAGA",
+          "STN_YOKKAICHI_NISHI_HINO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "あすなろう四日市",
+        "id": "STN_YOKKAICHI_ASUNARŌ_YOKKAICHI",
+        "lat": "34.96585566",
+        "lng": "136.61827307"
+      },
+      {
+        "name": "赤堀",
+        "id": "STN_YOKKAICHI_AKAHORI",
+        "lat": "34.959225",
+        "lng": "136.610435"
+      },
+      {
+        "name": "日永",
+        "id": "STN_YOKKAICHI_HINAGA",
+        "lat": "34.95596",
+        "lng": "136.604355"
+      },
+      {
+        "name": "南日永",
+        "id": "STN_YOKKAICHI_MINAMI_HINAGA",
+        "lat": "34.949905",
+        "lng": "136.601025"
+      },
+      {
+        "name": "泊",
+        "id": "STN_YOKKAICHI_TOMARI",
+        "lat": "34.940405",
+        "lng": "136.598475"
+      },
+      {
+        "name": "追分",
+        "id": "STN_YOKKAICHI_OIVAKE",
+        "lat": "34.933915",
+        "lng": "136.596135"
+      },
+      {
+        "name": "小古曽",
+        "id": "STN_YOKKAICHI_OGOSO",
+        "lat": "34.928675",
+        "lng": "136.592245"
+      },
+      {
+        "name": "内部",
+        "id": "STN_YOKKAICHI_UTSUBE",
+        "lat": "34.925544",
+        "lng": "136.586956"
+      },
+      {
+        "name": "日永",
+        "id": "STN_YOKKAICHI_HINAGA",
+        "lat": "34.95596",
+        "lng": "136.604355"
+      },
+      {
+        "name": "西日野",
+        "id": "STN_YOKKAICHI_NISHI_HINO",
+        "lat": "34.95295",
+        "lng": "136.59119"
+      }
+    ]
+  }
+]

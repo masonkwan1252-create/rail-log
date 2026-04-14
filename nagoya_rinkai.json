@@ -1,0 +1,94 @@
+[
+  {
+    "categories": "",
+    "company_id": "NAGOYA_RINKAI",
+    "company_name": "名古屋臨海高速鉄道",
+    "lines": [
+      {
+        "id": "NAGOYA_RINKAI_AONAMI",
+        "name": "あおなみ線",
+        "sequence": [
+          "STN_NAGOYA_RINKAI_NAGOYA",
+          "STN_NAGOYA_RINKAI_SASASHIMA_RAIVE",
+          "STN_NAGOYA_RINKAI_KOMOTO",
+          "STN_NAGOYA_RINKAI_ARAKO",
+          "STN_NAGOYA_RINKAI_MINAMI_ARAKO",
+          "STN_NAGOYA_RINKAI_NAKAJIMA",
+          "STN_NAGOYA_RINKAI_KOHOKU",
+          "STN_NAGOYA_RINKAI_ARAKOGAWA_KOEN",
+          "STN_NAGOYA_RINKAI_INAEI",
+          "STN_NAGOYA_RINKAI_NOSEKI",
+          "STN_NAGOYA_RINKAI_KINJO_FUTO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "名古屋",
+        "id": "STN_NAGOYA_RINKAI_NAGOYA",
+        "lat": "35.16864",
+        "lng": "136.882582"
+      },
+      {
+        "name": "ささしまライブ",
+        "id": "STN_NAGOYA_RINKAI_SASASHIMA_RAIVE",
+        "lat": "35.162015",
+        "lng": "136.88192"
+      },
+      {
+        "name": "小本",
+        "id": "STN_NAGOYA_RINKAI_KOMOTO",
+        "lat": "35.149083",
+        "lng": "136.86145"
+      },
+      {
+        "name": "荒子",
+        "id": "STN_NAGOYA_RINKAI_ARAKO",
+        "lat": "35.14005",
+        "lng": "136.861935"
+      },
+      {
+        "name": "南荒子",
+        "id": "STN_NAGOYA_RINKAI_MINAMI_ARAKO",
+        "lat": "35.131635",
+        "lng": "136.861935"
+      },
+      {
+        "name": "中島",
+        "id": "STN_NAGOYA_RINKAI_NAKAJIMA",
+        "lat": "35.125185",
+        "lng": "136.86141"
+      },
+      {
+        "name": "港北",
+        "id": "STN_NAGOYA_RINKAI_KŌHOKU",
+        "lat": "35.114553",
+        "lng": "136.862769"
+      },
+      {
+        "name": "荒子川公園",
+        "id": "STN_NAGOYA_RINKAI_ARAKOGAWA_KŌEN",
+        "lat": "35.104505",
+        "lng": "136.861305"
+      },
+      {
+        "name": "稲永",
+        "id": "STN_NAGOYA_RINKAI_INAEI",
+        "lat": "35.09151",
+        "lng": "136.86336"
+      },
+      {
+        "name": "野跡",
+        "id": "STN_NAGOYA_RINKAI_NOSEKI",
+        "lat": "35.075325",
+        "lng": "136.85419"
+      },
+      {
+        "name": "金城ふ頭",
+        "id": "STN_NAGOYA_RINKAI_KINJŌ_FUTŌ",
+        "lat": "35.048885",
+        "lng": "136.849245"
+      }
+    ]
+  }
+]

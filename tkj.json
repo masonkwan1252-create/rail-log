@@ -1,0 +1,59 @@
+[
+  {
+    "categories": "",
+    "company_id": "TKJ",
+    "company_name": "JR東海交通事業",
+    "lines": [
+      {
+        "id": "TKJ_JOHOKU",
+        "name": "城北線",
+        "sequence": [
+          "STN_TKJ_KACHIGAWA",
+          "STN_TKJ_AJIYOSHI",
+          "STN_TKJ_HIRA",
+          "STN_TKJ_OTAI",
+          "STN_TKJ_OWARI_HOSHINOMIYA",
+          "STN_TKJ_BIWAJIMA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "勝川",
+        "id": "STN_TKJ_KACHIGAWA",
+        "lat": "35.228025",
+        "lng": "136.953335"
+      },
+      {
+        "name": "味美",
+        "id": "STN_TKJ_AJIYOSHI",
+        "lat": "35.22935",
+        "lng": "136.93234"
+      },
+      {
+        "name": "比良",
+        "id": "STN_TKJ_HIRA",
+        "lat": "35.2286",
+        "lng": "136.90293"
+      },
+      {
+        "name": "小田井",
+        "id": "STN_TKJ_OTAI",
+        "lat": "35.221275",
+        "lng": "136.880925"
+      },
+      {
+        "name": "尾張星の宮",
+        "id": "STN_TKJ_OWARI_HOSHINOMIYA",
+        "lat": "35.213005",
+        "lng": "136.855048"
+      },
+      {
+        "name": "枇杷島",
+        "id": "STN_TKJ_BIWAJIMA",
+        "lat": "35.19933007",
+        "lng": "136.86135295"
+      }
+    ]
+  }
+]

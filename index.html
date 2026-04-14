@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.20</title>
+<title>鉄道手帳 RAIL LOG V0.21</title>
 
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
@@ -12,7 +12,7 @@
 
 <style>
 /* =========================================
-   🟩 V0.20 E235系 真實感加強版樣式
+   🟩 V0.21 E235系 真實感加強版樣式
    ========================================= */
 #loading-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -136,6 +136,13 @@ h3 { margin-top: 0; font-size: 17px; font-weight: 600; border-bottom: 2px solid 
 label { display: block; font-size: 13px; color: var(--subtext); margin-bottom: 6px; margin-top: 12px; }
 input, select { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--input-bg); color: var(--text); appearance: none; outline: none; }
 input:focus { border-color: var(--primary); }
+input[type="checkbox"] {
+    appearance: auto;
+    -webkit-appearance: auto;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
 .input-wrapper { position: relative; display: flex; align-items: center; }
 .input-wrapper input { padding-right: 35px; } 
 .clear-input-btn { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 16px; color: #bbb; padding: 6px; margin: 0; width: auto; cursor: pointer; z-index: 10; }
@@ -216,13 +223,25 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     .destination-sign-frame { 
         border-color: #292929; 
         background: #fff3d2; /* 暖黃色背燈 */
-        box-shadow: inset 0 10px 15px rgba(0,0,0,0.85), inset 0 -10px 15px rgba(0,0,0,0.85), 0 0 20px rgba(255, 210, 120, 0.2); 
+        /* 淨係保留外圍嘅發光效果，內陰影交畀 ::after 處理 */
+        box-shadow: 0 0 20px rgba(255, 210, 120, 0.2); 
     }
-		/* 4. 確保所有內容 (包括通勤快速) 喺陰影層下面 */
+    
+    /* 新增：利用 ::after 建立一層完全覆蓋嘅內陰影，確保壓喺所有內容上面 */
+    .destination-sign-frame::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        box-shadow: inset 0 10px 15px rgba(0,0,0,0.85), inset 0 -10px 15px rgba(0,0,0,0.85);
+        pointer-events: none; /* 確保唔會阻擋你撳向上/下捲動 */
+        z-index: 10; /* 設定一個較高嘅層級 */
+    }
+
+    /* 4. 確保所有內容背景透明，同時移除之前推高 z-index 嘅設定 */
     .sign-panel, .sign-main-content, .sign-type-box, .out-of-service-panel {
         background: transparent !important;
         position: relative;
-        z-index: 1; 
+        /* 將原本嘅 z-index: 1 拎走，等佢乖乖留喺 ::after 嘅陰影層下面 */
     }
 }
 
@@ -297,7 +316,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     </header>
 
     <div id="saveMessage" class="toast-message">儲存成功！</div>
-    <div class="version-badge">V0.20</div>
+    <div class="version-badge">V0.21</div>
 
     <div class="container">
 
@@ -309,20 +328,20 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
                 <label>鉄道公司</label>
                 <div class="input-wrapper">
-                    <input id="company" list="companyList" placeholder="選擇或輸入公司" onclick="this.select()">
+                    <input id="company" list="companyList" placeholder="輸入公司" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
                 </div>
 
-                <label>路線 (實體路線)</label>
+                <label>路線</label>
                 <div class="input-wrapper">
-                    <input id="line" list="lineList" placeholder="選擇或輸入路線" onclick="this.select()">
+                    <input id="line" list="lineList" placeholder="輸入路線" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
                 </div>
 
                 <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
                 <div id="throughContainer"></div>
 
-                <label>種別 / 列車名 (運行系統)</label>
+                <label>種別 / 列車名 (運行系統)</label>6
                 <div class="input-wrapper">
                     <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
@@ -344,7 +363,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
                 <label>車型</label>
                 <div class="input-wrapper">
-                    <input id="train" list="trainList" placeholder="輸入車型 (按公司快速過濾)" onclick="this.select()">
+                    <input id="train" list="trainList" placeholder="輸入車型" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
                 </div>
 
@@ -475,7 +494,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 <script>
 // =========================================
-// V0.20 E235系 Loading 頁面控制邏輯
+// V0.21 E235系 Loading 頁面控制邏輯
 // =========================================
 document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById('e235-loader');
@@ -702,7 +721,7 @@ async function loadData() {
             "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
             "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
-            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json"]; 
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"]; 
         
         const fetchPromises = newCompanyFiles.map(file => 
             fetch(file).then(res => res.ok ? res.json() : null).catch(() => null)
@@ -738,7 +757,7 @@ async function loadData() {
         // 配合 JRE 動畫，將載入時間設為 1.8 秒
         setTimeout(hideLoadingScreen, 1800);
 		
-        // 【V0.20 修正】自動修復舊記錄錯誤的車型 ID (解決帶有括號的殘留數據)
+        // 【V0.21 修正】自動修復舊記錄錯誤的車型 ID (解決帶有括號的殘留數據)
         let dataModified = false;
         trips.forEach(t => {
             if (!maps.train[t.train_id]) {
@@ -863,7 +882,7 @@ function updateTrainDatalist() {
 }
 
 
-// 【V0.20 修正】車型搜尋及過濾邏輯
+// 【V0.21 修正】車型搜尋及過濾邏輯
 let trainFilterTimeout = null;
 document.getElementById("train").addEventListener("input", function() {
     clearTimeout(trainFilterTimeout);
@@ -1048,6 +1067,18 @@ function getCompName(id) { return maps.company[id]?.name || id; }
 function getLineName(id) { return maps.line[id]?.name || id; }
 function getStationName(id) { return maps.station[id]?.name || id; }
 function getTrainName(id) { return maps.train[id]?.name || id; }
+function getStatStationDisplay(id) {
+    const stn = maps.station[id];
+    if (!stn) return id;
+    
+    // 檢查資料庫入面有冇同名但唔同公司嘅車站
+    const hasDuplicate = db.stations.some(s => s.name === stn.name && s.company_id !== stn.company_id);
+    if (hasDuplicate) {
+        const compName = maps.company[stn.company_id]?.name || "";
+        return compName ? `${stn.name} (${compName})` : stn.name;
+    }
+    return stn.name;
+}
 
 function getTodayStr() {
     let d = new Date();
@@ -1229,9 +1260,12 @@ function renderStats() {
     trips.forEach(t => t.routes.forEach(r => allCompaniesSet.add(r.company_id)));
     document.getElementById("companyStatTitle").innerText = `鉄道公司 (${allCompaniesSet.size} 間)`;
     
+    // 1. 公司標籤排序
     const filterContainer = document.getElementById("filterCompanies");
     filterContainer.innerHTML = "";
-    Array.from(allCompaniesSet).forEach(compId => {
+    let sortedCompanies = Array.from(allCompaniesSet).sort((a, b) => getCompName(a).localeCompare(getCompName(b), 'ja'));
+    
+    sortedCompanies.forEach(compId => {
         const tag = document.createElement("span");
         tag.className = `tag ${activeStatFilter.type === 'company' && activeStatFilter.id === compId ? "active" : ""}`;
         if(activeStatFilter.type && !cSet.has(compId)) tag.style.opacity = "0.4";
@@ -1239,6 +1273,11 @@ function renderStats() {
         tag.onclick = () => setStatFilter('company', compId);
         filterContainer.appendChild(tag);
     });
+
+    // 2. 準備已排序嘅陣列 (路線、車型、車站)
+    let sortedLines = Array.from(lSet).sort((a, b) => getLineName(a).localeCompare(getLineName(b), 'ja'));
+    let sortedTrains = Array.from(tSet).sort((a, b) => getStatTrainDisplay(a, trips).localeCompare(getStatTrainDisplay(b, trips), 'ja'));
+    let sortedStations = Array.from(sSet).sort((a, b) => getStatStationDisplay(a).localeCompare(getStatStationDisplay(b), 'ja'));
 
     let completionText = "";
     if (activeStatFilter.type === 'company' && db.lines.length > 0) {
@@ -1249,22 +1288,23 @@ function renderStats() {
         }
     }
 
+    // 3. 更新 HTML 輸出 (套用已排序陣列及新車站名函數)
     const statsHTML = `
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已乘搭路線 (${lSet.size} 條) ${completionText}</div>
-            <div class="tags-container">${Array.from(lSet).map(id => 
+            <div class="tags-container">${sortedLines.map(id => 
                 `<span class="tag ${activeStatFilter.type === 'line' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('line', '${id}')">${getLineName(id)}</span>`
             ).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已乘搭車型 (${tSet.size} 款)</div>
-            <div class="tags-container">${Array.from(tSet).map(id => 
+            <div class="tags-container">${sortedTrains.map(id => 
                 `<span class="tag ${activeStatFilter.type === 'train' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('train', '${id}')">${getStatTrainDisplay(id, trips)}</span>`
             ).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已造訪車站 (${sSet.size} 個)</div>
-            <div class="tags-container">${Array.from(sSet).map(id => `<span class="tag">${getStationName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
+            <div class="tags-container">${sortedStations.map(id => `<span class="tag">${getStatStationDisplay(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         ${activeStatFilter.type ? `<button class="btn-small btn-clear-stats" onclick="setStatFilter(null, null)">清除所有篩選</button>` : ''}
     `;
@@ -1296,7 +1336,14 @@ function drawBarChart() {
         });
     }
 
-    let sortedArray = Object.entries(counts).sort((a,b) => b[1] - a[1]).slice(0, 10);
+    // 加入次要字母排序，並替換車站名顯示
+    let sortedArray = Object.entries(counts).sort((a,b) => {
+        if (b[1] !== a[1]) return b[1] - a[1];
+        let nameA = currentChartType === 'company' ? getCompName(a[0]) : getStatStationDisplay(a[0]);
+        let nameB = currentChartType === 'company' ? getCompName(b[0]) : getStatStationDisplay(b[0]);
+        return nameA.localeCompare(nameB, 'ja');
+    }).slice(0, 10);
+
     if (sortedArray.length === 0) {
         container.innerHTML = "<div style='text-align:center; font-size:13px; color:var(--subtext);'>暫無資料</div>";
         return;
@@ -1305,8 +1352,10 @@ function drawBarChart() {
     let maxVal = sortedArray[0][1];
 
     sortedArray.forEach(item => {
-        let name = currentChartType === 'company' ? getCompName(item[0]) : getStationName(item[0]);
+        // 呢度換成 getStatStationDisplay
+        let name = currentChartType === 'company' ? getCompName(item[0]) : getStatStationDisplay(item[0]);
         let val = item[1];
+        // ... 後面不變
         let pct = (val / maxVal) * 100;
         
         const row = document.createElement("div");
@@ -1381,7 +1430,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.20.json"; a.click();
+    a.download = "rail-log-V0.21.json"; a.click();
 }
 
 function importData() {

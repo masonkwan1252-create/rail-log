@@ -1,0 +1,71 @@
+[
+  {
+    "categories": "",
+    "company_id": "YORO",
+    "company_name": "養老鉄道",
+    "lines": [
+      {
+  "id": "YORO_LINE",
+  "name": "養老線",
+  "sequence": [
+    "STN_YORO_KUWANA",
+    "STN_YORO_HARIMA",
+    "STN_YORO_SHIMOFUKAYA",
+    "STN_YORO_SHIMONOSHIRO",
+    "STN_YORO_TADO",
+    "STN_YORO_MINO_MATSUYAMA",
+    "STN_YORO_ISHIZU",
+    "STN_YORO_MINO_YAMAZAKI",
+    "STN_YORO_KOMANO",
+    "STN_YORO_MINO_TSUYA",
+    "STN_YORO_YORO",
+    "STN_YORO_MINO_TAKADA",
+    "STN_YORO_KARASUE",
+    "STN_YORO_OTOBA",
+    "STN_YORO_TOMOE",
+    "STN_YORO_MINO_YANAGI",
+    "STN_YORO_NISHI_OGAKI",
+    "STN_YORO_OGAKI",
+    "STN_YORO_MURO",
+    "STN_YORO_KITA_OGAKI",
+    "STN_YORO_HIGASHI_AKASAKA",
+    "STN_YORO_HIROGODO",
+    "STN_YORO_KITAGODO",
+    "STN_YORO_IKENO",
+    "STN_YORO_KITA_IKENO",
+    "STN_YORO_MINO_HONGO",
+    "STN_YORO_IBI"
+  ]
+}
+    ],
+    "stations": [
+      { "name": "桑名", "id": "STN_YORO_KUWANA", "lat": "35.066975", "lng": "136.683375" },
+{ "name": "播磨", "id": "STN_YORO_HARIMA", "lat": "35.078266", "lng": "136.674624" },
+{ "name": "下深谷", "id": "STN_YORO_SHIMOFUKAYA", "lat": "35.096057", "lng": "136.661554" },
+{ "name": "下野代", "id": "STN_YORO_SHIMONOSHIRO", "lat": "35.115879", "lng": "136.647237" },
+{ "name": "多度", "id": "STN_YORO_TADO", "lat": "35.133875", "lng": "136.64064" },
+{ "name": "美濃松山", "id": "STN_YORO_MINO_MATSUYAMA", "lat": "35.160907", "lng": "136.632683" },
+{ "name": "石津", "id": "STN_YORO_ISHIZU", "lat": "35.180457", "lng": "136.627496" },
+{ "name": "美濃山崎", "id": "STN_YORO_MINO_YAMAZAKI", "lat": "35.198786", "lng": "136.621528" },
+{ "name": "駒野", "id": "STN_YORO_KOMANO", "lat": "35.223693", "lng": "136.603613" },
+{ "name": "美濃津屋", "id": "STN_YORO_MINO_TSUYA", "lat": "35.251371", "lng": "136.566749" },
+{ "name": "養老", "id": "STN_YORO_YŌRŌ", "lat": "35.286769", "lng": "136.556841" },
+{ "name": "美濃高田", "id": "STN_YORO_MINO_TAKADA", "lat": "35.309072", "lng": "136.563616" },
+{ "name": "烏江", "id": "STN_YORO_KARASUE", "lat": "35.30554", "lng": "136.591741" },
+{ "name": "大外羽", "id": "STN_YORO_ŌTOBA", "lat": "35.31502", "lng": "136.597415" },
+{ "name": "友江", "id": "STN_YORO_TOMOE", "lat": "35.326448", "lng": "136.6007" },
+{ "name": "美濃青柳", "id": "STN_YORO_MINO_YANAGI", "lat": "35.343615", "lng": "136.60388" },
+{ "name": "西大垣", "id": "STN_YORO_NISHI_ŌGAKI", "lat": "35.36025937", "lng": "136.60326492" },
+{ "name": "大垣", "id": "STN_YORO_ŌGAKI", "lat": "35.366666", "lng": "136.616557" },
+{ "name": "室", "id": "STN_YORO_MURO", "lat": "35.367266", "lng": "136.60622" },
+{ "name": "北大垣", "id": "STN_YORO_KITA_ŌGAKI", "lat": "35.37534", "lng": "136.601906" },
+{ "name": "東赤坂", "id": "STN_YORO_HIGASHI_AKASAKA", "lat": "35.394158", "lng": "136.60098" },
+{ "name": "広神戸", "id": "STN_YORO_HIROGŌDO", "lat": "35.419763", "lng": "136.602139" },
+{ "name": "北神戸", "id": "STN_YORO_KITAGŌDO", "lat": "35.430056", "lng": "136.594468" },
+{ "name": "池野", "id": "STN_YORO_IKENO", "lat": "35.436507", "lng": "136.578687" },
+{ "name": "北池野", "id": "STN_YORO_KITA_IKENO", "lat": "35.443391", "lng": "136.573715" },
+{ "name": "美濃本郷", "id": "STN_YORO_MINO_HONGŌ", "lat": "35.449918", "lng": "136.571801" },
+{ "name": "揖斐", "id": "STN_YORO_IBI", "lat": "35.470287", "lng": "136.572506" }
+    ]
+  }
+]

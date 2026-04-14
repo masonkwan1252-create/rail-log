@@ -1,0 +1,73 @@
+[
+  {
+    "categories": "",
+    "company_id": "enshu",
+    "company_name": "伊豆箱根鉄道",
+    "lines": [
+     {
+  "id": "IZUHAKONE_SUNZU",
+  "name": "駿豆線",
+  "sequence": [
+    "STN_IZUHAKONE_MISHIMA",
+    "STN_IZUHAKONE_MISHIMA_HIROKOJI",
+    "STN_IZUHAKONE_MISHIMA_TAMACHI",
+    "STN_IZUHAKONE_MISHIMA_FUTSUKAMACHI",
+    "STN_IZUHAKONE_DAIBA",
+    "STN_IZUHAKONE_IZU_NITTA",
+    "STN_IZUHAKONE_BARAKI",
+    "STN_IZUHAKONE_NIRAYAMA",
+    "STN_IZUHAKONE_IZU_NAGAAOKA",
+    "STN_IZUHAKONE_TAKYO",
+    "STN_IZUHAKONE_OHITO",
+    "STN_IZUHAKONE_MAKINOGO",
+    "STN_IZUHAKONE_SHUZENJI"
+  ]
+},
+{
+  "id": "IZUHAKONE_DAIYUZAN",
+  "name": "大雄山線",
+  "sequence": [
+    "STN_IZUHAKONE_ODAWARA",
+    "STN_IZUHAKONE_MIDORICHO",
+    "STN_IZUHAKONE_ISAIDA",
+    "STN_IZUHAKONE_GOHAKURAKAN",
+    "STN_IZUHAKONE_ANABE",
+    "STN_IZUHAKONE_IIDAOKA",
+    "STN_IZUHAKONE_SAGAMI_NUMATA",
+    "STN_IZUHAKONE_IWAHARA",
+    "STN_IZUHAKONE_TSUKAHARA",
+    "STN_IZUHAKONE_WADAGAHARA",
+    "STN_IZUHAKONE_FUJIFILM_MAE",
+    "STN_IZUHAKONE_DAIYUZAN"
+  ]
+}
+    ],
+    "stations": [
+      { "name": "三島", "id": "STN_IZUKYU_MISHIMA", "lat": "35.12591064", "lng": "138.91091098" },
+{ "name": "三島広小路", "id": "STN_IZUKYU_MISHIMA_HIROKŌJI", "lat": "35.119345", "lng": "138.911215" },
+{ "name": "三島田町", "id": "STN_IZUKYU_MISHIMA_TAMACHI", "lat": "35.116263", "lng": "138.918519" },
+{ "name": "三島二日町", "id": "STN_IZUKYU_MISHIMA_FUTSUKAMACHI", "lat": "35.11103", "lng": "138.925935" },
+{ "name": "大場", "id": "STN_IZUKYU_DAIBA", "lat": "35.0922", "lng": "138.93938" },
+{ "name": "伊豆仁田", "id": "STN_IZUKYU_IZU_NITTA", "lat": "35.078755", "lng": "138.941565" },
+{ "name": "原木", "id": "STN_IZUKYU_BARAKI", "lat": "35.06549", "lng": "138.943705" },
+{ "name": "韮山", "id": "STN_IZUKYU_NIRAYAMA", "lat": "35.053285", "lng": "138.94552" },
+{ "name": "伊豆長岡", "id": "STN_IZUKYU_IZU_NAGAAOKA", "lat": "35.039805", "lng": "138.94751" },
+{ "name": "田京", "id": "STN_IZUKYU_TAKYO", "lat": "35.014565", "lng": "138.945775" },
+{ "name": "大仁", "id": "STN_IZUKYU_ŌHITO", "lat": "34.994365", "lng": "138.93746" },
+{ "name": "牧之郷", "id": "STN_IZUKYU_MAKINOGŌ", "lat": "34.988855", "lng": "138.95442" },
+{ "name": "修善寺", "id": "STN_IZUKYU_SHUZENJI", "lat": "34.97927", "lng": "138.95097" },
+{ "name": "小田原", "id": "STN_IZUKYU_ODAWARA", "lat": "35.25644455", "lng": "139.1564291" },
+{ "name": "緑町", "id": "STN_IZUKYU_MIDORICHŌ", "lat": "35.25928115", "lng": "139.15868979" },
+{ "name": "井細田", "id": "STN_IZUKYU_ISAIDA", "lat": "35.26897", "lng": "139.157395" },
+{ "name": "五百羅漢", "id": "STN_IZUKYU_GOHAKURAKAN", "lat": "35.275165", "lng": "139.15556" },
+{ "name": "穴部", "id": "STN_IZUKYU_ANABE", "lat": "35.27986", "lng": "139.14878" },
+{ "name": "飯田岡", "id": "STN_IZUKYU_IIDAOKA", "lat": "35.287905", "lng": "139.13932" },
+{ "name": "相模沼田", "id": "STN_IZUKYU_SAGAMI_NUMATA", "lat": "35.292345", "lng": "139.133905" },
+{ "name": "岩原", "id": "STN_IZUKYU_IWAHARA", "lat": "35.29883", "lng": "139.12881" },
+{ "name": "塚原", "id": "STN_IZUKYU_TSUKAHARA", "lat": "35.301345", "lng": "139.12672" },
+{ "name": "和田河原", "id": "STN_IZUKYU_WADAGAHARA", "lat": "35.315954", "lng": "139.118211" },
+{ "name": "富士フイルム前", "id": "STN_IZUKYU_FUJIFILM_MAE", "lat": "35.317704", "lng": "139.109505" },
+{ "name": "大雄山", "id": "STN_IZUKYU_DAIYŪZAN", "lat": "35.319045", "lng": "139.103711" }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "categories": "",
+    "company_id": "TARUMI",
+    "company_name": "樽見鉄道",
+    "lines": [
+      {
+  "id": "TARUMI_LINE",
+  "name": "樽見線",
+  "sequence": [
+    "STN_TARUMI_OGAKI",
+    "STN_TARUMI_HIGASHI_OGAKI",
+    "STN_TARUMI_YOKOYA",
+    "STN_TARUMI_JUKUJO",
+    "STN_TARUMI_MIEJI",
+    "STN_TARUMI_KITAGATA_MAKUWA",
+    "STN_TARUMI_MALERA_GIFU",
+    "STN_TARUMI_ITONUKI",
+    "STN_TARUMI_MOTOSU",
+    "STN_TARUMI_ORIBE",
+    "STN_TARUMI_KOCHIBORA",
+    "STN_TARUMI_TANIGUMIGUCHI",
+    "STN_TARUMI_KOMI",
+    "STN_TARUMI_TAKASHINA",
+    "STN_TARUMI_NABERA",
+    "STN_TARUMI_HINATA",
+    "STN_TARUMI_TAKEO",
+    "STN_TARUMI_MIDORI",
+    "STN_TARUMI_TARUMI"
+  ]
+}
+    ],
+    "stations": [
+      { "name": "大垣", "id": "STN_TARUMI_ŌGAKI", "lat": "35.367093", "lng": "136.618264" },
+{ "name": "東大垣", "id": "STN_TARUMI_HIGASHI_ŌGAKI", "lat": "35.37539", "lng": "136.64662" },
+{ "name": "横屋", "id": "STN_TARUMI_YOKOYA", "lat": "35.38693", "lng": "136.65956" },
+{ "name": "十九条", "id": "STN_TARUMI_JŪKŪJŌ", "lat": "35.39574", "lng": "136.66103" },
+{ "name": "美江寺", "id": "STN_TARUMI_MIEJI", "lat": "35.413375", "lng": "136.66147" },
+{ "name": "北方真桑", "id": "STN_TARUMI_KITAGATA_MAKÜWA", "lat": "35.43982", "lng": "136.674" },
+{ "name": "モレラ岐阜", "id": "STN_TARUMI_MALERA_GIFU", "lat": "35.45494", "lng": "136.66971" },
+{ "name": "糸貫", "id": "STN_TARUMI_ITONUKI", "lat": "35.463175", "lng": "136.66977" },
+{ "name": "本巣", "id": "STN_TARUMI_MOTOSU", "lat": "35.4879", "lng": "136.669895" },
+{ "name": "織部", "id": "STN_TARUMI_ORIBE", "lat": "35.499645", "lng": "136.66709" },
+{ "name": "木知原", "id": "STN_TARUMI_KOCHIBORA", "lat": "35.517955", "lng": "136.64967" },
+{ "name": "谷汲口", "id": "STN_TARUMI_TANIGUMIGUCHI", "lat": "35.527182", "lng": "136.642159" },
+{ "name": "神海", "id": "STN_TARUMI_KŌMI", "lat": "35.54277", "lng": "136.641375" },
+{ "name": "高科", "id": "STN_TARUMI_TAKASHINA", "lat": "35.55573", "lng": "136.640175" },
+{ "name": "鍋原", "id": "STN_TARUMI_NABERA", "lat": "35.5658", "lng": "136.636655" },
+{ "name": "日当", "id": "STN_TARUMI_HINATA", "lat": "35.582285", "lng": "136.63159" },
+{ "name": "高尾", "id": "STN_TARUMI_TAKEO", "lat": "35.601795", "lng": "136.625855" },
+{ "name": "水鳥", "id": "STN_TARUMI_MIDORI", "lat": "35.61749", "lng": "136.620825" },
+{ "name": "樽見", "id": "STN_TARUMI_TARUMI", "lat": "35.635165", "lng": "136.6158" }
+    ]
+  }
+]

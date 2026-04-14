@@ -1,0 +1,87 @@
+[
+  {
+    "categories": "",
+    "company_id": "GAKUNAN",
+    "company_name": "岳南電車",
+    "lines": [
+      {
+        "id": "GAKUNAN_LINE",
+        "name": "岳南鉄道線",
+        "sequence": [
+          "STN_GAKUNAN_YOSHIWARA",
+          "STN_GAKUNAN_JATCO_MAE",
+          "STN_GAKUNAN_YOSHIWARA_HONCHO",
+          "STN_GAKUNAN_HON_YOSHIWARA",
+          "STN_GAKUNAN_GAKUNAN_HARADA",
+          "STN_GAKUNAN_HINA",
+          "STN_GAKUNAN_GAKUNAN_FUJIOKA",
+          "STN_GAKUNAN_SUDO",
+          "STN_GAKUNAN_KAMIYA",
+          "STN_GAKUNAN_GAKUNAN_ENOO"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "吉原",
+        "id": "STN_GAKUNAN_YOSHIWARA",
+        "lat": "35.14433471",
+        "lng": "138.70125681"
+      },
+      {
+        "name": "ジヤトコ前",
+        "id": "STN_GAKUNAN_JATCO_MAE",
+        "lat": "35.15776",
+        "lng": "138.69004"
+      },
+      {
+        "name": "吉原本町",
+        "id": "STN_GAKUNAN_YOSHIWARA_HONCHŌ",
+        "lat": "35.16077",
+        "lng": "138.68973"
+      },
+      {
+        "name": "本吉原",
+        "id": "STN_GAKUNAN_HON_YOSHIWARA",
+        "lat": "35.16197",
+        "lng": "138.69281"
+      },
+      {
+        "name": "岳南原田",
+        "id": "STN_GAKUNAN_GAKUNAN_HARADA",
+        "lat": "35.16597018",
+        "lng": "138.70567689"
+      },
+      {
+        "name": "比奈",
+        "id": "STN_GAKUNAN_HINA",
+        "lat": "35.16148",
+        "lng": "138.713625"
+      },
+      {
+        "name": "岳南富士岡",
+        "id": "STN_GAKUNAN_GAKUNAN_FUJIOKA",
+        "lat": "35.16100487",
+        "lng": "138.72337133"
+      },
+      {
+        "name": "須津",
+        "id": "STN_GAKUNAN_SUDO",
+        "lat": "35.16051245",
+        "lng": "138.734136"
+      },
+      {
+        "name": "神谷",
+        "id": "STN_GAKUNAN_KAMIYA",
+        "lat": "35.16098",
+        "lng": "138.74302"
+      },
+      {
+        "name": "岳南江尾",
+        "id": "STN_GAKUNAN_GAKUNAN_ENOO",
+        "lat": "35.155245",
+        "lng": "138.75183"
+      }
+    ]
+  }
+]

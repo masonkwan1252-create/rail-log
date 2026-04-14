@@ -1,0 +1,290 @@
+[
+  {
+    "categories": "",
+    "company_id": "TENRYU",
+    "company_name": "天竜浜名湖鉄道",
+    "lines": [
+      {
+        "id": "TENRYU_HAMANAKO",
+        "name": "天竜浜名湖線",
+        "sequence": [
+          "STN_TENRYU_KAKEGAWA",
+          "STN_TENRYU_KAKEGAWA_SHIYAKUSHOMAE",
+          "STN_TENRYU_NISHI_KAKEGAWA",
+          "STN_TENRYU_SAKURAGI",
+          "STN_TENRYU_IKOINO_HIROBA",
+          "STN_TENRYU_HOSOYA",
+          "STN_TENRYU_HARANAYA",
+          "STN_TENRYU_HARADA",
+          "STN_TENRYU_TOWATA",
+          "STN_TENRYU_ENSHU_MORI",
+          "STN_TENRYU_MORIMACHI_BYOINMAE",
+          "STN_TENRYU_ENDEN",
+          "STN_TENRYU_TOTOMI_ICHINOMIYA",
+          "STN_TENRYU_SHIKJI",
+          "STN_TENRYU_TOYOOKA",
+          "STN_TENRYU_KAMINOBE",
+          "STN_TENRYU_TENRYU_FUTAMATA",
+          "STN_TENRYU_FUTAMATA_HONCHO",
+          "STN_TENRYU_NISHI_KAJIMA",
+          "STN_TENRYU_GANSUIJI",
+          "STN_TENRYU_MIYAGUCHI",
+          "STN_TENRYU_FRUIT_PARK",
+          "STN_TENRYU_MIYAKODA",
+          "STN_TENRYU_TOKOHA_DAIGAKUMAE",
+          "STN_TENRYU_KANASASHI",
+          "STN_TENRYU_OKACHI",
+          "STN_TENRYU_KIGA",
+          "STN_TENRYU_NISHI_KIGA",
+          "STN_TENRYU_SUNZA",
+          "STN_TENRYU_HAMANAKO_SAKUME",
+          "STN_TENRYU_HIGASHI_TSUZUKI",
+          "STN_TENRYU_TSUZUKI",
+          "STN_TENRYU_MIKKABI",
+          "STN_TENRYU_OKU_HAMANAKO",
+          "STN_TENRYU_ONA",
+          "STN_TENRYU_CHIBATA",
+          "STN_TENRYU_OMORI",
+          "STN_TENRYU_ASUMO_MAE",
+          "STN_TENRYU_SHIN_JOHARA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "掛川",
+        "id": "STN_TENRYU_KAKEGAWA",
+        "lat": "34.769407",
+        "lng": "138.014565"
+      },
+      {
+        "name": "掛川市役所前",
+        "id": "STN_TENRYU_KAKEGAWA_SHIYAKUSHOMAE",
+        "lat": "34.77034",
+        "lng": "138.00006"
+      },
+      {
+        "name": "西掛川",
+        "id": "STN_TENRYU_NISHI_KAKEGAWA",
+        "lat": "34.77199",
+        "lng": "137.99506"
+      },
+      {
+        "name": "桜木",
+        "id": "STN_TENRYU_SAKURAGI",
+        "lat": "34.77824",
+        "lng": "137.972735"
+      },
+      {
+        "name": "いこいの広場",
+        "id": "STN_TENRYU_IKOINO_HIROBA",
+        "lat": "34.788085",
+        "lng": "137.9638"
+      },
+      {
+        "name": "細谷",
+        "id": "STN_TENRYU_HOSOYA",
+        "lat": "34.79275",
+        "lng": "137.961635"
+      },
+      {
+        "name": "原谷",
+        "id": "STN_TENRYU_HARANAYA",
+        "lat": "34.80831599",
+        "lng": "137.95496308"
+      },
+      {
+        "name": "原田",
+        "id": "STN_TENRYU_HARADA",
+        "lat": "34.82017",
+        "lng": "137.952895"
+      },
+      {
+        "name": "戸綿",
+        "id": "STN_TENRYU_TOWATA",
+        "lat": "34.83131109",
+        "lng": "137.9310066"
+      },
+      {
+        "name": "遠州森",
+        "id": "STN_TENRYU_ENSHŪ_MORI",
+        "lat": "34.8310021",
+        "lng": "137.92408607"
+      },
+      {
+        "name": "森町病院前",
+        "id": "STN_TENRYU_MORIMACHI_BYŌINMAE",
+        "lat": "34.82612822",
+        "lng": "137.91771685"
+      },
+      {
+        "name": "円田",
+        "id": "STN_TENRYU_ENDEN",
+        "lat": "34.820814",
+        "lng": "137.907538"
+      },
+      {
+        "name": "遠江一宮",
+        "id": "STN_TENRYU_TŌTŌMI_ICHINOMIYA",
+        "lat": "34.818086",
+        "lng": "137.889094"
+      },
+      {
+        "name": "敷地",
+        "id": "STN_TENRYU_SHIKJI",
+        "lat": "34.826595",
+        "lng": "137.86414"
+      },
+      {
+        "name": "豊岡",
+        "id": "STN_TENRYU_TOYOOKA",
+        "lat": "34.83715",
+        "lng": "137.83976"
+      },
+      {
+        "name": "上野部",
+        "id": "STN_TENRYU_KAMINOBE",
+        "lat": "34.84746807",
+        "lng": "137.82999593"
+      },
+      {
+        "name": "天竜二俣",
+        "id": "STN_TENRYU_TENRYŪ_FUTAMATA",
+        "lat": "34.85923252",
+        "lng": "137.82007822"
+      },
+      {
+        "name": "二俣本町",
+        "id": "STN_TENRYU_FUTAMATA_HONCHŌ",
+        "lat": "34.8594",
+        "lng": "137.812765"
+      },
+      {
+        "name": "西鹿島",
+        "id": "STN_TENRYU_NISHI_KAJIMA",
+        "lat": "34.84690148",
+        "lng": "137.80795676"
+      },
+      {
+        "name": "岩水寺",
+        "id": "STN_TENRYU_GANSUIJI",
+        "lat": "34.837705",
+        "lng": "137.79258"
+      },
+      {
+        "name": "宮口",
+        "id": "STN_TENRYU_MIYAGUCHI",
+        "lat": "34.83045",
+        "lng": "137.77375"
+      },
+      {
+        "name": "フルーツパーク",
+        "id": "STN_TENRYU_FRUIT_PARK",
+        "lat": "34.83449402",
+        "lng": "137.73226808"
+      },
+      {
+        "name": "都田",
+        "id": "STN_TENRYU_MIYAKODA",
+        "lat": "34.82850693",
+        "lng": "137.71849334"
+      },
+      {
+        "name": "常葉大学前",
+        "id": "STN_TENRYU_TOKOHA_DAIGAKUMAE",
+        "lat": "34.82007588",
+        "lng": "137.70924594"
+      },
+      {
+        "name": "金指",
+        "id": "STN_TENRYU_KANASASHI",
+        "lat": "34.8169982",
+        "lng": "137.68100278"
+      },
+      {
+        "name": "岡地",
+        "id": "STN_TENRYU_OKACHI",
+        "lat": "34.81228",
+        "lng": "137.665673"
+      },
+      {
+        "name": "気賀",
+        "id": "STN_TENRYU_KIGA",
+        "lat": "34.8072",
+        "lng": "137.65195"
+      },
+      {
+        "name": "西気賀",
+        "id": "STN_TENRYU_NISHI_KIGA",
+        "lat": "34.802366",
+        "lng": "137.621588"
+      },
+      {
+        "name": "寸座",
+        "id": "STN_TENRYU_SUNZA",
+        "lat": "34.790066",
+        "lng": "137.612529"
+      },
+      {
+        "name": "浜名湖佐久米",
+        "id": "STN_TENRYU_HAMANAKO_SAKUME",
+        "lat": "34.78915044",
+        "lng": "137.5992999"
+      },
+      {
+        "name": "東都筑",
+        "id": "STN_TENRYU_HIGASHI_TSUZUKI",
+        "lat": "34.790435",
+        "lng": "137.58661"
+      },
+      {
+        "name": "都筑",
+        "id": "STN_TENRYU_TSUZUKI",
+        "lat": "34.795845",
+        "lng": "137.5745"
+      },
+      {
+        "name": "三ヶ日",
+        "id": "STN_TENRYU_MIKKABI",
+        "lat": "34.802565",
+        "lng": "137.55178"
+      },
+      {
+        "name": "奥浜名湖",
+        "id": "STN_TENRYU_OKU_HAMANAKO",
+        "lat": "34.795005",
+        "lng": "137.54587"
+      },
+      {
+        "name": "尾奈",
+        "id": "STN_TENRYU_ONA",
+        "lat": "34.783921",
+        "lng": "137.541721"
+      },
+      {
+        "name": "知波田",
+        "id": "STN_TENRYU_CHIBATA",
+        "lat": "34.75379001",
+        "lng": "137.51200163"
+      },
+      {
+        "name": "大森",
+        "id": "STN_TENRYU_ŌMORI",
+        "lat": "34.737868",
+        "lng": "137.509702"
+      },
+      {
+        "name": "アスモ前",
+        "id": "STN_TENRYU_ASUMO_MAE",
+        "lat": "34.72789",
+        "lng": "137.494165"
+      },
+      {
+        "name": "新所原",
+        "id": "STN_TENRYU_SHIN_JOHARA",
+        "lat": "34.72326",
+        "lng": "137.484455"
+      }
+    ]
+  }
+]

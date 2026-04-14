@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "",
+    "company_id": "IGA",
+    "company_name": "伊賀鉄道",
+    "lines": [
+      {
+        "id": "IGA_LINE",
+        "name": "伊賀線",
+        "sequence": [
+          "STN_IGA_IGA_UENO",
+          "STN_IGA_NII",
+          "STN_IGA_NISHI_OTE",
+          "STN_IGA_UENOSHI",
+          "STN_IGA_HIROKOJI",
+          "STN_IGA_KAYAMACHI",
+          "STN_IGA_KUWAMACHI",
+          "STN_IGA_SHIJUKU",
+          "STN_IGA_IDAMICHI",
+          "STN_IGA_ICHIBE",
+          "STN_IGA_INAKO",
+          "STN_IGA_MARUYAMA",
+          "STN_IGA_KAMIBAYASHI",
+          "STN_IGA_HIDO",
+          "STN_IGA_IGA_KANBE"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "伊賀上野",
+        "id": "STN_IGA_IGA_UENO",
+        "lat": "34.78895135",
+        "lng": "136.12279341"
+      },
+      {
+        "name": "新居",
+        "id": "STN_IGA_NII",
+        "lat": "34.786376",
+        "lng": "136.115895"
+      },
+      {
+        "name": "西大手",
+        "id": "STN_IGA_NISHI_ŌTE",
+        "lat": "34.766913",
+        "lng": "136.124662"
+      },
+      {
+        "name": "上野市",
+        "id": "STN_IGA_UENOSHI",
+        "lat": "34.767675",
+        "lng": "136.129441"
+      },
+      {
+        "name": "広小路",
+        "id": "STN_IGA_HIROKŌJI",
+        "lat": "34.76706425",
+        "lng": "136.13432914"
+      },
+      {
+        "name": "茅町",
+        "id": "STN_IGA_KAYAMACHI",
+        "lat": "34.761552",
+        "lng": "136.135697"
+      },
+      {
+        "name": "桑町",
+        "id": "STN_IGA_KUWAMACHI",
+        "lat": "34.754159",
+        "lng": "136.136604"
+      },
+      {
+        "name": "四十九",
+        "id": "STN_IGA_SHIJŪKU",
+        "lat": "34.74834614",
+        "lng": "136.13697001"
+      },
+      {
+        "name": "猪田道",
+        "id": "STN_IGA_IDAMICHI",
+        "lat": "34.73528446",
+        "lng": "136.14042146"
+      },
+      {
+        "name": "市部",
+        "id": "STN_IGA_ICHIBE",
+        "lat": "34.72623874",
+        "lng": "136.14868786"
+      },
+      {
+        "name": "依那古",
+        "id": "STN_IGA_INAKO",
+        "lat": "34.71559865",
+        "lng": "136.15307921"
+      },
+      {
+        "name": "丸山",
+        "id": "STN_IGA_MARUYAMA",
+        "lat": "34.70456667",
+        "lng": "136.15740626"
+      },
+      {
+        "name": "上林",
+        "id": "STN_IGA_KAMIBAYASHI",
+        "lat": "34.69494107",
+        "lng": "136.16127999"
+      },
+      {
+        "name": "比土",
+        "id": "STN_IGA_HIDO",
+        "lat": "34.676245",
+        "lng": "136.160627"
+      },
+      {
+        "name": "伊賀神戸",
+        "id": "STN_IGA_IGA_KANBE",
+        "lat": "34.67399",
+        "lng": "136.15207"
+      }
+    ]
+  }
+]

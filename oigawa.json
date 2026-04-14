@@ -1,0 +1,255 @@
+[
+  {
+    "categories": "",
+    "company_id": "OIGAWA",
+    "company_name": "大井川鐵道",
+    "lines": [
+      {
+        "id": "OIGAWA_HONSEN",
+        "name": "大井川本線",
+        "sequence": [
+          "STN_OIGAWA_KANAYA",
+          "STN_OIGAWA_SHIN_KANAYA",
+          "STN_OIGAWA_DAIKANCHO",
+          "STN_OIGAWA_HIGIRI",
+          "STN_OIGAWA_GOKAKU",
+          "STN_OIGAWA_KADODE",
+          "STN_OIGAWA_KAMIO",
+          "STN_OIGAWA_FUKUYO",
+          "STN_OIGAWA_OWADA",
+          "STN_OIGAWA_IEYAMA",
+          "STN_OIGAWA_NUKURI",
+          "STN_OIGAWA_KAWANE_ONSEN_SASAMADO",
+          "STN_OIGAWA_JINA",
+          "STN_OIGAWA_SHIOGO",
+          "STN_OIGAWA_SHIMOIZUMI",
+          "STN_OIGAWA_TANOKUCHI",
+          "STN_OIGAWA_SURUGA_TOKUYAMA",
+          "STN_OIGAWA_AOBE",
+          "STN_OIGAWA_SAKIDAIRA",
+          "STN_OIGAWA_SENZU"
+        ]
+      },
+      {
+        "id": "OIGAWA_IKAWA",
+        "name": "井川線",
+        "sequence": [
+          "STN_OIGAWA_SENZU",
+          "STN_OIGAWA_KAWANE_RYOGOKU",
+          "STN_OIGAWA_SAWAMA",
+          "STN_OIGAWA_TSUCHIMOTO",
+          "STN_OIGAWA_KAWANE_KOYAMA",
+          "STN_OIGAWA_OKUIZUMI",
+          "STN_OIGAWA_ABT_ICHISHIRO",
+          "STN_OIGAWA_NAGASHIMA_DAM",
+          "STN_OIGAWA_HIRANDA",
+          "STN_OIGAWA_OKU_OI_KOJO",
+          "STN_OIGAWA_SESSOKYO_ONSEN",
+          "STN_OIGAWA_OMORI",
+          "STN_OIGAWA_KANZO",
+          "STN_OIGAWA_IKAWA"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "金谷",
+        "id": "STN_OIGAWA_KANAYA",
+        "lat": "34.819235",
+        "lng": "138.125825"
+      },
+      {
+        "name": "新金谷",
+        "id": "STN_OIGAWA_SHIN_KANAYA",
+        "lat": "34.82574",
+        "lng": "138.13765"
+      },
+      {
+        "name": "代官町",
+        "id": "STN_OIGAWA_DAIKANCHŌ",
+        "lat": "34.835442",
+        "lng": "138.126135"
+      },
+      {
+        "name": "日切",
+        "id": "STN_OIGAWA_HIGIRI",
+        "lat": "34.838895",
+        "lng": "138.1225"
+      },
+      {
+        "name": "合格",
+        "id": "STN_OIGAWA_GOKAKU",
+        "lat": "34.844835",
+        "lng": "138.120835"
+      },
+      {
+        "name": "門出",
+        "id": "STN_OIGAWA_KADODE",
+        "lat": "34.85011936",
+        "lng": "138.11937797"
+      },
+      {
+        "name": "神尾",
+        "id": "STN_OIGAWA_KAMIO",
+        "lat": "34.88308",
+        "lng": "138.101735"
+      },
+      {
+        "name": "福用",
+        "id": "STN_OIGAWA_FUKUYŌ",
+        "lat": "34.901873",
+        "lng": "138.090129"
+      },
+      {
+        "name": "大和田",
+        "id": "STN_OIGAWA_ŌWADA",
+        "lat": "34.921095",
+        "lng": "138.082185"
+      },
+      {
+        "name": "家山",
+        "id": "STN_OIGAWA_IEYAMA",
+        "lat": "34.940075",
+        "lng": "138.07777"
+      },
+      {
+        "name": "抜里",
+        "id": "STN_OIGAWA_NUKURI",
+        "lat": "34.95338",
+        "lng": "138.087737"
+      },
+      {
+        "name": "川根温泉笹間渡",
+        "id": "STN_OIGAWA_KAWANE_ONSEN_SASAMADO",
+        "lat": "34.962295",
+        "lng": "138.086195"
+      },
+      {
+        "name": "地名",
+        "id": "STN_OIGAWA_JINA",
+        "lat": "34.98601",
+        "lng": "138.087294"
+      },
+      {
+        "name": "塩郷",
+        "id": "STN_OIGAWA_SHIOGŌ",
+        "lat": "34.997645",
+        "lng": "138.09065"
+      },
+      {
+        "name": "下泉",
+        "id": "STN_OIGAWA_SHIMOIZUMI",
+        "lat": "35.022125",
+        "lng": "138.09011"
+      },
+      {
+        "name": "田野口",
+        "id": "STN_OIGAWA_TANOKUCHI",
+        "lat": "35.05133",
+        "lng": "138.09548"
+      },
+      {
+        "name": "駿河徳山",
+        "id": "STN_OIGAWA_SURUGA_TOKUYAMA",
+        "lat": "35.074705",
+        "lng": "138.11055"
+      },
+      {
+        "name": "青部",
+        "id": "STN_OIGAWA_AOBE",
+        "lat": "35.089542",
+        "lng": "138.115485"
+      },
+      {
+        "name": "崎平",
+        "id": "STN_OIGAWA_SAKIDAIRA",
+        "lat": "35.09185",
+        "lng": "138.12747"
+      },
+      {
+        "name": "千頭",
+        "id": "STN_OIGAWA_SENZU",
+        "lat": "35.10777",
+        "lng": "138.136905"
+      },
+      {
+        "name": "川根両国",
+        "id": "STN_OIGAWA_KAWANE_RYŌGOKU",
+        "lat": "35.11681",
+        "lng": "138.14059"
+      },
+      {
+        "name": "沢間",
+        "id": "STN_OIGAWA_SAWAMA",
+        "lat": "35.12472",
+        "lng": "138.13436"
+      },
+      {
+        "name": "土本",
+        "id": "STN_OIGAWA_TSUCHIMOTO",
+        "lat": "35.13603",
+        "lng": "138.13917"
+      },
+      {
+        "name": "川根小山",
+        "id": "STN_OIGAWA_KAWANE_KOYAMA",
+        "lat": "35.141725",
+        "lng": "138.14104"
+      },
+      {
+        "name": "奥泉",
+        "id": "STN_OIGAWA_OKUIZUMI",
+        "lat": "35.14978",
+        "lng": "138.14778"
+      },
+      {
+        "name": "アプトいちしろ",
+        "id": "STN_OIGAWA_ABT_ICHISHIRO",
+        "lat": "35.16758",
+        "lng": "138.144665"
+      },
+      {
+        "name": "長島ダム",
+        "id": "STN_OIGAWA_NAGASHIMA_DAM",
+        "lat": "35.168935",
+        "lng": "138.157135"
+      },
+      {
+        "name": "ひらんだ",
+        "id": "STN_OIGAWA_HIRANDA",
+        "lat": "35.164885",
+        "lng": "138.16801"
+      },
+      {
+        "name": "奥大井湖上",
+        "id": "STN_OIGAWA_OKU_ŌI_KOJŌ",
+        "lat": "35.16796682",
+        "lng": "138.18087152"
+      },
+      {
+        "name": "接岨峡温泉",
+        "id": "STN_OIGAWA_SESSOKYŌ_ONSEN",
+        "lat": "35.178825",
+        "lng": "138.185285"
+      },
+      {
+        "name": "尾盛",
+        "id": "STN_OIGAWA_OMORI",
+        "lat": "35.19256175",
+        "lng": "138.17428757"
+      },
+      {
+        "name": "閑蔵",
+        "id": "STN_OIGAWA_KANZŌ",
+        "lat": "35.19174",
+        "lng": "138.194245"
+      },
+      {
+        "name": "井川",
+        "id": "STN_OIGAWA_IKAWA",
+        "lat": "35.21227",
+        "lng": "138.22114"
+      }
+    ]
+  }
+]

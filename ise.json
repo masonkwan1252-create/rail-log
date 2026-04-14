@@ -1,0 +1,101 @@
+[
+  {
+    "categories": "",
+    "company_id": "ISE",
+    "company_name": "伊勢鉄道",
+    "lines": [
+      {
+        "id": "ISE_LINE",
+        "name": "伊勢線",
+        "sequence": [
+          "STN_ISE_YOKKAICHI",
+          "STN_ISE_MINAMI_YOKKAICHI",
+          "STN_ISE_KAWARADA",
+          "STN_ISE_SUZUKA",
+          "STN_ISE_TAMAGAKI",
+          "STN_ISE_SUZUKA_CIRCUIT_INO",
+          "STN_ISE_TOKUDA",
+          "STN_ISE_NAKASEKO",
+          "STN_ISE_ISE_UENO",
+          "STN_ISE_KAWAGE",
+          "STN_ISE_HIGASHI_ISHINDEN",
+          "STN_ISE_TSU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "四日市",
+        "id": "STN_ISE_YOKKAICHI",
+        "lat": "34.962219",
+        "lng": "136.629926"
+      },
+      {
+        "name": "南四日市",
+        "id": "STN_ISE_MINAMI_YOKKAICHI",
+        "lat": "34.941553",
+        "lng": "136.609702"
+      },
+      {
+        "name": "河原田",
+        "id": "STN_ISE_KAWARADA",
+        "lat": "34.911235",
+        "lng": "136.599275"
+      },
+      {
+        "name": "鈴鹿",
+        "id": "STN_ISE_SUZUKA",
+        "lat": "34.87847",
+        "lng": "136.588795"
+      },
+      {
+        "name": "玉垣",
+        "id": "STN_ISE_TAMAGAKI",
+        "lat": "34.85514",
+        "lng": "136.57003"
+      },
+      {
+        "name": "鈴鹿サーキット稲生",
+        "id": "STN_ISE_SUZUKA_CIRCUIT_INŌ",
+        "lat": "34.8411",
+        "lng": "136.555215"
+      },
+      {
+        "name": "徳田",
+        "id": "STN_ISE_TOKUDA",
+        "lat": "34.826145",
+        "lng": "136.543985"
+      },
+      {
+        "name": "中瀬古",
+        "id": "STN_ISE_NAKASEKO",
+        "lat": "34.812145",
+        "lng": "136.543045"
+      },
+      {
+        "name": "伊勢上野",
+        "id": "STN_ISE_ISE_UENO",
+        "lat": "34.800335",
+        "lng": "136.54248"
+      },
+      {
+        "name": "河芸",
+        "id": "STN_ISE_KAWAGE",
+        "lat": "34.78127671",
+        "lng": "136.53125998"
+      },
+      {
+        "name": "東一身田",
+        "id": "STN_ISE_HIGASHI_ISHINDEN",
+        "lat": "34.758735",
+        "lng": "136.5121"
+      },
+      {
+        "name": "津",
+        "id": "STN_ISE_TSU",
+        "lat": "34.73439803",
+        "lng": "136.51075738"
+      }
+    ]
+  }
+]

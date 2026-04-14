@@ -1,0 +1,122 @@
+[
+  {
+    "categories": "",
+    "company_id": "SHIZU",
+    "company_name": "静岡鉄道",
+    "lines": [
+      {
+        "id": "SHIZU_SHIMIZU",
+        "name": "静岡清水線",
+        "sequence": [
+          "STN_SHIZU_SHIN_SHIZUOKA",
+          "STN_SHIZU_HIYOSHICHO",
+          "STN_SHIZU_OTOWACHO",
+          "STN_SHIZU_KASUGACHO",
+          "STN_SHIZU_YUNOKI",
+          "STN_SHIZU_NAGANUMA",
+          "STN_SHIZU_FURUSHO",
+          "STN_SHIZU_KEN_SOGO_UNDOJO",
+          "STN_SHIZU_KENRITSU_BIJUTSUKANMAE",
+          "STN_SHIZU_KUSANAGI",
+          "STN_SHIZU_MIKADODAI",
+          "STN_SHIZU_KITSUNEGASAKI",
+          "STN_SHIZU_SAKURABASHI",
+          "STN_SHIZU_IRIEOKA",
+          "STN_SHIZU_SHIN_SHIMIZU"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "name": "新静岡",
+        "id": "STN_SHIZU_SHIN_SHIZUOKA",
+        "lat": "34.97591421",
+        "lng": "138.38749101"
+      },
+      {
+        "name": "日吉町",
+        "id": "STN_SHIZU_HIYOSHICHŌ",
+        "lat": "34.97704",
+        "lng": "138.391175"
+      },
+      {
+        "name": "音羽町",
+        "id": "STN_SHIZU_OTOWACHŌ",
+        "lat": "34.9784",
+        "lng": "138.395845"
+      },
+      {
+        "name": "春日町",
+        "id": "STN_SHIZU_KASUGACHŌ",
+        "lat": "34.97841956",
+        "lng": "138.40081432"
+      },
+      {
+        "name": "柚木",
+        "id": "STN_SHIZU_YUNOKI",
+        "lat": "34.98207102",
+        "lng": "138.4063093"
+      },
+      {
+        "name": "長沼",
+        "id": "STN_SHIZU_NAGANUMA",
+        "lat": "34.98911",
+        "lng": "138.412885"
+      },
+      {
+        "name": "古庄",
+        "id": "STN_SHIZU_FÜRUSHŌ",
+        "lat": "34.992865",
+        "lng": "138.419595"
+      },
+      {
+        "name": "県総合運動場",
+        "id": "STN_SHIZU_KEN_SŌGŌ_UNDŌJŌ",
+        "lat": "34.993415",
+        "lng": "138.430205"
+      },
+      {
+        "name": "県立美術館前",
+        "id": "STN_SHIZU_KENRITSU_BIJUTSUKANMAE",
+        "lat": "34.997515",
+        "lng": "138.43809"
+      },
+      {
+        "name": "草薙",
+        "id": "STN_SHIZU_KUSANAGI",
+        "lat": "35.001415",
+        "lng": "138.442565"
+      },
+      {
+        "name": "御門台",
+        "id": "STN_SHIZU_MIKADODAI",
+        "lat": "35.007905",
+        "lng": "138.452545"
+      },
+      {
+        "name": "狐ヶ崎",
+        "id": "STN_SHIZU_KITSUNEGASAKI",
+        "lat": "35.01154715",
+        "lng": "138.45980241"
+      },
+      {
+        "name": "桜橋",
+        "id": "STN_SHIZU_SAKURABASHI",
+        "lat": "35.01315467",
+        "lng": "138.47778526"
+      },
+      {
+        "name": "入江岡",
+        "id": "STN_SHIZU_IRIEOKA",
+        "lat": "35.01486141",
+        "lng": "138.4810772"
+      },
+      {
+        "name": "新清水",
+        "id": "STN_SHIZU_SHIN_SHIMIZU",
+        "lat": "35.01707263",
+        "lng": "138.48747436"
+      }
+    ]
+  }
+]
