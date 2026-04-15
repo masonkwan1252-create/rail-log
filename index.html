@@ -4,15 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.21</title>
-
+<title>鉄道手帳 RAIL LOG V0.22</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
 <style>
 /* =========================================
-   🟩 V0.21 E235系 真實感加強版樣式
+   🟩 V0.22 E235系 真實感加強版樣式
    ========================================= */
 #loading-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -21,14 +22,12 @@
     overflow: hidden; transition: opacity 0.6s ease;
 }
 
-/* 頂部加大版黑色 Bar */
 .e235-header-wide {
     height: 12vh; min-height: 80px; background: #111; color: white;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 25px; border-bottom: 4px solid #333; position: relative;
 }
 
-/* 垂直山手線色帶 (相中左側那條) */
 .e235-line-color-stripe {
     position: absolute; left: 0; top: 0; bottom: 0; width: 15px;
     background-color: #80c241;
@@ -47,14 +46,12 @@
 #e235-clock { font-size: 1.4rem; font-weight: bold; font-family: monospace; }
 .e235-car-number { border: 1.5px solid white; padding: 1px 5px; font-size: 0.8rem; border-radius: 3px; }
 
-/* 中央大字站名 */
 .e235-main-content { flex: 1; padding: 8vh 0 0 10%; }
 .e235-next-label { color: #e60012; font-size: 2rem; font-weight: 900; margin-bottom: 5px; }
 .e235-next-en { font-size: 0.6em; margin-left: 10px; color: #b30000; }
 .e235-station { font-size: clamp(50px, 12vw, 90px); font-weight: 900; color: #222; }
 .e235-station-en { font-size: 1.8rem; color: #666; font-weight: bold; margin-top: -5px; }
 
-/* 底部粗身向左彎軌道 */
 .e235-progress-area {
     position: absolute; bottom: -10px; right: 5%; width: 25%; height: 60%;
     overflow: hidden; pointer-events: none;
@@ -62,12 +59,11 @@
 
 .e235-curve-track {
     width: 100%; height: 120%; background: #80c241;
-    border-top-left-radius: 120px; /* 控制彎曲弧度 */
+    border-top-left-radius: 120px;
     box-shadow: -10px 0 20px rgba(0,0,0,0.1);
     position: relative;
 }
 
-/* 向上流動的箭頭動畫 */
 .e235-arrows {
     position: absolute; width: 100%; height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 70 L50 45 L70 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3C/svg%3E");
@@ -80,15 +76,11 @@
     to { background-position: 0 0; }
 }
 
-/* 載入完成隱藏 */
 #loading-screen.loaded { opacity: 0; pointer-events: none; }
 
-
-/* 主畫面容器 */
 #main-app { visibility: hidden; opacity: 0; transition: opacity 0.5s ease; }
 #main-app.show { visibility: visible; opacity: 1; }
 
-/* 方向幕樣式 */
 .out-of-service-panel { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #001f5c; text-align: center; }
 .out-of-service-panel .sign-destination-text { color: #001f5c; font-size: 32px; font-weight: 900; letter-spacing: 30px; margin-right: -30px; white-space: nowrap; transform: scaleY(1.1); }
 .out-of-service-panel .sign-yamanote-en { color: #001f5c; font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-right: -2px; margin-top: 1px; transform: scaleY(1.1); }
@@ -97,7 +89,6 @@
     --bg: #e0e0e0; --input-bg: #f4f4f4; --card: #ffffff; --text: #1d1d1f; --subtext: #86868b;
     --border: #aaa; --primary: #63BD0F; --success: #34c759; --danger: #ff3b30; --tag-bg: #e5e5ea; --nav-bg: rgba(255, 255, 255, 0.85);
 }
-
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); padding-bottom: 100px; }
@@ -126,23 +117,31 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
 .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 0 0 calc(env(safe-area-inset-bottom)); z-index: 1000; }
-.nav-item { text-align: center; color: var(--subtext); font-size: 11px; font-weight: 500; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 0; border-bottom: 3px solid transparent; transition: all 0.2s ease; }
+.nav-item { text-align: center; color: var(--subtext); font-size: 10px; font-weight: 500; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 0; border-bottom: 3px solid transparent; transition: all 0.2s ease; }
 .nav-item.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
-.nav-icon { font-size: 22px; }
+.nav-icon { font-size: 20px; }
 
 h3 { margin-top: 0; font-size: 17px; font-weight: 600; border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; color: var(--primary); }
 .led-counter { font-family: 'DotGothic16', monospace; background-color: #111; color: #ff9500; padding: 2px 8px; border-radius: 4px; font-size: 1.2em; font-weight: normal; text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); border: 2px solid #222; box-shadow: inset 0 2px 4px rgba(0,0,0,1); margin-left: 6px; display: inline-block; line-height: 1; letter-spacing: 2px; }
 
 label { display: block; font-size: 13px; color: var(--subtext); margin-bottom: 6px; margin-top: 12px; }
-input, select { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--input-bg); color: var(--text); appearance: none; outline: none; }
-input:focus { border-color: var(--primary); }
-input[type="checkbox"] {
-    appearance: auto;
-    -webkit-appearance: auto;
-    width: 16px;
-    height: 16px;
+
+/* =========================================
+   🟩 V0.22 輸入欄強制顯示選單箭頭
+   ========================================= */
+input::-webkit-calendar-picker-indicator {
+    display: block !important;
+    opacity: 0.6;
     cursor: pointer;
+    padding-left: 10px;
 }
+input:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+
+input, select { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--input-bg); color: var(--text); outline: none; }
+input:focus { border-color: var(--primary); }
+input[type="checkbox"] { appearance: auto; -webkit-appearance: auto; width: 16px; height: 16px; cursor: pointer; }
 .input-wrapper { position: relative; display: flex; align-items: center; }
 .input-wrapper input { padding-right: 35px; } 
 .clear-input-btn { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 16px; color: #bbb; padding: 6px; margin: 0; width: auto; cursor: pointer; z-index: 10; }
@@ -157,6 +156,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .btn-clear-stats { width:100%; text-align:center; background:#fff; color:var(--text); }
 .btn-small:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* ... (保留原有 CSS 樣式) ... */
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
 .date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
 .date-mode-tabs button { flex: 1; margin: 0; padding: 8px 0; font-size: 13px; font-weight: 600; background: transparent; border: none; border-radius: 6px; color: var(--subtext); transition: 0.2s; }
@@ -200,49 +200,35 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .bar-track { flex: 1; background: var(--tag-bg); height: 14px; border-radius: 4px; overflow: hidden; position: relative; }
 .bar-fill { background: var(--primary); height: 100%; border-radius: 4px; transition: width 0.5s ease-out; }
 .bar-val { width: 30px; text-align: left; padding-left: 8px; font-weight: 600; color: var(--text); }
+
+/* =========================================
+   🟩 V0.22 新增地圖與成就樣式
+   ========================================= */
+#railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
+.achievement-card { display: flex; align-items: center; background: var(--tag-bg); margin-bottom: 12px; padding: 15px; border-radius: 12px; border: 1px solid var(--border); }
+.achieve-icon { font-size: 32px; margin-right: 15px; filter: grayscale(100%); opacity: 0.4; transition: 0.5s; }
+.achieve-icon.unlocked { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+.achieve-info { flex: 1; }
+.achieve-title { font-weight: bold; font-size: 15px; margin-bottom: 4px; color: var(--text); }
+.achieve-desc { font-size: 12px; color: var(--subtext); margin-bottom: 8px; }
+.achieve-bar-bg { height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; overflow: hidden; position: relative; }
+.achieve-bar-fill { height: 100%; background: var(--primary); width: 0%; transition: width 1s ease-out; }
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #1c1c1e; --input-bg: #2c2c2e; --card: #1c1c1e; --text: #f5f5f7; --subtext: #98989d;
         --border: #38383a; --tag-bg: #2c2c2e; --nav-bg: rgba(28, 28, 30, 0.85);
     }
     .btn-clear-stats { background: var(--primary) !important; color: #ffffff !important; border: none !important; }
+    header { background: linear-gradient(135deg, #222222 0%, #111111 100%) !important; border-bottom: 1px solid #0a0a0a !important; box-shadow: 0 5px 15px rgba(0,0,0,0.7); }
+    .header-band { background: #20400d; }
+    .destination-sign-frame { border-color: #292929; background: #fff3d2; box-shadow: 0 0 20px rgba(255, 210, 120, 0.2); }
+    .destination-sign-frame::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; box-shadow: inset 0 10px 15px rgba(0,0,0,0.85), inset 0 -10px 15px rgba(0,0,0,0.85); pointer-events: none; z-index: 10; }
+    .sign-panel, .sign-main-content, .sign-type-box, .out-of-service-panel { background: transparent !important; position: relative; }
+    .achieve-bar-bg { background: rgba(255,255,255,0.1); }
     
-    /* 1. 車身變得更暗，模擬夜晚無光照嘅金屬外殼 */
-    header { 
-        background: linear-gradient(135deg, #222222 0%, #111111 100%) !important; 
-        border-bottom: 1px solid #0a0a0a !important; 
-        box-shadow: 0 5px 15px rgba(0,0,0,0.7);
-    }
-    
-    /* 2. 山手線色帶變暗，模擬夜晚實體塗裝 */
-    .header-band { 
-        background: #20400d; 
-    }
-    
-    /* 3. 方向幕外框變暗，背燈改成偏暖黃，加強內外光暈對比 */
-    .destination-sign-frame { 
-        border-color: #292929; 
-        background: #fff3d2; /* 暖黃色背燈 */
-        /* 淨係保留外圍嘅發光效果，內陰影交畀 ::after 處理 */
-        box-shadow: 0 0 20px rgba(255, 210, 120, 0.2); 
-    }
-    
-    /* 新增：利用 ::after 建立一層完全覆蓋嘅內陰影，確保壓喺所有內容上面 */
-    .destination-sign-frame::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        box-shadow: inset 0 10px 15px rgba(0,0,0,0.85), inset 0 -10px 15px rgba(0,0,0,0.85);
-        pointer-events: none; /* 確保唔會阻擋你撳向上/下捲動 */
-        z-index: 10; /* 設定一個較高嘅層級 */
-    }
-
-    /* 4. 確保所有內容背景透明，同時移除之前推高 z-index 嘅設定 */
-    .sign-panel, .sign-main-content, .sign-type-box, .out-of-service-panel {
-        background: transparent !important;
-        position: relative;
-        /* 將原本嘅 z-index: 1 拎走，等佢乖乖留喺 ::after 嘅陰影層下面 */
-    }
+    /* V0.22 Dark mode tweaks */
+    input::-webkit-calendar-picker-indicator { filter: invert(1); }
 }
 
 </style>
@@ -285,20 +271,12 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         <div class="destination-sign-frame">
             <div class="roll-container" id="rollContainer">
                 <div class="sign-panel"></div>
-                
-                <div class="sign-panel out-of-service-panel">
-                    <div class="sign-destination-text">回送</div>
-                </div>
-
-                <div class="sign-panel out-of-service-panel">
-                    <div class="sign-destination-text">試運転</div>
-                </div>
-
+                <div class="sign-panel out-of-service-panel"><div class="sign-destination-text">回送</div></div>
+                <div class="sign-panel out-of-service-panel"><div class="sign-destination-text">試運転</div></div>
                 <div class="sign-panel out-of-service-panel" style="gap:0;">
                     <div class="sign-destination-text" style="font-size: 32px; letter-spacing: 20px; margin-right: -20px;transform: scaleX(1.1);">山手線</div>
                     <div class="sign-yamanote-en">YAMANOTE LINE</div>
                 </div>
-                
                 <div class="sign-panel final-panel">
                     <div class="sign-type-box">
                         <div class="sign-type-text-1">通勤</div>
@@ -316,7 +294,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     </header>
 
     <div id="saveMessage" class="toast-message">儲存成功！</div>
-    <div class="version-badge">V0.21</div>
+    <div class="version-badge">V0.22</div>
 
     <div class="container">
 
@@ -341,7 +319,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                 <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
                 <div id="throughContainer"></div>
 
-                <label>種別 / 列車名 (運行系統)</label>6
+                <label>種別 / 列車名 (運行系統)</label>
                 <div class="input-wrapper">
                     <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="this.select()">
                     <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
@@ -410,12 +388,10 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             <div class="card">
                 <h3>統計與完成率</h3>
                 <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
-                
                 <div class="stat-group">
                     <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
                     <div id="filterCompanies" class="tags-container"></div>
                 </div>
-
                 <div id="filteredStatsContainer"></div>
             </div>
             
@@ -426,6 +402,22 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                     <button id="btnChartStation" onclick="switchChartTab('station')">Top 10 車站</button>
                 </div>
                 <div id="chartDisplayArea" class="bar-chart-container"></div>
+            </div>
+        </div>
+
+        <div id="tab-map" class="tab-content">
+            <div class="card" style="padding: 10px;">
+                <h3 style="margin: 10px;">足跡地圖</h3>
+                <p style="font-size:13px; color:var(--subtext); margin: 0 10px 10px 10px;">紀錄你到訪過的所有車站位置。</p>
+                <div id="railMap"></div>
+            </div>
+        </div>
+
+        <div id="tab-achievements" class="tab-content">
+            <div class="card">
+                <h3>鐵道里程碑</h3>
+                <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">解鎖更多成就，見證你的鐵道旅程。</p>
+                <div id="achievementList"></div>
             </div>
         </div>
 
@@ -469,6 +461,14 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
             <span class="nav-icon">📊</span>
             <span>統計</span>
         </div>
+        <div class="nav-item" onclick="switchTab('tab-map', this)">
+            <span class="nav-icon">🗺️</span>
+            <span>地圖</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('tab-achievements', this)">
+            <span class="nav-icon">🏆</span>
+            <span>成就</span>
+        </div>
         <div class="nav-item" onclick="switchTab('tab-settings', this)">
             <span class="nav-icon">⚙️</span>
             <span>管理</span>
@@ -492,32 +492,31 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 </div> 
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <script>
 // =========================================
-// V0.21 E235系 Loading 頁面控制邏輯
+// V0.22 E235系 Loading 頁面控制邏輯
 // =========================================
 document.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById('e235-loader');
+    const loader = document.getElementById('loading-screen');
     const clockDisplay = document.getElementById('e235-clock');
     const stationName = document.getElementById('e235-station-name');
     const stationNameEn = document.getElementById('e235-station-name-en');
 
-    // 1. 更新右上角真實時間
     function updateClock() {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         clockDisplay.textContent = `${hours}:${minutes}`;
     }
-    updateClock(); // 立即執行一次
+    updateClock(); 
     const clockInterval = setInterval(updateClock, 1000);
 
-    // 2. 模擬列車行進 (載入進度)
-    // 這裡可以自訂你想要輪播的「站名」(即載入狀態)
     const loadingStages = [
         { zh: "讀取資料庫", en: "Loading Database..." },
         { zh: "準備路線圖", en: "Preparing Maps..." },
-        { zh: "鉄道手帳", en: "RAIL LOG" } // 終點站
+        { zh: "鉄道手帳", en: "RAIL LOG" } 
     ];
     
     let currentStage = 0;
@@ -528,47 +527,18 @@ document.addEventListener("DOMContentLoaded", () => {
             stationName.textContent = loadingStages[currentStage].zh;
             stationNameEn.textContent = loadingStages[currentStage].en;
         } else {
-            // 載入完成，準備隱藏畫面
             clearInterval(progressInterval);
             clearInterval(clockInterval);
             
-            // 加上淡出與微微向上的過場動畫
             loader.style.opacity = '0';
             loader.style.transform = 'translateY(-20px)';
             
-            // 等待動畫播放完畢後移除 DOM
             setTimeout(() => {
                 loader.style.display = 'none';
-                // 如果你有其他初始化函數，可以在這裡呼叫
-                // initApp(); 
             }, 500);
         }
-    }, 800); // 每 800 毫秒跳一站，可自行調整速度
+    }, 800); 
 });
-
-function updateE235Loading() {
-    const clock = document.getElementById('e235-clock');
-    const station = document.getElementById('e235-station-name');
-    const stationEn = document.getElementById('e235-station-name-en');
-
-    // 實時時鐘
-    const now = new Date();
-    clock.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-
-    // 模擬載入進程更改站名
-    setTimeout(() => {
-        station.textContent = "資料讀取中";
-        stationEn.textContent = "Data Loading...";
-    }, 1000);
-    
-    setTimeout(() => {
-        station.textContent = "鉄道手帳";
-        stationEn.textContent = "RAIL LOG";
-    }, 2200);
-}
-
-// 啟動載入畫面邏輯
-document.addEventListener('DOMContentLoaded', updateE235Loading);
 
 let currentSignIndex = 0;
 const totalSigns = 5; 
@@ -621,39 +591,40 @@ let currentRecordPage = 1;
 const recordsPerPage = 50;
 let currentChartType = 'company';
 
+// V0.22 地圖全域變數
+let railMapInstance = null;
+let mapMarkers = [];
+
 document.getElementById("date").valueAsDate = new Date();
 
-// 清除輸入欄的共用函數
 function clearInput(id) {
     const el = document.getElementById(id);
     if (el) {
         el.value = '';
         el.dispatchEvent(new Event('input'));
+        el.focus(); // 清除後重新 Focus 以彈出箭頭
     }
 }
 
-// 新增：清除相鄰輸入欄的函數 (用於直通運轉等動態生成的元件)
 function clearSiblingInput(btn) {
     const input = btn.previousElementSibling;
     if (input) {
         input.value = '';
         input.dispatchEvent(new Event('input'));
+        input.focus();
     }
 }
 
 function getTripTrainDisplay(trip) {
     const trainObj = maps.train[trip.train_id];
     if (!trainObj) return trip.train_id;
-
     const trainCompanyId = trainObj.company_id;
     const rideCompanyId = trip.company_id; 
     const throughCompanyId = trip.throughCompany_id; 
-
     let isSameCompany = (trainCompanyId === rideCompanyId);
     if (throughCompanyId && throughCompanyId !== trainCompanyId) {
          isSameCompany = false;
     }
-
     if (isSameCompany) {
         return trainObj.name; 
     } else {
@@ -665,9 +636,7 @@ function getTripTrainDisplay(trip) {
 function getStatTrainDisplay(train_id, trips) {
     const trainObj = maps.train[train_id];
     if (!trainObj) return train_id;
-
     const riddenTrainIds = [...new Set(trips.map(t => t.train_id))];
-    
     const companiesForTrainName = new Set();
     riddenTrainIds.forEach(id => {
         const t = maps.train[id];
@@ -675,7 +644,6 @@ function getStatTrainDisplay(train_id, trips) {
             companiesForTrainName.add(t.company_id);
         }
     });
-
     if (companiesForTrainName.size > 1) {
         const companyName = maps.company[trainObj.company_id]?.name || trainObj.company_id;
         return `${companyName} ${trainObj.name}`;
@@ -694,18 +662,13 @@ function hideLoadingScreen() {
 async function loadData() {
     try {
         const [compRes, trainRes] = await Promise.all([
-            fetch("companies.json"), 
-            fetch("traintypes.json")
+            fetch("companies.json"), fetch("traintypes.json")
         ]);
-        
         if (compRes.ok && trainRes.ok) {
-            db.companies = await compRes.json();
-            db.trains = await trainRes.json();
+            db.companies = await compRes.json(); db.trains = await trainRes.json();
         }
 
-        db.lines = [];
-        db.stations = [];
-
+        db.lines = []; db.stations = [];
         const newCompanyFiles = [
             "keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
@@ -723,67 +686,42 @@ async function loadData() {
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
             "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"]; 
         
-        const fetchPromises = newCompanyFiles.map(file => 
-            fetch(file).then(res => res.ok ? res.json() : null).catch(() => null)
-        );
-        
+        const fetchPromises = newCompanyFiles.map(file => fetch(file).then(res => res.ok ? res.json() : null).catch(() => null));
         const results = await Promise.all(fetchPromises);
         
         results.forEach(data => {
             if (!data) return;
             let compData = Array.isArray(data) ? data[0] : data; 
-            
             if (compData.lines) {
-                compData.lines.forEach(line => {
-                    line.company_id = compData.company_id;
-                    db.lines.push(line);
-                });
+                compData.lines.forEach(line => { line.company_id = compData.company_id; db.lines.push(line); });
             }
             if (compData.stations) {
-                compData.stations.forEach(station => {
-                    station.company_id = compData.company_id;
-                    db.stations.push(station);
-                });
+                compData.stations.forEach(station => { station.company_id = compData.company_id; db.stations.push(station); });
             }
         });
 
     } catch (e) { 
         console.log("資料庫載入失敗。", e); 
-        document.querySelector('.jre-loading-text').innerText = "ERROR";
-        document.querySelector('.jre-loading-text').style.color = "red";
     } 
     finally {
         buildMaps(); initUILists(); render(); updateStationLists();
-        // 配合 JRE 動畫，將載入時間設為 1.8 秒
-        setTimeout(hideLoadingScreen, 1800);
-		
-        // 【V0.21 修正】自動修復舊記錄錯誤的車型 ID (解決帶有括號的殘留數據)
+        
         let dataModified = false;
         trips.forEach(t => {
             if (!maps.train[t.train_id]) {
-                // 如果系統找不到這架車，代表它可能被錯誤儲存為文字 (例如 "1021系 (近畿日本鉄道)")
                 let realId = resolve.train[t.train_id];
                 if (!realId) {
-                    // 嘗試清走尾部括號找出原名
                     let cleanName = t.train_id.replace(/\s*\(.*?\)$/, '').trim();
                     let found = db.trains.find(tr => tr.name === cleanName || tr._display === t.train_id);
                     if (found) realId = found.id;
                 }
-                // 成功對應返正確 ID，執行替換！
-                if (realId) {
-                    t.train_id = realId;
-                    dataModified = true;
-                }
+                if (realId) { t.train_id = realId; dataModified = true; }
             }
         });
         
-        // 如果有進行過修復，自動幫用戶 Save 返落 LocalStorage
-        if (dataModified) {
-            localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-        }
+        if (dataModified) localStorage.setItem("railTrips_V2", JSON.stringify(trips));
 
         render(); updateStationLists();
-        // 配合 JRE 動畫，將載入時間設為 1.8 秒
         setTimeout(hideLoadingScreen, 1800);
     }
 }
@@ -833,17 +771,31 @@ function fillList(listId, dataArray) {
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
 }
 
+// =========================================
+// V0.22 分頁切換邏輯 (結合地圖與成就渲染)
+// =========================================
 function switchTab(tabId, navElement) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
     navElement.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 切換至地圖頁面時，初始化並重繪
+    if (tabId === 'tab-map') {
+        setTimeout(() => {
+            if (railMapInstance) { railMapInstance.invalidateSize(); }
+            renderMap();
+        }, 100);
+    }
+    
+    // 切換至成就頁面時，計算並重繪
+    if (tabId === 'tab-achievements') {
+        renderAchievements();
+    }
 }
 
-document.getElementById("line").addEventListener("input", () => {
-    updateStationLists();
-});
+document.getElementById("line").addEventListener("input", () => updateStationLists());
 
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
@@ -865,11 +817,8 @@ function updateTrainDatalist() {
     
     activeTrainCompanyId = resolve.company[compName] || null;
 
-    if (activeTrainCompanyId) {
-        currentCompanyTrains = db.trains.filter(t => t.company_id === activeTrainCompanyId);
-    } else {
-        currentCompanyTrains = []; 
-    }
+    if (activeTrainCompanyId) { currentCompanyTrains = db.trains.filter(t => t.company_id === activeTrainCompanyId); } 
+    else { currentCompanyTrains = []; }
     
     document.getElementById('train').value = '';
 
@@ -881,35 +830,23 @@ function updateTrainDatalist() {
     list.appendChild(fragment);
 }
 
-
-// 【V0.21 修正】車型搜尋及過濾邏輯
 let trainFilterTimeout = null;
 document.getElementById("train").addEventListener("input", function() {
     clearTimeout(trainFilterTimeout);
-    
     const keyword = this.value.trim().toLowerCase();
     const list = document.getElementById("trainList");
 
-    // [關鍵修復] 如果目前輸入嘅字，已經完全吻合選單入面嘅其中一項，
-    // 代表使用者剛剛「點擊」咗選項，此時絕對不能重建選單，否則會打斷輸入！
     const isSelected = currentCompanyTrains.some(t => t._display.toLowerCase() === keyword);
     if (isSelected) return; 
 
     trainFilterTimeout = setTimeout(() => {
         let filtered = currentCompanyTrains;
         if (keyword) {
-            filtered = currentCompanyTrains.filter(t => 
-                // 改用 includes，只要包含關鍵字就會顯示，比 startsWith 更好用
-                t._display.toLowerCase().includes(keyword) 
-            );
+            filtered = currentCompanyTrains.filter(t => t._display.toLowerCase().includes(keyword));
         }
-
-        const displayLimit = 30; // 稍微放寬顯示數量
-        const limitedResults = filtered.slice(0, displayLimit);
-
+        const limitedResults = filtered.slice(0, 30);
         const fragment = document.createDocumentFragment();
         limitedResults.forEach(t => fragment.appendChild(new Option(t._display)));
-        
         list.innerHTML = "";
         list.appendChild(fragment);
     }, 150); 
@@ -928,7 +865,6 @@ function updateStationLists() {
     const mainCompInput = document.getElementById("company").value;
     const mainCompId = resolve.company[mainCompInput];
     const mainLineInput = document.getElementById("line").value;
-    
     fillStationDatalist("stationListFrom", mainCompId, mainLineInput);
 
     let lastCompId = mainCompId;
@@ -943,7 +879,6 @@ function updateStationLists() {
             lastLineInput = lastBlock.querySelector(".throughLine").value;
         }
     }
-    
     fillStationDatalist("stationListTo", lastCompId, lastLineInput);
 }
 
@@ -951,7 +886,6 @@ function fillStationDatalist(listId, compId, lineInput) {
     const list = document.getElementById(listId);
     if(!list) return;
     list.innerHTML = "";
-
     let stationsToShow = [];
 
     if (compId && lineInput) {
@@ -979,8 +913,7 @@ function addThrough() {
         if(lastTC) lastCompName = lastTC;
     }
 
-    const div = document.createElement("div");
-    div.className = "through-block";
+    const div = document.createElement("div"); div.className = "through-block";
     const uniqueId = "throughLineList_" + Date.now();
     
     div.innerHTML = `
@@ -998,7 +931,6 @@ function addThrough() {
         <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
     `;
     document.getElementById("throughContainer").appendChild(div);
-    
     if(lastCompName) updateLineList(lastCompName, uniqueId);
     updateStationLists();
 }
@@ -1012,7 +944,6 @@ function saveTrip() {
     let mainLineId = db.lines.find(l => l.company_id === mainCompId && l.name === lineInput)?.id || lineInput;
 
     let routes = [{ company_id: mainCompId, line_id: mainLineId }];
-
     document.querySelectorAll(".through-block").forEach(block => {
         let tcId = resolve.company[block.querySelector(".throughCompany").value] || block.querySelector(".throughCompany").value;
         let tlInput = block.querySelector(".throughLine").value;
@@ -1024,9 +955,7 @@ function saveTrip() {
     let finalTrainId = trainInput;
     if (activeTrainCompanyId) {
         let matchedTrain = currentCompanyTrains.find(t => t._display === trainInput || t.name === trainInput);
-        if (matchedTrain) {
-            finalTrainId = matchedTrain.id;
-        }
+        if (matchedTrain) finalTrainId = matchedTrain.id;
     } else {
         finalTrainId = resolve.train[trainInput] || trainInput;
     }
@@ -1055,8 +984,7 @@ function saveTrip() {
     document.getElementById("trainOwnerCompany").value = "";
     
     updateLineList("", "lineList"); updateTrainDatalist(); updateStationLists();
-    currentRecordPage = 1; 
-    render();
+    currentRecordPage = 1; render();
     
     const messageDiv = document.getElementById("saveMessage");
     messageDiv.style.display = "block";
@@ -1070,8 +998,6 @@ function getTrainName(id) { return maps.train[id]?.name || id; }
 function getStatStationDisplay(id) {
     const stn = maps.station[id];
     if (!stn) return id;
-    
-    // 檢查資料庫入面有冇同名但唔同公司嘅車站
     const hasDuplicate = db.stations.some(s => s.name === stn.name && s.company_id !== stn.company_id);
     if (hasDuplicate) {
         const compName = maps.company[stn.company_id]?.name || "";
@@ -1088,8 +1014,7 @@ function getTodayStr() {
 function setDateFilter(val) {
     if (val === 'today') currentDateFilter = getTodayStr();
     else currentDateFilter = val;
-    currentRecordPage = 1;
-    render();
+    currentRecordPage = 1; render();
 }
 
 function changeDay(delta) {
@@ -1103,8 +1028,7 @@ function changeDay(delta) {
 
 function changeRecordPage(delta) {
     currentRecordPage += delta;
-    render();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    render(); window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function render() {
@@ -1116,16 +1040,12 @@ function render() {
     let displayDate = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
     document.getElementById('btnFilterDate').innerText = displayDate;
     
-    if (currentDateFilter !== 'all') {
-        document.getElementById('btnFilterDate').style.color = 'var(--primary)';
-    } else {
-        document.getElementById('btnFilterDate').style.color = 'var(--text)';
-    }
+    if (currentDateFilter !== 'all') { document.getElementById('btnFilterDate').style.color = 'var(--primary)'; } 
+    else { document.getElementById('btnFilterDate').style.color = 'var(--text)'; }
 
     const listDiv = document.getElementById("tripList");
     const paginationDiv = document.getElementById("paginationControls");
-    listDiv.innerHTML = "";
-    paginationDiv.innerHTML = "";
+    listDiv.innerHTML = ""; paginationDiv.innerHTML = "";
 
     let tripsToDisplay = trips.filter(t => currentDateFilter === "all" || t.date === currentDateFilter);
     document.getElementById("totalCount").innerText = tripsToDisplay.length;
@@ -1138,21 +1058,13 @@ function render() {
         let originalIndex = trips.indexOf(t);
         const div = document.createElement("div"); div.className = "trip";
         
-        let routeHtml = "";
-        let lastCompany = "";
+        let routeHtml = ""; let lastCompany = "";
         t.routes.forEach((r, idx) => {
-            let compName = getCompName(r.company_id);
-            let lineName = getLineName(r.line_id);
-            if (idx === 0) {
-                routeHtml += `${compName} ${lineName}`;
-                lastCompany = compName;
-            } else {
-                if (compName === lastCompany) {
-                    routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}`;
-                } else {
-                    routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}`;
-                    lastCompany = compName;
-                }
+            let compName = getCompName(r.company_id); let lineName = getLineName(r.line_id);
+            if (idx === 0) { routeHtml += `${compName} ${lineName}`; lastCompany = compName; } 
+            else {
+                if (compName === lastCompany) { routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}`; } 
+                else { routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}`; lastCompany = compName; }
             }
         });
         
@@ -1184,8 +1096,7 @@ function render() {
         `;
     }
 
-    renderStats();
-    drawBarChart(); 
+    renderStats(); drawBarChart(); 
 }
 
 function openCalendar() {
@@ -1199,10 +1110,7 @@ function openCalendar() {
     document.getElementById("calendarModal").style.display = "flex";
 }
 function closeCalendar() { document.getElementById("calendarModal").style.display = "none"; }
-function changeCalMonth(delta) {
-    calViewDate.setMonth(calViewDate.getMonth() + delta);
-    buildCalendar();
-}
+function changeCalMonth(delta) { calViewDate.setMonth(calViewDate.getMonth() + delta); buildCalendar(); }
 function buildCalendar() {
     let year = calViewDate.getFullYear(), month = calViewDate.getMonth();
     document.getElementById("calMonthYear").innerText = `${year}年 ${month + 1}月`;
@@ -1215,8 +1123,7 @@ function buildCalendar() {
     for (let i = 0; i < firstDay; i++) calGrid.appendChild(document.createElement("div"));
     
     for (let i = 1; i <= daysInMonth; i++) {
-        let div = document.createElement("div");
-        div.className = "cal-day";
+        let div = document.createElement("div"); div.className = "cal-day";
         let dateStr = `${year}-${(month+1).toString().padStart(2,'0')}-${i.toString().padStart(2,'0')}`;
         div.innerText = i;
         if(recordDates.has(dateStr)) div.classList.add("has-record");
@@ -1227,11 +1134,8 @@ function buildCalendar() {
 }
 
 function setStatFilter(type, id) {
-    if (activeStatFilter.type === type && activeStatFilter.id === id) {
-        activeStatFilter = { type: null, id: null };
-    } else {
-        activeStatFilter = { type, id };
-    }
+    if (activeStatFilter.type === type && activeStatFilter.id === id) { activeStatFilter = { type: null, id: null }; } 
+    else { activeStatFilter = { type, id }; }
     renderStats();
 }
 
@@ -1260,7 +1164,6 @@ function renderStats() {
     trips.forEach(t => t.routes.forEach(r => allCompaniesSet.add(r.company_id)));
     document.getElementById("companyStatTitle").innerText = `鉄道公司 (${allCompaniesSet.size} 間)`;
     
-    // 1. 公司標籤排序
     const filterContainer = document.getElementById("filterCompanies");
     filterContainer.innerHTML = "";
     let sortedCompanies = Array.from(allCompaniesSet).sort((a, b) => getCompName(a).localeCompare(getCompName(b), 'ja'));
@@ -1269,12 +1172,10 @@ function renderStats() {
         const tag = document.createElement("span");
         tag.className = `tag ${activeStatFilter.type === 'company' && activeStatFilter.id === compId ? "active" : ""}`;
         if(activeStatFilter.type && !cSet.has(compId)) tag.style.opacity = "0.4";
-        tag.innerText = getCompName(compId);
-        tag.onclick = () => setStatFilter('company', compId);
+        tag.innerText = getCompName(compId); tag.onclick = () => setStatFilter('company', compId);
         filterContainer.appendChild(tag);
     });
 
-    // 2. 準備已排序嘅陣列 (路線、車型、車站)
     let sortedLines = Array.from(lSet).sort((a, b) => getLineName(a).localeCompare(getLineName(b), 'ja'));
     let sortedTrains = Array.from(tSet).sort((a, b) => getStatTrainDisplay(a, trips).localeCompare(getStatTrainDisplay(b, trips), 'ja'));
     let sortedStations = Array.from(sSet).sort((a, b) => getStatStationDisplay(a).localeCompare(getStatStationDisplay(b), 'ja'));
@@ -1288,19 +1189,14 @@ function renderStats() {
         }
     }
 
-    // 3. 更新 HTML 輸出 (套用已排序陣列及新車站名函數)
     const statsHTML = `
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已乘搭路線 (${lSet.size} 條) ${completionText}</div>
-            <div class="tags-container">${sortedLines.map(id => 
-                `<span class="tag ${activeStatFilter.type === 'line' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('line', '${id}')">${getLineName(id)}</span>`
-            ).join('') || '<span class="tag">無記錄</span>'}</div>
+            <div class="tags-container">${sortedLines.map(id => `<span class="tag ${activeStatFilter.type === 'line' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('line', '${id}')">${getLineName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已乘搭車型 (${tSet.size} 款)</div>
-            <div class="tags-container">${sortedTrains.map(id => 
-                `<span class="tag ${activeStatFilter.type === 'train' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('train', '${id}')">${getStatTrainDisplay(id, trips)}</span>`
-            ).join('') || '<span class="tag">無記錄</span>'}</div>
+            <div class="tags-container">${sortedTrains.map(id => `<span class="tag ${activeStatFilter.type === 'train' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('train', '${id}')">${getStatTrainDisplay(id, trips)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
         </div>
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已造訪車站 (${sSet.size} 個)</div>
@@ -1308,7 +1204,6 @@ function renderStats() {
         </div>
         ${activeStatFilter.type ? `<button class="btn-small btn-clear-stats" onclick="setStatFilter(null, null)">清除所有篩選</button>` : ''}
     `;
-
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
 }
 
@@ -1331,12 +1226,10 @@ function drawBarChart() {
         });
     } else {
         trips.forEach(t => {
-            counts[t.from_id] = (counts[t.from_id] || 0) + 1;
-            counts[t.to_id] = (counts[t.to_id] || 0) + 1;
+            counts[t.from_id] = (counts[t.from_id] || 0) + 1; counts[t.to_id] = (counts[t.to_id] || 0) + 1;
         });
     }
 
-    // 加入次要字母排序，並替換車站名顯示
     let sortedArray = Object.entries(counts).sort((a,b) => {
         if (b[1] !== a[1]) return b[1] - a[1];
         let nameA = currentChartType === 'company' ? getCompName(a[0]) : getStatStationDisplay(a[0]);
@@ -1345,33 +1238,22 @@ function drawBarChart() {
     }).slice(0, 10);
 
     if (sortedArray.length === 0) {
-        container.innerHTML = "<div style='text-align:center; font-size:13px; color:var(--subtext);'>暫無資料</div>";
-        return;
+        container.innerHTML = "<div style='text-align:center; font-size:13px; color:var(--subtext);'>暫無資料</div>"; return;
     }
 
     let maxVal = sortedArray[0][1];
-
     sortedArray.forEach(item => {
-        // 呢度換成 getStatStationDisplay
         let name = currentChartType === 'company' ? getCompName(item[0]) : getStatStationDisplay(item[0]);
-        let val = item[1];
-        // ... 後面不變
-        let pct = (val / maxVal) * 100;
+        let val = item[1]; let pct = (val / maxVal) * 100;
         
-        const row = document.createElement("div");
-        row.className = "bar-row";
+        const row = document.createElement("div"); row.className = "bar-row";
         row.innerHTML = `
             <div class="bar-label" title="${name}">${name}</div>
-            <div class="bar-track">
-                <div class="bar-fill" style="width: 0%;"></div>
-            </div>
+            <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
             <div class="bar-val">${val}</div>
         `;
         container.appendChild(row);
-        
-        setTimeout(() => {
-            row.querySelector('.bar-fill').style.width = `${pct}%`;
-        }, 50);
+        setTimeout(() => { row.querySelector('.bar-fill').style.width = `${pct}%`; }, 50);
     });
 }
 
@@ -1430,7 +1312,7 @@ function deleteTrip(i) {
 function exportData() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.21.json"; a.click();
+    a.download = "rail-log-V0.22.json"; a.click();
 }
 
 function importData() {
@@ -1442,6 +1324,89 @@ function importData() {
         catch(err) { alert("檔案格式錯誤！"); }
     };
     reader.readAsText(file);
+}
+
+// =========================================
+// V0.22 地圖渲染邏輯 (Leaflet.js)
+// =========================================
+function renderMap() {
+    if (!railMapInstance) {
+        // 初始化，預設中心點喺東京車站
+        railMapInstance = L.map('railMap').setView([35.681236, 139.767125], 5);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+        }).addTo(railMapInstance);
+    }
+
+    // 清除舊 Marker
+    mapMarkers.forEach(m => railMapInstance.removeLayer(m));
+    mapMarkers = [];
+    
+    let visitedStations = new Set();
+    trips.forEach(t => {
+        visitedStations.add(t.from_id);
+        visitedStations.add(t.to_id);
+    });
+
+    let bounds = [];
+    visitedStations.forEach(stnId => {
+        let stn = maps.station[stnId];
+        // 假設你嘅車站 JSON 入面有 lat 同 lng 屬性
+        if (stn && stn.lat && stn.lng) {
+            let m = L.marker([stn.lat, stn.lng])
+                     .bindPopup(`<b>${getStatStationDisplay(stnId)}</b>`)
+                     .addTo(railMapInstance);
+            mapMarkers.push(m);
+            bounds.push([stn.lat, stn.lng]);
+        }
+    });
+
+    // 自動調整視野包含所有標記
+    if (bounds.length > 0) {
+        railMapInstance.fitBounds(bounds, { padding: [30, 30] });
+    }
+}
+
+// =========================================
+// V0.22 成就系統邏輯
+// =========================================
+function renderAchievements() {
+    let cSet = new Set(), lSet = new Set(), sSet = new Set();
+    trips.forEach(t => {
+        t.routes.forEach(r => { cSet.add(r.company_id); lSet.add(r.line_id); });
+        sSet.add(t.from_id); sSet.add(t.to_id);
+    });
+
+    const achieveData = [
+        { id: 'c1', title: '初次乘搭', desc: '乘搭 1 間鉄道公司', target: 1, current: cSet.size, icon: '🏢' },
+        { id: 'c5', title: '鉄道迷', desc: '乘搭 5 間鉄道公司', target: 5, current: cSet.size, icon: '🚆' },
+        { id: 'c15', title: '百家爭鳴', desc: '乘搭 15 間鉄道公司', target: 15, current: cSet.size, icon: '🗾' },
+        { id: 'l10', title: '路線開拓者', desc: '乘搭 10 條路線', target: 10, current: lSet.size, icon: '🛤️' },
+        { id: 'l50', title: '四通八達', desc: '乘搭 50 條路線', target: 50, current: lSet.size, icon: '🗺️' },
+        { id: 's50', title: '車站打卡', desc: '造訪 50 個車站', target: 50, current: sSet.size, icon: '🚉' },
+        { id: 's200', title: '車站達人', desc: '造訪 200 個車站', target: 200, current: sSet.size, icon: '👑' },
+    ];
+
+    const container = document.getElementById('achievementList');
+    container.innerHTML = '';
+    
+    achieveData.forEach(a => {
+        let pct = Math.min((a.current / a.target) * 100, 100);
+        let unlocked = a.current >= a.target;
+        
+        container.innerHTML += `
+            <div class="achievement-card">
+                <div class="achieve-icon ${unlocked ? 'unlocked' : ''}">${a.icon}</div>
+                <div class="achieve-info">
+                    <div class="achieve-title">${a.title} <span style="float:right; font-size:13px; font-weight:normal; color:var(--subtext);">${a.current} / ${a.target}</span></div>
+                    <div class="achieve-desc">${a.desc}</div>
+                    <div class="achieve-bar-bg">
+                        <div class="achieve-bar-fill" style="width: ${pct}%"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
 }
 
 loadData();
