@@ -211,11 +211,41 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     .station-sign-label { background: #222; color: #eee; border-color: #555; }
     .station-sign-name { color: #eee; }
 }
+.achievement-tooltip {
+    position: fixed;
+    display: none;
+    z-index: 4000;
+    max-width: min(260px, 80vw);
+    background: rgba(28, 28, 30, 0.96);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.45;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+    pointer-events: none;
+    white-space: normal;
+}
 
+.achievement-tooltip.show {
+    display: block;
+}
+
+.achievement-tooltip-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.achievement-tooltip-desc {
+    color: rgba(255,255,255,0.9);
+}
 </style>
 </head>
 
 <body>
+<div id="achievementTooltip" class="achievement-tooltip"></div>
 <div id="loading-screen">
     <div class="e235-header-wide">
         <div class="e235-header-left">
@@ -272,7 +302,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         <div class="header-band" onclick="scrollSign('next')" title="向下捲一格"></div>
     </header>
 
-    <div id="saveMessage" class="toast-message">儲存成功！</div>
+    <div id="appToast" class="toast-message">通知</div>
     <div class="version-badge">V0.25</div>
 
     <div class="container">
@@ -568,21 +598,102 @@ const storage = getStorage(app);
 
 console.log("Firebase 已連接", app);
 
+let achievementTooltipPinned = false;
+let currentAchievementTitle = "";
+let currentAchievementDesc = "";
+
+function getAchievementTooltip() {
+    return document.getElementById("achievementTooltip");
+}
+
+function hideAchievementTooltip() {
+    const tooltip = getAchievementTooltip();
+    if (!tooltip) return;
+    tooltip.classList.remove("show");
+    tooltip.style.display = "none";
+    achievementTooltipPinned = false;
+    currentAchievementTitle = "";
+    currentAchievementDesc = "";
+}
+
+function placeAchievementTooltip(x, y) {
+    const tooltip = getAchievementTooltip();
+    if (!tooltip) return;
+
+    const padding = 12;
+    const rect = tooltip.getBoundingClientRect();
+
+    let left = x + 12;
+    let top = y + 12;
+
+    if (left + rect.width > window.innerWidth - padding) {
+        left = window.innerWidth - rect.width - padding;
+    }
+    if (top + rect.height > window.innerHeight - padding) {
+        top = y - rect.height - 12;
+    }
+    if (top < padding) top = padding;
+    if (left < padding) left = padding;
+
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+}
+
+document.addEventListener("click", (e) => {
+    const tooltip = document.getElementById("achievementTooltip");
+    const badge = e.target.closest(".achieve-badge");
+
+    if (badge) return;
+    if (tooltip && tooltip.contains(e.target)) return;
+
+    hideAchievementDesc(true);
+});
+
+window.showAchievementDesc = function(event, title, desc, pinned = false) {
+    const tooltip = getAchievementTooltip();
+    if (!tooltip || !event) return;
+
+    currentAchievementTitle = title;
+    currentAchievementDesc = desc;
+    achievementTooltipPinned = pinned;
+
+    tooltip.innerHTML = `
+        <div class="achievement-tooltip-title">🏆 ${title}</div>
+        <div class="achievement-tooltip-desc">${desc}</div>
+    `;
+    tooltip.style.display = "block";
+    tooltip.classList.add("show");
+
+    placeAchievementTooltip(event.clientX, event.clientY);
+};
+
+window.moveAchievementDesc = function(event) {
+    if (!event || achievementTooltipPinned) return;
+    const tooltip = getAchievementTooltip();
+    if (!tooltip || tooltip.style.display === "none") return;
+    placeAchievementTooltip(event.clientX, event.clientY);
+};
+
+window.hideAchievementDesc = function(force = false) {
+    if (achievementTooltipPinned && !force) return;
+    hideAchievementTooltip();
+};
+
 window.register = async function () {
     const email = document.getElementById("authEmail").value.trim();
     const password = document.getElementById("authPassword").value;
 
     if (!email || !password) {
-        alert("請輸入 Email 同密碼");
+        showToast("請輸入 Email 同密碼");
         return;
     }
 
     try {
         await createUserWithEmailAndPassword(auth, email, password);
-        alert("帳戶建立成功");
+        showToast("帳戶建立成功");
     } catch (error) {
-        alert("建立帳戶失敗：" + error.message);
-        console.error(error);
+        showToast("建立帳戶失敗", "var(--danger)");
+		console.error(error);
     }
 };
 
@@ -591,16 +702,16 @@ window.login = async function () {
     const password = document.getElementById("authPassword").value;
 
     if (!email || !password) {
-        alert("請輸入 Email 同密碼");
+        showToast("請輸入 Email 同密碼");
         return;
     }
 
     try {
         await signInWithEmailAndPassword(auth, email, password);
-        alert("登入成功");
+        showToast("登入成功");
     } catch (error) {
-        alert("登入失敗：" + error.message);
-        console.error(error);
+        showToast("登入失敗", "var(--danger)");
+		console.error(error);
     }
 };
 
@@ -608,20 +719,20 @@ window.loginWithGoogle = async function () {
     try {
         const provider = new GoogleAuthProvider();
         await signInWithPopup(auth, provider);
-        alert("Google 登入成功");
+        showToast("Google 登入成功");
     } catch (error) {
-        alert("Google 登入失敗：" + error.message);
-        console.error(error);
+        showToast("Google 登入失敗", "var(--danger)");
+		console.error(error);
     }
 };
 
 window.logout = async function () {
     try {
         await signOut(auth);
-        alert("已登出");
+        showToast("已登出");
     } catch (error) {
-        alert("登出失敗：" + error.message);
-        console.error(error);
+        showToast("登出失敗", "var(--danger)");
+		console.error(error);
     }
 };
 
@@ -713,6 +824,21 @@ window.scrollSign = function(direction) {
 let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]").map(normalizeTrip);
 let editIndex = null;
 let lastTo = "";
+let toastTimer = null;
+
+function showToast(message, bgColor = "var(--success)") {
+    const toast = document.getElementById("appToast");
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.style.background = bgColor;
+    toast.style.display = "block";
+
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+        toast.style.display = "none";
+    }, 2200);
+}
 
 function normalizeTrip(trip) {
     const normalized = { ...trip };
@@ -1213,9 +1339,7 @@ window.saveTrip =function () {
     updateLineList("", "lineList"); updateTrainDatalist(); updateStationLists();
     currentRecordPage = 1; render();
     
-    const messageDiv = document.getElementById("saveMessage");
-    messageDiv.style.display = "block";
-    setTimeout(() => messageDiv.style.display = "none", 2500);
+    showToast("儲存成功！");
 }
 
 function getCompName(id) { return maps.company[id]?.name || id; }
@@ -1757,11 +1881,15 @@ function renderAchievements() {
         if (a.unlocked) {
             // 加入 onclick 事件顯示說明
             unlockedHtml += `
-                <div class="achieve-badge" onclick="showAchievementDesc('${a.title}', '${a.desc}')">
-                    <div class="achieve-icon unlocked">${a.icon}</div>
-                    <div class="achieve-title">${a.title}</div>
-                </div>
-            `;
+    <div class="achieve-badge"
+         onmouseenter="showAchievementDesc(event, '${a.title}', '${a.desc}', false)"
+         onmousemove="moveAchievementDesc(event)"
+         onmouseleave="hideAchievementDesc(false)"
+         onclick="showAchievementDesc(event, '${a.title}', '${a.desc}', true)">
+        <div class="achieve-icon unlocked">${a.icon}</div>
+        <div class="achieve-title">${a.title}</div>
+    </div>
+`;
         } else {
             lockedByCategory[a.cat].push(a);
         }
