@@ -673,24 +673,26 @@ function hideLoadingScreen() {
 
 async function loadData() {
     try {
-        if (document.getElementById('syncStatus')) {
-            document.getElementById('syncStatus').innerText = "正在載入資料庫...";
-        }
-
-        // --- 1. 載入基礎設定檔 ---
+        // ================================
+        // 1️⃣ 載入本地 JSON 資料（公司/車型）
+        // ================================
         const [compRes, trainRes] = await Promise.all([
-            fetch("companies.json"), fetch("traintypes.json")
+            fetch("companies.json"),
+            fetch("traintypes.json")
         ]);
+
         if (compRes.ok && trainRes.ok) {
-            db.companies = await compRes.json(); 
+            db.companies = await compRes.json();
             db.trains = await trainRes.json();
         }
 
-        // --- 2. 載入龐大的鐵路公司 JSON 清單 (保留你原本的所有檔案) ---
-        db.lines = []; 
+        // ================================
+        // 2️⃣ 載入所有公司路線 JSON
+        // ================================
+        db.lines = [];
         db.stations = [];
-        const newCompanyFiles = [
-            "keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
+
+        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
             "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", 
             "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", 
@@ -704,82 +706,116 @@ async function loadData() {
             "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
             "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
-            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"]; 
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"];
 
-        const fetchPromises = newCompanyFiles.map(file => fetch(file).then(res => res.ok ? res.json() : null).catch(() => null));
+        const fetchPromises = newCompanyFiles.map(file =>
+            fetch(file)
+                .then(res => res.ok ? res.json() : null)
+                .catch(() => null)
+        );
+
         const results = await Promise.all(fetchPromises);
-        
+
         results.forEach(data => {
             if (!data) return;
-            let compData = Array.isArray(data) ? data[0] : data; 
+
+            let compData = Array.isArray(data) ? data[0] : data;
+
             if (compData.lines) {
-                compData.lines.forEach(line => { line.company_id = compData.company_id; db.lines.push(line); });
+                compData.lines.forEach(line => {
+                    line.company_id = compData.company_id;
+                    db.lines.push(line);
+                });
             }
+
             if (compData.stations) {
-                compData.stations.forEach(station => { station.company_id = compData.company_id; db.stations.push(station); });
+                compData.stations.forEach(station => {
+                    station.company_id = compData.company_id;
+                    db.stations.push(station);
+                });
             }
         });
 
-        // 建立地圖索引 (maps)，這對後面的 ID 修復很重要
-        buildMaps(); 
-
-        // --- 3. 處理行程記錄 (本地 + 雲端同步) ---
-        
-        // A. 先讀取本地快取，讓介面能立刻顯示
+        // ================================
+        // 3️⃣ 🔥 先讀本地資料（即時顯示）
+        // ================================
         const local = localStorage.getItem("railTrips_V2");
         if (local) {
             trips = JSON.parse(local);
         }
 
-        // B. 檢查 Firebase 雲端是否有更新
-        if (window.cloudSync && window.cloudSync.isReady) {
-            if (document.getElementById('syncStatus')) document.getElementById('syncStatus').innerText = "同步雲端數據...";
+        // ================================
+        // 4️⃣ 🔥 嘗試雲端同步（不阻塞 UI）
+        // ================================
+        if (window.cloudSync && typeof window.cloudSync.loadTrips === "function") {
             try {
                 const cloudData = await window.cloudSync.loadTrips();
+
                 if (cloudData && Array.isArray(cloudData)) {
-                    // 以雲端為準，覆蓋本地
                     trips = cloudData;
+
+                    // 覆蓋本地
                     localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-                    console.log("雲端數據同步完成");
+
+                    console.log("✅ 已從雲端同步資料");
                 }
-            } catch (e) {
-                console.log("雲端載入失敗，使用本地備份", e);
+            } catch (err) {
+                console.log("⚠️ 雲端讀取失敗，使用本地資料", err);
             }
         }
 
-        // --- 4. ID 修復邏輯 (保留你原本的數據清洗過程) ---
+    } catch (e) {
+        console.log("資料庫載入失敗。", e);
+    } finally {
+
+        // ================================
+        // 5️⃣ 建立 maps + UI
+        // ================================
+        buildMaps();
+        initUILists();
+
+        // ================================
+        // 6️⃣ 修復舊資料 ID
+        // ================================
         let dataModified = false;
+
         trips.forEach(t => {
-            // 修正火車 ID
             if (!maps.train[t.train_id]) {
-                let realId = (typeof resolve !== 'undefined' && resolve.train) ? resolve.train[t.train_id] : null;
+                let realId = resolve.train[t.train_id];
+
                 if (!realId) {
                     let cleanName = t.train_id.replace(/\s*\(.*?\)$/, '').trim();
-                    let found = db.trains.find(tr => tr.name === cleanName || tr._display === t.train_id);
+                    let found = db.trains.find(tr =>
+                        tr.name === cleanName || tr._display === t.train_id
+                    );
                     if (found) realId = found.id;
                 }
-                if (realId) { t.train_id = realId; dataModified = true; }
+
+                if (realId) {
+                    t.train_id = realId;
+                    dataModified = true;
+                }
             }
-            // 你原本可能還有處理車站 ID 的邏輯，可以在此處繼續延伸...
         });
 
         if (dataModified) {
             localStorage.setItem("railTrips_V2", JSON.stringify(trips));
         }
 
-    } catch (e) { 
-        console.log("初始化載入失敗。", e); 
-    } finally {
-        // --- 5. 最後渲染介面 ---
-        initUILists(); 
-        render(); 
+        // ================================
+        // 7️⃣ Render UI
+        // ================================
+        render();
         updateStationLists();
-        if (typeof checkAchievements === "function") checkAchievements();
-        
-        if (document.getElementById('syncStatus')) {
-            document.getElementById('syncStatus').innerText = "系統就緒";
-        }
-    } 
+
+        // ================================
+        // 8️⃣ 收起 Loading
+        // ================================
+        setTimeout(() => {
+            hideLoadingScreen();
+            document.getElementById('main-app').classList.add('show');
+        }, 1200);
+    }
 }
 
 function buildMaps() {
