@@ -710,9 +710,37 @@ window.scrollSign = function(direction) {
     rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
 }
 
-let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]");
+let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]").map(normalizeTrip);
 let editIndex = null;
 let lastTo = "";
+
+function normalizeTrip(trip) {
+    const normalized = { ...trip };
+
+    // 確保 routes 一定存在，而且係 array
+    if (!Array.isArray(normalized.routes)) {
+        if (normalized.company_id || normalized.line_id) {
+            normalized.routes = [{
+                company_id: normalized.company_id || "",
+                line_id: normalized.line_id || ""
+            }];
+        } else {
+            normalized.routes = [];
+        }
+    }
+
+    // 補齊其他欄位，避免之後再出錯
+    normalized.date = normalized.date || "";
+    normalized.serviceType = normalized.serviceType || "";
+    normalized.train_id = normalized.train_id || "";
+    normalized.from_id = normalized.from_id || "";
+    normalized.to_id = normalized.to_id || "";
+    normalized.photoTrain = normalized.photoTrain || "";
+    normalized.photoFrom = normalized.photoFrom || "";
+    normalized.photoTo = normalized.photoTo || "";
+
+    return normalized;
+}
 
 let db = { companies: [], lines: [], stations: [], trains: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
@@ -839,8 +867,20 @@ async function loadData() {
         console.log("資料庫載入失敗。", e); 
     } 
     finally {
-        buildMaps(); initUILists(); render(); updateStationLists();
-        
+        buildMaps();
+initUILists();
+
+trips = trips.map(normalizeTrip);
+
+render();
+console.log("目前 trips:", trips);
+trips.forEach((t, i) => {
+    if (!Array.isArray(t.routes)) {
+        console.log("第 " + i + " 筆資料 routes 有問題：", t);
+    }
+});
+updateStationLists();
+
         let dataModified = false;
         trips.forEach(t => {
             if (!maps.train[t.train_id]) {
@@ -1246,7 +1286,9 @@ function render() {
         const div = document.createElement("div"); div.className = "trip";
         
         let routeHtml = ""; let lastCompany = "";
-        t.routes.forEach((r, idx) => {
+        const routes = Array.isArray(t.routes) ? t.routes : [];
+
+routes.forEach((r, idx) => {
             let compName = getCompName(r.company_id); let lineName = getLineName(r.line_id);
             if (idx === 0) { routeHtml += `${compName} ${lineName}`; lastCompany = compName; } 
             else {
@@ -1455,7 +1497,8 @@ window.editTrip = function(i) {
     setVal("company", firstCompName);
     
     updateLineList(firstCompName, "lineList");
-
+	setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
+	
     document.getElementById("throughContainer").innerHTML = "";
     t.routes.slice(1).forEach(r => {
         addThrough();
@@ -1520,9 +1563,15 @@ window.importData = function() {
     if(!file) return alert("請先選擇檔案！");
     const reader = new FileReader();
     reader.onload = e => {
-        try { trips = JSON.parse(e.target.result); localStorage.setItem("railTrips_V2", JSON.stringify(trips)); render(); alert("匯入成功！"); } 
-        catch(err) { alert("檔案格式錯誤！"); }
-    };
+         try {
+        trips = JSON.parse(e.target.result).map(normalizeTrip);
+        localStorage.setItem("railTrips_V2", JSON.stringify(trips));
+        render();
+        alert("匯入成功！");
+    } catch(err) {
+        alert("檔案格式錯誤！");
+    }
+};
     reader.readAsText(file);
 }
 
