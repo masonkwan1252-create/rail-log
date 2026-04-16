@@ -364,7 +364,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                     </div>
                 </div>
 
-                <button id="saveBtn" onclick="saveTrip()" class="btn-primary">儲存記錄</button>
+                <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
             </div>
         </div>
 
@@ -673,26 +673,16 @@ function hideLoadingScreen() {
 
 async function loadData() {
     try {
-        // ================================
-        // 1️⃣ 載入本地 JSON 資料（公司/車型）
-        // ================================
         const [compRes, trainRes] = await Promise.all([
-            fetch("companies.json"),
-            fetch("traintypes.json")
+            fetch("companies.json"), fetch("traintypes.json")
         ]);
-
         if (compRes.ok && trainRes.ok) {
-            db.companies = await compRes.json();
-            db.trains = await trainRes.json();
+            db.companies = await compRes.json(); db.trains = await trainRes.json();
         }
 
-        // ================================
-        // 2️⃣ 載入所有公司路線 JSON
-        // ================================
-        db.lines = [];
-        db.stations = [];
-
-        const newCompanyFiles = ["keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
+        db.lines = []; db.stations = [];
+        const newCompanyFiles = [
+            "keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
             "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", 
             "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", 
@@ -706,115 +696,45 @@ async function loadData() {
             "yamagata.json", "aizu.json", "abukuma.json", "fukushima.json", "sapporo.json", 
             "hakodate.json", "sendai.json", "toei.json", "kitakyu.json", "yokohama_subway.json", 
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
-            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"];
-
-        const fetchPromises = newCompanyFiles.map(file =>
-            fetch(file)
-                .then(res => res.ok ? res.json() : null)
-                .catch(() => null)
-        );
-
+            "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"]; 
+        
+        const fetchPromises = newCompanyFiles.map(file => fetch(file).then(res => res.ok ? res.json() : null).catch(() => null));
         const results = await Promise.all(fetchPromises);
-
+        
         results.forEach(data => {
             if (!data) return;
-
-            let compData = Array.isArray(data) ? data[0] : data;
-
+            let compData = Array.isArray(data) ? data[0] : data; 
             if (compData.lines) {
-                compData.lines.forEach(line => {
-                    line.company_id = compData.company_id;
-                    db.lines.push(line);
-                });
+                compData.lines.forEach(line => { line.company_id = compData.company_id; db.lines.push(line); });
             }
-
             if (compData.stations) {
-                compData.stations.forEach(station => {
-                    station.company_id = compData.company_id;
-                    db.stations.push(station);
-                });
+                compData.stations.forEach(station => { station.company_id = compData.company_id; db.stations.push(station); });
             }
         });
 
-        // ================================
-        // 3️⃣ 🔥 先讀本地資料（即時顯示）
-        // ================================
-        const local = localStorage.getItem("railTrips_V2");
-        if (local) {
-            trips = JSON.parse(local);
-        }
-
-        // ================================
-        // 4️⃣ 🔥 嘗試雲端同步（不阻塞 UI）
-        // ================================
-        if (window.cloudSync && typeof window.cloudSync.loadTrips === "function") {
-            try {
-                const cloudData = await window.cloudSync.loadTrips();
-
-                if (cloudData && Array.isArray(cloudData)) {
-                    trips = cloudData;
-
-                    // 覆蓋本地
-                    localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-
-                    console.log("✅ 已從雲端同步資料");
-                }
-            } catch (err) {
-                console.log("⚠️ 雲端讀取失敗，使用本地資料", err);
-            }
-        }
-
-    } catch (e) {
-        console.log("資料庫載入失敗。", e);
-    } finally {
-
-        // ================================
-        // 5️⃣ 建立 maps + UI
-        // ================================
-        buildMaps();
-        initUILists();
-
-        // ================================
-        // 6️⃣ 修復舊資料 ID
-        // ================================
+    } catch (e) { 
+        console.log("資料庫載入失敗。", e); 
+    } 
+    finally {
+        buildMaps(); initUILists(); render(); updateStationLists();
+        
         let dataModified = false;
-
         trips.forEach(t => {
             if (!maps.train[t.train_id]) {
                 let realId = resolve.train[t.train_id];
-
                 if (!realId) {
                     let cleanName = t.train_id.replace(/\s*\(.*?\)$/, '').trim();
-                    let found = db.trains.find(tr =>
-                        tr.name === cleanName || tr._display === t.train_id
-                    );
+                    let found = db.trains.find(tr => tr.name === cleanName || tr._display === t.train_id);
                     if (found) realId = found.id;
                 }
-
-                if (realId) {
-                    t.train_id = realId;
-                    dataModified = true;
-                }
+                if (realId) { t.train_id = realId; dataModified = true; }
             }
         });
+        
+        if (dataModified) localStorage.setItem("railTrips_V2", JSON.stringify(trips));
 
-        if (dataModified) {
-            localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-        }
-
-        // ================================
-        // 7️⃣ Render UI
-        // ================================
-        render();
-        updateStationLists();
-
-        // ================================
-        // 8️⃣ 收起 Loading
-        // ================================
-        setTimeout(() => {
-            hideLoadingScreen();
-            document.getElementById('main-app').classList.add('show');
-        }, 1200);
+        render(); updateStationLists();
+        setTimeout(hideLoadingScreen, 1800);
     }
 }
 
@@ -1027,10 +947,20 @@ function addThrough() {
 }
 
 // 🟩 V0.25 處理圖片上傳
-async function uploadImage(file) {
-  const storageRef = ref(storage, 'photos/' + file.name);
-  await uploadBytes(storageRef, file);
-  return await getDownloadURL(storageRef); // 這就是相片的雲端網址
+function handlePhotoUpload(input, targetId) {
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64Data = e.target.result;
+            document.getElementById(targetId).value = base64Data;
+            const previewImg = document.getElementById('preview-' + targetId);
+            previewImg.src = base64Data;
+            previewImg.style.display = 'block';
+            input.parentElement.querySelector('.remove-photo-btn').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
 }
 
 // 🟩 V0.25 移除圖片
@@ -1054,63 +984,75 @@ function clearAllPhotosUI() {
     });
 }
 
-async function saveTrip() {
-    const saveBtn = document.getElementById('saveBtn');
+function saveTrip() {
+    const getVal = (id) => document.getElementById(id).value;
+    const companyInput = getVal("company");
+    const lineInput = getVal("line");
+    
+    let mainCompId = resolve.company[companyInput] || companyInput;
+    let mainLineId = db.lines.find(l => l.company_id === mainCompId && l.name === lineInput)?.id || lineInput;
 
-    // 🛡️ 防止 null error
-    if (!saveBtn) {
-        console.error("saveBtn 不存在");
-        return;
+    let routes = [{ company_id: mainCompId, line_id: mainLineId }];
+    document.querySelectorAll(".through-block").forEach(block => {
+        let tcId = resolve.company[block.querySelector(".throughCompany").value] || block.querySelector(".throughCompany").value;
+        let tlInput = block.querySelector(".throughLine").value;
+        let tlId = db.lines.find(l => l.company_id === tcId && l.name === tlInput)?.id || tlInput;
+        if(tcId || tlId) routes.push({ company_id: tcId, line_id: tlId });
+    });
+
+    let trainInput = getVal("train");
+    let finalTrainId = trainInput;
+    if (activeTrainCompanyId) {
+        let matchedTrain = currentCompanyTrains.find(t => t._display === trainInput || t.name === trainInput);
+        if (matchedTrain) finalTrainId = matchedTrain.id;
+    } else {
+        finalTrainId = resolve.train[trainInput] || trainInput;
     }
 
-    const originalBtnText = saveBtn.innerText;
-
-    // ✅ 正確 id
-    const t = {
-        date: document.getElementById('date').value,
-        company_id: document.getElementById('company').value,
-        route_id: document.getElementById('line').value,
-        train_id: document.getElementById('train').value,
-        from_id: document.getElementById('from').value,
-        to_id: document.getElementById('to').value,
-        timestamp: Date.now()
+    const trip = {
+        date: getVal("date"),
+        serviceType: getVal("serviceType"), 
+        routes: routes,
+        train_id: finalTrainId,
+        from_id: resolve.station[getVal("from")] || getVal("from"),
+        to_id: resolve.station[getVal("to")] || getVal("to"),
+        // 🟩 V0.25 儲存相片
+        photoTrain: getVal("photoTrain"),
+        photoFrom: getVal("photoFrom"),
+        photoTo: getVal("photoTo")
     };
 
-    if (!t.date || !t.train_id) {
-        alert("請填寫日期與車型！");
-        return;
-    }
+    if (editIndex !== null) { trips[editIndex] = trip; editIndex = null; } 
+    else { trips.push(trip); }
 
     try {
-        saveBtn.disabled = true;
-        saveBtn.innerText = "儲存中...";
-
-        // ✅ 更新本地
-        if (editIndex > -1) {
-            trips[editIndex] = t;
-        } else {
-            trips.unshift(t);
-        }
-
         localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-
-        // ✅ 雲端同步
-        if (window.cloudSync && typeof window.cloudSync.saveTrips === "function") {
-            await window.cloudSync.saveTrips(trips);
+    } catch (e) {
+        if(e.name === 'QuotaExceededError') {
+            alert("儲存失敗：相片可能太大導致儲存空間不足。請嘗試不附加相片或減低相片像素。");
+            trips.pop(); // Revert
+            return;
         }
-
-        alert("已儲存！");
-        render();
-
-        switchTab('tab-history', document.querySelectorAll('.nav-item')[1]);
-
-    } catch (err) {
-        console.error(err);
-        alert("儲存失敗");
-    } finally {
-        saveBtn.disabled = false;
-        saveBtn.innerText = originalBtnText;
     }
+
+    lastTo = trip.to_id;
+
+    ["company", "line", "serviceType", "train", "to"].forEach(id => document.getElementById(id).value = "");
+    document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
+    document.getElementById("throughContainer").innerHTML = "";
+    
+    document.getElementById("useOtherTrainCompany").checked = false;
+    document.getElementById("otherTrainCompanyWrapper").style.display = "none";
+    document.getElementById("trainOwnerCompany").value = "";
+    
+    clearAllPhotosUI();
+
+    updateLineList("", "lineList"); updateTrainDatalist(); updateStationLists();
+    currentRecordPage = 1; render();
+    
+    const messageDiv = document.getElementById("saveMessage");
+    messageDiv.style.display = "block";
+    setTimeout(() => messageDiv.style.display = "none", 2500);
 }
 
 function getCompName(id) { return maps.company[id]?.name || id; }
@@ -1438,14 +1380,9 @@ function editTrip(i) {
     switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
 
-async function deleteTrip(i) {
+function deleteTrip(i) {
     if(confirm("確定刪除此記錄？")) {
-        trips.splice(i, 1);
-        localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-        if (window.cloudSync.isReady) {
-            await window.cloudSync.save(trips);
-        }
-        render();
+        trips.splice(i, 1); localStorage.setItem("railTrips_V2", JSON.stringify(trips)); render();
     }
 }
 
@@ -1709,53 +1646,6 @@ function renderAchievements() {
 }
 
 loadData();
-</script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyADOSXJ3NHnbqryLDma15uir-UuOO2PnEo",
-    authDomain: "rail-log-v1.firebaseapp.com",
-    projectId: "rail-log-v1",
-    storageBucket: "rail-log-v1.firebasestorage.app",
-    messagingSenderId: "160211065817",
-    appId: "1:160211065817:web:f68c310997c8c38ec717c8"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-storage.js";
-
-const db = getFirestore(app);
-const storage = getStorage(app);
-
-// 定義雲端儲存函式，讓外部（原本的代碼）可以呼叫
-window.cloudSync = {
-  // 上傳相片並獲取 URL
-  uploadImage: async (file) => {
-    const storageRef = ref(storage, `photos/${Date.now()}_${file.name}`);
-    const snapshot = await uploadBytes(storageRef, file);
-    return await getDownloadURL(snapshot.ref);
-  },
-  // 儲存所有行程到 Firestore
-  saveTrips: async (tripsArray) => {
-    // 暫時使用 "default_user" 作為 ID，直到你加入登入系統
-    await setDoc(doc(db, "railLogs", "my_trips"), {
-      data: tripsArray,
-      lastUpdated: new Date()
-    });
-  },
-  // 從 Firestore 讀取行程
-  loadTrips: async () => {
-    const docSnap = await getDoc(doc(db, "railLogs", "my_trips"));
-    return docSnap.exists() ? docSnap.data().data : null;
-  }
-};
 </script>
 </body>
 </html>
