@@ -437,6 +437,29 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         </div>
 
         <div id="tab-settings" class="tab-content">
+		<div class="card">
+    <h3>帳戶登入</h3>
+
+    <label>Email</label>
+    <div class="input-wrapper">
+        <input id="authEmail" type="email" placeholder="輸入 Email">
+        <button class="clear-input-btn" onclick="clearInput('authEmail')">✕</button>
+    </div>
+
+    <label>密碼</label>
+    <div class="input-wrapper">
+        <input id="authPassword" type="password" placeholder="輸入密碼">
+        <button class="clear-input-btn" onclick="clearInput('authPassword')">✕</button>
+    </div>
+
+    <button class="btn-primary" onclick="register()">建立帳戶</button>
+    <button onclick="login()">登入</button>
+    <button onclick="logout()">登出</button>
+<button onclick="loginWithGoogle()">使用 Google 登入</button>
+    <div id="authStatus" style="margin-top:12px; font-size:13px; color:var(--subtext);">
+        未登入
+    </div>
+</div>
             <div class="card">
                 <h3>資料管理</h3>
                 <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。注意：匯出資料包含相片會較大。</p>
@@ -513,7 +536,107 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCD_r9KTdFKQ3TGKuLPqyF8qnLMG3t9TdA",
+    authDomain: "rail-log-v1-41134.firebaseapp.com",
+    projectId: "rail-log-v1-41134",
+    storageBucket: "rail-log-v1-41134.firebasestorage.app",
+    messagingSenderId: "270077781044",
+    appId: "1:270077781044:web:cef091146a810ea4ba5661",
+    measurementId: "G-QFNMXPTYVF"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const dbCloud = getFirestore(app);
+const storage = getStorage(app);
+
+console.log("Firebase 已連接", app);
+
+window.register = async function () {
+    const email = document.getElementById("authEmail").value.trim();
+    const password = document.getElementById("authPassword").value;
+
+    if (!email || !password) {
+        alert("請輸入 Email 同密碼");
+        return;
+    }
+
+    try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        alert("帳戶建立成功");
+    } catch (error) {
+        alert("建立帳戶失敗：" + error.message);
+        console.error(error);
+    }
+};
+
+window.login = async function () {
+    const email = document.getElementById("authEmail").value.trim();
+    const password = document.getElementById("authPassword").value;
+
+    if (!email || !password) {
+        alert("請輸入 Email 同密碼");
+        return;
+    }
+
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert("登入成功");
+    } catch (error) {
+        alert("登入失敗：" + error.message);
+        console.error(error);
+    }
+};
+
+window.loginWithGoogle = async function () {
+    try {
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+        alert("Google 登入成功");
+    } catch (error) {
+        alert("Google 登入失敗：" + error.message);
+        console.error(error);
+    }
+};
+
+window.logout = async function () {
+    try {
+        await signOut(auth);
+        alert("已登出");
+    } catch (error) {
+        alert("登出失敗：" + error.message);
+        console.error(error);
+    }
+};
+
+onAuthStateChanged(auth, (user) => {
+    const authStatusEl = document.getElementById("authStatus");
+
+    if (!authStatusEl) return;
+
+    if (user) {
+        authStatusEl.textContent = `已登入：${user.email}`;
+    } else {
+        authStatusEl.textContent = "未登入";
+    }
+});
+
 // =========================================
 // V0.21 E235系 Loading 頁面控制邏輯
 // =========================================
@@ -573,7 +696,7 @@ setTimeout(() => {
     }, 3000);
 }, 500);
 
-function scrollSign(direction) {
+window.scrollSign = function(direction) {
     if (autoRollInterval) {
         clearInterval(autoRollInterval);
         autoRollInterval = null;
@@ -611,7 +734,7 @@ let mapMarkers = [];
 
 document.getElementById("date").valueAsDate = new Date();
 
-function clearInput(id) {
+window.clearInput = function(id) {
     const el = document.getElementById(id);
     if (el) {
         el.value = '';
@@ -620,7 +743,7 @@ function clearInput(id) {
     }
 }
 
-function clearSiblingInput(btn) {
+window.clearSiblingInput = function(btn) {
     const input = btn.previousElementSibling;
     if (input) {
         input.value = '';
@@ -687,7 +810,7 @@ async function loadData() {
             "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", 
             "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", 
             "mizuma.json", "nose.json", "kishu.json", "wakayama.json", "chizu.json", 
-            "wakasa.json", "ichibata.json", "ibata.json", "okayama.json", "hiroshima_rapid.json", 
+            "wakasa.json", "ichibata.json", "ibara.json", "okayama.json", "hiroshima_rapid.json", 
             "hiroshima.json","nishikigawa.json", "takamatsu.json", "iyo.json", "tosa.json", 
             "tosaden.json", "amagi.json", "kitakyushu.json", "chikuho.json", "heisei_chikuho.json", 
             "shimabara.json", "nagasaki.json", "matsuura.json", "kumagawa.json", "minami_aso.json", 
@@ -783,7 +906,7 @@ function fillList(listId, dataArray) {
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
 }
 
-function switchTab(tabId, navElement) {
+window.switchTab = function(tabId, navElement) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
@@ -815,13 +938,13 @@ document.getElementById("company").addEventListener("input", () => {
     updateStationLists();
 });
 
-function toggleTrainCompanyUI() {
+window.toggleTrainCompanyUI = function() {
     const useOther = document.getElementById('useOtherTrainCompany').checked;
     document.getElementById('otherTrainCompanyWrapper').style.display = useOther ? 'block' : 'none';
     updateTrainDatalist();
 }
 
-function updateTrainDatalist() {
+window.updateTrainDatalist = function() {
     const useOther = document.getElementById('useOtherTrainCompany').checked;
     const targetCompanyInputId = useOther ? 'trainOwnerCompany' : 'company';
     const compName = document.getElementById(targetCompanyInputId).value;
@@ -863,7 +986,7 @@ document.getElementById("train").addEventListener("input", function() {
     }, 150); 
 });
 
-function updateLineList(compName, targetListId) {
+window.updateLineList = function(compName, targetListId) {
     const compId = resolve.company[compName];
     const list = document.getElementById(targetListId);
     if(!list) return;
@@ -872,7 +995,7 @@ function updateLineList(compName, targetListId) {
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
 }
 
-function updateStationLists() {
+window.updateStationLists = function() {
     const mainCompInput = document.getElementById("company").value;
     const mainCompId = resolve.company[mainCompInput];
     const mainLineInput = document.getElementById("line").value;
@@ -916,7 +1039,7 @@ function fillStationDatalist(listId, compId, lineInput) {
     stationsToShow.forEach(s => list.appendChild(new Option(s._display)));
 }
 
-function addThrough() {
+window.addThrough = function() {
     let lastCompName = document.getElementById("company").value;
     const existingBlocks = document.querySelectorAll(".through-block");
     if (existingBlocks.length > 0) {
@@ -947,7 +1070,7 @@ function addThrough() {
 }
 
 // 🟩 V0.25 處理圖片上傳
-function handlePhotoUpload(input, targetId) {
+window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
         const reader = new FileReader();
@@ -964,7 +1087,7 @@ function handlePhotoUpload(input, targetId) {
 }
 
 // 🟩 V0.25 移除圖片
-function removePhoto(targetId, event) {
+window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
     document.getElementById(targetId).value = "";
@@ -984,7 +1107,7 @@ function clearAllPhotosUI() {
     });
 }
 
-function saveTrip() {
+window.saveTrip =function () {
     const getVal = (id) => document.getElementById(id).value;
     const companyInput = getVal("company");
     const lineInput = getVal("line");
@@ -1075,13 +1198,13 @@ function getTodayStr() {
     return `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')}`;
 }
 
-function setDateFilter(val) {
+window.setDateFilter = function(val) {
     if (val === 'today') currentDateFilter = getTodayStr();
     else currentDateFilter = val;
     currentRecordPage = 1; render();
 }
 
-function changeDay(delta) {
+window.changeDay = function(delta) {
     let dateStr = currentDateFilter === 'all' ? getTodayStr() : currentDateFilter;
     let parts = dateStr.split('-');
     let d = new Date(parts[0], parts[1] - 1, parts[2]);
@@ -1090,7 +1213,7 @@ function changeDay(delta) {
     setDateFilter(newDateStr);
 }
 
-function changeRecordPage(delta) {
+window.changeRecordPage = function(delta) {
     currentRecordPage += delta;
     render(); window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -1164,7 +1287,7 @@ function render() {
     renderStats(); drawBarChart(); 
 }
 
-function openCalendar() {
+window.openCalendar = function() {
     if(currentDateFilter !== 'all') {
         let parts = currentDateFilter.split('-');
         calViewDate = new Date(parts[0], parts[1]-1, 1);
@@ -1174,8 +1297,8 @@ function openCalendar() {
     buildCalendar();
     document.getElementById("calendarModal").style.display = "flex";
 }
-function closeCalendar() { document.getElementById("calendarModal").style.display = "none"; }
-function changeCalMonth(delta) { calViewDate.setMonth(calViewDate.getMonth() + delta); buildCalendar(); }
+window.closeCalendar = function() { document.getElementById("calendarModal").style.display = "none"; }
+window.changeCalMonth = function(delta) { calViewDate.setMonth(calViewDate.getMonth() + delta); buildCalendar(); }
 function buildCalendar() {
     let year = calViewDate.getFullYear(), month = calViewDate.getMonth();
     document.getElementById("calMonthYear").innerText = `${year}年 ${month + 1}月`;
@@ -1198,7 +1321,7 @@ function buildCalendar() {
     }
 }
 
-function setStatFilter(type, id) {
+window.setStatFilter = function(type, id) {
     if (activeStatFilter.type === type && activeStatFilter.id === id) { activeStatFilter = { type: null, id: null }; } 
     else { activeStatFilter = { type, id }; }
     renderStats();
@@ -1272,7 +1395,7 @@ function renderStats() {
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
 }
 
-function switchChartTab(type) {
+window.switchChartTab = function(type) {
     currentChartType = type;
     document.getElementById("btnChartCompany").className = type === 'company' ? 'active' : '';
     document.getElementById("btnChartStation").className = type === 'station' ? 'active' : '';
@@ -1322,7 +1445,7 @@ function drawBarChart() {
     });
 }
 
-function editTrip(i) {
+window.editTrip = function(i) {
     const t = trips[i];
     let setVal = (id, val) => document.getElementById(id).value = val || "";
     setVal("date", t.date);
@@ -1380,19 +1503,19 @@ function editTrip(i) {
     switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
 
-function deleteTrip(i) {
+window.deleteTrip = function(i) {
     if(confirm("確定刪除此記錄？")) {
         trips.splice(i, 1); localStorage.setItem("railTrips_V2", JSON.stringify(trips)); render();
     }
 }
 
-function exportData() {
+window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
     a.download = "rail-log-V0.25.json"; a.click();
 }
 
-function importData() {
+window.importData = function() {
     const file = document.getElementById("importFile").files[0];
     if(!file) return alert("請先選擇檔案！");
     const reader = new FileReader();
@@ -1540,7 +1663,7 @@ function renderGallery() {
 /* =========================================
    🟩 V0.25 成就佈局邏輯 (加入點擊說明)
    ========================================= */
-function showAchievementDesc(title, desc) {
+window.showAchievementDesc = function(title, desc) {
     alert(`【${title}】\n${desc}`);
 }
 
