@@ -364,7 +364,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
                     </div>
                 </div>
 
-                <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
+                <button id="saveBtn" onclick="saveTrip()" class="btn-primary">儲存記錄</button>
             </div>
         </div>
 
@@ -1056,78 +1056,60 @@ function clearAllPhotosUI() {
 
 async function saveTrip() {
     const saveBtn = document.getElementById('saveBtn');
+
+    // 🛡️ 防止 null error
+    if (!saveBtn) {
+        console.error("saveBtn 不存在");
+        return;
+    }
+
     const originalBtnText = saveBtn.innerText;
-    
-    // 1. 收集資料
+
+    // ✅ 正確 id
     const t = {
         date: document.getElementById('date').value,
-        company_id: document.getElementById('company_id').value,
-        route_id: document.getElementById('route_id').value,
+        company_id: document.getElementById('company').value,
+        route_id: document.getElementById('line').value,
         train_id: document.getElementById('train').value,
         from_id: document.getElementById('from').value,
         to_id: document.getElementById('to').value,
-        seat: document.getElementById('seat').value,
-        note: document.getElementById('note').value,
-        timestamp: new Date().getTime()
+        timestamp: Date.now()
     };
 
     if (!t.date || !t.train_id) {
-        alert("請填寫日期與班次！");
+        alert("請填寫日期與車型！");
         return;
     }
 
     try {
-        // 介面鎖定，顯示進度
         saveBtn.disabled = true;
-        saveBtn.innerText = "同步中...";
-        if (document.getElementById('syncStatus')) {
-            document.getElementById('syncStatus').innerText = "正在上傳至雲端...";
-        }
+        saveBtn.innerText = "儲存中...";
 
-        // 2. 處理相片上傳 (如有選擇新檔案)
-        const photoInput = document.getElementById('photoInput');
-        if (photoInput.files[0]) {
-            // 呼叫 Firebase 模組中的上傳功能
-            const imageUrl = await window.cloudSync.uploadImage(photoInput.files[0]);
-            t.photo = imageUrl;
-        } else if (editIndex > -1) {
-            // 如果是編輯模式且沒換圖，保留舊圖 URL
-            t.photo = trips[editIndex].photo;
-        }
-
-        // 3. 更新本地陣列
+        // ✅ 更新本地
         if (editIndex > -1) {
             trips[editIndex] = t;
         } else {
             trips.unshift(t);
         }
 
-        // 4. 同步至本地儲存
         localStorage.setItem("railTrips_V2", JSON.stringify(trips));
 
-        // 5. 同步至 Firebase Firestore
-        if (window.cloudSync && window.cloudSync.isReady) {
+        // ✅ 雲端同步
+        if (window.cloudSync && typeof window.cloudSync.saveTrips === "function") {
             await window.cloudSync.saveTrips(trips);
         }
 
-        // 6. 完成後的清理與 UI 更新
-        alert(editIndex > -1 ? "修改成功並已同步" : "記錄已儲存至雲端");
-        resetForm(); // 確保你有這個重置表單的 function
+        alert("已儲存！");
         render();
-        if (typeof checkAchievements === "function") checkAchievements();
-        
-        // 切換回列表頁面
-        switchTab('tab-list', document.querySelectorAll('.nav-item')[1]);
 
-    } catch (error) {
-        console.error("儲存失敗:", error);
-        alert("儲存過程出現錯誤，請檢查網絡連接。");
+        switchTab('tab-history', document.querySelectorAll('.nav-item')[1]);
+
+    } catch (err) {
+        console.error(err);
+        alert("儲存失敗");
     } finally {
         saveBtn.disabled = false;
         saveBtn.innerText = originalBtnText;
-        if (document.getElementById('syncStatus')) {
-            document.getElementById('syncStatus').innerText = "同步已完成";
-        }
     }
 }
 
