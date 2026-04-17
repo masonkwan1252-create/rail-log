@@ -7,6 +7,9 @@
 <title>鉄道手帳 RAIL LOG V0.25</title>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#e0e0e0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -211,6 +214,32 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     .station-sign-label { background: #222; color: #eee; border-color: #555; }
     .station-sign-name { color: #eee; }
 }
+
+html {
+    background: var(--bg);
+}
+
+body {
+    background: var(--bg);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * env(safe-area-inset-top));
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background: inherit;
+    pointer-events: none;
+}
+
 .achievement-tooltip {
     position: fixed;
     display: none;
@@ -241,6 +270,213 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .achievement-tooltip-desc {
     color: rgba(255,255,255,0.9);
 }
+
+.auth-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.auth-mini-btn {
+    width: auto;
+    margin-top: 0;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 999px;
+    flex: 0 0 auto;
+}
+
+.auth-user-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.auth-login-state-joined {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.auth-email-joined {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.auth-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.auth-email-text {
+    font-size: 12px;
+    color: var(--subtext);
+    word-break: break-all;
+}
+
+.auth-badge-led {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 28px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #181818 0%, #0f0f0f 100%);
+    color: #63BD0F;
+    border: 2px solid #222;
+    font-family: 'DotGothic16', monospace;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-shadow:
+        0 0 4px rgba(99, 189, 15, 0.9),
+        0 0 10px rgba(99, 189, 15, 0.35);
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,1),
+        0 1px 2px rgba(0,0,0,0.15);
+    white-space: nowrap;
+}
+
+.auth-led-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #63BD0F;
+    box-shadow:
+        0 0 4px rgba(99, 189, 15, 0.95),
+        0 0 8px rgba(99, 189, 15, 0.5);
+    flex: 0 0 auto;
+}
+.auth-led-panel,
+.auth-led-btn {
+    min-height: 30px;
+    padding: 7px 12px;
+    background: linear-gradient(to bottom, #181818 0%, #0f0f0f 100%);
+    border: 2px solid #222;
+    font-family: 'DotGothic16', monospace;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,1),
+        inset 0 -1px 2px rgba(255,255,255,0.04);
+    white-space: nowrap;
+    margin: 0;
+}
+
+.auth-led-panel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-led-btn {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.auth-led-segment + .auth-led-segment {
+    margin-left: -6px;
+}
+
+.auth-led-left {
+    border-radius: 4px 0 0 4px;
+}
+
+.auth-led-middle {
+    border-radius: 0;
+}
+
+.auth-led-right {
+    border-radius: 0 4px 4px 0;
+}
+
+.auth-led-red {
+    color: #ff4d4f;
+    text-shadow:
+        0 0 4px rgba(255, 77, 79, 0.9),
+        0 0 10px rgba(255, 77, 79, 0.35);
+}
+
+.auth-led-green {
+    color: #63BD0F;
+    text-shadow:
+        0 0 4px rgba(99, 189, 15, 0.9),
+        0 0 10px rgba(99, 189, 15, 0.35);
+}
+
+.auth-led-orange {
+    color: #ff9500;
+    text-shadow:
+        0 0 4px rgba(255, 149, 0, 0.9),
+        0 0 10px rgba(255, 149, 0, 0.35);
+}
+
+.auth-led-btn.auth-led-green {
+    color: #63BD0F;
+    text-shadow:
+        0 0 4px rgba(99, 189, 15, 0.9),
+        0 0 10px rgba(99, 189, 15, 0.35);
+}
+
+.auth-led-btn.auth-led-red {
+    color: #ff4d4f;
+    text-shadow:
+        0 0 4px rgba(255, 77, 79, 0.9),
+        0 0 10px rgba(255, 77, 79, 0.35);
+}
+
+.auth-led-btn.auth-led-orange {
+    color: #ff9500;
+    text-shadow:
+        0 0 4px rgba(255, 149, 0, 0.9),
+        0 0 10px rgba(255, 149, 0, 0.35);
+}
+
+.auth-led-btn:active {
+    transform: translateY(1px);
+}
+
+@keyframes authPanelGlow {
+    0% {
+        box-shadow:
+            inset 0 2px 4px rgba(0,0,0,1),
+            inset 0 -1px 2px rgba(255,255,255,0.04),
+            0 0 0 rgba(99, 189, 15, 0);
+    }
+    30% {
+        box-shadow:
+            inset 0 2px 4px rgba(0,0,0,1),
+            inset 0 -1px 2px rgba(255,255,255,0.04),
+            0 0 8px rgba(99, 189, 15, 0.75),
+            0 0 16px rgba(99, 189, 15, 0.45);
+    }
+    100% {
+        box-shadow:
+            inset 0 2px 4px rgba(0,0,0,1),
+            inset 0 -1px 2px rgba(255,255,255,0.04),
+            0 0 0 rgba(99, 189, 15, 0);
+    }
+}
+
+.auth-led-group.auth-glow .auth-led-panel,
+.auth-led-group.auth-glow .auth-led-btn {
+    animation: authPanelGlow 0.5s ease-out;
+}
+
 </style>
 </head>
 
@@ -470,25 +706,44 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 		<div class="card">
     <h3>帳戶登入</h3>
 
-    <label>Email</label>
-    <div class="input-wrapper">
-        <input id="authEmail" type="email" placeholder="輸入 Email">
-        <button class="clear-input-btn" onclick="clearInput('authEmail')">✕</button>
+    <div id="authGuestView">
+    <div class="auth-led-group" style="margin-bottom:10px;">
+        <span id="authGuestStateBadge" class="auth-led-panel auth-led-red auth-led-segment auth-led-left">未登入</span>
+        <button id="showRegisterBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('register')">建立帳戶</button>
+        <button id="showLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('login')">登入</button>
+        <button id="googleLoginBtn" class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="loginWithGoogle()">Google</button>
     </div>
 
-    <label>密碼</label>
-    <div class="input-wrapper">
-        <input id="authPassword" type="password" placeholder="輸入密碼">
-        <button class="clear-input-btn" onclick="clearInput('authPassword')">✕</button>
-    </div>
+    <div id="authInputsWrap" style="display:none;">
+        <label>Email</label>
+        <div class="input-wrapper">
+            <input id="authEmail" type="email" placeholder="輸入 Email">
+            <button class="clear-input-btn" onclick="clearInput('authEmail')">✕</button>
+        </div>
 
-    <button class="btn-primary" onclick="register()">建立帳戶</button>
-    <button onclick="login()">登入</button>
-    <button onclick="logout()">登出</button>
-<button onclick="loginWithGoogle()">使用 Google 登入</button>
-    <div id="authStatus" style="margin-top:12px; font-size:13px; color:var(--subtext);">
-        未登入
+        <label>密碼</label>
+        <div class="input-wrapper">
+            <input id="authPassword" type="password" placeholder="輸入密碼">
+            <button class="clear-input-btn" onclick="clearInput('authPassword')">✕</button>
+        </div>
+
+        <div class="auth-led-group" style="margin-top:12px;">
+            <button id="submitLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-left" onclick="login()" style="display:none;">送出登入</button>
+            <button id="submitRegisterBtn" class="auth-led-btn auth-led-red auth-led-segment auth-led-left" onclick="register()" style="display:none;">送出建立帳戶</button>
+            <button class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="closeAuthForm()">取消</button>
+        </div>
     </div>
+</div>
+
+    <div id="authUserView" style="display:none;">
+    <div class="auth-led-group">
+        <span id="authLoginStateBadge" class="auth-led-panel auth-led-green auth-led-segment auth-led-left">已登入</span>
+        <span id="authUserEmail" class="auth-led-panel auth-led-orange auth-led-segment auth-led-middle"></span>
+        <button id="logoutBtn" class="auth-led-btn auth-led-panel auth-led-red auth-led-segment auth-led-right" onclick="logout()">登出</button>
+    </div>
+</div>
+
+    <div id="authStatus" style="display:none;"></div>
 </div>
             <div class="card">
                 <h3>資料管理</h3>
@@ -598,6 +853,43 @@ const storage = getStorage(app);
 
 console.log("Firebase 已連接", app);
 
+let authFormMode = null; // "login" 或 "register"
+
+window.openAuthForm = function(mode) {
+    authFormMode = mode;
+
+    const authInputsWrap = document.getElementById("authInputsWrap");
+    const submitLoginBtn = document.getElementById("submitLoginBtn");
+    const submitRegisterBtn = document.getElementById("submitRegisterBtn");
+
+    if (authInputsWrap) authInputsWrap.style.display = "block";
+
+    if (submitLoginBtn) {
+        submitLoginBtn.style.display = mode === "login" ? "inline-block" : "none";
+    }
+    if (submitRegisterBtn) {
+        submitRegisterBtn.style.display = mode === "register" ? "inline-block" : "none";
+    }
+
+    const emailInput = document.getElementById("authEmail");
+    if (emailInput) emailInput.focus();
+};
+
+window.closeAuthForm = function() {
+    authFormMode = null;
+
+    const authInputsWrap = document.getElementById("authInputsWrap");
+    const submitLoginBtn = document.getElementById("submitLoginBtn");
+    const submitRegisterBtn = document.getElementById("submitRegisterBtn");
+
+    if (authInputsWrap) authInputsWrap.style.display = "none";
+    if (submitLoginBtn) submitLoginBtn.style.display = "none";
+    if (submitRegisterBtn) submitRegisterBtn.style.display = "none";
+
+    const passwordInput = document.getElementById("authPassword");
+    if (passwordInput) passwordInput.value = "";
+};
+
 let currentAchievementTitle = "";
 let currentAchievementDesc = "";
 
@@ -607,16 +899,18 @@ window.register = async function () {
     const password = document.getElementById("authPassword").value;
 
     if (!email || !password) {
-        showToast("請輸入 Email 同密碼");
+        showToast("請輸入 Email 同密碼", "var(--danger)");
         return;
     }
 
     try {
         await createUserWithEmailAndPassword(auth, email, password);
-        showToast("帳戶建立成功");
+        document.getElementById("authPassword").value = "";
+        closeAuthForm();
+        showToast("帳戶建立成功！");
     } catch (error) {
         showToast("建立帳戶失敗", "var(--danger)");
-		console.error(error);
+        console.error(error);
     }
 };
 
@@ -625,16 +919,18 @@ window.login = async function () {
     const password = document.getElementById("authPassword").value;
 
     if (!email || !password) {
-        showToast("請輸入 Email 同密碼");
+        showToast("請輸入 Email 同密碼", "var(--danger)");
         return;
     }
 
     try {
         await signInWithEmailAndPassword(auth, email, password);
-        showToast("登入成功");
+        document.getElementById("authPassword").value = "";
+        closeAuthForm();
+        showToast("登入成功！");
     } catch (error) {
         showToast("登入失敗", "var(--danger)");
-		console.error(error);
+        console.error(error);
     }
 };
 
@@ -660,16 +956,46 @@ window.logout = async function () {
 };
 
 onAuthStateChanged(auth, (user) => {
-    const authStatusEl = document.getElementById("authStatus");
-
-    if (!authStatusEl) return;
+    const authGuestView = document.getElementById("authGuestView");
+    const authUserView = document.getElementById("authUserView");
+    const authUserEmail = document.getElementById("authUserEmail");
+    const authLoginStateBadge = document.getElementById("authLoginStateBadge");
+    const authGuestStateBadge = document.getElementById("authGuestStateBadge");
 
     if (user) {
-        authStatusEl.textContent = `已登入：${user.email}`;
+        if (authGuestView) authGuestView.style.display = "none";
+        if (authUserView) authUserView.style.display = "block";
+
+        if (authLoginStateBadge) authLoginStateBadge.textContent = "已登入";
+        if (authUserEmail) authUserEmail.textContent = user.email || "";
+
+        closeAuthForm();
+
+        setTimeout(() => {
+            flashAuthPanel();
+        }, 50);
     } else {
-        authStatusEl.textContent = "未登入";
+        if (authGuestView) authGuestView.style.display = "block";
+        if (authUserView) authUserView.style.display = "none";
+
+        if (authGuestStateBadge) authGuestStateBadge.textContent = "未登入";
+
+        closeAuthForm();
     }
 });
+
+function flashAuthPanel() {
+    const panel = document.querySelector("#authUserView .auth-led-group");
+    if (!panel) return;
+
+    panel.classList.remove("auth-glow");
+    void panel.offsetWidth;
+    panel.classList.add("auth-glow");
+
+    setTimeout(() => {
+        panel.classList.remove("auth-glow");
+    }, 500);
+}
 
 // =========================================
 // V0.21 E235系 Loading 頁面控制邏輯
@@ -1831,6 +2157,18 @@ document.addEventListener("click", (e) => {
     if (badge) return;
     hideAchievementDesc(true);
 });
+
+window.addEventListener("scroll", () => {
+    if (typeof hideAchievementDesc === "function") hideAchievementDesc(true);
+}, { passive: true });
+
+window.addEventListener("resize", () => {
+    if (typeof hideAchievementDesc === "function") hideAchievementDesc(true);
+}, { passive: true });
+
+document.addEventListener("touchmove", () => {
+    if (typeof hideAchievementDesc === "function") hideAchievementDesc(true);
+}, { passive: true });
 
 function renderAchievements() {
     let cSet = new Set(), lSet = new Set(), sSet = new Set(), tSet = new Set();
