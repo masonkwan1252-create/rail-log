@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.25</title>
+<title>鉄道手帳 RAIL LOG V0.27</title>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <meta name="color-scheme" content="light dark">
@@ -179,7 +179,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.25 成就佈局樣式
+   🟩 V0.24/V0.27 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -251,7 +251,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.27);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -360,13 +360,13 @@ header::before {
 .auth-led-panel,
 .auth-led-btn {
     min-height: 30px;
-    padding: 7px 12px;
+    padding: 6px clamp(7px, 2vw, 12px);
     background: linear-gradient(to bottom, #181818 0%, #0f0f0f 100%);
     border: 2px solid #222;
     font-family: 'DotGothic16', monospace;
-    font-size: 14px;
+    font-size: clamp(11px, 3.2vw, 14px);
     line-height: 1;
-    letter-spacing: 1.2px;
+    letter-spacing: clamp(0.4px, 0.3vw, 1.2px);
     box-shadow:
         inset 0 2px 4px rgba(0,0,0,1),
         inset 0 -1px 2px rgba(255,255,255,0.04);
@@ -389,7 +389,7 @@ header::before {
 }
 
 .auth-led-segment + .auth-led-segment {
-    margin-left: -6px;
+    margin-left: -2px;
 }
 
 .auth-led-left {
@@ -448,6 +448,35 @@ header::before {
 
 .auth-led-btn:active {
     transform: translateY(1px);
+}
+
+.auth-led-group {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.auth-led-segment {
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+#authLoginStateBadge,
+#authGuestStateBadge,
+#logoutBtn {
+    flex: 0 0 auto;
+}
+
+#authUserEmail {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @keyframes authPanelGlow {
@@ -539,7 +568,7 @@ header::before {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.25</div>
+    <div class="version-badge">V0.27</div>
 
     <div class="container">
 
@@ -713,6 +742,7 @@ header::before {
         <button id="showLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('login')">登入</button>
         <button id="googleLoginBtn" class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="loginWithGoogle()">Google</button>
     </div>
+</div>
 
     <div id="authInputsWrap" style="display:none;">
         <label>Email</label>
@@ -739,7 +769,7 @@ header::before {
     <div class="auth-led-group">
         <span id="authLoginStateBadge" class="auth-led-panel auth-led-green auth-led-segment auth-led-left">已登入</span>
         <span id="authUserEmail" class="auth-led-panel auth-led-orange auth-led-segment auth-led-middle"></span>
-        <button id="logoutBtn" class="auth-led-btn auth-led-panel auth-led-red auth-led-segment auth-led-right" onclick="logout()">登出</button>
+        <button id="logoutBtn" class="auth-led-btn auth-led-red auth-led-segment auth-led-right" onclick="logout()">登出</button>
     </div>
 </div>
 
@@ -832,8 +862,26 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-import { getStorage } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
+
+import {
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  deleteDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-storage.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCD_r9KTdFKQ3TGKuLPqyF8qnLMG3t9TdA",
@@ -968,7 +1016,7 @@ onAuthStateChanged(auth, (user) => {
 
         if (authLoginStateBadge) authLoginStateBadge.textContent = "已登入";
         if (authUserEmail) authUserEmail.textContent = user.email || "";
-
+		subscribeTrips();
         closeAuthForm();
 
         setTimeout(() => {
@@ -977,9 +1025,14 @@ onAuthStateChanged(auth, (user) => {
     } else {
         if (authGuestView) authGuestView.style.display = "block";
         if (authUserView) authUserView.style.display = "none";
-
+		
         if (authGuestStateBadge) authGuestStateBadge.textContent = "未登入";
-
+		if (unsubscribeTrips) {
+    unsubscribeTrips();
+    unsubscribeTrips = null;
+}
+trips = [];
+render();
         closeAuthForm();
     }
 });
@@ -1070,7 +1123,46 @@ window.scrollSign = function(direction) {
     rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
 }
 
-let trips = JSON.parse(localStorage.getItem("railTrips_V2") || "[]").map(normalizeTrip);
+let trips = [];
+let unsubscribeTrips = null;
+
+function subscribeTrips() {
+    const user = auth.currentUser;
+    if (!user) {
+        trips = [];
+        render();
+        return;
+    }
+
+    if (unsubscribeTrips) {
+        unsubscribeTrips();
+        unsubscribeTrips = null;
+    }
+
+    const q = query(
+        collection(dbCloud, "users", user.uid, "trips"),
+        orderBy("date", "desc")
+    );
+
+    unsubscribeTrips = onSnapshot(q, (snapshot) => {
+        trips = snapshot.docs.map(docSnap => {
+            const data = docSnap.data();
+            return normalizeTrip({
+                id: docSnap.id,
+                ...data,
+                photoTrain: data.photoTrainUrl || "",
+                photoFrom: data.photoFromUrl || "",
+                photoTo: data.photoToUrl || ""
+            });
+        });
+
+        render();
+        updateStationLists();
+    }, (error) => {
+        console.error(error);
+        showToast("讀取雲端資料失敗", "var(--danger)");
+    });
+}
 let editIndex = null;
 let lastTo = "";
 let toastTimer = null;
@@ -1484,7 +1576,7 @@ window.addThrough = function() {
     updateStationLists();
 }
 
-// 🟩 V0.25 處理圖片上傳
+// 🟩 V0.27 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -1501,7 +1593,19 @@ window.handlePhotoUpload = function(input, targetId) {
     }
 }
 
-// 🟩 V0.25 移除圖片
+async function uploadBase64ToStorage(base64Data, path) {
+    if (!base64Data) return "";
+
+    const response = await fetch(base64Data);
+    const blob = await response.blob();
+
+    const storageRef = ref(storage, path);
+    await uploadBytes(storageRef, blob);
+
+    return await getDownloadURL(storageRef);
+}
+
+// 🟩 V0.27 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -1522,24 +1626,35 @@ function clearAllPhotosUI() {
     });
 }
 
-window.saveTrip =function () {
+window.saveTrip = async function () {
+    const user = auth.currentUser;
+    if (!user) {
+        showToast("請先登入先可以同步資料", "var(--danger)");
+        return;
+    }
+
     const getVal = (id) => document.getElementById(id).value;
     const companyInput = getVal("company");
     const lineInput = getVal("line");
-    
+
     let mainCompId = resolve.company[companyInput] || companyInput;
     let mainLineId = db.lines.find(l => l.company_id === mainCompId && l.name === lineInput)?.id || lineInput;
 
     let routes = [{ company_id: mainCompId, line_id: mainLineId }];
+
     document.querySelectorAll(".through-block").forEach(block => {
         let tcId = resolve.company[block.querySelector(".throughCompany").value] || block.querySelector(".throughCompany").value;
         let tlInput = block.querySelector(".throughLine").value;
         let tlId = db.lines.find(l => l.company_id === tcId && l.name === tlInput)?.id || tlInput;
-        if(tcId || tlId) routes.push({ company_id: tcId, line_id: tlId });
+
+        if (tcId || tlId) {
+            routes.push({ company_id: tcId, line_id: tlId });
+        }
     });
 
     let trainInput = getVal("train");
     let finalTrainId = trainInput;
+
     if (activeTrainCompanyId) {
         let matchedTrain = currentCompanyTrains.find(t => t._display === trainInput || t.name === trainInput);
         if (matchedTrain) finalTrainId = matchedTrain.id;
@@ -1547,49 +1662,64 @@ window.saveTrip =function () {
         finalTrainId = resolve.train[trainInput] || trainInput;
     }
 
-    const trip = {
-        date: getVal("date"),
-        serviceType: getVal("serviceType"), 
-        routes: routes,
-        train_id: finalTrainId,
-        from_id: resolve.station[getVal("from")] || getVal("from"),
-        to_id: resolve.station[getVal("to")] || getVal("to"),
-        // 🟩 V0.25 儲存相片
-        photoTrain: getVal("photoTrain"),
-        photoFrom: getVal("photoFrom"),
-        photoTo: getVal("photoTo")
-    };
-
-    if (editIndex !== null) { trips[editIndex] = trip; editIndex = null; } 
-    else { trips.push(trip); }
-
     try {
-        localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-    } catch (e) {
-        if(e.name === 'QuotaExceededError') {
-            alert("儲存失敗：相片可能太大導致儲存空間不足。請嘗試不附加相片或減低相片像素。");
-            trips.pop(); // Revert
-            return;
-        }
+        const tripRef = doc(collection(dbCloud, "users", user.uid, "trips"));
+        const tripId = tripRef.id;
+
+        const photoTrainUrl = await uploadBase64ToStorage(
+            getVal("photoTrain"),
+            `users/${user.uid}/trips/${tripId}/photoTrain.jpg`
+        );
+
+        const photoFromUrl = await uploadBase64ToStorage(
+            getVal("photoFrom"),
+            `users/${user.uid}/trips/${tripId}/photoFrom.jpg`
+        );
+
+        const photoToUrl = await uploadBase64ToStorage(
+            getVal("photoTo"),
+            `users/${user.uid}/trips/${tripId}/photoTo.jpg`
+        );
+
+        const trip = {
+            date: getVal("date"),
+            serviceType: getVal("serviceType"),
+            routes: routes,
+            train_id: finalTrainId,
+            from_id: resolve.station[getVal("from")] || getVal("from"),
+            to_id: resolve.station[getVal("to")] || getVal("to"),
+
+            photoTrainUrl,
+            photoFromUrl,
+            photoToUrl,
+
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+        };
+
+        await setDoc(tripRef, trip);
+
+        lastTo = trip.to_id;
+
+        ["company", "line", "serviceType", "train", "to"].forEach(id => document.getElementById(id).value = "");
+        document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
+        document.getElementById("throughContainer").innerHTML = "";
+
+        document.getElementById("useOtherTrainCompany").checked = false;
+        document.getElementById("otherTrainCompanyWrapper").style.display = "none";
+        document.getElementById("trainOwnerCompany").value = "";
+
+        clearAllPhotosUI();
+        updateLineList("", "lineList");
+        updateTrainDatalist();
+        updateStationLists();
+
+        showToast("已同步到雲端！");
+    } catch (error) {
+        console.error(error);
+        showToast("上傳失敗", "var(--danger)");
     }
-
-    lastTo = trip.to_id;
-
-    ["company", "line", "serviceType", "train", "to"].forEach(id => document.getElementById(id).value = "");
-    document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
-    document.getElementById("throughContainer").innerHTML = "";
-    
-    document.getElementById("useOtherTrainCompany").checked = false;
-    document.getElementById("otherTrainCompanyWrapper").style.display = "none";
-    document.getElementById("trainOwnerCompany").value = "";
-    
-    clearAllPhotosUI();
-
-    updateLineList("", "lineList"); updateTrainDatalist(); updateStationLists();
-    currentRecordPage = 1; render();
-    
-    showToast("儲存成功！");
-}
+};
 
 function getCompName(id) { return maps.company[id]?.name || id; }
 function getLineName(id) { return maps.line[id]?.name || id; }
@@ -1903,7 +2033,7 @@ window.editTrip = function(i) {
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
 
-    // 🟩 V0.25 編輯模式載入相片
+    // 🟩 V0.27 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -1919,16 +2049,43 @@ window.editTrip = function(i) {
     switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
 
-window.deleteTrip = function(i) {
-    if(confirm("確定刪除此記錄？")) {
-        trips.splice(i, 1); localStorage.setItem("railTrips_V2", JSON.stringify(trips)); render();
+window.deleteTrip = async function (i) {
+    const user = auth.currentUser;
+    if (!user) return;
+
+    const trip = trips[i];
+    if (!trip?.id) return;
+
+    if (!confirm("確定刪除此記錄？")) return;
+
+    try {
+        await deleteDoc(doc(dbCloud, "users", user.uid, "trips", trip.id));
+
+        const photoPaths = [
+            `users/${user.uid}/trips/${trip.id}/photoTrain.jpg`,
+            `users/${user.uid}/trips/${trip.id}/photoFrom.jpg`,
+            `users/${user.uid}/trips/${trip.id}/photoTo.jpg`
+        ];
+
+        for (const path of photoPaths) {
+            try {
+                await deleteObject(ref(storage, path));
+            } catch (e) {
+                // 圖片不存在都唔使中斷
+            }
+        }
+
+        showToast("已刪除");
+    } catch (error) {
+        console.error(error);
+        showToast("刪除失敗", "var(--danger)");
     }
-}
+};
 
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.25.json"; a.click();
+    a.download = "rail-log-V0.27.json"; a.click();
 }
 
 window.importData = function() {
@@ -1949,7 +2106,7 @@ window.importData = function() {
 }
 
 // =========================================
-// 🟩 V0.25 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.27 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 function renderMap() {
     if (!railMapInstance) {
@@ -2018,7 +2175,7 @@ function renderMap() {
 }
 
 // =========================================
-// 🟩 V0.25 相冊渲染邏輯
+// 🟩 V0.27 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById('galleryContainer');
@@ -2083,7 +2240,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.25 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.27 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
