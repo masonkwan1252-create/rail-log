@@ -5,39 +5,377 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>鉄道手帳 RAIL LOG V0.27</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
+<meta name="theme-color" content="#e9e9e9" id="theme-color-meta">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#e0e0e0" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
 <style>
 /* =========================================
    🟩 核心與版面樣式
    ========================================= */
-#loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f0f0f0; display: flex; flex-direction: column; z-index: 9999; font-family: 'Hiragino Sans', 'Meiryo', sans-serif; overflow: hidden; transition: opacity 0.6s ease; }
-.e235-header-wide { height: 12vh; min-height: 80px; background: #111; color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 25px; border-bottom: 4px solid #333; position: relative; }
-.e235-line-color-stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 15px; background-color: #80c241; }
-.e235-header-left { display: flex; align-items: center; margin-left: 10px; }
-.e235-type { color: #80c241; border: 2.5px solid #80c241; padding: 2px 10px; font-size: 1.2rem; font-weight: bold; border-radius: 4px; margin-right: 15px; }
-.e235-destination { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
-.e235-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
-#e235-clock { font-size: 1.4rem; font-weight: bold; font-family: monospace; }
-.e235-car-number { border: 1.5px solid white; padding: 1px 5px; font-size: 0.8rem; border-radius: 3px; }
-.e235-main-content { flex: 1; padding: 8vh 0 0 10%; }
-.e235-next-label { color: #e60012; font-size: 2rem; font-weight: 900; margin-bottom: 5px; }
-.e235-next-en { font-size: 0.6em; margin-left: 10px; color: #b30000; }
-.e235-station { font-size: clamp(50px, 12vw, 90px); font-weight: 900; color: #222; }
-.e235-station-en { font-size: 1.8rem; color: #666; font-weight: bold; margin-top: -5px; }
-.e235-progress-area { position: absolute; bottom: -10px; right: 5%; width: 25%; height: 60%; overflow: hidden; pointer-events: none; }
-.e235-curve-track { width: 100%; height: 120%; background: #80c241; border-top-left-radius: 120px; box-shadow: -10px 0 20px rgba(0,0,0,0.1); position: relative; }
-.e235-arrows { position: absolute; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 70 L50 45 L70 70' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'/%3E%3C/svg%3E"); background-size: 100% 100px; animation: e235-flow 1s linear infinite; }
-@keyframes e235-flow { from { background-position: 0 100px; } to { background-position: 0 0; } }
-#loading-screen.loaded { opacity: 0; pointer-events: none; }
-#main-app { visibility: hidden; opacity: 0; transition: opacity 0.5s ease; }
+/* =========================================
+   🟩 新版 Loading Page：列車駛向下一站
+   ========================================= */
+/* =========================================
+   🟩 日本列車 LCD / LED 風格 Loading Page
+   ========================================= */
+/* =========================================
+   🟩 E235 車內到站顯示器 Loading Page
+   ========================================= */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:
+        calc(env(safe-area-inset-top) + 14px)
+        14px
+        calc(env(safe-area-inset-bottom) + 14px);
+    background: #e9e9e9;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#loading-screen.loaded {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+}
+
+#main-app {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#main-app.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.e235-arrival-screen {
+    width: min(100%, 720px);
+    background: #f7f7f7;
+    border: 1px solid #b8b8b8;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+        0 22px 55px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.72);
+}
+
+.e235-arrival-header {
+    position: relative;
+    min-height: 96px;
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px 0 24px;
+    border-bottom: 4px solid #63BD0F;
+}
+
+.e235-arrival-strip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    background: #63BD0F;
+}
+
+.e235-arrival-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.e235-arrival-type {
+    color: #63BD0F;
+    border: 2px solid #63BD0F;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.e235-arrival-title-wrap {
+    min-width: 0;
+}
+
+.e235-arrival-title {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.04;
+    letter-spacing: 0.5px;
+}
+
+.e235-arrival-title-en {
+    margin-top: 5px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 1.3px;
+    font-weight: 700;
+}
+
+.e235-arrival-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    flex: 0 0 auto;
+}
+
+.e235-arrival-clock {
+    font-family: 'DotGothic16', monospace;
+    font-size: 18px;
+    color: #ff9500;
+    background: #111;
+    border: 2px solid #2b2b2b;
+    border-radius: 6px;
+    padding: 4px 8px;
+    text-shadow:
+        0 0 4px rgba(255,149,0,0.85),
+        0 0 10px rgba(255,149,0,0.35);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,1);
+}
+
+.e235-arrival-version {
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+
+.e235-arrival-main {
+    padding: 30px 20px 18px;
+    text-align: center;
+}
+
+.e235-arrival-next-row {
+    margin-bottom: 10px;
+}
+
+.e235-arrival-next-jp {
+    color: #e60012;
+    font-size: 31px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.e235-arrival-next-en {
+    margin-left: 10px;
+    color: #b30000;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.e235-arrival-station-fade {
+    opacity: 1;
+    transition: opacity 0.26s ease;
+}
+
+.e235-arrival-station-fade.is-fading {
+    opacity: 0;
+}
+
+.e235-arrival-station-name {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 900;
+    color: #222;
+    line-height: 1.04;
+    letter-spacing: 0.02em;
+}
+
+.e235-arrival-station-en {
+    margin-top: 6px;
+    font-size: clamp(15px, 2.6vw, 22px);
+    color: #666;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.e235-arrival-status-text {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+}
+
+.e235-arrival-route-panel {
+    padding: 8px 20px 26px;
+}
+
+.e235-arrival-route-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7a7a7a;
+}
+
+.e235-arrival-track-wrap {
+    position: relative;
+    height: 82px;
+}
+
+.e235-arrival-track-base {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 37px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #b9b9b9 0%, #ababab 100%);
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.16);
+}
+
+.e235-arrival-track-fill {
+    position: absolute;
+    left: 0;
+    top: 37px;
+    width: 0%;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #63BD0F 0%, #7fd13e 50%, #63BD0F 100%);
+    box-shadow:
+        0 0 8px rgba(99, 189, 15, 0.28),
+        inset 0 1px 1px rgba(255,255,255,0.18);
+    transition: width 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.e235-arrival-stop {
+    position: absolute;
+    top: 26px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #63BD0F;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+}
+
+.e235-arrival-stop-start {
+    left: 0;
+}
+
+.e235-arrival-stop-mid {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.e235-arrival-stop-end {
+    right: 0;
+}
+
+.e235-arrival-train {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 86px;
+    height: 50px;
+    transform: translateX(0);
+    transition: transform 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.e235-arrival-train-body {
+    position: absolute;
+    inset: 0 0 12px 0;
+    border-radius: 10px 12px 8px 8px;
+    background: linear-gradient(180deg, #fcfcfc 0%, #d8d8d8 100%);
+    border: 2px solid #666;
+    overflow: hidden;
+}
+
+.e235-arrival-train-band {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 13px;
+    height: 7px;
+    background: #63BD0F;
+}
+
+.e235-arrival-train-window {
+    position: absolute;
+    top: 5px;
+    width: 12px;
+    height: 8px;
+    background: #1c1c1e;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.16);
+}
+
+.e235-arrival-train-window:nth-child(1) { left: 13px; }
+.e235-arrival-train-window:nth-child(2) { left: 34px; }
+.e235-arrival-train-window:nth-child(3) { left: 55px; }
+
+.e235-arrival-train-wheel {
+    position: absolute;
+    bottom: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #333;
+}
+
+.e235-arrival-train-wheel-left { left: 18px; }
+.e235-arrival-train-wheel-right { right: 18px; }
+
+@media (prefers-color-scheme: dark) {
+    #loading-screen {
+        background: #111;
+    }
+
+    .e235-arrival-screen {
+        background: #1c1c1e;
+        border-color: #38383a;
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.35),
+            inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .e235-arrival-station-name {
+        color: #f5f5f7;
+    }
+
+    .e235-arrival-station-en,
+    .e235-arrival-status-text,
+    .e235-arrival-route-labels {
+        color: #a0a0a5;
+    }
+
+    .e235-arrival-track-base {
+        background: linear-gradient(90deg, #4d4d50 0%, #606065 100%);
+    }
+
+    .e235-arrival-stop {
+        background: #222;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    .e235-arrival-train-body {
+        background: linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%);
+    }
+}
+html {
+    background: var(--bg);
+}
+
+body {
+    background: var(--bg);
+}
 #main-app.show { visibility: visible; opacity: 1; }
 .out-of-service-panel { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #001f5c; text-align: center; }
 .out-of-service-panel .sign-destination-text { color: #001f5c; font-size: 32px; font-weight: 900; letter-spacing: 30px; margin-right: -30px; white-space: nowrap; transform: scaleY(1.1); }
@@ -110,11 +448,8 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 /* 相冊樣式 */
 .gallery-section { margin-bottom: 20px; }
 .gallery-comp-title { font-size: 15px; font-weight: bold; color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 5px;}
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
 .gallery-item { background: var(--tag-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
 .gallery-img { width: 100%; height: 100px; object-fit: cover; display: block; }
-.gallery-info { padding: 8px; font-size: 12px; }
-.gallery-train-name { font-weight: bold; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .gallery-date { color: var(--subtext); font-size: 10px; margin-top: 4px; }
 
 /* 地圖站名標籤樣式 (駅名標) */
@@ -505,37 +840,686 @@ header::before {
 .auth-led-group.auth-glow .auth-led-btn {
     animation: authPanelGlow 0.5s ease-out;
 }
+.gallery-page-card {
+    padding-bottom: 14px;
+}
 
+.gallery-page-desc {
+    font-size: 13px;
+    color: var(--subtext);
+    margin-top: -10px;
+    margin-bottom: 14px;
+}
+
+.gallery-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.gallery-toolbar select {
+    flex: 1 1 160px;
+    min-width: 0;
+}
+
+.gallery-section {
+    margin-bottom: 22px;
+}
+
+.gallery-comp-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-count {
+    font-size: 11px;
+    color: var(--subtext);
+    font-weight: 500;
+}
+
+.gallery-item {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.gallery-item:active {
+    transform: scale(0.98);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-meta {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--subtext);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.gallery-empty {
+    text-align: center;
+    padding: 24px 10px;
+    color: var(--subtext);
+    font-size: 13px;
+}
+.gallery-preview-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    background: rgba(0,0,0,0.72);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-preview-content {
+    width: min(100%, 520px);
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.gallery-preview-image {
+    width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    display: block;
+    background: #000;
+}
+
+.gallery-preview-caption {
+    padding: 12px 14px 0;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+.gallery-preview-close {
+    margin: 12px 14px 14px;
+    width: calc(100% - 28px);
+}
+
+.gallery-item {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+}
+
+.gallery-item:active {
+    transform: scale(0.985);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-photo-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.72);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.gallery-section-title-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-section-badge {
+    font-size: 11px;
+    color: var(--subtext);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 3px 7px;
+    border-radius: 999px;
+}
+.gallery-preview-info-card {
+    display: grid;
+    gap: 6px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.gallery-preview-info-row {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.gallery-item:active {
+    transform: scale(0.985);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-photo-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.72);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.gallery-meta-label {
+    color: var(--subtext);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.gallery-meta-value {
+    color: var(--text);
+    font-weight: 700;
+    text-align: left;
+    min-width: 0;
+    word-break: break-word;
+}
+.gallery-section-title-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-section-badge {
+    font-size: 11px;
+    color: var(--subtext);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 3px 7px;
+    border-radius: 999px;
+}
+.gallery-section {
+    margin-bottom: 24px;
+}
+
+.gallery-comp-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-section-badge {
+    font-size: 11px;
+    color: var(--subtext);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 3px 7px;
+    border-radius: 999px;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    flex: 0 0 180px;
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+}
+
+.gallery-item:active {
+    transform: scale(0.985);
+}
+
+.gallery-img-wrap {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--tag-bg);
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-img-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.28) 28%,
+        rgba(0,0,0,0.05) 50%,
+        rgba(0,0,0,0) 70%
+    );
+    pointer-events: none;
+}
+
+.gallery-photo-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.72);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.gallery-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px 12px 13px;
+    z-index: 2;
+    background: none;
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+.gallery-train-name {
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.25;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+    min-height: 2.5em;
+}
+
+.gallery-company-badge,
+.gallery-meta-card,
+.gallery-meta-row,
+.gallery-meta-label,
+.gallery-meta-value {
+    display: none;
+}
+.train-dex-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 4500;
+    background: rgba(0,0,0,0.72);
+    padding: 18px;
+    align-items: center;
+    justify-content: center;
+}
+
+.train-dex-content {
+    width: min(100%, 620px);
+    max-height: 88vh;
+    overflow: auto;
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+}
+.train-dex-main-image-wrap {
+    position: relative;
+}
+
+.train-dex-main-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    background: #000;
+}
+
+.train-dex-main-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.18));
+    color: #fff;
+
+    font-size: 11px;
+    line-height: 1.2;
+
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+.train-dex-overlay-item {
+    position: relative;
+    padding-left: 8px;
+}
+
+.train-dex-overlay-item:first-child {
+    padding-left: 0;
+}
+
+.train-dex-overlay-item:not(:first-child)::before {
+    content: "｜";
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.6);
+}
+.train-dex-overlay-line {
+    margin-top: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+}
+
+.train-dex-body {
+    padding: 14px;
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+.train-dex-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.train-dex-title-wrap {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.train-dex-title,
+.train-dex-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #181818 0%, #0f0f0f 100%);
+    border: 2px solid #222;
+    font-family: 'DotGothic16', monospace;
+    line-height: 1;
+    letter-spacing: 1px;
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,1),
+        inset 0 -1px 2px rgba(255,255,255,0.04);
+    white-space: nowrap;
+}
+
+.train-dex-title {
+    max-width: 100%;
+    font-size: 15px;
+    justify-content: flex-start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.train-dex-company {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--subtext);
+    font-weight: 600;
+}
+
+.train-dex-count-badge {
+    flex: 0 0 auto;
+    font-size: 13px;
+}
+
+.train-dex-stats-grid {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+.train-dex-led-green {
+    color: #63BD0F;
+    text-shadow:
+        0 0 4px rgba(99, 189, 15, 0.9),
+        0 0 10px rgba(99, 189, 15, 0.35);
+}
+
+.train-dex-led-orange {
+    color: #ff9500;
+    text-shadow:
+        0 0 4px rgba(255, 149, 0, 0.9),
+        0 0 10px rgba(255, 149, 0, 0.35);
+}
+.train-dex-stat-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.train-dex-stat-label {
+    font-size: 11px;
+    color: var(--subtext);
+    margin-bottom: 6px;
+}
+
+.train-dex-stat-value {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 700;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.train-dex-subtitle {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.train-dex-thumb-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.train-dex-thumb-row::-webkit-scrollbar {
+    display: none;
+}
+
+.train-dex-thumb {
+    position: relative;
+    flex: 0 0 118px;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: var(--tag-bg);
+    cursor: pointer;
+}
+
+.train-dex-thumb.active {
+    border-color: var(--primary);
+}
+
+.train-dex-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.train-dex-thumb-meta {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 6px 7px;
+    background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.15));
+    color: #fff;
+    font-size: 10px;
+    line-height: 1.25;
+    text-align: right;
+}
+
+.train-dex-close-btn {
+    margin-top: 14px;
+}
+.gallery-toolbar input {
+    flex: 2 1 220px;
+    min-width: 0;
+}
+
+.train-dex-routes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.train-dex-route-tag {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 8px;
+    border-radius: 999px;
+}
 </style>
 </head>
 
 <body>
 <div id="achievementTooltip" class="achievement-tooltip"></div>
+
 <div id="loading-screen">
-    <div class="e235-header-wide">
-        <div class="e235-header-left">
-            <div class="e235-line-color-stripe"></div> <div class="e235-header-text">
-                <span class="e235-type">各駅停車</span>
-                <span class="e235-destination">鉄道手帳 RAIL LOG</span>
+    <div class="e235-arrival-screen">
+        <div class="e235-arrival-header">
+            <div class="e235-arrival-strip"></div>
+
+            <div class="e235-arrival-header-left">
+                <div class="e235-arrival-type">各駅停車</div>
+                <div class="e235-arrival-title-wrap">
+                    <div class="e235-arrival-title">鉄道手帳 RAIL LOG</div>
+                    <div class="e235-arrival-title-en">JR STYLE ARRIVAL DISPLAY</div>
+                </div>
+            </div>
+
+            <div class="e235-arrival-header-right">
+                <div id="e235-clock" class="e235-arrival-clock">--:--</div>
+                <div class="e235-arrival-version">V0.25</div>
             </div>
         </div>
-        <div class="e235-header-right">
-            <span id="e235-clock">--:--</span>
-            <span class="e235-car-number">1号車</span>
-        </div>
-    </div>
 
-    <div class="e235-main-content">
-        <div class="e235-next-label">次は<span class="e235-next-en">Next</span></div>
-        <div class="e235-station-box">
-            <div class="e235-station" id="e235-station-name">系統啟動中</div>
-            <div class="e235-station-en" id="e235-station-name-en">System Starting</div>
-        </div>
-    </div>
+        <div class="e235-arrival-main">
+            <div class="e235-arrival-next-row">
+                <span class="e235-arrival-next-jp">次は</span>
+                <span class="e235-arrival-next-en">Next</span>
+            </div>
 
-    <div class="e235-progress-area">
-        <div class="e235-curve-track">
-            <div class="e235-arrows"></div>
+            <div id="e235-station-fade" class="e235-arrival-station-fade">
+                <div id="e235-station-name" class="e235-arrival-station-name">系統啟動中</div>
+                <div id="e235-station-name-en" class="e235-arrival-station-en">System Starting</div>
+            </div>
+
+            <div id="rail-loader-progress-text" class="e235-arrival-status-text">
+                正在準備資料...
+            </div>
+        </div>
+
+        <div class="e235-arrival-route-panel">
+            <div class="e235-arrival-route-labels">
+                <span>始発</span>
+                <span>運行中</span>
+                <span>到着</span>
+            </div>
+
+            <div class="e235-arrival-track-wrap">
+                <div class="e235-arrival-track-base"></div>
+                <div id="e235-loader-track-fill" class="e235-arrival-track-fill"></div>
+
+                <div class="e235-arrival-stop e235-arrival-stop-start"></div>
+                <div class="e235-arrival-stop e235-arrival-stop-mid"></div>
+                <div class="e235-arrival-stop e235-arrival-stop-end"></div>
+
+                <div id="rail-train-progress" class="e235-arrival-train">
+                    <div class="e235-arrival-train-body">
+                        <div class="e235-arrival-train-window"></div>
+                        <div class="e235-arrival-train-window"></div>
+                        <div class="e235-arrival-train-window"></div>
+                        <div class="e235-arrival-train-band"></div>
+                    </div>
+                    <div class="e235-arrival-train-wheel e235-arrival-train-wheel-left"></div>
+                    <div class="e235-arrival-train-wheel e235-arrival-train-wheel-right"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -716,12 +1700,53 @@ header::before {
         </div>
 
         <div id="tab-gallery" class="tab-content">
-            <div class="card" style="padding-bottom: 10px;">
-                <h3>車型相冊</h3>
-                <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">你記錄過嘅鐵道車輛寫真。</p>
-                <div id="galleryContainer"></div>
-            </div>
-        </div>
+    <div class="card gallery-page-card">
+        <h3>車型相冊</h3>
+        <p class="gallery-page-desc">你記錄過嘅鐵道車輛寫真。</p>
+
+        <div class="gallery-toolbar">
+    <input id="gallerySearchInput" type="text" placeholder="搜尋車型名 / 公司名" oninput="renderGallery()">
+
+    <select id="galleryCompanyFilter" onchange="renderGallery()">
+        <option value="all">全部公司</option>
+    </select>
+
+    <select id="gallerySortMode" onchange="renderGallery()">
+        <option value="train">車型名稱</option>
+        <option value="count">收錄張數</option>
+        <option value="newest">最新記錄</option>
+        <option value="oldest">最早記錄</option>
+    </select>
+</div>
+
+<div id="trainDexModal" class="train-dex-modal" onclick="closeTrainDexModal()">
+    <div class="train-dex-content" onclick="event.stopPropagation()">
+        <div class="train-dex-main-image-wrap">
+    <img id="trainDexMainImage" class="train-dex-main-image" src="" alt="">
+    <div id="trainDexMainOverlay" class="train-dex-main-overlay"></div>
+</div>
+
+        <div class="train-dex-body">
+    <div class="train-dex-header">
+    <div class="train-dex-title-wrap">
+        <div id="trainDexTitle" class="train-dex-title train-dex-led-green"></div>
+    </div>
+    <div id="trainDexCountBadge" class="train-dex-count-badge train-dex-led-orange"></div>
+</div>
+
+    <div class="train-dex-subtitle">涉及路線</div>
+    <div id="trainDexRoutes" class="train-dex-routes"></div>
+
+    <div class="train-dex-subtitle">收錄相片</div>
+    <div id="trainDexThumbRow" class="train-dex-thumb-row"></div>
+
+    <button class="train-dex-close-btn" onclick="closeTrainDexModal()">關閉</button>
+</div>
+    </div>
+</div>
+        <div id="galleryContainer"></div>
+    </div>
+</div>
 
         <div id="tab-achievements" class="tab-content">
             <div class="card" style="padding-bottom: 10px;">
@@ -731,58 +1756,58 @@ header::before {
             </div>
         </div>
 
-        <div id="tab-settings" class="tab-content">
-		<div class="card">
-    <h3>帳戶登入</h3>
+<div id="tab-settings" class="tab-content">
+    <div class="card">
+        <h3>帳戶登入</h3>
 
-    <div id="authGuestView">
-    <div class="auth-led-group" style="margin-bottom:10px;">
-        <span id="authGuestStateBadge" class="auth-led-panel auth-led-red auth-led-segment auth-led-left">未登入</span>
-        <button id="showRegisterBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('register')">建立帳戶</button>
-        <button id="showLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('login')">登入</button>
-        <button id="googleLoginBtn" class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="loginWithGoogle()">Google</button>
-    </div>
-</div>
+        <div id="authGuestView">
+            <div class="auth-led-group" style="margin-bottom:10px;">
+                <span id="authGuestStateBadge" class="auth-led-panel auth-led-red auth-led-segment auth-led-left">未登入</span>
+                <button id="showRegisterBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('register')">建立帳戶</button>
+                <button id="showLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-middle" onclick="openAuthForm('login')">登入</button>
+                <button id="googleLoginBtn" class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="loginWithGoogle()">Google</button>
+            </div>
 
-    <div id="authInputsWrap" style="display:none;">
-        <label>Email</label>
-        <div class="input-wrapper">
-            <input id="authEmail" type="email" placeholder="輸入 Email">
-            <button class="clear-input-btn" onclick="clearInput('authEmail')">✕</button>
-        </div>
+            <div id="authInputsWrap" style="display:none;">
+                <label>Email</label>
+                <div class="input-wrapper">
+                    <input id="authEmail" type="email" placeholder="輸入 Email">
+                    <button class="clear-input-btn" onclick="clearInput('authEmail')">✕</button>
+                </div>
 
-        <label>密碼</label>
-        <div class="input-wrapper">
-            <input id="authPassword" type="password" placeholder="輸入密碼">
-            <button class="clear-input-btn" onclick="clearInput('authPassword')">✕</button>
-        </div>
+                <label>密碼</label>
+                <div class="input-wrapper">
+                    <input id="authPassword" type="password" placeholder="輸入密碼">
+                    <button class="clear-input-btn" onclick="clearInput('authPassword')">✕</button>
+                </div>
 
-        <div class="auth-led-group" style="margin-top:12px;">
-            <button id="submitLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-left" onclick="login()" style="display:none;">送出登入</button>
-            <button id="submitRegisterBtn" class="auth-led-btn auth-led-red auth-led-segment auth-led-left" onclick="register()" style="display:none;">送出建立帳戶</button>
-            <button class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="closeAuthForm()">取消</button>
-        </div>
-    </div>
-</div>
-
-    <div id="authUserView" style="display:none;">
-    <div class="auth-led-group">
-        <span id="authLoginStateBadge" class="auth-led-panel auth-led-green auth-led-segment auth-led-left">已登入</span>
-        <span id="authUserEmail" class="auth-led-panel auth-led-orange auth-led-segment auth-led-middle"></span>
-        <button id="logoutBtn" class="auth-led-btn auth-led-red auth-led-segment auth-led-right" onclick="logout()">登出</button>
-    </div>
-</div>
-
-    <div id="authStatus" style="display:none;"></div>
-</div>
-            <div class="card">
-                <h3>資料管理</h3>
-                <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。注意：匯出資料包含相片會較大。</p>
-                <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
-                <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
-                <button class="btn-small" onclick="importData()">匯入資料</button>
+                <div class="auth-led-group" style="margin-top:12px;">
+                    <button id="submitLoginBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-left" onclick="login()" style="display:none;">送出登入</button>
+                    <button id="submitRegisterBtn" class="auth-led-btn auth-led-green auth-led-segment auth-led-left" onclick="register()" style="display:none;">送出建立帳戶</button>
+                    <button class="auth-led-btn auth-led-orange auth-led-segment auth-led-right" onclick="closeAuthForm()">取消</button>
+                </div>
             </div>
         </div>
+
+        <div id="authUserView" style="display:none;">
+            <div class="auth-led-group">
+                <span id="authLoginStateBadge" class="auth-led-panel auth-led-green auth-led-segment auth-led-left">已登入</span>
+                <span id="authUserEmail" class="auth-led-panel auth-led-orange auth-led-segment auth-led-middle"></span>
+                <button id="logoutBtn" class="auth-led-btn auth-led-red auth-led-segment auth-led-right" onclick="logout()">登出</button>
+            </div>
+        </div>
+
+        <div id="authStatus" style="display:none;"></div>
+    </div>
+
+<div class="card">
+        <h3>資料管理</h3>
+        <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。注意：匯出資料包含相片會較大。</p>
+        <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
+        <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
+        <button class="btn-small" onclick="importData()">匯入資料</button>
+    </div>
+</div>
 
     </div>
 
@@ -848,7 +1873,13 @@ header::before {
     </datalist>
 
 </div> 
-
+<div id="galleryPreviewModal" class="gallery-preview-modal" onclick="closeGalleryPreview()">
+    <div class="gallery-preview-content" onclick="event.stopPropagation()">
+        <img id="galleryPreviewImage" class="gallery-preview-image" src="" alt="">
+        <div id="galleryPreviewCaption" class="gallery-preview-caption"></div>
+        <button class="gallery-preview-close" onclick="closeGalleryPreview()">關閉</button>
+    </div>
+</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script type="module">
@@ -1036,6 +2067,96 @@ render();
         closeAuthForm();
     }
 });
+let currentTrainDexData = null;
+
+window.openTrainDexModal = function(trainId) {
+    if (!window.trainDexIndex || !window.trainDexIndex[trainId]) return;
+
+    const data = window.trainDexIndex[trainId];
+    currentTrainDexData = data;
+    currentTrainDexData.activePhotoIndex = 0;
+
+    const modal = document.getElementById("trainDexModal");
+    const mainImage = document.getElementById("trainDexMainImage");
+    const mainOverlay = document.getElementById("trainDexMainOverlay");
+    const title = document.getElementById("trainDexTitle");
+    const countBadge = document.getElementById("trainDexCountBadge");
+    const routesEl = document.getElementById("trainDexRoutes");
+    const thumbRow = document.getElementById("trainDexThumbRow");
+
+    if (!modal || !mainImage || !mainOverlay || !title || !countBadge || !routesEl || !thumbRow) return;
+
+    const firstPhoto = data.photos[0];
+
+    mainImage.src = data.coverPhoto;
+    title.textContent = data.trainName;
+    countBadge.textContent = `${data.tripCount} 次`;
+
+    mainOverlay.innerHTML = `
+    <div class="train-dex-overlay-item">${firstPhoto?.date || "-"}</div>
+    <div class="train-dex-overlay-item">${firstPhoto?.routeSummary || "-"}</div>
+    <div class="train-dex-overlay-item">${firstPhoto?.segmentSummary || "-"}</div>
+`;
+
+    if (data.routeNames && data.routeNames.length > 0) {
+        routesEl.innerHTML = data.routeNames.map(name => `
+            <span class="train-dex-route-tag">${name}</span>
+        `).join("");
+    } else {
+        routesEl.innerHTML = `<span class="train-dex-route-tag">-</span>`;
+    }
+
+    thumbRow.innerHTML = data.photos.map((photo, index) => `
+        <div class="train-dex-thumb ${index === 0 ? 'active' : ''}" onclick="switchTrainDexPhoto(${index})">
+            <img src="${photo.photo}" alt="${data.trainName}">
+        </div>
+    `).join("");
+
+    modal.style.display = "flex";
+};
+
+window.switchTrainDexPhoto = function(index) {
+    if (!currentTrainDexData || !currentTrainDexData.photos[index]) return;
+
+    const mainImage = document.getElementById("trainDexMainImage");
+    const mainOverlay = document.getElementById("trainDexMainOverlay");
+    const thumbs = document.querySelectorAll(".train-dex-thumb");
+    const photo = currentTrainDexData.photos[index];
+
+    if (mainImage) {
+        mainImage.src = photo.photo;
+    }
+
+    if (mainOverlay) {
+        mainOverlay.innerHTML = `
+    <div class="train-dex-overlay-item">${photo?.date || "-"}</div>
+    <div class="train-dex-overlay-item">${photo?.routeSummary || "-"}</div>
+    <div class="train-dex-overlay-item">${photo?.segmentSummary || "-"}</div>
+`;
+    }
+
+    thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle("active", i === index);
+    });
+
+    currentTrainDexData.activePhotoIndex = index;
+};
+
+window.closeTrainDexModal = function() {
+    const modal = document.getElementById("trainDexModal");
+    const mainImage = document.getElementById("trainDexMainImage");
+    const mainOverlay = document.getElementById("trainDexMainOverlay");
+    const thumbRow = document.getElementById("trainDexThumbRow");
+    const routesEl = document.getElementById("trainDexRoutes");
+
+    if (modal) modal.style.display = "none";
+    if (mainImage) mainImage.src = "";
+    if (mainOverlay) mainOverlay.innerHTML = "";
+    if (thumbRow) thumbRow.innerHTML = "";
+    if (routesEl) routesEl.innerHTML = "";
+
+    currentTrainDexData = null;
+};
 
 function flashAuthPanel() {
     const panel = document.querySelector("#authUserView .auth-led-group");
@@ -1049,47 +2170,154 @@ function flashAuthPanel() {
         panel.classList.remove("auth-glow");
     }, 500);
 }
+function updateSafariThemeColor() {
+    const metaTheme = document.getElementById("theme-color-meta");
+    if (!metaTheme) return;
 
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    metaTheme.setAttribute("content", isDark ? "#111111" : "#e9e9e9");
+}
+updateSafariThemeColor();
+const colorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (colorSchemeMedia.addEventListener) {
+    colorSchemeMedia.addEventListener("change", updateSafariThemeColor);
+} else if (colorSchemeMedia.addListener) {
+    colorSchemeMedia.addListener(updateSafariThemeColor);
+}
 // =========================================
 // V0.21 E235系 Loading 頁面控制邏輯
 // =========================================
 document.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById('loading-screen');
-    const clockDisplay = document.getElementById('e235-clock');
-    const stationName = document.getElementById('e235-station-name');
-    const stationNameEn = document.getElementById('e235-station-name-en');
+    const clockDisplay = document.getElementById("e235-clock");
+    const stationName = document.getElementById("e235-station-name");
+    const stationNameEn = document.getElementById("e235-station-name-en");
+    const stationFade = document.getElementById("e235-station-fade");
+    const trainProgress = document.getElementById("rail-train-progress");
+    const progressText = document.getElementById("rail-loader-progress-text");
+    const progressFill = document.getElementById("e235-loader-track-fill");
 
     function updateClock() {
         const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
         clockDisplay.textContent = `${hours}:${minutes}`;
     }
-    updateClock(); 
+
+    updateClock();
     const clockInterval = setInterval(updateClock, 1000);
 
     const loadingStages = [
-        { zh: "讀取資料庫", en: "Loading Database..." },
-        { zh: "準備路線圖", en: "Preparing Maps..." },
-        { zh: "鉄道手帳", en: "RAIL LOG" } 
-    ];
-    
-    let currentStage = 0;
-    
-    const progressInterval = setInterval(() => {
-        currentStage++;
-        if (currentStage < loadingStages.length) {
-            stationName.textContent = loadingStages[currentStage].zh;
-            stationNameEn.textContent = loadingStages[currentStage].en;
-        } else {
-            clearInterval(progressInterval);
-            clearInterval(clockInterval);
-            loader.style.opacity = '0';
-            loader.style.transform = 'translateY(-20px)';
-            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        {
+            zh: "讀取乘車記錄",
+            en: "Loading Trip Records...",
+            progress: 0.08,
+            status: "正在讀取本地與雲端資料..."
+        },
+        {
+            zh: "準備路線資料",
+            en: "Preparing Railway Database...",
+            progress: 0.38,
+            status: "正在整理公司、路線、車站資料..."
+        },
+        {
+            zh: "載入地圖與統計",
+            en: "Preparing Maps and Stats...",
+            progress: 0.70,
+            status: "正在建立地圖、統計、相冊與成就資料..."
+        },
+        {
+            zh: "鉄道手帳",
+            en: "RAIL LOG",
+            progress: 1,
+            status: "列車即將到站，請稍候。"
         }
-    }, 800); 
+    ];
+
+    let currentStage = 0;
+
+    function placeTrainAndFill(progress) {
+        const track = document.querySelector(".e235-arrival-track-wrap");
+        const trainWidth = trainProgress?.offsetWidth || 86;
+        const trackWidth = track?.clientWidth || 0;
+        const maxMove = Math.max(trackWidth - trainWidth, 0);
+        const moveX = maxMove * progress;
+
+        if (trainProgress) {
+            trainProgress.style.transform = `translateX(${moveX}px)`;
+        }
+
+        if (progressFill) {
+            const fillPercent = Math.max(0, Math.min(progress * 100, 100));
+            progressFill.style.width = `${fillPercent}%`;
+        }
+    }
+
+    function switchStationText(stage) {
+        if (!stationFade) return;
+
+        stationFade.classList.add("is-fading");
+
+        setTimeout(() => {
+            stationName.textContent = stage.zh;
+            stationNameEn.textContent = stage.en;
+            progressText.textContent = stage.status;
+            stationFade.classList.remove("is-fading");
+        }, 260);
+    }
+
+    function updateLoaderStage(stage) {
+        placeTrainAndFill(stage.progress);
+        switchStationText(stage);
+    }
+
+    function finishLoadingAnimation() {
+        isLoaderAnimationDone = true;
+        tryEnterMainApp();
+    }
+
+    stationName.textContent = loadingStages[0].zh;
+    stationNameEn.textContent = loadingStages[0].en;
+    progressText.textContent = loadingStages[0].status;
+    placeTrainAndFill(loadingStages[0].progress);
+
+    const stepDurations = [600, 700, 800, 900];
+    let totalDelay = 0;
+
+    loadingStages.slice(1).forEach((stage, index) => {
+        totalDelay += stepDurations[index] || 1300;
+
+        setTimeout(() => {
+            updateLoaderStage(stage);
+        }, totalDelay);
+    });
+
+    setTimeout(() => {
+        clearInterval(clockInterval);
+
+        // 最後站多停頓 700ms，模擬進站顯示器停留
+        setTimeout(() => {
+            finishLoadingAnimation();
+        }, 700);
+    }, totalDelay + 200);
 });
+
+let isAppDataReady = false;
+let isLoaderAnimationDone = false;
+
+function tryEnterMainApp() {
+    if (!isAppDataReady || !isLoaderAnimationDone) return;
+
+    const loader = document.getElementById("loading-screen");
+    const app = document.getElementById("main-app");
+
+    if (loader) loader.classList.add("loaded");
+
+    setTimeout(() => {
+        if (loader) loader.style.display = "none";
+        if (app) app.classList.add("show");
+    }, 650);
+}
 
 let currentSignIndex = 0;
 const totalSigns = 5; 
@@ -1166,6 +2394,7 @@ function subscribeTrips() {
 let editIndex = null;
 let lastTo = "";
 let toastTimer = null;
+let editingTripId = null;
 
 function showToast(message, bgColor = "var(--success)") {
     const toast = document.getElementById("appToast");
@@ -1208,6 +2437,37 @@ function normalizeTrip(trip) {
 
     return normalized;
 }
+
+window.openGalleryPreview = function(imageSrc, caption) {
+    const modal = document.getElementById("galleryPreviewModal");
+    const img = document.getElementById("galleryPreviewImage");
+    const captionEl = document.getElementById("galleryPreviewCaption");
+
+    if (!modal || !img || !captionEl) return;
+
+    const parts = caption.split("｜");
+
+    captionEl.innerHTML = `
+        <div class="gallery-preview-info-card">
+            ${parts.map(part => `<div class="gallery-preview-info-row">${part}</div>`).join("")}
+        </div>
+    `;
+
+    img.src = imageSrc;
+    modal.style.display = "flex";
+};
+
+window.closeGalleryPreview = function() {
+    const modal = document.getElementById("galleryPreviewModal");
+    const img = document.getElementById("galleryPreviewImage");
+    const captionEl = document.getElementById("galleryPreviewCaption");
+
+    if (!modal || !img || !captionEl) return;
+
+    modal.style.display = "none";
+    img.src = "";
+    captionEl.textContent = "";
+};
 
 let db = { companies: [], lines: [], stations: [], trains: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
@@ -1364,7 +2624,8 @@ updateStationLists();
         if (dataModified) localStorage.setItem("railTrips_V2", JSON.stringify(trips));
 
         render(); updateStationLists();
-        setTimeout(hideLoadingScreen, 1800);
+        isAppDataReady = true;
+    tryEnterMainApp();
     }
 }
 
@@ -1663,23 +2924,30 @@ window.saveTrip = async function () {
     }
 
     try {
-        const tripRef = doc(collection(dbCloud, "users", user.uid, "trips"));
-        const tripId = tripRef.id;
+        // 編輯模式：找回舊 trip
+        const existingTrip = editingTripId ? trips.find(t => t.id === editingTripId) : null;
 
-        const photoTrainUrl = await uploadBase64ToStorage(
-            getVal("photoTrain"),
-            `users/${user.uid}/trips/${tripId}/photoTrain.jpg`
-        );
+        // 新增 / 編輯 共用 tripId
+        const tripId = editingTripId || doc(collection(dbCloud, "users", user.uid, "trips")).id;
+        const tripRef = doc(dbCloud, "users", user.uid, "trips", tripId);
 
-        const photoFromUrl = await uploadBase64ToStorage(
-            getVal("photoFrom"),
-            `users/${user.uid}/trips/${tripId}/photoFrom.jpg`
-        );
+        // 讀取目前 input 入面相片
+        const photoTrainInput = getVal("photoTrain");
+        const photoFromInput = getVal("photoFrom");
+        const photoToInput = getVal("photoTo");
 
-        const photoToUrl = await uploadBase64ToStorage(
-            getVal("photoTo"),
-            `users/${user.uid}/trips/${tripId}/photoTo.jpg`
-        );
+        // 有新相就 upload；冇新相就沿用舊 URL
+        const photoTrainUrl = photoTrainInput
+            ? await uploadBase64ToStorage(photoTrainInput, `users/${user.uid}/trips/${tripId}/photoTrain.jpg`)
+            : (existingTrip?.photoTrainUrl || existingTrip?.photoTrain || "");
+
+        const photoFromUrl = photoFromInput
+            ? await uploadBase64ToStorage(photoFromInput, `users/${user.uid}/trips/${tripId}/photoFrom.jpg`)
+            : (existingTrip?.photoFromUrl || existingTrip?.photoFrom || "");
+
+        const photoToUrl = photoToInput
+            ? await uploadBase64ToStorage(photoToInput, `users/${user.uid}/trips/${tripId}/photoTo.jpg`)
+            : (existingTrip?.photoToUrl || existingTrip?.photoTo || "");
 
         const trip = {
             date: getVal("date"),
@@ -1693,7 +2961,7 @@ window.saveTrip = async function () {
             photoFromUrl,
             photoToUrl,
 
-            createdAt: serverTimestamp(),
+            createdAt: existingTrip?.createdAt || serverTimestamp(),
             updatedAt: serverTimestamp()
         };
 
@@ -1701,10 +2969,12 @@ window.saveTrip = async function () {
 
         lastTo = trip.to_id;
 
-        ["company", "line", "serviceType", "train", "to"].forEach(id => document.getElementById(id).value = "");
+        ["company", "line", "serviceType", "train", "to"].forEach(id => {
+            document.getElementById(id).value = "";
+        });
+
         document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
         document.getElementById("throughContainer").innerHTML = "";
-
         document.getElementById("useOtherTrainCompany").checked = false;
         document.getElementById("otherTrainCompanyWrapper").style.display = "none";
         document.getElementById("trainOwnerCompany").value = "";
@@ -1714,7 +2984,11 @@ window.saveTrip = async function () {
         updateTrainDatalist();
         updateStationLists();
 
-        showToast("已同步到雲端！");
+        // 清除編輯狀態
+        editingTripId = null;
+        editIndex = null;
+
+        showToast(existingTrip ? "記錄已更新！" : "已同步到雲端！");
     } catch (error) {
         console.error(error);
         showToast("上傳失敗", "var(--danger)");
@@ -2046,7 +3320,8 @@ window.editTrip = function(i) {
     });
 
     editIndex = i;
-    switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
+editingTripId = t.id || null;
+switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
 
 window.deleteTrip = async function (i) {
@@ -2178,62 +3453,178 @@ function renderMap() {
 // 🟩 V0.27 相冊渲染邏輯
 // =========================================
 function renderGallery() {
-    const container = document.getElementById('galleryContainer');
-    container.innerHTML = '';
+    const container = document.getElementById("galleryContainer");
+    const companyFilterEl = document.getElementById("galleryCompanyFilter");
+    const sortModeEl = document.getElementById("gallerySortMode");
+	const searchInputEl = document.getElementById("gallerySearchInput");
 
-    // 收集所有有相嘅車型記錄
-    let trainPhotos = [];
+    if (!container) return;
+    container.innerHTML = "";
+
+    let rawPhotos = [];
+    let trainTripStats = {};
+
     trips.forEach(t => {
-        if (t.photoTrain) {
-            trainPhotos.push({
-                train_id: t.train_id,
-                date: t.date,
-                photo: t.photoTrain
-            });
-        }
+        const trainPhoto = t.photoTrainUrl || t.photoTrain;
+        const trainObj = maps.train[t.train_id];
+        if (!trainObj) return;
+
+        const compId = trainObj.company_id;
+        const compName = maps.company[compId]?.name || "其他";
+        const trainId = t.train_id;
+
+        // 統計 trip 次數、路線數
+        if (!trainTripStats[trainId]) {
+    trainTripStats[trainId] = {
+        tripCount: 0,
+        routeSet: new Set(),
+        routeNames: new Set()
+    };
+}
+
+        trainTripStats[trainId].tripCount += 1;
+
+        const routes = Array.isArray(t.routes) ? t.routes : [];
+        routes.forEach(r => {
+    if (r.line_id) {
+        trainTripStats[trainId].routeSet.add(r.line_id);
+        trainTripStats[trainId].routeNames.add(getLineName(r.line_id));
+    }
+});
+
+        if (trainPhoto) {
+    const routes = Array.isArray(t.routes) ? t.routes : [];
+    const routeSummary = routes.map(r => getLineName(r.line_id)).join(" / ");
+    const segmentSummary = `${getStationName(t.from_id)} → ${getStationName(t.to_id)}`;
+
+    rawPhotos.push({
+        trainId,
+        trainName: trainObj.name,
+        companyId: compId,
+        companyName: compName,
+        date: t.date || "",
+        photo: trainPhoto,
+        routeSummary,
+        segmentSummary
+    });
+}
     });
 
-    if (trainPhotos.length === 0) {
-        container.innerHTML = '<div style="text-align:center; padding: 20px; color:var(--subtext); font-size:13px;">尚未上傳任何車型相片。喺「新增」頁面記錄乘車時，可以附加相片！</div>';
+    if (rawPhotos.length === 0) {
+        container.innerHTML = `<div class="gallery-empty">尚未上傳任何車型相片。喺「新增」頁面記錄乘車時，可以附加相片！</div>`;
+        if (companyFilterEl) companyFilterEl.innerHTML = `<option value="all">全部公司</option>`;
+        window.trainDexIndex = {};
         return;
     }
 
-    // 按公司及車型分組
-    let groupedData = {};
-    trainPhotos.forEach(item => {
-        const trainObj = maps.train[item.train_id];
-        if (!trainObj) return;
-        
-        const compId = trainObj.company_id;
-        const compName = maps.company[compId]?.name || "其他";
-        
-        if (!groupedData[compName]) groupedData[compName] = [];
-        groupedData[compName].push({
-            trainName: trainObj.name,
-            date: item.date,
-            photo: item.photo
-        });
+    const companyNames = [...new Set(rawPhotos.map(item => item.companyName))].sort((a, b) => a.localeCompare(b, 'ja'));
+    const currentFilter = companyFilterEl?.value || "all";
+
+    if (companyFilterEl) {
+        companyFilterEl.innerHTML = `<option value="all">全部公司</option>` +
+            companyNames.map(name => `<option value="${name}">${name}</option>`).join("");
+        companyFilterEl.value = companyNames.includes(currentFilter) || currentFilter === "all" ? currentFilter : "all";
+    }
+
+    let filteredPhotos = [...rawPhotos];
+    const selectedCompany = companyFilterEl?.value || "all";
+    const sortMode = sortModeEl?.value || "train";
+	const searchKeyword = (searchInputEl?.value || "").trim().toLowerCase();
+
+    if (selectedCompany !== "all") {
+        filteredPhotos = filteredPhotos.filter(item => item.companyName === selectedCompany);
+    }
+	if (searchKeyword) {
+    filteredPhotos = filteredPhotos.filter(item => {
+        return item.trainName.toLowerCase().includes(searchKeyword) ||
+               item.companyName.toLowerCase().includes(searchKeyword);
+    });
+}
+    let trainDex = {};
+    filteredPhotos.forEach(item => {
+        const key = item.trainId;
+
+        if (!trainDex[key]) {
+            trainDex[key] = {
+    trainId: item.trainId,
+    trainName: item.trainName,
+    companyId: item.companyId,
+    companyName: item.companyName,
+    photos: [],
+    firstDate: item.date,
+    latestDate: item.date,
+    coverPhoto: item.photo,
+    tripCount: trainTripStats[item.trainId]?.tripCount || 0,
+    routeCount: trainTripStats[item.trainId]?.routeSet?.size || 0,
+    routeNames: [...(trainTripStats[item.trainId]?.routeNames || [])].sort((a, b) => a.localeCompare(b, 'ja'))
+};
+        }
+
+        trainDex[key].photos.push(item);
+
+        if (item.date && (!trainDex[key].firstDate || new Date(item.date) < new Date(trainDex[key].firstDate))) {
+            trainDex[key].firstDate = item.date;
+        }
+
+        if (item.date && (!trainDex[key].latestDate || new Date(item.date) > new Date(trainDex[key].latestDate))) {
+            trainDex[key].latestDate = item.date;
+            trainDex[key].coverPhoto = item.photo;
+        }
     });
 
-    // 渲染 UI
-    Object.keys(groupedData).sort().forEach(compName => {
-        let sectionHtml = `<div class="gallery-section">`;
-        sectionHtml += `<div class="gallery-comp-title">${compName}</div>`;
-        sectionHtml += `<div class="gallery-grid">`;
-        
-        // 每個公司內嘅相片按日期最新排序
-        groupedData[compName].sort((a,b) => new Date(b.date) - new Date(a.date)).forEach(item => {
-            sectionHtml += `
-                <div class="gallery-item">
-                    <img src="${item.photo}" class="gallery-img">
-                    <div class="gallery-info">
-                        <div class="gallery-train-name">${item.trainName}</div>
-                        <div class="gallery-date">${item.date}</div>
+    let dexItems = Object.values(trainDex);
+
+    if (sortMode === "train") {
+    dexItems.sort((a, b) => a.trainName.localeCompare(b.trainName, 'en'));
+} else if (sortMode === "count") {
+        dexItems.sort((a, b) => b.photos.length - a.photos.length || a.trainName.localeCompare(b.trainName, 'ja'));
+    } else if (sortMode === "newest") {
+        dexItems.sort((a, b) => new Date(b.latestDate) - new Date(a.latestDate));
+    } else if (sortMode === "oldest") {
+        dexItems.sort((a, b) => new Date(a.firstDate) - new Date(b.firstDate));
+    }
+
+    window.trainDexIndex = {};
+    dexItems.forEach(item => {
+        window.trainDexIndex[item.trainId] = item;
+    });
+
+    let groupedData = {};
+    dexItems.forEach(item => {
+        if (!groupedData[item.companyName]) groupedData[item.companyName] = [];
+        groupedData[item.companyName].push(item);
+    });
+
+    Object.keys(groupedData).sort((a, b) => a.localeCompare(b, 'ja')).forEach(compName => {
+        const items = groupedData[compName];
+
+        let sectionHtml = `
+            <div class="gallery-section">
+                <div class="gallery-comp-title">
+                    <div class="gallery-section-title-main">
+                        <span>${compName}</span>
+                        <span class="gallery-section-badge">${items.length} 款車型</span>
                     </div>
+                    <span class="gallery-count">${items.reduce((sum, item) => sum + item.photos.length, 0)} 張</span>
                 </div>
-            `;
-        });
-        
+                <div class="gallery-grid">
+        `;
+
+        items.forEach(item => {
+    sectionHtml += `
+        <div class="gallery-item" onclick="openTrainDexModal('${item.trainId}')">
+            <div class="gallery-img-wrap">
+                <img src="${item.coverPhoto}" class="gallery-img" alt="${item.trainName}">
+                <div class="gallery-photo-count">${item.photos.length} 張</div>
+
+                <div class="gallery-info">
+                    <div class="gallery-train-name">${item.trainName}</div>
+                </div>
+            </div>
+        </div>
+    `;
+});
+
         sectionHtml += `</div></div>`;
         container.innerHTML += sectionHtml;
     });
