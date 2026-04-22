@@ -1,618 +1,772 @@
 [
   {
     "id": "JR_EAST",
-    "name": "JR東日本"
+    "name": "JR東日本",
+    "categories": "jr_east"
   },
   {
     "id": "JR_WEST",
-    "name": "JR西日本"
+    "name": "JR西日本",
+    "categories": "jr_west"
   },
   {
     "id": "JR_CENTRAL",
-    "name": "JR東海"
+    "name": "JR東海",
+    "categories": "jr_central"
   },
   {
     "id": "JR_SHIKOKU",
-    "name": "JR四国"
+    "name": "JR四国",
+    "categories": "jr_shikoku"
   },
   {
     "id": "JR_KYUSHU",
-    "name": "JR九州"
+    "name": "JR九州",
+    "categories": "jr_kyushu"
   },
   {
     "id": "JR_HOKKAIDO",
-    "name": "JR北海道"
+    "name": "JR北海道",
+    "categories": "jr_hokkaido"
   },
   {
     "id": "KINTETSU",
-    "name": "近畿日本鉄道"
+    "name": "近畿日本鉄道",
+    "categories": "major_private"
   },
   {
     "id": "HANSHIN",
-    "name": "阪神電鉄"
+    "name": "阪神電鉄",
+    "categories": "major_private"
   },
   {
     "id": "KEIHAN",
-    "name": "京阪電鉄"
+    "name": "京阪電鉄",
+    "categories": "major_private"
   },
   {
     "id": "HANKYU",
-    "name": "阪急電鉄"
+    "name": "阪急電鉄",
+    "categories": "major_private"
   },
   {
     "id": "ODAKYU",
-    "name": "小田急電鉄"
+    "name": "小田急電鉄",
+    "categories": "major_private"
   },
   {
     "id": "KEIO",
-    "name": "京王電鉄"
+    "name": "京王電鉄",
+    "categories": "major_private"
   },
   {
     "id": "KEISEI",
-    "name": "京成電鉄"
+    "name": "京成電鉄",
+    "categories": "major_private"
   },
   {
     "id": "KEIKYU",
-    "name": "京浜急行電鉄"
+    "name": "京浜急行電鉄",
+    "categories": "major_private"
   },
   {
     "id": "SAGAMI",
-    "name": "相模鉄道"
+    "name": "相模鉄道",
+    "categories": "major_private"
   },
   {
     "id": "SEIBU",
-    "name": "西武鉄道"
+    "name": "西武鉄道",
+    "categories": "major_private"
   },
   {
     "id": "TOKYU",
-    "name": "東急電鉄"
+    "name": "東急電鉄",
+    "categories": "major_private"
   },
   {
     "id": "TOKYO_METRO",
-    "name": "東京メトロ"
+    "name": "東京メトロ",
+    "categories": "major_private"
   },
   {
     "id": "TOBU",
-    "name": "東武鉄道"
+    "name": "東武鉄道",
+    "categories": "major_private"
   },
   {
     "id": "NANKAI",
-    "name": "南海電鉄"
+    "name": "南海電鉄",
+    "categories": "major_private"
   },
   {
     "id": "NISHITETSU",
-    "name": "西日本鉄道"
+    "name": "西日本鉄道",
+    "categories": "major_private"
   },
   {
     "id": "MEITETSU",
-    "name": "名古屋鉄道"
+    "name": "名古屋鉄道",
+    "categories": "major_private"
   },
   {
     "id": "SANYO",
-    "name": "山陽電鉄"
+    "name": "山陽電鉄",
+    "categories": ""
   },
   {
     "id": "KITAKYU",
-    "name": "北大阪急行"
+    "name": "北大阪急行",
+    "categories": ""
   },
   {
     "id": "SAPPORO",
-    "name": "札幌市電"
+    "name": "札幌市電",
+    "categories": ""
   },
   {
     "id": "HAKODATE",
-    "name": "函館市電"
+    "name": "函館市電",
+    "categories": ""
   },
   {
     "id": "SENDAI",
-    "name": "仙台市地下鉄"
+    "name": "仙台市地下鉄",
+    "categories": ""
   },
   {
     "id": "TOEI",
-    "name": "都営地下鉄"
+    "name": "都営地下鉄",
+    "categories": ""
   },
   {
     "id": "YOKOHAMA_SUBWAY",
-    "name": "横浜市営地下鉄"
+    "name": "横浜市営地下鉄",
+    "categories": ""
   },
   {
     "id": "NAGOYA",
-    "name": "名古屋市営地下鉄"
+    "name": "名古屋市営地下鉄",
+    "categories": ""
   },
   {
     "id": "CITY_KOBE",
-    "name": "神戸市営地下鉄"
+    "name": "神戸市営地下鉄",
+    "categories": ""
   },
   {
     "id": "KUMAMOTO_CITY",
-    "name": "熊本市電"
+    "name": "熊本市電",
+    "categories": ""
   },
   {
     "id": "KAGOSHIMA",
-    "name": "鹿児島市電"
+    "name": "鹿児島市電",
+    "categories": ""
   },
   {
     "id": "OSAKA_METRO",
-    "name": "Osaka Metro"
+    "name": "Osaka Metro",
+    "categories": ""
   },
   {
     "id": "FUKUOKA_SUBWAY",
-    "name": "福岡市営地下鉄"
+    "name": "福岡市営地下鉄",
+    "categories": ""
   },
   {
     "id": "KYOTO_SUBWAY",
-    "name": "京都市営地下鉄"
+    "name": "京都市営地下鉄",
+    "categories": ""
   },
   {
     "id": "S_HOKKAIDO",
-    "name": "道南いさりび鉄道"
+    "name": "道南いさりび鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "AOIMORI",
-    "name": "青い森鉄道"
+    "name": "青い森鉄道",
+    "categories": ""
   },
   {
     "id": "KONAN",
-    "name": "弘南鉄道"
+    "name": "弘南鉄道",
+    "categories": ""
   },
   {
     "id": "TSUGARU",
-    "name": "津軽鉄道"
+    "name": "津軽鉄道",
+    "categories": ""
   },
   {
     "id": "IGR",
-    "name": "IGRいわて銀河鉄道"
+    "name": "IGRいわて銀河鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "SANRIKU",
-    "name": "三陸鉄道"
+    "name": "三陸鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "SAT",
-    "name": "仙台空港鉄道"
+    "name": "仙台空港鉄道",
+    "categories": ""
   },
   {
     "id": "AKITA",
-    "name": "秋田内陸縦貫鉄道"
+    "name": "秋田内陸縦貫鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "YURI_KOGEN",
-    "name": "由利高原鉄道"
+    "name": "由利高原鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "YAMAGATA",
-    "name": "山形鉄道"
+    "name": "山形鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "AIZU",
-    "name": "会津鉄道"
+    "name": "会津鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "ABUKUMA",
-    "name": "阿武隈急行"
+    "name": "阿武隈急行",
+    "categories": "third_sector"
   },
   {
     "id": "FUKUSHIMA",
-    "name": "福島交通"
+    "name": "福島交通",
+    "categories": ""
   },
   {
     "id": "KRT",
-    "name": "鹿島臨海鉄道"
+    "name": "鹿島臨海鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "KANTO",
-    "name": "関東鉄道"
+    "name": "関東鉄道",
+    "categories": ""
   },
   {
     "id": "HITACHINAKA",
-    "name": "ひたちなか海浜鉄道"
+    "name": "ひたちなか海浜鉄道",
+    "categories": ""
   },
   {
     "id": "UTSUNOMIYA_LRT",
-    "name": "宇都宮ライトレール"
+    "name": "宇都宮ライトレール",
+    "categories": ""
   },
   {
     "id": "MOKA",
-    "name": "真岡鐵道"
+    "name": "真岡鐵道",
+    "categories": "third_sector"
   },
   {
     "id": "YAGANTETSUDO",
-    "name": "野岩鉄道"
+    "name": "野岩鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "JOSHIN",
-    "name": "上信電鉄"
+    "name": "上信電鉄",
+    "categories": ""
   },
   {
     "id": "JOMO",
-    "name": "上毛電気鉄道"
+    "name": "上毛電気鉄道",
+    "categories": ""
   },
   {
     "id": "WATARASE",
-    "name": "わたらせ渓谷鐵道"
+    "name": "わたらせ渓谷鐵道",
+    "categories": "third_sector"
   },
   {
     "id": "SAITAMA",
-    "name": "埼玉高速鉄道"
+    "name": "埼玉高速鉄道",
+    "categories": ""
   },
   {
     "id": "SAITAMA_URBAN",
-    "name": "埼玉新都市交通"
+    "name": "埼玉新都市交通",
+    "categories": ""
   },
   {
     "id": "CHICHIBU",
-    "name": "秩父鉄道"
+    "name": "秩父鉄道",
+    "categories": ""
   },
   {
     "id": "ISUMI",
-    "name": "いすみ鉄道"
+    "name": "いすみ鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "KOMINATO",
-    "name": "小湊鉄道"
+    "name": "小湊鉄道",
+    "categories": ""
   },
   {
     "id": "SHIBAYAMA",
-    "name": "芝山鉄道"
+    "name": "芝山鉄道",
+    "categories": ""
   },
   {
     "id": "CHIBA_MONO",
-    "name": "千葉都市モノレール"
+    "name": "千葉都市モノレール",
+    "categories": ""
   },
   {
     "id": "CHOSHI",
-    "name": "銚子電気鉄道"
+    "name": "銚子電気鉄道",
+    "categories": ""
   },
   {
     "id": "TOYO",
-    "name": "東葉高速鉄道"
+    "name": "東葉高速鉄道",
+    "categories": ""
   },
   {
     "id": "HOKUSO",
-    "name": "北総鉄道"
+    "name": "北総鉄道",
+    "categories": ""
   },
   {
     "id": "RYUTETSU",
-    "name": "流鉄"
+    "name": "流鉄",
+    "categories": ""
   },
   {
     "id": "TSUKUBA",
-    "name": "首都圏新都市鉄道"
+    "name": "首都圏新都市鉄道",
+    "categories": ""
   },
   {
     "id": "TAMA_MONO",
-    "name": "多摩都市モノレール"
+    "name": "多摩都市モノレール",
+    "categories": ""
   },
   {
     "id": "TOKYO_MONO",
-    "name": "東京モノレール"
+    "name": "東京モノレール",
+    "categories": ""
   },
   {
     "id": "TWR",
-    "name": "東京臨海高速鉄道"
+    "name": "東京臨海高速鉄道",
+    "categories": ""
   },
   {
     "id": "YURIKAMOME",
-    "name": "東京臨海新交通"
+    "name": "東京臨海新交通",
+    "categories": ""
   },
   {
     "id": "ENOSHIMA",
-    "name": "江ノ島電鉄"
+    "name": "江ノ島電鉄",
+    "categories": ""
   },
   {
     "id": "ODAKYU_HAKONE",
-    "name": "箱根登山鉄道"
+    "name": "箱根登山鉄道",
+    "categories": ""
   },
   {
     "id": "SHONAN_MONO",
-    "name": "湘南モノレール"
+    "name": "湘南モノレール",
+    "categories": ""
   },
   {
     "id": "YOKOHAMA",
-    "name": "横浜高速鉄道"
+    "name": "横浜高速鉄道",
+    "categories": ""
   },
   {
     "id": "YOKOHAMA_SEASIDE",
-    "name": "横浜シーサイドライン"
+    "name": "横浜シーサイドライン",
+    "categories": ""
   },
   {
     "id": "ECHIGO",
-    "name": "えちごトキめき鉄道"
+    "name": "えちごトキめき鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "HOKUETSU",
-    "name": "北越急行"
+    "name": "北越急行",
+    "categories": "third_sector"
   },
   {
     "id": "AINOKAZE",
-    "name": "あいの風とやま鉄道"
+    "name": "あいの風とやま鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "TOYAMACHIHO",
-    "name": "富山地方鉄道"
+    "name": "富山地方鉄道",
+    "categories": ""
   },
   {
     "id": "MANYOSEN",
-    "name": "万葉線"
+    "name": "万葉線",
+    "categories": ""
   },
   {
     "id": "IR",
-    "name": "IRいしかわ鉄道"
+    "name": "IRいしかわ鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "NOTO",
-    "name": "のと鉄道"
+    "name": "のと鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "HOKURIKU",
-    "name": "北陸鉄道"
+    "name": "北陸鉄道",
+    "categories": ""
   },
   {
     "id": "ECHIZEN",
-    "name": "えちぜん鉄道"
+    "name": "えちぜん鉄道",
+    "categories": ""
   },
   {
     "id": "HAPI",
-    "name": "ハピラインふくい"
+    "name": "ハピラインふくい",
+    "categories": "third_sector"
   },
   {
     "id": "FUKUI",
-    "name": "福井鉄道"
+    "name": "福井鉄道",
+    "categories": ""
   },
   {
     "id": "FUJIKYU",
-    "name": "富士山麓電気鉄道"
+    "name": "富士山麓電気鉄道",
+    "categories": ""
   },
   {
     "id": "ALPICO",
-    "name": "アルピコ交通"
+    "name": "アルピコ交通",
+    "categories": ""
   },
   {
     "id": "UEDADENTETSU",
-    "name": "上田電鉄"
+    "name": "上田電鉄",
+    "categories": ""
   },
   {
     "id": "SHINANO",
-    "name": "しなの鉄道"
+    "name": "しなの鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "NAGANO",
-    "name": "長野電鉄"
+    "name": "長野電鉄",
+    "categories": ""
   },
   {
     "id": "AKECHI",
-    "name": "明知鉄道"
+    "name": "明知鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "SEINO",
-    "name": "西濃鉄道"
+    "name": "西濃鉄道",
+    "categories": ""
   },
   {
     "id": "TARUMI",
-    "name": "樽見鉄道"
+    "name": "樽見鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "NAGARAGAWA",
-    "name": "長良川鉄道"
+    "name": "長良川鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "YORO",
-    "name": "養老鉄道"
+    "name": "養老鉄道",
+    "categories": ""
   },
   {
     "id": "IZUKYU",
-    "name": "伊豆急行"
+    "name": "伊豆急行",
+    "categories": ""
   },
   {
     "id": "IZUHAKONE",
-    "name": "伊豆箱根鉄道"
+    "name": "伊豆箱根鉄道",
+    "categories": ""
   },
   {
     "id": "ENSHU",
-    "name": "遠州鉄道"
+    "name": "遠州鉄道",
+    "categories": ""
   },
   {
     "id": "OIGAWA",
-    "name": "大井川鐵道"
+    "name": "大井川鐵道",
+    "categories": ""
   },
   {
     "id": "GAKUNAN",
-    "name": "岳南電車"
+    "name": "岳南電車",
+    "categories": ""
   },
   {
     "id": "SHIZU",
-    "name": "静岡鉄道"
+    "name": "静岡鉄道",
+    "categories": ""
   },
   {
     "id": "TENRYU",
-    "name": "天竜浜名湖鉄道"
+    "name": "天竜浜名湖鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "AICHI_LOOP",
-    "name": "愛知環状鉄道"
+    "name": "愛知環状鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "TKJ",
-    "name": "JR東海交通事業"
+    "name": "JR東海交通事業",
+    "categories": ""
   },
   {
     "id": "TOYOHASHI",
-    "name": "豊橋鉄道"
+    "name": "豊橋鉄道",
+    "categories": ""
   },
   {
     "id": "NAGOYA_RINKAI",
-    "name": "名古屋臨海高速鉄道"
+    "name": "名古屋臨海高速鉄道",
+    "categories": ""
   },
   {
     "id": "IGA",
-    "name": "伊賀鉄道"
+    "name": "伊賀鉄道",
+    "categories": ""
   },
   {
     "id": "ISE",
-    "name": "伊勢鉄道"
+    "name": "伊勢鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "SANGI",
-    "name": "三岐鉄道"
+    "name": "三岐鉄道",
+    "categories": ""
   },
   {
     "id": "YOKKAICHI",
-    "name": "四日市あすなろう鉄道"
+    "name": "四日市あすなろう鉄道",
+    "categories": ""
   },
   {
     "id": "HOJO",
-    "name": "北条鉄道"
+    "name": "北条鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "EIZAN",
-    "name": "叡山電鉄"
+    "name": "叡山電鉄",
+    "categories": ""
   },
   {
     "id": "HANKAI",
-    "name": "阪堺電車"
+    "name": "阪堺電車",
+    "categories": ""
   },
   {
     "id": "KNT_LINER",
-    "name": "神戸新交通"
+    "name": "神戸新交通",
+    "categories": ""
   },
   {
     "id": "SHINTETSU",
-    "name": "神戸電鉄"
+    "name": "神戸電鉄",
+    "categories": ""
   },
   {
     "id": "OHMI",
-    "name": "近江鉄道"
+    "name": "近江鉄道",
+    "categories": ""
   },
   {
     "id": "SHIGARAKI",
-    "name": "信楽高原鐵道"
+    "name": "信楽高原鐵道",
+    "categories": "third_sector"
   },
   {
     "id": "WILLER",
-    "name": "京都丹後鉄道"
+    "name": "京都丹後鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "KEIFUKU",
-    "name": "京福電気鉄道"
+    "name": "京福電気鉄道",
+    "categories": ""
   },
   {
     "id": "OSAKA_MONO",
-    "name": "大阪モノレール"
+    "name": "大阪モノレール",
+    "categories": ""
   },
   {
     "id": "MIZUMA",
-    "name": "水間鉄道"
+    "name": "水間鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "NOSE",
-    "name": "能勢電鉄"
+    "name": "能勢電鉄",
+    "categories": ""
   },
   {
     "id": "KISHU",
-    "name": "紀州鉄道"
+    "name": "紀州鉄道",
+    "categories": ""
   },
   {
     "id": "WAKAYAMA",
-    "name": "和歌山電鐵"
+    "name": "和歌山電鐵",
+    "categories": ""
   },
   {
     "id": "CHIZU",
-    "name": "智頭急行"
+    "name": "智頭急行",
+    "categories": "third_sector"
   },
   {
     "id": "WAKASA",
-    "name": "若桜鉄道"
+    "name": "若桜鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "ICHIBATA",
-    "name": "一畑電車"
+    "name": "一畑電車",
+    "categories": ""
   },
   {
     "id": "IBARA",
-    "name": "井原鉄道"
+    "name": "井原鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "OKAYAMA",
-    "name": "岡山電気軌道"
+    "name": "岡山電気軌道",
+    "categories": ""
   },
   {
     "id": "MIZUSHIMA",
-    "name": "水島臨海鉄道"
+    "name": "水島臨海鉄道",
+    "categories": ""
   },
   {
     "id": "HIROSHIMA_RAPID",
-    "name": "広島高速交通"
+    "name": "広島高速交通",
+    "categories": ""
   },
   {
     "id": "HIROSHIMA",
-    "name": "広島電鉄"
+    "name": "広島電鉄",
+    "categories": ""
   },
   {
     "id": "NISHIKIGAWA",
-    "name": "錦川鉄道"
+    "name": "錦川鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "ASA",
-    "name": "阿佐海岸鉄道"
+    "name": "阿佐海岸鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "TAKAMATSU",
-    "name": "高松琴平電気鉄道"
+    "name": "高松琴平電気鉄道",
+    "categories": ""
   },
   {
     "id": "IYO",
-    "name": "伊予鉄道"
+    "name": "伊予鉄道",
+    "categories": ""
   },
   {
     "id": "TOSA",
-    "name": "土佐くろしお鉄道"
+    "name": "土佐くろしお鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "TOSADEN",
-    "name": "とさでん交通"
+    "name": "とさでん交通",
+    "categories": ""
   },
   {
     "id": "AMAGI",
-    "name": "甘木鉄道"
+    "name": "甘木鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "KITAKYUSHU",
-    "name": "北九州高速鉄道"
+    "name": "北九州高速鉄道",
+    "categories": ""
   },
   {
     "id": "CHIKUHO",
-    "name": "筑豊電気鉄道"
+    "name": "筑豊電気鉄道",
+    "categories": ""
   },
   {
     "id": "HEISEI_CHIKUHO",
-    "name": "平成筑豊鉄道"
+    "name": "平成筑豊鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "SHIMABARA",
-    "name": "島原鉄道"
+    "name": "島原鉄道",
+    "categories": ""
   },
   {
     "id": "NAGASAKI",
-    "name": "長崎電気軌道"
+    "name": "長崎電気軌道",
+    "categories": ""
   },
   {
     "id": "MATSUURA",
-    "name": "松浦鉄道"
+    "name": "松浦鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "KUMAGAWA",
-    "name": "くま川鉄道"
+    "name": "くま川鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "KUMAMOTO",
-    "name": "熊本電鉄"
+    "name": "熊本電鉄",
+    "categories": ""
   },
   {
     "id": "HISATSU",
-    "name": "肥薩おれんじ鉄道"
+    "name": "肥薩おれんじ鉄道",
+    "categories": "third_sector"
   },
   {
     "id": "MINAMI_ASO",
-    "name": "南阿蘇鉄道"
+    "name": "南阿蘇鉄道",
+    "categories": "third_sector"
   }
 ]
