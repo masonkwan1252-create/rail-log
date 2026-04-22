@@ -2957,76 +2957,71 @@ function flashAuthPanel() {
     }, 500);
 }
 function updateSafariThemeColor() {
-    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let metaTheme = document.getElementById("theme-color-meta");
+    let metaThemeLight = document.getElementById("theme-color-light-meta");
+    let metaThemeDark = document.getElementById("theme-color-dark-meta");
 
+    if (!metaTheme) {
+        metaTheme = document.createElement("meta");
+        metaTheme.name = "theme-color";
+        metaTheme.id = "theme-color-meta";
+        document.head.appendChild(metaTheme);
+    }
+
+    if (!metaThemeLight) {
+        metaThemeLight = document.createElement("meta");
+        metaThemeLight.name = "theme-color";
+        metaThemeLight.media = "(prefers-color-scheme: light)";
+        metaThemeLight.id = "theme-color-light-meta";
+        document.head.appendChild(metaThemeLight);
+    }
+
+    if (!metaThemeDark) {
+        metaThemeDark = document.createElement("meta");
+        metaThemeDark.name = "theme-color";
+        metaThemeDark.media = "(prefers-color-scheme: dark)";
+        metaThemeDark.id = "theme-color-dark-meta";
+        document.head.appendChild(metaThemeDark);
+    }
+
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const loader = document.getElementById("loading-screen");
-    const isLoading =
+    const isLoadingVisible =
         loader &&
         loader.style.display !== "none" &&
         !loader.classList.contains("loaded");
 
-    const lightColor = isLoading ? "#e9e9e9" : "#ffffff";
-    const darkColor = isLoading ? "#111111" : "#000000";
-    const color = isDark ? darkColor : lightColor;
+    const lightColor = isLoadingVisible ? "#e9e9e9" : "#ffffff";
+    const darkColor = isLoadingVisible ? "#111111" : "#000000";
+    const activeColor = isDark ? darkColor : lightColor;
 
-    let meta = document.querySelector('meta[name="theme-color"]:not([media])');
-    if (!meta) {
-        meta = document.createElement("meta");
-        meta.name = "theme-color";
-        document.head.appendChild(meta);
-    }
+    metaTheme.setAttribute("content", activeColor);
+    metaThemeLight.setAttribute("content", lightColor);
+    metaThemeDark.setAttribute("content", darkColor);
 
-    // 👉 核心：強制 repaint Safari UI
-    meta.setAttribute("content", color);
-
-    document.documentElement.style.backgroundColor = color;
-    document.body.style.backgroundColor = color;
-
+    document.documentElement.style.backgroundColor = activeColor;
+    document.body.style.backgroundColor = activeColor;
     document.documentElement.style.colorScheme = isDark ? "dark" : "light";
     document.body.style.colorScheme = isDark ? "dark" : "light";
 
     requestAnimationFrame(() => {
-        meta.setAttribute("content", color);
+        metaTheme.setAttribute("content", activeColor);
+        metaThemeLight.setAttribute("content", lightColor);
+        metaThemeDark.setAttribute("content", darkColor);
 
-        setTimeout(() => meta.setAttribute("content", color), 50);
-        setTimeout(() => meta.setAttribute("content", color), 150);
-        setTimeout(() => meta.setAttribute("content", color), 350);
+        setTimeout(() => {
+            metaTheme.setAttribute("content", activeColor);
+            metaThemeLight.setAttribute("content", lightColor);
+            metaThemeDark.setAttribute("content", darkColor);
+        }, 80);
+
+        setTimeout(() => {
+            metaTheme.setAttribute("content", activeColor);
+            metaThemeLight.setAttribute("content", lightColor);
+            metaThemeDark.setAttribute("content", darkColor);
+        }, 240);
     });
 }
-const mql = window.matchMedia("(prefers-color-scheme: dark)");
-
-function handleThemeChange() {
-    updateSafariThemeColor();
-}
-
-if (mql.addEventListener) {
-    mql.addEventListener("change", handleThemeChange);
-} else {
-    mql.addListener(handleThemeChange);
-}
-
-window.addEventListener("pageshow", updateSafariThemeColor);
-window.addEventListener("focus", updateSafariThemeColor);
-
-document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) updateSafariThemeColor();
-});
-
-window.addEventListener("pageshow", updateSafariThemeColor);
-
-document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) {
-        updateSafariThemeColor();
-        setTimeout(updateSafariThemeColor, 120);
-        setTimeout(updateSafariThemeColor, 300);
-    }
-});
-
-window.addEventListener("focus", () => {
-    updateSafariThemeColor();
-    setTimeout(updateSafariThemeColor, 120);
-});
-
 const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
 function handleSafariColorSchemeChange() {
@@ -3036,6 +3031,24 @@ function handleSafariColorSchemeChange() {
     setTimeout(updateSafariThemeColor, 300);
     setTimeout(updateSafariThemeColor, 600);
 }
+
+window.addEventListener("pageshow", () => {
+    updateSafariThemeColor();
+    setTimeout(updateSafariThemeColor, 120);
+});
+
+window.addEventListener("focus", () => {
+    updateSafariThemeColor();
+    setTimeout(updateSafariThemeColor, 120);
+});
+
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+        updateSafariThemeColor();
+        setTimeout(updateSafariThemeColor, 120);
+        setTimeout(updateSafariThemeColor, 300);
+    }
+});
 
 if (safariColorSchemeMedia.addEventListener) {
     safariColorSchemeMedia.addEventListener("change", handleSafariColorSchemeChange);
@@ -3123,7 +3136,6 @@ function switchStationText(stage) {
         return;
     }
 
-    // 清走上一輪 timer，避免 Safari 疊動畫
     if (stationFadeTimer) {
         clearTimeout(stationFadeTimer);
         stationFadeTimer = null;
@@ -3138,23 +3150,18 @@ function switchStationText(stage) {
 
     if (!currentEl || !nextEl) return;
 
-    // 先準備下一句
     nextEl.textContent = stage.status;
 
-    // 先固定兩層狀態，避免殘影
     nextEl.classList.remove("is-visible", "is-hidden");
     currentEl.classList.remove("is-visible", "is-hidden");
 
     nextEl.classList.add("is-hidden");
     currentEl.classList.add("is-visible");
 
-    // 強制 reflow，令 Safari 真正分開兩次動畫
     void nextEl.offsetWidth;
 
-    // 站名淡出
     stationFade.classList.add("is-fading");
 
-    // 下一 frame 再做文字交叉淡入淡出
     requestAnimationFrame(() => {
         nextEl.classList.remove("is-hidden");
         nextEl.classList.add("is-visible");
@@ -3163,7 +3170,6 @@ function switchStationText(stage) {
         currentEl.classList.add("is-hidden");
     });
 
-    // 260ms 後換站名
     stationFadeTimer = setTimeout(() => {
         stationName.textContent = stage.zh;
         stationNameEn.textContent = stage.en;
@@ -3171,7 +3177,6 @@ function switchStationText(stage) {
         stationFadeTimer = null;
     }, 260);
 
-    // 動畫完清空舊層文字，防止 Safari 疊字殘影
     statusCleanupTimer = setTimeout(() => {
         if (currentEl.classList.contains("is-hidden")) {
             currentEl.textContent = "";
