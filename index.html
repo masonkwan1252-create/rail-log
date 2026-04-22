@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.29</title>
+<title>鉄道手帳 RAIL LOG V0.30</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <meta name="theme-color" content="#e9e9e9" id="theme-color-meta">
@@ -214,7 +214,6 @@
 
 .e235-arrival-status-fade {
     position: relative;
-    margin-top: 14px;
     min-height: 3.2em;
     overflow: hidden;
 }
@@ -224,23 +223,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 12px;
 
-    display: block;
     text-align: center;
 
-    font-size: 13px;
-    color: #666;
-    font-weight: 600;
-    line-height: 1.35;
-
     opacity: 0;
-    transform: translateY(4px) translateZ(0);
-    transition: opacity 0.24s ease, transform 0.24s ease;
-    will-change: opacity, transform;
+    transform: translateY(6px) translateZ(0);
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
+
+    will-change: opacity, transform;
+
     pointer-events: none;
 }
 
@@ -252,7 +247,7 @@
 
 .e235-arrival-status-text.is-hidden {
     opacity: 0;
-    transform: translateY(-4px) translateZ(0);
+    transform: translateY(-6px) translateZ(0);
     z-index: 1;
 }
 
@@ -305,7 +300,7 @@
     border-radius: 999px;
     background: linear-gradient(90deg, #63BD0F 0%, #7fd13e 50%, #63BD0F 100%);
     box-shadow:
-        0 0 8px rgba(99, 189, 15, 0.29),
+        0 0 8px rgba(99, 189, 15, 0.30),
         inset 0 1px 1px rgba(255,255,255,0.18);
     transition: width 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -579,7 +574,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.29);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.30);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -847,7 +842,7 @@ header::before {
     background: linear-gradient(
         to top,
         rgba(0,0,0,0.72) 0%,
-        rgba(0,0,0,0.29) 28%,
+        rgba(0,0,0,0.30) 28%,
         rgba(0,0,0,0.05) 50%,
         rgba(0,0,0,0) 70%
     );
@@ -984,7 +979,7 @@ header::before {
     background: var(--card);
     border-radius: 16px;
     border: 1px solid var(--border);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.29);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.30);
 }
 
 .train-dex-main-image-wrap {
@@ -1068,7 +1063,7 @@ header::before {
     box-shadow:
         inset 0 1px 1px rgba(255,255,255,0.15),
         0 1px 3px rgba(0,0,0,0.18);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.29);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.30);
     position: relative;
 }
 
@@ -1278,17 +1273,104 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 @keyframes fadeInOut { 0% { opacity: 0; transform: translate(-50%, -10px); } 10% { opacity: 1; transform: translate(-50%, 0); } 90% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, -10px); } }
 .version-badge { position: fixed; bottom: calc(env(safe-area-inset-bottom) + 65px); right: 8px; font-size: 10px; color: var(--subtext); background: var(--nav-bg); border: 1px solid var(--border); border-radius: 10px; padding: 2px 6px; z-index: 1001; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 
-.container { max-width: 600px; margin: 15px auto; padding: 0 15px; }
+.container {
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 0 15px 110px;
+}
 .card { background: var(--card); padding: 20px; margin-bottom: 16px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 .tab-content { display: none; animation: fadeIn 0.3s ease; }
 .tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
 /* 底部導航 - 加入相冊 Icon */
-.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--nav-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid var(--border); display: flex; justify-content: space-around; padding: 0 0 calc(env(safe-area-inset-bottom)); z-index: 1000; }
-.nav-item { text-align: center; color: var(--subtext); font-size: 10px; font-weight: 500; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 0; border-bottom: 3px solid transparent; transition: all 0.2s ease; }
-.nav-item.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
-.nav-icon { font-size: 20px; }
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+
+    min-height: 64px;
+    padding: 0 0 calc(env(safe-area-inset-bottom) + 2px);
+
+    background: var(--nav-bg);
+    border-top: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.nav-item {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 8px 0 7px;
+    color: var(--subtext);
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+    border-top: 2px solid transparent;
+}
+
+.nav-item.active {
+    color: var(--primary);
+    border-top-color: var(--primary);
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon-svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    overflow: visible;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 480px) {
+    .bottom-nav {
+        min-height: 60px;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-icon-svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 1.8;
+    }
+
+    .nav-label {
+        font-size: 9px;
+    }
+}
 
 h3 { margin-top: 0; font-size: 17px; font-weight: 600; border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; color: var(--primary); }
 .led-counter { font-family: 'DotGothic16', monospace; background-color: #111; color: #ff9500; padding: 2px 8px; border-radius: 4px; font-size: 1.2em; font-weight: normal; text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); border: 2px solid #222; box-shadow: inset 0 2px 4px rgba(0,0,0,1); margin-left: 6px; display: inline-block; line-height: 1; letter-spacing: 2px; }
@@ -1502,7 +1584,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.29 成就佈局樣式
+   🟩 V0.24/V0.30 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -1574,7 +1656,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.29);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.30);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -1610,7 +1692,7 @@ header::before {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.29);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.30);
 }
 
 .map-photo-preview-image {
@@ -1974,7 +2056,7 @@ header::before {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.29</div>
+                <div class="e235-arrival-version">V0.30</div>
             </div>
         </div>
 
@@ -2112,7 +2194,7 @@ header::before {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.29</div>
+    <div class="version-badge">V0.30</div>
 
     <div class="container">
 
@@ -2394,35 +2476,75 @@ header::before {
     </div>
 
     <nav class="bottom-nav">
-        <div class="nav-item active" onclick="switchTab('tab-add', this)">
-            <span class="nav-icon">📝</span>
-            <span>新增</span>
-        </div>
-        <div class="nav-item" onclick="switchTab('tab-history', this)">
-            <span class="nav-icon">🚆</span>
-            <span>記錄</span>
-        </div>
-        <div class="nav-item" onclick="switchTab('tab-stats', this)">
-            <span class="nav-icon">📊</span>
-            <span>統計</span>
-        </div>
-        <div class="nav-item" onclick="switchTab('tab-map', this)">
-            <span class="nav-icon">🗺️</span>
-            <span>地圖</span>
-        </div>
-        <div class="nav-item" onclick="switchTab('tab-gallery', this)">
-            <span class="nav-icon">📷</span>
-            <span>相冊</span>
-        </div>
-        <div class="nav-item" onclick="switchTab('tab-achievements', this)">
-            <span class="nav-icon">🏆</span>
-            <span>成就</span>
-        </div>
-        <div class="nav-item" onclick="switchTab('tab-settings', this)">
-            <span class="nav-icon">⚙️</span>
-            <span>管理</span>
-        </div>
-    </nav>
+    <div class="nav-item active" onclick="switchTab('tab-add', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M5 12h14" />
+            </svg>
+        </span>
+        <span class="nav-label">新增</span>
+    </div>
+
+    <div class="nav-item" onclick="switchTab('tab-history', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M6 4h12v16H6z" />
+                <path d="M9 8h6M9 12h6M9 16h4" />
+            </svg>
+        </span>
+        <span class="nav-label">記錄</span>
+    </div>
+
+    <div class="nav-item" onclick="switchTab('tab-stats', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18V11" />
+                <path d="M12 18V7" />
+                <path d="M18 18V13" />
+            </svg>
+        </span>
+        <span class="nav-label">統計</span>
+    </div>
+
+    <div class="nav-item" onclick="switchTab('tab-map', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 20s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" />
+                <circle cx="12" cy="10" r="2.2" />
+            </svg>
+        </span>
+        <span class="nav-label">地圖</span>
+    </div>
+
+    <div class="nav-item" onclick="switchTab('tab-gallery', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="6" width="16" height="12" rx="2" />
+                <path d="M8 14l2.5-2.5L13 14l3-3 2 3" />
+                <circle cx="9" cy="10" r="1.2" />
+            </svg>
+        </span>
+        <span class="nav-label">相冊</span>
+    </div>
+
+    <div class="nav-item" onclick="switchTab('tab-achievements', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 4l2.2 4.5 5 .7-3.6 3.4.9 4.9L12 15.8 7.5 17.5l.9-4.9L4.8 9.2l5-.7L12 4z" />
+            </svg>
+        </span>
+        <span class="nav-label">成就</span>
+    </div>
+
+    <div class="nav-item" onclick="switchTab('tab-settings', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M7 12h10M10 17h4" />
+            </svg>
+        </span>
+        <span class="nav-label">管理</span>
+    </div>
+</nav>
 
     <datalist id="companyList"></datalist>
     <datalist id="lineList"></datalist>
@@ -2835,66 +2957,60 @@ function flashAuthPanel() {
     }, 500);
 }
 function updateSafariThemeColor() {
-    let metaTheme = document.getElementById("theme-color-meta");
-    let metaThemeLight = document.getElementById("theme-color-light-meta");
-    let metaThemeDark = document.getElementById("theme-color-dark-meta");
-
-    if (!metaTheme) {
-        metaTheme = document.createElement("meta");
-        metaTheme.name = "theme-color";
-        metaTheme.id = "theme-color-meta";
-        document.head.appendChild(metaTheme);
-    }
-
-    if (!metaThemeLight) {
-        metaThemeLight = document.createElement("meta");
-        metaThemeLight.name = "theme-color";
-        metaThemeLight.media = "(prefers-color-scheme: light)";
-        metaThemeLight.id = "theme-color-light-meta";
-        document.head.appendChild(metaThemeLight);
-    }
-
-    if (!metaThemeDark) {
-        metaThemeDark = document.createElement("meta");
-        metaThemeDark.name = "theme-color";
-        metaThemeDark.media = "(prefers-color-scheme: dark)";
-        metaThemeDark.id = "theme-color-dark-meta";
-        document.head.appendChild(metaThemeDark);
-    }
-
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
     const loader = document.getElementById("loading-screen");
-    const isLoadingVisible =
+    const isLoading =
         loader &&
         loader.style.display !== "none" &&
         !loader.classList.contains("loaded");
 
-    const lightColor = isLoadingVisible ? "#e9e9e9" : "#e0e0e0";
-    const darkColor = isLoadingVisible ? "#111111" : "#1c1c1e";
-    const activeColor = isDark ? darkColor : lightColor;
+    const lightColor = isLoading ? "#e9e9e9" : "#ffffff";
+    const darkColor = isLoading ? "#111111" : "#000000";
+    const color = isDark ? darkColor : lightColor;
 
-    metaTheme.setAttribute("content", activeColor);
-    metaThemeLight.setAttribute("content", lightColor);
-    metaThemeDark.setAttribute("content", darkColor);
+    let meta = document.querySelector('meta[name="theme-color"]:not([media])');
+    if (!meta) {
+        meta = document.createElement("meta");
+        meta.name = "theme-color";
+        document.head.appendChild(meta);
+    }
 
-    document.documentElement.style.backgroundColor = activeColor;
-    document.body.style.backgroundColor = activeColor;
+    // 👉 核心：強制 repaint Safari UI
+    meta.setAttribute("content", color);
+
+    document.documentElement.style.backgroundColor = color;
+    document.body.style.backgroundColor = color;
 
     document.documentElement.style.colorScheme = isDark ? "dark" : "light";
     document.body.style.colorScheme = isDark ? "dark" : "light";
 
     requestAnimationFrame(() => {
-        metaTheme.setAttribute("content", activeColor);
-        metaThemeLight.setAttribute("content", lightColor);
-        metaThemeDark.setAttribute("content", darkColor);
+        meta.setAttribute("content", color);
 
-        setTimeout(() => {
-            metaTheme.setAttribute("content", activeColor);
-            metaThemeLight.setAttribute("content", lightColor);
-            metaThemeDark.setAttribute("content", darkColor);
-        }, 80);
+        setTimeout(() => meta.setAttribute("content", color), 50);
+        setTimeout(() => meta.setAttribute("content", color), 150);
+        setTimeout(() => meta.setAttribute("content", color), 350);
     });
 }
+const mql = window.matchMedia("(prefers-color-scheme: dark)");
+
+function handleThemeChange() {
+    updateSafariThemeColor();
+}
+
+if (mql.addEventListener) {
+    mql.addEventListener("change", handleThemeChange);
+} else {
+    mql.addListener(handleThemeChange);
+}
+
+window.addEventListener("pageshow", updateSafariThemeColor);
+window.addEventListener("focus", updateSafariThemeColor);
+
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) updateSafariThemeColor();
+});
 
 window.addEventListener("pageshow", updateSafariThemeColor);
 
@@ -2938,6 +3054,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const progressTextA = document.getElementById("rail-loader-progress-text-a");
 	const progressTextB = document.getElementById("rail-loader-progress-text-b");
 	let activeStatusText = "a";
+	let stationFadeTimer = null;
+	let statusCleanupTimer = null;
     const progressFill = document.getElementById("e235-loader-track-fill");
 
     function updateClock() {
@@ -3005,33 +3123,61 @@ function switchStationText(stage) {
         return;
     }
 
-    stationFade.classList.add("is-fading");
-
-    setTimeout(() => {
-        stationName.textContent = stage.zh;
-        stationNameEn.textContent = stage.en;
-        stationFade.classList.remove("is-fading");
-    }, 260);
+    // 清走上一輪 timer，避免 Safari 疊動畫
+    if (stationFadeTimer) {
+        clearTimeout(stationFadeTimer);
+        stationFadeTimer = null;
+    }
+    if (statusCleanupTimer) {
+        clearTimeout(statusCleanupTimer);
+        statusCleanupTimer = null;
+    }
 
     const currentEl = activeStatusText === "a" ? progressTextA : progressTextB;
     const nextEl = activeStatusText === "a" ? progressTextB : progressTextA;
 
     if (!currentEl || !nextEl) return;
 
+    // 先準備下一句
     nextEl.textContent = stage.status;
 
-    nextEl.classList.remove("is-hidden");
-    nextEl.classList.add("is-visible");
+    // 先固定兩層狀態，避免殘影
+    nextEl.classList.remove("is-visible", "is-hidden");
+    currentEl.classList.remove("is-visible", "is-hidden");
 
-    currentEl.classList.remove("is-visible");
-    currentEl.classList.add("is-hidden");
+    nextEl.classList.add("is-hidden");
+    currentEl.classList.add("is-visible");
 
-    const oldEl = currentEl;
-    setTimeout(() => {
-        if (oldEl.classList.contains("is-hidden")) {
-            oldEl.textContent = "";
-        }
+    // 強制 reflow，令 Safari 真正分開兩次動畫
+    void nextEl.offsetWidth;
+
+    // 站名淡出
+    stationFade.classList.add("is-fading");
+
+    // 下一 frame 再做文字交叉淡入淡出
+    requestAnimationFrame(() => {
+        nextEl.classList.remove("is-hidden");
+        nextEl.classList.add("is-visible");
+
+        currentEl.classList.remove("is-visible");
+        currentEl.classList.add("is-hidden");
+    });
+
+    // 260ms 後換站名
+    stationFadeTimer = setTimeout(() => {
+        stationName.textContent = stage.zh;
+        stationNameEn.textContent = stage.en;
+        stationFade.classList.remove("is-fading");
+        stationFadeTimer = null;
     }, 260);
+
+    // 動畫完清空舊層文字，防止 Safari 疊字殘影
+    statusCleanupTimer = setTimeout(() => {
+        if (currentEl.classList.contains("is-hidden")) {
+            currentEl.textContent = "";
+        }
+        statusCleanupTimer = null;
+    }, 280);
 
     activeStatusText = activeStatusText === "a" ? "b" : "a";
 }
@@ -3649,7 +3795,7 @@ window.addThrough = function() {
     updateStationLists();
 }
 
-// 🟩 V0.29 處理圖片上傳
+// 🟩 V0.30 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -3678,7 +3824,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.29 移除圖片
+// 🟩 V0.30 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -4215,7 +4361,7 @@ window.editTrip = function(i) {
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
 
-    // 🟩 V0.29 編輯模式載入相片
+    // 🟩 V0.30 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -4268,7 +4414,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.29.json"; a.click();
+    a.download = "rail-log-V0.30.json"; a.click();
 }
 
 window.importData = function() {
@@ -4406,7 +4552,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.29 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.30 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function renderMap() {
@@ -4496,7 +4642,7 @@ function renderMap() {
 }
 
 // =========================================
-// 🟩 V0.29 相冊渲染邏輯
+// 🟩 V0.30 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -4677,7 +4823,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.29 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.30 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
