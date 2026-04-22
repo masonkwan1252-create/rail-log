@@ -4,10 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.28</title>
+<title>鉄道手帳 RAIL LOG V0.29</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <meta name="theme-color" content="#e9e9e9" id="theme-color-meta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e9e9e9" id="theme-color-light-meta">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" id="theme-color-dark-meta">
 <meta name="color-scheme" content="light dark">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;800&display=swap" rel="stylesheet">
@@ -211,22 +213,52 @@
 }
 
 .e235-arrival-status-fade {
-    opacity: 1;
-    transition: opacity 0.22s ease;
-    min-height: 20px;
-}
-
-.e235-arrival-status-fade.is-fading {
-    opacity: 0;
+    position: relative;
+    margin-top: 14px;
+    min-height: 3em;
+    overflow: hidden;
 }
 
 .e235-arrival-status-text {
-    margin-top: 14px;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+
     font-size: 13px;
     color: #666;
     font-weight: 600;
     line-height: 1.35;
-    min-height: 2.7em;
+
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.24s ease, transform 0.24s ease;
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.e235-arrival-status-text.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.e235-arrival-status-text.is-hidden {
+    opacity: 0;
+    transform: translateY(-4px);
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .e235-arrival-status-fade {
+        min-height: 3.2em;
+    }
+
+    .e235-arrival-status-text {
+        font-size: 12px;
+    }
 }
 
 .e235-arrival-route-panel {
@@ -267,7 +299,7 @@
     border-radius: 999px;
     background: linear-gradient(90deg, #63BD0F 0%, #7fd13e 50%, #63BD0F 100%);
     box-shadow:
-        0 0 8px rgba(99, 189, 15, 0.28),
+        0 0 8px rgba(99, 189, 15, 0.29),
         inset 0 1px 1px rgba(255,255,255,0.18);
     transition: width 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -541,7 +573,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.29);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -809,7 +841,7 @@ header::before {
     background: linear-gradient(
         to top,
         rgba(0,0,0,0.72) 0%,
-        rgba(0,0,0,0.28) 28%,
+        rgba(0,0,0,0.29) 28%,
         rgba(0,0,0,0.05) 50%,
         rgba(0,0,0,0) 70%
     );
@@ -946,7 +978,7 @@ header::before {
     background: var(--card);
     border-radius: 16px;
     border: 1px solid var(--border);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.29);
 }
 
 .train-dex-main-image-wrap {
@@ -1030,7 +1062,7 @@ header::before {
     box-shadow:
         inset 0 1px 1px rgba(255,255,255,0.15),
         0 1px 3px rgba(0,0,0,0.18);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.28);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.29);
     position: relative;
 }
 
@@ -1464,7 +1496,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.28 成就佈局樣式
+   🟩 V0.24/V0.29 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -1536,7 +1568,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.29);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -1572,7 +1604,7 @@ header::before {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.29);
 }
 
 .map-photo-preview-image {
@@ -1792,6 +1824,129 @@ header::before {
 .e235-arrival-headlight-rear-bottom {
     top: 14px;
 }
+.ride-ratio-card {
+    overflow: hidden;
+}
+
+.ride-ratio-title {
+    color: var(--primary);
+}
+
+.ride-ratio-stacked-wrap {
+    margin-top: 10px;
+}
+
+.ride-ratio-led-bar {
+    display: flex;
+    width: 100%;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #181818 0%, #0f0f0f 100%);
+    border: 2px solid #222;
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,1),
+        inset 0 -1px 2px rgba(255,255,255,0.04);
+}
+
+.ride-ratio-segment {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DotGothic16', monospace;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(255,255,255,0.25);
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.ride-ratio-segment + .ride-ratio-segment {
+    box-shadow: inset 1px 0 0 rgba(255,255,255,0.18);
+}
+
+.ride-ratio-segment::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0)),
+        repeating-linear-gradient(
+            to right,
+            rgba(255,255,255,0.06) 0,
+            rgba(255,255,255,0.06) 1px,
+            transparent 1px,
+            transparent 6px
+        );
+    pointer-events: none;
+}
+
+.ride-ratio-jr {
+    background: linear-gradient(to bottom, #4f950c 0%, #63BD0F 55%, #3b7408 100%);
+    color: #f3ffe7;
+    text-shadow:
+        0 0 4px rgba(99, 189, 15, 0.9),
+        0 0 8px rgba(99, 189, 15, 0.35);
+}
+
+.ride-ratio-major {
+    background: linear-gradient(to bottom, #6f1730 0%, #8A1E3A 55%, #571326 100%);
+    color: #fff1f5;
+    text-shadow:
+        0 0 4px rgba(138, 30, 58, 0.85),
+        0 0 8px rgba(138, 30, 58, 0.35);
+}
+
+.ride-ratio-other {
+    background: linear-gradient(to bottom, #3c4a5b 0%, #4B5D73 55%, #32404f 100%);
+    color: #eef5ff;
+    text-shadow:
+        0 0 4px rgba(75, 93, 115, 0.8),
+        0 0 8px rgba(75, 93, 115, 0.3);
+}
+
+.ride-ratio-legend {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    color: var(--subtext);
+}
+
+.ride-ratio-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ride-ratio-legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 480px) {
+    .ride-ratio-led-bar {
+        height: 30px;
+    }
+
+    .ride-ratio-segment {
+        font-size: 12px;
+        letter-spacing: 0.6px;
+    }
+
+    .ride-ratio-legend {
+        gap: 10px;
+        font-size: 10px;
+    }
+}
 </style>
 </head>
 
@@ -1813,7 +1968,7 @@ header::before {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.25</div>
+                <div class="e235-arrival-version">V0.29</div>
             </div>
         </div>
 
@@ -1829,9 +1984,10 @@ header::before {
             </div>
 
             <div id="e235-status-fade" class="e235-arrival-status-fade">
-    <div id="rail-loader-progress-text" class="e235-arrival-status-text">
+    <div id="rail-loader-progress-text-a" class="e235-arrival-status-text is-visible">
         正在準備資料...
     </div>
+    <div id="rail-loader-progress-text-b" class="e235-arrival-status-text is-hidden"></div>
 </div>
         </div>
 
@@ -1950,7 +2106,7 @@ header::before {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.28</div>
+    <div class="version-badge">V0.29</div>
 
     <div class="container">
 
@@ -2069,6 +2225,11 @@ header::before {
         </div>
 
         <div id="tab-stats" class="tab-content">
+		<div class="card ride-ratio-card">
+    <h3 class="ride-ratio-title">乘搭類別比例</h3>
+    <div id="rideCategoryStackedBar" class="ride-ratio-stacked-wrap"></div>
+</div>
+		
             <div class="card">
                 <h3>統計與完成率</h3>
                 <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
@@ -2086,6 +2247,8 @@ header::before {
                     <button id="btnChartStation" onclick="switchChartTab('station')">Top 10 車站</button>
                 </div>
                 <div id="chartDisplayArea" class="bar-chart-container"></div>
+				<div style="margin-top:18px;">
+</div>
             </div>
         </div>
 
@@ -2308,7 +2471,9 @@ import {
   query,
   orderBy,
   onSnapshot,
-  serverTimestamp
+  serverTimestamp,
+  getDocs,
+  addDoc
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 import {
@@ -2339,6 +2504,54 @@ console.log("Firebase 已連接", app);
 
 let authFormMode = null; // "login" 或 "register"
 let railMapHasFitted = false;
+updateSafariThemeColor();
+
+async function migrateLocalTripsToCloud(user) {
+    if (!user) return;
+
+    const userId = user.uid;
+    const localTrips = getLocalTripsForMigration();
+
+    if (!localTrips || localTrips.length === 0) {
+        console.log("無本地資料需要搬遷");
+        return;
+    }
+
+    const tripsRef = collection(dbCloud, "users", userId, "trips");
+    const snapshot = await getDocs(tripsRef);
+
+    // 雲端已有資料，就唔再搬，避免重複
+    if (!snapshot.empty) {
+        console.log("雲端已有資料，跳過搬遷");
+        return;
+    }
+
+    console.log(`開始搬遷本地資料到雲端，共 ${localTrips.length} 筆`);
+
+    for (const trip of localTrips) {
+        const cleanTrip = normalizeTrip(trip);
+
+        await addDoc(tripsRef, {
+            date: cleanTrip.date || "",
+            serviceType: cleanTrip.serviceType || "",
+            routes: Array.isArray(cleanTrip.routes) ? cleanTrip.routes : [],
+            train_id: cleanTrip.train_id || "",
+            from_id: cleanTrip.from_id || "",
+            to_id: cleanTrip.to_id || "",
+
+            // 舊資料如果已經係 base64 / 本地字串，先直接照搬
+            photoTrainUrl: cleanTrip.photoTrain || cleanTrip.photoTrainUrl || "",
+            photoFromUrl: cleanTrip.photoFrom || cleanTrip.photoFromUrl || "",
+            photoToUrl: cleanTrip.photoTo || cleanTrip.photoToUrl || "",
+
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+        });
+    }
+
+    console.log("搬遷完成");
+    showToast("舊資料已搬遷到雲端");
+}
 
 window.openAuthForm = function(mode) {
     authFormMode = mode;
@@ -2440,7 +2653,7 @@ window.logout = async function () {
     }
 };
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     const authGuestView = document.getElementById("authGuestView");
     const authUserView = document.getElementById("authUserView");
     const authUserEmail = document.getElementById("authUserEmail");
@@ -2453,7 +2666,10 @@ onAuthStateChanged(auth, (user) => {
 
         if (authLoginStateBadge) authLoginStateBadge.textContent = "已登入";
         if (authUserEmail) authUserEmail.textContent = user.email || "";
-		subscribeTrips();
+
+        await migrateLocalTripsToCloud(user);
+        subscribeTrips();
+
         closeAuthForm();
 
         setTimeout(() => {
@@ -2462,18 +2678,41 @@ onAuthStateChanged(auth, (user) => {
     } else {
         if (authGuestView) authGuestView.style.display = "block";
         if (authUserView) authUserView.style.display = "none";
-		
+
         if (authGuestStateBadge) authGuestStateBadge.textContent = "未登入";
-		if (unsubscribeTrips) {
-    unsubscribeTrips();
-    unsubscribeTrips = null;
-}
-trips = [];
-render();
+
+        if (unsubscribeTrips) {
+            unsubscribeTrips();
+            unsubscribeTrips = null;
+        }
+
+        trips = getLocalTripsForMigration();
+        render();
+
         closeAuthForm();
     }
 });
+
 let currentTrainDexData = null;
+
+async function loadTripsFromCloud(user) {
+    const userId = user.uid;
+    const tripsRef = collection(dbCloud, "users", userId, "trips");
+    const snapshot = await getDocs(tripsRef);
+
+    trips = snapshot.docs.map(docSnap => {
+        const data = docSnap.data();
+        return normalizeTrip({
+            id: docSnap.id,
+            ...data,
+            photoTrain: data.photoTrainUrl || "",
+            photoFrom: data.photoFromUrl || "",
+            photoTo: data.photoToUrl || ""
+        });
+    });
+
+    render();
+}
 
 window.openTrainDexModal = function(trainId) {
     if (!window.trainDexIndex || !window.trainDexIndex[trainId]) return;
@@ -2591,6 +2830,8 @@ function flashAuthPanel() {
 }
 function updateSafariThemeColor() {
     let metaTheme = document.getElementById("theme-color-meta");
+    let metaThemeLight = document.getElementById("theme-color-light-meta");
+    let metaThemeDark = document.getElementById("theme-color-dark-meta");
 
     if (!metaTheme) {
         metaTheme = document.createElement("meta");
@@ -2599,26 +2840,70 @@ function updateSafariThemeColor() {
         document.head.appendChild(metaTheme);
     }
 
+    if (!metaThemeLight) {
+        metaThemeLight = document.createElement("meta");
+        metaThemeLight.name = "theme-color";
+        metaThemeLight.media = "(prefers-color-scheme: light)";
+        metaThemeLight.id = "theme-color-light-meta";
+        document.head.appendChild(metaThemeLight);
+    }
+
+    if (!metaThemeDark) {
+        metaThemeDark = document.createElement("meta");
+        metaThemeDark.name = "theme-color";
+        metaThemeDark.media = "(prefers-color-scheme: dark)";
+        metaThemeDark.id = "theme-color-dark-meta";
+        document.head.appendChild(metaThemeDark);
+    }
+
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isLoadingVisible = (() => {
-        const loader = document.getElementById("loading-screen");
-        return loader && loader.style.display !== "none" && !loader.classList.contains("loaded");
-    })();
+    const loader = document.getElementById("loading-screen");
+    const isLoadingVisible =
+        loader &&
+        loader.style.display !== "none" &&
+        !loader.classList.contains("loaded");
 
-    const color = isDark
-        ? (isLoadingVisible ? "#111111" : "#1c1c1e")
-        : (isLoadingVisible ? "#e9e9e9" : "#e0e0e0");
+    const lightColor = isLoadingVisible ? "#e9e9e9" : "#e0e0e0";
+    const darkColor = isLoadingVisible ? "#111111" : "#1c1c1e";
+    const activeColor = isDark ? darkColor : lightColor;
 
-    metaTheme.setAttribute("content", color);
+    metaTheme.setAttribute("content", activeColor);
+    metaThemeLight.setAttribute("content", lightColor);
+    metaThemeDark.setAttribute("content", darkColor);
+
+    document.documentElement.style.backgroundColor = activeColor;
+    document.body.style.backgroundColor = activeColor;
 
     requestAnimationFrame(() => {
-        metaTheme.setAttribute("content", color);
-        setTimeout(() => metaTheme.setAttribute("content", color), 60);
+        metaTheme.setAttribute("content", activeColor);
+        metaThemeLight.setAttribute("content", lightColor);
+        metaThemeDark.setAttribute("content", darkColor);
+
+        setTimeout(() => {
+            metaTheme.setAttribute("content", activeColor);
+            metaThemeLight.setAttribute("content", lightColor);
+            metaThemeDark.setAttribute("content", darkColor);
+        }, 80);
     });
 }
 window.addEventListener("pageshow", updateSafariThemeColor);
 document.addEventListener("visibilitychange", () => {
     if (!document.hidden) updateSafariThemeColor();
+	const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (safariColorSchemeMedia.addEventListener) {
+    safariColorSchemeMedia.addEventListener("change", () => {
+        setTimeout(updateSafariThemeColor, 0);
+        setTimeout(updateSafariThemeColor, 120);
+        setTimeout(updateSafariThemeColor, 300);
+    });
+} else if (safariColorSchemeMedia.addListener) {
+    safariColorSchemeMedia.addListener(() => {
+        setTimeout(updateSafariThemeColor, 0);
+        setTimeout(updateSafariThemeColor, 120);
+        setTimeout(updateSafariThemeColor, 300);
+    });
+}
 });
 window.addEventListener("focus", updateSafariThemeColor);
 // =========================================
@@ -2630,8 +2915,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const stationNameEn = document.getElementById("e235-station-name-en");
     const stationFade = document.getElementById("e235-station-fade");
     const trainProgress = document.getElementById("rail-train-progress");
-    const progressText = document.getElementById("rail-loader-progress-text");
-	const statusFade = document.getElementById("e235-status-fade");
+	const progressTextA = document.getElementById("rail-loader-progress-text-a");
+	const progressTextB = document.getElementById("rail-loader-progress-text-b");
+	let activeStatusText = "a";
     const progressFill = document.getElementById("e235-loader-track-fill");
 
     function updateClock() {
@@ -2690,25 +2976,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function switchStationText(stage) {
-    if (!stationFade || !statusFade) {
+function switchStationText(stage) {
+    if (!stationFade) {
         stationName.textContent = stage.zh;
         stationNameEn.textContent = stage.en;
-        progressText.textContent = stage.status;
+        if (progressTextA) progressTextA.textContent = stage.status;
+        if (progressTextB) progressTextB.textContent = "";
         return;
     }
 
     stationFade.classList.add("is-fading");
-    statusFade.classList.add("is-fading");
 
     setTimeout(() => {
         stationName.textContent = stage.zh;
         stationNameEn.textContent = stage.en;
-        progressText.textContent = stage.status;
-
         stationFade.classList.remove("is-fading");
-        statusFade.classList.remove("is-fading");
     }, 260);
+
+    const currentEl = activeStatusText === "a" ? progressTextA : progressTextB;
+    const nextEl = activeStatusText === "a" ? progressTextB : progressTextA;
+
+    if (!currentEl || !nextEl) return;
+
+    nextEl.textContent = stage.status;
+
+    nextEl.classList.remove("is-hidden");
+    nextEl.classList.add("is-visible");
+
+    currentEl.classList.remove("is-visible");
+    currentEl.classList.add("is-hidden");
+
+    activeStatusText = activeStatusText === "a" ? "b" : "a";
 }
 
     function updateLoaderStage(stage) {
@@ -2723,7 +3021,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     stationName.textContent = loadingStages[0].zh;
     stationNameEn.textContent = loadingStages[0].en;
-    progressText.textContent = loadingStages[0].status;
+    if (progressTextA) progressTextA.textContent = loadingStages[0].status;
+if (progressTextB) progressTextB.textContent = "";
     placeTrainAndFill(loadingStages[0].progress);
 
     const stepDurations = [600, 700, 800, 900];
@@ -2795,6 +3094,19 @@ window.scrollSign = function(direction) {
         currentSignIndex++;
     }
     rollContainer.style.transform = `translateY(-${currentSignIndex * 20}%)`;
+}
+
+function getLocalTripsForMigration() {
+    try {
+        const raw = localStorage.getItem("railTrips_V2");
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed)) return [];
+        return parsed.map(normalizeTrip);
+    } catch (error) {
+        console.error("讀取本地舊資料失敗", error);
+        return [];
+    }
 }
 
 let trips = [];
@@ -3310,7 +3622,7 @@ window.addThrough = function() {
     updateStationLists();
 }
 
-// 🟩 V0.28 處理圖片上傳
+// 🟩 V0.29 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -3339,7 +3651,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.28 移除圖片
+// 🟩 V0.29 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -3511,6 +3823,7 @@ window.changeRecordPage = function(delta) {
 function render() {
     trips.sort((a, b) => new Date(b.date) - new Date(a.date));
     
+	renderRideCategoryRatio();
     document.getElementById('btnFilterAll').className = currentDateFilter === 'all' ? 'active' : '';
     document.getElementById('btnFilterToday').className = currentDateFilter === getTodayStr() ? 'active' : '';
     
@@ -3576,7 +3889,9 @@ routes.forEach((r, idx) => {
         `;
     }
 
-    renderStats(); drawBarChart(); 
+    renderStats();
+	renderRideCategoryRatio();
+	drawBarChart();
 }
 
 window.openCalendar = function() {
@@ -3736,6 +4051,99 @@ function drawBarChart() {
         setTimeout(() => { row.querySelector('.bar-fill').style.width = `${pct}%`; }, 50);
     });
 }
+function renderRideCategoryRatio() {
+    const stackedContainer = document.getElementById("rideCategoryStackedBar");
+    if (!stackedContainer) return;
+
+    if (!trips || trips.length === 0) {
+        stackedContainer.innerHTML = "<div style='font-size:13px; color:var(--subtext);'>暫無資料</div>";
+        return;
+    }
+
+    const counts = {
+        jr: 0,
+        majorPrivate: 0,
+        other: 0
+    };
+
+    // 以主公司計
+    trips.forEach(t => {
+        const mainCompanyId = Array.isArray(t.routes) && t.routes[0]
+            ? t.routes[0].company_id
+            : null;
+
+        if (!mainCompanyId) return;
+
+        const companyName = maps.company[mainCompanyId]?.name || "";
+        const category = getRailCompanyCategory(companyName);
+
+        if (category.startsWith("jr-")) {
+            counts.jr += 1;
+        } else if (category === "major-private") {
+            counts.majorPrivate += 1;
+        } else {
+            counts.other += 1;
+        }
+    });
+
+    const total = counts.jr + counts.majorPrivate + counts.other;
+
+    if (total === 0) {
+        stackedContainer.innerHTML = "<div style='font-size:13px; color:var(--subtext);'>暫無資料</div>";
+        return;
+    }
+
+    const jrPct = (counts.jr / total) * 100;
+    const mpPct = (counts.majorPrivate / total) * 100;
+    const otherPct = (counts.other / total) * 100;
+
+    const rows = [
+        {
+            label: "JR",
+            pct: jrPct,
+            className: "ride-ratio-jr"
+        },
+        {
+            label: "私鉄",
+            pct: mpPct,
+            className: "ride-ratio-major"
+        },
+        {
+            label: "OTHER",
+            pct: otherPct,
+            className: "ride-ratio-other"
+        }
+    ];
+
+    stackedContainer.innerHTML = `
+        <div class="ride-ratio-led-bar">
+            ${rows.map(row => `
+                <div
+                    class="ride-ratio-segment ${row.className}"
+                    style="width:${row.pct}%"
+                    title="${row.label} ${row.pct.toFixed(1)}%"
+                >
+                    ${row.pct >= 10 ? `${row.pct.toFixed(0)}%` : ""}
+                </div>
+            `).join("")}
+        </div>
+
+        <div class="ride-ratio-legend">
+            <span class="ride-ratio-legend-item">
+                <span class="ride-ratio-legend-dot" style="background:#63BD0F;"></span>
+                JR
+            </span>
+            <span class="ride-ratio-legend-item">
+                <span class="ride-ratio-legend-dot" style="background:#8A1E3A;"></span>
+                大手私鐵
+            </span>
+            <span class="ride-ratio-legend-item">
+                <span class="ride-ratio-legend-dot" style="background:#4B5D73;"></span>
+                其他公司
+            </span>
+        </div>
+    `;
+}
 
 window.editTrip = function(i) {
     const t = trips[i];
@@ -3780,7 +4188,7 @@ window.editTrip = function(i) {
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
 
-    // 🟩 V0.28 編輯模式載入相片
+    // 🟩 V0.29 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -3833,7 +4241,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.28.json"; a.click();
+    a.download = "rail-log-V0.29.json"; a.click();
 }
 
 window.importData = function() {
@@ -3971,7 +4379,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.28 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.29 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function renderMap() {
@@ -4061,7 +4469,7 @@ function renderMap() {
 }
 
 // =========================================
-// 🟩 V0.28 相冊渲染邏輯
+// 🟩 V0.29 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -4242,7 +4650,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.28 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.29 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
