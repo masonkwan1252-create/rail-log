@@ -215,16 +215,18 @@
 .e235-arrival-status-fade {
     position: relative;
     margin-top: 14px;
-    min-height: 3em;
+    min-height: 3.2em;
     overflow: hidden;
 }
 
 .e235-arrival-status-text {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 12px;
+
+    display: block;
     text-align: center;
 
     font-size: 13px;
@@ -233,31 +235,35 @@
     line-height: 1.35;
 
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(4px) translateZ(0);
     transition: opacity 0.24s ease, transform 0.24s ease;
     will-change: opacity, transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    pointer-events: none;
 }
 
 .e235-arrival-status-text.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
+    z-index: 2;
 }
 
 .e235-arrival-status-text.is-hidden {
     opacity: 0;
-    transform: translateY(-4px);
-    pointer-events: none;
+    transform: translateY(-4px) translateZ(0);
+    z-index: 1;
 }
 
 @media (max-width: 480px) {
     .e235-arrival-status-fade {
-        min-height: 3.2em;
+        min-height: 3.5em;
     }
 
     .e235-arrival-status-text {
-        font-size: 12px;
+     font-size: 12px;
+        padding: 0 10px;
     }
 }
 
@@ -2874,6 +2880,9 @@ function updateSafariThemeColor() {
     document.documentElement.style.backgroundColor = activeColor;
     document.body.style.backgroundColor = activeColor;
 
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+    document.body.style.colorScheme = isDark ? "dark" : "light";
+
     requestAnimationFrame(() => {
         metaTheme.setAttribute("content", activeColor);
         metaThemeLight.setAttribute("content", lightColor);
@@ -2886,26 +2895,37 @@ function updateSafariThemeColor() {
         }, 80);
     });
 }
+
 window.addEventListener("pageshow", updateSafariThemeColor);
+
 document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) updateSafariThemeColor();
-	const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    if (!document.hidden) {
+        updateSafariThemeColor();
+        setTimeout(updateSafariThemeColor, 120);
+        setTimeout(updateSafariThemeColor, 300);
+    }
+});
+
+window.addEventListener("focus", () => {
+    updateSafariThemeColor();
+    setTimeout(updateSafariThemeColor, 120);
+});
+
+const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+function handleSafariColorSchemeChange() {
+    updateSafariThemeColor();
+    setTimeout(updateSafariThemeColor, 0);
+    setTimeout(updateSafariThemeColor, 120);
+    setTimeout(updateSafariThemeColor, 300);
+    setTimeout(updateSafariThemeColor, 600);
+}
 
 if (safariColorSchemeMedia.addEventListener) {
-    safariColorSchemeMedia.addEventListener("change", () => {
-        setTimeout(updateSafariThemeColor, 0);
-        setTimeout(updateSafariThemeColor, 120);
-        setTimeout(updateSafariThemeColor, 300);
-    });
+    safariColorSchemeMedia.addEventListener("change", handleSafariColorSchemeChange);
 } else if (safariColorSchemeMedia.addListener) {
-    safariColorSchemeMedia.addListener(() => {
-        setTimeout(updateSafariThemeColor, 0);
-        setTimeout(updateSafariThemeColor, 120);
-        setTimeout(updateSafariThemeColor, 300);
-    });
+    safariColorSchemeMedia.addListener(handleSafariColorSchemeChange);
 }
-});
-window.addEventListener("focus", updateSafariThemeColor);
 // =========================================
 // V0.21 E235系 Loading 頁面控制邏輯
 // =========================================
@@ -3005,6 +3025,13 @@ function switchStationText(stage) {
 
     currentEl.classList.remove("is-visible");
     currentEl.classList.add("is-hidden");
+
+    const oldEl = currentEl;
+    setTimeout(() => {
+        if (oldEl.classList.contains("is-hidden")) {
+            oldEl.textContent = "";
+        }
+    }, 260);
 
     activeStatusText = activeStatusText === "a" ? "b" : "a";
 }
