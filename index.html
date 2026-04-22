@@ -187,81 +187,6 @@
     font-weight: 700;
 }
 
-.e235-arrival-station-fade {
-    opacity: 1;
-    transition: opacity 0.26s ease;
-}
-
-.e235-arrival-station-fade.is-fading {
-    opacity: 0;
-}
-
-.e235-arrival-station-name {
-    font-size: clamp(40px, 7vw, 72px);
-    font-weight: 900;
-    color: #222;
-    line-height: 1.04;
-    letter-spacing: 0.02em;
-}
-
-.e235-arrival-station-en {
-    margin-top: 6px;
-    font-size: clamp(15px, 2.6vw, 22px);
-    color: #666;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-}
-
-.e235-arrival-status-fade {
-    position: relative;
-    min-height: 3.2em;
-    overflow: hidden;
-}
-
-.e235-arrival-status-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    text-align: center;
-
-    opacity: 0;
-    transform: translateY(6px) translateZ(0);
-
-    transition: opacity 0.25s ease, transform 0.25s ease;
-
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-
-    will-change: opacity, transform;
-
-    pointer-events: none;
-}
-
-.e235-arrival-status-text.is-visible {
-    opacity: 1;
-    transform: translateY(0) translateZ(0);
-    z-index: 2;
-}
-
-.e235-arrival-status-text.is-hidden {
-    opacity: 0;
-    transform: translateY(-6px) translateZ(0);
-    z-index: 1;
-}
-
-@media (max-width: 480px) {
-    .e235-arrival-status-fade {
-        min-height: 3.5em;
-    }
-
-    .e235-arrival-status-text {
-     font-size: 12px;
-        padding: 0 10px;
-    }
-}
-
 .e235-arrival-route-panel {
     padding: 8px 20px 26px;
 }
@@ -466,11 +391,6 @@
 
     .e235-arrival-version {
         font-size: 9px;
-    }
-
-    .e235-arrival-status-text {
-        font-size: 12px;
-        min-height: 3em;
     }
 
     .e235-arrival-train {
@@ -2035,6 +1955,117 @@ header::before {
         font-size: 10px;
     }
 }
+/* ====== LOADING LCD SLIDE SYSTEM (FINAL CLEAN) ====== */
+
+.e235-arrival-station-fade,
+.e235-arrival-status-fade {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.e235-arrival-station-fade {
+    height: 122px;
+}
+
+.e235-arrival-status-fade {
+    height: 42px;
+    margin-top: 8px;
+}
+
+.e235-arrival-station-layer,
+.e235-arrival-status-text {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    will-change: transform;
+    transition: transform 0.34s cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+.e235-arrival-station-name {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 900;
+    color: #222;
+    line-height: 1.04;
+    letter-spacing: 0.02em;
+}
+
+.e235-arrival-station-en {
+    margin-top: 6px;
+    font-size: clamp(15px, 2.6vw, 22px);
+    color: #666;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.e235-arrival-status-text {
+    padding: 0 12px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.pos-current {
+    transform: translate3d(0, 0, 0);
+}
+
+.e235-arrival-station-layer.pos-below {
+    transform: translate3d(0, 122px, 0);
+}
+
+.e235-arrival-station-layer.pos-above {
+    transform: translate3d(0, -122px, 0);
+}
+
+.e235-arrival-status-text.pos-below {
+    transform: translate3d(0, 42px, 0);
+}
+
+.e235-arrival-status-text.pos-above {
+    transform: translate3d(0, -42px, 0);
+}
+.no-slide-transition {
+    transition: none !important;
+}
+@media (max-width: 480px) {
+    .e235-arrival-station-fade {
+        height: 108px;
+    }
+
+    .e235-arrival-status-fade {
+        height: 38px;
+    }
+
+    .e235-arrival-status-text {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .e235-arrival-station-layer.pos-below {
+        transform: translate3d(0, 108px, 0);
+    }
+
+    .e235-arrival-station-layer.pos-above {
+        transform: translate3d(0, -108px, 0);
+    }
+
+    .e235-arrival-status-text.pos-below {
+        transform: translate3d(0, 38px, 0);
+    }
+
+    .e235-arrival-status-text.pos-above {
+        transform: translate3d(0, -38px, 0);
+    }
+}
 </style>
 </head>
 
@@ -2061,22 +2092,29 @@ header::before {
         </div>
 
         <div class="e235-arrival-main">
-            <div class="e235-arrival-next-row">
-                <span class="e235-arrival-next-jp">次は</span>
-                <span class="e235-arrival-next-en">Next</span>
-            </div>
-
-            <div id="e235-station-fade" class="e235-arrival-station-fade">
-                <div id="e235-station-name" class="e235-arrival-station-name">系統啟動中</div>
-                <div id="e235-station-name-en" class="e235-arrival-station-en">System Starting</div>
-            </div>
-
-            <div id="e235-status-fade" class="e235-arrival-status-fade">
-    <div id="rail-loader-progress-text-a" class="e235-arrival-status-text is-visible">
-        正在準備資料...
+    <div class="e235-arrival-next-row">
+        <span class="e235-arrival-next-jp">次は</span>
+        <span class="e235-arrival-next-en">Next</span>
     </div>
-    <div id="rail-loader-progress-text-b" class="e235-arrival-status-text is-hidden"></div>
-</div>
+
+    <div id="e235-station-fade" class="e235-arrival-station-fade">
+        <div id="station-layer-a" class="e235-arrival-station-layer pos-current">
+            <div id="e235-station-name-a" class="e235-arrival-station-name">系統啟動中</div>
+            <div id="e235-station-en-a" class="e235-arrival-station-en">System Starting</div>
+        </div>
+
+        <div id="station-layer-b" class="e235-arrival-station-layer pos-below">
+            <div id="e235-station-name-b" class="e235-arrival-station-name"></div>
+            <div id="e235-station-en-b" class="e235-arrival-station-en"></div>
+        </div>
+    </div>
+
+    <div id="e235-status-fade" class="e235-arrival-status-fade">
+        <div id="rail-loader-progress-text-a" class="e235-arrival-status-text pos-current">
+            正在準備資料...
+        </div>
+        <div id="rail-loader-progress-text-b" class="e235-arrival-status-text pos-below"></div>
+    </div>
         </div>
 
         <div class="e235-arrival-route-panel">
@@ -2632,7 +2670,6 @@ console.log("Firebase 已連接", app);
 
 let authFormMode = null; // "login" 或 "register"
 let railMapHasFitted = false;
-updateSafariThemeColor();
 
 async function migrateLocalTripsToCloud(user) {
     if (!user) return;
@@ -2995,31 +3032,27 @@ function updateSafariThemeColor() {
     const darkColor = isLoadingVisible ? "#111111" : "#000000";
     const activeColor = isDark ? darkColor : lightColor;
 
-    metaTheme.setAttribute("content", activeColor);
-    metaThemeLight.setAttribute("content", lightColor);
-    metaThemeDark.setAttribute("content", darkColor);
-
-    document.documentElement.style.backgroundColor = activeColor;
-    document.body.style.backgroundColor = activeColor;
-    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
-    document.body.style.colorScheme = isDark ? "dark" : "light";
-
-    requestAnimationFrame(() => {
-        metaTheme.setAttribute("content", activeColor);
+    function applyThemeColor(color) {
+        metaTheme.setAttribute("content", color);
         metaThemeLight.setAttribute("content", lightColor);
         metaThemeDark.setAttribute("content", darkColor);
 
-        setTimeout(() => {
-            metaTheme.setAttribute("content", activeColor);
-            metaThemeLight.setAttribute("content", lightColor);
-            metaThemeDark.setAttribute("content", darkColor);
-        }, 80);
+        document.documentElement.style.backgroundColor = color;
+        document.body.style.backgroundColor = color;
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+        document.body.style.colorScheme = isDark ? "dark" : "light";
+    }
 
-        setTimeout(() => {
-            metaTheme.setAttribute("content", activeColor);
-            metaThemeLight.setAttribute("content", lightColor);
-            metaThemeDark.setAttribute("content", darkColor);
-        }, 240);
+    applyThemeColor(activeColor);
+
+    requestAnimationFrame(() => {
+        // iOS Safari hack：先寫一個過渡值，再寫返真正顏色
+        metaTheme.setAttribute("content", isDark ? "#010101" : "#fefefe");
+
+        setTimeout(() => applyThemeColor(activeColor), 20);
+        setTimeout(() => applyThemeColor(activeColor), 120);
+        setTimeout(() => applyThemeColor(activeColor), 320);
+        setTimeout(() => applyThemeColor(activeColor), 650);
     });
 }
 const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
@@ -3028,7 +3061,7 @@ function handleSafariColorSchemeChange() {
     updateSafariThemeColor();
     setTimeout(updateSafariThemeColor, 0);
     setTimeout(updateSafariThemeColor, 120);
-    setTimeout(updateSafariThemeColor, 300);
+    setTimeout(updateSafariThemeColor, 320);
     setTimeout(updateSafariThemeColor, 600);
 }
 
@@ -3046,7 +3079,7 @@ document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
         updateSafariThemeColor();
         setTimeout(updateSafariThemeColor, 120);
-        setTimeout(updateSafariThemeColor, 300);
+        setTimeout(updateSafariThemeColor, 320);
     }
 });
 
@@ -3059,17 +3092,23 @@ if (safariColorSchemeMedia.addEventListener) {
 // V0.21 E235系 Loading 頁面控制邏輯
 // =========================================
 document.addEventListener("DOMContentLoaded", () => {
-    const clockDisplay = document.getElementById("e235-clock");
-    const stationName = document.getElementById("e235-station-name");
-    const stationNameEn = document.getElementById("e235-station-name-en");
-    const stationFade = document.getElementById("e235-station-fade");
-    const trainProgress = document.getElementById("rail-train-progress");
-	const progressTextA = document.getElementById("rail-loader-progress-text-a");
-	const progressTextB = document.getElementById("rail-loader-progress-text-b");
-	let activeStatusText = "a";
-	let stationFadeTimer = null;
-	let statusCleanupTimer = null;
-    const progressFill = document.getElementById("e235-loader-track-fill");
+const stationFade = document.getElementById("e235-station-fade");
+const clockDisplay = document.getElementById("e235-clock");
+const stationLayerA = document.getElementById("station-layer-a");
+const stationLayerB = document.getElementById("station-layer-b");
+const stationNameA = document.getElementById("e235-station-name-a");
+const stationEnA = document.getElementById("e235-station-en-a");
+const stationNameB = document.getElementById("e235-station-name-b");
+const stationEnB = document.getElementById("e235-station-en-b");
+
+const progressTextA = document.getElementById("rail-loader-progress-text-a");
+const progressTextB = document.getElementById("rail-loader-progress-text-b");
+const trainProgress = document.getElementById("rail-train-progress");
+const progressFill = document.getElementById("e235-loader-track-fill");
+
+let activeStationText = "a";
+let activeStatusText = "a";
+let loaderSlideTimer = null;
 
     function updateClock() {
         const now = new Date();
@@ -3128,79 +3167,96 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 function switchStationText(stage) {
-    if (!stationFade) {
-        stationName.textContent = stage.zh;
-        stationNameEn.textContent = stage.en;
-        if (progressTextA) progressTextA.textContent = stage.status;
-        if (progressTextB) progressTextB.textContent = "";
-        return;
+    if (loaderSlideTimer) {
+        clearTimeout(loaderSlideTimer);
+        loaderSlideTimer = null;
     }
 
-    if (stationFadeTimer) {
-        clearTimeout(stationFadeTimer);
-        stationFadeTimer = null;
-    }
-    if (statusCleanupTimer) {
-        clearTimeout(statusCleanupTimer);
-        statusCleanupTimer = null;
-    }
+    const currentStationLayer = activeStationText === "a" ? stationLayerA : stationLayerB;
+    const nextStationLayer = activeStationText === "a" ? stationLayerB : stationLayerA;
+    const nextStationName = activeStationText === "a" ? stationNameB : stationNameA;
+    const nextStationEn = activeStationText === "a" ? stationEnB : stationEnA;
 
-    const currentEl = activeStatusText === "a" ? progressTextA : progressTextB;
-    const nextEl = activeStatusText === "a" ? progressTextB : progressTextA;
+    const currentStatusEl = activeStatusText === "a" ? progressTextA : progressTextB;
+    const nextStatusEl = activeStatusText === "a" ? progressTextB : progressTextA;
 
-    if (!currentEl || !nextEl) return;
+    if (!currentStationLayer || !nextStationLayer || !currentStatusEl || !nextStatusEl) return;
 
-    nextEl.textContent = stage.status;
+    // 寫入新內容
+    nextStationName.textContent = stage.zh;
+    nextStationEn.textContent = stage.en;
+    nextStatusEl.textContent = stage.status;
 
-    nextEl.classList.remove("is-visible", "is-hidden");
-    currentEl.classList.remove("is-visible", "is-hidden");
+    // 先將重用 layer 無動畫重置到起跑位
+    currentStationLayer.classList.add("no-slide-transition");
+    nextStationLayer.classList.add("no-slide-transition");
+    currentStatusEl.classList.add("no-slide-transition");
+    nextStatusEl.classList.add("no-slide-transition");
 
-    nextEl.classList.add("is-hidden");
-    currentEl.classList.add("is-visible");
+    currentStationLayer.className = "e235-arrival-station-layer pos-current no-slide-transition";
+    nextStationLayer.className = "e235-arrival-station-layer pos-below no-slide-transition";
 
-    void nextEl.offsetWidth;
+    currentStatusEl.className = "e235-arrival-status-text pos-current no-slide-transition";
+    nextStatusEl.className = "e235-arrival-status-text pos-below no-slide-transition";
 
-    stationFade.classList.add("is-fading");
+    // 強制 reflow，確保瀏覽器食咗「重置後位置」
+    void currentStationLayer.offsetWidth;
+    void nextStationLayer.offsetWidth;
+    void currentStatusEl.offsetWidth;
+    void nextStatusEl.offsetWidth;
+
+    // 移除 no-transition，下一 frame 先正式滑動
+    currentStationLayer.classList.remove("no-slide-transition");
+    nextStationLayer.classList.remove("no-slide-transition");
+    currentStatusEl.classList.remove("no-slide-transition");
+    nextStatusEl.classList.remove("no-slide-transition");
 
     requestAnimationFrame(() => {
-        nextEl.classList.remove("is-hidden");
-        nextEl.classList.add("is-visible");
+        currentStationLayer.className = "e235-arrival-station-layer pos-above";
+        nextStationLayer.className = "e235-arrival-station-layer pos-current";
 
-        currentEl.classList.remove("is-visible");
-        currentEl.classList.add("is-hidden");
+        currentStatusEl.className = "e235-arrival-status-text pos-above";
+        nextStatusEl.className = "e235-arrival-status-text pos-current";
     });
 
-    stationFadeTimer = setTimeout(() => {
-        stationName.textContent = stage.zh;
-        stationNameEn.textContent = stage.en;
-        stationFade.classList.remove("is-fading");
-        stationFadeTimer = null;
-    }, 260);
+    loaderSlideTimer = setTimeout(() => {
+        currentStationLayer.className = "e235-arrival-station-layer pos-above";
+        currentStatusEl.className = "e235-arrival-status-text pos-above";
 
-    statusCleanupTimer = setTimeout(() => {
-        if (currentEl.classList.contains("is-hidden")) {
-            currentEl.textContent = "";
-        }
-        statusCleanupTimer = null;
-    }, 280);
+        nextStationLayer.className = "e235-arrival-station-layer pos-current";
+        nextStatusEl.className = "e235-arrival-status-text pos-current";
 
-    activeStatusText = activeStatusText === "a" ? "b" : "a";
+        activeStationText = activeStationText === "a" ? "b" : "a";
+        activeStatusText = activeStatusText === "a" ? "b" : "a";
+
+        loaderSlideTimer = null;
+    }, 360);
 }
 
-    function updateLoaderStage(stage) {
+function updateLoaderStage(stage) {
         placeTrainAndFill(stage.progress);
         switchStationText(stage);
     }
 
-    function finishLoadingAnimation() {
+function finishLoadingAnimation() {
         isLoaderAnimationDone = true;
         tryEnterMainApp();
     }
 
-    stationName.textContent = loadingStages[0].zh;
-    stationNameEn.textContent = loadingStages[0].en;
-    if (progressTextA) progressTextA.textContent = loadingStages[0].status;
-if (progressTextB) progressTextB.textContent = "";
+    stationNameA.textContent = loadingStages[0].zh;
+stationEnA.textContent = loadingStages[0].en;
+stationNameB.textContent = "";
+stationEnB.textContent = "";
+
+progressTextA.textContent = loadingStages[0].status;
+progressTextB.textContent = "";
+
+stationLayerA.className = "e235-arrival-station-layer pos-current";
+stationLayerB.className = "e235-arrival-station-layer pos-below";
+
+progressTextA.className = "e235-arrival-status-text pos-current";
+progressTextB.className = "e235-arrival-status-text pos-below";
+
     placeTrainAndFill(loadingStages[0].progress);
 
     const stepDurations = [600, 700, 800, 900];
