@@ -8,8 +8,6 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <meta name="theme-color" content="#e9e9e9" id="theme-color-meta">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e9e9e9" id="theme-color-light-meta">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" id="theme-color-dark-meta">
 <meta name="color-scheme" content="light dark">
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;800&display=swap" rel="stylesheet">
@@ -1330,7 +1328,6 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .gallery-img { width: 100%; height: 100px; object-fit: cover; display: block; }
 .gallery-date { color: var(--subtext); font-size: 10px; margin-top: 4px; }
 
-/* 地圖站名標籤樣式 (駅名標) */
 .custom-div-icon {
     background: transparent;
     border: none;
@@ -1339,15 +1336,13 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .station-sign-label {
     background: #fff;
     border: 1.5px solid #999;
-    border-radius: 3px;
+    border-radius: 2px;
     box-shadow:
-        0 2px 7px rgba(0,0,0,0.22),
-        inset 0 1px 0 rgba(255,255,255,0.85);
+        0 2px 6px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.82);
     display: inline-flex;
     flex-direction: column;
     align-items: stretch;
-    min-width: 90px;
-    max-width: 150px;
     overflow: hidden;
     font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
     position: relative;
@@ -1357,65 +1352,134 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 6px;
-    padding: 4px 8px 0;
+    gap: 4px;
+    padding: 3px 6px 0;
 }
 
 .station-sign-company-tag {
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 800;
     line-height: 1;
     color: #666;
     background: rgba(0,0,0,0.04);
     border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 999px;
-    padding: 2px 5px;
+    border-radius: 2px;
+    padding: 2px 4px;
     white-space: nowrap;
-    max-width: 52px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .station-sign-type-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
     flex: 0 0 auto;
 }
 
 .station-sign-body {
-    padding: 2px 8px 9px;
+    padding: 2px 6px 7px;
     text-align: center;
 }
 
 .station-sign-name {
-    font-size: 15px;
     font-weight: 800;
     color: #222;
-    line-height: 1.15;
-    letter-spacing: 0.02em;
-    max-width: 132px;
+    line-height: 1.12;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .station-sign-subline {
-    font-size: 9px;
+    font-size: 8px;
     color: #666;
     margin-top: 2px;
     line-height: 1.1;
-    letter-spacing: 0.04em;
-    max-width: 132px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
-
-.station-sign-line {
-    height: 7px;
+.station-sign-line,
+.station-sign-dotline {
     width: 100%;
+    height: 6px;
+}
+
+/* full */
+.station-sign-label.full {
+    min-width: 92px;
+    max-width: 150px;
+}
+
+.station-sign-label.full .station-sign-name {
+    font-size: 15px;
+    max-width: 132px;
+}
+
+.station-sign-label.full .station-sign-subline {
+    max-width: 132px;
+}
+
+/* medium */
+.station-sign-label.medium {
+    min-width: 70px;
+    max-width: 112px;
+}
+
+.station-sign-label.medium .station-sign-body {
+    padding: 3px 6px 7px;
+}
+
+.station-sign-label.medium .station-sign-name {
+    font-size: 12px;
+    max-width: 96px;
+}
+
+.station-sign-label.medium .station-sign-line {
+    height: 5px;
+}
+
+/* small */
+.station-sign-label.small {
+    min-width: 52px;
+    max-width: 84px;
+}
+
+.station-sign-label.small .station-sign-head {
+    display: none;
+}
+
+.station-sign-label.small .station-sign-body {
+    padding: 3px 6px 6px;
+}
+
+.station-sign-label.small .station-sign-name {
+    font-size: 10px;
+    max-width: 70px;
+}
+
+.station-sign-label.small .station-sign-line {
+    height: 4px;
+}
+
+/* tiny */
+.station-sign-label.tiny {
+    min-width: 34px;
+    max-width: 62px;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.16);
+}
+
+.station-sign-label.tiny .station-sign-name {
+    font-size: 9px;
+    padding: 3px 5px 4px;
+    max-width: 52px;
+}
+
+.station-sign-label.tiny .station-sign-dotline {
+    height: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1441,6 +1505,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         color: #b0b0b5;
     }
 }
+
 /* 地圖 Popup 圖片樣式 */
 .leaflet-popup-content img.popup-station-photo {
     width: 100%;
@@ -2994,33 +3059,6 @@ function flashAuthPanel() {
     }, 500);
 }
 function updateSafariThemeColor() {
-    let metaTheme = document.getElementById("theme-color-meta");
-    let metaThemeLight = document.getElementById("theme-color-light-meta");
-    let metaThemeDark = document.getElementById("theme-color-dark-meta");
-
-    if (!metaTheme) {
-        metaTheme = document.createElement("meta");
-        metaTheme.name = "theme-color";
-        metaTheme.id = "theme-color-meta";
-        document.head.appendChild(metaTheme);
-    }
-
-    if (!metaThemeLight) {
-        metaThemeLight = document.createElement("meta");
-        metaThemeLight.name = "theme-color";
-        metaThemeLight.media = "(prefers-color-scheme: light)";
-        metaThemeLight.id = "theme-color-light-meta";
-        document.head.appendChild(metaThemeLight);
-    }
-
-    if (!metaThemeDark) {
-        metaThemeDark = document.createElement("meta");
-        metaThemeDark.name = "theme-color";
-        metaThemeDark.media = "(prefers-color-scheme: dark)";
-        metaThemeDark.id = "theme-color-dark-meta";
-        document.head.appendChild(metaThemeDark);
-    }
-
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const loader = document.getElementById("loading-screen");
     const isLoadingVisible =
@@ -3032,47 +3070,66 @@ function updateSafariThemeColor() {
     const darkColor = isLoadingVisible ? "#111111" : "#000000";
     const activeColor = isDark ? darkColor : lightColor;
 
-    function applyThemeColor(color) {
-        metaTheme.setAttribute("content", color);
-        metaThemeLight.setAttribute("content", lightColor);
-        metaThemeDark.setAttribute("content", darkColor);
+    document.documentElement.style.backgroundColor = activeColor;
+    document.body.style.backgroundColor = activeColor;
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+    document.body.style.colorScheme = isDark ? "dark" : "light";
 
-        document.documentElement.style.backgroundColor = color;
-        document.body.style.backgroundColor = color;
-        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
-        document.body.style.colorScheme = isDark ? "dark" : "light";
+    let metaTheme = document.getElementById("theme-color-meta");
+    if (metaTheme) {
+        metaTheme.remove();
     }
 
-    applyThemeColor(activeColor);
+    metaTheme = document.createElement("meta");
+    metaTheme.name = "theme-color";
+    metaTheme.id = "theme-color-meta";
+    metaTheme.content = activeColor;
+    document.head.appendChild(metaTheme);
+
+    // 強制 Safari 再讀一次 head
+    void document.documentElement.offsetHeight;
 
     requestAnimationFrame(() => {
-        // iOS Safari hack：先寫一個過渡值，再寫返真正顏色
-        metaTheme.setAttribute("content", isDark ? "#010101" : "#fefefe");
+        metaTheme.content = isDark ? "#010101" : "#fefefe";
 
-        setTimeout(() => applyThemeColor(activeColor), 20);
-        setTimeout(() => applyThemeColor(activeColor), 120);
-        setTimeout(() => applyThemeColor(activeColor), 320);
-        setTimeout(() => applyThemeColor(activeColor), 650);
+        requestAnimationFrame(() => {
+            metaTheme.content = activeColor;
+        });
+
+        setTimeout(() => {
+            metaTheme.content = activeColor;
+            document.documentElement.style.backgroundColor = activeColor;
+            document.body.style.backgroundColor = activeColor;
+        }, 120);
+
+        setTimeout(() => {
+            metaTheme.content = activeColor;
+        }, 320);
+
+        setTimeout(() => {
+            metaTheme.content = activeColor;
+        }, 700);
     });
 }
 const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
 function handleSafariColorSchemeChange() {
     updateSafariThemeColor();
-    setTimeout(updateSafariThemeColor, 0);
     setTimeout(updateSafariThemeColor, 120);
     setTimeout(updateSafariThemeColor, 320);
-    setTimeout(updateSafariThemeColor, 600);
+    setTimeout(updateSafariThemeColor, 700);
 }
 
 window.addEventListener("pageshow", () => {
     updateSafariThemeColor();
     setTimeout(updateSafariThemeColor, 120);
+    setTimeout(updateSafariThemeColor, 320);
 });
 
 window.addEventListener("focus", () => {
     updateSafariThemeColor();
     setTimeout(updateSafariThemeColor, 120);
+    setTimeout(updateSafariThemeColor, 320);
 });
 
 document.addEventListener("visibilitychange", () => {
@@ -3080,6 +3137,7 @@ document.addEventListener("visibilitychange", () => {
         updateSafariThemeColor();
         setTimeout(updateSafariThemeColor, 120);
         setTimeout(updateSafariThemeColor, 320);
+        setTimeout(updateSafariThemeColor, 700);
     }
 });
 
@@ -3295,6 +3353,8 @@ function tryEnterMainApp() {
         if (loader) loader.style.display = "none";
         if (app) app.classList.add("show");
 		updateSafariThemeColor();
+setTimeout(updateSafariThemeColor, 120);
+setTimeout(updateSafariThemeColor, 320);
     }, 650);
 }
 
@@ -4497,66 +4557,64 @@ window.importData = function() {
 // =========================================
 // 判斷公司類型，取顏色
 // =========================================
-function getRailCompanyCategory(companyName = "") {
-    const name = String(companyName);
+function getRailCompanyCategory(companyIdOrName = "") {
+    const company =
+        maps.company[companyIdOrName] ||
+        Object.values(maps.company).find(c => c.name === companyIdOrName);
 
-    // JR 各社
-    if (name.includes("JR東日本")) return "jr-east";
-    if (name.includes("JR西日本")) return "jr-west";
-    if (name.includes("JR東海")) return "jr-central";
-    if (name.includes("JR九州")) return "jr-kyushu";
-    if (name.includes("JR北海道")) return "jr-hokkaido";
-    if (name.includes("JR四国")) return "jr-shikoku";
+    const category = company?.categories || "";
 
-    // 大手私鐵
-    const majorPrivate = [
-        "東武", "西武", "京王", "京成", "小田急", "東急",
-        "京急", "相鉄", "名鉄", "近鉄", "南海", "京阪",
-        "阪急", "阪神", "西鉄", "東京メトロ", "Osaka Metro"
-    ];
+    if (category === "jr_west") return "jr_west";
+	if (category === "jr_central") return "jr_central";
+	if (category === "jr_east") return "jr_east";
+	if (category === "jr_hokkaido") return "jr_hokkaido";
+	if (category === "jr_kyushu") return "jr_kyushu";
+	if (category === "jr_shikoku") return "jr_shikoku";
+    if (category === "major_private") return "major_private";
+    if (category === "private") return "private";
+    if (category === "third_sector") return "third_sector";
 
-    if (majorPrivate.some(keyword => name.includes(keyword))) {
-        return "major-private";
-    }
-
-    return "other-rail";
+    return "private";
 }
 
-function getStationSignColor(companyName = "") {
-    const category = getRailCompanyCategory(companyName);
+function getStationSignColor(companyIdOrName = "") {
+    const category = getRailCompanyCategory(companyIdOrName);
 
     const colorMap = {
-        "jr-east": "#63BD0F",
-        "jr-west": "#005BAC",
-        "jr-central": "#F68B1F",
-        "jr-kyushu": "#E60012",
-        "jr-hokkaido": "#006C35",
-        "jr-shikoku": "#4AA3D8",
-        "major-private": "#8A1E3A",
-        "other-rail": "#4B5D73"
+		"jr_east": "#63BD0F",
+        "jr_west": "#005BAC",
+        "jr_central": "#F68B1F",
+        "jr_kyushu": "#E60012",
+        "jr_hokkaido": "#006C35",
+        "jr_shikoku": "#4AA3D8",
+        "major_private": "#8A1E3A",
+        "private": "#4B5D73",
+        "third_sector": "#C78A00"
     };
 
     return colorMap[category] || "#4B5D73";
 }
 
-function getRailCompanyShortLabel(companyName = "") {
-    const category = getRailCompanyCategory(companyName);
+function getRailCompanyShortLabel(companyIdOrName = "") {
+    const category = getRailCompanyCategory(companyIdOrName);
 
     const labelMap = {
-        "jr-east": "JR東",
-        "jr-west": "JR西",
-        "jr-central": "JR海",
-        "jr-kyushu": "JR九",
-        "jr-hokkaido": "JR北",
-        "jr-shikoku": "JR四",
-        "major-private": "私鉄",
-        "other-rail": "地方"
+        "jr_east": "JR東日本",
+        "jr_west": "JR西日本",
+        "jr_central": "JR東海",
+        "jr_kyushu": "JR九州",
+        "jr_hokkaido": "JR北海道",
+        "jr_shikoku": "JR四国",
+        "major_private": "大手私鉄",
+        "private": "私鉄",
+        "third_sector": "第三セクター"
     };
 
     return labelMap[category] || "鉄道";
 }
-function buildFullStationLabelHtml(stn, compName, lineColor) {
-    const shortLabel = getRailCompanyShortLabel(compName);
+
+function buildFullStationLabelHtml(stn, compId, compName, lineColor) {
+    const shortLabel = getRailCompanyShortLabel(compId);
 
     return `
         <div class="station-sign-label full" style="border-color:${lineColor};">
@@ -4573,9 +4631,14 @@ function buildFullStationLabelHtml(stn, compName, lineColor) {
     `;
 }
 
-function buildCompactStationLabelHtml(stn, lineColor) {
+function buildMediumStationLabelHtml(stn, compId, lineColor) {
+    const shortLabel = getRailCompanyShortLabel(compId);
+
     return `
-        <div class="station-sign-label compact" style="border-color:${lineColor};">
+        <div class="station-sign-label medium" style="border-color:${lineColor};">
+            <div class="station-sign-head">
+                <span class="station-sign-company-tag">${shortLabel}</span>
+            </div>
             <div class="station-sign-body">
                 <div class="station-sign-name">${stn.name}</div>
             </div>
@@ -4584,9 +4647,35 @@ function buildCompactStationLabelHtml(stn, lineColor) {
     `;
 }
 
-function shouldUseCompactStationLabel() {
-    if (!railMapInstance) return false;
-    return railMapInstance.getZoom() <= 8;
+function buildSmallStationLabelHtml(stn, lineColor) {
+    return `
+        <div class="station-sign-label small" style="border-color:${lineColor};">
+            <div class="station-sign-body">
+                <div class="station-sign-name">${stn.name}</div>
+            </div>
+            <div class="station-sign-line" style="background:${lineColor};"></div>
+        </div>
+    `;
+}
+
+function buildTinyStationLabelHtml(stn, lineColor) {
+    return `
+        <div class="station-sign-label tiny" style="border-color:${lineColor};">
+            <div class="station-sign-dotline" style="background:${lineColor};"></div>
+            <div class="station-sign-name">${stn.name}</div>
+        </div>
+    `;
+}
+
+function getStationLabelLevel() {
+    if (!railMapInstance) return "medium";
+
+    const zoom = railMapInstance.getZoom();
+
+    if (zoom <= 6) return "tiny";
+    if (zoom <= 8) return "small";
+    if (zoom <= 10) return "medium";
+    return "full";
 }
 
 window.openMapPhotoPreview = function(imageSrc, caption) {
@@ -4655,17 +4744,33 @@ function renderMap() {
         const stn = maps.station[stnId];
         if (!stn || stn.lat == null || stn.lng == null) return;
 
-        const compName = maps.company[stn.company_id]?.name || "";
-        const lineColor = getStationSignColor(compName);
-        const isCompact = shouldUseCompactStationLabel();
+        const compId = stn.company_id || "";
+const compName = maps.company[compId]?.name || "";
+const lineColor = getStationSignColor(compId);
+const labelLevel = getStationLabelLevel();
 
-        const customIcon = L.divIcon({
-            className: 'custom-div-icon',
-            html: isCompact
-                ? buildCompactStationLabelHtml(stn, lineColor)
-                : buildFullStationLabelHtml(stn, compName, lineColor),
-            iconAnchor: isCompact ? [28, 22] : [45, 38]
-        });
+let html = "";
+let iconAnchor = [40, 28];
+
+if (labelLevel === "tiny") {
+    html = buildTinyStationLabelHtml(stn, lineColor);
+    iconAnchor = [18, 12];
+} else if (labelLevel === "small") {
+    html = buildSmallStationLabelHtml(stn, lineColor);
+    iconAnchor = [28, 16];
+} else if (labelLevel === "medium") {
+    html = buildMediumStationLabelHtml(stn, compId, lineColor);
+    iconAnchor = [34, 22];
+} else {
+    html = buildFullStationLabelHtml(stn, compId, compName, lineColor);
+    iconAnchor = [45, 30];
+}
+
+const customIcon = L.divIcon({
+    className: 'custom-div-icon',
+    html,
+    iconAnchor
+});
 
         let popupHtml = `<b>${getStatStationDisplay(stnId)}</b>`;
 
