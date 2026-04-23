@@ -2119,6 +2119,16 @@ header::before {
     pointer-events: none;
     z-index: 5;
 }
+@media (prefers-color-scheme: dark) {
+    .e235-arrival-station-name {
+        color: #f5f5f7;
+    }
+
+    .e235-arrival-station-en,
+    .e235-arrival-status-text {
+        color: #a0a0a5;
+    }
+}
 @media (max-width: 480px) {
     .e235-arrival-station-fade {
         height: 108px;
@@ -2466,13 +2476,13 @@ header::before {
                 <h3 style="margin: 10px;">足跡地圖</h3>
                 <p style="font-size:13px; color:var(--subtext); margin: 0 10px 10px 10px;">紀錄你到訪過的所有車站位置。</p>
 				<div class="map-filter-bar">
-    <select id="mapCategoryFilter" onchange="renderMap()">
-        <option value="all">全部類別</option>
-        <option value="jr">JR</option>
-        <option value="major-private">大手私鐵</option>
-        <option value="private">私鐵</option>
-        <option value="third-sector">第三セクター</option>
-    </select>
+    <select id="mapCategoryFilter" onchange="handleMapFilterChange()">
+    <option value="all">全部類別</option>
+    <option value="jr">JR</option>
+    <option value="major_private">大手私鐵</option>
+    <option value="private">私鐵</option>
+    <option value="third_sector">第三セクター</option>
+</select>
 </div>
                 <div id="railMap"></div>
             </div>
@@ -3088,14 +3098,21 @@ function flashAuthPanel() {
 function updateSafariThemeColor() {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const loader = document.getElementById("loading-screen");
+    const app = document.getElementById("main-app");
+
     const isLoadingVisible =
         loader &&
         loader.style.display !== "none" &&
         !loader.classList.contains("loaded");
 
-    const lightColor = isLoadingVisible ? "#e9e9e9" : "#ffffff";
-    const darkColor = isLoadingVisible ? "#111111" : "#000000";
-    const activeColor = isDark ? darkColor : lightColor;
+    let activeColor = "#e9e9e9";
+
+    if (isLoadingVisible) {
+        activeColor = isDark ? "#111111" : "#e9e9e9";
+    } else {
+        // 主畫面之後，直接跟 body 真實背景色走
+        activeColor = getComputedStyle(document.body).backgroundColor;
+    }
 
     document.documentElement.style.backgroundColor = activeColor;
     document.body.style.backgroundColor = activeColor;
@@ -3111,6 +3128,7 @@ function updateSafariThemeColor() {
     metaTheme.content = activeColor;
     document.head.appendChild(metaTheme);
 
+    // 強制 Safari 重新讀一次
     void document.documentElement.offsetHeight;
 
     requestAnimationFrame(() => {
@@ -3137,31 +3155,28 @@ function updateSafariThemeColor() {
 }
 const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
-function handleSafariColorSchemeChange() {
+function syncSafariThemeAfterMainApp() {
     updateSafariThemeColor();
     setTimeout(updateSafariThemeColor, 120);
     setTimeout(updateSafariThemeColor, 320);
     setTimeout(updateSafariThemeColor, 700);
 }
 
+function handleSafariColorSchemeChange() {
+    syncSafariThemeAfterMainApp();
+}
+
 window.addEventListener("pageshow", () => {
-    updateSafariThemeColor();
-    setTimeout(updateSafariThemeColor, 120);
-    setTimeout(updateSafariThemeColor, 320);
+    syncSafariThemeAfterMainApp();
 });
 
 window.addEventListener("focus", () => {
-    updateSafariThemeColor();
-    setTimeout(updateSafariThemeColor, 120);
-    setTimeout(updateSafariThemeColor, 320);
+    syncSafariThemeAfterMainApp();
 });
 
 document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
-        updateSafariThemeColor();
-        setTimeout(updateSafariThemeColor, 120);
-        setTimeout(updateSafariThemeColor, 320);
-        setTimeout(updateSafariThemeColor, 700);
+        syncSafariThemeAfterMainApp();
     }
 });
 
@@ -3374,12 +3389,10 @@ function tryEnterMainApp() {
     if (loader) loader.classList.add("loaded");
 
     setTimeout(() => {
-        if (loader) loader.style.display = "none";
-        if (app) app.classList.add("show");
-		updateSafariThemeColor();
-setTimeout(updateSafariThemeColor, 120);
-setTimeout(updateSafariThemeColor, 320);
-    }, 650);
+    if (loader) loader.style.display = "none";
+    if (app) app.classList.add("show");
+    syncSafariThemeAfterMainApp();
+}, 650);
 }
 
 let currentSignIndex = 0;
@@ -4610,6 +4623,11 @@ function getRailCompanyCategory(companyIdOrName = "") {
     return "private";
 }
 
+function normalizeMapFilterCategory(rawCategory = "") {
+    if (String(rawCategory).startsWith("jr_")) return "jr";
+    return rawCategory;
+}
+
 function getStationSignColor(companyIdOrName = "") {
     const category = getRailCompanyCategory(companyIdOrName);
 
@@ -4645,6 +4663,11 @@ function getRailCompanyShortLabel(companyIdOrName = "") {
 
     return labelMap[category] || "鉄道";
 }
+
+window.handleMapFilterChange = function() {
+    railMapHasFitted = false;
+    renderMap();
+};
 
 function buildFullStationLabelHtml(stn, compId, compName, lineColor) {
     const shortLabel = getRailCompanyShortLabel(compId);
@@ -4765,10 +4788,16 @@ function renderMap() {
     const bounds = [];
 
     Object.keys(stationDataMap).forEach(stnId => {
-        const stn = maps.station[stnId];
-		const stationCategory = getRailCompanyCategory(stn.company_id);
-if (selectedCategory !== "all" && stationCategory !== selectedCategory) return;
-        if (!stn || stn.lat == null || stn.lng == null) return;
+    const stn = maps.station[stnId];
+    if (!stn || stn.lat == null || stn.lng == null) return;
+
+    const stationCategory = normalizeMapFilterCategory(
+        getRailCompanyCategory(stn.company_id)
+    );
+
+    if (selectedCategory !== "all" && stationCategory !== selectedCategory) {
+        return;
+    }
 
         const compId = stn.company_id || "";
 const compName = maps.company[compId]?.name || "";
