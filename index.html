@@ -658,21 +658,66 @@ header::before {
     margin-bottom: 14px;
 }
 
-.gallery-toolbar {
+.gallery-card-head {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery-card-title {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.gallery-filter-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+
+.gallery-filter-select {
+    width: auto;
+    min-width: 76px;
+    height: 32px;
+    padding: 0 28px 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+    background: var(--tag-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    line-height: 32px;
+}
+
+.gallery-search-row {
     margin-bottom: 16px;
-    flex-wrap: wrap;
 }
 
-.gallery-toolbar input {
-    flex: 2 1 220px;
-    min-width: 0;
+.gallery-search-row input {
+    width: 100%;
 }
 
-.gallery-toolbar select {
-    flex: 1 1 160px;
-    min-width: 0;
+@media (max-width: 480px) {
+    .gallery-card-head {
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .gallery-filter-inline {
+        gap: 6px;
+    }
+
+    .gallery-filter-select {
+        min-width: 68px;
+        font-size: 11px;
+        padding: 0 24px 0 8px;
+    }
 }
 
 .gallery-section {
@@ -1511,12 +1556,56 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .leaflet-popup-content img.popup-station-photo:active {
     transform: scale(0.98);
 }
-.map-filter-bar {
-    margin: 0 10px 10px;
+.map-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px;
 }
 
-.map-filter-bar select {
-    width: 100%;
+.map-card-title {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.map-card-desc {
+    font-size: 13px;
+    color: var(--subtext);
+    margin: 0 10px 10px 10px;
+}
+
+.map-filter-inline {
+    flex: 0 0 auto;
+}
+
+.map-filter-select {
+    width: auto;
+    min-width: 88px;
+    height: 32px;
+    padding: 0 30px 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+    background: var(--tag-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    line-height: 32px;
+}
+
+@media (max-width: 480px) {
+    .map-card-head {
+        gap: 8px;
+    }
+
+    .map-filter-select {
+        min-width: 78px;
+        font-size: 11px;
+        padding: 0 26px 0 8px;
+    }
 }
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
 .date-mode-tabs { display: flex; background: var(--tag-bg); border-radius: 8px; padding: 3px; }
@@ -2473,39 +2562,47 @@ header::before {
 
         <div id="tab-map" class="tab-content">
             <div class="card" style="padding: 10px;">
-                <h3 style="margin: 10px;">足跡地圖</h3>
-                <p style="font-size:13px; color:var(--subtext); margin: 0 10px 10px 10px;">紀錄你到訪過的所有車站位置。</p>
-				<div class="map-filter-bar">
-    <select id="mapCategoryFilter" onchange="handleMapFilterChange()">
-    <option value="all">全部類別</option>
-    <option value="jr">JR</option>
-    <option value="major_private">大手私鐵</option>
-    <option value="private">私鐵</option>
-    <option value="third_sector">第三セクター</option>
-</select>
+                <div class="map-card-head">
+    <h3 class="map-card-title">足跡地圖</h3>
+
+    <div class="map-filter-inline">
+        <select id="mapCategoryFilter" class="map-filter-select" onchange="handleMapFilterChange()">
+            <option value="all">全部</option>
+            <option value="jr">JR</option>
+            <option value="major_private">大手</option>
+            <option value="private">私鐵</option>
+            <option value="third_sector">3セク</option>
+        </select>
+    </div>
 </div>
-                <div id="railMap"></div>
+
+<p class="map-card-desc">紀錄你到訪過的所有車站位置。</p>
+<div id="railMap"></div>
             </div>
         </div>
 
         <div id="tab-gallery" class="tab-content">
     <div class="card gallery-page-card">
-        <h3>車型相冊</h3>
-        <p class="gallery-page-desc">你記錄過嘅鐵道車輛寫真。</p>
+        <div class="gallery-card-head">
+    <h3 class="gallery-card-title">車型相冊</h3>
 
-        <div class="gallery-toolbar">
+    <div class="gallery-filter-inline">
+        <select id="galleryCompanyFilter" class="gallery-filter-select" onchange="renderGallery()">
+            <option value="all">全部公司</option>
+        </select>
+
+        <select id="gallerySortMode" class="gallery-filter-select" onchange="renderGallery()">
+            <option value="train">名稱</option>
+            <option value="newest">最新</option>
+            <option value="oldest">最早</option>
+        </select>
+    </div>
+</div>
+
+<p class="gallery-page-desc">你記錄過嘅鐵道車輛寫真。</p>
+
+<div class="gallery-search-row">
     <input id="gallerySearchInput" type="text" placeholder="搜尋車型名 / 公司名" oninput="renderGallery()">
-
-    <select id="galleryCompanyFilter" onchange="renderGallery()">
-        <option value="all">全部公司</option>
-    </select>
-
-    <select id="gallerySortMode" onchange="renderGallery()">
-        <option value="train">車型名稱</option>
-        <option value="count">收錄張數</option>
-        <option value="newest">最新記錄</option>
-        <option value="oldest">最早記錄</option>
-    </select>
 </div>
 
 <div id="trainDexModal" class="train-dex-modal" onclick="closeTrainDexModal()">
@@ -4407,19 +4504,9 @@ function renderRideCategoryRatio() {
 
         const category = getRailCompanyCategory(mainCompanyId);
 
-        if (category === "jr_west") {
+       if (String(category).startsWith("jr_")) {
     counts.jr += 1;
-		} else if (category === "jr_east") {
-    counts.jr += 1;
-	} else if (category === "jr_shikoku") {
-    counts.jr += 1;
-	} else if (category === "jr_kyushu") {
-    counts.jr += 1;
-	} else if (category === "jr_central") {
-    counts.jr += 1;
-	} else if (category === "jr_hokkaido") {
-    counts.jr += 1;
-} else if (category === "major-private") {
+} else if (category === "major_private") {
     counts.majorPrivate += 1;
 } else {
     counts.other += 1;
