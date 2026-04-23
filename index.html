@@ -658,6 +658,7 @@ header::before {
     margin-bottom: 14px;
 }
 
+
 .gallery-card-head {
     display: flex;
     align-items: center;
@@ -1265,8 +1266,8 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 
     background: var(--nav-bg);
     border-top: 1px solid var(--border);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+	backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .nav-item {
@@ -3192,10 +3193,23 @@ function flashAuthPanel() {
         panel.classList.remove("auth-glow");
     }, 500);
 }
+
+function getMainAppChromeColor(isDark) {
+    const header = document.querySelector("header");
+    const bottomNav = document.querySelector(".bottom-nav");
+
+    const headerBg = header ? getComputedStyle(header).backgroundColor : "";
+    const navBg = bottomNav ? getComputedStyle(bottomNav).backgroundColor : "";
+    const bodyBg = getComputedStyle(document.body).backgroundColor;
+
+    // iOS Safari / Web App 最穩定做法：
+    // 主畫面後優先取 header 實色；取唔到先 fallback 去 nav，再 fallback 去 body
+    return headerBg || navBg || bodyBg || (isDark ? "#1c1c1e" : "#e0e0e0");
+}
+
 function updateSafariThemeColor() {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const loader = document.getElementById("loading-screen");
-    const app = document.getElementById("main-app");
 
     const isLoadingVisible =
         loader &&
@@ -3207,14 +3221,29 @@ function updateSafariThemeColor() {
     if (isLoadingVisible) {
         activeColor = isDark ? "#111111" : "#e9e9e9";
     } else {
-        // 主畫面之後，直接跟 body 真實背景色走
-        activeColor = getComputedStyle(document.body).backgroundColor;
+        activeColor = getMainAppChromeColor(isDark);
     }
 
     document.documentElement.style.backgroundColor = activeColor;
     document.body.style.backgroundColor = activeColor;
     document.documentElement.style.colorScheme = isDark ? "dark" : "light";
     document.body.style.colorScheme = isDark ? "dark" : "light";
+
+    // 同步主畫面頂 / 底主要色層，減少 iOS 睇落未轉色
+    const header = document.querySelector("header");
+    const bottomNav = document.querySelector(".bottom-nav");
+
+    if (header) {
+        header.style.background = isDark
+            ? "linear-gradient(135deg, #222222 0%, #111111 100%)"
+            : "linear-gradient(135deg, #ddd 0%, #aaa 100%)";
+    }
+
+    if (bottomNav) {
+        bottomNav.style.background = isDark
+            ? "rgba(28, 28, 30, 0.85)"
+            : "rgba(255, 255, 255, 0.85)";
+    }
 
     let metaTheme = document.getElementById("theme-color-meta");
     if (metaTheme) metaTheme.remove();
@@ -3225,7 +3254,6 @@ function updateSafariThemeColor() {
     metaTheme.content = activeColor;
     document.head.appendChild(metaTheme);
 
-    // 強制 Safari 重新讀一次
     void document.documentElement.offsetHeight;
 
     requestAnimationFrame(() => {
@@ -3250,6 +3278,7 @@ function updateSafariThemeColor() {
         }, 700);
     });
 }
+
 const safariColorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
 function syncSafariThemeAfterMainApp() {
