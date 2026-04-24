@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.30</title>
+<title>鉄道手帳 RAIL LOG V0.31</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="og:image" href="cover.jpg">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <meta name="theme-color" content="#e9e9e9" id="theme-color-meta">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -225,7 +226,7 @@
     border-radius: 999px;
     background: linear-gradient(90deg, #63BD0F 0%, #7fd13e 50%, #63BD0F 100%);
     box-shadow:
-        0 0 8px rgba(99, 189, 15, 0.30),
+        0 0 8px rgba(99, 189, 15, 0.31),
         inset 0 1px 1px rgba(255,255,255,0.18);
     transition: width 0.95s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -494,7 +495,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.30);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.31);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -808,7 +809,7 @@ header::before {
     background: linear-gradient(
         to top,
         rgba(0,0,0,0.72) 0%,
-        rgba(0,0,0,0.30) 28%,
+        rgba(0,0,0,0.31) 28%,
         rgba(0,0,0,0.05) 50%,
         rgba(0,0,0,0) 70%
     );
@@ -945,7 +946,7 @@ header::before {
     background: var(--card);
     border-radius: 16px;
     border: 1px solid var(--border);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.30);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.31);
 }
 
 .train-dex-main-image-wrap {
@@ -1029,7 +1030,7 @@ header::before {
     box-shadow:
         inset 0 1px 1px rgba(255,255,255,0.15),
         0 1px 3px rgba(0,0,0,0.18);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.30);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.31);
     position: relative;
 }
 
@@ -1220,7 +1221,14 @@ header::before {
 
 :root { --bg: #e0e0e0; --input-bg: #f4f4f4; --card: #ffffff; --text: #1d1d1f; --subtext: #86868b; --border: #aaa; --primary: #63BD0F; --success: #34c759; --danger: #ff3b30; --tag-bg: #e5e5ea; --nav-bg: rgba(255, 255, 255, 0.85); }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); padding-bottom: 100px; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-bottom: calc(74px + env(safe-area-inset-bottom));
+}
 
 header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(env(safe-area-inset-top) + 8px) 0 8px 0; border-bottom: 1px solid #aaa; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; gap: 20px; overflow: hidden; }
 .header-band { flex: 1; height: 30px; background: var(--primary); cursor: pointer; transition: opacity 0.2s; }
@@ -1242,7 +1250,7 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 .container {
     max-width: 600px;
     margin: 15px auto;
-    padding: 0 15px 110px;
+    padding: 0 15px calc(88px + env(safe-area-inset-bottom));
 }
 .card { background: var(--card); padding: 20px; margin-bottom: 16px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
 .tab-content { display: none; animation: fadeIn 0.3s ease; }
@@ -1259,15 +1267,17 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 
     display: flex;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: center;
 
-    min-height: 64px;
-    padding: 0 0 calc(env(safe-area-inset-bottom) + 2px);
+    height: auto;
+    min-height: 0;
+    padding-top: 6px;
+    padding-bottom: max(env(safe-area-inset-bottom), 6px);
 
     background: var(--nav-bg);
     border-top: 1px solid var(--border);
-	backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .nav-item {
@@ -1280,7 +1290,7 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
     justify-content: center;
     gap: 4px;
 
-    padding: 8px 0 7px;
+    padding: 6px 0 4px;
     color: var(--subtext);
     cursor: pointer;
     transition: color 0.2s ease, background 0.2s ease;
@@ -1319,7 +1329,8 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 
 @media (max-width: 480px) {
     .bottom-nav {
-        min-height: 60px;
+        padding-top: 5px;
+        padding-bottom: max(env(safe-area-inset-bottom), 5px);
     }
 
     .nav-icon {
@@ -1342,8 +1353,17 @@ h3 { margin-top: 0; font-size: 17px; font-weight: 600; border-bottom: 2px solid 
 .led-counter { font-family: 'DotGothic16', monospace; background-color: #111; color: #ff9500; padding: 2px 8px; border-radius: 4px; font-size: 1.2em; font-weight: normal; text-shadow: 0 0 5px rgba(255, 149, 0, 0.8), 0 0 10px rgba(255, 149, 0, 0.4); border: 2px solid #222; box-shadow: inset 0 2px 4px rgba(0,0,0,1); margin-left: 6px; display: inline-block; line-height: 1; letter-spacing: 2px; }
 label { display: block; font-size: 13px; color: var(--subtext); margin-bottom: 6px; margin-top: 12px; }
 
-input::-webkit-calendar-picker-indicator { display: block !important; opacity: 0.6; cursor: pointer; padding-left: 10px; }
-input:hover::-webkit-calendar-picker-indicator { opacity: 1; }
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    opacity: 0.85;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+
 input[type="date"] { -webkit-appearance: none; display: block; width: 100%; max-width: 100%; box-sizing: border-box; }
 input, select { width: 100%; padding: 12px 14px; font-size: 16px; border: 1px solid var(--border); border-radius: 4px; background: var(--input-bg); color: var(--text); outline: none; }
 input:focus { border-color: var(--primary); }
@@ -1655,7 +1675,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.30 成就佈局樣式
+   🟩 V0.24/V0.31 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -1727,7 +1747,7 @@ header::before {
     border-radius: 10px;
     font-size: 12px;
     line-height: 1.45;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.30);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.31);
     border: 1px solid rgba(255,255,255,0.08);
     pointer-events: none;
     white-space: normal;
@@ -1763,7 +1783,7 @@ header::before {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--border);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.30);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.31);
 }
 
 .map-photo-preview-image {
@@ -2113,6 +2133,7 @@ header::before {
     position: relative;
     overflow: hidden;
     isolation: isolate;
+ clip-path: inset(0 0 0 0); /* 🔥 更硬裁切 */
 }
 
 .e235-arrival-station-fade {
@@ -2138,7 +2159,7 @@ header::before {
     -webkit-backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
     will-change: transform;
-    transition: transform 0.30s cubic-bezier(0.22, 0.8, 0.2, 1);
+    transition: transform 0.31s cubic-bezier(0.22, 0.8, 0.2, 1);
 }
 
 .e235-arrival-station-name {
@@ -2169,27 +2190,36 @@ header::before {
     transform: translate3d(0, 0, 0);
 }
 
-.e235-arrival-station-layer.pos-below {
-    transform: translate3d(0, 122px, 0);
-}
 
-.e235-arrival-station-layer.pos-above {
-    transform: translate3d(0, -122px, 0);
-}
-
-.e235-arrival-status-text.pos-below {
-    transform: translate3d(0, 42px, 0);
-}
-
-.e235-arrival-status-text.pos-above {
-    transform: translate3d(0, -42px, 0);
-}
 .no-slide-transition {
     transition: none !important;
 }
+
 .e235-arrival-station-fade,
 .e235-arrival-status-fade {
-    contain: layout paint style;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+}
+
+.e235-arrival-station-layer,
+.e235-arrival-status-text {
+    overflow: hidden;
+}
+
+.e235-arrival-station-layer.pos-below {
+    transform: translate3d(0, 145%, 0);
+}
+
+.e235-arrival-station-layer.pos-above {
+    transform: translate3d(0, -145%, 0);
+}
+
+.e235-arrival-status-text.pos-below {
+    transform: translate3d(0, 160%, 0);
+}
+
+.e235-arrival-status-text.pos-above {
+    transform: translate3d(0, -160%, 0);
 }
 
 .e235-arrival-station-layer,
@@ -2232,22 +2262,40 @@ header::before {
         font-size: 12px;
         padding: 0 10px;
     }
+}
+.history-search-row {
+    margin-bottom: 12px;
+}
 
-    .e235-arrival-station-layer.pos-below {
-        transform: translate3d(0, 108px, 0);
-    }
+.history-date-separator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 10px;
+}
 
-    .e235-arrival-station-layer.pos-above {
-        transform: translate3d(0, -108px, 0);
-    }
+.history-date-separator:first-child {
+    margin-top: 6px;
+}
 
-    .e235-arrival-status-text.pos-below {
-        transform: translate3d(0, 38px, 0);
-    }
+.history-date-separator-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    opacity: 0.30;
+}
 
-    .e235-arrival-status-text.pos-above {
-        transform: translate3d(0, -38px, 0);
-    }
+.history-date-separator-label {
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
 }
 </style>
 </head>
@@ -2270,7 +2318,7 @@ header::before {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.30</div>
+                <div class="e235-arrival-version">V0.31</div>
             </div>
         </div>
 
@@ -2415,7 +2463,7 @@ header::before {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.30</div>
+    <div class="version-badge">V0.31</div>
 
     <div class="container">
 
@@ -2511,28 +2559,40 @@ header::before {
         </div>
 
         <div id="tab-history" class="tab-content">
-            <div class="card">
-                <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
-                    乘車記錄 <span id="totalCount" class="led-counter">0</span>
-                </h3>
-                
-                <div class="date-controls-wrapper">
-                    <div class="date-mode-tabs">
-                        <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
-                        <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
-                    </div>
-                    <div class="date-stepper">
-                        <button onclick="changeDay(-1)"> &lt; </button>
-                        <div id="btnFilterDate" class="date-label" onclick="openCalendar()">選擇日期</div>
-                        <button onclick="changeDay(1)"> &gt; </button>
-                    </div>
-                </div>
+    <div class="card">
+        <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
+            乘車記錄 <span id="totalCount" class="led-counter">0</span>
+        </h3>
 
-                <div id="tripList"></div>
-                <div id="paginationControls" style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;"></div>
+        <div class="history-search-row">
+    <div class="input-wrapper">
+        <input
+            id="historySearchInput"
+            type="text"
+            placeholder="搜尋公司、路線、車型、車站"
+            oninput="render()"
+        >
+        <button type="button" class="clear-input-btn" onclick="clearHistorySearch(event)">✕</button>
+    </div>
+</div>
+        
+        <div class="date-controls-wrapper">
+            <div class="date-mode-tabs">
+                <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
+                <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
+            </div>
+            <div class="date-stepper">
+                <button onclick="changeDay(-1)"> &lt; </button>
+                <div id="btnFilterDate" class="date-label" onclick="openCalendar()">選擇日期</div>
+                <button onclick="changeDay(1)"> &gt; </button>
             </div>
         </div>
 
+        <div id="tripList"></div>
+        <div id="paginationControls" style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;"></div>
+    </div>
+</div>
+       
         <div id="tab-stats" class="tab-content">
 		<div class="card ride-ratio-card">
     <h3 class="ride-ratio-title">乘搭類別比例</h3>
@@ -3079,6 +3139,20 @@ async function loadTripsFromCloud(user) {
     render();
 }
 
+window.clearHistorySearch = function(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    const input = document.getElementById("historySearchInput");
+    if (!input) return;
+
+    input.value = "";
+    render();
+    input.focus();
+};
+
 window.openTrainDexModal = function(trainId) {
     if (!window.trainDexIndex || !window.trainDexIndex[trainId]) return;
 
@@ -3442,18 +3516,26 @@ function switchStationText(stage) {
         nextStatusEl.className = "e235-arrival-status-text pos-current";
     });
 
-    loaderSlideTimer = setTimeout(() => {
-        currentStationLayer.className = "e235-arrival-station-layer pos-above";
-        currentStatusEl.className = "e235-arrival-status-text pos-above";
+   loaderSlideTimer = setTimeout(() => {
+    currentStationLayer.className = "e235-arrival-station-layer pos-below no-slide-transition";
+    currentStatusEl.className = "e235-arrival-status-text pos-below no-slide-transition";
 
-        nextStationLayer.className = "e235-arrival-station-layer pos-current";
-        nextStatusEl.className = "e235-arrival-status-text pos-current";
+    nextStationLayer.className = "e235-arrival-station-layer pos-current";
+    nextStatusEl.className = "e235-arrival-status-text pos-current";
 
-        activeStationText = activeStationText === "a" ? "b" : "a";
-        activeStatusText = activeStatusText === "a" ? "b" : "a";
+    void currentStationLayer.offsetWidth;
+    void currentStatusEl.offsetWidth;
 
-        loaderSlideTimer = null;
-    }, 360);
+    requestAnimationFrame(() => {
+        currentStationLayer.className = "e235-arrival-station-layer pos-below";
+        currentStatusEl.className = "e235-arrival-status-text pos-below";
+    });
+
+    activeStationText = activeStationText === "a" ? "b" : "a";
+    activeStatusText = activeStatusText === "a" ? "b" : "a";
+
+    loaderSlideTimer = null;
+}, 360);
 }
 
 function updateLoaderStage(stage) {
@@ -3802,7 +3884,7 @@ async function loadData() {
 
         db.lines = []; db.stations = [];
         const newCompanyFiles = [
-            "keihan.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
+            "keihan.json", "tokyo_metro.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
             "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", 
             "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", 
@@ -4079,7 +4161,7 @@ window.addThrough = function() {
     updateStationLists();
 }
 
-// 🟩 V0.30 處理圖片上傳
+// 🟩 V0.31 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -4108,7 +4190,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.30 移除圖片
+// 🟩 V0.31 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -4278,6 +4360,7 @@ window.changeRecordPage = function(delta) {
 }
 
 function render() {
+	console.log("render triggered");
     trips.sort((a, b) => new Date(b.date) - new Date(a.date));
     
 	renderRideCategoryRatio();
@@ -4294,49 +4377,111 @@ function render() {
     const paginationDiv = document.getElementById("paginationControls");
     listDiv.innerHTML = ""; paginationDiv.innerHTML = "";
 
-    let tripsToDisplay = trips.filter(t => currentDateFilter === "all" || t.date === currentDateFilter);
-    document.getElementById("totalCount").innerText = tripsToDisplay.length;
+    const historySearchKeyword = (
+    document.getElementById("historySearchInput")?.value || ""
+).trim().toLowerCase();
+
+console.log("historySearchKeyword =", historySearchKeyword);
+
+let tripsToDisplay = trips.filter(t => {
+    if (!(currentDateFilter === "all" || t.date === currentDateFilter)) {
+        return false;
+    }
+
+    if (!historySearchKeyword) return true;
+
+    const routeTexts = (Array.isArray(t.routes) ? t.routes : []).map(r => {
+        return `${getCompName(r.company_id)} ${getLineName(r.line_id)}`;
+    }).join(" ");
+
+    const trainText = getTripTrainDisplay(t) || "";
+    const fromText = getStationName(t.from_id) || "";
+    const toText = getStationName(t.to_id) || "";
+    const serviceText = t.serviceType || "";
+
+    const haystack = [
+        routeTexts,
+        trainText,
+        fromText,
+        toText,
+        serviceText
+    ].join(" ").toLowerCase();
+
+    return haystack.includes(historySearchKeyword);
+});
+
+document.getElementById("totalCount").innerText = tripsToDisplay.length;
 
     let totalPages = Math.ceil(tripsToDisplay.length / recordsPerPage) || 1;
     if (currentRecordPage > totalPages) currentRecordPage = totalPages;
     let pagedTrips = tripsToDisplay.slice((currentRecordPage - 1) * recordsPerPage, currentRecordPage * recordsPerPage);
 
-    pagedTrips.forEach((t) => {
-        let originalIndex = trips.indexOf(t);
-        const div = document.createElement("div"); div.className = "trip";
-        
-        let routeHtml = ""; let lastCompany = "";
-        const routes = Array.isArray(t.routes) ? t.routes : [];
+    let lastRenderedDate = "";
 
-routes.forEach((r, idx) => {
-            let compName = getCompName(r.company_id); let lineName = getLineName(r.line_id);
-            if (idx === 0) { routeHtml += `${compName} ${lineName}`; lastCompany = compName; } 
-            else {
-                if (compName === lastCompany) { routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}`; } 
-                else { routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}`; lastCompany = compName; }
-            }
-        });
-        
-        const serviceHtml = t.serviceType ? `<span style="background:var(--danger); color:white; padding:1px 5px; border-radius:3px; font-size:11px; font-weight:bold;">${t.serviceType}</span>` : '';
-        const photoIconHtml = (t.photoTrain || t.photoFrom || t.photoTo) ? `<span style="font-size:12px; margin-left:5px;">📸</span>` : '';
-
-        div.innerHTML = `
-            <div class="trip-header-row">
-                <div class="date">${t.date} ${photoIconHtml}</div>
-                <div style="display:flex; gap:16px;">
-                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="editTrip(${originalIndex})">✏️</span>
-                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="deleteTrip(${originalIndex})">🗑️</span>
-                </div>
-            </div>
-            <div class="route">${routeHtml}</div>
-            <div class="trip-detail">
-                ${serviceHtml} <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
-                <span style="color:var(--border);">|</span>
-                <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
-            </div>
+pagedTrips.forEach((t) => {
+    if (t.date !== lastRenderedDate) {
+        const sep = document.createElement("div");
+        sep.className = "history-date-separator";
+        sep.innerHTML = `
+            <div class="history-date-separator-line"></div>
+            <div class="history-date-separator-label">${t.date || "未設定日期"}</div>
+            <div class="history-date-separator-line"></div>
         `;
-        listDiv.appendChild(div);
+        listDiv.appendChild(sep);
+        lastRenderedDate = t.date;
+    }
+
+    let originalIndex = trips.indexOf(t);
+    const div = document.createElement("div");
+    div.className = "trip";
+    
+    let routeHtml = "";
+    let lastCompany = "";
+    const routes = Array.isArray(t.routes) ? t.routes : [];
+
+    routes.forEach((r, idx) => {
+        let compName = getCompName(r.company_id);
+        let lineName = getLineName(r.line_id);
+
+        if (idx === 0) {
+            routeHtml += `${compName} ${lineName}`;
+            lastCompany = compName;
+        } else {
+            if (compName === lastCompany) {
+                routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}`;
+            } else {
+                routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}`;
+                lastCompany = compName;
+            }
+        }
     });
+    
+    const serviceHtml = t.serviceType
+        ? `<span style="background:var(--danger); color:white; padding:1px 5px; border-radius:3px; font-size:11px; font-weight:bold;">${t.serviceType}</span>`
+        : '';
+
+    const photoIconHtml = (t.photoTrain || t.photoFrom || t.photoTo)
+        ? `<span style="font-size:12px; margin-left:5px;">📸</span>`
+        : '';
+
+    div.innerHTML = `
+        <div class="trip-header-row">
+            <div class="date">${photoIconHtml}</div>
+            <div style="display:flex; gap:16px;">
+                <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="editTrip(${originalIndex})">✏️</span>
+                <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="deleteTrip(${originalIndex})">🗑️</span>
+            </div>
+        </div>
+        <div class="route">${routeHtml}</div>
+        <div class="trip-detail">
+            ${serviceHtml}
+            <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
+            <span style="color:var(--border);">|</span>
+            <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
+        </div>
+    `;
+    listDiv.appendChild(div);
+});
 
     if (totalPages > 1) {
         paginationDiv.innerHTML = `
@@ -4350,6 +4495,8 @@ routes.forEach((r, idx) => {
 	renderRideCategoryRatio();
 	drawBarChart();
 }
+
+window.render = render;
 
 window.openCalendar = function() {
     if(currentDateFilter !== 'all') {
@@ -4644,7 +4791,7 @@ window.editTrip = function(i) {
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
 
-    // 🟩 V0.30 編輯模式載入相片
+    // 🟩 V0.31 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -4697,7 +4844,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.30.json"; a.click();
+    a.download = "rail-log-V0.31.json"; a.click();
 }
 
 window.importData = function() {
@@ -4865,7 +5012,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.30 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.31 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function renderMap() {
@@ -4976,7 +5123,7 @@ const customIcon = L.divIcon({
 }
 
 // =========================================
-// 🟩 V0.30 相冊渲染邏輯
+// 🟩 V0.31 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -5157,7 +5304,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.30 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.31 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
