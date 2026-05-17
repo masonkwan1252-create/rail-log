@@ -6,9 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>鉄道手帳 RAIL LOG V0.31</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="og:image" href="cover.jpg">
+<meta property="og:title" content="鉄道手帳 RAIL LOG">
+<meta property="og:description" content="乘車記錄、足跡地圖與車型相冊">
+<meta property="og:image" content="https://masonkwan1252-create.github.io/rail-log/cover.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://masonkwan1252-create.github.io/rail-log/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23e0e0e0'/><path d='M40 40 h432 v432 h-432 z' fill='%23d9d9d9' stroke='%23999' stroke-width='10'/><rect x='40' y='320' width='432' height='60' fill='%2363BD0F'/><rect x='80' y='80' width='352' height='200' rx='16' fill='%23111'/><rect x='80' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='100' cy='420' r='12' fill='%23fff9c4'/><circle cx='140' cy='420' r='12' fill='%23fff9c4'/><rect x='352' y='400' width='80' height='40' rx='8' fill='%23555'/><circle cx='372' cy='420' r='12' fill='%23fff9c4'/><circle cx='412' cy='420' r='12' fill='%23fff9c4'/><rect x='220' y='100' width='180' height='40' fill='%23fff'/></svg>">
 <meta name="theme-color" content="#e9e9e9" id="theme-color-meta">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="color-scheme" content="light dark">
@@ -2297,6 +2303,291 @@ header::before {
     border: none;
     border-radius: 0;
 }
+
+.route-info-popup .leaflet-popup-content-wrapper {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+}
+
+.route-info-popup .leaflet-popup-content {
+    margin: 10px 12px;
+}
+
+.route-info-popup .leaflet-popup-tip {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+    .route-info-popup .leaflet-popup-content-wrapper,
+    .route-info-popup .leaflet-popup-tip {
+        background: #1f1f21;
+        color: #f5f5f7;
+        border-color: #555;
+    }
+
+    .route-info-popup .leaflet-popup-content div {
+        color: inherit;
+    }
+}
+/* ===== Map Station Sign Refinement ===== */
+
+.station-sign-label {
+    border-radius: 2px !important;
+}
+
+.station-sign-label.full {
+    min-width: 78px !important;
+    max-width: 124px !important;
+}
+
+.station-sign-label.full .station-sign-head {
+    padding: 3px 6px 0 !important;
+    gap: 4px !important;
+}
+
+.station-sign-label.full .station-sign-company-tag {
+    font-size: 7px !important;
+    max-width: 44px !important;
+    border-radius: 2px !important;
+    padding: 2px 4px !important;
+}
+
+.station-sign-label.full .station-sign-type-dot {
+    width: 7px !important;
+    height: 7px !important;
+    border-radius: 1px !important;
+}
+
+.station-sign-label.full .station-sign-body {
+    padding: 2px 6px 7px !important;
+}
+
+.station-sign-label.full .station-sign-name {
+    font-size: 13px !important;
+    max-width: 108px !important;
+    letter-spacing: 0.01em !important;
+}
+
+.station-sign-label.full .station-sign-subline {
+    font-size: 8px !important;
+    max-width: 108px !important;
+}
+
+.station-sign-label.full .station-sign-line {
+    height: 5px !important;
+}
+
+/* 如果 JS 用 medium / small */
+.station-sign-label.medium {
+    min-width: 62px !important;
+    max-width: 98px !important;
+    border-radius: 2px !important;
+}
+
+.station-sign-label.medium .station-sign-name {
+    font-size: 11px !important;
+    max-width: 84px !important;
+}
+
+.station-sign-label.medium .station-sign-line {
+    height: 4px !important;
+}
+
+.station-sign-label.small,
+.station-sign-label.compact {
+    min-width: 48px !important;
+    max-width: 76px !important;
+    border-radius: 2px !important;
+}
+
+.station-sign-label.small .station-sign-name,
+.station-sign-label.compact .station-sign-name {
+    font-size: 9px !important;
+    max-width: 62px !important;
+}
+
+.station-sign-label.small .station-sign-line,
+.station-sign-label.compact .station-sign-line {
+    height: 4px !important;
+}
+/* =========================
+   New Map Station Card Style
+   ========================= */
+
+.station-card {
+    display: inline-flex;
+    align-items: stretch;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.18),
+        0 1px 0 rgba(255,255,255,0.45) inset;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    white-space: nowrap;
+}
+
+.station-card-accent {
+    width: 6px;
+    background: var(--station-accent, #4B5D73);
+    flex: 0 0 auto;
+}
+.station-card-accent-multi {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+}
+
+.station-card-color-segment {
+    flex: 1 1 0;
+    min-height: 4px;
+    width: 100%;
+    display: block;
+}
+.station-card-main {
+    padding: 6px 8px 7px;
+    min-width: 0;
+}
+
+.station-card-top {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
+}
+
+.station-card-pill {
+    display: inline-flex;
+    align-items: center;
+    height: 18px;
+    padding: 0 7px;
+    border-radius: 999px;
+    background: var(--station-category, #4B5D73);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    flex: 0 0 auto;
+}
+
+.station-card-pill-sub {
+    background: rgba(0,0,0,0.06);
+    color: #555;
+    max-width: 82px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.station-card-name {
+    font-weight: 800;
+    color: #1d1d1f;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Full */
+.station-card-full {
+    min-width: 78px;
+    max-width: 132px;
+}
+
+.station-card-full .station-card-name {
+    font-size: 14px;
+    max-width: 104px;
+}
+
+/* Medium */
+.station-card-medium {
+    min-width: 62px;
+    max-width: 102px;
+}
+
+.station-card-medium .station-card-main {
+    padding: 5px 7px 6px;
+}
+
+.station-card-medium .station-card-pill {
+    height: 16px;
+    font-size: 9px;
+    padding: 0 6px;
+}
+
+.station-card-medium .station-card-name {
+    font-size: 12px;
+    max-width: 82px;
+}
+
+/* Small */
+.station-card-small {
+    min-width: 42px;
+    max-width: 74px;
+    border-radius: 8px;
+}
+
+.station-card-small .station-card-accent {
+    width: 5px;
+}
+
+.station-card-small .station-card-main {
+    padding: 4px 6px 5px;
+}
+
+.station-card-small .station-card-name {
+    font-size: 10px;
+    max-width: 56px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .station-card {
+        background: rgba(28,28,30,0.95);
+        border-color: rgba(255,255,255,0.14);
+        box-shadow:
+            0 4px 14px rgba(0,0,0,0.35),
+            0 1px 0 rgba(255,255,255,0.04) inset;
+    }
+
+    .station-card-name {
+        color: #f5f5f7;
+    }
+
+    .station-card-pill-sub {
+        background: rgba(255,255,255,0.08);
+        color: #d0d0d4;
+    }
+}
+
+/* ===== Loop direction selector ===== */
+.loop-direction-wrap {
+    display: none;
+    margin: 12px 0;
+    padding: 10px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+.loop-direction-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--subtext);
+    margin-bottom: 8px;
+}
+.loop-direction-select {
+    font-weight: 700;
+}
+.loop-direction-note {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--subtext);
+    line-height: 1.35;
+}
+
 </style>
 </head>
 
@@ -2485,6 +2776,12 @@ header::before {
                     <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
                 </div>
 
+                <div id="mainLoopDirectionWrap" class="loop-direction-wrap">
+                    <div class="loop-direction-title">環狀線乘車方向</div>
+                    <select id="mainLoopDirection" class="loop-direction-select"></select>
+                    <div class="loop-direction-note">呢個方向會影響地圖 highlight 係行環狀線邊一邊。</div>
+                </div>
+
                 <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
                 <div id="throughContainer"></div>
 
@@ -2629,10 +2926,11 @@ header::before {
     <div class="map-filter-inline">
         <select id="mapCategoryFilter" class="map-filter-select" onchange="handleMapFilterChange()">
             <option value="all">全部</option>
-            <option value="jr">JR</option>
-            <option value="major_private">大手</option>
-            <option value="private">私鐵</option>
-            <option value="third_sector">3セク</option>
+			<option value="test_all_lines">測試</option>
+			<option value="jr">JR</option>
+			<option value="major_private">大手</option>
+			<option value="private">私鐵</option>
+			<option value="third_sector">3セク</option>
         </select>
     </div>
 </div>
@@ -3092,7 +3390,6 @@ onAuthStateChanged(auth, async (user) => {
         if (authLoginStateBadge) authLoginStateBadge.textContent = "已登入";
         if (authUserEmail) authUserEmail.textContent = user.email || "";
 
-        await migrateLocalTripsToCloud(user);
         subscribeTrips();
 
         closeAuthForm();
@@ -3731,7 +4028,8 @@ function normalizeTrip(trip) {
     normalized.photoTrain = normalized.photoTrain || "";
     normalized.photoFrom = normalized.photoFrom || "";
     normalized.photoTo = normalized.photoTo || "";
-
+	normalized.segments = Array.isArray(normalized.segments) ? normalized.segments : [];
+	
     return normalized;
 }
 
@@ -3769,6 +4067,7 @@ window.closeGalleryPreview = function() {
 let db = { companies: [], lines: [], stations: [], trains: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
 let resolve = { company: {}, station: {}, train: {} };
+let railGeometries = {};
 
 let currentDateFilter = "all"; 
 let calViewDate = new Date();
@@ -3783,6 +4082,14 @@ let currentChartType = 'company';
 
 let railMapInstance = null;
 let mapMarkers = [];
+let mapRailGeometryLines = [];
+
+let activeRouteHighlightLayer = null;
+let activeRoutePopup = null;
+let ignoreNextMapClickClear = false;
+let selectedMapRouteState = null;
+let isMapZoomRerendering = false;
+let railSegmentUsageIndex = new Map();
 
 document.getElementById("date").valueAsDate = new Date();
 
@@ -3791,6 +4098,7 @@ window.clearInput = function(id) {
     if (el) {
         el.value = '';
         el.dispatchEvent(new Event('input'));
+        updateAllLoopDirectionUI();
         el.focus();
     }
 }
@@ -3884,7 +4192,7 @@ async function loadData() {
 
         db.lines = []; db.stations = [];
         const newCompanyFiles = [
-            "keihan.json", "tokyo_metro.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
+            "meitetsu.json", "sagami.json", "keikyu.json", "keihan.json", "tokyo_metro.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
             "nankai.json", "mizushima.json", "knt.json", "shintetsu.json", "jr_west.json", 
             "keifuku.json", "ohmi.json", "shigaraki.json", "willer.json", "osaka_mono.json", 
@@ -3904,21 +4212,58 @@ async function loadData() {
         const results = await Promise.all(fetchPromises);
         
         results.forEach(data => {
-            if (!data) return;
-            let compData = Array.isArray(data) ? data[0] : data; 
-            if (compData.lines) {
-                compData.lines.forEach(line => { line.company_id = compData.company_id; db.lines.push(line); });
+    if (!data) return;
+    let compData = Array.isArray(data) ? data[0] : data;
+
+    if (compData.geometries) {
+        Object.entries(compData.geometries).forEach(([key, geo]) => {
+            const wkt =
+                typeof geo === "string"
+                    ? geo
+                    : geo.geometry_wkt || geo.asWKT || geo.geometry || "";
+
+            if (wkt) {
+                railGeometries[`${compData.company_id}:${key}`] = wkt;
+            }
+        });
+    }
+
+    if (compData.lines) {
+                compData.lines.forEach(line => {
+    line.company_id = compData.company_id;
+
+    if (!line.geometry_wkt && compData.geometry_wkt && compData.lines.length === 1) {
+        line.geometry_wkt = compData.geometry_wkt;
+    }
+
+    if (!line.geometry_wkt && compData.asWKT && compData.lines.length === 1) {
+        line.geometry_wkt = compData.asWKT;
+    }
+
+    db.lines.push(line);
+});
             }
             if (compData.stations) {
                 compData.stations.forEach(station => { station.company_id = compData.company_id; db.stations.push(station); });
             }
+		if (compData.trains) {
+    compData.trains.forEach(train => {
+        const trainData = {
+            ...train,
+            company_id: train.company_id || compData.company_id
+        };
+
+        db.trains.push(trainData);
+    });
+}	
         });
 
     } catch (e) { 
         console.log("資料庫載入失敗。", e); 
     } 
     finally {
-        buildMaps();
+buildMaps();
+buildRailSegmentUsageIndex();
 initUILists();
 
 trips = trips.map(normalizeTrip);
@@ -3954,6 +4299,13 @@ updateStationLists();
 }
 
 function buildMaps() {
+    const trainById = {};
+    db.trains.forEach(train => {
+        if (!train || !train.id) return;
+        trainById[train.id] = train;
+    });
+    db.trains = Object.values(trainById);
+	
     db.companies.forEach(c => { maps.company[c.id] = c; resolve.company[c.name] = c.id; });
     db.lines.forEach(l => { maps.line[l.id] = l; });
     db.stations.forEach(s => {
@@ -3963,7 +4315,7 @@ function buildMaps() {
         resolve.station[display] = s.id;
         s._display = display;
     });
-
+	
     let expandedTrains = [];
     db.trains.forEach(t => {
         let compName = maps.company[t.company_id]?.name || "";
@@ -3989,6 +4341,7 @@ function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
     fillList("lineList", db.lines.map(l => l.name));
     updateTrainDatalist();
+    updateMainLoopDirectionUI();
 }
 
 function fillList(listId, dataArray) {
@@ -4021,13 +4374,14 @@ window.switchTab = function(tabId, navElement) {
     }
 }
 
-document.getElementById("line").addEventListener("input", () => updateStationLists());
+document.getElementById("line").addEventListener("input", () => { updateStationLists(); updateMainLoopDirectionUI(); });
 
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
     updateLineList(compName, "lineList");
     updateTrainDatalist(); 
     updateStationLists();
+    updateMainLoopDirectionUI();
 });
 
 window.toggleTrainCompanyUI = function() {
@@ -4091,22 +4445,29 @@ window.updateStationLists = function() {
     const mainCompInput = document.getElementById("company").value;
     const mainCompId = resolve.company[mainCompInput];
     const mainLineInput = document.getElementById("line").value;
+
     fillStationDatalist("stationListFrom", mainCompId, mainLineInput);
 
     let lastCompId = mainCompId;
     let lastLineInput = mainLineInput;
-    
-    const throughBlocks = document.querySelectorAll(".through-block");
-    if (throughBlocks.length > 0) {
-        const lastBlock = throughBlocks[throughBlocks.length - 1];
-        const tcInput = lastBlock.querySelector(".throughCompany").value;
+
+    const throughBlocks = [...document.querySelectorAll(".through-block")];
+
+    throughBlocks.forEach(block => {
+        const tcInput = block.querySelector(".throughCompany")?.value || "";
+        const tlInput = block.querySelector(".throughLine")?.value || "";
+
         if (tcInput) {
             lastCompId = resolve.company[tcInput] || tcInput;
-            lastLineInput = lastBlock.querySelector(".throughLine").value;
         }
-    }
+
+        if (tlInput) {
+            lastLineInput = tlInput;
+        }
+    });
+
     fillStationDatalist("stationListTo", lastCompId, lastLineInput);
-}
+};
 
 function fillStationDatalist(listId, compId, lineInput) {
     const list = document.getElementById(listId);
@@ -4143,22 +4504,40 @@ window.addThrough = function() {
     const uniqueId = "throughLineList_" + Date.now();
     
     div.innerHTML = `
-        <label style="margin-top:0;">直通公司</label>
-        <div class="input-wrapper">
-            <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); updateStationLists();" placeholder="直通公司" onclick="this.select()">
-            <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
-        </div>
-        <datalist id="${uniqueId}"></datalist>
-        <label>直通路線 (實體路線)</label>
-        <div class="input-wrapper">
-            <input class="throughLine" list="${uniqueId}" oninput="updateStationLists()" placeholder="直通路線" onclick="this.select()">
-            <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
-        </div>
-        <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
-    `;
+    <label style="margin-top:0;">直通公司</label>
+    <div class="input-wrapper">
+        <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); const block=this.closest('.through-block'); if(block){ const lineInput=block.querySelector('.throughLine'); if(lineInput) lineInput.value=''; } updateStationLists(); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通公司" onclick="this.select()">
+        <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
+    </div>
+
+    <datalist id="${uniqueId}"></datalist>
+
+    <label>直通路線 (實體路線)</label>
+    <div class="input-wrapper">
+        <input class="throughLine" list="${uniqueId}" oninput="updateStationLists(); autoFillThroughJunction(this); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通路線" onclick="this.select()">
+        <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
+    </div>
+
+    <div class="loop-direction-wrap throughLoopDirectionWrap">
+        <div class="loop-direction-title">環狀線乘車方向</div>
+        <select class="loop-direction-select throughLoopDirectionSelect"></select>
+        <div class="loop-direction-note">呢段直通路線如果係環狀線，會用呢個方向切地圖 highlight。</div>
+    </div>
+
+    <label>経由</label>
+    <div class="input-wrapper">
+        <input class="throughJunctionStation" list="${uniqueId}_junction" placeholder="自動判斷或手動輸入" onclick="this.select()">
+        <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
+    </div>
+
+    <datalist id="${uniqueId}_junction" class="throughJunctionList"></datalist>
+
+    <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
+`;
     document.getElementById("throughContainer").appendChild(div);
     if(lastCompName) updateLineList(lastCompName, uniqueId);
     updateStationLists();
+    updateThroughLoopDirectionUI(div);
 }
 
 // 🟩 V0.31 處理圖片上傳
@@ -4208,6 +4587,153 @@ function clearAllPhotosUI() {
         document.getElementById('preview-' + id).style.display = 'none';
         document.querySelector(`#preview-${id}`).parentElement.querySelector('.remove-photo-btn').style.display = 'none';
         document.querySelector(`#preview-${id}`).parentElement.querySelector('input[type="file"]').value = "";
+    });
+}
+
+
+function findLineByCompanyAndName(companyId, lineInput) {
+    return db.lines.find(l =>
+        l.company_id === companyId &&
+        (l.name === lineInput || l.id === lineInput)
+    ) || maps.line[lineInput] || null;
+}
+
+function getCurrentMainLine() {
+    const compName = document.getElementById("company")?.value || "";
+    const lineInput = document.getElementById("line")?.value || "";
+    const compId = resolve.company[compName] || compName;
+    return findLineByCompanyAndName(compId, lineInput);
+}
+
+function isLoopLine(lineOrId) {
+    const line = typeof lineOrId === "string" ? maps.line[lineOrId] : lineOrId;
+    if (!line) return false;
+    return line.is_loop === true || line.is_loop === "true" || line.loop === true || line.loop === "true";
+}
+
+function getLineDirectionLabels(lineOrId) {
+    const line = typeof lineOrId === "string" ? maps.line[lineOrId] : lineOrId;
+    const labels = line?.direction_labels || {};
+
+    return {
+        forward: labels.forward || "外回り",
+        reverse: labels.reverse || "内回り"
+    };
+}
+
+function renderDirectionSelectOptions(selectEl, line, selectedValue = "forward") {
+    if (!selectEl || !line) return;
+
+    const labels = getLineDirectionLabels(line);
+    selectEl.innerHTML = `
+        <option value="forward">${labels.forward}</option>
+        <option value="reverse">${labels.reverse}</option>
+    `;
+    selectEl.value = selectedValue === "reverse" ? "reverse" : "forward";
+}
+
+function updateMainLoopDirectionUI(selectedValue = null) {
+    const wrap = document.getElementById("mainLoopDirectionWrap");
+    const select = document.getElementById("mainLoopDirection");
+    if (!wrap || !select) return;
+
+    const line = getCurrentMainLine();
+
+    if (isLoopLine(line)) {
+        wrap.style.display = "block";
+        renderDirectionSelectOptions(select, line, selectedValue || select.value || "forward");
+    } else {
+        wrap.style.display = "none";
+        select.innerHTML = "";
+    }
+}
+
+function getThroughBlockLine(block) {
+    if (!block) return null;
+
+    const compName = block.querySelector(".throughCompany")?.value || "";
+    const lineInput = block.querySelector(".throughLine")?.value || "";
+    const compId = resolve.company[compName] || compName;
+
+    return findLineByCompanyAndName(compId, lineInput);
+}
+
+function updateThroughLoopDirectionUI(block, selectedValue = null) {
+    const wrap = block?.querySelector(".throughLoopDirectionWrap");
+    const select = block?.querySelector(".throughLoopDirectionSelect");
+    if (!wrap || !select) return;
+
+    const line = getThroughBlockLine(block);
+
+    if (isLoopLine(line)) {
+        wrap.style.display = "block";
+        renderDirectionSelectOptions(select, line, selectedValue || select.value || "forward");
+    } else {
+        wrap.style.display = "none";
+        select.innerHTML = "";
+    }
+}
+
+function updateAllLoopDirectionUI() {
+    updateMainLoopDirectionUI();
+    document.querySelectorAll(".through-block").forEach(block => updateThroughLoopDirectionUI(block));
+}
+
+function getLoopDirectionForRoute(route, routeIndex) {
+    const line = maps.line[route?.line_id];
+    if (!isLoopLine(line)) return "";
+
+    if (routeIndex === 0) {
+        return document.getElementById("mainLoopDirection")?.value || "forward";
+    }
+
+    const block = document.querySelectorAll(".through-block")[routeIndex - 1];
+    return block?.querySelector(".throughLoopDirectionSelect")?.value || "forward";
+}
+
+function getLoopDirectionLabel(lineId, direction) {
+    if (!direction) return "";
+    const labels = getLineDirectionLabels(lineId);
+    return direction === "reverse" ? labels.reverse : labels.forward;
+}
+
+function buildTripSegmentsFromForm(routes, fromId, toId) {
+    if (!Array.isArray(routes) || routes.length === 0) return [];
+
+    if (routes.length === 1) {
+        const segment = {
+            company_id: routes[0].company_id,
+            line_id: routes[0].line_id,
+            from_id: fromId,
+            to_id: toId
+        };
+
+        const direction = getLoopDirectionForRoute(routes[0], 0);
+        if (direction) segment.direction = direction;
+
+        return [segment];
+    }
+
+    const junctionIds = [...document.querySelectorAll(".throughJunctionStation")]
+        .map(input => resolve.station[input.value] || input.value)
+        .filter(Boolean);
+
+    if (junctionIds.length !== routes.length - 1) {
+        return [];
+    }
+
+    return routes.map((route, index) => {
+        const segment = {
+            company_id: route.company_id,
+            line_id: route.line_id,
+            from_id: index === 0 ? fromId : junctionIds[index - 1],
+            to_id: index === routes.length - 1 ? toId : junctionIds[index]
+        };
+
+        const direction = getLoopDirectionForRoute(route, index);
+        if (direction) segment.direction = direction;
+
+        return segment;
     });
 }
 
@@ -4272,14 +4798,24 @@ window.saveTrip = async function () {
         const photoToUrl = photoToInput
             ? await uploadBase64ToStorage(photoToInput, `users/${user.uid}/trips/${tripId}/photoTo.jpg`)
             : (existingTrip?.photoToUrl || existingTrip?.photoTo || "");
+		
+		const fromId = resolve.station[getVal("from")] || getVal("from");
+		const toId = resolve.station[getVal("to")] || getVal("to");
+		const segments = buildTripSegmentsFromForm(routes, fromId, toId);
 
+		if (routes.length > 1 && segments.length === 0) {
+			showToast("請確認直通交界站", "var(--danger)");
+			return;
+		}
+		
         const trip = {
             date: getVal("date"),
             serviceType: getVal("serviceType"),
             routes: routes,
             train_id: finalTrainId,
-            from_id: resolve.station[getVal("from")] || getVal("from"),
-            to_id: resolve.station[getVal("to")] || getVal("to"),
+            from_id: fromId,
+			to_id: toId,
+			segments: segments,
 
             photoTrainUrl,
             photoFromUrl,
@@ -4302,6 +4838,7 @@ window.saveTrip = async function () {
         document.getElementById("useOtherTrainCompany").checked = false;
         document.getElementById("otherTrainCompanyWrapper").style.display = "none";
         document.getElementById("trainOwnerCompany").value = "";
+        updateAllLoopDirectionUI();
 
         clearAllPhotosUI();
         updateLineList("", "lineList");
@@ -4357,6 +4894,15 @@ window.changeDay = function(delta) {
 window.changeRecordPage = function(delta) {
     currentRecordPage += delta;
     render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+function getTripDirectionSummary(trip) {
+    const labels = getTripSegments(trip)
+        .map(seg => getLoopDirectionLabel(seg.line_id, seg.direction))
+        .filter(Boolean);
+
+    return [...new Set(labels)].join(" / ");
 }
 
 function render() {
@@ -4478,6 +5024,7 @@ pagedTrips.forEach((t) => {
             <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
             <span style="color:var(--border);">|</span>
             <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
+            ${getTripDirectionSummary(t) ? `<span style="color:var(--border);">|</span><span>${getTripDirectionSummary(t)}</span>` : ""}
         </div>
     `;
     listDiv.appendChild(div);
@@ -4748,6 +5295,973 @@ function renderRideCategoryRatio() {
     `;
 }
 
+function parseWKTMultiLineString(wkt) {
+    if (!wkt || typeof wkt !== "string") return [];
+
+    const body = wkt
+        .replace(/^MULTILINESTRING\s*\(\(/i, "")
+        .replace(/\)\)\s*$/i, "");
+
+    return body.split(/\),\s*\(/).map(line =>
+        line.split(",").map(pair => {
+            const [lng, lat] = pair.trim().split(/\s+/).map(Number);
+            return [lat, lng];
+        }).filter(p => Number.isFinite(p[0]) && Number.isFinite(p[1]))
+    ).filter(line => line.length >= 2);
+}
+
+function hasRiddenLine(lineId) {
+    return trips.some(t =>
+        Array.isArray(t.routes) &&
+        t.routes.some(r => r.line_id === lineId)
+    );
+}
+
+function findJunctionStations(lineIdA, lineIdB) {
+    const lineA = maps.line[lineIdA];
+    const lineB = maps.line[lineIdB];
+
+    if (!lineA?.sequence || !lineB?.sequence) return [];
+
+    const setB = new Set(lineB.sequence);
+
+    return lineA.sequence
+        .filter(stnId => setB.has(stnId))
+        .map(stnId => maps.station[stnId])
+        .filter(Boolean);
+}
+
+function getLineIdFromBlock(block) {
+    const compName = block.querySelector(".throughCompany")?.value || "";
+    const lineName = block.querySelector(".throughLine")?.value || "";
+
+    const compId = resolve.company[compName] || compName;
+
+    return db.lines.find(l => l.company_id === compId && l.name === lineName)?.id || lineName;
+}
+
+function getPreviousLineIdForBlock(block) {
+    const blocks = [...document.querySelectorAll(".through-block")];
+    const index = blocks.indexOf(block);
+
+    if (index <= 0) {
+        const compName = document.getElementById("company").value;
+        const lineName = document.getElementById("line").value;
+        const compId = resolve.company[compName] || compName;
+
+        return db.lines.find(l => l.company_id === compId && l.name === lineName)?.id || lineName;
+    }
+
+    return getLineIdFromBlock(blocks[index - 1]);
+}
+
+window.autoFillThroughJunction = function(inputEl) {
+    const block = inputEl.closest(".through-block");
+    if (!block) return;
+
+    const currentLineId = getLineIdFromBlock(block);
+    const prevLineId = getPreviousLineIdForBlock(block);
+
+    const junctionInput = block.querySelector(".throughJunctionStation");
+    const junctionList = block.querySelector(".throughJunctionList");
+
+    if (!junctionInput || !junctionList) return;
+
+    const candidates = findJunctionStations(prevLineId, currentLineId);
+
+    junctionList.innerHTML = "";
+    candidates.forEach(stn => {
+        junctionList.appendChild(new Option(stn._display || stn.name));
+    });
+
+    if (candidates.length === 1) {
+        junctionInput.value = candidates[0]._display || candidates[0].name;
+    } else {
+        junctionInput.value = "";
+    }
+};
+
+function distanceSq(latlng, station) {
+    const dLat = latlng[0] - Number(station.lat);
+    const dLng = latlng[1] - Number(station.lng);
+    return dLat * dLat + dLng * dLng;
+}
+
+function findNearestPointIndex(latlngs, station) {
+    if (!station || station.lat == null || station.lng == null) return -1;
+
+    let bestIndex = -1;
+    let bestDist = Infinity;
+
+    latlngs.forEach((p, index) => {
+        const d = distanceSq(p, station);
+        if (d < bestDist) {
+            bestDist = d;
+            bestIndex = index;
+        }
+    });
+
+    return bestIndex;
+}
+
+function isSameLatLngPoint(a, b, tolerance = 0.000001) {
+    if (!Array.isArray(a) || !Array.isArray(b)) return false;
+    return Math.abs(Number(a[0]) - Number(b[0])) <= tolerance &&
+        Math.abs(Number(a[1]) - Number(b[1])) <= tolerance;
+}
+
+function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward") {
+    let points = Array.isArray(latlngs) ? latlngs.slice() : [];
+    if (points.length < 2) return [];
+
+    // WKT 環狀線有時最後一點會重複第一點；切方向時先移除尾端重複點，避免繞圈時計多一格。
+    if (points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
+        points = points.slice(0, -1);
+    }
+
+    const fromPointIndex = findNearestPointIndex(points, fromStation);
+    const toPointIndex = findNearestPointIndex(points, toStation);
+
+    if (fromPointIndex === -1 || toPointIndex === -1) return [];
+    if (fromPointIndex === toPointIndex) return [points[fromPointIndex]];
+
+    const part = [];
+    const step = direction === "reverse" ? -1 : 1;
+    let index = fromPointIndex;
+    let safety = 0;
+
+    while (safety <= points.length) {
+        part.push(points[index]);
+        if (index === toPointIndex) break;
+
+        index = (index + step + points.length) % points.length;
+        safety += 1;
+    }
+
+    return part.length >= 2 ? part : [];
+}
+
+function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null) {
+    if (isLoopLine(line) && (direction === "forward" || direction === "reverse")) {
+        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction);
+    }
+
+    const fromPointIndex = findNearestPointIndex(latlngs, fromStation);
+    const toPointIndex = findNearestPointIndex(latlngs, toStation);
+
+    if (fromPointIndex === -1 || toPointIndex === -1) return [];
+
+    // 舊記錄如果冇 direction，環狀線先揀較短嗰邊，避免山手線呢類 loop 被固定切錯大半圈。
+    if (isLoopLine(line) && !direction) {
+        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward");
+        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse");
+        if (forwardPart.length >= 2 && reversePart.length >= 2) {
+            return forwardPart.length <= reversePart.length ? forwardPart : reversePart;
+        }
+    }
+
+    const start = Math.min(fromPointIndex, toPointIndex);
+    const end = Math.max(fromPointIndex, toPointIndex);
+
+    return latlngs.slice(start, end + 1);
+}
+
+function pointDistanceSq(a, b) {
+    const dLat = a[0] - b[0];
+    const dLng = a[1] - b[1];
+    return dLat * dLat + dLng * dLng;
+}
+
+function stitchLineParts(parts, tolerance = 0.00015) {
+    const usable = parts
+        .filter(part => Array.isArray(part) && part.length >= 2)
+        .map(part => part.slice());
+
+    const stitched = [];
+    const toleranceSq = tolerance * tolerance;
+
+    while (usable.length > 0) {
+        let current = usable.shift();
+        let changed = true;
+
+        while (changed) {
+            changed = false;
+
+            const currentStart = current[0];
+            const currentEnd = current[current.length - 1];
+
+            let bestIndex = -1;
+            let bestMode = "";
+            let bestDist = Infinity;
+
+            usable.forEach((part, index) => {
+                const partStart = part[0];
+                const partEnd = part[part.length - 1];
+
+                const checks = [
+                    { mode: "end-start", dist: pointDistanceSq(currentEnd, partStart) },
+                    { mode: "end-end", dist: pointDistanceSq(currentEnd, partEnd) },
+                    { mode: "start-end", dist: pointDistanceSq(currentStart, partEnd) },
+                    { mode: "start-start", dist: pointDistanceSq(currentStart, partStart) }
+                ];
+
+                checks.forEach(check => {
+                    if (check.dist < bestDist) {
+                        bestDist = check.dist;
+                        bestIndex = index;
+                        bestMode = check.mode;
+                    }
+                });
+            });
+
+            if (bestIndex >= 0 && bestDist <= toleranceSq) {
+                let part = usable.splice(bestIndex, 1)[0];
+
+                if (bestMode === "end-start") {
+                    current = current.concat(part.slice(1));
+                } else if (bestMode === "end-end") {
+                    part.reverse();
+                    current = current.concat(part.slice(1));
+                } else if (bestMode === "start-end") {
+                    current = part.slice(0, -1).concat(current);
+                } else if (bestMode === "start-start") {
+                    part.reverse();
+                    current = part.slice(0, -1).concat(current);
+                }
+
+                changed = true;
+            }
+        }
+
+        stitched.push(current);
+    }
+
+    return stitched;
+}
+
+function getTripSegments(trip) {
+    if (Array.isArray(trip.segments) && trip.segments.length > 0) {
+        return trip.segments;
+    }
+
+    const routes = Array.isArray(trip.routes) ? trip.routes : [];
+
+    if (routes.length === 1) {
+        const segment = {
+            company_id: routes[0].company_id,
+            line_id: routes[0].line_id,
+            from_id: trip.from_id,
+            to_id: trip.to_id
+        };
+        if (trip.direction) segment.direction = trip.direction;
+        return [segment];
+    }
+
+    return [];
+}
+
+function getRiddenSegmentsForLine(lineId) {
+    const segments = [];
+
+    trips.forEach(t => {
+        getTripSegments(t).forEach(seg => {
+            if (seg.line_id !== lineId) return;
+
+            segments.push({
+                fromId: seg.from_id,
+                toId: seg.to_id,
+                direction: seg.direction || ""
+            });
+        });
+    });
+
+    return segments;
+}
+
+function clearSelectedMapRoute(clearState = true) {
+    if (activeRouteHighlightLayer && railMapInstance) {
+        railMapInstance.removeLayer(activeRouteHighlightLayer);
+    }
+
+    if (activeRoutePopup && railMapInstance) {
+        railMapInstance.closePopup(activeRoutePopup);
+    }
+
+    activeRouteHighlightLayer = null;
+    activeRoutePopup = null;
+
+    if (clearState) {
+        selectedMapRouteState = null;
+    }
+}
+
+function escapeHtml(text) {
+    return String(text || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function getLineGeometryParts(line) {
+    const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
+    if (!wkt) return [];
+
+    const rawParts = parseWKTMultiLineString(wkt);
+
+    return typeof stitchLineParts === "function"
+        ? stitchLineParts(rawParts)
+        : rawParts;
+}
+
+function normalizeSegmentPoint(point, precision = 5) {
+    // point = [lat, lng]
+    const lat = Number(point[0]).toFixed(precision);
+    const lng = Number(point[1]).toFixed(precision);
+    return `${lng},${lat}`;
+}
+
+function makeSegmentKey(a, b) {
+    const keyA = normalizeSegmentPoint(a);
+    const keyB = normalizeSegmentPoint(b);
+
+    // 正反方向視為同一段
+    return keyA < keyB ? `${keyA}|${keyB}` : `${keyB}|${keyA}`;
+}
+
+function buildRailSegmentUsageIndex() {
+    railSegmentUsageIndex = new Map();
+
+    db.lines.forEach(line => {
+        const parts = getLineGeometryParts(line);
+
+        parts.forEach(latlngs => {
+            for (let i = 0; i < latlngs.length - 1; i++) {
+                const a = latlngs[i];
+                const b = latlngs[i + 1];
+
+                const key = makeSegmentKey(a, b);
+
+                if (!railSegmentUsageIndex.has(key)) {
+                    railSegmentUsageIndex.set(key, []);
+                }
+
+                const usage = railSegmentUsageIndex.get(key);
+
+                if (!usage.some(item => item.lineId === line.id)) {
+                    usage.push({
+                        lineId: line.id,
+                        companyId: line.company_id || "",
+                        lineName: line.name || line.id,
+                        color: getLineThemeColor(line, line.company_id || "")
+                    });
+                }
+            }
+        });
+    });
+
+    console.log("railSegmentUsageIndex built:", railSegmentUsageIndex.size);
+}
+
+function getSegmentUsage(segmentKey) {
+    if (!segmentKey) return [];
+    return railSegmentUsageIndex.get(segmentKey) || [];
+}
+
+function isSharedSegmentKey(segmentKey) {
+    return getSegmentUsage(segmentKey).length > 1;
+}
+
+function distancePointToSegmentSq(point, a, b) {
+    const px = point.lng;
+    const py = point.lat;
+    const ax = a[1];
+    const ay = a[0];
+    const bx = b[1];
+    const by = b[0];
+
+    const dx = bx - ax;
+    const dy = by - ay;
+
+    if (dx === 0 && dy === 0) {
+        const ex = px - ax;
+        const ey = py - ay;
+        return ex * ex + ey * ey;
+    }
+
+    let t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
+    t = Math.max(0, Math.min(1, t));
+
+    const cx = ax + t * dx;
+    const cy = ay + t * dy;
+
+    const ex = px - cx;
+    const ey = py - cy;
+
+    return ex * ex + ey * ey;
+}
+
+function findNearestClickedSegment(line, allLineParts, clickLatLng) {
+    let best = null;
+    let bestDist = Infinity;
+
+    allLineParts.forEach(latlngs => {
+        for (let i = 0; i < latlngs.length - 1; i++) {
+            const a = latlngs[i];
+            const b = latlngs[i + 1];
+            const segmentKey = makeSegmentKey(a, b);
+            const dist = distancePointToSegmentSq(clickLatLng, a, b);
+
+            if (dist < bestDist) {
+                bestDist = dist;
+                best = {
+                    type: "auto_segment",
+                    segmentKey,
+                    a,
+                    b,
+                    usage: getSegmentUsage(segmentKey)
+                };
+            }
+        }
+    });
+
+    if (!best) {
+        return {
+            type: "auto_segment",
+            segmentKey: null,
+            a: null,
+            b: null,
+            usage: [{
+                lineId: line.id,
+                companyId: line.company_id || "",
+                lineName: line.name || line.id,
+                color: getLineThemeColor(line, line.company_id || "")
+            }]
+        };
+    }
+
+    if (!best.usage || best.usage.length === 0) {
+        best.usage = [{
+            lineId: line.id,
+            companyId: line.company_id || "",
+            lineName: line.name || line.id,
+            color: getLineThemeColor(line, line.company_id || "")
+        }];
+    }
+
+    return best;
+}
+
+function hydrateClickedSegment(clickedSegment, line, allLineParts) {
+    if (!clickedSegment?.segmentKey) return clickedSegment || null;
+
+    const usage = getSegmentUsage(clickedSegment.segmentKey);
+
+    for (const latlngs of allLineParts) {
+        for (let i = 0; i < latlngs.length - 1; i++) {
+            const a = latlngs[i];
+            const b = latlngs[i + 1];
+
+            if (makeSegmentKey(a, b) === clickedSegment.segmentKey) {
+                return {
+                    type: "auto_segment",
+                    segmentKey: clickedSegment.segmentKey,
+                    a,
+                    b,
+                    usage
+                };
+            }
+        }
+    }
+
+    return {
+        type: "auto_segment",
+        segmentKey: clickedSegment.segmentKey,
+        a: null,
+        b: null,
+        usage
+    };
+}
+
+function getSharedSectionParts(line, allLineParts, clickedSegment) {
+    if (!clickedSegment?.segmentKey || !isSharedSegmentKey(clickedSegment.segmentKey)) {
+        return allLineParts;
+    }
+
+    const result = [];
+
+    allLineParts.forEach(latlngs => {
+        let hitIndex = -1;
+
+        for (let i = 0; i < latlngs.length - 1; i++) {
+            const key = makeSegmentKey(latlngs[i], latlngs[i + 1]);
+
+            if (key === clickedSegment.segmentKey) {
+                hitIndex = i;
+                break;
+            }
+        }
+
+        if (hitIndex === -1) return;
+
+        let start = hitIndex;
+        let end = hitIndex;
+
+        while (start > 0) {
+            const prevKey = makeSegmentKey(latlngs[start - 1], latlngs[start]);
+            if (!isSharedSegmentKey(prevKey)) break;
+            start--;
+        }
+
+        while (end < latlngs.length - 2) {
+            const nextKey = makeSegmentKey(latlngs[end + 1], latlngs[end + 2]);
+            if (!isSharedSegmentKey(nextKey)) break;
+            end++;
+        }
+
+        const sharedPart = latlngs.slice(start, end + 2);
+        if (sharedPart.length >= 2) {
+            result.push(sharedPart);
+        }
+    });
+
+    return result.length > 0 ? result : allLineParts;
+}
+
+function getSelectedRouteHighlightColors(line, clickedSegment) {
+    if (clickedSegment?.segmentKey && isSharedSegmentKey(clickedSegment.segmentKey)) {
+        const colors = getSegmentUsage(clickedSegment.segmentKey)
+            .map(item => item.color)
+            .filter(Boolean);
+
+        return [...new Set(colors)];
+    }
+
+    const companyId = line.company_id || "";
+    return [getLineThemeColor(line, companyId)];
+}
+
+function getRouteGroupFromClickedSegment(line, clickedSegment) {
+    if (clickedSegment?.segmentKey && isSharedSegmentKey(clickedSegment.segmentKey)) {
+        const usage = getSegmentUsage(clickedSegment.segmentKey);
+
+        const lines = usage
+            .map(item => maps.line[item.lineId])
+            .filter(Boolean);
+
+        return lines.length > 0 ? lines : [line];
+    }
+
+    return [line];
+}
+
+function buildMixedHighlightLayers(latlngs, colors) {
+    const safeColors = Array.isArray(colors) && colors.length > 0
+        ? colors
+        : ["#63BD0F"];
+
+    // 單色：普通粗線
+    if (safeColors.length === 1) {
+        return [
+            L.polyline(latlngs, {
+                color: safeColors[0],
+                weight: 9,
+                opacity: 0.95,
+                lineCap: "round",
+                lineJoin: "round",
+                smoothFactor: 1,
+                interactive: false
+            })
+        ];
+    }
+
+    // 多色共用段：先畫白色外框，令並排線更清楚
+    const layers = [
+        L.polyline(latlngs, {
+            color: "#ffffff",
+            weight: 12,
+            opacity: 0.88,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: false
+        })
+    ];
+
+    // Leaflet 原生 polyline 無 offset，所以用不同 weight 疊出「內外雙線」效果
+    // 2 條線：外圈第一色 + 內圈第二色
+    if (safeColors.length === 2) {
+        layers.push(
+            L.polyline(latlngs, {
+                color: safeColors[0],
+                weight: 10,
+                opacity: 0.96,
+                lineCap: "round",
+                lineJoin: "round",
+                smoothFactor: 1,
+                interactive: false
+            })
+        );
+
+        layers.push(
+            L.polyline(latlngs, {
+                color: safeColors[1],
+                weight: 5,
+                opacity: 0.98,
+                lineCap: "round",
+                lineJoin: "round",
+                smoothFactor: 1,
+                interactive: false
+            })
+        );
+
+        return layers;
+    }
+
+    // 3 條或以上：用「彩色外圈 + 白隔線 + 彩色內線」呈現
+    layers.push(
+        L.polyline(latlngs, {
+            color: safeColors[0],
+            weight: 12,
+            opacity: 0.94,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: false
+        })
+    );
+
+    layers.push(
+        L.polyline(latlngs, {
+            color: "#ffffff",
+            weight: 8,
+            opacity: 0.9,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: false
+        })
+    );
+
+    layers.push(
+        L.polyline(latlngs, {
+            color: safeColors[1],
+            weight: 5,
+            opacity: 0.98,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: false
+        })
+    );
+
+    layers.push(
+        L.polyline(latlngs, {
+            color: safeColors[2],
+            weight: 2.5,
+            opacity: 0.98,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: false
+        })
+    );
+
+    return layers;
+}
+
+function buildRoutePopupHtml(line, clickedSegment = null) {
+    const isSharedSegment =
+        clickedSegment?.segmentKey &&
+        isSharedSegmentKey(clickedSegment.segmentKey);
+
+    const routeGroup = getRouteGroupFromClickedSegment(line, clickedSegment);
+
+    const mainCompanyId = line.company_id || "";
+    const categoryColor = getLineThemeColor(line, mainCompanyId);
+    const categoryLabel = getRailCompanyShortLabel(mainCompanyId);
+
+    const routeRows = routeGroup.map(route => {
+        const companyId = route.company_id || "";
+        const companyName = getCompName(companyId);
+        const lineName = route.name || getLineName(route.id) || route.id;
+        const routeColor = getLineThemeColor(route, companyId);
+
+        return `
+            <div style="
+                display:flex;
+                align-items:center;
+                gap:7px;
+                padding:5px 0;
+                border-top:1px solid rgba(0,0,0,0.08);
+            ">
+                <span style="
+                    width:7px;
+                    height:22px;
+                    border-radius:2px;
+                    background:${routeColor};
+                    flex:0 0 auto;
+                "></span>
+
+                <div style="min-width:0;">
+                    <div style="
+                        font-size:14px;
+                        font-weight:800;
+                        color:#1d1d1f;
+                        line-height:1.25;
+                        white-space:nowrap;
+                    ">
+                        ${escapeHtml(lineName)}
+                    </div>
+
+                    <div style="
+                        font-size:11px;
+                        color:#666;
+                        margin-top:2px;
+                        line-height:1.25;
+                        white-space:nowrap;
+                    ">
+                        ${escapeHtml(companyName)}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    return `
+        <div style="
+            min-width:170px;
+            font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Noto Sans JP',sans-serif;
+        ">
+            <div style="
+                display:flex;
+                align-items:center;
+                gap:6px;
+                margin-bottom:7px;
+            ">
+                <div style="
+                    font-size:11px;
+                    font-weight:800;
+                    color:#fff;
+                    background:${categoryColor};
+                    display:inline-block;
+                    padding:3px 7px;
+                    border-radius:999px;
+                ">
+                    ${escapeHtml(categoryLabel)}
+                </div>
+
+                ${isSharedSegment ? `
+                    <div style="
+                        font-size:11px;
+                        font-weight:800;
+                        color:#fff;
+                        background:#444;
+                        display:inline-block;
+                        padding:3px 7px;
+                        border-radius:999px;
+                    ">
+                        共用区間
+                    </div>
+                ` : ""}
+            </div>
+
+            ${routeRows}
+        </div>
+    `;
+}
+
+function showSelectedMapRoute(line, allLineParts, latlng, saveState = true, clickedSegment = null) {
+    if (!railMapInstance) return;
+
+    clearSelectedMapRoute(false);
+
+    const segment = hydrateClickedSegment(clickedSegment, line, allLineParts);
+
+    const highlightParts =
+        segment?.segmentKey && isSharedSegmentKey(segment.segmentKey)
+            ? getSharedSectionParts(line, allLineParts, segment)
+            : allLineParts;
+
+    const highlightColors = getSelectedRouteHighlightColors(line, segment);
+
+    activeRouteHighlightLayer = L.featureGroup(
+        highlightParts
+            .filter(latlngs => Array.isArray(latlngs) && latlngs.length >= 2)
+            .flatMap(latlngs => buildMixedHighlightLayers(latlngs, highlightColors))
+    ).addTo(railMapInstance);
+
+    activeRouteHighlightLayer.bringToFront();
+
+    activeRoutePopup = L.popup({
+        className: "route-info-popup",
+        closeButton: false,
+        autoClose: false,
+        closeOnClick: false,
+        autoPan: false,
+        offset: [0, -6]
+    })
+        .setLatLng(latlng)
+        .setContent(buildRoutePopupHtml(line, segment))
+        .openOn(railMapInstance);
+
+    if (saveState) {
+        selectedMapRouteState = {
+            lineId: line.id,
+            latlng: {
+                lat: latlng.lat,
+                lng: latlng.lng
+            },
+            clickedSegment: segment?.segmentKey
+                ? {
+                    segmentKey: segment.segmentKey
+                }
+                : null
+        };
+    }
+}
+
+function renderRailGeometries(selectedCategory = "all") {
+    if (!railMapInstance) return;
+
+    const routeToRestore = isMapZoomRerendering ? selectedMapRouteState : null;
+    let routeRestoreData = null;
+
+    clearSelectedMapRoute(!routeToRestore);
+
+    mapRailGeometryLines.forEach(layer => railMapInstance.removeLayer(layer));
+    mapRailGeometryLines = [];
+
+    const isTestMode = selectedCategory === "test_all_lines";
+
+    db.lines.forEach(line => {
+        const allLineParts = getLineGeometryParts(line);
+        if (allLineParts.length === 0) return;
+
+        const companyId = line.company_id || "";
+        const companyCategory = normalizeMapFilterCategory(getRailCompanyCategory(companyId));
+
+        if (
+            selectedCategory !== "all" &&
+            selectedCategory !== "test_all_lines" &&
+            companyCategory !== selectedCategory
+        ) {
+            return;
+        }
+
+        if (routeToRestore && routeToRestore.lineId === line.id) {
+            routeRestoreData = {
+                line,
+                allLineParts
+            };
+        }
+
+        const baseColor = isTestMode ? "#666" : "#777";
+        const highlightColor = getLineThemeColor(line, companyId);
+
+        const handleRouteClick = (e) => {
+            ignoreNextMapClickClear = true;
+
+            if (e.originalEvent) {
+                L.DomEvent.stop(e.originalEvent);
+                e.originalEvent.preventDefault();
+                e.originalEvent.stopPropagation();
+            }
+
+            const clickedSegment = findNearestClickedSegment(line, allLineParts, e.latlng);
+
+            showSelectedMapRoute(
+                line,
+                allLineParts,
+                e.latlng,
+                true,
+                clickedSegment
+            );
+
+            setTimeout(() => {
+                ignoreNextMapClickClear = false;
+            }, 80);
+        };
+
+        // 1) 全線底線：全部可點擊
+        allLineParts.forEach(latlngs => {
+            const baseLayer = L.polyline(latlngs, {
+                color: baseColor,
+                weight: isTestMode ? 3 : 4,
+                opacity: isTestMode ? 0.7 : 0.45,
+                lineCap: "round",
+                lineJoin: "round",
+                smoothFactor: 1,
+                interactive: true
+            }).addTo(railMapInstance);
+
+            baseLayer.on("click", handleRouteClick);
+
+            const hitLayer = L.polyline(latlngs, {
+                color: "#000",
+                weight: 22,
+                opacity: 0.01,
+                lineCap: "round",
+                lineJoin: "round",
+                smoothFactor: 1,
+                interactive: true
+            }).addTo(railMapInstance);
+
+            hitLayer.bringToFront();
+            hitLayer.on("click", handleRouteClick);
+
+            mapRailGeometryLines.push(baseLayer);
+            mapRailGeometryLines.push(hitLayer);
+        });
+
+        if (isTestMode) return;
+
+        // 2) 已乘搭 from → to highlight
+        const riddenSegments = getRiddenSegmentsForLine(line.id);
+        if (riddenSegments.length === 0) return;
+
+        riddenSegments.forEach(seg => {
+            const fromStation = maps.station[seg.fromId];
+            const toStation = maps.station[seg.toId];
+
+            if (!fromStation || !toStation) return;
+
+            allLineParts.forEach(latlngs => {
+                const part = extractLinePartByStations(latlngs, fromStation, toStation, seg.direction || "", line);
+
+                if (part.length < 2) return;
+
+                const highlightLayer = L.polyline(part, {
+                    color: highlightColor,
+                    weight: 6,
+                    opacity: 0.92,
+                    lineCap: "round",
+                    lineJoin: "round",
+                    smoothFactor: 1,
+                    interactive: true
+                }).addTo(railMapInstance);
+
+                highlightLayer.on("click", handleRouteClick);
+
+                mapRailGeometryLines.push(highlightLayer);
+            });
+        });
+    });
+
+    if (routeToRestore && routeRestoreData) {
+        showSelectedMapRoute(
+            routeRestoreData.line,
+            routeRestoreData.allLineParts,
+            L.latLng(routeToRestore.latlng.lat, routeToRestore.latlng.lng),
+            false,
+            routeToRestore.clickedSegment || null
+        );
+    }
+
+    isMapZoomRerendering = false;
+}
+
 window.editTrip = function(i) {
     const t = trips[i];
     let setVal = (id, val) => document.getElementById(id).value = val || "";
@@ -4761,16 +6275,36 @@ window.editTrip = function(i) {
 	setVal("line", maps.line[t.routes[0].line_id]?.name || t.routes[0].line_id);
 	
     document.getElementById("throughContainer").innerHTML = "";
-    t.routes.slice(1).forEach(r => {
-        addThrough();
-        const blocks = document.querySelectorAll(".through-block");
-        const lastBlock = blocks[blocks.length - 1];
-        const cName = maps.company[r.company_id]?.name || r.company_id;
-        lastBlock.querySelector(".throughCompany").value = cName;
-        const listId = lastBlock.querySelector("datalist").id;
-        updateLineList(cName, listId);
-        lastBlock.querySelector(".throughLine").value = maps.line[r.line_id]?.name || r.line_id;
-    });
+    t.routes.slice(1).forEach((r, idx) => {
+    addThrough();
+
+    const blocks = document.querySelectorAll(".through-block");
+    const lastBlock = blocks[blocks.length - 1];
+
+    const cName = maps.company[r.company_id]?.name || r.company_id;
+    lastBlock.querySelector(".throughCompany").value = cName;
+
+    const lineList = lastBlock.querySelector("datalist:not(.throughJunctionList)");
+    if (lineList) updateLineList(cName, lineList.id);
+
+    lastBlock.querySelector(".throughLine").value =
+        maps.line[r.line_id]?.name || r.line_id;
+
+    const junctionInput = lastBlock.querySelector(".throughJunctionStation");
+
+    if (junctionInput && Array.isArray(t.segments)) {
+        const junctionSeg = t.segments[idx];
+
+        if (junctionSeg?.to_id) {
+            junctionInput.value =
+                maps.station[junctionSeg.to_id]?._display ||
+                maps.station[junctionSeg.to_id]?.name ||
+                junctionSeg.to_id;
+        }
+    }
+
+    autoFillThroughJunction(lastBlock.querySelector(".throughLine"));
+});
 
     updateStationLists(); 
     setVal("serviceType", t.serviceType); 
@@ -4790,6 +6324,12 @@ window.editTrip = function(i) {
     setVal("train", trainObj ? trainObj._display : t.train_id);
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
+
+    const editSegments = getTripSegments(t);
+    updateMainLoopDirectionUI(editSegments[0]?.direction || "forward");
+    document.querySelectorAll(".through-block").forEach((block, idx) => {
+        updateThroughLoopDirectionUI(block, editSegments[idx + 1]?.direction || "forward");
+    });
 
     // 🟩 V0.31 編輯模式載入相片
     clearAllPhotosUI();
@@ -4849,20 +6389,53 @@ window.exportData = function() {
 
 window.importData = function() {
     const file = document.getElementById("importFile").files[0];
-    if(!file) return alert("請先選擇檔案！");
+    if (!file) return alert("請先選擇檔案！");
+
     const reader = new FileReader();
-    reader.onload = e => {
-         try {
-        trips = JSON.parse(e.target.result).map(normalizeTrip);
-        localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-        render();
-        alert("匯入成功！");
-    } catch(err) {
-        alert("檔案格式錯誤！");
-    }
-};
+
+    reader.onload = async e => {
+        try {
+            const importedTrips = JSON.parse(e.target.result).map(normalizeTrip);
+            const user = auth.currentUser;
+
+            if (user) {
+                const tripsRef = collection(dbCloud, "users", user.uid, "trips");
+
+                for (const trip of importedTrips) {
+                    await addDoc(tripsRef, {
+                        date: trip.date || "",
+                        serviceType: trip.serviceType || "",
+                        routes: Array.isArray(trip.routes) ? trip.routes : [],
+                        train_id: trip.train_id || "",
+                        from_id: trip.from_id || "",
+                        to_id: trip.to_id || "",
+                        segments: Array.isArray(trip.segments) ? trip.segments : [],
+
+                        photoTrainUrl: trip.photoTrainUrl || trip.photoTrain || "",
+                        photoFromUrl: trip.photoFromUrl || trip.photoFrom || "",
+                        photoToUrl: trip.photoToUrl || trip.photoTo || "",
+
+                        createdAt: serverTimestamp(),
+                        updatedAt: serverTimestamp()
+                    });
+                }
+
+                alert("已匯入到目前登入帳戶！");
+                subscribeTrips();
+            } else {
+                localStorage.setItem("railTrips_V2", JSON.stringify(importedTrips));
+                trips = importedTrips;
+                render();
+                alert("未登入狀態：已匯入到本機資料。");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("檔案格式錯誤！");
+        }
+    };
+
     reader.readAsText(file);
-}
+};
 // =========================================
 // 判斷公司類型，取顏色
 // =========================================
@@ -4889,6 +6462,19 @@ function getRailCompanyCategory(companyIdOrName = "") {
 function normalizeMapFilterCategory(rawCategory = "") {
     if (String(rawCategory).startsWith("jr_")) return "jr";
     return rawCategory;
+}
+
+function getLineThemeColor(lineOrLineId, fallbackCompanyId = "") {
+    const line = typeof lineOrLineId === "string"
+        ? maps.line[lineOrLineId]
+        : lineOrLineId;
+
+    if (line && typeof line.color === "string" && line.color.trim()) {
+        return line.color.trim();
+    }
+
+    const companyId = line?.company_id || fallbackCompanyId || "";
+    return getStationSignColor(companyId);
 }
 
 function getStationSignColor(companyIdOrName = "") {
@@ -4932,47 +6518,58 @@ window.handleMapFilterChange = function() {
     renderMap();
 };
 
-function buildFullStationLabelHtml(stn, compId, compName, lineColor) {
+function buildFullStationLabelHtml(stn, compId, compName, lineColors) {
     const shortLabel = getRailCompanyShortLabel(compId);
+    const categoryColor = getStationSignColor(compId);
+    const colorBars = buildStationColorBars(lineColors);
 
     return `
-        <div class="station-sign-label full" style="border-color:${lineColor};">
-            <div class="station-sign-head">
-                <span class="station-sign-company-tag">${shortLabel}</span>
-                <span class="station-sign-type-dot" style="background:${lineColor};"></span>
+        <div class="station-card station-card-full" style="--station-category:${categoryColor};">
+            <div class="station-card-accent station-card-accent-multi">
+                ${colorBars}
             </div>
-            <div class="station-sign-body">
-                <div class="station-sign-name">${stn.name}</div>
-                <div class="station-sign-subline">${compName}</div>
+            <div class="station-card-main">
+                <div class="station-card-top">
+                    <span class="station-card-pill">${shortLabel}</span>
+                    <span class="station-card-pill station-card-pill-sub">${compName}</span>
+                </div>
+                <div class="station-card-name">${stn.name}</div>
             </div>
-            <div class="station-sign-line" style="background:${lineColor};"></div>
         </div>
     `;
 }
 
-function buildMediumStationLabelHtml(stn, compId, lineColor) {
+function buildMediumStationLabelHtml(stn, compId, lineColors) {
     const shortLabel = getRailCompanyShortLabel(compId);
+    const categoryColor = getStationSignColor(compId);
+    const colorBars = buildStationColorBars(lineColors);
 
     return `
-        <div class="station-sign-label medium" style="border-color:${lineColor};">
-            <div class="station-sign-head">
-                <span class="station-sign-company-tag">${shortLabel}</span>
+        <div class="station-card station-card-medium" style="--station-category:${categoryColor};">
+            <div class="station-card-accent station-card-accent-multi">
+                ${colorBars}
             </div>
-            <div class="station-sign-body">
-                <div class="station-sign-name">${stn.name}</div>
+            <div class="station-card-main">
+                <div class="station-card-top">
+                    <span class="station-card-pill">${shortLabel}</span>
+                </div>
+                <div class="station-card-name">${stn.name}</div>
             </div>
-            <div class="station-sign-line" style="background:${lineColor};"></div>
         </div>
     `;
 }
 
-function buildSmallStationLabelHtml(stn, lineColor) {
+function buildSmallStationLabelHtml(stn, lineColors) {
+    const colorBars = buildStationColorBars(lineColors);
+
     return `
-        <div class="station-sign-label small" style="border-color:${lineColor};">
-            <div class="station-sign-body">
-                <div class="station-sign-name">${stn.name}</div>
+        <div class="station-card station-card-small">
+            <div class="station-card-accent station-card-accent-multi">
+                ${colorBars}
             </div>
-            <div class="station-sign-line" style="background:${lineColor};"></div>
+            <div class="station-card-main">
+                <div class="station-card-name">${stn.name}</div>
+            </div>
         </div>
     `;
 }
@@ -5015,6 +6612,37 @@ window.closeMapPhotoPreview = function() {
 // 🟩 V0.31 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
+function getStationLineThemeColors(stationData, fallbackCompanyId = "") {
+    const lineIds = stationData?.lineIds
+        ? Array.from(stationData.lineIds)
+        : [];
+
+    const colors = [];
+
+    lineIds.forEach(lineId => {
+        const line = maps.line[lineId];
+        const color = line
+            ? getLineThemeColor(line, fallbackCompanyId)
+            : "";
+
+        if (color && !colors.includes(color)) {
+            colors.push(color);
+        }
+    });
+
+    if (colors.length === 0) {
+        colors.push(getStationSignColor(fallbackCompanyId));
+    }
+
+    return colors.slice(0, 4);
+}
+
+function buildStationColorBars(colors = []) {
+    return colors.map(color => `
+        <span class="station-card-color-segment" style="background:${color};"></span>
+    `).join("");
+}
+
 function renderMap() {
     if (!railMapInstance) {
         railMapInstance = L.map('railMap', {
@@ -5022,18 +6650,42 @@ function renderMap() {
             maxZoom: 18
         }).setView([35.681236, 139.767125], 5);
 
+		railMapInstance.on("click", () => {
+		if (ignoreNextMapClickClear) {
+        ignoreNextMapClickClear = false;
+        return;
+    }
+
+    clearSelectedMapRoute();
+	});
+
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(railMapInstance);
 
         railMapInstance.on("zoomend", () => {
-            renderMap();
+    const keepCenter = railMapInstance.getCenter();
+    const keepZoom = railMapInstance.getZoom();
+
+    isMapZoomRerendering = true;
+    renderMap();
+
+    requestAnimationFrame(() => {
+        if (!railMapInstance) return;
+        railMapInstance.setView(keepCenter, keepZoom, {
+            animate: false,
+            reset: true
         });
+    });
+});	
     }
 	const selectedCategory = document.getElementById("mapCategoryFilter")?.value || "all";
     // 清走舊 marker
+	
     mapMarkers.forEach(marker => railMapInstance.removeLayer(marker));
     mapMarkers = [];
+	
+	renderRailGeometries(selectedCategory);
 
     // 收集造訪過嘅車站，同埋最近相片
     const stationDataMap = {};
@@ -5041,13 +6693,26 @@ function renderMap() {
     trips.forEach(t => {
         if (!t.from_id || !t.to_id) return;
 
-        if (!stationDataMap[t.from_id]) stationDataMap[t.from_id] = { photo: null };
-        if (!stationDataMap[t.to_id]) stationDataMap[t.to_id] = { photo: null };
+        if (!stationDataMap[t.from_id]) stationDataMap[t.from_id] = { photo: null, lineIds: new Set() };
+		if (!stationDataMap[t.to_id]) stationDataMap[t.to_id] = { photo: null, lineIds: new Set() };
 
-        if (t.photoFrom) stationDataMap[t.from_id].photo = t.photoFrom;
-        if (t.photoTo) stationDataMap[t.to_id].photo = t.photoTo;
-    });
+		if (t.photoFrom) stationDataMap[t.from_id].photo = t.photoFrom;
+		if (t.photoTo) stationDataMap[t.to_id].photo = t.photoTo;
 
+		const tripSegments = getTripSegments(t);
+
+		tripSegments.forEach(seg => {
+			if (!seg.line_id) return;
+
+			if (seg.from_id && stationDataMap[seg.from_id]) {
+				stationDataMap[seg.from_id].lineIds.add(seg.line_id);
+			}
+
+			if (seg.to_id && stationDataMap[seg.to_id]) {
+				stationDataMap[seg.to_id].lineIds.add(seg.line_id);
+			}
+		});
+});
     const bounds = [];
 
     Object.keys(stationDataMap).forEach(stnId => {
@@ -5058,27 +6723,31 @@ function renderMap() {
         getRailCompanyCategory(stn.company_id)
     );
 
-    if (selectedCategory !== "all" && stationCategory !== selectedCategory) {
-        return;
-    }
+    if (
+    selectedCategory !== "all" &&
+    selectedCategory !== "test_all_lines" &&
+    stationCategory !== selectedCategory
+) {
+    return;
+}
 
         const compId = stn.company_id || "";
 const compName = maps.company[compId]?.name || "";
-const lineColor = getStationSignColor(compId);
+const lineColors = getStationLineThemeColors(stationDataMap[stnId], compId);
 const labelLevel = getStationLabelLevel();
 
 let html = "";
 let iconAnchor = [40, 28];
 
 if (labelLevel === "small") {
-    html = buildSmallStationLabelHtml(stn, lineColor);
-    iconAnchor = [28, 16];
+    html = buildSmallStationLabelHtml(stn, lineColors);
+    iconAnchor = [24, 14];
 } else if (labelLevel === "medium") {
-    html = buildMediumStationLabelHtml(stn, compId, lineColor);
-    iconAnchor = [34, 22];
+    html = buildMediumStationLabelHtml(stn, compId, lineColors);
+    iconAnchor = [30, 18];
 } else {
-    html = buildFullStationLabelHtml(stn, compId, compName, lineColor);
-    iconAnchor = [45, 30];
+    html = buildFullStationLabelHtml(stn, compId, compName, lineColors);
+    iconAnchor = [38, 22];
 }
 
 const customIcon = L.divIcon({
