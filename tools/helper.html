@@ -31,6 +31,26 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
 
 @media(max-width:860px){.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.container{padding:16px}body{padding:12px}.geo-hero h1{font-size:21px}}
 @media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1c1c1e;--text:#f5f5f7;--sub:#aaa;--border:#38383a;--soft:#182235}.container{background:rgba(28,28,30,.92)}.config-row{background:#182235}.hint-box,.geo-toggle,.geo-statusbar{background:#151515}.drop-zone{background:#151515}.step-card{background:#1f1f22}input,textarea,.geo-card textarea{background:#111;color:#f5f5f7;border-color:#38383a}.metric{background:#111;color:#cbd5e1}.pill{background:#14263a;color:#9fd3ff}button.ghost{background:#2c2c2e;color:#eee}}
+
+
+/* ===== Helper v4 spacious studio polish ===== */
+:root{
+  --studioShadow:0 18px 42px rgba(15,23,42,.10);
+  --studioSoftBlue:#eef7ff;
+  --stationMerge:#16a34a;
+}
+body{padding:28px;background:
+  radial-gradient(circle at 0% 0%,rgba(10,132,255,.18),transparent 320px),
+  radial-gradient(circle at 100% 4%,rgba(52,199,89,.12),transparent 340px),
+  linear-gradient(180deg,#f7fbff,var(--bg));}
+.container{max-width:1480px;padding:30px;border-radius:26px;box-shadow:var(--studioShadow);}
+.tabs{position:sticky;top:10px;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);padding:10px 10px 0;border-radius:20px 20px 0 0;margin:-6px 0 26px;border-bottom:1px solid rgba(148,163,184,.45)}
+.tab-btn{border-radius:14px 14px 0 0;padding:12px 20px;letter-spacing:.02em}.tab-btn.active{box-shadow:0 10px 22px rgba(10,132,255,.22)}
+.card{padding:22px;border-radius:20px;margin-bottom:20px;box-shadow:0 12px 32px rgba(15,23,42,.075)}
+.editor-hero,.geo-hero{padding:28px;border-radius:24px}.editor-hero h1,.geo-hero h1{font-size:28px}.editor-toolbar{grid-template-columns:1.25fr 1fr auto;gap:16px}.editor-summary{gap:10px;margin-top:16px}.editor-chip{padding:8px 12px;border-radius:999px}.editor-layout{grid-template-columns:minmax(320px,360px) minmax(0,1fr);gap:22px}.editor-sidebar{gap:12px}.editor-list{border-radius:16px;max-height:560px}.editor-list button{padding:13px 14px;border-left:4px solid transparent}.editor-list button.active{border-left-color:#63bd0f}.editor-form{gap:16px}.row{gap:10px;margin:14px 0}input,textarea{border-radius:12px;padding:12px 13px}.locked-id-row{background:linear-gradient(180deg,#f8fbff,#eef6ff);border:1px solid #dbeafe;border-radius:14px;padding:5px}.locked-id-row input{border:0;background:transparent;box-shadow:none!important}.id-prefix-chip{background:#0f172a;color:#dff4ff;border-color:#1e293b;border-radius:10px}.seq-list{max-height:440px;padding:12px;border-radius:16px;gap:8px}.seq-item{padding:10px;border-radius:14px;grid-template-columns:24px 34px minmax(0,1fr) auto auto auto}.seq-item:hover{background:#f8fbff;border-color:#93c5fd}.station-issue-panel{gap:14px;margin:16px 0}.station-issue-card{position:relative;overflow:hidden;border-radius:18px;padding:16px 16px 16px 20px;box-shadow:0 12px 28px rgba(153,27,27,.08)}.station-issue-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#ef4444}.station-issue-card.coord:before{background:#f59e0b}.station-issue-card.id:before{background:#7c3aed}.station-issue-title{font-size:14px;margin-bottom:8px}.station-issue-actions{gap:12px;margin-top:12px}.station-mini-card{min-width:260px;flex:1;background:rgba(255,255,255,.88);border-radius:16px;padding:13px;box-shadow:0 8px 20px rgba(15,23,42,.07)}.station-mini-card strong{font-size:15px}.station-mini-id{display:inline-block;margin:6px 0;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:#e0f2fe;color:#075985;border-radius:999px;padding:4px 8px}.station-mini-meta{font-size:12px;color:#64748b;line-height:1.6}.station-mini-routes{font-size:12px;color:#334155;margin-top:5px}.merge-main-btn{background:linear-gradient(135deg,#16a34a,#22c55e)!important}.edit-station-btn,.route-ref-btn{background:#eef2f7!important;color:#334155!important}.station-route-refs{background:linear-gradient(180deg,#f8fafc,#eef6ff);border-style:solid;padding:13px;border-radius:16px}.station-route-refs button{margin:3px}.editor-raw-grid{gap:18px}.editor-raw-grid textarea{min-height:460px}.helper-output{border-radius:18px;min-height:210px}
+@media(max-width:900px){body{padding:12px}.container{padding:16px;border-radius:18px}.tabs{top:0;margin:0 0 16px}.editor-layout,.editor-toolbar,.editor-form,.editor-raw-grid,.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.editor-list{max-height:280px}.station-mini-card{min-width:100%}}
+@media(prefers-color-scheme:dark){.tabs{background:rgba(28,28,30,.82)}.locked-id-row{background:#111827;border-color:#374151}.station-mini-card{background:rgba(31,31,34,.88)}.station-mini-id{background:#082f49;color:#bae6fd}.station-mini-meta,.station-mini-routes{color:#cbd5e1}.edit-station-btn,.route-ref-btn{background:#2c2c2e!important;color:#eee!important}.station-route-refs{background:#151515}}
+
 </style>
 </head>
 <body>
@@ -900,7 +920,12 @@ function renderCompanyStationDatalist() {
 
 
 function normalizeStationCompareName(name) {
-  return String(name || '').normalize('NFKC').trim().replace(/\s+/g, '').toLowerCase();
+  return String(name || '')
+    .normalize('NFKC')
+    .trim()
+    .replace(/[\s\u3000]+/g, '')
+    .replace(/[・･·\.\-ー－（）()\[\]【】「」『』]/g, '')
+    .toLowerCase();
 }
 
 function normalizeStationCoordValue(value) {
@@ -908,43 +933,74 @@ function normalizeStationCoordValue(value) {
   return Number.isFinite(n) ? n.toFixed(6) : '';
 }
 
-function getStationRouteRefs(stationId) {
-  if (!companyEditorData || !stationId) return [];
-  return (companyEditorData.lines || []).filter(line => Array.isArray(line.sequence) && line.sequence.includes(stationId));
+function getStationIssueKey(station, type) {
+  if (!station) return '';
+  if (type === 'id') return toEditorIdToken(station.id);
+  if (type === 'coord') {
+    const lat = normalizeStationCoordValue(station.lat);
+    const lng = normalizeStationCoordValue(station.lng);
+    return lat && lng ? `${lat},${lng}` : '';
+  }
+  return normalizeStationCompareName(station.name);
 }
 
-function buildStationMiniHtml(station, index, groupIndex = -1, allowMerge = false) {
+function getStationRouteRefs(stationId) {
+  if (!companyEditorData || !stationId) return [];
+  const targetId = toEditorIdToken(stationId);
+  return (companyEditorData.lines || []).filter(line =>
+    Array.isArray(line.sequence) && line.sequence.some(id => toEditorIdToken(id) === targetId)
+  );
+}
+
+function getStationIssueTypeLabel(type) {
+  if (type === 'id') return '重複 ID';
+  if (type === 'coord') return '同座標';
+  return '同名';
+}
+
+function buildStationMiniHtml(station, index, groupType = 'name', groupKey = '', allowMerge = true) {
   const routes = getStationRouteRefs(station.id);
   const routeText = routes.length ? routes.map(r => r.name || r.id).join('、') : '未有路線停靠';
-  const mergeBtn = allowMerge ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, '${escapeEditorAttr(station.id)}')">合併到此站</button>` : '';
-  return `<div class="station-mini-card"><strong>${escapeEditorHtml(station.name || '(未命名站)')}</strong><br><code>${escapeEditorHtml(station.id || '')}</code><br><span>座標：${escapeEditorHtml(station.lat ?? '')}, ${escapeEditorHtml(station.lng ?? '')}</span><br><span>停靠：${escapeEditorHtml(routeText)}</span><br><button class="ghost mini-btn" onclick="selectCompanyStation(${index})">修改此站</button>${mergeBtn}</div>`;
+  const mergeBtn = allowMerge
+    ? `<button class="ok mini-btn merge-main-btn" onclick="mergeStationIssueGroupToTarget('${escapeEditorAttr(groupType)}', '${escapeEditorAttr(groupKey)}', '${escapeEditorAttr(station.id)}')">以此站為正本合併</button>`
+    : '';
+  return `<div class="station-mini-card">
+    <strong>${escapeEditorHtml(station.name || '(未命名站)')}</strong><br>
+    <span class="station-mini-id">${escapeEditorHtml(station.id || '')}</span>
+    <div class="station-mini-meta">座標：${escapeEditorHtml(station.lat ?? '')}, ${escapeEditorHtml(station.lng ?? '')}</div>
+    <div class="station-mini-routes">停靠：${escapeEditorHtml(routeText)}</div>
+    <div class="station-issue-actions">
+      <button class="ghost mini-btn edit-station-btn" onclick="selectCompanyStationById('${escapeEditorAttr(station.id)}')">修改此站</button>
+      ${mergeBtn}
+    </div>
+  </div>`;
 }
 
 function findStationIssueGroups() {
   const stations = (companyEditorData?.stations || []).map((s, i) => ({ s, i }));
   const groups = [];
-  const byName = new Map();
-  const byCoord = new Map();
+  const groupMaps = {
+    id: new Map(),
+    name: new Map(),
+    coord: new Map()
+  };
 
   stations.forEach(item => {
-    const nameKey = normalizeStationCompareName(item.s.name);
-    if (nameKey) {
-      if (!byName.has(nameKey)) byName.set(nameKey, []);
-      byName.get(nameKey).push(item);
-    }
-    const lat = normalizeStationCoordValue(item.s.lat);
-    const lng = normalizeStationCoordValue(item.s.lng);
-    if (lat && lng) {
-      const coordKey = `${lat},${lng}`;
-      if (!byCoord.has(coordKey)) byCoord.set(coordKey, []);
-      byCoord.get(coordKey).push(item);
-    }
+    ['id', 'name', 'coord'].forEach(type => {
+      const key = getStationIssueKey(item.s, type);
+      if (!key) return;
+      if (!groupMaps[type].has(key)) groupMaps[type].set(key, []);
+      groupMaps[type].get(key).push(item);
+    });
   });
 
-  byName.forEach((items, key) => {
+  groupMaps.id.forEach((items, key) => {
+    if (items.length > 1) groups.push({ type: 'id', key, title: `重複 station_id：${key}`, items });
+  });
+  groupMaps.name.forEach((items, key) => {
     if (items.length > 1) groups.push({ type: 'name', key, title: `同名車站：${items[0].s.name || key}`, items });
   });
-  byCoord.forEach((items, key) => {
+  groupMaps.coord.forEach((items, key) => {
     if (items.length > 1) groups.push({ type: 'coord', key, title: `同座標車站：${key}`, items });
   });
   return groups;
@@ -954,18 +1010,28 @@ function renderStationIssuePanel() {
   const panel = document.getElementById('stationIssuePanel');
   if (!panel) return;
   if (!companyEditorData) { panel.innerHTML = ''; return; }
+
   companyStationIssueGroups = findStationIssueGroups();
+
   if (!companyStationIssueGroups.length) {
-    panel.innerHTML = '<div class="station-route-refs"><strong>檢查結果：</strong>未發現同名 / 同座標車站。</div>';
+    panel.innerHTML = '<div class="station-route-refs"><strong>檢查結果：</strong>未發現重複 ID / 同名 / 同座標車站。</div>';
     return;
   }
-  panel.innerHTML = companyStationIssueGroups.map((group, groupIndex) => {
-    const allowMerge = group.type === 'name';
-    const detail = group.type === 'name'
-      ? '以下車站名稱相同，請確認是否同一個站。可以揀其中一個作正確名稱並合併，系統會同步改寫所有路線 sequence。'
-      : '以下車站座標完全相同，請檢查是否輸入錯誤或重複建立。';
-    const cards = group.items.map(({s, i}) => buildStationMiniHtml(s, i, groupIndex, allowMerge)).join('');
-    return `<div class="station-issue-card ${group.type === 'coord' ? 'coord' : ''}"><div class="station-issue-title">⚠️ ${escapeEditorHtml(group.title)}</div><div>${escapeEditorHtml(detail)}</div><div class="station-issue-actions">${cards}</div></div>`;
+
+  panel.innerHTML = companyStationIssueGroups.map(group => {
+    const affectedRouteCount = new Set(group.items.flatMap(({ s }) => getStationRouteRefs(s.id).map(r => r.id))).size;
+    const label = getStationIssueTypeLabel(group.type);
+    const detail = group.type === 'id'
+      ? `以下 ${group.items.length} 個車站使用同一個 station_id，輸出時會造成資料混亂。請選一個作正本，系統會刪除多餘車站資料。受影響路線：${affectedRouteCount} 條。`
+      : group.type === 'name'
+        ? `以下 ${group.items.length} 個車站名稱相同。請選一個作正本合併；系統會自動改寫所有路線 sequence，並刪除其餘重複車站。受影響路線：${affectedRouteCount} 條。`
+        : `以下 ${group.items.length} 個車站座標完全相同。多數情況代表重複建立；如確定係同一站，可選一個作正本合併。受影響路線：${affectedRouteCount} 條。`;
+    const cards = group.items.map(({s, i}) => buildStationMiniHtml(s, i, group.type, group.key, true)).join('');
+    return `<div class="station-issue-card ${group.type}">
+      <div class="station-issue-title">⚠️ ${escapeEditorHtml(label)}｜${escapeEditorHtml(group.title)}</div>
+      <div>${escapeEditorHtml(detail)}</div>
+      <div class="station-issue-actions">${cards}</div>
+    </div>`;
   }).join('');
 }
 
@@ -978,42 +1044,109 @@ function renderSelectedStationRouteRefs(stationId) {
     box.innerHTML = '<strong>停靠路線：</strong>未有路線 sequence 使用此站';
     return;
   }
-  box.innerHTML = '<strong>停靠路線：</strong>' + routes.map(route => `<button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(route.id)}')">${escapeEditorHtml(route.name || route.id)}</button>`).join(' ');
+  box.innerHTML = '<strong>停靠路線：</strong>' + routes.map(route => `<button class="ghost mini-btn route-ref-btn" onclick="selectCompanyLineById('${escapeEditorAttr(route.id)}')">${escapeEditorHtml(route.name || route.id)}</button>`).join(' ');
 }
 
 function selectCompanyLineById(lineId) {
-  const index = (companyEditorData?.lines || []).findIndex(line => line.id === lineId);
+  const targetId = toEditorIdToken(lineId);
+  const index = (companyEditorData?.lines || []).findIndex(line => toEditorIdToken(line.id) === targetId);
   if (index < 0) return;
   companyEditorCurrent.line = index;
   switchCompanyEditorSection('lines');
   renderCompanyLineList();
   renderSelectedLineForm();
+  document.getElementById('companyEditorLines')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function mergeStationIssueGroup(groupIndex, targetId) {
-  const group = companyStationIssueGroups[groupIndex];
-  if (!companyEditorData || !group || group.type !== 'name') return;
-  const target = (companyEditorData.stations || []).find(st => st.id === targetId);
-  if (!target) return;
-  const duplicateIds = group.items.map(item => item.s.id).filter(id => id && id !== targetId);
-  if (!duplicateIds.length) return;
-  const ok = confirm(`確定合併 ${duplicateIds.length} 個同名車站到「${target.name}」？\n所有路線 sequence 會自動改用：${target.id}`);
+function selectCompanyStationById(stationId) {
+  const targetId = toEditorIdToken(stationId);
+  const index = (companyEditorData?.stations || []).findIndex(st => toEditorIdToken(st.id) === targetId);
+  if (index < 0) return;
+  companyEditorCurrent.station = index;
+  switchCompanyEditorSection('stations');
+  renderCompanyStationList();
+  renderSelectedStationForm();
+  document.getElementById('companyEditorStations')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function removeConsecutiveStationDuplicates(sequence) {
+  const result = [];
+  let previous = null;
+  (sequence || []).forEach(rawId => {
+    const id = toEditorIdToken(rawId);
+    if (!id) return;
+    if (id === previous) return;
+    result.push(id);
+    previous = id;
+  });
+  return result;
+}
+
+function mergeStationIssueGroupToTarget(type, key, targetStationId) {
+  if (!companyEditorData) return;
+
+  const cleanType = String(type || 'name');
+  const cleanKey = String(key || '');
+  const targetId = toEditorIdToken(targetStationId);
+
+  const latestGroup = findStationIssueGroups().find(group => group.type === cleanType && group.key === cleanKey);
+  if (!latestGroup || latestGroup.items.length < 2) {
+    setCompanyEditorStatus('合併失敗：呢組重複車站已經不存在，請重新整理檢查結果。', 'warn');
+    renderStationIssuePanel();
+    return;
+  }
+
+  const targetItem = latestGroup.items.find(item => toEditorIdToken(item.s.id) === targetId) || latestGroup.items[0];
+  const target = targetItem.s;
+  const finalTargetId = toEditorIdToken(target.id);
+
+  const stationIdsInGroup = latestGroup.items.map(item => toEditorIdToken(item.s.id)).filter(Boolean);
+  const duplicateIds = [...new Set(stationIdsInGroup.filter(id => id !== finalTargetId))];
+  const affectedRoutes = (companyEditorData.lines || []).filter(line =>
+    Array.isArray(line.sequence) && line.sequence.some(id => duplicateIds.includes(toEditorIdToken(id)) || toEditorIdToken(id) === finalTargetId)
+  );
+
+  const ok = confirm(
+    `確定將「${latestGroup.title}」合併到「${target.name || finalTargetId}」？\n\n` +
+    `正本：${finalTargetId}\n` +
+    `會刪除 / 合併：${latestGroup.items.length - 1} 個車站資料\n` +
+    `受影響路線：${affectedRoutes.length} 條\n\n` +
+    `所有相關路線 sequence 會自動改用正本 station_id。`
+  );
   if (!ok) return;
 
   companyEditorData.lines.forEach(line => {
     if (!Array.isArray(line.sequence)) return;
-    const seen = new Set();
-    line.sequence = line.sequence.map(id => duplicateIds.includes(id) ? targetId : id).filter(id => {
-      if (seen.has(id)) return false;
-      seen.add(id);
-      return true;
-    });
+    line.sequence = removeConsecutiveStationDuplicates(line.sequence.map(rawId => {
+      const cleanId = toEditorIdToken(rawId);
+      return duplicateIds.includes(cleanId) ? finalTargetId : cleanId;
+    }));
   });
-  companyEditorData.stations = companyEditorData.stations.filter(st => !duplicateIds.includes(st.id));
-  companyEditorCurrent.station = Math.max(0, companyEditorData.stations.findIndex(st => st.id === targetId));
+
+  let keptTarget = false;
+  companyEditorData.stations = (companyEditorData.stations || []).filter(st => {
+    const stId = toEditorIdToken(st.id);
+    const belongsToGroup = getStationIssueKey(st, cleanType) === cleanKey;
+    if (!belongsToGroup) return true;
+    if (stId === finalTargetId && !keptTarget) {
+      keptTarget = true;
+      return true;
+    }
+    return false;
+  });
+
+  const newIndex = companyEditorData.stations.findIndex(st => toEditorIdToken(st.id) === finalTargetId);
+  companyEditorCurrent.station = Math.max(0, newIndex);
   renderCompanyEditorAll();
   switchCompanyEditorSection('stations');
-  setCompanyEditorStatus(`已合併同名車站到 ${target.name}，並已改寫相關路線 sequence`, 'ok');
+  setCompanyEditorStatus(`已合併到 ${target.name || finalTargetId}，並改寫 ${affectedRoutes.length} 條路線 sequence`, 'ok');
+}
+
+// 舊版 inline onclick 相容層：如果舊 HTML 尚有 mergeStationIssueGroup(...)，仍然會轉去新版邏輯。
+function mergeStationIssueGroup(groupIndex, targetId) {
+  const group = companyStationIssueGroups[groupIndex];
+  if (!group) return;
+  mergeStationIssueGroupToTarget(group.type, group.key, targetId);
 }
 
 function renderCompanyStationList() {
