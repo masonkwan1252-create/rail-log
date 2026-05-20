@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rail Log Helper Suite</title>
+<style>
+:root{
+  --bg:#f4f7f9;--card:#fff;--text:#1d1d1f;--sub:#6b7280;--border:#d6dbe3;
+  --primary:#1a73e8;--primary2:#0a84ff;--ok:#34a853;--danger:#ea4335;--warn:#f59e0b;
+  --code:#282c34;--codeText:#abb2bf;--soft:#e8f0fe;--rail:#10233f;--rail2:#00a7ff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,#eaf3ff 0,#f4f7f9 320px,var(--bg) 70%);color:var(--text);padding:20px}
+.container{max-width:1180px;margin:0 auto;background:rgba(255,255,255,.9);padding:24px;border-radius:18px;box-shadow:0 12px 34px rgba(15,23,42,.12);backdrop-filter:blur(10px)}
+h1{color:var(--primary);font-size:21px;margin:0 0 14px}p{font-size:13px;color:var(--sub);line-height:1.6;margin:0 0 12px}code{background:rgba(26,115,232,.08);padding:1px 5px;border-radius:5px}
+.tabs{display:flex;gap:6px;margin-bottom:20px;border-bottom:2px solid #e0e7ef;flex-wrap:wrap}.tab-btn{padding:10px 18px;cursor:pointer;border:none;background:#eef2f7;border-radius:10px 10px 0 0;font-weight:800;color:#596579}.tab-btn.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff}.tab-content{display:none}.tab-content.active{display:block}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 4px 16px rgba(15,23,42,.06)}
+.config-row{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:15px;background:var(--soft);padding:15px;border-radius:10px;margin-bottom:15px}.input-group{display:flex;flex-direction:column;gap:6px}.input-group label{font-size:12px;font-weight:800;color:var(--primary);letter-spacing:.02em}
+input,textarea{padding:10px;border:1px solid #cbd5e1;border-radius:10px;font-size:14px;background:#fff;color:var(--text);outline:none}input:focus,textarea:focus{border-color:var(--primary2);box-shadow:0 0 0 3px rgba(10,132,255,.12)}
+textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;width:100%;box-sizing:border-box;resize:vertical}.btn-main{width:100%;padding:15px;font-size:18px;font-weight:900;cursor:pointer;border:none;border-radius:10px;color:white;background:linear-gradient(135deg,var(--primary),#0a84ff);margin:10px 0;transition:.2s}.btn-main:hover{filter:brightness(.95);transform:translateY(-1px)}button{border:0;border-radius:10px;padding:11px 13px;font-weight:800;background:var(--primary2);color:#fff;cursor:pointer;transition:.15s}button:hover{filter:brightness(.95);transform:translateY(-1px)}button.secondary{background:#526174}button.ok{background:#34c759}button.danger{background:#ff3b30}button.ghost{background:#eef2f7;color:#334155}.helper-output{background-color:var(--code);color:var(--codeText);height:250px;border:none;margin-top:10px}.status-msg,.status{min-height:24px;text-align:center;font-weight:bold;margin-top:5px}.hint{font-size:12px;color:#777;margin-bottom:8px}.hint-box{background:#f8fafc;border:1px dashed var(--border);border-radius:12px;padding:12px;font-size:12px;color:var(--sub);line-height:1.6}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}.title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.title strong{font-size:14px}.small{font-size:12px;color:var(--sub)}.status{font-size:13px;color:var(--sub);padding:8px 0;text-align:left}.status.ok{color:#34c759}.status.err{color:#ff3b30}.status.warn{color:#f59e0b}
+/* Geometry polished UI */
+.geo-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#07172d,#123b68 58%,#0a84ff);color:#fff;border:0;padding:20px}.geo-hero:before{content:"";position:absolute;inset:auto -60px -100px auto;width:280px;height:280px;border:26px solid rgba(255,255,255,.12);border-radius:50%}.geo-hero h1{color:#fff;font-size:24px;margin:0 0 8px;letter-spacing:.02em}.geo-hero p{color:rgba(255,255,255,.78)}.geo-chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.geo-chip{font-size:12px;font-weight:800;color:#dff4ff;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);border-radius:999px;padding:6px 10px}.geo-toolbar{display:grid;grid-template-columns:1.2fr 1fr auto;gap:12px;align-items:end}.geo-toggle{display:flex;gap:9px;align-items:center;font-size:13px;color:var(--sub);font-weight:700;background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:10px}.geo-toggle input{width:auto}.drop-zone{border:2px dashed #b8c7d9;border-radius:14px;background:linear-gradient(180deg,#fbfdff,#f5f9ff);padding:14px;text-align:center;color:#64748b;font-size:13px;font-weight:700;transition:.15s}.drop-zone.dragover{border-color:#0a84ff;background:#e8f4ff;color:#0a84ff;transform:scale(1.01)}.geo-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.step-card{border:1px solid var(--border);background:#fff;border-radius:14px;padding:12px;display:flex;gap:10px;align-items:flex-start}.step-no{min-width:28px;height:28px;border-radius:999px;background:#0a84ff;color:#fff;font-weight:900;display:grid;place-items:center}.step-card strong{display:block;font-size:13px}.step-card span{display:block;font-size:12px;color:var(--sub);line-height:1.45;margin-top:3px}.geo-card{border-radius:16px}.geo-card textarea{min-height:360px;background:linear-gradient(180deg,#fcfdff,#f8fafc)}.pill{font-size:11px;font-weight:900;padding:5px 8px;border-radius:999px;background:#eef6ff;color:#0a66c2}.pill.ok{background:#e9f8ee;color:#1b8f3a}.pill.warn{background:#fff6df;color:#b77900}.geo-statusbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:10px 12px;margin-top:10px}.geo-metrics{display:flex;gap:8px;flex-wrap:wrap}.metric{font-size:12px;color:#475569;background:#fff;border:1px solid var(--border);border-radius:999px;padding:5px 9px}.download-group{display:flex;gap:8px;flex-wrap:wrap}.wkt-final{background:#101827!important;color:#dbeafe!important;border-color:#263449!important}
+
+/* Company JSON Editor */
+.editor-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#16213e,#263b77 55%,#5d7cff);color:#fff;border:0;padding:20px}.editor-hero h1{color:#fff;font-size:24px;margin:0 0 8px}.editor-hero p{color:rgba(255,255,255,.8)}
+.editor-toolbar{display:grid;grid-template-columns:1.2fr 1fr auto;gap:12px;align-items:end}.editor-summary{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.editor-chip{font-size:12px;font-weight:900;background:#eef6ff;color:#0a66c2;border-radius:999px;padding:6px 10px;border:1px solid #d8e9ff}.editor-chip.ok{background:#e9f8ee;color:#16883a}.editor-chip.warn{background:#fff6df;color:#b77900}
+.editor-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.editor-sidebar{display:flex;flex-direction:column;gap:10px}.editor-list{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;max-height:420px;overflow-y:auto}.editor-list button{width:100%;display:block;background:transparent;color:var(--text);border-radius:0;text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-weight:750}.editor-list button:hover{transform:none;background:#eef6ff}.editor-list button.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff}.editor-tabs{display:flex;gap:6px;flex-wrap:wrap}.editor-tabs button{background:#eef2f7;color:#334155}.editor-tabs button.active{background:var(--primary2);color:#fff}.editor-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-form .wide{grid-column:1/-1}.editor-form textarea{min-height:130px}.locked-id-row{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center}.id-prefix-chip{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:900;color:#475569;background:#eef2f7;border:1px solid #cbd5e1;border-radius:10px;padding:10px;white-space:nowrap}.locked-id-row input{text-transform:uppercase;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace}.seq-list{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto;border:1px solid var(--border);border-radius:12px;padding:8px;background:#f8fafc}.seq-item{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:6px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;padding:6px;transition:.15s}.seq-item[draggable="true"]{cursor:grab}.seq-item.dragging{opacity:.45;transform:scale(.99);border-color:var(--primary2);box-shadow:0 6px 18px rgba(10,132,255,.18)}.seq-item.drag-over{border-color:var(--primary2);background:#eef6ff;box-shadow:inset 4px 0 0 var(--primary2)}.seq-drag-handle{font-size:15px;color:#94a3b8;cursor:grab;user-select:none;padding:0 3px}.seq-no{font-size:11px;color:var(--sub);font-weight:900}.seq-name{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.seq-item button{padding:6px 8px;border-radius:8px}.editor-output{min-height:260px;background:#101827!important;color:#dbeafe!important}.editor-status{font-size:13px;color:var(--sub);font-weight:800;margin-top:8px}.mini-btn{padding:8px 10px;font-size:12px}.danger-text{color:#ff3b30}.station-issue-panel{display:flex;flex-direction:column;gap:8px;margin:10px 0}.station-issue-card{border:1px solid #fecaca;background:#fff1f2;color:#991b1b;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.station-issue-card.coord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-title{font-weight:900;margin-bottom:6px}.station-issue-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.station-mini-card{border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.72);border-radius:10px;padding:7px;min-width:190px}.station-mini-card button{margin-top:6px}.station-route-refs{margin:10px 0;padding:10px;border:1px dashed var(--border);border-radius:12px;background:#f8fafc;font-size:12px;color:var(--sub);line-height:1.55}.station-route-refs strong{color:var(--primary)}.editor-raw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-raw-grid textarea{min-height:320px}
+@media(max-width:860px){.editor-toolbar,.editor-layout,.editor-form,.editor-raw-grid{grid-template-columns:1fr}.editor-list{max-height:260px}}
+@media(prefers-color-scheme:dark){.station-issue-card{background:#3a171a;color:#fecaca;border-color:#7f1d1d}.station-issue-card.coord{background:#33260b;color:#fde68a;border-color:#92400e}.station-mini-card{background:rgba(31,31,34,.75);border-color:#38383a}.station-route-refs{background:#151515}.editor-list,.seq-item{background:#1f1f22}.seq-list{background:#151515}.editor-list button:hover{background:#14263a}.editor-chip{background:#14263a;color:#9fd3ff}.id-prefix-chip{background:#2c2c2e;color:#d1d5db;border-color:#38383a}}
+
+@media(max-width:860px){.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.container{padding:16px}body{padding:12px}.geo-hero h1{font-size:21px}}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1c1c1e;--text:#f5f5f7;--sub:#aaa;--border:#38383a;--soft:#182235}.container{background:rgba(28,28,30,.92)}.config-row{background:#182235}.hint-box,.geo-toggle,.geo-statusbar{background:#151515}.drop-zone{background:#151515}.step-card{background:#1f1f22}input,textarea,.geo-card textarea{background:#111;color:#f5f5f7;border-color:#38383a}.metric{background:#111;color:#cbd5e1}.pill{background:#14263a;color:#9fd3ff}button.ghost{background:#2c2c2e;color:#eee}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event,'stn-tab')">車站生成器</button>
+    <button class="tab-btn" onclick="openTab(event,'trn-tab')">車型生成器</button>
+    <button class="tab-btn" onclick="openTab(event,'geo-tab')">Rail Geometry Converter</button>
+    <button class="tab-btn" onclick="openTab(event,'json-editor-tab')">公司 JSON 編輯器</button>
+  </div>
+
+  <div id="stn-tab" class="tab-content active">
+    <h1>車站 Sequence 生成器</h1>
+    <div class="config-row">
+      <div class="input-group"><label>公司 ID</label><input type="text" id="stn-company" value="JR_WEST" onfocus="this.select()" oninput="this.value=this.value.toUpperCase();document.getElementById('trn-company').value=this.value;"></div>
+      <div class="input-group"><label>路線名稱（中）</label><input type="text" id="stn-name" placeholder="例如: JR東西線" onfocus="this.select()"></div>
+      <div class="input-group"><label>路線 ID（英）</label><input type="text" id="stn-id" placeholder="例如: TOZAI" onfocus="this.select()" oninput="this.value=this.value.toUpperCase();"></div>
+    </div>
+    <textarea id="stn-input" style="height:120px" placeholder="貼入車站資料..."></textarea>
+    <button class="btn-main" onclick="processStn()">GENERATE & COPY & CLEAR</button>
+  </div>
+
+  <div id="trn-tab" class="tab-content">
+    <h1>車型生成器</h1>
+    <div class="config-row" style="grid-template-columns:1fr">
+      <div class="input-group"><label>公司 ID</label><input type="text" id="trn-company" value="JR_WEST" style="width:220px" onfocus="this.select()" oninput="this.value=this.value.toUpperCase();document.getElementById('stn-company').value=this.value;"></div>
+    </div>
+    <div class="hint">批量輸入格式：每行一筆 [車型名稱] [代碼]<br>例如：モボ101形 101</div>
+    <textarea id="trn-input" style="height:180px" placeholder="モボ101形 101&#10;モボ301形 301"></textarea>
+    <button class="btn-main" onclick="processTrn()">GENERATE BATCH & COPY & CLEAR</button>
+  </div>
+
+  <div id="geo-tab" class="tab-content">
+    <div class="card geo-hero">
+      <h1>Rail Geometry Converter</h1>
+      <p>貼入 JRSLod / WKT / GeoJSON 後自動判斷格式，幫你轉成 QGIS 可改嘅 GeoJSON，或者轉返 Rail Log 用嘅 <code>geometry_wkt</code>。</p>
+      <div class="geo-chip-row"><span class="geo-chip">Auto Detect</span><span class="geo-chip">WKT ⇄ GeoJSON</span><span class="geo-chip">Smart Filename</span><span class="geo-chip">Drag & Drop</span></div>
+    </div>
+
+    <div class="geo-steps">
+      <div class="step-card"><div class="step-no">1</div><div><strong>貼 / 拖入資料</strong><span>會自動分辨 WKT、JRSLod JSON 或 GeoJSON。</span></div></div>
+      <div class="step-card"><div class="step-no">2</div><div><strong>自動轉換</strong><span>開啟 Auto convert 後，貼上即轉，唔使逐個掣撳。</span></div></div>
+      <div class="step-card"><div class="step-no">3</div><div><strong>下載 / 複製</strong><span>GeoJSON 用指定檔名下載，WKT 可直接貼返 Rail Log。</span></div></div>
+    </div>
+
+    <div class="card">
+      <div class="geo-toolbar">
+        <div class="input-group"><label>輸出文件名</label><input id="geomOutputName" type="text" value="rail_geometry" placeholder="例如: TOBU_NIKKO / kintetsu_yoshino" oninput="refreshDownloadLabels()"></div>
+        <label class="geo-toggle"><input id="autoConvert" type="checkbox" checked> 自動偵測 + 自動轉換</label>
+        <div class="download-group">
+          <input id="fileInput" type="file" accept=".json,.geojson,.txt,.wkt" onchange="loadFile()" />
+          <button class="danger" onclick="clearAll()">清空</button>
+        </div>
+      </div>
+      <div id="dropZone" class="drop-zone">將 .json / .geojson / .txt / .wkt 拖到呢度，會自動讀取同轉換</div>
+      <div class="geo-statusbar">
+        <div id="geoStatus" class="status">Ready</div>
+        <div class="geo-metrics">
+          <span id="fmtBadge" class="metric">格式：未偵測</span>
+          <span id="lineBadge" class="metric">線段：0</span>
+          <span id="pointBadge" class="metric">座標點：0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card geo-card">
+        <div class="title"><strong>輸入：原始 JSON / WKT</strong><span id="inputBadge" class="pill">JRSLod / WKT</span></div>
+        <textarea id="inputText" placeholder='貼入：{"...":{"http://www.opengis.net/ont/geosparql#asWKT":[{"value":"MULTILINESTRING(...)"}]}} 或直接貼 MULTILINESTRING(...)'></textarea>
+        <div class="row"><button onclick="convertToGeoJSON()">轉成 GeoJSON →</button><button class="secondary" onclick="copyText('inputText')">複製輸入</button><button class="ghost" onclick="pasteFromClipboard('inputText')">貼上並轉換</button></div>
+      </div>
+      <div class="card geo-card">
+        <div class="title"><strong>輸出 / 輸入：GeoJSON</strong><span id="geojsonBadge" class="pill ok">QGIS / geojson.io</span></div>
+        <textarea id="geojsonText" placeholder="GeoJSON 會出現喺呢度；或者貼入改完嘅 GeoJSON 再自動轉回 WKT"></textarea>
+        <div class="row"><button class="ok" onclick="convertToWKT()">← 轉回 WKT</button><button id="downloadGeoBtn" class="secondary" onclick="downloadGeoJSON()">下載 GeoJSON</button><button class="secondary" onclick="copyText('geojsonText')">複製 GeoJSON</button></div>
+      </div>
+    </div>
+    <div class="card geo-card">
+      <div class="title"><strong>Rail Log 用 WKT</strong><span class="small">貼返入公司 JSON 嘅 geometry_wkt</span></div>
+      <textarea id="wktOutput" class="wkt-final" style="min-height:170px" placeholder='"geometry_wkt": "MULTILINESTRING(...)"'></textarea>
+      <div class="row"><button class="secondary" onclick="copyText('wktOutput')">複製 WKT</button><button id="downloadWktBtn" class="secondary" onclick="downloadWKT()">下載 TXT</button><button class="ghost" onclick="copyGeometryValueOnly()">只複製 MULTILINESTRING</button></div>
+    </div>
+  </div>
+
+
+  <div id="json-editor-tab" class="tab-content">
+    <div class="card editor-hero">
+      <h1>公司 JSON 編輯器</h1>
+      <p>讀取 <code>tokyu.json</code> 呢類公司資料後，可以用表單修改公司資料、路線、<code>geometry_wkt</code>、停車站 sequence、車站名單同車型，最後輸出成新 JSON。</p>
+    </div>
+
+    <div class="card">
+      <div class="editor-toolbar">
+        <div class="input-group">
+          <label>讀取公司 JSON</label>
+          <input id="companyJsonFileInput" type="file" accept=".json" onchange="loadCompanyJsonFile()">
+        </div>
+        <div class="input-group">
+          <label>輸出文件名</label>
+          <input id="companyJsonOutputName" type="text" value="company_updated" oninput="refreshCompanyJsonSaveLabel()">
+        </div>
+        <div class="download-group">
+          <button class="ghost" onclick="applyRawCompanyJson()">由右下原始 JSON 載入</button>
+          <button class="danger" onclick="clearCompanyJsonEditor()">清除已載入</button>
+          <button id="saveCompanyJsonBtn" class="ok" onclick="saveCompanyJsonFile()">儲存 company_updated.json</button>
+        </div>
+      </div>
+      <div class="editor-summary">
+        <span id="companyEditorNameBadge" class="editor-chip">公司：未載入</span>
+        <span id="companyEditorLineBadge" class="editor-chip">路線：0</span>
+        <span id="companyEditorStationBadge" class="editor-chip">車站：0</span>
+        <span id="companyEditorTrainBadge" class="editor-chip">車型：0</span>
+      </div>
+      <div id="companyEditorStatus" class="editor-status">先選擇一個公司 JSON，例如 TOKYU。</div>
+    </div>
+
+    <div class="card">
+      <div class="title"><strong>公司基本資料</strong><span class="small">會直接寫入 JSON 最外層</span></div>
+      <div class="editor-form">
+        <div class="input-group"><label>company_id</label><input id="editCompanyId" oninput="this.value = toEditorIdToken(this.value); updateCompanyMetaFromForm()"></div>
+        <div class="input-group"><label>company_name</label><input id="editCompanyName" oninput="updateCompanyMetaFromForm()"></div>
+        <div class="input-group"><label>categories</label><input id="editCompanyCategory" list="companyCategoryList" oninput="updateCompanyMetaFromForm()"></div>
+        <div class="input-group"><label>schema_version</label><input id="editCompanySchema" placeholder="2.0" oninput="updateCompanyMetaFromForm()"></div>
+      </div>
+      <datalist id="companyCategoryList">
+        <option value="jr"></option><option value="major_private"></option><option value="private"></option><option value="third_sector"></option><option value="subway"></option><option value="tram"></option><option value="monorail"></option><option value="new_transit"></option><option value="tourist"></option>
+      </datalist>
+    </div>
+
+    <div class="card">
+      <div class="editor-tabs">
+        <button id="jsonEditTabLines" class="active" onclick="switchCompanyEditorSection('lines')">路線</button>
+        <button id="jsonEditTabStations" onclick="switchCompanyEditorSection('stations')">車站</button>
+        <button id="jsonEditTabTrains" onclick="switchCompanyEditorSection('trains')">車型</button>
+        <button id="jsonEditTabRaw" onclick="switchCompanyEditorSection('raw')">原始 / 輸出 JSON</button>
+      </div>
+    </div>
+
+    <div id="companyEditorLines" class="card">
+      <div class="title"><strong>路線資料</strong><span class="small">修改名稱、顏色、geometry_wkt 同停車站 sequence</span></div>
+      <div class="editor-layout">
+        <div class="editor-sidebar">
+          <button class="ok" onclick="addCompanyLine()">+ 新增路線</button>
+          <div id="companyLineList" class="editor-list"></div>
+        </div>
+        <div>
+          <div class="editor-form">
+            <div class="input-group"><label>line id</label><div class="locked-id-row"><span id="editLineIdPrefix" class="id-prefix-chip">COMPANY_</span><input id="editLineIdSuffix" placeholder="路線ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedLineFromForm()"><input id="editLineId" type="hidden"></div></div>
+            <div class="input-group"><label>路線名</label><input id="editLineName" oninput="updateSelectedLineFromForm()"></div>
+            <div class="input-group"><label>路線色</label><input id="editLineColor" placeholder="#da0442" oninput="updateSelectedLineFromForm()"></div>
+            <div class="input-group"><label>公司 ID</label><input id="editLineCompanyId" oninput="this.value = toEditorIdToken(this.value); updateSelectedLineFromForm()"></div>
+            <div class="input-group wide" style="background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:12px;">
+              <label style="display:flex;align-items:center;gap:8px;margin:0 0 10px;color:var(--primary);font-weight:900;">
+                <input id="editLineIsLoop" type="checkbox" onchange="toggleLoopDirectionDefaults(); updateSelectedLineFromForm();" style="width:auto;min-width:16px;box-shadow:none;">
+                環狀線 / 需要乘車方向判斷
+              </label>
+              <div class="editor-form" style="grid-template-columns:1fr 1fr;gap:10px;">
+                <div class="input-group">
+                  <label>forward 顯示名</label>
+                  <input id="editLineForwardLabel" placeholder="例：外回り / 順方向" oninput="updateSelectedLineFromForm()">
+                </div>
+                <div class="input-group">
+                  <label>reverse 顯示名</label>
+                  <input id="editLineReverseLabel" placeholder="例：内回り / 逆方向" oninput="updateSelectedLineFromForm()">
+                </div>
+              </div>
+              <div class="small" style="margin-top:8px;line-height:1.5;">
+                輸出例：<code>is_loop: true</code> + <code>direction_labels.forward / reverse</code>。稍後 Rail Log index 會用呢個設定判斷山手線等環狀線 highlight 方向。
+              </div>
+            </div>
+            <div class="input-group wide"><label>geometry_wkt</label><textarea id="editLineGeometry" oninput="updateSelectedLineFromForm()" placeholder="MULTILINESTRING(...)"></textarea></div>
+          </div>
+          <div class="row">
+            <input id="sequenceStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px">
+            <button class="secondary mini-btn" onclick="addStationToSelectedLineSequence()">加入停車站</button>
+            <button class="danger mini-btn" onclick="deleteSelectedLine()">刪除此路線</button>
+          </div>
+          <datalist id="companyStationIdList"></datalist>
+          <div class="small" style="margin:4px 0 8px;">提示：可直接拖放停車站改變次序；↑↓ 按鈕仍然保留。</div>
+          <div id="lineSequenceList" class="seq-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="companyEditorStations" class="card" style="display:none;">
+      <div class="title"><strong>車站名單 / ID 資料</strong><span class="small">修改站名、座標、ID</span></div>
+      <div id="stationIssuePanel" class="station-issue-panel"></div>
+      <div class="editor-layout">
+        <div class="editor-sidebar">
+          <button class="ok" onclick="addCompanyStation()">+ 新增車站</button>
+          <input id="stationSearchInput" placeholder="搜尋車站名 / ID" oninput="renderCompanyStationList()">
+          <div id="companyStationList" class="editor-list"></div>
+        </div>
+        <div>
+          <div class="editor-form">
+            <div class="input-group"><label>station id</label><div class="locked-id-row"><span id="editStationIdPrefix" class="id-prefix-chip">STN_COMPANY_</span><input id="editStationIdSuffix" placeholder="車站ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedStationFromForm()"><input id="editStationId" type="hidden"></div></div>
+            <div class="input-group"><label>站名</label><input id="editStationName" oninput="updateSelectedStationFromForm()"></div>
+            <div class="input-group"><label>lat</label><input id="editStationLat" oninput="updateSelectedStationFromForm()"></div>
+            <div class="input-group"><label>lng</label><input id="editStationLng" oninput="updateSelectedStationFromForm()"></div>
+            <div class="input-group"><label>company_id</label><input id="editStationCompanyId" oninput="this.value = toEditorIdToken(this.value); updateSelectedStationFromForm()"></div>
+            <div class="input-group"><label>name_en / memo</label><input id="editStationNameEn" oninput="updateSelectedStationFromForm()"></div>
+          </div>
+          <div id="selectedStationRouteRefs" class="station-route-refs"></div>
+          <div class="row"><button class="danger" onclick="deleteSelectedStation()">刪除此車站</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="companyEditorTrains" class="card" style="display:none;">
+      <div class="title"><strong>車型資料</strong><span class="small">variants 一行一個</span></div>
+      <div class="editor-layout">
+        <div class="editor-sidebar">
+          <button class="ok" onclick="addCompanyTrain()">+ 新增車型</button>
+          <div id="companyTrainList" class="editor-list"></div>
+        </div>
+        <div>
+          <div class="editor-form">
+            <div class="input-group"><label>train id</label><div class="locked-id-row"><span id="editTrainIdPrefix" class="id-prefix-chip">TRN_COMPANY_</span><input id="editTrainIdSuffix" placeholder="車型ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedTrainFromForm()"><input id="editTrainId" type="hidden"></div></div>
+            <div class="input-group"><label>車型名</label><input id="editTrainName" oninput="updateSelectedTrainFromForm()"></div>
+            <div class="input-group"><label>company_id</label><input id="editTrainCompanyId" oninput="this.value = toEditorIdToken(this.value); updateSelectedTrainFromForm()"></div>
+            <div class="input-group wide"><label>variants（一行一個）</label><textarea id="editTrainVariants" oninput="updateSelectedTrainFromForm()"></textarea></div>
+          </div>
+          <div class="row"><button class="danger" onclick="deleteSelectedTrain()">刪除此車型</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="companyEditorRaw" class="card" style="display:none;">
+      <div class="title"><strong>原始 / 輸出 JSON</strong><span class="small">可手動直接改 JSON，再按「套用」</span></div>
+      <div class="editor-raw-grid">
+        <div>
+          <div class="title"><strong>原始 JSON 輸入</strong></div>
+          <textarea id="companyRawInput" class="editor-output" placeholder="可以直接貼入整份公司 JSON"></textarea>
+          <div class="row"><button class="secondary" onclick="applyRawCompanyJson()">套用原始 JSON</button><button class="ghost" onclick="copyText('companyRawInput')">複製原始</button></div>
+        </div>
+        <div>
+          <div class="title"><strong>輸出 JSON 預覽</strong></div>
+          <textarea id="companyJsonOutput" class="editor-output" readonly></textarea>
+          <div class="row"><button class="secondary" onclick="refreshCompanyJsonOutput()">重新產生預覽</button><button class="ghost" onclick="copyText('companyJsonOutput')">複製輸出 JSON</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <textarea id="code-output" class="helper-output" readonly placeholder="車站 / 車型生成結果會喺度顯示並自動 Copy..."></textarea>
+  <div id="status" class="status-msg"></div>
+</div>
+
+<script>
+function openTab(evt, tabId){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(tabId).classList.add('active');evt.currentTarget.classList.add('active');}
+function processStn(){const company=document.getElementById('stn-company').value.trim().toUpperCase();const name=document.getElementById('stn-name').value.trim();const routeId=document.getElementById('stn-id').value.trim().toUpperCase();const input=document.getElementById('stn-input').value;if(!company||!name||!routeId){showStatus('⚠️ 欄位未填齊！','#ea4335');return;}let normalized=input.normalize('NFD').replace(/[^\u0000-\u007F]/g,'');let cleaned=normalized.replace(/[\u4e00-\u9fa5]|[\u3040-\u309F]|[\u30A0-\u30FF]|駅|停留場|（.*?）|\(.*?\)|[\.\+\|▲▼●◇■□↓→キロ]/g,' ');let rawList=cleaned.split(/[\s\n,]+/).map(s=>s.trim().toUpperCase()).filter(s=>s!==''&&s.length>1&&!/^\d+$/.test(s));let finalList=[];for(let i=0;i<rawList.length;i++){if(rawList[i]==='JR'&&i+1<rawList.length){finalList.push(`JR_${rawList[i+1]}`);i++;}else if(rawList[i]!=='JR'){finalList.push(rawList[i]);}}const res={id:`${company}_${routeId}`,name:name,sequence:finalList.map(s=>`STN_${company}_${s}`)};finalizeOutput(JSON.stringify(res,null,2),'stn-input');}
+function processTrn(){const comp=document.getElementById('trn-company').value.trim().toUpperCase();const input=document.getElementById('trn-input').value.trim();if(!comp){showStatus('⚠️ 請先輸入公司 ID！','#ea4335');return;}if(!input)return;const lines=input.split('\n');let results=[];lines.forEach(line=>{const parts=line.trim().split(/\s+/);if(parts.length>=2){const trainName=parts[0];const code=parts[1].toUpperCase();results.push(`{ "id":"TRN_${comp}_${code}","company_id":"${comp}","name":"${trainName}","variants":[] },`);}});if(results.length>0){finalizeOutput(results.join('\n'),'trn-input');}else{showStatus('⚠️ 格式錯誤！請確保每行有：車型 代碼','#ea4335');}}
+function finalizeOutput(content,inputId){const output=document.getElementById('code-output');output.value=content;output.select();document.execCommand('copy');document.getElementById(inputId).value='';showStatus('🚀 已生成並自動複製！','#34a853');}
+function showStatus(msg,color){const s=document.getElementById('status');s.innerText=msg;s.style.color=color;setTimeout(()=>s.innerText='',3000);}
+function setGeoStatus(msg,type=''){const el=document.getElementById('geoStatus');el.textContent=msg;el.className='status '+type;}
+function findWKTFromAnyJson(obj){const targetKey='http://www.opengis.net/ont/geosparql#asWKT';let found=null;function walk(value){if(found)return;if(!value||typeof value!=='object')return;if(Array.isArray(value)){value.forEach(walk);return;}if(value[targetKey]&&Array.isArray(value[targetKey])&&value[targetKey][0]?.value){found=value[targetKey][0].value;return;}if(typeof value.geometry_wkt==='string'){found=value.geometry_wkt;return;}if(typeof value.asWKT==='string'){found=value.asWKT;return;}Object.values(value).forEach(walk);}walk(obj);return found;}
+function getInputWKT(){const raw=document.getElementById('inputText').value.trim();if(!raw)throw new Error('請先貼入 JSON 或 WKT');if(/^(MULTILINESTRING|LINESTRING)\s*\(/i.test(raw))return raw;const obj=JSON.parse(raw);const wkt=findWKTFromAnyJson(obj);if(!wkt)throw new Error('搵唔到 asWKT / geometry_wkt / asWKT 欄位');return wkt;}
+function parseWKT(wkt){const clean=wkt.trim();if(/^LINESTRING\s*\(/i.test(clean)){const body=clean.replace(/^LINESTRING\s*\(/i,'').replace(/\)\s*$/i,'');return{type:'LineString',coordinates:parseCoordLine(body)};}if(/^MULTILINESTRING\s*\(\(/i.test(clean)){const body=clean.replace(/^MULTILINESTRING\s*\(\(/i,'').replace(/\)\)\s*$/i,'');const lines=body.split(/\)\s*,\s*\(/).map(parseCoordLine).filter(line=>line.length>=2);return{type:'MultiLineString',coordinates:lines};}throw new Error('暫時只支援 LINESTRING / MULTILINESTRING');}
+function parseCoordLine(lineText){return lineText.split(/\s*,\s*/).map(pair=>{const nums=pair.trim().split(/\s+/).map(Number);if(nums.length<2||!Number.isFinite(nums[0])||!Number.isFinite(nums[1]))throw new Error('座標格式錯誤：'+pair);return[nums[0],nums[1]];});}
+function convertToGeoJSON(){try{const wkt=getInputWKT();const geometry=parseWKT(wkt);const geojson={type:'FeatureCollection',features:[{type:'Feature',properties:{source:'converted_from_wkt',name:sanitizeFilename(document.getElementById('geomOutputName').value)},geometry}]};document.getElementById('geojsonText').value=JSON.stringify(geojson,null,2);updateMetricsFromGeometry(geometry,'WKT / JRSLod');setGeoStatus('已自動轉成 GeoJSON，可以下載去 QGIS 改線','ok');}catch(err){setGeoStatus(err.message,'err');}}
+function getGeometryFromGeoJSON(obj){if(!obj||typeof obj!=='object')throw new Error('GeoJSON 格式錯誤');if(obj.type==='FeatureCollection'){const geoms=(obj.features||[]).map(f=>f.geometry).filter(Boolean);if(geoms.length===0)throw new Error('FeatureCollection 入面冇 geometry');if(geoms.length===1)return geoms[0];return{type:'MultiLineString',coordinates:geoms.flatMap(g=>geometryToLines(g))};}if(obj.type==='Feature')return obj.geometry;return obj;}
+function geometryToLines(geom){if(!geom)return[];if(geom.type==='LineString')return[geom.coordinates];if(geom.type==='MultiLineString')return geom.coordinates;if(geom.type==='GeometryCollection')return geom.geometries.flatMap(g=>geometryToLines(g));throw new Error('只支援 LineString / MultiLineString，收到：'+geom.type);}
+function formatNum(n){return Number(n).toFixed(6).replace(/\.0+$/,'').replace(/(\.\d*?)0+$/,'$1');}
+function convertToWKT(){try{const raw=document.getElementById('geojsonText').value.trim();if(!raw)throw new Error('請先貼入 GeoJSON');const obj=JSON.parse(raw);const geom=getGeometryFromGeoJSON(obj);const lines=geometryToLines(geom).filter(line=>line.length>=2);if(lines.length===0)throw new Error('GeoJSON 入面冇有效線段');const wkt='MULTILINESTRING('+lines.map(line=>'('+line.map(pt=>`${formatNum(pt[0])} ${formatNum(pt[1])}`).join(', ')+')').join(', ')+')';document.getElementById('wktOutput').value=`"geometry_wkt": "${wkt}"`;updateMetricsFromGeometry({type:'MultiLineString',coordinates:lines},'GeoJSON');setGeoStatus('已自動轉回 Rail Log 用 WKT','ok');}catch(err){setGeoStatus(err.message,'err');}}
+function detectTextFormat(text){const raw=(text||'').trim();if(!raw)return 'empty';if(/^(MULTILINESTRING|LINESTRING)\s*\(/i.test(raw))return 'wkt';try{const obj=JSON.parse(raw);if(obj?.type&&['FeatureCollection','Feature','LineString','MultiLineString','GeometryCollection'].includes(obj.type))return 'geojson';if(findWKTFromAnyJson(obj))return 'json-wkt';return 'json';}catch(e){return 'unknown';}}
+function smartConvertFrom(text, sourceName=''){const format=detectTextFormat(text);document.getElementById('fmtBadge').textContent='格式：'+format.toUpperCase();if(sourceName)document.getElementById('geomOutputName').value=sanitizeFilename(sourceName.replace(/\.(json|geojson|txt|wkt)$/i,''));refreshDownloadLabels();if(format==='geojson'){document.getElementById('geojsonText').value=text;convertToWKT();}else if(format==='wkt'||format==='json-wkt'){document.getElementById('inputText').value=text;convertToGeoJSON();}else if(format==='json'){document.getElementById('inputText').value=text;setGeoStatus('已讀取 JSON，但未搵到 geometry_wkt / asWKT','warn');}else{document.getElementById('inputText').value=text;setGeoStatus('未能自動判斷格式，請手動按轉換', 'warn');}}
+function updateMetricsFromGeometry(geometry,label){try{const lines=geometryToLines(geometry);const pointCount=lines.reduce((sum,line)=>sum+line.length,0);document.getElementById('fmtBadge').textContent='格式：'+label;document.getElementById('lineBadge').textContent='線段：'+lines.length;document.getElementById('pointBadge').textContent='座標點：'+pointCount;}catch(e){}}
+function copyText(id){const el=document.getElementById(id);el.select();document.execCommand('copy');setGeoStatus('已複製','ok');}
+function copyGeometryValueOnly(){const raw=document.getElementById('wktOutput').value;const match=raw.match(/"geometry_wkt"\s*:\s*"([\s\S]*)"\s*$/);if(match){navigator.clipboard?.writeText(match[1]).then(()=>setGeoStatus('已只複製 MULTILINESTRING','ok')).catch(()=>{const tmp=document.createElement('textarea');tmp.value=match[1];document.body.appendChild(tmp);tmp.select();document.execCommand('copy');tmp.remove();setGeoStatus('已只複製 MULTILINESTRING','ok');});}else{setGeoStatus('冇 WKT 可複製','err');}}
+async function pasteFromClipboard(targetId){try{const text=await navigator.clipboard.readText();document.getElementById(targetId).value=text;if(document.getElementById('autoConvert').checked)smartConvertFrom(text);}catch(e){setGeoStatus('瀏覽器未允許讀取剪貼簿，請手動貼上','err');}}
+function sanitizeFilename(name){return (name||'rail_geometry').trim().replace(/[\\/:*?"<>|]+/g,'_').replace(/\s+/g,'_').replace(/_+/g,'_')||'rail_geometry';}
+function filenameWithExt(ext){const base=sanitizeFilename(document.getElementById('geomOutputName').value);return base.toLowerCase().endsWith(ext)?base:base+ext;}
+function refreshDownloadLabels(){document.getElementById('downloadGeoBtn').textContent='下載 '+filenameWithExt('.geojson');document.getElementById('downloadWktBtn').textContent='下載 '+filenameWithExt('_wkt.txt');}
+function downloadText(filename,text,type='text/plain'){const blob=new Blob([text],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;a.click();URL.revokeObjectURL(url);}
+
+function getFilePickerTypes(filename, mimeType) {
+  const lower = String(filename || '').toLowerCase();
+
+  if (lower.endsWith('.json')) {
+    return [{
+      description: 'JSON file',
+      accept: { 'application/json': ['.json'] }
+    }];
+  }
+
+  if (lower.endsWith('.geojson')) {
+    return [{
+      description: 'GeoJSON file',
+      accept: { 'application/geo+json': ['.geojson'], 'application/json': ['.geojson', '.json'] }
+    }];
+  }
+
+  if (lower.endsWith('.txt')) {
+    return [{
+      description: 'Text file',
+      accept: { 'text/plain': ['.txt'] }
+    }];
+  }
+
+  return [{
+    description: 'Text file',
+    accept: { [mimeType || 'text/plain']: ['.txt'] }
+  }];
+}
+
+function fallbackDownloadText(filename, text, type = 'text/plain') {
+  const blob = new Blob([text], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function saveTextFile(filename, text, type = 'text/plain') {
+  const safeFilename = sanitizeFilename(filename);
+
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: safeFilename,
+        types: getFilePickerTypes(safeFilename, type)
+      });
+
+      const writable = await handle.createWritable();
+      await writable.write(new Blob([text], { type }));
+      await writable.close();
+
+      return { savedWithPicker: true };
+    } catch (error) {
+      if (error && error.name === 'AbortError') {
+        return { cancelled: true };
+      }
+      console.warn('Save picker failed, fallback to normal download:', error);
+    }
+  }
+
+  fallbackDownloadText(safeFilename, text, type);
+  return { savedWithPicker: false };
+}
+
+function downloadGeoJSON(){const text=document.getElementById('geojsonText').value;if(!text.trim())return setGeoStatus('冇 GeoJSON 可下載','err');downloadText(filenameWithExt('.geojson'),text,'application/geo+json');setGeoStatus('已下載 GeoJSON','ok');}
+function downloadWKT(){const text=document.getElementById('wktOutput').value;if(!text.trim())return setGeoStatus('冇 WKT 可下載','err');downloadText(filenameWithExt('_wkt.txt'),text);setGeoStatus('已下載 TXT','ok');}
+function loadFile(){const file=document.getElementById('fileInput').files[0];if(!file)return setGeoStatus('請先選擇檔案','err');readGeometryFile(file);}
+function readGeometryFile(file){const reader=new FileReader();reader.onload=()=>smartConvertFrom(String(reader.result||''),file.name);reader.readAsText(file);}
+function clearAll(){document.getElementById('inputText').value='';document.getElementById('geojsonText').value='';document.getElementById('wktOutput').value='';document.getElementById('fileInput').value='';document.getElementById('fmtBadge').textContent='格式：未偵測';document.getElementById('lineBadge').textContent='線段：0';document.getElementById('pointBadge').textContent='座標點：0';setGeoStatus('已清空');}
+function setupGeometryAutomation(){const inputText=document.getElementById('inputText');const geojsonText=document.getElementById('geojsonText');let inputTimer=null;let geoTimer=null;inputText.addEventListener('input',()=>{if(!document.getElementById('autoConvert').checked)return;clearTimeout(inputTimer);inputTimer=setTimeout(()=>{const text=inputText.value.trim();if(text)smartConvertFrom(text);},450);});geojsonText.addEventListener('input',()=>{if(!document.getElementById('autoConvert').checked)return;clearTimeout(geoTimer);geoTimer=setTimeout(()=>{const text=geojsonText.value.trim();if(detectTextFormat(text)==='geojson')convertToWKT();},450);});const dz=document.getElementById('dropZone');['dragenter','dragover'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('dragover');}));['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('dragover');}));dz.addEventListener('drop',e=>{const file=e.dataTransfer.files?.[0];if(file)readGeometryFile(file);});refreshDownloadLabels();}
+
+
+/* ================================
+   Company JSON Editor
+   ================================ */
+let companyEditorData = null;
+let companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
+let companyEditorOriginalWrapped = true;
+let companyStationIssueGroups = [];
+
+function toEditorIdToken(value) {
+  return String(value || '')
+    .trim()
+    // 先拆走重音符號：ō → o、ū → u、é → e，避免變成底線
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .normalize('NFKC')
+    .replace(/\s+/g, '_')
+    .replace(/[^A-Za-z0-9_]/g, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .toUpperCase();
+}
+
+function looksLikeEditorIdToken(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return false;
+  const converted = toEditorIdToken(raw);
+  if (!converted) return false;
+  // 有英文字母 / 數字，而且轉換後主要仍然係原本內容，就當係英文 ID
+  return /[A-Za-z0-9]/.test(raw) && converted.length >= 2;
+}
+
+function getStationDraftFromSearch() {
+  const raw = String(document.getElementById('stationSearchInput')?.value || '').trim();
+  const base = getCompanyIdForEditor();
+
+  if (!raw) {
+    return { name: '新車站', suffix: 'NEW', companyId: base };
+  }
+
+  // 如果搜尋欄輸入完整 STN_COMPANY_xxx，就只取最後部分做 suffix
+  const suffixFromFullId = getLockedEditorSuffix(raw, 'STN', base);
+  const token = toEditorIdToken(suffixFromFullId || raw);
+
+  if (looksLikeEditorIdToken(raw) && token) {
+    return { name: raw, suffix: token, companyId: base };
+  }
+
+  // 中文 / 日文站名：先填入站名；ID 最後部分留 NEW，等你再改
+  return { name: raw, suffix: 'NEW', companyId: base };
+}
+
+function getCompanyIdForEditor() {
+  return toEditorIdToken(companyEditorData?.company_id || document.getElementById('editCompanyId')?.value || 'COMPANY');
+}
+
+function buildLockedEditorId(kind, companyId, suffix) {
+  const cleanKind = toEditorIdToken(kind);
+  const cleanCompany = toEditorIdToken(companyId || getCompanyIdForEditor());
+  const cleanSuffix = toEditorIdToken(suffix || 'NEW');
+  return `${cleanKind}_${cleanCompany}_${cleanSuffix}`;
+}
+
+function getLockedEditorSuffix(fullId, kind, companyId) {
+  const id = toEditorIdToken(fullId);
+  const prefix = `${toEditorIdToken(kind)}_${toEditorIdToken(companyId || getCompanyIdForEditor())}_`;
+  if (id.startsWith(prefix)) return id.slice(prefix.length);
+
+  // 如果載入舊資料用咗其他 company_id，盡量保留最後部分，避免整個 ID 被吞走。
+  const generic = id.match(new RegExp(`^${toEditorIdToken(kind)}_[A-Z0-9_]+?_(.+)$`));
+  return generic ? generic[1] : id.replace(new RegExp(`^${toEditorIdToken(kind)}_`), '');
+}
+
+function syncLockedIdPrefix(kind, companyId) {
+  const cleanCompany = toEditorIdToken(companyId || getCompanyIdForEditor());
+  const prefixText = `${toEditorIdToken(kind)}_${cleanCompany}_`;
+  const el = document.getElementById(kind === 'STN' ? 'editStationIdPrefix' : 'editTrainIdPrefix');
+  if (el) el.textContent = prefixText;
+  return prefixText;
+}
+
+function rebuildStationIdFromSuffix(suffix, companyId) {
+  return buildLockedEditorId('STN', companyId, suffix);
+}
+
+function rebuildTrainIdFromSuffix(suffix, companyId) {
+  return buildLockedEditorId('TRN', companyId, suffix);
+}
+
+function buildLockedLineId(companyId, suffix) {
+  const cleanCompany = toEditorIdToken(companyId || getCompanyIdForEditor());
+  const cleanSuffix = toEditorIdToken(suffix || 'NEW_LINE');
+  return `${cleanCompany}_${cleanSuffix}`;
+}
+
+function getLineLockedSuffix(fullId, companyId) {
+  const id = toEditorIdToken(fullId);
+  const cleanCompany = toEditorIdToken(companyId || getCompanyIdForEditor());
+  const prefix = `${cleanCompany}_`;
+  if (id.startsWith(prefix)) return id.slice(prefix.length) || 'NEW_LINE';
+  return id || 'NEW_LINE';
+}
+
+function syncLineIdPrefix(companyId) {
+  const cleanCompany = toEditorIdToken(companyId || getCompanyIdForEditor());
+  const el = document.getElementById('editLineIdPrefix');
+  if (el) el.textContent = `${cleanCompany}_`;
+  return `${cleanCompany}_`;
+}
+
+function setCompanyEditorStatus(msg, type='') {
+  const el = document.getElementById('companyEditorStatus');
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'editor-status ' + (type || '');
+}
+
+function normalizeCompanyEditorData(raw) {
+  companyEditorOriginalWrapped = Array.isArray(raw);
+  const comp = Array.isArray(raw) ? (raw[0] || {}) : raw;
+  if (!comp || typeof comp !== 'object') throw new Error('JSON 最外層格式錯誤');
+  comp.lines = Array.isArray(comp.lines) ? comp.lines : [];
+  comp.stations = Array.isArray(comp.stations) ? comp.stations : [];
+  comp.trains = Array.isArray(comp.trains) ? comp.trains : [];
+  comp.company_id = toEditorIdToken(comp.company_id || comp.id || '');
+  comp.company_name = comp.company_name || comp.name || '';
+  comp.categories = comp.categories || '';
+  comp.lines.forEach(line => {
+    line.company_id = toEditorIdToken(line.company_id || comp.company_id);
+    const suffix = getLineLockedSuffix(line.id || 'NEW_LINE', line.company_id);
+    line.id = buildLockedLineId(line.company_id, suffix);
+    if (!Array.isArray(line.sequence)) line.sequence = [];
+    line.sequence = line.sequence.map(id => toEditorIdToken(id));
+  });
+  comp.stations.forEach(st => {
+    st.company_id = toEditorIdToken(st.company_id || comp.company_id);
+    st.id = toEditorIdToken(st.id || rebuildStationIdFromSuffix(st.name || 'NEW', st.company_id));
+  });
+  comp.trains.forEach(tr => {
+    tr.company_id = toEditorIdToken(tr.company_id || comp.company_id);
+    tr.id = toEditorIdToken(tr.id || rebuildTrainIdFromSuffix(tr.name || 'NEW', tr.company_id));
+    if (!Array.isArray(tr.variants)) tr.variants = [];
+  });
+  return comp;
+}
+
+function loadCompanyJsonFile() {
+  const file = document.getElementById('companyJsonFileInput')?.files?.[0];
+  if (!file) return setCompanyEditorStatus('請先選擇 JSON 檔', 'err');
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const text = String(reader.result || '');
+      document.getElementById('companyRawInput').value = text;
+      const raw = JSON.parse(text);
+      companyEditorData = normalizeCompanyEditorData(raw);
+      companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
+      document.getElementById('companyJsonOutputName').value = sanitizeFilename(file.name.replace(/\.json$/i, ''));
+      renderCompanyEditorAll();
+      switchCompanyEditorSection('lines');
+      setCompanyEditorStatus('已讀取 ' + file.name, 'ok');
+    } catch (err) {
+      setCompanyEditorStatus('讀取失敗：' + err.message, 'err');
+    }
+  };
+  reader.readAsText(file);
+}
+
+function applyRawCompanyJson() {
+  try {
+    const text = document.getElementById('companyRawInput').value.trim();
+    if (!text) throw new Error('請先貼入公司 JSON');
+    companyEditorData = normalizeCompanyEditorData(JSON.parse(text));
+    companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
+    renderCompanyEditorAll();
+    setCompanyEditorStatus('已由原始 JSON 套用到編輯器', 'ok');
+  } catch (err) {
+    setCompanyEditorStatus('套用失敗：' + err.message, 'err');
+  }
+}
+
+function getCompanyOutputObject() {
+  if (!companyEditorData) return null;
+  return [companyEditorData];
+}
+
+function refreshCompanyJsonOutput() {
+  const out = document.getElementById('companyJsonOutput');
+  if (!out) return;
+  if (!companyEditorData) { out.value = ''; return; }
+  out.value = JSON.stringify(getCompanyOutputObject(), null, 2);
+  refreshCompanyJsonSaveLabel();
+}
+
+function refreshCompanyJsonSaveLabel() {
+  const btn = document.getElementById('saveCompanyJsonBtn');
+  if (!btn) return;
+  const base = sanitizeFilename(document.getElementById('companyJsonOutputName')?.value || companyEditorData?.company_id?.toLowerCase() || 'company_updated');
+  btn.textContent = '儲存 ' + (base.toLowerCase().endsWith('.json') ? base : base + '.json');
+}
+
+async function saveCompanyJsonFile() {
+  if (!companyEditorData) return setCompanyEditorStatus('未載入公司 JSON', 'err');
+  refreshCompanyJsonOutput();
+  const text = document.getElementById('companyJsonOutput').value;
+  const base = sanitizeFilename(document.getElementById('companyJsonOutputName').value || 'company_updated');
+  const filename = base.toLowerCase().endsWith('.json') ? base : base + '.json';
+  const result = await saveTextFile(filename, text, 'application/json');
+  if (result.cancelled) return setCompanyEditorStatus('已取消儲存 JSON', 'warn');
+  setCompanyEditorStatus(result.savedWithPicker ? '已儲存新公司 JSON 到指定位置' : '已下載新公司 JSON（此瀏覽器未支援自選位置）', 'ok');
+}
+
+function clearCompanyJsonEditor() {
+  companyEditorData = null;
+  companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
+  companyStationIssueGroups = [];
+  const fileInput = document.getElementById('companyJsonFileInput');
+  if (fileInput) fileInput.value = '';
+  const rawInput = document.getElementById('companyRawInput');
+  if (rawInput) rawInput.value = '';
+  const out = document.getElementById('companyJsonOutput');
+  if (out) out.value = '';
+  const outputName = document.getElementById('companyJsonOutputName');
+  if (outputName) outputName.value = 'company_updated';
+  renderCompanyEditorAll();
+  setCompanyEditorStatus('已清除已載入公司 JSON，可以重新讀取新檔案', 'warn');
+}
+
+function renderCompanyEditorAll() {
+  renderCompanyMetaForm();
+  renderCompanyLineList();
+  renderSelectedLineForm();
+  renderCompanyStationList();
+  renderSelectedStationForm();
+  renderCompanyTrainList();
+  renderSelectedTrainForm();
+  renderCompanyStationDatalist();
+  renderStationIssuePanel();
+  updateCompanyEditorBadges();
+  refreshCompanyJsonOutput();
+}
+
+function updateCompanyEditorBadges() {
+  const c = companyEditorData;
+  document.getElementById('companyEditorNameBadge').textContent = '公司：' + (c ? `${c.company_name || '-'} (${c.company_id || '-'})` : '未載入');
+  document.getElementById('companyEditorLineBadge').textContent = '路線：' + (c?.lines?.length || 0);
+  document.getElementById('companyEditorStationBadge').textContent = '車站：' + (c?.stations?.length || 0);
+  document.getElementById('companyEditorTrainBadge').textContent = '車型：' + (c?.trains?.length || 0);
+}
+
+function renderCompanyMetaForm() {
+  const c = companyEditorData || {};
+  document.getElementById('editCompanyId').value = c.company_id || '';
+  document.getElementById('editCompanyName').value = c.company_name || '';
+  document.getElementById('editCompanyCategory').value = c.categories || '';
+  document.getElementById('editCompanySchema').value = c.schema_version || '';
+}
+
+function updateCompanyMetaFromForm() {
+  if (!companyEditorData) return;
+  const oldId = toEditorIdToken(companyEditorData.company_id || '');
+  companyEditorData.company_id = toEditorIdToken(document.getElementById('editCompanyId').value);
+  document.getElementById('editCompanyId').value = companyEditorData.company_id;
+  companyEditorData.company_name = document.getElementById('editCompanyName').value.trim();
+  companyEditorData.categories = document.getElementById('editCompanyCategory').value.trim();
+  const schema = document.getElementById('editCompanySchema').value.trim();
+  if (schema) companyEditorData.schema_version = schema;
+  else delete companyEditorData.schema_version;
+  if (oldId && oldId !== companyEditorData.company_id) {
+    companyEditorData.lines.forEach(l => {
+      if (!l.company_id || toEditorIdToken(l.company_id) === oldId) {
+        const suffix = getLineLockedSuffix(l.id, oldId) || 'NEW_LINE';
+        l.company_id = companyEditorData.company_id;
+        l.id = buildLockedLineId(companyEditorData.company_id, suffix);
+      }
+    });
+    companyEditorData.stations.forEach(st => {
+      if (!st.company_id || toEditorIdToken(st.company_id) === oldId) {
+        const suffix = getLockedEditorSuffix(st.id, 'STN', oldId) || 'NEW';
+        st.company_id = companyEditorData.company_id;
+        st.id = rebuildStationIdFromSuffix(suffix, companyEditorData.company_id);
+      }
+    });
+    companyEditorData.trains.forEach(tr => {
+      if (!tr.company_id || toEditorIdToken(tr.company_id) === oldId) {
+        const suffix = getLockedEditorSuffix(tr.id, 'TRN', oldId) || 'NEW';
+        tr.company_id = companyEditorData.company_id;
+        tr.id = rebuildTrainIdFromSuffix(suffix, companyEditorData.company_id);
+      }
+    });
+    companyEditorData.lines.forEach(line => {
+      if (Array.isArray(line.sequence)) {
+        line.sequence = line.sequence.map(id => {
+          const suffix = getLockedEditorSuffix(id, 'STN', oldId);
+          return id.startsWith(`STN_${oldId}_`) ? rebuildStationIdFromSuffix(suffix, companyEditorData.company_id) : id;
+        });
+      }
+    });
+  }
+  renderCompanyEditorAll();
+}
+
+function switchCompanyEditorSection(section) {
+  companyEditorCurrent.section = section;
+  ['lines','stations','trains','raw'].forEach(s => {
+    const panel = document.getElementById('companyEditor' + s.charAt(0).toUpperCase() + s.slice(1));
+    const btn = document.getElementById('jsonEditTab' + s.charAt(0).toUpperCase() + s.slice(1));
+    if (panel) panel.style.display = s === section ? 'block' : 'none';
+    if (btn) btn.classList.toggle('active', s === section);
+  });
+  if (section === 'raw') refreshCompanyJsonOutput();
+}
+
+function renderCompanyLineList() {
+  const box = document.getElementById('companyLineList');
+  if (!box) return;
+  const lines = companyEditorData?.lines || [];
+  box.innerHTML = lines.map((line, i) => `<button class="${i === companyEditorCurrent.line ? 'active' : ''}" onclick="selectCompanyLine(${i})">${escapeEditorHtml(line.name || line.id || '(未命名路線)')}<br><span class="small">${escapeEditorHtml(line.id || '')}</span></button>`).join('') || '<div class="status">未有路線</div>';
+}
+
+function selectCompanyLine(index) { companyEditorCurrent.line = index; renderCompanyLineList(); renderSelectedLineForm(); }
+function getSelectedLine() { return companyEditorData?.lines?.[companyEditorCurrent.line] || null; }
+
+function renderSelectedLineForm() {
+  const line = getSelectedLine() || {};
+  const companyId = toEditorIdToken(line.company_id || companyEditorData?.company_id || 'COMPANY');
+  syncLineIdPrefix(companyId);
+  const lineSuffix = getLineLockedSuffix(line.id || '', companyId) || 'NEW_LINE';
+  document.getElementById('editLineIdSuffix').value = lineSuffix;
+  document.getElementById('editLineId').value = buildLockedLineId(companyId, lineSuffix);
+  document.getElementById('editLineName').value = line.name || '';
+  document.getElementById('editLineColor').value = line.color || '';
+  document.getElementById('editLineCompanyId').value = companyId;
+  document.getElementById('editLineGeometry').value = line.geometry_wkt || line.asWKT || line.geometry || '';
+
+  const isLoopInput = document.getElementById('editLineIsLoop');
+  const forwardInput = document.getElementById('editLineForwardLabel');
+  const reverseInput = document.getElementById('editLineReverseLabel');
+
+  if (isLoopInput) isLoopInput.checked = !!line.is_loop;
+  if (forwardInput) forwardInput.value = line.direction_labels?.forward || '';
+  if (reverseInput) reverseInput.value = line.direction_labels?.reverse || '';
+
+  renderLineSequenceList();
+}
+
+function toggleLoopDirectionDefaults() {
+  const isLoop = !!document.getElementById('editLineIsLoop')?.checked;
+  const forwardInput = document.getElementById('editLineForwardLabel');
+  const reverseInput = document.getElementById('editLineReverseLabel');
+
+  // 勾選環狀線時，先自動放一組常用日鐵標籤；之後可以自由改成右回り / 左回り等
+  if (isLoop) {
+    if (forwardInput && !forwardInput.value.trim()) forwardInput.value = '外回り';
+    if (reverseInput && !reverseInput.value.trim()) reverseInput.value = '内回り';
+  }
+}
+
+function updateSelectedLineFromForm() {
+  const line = getSelectedLine(); if (!line) return;
+  const companyId = toEditorIdToken(document.getElementById('editLineCompanyId').value || companyEditorData.company_id);
+  const suffix = toEditorIdToken(document.getElementById('editLineIdSuffix').value || 'NEW_LINE');
+  document.getElementById('editLineCompanyId').value = companyId;
+  document.getElementById('editLineIdSuffix').value = suffix;
+  syncLineIdPrefix(companyId);
+  line.id = buildLockedLineId(companyId, suffix);
+  document.getElementById('editLineId').value = line.id;
+  line.name = document.getElementById('editLineName').value.trim();
+  line.color = document.getElementById('editLineColor').value.trim();
+  line.company_id = companyId;
+  line.geometry_wkt = document.getElementById('editLineGeometry').value.trim();
+
+  const isLoop = !!document.getElementById('editLineIsLoop')?.checked;
+  const forwardLabel = (document.getElementById('editLineForwardLabel')?.value || '').trim();
+  const reverseLabel = (document.getElementById('editLineReverseLabel')?.value || '').trim();
+
+  if (isLoop) {
+    line.is_loop = true;
+  } else {
+    delete line.is_loop;
+  }
+
+  if (isLoop || forwardLabel || reverseLabel) {
+    line.direction_labels = {
+      forward: forwardLabel || '順方向',
+      reverse: reverseLabel || '逆方向'
+    };
+  } else {
+    delete line.direction_labels;
+  }
+
+  renderCompanyLineList(); refreshCompanyJsonOutput(); updateCompanyEditorBadges();
+}
+
+function renderLineSequenceList() {
+  const box = document.getElementById('lineSequenceList');
+  const line = getSelectedLine();
+  if (!box || !line) { if (box) box.innerHTML = '<div class="status">請先選擇路線</div>'; return; }
+  line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
+  const stMap = new Map((companyEditorData?.stations || []).map(s => [s.id, s]));
+  box.innerHTML = line.sequence.map((stId, i) => {
+    const st = stMap.get(stId);
+    const label = st ? `${st.name}｜${st.id}` : stId;
+    return `<div class="seq-item" draggable="true" data-seq-index="${i}" ondragstart="handleSequenceDragStart(event, ${i})" ondragover="handleSequenceDragOver(event, ${i})" ondragleave="handleSequenceDragLeave(event)" ondrop="handleSequenceDrop(event, ${i})" ondragend="handleSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${i+1}</span><span class="seq-name" title="${escapeEditorHtml(label)}">${escapeEditorHtml(label)}</span><button class="ghost mini-btn" onclick="moveSequenceStation(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveSequenceStation(${i},1)">↓</button><button class="danger mini-btn" onclick="removeSequenceStation(${i})">✕</button></div>`;
+  }).join('') || '<div class="status">未有停車站 sequence</div>';
+}
+
+let companySequenceDragIndex = null;
+
+function clearSequenceDragClasses() {
+  document.querySelectorAll('#lineSequenceList .seq-item').forEach(item => {
+    item.classList.remove('dragging', 'drag-over');
+  });
+}
+
+function handleSequenceDragStart(event, index) {
+  companySequenceDragIndex = index;
+  event.currentTarget.classList.add('dragging');
+  if (event.dataTransfer) {
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', String(index));
+  }
+}
+
+function handleSequenceDragOver(event, index) {
+  event.preventDefault();
+  if (event.dataTransfer) event.dataTransfer.dropEffect = 'move';
+  document.querySelectorAll('#lineSequenceList .seq-item.drag-over').forEach(item => {
+    if (item !== event.currentTarget) item.classList.remove('drag-over');
+  });
+  if (companySequenceDragIndex !== null && companySequenceDragIndex !== index) {
+    event.currentTarget.classList.add('drag-over');
+  }
+}
+
+function handleSequenceDragLeave(event) {
+  event.currentTarget.classList.remove('drag-over');
+}
+
+function handleSequenceDrop(event, targetIndex) {
+  event.preventDefault();
+  const rawIndex = event.dataTransfer?.getData('text/plain');
+  const fromIndex = Number.isInteger(companySequenceDragIndex) ? companySequenceDragIndex : Number(rawIndex);
+  reorderSequenceStation(fromIndex, targetIndex);
+  companySequenceDragIndex = null;
+  clearSequenceDragClasses();
+}
+
+function handleSequenceDragEnd() {
+  companySequenceDragIndex = null;
+  clearSequenceDragClasses();
+}
+
+function reorderSequenceStation(fromIndex, toIndex) {
+  const line = getSelectedLine();
+  if (!line?.sequence) return;
+  if (!Number.isInteger(fromIndex) || !Number.isInteger(toIndex)) return;
+  if (fromIndex < 0 || fromIndex >= line.sequence.length || toIndex < 0 || toIndex >= line.sequence.length) return;
+  if (fromIndex === toIndex) return;
+
+  const [moved] = line.sequence.splice(fromIndex, 1);
+  line.sequence.splice(toIndex, 0, moved);
+  renderLineSequenceList();
+  refreshCompanyJsonOutput();
+}
+
+function addStationToSelectedLineSequence() {
+  const line = getSelectedLine(); if (!line) return;
+  const raw = document.getElementById('sequenceStationPicker').value.trim();
+  if (!raw) return;
+  const st = (companyEditorData.stations || []).find(s => s.id === toEditorIdToken(raw) || s.name === raw || `${s.name}｜${s.id}` === raw);
+  const id = st?.id || toEditorIdToken(raw);
+  line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
+  line.sequence.push(id);
+  document.getElementById('sequenceStationPicker').value = '';
+  renderLineSequenceList(); refreshCompanyJsonOutput();
+}
+
+function moveSequenceStation(index, delta) {
+  const line = getSelectedLine(); if (!line?.sequence) return;
+  const next = index + delta;
+  if (next < 0 || next >= line.sequence.length) return;
+  [line.sequence[index], line.sequence[next]] = [line.sequence[next], line.sequence[index]];
+  renderLineSequenceList(); refreshCompanyJsonOutput();
+}
+function removeSequenceStation(index) { const line = getSelectedLine(); if (!line?.sequence) return; line.sequence.splice(index,1); renderLineSequenceList(); refreshCompanyJsonOutput(); }
+
+function addCompanyLine() {
+  if (!companyEditorData) return;
+  const base = toEditorIdToken(companyEditorData.company_id || 'COMPANY');
+  companyEditorData.lines.push({ id: buildLockedLineId(base, 'NEW_LINE'), company_id: base, name: '新路線', color: '#63BD0F', geometry_wkt: '', sequence: [] });
+  companyEditorCurrent.line = companyEditorData.lines.length - 1;
+  renderCompanyEditorAll();
+}
+function deleteSelectedLine() {
+  if (!companyEditorData || !getSelectedLine()) return;
+  if (!confirm('確定刪除此路線？')) return;
+  companyEditorData.lines.splice(companyEditorCurrent.line,1);
+  companyEditorCurrent.line = Math.max(0, companyEditorCurrent.line - 1);
+  renderCompanyEditorAll();
+}
+
+function renderCompanyStationDatalist() {
+  const list = document.getElementById('companyStationIdList');
+  if (!list) return;
+
+  // 每個車站只顯示一個候選項，避免 datalist 出現「同一站兩行」
+  // 格式用「站名｜ID」，addStationToSelectedLineSequence() 已支援呢個格式。
+  list.innerHTML = (companyEditorData?.stations || []).map(s => {
+    const name = String(s.name || '').trim();
+    const id = String(s.id || '').trim();
+    const value = name && id ? `${name}｜${id}` : (id || name);
+    return `<option value="${escapeEditorHtml(value)}"></option>`;
+  }).join('');
+}
+
+
+function normalizeStationCompareName(name) {
+  return String(name || '').normalize('NFKC').trim().replace(/\s+/g, '').toLowerCase();
+}
+
+function normalizeStationCoordValue(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n.toFixed(6) : '';
+}
+
+function getStationRouteRefs(stationId) {
+  if (!companyEditorData || !stationId) return [];
+  return (companyEditorData.lines || []).filter(line => Array.isArray(line.sequence) && line.sequence.includes(stationId));
+}
+
+function buildStationMiniHtml(station, index, groupIndex = -1, allowMerge = false) {
+  const routes = getStationRouteRefs(station.id);
+  const routeText = routes.length ? routes.map(r => r.name || r.id).join('、') : '未有路線停靠';
+  const mergeBtn = allowMerge ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, '${escapeEditorAttr(station.id)}')">合併到此站</button>` : '';
+  return `<div class="station-mini-card"><strong>${escapeEditorHtml(station.name || '(未命名站)')}</strong><br><code>${escapeEditorHtml(station.id || '')}</code><br><span>座標：${escapeEditorHtml(station.lat ?? '')}, ${escapeEditorHtml(station.lng ?? '')}</span><br><span>停靠：${escapeEditorHtml(routeText)}</span><br><button class="ghost mini-btn" onclick="selectCompanyStation(${index})">修改此站</button>${mergeBtn}</div>`;
+}
+
+function findStationIssueGroups() {
+  const stations = (companyEditorData?.stations || []).map((s, i) => ({ s, i }));
+  const groups = [];
+  const byName = new Map();
+  const byCoord = new Map();
+
+  stations.forEach(item => {
+    const nameKey = normalizeStationCompareName(item.s.name);
+    if (nameKey) {
+      if (!byName.has(nameKey)) byName.set(nameKey, []);
+      byName.get(nameKey).push(item);
+    }
+    const lat = normalizeStationCoordValue(item.s.lat);
+    const lng = normalizeStationCoordValue(item.s.lng);
+    if (lat && lng) {
+      const coordKey = `${lat},${lng}`;
+      if (!byCoord.has(coordKey)) byCoord.set(coordKey, []);
+      byCoord.get(coordKey).push(item);
+    }
+  });
+
+  byName.forEach((items, key) => {
+    if (items.length > 1) groups.push({ type: 'name', key, title: `同名車站：${items[0].s.name || key}`, items });
+  });
+  byCoord.forEach((items, key) => {
+    if (items.length > 1) groups.push({ type: 'coord', key, title: `同座標車站：${key}`, items });
+  });
+  return groups;
+}
+
+function renderStationIssuePanel() {
+  const panel = document.getElementById('stationIssuePanel');
+  if (!panel) return;
+  if (!companyEditorData) { panel.innerHTML = ''; return; }
+  companyStationIssueGroups = findStationIssueGroups();
+  if (!companyStationIssueGroups.length) {
+    panel.innerHTML = '<div class="station-route-refs"><strong>檢查結果：</strong>未發現同名 / 同座標車站。</div>';
+    return;
+  }
+  panel.innerHTML = companyStationIssueGroups.map((group, groupIndex) => {
+    const allowMerge = group.type === 'name';
+    const detail = group.type === 'name'
+      ? '以下車站名稱相同，請確認是否同一個站。可以揀其中一個作正確名稱並合併，系統會同步改寫所有路線 sequence。'
+      : '以下車站座標完全相同，請檢查是否輸入錯誤或重複建立。';
+    const cards = group.items.map(({s, i}) => buildStationMiniHtml(s, i, groupIndex, allowMerge)).join('');
+    return `<div class="station-issue-card ${group.type === 'coord' ? 'coord' : ''}"><div class="station-issue-title">⚠️ ${escapeEditorHtml(group.title)}</div><div>${escapeEditorHtml(detail)}</div><div class="station-issue-actions">${cards}</div></div>`;
+  }).join('');
+}
+
+function renderSelectedStationRouteRefs(stationId) {
+  const box = document.getElementById('selectedStationRouteRefs');
+  if (!box) return;
+  if (!stationId) { box.innerHTML = '<strong>停靠路線：</strong>未選擇車站'; return; }
+  const routes = getStationRouteRefs(stationId);
+  if (!routes.length) {
+    box.innerHTML = '<strong>停靠路線：</strong>未有路線 sequence 使用此站';
+    return;
+  }
+  box.innerHTML = '<strong>停靠路線：</strong>' + routes.map(route => `<button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(route.id)}')">${escapeEditorHtml(route.name || route.id)}</button>`).join(' ');
+}
+
+function selectCompanyLineById(lineId) {
+  const index = (companyEditorData?.lines || []).findIndex(line => line.id === lineId);
+  if (index < 0) return;
+  companyEditorCurrent.line = index;
+  switchCompanyEditorSection('lines');
+  renderCompanyLineList();
+  renderSelectedLineForm();
+}
+
+function mergeStationIssueGroup(groupIndex, targetId) {
+  const group = companyStationIssueGroups[groupIndex];
+  if (!companyEditorData || !group || group.type !== 'name') return;
+  const target = (companyEditorData.stations || []).find(st => st.id === targetId);
+  if (!target) return;
+  const duplicateIds = group.items.map(item => item.s.id).filter(id => id && id !== targetId);
+  if (!duplicateIds.length) return;
+  const ok = confirm(`確定合併 ${duplicateIds.length} 個同名車站到「${target.name}」？\n所有路線 sequence 會自動改用：${target.id}`);
+  if (!ok) return;
+
+  companyEditorData.lines.forEach(line => {
+    if (!Array.isArray(line.sequence)) return;
+    const seen = new Set();
+    line.sequence = line.sequence.map(id => duplicateIds.includes(id) ? targetId : id).filter(id => {
+      if (seen.has(id)) return false;
+      seen.add(id);
+      return true;
+    });
+  });
+  companyEditorData.stations = companyEditorData.stations.filter(st => !duplicateIds.includes(st.id));
+  companyEditorCurrent.station = Math.max(0, companyEditorData.stations.findIndex(st => st.id === targetId));
+  renderCompanyEditorAll();
+  switchCompanyEditorSection('stations');
+  setCompanyEditorStatus(`已合併同名車站到 ${target.name}，並已改寫相關路線 sequence`, 'ok');
+}
+
+function renderCompanyStationList() {
+  const box = document.getElementById('companyStationList'); if (!box) return;
+  const kw = (document.getElementById('stationSearchInput')?.value || '').toLowerCase();
+  const stations = (companyEditorData?.stations || []).map((s,i)=>({s,i})).filter(x => !kw || `${x.s.id} ${x.s.name}`.toLowerCase().includes(kw));
+  box.innerHTML = stations.map(({s,i}) => `<button class="${i === companyEditorCurrent.station ? 'active' : ''}" onclick="selectCompanyStation(${i})">${escapeEditorHtml(s.name || s.id || '(未命名站)')}<br><span class="small">${escapeEditorHtml(s.id || '')}</span></button>`).join('') || '<div class="status">找不到車站；按「+ 新增車站」會使用搜尋欄內容自動填入站名 / ID。</div>';
+}
+function selectCompanyStation(index) { companyEditorCurrent.station = index; renderCompanyStationList(); renderSelectedStationForm(); }
+function getSelectedStation() { return companyEditorData?.stations?.[companyEditorCurrent.station] || null; }
+function renderSelectedStationForm() {
+  const st = getSelectedStation() || {};
+  const companyId = toEditorIdToken(st.company_id || companyEditorData?.company_id || 'COMPANY');
+  syncLockedIdPrefix('STN', companyId);
+  const suffix = getLockedEditorSuffix(st.id || '', 'STN', companyId) || 'NEW';
+  document.getElementById('editStationIdSuffix').value = suffix;
+  document.getElementById('editStationId').value = rebuildStationIdFromSuffix(suffix, companyId);
+  document.getElementById('editStationName').value = st.name || '';
+  document.getElementById('editStationLat').value = st.lat ?? '';
+  document.getElementById('editStationLng').value = st.lng ?? '';
+  document.getElementById('editStationCompanyId').value = companyId;
+  document.getElementById('editStationNameEn').value = st.name_en || st.memo || '';
+  renderSelectedStationRouteRefs(st.id);
+}
+function updateSelectedStationFromForm() {
+  const st = getSelectedStation(); if (!st) return;
+  const oldId = toEditorIdToken(st.id);
+  const companyId = toEditorIdToken(document.getElementById('editStationCompanyId').value || companyEditorData.company_id);
+  const suffix = toEditorIdToken(document.getElementById('editStationIdSuffix').value || 'NEW');
+  document.getElementById('editStationCompanyId').value = companyId;
+  document.getElementById('editStationIdSuffix').value = suffix;
+  syncLockedIdPrefix('STN', companyId);
+  st.id = rebuildStationIdFromSuffix(suffix, companyId);
+  document.getElementById('editStationId').value = st.id;
+  st.name = document.getElementById('editStationName').value.trim();
+  st.lat = document.getElementById('editStationLat').value.trim();
+  st.lng = document.getElementById('editStationLng').value.trim();
+  st.company_id = companyId;
+  const nameEn = document.getElementById('editStationNameEn').value.trim();
+  if (nameEn) st.name_en = nameEn; else delete st.name_en;
+  if (oldId && oldId !== st.id) {
+    companyEditorData.lines.forEach(line => { if (Array.isArray(line.sequence)) line.sequence = line.sequence.map(id => toEditorIdToken(id) === oldId ? st.id : id); });
+  }
+  renderCompanyStationList(); renderCompanyStationDatalist(); renderLineSequenceList(); renderStationIssuePanel(); renderSelectedStationRouteRefs(st.id); refreshCompanyJsonOutput();
+}
+function addCompanyStation() {
+  if (!companyEditorData) return;
+  const draft = getStationDraftFromSearch();
+  const companyId = toEditorIdToken(draft.companyId || companyEditorData.company_id || 'COMPANY');
+  const suffix = toEditorIdToken(draft.suffix || 'NEW') || 'NEW';
+
+  companyEditorData.stations.push({
+    id: rebuildStationIdFromSuffix(suffix, companyId),
+    company_id: companyId,
+    name: draft.name || '新車站',
+    lat: '',
+    lng: ''
+  });
+
+  companyEditorCurrent.station = companyEditorData.stations.length - 1;
+  renderCompanyEditorAll();
+  switchCompanyEditorSection('stations');
+  setCompanyEditorStatus(`已新增車站：${draft.name || suffix}`, 'ok');
+}
+function deleteSelectedStation() {
+  if (!companyEditorData || !getSelectedStation()) return;
+  const st = getSelectedStation();
+  if (!confirm('確定刪除此車站？\n如路線 sequence 有使用呢個 ID，會一併移除。')) return;
+  companyEditorData.lines.forEach(line => { if (Array.isArray(line.sequence)) line.sequence = line.sequence.filter(id => id !== st.id); });
+  companyEditorData.stations.splice(companyEditorCurrent.station,1);
+  companyEditorCurrent.station = Math.max(0, companyEditorCurrent.station - 1);
+  renderCompanyEditorAll();
+}
+
+function renderCompanyTrainList() {
+  const box = document.getElementById('companyTrainList'); if (!box) return;
+  const trains = companyEditorData?.trains || [];
+  box.innerHTML = trains.map((tr,i) => `<button class="${i === companyEditorCurrent.train ? 'active' : ''}" onclick="selectCompanyTrain(${i})">${escapeEditorHtml(tr.name || tr.id || '(未命名車型)')}<br><span class="small">${escapeEditorHtml(tr.id || '')}</span></button>`).join('') || '<div class="status">未有車型</div>';
+}
+function selectCompanyTrain(index) { companyEditorCurrent.train = index; renderCompanyTrainList(); renderSelectedTrainForm(); }
+function getSelectedTrain() { return companyEditorData?.trains?.[companyEditorCurrent.train] || null; }
+function renderSelectedTrainForm() {
+  const tr = getSelectedTrain() || {};
+  const companyId = toEditorIdToken(tr.company_id || companyEditorData?.company_id || 'COMPANY');
+  syncLockedIdPrefix('TRN', companyId);
+  const suffix = getLockedEditorSuffix(tr.id || '', 'TRN', companyId) || 'NEW';
+  document.getElementById('editTrainIdSuffix').value = suffix;
+  document.getElementById('editTrainId').value = rebuildTrainIdFromSuffix(suffix, companyId);
+  document.getElementById('editTrainName').value = tr.name || '';
+  document.getElementById('editTrainCompanyId').value = companyId;
+  document.getElementById('editTrainVariants').value = Array.isArray(tr.variants) ? tr.variants.join('\n') : '';
+}
+function updateSelectedTrainFromForm() {
+  const tr = getSelectedTrain(); if (!tr) return;
+  const companyId = toEditorIdToken(document.getElementById('editTrainCompanyId').value || companyEditorData.company_id);
+  const suffix = toEditorIdToken(document.getElementById('editTrainIdSuffix').value || 'NEW');
+  document.getElementById('editTrainCompanyId').value = companyId;
+  document.getElementById('editTrainIdSuffix').value = suffix;
+  syncLockedIdPrefix('TRN', companyId);
+  tr.id = rebuildTrainIdFromSuffix(suffix, companyId);
+  document.getElementById('editTrainId').value = tr.id;
+  tr.name = document.getElementById('editTrainName').value.trim();
+  tr.company_id = companyId;
+  tr.variants = document.getElementById('editTrainVariants').value.split('\n').map(v => v.trim()).filter(Boolean);
+  renderCompanyTrainList(); refreshCompanyJsonOutput();
+}
+function addCompanyTrain() {
+  if (!companyEditorData) return;
+  const base = companyEditorData.company_id || 'COMPANY';
+  companyEditorData.trains.push({ id: rebuildTrainIdFromSuffix('NEW', base), company_id: toEditorIdToken(base), name: '新車型', variants: [] });
+  companyEditorCurrent.train = companyEditorData.trains.length - 1;
+  renderCompanyEditorAll(); switchCompanyEditorSection('trains');
+}
+function deleteSelectedTrain() {
+  if (!companyEditorData || !getSelectedTrain()) return;
+  if (!confirm('確定刪除此車型？')) return;
+  companyEditorData.trains.splice(companyEditorCurrent.train,1);
+  companyEditorCurrent.train = Math.max(0, companyEditorCurrent.train - 1);
+  renderCompanyEditorAll();
+}
+
+function escapeEditorHtml(text) {
+  return String(text || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+
+function escapeEditorAttr(text) {
+  return String(text || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+document.addEventListener('DOMContentLoaded',setupGeometryAutomation);
+</script>
+</body>
+</html>
