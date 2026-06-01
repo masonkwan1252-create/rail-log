@@ -1156,54 +1156,6 @@
     "variants": []
   },
   {
-    "id": "TRN_NAGOYA_5050",
-    "company_id": "NAGOYA",
-    "name": "5050形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_N1000",
-    "company_id": "NAGOYA",
-    "name": "N1000形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_2000",
-    "company_id": "NAGOYA",
-    "name": "2000形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_3050",
-    "company_id": "NAGOYA",
-    "name": "3050形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_N3000",
-    "company_id": "NAGOYA",
-    "name": "N3000形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_6000",
-    "company_id": "NAGOYA",
-    "name": "6000形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_6050",
-    "company_id": "NAGOYA",
-    "name": "6050形",
-    "variants": []
-  },
-  {
-    "id": "TRN_NAGOYA_7000",
-    "company_id": "NAGOYA",
-    "name": "7000形",
-    "variants": []
-  },
-  {
     "id": "TRN_KITAKYU_8000",
     "company_id": "KITAKYU",
     "name": "8000形",

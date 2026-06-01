@@ -13826,13 +13826,26 @@
         "id": "TRN_JR_EAST_E233",
         "company_id": "JR_EAST",
         "name": "E233系",
-        "variants": []
+        "variants": [
+          "0番台",
+          "1000番台",
+          "2000番台",
+          "3000番台",
+          "5000番台",
+          "6000番台",
+          "7000番台",
+          "8000番台",
+          "8500番台"
+        ]
       },
       {
         "id": "TRN_JR_EAST_E235",
         "company_id": "JR_EAST",
         "name": "E235系",
-        "variants": []
+        "variants": [
+          "0番台",
+          "1000番台"
+        ]
       },
       {
         "id": "TRN_JR_EAST_E531",
