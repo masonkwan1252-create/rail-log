@@ -1284,6 +1284,18 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
     border-top: 1px solid var(--border);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+
+    /* iPhone PWA / Safari: keep the option bar attached to the visual viewport */
+    width: 100vw;
+    min-height: calc(54px + env(safe-area-inset-bottom));
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    contain: layout paint;
+}
+
+#main-app.show {
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .nav-item {
@@ -1621,6 +1633,31 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     color: var(--text);
     border: 1px solid var(--border);
     line-height: 32px;
+}
+
+
+.map-station-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 32px;
+    padding: 0 9px;
+    border-radius: 999px;
+    background: var(--tag-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+}
+
+.map-station-toggle input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: var(--primary);
 }
 
 @media (max-width: 480px) {
@@ -2932,6 +2969,10 @@ header::before {
 			<option value="private">私鐵</option>
 			<option value="third_sector">3セク</option>
         </select>
+        <label class="map-station-toggle" title="顯示 / 隱藏已登記路段的車站標記">
+            <input id="mapStationMarkerToggle" type="checkbox" checked onchange="handleMapStationMarkerToggle()">
+            <span>站名標</span>
+        </label>
     </div>
 </div>
 
@@ -4351,12 +4392,35 @@ function fillList(listId, dataArray) {
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
 }
 
+function lockBottomNavToVisualViewport() {
+    const nav = document.querySelector(".bottom-nav");
+    if (!nav) return;
+
+    // In iOS standalone/Safari, fixed elements can visually drift when the visual viewport
+    // changes after tab switching or address-bar animation. Keep it pinned to the visible bottom.
+    if (window.visualViewport) {
+        const viewport = window.visualViewport;
+        const bottomOffset = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop);
+        nav.style.bottom = `${bottomOffset}px`;
+    } else {
+        nav.style.bottom = "0px";
+    }
+}
+
+function refreshBottomNavLock() {
+    lockBottomNavToVisualViewport();
+    requestAnimationFrame(lockBottomNavToVisualViewport);
+    setTimeout(lockBottomNavToVisualViewport, 120);
+    setTimeout(lockBottomNavToVisualViewport, 320);
+}
+
 window.switchTab = function(tabId, navElement) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
     navElement.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    refreshBottomNavLock();
 
     if (tabId === 'tab-map') {
         setTimeout(() => {
@@ -4372,6 +4436,14 @@ window.switchTab = function(tabId, navElement) {
     if (tabId === 'tab-achievements') {
         renderAchievements();
     }
+}
+
+refreshBottomNavLock();
+window.addEventListener("resize", refreshBottomNavLock, { passive: true });
+window.addEventListener("orientationchange", refreshBottomNavLock, { passive: true });
+if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", refreshBottomNavLock, { passive: true });
+    window.visualViewport.addEventListener("scroll", refreshBottomNavLock, { passive: true });
 }
 
 document.getElementById("line").addEventListener("input", () => { updateStationLists(); updateMainLoopDirectionUI(); });
@@ -5673,6 +5745,41 @@ function isSharedSegmentKey(segmentKey) {
     return getSegmentUsage(segmentKey).length > 1;
 }
 
+function getSegmentUsageLineIds(segmentKey) {
+    return getSegmentUsage(segmentKey)
+        .map(item => item.lineId)
+        .filter(Boolean)
+        .sort();
+}
+
+function getSegmentUsageSignature(segmentKey) {
+    return getSegmentUsageLineIds(segmentKey).join("|");
+}
+
+function hasSameSegmentUsage(segmentKeyA, segmentKeyB) {
+    if (!segmentKeyA || !segmentKeyB) return false;
+    const sigA = getSegmentUsageSignature(segmentKeyA);
+    const sigB = getSegmentUsageSignature(segmentKeyB);
+    return !!sigA && sigA === sigB;
+}
+
+function buildPartFromSegmentRange(latlngs, startIndex, endIndex) {
+    const safeStart = Math.max(0, Math.min(startIndex, endIndex));
+    const safeEnd = Math.min(latlngs.length - 2, Math.max(startIndex, endIndex));
+    const part = latlngs.slice(safeStart, safeEnd + 2);
+    return part.length >= 2 ? part : [];
+}
+
+function distanceSegmentToSegmentSq(a1, a2, b1, b2) {
+    // Approximate enough for map-click filtering: compare both endpoints to the other segment.
+    return Math.min(
+        distancePointToSegmentSq({ lat: a1[0], lng: a1[1] }, b1, b2),
+        distancePointToSegmentSq({ lat: a2[0], lng: a2[1] }, b1, b2),
+        distancePointToSegmentSq({ lat: b1[0], lng: b1[1] }, a1, a2),
+        distancePointToSegmentSq({ lat: b2[0], lng: b2[1] }, a1, a2)
+    );
+}
+
 function distancePointToSegmentSq(point, a, b) {
     const px = point.lng;
     const py = point.lat;
@@ -5790,6 +5897,7 @@ function getSharedSectionParts(line, allLineParts, clickedSegment) {
     }
 
     const result = [];
+    const clickedSignature = getSegmentUsageSignature(clickedSegment.segmentKey);
 
     allLineParts.forEach(latlngs => {
         let hitIndex = -1;
@@ -5808,19 +5916,24 @@ function getSharedSectionParts(line, allLineParts, clickedSegment) {
         let start = hitIndex;
         let end = hitIndex;
 
+        // Only extend while the adjacent segment is shared by the exact same route group.
+        // Old logic used "any shared segment", so adjacent but different shared sections
+        // could be swallowed into the selected highlight.
         while (start > 0) {
             const prevKey = makeSegmentKey(latlngs[start - 1], latlngs[start]);
             if (!isSharedSegmentKey(prevKey)) break;
+            if (getSegmentUsageSignature(prevKey) !== clickedSignature) break;
             start--;
         }
 
         while (end < latlngs.length - 2) {
             const nextKey = makeSegmentKey(latlngs[end + 1], latlngs[end + 2]);
             if (!isSharedSegmentKey(nextKey)) break;
+            if (getSegmentUsageSignature(nextKey) !== clickedSignature) break;
             end++;
         }
 
-        const sharedPart = latlngs.slice(start, end + 2);
+        const sharedPart = buildPartFromSegmentRange(latlngs, start, end);
         if (sharedPart.length >= 2) {
             result.push(sharedPart);
         }
@@ -6518,6 +6631,15 @@ window.handleMapFilterChange = function() {
     renderMap();
 };
 
+window.handleMapStationMarkerToggle = function() {
+    renderMap();
+};
+
+function shouldShowMapStationMarkers() {
+    const toggle = document.getElementById("mapStationMarkerToggle");
+    return !toggle || toggle.checked !== false;
+}
+
 function buildFullStationLabelHtml(stn, compId, compName, lineColors) {
     const shortLabel = getRailCompanyShortLabel(compId);
     const categoryColor = getStationSignColor(compId);
@@ -6686,6 +6808,13 @@ function renderMap() {
     mapMarkers = [];
 	
 	renderRailGeometries(selectedCategory);
+
+    if (!shouldShowMapStationMarkers()) {
+        setTimeout(() => {
+            if (railMapInstance) railMapInstance.invalidateSize();
+        }, 0);
+        return;
+    }
 
     // 收集造訪過嘅車站，同埋最近相片
     const stationDataMap = {};
