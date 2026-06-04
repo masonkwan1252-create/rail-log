@@ -5,187 +5,229 @@
     "company_name": "万葉線",
     "lines": [
       {
-  "id": "MANYOSEN_LINE",
-  "name": "万葉線",
-  "sequence": [
-    "STN_MANYOSEN_TAKAOKA_EKI",
-    "STN_MANYOSEN_SUEHIROCHO",
-    "STN_MANYOSEN_KATAHARAMACHI",
-    "STN_MANYOSEN_SAKASHITAMACHI",
-    "STN_MANYOSEN_KYUKAN_IRYO_CENTER_MAE",
-    "STN_MANYOSEN_HIROKOJI",
-    "STN_MANYOSEN_SHIKINO_CHUGAKKOMAE",
-    "STN_MANYOSEN_SHIMIN_BYOIN_MAE",
-    "STN_MANYOSEN_EJIRI",
-    "STN_MANYOSEN_ASAHIGAOKA",
-    "STN_MANYOSEN_OGINO",
-    "STN_MANYOSEN_SHIN_NOMACHI",
-    "STN_MANYOSEN_YONEJIMAGUCHI",
-    "STN_MANYOSEN_NOMACHIGUCHI",
-    "STN_MANYOSEN_SHIN_YOSHIHISA",
-    "STN_MANYOSEN_YOSHIHISA",
-    "STN_MANYOSEN_NAKAFUSHIKI",
-    "STN_MANYOSEN_ROKUDOJI",
-    "STN_MANYOSEN_SHOGAWAGUCHI",
-    "STN_MANYOSEN_DAI_ICHI_INN_SHIN_MINATO_CROSS_BAY_MAE",
-    "STN_MANYOSEN_SHINMACHIGUCHI",
-    "STN_MANYOSEN_NAKA_SHIN_MINATO",
-    "STN_MANYOSEN_HIGASHI_SHIN_MINATO",
-    "STN_MANYOSEN_KAIOMARU",
-    "STN_MANYOSEN_KOSHINOGATA"
-  ]
-}
+        "id": "MANYOSEN_LINE",
+        "name": "万葉線",
+        "sequence": [
+          "STN_MANYOSEN_TAKAOKA_EKI",
+          "STN_MANYOSEN_SUEHIROCHO",
+          "STN_MANYOSEN_KATAHARAMACHI",
+          "STN_MANYOSEN_SAKASHITAMACHI",
+          "STN_MANYOSEN_KYUKAN_IRYO_CENTER_MAE",
+          "STN_MANYOSEN_HIROKOJI",
+          "STN_MANYOSEN_SHIKINO_CHUGAKKOMAE",
+          "STN_MANYOSEN_SHIMIN_BYOIN_MAE",
+          "STN_MANYOSEN_EJIRI",
+          "STN_MANYOSEN_ASAHIGAOKA",
+          "STN_MANYOSEN_OGINO",
+          "STN_MANYOSEN_SHIN_NOMACHI",
+          "STN_MANYOSEN_YONEJIMAGUCHI",
+          "STN_MANYOSEN_NOMACHIGUCHI",
+          "STN_MANYOSEN_SHIN_YOSHIHISA",
+          "STN_MANYOSEN_YOSHIHISA",
+          "STN_MANYOSEN_NAKAFUSHIKI",
+          "STN_MANYOSEN_ROKUDOJI",
+          "STN_MANYOSEN_SHOGAWAGUCHI",
+          "STN_MANYOSEN_DAI_ICHI_INN_SHIN_MINATO_CROSS_BAY_MAE",
+          "STN_MANYOSEN_SHINMACHIGUCHI",
+          "STN_MANYOSEN_NAKA_SHIN_MINATO",
+          "STN_MANYOSEN_HIGASHI_SHIN_MINATO",
+          "STN_MANYOSEN_KAIOMARU",
+          "STN_MANYOSEN_KOSHINOGATA"
+        ],
+        "company_id": "MANYOSEN",
+        "color": "#ff0000",
+        "geometry_wkt": "MULTILINESTRING((137.06628 36.78868, 137.06566 36.78897), (137.04846 36.77313, 137.04814 36.77313, 137.04585 36.77347, 137.04543 36.77352, 137.04322 36.77385, 137.0428 36.77392, 137.04134 36.77411, 137.04077 36.77413, 137.04028 36.77405, 137.03986 36.77395, 137.03949 36.77377, 137.03898 36.77344, 137.03882 36.77298, 137.03865 36.77251, 137.03856 36.77225), (137.015185 36.741547, 137.014968 36.74156), (137.01506 36.74752, 137.01584 36.74796, 137.01668 36.74858, 137.01797 36.74983), (137.03174 36.76318, 137.03003 36.76164), (137.05618 36.78166, 137.05584 36.78121, 137.05554 36.78076, 137.05463 36.77876, 137.05439 36.77827, 137.05308 36.77628), (137.03856 36.77225, 137.0384 36.7718), (137.02365 36.75543, 137.02339 36.75518), (137.02088 36.75268, 137.02101 36.75281, 137.02125 36.75304, 137.02256 36.75433, 137.02339 36.75518), (137.01309 36.74641, 137.01398 36.74691, 137.01469 36.74731), (137.01797 36.74983, 137.01812 36.74998, 137.01822 36.75009), (137.05308 36.77628, 137.05288 36.77598), (137.01469 36.74731, 137.01485 36.7474, 137.01506 36.74752), (137.03776 36.7701, 137.03708 36.76828, 137.03688 36.76791, 137.03664 36.76761, 137.03592 36.76696), (137.05288 36.77598, 137.05203 36.77518, 137.0513 36.77451, 137.05079 36.77409, 137.05048 36.77389, 137.05042 36.77385, 137.05008 36.77364, 137.0498 36.77348, 137.04929 36.77323, 137.04909 36.77317), (137.0205 36.75233, 137.02069 36.75251, 137.02088 36.75268), (137.0264 36.75839, 137.02601 36.75799), (137.014968 36.74156, 137.014857 36.741586, 137.014783 36.741624, 137.014711 36.741734, 137.014687 36.741895, 137.014704 36.742045, 137.014733 36.742099, 137.01479 36.74214, 137.01505 36.74225, 137.01507 36.7424, 137.0147 36.74291, 137.01388 36.744, 137.0136 36.74431), (137.06128 36.78774, 137.06031 36.78679, 137.06017 36.78658, 137.06 36.78628, 137.05963 36.78548, 137.05942 36.78513, 137.05931 36.78502, 137.05732 36.78291, 137.05653 36.78207), (137.0384 36.7718, 137.03789 36.77046), (137.05653 36.78207, 137.05618 36.78166), (137.03789 36.77046, 137.03776 36.7701), (137.03592 36.76696, 137.03559 36.76665), (137.01822 36.75009, 137.01852 36.75039, 137.01881 36.75069, 137.01926 36.75115, 137.0202 36.75205, 137.0205 36.75233), (137.01271 36.7462, 137.01292 36.74631, 137.01309 36.74641), (137.02968 36.76133, 137.02681 36.75876, 137.0264 36.75839), (137.02601 36.75799, 137.02365 36.75543), (137.03559 36.76665, 137.03204 36.76345), (137.03204 36.76345, 137.03174 36.76318), (137.03003 36.76164, 137.02968 36.76133), (137.06566 36.78897, 137.06521 36.78913, 137.06468 36.78923, 137.06408 36.78928, 137.06358 36.78923, 137.06316 36.78913, 137.06269 36.78895, 137.06231 36.7887, 137.06189 36.78835, 137.06168 36.78814), (137.04909 36.77317, 137.04846 36.77313), (137.06168 36.78814, 137.06128 36.78774), (137.11216 36.7746, 137.11171 36.77507), (137.08449 36.77845, 137.08415 36.77882), (137.07877 36.78108, 137.07805 36.78133), (137.08415 36.77882, 137.08408 36.77887, 137.08383 36.77904, 137.08293 36.77951, 137.07877 36.78108), (137.09943 36.7778, 137.09868 36.77793), (137.07074 36.78429, 137.07034 36.78463, 137.0678 36.78735, 137.06748 36.78766, 137.06705 36.78811, 137.06669 36.78843, 137.06628 36.78868), (137.11171 36.77507, 137.11148 36.77519, 137.11118 36.77528, 137.1071 36.7762), (137.1071 36.7762, 137.10628 36.77637), (137.08928 36.77487, 137.08849 36.77513), (137.09868 36.77793, 137.09832 36.77799, 137.09785 36.77799, 137.09744 36.77795, 137.09704 36.77786, 137.09666 36.77771, 137.09626 36.77747, 137.09578 36.77707, 137.094 36.77562, 137.09324 36.77498, 137.09248 36.77445, 137.09218 36.77432, 137.09173 36.77424, 137.09127 36.77425, 137.0909 36.77431, 137.09007 36.7746, 137.08928 36.77487), (137.07805 36.78133, 137.07774 36.78144, 137.07222 36.78342, 137.07128 36.78385), (137.10628 36.77637, 137.09943 36.7778), (137.08849 36.77513, 137.08775 36.77538, 137.08678 36.77571, 137.08674 36.77573, 137.08641 36.7759, 137.08605 36.77615, 137.08581 36.77642, 137.08534 36.77731, 137.08513 36.77761, 137.08449 36.77845), (137.07128 36.78385, 137.07074 36.78429), (137.0136 36.74431, 137.01329 36.74466), (137.01329 36.74466, 137.01296 36.74503, 137.01231 36.74573, 137.01229 36.74588, 137.01239 36.74602, 137.01271 36.7462))"
+      }
     ],
     "stations": [
       {
         "id": "STN_MANYOSEN_TAKAOKA_EKI",
         "lat": "36.74155319",
         "lng": "137.01507701",
-        "name": "高岡駅"
+        "name": "高岡駅",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_SUEHIROCHŌ",
+        "id": "STN_MANYOSEN_SUEHIROCHO",
         "lat": "36.74456095",
         "lng": "137.01345768",
-        "name": "末広町"
+        "name": "末広町",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_KATAHARAMACHI",
         "lat": "36.74653628",
         "lng": "137.01308823",
-        "name": "片原町"
+        "name": "片原町",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_SAKASHITAMACHI",
         "lat": "36.74751101",
         "lng": "137.01481576",
-        "name": "坂下町"
+        "name": "坂下町",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_KYŪKAN_IRYŌ_CENTER_MAE",
+        "id": "STN_MANYOSEN_KYUKAN_IRYO_CENTER_MAE",
         "lat": "36.75065443",
         "lng": "137.01867055",
-        "name": "急患医療センター前"
+        "name": "急患医療センター前",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_HIROKŌJI",
+        "id": "STN_MANYOSEN_HIROKOJI",
         "lat": "36.75254175",
         "lng": "137.0205782",
-        "name": "広小路"
+        "name": "広小路",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_SHIKINO_CHŪGAKKŌMAE",
+        "id": "STN_MANYOSEN_SHIKINO_CHUGAKKOMAE",
         "lat": "36.75563661",
         "lng": "137.02370461",
-        "name": "志貴野中学校前"
+        "name": "志貴野中学校前",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_SHIMIN_BYŌIN_MAE",
+        "id": "STN_MANYOSEN_SHIMIN_BYOIN_MAE",
         "lat": "36.75839602",
         "lng": "137.02633166",
-        "name": "市民病院前"
+        "name": "市民病院前",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_EJIRI",
         "lat": "36.7623702",
         "lng": "137.03072778",
-        "name": "江尻"
+        "name": "江尻",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_ASAHIGAOKA",
         "lat": "36.7641385",
         "lng": "137.03268538",
-        "name": "旭ヶ丘"
+        "name": "旭ヶ丘",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_OGINO",
         "lat": "36.76685847",
         "lng": "137.03567219",
-        "name": "荻布"
+        "name": "荻布",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_SHIN_NŌMACHI",
+        "id": "STN_MANYOSEN_SHIN_NOMACHI",
         "lat": "36.77028146",
         "lng": "137.03774169",
-        "name": "新能町"
+        "name": "新能町",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_YONEJIMAGUCHI",
         "lat": "36.77296129",
         "lng": "137.03871151",
-        "name": "米島口"
+        "name": "米島口",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_NŌMACHIGUCHI",
+        "id": "STN_MANYOSEN_NOMACHIGUCHI",
         "lat": "36.77326491",
         "lng": "137.04904096",
-        "name": "能町口"
+        "name": "能町口",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_SHIN_YOSHIHISA",
         "lat": "36.77614492",
         "lng": "137.05285807",
-        "name": "新吉久"
+        "name": "新吉久",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_YOSHIHISA",
         "lat": "36.781937",
         "lng": "137.05631765",
-        "name": "吉久"
+        "name": "吉久",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_NAKAFUSHIKI",
         "lat": "36.78814542",
         "lng": "137.06155675",
-        "name": "中伏木"
+        "name": "中伏木",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_ROKUDŌJI",
+        "id": "STN_MANYOSEN_ROKUDOJI",
         "lat": "36.78900958",
         "lng": "137.06616366",
-        "name": "六渡寺"
+        "name": "六渡寺",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_SHŌGAWAGUCHI",
+        "id": "STN_MANYOSEN_SHOGAWAGUCHI",
         "lat": "36.78428901",
         "lng": "137.07088585",
-        "name": "庄川口"
+        "name": "庄川口",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_DAI_ICHI_INN_SHIN_MINATO_CROSS_BAY_MAE",
         "lat": "36.78125697",
         "lng": "137.07849499",
-        "name": "第一イン新湊クロスベイ前"
+        "name": "第一イン新湊クロスベイ前",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_SHINMACHIGUCHI",
         "lat": "36.77891286",
         "lng": "137.08429745",
-        "name": "新町口"
+        "name": "新町口",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_NAKA_SHIN_MINATO",
         "lat": "36.77506503",
         "lng": "137.08889831",
-        "name": "中新湊"
+        "name": "中新湊",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_HIGASHI_SHIN_MINATO",
         "lat": "36.77792096",
         "lng": "137.09901054",
-        "name": "東新湊"
+        "name": "東新湊",
+        "company_id": "MANYOSEN"
       },
       {
-        "id": "STN_MANYOSEN_KAIŌMARU",
+        "id": "STN_MANYOSEN_KAIOMARU",
         "lat": "36.77672096",
         "lng": "137.10553245",
-        "name": "海王丸"
+        "name": "海王丸",
+        "company_id": "MANYOSEN"
       },
       {
         "id": "STN_MANYOSEN_KOSHINOGATA",
         "lat": "36.77485689",
         "lng": "137.1117243",
-        "name": "越ノ潟"
+        "name": "越ノ潟",
+        "company_id": "MANYOSEN"
+      }
+    ],
+    "trains": [
+      {
+        "id": "TRN_MANYOSEN_7070",
+        "company_id": "MANYOSEN",
+        "name": "デ7070形",
+        "variants": []
+      },
+      {
+        "id": "TRN_MANYOSEN_MLRV1000",
+        "company_id": "MANYOSEN",
+        "name": "MLRV1000形",
+        "variants": []
       }
     ]
   }
