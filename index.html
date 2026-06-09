@@ -1284,18 +1284,6 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
     border-top: 1px solid var(--border);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-
-    /* iPhone PWA / Safari: keep the option bar attached to the visual viewport */
-    width: 100vw;
-    min-height: calc(54px + env(safe-area-inset-bottom));
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    contain: layout paint;
-}
-
-#main-app.show {
-    min-height: 100vh;
-    min-height: 100dvh;
 }
 
 .nav-item {
@@ -1619,6 +1607,11 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 .map-filter-inline {
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .map-filter-select {
@@ -1628,47 +1621,67 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     padding: 0 30px 0 10px;
     font-size: 12px;
     font-weight: 700;
-    border-radius: 6px;
+    border-radius: 999px;
     background: var(--tag-bg);
     color: var(--text);
     border: 1px solid var(--border);
     line-height: 32px;
 }
 
-
-.map-station-toggle {
+.map-toggle-pill {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
-    height: 32px;
-    padding: 0 9px;
+    min-height: 32px;
+    padding: 0 10px;
     border-radius: 999px;
     background: var(--tag-bg);
     color: var(--text);
     border: 1px solid var(--border);
     font-size: 11px;
     font-weight: 700;
+    line-height: 1;
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
 }
 
-.map-station-toggle input {
+.map-toggle-pill input {
     width: 14px;
     height: 14px;
     margin: 0;
     accent-color: var(--primary);
+    flex: 0 0 auto;
 }
 
 @media (max-width: 480px) {
     .map-card-head {
+        align-items: flex-start;
         gap: 8px;
     }
 
+    .map-filter-inline {
+        gap: 6px;
+        max-width: 68%;
+    }
+
     .map-filter-select {
-        min-width: 78px;
+        min-width: 76px;
+        height: 30px;
         font-size: 11px;
-        padding: 0 26px 0 8px;
+        padding: 0 24px 0 8px;
+    }
+
+    .map-toggle-pill {
+        min-height: 30px;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .map-toggle-pill input {
+        width: 13px;
+        height: 13px;
     }
 }
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
@@ -2963,15 +2976,18 @@ header::before {
     <div class="map-filter-inline">
         <select id="mapCategoryFilter" class="map-filter-select" onchange="handleMapFilterChange()">
             <option value="all">全部</option>
-			<option value="test_all_lines">測試</option>
-			<option value="jr">JR</option>
-			<option value="major_private">大手</option>
-			<option value="private">私鐵</option>
-			<option value="third_sector">3セク</option>
+            <option value="jr">JR</option>
+            <option value="major_private">大手</option>
+            <option value="private">私鐵</option>
+            <option value="third_sector">3セク</option>
         </select>
-        <label class="map-station-toggle" title="顯示 / 隱藏已登記路段的車站標記">
+        <label class="map-toggle-pill" title="顯示 / 隱藏已登記路段的車站標記">
             <input id="mapStationMarkerToggle" type="checkbox" checked onchange="handleMapStationMarkerToggle()">
             <span>站名標</span>
+        </label>
+        <label class="map-toggle-pill" title="勾選時顯示未搭乘路線；取消時只顯示已乘搭路線">
+            <input id="mapUnriddenLineToggle" type="checkbox" checked onchange="handleMapUnriddenLineToggle()">
+            <span>未搭乘</span>
         </label>
     </div>
 </div>
@@ -4132,6 +4148,12 @@ let selectedMapRouteState = null;
 let isMapZoomRerendering = false;
 let railSegmentUsageIndex = new Map();
 
+const MAP_SETTINGS_KEYS = {
+    category: "railLog.map.categoryFilter",
+    stationMarkers: "railLog.map.showStationMarkers",
+    unriddenLines: "railLog.map.showUnriddenLines"
+};
+
 document.getElementById("date").valueAsDate = new Date();
 
 window.clearInput = function(id) {
@@ -4392,35 +4414,12 @@ function fillList(listId, dataArray) {
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
 }
 
-function lockBottomNavToVisualViewport() {
-    const nav = document.querySelector(".bottom-nav");
-    if (!nav) return;
-
-    // In iOS standalone/Safari, fixed elements can visually drift when the visual viewport
-    // changes after tab switching or address-bar animation. Keep it pinned to the visible bottom.
-    if (window.visualViewport) {
-        const viewport = window.visualViewport;
-        const bottomOffset = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop);
-        nav.style.bottom = `${bottomOffset}px`;
-    } else {
-        nav.style.bottom = "0px";
-    }
-}
-
-function refreshBottomNavLock() {
-    lockBottomNavToVisualViewport();
-    requestAnimationFrame(lockBottomNavToVisualViewport);
-    setTimeout(lockBottomNavToVisualViewport, 120);
-    setTimeout(lockBottomNavToVisualViewport, 320);
-}
-
 window.switchTab = function(tabId, navElement) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
     navElement.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    refreshBottomNavLock();
 
     if (tabId === 'tab-map') {
         setTimeout(() => {
@@ -4436,14 +4435,6 @@ window.switchTab = function(tabId, navElement) {
     if (tabId === 'tab-achievements') {
         renderAchievements();
     }
-}
-
-refreshBottomNavLock();
-window.addEventListener("resize", refreshBottomNavLock, { passive: true });
-window.addEventListener("orientationchange", refreshBottomNavLock, { passive: true });
-if (window.visualViewport) {
-    window.visualViewport.addEventListener("resize", refreshBottomNavLock, { passive: true });
-    window.visualViewport.addEventListener("scroll", refreshBottomNavLock, { passive: true });
 }
 
 document.getElementById("line").addEventListener("input", () => { updateStationLists(); updateMainLoopDirectionUI(); });
@@ -5745,41 +5736,6 @@ function isSharedSegmentKey(segmentKey) {
     return getSegmentUsage(segmentKey).length > 1;
 }
 
-function getSegmentUsageLineIds(segmentKey) {
-    return getSegmentUsage(segmentKey)
-        .map(item => item.lineId)
-        .filter(Boolean)
-        .sort();
-}
-
-function getSegmentUsageSignature(segmentKey) {
-    return getSegmentUsageLineIds(segmentKey).join("|");
-}
-
-function hasSameSegmentUsage(segmentKeyA, segmentKeyB) {
-    if (!segmentKeyA || !segmentKeyB) return false;
-    const sigA = getSegmentUsageSignature(segmentKeyA);
-    const sigB = getSegmentUsageSignature(segmentKeyB);
-    return !!sigA && sigA === sigB;
-}
-
-function buildPartFromSegmentRange(latlngs, startIndex, endIndex) {
-    const safeStart = Math.max(0, Math.min(startIndex, endIndex));
-    const safeEnd = Math.min(latlngs.length - 2, Math.max(startIndex, endIndex));
-    const part = latlngs.slice(safeStart, safeEnd + 2);
-    return part.length >= 2 ? part : [];
-}
-
-function distanceSegmentToSegmentSq(a1, a2, b1, b2) {
-    // Approximate enough for map-click filtering: compare both endpoints to the other segment.
-    return Math.min(
-        distancePointToSegmentSq({ lat: a1[0], lng: a1[1] }, b1, b2),
-        distancePointToSegmentSq({ lat: a2[0], lng: a2[1] }, b1, b2),
-        distancePointToSegmentSq({ lat: b1[0], lng: b1[1] }, a1, a2),
-        distancePointToSegmentSq({ lat: b2[0], lng: b2[1] }, a1, a2)
-    );
-}
-
 function distancePointToSegmentSq(point, a, b) {
     const px = point.lng;
     const py = point.lat;
@@ -5891,13 +5847,21 @@ function hydrateClickedSegment(clickedSegment, line, allLineParts) {
     };
 }
 
+function getSharedSegmentUsageSignature(segmentKey) {
+    return getSegmentUsage(segmentKey)
+        .map(item => item.lineId)
+        .filter(Boolean)
+        .sort()
+        .join("|");
+}
+
 function getSharedSectionParts(line, allLineParts, clickedSegment) {
     if (!clickedSegment?.segmentKey || !isSharedSegmentKey(clickedSegment.segmentKey)) {
         return allLineParts;
     }
 
+    const targetSignature = getSharedSegmentUsageSignature(clickedSegment.segmentKey);
     const result = [];
-    const clickedSignature = getSegmentUsageSignature(clickedSegment.segmentKey);
 
     allLineParts.forEach(latlngs => {
         let hitIndex = -1;
@@ -5916,24 +5880,21 @@ function getSharedSectionParts(line, allLineParts, clickedSegment) {
         let start = hitIndex;
         let end = hitIndex;
 
-        // Only extend while the adjacent segment is shared by the exact same route group.
-        // Old logic used "any shared segment", so adjacent but different shared sections
-        // could be swallowed into the selected highlight.
         while (start > 0) {
             const prevKey = makeSegmentKey(latlngs[start - 1], latlngs[start]);
             if (!isSharedSegmentKey(prevKey)) break;
-            if (getSegmentUsageSignature(prevKey) !== clickedSignature) break;
+            if (getSharedSegmentUsageSignature(prevKey) !== targetSignature) break;
             start--;
         }
 
         while (end < latlngs.length - 2) {
             const nextKey = makeSegmentKey(latlngs[end + 1], latlngs[end + 2]);
             if (!isSharedSegmentKey(nextKey)) break;
-            if (getSegmentUsageSignature(nextKey) !== clickedSignature) break;
+            if (getSharedSegmentUsageSignature(nextKey) !== targetSignature) break;
             end++;
         }
 
-        const sharedPart = buildPartFromSegmentRange(latlngs, start, end);
+        const sharedPart = latlngs.slice(start, end + 2);
         if (sharedPart.length >= 2) {
             result.push(sharedPart);
         }
@@ -6246,7 +6207,7 @@ function renderRailGeometries(selectedCategory = "all") {
     mapRailGeometryLines.forEach(layer => railMapInstance.removeLayer(layer));
     mapRailGeometryLines = [];
 
-    const isTestMode = selectedCategory === "test_all_lines";
+    const showUnriddenLines = getMapShowUnriddenLines();
 
     db.lines.forEach(line => {
         const allLineParts = getLineGeometryParts(line);
@@ -6257,9 +6218,15 @@ function renderRailGeometries(selectedCategory = "all") {
 
         if (
             selectedCategory !== "all" &&
-            selectedCategory !== "test_all_lines" &&
             companyCategory !== selectedCategory
         ) {
+            return;
+        }
+
+        const riddenSegments = getRiddenSegmentsForLine(line.id);
+        const lineHasRidden = riddenSegments.length > 0 || hasRiddenLine(line.id);
+
+        if (!showUnriddenLines && !lineHasRidden) {
             return;
         }
 
@@ -6270,7 +6237,7 @@ function renderRailGeometries(selectedCategory = "all") {
             };
         }
 
-        const baseColor = isTestMode ? "#666" : "#777";
+        const baseColor = lineHasRidden ? "#777" : "#9a9a9a";
         const highlightColor = getLineThemeColor(line, companyId);
 
         const handleRouteClick = (e) => {
@@ -6301,8 +6268,8 @@ function renderRailGeometries(selectedCategory = "all") {
         allLineParts.forEach(latlngs => {
             const baseLayer = L.polyline(latlngs, {
                 color: baseColor,
-                weight: isTestMode ? 3 : 4,
-                opacity: isTestMode ? 0.7 : 0.45,
+                weight: lineHasRidden ? 4 : 3,
+                opacity: lineHasRidden ? 0.45 : 0.20,
                 lineCap: "round",
                 lineJoin: "round",
                 smoothFactor: 1,
@@ -6328,10 +6295,7 @@ function renderRailGeometries(selectedCategory = "all") {
             mapRailGeometryLines.push(hitLayer);
         });
 
-        if (isTestMode) return;
-
         // 2) 已乘搭 from → to highlight
-        const riddenSegments = getRiddenSegmentsForLine(line.id);
         if (riddenSegments.length === 0) return;
 
         riddenSegments.forEach(seg => {
@@ -6626,19 +6590,76 @@ function getRailCompanyShortLabel(companyIdOrName = "") {
     return labelMap[category] || "鉄道";
 }
 
+function saveMapSetting(key, value) {
+    try {
+        localStorage.setItem(key, String(value));
+    } catch (error) {
+        console.warn("Map setting save failed", error);
+    }
+}
+
+function readMapSetting(key, fallback) {
+    try {
+        const value = localStorage.getItem(key);
+        return value == null ? fallback : value;
+    } catch (error) {
+        return fallback;
+    }
+}
+
+function readMapBoolSetting(key, fallback = true) {
+    const value = readMapSetting(key, fallback ? "true" : "false");
+    return value !== "false";
+}
+
+function getMapShowStationMarkers() {
+    const toggle = document.getElementById("mapStationMarkerToggle");
+    return toggle ? toggle.checked : readMapBoolSetting(MAP_SETTINGS_KEYS.stationMarkers, true);
+}
+
+function getMapShowUnriddenLines() {
+    const toggle = document.getElementById("mapUnriddenLineToggle");
+    return toggle ? toggle.checked : readMapBoolSetting(MAP_SETTINGS_KEYS.unriddenLines, true);
+}
+
+function initMapControlSettings() {
+    const categorySelect = document.getElementById("mapCategoryFilter");
+    const stationToggle = document.getElementById("mapStationMarkerToggle");
+    const unriddenToggle = document.getElementById("mapUnriddenLineToggle");
+
+    if (categorySelect) {
+        const savedCategory = readMapSetting(MAP_SETTINGS_KEYS.category, "all");
+        const allowed = Array.from(categorySelect.options).map(option => option.value);
+        categorySelect.value = allowed.includes(savedCategory) ? savedCategory : "all";
+    }
+
+    if (stationToggle) {
+        stationToggle.checked = readMapBoolSetting(MAP_SETTINGS_KEYS.stationMarkers, true);
+    }
+
+    if (unriddenToggle) {
+        unriddenToggle.checked = readMapBoolSetting(MAP_SETTINGS_KEYS.unriddenLines, true);
+    }
+}
+
 window.handleMapFilterChange = function() {
+    const selectedCategory = document.getElementById("mapCategoryFilter")?.value || "all";
+    saveMapSetting(MAP_SETTINGS_KEYS.category, selectedCategory);
     railMapHasFitted = false;
     renderMap();
 };
 
 window.handleMapStationMarkerToggle = function() {
+    saveMapSetting(MAP_SETTINGS_KEYS.stationMarkers, getMapShowStationMarkers());
     renderMap();
 };
 
-function shouldShowMapStationMarkers() {
-    const toggle = document.getElementById("mapStationMarkerToggle");
-    return !toggle || toggle.checked !== false;
-}
+window.handleMapUnriddenLineToggle = function() {
+    saveMapSetting(MAP_SETTINGS_KEYS.unriddenLines, getMapShowUnriddenLines());
+    renderMap();
+};
+
+initMapControlSettings();
 
 function buildFullStationLabelHtml(stn, compId, compName, lineColors) {
     const shortLabel = getRailCompanyShortLabel(compId);
@@ -6802,19 +6823,13 @@ function renderMap() {
 });	
     }
 	const selectedCategory = document.getElementById("mapCategoryFilter")?.value || "all";
+    const showStationMarkers = getMapShowStationMarkers();
     // 清走舊 marker
 	
     mapMarkers.forEach(marker => railMapInstance.removeLayer(marker));
     mapMarkers = [];
 	
 	renderRailGeometries(selectedCategory);
-
-    if (!shouldShowMapStationMarkers()) {
-        setTimeout(() => {
-            if (railMapInstance) railMapInstance.invalidateSize();
-        }, 0);
-        return;
-    }
 
     // 收集造訪過嘅車站，同埋最近相片
     const stationDataMap = {};
@@ -6844,6 +6859,13 @@ function renderMap() {
 });
     const bounds = [];
 
+    if (!showStationMarkers) {
+        setTimeout(() => {
+            if (railMapInstance) railMapInstance.invalidateSize();
+        }, 0);
+        return;
+    }
+
     Object.keys(stationDataMap).forEach(stnId => {
     const stn = maps.station[stnId];
     if (!stn || stn.lat == null || stn.lng == null) return;
@@ -6854,7 +6876,6 @@ function renderMap() {
 
     if (
     selectedCategory !== "all" &&
-    selectedCategory !== "test_all_lines" &&
     stationCategory !== selectedCategory
 ) {
     return;
