@@ -1587,8 +1587,8 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    margin: 10px;
+    gap: 8px;
+    margin: 7px 8px 5px;
 }
 
 .map-card-title {
@@ -1600,88 +1600,156 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 }
 
 .map-card-desc {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--subtext);
-    margin: 0 10px 10px 10px;
+    margin: 0 8px 8px;
 }
 
+/* ===== Map controls style 2: slim rail-line control ===== */
 .map-filter-inline {
     flex: 0 0 auto;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 0;
+    height: 30px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
 }
 
 .map-filter-select {
     width: auto;
-    min-width: 88px;
-    height: 32px;
-    padding: 0 30px 0 10px;
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 999px;
-    background: var(--tag-bg);
+    min-width: 66px;
+    height: 28px;
+    padding: 0 18px 0 2px;
+    font-size: 11px;
+    font-weight: 900;
+    border-radius: 0;
+    background: transparent;
     color: var(--text);
-    border: 1px solid var(--border);
-    line-height: 32px;
+    border: none;
+    line-height: 28px;
+    appearance: auto;
+    -webkit-appearance: auto;
 }
 
-.map-toggle-pill {
+.map-icon-toggle {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    min-height: 32px;
-    padding: 0 10px;
-    border-radius: 999px;
-    background: var(--tag-bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1;
-    white-space: nowrap;
     cursor: pointer;
     user-select: none;
+    margin: 0;
 }
 
-.map-toggle-pill input {
-    width: 14px;
-    height: 14px;
+.map-icon-toggle::before {
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    opacity: 0.65;
+    margin: 0 5px 0 3px;
+}
+
+.map-icon-toggle input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
     margin: 0;
-    accent-color: var(--primary);
-    flex: 0 0 auto;
+}
+
+.map-icon-toggle-face {
+    min-width: 22px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    background: transparent;
+    color: var(--subtext);
+    border: none;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    position: relative;
+    transition: color 0.16s ease, transform 0.12s ease, opacity 0.16s ease;
+}
+
+.map-icon-toggle-face::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: -2px;
+    height: 2px;
+    background: transparent;
+    transition: background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.map-icon-toggle:active .map-icon-toggle-face {
+    transform: translateY(1px);
+}
+
+.map-icon-toggle input:checked + .map-icon-toggle-face {
+    background: transparent;
+    color: var(--primary);
+    border: none;
+    box-shadow: none;
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.30);
+}
+
+.map-icon-toggle input:checked + .map-icon-toggle-face::after {
+    background: var(--primary);
+    box-shadow: 0 0 7px rgba(99, 189, 15, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+    .map-filter-inline {
+        border-bottom-color: rgba(99, 189, 15, 0.65);
+    }
+
+    .map-filter-select {
+        color: var(--text);
+    }
+
+    .map-icon-toggle::before {
+        opacity: 0.55;
+    }
 }
 
 @media (max-width: 480px) {
     .map-card-head {
-        align-items: flex-start;
-        gap: 8px;
+        gap: 5px;
+        margin: 7px 6px 5px;
     }
 
     .map-filter-inline {
-        gap: 6px;
-        max-width: 68%;
+        height: 28px;
     }
 
     .map-filter-select {
-        min-width: 76px;
-        height: 30px;
-        font-size: 11px;
-        padding: 0 24px 0 8px;
-    }
-
-    .map-toggle-pill {
-        min-height: 30px;
-        padding: 0 8px;
+        min-width: 58px;
+        height: 26px;
         font-size: 10px;
+        padding-right: 14px;
     }
 
-    .map-toggle-pill input {
-        width: 13px;
-        height: 13px;
+    .map-icon-toggle::before {
+        height: 14px;
+        margin: 0 4px 0 2px;
+    }
+
+    .map-icon-toggle-face {
+        min-width: 20px;
+        height: 26px;
+        font-size: 10px;
     }
 }
 .date-controls-wrapper { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
@@ -2323,6 +2391,92 @@ header::before {
     margin-bottom: 12px;
 }
 
+/* ===== History manual order controls ===== */
+.history-sort-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 4px 0 12px;
+}
+.history-sort-toggle {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    margin: 0;
+    padding: 0;
+    border-radius: 999px;
+    font-size: 17px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.history-sort-toggle.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 0 2px rgba(99, 189, 15, 0.18), 0 3px 10px rgba(0,0,0,0.12);
+}
+.history-drag-handle {
+    display: none;
+    width: 30px;
+    min-width: 30px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    color: var(--subtext);
+    font-size: 18px;
+    line-height: 1;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.history-manual-sort-on .history-drag-handle {
+    display: inline-flex;
+}
+.history-drag-handle:active {
+    cursor: grabbing;
+    color: var(--primary);
+}
+.trip.manual-sort-active {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    border-left: 3px solid var(--primary);
+    padding-left: 6px;
+}
+.trip-content-wrap {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+.trip.sort-dragging {
+    opacity: 0.45;
+    transform: scale(0.995);
+}
+.trip.sort-drag-over {
+    outline: 2px dashed var(--primary);
+    outline-offset: 3px;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+body.history-touch-sorting {
+    overflow: hidden;
+    touch-action: none;
+}
+@supports not (background: color-mix(in srgb, red 10%, transparent)) {
+    .trip.sort-drag-over {
+        background: rgba(99, 189, 15, 0.10);
+    }
+}
+
 .history-date-separator {
     display: flex;
     align-items: center;
@@ -2638,6 +2792,788 @@ header::before {
     line-height: 1.35;
 }
 
+
+
+/* ===== Design 2 unified slim rail-line UI ===== */
+.history-design2-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 12px;
+    flex-wrap: wrap;
+}
+
+.history-search-linebar,
+.gallery-search-linebar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    margin: 0;
+    padding: 0 2px;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+    flex: 1 1 150px;
+    min-width: 0;
+}
+
+.gallery-search-linebar {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.design2-icon {
+    flex: 0 0 auto;
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.22);
+}
+
+.history-search-linebar input,
+.gallery-search-linebar input {
+    min-width: 0;
+    flex: 1 1 auto;
+    height: 30px;
+    padding: 0 2px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    outline: none;
+}
+
+.history-search-linebar input::placeholder,
+.gallery-search-linebar input::placeholder {
+    color: var(--subtext);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.design2-clear-btn {
+    width: 22px;
+    height: 28px;
+    min-width: 22px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--subtext);
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.design2-clear-btn:active {
+    color: var(--primary);
+    transform: translateY(1px);
+}
+
+.history-date-linebar {
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+}
+
+.design2-line-btn {
+    position: relative;
+    width: auto;
+    min-width: 34px;
+    height: 30px;
+    margin: 0;
+    padding: 0 8px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--subtext);
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: none;
+    transition: color 0.16s ease, transform 0.12s ease;
+}
+
+.design2-line-btn + .design2-line-btn::before,
+.gallery-filter-select + .gallery-filter-select::before {
+    content: "";
+}
+
+.design2-line-btn:not(:first-child) {
+    border-left: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.design2-line-btn::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    bottom: -2px;
+    height: 2px;
+    background: transparent;
+    transition: background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.design2-line-btn.active {
+    color: var(--primary);
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.28);
+}
+
+.design2-line-btn.active::after {
+    background: var(--primary);
+    box-shadow: 0 0 7px rgba(99, 189, 15, 0.35);
+}
+
+.design2-line-btn:active {
+    transform: translateY(1px);
+}
+
+.history-date-step {
+    min-width: 25px;
+    padding: 0 6px;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.history-calendar-btn {
+    min-width: 32px;
+}
+
+.history-calendar-text {
+    max-width: 74px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px;
+    letter-spacing: 0;
+}
+
+/* Gallery Design 2 */
+.gallery-card-head {
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-filter-inline {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    height: 30px;
+    padding: 0;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+}
+
+.gallery-filter-select {
+    width: auto;
+    min-width: 58px;
+    height: 28px;
+    padding: 0 17px 0 2px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 28px;
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+.gallery-filter-select + .gallery-filter-select {
+    border-left: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+    padding-left: 7px;
+}
+
+/* Add trip page Design 2 */
+.design2-form-card {
+    padding-top: 18px;
+}
+
+.design2-form-card h3 {
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+}
+
+.design2-form-card label:not(.map-icon-toggle) {
+    margin-top: 13px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--subtext);
+}
+
+.design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]),
+.design2-form-card select {
+    height: 36px;
+    padding: 0 30px 0 2px;
+    border: none;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.55);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]):focus,
+.design2-form-card select:focus {
+    border-bottom-color: var(--primary);
+    box-shadow: 0 2px 0 rgba(99, 189, 15, 0.13);
+}
+
+.design2-form-card .input-wrapper {
+    align-items: center;
+}
+
+.design2-form-card .clear-input-btn {
+    right: 0;
+    width: 26px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--subtext);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.design2-form-card .btn-small,
+.design2-form-card .btn-primary {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    box-shadow: none;
+    font-weight: 900;
+}
+
+.design2-form-card .btn-primary {
+    margin-top: 18px;
+    background: linear-gradient(to bottom, rgba(99,189,15,0.10), rgba(99,189,15,0.03));
+    border-top: 1px solid rgba(99,189,15,0.30);
+}
+
+.design2-form-card .through-block,
+.design2-form-card #mainLoopDirectionWrap,
+.design2-form-card #otherTrainCompanyWrapper,
+.design2-form-card [style*="background: var(--tag-bg)"] {
+    border-radius: 0 !important;
+}
+
+@supports not (border-color: color-mix(in srgb, red 10%, transparent)) {
+    .design2-line-btn:not(:first-child),
+    .gallery-filter-select + .gallery-filter-select {
+        border-left-color: rgba(170,170,170,0.55);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .history-search-linebar,
+    .gallery-search-linebar,
+    .history-date-linebar,
+    .gallery-filter-inline {
+        border-bottom-color: rgba(99, 189, 15, 0.65);
+    }
+}
+
+@media (max-width: 480px) {
+    .history-design2-toolbar {
+        gap: 8px;
+    }
+
+    .history-search-linebar {
+        flex-basis: 100%;
+    }
+
+    .history-date-linebar {
+        flex: 1 1 auto;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .design2-line-btn {
+        min-width: 32px;
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    .history-date-step {
+        min-width: 24px;
+        padding: 0 5px;
+    }
+
+    .history-calendar-text {
+        max-width: 58px;
+        font-size: 9px;
+    }
+
+    .gallery-card-head {
+        align-items: center;
+        gap: 6px;
+    }
+
+    .gallery-filter-inline {
+        height: 28px;
+    }
+
+    .gallery-filter-select {
+        min-width: 50px;
+        height: 26px;
+        font-size: 10px;
+        padding-right: 13px;
+    }
+
+    .design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]),
+    .design2-form-card select {
+        height: 34px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* ===== Design 2 refinement: compact history controls + readable add form ===== */
+.history-design2-toolbar {
+    gap: 8px;
+    margin: 2px 0 10px;
+}
+
+.history-date-linebar {
+    height: 28px;
+    border-bottom-width: 1.5px;
+}
+
+.history-date-linebar .design2-line-btn {
+    height: 27px;
+    min-width: 26px;
+    padding: 0 6px;
+    font-size: 9.5px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    text-transform: none;
+}
+
+.history-date-linebar .design2-line-btn:not(:first-child) {
+    border-left-color: rgba(134,134,139,0.32);
+}
+
+.history-date-linebar .history-date-step {
+    min-width: 20px;
+    padding: 0 4px;
+    font-size: 14px;
+}
+
+.history-date-linebar .history-calendar-btn {
+    min-width: 28px;
+    padding: 0 6px;
+}
+
+.history-date-linebar .history-calendar-text {
+    max-width: 62px;
+    font-size: 8.5px;
+}
+
+.history-search-linebar {
+    height: 30px;
+    border-bottom-width: 1.5px;
+}
+
+/* Undo the old bug effect if any active class is applied directly */
+#btnFilterAll.active,
+#btnFilterToday.active,
+#btnFilterDate.active {
+    color: var(--primary);
+}
+
+/* Add trip page: keep Design 2 line language, but make it easier to scan */
+.design2-form-card {
+    padding: 18px 16px 20px;
+    background:
+        linear-gradient(180deg, rgba(99,189,15,0.035), transparent 95px),
+        var(--card);
+}
+
+.design2-form-card h3 {
+    margin-bottom: 18px;
+    padding-bottom: 9px;
+    border-bottom-width: 1.5px;
+    letter-spacing: 0.02em;
+}
+
+.design2-form-card label:not(.map-icon-toggle):not([style*="display: flex"]) {
+    margin-top: 15px;
+    margin-bottom: 6px;
+    padding-left: 7px;
+    border-left: 3px solid rgba(99,189,15,0.75);
+    color: var(--text);
+    opacity: 0.76;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.05em;
+}
+
+.design2-form-card .input-wrapper {
+    min-height: 42px;
+    padding: 0 8px;
+    border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+    border-left: 3px solid rgba(99,189,15,0.70);
+    border-radius: 8px 8px 2px 2px;
+    background: color-mix(in srgb, var(--tag-bg) 38%, transparent);
+}
+
+.design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]),
+.design2-form-card select {
+    height: 40px;
+    padding: 0 30px 0 2px;
+    border-bottom-width: 1.5px;
+    font-size: 15px;
+    background: transparent;
+}
+
+.design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]):focus,
+.design2-form-card select:focus {
+    box-shadow: none;
+}
+
+.design2-form-card .clear-input-btn {
+    right: 6px;
+    color: var(--subtext);
+}
+
+.design2-form-card .btn-small {
+    min-height: 34px;
+    padding: 7px 10px;
+    border: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
+    border-bottom: 2px solid var(--primary);
+    border-radius: 8px 8px 2px 2px;
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+    color: var(--primary);
+}
+
+.design2-form-card .btn-add {
+    margin-top: 14px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.design2-form-card .btn-primary {
+    min-height: 44px;
+    margin-top: 22px;
+    border: 1px solid rgba(99,189,15,0.45);
+    border-bottom: 3px solid var(--primary);
+    border-radius: 10px 10px 3px 3px;
+    background:
+        linear-gradient(180deg, rgba(99,189,15,0.18), rgba(99,189,15,0.06));
+    color: var(--primary);
+    letter-spacing: 0.04em;
+}
+
+.design2-form-card .through-block,
+.design2-form-card #mainLoopDirectionWrap {
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent) !important;
+    border-left: 3px solid rgba(99,189,15,0.70) !important;
+    border-radius: 10px 10px 2px 2px !important;
+    background: color-mix(in srgb, var(--tag-bg) 45%, transparent) !important;
+}
+
+.design2-form-card [style*="background: var(--tag-bg)"] {
+    margin-top: 16px !important;
+    padding: 11px 12px !important;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent) !important;
+    border-left: 3px solid rgba(99,189,15,0.70) !important;
+    border-radius: 10px 10px 2px 2px !important;
+    background: color-mix(in srgb, var(--tag-bg) 45%, transparent) !important;
+}
+
+.design2-form-card label[style*="display: flex"] {
+    margin: 0 !important;
+    color: var(--text) !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+}
+
+.design2-form-card #otherTrainCompanyWrapper {
+    margin-top: 10px !important;
+    padding-top: 8px;
+    border-top: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+}
+
+.design2-form-card .photo-upload-container {
+    gap: 9px;
+    padding-bottom: 8px;
+}
+
+.design2-form-card .photo-upload-box {
+    flex-basis: 94px;
+    height: 88px;
+    border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+    border-bottom: 2px solid rgba(99,189,15,0.65);
+    border-radius: 10px 10px 2px 2px;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 55%, transparent), transparent);
+}
+
+.design2-form-card .photo-upload-label {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+@supports not (color: color-mix(in srgb, red 10%, white)) {
+    .design2-form-card .input-wrapper,
+    .design2-form-card .through-block,
+    .design2-form-card #mainLoopDirectionWrap,
+    .design2-form-card [style*="background: var(--tag-bg)"] {
+        border-color: rgba(170,170,170,0.45) !important;
+        background: rgba(99,189,15,0.04) !important;
+    }
+
+    .design2-form-card .btn-small,
+    .design2-form-card .photo-upload-box {
+        border-color: rgba(99,189,15,0.42);
+        background: rgba(99,189,15,0.06);
+    }
+}
+
+@media (max-width: 480px) {
+    .history-design2-toolbar {
+        gap: 7px;
+    }
+
+    .history-search-linebar {
+        flex-basis: 100%;
+        height: 29px;
+    }
+
+    .history-date-linebar {
+        width: auto;
+        max-width: 100%;
+        flex: 0 1 auto;
+    }
+
+    .history-date-linebar .design2-line-btn {
+        min-width: 24px;
+        padding: 0 5px;
+        font-size: 9px;
+    }
+
+    .history-date-linebar .history-date-step {
+        min-width: 19px;
+        padding: 0 3px;
+    }
+
+    .history-date-linebar .history-calendar-text {
+        max-width: 48px;
+    }
+
+    .design2-form-card {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .design2-form-card .input-wrapper {
+        min-height: 40px;
+        padding: 0 7px;
+    }
+
+    .design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]),
+    .design2-form-card select {
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .design2-form-card .photo-upload-box {
+        flex-basis: 86px;
+        height: 82px;
+    }
+}
+
+
+/* ===== Design 2: Stats ranking + Data management ===== */
+.design2-chart-card h3,
+.design2-data-card h3 {
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+}
+
+.design2-chart-card .chart-tabs {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    max-width: 100%;
+    height: 32px;
+    margin: 2px 0 14px;
+    padding: 0;
+    gap: 0;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+}
+
+.design2-chart-card .chart-tabs button {
+    position: relative;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--subtext);
+    box-shadow: none;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+}
+
+.design2-chart-card .chart-tabs button + button {
+    border-left: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.design2-chart-card .chart-tabs button::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: -2px;
+    height: 2px;
+    background: transparent;
+    transition: background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.design2-chart-card .chart-tabs button.active {
+    color: var(--primary);
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.28);
+    background: transparent;
+    box-shadow: none;
+}
+
+.design2-chart-card .chart-tabs button.active::after {
+    background: var(--primary);
+    box-shadow: 0 0 7px rgba(99, 189, 15, 0.35);
+}
+
+.design2-chart-card .bar-chart-container {
+    margin-top: 6px;
+    padding-top: 2px;
+}
+
+.design2-data-desc {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--subtext);
+    margin: -4px 0 14px;
+}
+
+.design2-data-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.design2-data-card .design2-action-btn,
+.design2-file-picker {
+    width: auto;
+    min-width: 86px;
+    height: 32px;
+    margin: 0;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    box-shadow: none;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.design2-file-picker {
+    color: var(--subtext);
+    position: relative;
+    overflow: hidden;
+}
+
+.design2-file-picker input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.design2-file-icon {
+    color: var(--primary);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.design2-data-card .design2-action-btn:active,
+.design2-file-picker:active {
+    color: var(--primary);
+    transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+    .design2-chart-card .chart-tabs {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .design2-chart-card .chart-tabs button {
+        flex: 1 1 0;
+        padding: 0 6px;
+        font-size: 10px;
+    }
+
+    .design2-data-actions {
+        gap: 7px;
+    }
+
+    .design2-data-card .design2-action-btn,
+    .design2-file-picker {
+        flex: 1 1 calc(50% - 7px);
+        min-width: 0;
+        padding: 0 6px;
+        font-size: 10px;
+    }
+}
+
 </style>
 </head>
 
@@ -2809,7 +3745,7 @@ header::before {
     <div class="container">
 
         <div id="tab-add" class="tab-content active">
-            <div class="card">
+            <div class="card design2-form-card">
                 <h3>新增乘車</h3>
                 <label>日期</label>
                 <input type="date" id="date">
@@ -2911,28 +3847,32 @@ header::before {
             乘車記錄 <span id="totalCount" class="led-counter">0</span>
         </h3>
 
-        <div class="history-search-row">
-    <div class="input-wrapper">
-        <input
-            id="historySearchInput"
-            type="text"
-            placeholder="搜尋公司、路線、車型、車站"
-            oninput="render()"
-        >
-        <button type="button" class="clear-input-btn" onclick="clearHistorySearch(event)">✕</button>
-    </div>
-</div>
-        
-        <div class="date-controls-wrapper">
-            <div class="date-mode-tabs">
-                <button id="btnFilterAll" onclick="setDateFilter('all')">All Time</button>
-                <button id="btnFilterToday" onclick="setDateFilter('today')">Today</button>
+        <div class="history-design2-toolbar">
+            <div class="history-search-row history-search-linebar">
+                <span class="design2-icon" aria-hidden="true">⌕</span>
+                <input
+                    id="historySearchInput"
+                    type="text"
+                    placeholder="搜尋"
+                    oninput="render()"
+                    aria-label="搜尋公司、路線、車型、車站"
+                >
+                <button type="button" class="design2-clear-btn" onclick="clearHistorySearch(event)" aria-label="清除搜尋">✕</button>
             </div>
-            <div class="date-stepper">
-                <button onclick="changeDay(-1)"> &lt; </button>
-                <div id="btnFilterDate" class="date-label" onclick="openCalendar()">選擇日期</div>
-                <button onclick="changeDay(1)"> &gt; </button>
+
+            <div class="date-controls-wrapper history-date-linebar">
+                <button id="btnFilterAll" class="design2-line-btn" onclick="setDateFilter('all')">All</button>
+                <button id="btnFilterToday" class="design2-line-btn" onclick="setDateFilter('today')">Today</button>
+                <button class="design2-line-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
+                <button id="btnFilterDate" class="design2-line-btn history-calendar-btn" onclick="openCalendar()" aria-label="選擇日期">
+                    <span aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
+                </button>
+                <button class="design2-line-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
             </div>
+        </div>
+
+        <div id="historySortToolbar" class="history-sort-toolbar">
+            <button id="historyManualSortBtn" type="button" class="history-sort-toggle" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序">🔒</button>
         </div>
 
         <div id="tripList"></div>
@@ -2956,7 +3896,7 @@ header::before {
                 <div id="filteredStatsContainer"></div>
             </div>
             
-            <div class="card">
+            <div class="card design2-chart-card">
                 <h3>乘搭排行榜 (Top 10)</h3>
                 <div class="chart-tabs">
                     <button id="btnChartCompany" class="active" onclick="switchChartTab('company')">Top 10 公司</button>
@@ -2981,13 +3921,13 @@ header::before {
             <option value="private">私鐵</option>
             <option value="third_sector">3セク</option>
         </select>
-        <label class="map-toggle-pill" title="顯示 / 隱藏已登記路段的車站標記">
+        <label class="map-icon-toggle" title="顯示 / 隱藏車站標記" aria-label="顯示或隱藏車站標記">
             <input id="mapStationMarkerToggle" type="checkbox" checked onchange="handleMapStationMarkerToggle()">
-            <span>站名標</span>
+            <span class="map-icon-toggle-face">駅</span>
         </label>
-        <label class="map-toggle-pill" title="勾選時顯示未搭乘路線；取消時只顯示已乘搭路線">
+        <label class="map-icon-toggle" title="顯示 / 隱藏未搭乘路段" aria-label="顯示或隱藏未搭乘路段">
             <input id="mapUnriddenLineToggle" type="checkbox" checked onchange="handleMapUnriddenLineToggle()">
-            <span>未搭乘</span>
+            <span class="map-icon-toggle-face">未</span>
         </label>
     </div>
 </div>
@@ -3017,8 +3957,9 @@ header::before {
 
 <p class="gallery-page-desc">你記錄過嘅鐵道車輛寫真。</p>
 
-<div class="gallery-search-row">
-    <input id="gallerySearchInput" type="text" placeholder="搜尋車型名 / 公司名" oninput="renderGallery()">
+<div class="gallery-search-row gallery-search-linebar">
+    <span class="design2-icon" aria-hidden="true">⌕</span>
+    <input id="gallerySearchInput" type="text" placeholder="搜尋" oninput="renderGallery()" aria-label="搜尋車型名 / 公司名">
 </div>
 
 <div id="trainDexModal" class="train-dex-modal" onclick="closeTrainDexModal()">
@@ -3102,12 +4043,18 @@ header::before {
         <div id="authStatus" style="display:none;"></div>
     </div>
 
-<div class="card">
+<div class="card design2-data-card">
         <h3>資料管理</h3>
-        <p style="font-size:13px; color:var(--subtext);">備份你的乘車記錄或匯入舊資料。注意：匯出資料包含相片會較大。</p>
-        <button class="btn-small" onclick="exportData()">匯出資料 (JSON)</button>
-        <input type="file" id="importFile" accept=".json" style="margin-top:12px;">
-        <button class="btn-small" onclick="importData()">匯入資料</button>
+        <p class="design2-data-desc">備份你的乘車記錄或匯入舊資料。注意：匯出資料包含相片會較大。</p>
+        <div class="design2-data-actions">
+            <button class="btn-small design2-action-btn" onclick="exportData()">匯出 JSON</button>
+            <label class="design2-file-picker">
+                <span class="design2-file-icon">＋</span>
+                <span id="importFileLabel">選擇檔案</span>
+                <input type="file" id="importFile" accept=".json" onchange="updateImportFileLabel()">
+            </label>
+            <button class="btn-small design2-action-btn" onclick="importData()">匯入資料</button>
+        </div>
     </div>
 </div>
 
@@ -3324,6 +4271,8 @@ async function migrateLocalTripsToCloud(user) {
             photoFromUrl: cleanTrip.photoFrom || cleanTrip.photoFromUrl || "",
             photoToUrl: cleanTrip.photoTo || cleanTrip.photoToUrl || "",
 
+            createdOrder: Number.isFinite(Number(cleanTrip.createdOrder)) ? Number(cleanTrip.createdOrder) : Date.now(),
+            sortOrder: Number.isFinite(Number(cleanTrip.sortOrder)) ? Number(cleanTrip.sortOrder) : null,
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp()
         });
@@ -3995,7 +4944,7 @@ function getLocalTripsForMigration() {
         if (!raw) return [];
         const parsed = JSON.parse(raw);
         if (!Array.isArray(parsed)) return [];
-        return parsed.map(normalizeTrip);
+        return parsed.map((trip, index) => normalizeTrip({ ...trip, _snapshotIndex: index }));
     } catch (error) {
         console.error("讀取本地舊資料失敗", error);
         return [];
@@ -4024,11 +4973,13 @@ function subscribeTrips() {
     );
 
     unsubscribeTrips = onSnapshot(q, (snapshot) => {
+        tripSnapshotCounter = 0;
         trips = snapshot.docs.map(docSnap => {
             const data = docSnap.data();
             return normalizeTrip({
                 id: docSnap.id,
                 ...data,
+                _snapshotIndex: tripSnapshotCounter++,
                 photoTrain: data.photoTrainUrl || "",
                 photoFrom: data.photoFromUrl || "",
                 photoTo: data.photoToUrl || ""
@@ -4046,6 +4997,8 @@ let editIndex = null;
 let lastTo = "";
 let toastTimer = null;
 let editingTripId = null;
+let isHistoryManualSortUnlocked = false;
+let tripSnapshotCounter = 0;
 
 function showToast(message, bgColor = "var(--success)") {
     const toast = document.getElementById("appToast");
@@ -4086,6 +5039,9 @@ function normalizeTrip(trip) {
     normalized.photoFrom = normalized.photoFrom || "";
     normalized.photoTo = normalized.photoTo || "";
 	normalized.segments = Array.isArray(normalized.segments) ? normalized.segments : [];
+    normalized.sortOrder = Number.isFinite(Number(normalized.sortOrder)) ? Number(normalized.sortOrder) : null;
+    normalized.createdOrder = Number.isFinite(Number(normalized.createdOrder)) ? Number(normalized.createdOrder) : null;
+    normalized._snapshotIndex = Number.isFinite(Number(normalized._snapshotIndex)) ? Number(normalized._snapshotIndex) : 0;
 	
     return normalized;
 }
@@ -4885,6 +5841,9 @@ window.saveTrip = async function () {
             photoFromUrl,
             photoToUrl,
 
+            // createdOrder / sortOrder 用嚟固定輸入次序。修改記錄時會保留原本排序。
+            createdOrder: getTripStableCreatedOrder(existingTrip),
+            sortOrder: Number.isFinite(Number(existingTrip?.sortOrder)) ? Number(existingTrip.sortOrder) : null,
             createdAt: existingTrip?.createdAt || serverTimestamp(),
             updatedAt: serverTimestamp()
         };
@@ -4961,6 +5920,288 @@ window.changeRecordPage = function(delta) {
 }
 
 
+
+function getFirestoreTimestampMs(value) {
+    if (!value) return 0;
+    if (typeof value.toMillis === "function") return value.toMillis();
+    if (Number.isFinite(Number(value.seconds))) return Number(value.seconds) * 1000 + Math.floor(Number(value.nanoseconds || 0) / 1000000);
+    const parsed = Date.parse(value);
+    return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function getTripInputOrderValue(trip) {
+    if (!trip) return 0;
+    if (Number.isFinite(Number(trip.sortOrder))) return Number(trip.sortOrder);
+    if (Number.isFinite(Number(trip.createdOrder))) return Number(trip.createdOrder);
+    const createdMs = getFirestoreTimestampMs(trip.createdAt);
+    if (createdMs) return createdMs;
+    if (Number.isFinite(Number(trip._snapshotIndex))) return Number(trip._snapshotIndex);
+    return 0;
+}
+
+function compareTripsByDateAndInputOrder(a, b) {
+    const dateCompare = String(b?.date || "").localeCompare(String(a?.date || ""));
+    if (dateCompare !== 0) return dateCompare;
+
+    const orderA = getTripInputOrderValue(a);
+    const orderB = getTripInputOrderValue(b);
+    if (orderA !== orderB) return orderA - orderB;
+
+    return String(a?.id || "").localeCompare(String(b?.id || ""));
+}
+
+function getOrderedTripsForDisplay(sourceTrips = trips) {
+    return [...sourceTrips].sort(compareTripsByDateAndInputOrder);
+}
+
+function getTripStableCreatedOrder(existingTrip) {
+    if (!existingTrip) return Date.now();
+    if (Number.isFinite(Number(existingTrip.createdOrder))) return Number(existingTrip.createdOrder);
+    if (Number.isFinite(Number(existingTrip.sortOrder))) return Number(existingTrip.sortOrder);
+    const createdMs = getFirestoreTimestampMs(existingTrip.createdAt);
+    return createdMs || Date.now();
+}
+
+function getManualSortDateGroup(date) {
+    return getOrderedTripsForDisplay(trips).filter(t => t.date === date && t.id);
+}
+
+async function saveManualSortDateGroup(date, orderedIds) {
+    const user = auth.currentUser;
+    if (!user || !date || !Array.isArray(orderedIds)) return;
+
+    const base = Date.now();
+    const writes = orderedIds.map((tripId, index) => {
+        const tripRef = doc(dbCloud, "users", user.uid, "trips", tripId);
+        return setDoc(tripRef, {
+            sortOrder: base + index,
+            updatedAt: serverTimestamp()
+        }, { merge: true });
+    });
+
+    await Promise.all(writes);
+}
+
+window.toggleHistoryManualSort = function() {
+    isHistoryManualSortUnlocked = !isHistoryManualSortUnlocked;
+    render();
+};
+
+async function applyManualSortForDate(date, reorderedTrips) {
+    if (!date || !Array.isArray(reorderedTrips) || reorderedTrips.length === 0) return;
+
+    const base = Date.now();
+    reorderedTrips.forEach((trip, index) => {
+        trip.sortOrder = base + index;
+    });
+    render();
+
+    try {
+        await saveManualSortDateGroup(date, reorderedTrips.map(t => t.id));
+        showToast("當日排序已更新");
+    } catch (error) {
+        console.error(error);
+        showToast("排序儲存失敗", "var(--danger)");
+    }
+}
+
+function cssEscapeId(value) {
+    if (window.CSS && typeof window.CSS.escape === "function") return CSS.escape(String(value));
+    return String(value).replace(/"/g, '\"');
+}
+
+async function reorderTripWithinDateByTarget(sourceTripId, targetTripId, clientY = null) {
+    const user = auth.currentUser;
+    if (!user) {
+        showToast("請先登入先可以排序", "var(--danger)");
+        return;
+    }
+
+    if (!isHistoryManualSortUnlocked || !sourceTripId || !targetTripId || sourceTripId === targetTripId) return;
+
+    const sourceTrip = trips.find(t => t.id === sourceTripId);
+    const targetTrip = trips.find(t => t.id === targetTripId);
+    if (!sourceTrip || !targetTrip || sourceTrip.date !== targetTrip.date) return;
+
+    const group = getManualSortDateGroup(sourceTrip.date);
+    const fromIndex = group.findIndex(t => t.id === sourceTripId);
+    const rawTargetIndex = group.findIndex(t => t.id === targetTripId);
+    if (fromIndex < 0 || rawTargetIndex < 0) return;
+
+    const reordered = [...group];
+    const [moved] = reordered.splice(fromIndex, 1);
+
+    let insertIndex = rawTargetIndex;
+    const targetEl = document.querySelector(`.trip[data-trip-id="${cssEscapeId(targetTripId)}"]`);
+    if (targetEl && Number.isFinite(Number(clientY))) {
+        const rect = targetEl.getBoundingClientRect();
+        const placeAfter = Number(clientY) > rect.top + rect.height / 2;
+        insertIndex = rawTargetIndex + (placeAfter ? 1 : 0);
+    }
+
+    if (fromIndex < insertIndex) insertIndex -= 1;
+    insertIndex = Math.max(0, Math.min(insertIndex, reordered.length));
+    reordered.splice(insertIndex, 0, moved);
+
+    await applyManualSortForDate(sourceTrip.date, reordered);
+}
+
+window.moveTripWithinDate = async function(tripId, direction) {
+    const targetTrip = trips.find(t => t.id === tripId);
+    if (!targetTrip) return;
+
+    const group = getManualSortDateGroup(targetTrip.date);
+    const currentIndex = group.findIndex(t => t.id === tripId);
+    const nextIndex = currentIndex + direction;
+
+    if (currentIndex < 0 || nextIndex < 0 || nextIndex >= group.length) return;
+
+    const reordered = [...group];
+    [reordered[currentIndex], reordered[nextIndex]] = [reordered[nextIndex], reordered[currentIndex]];
+    await applyManualSortForDate(targetTrip.date, reordered);
+};
+
+let historyDraggedTripId = null;
+let historyPointerDragState = null;
+
+window.startHistoryTripDrag = function(event, tripId) {
+    if (!isHistoryManualSortUnlocked || !tripId) {
+        event.preventDefault();
+        return;
+    }
+
+    historyDraggedTripId = tripId;
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", tripId);
+
+    const tripEl = event.target.closest(".trip");
+    if (tripEl) tripEl.classList.add("sort-dragging");
+};
+
+window.endHistoryTripDrag = function(event) {
+    historyDraggedTripId = null;
+    document.querySelectorAll(".trip.sort-dragging, .trip.sort-drag-over").forEach(el => {
+        el.classList.remove("sort-dragging", "sort-drag-over");
+    });
+};
+
+window.handleHistoryTripDragOver = function(event, targetTripId) {
+    if (!isHistoryManualSortUnlocked || !historyDraggedTripId || historyDraggedTripId === targetTripId) return;
+
+    const sourceTrip = trips.find(t => t.id === historyDraggedTripId);
+    const targetTrip = trips.find(t => t.id === targetTripId);
+    if (!sourceTrip || !targetTrip || sourceTrip.date !== targetTrip.date) return;
+
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+
+    document.querySelectorAll(".trip.sort-drag-over").forEach(el => el.classList.remove("sort-drag-over"));
+    const targetEl = event.currentTarget?.closest?.(".trip") || event.currentTarget;
+    if (targetEl) targetEl.classList.add("sort-drag-over");
+};
+
+window.dropHistoryTrip = async function(event, targetTripId) {
+    if (!isHistoryManualSortUnlocked) return;
+    event.preventDefault();
+
+    const sourceId = historyDraggedTripId || event.dataTransfer.getData("text/plain");
+    historyDraggedTripId = null;
+
+    document.querySelectorAll(".trip.sort-dragging, .trip.sort-drag-over").forEach(el => {
+        el.classList.remove("sort-dragging", "sort-drag-over");
+    });
+
+    await reorderTripWithinDateByTarget(sourceId, targetTripId, event.clientY);
+};
+
+function clearHistoryPointerDragState() {
+    document.body.classList.remove("history-touch-sorting");
+    document.querySelectorAll(".trip.sort-dragging, .trip.sort-drag-over").forEach(el => {
+        el.classList.remove("sort-dragging", "sort-drag-over");
+    });
+    window.removeEventListener("pointermove", handleHistoryPointerMove);
+    window.removeEventListener("pointerup", finishHistoryPointerDrag);
+    window.removeEventListener("pointercancel", cancelHistoryPointerDrag);
+    historyPointerDragState = null;
+}
+
+window.startHistoryPointerDrag = function(event, tripId) {
+    if (!isHistoryManualSortUnlocked || !tripId) return;
+
+    event.preventDefault();
+    const tripEl = event.target.closest(".trip");
+    if (!tripEl) return;
+
+    historyPointerDragState = {
+        tripId,
+        clientX: event.clientX,
+        clientY: event.clientY
+    };
+
+    tripEl.classList.add("sort-dragging");
+    document.body.classList.add("history-touch-sorting");
+
+    window.addEventListener("pointermove", handleHistoryPointerMove, { passive: false });
+    window.addEventListener("pointerup", finishHistoryPointerDrag, { passive: false });
+    window.addEventListener("pointercancel", cancelHistoryPointerDrag, { passive: false });
+};
+
+function handleHistoryPointerMove(event) {
+    if (!historyPointerDragState) return;
+    event.preventDefault();
+
+    historyPointerDragState.clientX = event.clientX;
+    historyPointerDragState.clientY = event.clientY;
+
+    document.querySelectorAll(".trip.sort-drag-over").forEach(el => el.classList.remove("sort-drag-over"));
+
+    const underEl = document.elementFromPoint(event.clientX, event.clientY);
+    const targetEl = underEl?.closest?.(".trip[data-trip-id]");
+    if (!targetEl) return;
+
+    const sourceTrip = trips.find(t => t.id === historyPointerDragState.tripId);
+    const targetTrip = trips.find(t => t.id === targetEl.dataset.tripId);
+    if (!sourceTrip || !targetTrip || sourceTrip.id === targetTrip.id || sourceTrip.date !== targetTrip.date) return;
+
+    targetEl.classList.add("sort-drag-over");
+}
+
+async function finishHistoryPointerDrag(event) {
+    if (!historyPointerDragState) return;
+    event.preventDefault();
+
+    const { tripId, clientX, clientY } = historyPointerDragState;
+    const underEl = document.elementFromPoint(clientX, clientY);
+    const targetEl = underEl?.closest?.(".trip[data-trip-id]");
+    const targetId = targetEl?.dataset?.tripId || "";
+
+    clearHistoryPointerDragState();
+
+    if (targetId) {
+        await reorderTripWithinDateByTarget(tripId, targetId, clientY);
+    }
+}
+
+function cancelHistoryPointerDrag(event) {
+    clearHistoryPointerDragState();
+}
+
+function updateHistoryManualSortToolbar() {
+    const btn = document.getElementById("historyManualSortBtn");
+    const listDiv = document.getElementById("tripList");
+
+    if (btn) {
+        btn.textContent = isHistoryManualSortUnlocked ? "🔓" : "🔒";
+        btn.setAttribute("aria-label", isHistoryManualSortUnlocked ? "鎖定排序" : "解鎖排序");
+        btn.setAttribute("title", isHistoryManualSortUnlocked ? "鎖定排序" : "解鎖排序");
+        btn.classList.toggle("active", isHistoryManualSortUnlocked);
+    }
+
+    if (listDiv) {
+        listDiv.classList.toggle("history-manual-sort-on", isHistoryManualSortUnlocked);
+    }
+}
+
 function getTripDirectionSummary(trip) {
     const labels = getTripSegments(trip)
         .map(seg => getLoopDirectionLabel(seg.line_id, seg.direction))
@@ -4971,21 +6212,32 @@ function getTripDirectionSummary(trip) {
 
 function render() {
 	console.log("render triggered");
-    trips.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const orderedTrips = getOrderedTripsForDisplay(trips);
     
 	renderRideCategoryRatio();
-    document.getElementById('btnFilterAll').className = currentDateFilter === 'all' ? 'active' : '';
-    document.getElementById('btnFilterToday').className = currentDateFilter === getTodayStr() ? 'active' : '';
+    const btnFilterAll = document.getElementById('btnFilterAll');
+    const btnFilterToday = document.getElementById('btnFilterToday');
+
+    if (btnFilterAll) btnFilterAll.classList.toggle('active', currentDateFilter === 'all');
+    if (btnFilterToday) btnFilterToday.classList.toggle('active', currentDateFilter === getTodayStr());
     
-    let displayDate = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
-    document.getElementById('btnFilterDate').innerText = displayDate;
-    
-    if (currentDateFilter !== 'all') { document.getElementById('btnFilterDate').style.color = 'var(--primary)'; } 
-    else { document.getElementById('btnFilterDate').style.color = 'var(--text)'; }
+    let displayDate = currentDateFilter === 'all' ? '' : currentDateFilter;
+    const btnFilterDate = document.getElementById('btnFilterDate');
+    const btnFilterDateText = document.getElementById('btnFilterDateText');
+
+    if (btnFilterDateText) {
+        btnFilterDateText.textContent = displayDate;
+    }
+
+    if (btnFilterDate) {
+        btnFilterDate.classList.toggle('active', currentDateFilter !== 'all');
+        btnFilterDate.title = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
+    }
 
     const listDiv = document.getElementById("tripList");
     const paginationDiv = document.getElementById("paginationControls");
     listDiv.innerHTML = ""; paginationDiv.innerHTML = "";
+    updateHistoryManualSortToolbar();
 
     const historySearchKeyword = (
     document.getElementById("historySearchInput")?.value || ""
@@ -4993,7 +6245,7 @@ function render() {
 
 console.log("historySearchKeyword =", historySearchKeyword);
 
-let tripsToDisplay = trips.filter(t => {
+let tripsToDisplay = orderedTrips.filter(t => {
     if (!(currentDateFilter === "all" || t.date === currentDateFilter)) {
         return false;
     }
@@ -5027,6 +6279,12 @@ document.getElementById("totalCount").innerText = tripsToDisplay.length;
     let pagedTrips = tripsToDisplay.slice((currentRecordPage - 1) * recordsPerPage, currentRecordPage * recordsPerPage);
 
     let lastRenderedDate = "";
+    const pagedTripIds = new Set(pagedTrips.map(t => t.id).filter(Boolean));
+    const visibleDateGroups = new Map();
+    orderedTrips.forEach(t => {
+        if (!t.id || !pagedTripIds.has(t.id)) return;
+        if (!visibleDateGroups.has(t.date)) visibleDateGroups.set(t.date, getManualSortDateGroup(t.date));
+    });
 
 pagedTrips.forEach((t) => {
     if (t.date !== lastRenderedDate) {
@@ -5074,21 +6332,47 @@ pagedTrips.forEach((t) => {
         ? `<span style="font-size:12px; margin-left:5px;">📸</span>`
         : '';
 
+    if (t.id) {
+        div.dataset.tripId = t.id;
+        div.dataset.tripDate = t.date || "";
+        div.setAttribute("ondragover", `handleHistoryTripDragOver(event, '${t.id}')`);
+        div.setAttribute("ondrop", `dropHistoryTrip(event, '${t.id}')`);
+    }
+
+    const dragHandleHtml = t.id ? `
+        <span
+            class="history-drag-handle"
+            draggable="${isHistoryManualSortUnlocked ? "true" : "false"}"
+            title="拖曳排序"
+            aria-label="拖曳排序"
+            ondragstart="startHistoryTripDrag(event, '${t.id}')"
+            ondragend="endHistoryTripDrag(event)"
+            onpointerdown="startHistoryPointerDrag(event, '${t.id}')"
+        >☰</span>
+    ` : "";
+
+    if (isHistoryManualSortUnlocked) {
+        div.classList.add("manual-sort-active");
+    }
+
     div.innerHTML = `
-        <div class="trip-header-row">
-            <div class="date">${photoIconHtml}</div>
-            <div style="display:flex; gap:16px;">
-                <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="editTrip(${originalIndex})">✏️</span>
-                <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="deleteTrip(${originalIndex})">🗑️</span>
+        ${dragHandleHtml}
+        <div class="trip-content-wrap">
+            <div class="trip-header-row">
+                <div class="date">${photoIconHtml}</div>
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="editTrip(${originalIndex})">✏️</span>
+                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="deleteTrip(${originalIndex})">🗑️</span>
+                </div>
             </div>
-        </div>
-        <div class="route">${routeHtml}</div>
-        <div class="trip-detail">
-            ${serviceHtml}
-            <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
-            <span style="color:var(--border);">|</span>
-            <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
-            ${getTripDirectionSummary(t) ? `<span style="color:var(--border);">|</span><span>${getTripDirectionSummary(t)}</span>` : ""}
+            <div class="route">${routeHtml}</div>
+            <div class="trip-detail">
+                ${serviceHtml}
+                <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
+                <span style="color:var(--border);">|</span>
+                <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
+                ${getTripDirectionSummary(t) ? `<span style="color:var(--border);">|</span><span>${getTripDirectionSummary(t)}</span>` : ""}
+            </div>
         </div>
     `;
     listDiv.appendChild(div);
@@ -6599,7 +7883,7 @@ window.importData = function() {
             if (user) {
                 const tripsRef = collection(dbCloud, "users", user.uid, "trips");
 
-                for (const trip of importedTrips) {
+                for (const [index, trip] of importedTrips.entries()) {
                     await addDoc(tripsRef, {
                         date: trip.date || "",
                         serviceType: trip.serviceType || "",
@@ -6613,6 +7897,8 @@ window.importData = function() {
                         photoFromUrl: trip.photoFromUrl || trip.photoFrom || "",
                         photoToUrl: trip.photoToUrl || trip.photoTo || "",
 
+                        createdOrder: Number.isFinite(Number(trip.createdOrder)) ? Number(trip.createdOrder) : Date.now() + index,
+                        sortOrder: Number.isFinite(Number(trip.sortOrder)) ? Number(trip.sortOrder) : null,
                         createdAt: serverTimestamp(),
                         updatedAt: serverTimestamp()
                     });
@@ -7437,6 +8723,15 @@ function renderAchievements() {
 }
 
 loadData();
+
+window.updateImportFileLabel = function() {
+    const input = document.getElementById("importFile");
+    const label = document.getElementById("importFileLabel");
+    if (!input || !label) return;
+    const fileName = input.files && input.files[0] ? input.files[0].name : "選擇檔案";
+    label.textContent = fileName.length > 12 ? `${fileName.slice(0, 9)}…` : fileName;
+};
+
 </script>
 </body>
 </html>
