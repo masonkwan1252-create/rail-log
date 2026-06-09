@@ -4147,6 +4147,7 @@ let ignoreNextMapClickClear = false;
 let selectedMapRouteState = null;
 let isMapZoomRerendering = false;
 let railSegmentUsageIndex = new Map();
+let riddenSegmentKeySetCache = new Map();
 
 const MAP_SETTINGS_KEYS = {
     category: "railLog.map.categoryFilter",
@@ -5736,6 +5737,63 @@ function isSharedSegmentKey(segmentKey) {
     return getSegmentUsage(segmentKey).length > 1;
 }
 
+function clearRiddenSegmentKeySetCache() {
+    riddenSegmentKeySetCache = new Map();
+}
+
+function getRiddenSegmentKeySetForLine(lineId) {
+    if (!lineId) return new Set();
+
+    if (riddenSegmentKeySetCache.has(lineId)) {
+        return riddenSegmentKeySetCache.get(lineId);
+    }
+
+    const line = maps.line[lineId];
+    const keys = new Set();
+
+    if (!line) {
+        riddenSegmentKeySetCache.set(lineId, keys);
+        return keys;
+    }
+
+    const allLineParts = getLineGeometryParts(line);
+    const riddenSegments = getRiddenSegmentsForLine(lineId);
+
+    riddenSegments.forEach(seg => {
+        const fromStation = maps.station[seg.fromId];
+        const toStation = maps.station[seg.toId];
+
+        if (!fromStation || !toStation) return;
+
+        allLineParts.forEach(latlngs => {
+            const part = extractLinePartByStations(
+                latlngs,
+                fromStation,
+                toStation,
+                seg.direction || "",
+                line
+            );
+
+            if (!Array.isArray(part) || part.length < 2) return;
+
+            for (let i = 0; i < part.length - 1; i++) {
+                keys.add(makeSegmentKey(part[i], part[i + 1]));
+            }
+        });
+    });
+
+    riddenSegmentKeySetCache.set(lineId, keys);
+    return keys;
+}
+
+function getActuallyRiddenSharedSegmentUsage(segmentKey) {
+    if (!segmentKey || !isSharedSegmentKey(segmentKey)) return [];
+
+    return getSegmentUsage(segmentKey).filter(item =>
+        item.lineId && getRiddenSegmentKeySetForLine(item.lineId).has(segmentKey)
+    );
+}
+
 function distancePointToSegmentSq(point, a, b) {
     const px = point.lng;
     const py = point.lat;
@@ -6048,12 +6106,18 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
 
 function getSegmentHighlightColors(segmentKey, fallbackColor) {
     if (segmentKey && isSharedSegmentKey(segmentKey)) {
-        const colors = getSegmentUsage(segmentKey)
-            .map(item => item.color)
-            .filter(Boolean);
+        const riddenSharedUsage = getActuallyRiddenSharedSegmentUsage(segmentKey);
 
-        const uniqueColors = [...new Set(colors)];
-        if (uniqueColors.length > 0) return uniqueColors;
+        // 嚴格定義：只有當「同一條共同區間」入面，實際已搭乘涉及路線達 2 條或以上，
+        // 已搭乘 highlight 先會用混色；否則當作目前乘搭路線的單色 highlight。
+        if (riddenSharedUsage.length >= 2) {
+            const colors = riddenSharedUsage
+                .map(item => item.color)
+                .filter(Boolean);
+
+            const uniqueColors = [...new Set(colors)];
+            if (uniqueColors.length >= 2) return uniqueColors;
+        }
     }
 
     return [fallbackColor || "#63BD0F"];
@@ -6264,6 +6328,7 @@ function renderRailGeometries(selectedCategory = "all") {
     mapRailGeometryLines = [];
 
     const showUnriddenLines = getMapShowUnriddenLines();
+    clearRiddenSegmentKeySetCache();
 
     db.lines.forEach(line => {
         const allLineParts = getLineGeometryParts(line);
@@ -6357,7 +6422,7 @@ function renderRailGeometries(selectedCategory = "all") {
 
         // 2) 已乘搭 from → to highlight。
         //    已搭乘路線入面未搭過嘅路段，只有開啟「顯示未搭乘路線」先會顯示灰線。
-        //    已搭乘共同路段會按實際共用路線混色顯示。
+        //    已搭乘共同路段：只有同一共同區間內實際搭過 2 條或以上涉及路線，先會混色。
         if (riddenSegments.length === 0) return;
 
         riddenSegments.forEach(seg => {
