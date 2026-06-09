@@ -5930,10 +5930,11 @@ function getRouteGroupFromClickedSegment(line, clickedSegment) {
     return [line];
 }
 
-function buildMixedHighlightLayers(latlngs, colors) {
+function buildMixedHighlightLayers(latlngs, colors, options = {}) {
     const safeColors = Array.isArray(colors) && colors.length > 0
         ? colors
         : ["#63BD0F"];
+    const isInteractive = options.interactive === true;
 
     // 單色：普通粗線
     if (safeColors.length === 1) {
@@ -5945,7 +5946,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
                 lineCap: "round",
                 lineJoin: "round",
                 smoothFactor: 1,
-                interactive: false
+                interactive: isInteractive
             })
         ];
     }
@@ -5959,7 +5960,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
             lineCap: "round",
             lineJoin: "round",
             smoothFactor: 1,
-            interactive: false
+            interactive: isInteractive
         })
     ];
 
@@ -5974,7 +5975,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
                 lineCap: "round",
                 lineJoin: "round",
                 smoothFactor: 1,
-                interactive: false
+                interactive: isInteractive
             })
         );
 
@@ -5986,7 +5987,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
                 lineCap: "round",
                 lineJoin: "round",
                 smoothFactor: 1,
-                interactive: false
+                interactive: isInteractive
             })
         );
 
@@ -6002,7 +6003,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
             lineCap: "round",
             lineJoin: "round",
             smoothFactor: 1,
-            interactive: false
+            interactive: isInteractive
         })
     );
 
@@ -6014,7 +6015,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
             lineCap: "round",
             lineJoin: "round",
             smoothFactor: 1,
-            interactive: false
+            interactive: isInteractive
         })
     );
 
@@ -6026,7 +6027,7 @@ function buildMixedHighlightLayers(latlngs, colors) {
             lineCap: "round",
             lineJoin: "round",
             smoothFactor: 1,
-            interactive: false
+            interactive: isInteractive
         })
     );
 
@@ -6038,11 +6039,66 @@ function buildMixedHighlightLayers(latlngs, colors) {
             lineCap: "round",
             lineJoin: "round",
             smoothFactor: 1,
-            interactive: false
+            interactive: isInteractive
         })
     );
 
     return layers;
+}
+
+function getSegmentHighlightColors(segmentKey, fallbackColor) {
+    if (segmentKey && isSharedSegmentKey(segmentKey)) {
+        const colors = getSegmentUsage(segmentKey)
+            .map(item => item.color)
+            .filter(Boolean);
+
+        const uniqueColors = [...new Set(colors)];
+        if (uniqueColors.length > 0) return uniqueColors;
+    }
+
+    return [fallbackColor || "#63BD0F"];
+}
+
+function buildRiddenSegmentHighlightLayers(latlngs, fallbackColor) {
+    if (!Array.isArray(latlngs) || latlngs.length < 2) return [];
+
+    const groupedParts = [];
+    let currentPoints = [latlngs[0]];
+    let currentSignature = null;
+    let currentColors = null;
+
+    for (let i = 0; i < latlngs.length - 1; i++) {
+        const segmentKey = makeSegmentKey(latlngs[i], latlngs[i + 1]);
+        const colors = getSegmentHighlightColors(segmentKey, fallbackColor);
+        const signature = colors.join("|");
+
+        if (currentSignature === null) {
+            currentSignature = signature;
+            currentColors = colors;
+            currentPoints.push(latlngs[i + 1]);
+            continue;
+        }
+
+        if (signature !== currentSignature) {
+            if (currentPoints.length >= 2) {
+                groupedParts.push({ points: currentPoints, colors: currentColors });
+            }
+
+            currentSignature = signature;
+            currentColors = colors;
+            currentPoints = [latlngs[i], latlngs[i + 1]];
+        } else {
+            currentPoints.push(latlngs[i + 1]);
+        }
+    }
+
+    if (currentPoints.length >= 2) {
+        groupedParts.push({ points: currentPoints, colors: currentColors });
+    }
+
+    return groupedParts.flatMap(part =>
+        buildMixedHighlightLayers(part.points, part.colors, { interactive: true })
+    );
 }
 
 function buildRoutePopupHtml(line, clickedSegment = null) {
@@ -6239,6 +6295,7 @@ function renderRailGeometries(selectedCategory = "all") {
 
         const baseColor = lineHasRidden ? "#777" : "#9a9a9a";
         const highlightColor = getLineThemeColor(line, companyId);
+        const shouldDrawWholeLineBase = showUnriddenLines || riddenSegments.length === 0;
 
         const handleRouteClick = (e) => {
             ignoreNextMapClickClear = true;
@@ -6264,38 +6321,43 @@ function renderRailGeometries(selectedCategory = "all") {
             }, 80);
         };
 
-        // 1) 全線底線：全部可點擊
-        allLineParts.forEach(latlngs => {
-            const baseLayer = L.polyline(latlngs, {
-                color: baseColor,
-                weight: lineHasRidden ? 4 : 3,
-                opacity: lineHasRidden ? 0.45 : 0.20,
-                lineCap: "round",
-                lineJoin: "round",
-                smoothFactor: 1,
-                interactive: true
-            }).addTo(railMapInstance);
+        // 1) 全線底線：只在「顯示未搭乘路線」開啟時顯示。
+        //    如果係舊資料導致暫時拆唔到 from→to 路段，會保留全線作 fallback，避免已乘搭路線完全消失。
+        if (shouldDrawWholeLineBase) {
+            allLineParts.forEach(latlngs => {
+                const baseLayer = L.polyline(latlngs, {
+                    color: baseColor,
+                    weight: lineHasRidden ? 4 : 3,
+                    opacity: lineHasRidden ? 0.45 : 0.20,
+                    lineCap: "round",
+                    lineJoin: "round",
+                    smoothFactor: 1,
+                    interactive: true
+                }).addTo(railMapInstance);
 
-            baseLayer.on("click", handleRouteClick);
+                baseLayer.on("click", handleRouteClick);
 
-            const hitLayer = L.polyline(latlngs, {
-                color: "#000",
-                weight: 22,
-                opacity: 0.01,
-                lineCap: "round",
-                lineJoin: "round",
-                smoothFactor: 1,
-                interactive: true
-            }).addTo(railMapInstance);
+                const hitLayer = L.polyline(latlngs, {
+                    color: "#000",
+                    weight: 22,
+                    opacity: 0.01,
+                    lineCap: "round",
+                    lineJoin: "round",
+                    smoothFactor: 1,
+                    interactive: true
+                }).addTo(railMapInstance);
 
-            hitLayer.bringToFront();
-            hitLayer.on("click", handleRouteClick);
+                hitLayer.bringToFront();
+                hitLayer.on("click", handleRouteClick);
 
-            mapRailGeometryLines.push(baseLayer);
-            mapRailGeometryLines.push(hitLayer);
-        });
+                mapRailGeometryLines.push(baseLayer);
+                mapRailGeometryLines.push(hitLayer);
+            });
+        }
 
-        // 2) 已乘搭 from → to highlight
+        // 2) 已乘搭 from → to highlight。
+        //    已搭乘路線入面未搭過嘅路段，只有開啟「顯示未搭乘路線」先會顯示灰線。
+        //    已搭乘共同路段會按實際共用路線混色顯示。
         if (riddenSegments.length === 0) return;
 
         riddenSegments.forEach(seg => {
@@ -6309,19 +6371,13 @@ function renderRailGeometries(selectedCategory = "all") {
 
                 if (part.length < 2) return;
 
-                const highlightLayer = L.polyline(part, {
-                    color: highlightColor,
-                    weight: 6,
-                    opacity: 0.92,
-                    lineCap: "round",
-                    lineJoin: "round",
-                    smoothFactor: 1,
-                    interactive: true
-                }).addTo(railMapInstance);
+                const highlightLayers = buildRiddenSegmentHighlightLayers(part, highlightColor);
 
-                highlightLayer.on("click", handleRouteClick);
-
-                mapRailGeometryLines.push(highlightLayer);
+                highlightLayers.forEach(layer => {
+                    layer.addTo(railMapInstance);
+                    layer.on("click", handleRouteClick);
+                    mapRailGeometryLines.push(layer);
+                });
             });
         });
     });
