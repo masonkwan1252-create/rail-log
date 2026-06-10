@@ -3574,6 +3574,371 @@ body.history-touch-sorting {
     }
 }
 
+
+
+/* ===== History controls v3: compact full-width linebar + hidden search drawer ===== */
+.history-compact-controls {
+    margin: 2px 0 12px;
+}
+
+.history-function-linebar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 34px;
+    gap: 0;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.78);
+    background: linear-gradient(180deg, rgba(99,189,15,0.035), transparent);
+}
+
+.history-function-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 32px;
+    padding: 0 4px;
+    font-size: 10px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.history-function-btn:not(:first-child) {
+    border-left: 1px solid rgba(134,134,139,0.30);
+}
+
+.history-search-toggle,
+.history-sort-toggle-inline,
+.history-date-step {
+    flex: 0 0 38px;
+    max-width: 42px;
+    font-size: 16px;
+}
+
+.history-calendar-btn {
+    flex: 1.15 1 0;
+}
+
+.history-calendar-icon {
+    font-size: 13px;
+    line-height: 1;
+}
+
+.history-function-linebar .history-calendar-text {
+    max-width: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 9px;
+}
+
+.history-search-drawer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-4px);
+    transition: max-height 0.22s ease, opacity 0.18s ease, transform 0.18s ease, margin-top 0.18s ease;
+    margin-top: 0;
+}
+
+.history-search-drawer.open,
+.history-search-drawer.has-value {
+    max-height: 44px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 8px;
+}
+
+.history-search-drawer .history-search-linebar {
+    width: 100%;
+    flex: none;
+    height: 32px;
+    border-bottom-width: 1.5px;
+}
+
+.history-search-toggle.active,
+.history-sort-toggle-inline.active {
+    color: var(--primary);
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.30);
+}
+
+.history-search-toggle.active::after,
+.history-sort-toggle-inline.active::after {
+    background: var(--primary);
+    box-shadow: 0 0 7px rgba(99, 189, 15, 0.35);
+}
+
+.history-sort-toolbar {
+    display: none !important;
+}
+
+@media (max-width: 480px) {
+    .history-function-linebar {
+        min-height: 32px;
+    }
+
+    .history-function-btn {
+        height: 31px;
+        line-height: 31px;
+        font-size: 9px;
+        padding: 0 3px;
+    }
+
+    .history-search-toggle,
+    .history-sort-toggle-inline,
+    .history-date-step {
+        flex-basis: 33px;
+        max-width: 35px;
+        font-size: 15px;
+    }
+
+    .history-function-linebar .history-calendar-text {
+        max-width: 48px;
+        font-size: 8px;
+    }
+}
+
+
+
+/* ===== Fix batch: iOS tabbar + data layout + cleaner add form ===== */
+html, body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+#main-app {
+    min-height: 100svh;
+}
+
+.bottom-nav {
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    width: 100% !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    contain: layout paint;
+}
+
+#tab-settings {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
+@supports (-webkit-touch-callout: none) {
+    .bottom-nav {
+        position: fixed !important;
+        bottom: 0 !important;
+        padding-bottom: max(env(safe-area-inset-bottom), 6px) !important;
+    }
+}
+
+/* Data management: export on first row, file + import on second row */
+.design2-data-actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 9px !important;
+    align-items: stretch !important;
+}
+
+.design2-data-actions .design2-action-btn,
+.design2-data-actions .design2-file-picker {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 34px;
+    margin: 0 !important;
+}
+
+.design2-data-actions .design2-action-btn[onclick="exportData()"] {
+    grid-column: 1 / -1;
+}
+
+.design2-data-actions .design2-file-picker {
+    grid-column: 1;
+}
+
+.design2-data-actions .design2-action-btn[onclick="importData()"] {
+    grid-column: 2;
+}
+
+/* Add trip page: remove excessive green vertical edges, strengthen underline */
+.design2-form-card label:not(.map-icon-toggle):not([style*="display: flex"]) {
+    padding-left: 0 !important;
+    border-left: none !important;
+    opacity: 0.82;
+}
+
+.design2-form-card .input-wrapper {
+    border-left: none !important;
+    border-top: 1px solid color-mix(in srgb, var(--border) 34%, transparent) !important;
+    border-right: 1px solid color-mix(in srgb, var(--border) 34%, transparent) !important;
+    border-bottom: 3px solid rgba(99, 189, 15, 0.92) !important;
+    border-radius: 9px 9px 3px 3px !important;
+    background: color-mix(in srgb, var(--tag-bg) 30%, transparent) !important;
+    box-shadow: inset 0 -1px 0 rgba(99, 189, 15, 0.18);
+}
+
+.design2-form-card .input-wrapper:focus-within {
+    border-bottom-color: var(--primary) !important;
+    box-shadow: 0 2px 0 rgba(99, 189, 15, 0.20);
+}
+
+.design2-form-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]),
+.design2-form-card select {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.design2-form-card .through-block,
+.design2-form-card #mainLoopDirectionWrap,
+.design2-form-card [style*="background: var(--tag-bg)"] {
+    border-left: none !important;
+    border-bottom: 3px solid rgba(99, 189, 15, 0.86) !important;
+    border-radius: 10px 10px 3px 3px !important;
+}
+
+.design2-form-card .photo-upload-box {
+    border-bottom-width: 3px !important;
+    border-bottom-color: rgba(99, 189, 15, 0.90) !important;
+}
+
+/* iOS / Safari: keep dropdown affordance visible on add form */
+.design2-form-card select {
+    -webkit-appearance: menulist !important;
+    appearance: auto !important;
+    padding-right: 26px !important;
+}
+
+.design2-form-card input[type="date"] {
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+    padding-right: 10px !important;
+}
+
+.design2-form-card input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    opacity: 0.95 !important;
+    margin-left: 6px;
+}
+
+.design2-form-card input[list] {
+    padding-right: 56px !important;
+}
+
+.design2-form-card .input-wrapper:has(input[list])::after {
+    content: "⌄";
+    position: absolute;
+    right: 33px;
+    top: 50%;
+    transform: translateY(-54%);
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.design2-form-card .input-wrapper:has(input[list]):focus-within::after {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.26);
+}
+
+@supports not selector(:has(*)) {
+    .design2-form-card input[list] {
+        background-image: linear-gradient(45deg, transparent 50%, var(--primary) 50%), linear-gradient(135deg, var(--primary) 50%, transparent 50%);
+        background-position: calc(100% - 42px) 17px, calc(100% - 36px) 17px;
+        background-size: 6px 6px, 6px 6px;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 480px) {
+    #tab-settings {
+        padding-bottom: calc(104px + env(safe-area-inset-bottom));
+    }
+
+    .design2-data-actions {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    .design2-data-actions .design2-action-btn,
+    .design2-data-actions .design2-file-picker {
+        font-size: 10.5px;
+        height: 34px;
+    }
+
+    .design2-form-card .input-wrapper {
+        border-bottom-width: 3px !important;
+    }
+}
+
+
+
+/* ===== Small fix: restore label rail marker + single datalist arrow ===== */
+.design2-form-card label:not(.map-icon-toggle):not([style*="display: flex"]) {
+    padding-left: 7px !important;
+    border-left: 3px solid rgba(99, 189, 15, 0.82) !important;
+}
+
+/* Keep input boxes clean: no green vertical edge on the field itself */
+.design2-form-card .input-wrapper {
+    border-left: none !important;
+}
+
+/* Datalist inputs: hide browser's extra picker indicator, then use one custom arrow */
+.design2-form-card input[list] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+    padding-right: 56px !important;
+}
+
+.design2-form-card input[list]::-webkit-calendar-picker-indicator,
+.design2-form-card input[list]::-webkit-list-button {
+    display: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.design2-form-card .input-wrapper:has(input[list])::after {
+    content: "⌄" !important;
+    position: absolute !important;
+    right: 33px !important;
+    top: 50% !important;
+    transform: translateY(-54%) !important;
+    color: var(--primary) !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    opacity: 0.92 !important;
+    pointer-events: none !important;
+    background: transparent !important;
+}
+
+/* Native select/date controls keep their own system arrow/icon only */
+.design2-form-card select,
+.design2-form-card input[type="date"] {
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+    background-image: none !important;
+}
+
+@supports not selector(:has(*)) {
+    .design2-form-card input[list] {
+        background-image:
+            linear-gradient(45deg, transparent 50%, var(--primary) 50%),
+            linear-gradient(135deg, var(--primary) 50%, transparent 50%) !important;
+        background-position: calc(100% - 42px) 17px, calc(100% - 36px) 17px !important;
+        background-size: 6px 6px, 6px 6px !important;
+        background-repeat: no-repeat !important;
+    }
+}
 </style>
 </head>
 
@@ -3847,32 +4212,34 @@ body.history-touch-sorting {
             乘車記錄 <span id="totalCount" class="led-counter">0</span>
         </h3>
 
-        <div class="history-design2-toolbar">
-            <div class="history-search-row history-search-linebar">
-                <span class="design2-icon" aria-hidden="true">⌕</span>
-                <input
-                    id="historySearchInput"
-                    type="text"
-                    placeholder="搜尋"
-                    oninput="render()"
-                    aria-label="搜尋公司、路線、車型、車站"
-                >
-                <button type="button" class="design2-clear-btn" onclick="clearHistorySearch(event)" aria-label="清除搜尋">✕</button>
-            </div>
-
-            <div class="date-controls-wrapper history-date-linebar">
-                <button id="btnFilterAll" class="design2-line-btn" onclick="setDateFilter('all')">All</button>
-                <button id="btnFilterToday" class="design2-line-btn" onclick="setDateFilter('today')">Today</button>
-                <button class="design2-line-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
-                <button id="btnFilterDate" class="design2-line-btn history-calendar-btn" onclick="openCalendar()" aria-label="選擇日期">
-                    <span aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
+        <div class="history-compact-controls">
+            <div class="history-function-linebar" role="toolbar" aria-label="乘車記錄篩選工具列">
+                <button id="historySearchToggle" type="button" class="design2-line-btn history-function-btn history-search-toggle" onclick="toggleHistorySearch()" aria-label="搜尋" title="搜尋">
+                    <span aria-hidden="true">⌕</span>
                 </button>
-                <button class="design2-line-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
+                <button id="btnFilterAll" class="design2-line-btn history-function-btn" onclick="setDateFilter('all')">ALL</button>
+                <button id="btnFilterToday" class="design2-line-btn history-function-btn" onclick="setDateFilter('today')">TODAY</button>
+                <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
+                <button id="btnFilterDate" class="design2-line-btn history-function-btn history-calendar-btn" onclick="openCalendar()" aria-label="選擇日期" title="選擇日期">
+                    <span class="history-calendar-icon" aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
+                </button>
+                <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
+                <button id="historyManualSortBtn" type="button" class="design2-line-btn history-function-btn history-sort-toggle-inline" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序">🔒</button>
             </div>
-        </div>
 
-        <div id="historySortToolbar" class="history-sort-toolbar">
-            <button id="historyManualSortBtn" type="button" class="history-sort-toggle" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序">🔒</button>
+            <div id="historySearchDrawer" class="history-search-drawer">
+                <div class="history-search-row history-search-linebar">
+                    <span class="design2-icon" aria-hidden="true">⌕</span>
+                    <input
+                        id="historySearchInput"
+                        type="text"
+                        placeholder="搜尋公司、路線、車型、車站"
+                        oninput="render()"
+                        aria-label="搜尋公司、路線、車型、車站"
+                    >
+                    <button type="button" class="design2-clear-btn" onclick="clearHistorySearch(event)" aria-label="清除搜尋">✕</button>
+                </div>
+            </div>
         </div>
 
         <div id="tripList"></div>
@@ -4442,6 +4809,35 @@ async function loadTripsFromCloud(user) {
     render();
 }
 
+function syncHistorySearchDrawer() {
+    const drawer = document.getElementById("historySearchDrawer");
+    const toggle = document.getElementById("historySearchToggle");
+    const input = document.getElementById("historySearchInput");
+    const hasValue = !!input?.value?.trim();
+
+    if (drawer) {
+        drawer.classList.toggle("open", isHistorySearchOpen);
+        drawer.classList.toggle("has-value", hasValue);
+    }
+
+    if (toggle) {
+        toggle.classList.toggle("active", isHistorySearchOpen || hasValue);
+        toggle.setAttribute("aria-expanded", isHistorySearchOpen || hasValue ? "true" : "false");
+    }
+}
+
+window.toggleHistorySearch = function() {
+    isHistorySearchOpen = !isHistorySearchOpen;
+    syncHistorySearchDrawer();
+
+    if (isHistorySearchOpen) {
+        requestAnimationFrame(() => {
+            const input = document.getElementById("historySearchInput");
+            if (input) input.focus();
+        });
+    }
+};
+
 window.clearHistorySearch = function(event) {
     if (event) {
         event.preventDefault();
@@ -4452,8 +4848,9 @@ window.clearHistorySearch = function(event) {
     if (!input) return;
 
     input.value = "";
+    isHistorySearchOpen = false;
+    syncHistorySearchDrawer();
     render();
-    input.focus();
 };
 
 window.openTrainDexModal = function(trainId) {
@@ -4998,6 +5395,7 @@ let lastTo = "";
 let toastTimer = null;
 let editingTripId = null;
 let isHistoryManualSortUnlocked = false;
+let isHistorySearchOpen = false;
 let tripSnapshotCounter = 0;
 
 function showToast(message, bgColor = "var(--success)") {
@@ -6233,6 +6631,7 @@ function render() {
         btnFilterDate.classList.toggle('active', currentDateFilter !== 'all');
         btnFilterDate.title = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
     }
+    syncHistorySearchDrawer();
 
     const listDiv = document.getElementById("tripList");
     const paginationDiv = document.getElementById("paginationControls");
