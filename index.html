@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.31</title>
+<title>鉄道手帳 RAIL LOG V0.32</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:title" content="鉄道手帳 RAIL LOG">
 <meta property="og:description" content="乘車記錄、足跡地圖與車型相冊">
@@ -1799,7 +1799,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.31 成就佈局樣式
+   🟩 V0.24/V0.32 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -3939,6 +3939,1820 @@ html, body {
         background-repeat: no-repeat !important;
     }
 }
+
+
+/* ===== V0.32 Desktop Layout =====
+   Mobile keeps the existing one-column app. Desktop becomes a wide rail-control workspace. */
+@media (min-width: 900px) {
+    :root {
+        --desktop-sidebar-w: 88px;
+        --desktop-page-pad: clamp(18px, 2vw, 30px);
+    }
+
+    body {
+        padding-bottom: 0;
+        min-height: 100vh;
+    }
+
+    header {
+        min-height: 94px;
+        padding-top: calc(env(safe-area-inset-top) + 10px);
+        padding-bottom: 10px;
+    }
+
+    .destination-sign-frame {
+        max-width: 260px;
+        width: 30vw;
+    }
+
+    .container {
+        width: calc(100% - var(--desktop-sidebar-w));
+        max-width: none;
+        margin: 0 0 0 var(--desktop-sidebar-w);
+        padding: var(--desktop-page-pad);
+        padding-bottom: var(--desktop-page-pad);
+    }
+
+    .card {
+        border-radius: 16px;
+        padding: 22px;
+        margin-bottom: 18px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.055);
+    }
+
+    .bottom-nav {
+        position: fixed !important;
+        left: 0 !important;
+        right: auto !important;
+        top: 94px !important;
+        bottom: 0 !important;
+        width: var(--desktop-sidebar-w) !important;
+        height: auto !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 6px;
+        padding: 14px 8px max(env(safe-area-inset-bottom), 12px) !important;
+        border-top: none;
+        border-right: 1px solid var(--border);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+    }
+
+    .nav-item {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: 62px;
+        padding: 9px 4px 8px;
+        border-top: none;
+        border-left: 3px solid transparent;
+        border-radius: 14px;
+        gap: 6px;
+    }
+
+    .nav-item:hover {
+        background: color-mix(in srgb, var(--primary) 7%, transparent);
+        color: var(--text);
+    }
+
+    .nav-item.active {
+        border-left-color: var(--primary);
+        border-top-color: transparent;
+        color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 10%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 18%, transparent);
+    }
+
+    .nav-icon,
+    .nav-icon-svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-label {
+        font-size: 11px;
+        line-height: 1.15;
+    }
+
+    .version-badge {
+        bottom: 12px;
+        right: 14px;
+    }
+
+    .tab-content.active {
+        animation: desktopFadeIn 0.22s ease;
+    }
+
+    @keyframes desktopFadeIn {
+        from { opacity: 0; transform: translateY(3px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1100px) {
+    /* Add page */
+    #tab-add.active {
+        display: block;
+    }
+
+    .desktop-add-card {
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 26px 28px 28px;
+    }
+
+    .desktop-add-card h3 {
+        margin-bottom: 20px;
+    }
+
+    .desktop-form-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px 18px;
+        align-items: start;
+    }
+
+    .desktop-form-grid .form-field,
+    .desktop-form-grid .form-field-wide {
+        min-width: 0;
+    }
+
+    .desktop-form-grid .form-field-wide {
+        grid-column: 1 / -1;
+    }
+
+    .secondary-trip-grid {
+        margin-top: 12px;
+    }
+
+    .other-company-field {
+        grid-column: span 2;
+    }
+
+    .desktop-through-row {
+        margin: 16px 0 6px;
+        padding: 13px 14px;
+        border: 1px solid color-mix(in srgb, var(--border) 42%, transparent);
+        border-bottom: 3px solid rgba(99,189,15,0.78);
+        border-radius: 12px 12px 4px 4px;
+        background: color-mix(in srgb, var(--tag-bg) 24%, transparent);
+    }
+
+    .desktop-through-row .btn-add {
+        margin-top: 0;
+    }
+
+    .desktop-through-container {
+        margin-top: 10px;
+    }
+
+    .desktop-add-card .photo-upload-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        overflow: visible;
+        gap: 14px;
+    }
+
+    .desktop-add-card .photo-upload-box {
+        width: 100%;
+        height: 112px;
+        flex-basis: auto;
+    }
+
+    .desktop-save-btn {
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* History page: more records on screen */
+    #tab-history .card {
+        max-width: none;
+    }
+
+    #tab-history #tripList {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 14px;
+        align-items: start;
+    }
+
+    #tab-history .history-date-separator,
+    #tab-history #paginationControls {
+        grid-column: 1 / -1;
+    }
+
+    #tab-history .trip {
+        border: 1px solid color-mix(in srgb, var(--border) 48%, transparent);
+        border-bottom: 3px solid color-mix(in srgb, var(--primary) 52%, transparent);
+        border-radius: 12px 12px 4px 4px;
+        padding: 12px 14px;
+        background: color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+        min-height: 100px;
+    }
+
+    #tab-history .trip.manual-sort-active {
+        border-left: 3px solid var(--primary);
+        padding-left: 10px;
+    }
+
+    #tab-history .route {
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    #tab-history .trip-detail {
+        font-size: 13px;
+        gap: 7px;
+    }
+
+    .history-function-linebar {
+        max-width: 880px;
+    }
+
+    .history-search-drawer {
+        max-width: 880px;
+    }
+
+    /* Stats page */
+    #tab-stats.active {
+        display: grid;
+        grid-template-columns: minmax(340px, 0.9fr) minmax(480px, 1.25fr);
+        gap: 18px;
+        align-items: start;
+    }
+
+    #tab-stats .ride-ratio-card {
+        grid-column: 1 / -1;
+    }
+
+    #tab-stats .card {
+        margin-bottom: 0;
+    }
+
+    #tab-stats .design2-chart-card {
+        min-height: 460px;
+    }
+
+    #tab-stats .bar-row {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    #tab-stats .bar-track {
+        height: 17px;
+    }
+
+    /* Map page */
+    #tab-map .card {
+        padding: 16px !important;
+    }
+
+    #railMap {
+        height: calc(100vh - 174px);
+        min-height: 620px;
+        border-radius: 14px;
+    }
+
+    /* Gallery page */
+    #tab-gallery .gallery-page-card {
+        padding: 22px 24px 26px;
+    }
+
+    #tab-gallery .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 14px;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+
+    #tab-gallery .gallery-item {
+        flex: initial;
+        width: 100%;
+    }
+
+    #tab-gallery .gallery-img-wrap {
+        aspect-ratio: 4 / 4.6;
+    }
+
+    /* Achievements */
+    #tab-achievements #achievementList {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 18px;
+    }
+
+    #tab-achievements .achieve-category-header,
+    #tab-achievements .unlocked-achievements-row {
+        grid-column: 1 / -1;
+    }
+
+    #tab-achievements .achieve-category-section {
+        min-width: 0;
+    }
+
+    /* Settings page */
+    #tab-settings.active {
+        display: grid;
+        grid-template-columns: minmax(360px, 0.95fr) minmax(420px, 1.05fr);
+        gap: 18px;
+        align-items: start;
+        padding-bottom: 0;
+    }
+
+    #tab-settings .card {
+        margin-bottom: 0;
+    }
+
+    .design2-data-actions {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .container {
+        padding-left: 34px;
+        padding-right: 34px;
+    }
+
+    #tab-history #tripList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #tab-stats.active {
+        grid-template-columns: minmax(420px, 0.85fr) minmax(620px, 1.15fr);
+    }
+
+    #tab-gallery .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    }
+}
+
+@media (min-width: 1100px) and (prefers-color-scheme: dark) {
+    .card {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    #tab-history .trip,
+    .desktop-through-row {
+        background: color-mix(in srgb, var(--card) 84%, var(--tag-bg));
+    }
+}
+
+/* ===== Desktop readability pass: Add Trip + History ===== */
+.desktop-add-kicker,
+.desktop-section-heading {
+    display: none;
+}
+
+.desktop-add-head h3 {
+    margin-bottom: 0;
+}
+
+.desktop-add-layout,
+.desktop-add-section {
+    min-width: 0;
+}
+
+.history-desktop-head {
+    min-width: 0;
+}
+
+@media (min-width: 1100px) {
+    .desktop-add-card {
+        max-width: 1280px;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+
+    .desktop-add-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 24px 30px 18px;
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+        background:
+            linear-gradient(135deg, color-mix(in srgb, var(--primary) 9%, transparent), transparent 54%),
+            color-mix(in srgb, var(--card) 92%, var(--tag-bg));
+    }
+
+    .desktop-add-head h3 {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 22px;
+        line-height: 1.15;
+    }
+
+    .desktop-add-kicker {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0 12px;
+        border: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
+        border-radius: 999px;
+        color: var(--primary);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+    }
+
+    .desktop-add-layout {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.78fr) minmax(560px, 1.22fr);
+        align-items: stretch;
+    }
+
+    .desktop-add-section {
+        padding: 24px 30px 28px;
+    }
+
+    .desktop-route-section {
+        border-right: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+        background: color-mix(in srgb, var(--tag-bg) 22%, transparent);
+    }
+
+    .desktop-section-heading {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 16px;
+        color: var(--text);
+        font-size: 14px;
+        letter-spacing: 0.02em;
+    }
+
+    .desktop-section-heading span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 22px;
+        border-radius: 6px;
+        background: var(--primary);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .desktop-route-section .desktop-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .desktop-ride-section .desktop-form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 18px;
+        margin-top: 0;
+    }
+
+    .desktop-ride-section .other-company-field,
+    .desktop-ride-section .photo-field {
+        grid-column: 1 / -1;
+    }
+
+    .desktop-add-card label:not(.map-icon-toggle):not([style*="display: flex"]) {
+        margin-top: 0 !important;
+        margin-bottom: 7px !important;
+    }
+
+    .desktop-add-card .input-wrapper {
+        min-height: 46px;
+        background: color-mix(in srgb, var(--input-bg) 74%, var(--tag-bg)) !important;
+    }
+
+    .desktop-add-card input:not([type="checkbox"]):not([type="file"]):not([type="hidden"]),
+    .desktop-add-card select {
+        height: 44px;
+        font-size: 15px;
+    }
+
+    .desktop-through-row {
+        margin: 18px 0 0;
+        padding: 14px;
+        border-radius: 8px !important;
+        border-bottom-width: 2px !important;
+    }
+
+    .desktop-through-row .btn-add {
+        margin-top: 0;
+    }
+
+    .desktop-add-card .photo-field label {
+        margin-top: 8px !important;
+        padding-top: 0 !important;
+        border-top: 0 !important;
+    }
+
+    .desktop-add-card .photo-upload-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .desktop-add-card .photo-upload-box {
+        height: 118px;
+        border-radius: 8px !important;
+    }
+
+    .desktop-save-btn {
+        width: 100%;
+        max-width: none;
+        min-height: 54px;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-bottom: 0 !important;
+        letter-spacing: 0.08em;
+    }
+
+    #tab-history .history-desktop-card {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .history-desktop-head {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) minmax(560px, 720px);
+        gap: 22px;
+        align-items: center;
+        padding: 22px 28px 18px;
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+        background:
+            linear-gradient(135deg, color-mix(in srgb, var(--primary) 8%, transparent), transparent 60%),
+            color-mix(in srgb, var(--card) 94%, var(--tag-bg));
+    }
+
+    #tab-history .history-title {
+        margin: 0 !important;
+        font-size: 22px;
+        line-height: 1.15;
+    }
+
+    #tab-history .led-counter {
+        margin-left: 10px;
+    }
+
+    .history-compact-controls {
+        margin: 0;
+    }
+
+    .history-function-linebar {
+        max-width: none;
+        min-height: 40px;
+        border: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+        border-bottom: 2px solid rgba(99, 189, 15, 0.78);
+        border-radius: 8px 8px 3px 3px;
+        background: color-mix(in srgb, var(--tag-bg) 30%, transparent);
+    }
+
+    .history-function-btn {
+        height: 38px;
+        padding: 0 9px;
+        font-size: 11px;
+        line-height: 38px;
+    }
+
+    #btnFilterAll,
+    #btnFilterToday {
+        flex: 0 0 82px;
+    }
+
+    .history-search-toggle,
+    .history-sort-toggle-inline,
+    .history-date-step {
+        flex: 0 0 44px;
+        max-width: 46px;
+        font-size: 16px;
+    }
+
+    .history-calendar-btn {
+        flex: 1 1 160px;
+        min-width: 130px;
+    }
+
+    .history-function-linebar .history-calendar-text {
+        max-width: 110px;
+        font-size: 10px;
+    }
+
+    .history-search-drawer.open,
+    .history-search-drawer.has-value {
+        max-height: 48px;
+        margin-top: 10px;
+    }
+
+    .history-search-drawer .history-search-linebar {
+        height: 38px;
+        padding: 0 8px;
+        border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+        border-bottom: 2px solid rgba(99, 189, 15, 0.72);
+        border-radius: 8px 8px 3px 3px;
+        background: color-mix(in srgb, var(--input-bg) 76%, transparent);
+    }
+
+    #tab-history #tripList {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 22px 28px 0;
+    }
+
+    #tab-history .history-date-separator {
+        grid-column: 1;
+        margin: 18px 0 6px;
+    }
+
+    #tab-history .history-date-separator:first-child {
+        margin-top: 0;
+    }
+
+    #tab-history .trip {
+        border: 1px solid color-mix(in srgb, var(--border) 54%, transparent);
+        border-bottom: 2px solid color-mix(in srgb, var(--primary) 58%, transparent);
+        border-radius: 8px 8px 3px 3px;
+        padding: 12px 14px;
+        background: color-mix(in srgb, var(--card) 86%, var(--tag-bg));
+        min-height: 0;
+    }
+
+    #tab-history .trip.manual-sort-active {
+        border-left: 3px solid var(--primary);
+        padding-left: 11px;
+    }
+
+    #tab-history .trip-content-wrap {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.86fr) minmax(360px, 1.14fr) auto;
+        gap: 16px;
+        align-items: center;
+    }
+
+    #tab-history .trip-header-row {
+        grid-column: 3;
+        grid-row: 1;
+        justify-content: flex-end;
+        margin: 0;
+    }
+
+    #tab-history .route {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+        font-size: 14.5px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    #tab-history .trip-detail {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+        margin: 0;
+        gap: 8px;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    #tab-history .date {
+        min-width: 18px;
+        text-align: right;
+    }
+
+    #tab-history #paginationControls {
+        grid-column: 1;
+        margin-top: 0 !important;
+        padding: 18px 28px 24px;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1240px) {
+    .desktop-add-layout {
+        grid-template-columns: minmax(300px, 0.9fr) minmax(500px, 1.1fr);
+    }
+
+    .desktop-add-section {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .history-desktop-head {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    #tab-history .trip-content-wrap {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 7px 16px;
+    }
+
+    #tab-history .trip-header-row {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    #tab-history .route,
+    #tab-history .trip-detail {
+        grid-column: 1;
+    }
+
+    #tab-history .route {
+        grid-row: 1;
+    }
+
+    #tab-history .trip-detail {
+        grid-row: 2;
+    }
+}
+
+@media (min-width: 1100px) and (prefers-color-scheme: dark) {
+    .desktop-add-head,
+    .history-desktop-head {
+        background:
+            linear-gradient(135deg, rgba(99,189,15,0.10), transparent 58%),
+            color-mix(in srgb, var(--card) 90%, var(--tag-bg));
+    }
+
+    .desktop-route-section,
+    #tab-history .trip {
+        background: color-mix(in srgb, var(--card) 84%, var(--tag-bg));
+    }
+}
+
+/* ===== Desktop top chrome fix ===== */
+@media (min-width: 900px) {
+    :root {
+        --desktop-header-h: 92px;
+    }
+
+    header {
+        min-height: var(--desktop-header-h);
+        padding-top: calc(env(safe-area-inset-top) + 8px);
+        padding-bottom: 8px;
+    }
+
+    .destination-sign-frame {
+        width: min(210px, 32vw);
+        max-width: 210px;
+        flex: 0 0 auto;
+    }
+
+    .sign-type-box {
+        font-size: clamp(13px, 1.15vw, 15px);
+    }
+
+    .sign-destination-text {
+        font-size: clamp(20px, 1.9vw, 25px);
+    }
+
+    .sign-english-text {
+        font-size: clamp(10px, 0.95vw, 13px);
+    }
+
+    .bottom-nav {
+        top: var(--desktop-header-h) !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    .desktop-through-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 12px 0 0;
+        padding: 8px 0 0;
+        border: 0 !important;
+        border-top: 1px solid color-mix(in srgb, var(--border) 58%, transparent) !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+
+    .desktop-through-row .btn-add {
+        flex: 0 0 auto;
+        width: auto;
+        min-height: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0 11px;
+        border-radius: 7px 7px 2px 2px;
+        font-size: 11px;
+        line-height: 28px;
+        white-space: nowrap;
+    }
+
+    .desktop-through-container {
+        flex: 1 1 auto;
+        min-width: 0;
+        margin-top: 0;
+    }
+}
+
+/* ===== Cleaner add toggle, history controls, stats layout ===== */
+.other-train-card {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+}
+
+.other-train-toggle {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100%;
+    min-height: 46px;
+    margin: 0 !important;
+    padding: 8px 11px !important;
+    border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+    border-bottom: 3px solid rgba(99, 189, 15, 0.88);
+    border-radius: 9px 9px 3px 3px;
+    background: color-mix(in srgb, var(--input-bg) 74%, var(--tag-bg));
+    color: var(--text) !important;
+    cursor: pointer;
+}
+
+.other-train-toggle input {
+    position: absolute;
+    width: 1px !important;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.other-train-switch {
+    position: relative;
+    flex: 0 0 auto;
+    width: 34px;
+    height: 20px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--subtext) 35%, transparent);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.18);
+    transition: background 0.18s ease;
+}
+
+.other-train-switch::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--card);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.22);
+    transition: transform 0.18s ease;
+}
+
+.other-train-toggle input:checked + .other-train-switch {
+    background: var(--primary);
+}
+
+.other-train-toggle input:checked + .other-train-switch::after {
+    transform: translateX(14px);
+}
+
+.other-train-text {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+}
+
+.other-train-main {
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.other-train-sub {
+    color: var(--subtext);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+#otherTrainCompanyWrapper {
+    padding-top: 10px;
+}
+
+.trip-route-block,
+.trip-train-block,
+.trip-station-block {
+    min-width: 0;
+}
+
+.trip-field-label {
+    margin-bottom: 4px;
+    color: var(--subtext);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1;
+}
+
+.trip-field-value {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.trip-meta-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 18px;
+    margin-top: 5px;
+}
+
+.trip-service-badge,
+.trip-direction-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 18px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.trip-service-badge {
+    background: var(--danger);
+    color: #fff;
+}
+
+.trip-direction-chip {
+    width: fit-content;
+    margin-top: 5px;
+    background: color-mix(in srgb, var(--primary) 11%, transparent);
+    color: var(--primary);
+    border: 1px solid color-mix(in srgb, var(--primary) 35%, transparent);
+}
+
+.trip-photo-icon {
+    font-size: 12px;
+    line-height: 1;
+}
+
+.trip-arrow {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.trip-actions {
+    gap: 7px !important;
+}
+
+.trip-icon-btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+    border-bottom: 2px solid rgba(99, 189, 15, 0.68);
+    border-radius: 7px 7px 2px 2px;
+    background: color-mix(in srgb, var(--tag-bg) 42%, transparent);
+    color: var(--subtext);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 28px;
+}
+
+.trip-icon-btn:active {
+    color: var(--primary);
+    transform: translateY(1px);
+}
+
+@media (min-width: 1100px) {
+    .history-desktop-head {
+        grid-template-columns: minmax(230px, 1fr) minmax(680px, 860px);
+        gap: 24px;
+    }
+
+    .history-function-linebar {
+        display: grid;
+        grid-template-columns: 42px 76px 84px 40px minmax(138px, 1fr) 40px 42px;
+        gap: 8px;
+        min-height: 40px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .history-function-linebar .history-function-btn {
+        height: 38px;
+        min-width: 0;
+        padding: 0 8px;
+        border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+        border-bottom: 2px solid rgba(99, 189, 15, 0.72);
+        border-radius: 8px 8px 3px 3px;
+        background: color-mix(in srgb, var(--tag-bg) 36%, transparent);
+        color: var(--text);
+        line-height: 36px;
+    }
+
+    .history-function-linebar .history-function-btn:not(:first-child),
+    .history-function-linebar .design2-line-btn:not(:first-child) {
+        border-left: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+    }
+
+    .history-function-linebar .history-function-btn::after {
+        left: 9px;
+        right: 9px;
+        bottom: -2px;
+    }
+
+    .history-function-linebar .history-function-btn.active,
+    .history-function-linebar #btnFilterAll.active,
+    .history-function-linebar #btnFilterToday.active,
+    .history-function-linebar #btnFilterDate.active,
+    .history-function-linebar .history-search-toggle.active,
+    .history-function-linebar .history-sort-toggle-inline.active {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 9%, var(--tag-bg));
+        text-shadow: 0 0 6px rgba(99, 189, 15, 0.24);
+    }
+
+    .history-function-linebar .history-search-toggle,
+    .history-function-linebar .history-sort-toggle-inline,
+    .history-function-linebar .history-date-step {
+        flex: initial;
+        max-width: none;
+        font-size: 15px;
+    }
+
+    .history-function-linebar #btnFilterAll,
+    .history-function-linebar #btnFilterToday {
+        flex: initial;
+    }
+
+    .history-function-linebar .history-calendar-btn {
+        flex: initial;
+        min-width: 0;
+    }
+
+    .history-function-linebar .history-calendar-text {
+        max-width: 150px;
+        font-size: 10px;
+    }
+
+    #tab-history .history-desktop-card {
+        max-width: 1460px;
+    }
+
+    #tab-history #tripList {
+        max-width: 1340px;
+        gap: 9px;
+    }
+
+    #tab-history .trip-content-wrap {
+        grid-template-columns:
+            minmax(320px, 1.25fr)
+            minmax(170px, 0.58fr)
+            minmax(300px, 1fr)
+            78px;
+        gap: 18px;
+    }
+
+    #tab-history .trip-route-block {
+        grid-column: 1;
+    }
+
+    #tab-history .trip-train-block {
+        grid-column: 2;
+    }
+
+    #tab-history .trip-station-block {
+        grid-column: 3;
+    }
+
+    #tab-history .trip-actions {
+        grid-column: 4;
+        grid-row: 1;
+        justify-content: flex-end;
+        margin: 0;
+    }
+
+    #tab-history .route {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    #tab-history .trip {
+        padding: 13px 15px;
+    }
+
+    #tab-stats.active {
+        max-width: 1340px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: minmax(560px, 1.2fr) minmax(380px, 0.8fr);
+        grid-template-areas:
+            "stats ratio"
+            "stats chart";
+        gap: 18px;
+        align-items: start;
+    }
+
+    #tab-stats .stats-filter-card {
+        grid-area: stats;
+    }
+
+    #tab-stats .ride-ratio-card {
+        grid-area: ratio;
+        grid-column: auto !important;
+    }
+
+    #tab-stats .design2-chart-card {
+        grid-area: chart;
+        min-height: 0;
+    }
+
+    #tab-stats .card {
+        margin-bottom: 0;
+    }
+
+    .stats-card-desc {
+        margin-bottom: 16px !important;
+    }
+
+    .stats-filter-card .stat-group {
+        margin-bottom: 12px;
+        padding: 14px;
+        border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+        border-bottom: 2px solid color-mix(in srgb, var(--primary) 45%, transparent);
+        border-radius: 8px 8px 3px 3px;
+        background: color-mix(in srgb, var(--tag-bg) 27%, transparent);
+    }
+
+    .stats-filter-card .stat-group-title {
+        margin-bottom: 10px;
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 900;
+    }
+
+    .stats-filter-card .tags-container {
+        gap: 6px;
+        margin: 0;
+        max-height: 178px;
+        overflow: auto;
+        padding-right: 4px;
+    }
+
+    #filterCompanies.tags-container {
+        max-height: 154px;
+    }
+
+    #filteredStatsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    #filteredStatsContainer .stat-group {
+        margin-bottom: 0;
+    }
+
+    #filteredStatsContainer .stat-group:first-child {
+        grid-column: 1 / -1;
+    }
+
+    #filteredStatsContainer .btn-clear-stats {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin: 0;
+    }
+
+    .stats-filter-card .tag {
+        padding: 5px 9px;
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 1.25;
+    }
+
+    .completion-rate {
+        display: inline-block;
+        margin: 4px 0 0;
+        color: var(--primary);
+    }
+
+    #tab-stats .ride-ratio-title,
+    #tab-stats .design2-chart-card h3,
+    #tab-stats .stats-filter-card h3 {
+        margin-bottom: 14px;
+    }
+
+    #tab-stats .ride-ratio-led-bar {
+        height: 40px;
+    }
+
+    #tab-stats .ride-ratio-legend {
+        justify-content: flex-start;
+        margin-top: 12px;
+    }
+
+    #tab-stats .bar-row {
+        display: grid;
+        grid-template-columns: minmax(132px, 0.95fr) minmax(110px, 1fr) 36px;
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+
+    #tab-stats .bar-label {
+        width: auto;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    #tab-stats .bar-val {
+        width: auto;
+        padding-left: 0;
+        text-align: right;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1260px) {
+    .history-desktop-head {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .history-function-linebar {
+        grid-template-columns: 42px 74px 82px 40px minmax(128px, 1fr) 40px 42px;
+    }
+
+    #tab-history .trip-content-wrap {
+        grid-template-columns: minmax(0, 1fr) minmax(180px, 0.7fr) 74px;
+        gap: 8px 14px;
+    }
+
+    #tab-history .trip-route-block {
+        grid-column: 1 / span 2;
+    }
+
+    #tab-history .trip-train-block {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #tab-history .trip-station-block {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #tab-history .trip-actions {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+    }
+
+    #tab-stats.active {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "ratio"
+            "stats"
+            "chart";
+    }
+}
+
+/* ===== History control redesign + record typography pass ===== */
+.history-control-group {
+    display: contents;
+}
+
+@media (min-width: 1100px) {
+    .history-desktop-head {
+        grid-template-columns: minmax(220px, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .history-compact-controls {
+        justify-self: end;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .history-function-linebar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        min-height: 0;
+        gap: 8px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+
+    .history-control-group {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        overflow: hidden;
+        border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+        border-bottom: 2px solid rgba(99, 189, 15, 0.72);
+        border-radius: 8px 8px 3px 3px;
+        background: color-mix(in srgb, var(--tag-bg) 32%, transparent);
+    }
+
+    .history-function-linebar .history-function-btn {
+        height: 34px;
+        min-width: 0;
+        margin: 0;
+        padding: 0 10px;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 0;
+        background: transparent;
+        color: var(--text);
+        font-size: 10.5px;
+        line-height: 34px;
+        box-shadow: none;
+    }
+
+    .history-function-linebar > .history-function-btn {
+        width: 36px;
+        min-width: 36px;
+        padding: 0;
+        border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+        border-bottom: 2px solid rgba(99, 189, 15, 0.72);
+        border-radius: 8px 8px 3px 3px;
+        background: color-mix(in srgb, var(--tag-bg) 32%, transparent);
+    }
+
+    .history-control-group .history-function-btn + .history-function-btn {
+        border-left: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+    }
+
+    .history-function-linebar .history-function-btn:not(:first-child),
+    .history-function-linebar .design2-line-btn:not(:first-child) {
+        border-left-color: color-mix(in srgb, var(--border) 58%, transparent);
+    }
+
+    .history-range-group .history-function-btn {
+        min-width: 64px;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+    }
+
+    .history-date-group .history-date-step {
+        width: 32px;
+        min-width: 32px;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .history-date-group .history-calendar-btn {
+        min-width: 118px;
+        max-width: 142px;
+        padding: 0 10px;
+    }
+
+    .history-function-linebar .history-calendar-text {
+        max-width: 96px;
+        font-size: 9.5px;
+    }
+
+    .history-function-linebar .history-function-btn::after {
+        left: 8px;
+        right: 8px;
+        bottom: -2px;
+    }
+
+    .history-function-linebar .history-function-btn.active,
+    .history-function-linebar #btnFilterAll.active,
+    .history-function-linebar #btnFilterToday.active,
+    .history-function-linebar #btnFilterDate.active,
+    .history-function-linebar .history-search-toggle.active,
+    .history-function-linebar .history-sort-toggle-inline.active {
+        color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 10%, transparent);
+        text-shadow: 0 0 6px rgba(99, 189, 15, 0.24);
+    }
+
+    #tab-history #tripList {
+        max-width: 1400px;
+    }
+
+    #tab-history .trip {
+        padding: 14px 16px;
+    }
+
+    #tab-history .trip-content-wrap {
+        grid-template-columns:
+            minmax(360px, 1.2fr)
+            minmax(190px, 0.6fr)
+            minmax(340px, 1fr)
+            78px;
+        gap: 18px;
+        align-items: start;
+    }
+
+    #tab-history .route {
+        font-size: 15.5px;
+        line-height: 1.38;
+    }
+
+    #tab-history .trip-field-label {
+        margin-bottom: 6px;
+        font-size: 10.5px;
+    }
+
+    #tab-history .trip-field-value {
+        font-size: 14.5px;
+        line-height: 1.38;
+    }
+
+    #tab-history .trip-service-badge,
+    #tab-history .trip-direction-chip {
+        font-size: 10.5px;
+    }
+
+    #tab-history .trip-actions {
+        padding-top: 15px;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1260px) {
+    .history-desktop-head {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .history-compact-controls {
+        justify-self: stretch;
+    }
+
+    .history-function-linebar {
+        justify-content: flex-start;
+    }
+
+    #tab-history .trip-content-wrap {
+        grid-template-columns: minmax(0, 1fr) minmax(210px, 0.7fr) 74px;
+        gap: 9px 14px;
+    }
+}
+
+/* ===== Ranking card polish ===== */
+.design2-chart-card {
+    overflow: hidden;
+}
+
+.chart-empty-state {
+    padding: 28px 10px;
+    text-align: center;
+    color: var(--subtext);
+    font-size: 13px;
+}
+
+#tab-stats .design2-chart-card .chart-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    height: auto;
+    margin: 0 0 16px;
+    padding: 4px;
+    gap: 4px;
+    border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
+    border-bottom: 2px solid rgba(99, 189, 15, 0.72);
+    border-radius: 8px 8px 3px 3px;
+    background: color-mix(in srgb, var(--tag-bg) 42%, transparent);
+}
+
+#tab-stats .design2-chart-card .chart-tabs button {
+    width: 100%;
+    height: 32px;
+    min-width: 0;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 6px 6px 2px 2px;
+    background: transparent;
+    color: var(--subtext);
+    font-size: 11px;
+    line-height: 32px;
+}
+
+#tab-stats .design2-chart-card .chart-tabs button + button {
+    border-left: 0;
+}
+
+#tab-stats .design2-chart-card .chart-tabs button::after {
+    display: none;
+}
+
+#tab-stats .design2-chart-card .chart-tabs button.active {
+    background: color-mix(in srgb, var(--primary) 12%, var(--card));
+    color: var(--primary);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 26%, transparent);
+    text-shadow: none;
+}
+
+#tab-stats .design2-chart-card .bar-chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#tab-stats .design2-chart-card .bar-row {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    grid-template-areas:
+        "rank label value"
+        "rank track track";
+    gap: 7px 10px;
+    align-items: center;
+    margin: 0;
+    padding: 10px 11px;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+    border-bottom: 2px solid color-mix(in srgb, var(--primary) 42%, transparent);
+    border-radius: 8px 8px 3px 3px;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 30%, transparent), transparent),
+        color-mix(in srgb, var(--card) 92%, var(--tag-bg));
+}
+
+#tab-stats .design2-chart-card .bar-rank {
+    grid-area: rank;
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border-radius: 7px 7px 2px 2px;
+    background: #111;
+    color: #ff9500;
+    font-family: 'DotGothic16', monospace;
+    font-size: 16px;
+    line-height: 1;
+    text-shadow:
+        0 0 4px rgba(255, 149, 0, 0.85),
+        0 0 10px rgba(255, 149, 0, 0.35);
+    box-shadow:
+        inset 0 2px 4px rgba(0,0,0,1),
+        inset 0 -1px 2px rgba(255,255,255,0.04);
+}
+
+#tab-stats .design2-chart-card .rank-1 .bar-rank,
+#tab-stats .design2-chart-card .rank-2 .bar-rank,
+#tab-stats .design2-chart-card .rank-3 .bar-rank {
+    color: #63BD0F;
+    text-shadow:
+        0 0 4px rgba(99, 189, 15, 0.9),
+        0 0 10px rgba(99, 189, 15, 0.35);
+}
+
+#tab-stats .design2-chart-card .bar-label {
+    grid-area: label;
+    width: auto;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 850;
+    line-height: 1.25;
+}
+
+#tab-stats .design2-chart-card .bar-val {
+    grid-area: value;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 3px;
+    width: auto;
+    min-width: 42px;
+    padding: 0;
+    color: var(--primary);
+    font-family: 'DotGothic16', monospace;
+    font-weight: 900;
+    line-height: 1;
+    text-align: right;
+}
+
+#tab-stats .design2-chart-card .bar-val span {
+    font-size: 18px;
+}
+
+#tab-stats .design2-chart-card .bar-val small {
+    color: var(--subtext);
+    font-family: inherit;
+    font-size: 10px;
+}
+
+#tab-stats .design2-chart-card .bar-track {
+    grid-area: track;
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--border) 45%, transparent);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.12);
+}
+
+#tab-stats .design2-chart-card .bar-fill {
+    border-radius: 999px;
+    background: linear-gradient(90deg, #63BD0F 0%, #84d948 100%);
+    box-shadow: 0 0 8px rgba(99, 189, 15, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+    #tab-stats .design2-chart-card .bar-row {
+        background:
+            linear-gradient(180deg, rgba(99,189,15,0.045), transparent),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+    }
+
+    #tab-stats .design2-chart-card .bar-track {
+        background: rgba(255,255,255,0.10);
+    }
+}
+
+/* ===== History controls: map-style slim inline filter ===== */
+@media (min-width: 1100px) {
+    .history-desktop-head {
+        grid-template-columns: minmax(220px, 1fr) auto;
+        gap: 18px;
+        padding-top: 20px;
+        padding-bottom: 16px;
+    }
+
+    .history-compact-controls {
+        justify-self: end;
+        width: auto;
+    }
+
+    .history-map-style-controls {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto !important;
+        min-height: 30px !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-bottom: 2px solid rgba(99, 189, 15, 0.75) !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .history-map-style-controls .history-control-group {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .history-map-style-controls .history-function-btn {
+        position: relative;
+        width: auto !important;
+        min-width: 24px !important;
+        height: 28px !important;
+        margin: 0 !important;
+        padding: 0 8px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        color: var(--subtext) !important;
+        font-size: 11px !important;
+        font-weight: 900 !important;
+        line-height: 28px !important;
+        letter-spacing: 0.02em;
+        text-shadow: none !important;
+    }
+
+    .history-map-style-controls > .history-function-btn,
+    .history-map-style-controls .history-control-group {
+        flex: 0 0 auto;
+    }
+
+    .history-map-style-controls > .history-function-btn:not(:first-child)::before,
+    .history-map-style-controls .history-control-group::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 16px;
+        margin: 0 5px 0 3px;
+        background: var(--border);
+        opacity: 0.65;
+        vertical-align: middle;
+    }
+
+    .history-map-style-controls .history-control-group .history-function-btn + .history-function-btn {
+        border-left: 1px solid color-mix(in srgb, var(--border) 58%, transparent) !important;
+    }
+
+    .history-map-style-controls .history-function-btn::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        right: 4px;
+        bottom: -2px;
+        height: 2px;
+        background: transparent;
+        transition: background 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .history-map-style-controls .history-function-btn.active,
+    .history-map-style-controls #btnFilterAll.active,
+    .history-map-style-controls #btnFilterToday.active,
+    .history-map-style-controls #btnFilterDate.active,
+    .history-map-style-controls .history-search-toggle.active,
+    .history-map-style-controls .history-sort-toggle-inline.active {
+        color: var(--primary) !important;
+    }
+
+    .history-map-style-controls .history-function-btn.active::after,
+    .history-map-style-controls #btnFilterAll.active::after,
+    .history-map-style-controls #btnFilterToday.active::after,
+    .history-map-style-controls #btnFilterDate.active::after,
+    .history-map-style-controls .history-search-toggle.active::after,
+    .history-map-style-controls .history-sort-toggle-inline.active::after {
+        background: var(--primary);
+        box-shadow: 0 0 7px rgba(99, 189, 15, 0.35);
+    }
+
+    .history-map-style-controls .history-search-toggle,
+    .history-map-style-controls .history-sort-toggle-inline {
+        min-width: 22px !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        font-size: 13px !important;
+    }
+
+    .history-map-style-controls .history-range-group .history-function-btn {
+        min-width: 24px !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .history-map-style-controls .history-date-step {
+        min-width: 20px !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        font-size: 15px !important;
+    }
+
+    .history-map-style-controls .history-calendar-btn {
+        min-width: 56px !important;
+        max-width: 70px;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .history-map-style-controls .history-calendar-icon {
+        font-size: 11px;
+    }
+
+    .history-map-style-controls .history-calendar-text {
+        max-width: 42px;
+        font-size: 9px !important;
+        letter-spacing: 0;
+    }
+
+    .history-search-drawer.open,
+    .history-search-drawer.has-value {
+        max-width: 360px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1260px) {
+    .history-compact-controls {
+        justify-self: start;
+    }
+}
+
 </style>
 </head>
 
@@ -3960,7 +5774,7 @@ html, body {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.31</div>
+                <div class="e235-arrival-version">V0.32</div>
             </div>
         </div>
 
@@ -4105,125 +5919,176 @@ html, body {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.31</div>
+    <div class="version-badge">V0.32</div>
 
     <div class="container">
 
         <div id="tab-add" class="tab-content active">
-            <div class="card design2-form-card">
-                <h3>新增乘車</h3>
-                <label>日期</label>
-                <input type="date" id="date">
-
-                <label>鉄道公司</label>
-                <div class="input-wrapper">
-                    <input id="company" list="companyList" placeholder="輸入公司" onclick="this.select()">
-                    <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
+            <div class="card design2-form-card desktop-add-card">
+                <div class="desktop-add-head">
+                    <h3>新增乘車</h3>
+                    <span class="desktop-add-kicker">RAIL LOG ENTRY</span>
                 </div>
 
-                <label>路線</label>
-                <div class="input-wrapper">
-                    <input id="line" list="lineList" placeholder="輸入路線" onclick="this.select()">
-                    <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
-                </div>
+                <div class="desktop-add-layout">
+                    <section class="desktop-add-section desktop-route-section">
+                        <div class="desktop-section-heading">
+                            <span>01</span>
+                            <strong>路線資料</strong>
+                        </div>
+                <div class="desktop-form-grid primary-trip-grid">
+                    <div class="form-field form-field-date">
+                        <label>日期</label>
+                        <input type="date" id="date">
+                    </div>
 
-                <div id="mainLoopDirectionWrap" class="loop-direction-wrap">
-                    <div class="loop-direction-title">環狀線乘車方向</div>
-                    <select id="mainLoopDirection" class="loop-direction-select"></select>
-                    <div class="loop-direction-note">呢個方向會影響地圖 highlight 係行環狀線邊一邊。</div>
-                </div>
-
-                <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
-                <div id="throughContainer"></div>
-
-                <label>種別 / 列車名 (運行系統)</label>
-                <div class="input-wrapper">
-                    <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="this.select()">
-                    <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
-                </div>
-
-                <div style="background: var(--tag-bg); padding: 10px; border-radius: 6px; margin: 12px 0;">
-                    <label style="margin-top: 0; display: flex; align-items: center; gap: 8px; color: var(--text); cursor: pointer; font-weight: 600;">
-                        <input type="checkbox" id="useOtherTrainCompany" onchange="toggleTrainCompanyUI()" style="width: auto; margin: 0;">
-                        車輛屬於其他公司？ (直通運轉)
-                    </label>
-                    <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
-                        <label style="margin-top: 0;">車輛所屬公司</label>
+                    <div class="form-field">
+                        <label>鉄道公司</label>
                         <div class="input-wrapper">
-                            <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()" onclick="this.select()">
-                            <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
+                            <input id="company" list="companyList" placeholder="輸入公司" onclick="this.select()">
+                            <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>路線</label>
+                        <div class="input-wrapper">
+                            <input id="line" list="lineList" placeholder="輸入路線" onclick="this.select()">
+                            <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
+                        </div>
+                    </div>
+
+                    <div id="mainLoopDirectionWrap" class="loop-direction-wrap form-field-wide">
+                        <div class="loop-direction-title">環狀線乘車方向</div>
+                        <select id="mainLoopDirection" class="loop-direction-select"></select>
+                        <div class="loop-direction-note">呢個方向會影響地圖 highlight 係行環狀線邊一邊。</div>
+                    </div>
+                </div>
+
+                <div class="desktop-through-row">
+                    <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
+                    <div id="throughContainer" class="desktop-through-container"></div>
+                </div>
+                    </section>
+
+                    <section class="desktop-add-section desktop-ride-section">
+                        <div class="desktop-section-heading">
+                            <span>02</span>
+                            <strong>列車與車站</strong>
+                        </div>
+                <div class="desktop-form-grid secondary-trip-grid">
+                    <div class="form-field">
+                        <label>種別 / 列車名 (運行系統)</label>
+                        <div class="input-wrapper">
+                            <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="this.select()">
+                            <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field other-company-field">
+                        <div class="other-train-card">
+                            <label class="other-train-toggle">
+                                <input type="checkbox" id="useOtherTrainCompany" onchange="toggleTrainCompanyUI()">
+                                <span class="other-train-switch" aria-hidden="true"></span>
+                                <span class="other-train-text">
+                                    <span class="other-train-main">其他公司車両</span>
+                                    <span class="other-train-sub">直通 / 代走</span>
+                                </span>
+                            </label>
+                            <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
+                                <label style="margin-top: 0;">車輛所屬公司</label>
+                                <div class="input-wrapper">
+                                    <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()" onclick="this.select()">
+                                    <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>車型</label>
+                        <div class="input-wrapper">
+                            <input id="train" list="trainList" placeholder="輸入車型" onclick="this.select()">
+                            <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>上車站</label>
+                        <div class="input-wrapper">
+                            <input id="from" list="stationListFrom" placeholder="出發站" onclick="this.select()">
+                            <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>下車站</label>
+                        <div class="input-wrapper">
+                            <input id="to" list="stationListTo" placeholder="到達站" onclick="this.select()">
+                            <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="form-field form-field-wide photo-field">
+                        <label style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">📸 附加照片 (選填)</label>
+                        <div class="photo-upload-container">
+                            <div class="photo-upload-box">
+                                <span style="font-size: 24px;">🚈</span>
+                                <span class="photo-upload-label">車型外觀</span>
+                                <input type="file" accept="image/*" onchange="handlePhotoUpload(this, 'photoTrain')">
+                                <img id="preview-photoTrain" class="photo-preview">
+                                <button class="remove-photo-btn" onclick="removePhoto('photoTrain', event)">✕</button>
+                                <input type="hidden" id="photoTrain">
+                            </div>
+                            <div class="photo-upload-box">
+                                <span style="font-size: 24px;">🚉</span>
+                                <span class="photo-upload-label">上車站</span>
+                                <input type="file" accept="image/*" onchange="handlePhotoUpload(this, 'photoFrom')">
+                                <img id="preview-photoFrom" class="photo-preview">
+                                <button class="remove-photo-btn" onclick="removePhoto('photoFrom', event)">✕</button>
+                                <input type="hidden" id="photoFrom">
+                            </div>
+                            <div class="photo-upload-box">
+                                <span style="font-size: 24px;">🏁</span>
+                                <span class="photo-upload-label">下車站</span>
+                                <input type="file" accept="image/*" onchange="handlePhotoUpload(this, 'photoTo')">
+                                <img id="preview-photoTo" class="photo-preview">
+                                <button class="remove-photo-btn" onclick="removePhoto('photoTo', event)">✕</button>
+                                <input type="hidden" id="photoTo">
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <label>車型</label>
-                <div class="input-wrapper">
-                    <input id="train" list="trainList" placeholder="輸入車型" onclick="this.select()">
-                    <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
+                    </section>
                 </div>
 
-                <label>上車站</label>
-                <div class="input-wrapper">
-                    <input id="from" list="stationListFrom" placeholder="出發站" onclick="this.select()">
-                    <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
-                </div>
-
-                <label>下車站</label>
-                <div class="input-wrapper">
-                    <input id="to" list="stationListTo" placeholder="到達站" onclick="this.select()">
-                    <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
-                </div>
-
-                <label style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">📸 附加照片 (選填)</label>
-                <div class="photo-upload-container">
-                    <div class="photo-upload-box">
-                        <span style="font-size: 24px;">🚈</span>
-                        <span class="photo-upload-label">車型外觀</span>
-                        <input type="file" accept="image/*" onchange="handlePhotoUpload(this, 'photoTrain')">
-                        <img id="preview-photoTrain" class="photo-preview">
-                        <button class="remove-photo-btn" onclick="removePhoto('photoTrain', event)">✕</button>
-                        <input type="hidden" id="photoTrain">
-                    </div>
-                    <div class="photo-upload-box">
-                        <span style="font-size: 24px;">🚉</span>
-                        <span class="photo-upload-label">上車站</span>
-                        <input type="file" accept="image/*" onchange="handlePhotoUpload(this, 'photoFrom')">
-                        <img id="preview-photoFrom" class="photo-preview">
-                        <button class="remove-photo-btn" onclick="removePhoto('photoFrom', event)">✕</button>
-                        <input type="hidden" id="photoFrom">
-                    </div>
-                    <div class="photo-upload-box">
-                        <span style="font-size: 24px;">🏁</span>
-                        <span class="photo-upload-label">下車站</span>
-                        <input type="file" accept="image/*" onchange="handlePhotoUpload(this, 'photoTo')">
-                        <img id="preview-photoTo" class="photo-preview">
-                        <button class="remove-photo-btn" onclick="removePhoto('photoTo', event)">✕</button>
-                        <input type="hidden" id="photoTo">
-                    </div>
-                </div>
-
-                <button onclick="saveTrip()" class="btn-primary">儲存記錄</button>
+                <button onclick="saveTrip()" class="btn-primary desktop-save-btn">儲存記錄</button>
             </div>
         </div>
 
         <div id="tab-history" class="tab-content">
-    <div class="card">
-        <h3 style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
+    <div class="card history-desktop-card">
+        <div class="history-desktop-head">
+        <h3 class="history-title" style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
             乘車記錄 <span id="totalCount" class="led-counter">0</span>
         </h3>
 
         <div class="history-compact-controls">
-            <div class="history-function-linebar" role="toolbar" aria-label="乘車記錄篩選工具列">
+            <div class="history-function-linebar history-map-style-controls" role="toolbar" aria-label="乘車記錄篩選工具列">
                 <button id="historySearchToggle" type="button" class="design2-line-btn history-function-btn history-search-toggle" onclick="toggleHistorySearch()" aria-label="搜尋" title="搜尋">
                     <span aria-hidden="true">⌕</span>
                 </button>
-                <button id="btnFilterAll" class="design2-line-btn history-function-btn" onclick="setDateFilter('all')">ALL</button>
-                <button id="btnFilterToday" class="design2-line-btn history-function-btn" onclick="setDateFilter('today')">TODAY</button>
-                <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
-                <button id="btnFilterDate" class="design2-line-btn history-function-btn history-calendar-btn" onclick="openCalendar()" aria-label="選擇日期" title="選擇日期">
-                    <span class="history-calendar-icon" aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
-                </button>
-                <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
+                <div class="history-control-group history-range-group" aria-label="日期篩選">
+                    <button id="btnFilterAll" class="design2-line-btn history-function-btn" onclick="setDateFilter('all')">全</button>
+                    <button id="btnFilterToday" class="design2-line-btn history-function-btn" onclick="setDateFilter('today')">今</button>
+                </div>
+                <div class="history-control-group history-date-group" aria-label="日期移動">
+                    <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
+                    <button id="btnFilterDate" class="design2-line-btn history-function-btn history-calendar-btn" onclick="openCalendar()" aria-label="選擇日期" title="選擇日期">
+                        <span class="history-calendar-icon" aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
+                    </button>
+                    <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
+                </div>
                 <button id="historyManualSortBtn" type="button" class="design2-line-btn history-function-btn history-sort-toggle-inline" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序">🔒</button>
             </div>
 
@@ -4241,21 +6106,22 @@ html, body {
                 </div>
             </div>
         </div>
+        </div>
 
         <div id="tripList"></div>
         <div id="paginationControls" style="display:flex; justify-content:center; gap: 10px; margin-top: 15px;"></div>
     </div>
 </div>
        
-        <div id="tab-stats" class="tab-content">
+<div id="tab-stats" class="tab-content">
 		<div class="card ride-ratio-card">
     <h3 class="ride-ratio-title">乘搭類別比例</h3>
     <div id="rideCategoryStackedBar" class="ride-ratio-stacked-wrap"></div>
 </div>
 		
-            <div class="card">
+            <div class="card stats-filter-card">
                 <h3>統計與完成率</h3>
-                <p style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
+                <p class="stats-card-desc" style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
                 <div class="stat-group">
                     <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
                     <div id="filterCompanies" class="tags-container"></div>
@@ -5958,7 +7824,7 @@ window.addThrough = function() {
     updateThroughLoopDirectionUI(div);
 }
 
-// 🟩 V0.31 處理圖片上傳
+// 🟩 V0.32 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -5987,7 +7853,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.31 移除圖片
+// 🟩 V0.32 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -6133,7 +7999,19 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
     }
 
     const junctionIds = [...document.querySelectorAll(".throughJunctionStation")]
-        .map(input => resolve.station[input.value] || input.value)
+        .map((input, index) => {
+            const prevLineId = routes[index]?.line_id || "";
+            const nextLineId = routes[index + 1]?.line_id || "";
+            const value = input.value;
+
+            const prevResolved = resolveStationIdForLine(value, prevLineId);
+            if (maps.station[prevResolved]) return prevResolved;
+
+            const nextResolved = resolveStationIdForLine(value, nextLineId);
+            if (maps.station[nextResolved]) return nextResolved;
+
+            return resolve.station[value] || value;
+        })
         .filter(Boolean);
 
     if (junctionIds.length !== routes.length - 1) {
@@ -6217,8 +8095,9 @@ window.saveTrip = async function () {
             ? await uploadBase64ToStorage(photoToInput, `users/${user.uid}/trips/${tripId}/photoTo.jpg`)
             : (existingTrip?.photoToUrl || existingTrip?.photoTo || "");
 		
-		const fromId = resolve.station[getVal("from")] || getVal("from");
-		const toId = resolve.station[getVal("to")] || getVal("to");
+		const fromId = resolveStationIdForLine(getVal("from"), mainLineId);
+		const lastRouteLineId = routes.length > 1 ? routes[routes.length - 1].line_id : mainLineId;
+		const toId = resolveStationIdForLine(getVal("to"), lastRouteLineId);
 		const segments = buildTripSegmentsFromForm(routes, fromId, toId);
 
 		if (routes.length > 1 && segments.length === 0) {
@@ -6619,7 +8498,11 @@ function render() {
     if (btnFilterAll) btnFilterAll.classList.toggle('active', currentDateFilter === 'all');
     if (btnFilterToday) btnFilterToday.classList.toggle('active', currentDateFilter === getTodayStr());
     
-    let displayDate = currentDateFilter === 'all' ? '' : currentDateFilter;
+    let displayDate = "";
+    if (currentDateFilter !== "all") {
+        const parts = String(currentDateFilter).split("-");
+        displayDate = parts.length === 3 ? `${parts[1]}/${parts[2]}` : currentDateFilter;
+    }
     const btnFilterDate = document.getElementById('btnFilterDate');
     const btnFilterDateText = document.getElementById('btnFilterDateText');
 
@@ -6724,12 +8607,14 @@ pagedTrips.forEach((t) => {
     });
     
     const serviceHtml = t.serviceType
-        ? `<span style="background:var(--danger); color:white; padding:1px 5px; border-radius:3px; font-size:11px; font-weight:bold;">${t.serviceType}</span>`
+        ? `<span class="trip-service-badge">${t.serviceType}</span>`
         : '';
 
     const photoIconHtml = (t.photoTrain || t.photoFrom || t.photoTo)
-        ? `<span style="font-size:12px; margin-left:5px;">📸</span>`
+        ? `<span class="trip-photo-icon" title="有相片">📸</span>`
         : '';
+
+    const directionSummary = getTripDirectionSummary(t);
 
     if (t.id) {
         div.dataset.tripId = t.id;
@@ -6757,20 +8642,26 @@ pagedTrips.forEach((t) => {
     div.innerHTML = `
         ${dragHandleHtml}
         <div class="trip-content-wrap">
-            <div class="trip-header-row">
-                <div class="date">${photoIconHtml}</div>
-                <div style="display:flex; align-items:center; gap:16px;">
-                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="editTrip(${originalIndex})">✏️</span>
-                    <span style="cursor:pointer; font-size:15px; filter: grayscale(100%); opacity:0.6;" onclick="deleteTrip(${originalIndex})">🗑️</span>
-                </div>
+            <div class="trip-route-block">
+                <div class="trip-field-label">路線</div>
+                <div class="route">${routeHtml || "未設定路線"}</div>
+                ${serviceHtml || photoIconHtml ? `<div class="trip-meta-line">${serviceHtml}${photoIconHtml}</div>` : ""}
             </div>
-            <div class="route">${routeHtml}</div>
-            <div class="trip-detail">
-                ${serviceHtml}
-                <span style="font-weight:600; color:var(--text);">${getTripTrainDisplay(t)}</span>
-                <span style="color:var(--border);">|</span>
-                <span>${getStationName(t.from_id)} <span style="color:var(--border);">→</span> ${getStationName(t.to_id)}</span>
-                ${getTripDirectionSummary(t) ? `<span style="color:var(--border);">|</span><span>${getTripDirectionSummary(t)}</span>` : ""}
+
+            <div class="trip-train-block">
+                <div class="trip-field-label">車型</div>
+                <div class="trip-field-value">${getTripTrainDisplay(t)}</div>
+            </div>
+
+            <div class="trip-station-block">
+                <div class="trip-field-label">區間</div>
+                <div class="trip-field-value">${getStationName(t.from_id)} <span class="trip-arrow">→</span> ${getStationName(t.to_id)}</div>
+                ${directionSummary ? `<div class="trip-direction-chip">${directionSummary}</div>` : ""}
+            </div>
+
+            <div class="trip-header-row trip-actions">
+                <button class="trip-icon-btn" type="button" onclick="editTrip(${originalIndex})" aria-label="編輯記錄" title="編輯">✎</button>
+                <button class="trip-icon-btn" type="button" onclick="deleteTrip(${originalIndex})" aria-label="刪除記錄" title="刪除">⌫</button>
             </div>
         </div>
     `;
@@ -6931,19 +8822,21 @@ function drawBarChart() {
     }).slice(0, 10);
 
     if (sortedArray.length === 0) {
-        container.innerHTML = "<div style='text-align:center; font-size:13px; color:var(--subtext);'>暫無資料</div>"; return;
+        container.innerHTML = "<div class='chart-empty-state'>暫無資料</div>"; return;
     }
 
     let maxVal = sortedArray[0][1];
-    sortedArray.forEach(item => {
+    sortedArray.forEach((item, index) => {
         let name = currentChartType === 'company' ? getCompName(item[0]) : getStatStationDisplay(item[0]);
         let val = item[1]; let pct = (val / maxVal) * 100;
         
-        const row = document.createElement("div"); row.className = "bar-row";
+        const row = document.createElement("div");
+        row.className = `bar-row rank-${index + 1}`;
         row.innerHTML = `
+            <div class="bar-rank">${String(index + 1).padStart(2, "0")}</div>
             <div class="bar-label" title="${name}">${name}</div>
             <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
-            <div class="bar-val">${val}</div>
+            <div class="bar-val"><span>${val}</span><small>次</small></div>
         `;
         container.appendChild(row);
         setTimeout(() => { row.querySelector('.bar-fill').style.width = `${pct}%`; }, 50);
@@ -7151,116 +9044,131 @@ function findNearestPointIndex(latlngs, station) {
     return bestIndex;
 }
 
+function normalizeStationInputName(value = "") {
+    return String(value || "")
+        .trim()
+        .replace(/\s*\([^)]*\)\s*$/g, "")
+        .replace(/\s*（[^）]*）\s*$/g, "")
+        .trim();
+}
+
+function resolveStationIdForLine(value, lineId = "") {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+
+    if (maps.station[raw]) return raw;
+    if (resolve.station[raw]) return resolve.station[raw];
+
+    const clean = normalizeStationInputName(raw);
+    const line = maps.line[lineId];
+
+    // 最重要：用目前路線 sequence 去解決「只輸入站名」嘅情況。
+    // 例如 JR神戸線入「西明石」/「大阪」，都會轉返正確 station id。
+    if (line && Array.isArray(line.sequence)) {
+        const matched = line.sequence
+            .map(stnId => maps.station[stnId])
+            .filter(Boolean)
+            .find(station => {
+                const companyName = maps.company[station.company_id]?.name || "";
+                const display = station._display || (companyName ? `${station.name} (${companyName})` : station.name);
+
+                return station.id === raw ||
+                    station.name === raw ||
+                    station.name === clean ||
+                    display === raw ||
+                    normalizeStationInputName(display) === clean;
+            });
+
+        if (matched) return matched.id;
+    }
+
+    // 如果全資料庫只有一個同名站，亦可以安全轉換。
+    if (clean) {
+        const exactMatches = db.stations.filter(station =>
+            station.id === raw ||
+            station.name === raw ||
+            station.name === clean ||
+            station._display === raw
+        );
+
+        if (exactMatches.length === 1) return exactMatches[0].id;
+    }
+
+    return raw;
+}
+
+function resolveStationObjectForLine(value, lineId = "") {
+    const stationId = resolveStationIdForLine(value, lineId);
+    return maps.station[stationId] || null;
+}
+
 function isSameLatLngPoint(a, b, tolerance = 0.000001) {
     if (!Array.isArray(a) || !Array.isArray(b)) return false;
     return Math.abs(Number(a[0]) - Number(b[0])) <= tolerance &&
         Math.abs(Number(a[1]) - Number(b[1])) <= tolerance;
 }
 
-function getStationLatLngLike(station) {
-    if (!station || station.lat == null || station.lng == null) return null;
+function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward") {
+    let points = Array.isArray(latlngs) ? latlngs.slice() : [];
+    if (points.length < 2) return [];
 
-    const lat = Number(station.lat);
-    const lng = Number(station.lng);
-
-    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-
-    return { lat, lng };
-}
-
-function projectStationToGeometrySegment(stationPoint, a, b) {
-    const px = stationPoint.lng;
-    const py = stationPoint.lat;
-    const ax = Number(a[1]);
-    const ay = Number(a[0]);
-    const bx = Number(b[1]);
-    const by = Number(b[0]);
-
-    const dx = bx - ax;
-    const dy = by - ay;
-
-    if (!Number.isFinite(px) || !Number.isFinite(py) || !Number.isFinite(ax) || !Number.isFinite(ay) || !Number.isFinite(bx) || !Number.isFinite(by)) {
-        return null;
+    // WKT 環狀線有時最後一點會重複第一點；切方向時先移除尾端重複點，避免繞圈時計多一格。
+    if (points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
+        points = points.slice(0, -1);
     }
 
-    let t = 0;
+    const fromPointIndex = findNearestPointIndex(points, fromStation);
+    const toPointIndex = findNearestPointIndex(points, toStation);
 
-    if (dx !== 0 || dy !== 0) {
-        t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
-        t = Math.max(0, Math.min(1, t));
+    if (fromPointIndex === -1 || toPointIndex === -1) return [];
+    if (fromPointIndex === toPointIndex) return [points[fromPointIndex]];
+
+    const part = [];
+    const step = direction === "reverse" ? -1 : 1;
+    let index = fromPointIndex;
+    let safety = 0;
+
+    while (safety <= points.length) {
+        part.push(points[index]);
+        if (index === toPointIndex) break;
+
+        index = (index + step + points.length) % points.length;
+        safety += 1;
     }
 
-    const lng = ax + t * dx;
-    const lat = ay + t * dy;
-    const dLng = px - lng;
-    const dLat = py - lat;
-
-    return {
-        point: [lat, lng],
-        t,
-        distSq: dLat * dLat + dLng * dLng
-    };
+    return part.length >= 2 ? part : [];
 }
 
-function findNearestGeometryPosition(latlngs, station) {
-    const stationPoint = getStationLatLngLike(station);
-    if (!stationPoint || !Array.isArray(latlngs) || latlngs.length < 2) return null;
+function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null) {
+    if (isLoopLine(line) && (direction === "forward" || direction === "reverse")) {
+        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction);
+    }
 
-    let best = null;
+    const fromPointIndex = findNearestPointIndex(latlngs, fromStation);
+    const toPointIndex = findNearestPointIndex(latlngs, toStation);
 
-    for (let i = 0; i < latlngs.length - 1; i++) {
-        const projected = projectStationToGeometrySegment(stationPoint, latlngs[i], latlngs[i + 1]);
-        if (!projected) continue;
+    if (fromPointIndex === -1 || toPointIndex === -1) return [];
 
-        if (!best || projected.distSq < best.distSq) {
-            best = {
-                segmentIndex: i,
-                t: projected.t,
-                value: i + projected.t,
-                point: projected.point,
-                distSq: projected.distSq
-            };
+    // 舊記錄如果冇 direction，環狀線先揀較短嗰邊，避免山手線呢類 loop 被固定切錯大半圈。
+    if (isLoopLine(line) && !direction) {
+        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward");
+        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse");
+        if (forwardPart.length >= 2 && reversePart.length >= 2) {
+            return forwardPart.length <= reversePart.length ? forwardPart : reversePart;
         }
     }
 
-    return best;
+    const start = Math.min(fromPointIndex, toPointIndex);
+    const end = Math.max(fromPointIndex, toPointIndex);
+
+    return latlngs.slice(start, end + 1);
 }
 
-function addPointIfDifferent(points, point) {
-    if (!Array.isArray(point)) return;
-    const last = points[points.length - 1];
-    if (!last || !isSameLatLngPoint(last, point, 0.0000000001)) {
-        points.push(point);
-    }
-}
-
-function buildForwardGeometryPath(points, fromPos, toPos, allowWrap = false) {
-    if (!Array.isArray(points) || points.length < 2 || !fromPos || !toPos) return [];
-
-    const n = points.length;
-    const nSeg = n - 1;
-    const path = [];
-
-    addPointIfDifferent(path, fromPos.point);
-
-    if (toPos.value >= fromPos.value) {
-        for (let k = fromPos.segmentIndex + 1; k <= toPos.segmentIndex; k++) {
-            addPointIfDifferent(path, points[k]);
-        }
-        addPointIfDifferent(path, toPos.point);
-    } else if (allowWrap) {
-        for (let k = fromPos.segmentIndex + 1; k < n; k++) {
-            addPointIfDifferent(path, points[k]);
-        }
-        for (let k = 0; k <= toPos.segmentIndex; k++) {
-            addPointIfDifferent(path, points[k]);
-        }
-        addPointIfDifferent(path, toPos.point);
-    } else {
-        return [];
-    }
-
-    return path.length >= 2 ? path : [];
+function stationPointDistanceSq(point, station) {
+    if (!Array.isArray(point) || !station) return Infinity;
+    const dLat = Number(point[0]) - Number(station.lat);
+    const dLng = Number(point[1]) - Number(station.lng);
+    return dLat * dLat + dLng * dLng;
 }
 
 function calculatePathLengthSqApprox(path) {
@@ -7273,100 +9181,16 @@ function calculatePathLengthSqApprox(path) {
     return total;
 }
 
-function collectForwardSegmentKeys(points, fromPos, toPos, allowWrap = false) {
-    if (!Array.isArray(points) || points.length < 2 || !fromPos || !toPos) return [];
+function scoreLinePartCandidate(part, fromStation, toStation) {
+    if (!Array.isArray(part) || part.length < 2) return Infinity;
 
-    const keys = [];
-    const addSegmentKey = (index) => {
-        if (index >= 0 && index < points.length - 1) {
-            keys.push(makeSegmentKey(points[index], points[index + 1]));
-        }
-    };
+    const first = part[0];
+    const last = part[part.length - 1];
 
-    if (toPos.value >= fromPos.value) {
-        for (let k = fromPos.segmentIndex; k <= toPos.segmentIndex; k++) addSegmentKey(k);
-    } else if (allowWrap) {
-        for (let k = fromPos.segmentIndex; k < points.length - 1; k++) addSegmentKey(k);
-        for (let k = 0; k <= toPos.segmentIndex; k++) addSegmentKey(k);
-    }
+    const directScore = stationPointDistanceSq(first, fromStation) + stationPointDistanceSq(last, toStation);
+    const reverseScore = stationPointDistanceSq(first, toStation) + stationPointDistanceSq(last, fromStation);
 
-    return [...new Set(keys)];
-}
-
-function attachGeometryPartMeta(part, meta = {}) {
-    if (Array.isArray(part)) {
-        Object.entries(meta).forEach(([key, value]) => {
-            part[key] = value;
-        });
-    }
-    return part;
-}
-
-function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null) {
-    let points = Array.isArray(latlngs) ? latlngs.slice() : [];
-    if (points.length < 2) return [];
-
-    const isLoop = isLoopLine(line);
-
-    // WKT 環狀線有時最後一點會重複第一點；切方向時先移除尾端重複點，避免繞圈時計多一格。
-    if (isLoop && points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
-        points = points.slice(0, -1);
-    }
-
-    const fromPos = findNearestGeometryPosition(points, fromStation);
-    const toPos = findNearestGeometryPosition(points, toStation);
-
-    if (!fromPos || !toPos) return [];
-
-    const snapScore = fromPos.distSq + toPos.distSq;
-    const allowWrap = isLoop;
-
-    const forwardPath = buildForwardGeometryPath(points, fromPos, toPos, allowWrap);
-    const reverseBase = buildForwardGeometryPath(points, toPos, fromPos, allowWrap);
-    const reversePath = reverseBase.length >= 2 ? reverseBase.slice().reverse() : [];
-
-    let chosen = [];
-    let chosenDirection = "forward";
-
-    if (isLoop && direction === "forward") {
-        chosen = forwardPath;
-        chosenDirection = "forward";
-    } else if (isLoop && direction === "reverse") {
-        chosen = reversePath;
-        chosenDirection = "reverse";
-    } else if (isLoop) {
-        const forwardLength = calculatePathLengthSqApprox(forwardPath);
-        const reverseLength = calculatePathLengthSqApprox(reversePath);
-        if (forwardLength <= reverseLength) {
-            chosen = forwardPath;
-            chosenDirection = "forward";
-        } else {
-            chosen = reversePath;
-            chosenDirection = "reverse";
-        }
-    } else {
-        if (fromPos.value <= toPos.value) {
-            chosen = forwardPath;
-            chosenDirection = "forward";
-        } else {
-            chosen = reversePath;
-            chosenDirection = "reverse";
-        }
-    }
-
-    if (!Array.isArray(chosen) || chosen.length < 2) return [];
-
-    const sourceSegmentKeys = chosenDirection === "forward"
-        ? collectForwardSegmentKeys(points, fromPos, toPos, allowWrap)
-        : collectForwardSegmentKeys(points, toPos, fromPos, allowWrap);
-
-    return attachGeometryPartMeta(chosen, {
-        _snapScore: snapScore,
-        _fromSnapDistSq: fromPos.distSq,
-        _toSnapDistSq: toPos.distSq,
-        _sourceSegmentKeys: sourceSegmentKeys,
-        _chosenDirection: chosenDirection
-    });
+    return Math.min(directScore, reverseScore);
 }
 
 function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null) {
@@ -7379,11 +9203,10 @@ function extractBestLinePartByStations(allLineParts, fromStation, toStation, dir
     if (candidates.length === 0) return [];
 
     candidates.sort((a, b) => {
-        const scoreA = Number.isFinite(a._snapScore) ? a._snapScore : Infinity;
-        const scoreB = Number.isFinite(b._snapScore) ? b._snapScore : Infinity;
+        const scoreA = scoreLinePartCandidate(a, fromStation, toStation);
+        const scoreB = scoreLinePartCandidate(b, fromStation, toStation);
 
         if (scoreA !== scoreB) return scoreA - scoreB;
-
         return calculatePathLengthSqApprox(a) - calculatePathLengthSqApprox(b);
     });
 
@@ -7396,7 +9219,7 @@ function pointDistanceSq(a, b) {
     return dLat * dLat + dLng * dLng;
 }
 
-function stitchLineParts(parts, tolerance = 0) {
+function stitchLineParts(parts, tolerance = 0.00015) {
     const usable = parts
         .filter(part => Array.isArray(part) && part.length >= 2)
         .map(part => part.slice());
@@ -7491,9 +9314,23 @@ function getRiddenSegmentsForLine(lineId) {
         getTripSegments(t).forEach(seg => {
             if (seg.line_id !== lineId) return;
 
+            const fromId = resolveStationIdForLine(seg.from_id || seg.fromId || "", lineId);
+            const toId = resolveStationIdForLine(seg.to_id || seg.toId || "", lineId);
+
+            if (!maps.station[fromId] || !maps.station[toId]) {
+                console.warn("Map segment station could not be resolved", {
+                    lineId,
+                    from: seg.from_id || seg.fromId,
+                    to: seg.to_id || seg.toId,
+                    resolvedFrom: fromId,
+                    resolvedTo: toId
+                });
+                return;
+            }
+
             segments.push({
-                fromId: seg.from_id,
-                toId: seg.to_id,
+                fromId,
+                toId,
                 direction: seg.direction || ""
             });
         });
@@ -7535,7 +9372,7 @@ function getLineGeometryParts(line) {
     const rawParts = parseWKTMultiLineString(wkt);
 
     return typeof stitchLineParts === "function"
-        ? stitchLineParts(rawParts, 0)
+        ? stitchLineParts(rawParts)
         : rawParts;
 }
 
@@ -7635,14 +9472,8 @@ function getRiddenSegmentKeySetForLine(lineId) {
 
         if (!Array.isArray(part) || part.length < 2) return;
 
-        const sourceKeys = Array.isArray(part._sourceSegmentKeys) ? part._sourceSegmentKeys : [];
-
-        if (sourceKeys.length > 0) {
-            sourceKeys.forEach(key => keys.add(key));
-        } else {
-            for (let i = 0; i < part.length - 1; i++) {
-                keys.add(makeSegmentKey(part[i], part[i + 1]));
-            }
+        for (let i = 0; i < part.length - 1; i++) {
+            keys.add(makeSegmentKey(part[i], part[i + 1]));
         }
     });
 
@@ -7857,40 +9688,34 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
         ? colors
         : ["#63BD0F"];
     const isInteractive = options.interactive === true;
-    const lineCap = options.lineCap || "round";
-    const includeOutline = options.includeOutline !== false;
 
     // 單色：普通粗線
     if (safeColors.length === 1) {
         return [
             L.polyline(latlngs, {
                 color: safeColors[0],
-                weight: options.weight || 9,
+                weight: 9,
                 opacity: 0.95,
-                lineCap,
+                lineCap: "round",
                 lineJoin: "round",
-                smoothFactor: 0,
+                smoothFactor: 1,
                 interactive: isInteractive
             })
         ];
     }
 
-    // 多色共用段：選中路線時保留白色外框；已乘搭路段則關閉外框，避免白色端帽遮住連續線。
-    const layers = [];
-
-    if (includeOutline) {
-        layers.push(
-            L.polyline(latlngs, {
-                color: "#ffffff",
-                weight: 12,
-                opacity: 0.88,
-                lineCap,
-                lineJoin: "round",
-                smoothFactor: 0,
-                interactive: isInteractive
-            })
-        );
-    }
+    // 多色共用段：先畫白色外框，令並排線更清楚
+    const layers = [
+        L.polyline(latlngs, {
+            color: "#ffffff",
+            weight: 12,
+            opacity: 0.88,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: isInteractive
+        })
+    ];
 
     // Leaflet 原生 polyline 無 offset，所以用不同 weight 疊出「內外雙線」效果
     // 2 條線：外圈第一色 + 內圈第二色
@@ -7898,11 +9723,11 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
         layers.push(
             L.polyline(latlngs, {
                 color: safeColors[0],
-                weight: includeOutline ? 10 : 8,
+                weight: 10,
                 opacity: 0.96,
-                lineCap,
+                lineCap: "round",
                 lineJoin: "round",
-                smoothFactor: 0,
+                smoothFactor: 1,
                 interactive: isInteractive
             })
         );
@@ -7910,11 +9735,11 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
         layers.push(
             L.polyline(latlngs, {
                 color: safeColors[1],
-                weight: includeOutline ? 5 : 4,
+                weight: 5,
                 opacity: 0.98,
-                lineCap,
+                lineCap: "round",
                 lineJoin: "round",
-                smoothFactor: 0,
+                smoothFactor: 1,
                 interactive: isInteractive
             })
         );
@@ -7926,37 +9751,35 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
     layers.push(
         L.polyline(latlngs, {
             color: safeColors[0],
-            weight: includeOutline ? 12 : 8,
+            weight: 12,
             opacity: 0.94,
-            lineCap,
+            lineCap: "round",
             lineJoin: "round",
-            smoothFactor: 0,
+            smoothFactor: 1,
             interactive: isInteractive
         })
     );
 
-    if (includeOutline) {
-        layers.push(
-            L.polyline(latlngs, {
-                color: "#ffffff",
-                weight: 8,
-                opacity: 0.9,
-                lineCap,
-                lineJoin: "round",
-                smoothFactor: 0,
-                interactive: isInteractive
-            })
-        );
-    }
+    layers.push(
+        L.polyline(latlngs, {
+            color: "#ffffff",
+            weight: 8,
+            opacity: 0.9,
+            lineCap: "round",
+            lineJoin: "round",
+            smoothFactor: 1,
+            interactive: isInteractive
+        })
+    );
 
     layers.push(
         L.polyline(latlngs, {
             color: safeColors[1],
-            weight: includeOutline ? 5 : 4,
+            weight: 5,
             opacity: 0.98,
-            lineCap,
+            lineCap: "round",
             lineJoin: "round",
-            smoothFactor: 0,
+            smoothFactor: 1,
             interactive: isInteractive
         })
     );
@@ -7964,11 +9787,11 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
     layers.push(
         L.polyline(latlngs, {
             color: safeColors[2],
-            weight: includeOutline ? 2.5 : 2.5,
+            weight: 2.5,
             opacity: 0.98,
-            lineCap,
+            lineCap: "round",
             lineJoin: "round",
-            smoothFactor: 0,
+            smoothFactor: 1,
             interactive: isInteractive
         })
     );
@@ -7998,38 +9821,24 @@ function getSegmentHighlightColors(segmentKey, fallbackColor) {
 function buildRiddenSegmentHighlightLayers(latlngs, fallbackColor) {
     if (!Array.isArray(latlngs) || latlngs.length < 2) return [];
 
-    const baseColor = fallbackColor || "#63BD0F";
-
-    // 先畫一條完整、連續、只跟原本 WKT 座標走嘅已乘搭底線。
-    // 之後即使共同路段需要混色 overlay，都唔會因為分段 polyline / 白色外框 / round cap 而出現視覺斷口。
-    const layers = buildMixedHighlightLayers(latlngs, [baseColor], {
-        interactive: true,
-        lineCap: "round"
-    });
-
     const groupedParts = [];
-    let currentPoints = [];
+    let currentPoints = [latlngs[0]];
     let currentSignature = null;
     let currentColors = null;
 
     for (let i = 0; i < latlngs.length - 1; i++) {
         const segmentKey = makeSegmentKey(latlngs[i], latlngs[i + 1]);
-        const colors = getSegmentHighlightColors(segmentKey, baseColor);
+        const colors = getSegmentHighlightColors(segmentKey, fallbackColor);
+        const signature = colors.join("|");
 
-        // 單色段已經由完整底線負責畫；这里只額外處理真正多色共同區間。
-        if (!Array.isArray(colors) || colors.length < 2) {
-            if (currentPoints.length >= 2) {
-                groupedParts.push({ points: currentPoints, colors: currentColors });
-            }
-            currentPoints = [];
-            currentSignature = null;
-            currentColors = null;
+        if (currentSignature === null) {
+            currentSignature = signature;
+            currentColors = colors;
+            currentPoints.push(latlngs[i + 1]);
             continue;
         }
 
-        const signature = colors.join("|");
-
-        if (currentSignature === null || signature !== currentSignature) {
+        if (signature !== currentSignature) {
             if (currentPoints.length >= 2) {
                 groupedParts.push({ points: currentPoints, colors: currentColors });
             }
@@ -8046,15 +9855,9 @@ function buildRiddenSegmentHighlightLayers(latlngs, fallbackColor) {
         groupedParts.push({ points: currentPoints, colors: currentColors });
     }
 
-    groupedParts.forEach(part => {
-        layers.push(...buildMixedHighlightLayers(part.points, part.colors, {
-            interactive: false,
-            lineCap: "butt",
-            includeOutline: false
-        }));
-    });
-
-    return layers;
+    return groupedParts.flatMap(part =>
+        buildMixedHighlightLayers(part.points, part.colors, { interactive: true })
+    );
 }
 
 function buildRoutePopupHtml(line, clickedSegment = null) {
@@ -8288,7 +10091,7 @@ function renderRailGeometries(selectedCategory = "all") {
                     opacity: lineHasRidden ? 0.45 : 0.20,
                     lineCap: "round",
                     lineJoin: "round",
-                    smoothFactor: 0,
+                    smoothFactor: 1,
                     interactive: true
                 }).addTo(railMapInstance);
 
@@ -8300,7 +10103,7 @@ function renderRailGeometries(selectedCategory = "all") {
                     opacity: 0.01,
                     lineCap: "round",
                     lineJoin: "round",
-                    smoothFactor: 0,
+                    smoothFactor: 1,
                     interactive: true
                 }).addTo(railMapInstance);
 
@@ -8425,7 +10228,7 @@ window.editTrip = function(i) {
         updateThroughLoopDirectionUI(block, editSegments[idx + 1]?.direction || "forward");
     });
 
-    // 🟩 V0.31 編輯模式載入相片
+    // 🟩 V0.32 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -8478,7 +10281,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.31.json"; a.click();
+    a.download = "rail-log-V0.32.json"; a.click();
 }
 
 window.importData = function() {
@@ -8771,7 +10574,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.31 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.32 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function getStationLineThemeColors(stationData, fallbackCompanyId = "") {
@@ -8961,7 +10764,7 @@ const customIcon = L.divIcon({
 }
 
 // =========================================
-// 🟩 V0.31 相冊渲染邏輯
+// 🟩 V0.32 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -9142,7 +10945,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.31 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.32 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
