@@ -7151,83 +7151,74 @@ function findNearestPointIndex(latlngs, station) {
     return bestIndex;
 }
 
-function getStationLatLngPoint(station) {
+function isSameLatLngPoint(a, b, tolerance = 0.000001) {
+    if (!Array.isArray(a) || !Array.isArray(b)) return false;
+    return Math.abs(Number(a[0]) - Number(b[0])) <= tolerance &&
+        Math.abs(Number(a[1]) - Number(b[1])) <= tolerance;
+}
+
+function getStationLatLngLike(station) {
     if (!station || station.lat == null || station.lng == null) return null;
+
     const lat = Number(station.lat);
     const lng = Number(station.lng);
+
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
-    return [lat, lng];
+
+    return { lat, lng };
 }
 
-function interpolateLatLng(a, b, t) {
-    return [
-        a[0] + (b[0] - a[0]) * t,
-        a[1] + (b[1] - a[1]) * t
-    ];
-}
+function projectStationToGeometrySegment(stationPoint, a, b) {
+    const px = stationPoint.lng;
+    const py = stationPoint.lat;
+    const ax = Number(a[1]);
+    const ay = Number(a[0]);
+    const bx = Number(b[1]);
+    const by = Number(b[0]);
 
-function dedupeLatLngSequence(points, tolerance = 0.00000001) {
-    const result = [];
+    const dx = bx - ax;
+    const dy = by - ay;
 
-    points.forEach(point => {
-        if (!Array.isArray(point) || point.length < 2) return;
-        const normalized = [Number(point[0]), Number(point[1])];
-        if (!Number.isFinite(normalized[0]) || !Number.isFinite(normalized[1])) return;
-
-        const prev = result[result.length - 1];
-        if (!prev || !isSameLatLngPoint(prev, normalized, tolerance)) {
-            result.push(normalized);
-        }
-    });
-
-    return result;
-}
-
-function findNearestRoutePosition(latlngs, station, options = {}) {
-    const stationPoint = getStationLatLngPoint(station);
-    const points = Array.isArray(latlngs) ? latlngs : [];
-
-    if (!stationPoint || points.length === 0) return null;
-
-    let best = null;
-    const isRing = options.isRing === true;
-    const segmentCount = isRing ? points.length : Math.max(points.length - 1, 0);
-
-    if (segmentCount === 0) {
-        return {
-            segmentIndex: 0,
-            t: 0,
-            order: 0,
-            point: points[0],
-            distSq: pointDistanceSq(stationPoint, points[0])
-        };
+    if (!Number.isFinite(px) || !Number.isFinite(py) || !Number.isFinite(ax) || !Number.isFinite(ay) || !Number.isFinite(bx) || !Number.isFinite(by)) {
+        return null;
     }
 
-    for (let i = 0; i < segmentCount; i++) {
-        const a = points[i];
-        const b = points[(i + 1) % points.length];
-        if (!Array.isArray(a) || !Array.isArray(b)) continue;
+    let t = 0;
 
-        const dLat = b[0] - a[0];
-        const dLng = b[1] - a[1];
-        const lenSq = dLat * dLat + dLng * dLng;
-        let t = 0;
+    if (dx !== 0 || dy !== 0) {
+        t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
+        t = Math.max(0, Math.min(1, t));
+    }
 
-        if (lenSq > 0) {
-            t = ((stationPoint[0] - a[0]) * dLat + (stationPoint[1] - a[1]) * dLng) / lenSq;
-            t = Math.max(0, Math.min(1, t));
-        }
+    const lng = ax + t * dx;
+    const lat = ay + t * dy;
+    const dLng = px - lng;
+    const dLat = py - lat;
 
-        const projected = interpolateLatLng(a, b, t);
-        const distSq = pointDistanceSq(stationPoint, projected);
+    return {
+        point: [lat, lng],
+        t,
+        distSq: dLat * dLat + dLng * dLng
+    };
+}
 
-        if (!best || distSq < best.distSq) {
+function findNearestGeometryPosition(latlngs, station) {
+    const stationPoint = getStationLatLngLike(station);
+    if (!stationPoint || !Array.isArray(latlngs) || latlngs.length < 2) return null;
+
+    let best = null;
+
+    for (let i = 0; i < latlngs.length - 1; i++) {
+        const projected = projectStationToGeometrySegment(stationPoint, latlngs[i], latlngs[i + 1]);
+        if (!projected) continue;
+
+        if (!best || projected.distSq < best.distSq) {
             best = {
                 segmentIndex: i,
-                t,
-                order: i + t,
-                point: projected,
-                distSq
+                t: projected.t,
+                value: i + projected.t,
+                point: projected.point,
+                distSq: projected.distSq
             };
         }
     }
@@ -7235,165 +7226,168 @@ function findNearestRoutePosition(latlngs, station, options = {}) {
     return best;
 }
 
-function isSameLatLngPoint(a, b, tolerance = 0.000001) {
-    if (!Array.isArray(a) || !Array.isArray(b)) return false;
-    return Math.abs(Number(a[0]) - Number(b[0])) <= tolerance &&
-        Math.abs(Number(a[1]) - Number(b[1])) <= tolerance;
+function addPointIfDifferent(points, point) {
+    if (!Array.isArray(point)) return;
+    const last = points[points.length - 1];
+    if (!last || !isSameLatLngPoint(last, point, 0.0000000001)) {
+        points.push(point);
+    }
 }
 
-function buildRoutePartBetweenPositions(latlngs, fromStation, toStation, fromPos, toPos, options = {}) {
-    const points = Array.isArray(latlngs) ? latlngs : [];
-    if (points.length < 2 || !fromPos || !toPos) return [];
+function buildForwardGeometryPath(points, fromPos, toPos, allowWrap = false) {
+    if (!Array.isArray(points) || points.length < 2 || !fromPos || !toPos) return [];
 
-    const snapToStation = options.snapToStation === true;
-    const fromPoint = snapToStation ? getStationLatLngPoint(fromStation) : fromPos.point;
-    const toPoint = snapToStation ? getStationLatLngPoint(toStation) : toPos.point;
+    const n = points.length;
+    const nSeg = n - 1;
+    const path = [];
 
-    if (!fromPoint || !toPoint) return [];
+    addPointIfDifferent(path, fromPos.point);
 
-    if (Math.abs(fromPos.order - toPos.order) < 0.00000001) {
-        return dedupeLatLngSequence([fromPoint, toPoint]);
-    }
-
-    let part;
-
-    if (fromPos.order < toPos.order) {
-        const middle = points.slice(fromPos.segmentIndex + 1, toPos.segmentIndex + 1);
-        part = [fromPoint, ...middle, toPoint];
-    } else {
-        const middle = points.slice(toPos.segmentIndex + 1, fromPos.segmentIndex + 1).reverse();
-        part = [fromPoint, ...middle, toPoint];
-    }
-
-    return dedupeLatLngSequence(part);
-}
-
-function buildLoopRoutePartBetweenPositions(points, fromStation, toStation, fromPos, toPos, direction = "forward", options = {}) {
-    const n = Array.isArray(points) ? points.length : 0;
-    if (n < 2 || !fromPos || !toPos) return [];
-
-    const snapToStation = options.snapToStation === true;
-    const fromPoint = snapToStation ? getStationLatLngPoint(fromStation) : fromPos.point;
-    const toPoint = snapToStation ? getStationLatLngPoint(toStation) : toPos.point;
-
-    if (!fromPoint || !toPoint) return [];
-
-    const part = [fromPoint];
-
-    if (direction === "reverse") {
-        let targetOrder = toPos.order;
-        if (targetOrder >= fromPos.order) targetOrder -= n;
-
-        let index = fromPos.segmentIndex;
-        let safety = 0;
-
-        while (safety <= n + 1) {
-            let vertexOrder = index;
-            if (vertexOrder >= fromPos.order) vertexOrder -= n;
-            if (vertexOrder <= targetOrder) break;
-
-            part.push(points[(index + n) % n]);
-            index = (index - 1 + n) % n;
-            safety += 1;
+    if (toPos.value >= fromPos.value) {
+        for (let k = fromPos.segmentIndex + 1; k <= toPos.segmentIndex; k++) {
+            addPointIfDifferent(path, points[k]);
         }
-    } else {
-        let targetOrder = toPos.order;
-        if (targetOrder <= fromPos.order) targetOrder += n;
-
-        let index = fromPos.segmentIndex + 1;
-        let safety = 0;
-
-        while (safety <= n + 1) {
-            let vertexOrder = index;
-            if (vertexOrder <= fromPos.order) vertexOrder += n;
-            if (vertexOrder >= targetOrder) break;
-
-            part.push(points[index % n]);
-            index += 1;
-            safety += 1;
+        addPointIfDifferent(path, toPos.point);
+    } else if (allowWrap) {
+        for (let k = fromPos.segmentIndex + 1; k < n; k++) {
+            addPointIfDifferent(path, points[k]);
         }
+        for (let k = 0; k <= toPos.segmentIndex; k++) {
+            addPointIfDifferent(path, points[k]);
+        }
+        addPointIfDifferent(path, toPos.point);
+    } else {
+        return [];
     }
 
-    part.push(toPoint);
-    return dedupeLatLngSequence(part);
+    return path.length >= 2 ? path : [];
 }
 
-function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward", options = {}) {
+function calculatePathLengthSqApprox(path) {
+    if (!Array.isArray(path) || path.length < 2) return Infinity;
+
+    let total = 0;
+    for (let i = 0; i < path.length - 1; i++) {
+        total += pointDistanceSq(path[i], path[i + 1]);
+    }
+    return total;
+}
+
+function collectForwardSegmentKeys(points, fromPos, toPos, allowWrap = false) {
+    if (!Array.isArray(points) || points.length < 2 || !fromPos || !toPos) return [];
+
+    const keys = [];
+    const addSegmentKey = (index) => {
+        if (index >= 0 && index < points.length - 1) {
+            keys.push(makeSegmentKey(points[index], points[index + 1]));
+        }
+    };
+
+    if (toPos.value >= fromPos.value) {
+        for (let k = fromPos.segmentIndex; k <= toPos.segmentIndex; k++) addSegmentKey(k);
+    } else if (allowWrap) {
+        for (let k = fromPos.segmentIndex; k < points.length - 1; k++) addSegmentKey(k);
+        for (let k = 0; k <= toPos.segmentIndex; k++) addSegmentKey(k);
+    }
+
+    return [...new Set(keys)];
+}
+
+function attachGeometryPartMeta(part, meta = {}) {
+    if (Array.isArray(part)) {
+        Object.entries(meta).forEach(([key, value]) => {
+            part[key] = value;
+        });
+    }
+    return part;
+}
+
+function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null) {
     let points = Array.isArray(latlngs) ? latlngs.slice() : [];
     if (points.length < 2) return [];
 
+    const isLoop = isLoopLine(line);
+
     // WKT 環狀線有時最後一點會重複第一點；切方向時先移除尾端重複點，避免繞圈時計多一格。
-    if (points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
+    if (isLoop && points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
         points = points.slice(0, -1);
     }
 
-    const fromPos = findNearestRoutePosition(points, fromStation, { isRing: true });
-    const toPos = findNearestRoutePosition(points, toStation, { isRing: true });
-
-    return buildLoopRoutePartBetweenPositions(
-        points,
-        fromStation,
-        toStation,
-        fromPos,
-        toPos,
-        direction === "reverse" ? "reverse" : "forward",
-        options
-    );
-}
-
-function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null, options = {}) {
-    if (isLoopLine(line) && (direction === "forward" || direction === "reverse")) {
-        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction, options);
-    }
-
-    const fromPos = findNearestRoutePosition(latlngs, fromStation);
-    const toPos = findNearestRoutePosition(latlngs, toStation);
+    const fromPos = findNearestGeometryPosition(points, fromStation);
+    const toPos = findNearestGeometryPosition(points, toStation);
 
     if (!fromPos || !toPos) return [];
 
-    // 舊記錄如果冇 direction，環狀線先揀較短嗰邊，避免山手線呢類 loop 被固定切錯大半圈。
-    if (isLoopLine(line) && !direction) {
-        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward", options);
-        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse", options);
-        if (forwardPart.length >= 2 && reversePart.length >= 2) {
-            return forwardPart.length <= reversePart.length ? forwardPart : reversePart;
+    const snapScore = fromPos.distSq + toPos.distSq;
+    const allowWrap = isLoop;
+
+    const forwardPath = buildForwardGeometryPath(points, fromPos, toPos, allowWrap);
+    const reverseBase = buildForwardGeometryPath(points, toPos, fromPos, allowWrap);
+    const reversePath = reverseBase.length >= 2 ? reverseBase.slice().reverse() : [];
+
+    let chosen = [];
+    let chosenDirection = "forward";
+
+    if (isLoop && direction === "forward") {
+        chosen = forwardPath;
+        chosenDirection = "forward";
+    } else if (isLoop && direction === "reverse") {
+        chosen = reversePath;
+        chosenDirection = "reverse";
+    } else if (isLoop) {
+        const forwardLength = calculatePathLengthSqApprox(forwardPath);
+        const reverseLength = calculatePathLengthSqApprox(reversePath);
+        if (forwardLength <= reverseLength) {
+            chosen = forwardPath;
+            chosenDirection = "forward";
+        } else {
+            chosen = reversePath;
+            chosenDirection = "reverse";
+        }
+    } else {
+        if (fromPos.value <= toPos.value) {
+            chosen = forwardPath;
+            chosenDirection = "forward";
+        } else {
+            chosen = reversePath;
+            chosenDirection = "reverse";
         }
     }
 
-    return buildRoutePartBetweenPositions(latlngs, fromStation, toStation, fromPos, toPos, options);
+    if (!Array.isArray(chosen) || chosen.length < 2) return [];
+
+    const sourceSegmentKeys = chosenDirection === "forward"
+        ? collectForwardSegmentKeys(points, fromPos, toPos, allowWrap)
+        : collectForwardSegmentKeys(points, toPos, fromPos, allowWrap);
+
+    return attachGeometryPartMeta(chosen, {
+        _snapScore: snapScore,
+        _fromSnapDistSq: fromPos.distSq,
+        _toSnapDistSq: toPos.distSq,
+        _sourceSegmentKeys: sourceSegmentKeys,
+        _chosenDirection: chosenDirection
+    });
 }
 
-function getRoutePartDistanceScore(latlngs, fromStation, toStation, line = null) {
-    const isRing = isLoopLine(line);
-    let points = Array.isArray(latlngs) ? latlngs.slice() : [];
+function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null) {
+    if (!Array.isArray(allLineParts) || allLineParts.length === 0) return [];
 
-    if (isRing && points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
-        points = points.slice(0, -1);
-    }
+    const candidates = allLineParts
+        .map(latlngs => extractLinePartByStations(latlngs, fromStation, toStation, direction, line))
+        .filter(part => Array.isArray(part) && part.length >= 2);
 
-    const fromPos = findNearestRoutePosition(points, fromStation, { isRing });
-    const toPos = findNearestRoutePosition(points, toStation, { isRing });
+    if (candidates.length === 0) return [];
 
-    if (!fromPos || !toPos) return Infinity;
-    return fromPos.distSq + toPos.distSq;
-}
+    candidates.sort((a, b) => {
+        const scoreA = Number.isFinite(a._snapScore) ? a._snapScore : Infinity;
+        const scoreB = Number.isFinite(b._snapScore) ? b._snapScore : Infinity;
 
-function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null, options = {}) {
-    let bestPart = [];
-    let bestScore = Infinity;
+        if (scoreA !== scoreB) return scoreA - scoreB;
 
-    (Array.isArray(allLineParts) ? allLineParts : []).forEach(latlngs => {
-        const part = extractLinePartByStations(latlngs, fromStation, toStation, direction, line, options);
-        if (!Array.isArray(part) || part.length < 2) return;
-
-        const score = getRoutePartDistanceScore(latlngs, fromStation, toStation, line);
-        if (score < bestScore) {
-            bestScore = score;
-            bestPart = part;
-        }
+        return calculatePathLengthSqApprox(a) - calculatePathLengthSqApprox(b);
     });
 
-    return bestPart;
+    return candidates[0];
 }
 
 function pointDistanceSq(a, b) {
@@ -7402,7 +7396,7 @@ function pointDistanceSq(a, b) {
     return dLat * dLat + dLng * dLng;
 }
 
-function stitchLineParts(parts, tolerance = 0.00015) {
+function stitchLineParts(parts, tolerance = 0) {
     const usable = parts
         .filter(part => Array.isArray(part) && part.length >= 2)
         .map(part => part.slice());
@@ -7539,18 +7533,10 @@ function getLineGeometryParts(line) {
     if (!wkt) return [];
 
     const rawParts = parseWKTMultiLineString(wkt);
-    if (typeof stitchLineParts !== "function") return rawParts;
 
-    const normalStitched = stitchLineParts(rawParts);
-
-    // 部分 GeoJSON/WKT 分段端點相差數十米；畫面睇落係同一條線，但 from→to highlight 會斷。
-    // 先用原本嚴格容差，仍然未接到先放寬少少，只接近距離端點，避免隨便跨支線。
-    if (normalStitched.length <= 1) return normalStitched;
-
-    const relaxedStitched = stitchLineParts(rawParts, 0.0006);
-    return relaxedStitched.length < normalStitched.length
-        ? relaxedStitched
-        : normalStitched;
+    return typeof stitchLineParts === "function"
+        ? stitchLineParts(rawParts, 0)
+        : rawParts;
 }
 
 function normalizeSegmentPoint(point, precision = 5) {
@@ -7644,14 +7630,19 @@ function getRiddenSegmentKeySetForLine(lineId) {
             fromStation,
             toStation,
             seg.direction || "",
-            line,
-            { snapToStation: false }
+            line
         );
 
         if (!Array.isArray(part) || part.length < 2) return;
 
-        for (let i = 0; i < part.length - 1; i++) {
-            keys.add(makeSegmentKey(part[i], part[i + 1]));
+        const sourceKeys = Array.isArray(part._sourceSegmentKeys) ? part._sourceSegmentKeys : [];
+
+        if (sourceKeys.length > 0) {
+            sourceKeys.forEach(key => keys.add(key));
+        } else {
+            for (let i = 0; i < part.length - 1; i++) {
+                keys.add(makeSegmentKey(part[i], part[i + 1]));
+            }
         }
     });
 
@@ -7866,34 +7857,40 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
         ? colors
         : ["#63BD0F"];
     const isInteractive = options.interactive === true;
+    const lineCap = options.lineCap || "round";
+    const includeOutline = options.includeOutline !== false;
 
     // 單色：普通粗線
     if (safeColors.length === 1) {
         return [
             L.polyline(latlngs, {
                 color: safeColors[0],
-                weight: 9,
+                weight: options.weight || 9,
                 opacity: 0.95,
-                lineCap: "round",
+                lineCap,
                 lineJoin: "round",
-                smoothFactor: 1,
+                smoothFactor: 0,
                 interactive: isInteractive
             })
         ];
     }
 
-    // 多色共用段：先畫白色外框，令並排線更清楚
-    const layers = [
-        L.polyline(latlngs, {
-            color: "#ffffff",
-            weight: 12,
-            opacity: 0.88,
-            lineCap: "round",
-            lineJoin: "round",
-            smoothFactor: 1,
-            interactive: isInteractive
-        })
-    ];
+    // 多色共用段：選中路線時保留白色外框；已乘搭路段則關閉外框，避免白色端帽遮住連續線。
+    const layers = [];
+
+    if (includeOutline) {
+        layers.push(
+            L.polyline(latlngs, {
+                color: "#ffffff",
+                weight: 12,
+                opacity: 0.88,
+                lineCap,
+                lineJoin: "round",
+                smoothFactor: 0,
+                interactive: isInteractive
+            })
+        );
+    }
 
     // Leaflet 原生 polyline 無 offset，所以用不同 weight 疊出「內外雙線」效果
     // 2 條線：外圈第一色 + 內圈第二色
@@ -7901,11 +7898,11 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
         layers.push(
             L.polyline(latlngs, {
                 color: safeColors[0],
-                weight: 10,
+                weight: includeOutline ? 10 : 8,
                 opacity: 0.96,
-                lineCap: "round",
+                lineCap,
                 lineJoin: "round",
-                smoothFactor: 1,
+                smoothFactor: 0,
                 interactive: isInteractive
             })
         );
@@ -7913,11 +7910,11 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
         layers.push(
             L.polyline(latlngs, {
                 color: safeColors[1],
-                weight: 5,
+                weight: includeOutline ? 5 : 4,
                 opacity: 0.98,
-                lineCap: "round",
+                lineCap,
                 lineJoin: "round",
-                smoothFactor: 1,
+                smoothFactor: 0,
                 interactive: isInteractive
             })
         );
@@ -7929,35 +7926,37 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
     layers.push(
         L.polyline(latlngs, {
             color: safeColors[0],
-            weight: 12,
+            weight: includeOutline ? 12 : 8,
             opacity: 0.94,
-            lineCap: "round",
+            lineCap,
             lineJoin: "round",
-            smoothFactor: 1,
+            smoothFactor: 0,
             interactive: isInteractive
         })
     );
 
-    layers.push(
-        L.polyline(latlngs, {
-            color: "#ffffff",
-            weight: 8,
-            opacity: 0.9,
-            lineCap: "round",
-            lineJoin: "round",
-            smoothFactor: 1,
-            interactive: isInteractive
-        })
-    );
+    if (includeOutline) {
+        layers.push(
+            L.polyline(latlngs, {
+                color: "#ffffff",
+                weight: 8,
+                opacity: 0.9,
+                lineCap,
+                lineJoin: "round",
+                smoothFactor: 0,
+                interactive: isInteractive
+            })
+        );
+    }
 
     layers.push(
         L.polyline(latlngs, {
             color: safeColors[1],
-            weight: 5,
+            weight: includeOutline ? 5 : 4,
             opacity: 0.98,
-            lineCap: "round",
+            lineCap,
             lineJoin: "round",
-            smoothFactor: 1,
+            smoothFactor: 0,
             interactive: isInteractive
         })
     );
@@ -7965,11 +7964,11 @@ function buildMixedHighlightLayers(latlngs, colors, options = {}) {
     layers.push(
         L.polyline(latlngs, {
             color: safeColors[2],
-            weight: 2.5,
+            weight: includeOutline ? 2.5 : 2.5,
             opacity: 0.98,
-            lineCap: "round",
+            lineCap,
             lineJoin: "round",
-            smoothFactor: 1,
+            smoothFactor: 0,
             interactive: isInteractive
         })
     );
@@ -7999,24 +7998,38 @@ function getSegmentHighlightColors(segmentKey, fallbackColor) {
 function buildRiddenSegmentHighlightLayers(latlngs, fallbackColor) {
     if (!Array.isArray(latlngs) || latlngs.length < 2) return [];
 
+    const baseColor = fallbackColor || "#63BD0F";
+
+    // 先畫一條完整、連續、只跟原本 WKT 座標走嘅已乘搭底線。
+    // 之後即使共同路段需要混色 overlay，都唔會因為分段 polyline / 白色外框 / round cap 而出現視覺斷口。
+    const layers = buildMixedHighlightLayers(latlngs, [baseColor], {
+        interactive: true,
+        lineCap: "round"
+    });
+
     const groupedParts = [];
-    let currentPoints = [latlngs[0]];
+    let currentPoints = [];
     let currentSignature = null;
     let currentColors = null;
 
     for (let i = 0; i < latlngs.length - 1; i++) {
         const segmentKey = makeSegmentKey(latlngs[i], latlngs[i + 1]);
-        const colors = getSegmentHighlightColors(segmentKey, fallbackColor);
-        const signature = colors.join("|");
+        const colors = getSegmentHighlightColors(segmentKey, baseColor);
 
-        if (currentSignature === null) {
-            currentSignature = signature;
-            currentColors = colors;
-            currentPoints.push(latlngs[i + 1]);
+        // 單色段已經由完整底線負責畫；这里只額外處理真正多色共同區間。
+        if (!Array.isArray(colors) || colors.length < 2) {
+            if (currentPoints.length >= 2) {
+                groupedParts.push({ points: currentPoints, colors: currentColors });
+            }
+            currentPoints = [];
+            currentSignature = null;
+            currentColors = null;
             continue;
         }
 
-        if (signature !== currentSignature) {
+        const signature = colors.join("|");
+
+        if (currentSignature === null || signature !== currentSignature) {
             if (currentPoints.length >= 2) {
                 groupedParts.push({ points: currentPoints, colors: currentColors });
             }
@@ -8033,9 +8046,15 @@ function buildRiddenSegmentHighlightLayers(latlngs, fallbackColor) {
         groupedParts.push({ points: currentPoints, colors: currentColors });
     }
 
-    return groupedParts.flatMap(part =>
-        buildMixedHighlightLayers(part.points, part.colors, { interactive: true })
-    );
+    groupedParts.forEach(part => {
+        layers.push(...buildMixedHighlightLayers(part.points, part.colors, {
+            interactive: false,
+            lineCap: "butt",
+            includeOutline: false
+        }));
+    });
+
+    return layers;
 }
 
 function buildRoutePopupHtml(line, clickedSegment = null) {
@@ -8269,7 +8288,7 @@ function renderRailGeometries(selectedCategory = "all") {
                     opacity: lineHasRidden ? 0.45 : 0.20,
                     lineCap: "round",
                     lineJoin: "round",
-                    smoothFactor: 1,
+                    smoothFactor: 0,
                     interactive: true
                 }).addTo(railMapInstance);
 
@@ -8281,7 +8300,7 @@ function renderRailGeometries(selectedCategory = "all") {
                     opacity: 0.01,
                     lineCap: "round",
                     lineJoin: "round",
-                    smoothFactor: 1,
+                    smoothFactor: 0,
                     interactive: true
                 }).addTo(railMapInstance);
 
@@ -8294,7 +8313,6 @@ function renderRailGeometries(selectedCategory = "all") {
         }
 
         // 2) 已乘搭 from → to highlight。
-        //    乘車 highlight 只沿 WKT / GeoJSON 本身嘅線段畫；站座標若有偏移，只取最近線段投影點，避免拉出離開數據線嘅直線。
         //    已搭乘路線入面未搭過嘅路段，只有開啟「顯示未搭乘路線」先會顯示灰線。
         //    已搭乘共同路段：只有同一共同區間內實際搭過 2 條或以上涉及路線，先會混色。
         if (riddenSegments.length === 0) return;
@@ -8310,11 +8328,10 @@ function renderRailGeometries(selectedCategory = "all") {
                 fromStation,
                 toStation,
                 seg.direction || "",
-                line,
-                { snapToStation: false }
+                line
             );
 
-            if (part.length < 2) return;
+            if (!Array.isArray(part) || part.length < 2) return;
 
             const highlightLayers = buildRiddenSegmentHighlightLayers(part, highlightColor);
 
