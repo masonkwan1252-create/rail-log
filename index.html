@@ -7151,13 +7151,174 @@ function findNearestPointIndex(latlngs, station) {
     return bestIndex;
 }
 
+function getStationLatLngPoint(station) {
+    if (!station || station.lat == null || station.lng == null) return null;
+    const lat = Number(station.lat);
+    const lng = Number(station.lng);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+    return [lat, lng];
+}
+
+function interpolateLatLng(a, b, t) {
+    return [
+        a[0] + (b[0] - a[0]) * t,
+        a[1] + (b[1] - a[1]) * t
+    ];
+}
+
+function dedupeLatLngSequence(points, tolerance = 0.00000001) {
+    const result = [];
+
+    points.forEach(point => {
+        if (!Array.isArray(point) || point.length < 2) return;
+        const normalized = [Number(point[0]), Number(point[1])];
+        if (!Number.isFinite(normalized[0]) || !Number.isFinite(normalized[1])) return;
+
+        const prev = result[result.length - 1];
+        if (!prev || !isSameLatLngPoint(prev, normalized, tolerance)) {
+            result.push(normalized);
+        }
+    });
+
+    return result;
+}
+
+function findNearestRoutePosition(latlngs, station, options = {}) {
+    const stationPoint = getStationLatLngPoint(station);
+    const points = Array.isArray(latlngs) ? latlngs : [];
+
+    if (!stationPoint || points.length === 0) return null;
+
+    let best = null;
+    const isRing = options.isRing === true;
+    const segmentCount = isRing ? points.length : Math.max(points.length - 1, 0);
+
+    if (segmentCount === 0) {
+        return {
+            segmentIndex: 0,
+            t: 0,
+            order: 0,
+            point: points[0],
+            distSq: pointDistanceSq(stationPoint, points[0])
+        };
+    }
+
+    for (let i = 0; i < segmentCount; i++) {
+        const a = points[i];
+        const b = points[(i + 1) % points.length];
+        if (!Array.isArray(a) || !Array.isArray(b)) continue;
+
+        const dLat = b[0] - a[0];
+        const dLng = b[1] - a[1];
+        const lenSq = dLat * dLat + dLng * dLng;
+        let t = 0;
+
+        if (lenSq > 0) {
+            t = ((stationPoint[0] - a[0]) * dLat + (stationPoint[1] - a[1]) * dLng) / lenSq;
+            t = Math.max(0, Math.min(1, t));
+        }
+
+        const projected = interpolateLatLng(a, b, t);
+        const distSq = pointDistanceSq(stationPoint, projected);
+
+        if (!best || distSq < best.distSq) {
+            best = {
+                segmentIndex: i,
+                t,
+                order: i + t,
+                point: projected,
+                distSq
+            };
+        }
+    }
+
+    return best;
+}
+
 function isSameLatLngPoint(a, b, tolerance = 0.000001) {
     if (!Array.isArray(a) || !Array.isArray(b)) return false;
     return Math.abs(Number(a[0]) - Number(b[0])) <= tolerance &&
         Math.abs(Number(a[1]) - Number(b[1])) <= tolerance;
 }
 
-function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward") {
+function buildRoutePartBetweenPositions(latlngs, fromStation, toStation, fromPos, toPos, options = {}) {
+    const points = Array.isArray(latlngs) ? latlngs : [];
+    if (points.length < 2 || !fromPos || !toPos) return [];
+
+    const snapToStation = options.snapToStation !== false;
+    const fromPoint = snapToStation ? getStationLatLngPoint(fromStation) : fromPos.point;
+    const toPoint = snapToStation ? getStationLatLngPoint(toStation) : toPos.point;
+
+    if (!fromPoint || !toPoint) return [];
+
+    if (Math.abs(fromPos.order - toPos.order) < 0.00000001) {
+        return dedupeLatLngSequence([fromPoint, toPoint]);
+    }
+
+    let part;
+
+    if (fromPos.order < toPos.order) {
+        const middle = points.slice(fromPos.segmentIndex + 1, toPos.segmentIndex + 1);
+        part = [fromPoint, ...middle, toPoint];
+    } else {
+        const middle = points.slice(toPos.segmentIndex + 1, fromPos.segmentIndex + 1).reverse();
+        part = [fromPoint, ...middle, toPoint];
+    }
+
+    return dedupeLatLngSequence(part);
+}
+
+function buildLoopRoutePartBetweenPositions(points, fromStation, toStation, fromPos, toPos, direction = "forward", options = {}) {
+    const n = Array.isArray(points) ? points.length : 0;
+    if (n < 2 || !fromPos || !toPos) return [];
+
+    const snapToStation = options.snapToStation !== false;
+    const fromPoint = snapToStation ? getStationLatLngPoint(fromStation) : fromPos.point;
+    const toPoint = snapToStation ? getStationLatLngPoint(toStation) : toPos.point;
+
+    if (!fromPoint || !toPoint) return [];
+
+    const part = [fromPoint];
+
+    if (direction === "reverse") {
+        let targetOrder = toPos.order;
+        if (targetOrder >= fromPos.order) targetOrder -= n;
+
+        let index = fromPos.segmentIndex;
+        let safety = 0;
+
+        while (safety <= n + 1) {
+            let vertexOrder = index;
+            if (vertexOrder >= fromPos.order) vertexOrder -= n;
+            if (vertexOrder <= targetOrder) break;
+
+            part.push(points[(index + n) % n]);
+            index = (index - 1 + n) % n;
+            safety += 1;
+        }
+    } else {
+        let targetOrder = toPos.order;
+        if (targetOrder <= fromPos.order) targetOrder += n;
+
+        let index = fromPos.segmentIndex + 1;
+        let safety = 0;
+
+        while (safety <= n + 1) {
+            let vertexOrder = index;
+            if (vertexOrder <= fromPos.order) vertexOrder += n;
+            if (vertexOrder >= targetOrder) break;
+
+            part.push(points[index % n]);
+            index += 1;
+            safety += 1;
+        }
+    }
+
+    part.push(toPoint);
+    return dedupeLatLngSequence(part);
+}
+
+function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward", options = {}) {
     let points = Array.isArray(latlngs) ? latlngs.slice() : [];
     if (points.length < 2) return [];
 
@@ -7166,51 +7327,73 @@ function extractLoopLinePartByDirection(latlngs, fromStation, toStation, directi
         points = points.slice(0, -1);
     }
 
-    const fromPointIndex = findNearestPointIndex(points, fromStation);
-    const toPointIndex = findNearestPointIndex(points, toStation);
+    const fromPos = findNearestRoutePosition(points, fromStation, { isRing: true });
+    const toPos = findNearestRoutePosition(points, toStation, { isRing: true });
 
-    if (fromPointIndex === -1 || toPointIndex === -1) return [];
-    if (fromPointIndex === toPointIndex) return [points[fromPointIndex]];
-
-    const part = [];
-    const step = direction === "reverse" ? -1 : 1;
-    let index = fromPointIndex;
-    let safety = 0;
-
-    while (safety <= points.length) {
-        part.push(points[index]);
-        if (index === toPointIndex) break;
-
-        index = (index + step + points.length) % points.length;
-        safety += 1;
-    }
-
-    return part.length >= 2 ? part : [];
+    return buildLoopRoutePartBetweenPositions(
+        points,
+        fromStation,
+        toStation,
+        fromPos,
+        toPos,
+        direction === "reverse" ? "reverse" : "forward",
+        options
+    );
 }
 
-function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null) {
+function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null, options = {}) {
     if (isLoopLine(line) && (direction === "forward" || direction === "reverse")) {
-        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction);
+        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction, options);
     }
 
-    const fromPointIndex = findNearestPointIndex(latlngs, fromStation);
-    const toPointIndex = findNearestPointIndex(latlngs, toStation);
+    const fromPos = findNearestRoutePosition(latlngs, fromStation);
+    const toPos = findNearestRoutePosition(latlngs, toStation);
 
-    if (fromPointIndex === -1 || toPointIndex === -1) return [];
+    if (!fromPos || !toPos) return [];
 
     // 舊記錄如果冇 direction，環狀線先揀較短嗰邊，避免山手線呢類 loop 被固定切錯大半圈。
     if (isLoopLine(line) && !direction) {
-        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward");
-        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse");
+        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward", options);
+        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse", options);
         if (forwardPart.length >= 2 && reversePart.length >= 2) {
             return forwardPart.length <= reversePart.length ? forwardPart : reversePart;
         }
     }
 
-    const start = Math.min(fromPointIndex, toPointIndex);
-    const end = Math.max(fromPointIndex, toPointIndex);
+    return buildRoutePartBetweenPositions(latlngs, fromStation, toStation, fromPos, toPos, options);
+}
 
-    return latlngs.slice(start, end + 1);
+function getRoutePartDistanceScore(latlngs, fromStation, toStation, line = null) {
+    const isRing = isLoopLine(line);
+    let points = Array.isArray(latlngs) ? latlngs.slice() : [];
+
+    if (isRing && points.length > 2 && isSameLatLngPoint(points[0], points[points.length - 1])) {
+        points = points.slice(0, -1);
+    }
+
+    const fromPos = findNearestRoutePosition(points, fromStation, { isRing });
+    const toPos = findNearestRoutePosition(points, toStation, { isRing });
+
+    if (!fromPos || !toPos) return Infinity;
+    return fromPos.distSq + toPos.distSq;
+}
+
+function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null, options = {}) {
+    let bestPart = [];
+    let bestScore = Infinity;
+
+    (Array.isArray(allLineParts) ? allLineParts : []).forEach(latlngs => {
+        const part = extractLinePartByStations(latlngs, fromStation, toStation, direction, line, options);
+        if (!Array.isArray(part) || part.length < 2) return;
+
+        const score = getRoutePartDistanceScore(latlngs, fromStation, toStation, line);
+        if (score < bestScore) {
+            bestScore = score;
+            bestPart = part;
+        }
+    });
+
+    return bestPart;
 }
 
 function pointDistanceSq(a, b) {
@@ -7356,10 +7539,18 @@ function getLineGeometryParts(line) {
     if (!wkt) return [];
 
     const rawParts = parseWKTMultiLineString(wkt);
+    if (typeof stitchLineParts !== "function") return rawParts;
 
-    return typeof stitchLineParts === "function"
-        ? stitchLineParts(rawParts)
-        : rawParts;
+    const normalStitched = stitchLineParts(rawParts);
+
+    // 部分 GeoJSON/WKT 分段端點相差數十米；畫面睇落係同一條線，但 from→to highlight 會斷。
+    // 先用原本嚴格容差，仍然未接到先放寬少少，只接近距離端點，避免隨便跨支線。
+    if (normalStitched.length <= 1) return normalStitched;
+
+    const relaxedStitched = stitchLineParts(rawParts, 0.0006);
+    return relaxedStitched.length < normalStitched.length
+        ? relaxedStitched
+        : normalStitched;
 }
 
 function normalizeSegmentPoint(point, precision = 5) {
@@ -7448,21 +7639,20 @@ function getRiddenSegmentKeySetForLine(lineId) {
 
         if (!fromStation || !toStation) return;
 
-        allLineParts.forEach(latlngs => {
-            const part = extractLinePartByStations(
-                latlngs,
-                fromStation,
-                toStation,
-                seg.direction || "",
-                line
-            );
+        const part = extractBestLinePartByStations(
+            allLineParts,
+            fromStation,
+            toStation,
+            seg.direction || "",
+            line,
+            { snapToStation: false }
+        );
 
-            if (!Array.isArray(part) || part.length < 2) return;
+        if (!Array.isArray(part) || part.length < 2) return;
 
-            for (let i = 0; i < part.length - 1; i++) {
-                keys.add(makeSegmentKey(part[i], part[i + 1]));
-            }
-        });
+        for (let i = 0; i < part.length - 1; i++) {
+            keys.add(makeSegmentKey(part[i], part[i + 1]));
+        }
     });
 
     riddenSegmentKeySetCache.set(lineId, keys);
@@ -8114,18 +8304,23 @@ function renderRailGeometries(selectedCategory = "all") {
 
             if (!fromStation || !toStation) return;
 
-            allLineParts.forEach(latlngs => {
-                const part = extractLinePartByStations(latlngs, fromStation, toStation, seg.direction || "", line);
+            const part = extractBestLinePartByStations(
+                allLineParts,
+                fromStation,
+                toStation,
+                seg.direction || "",
+                line,
+                { snapToStation: true }
+            );
 
-                if (part.length < 2) return;
+            if (part.length < 2) return;
 
-                const highlightLayers = buildRiddenSegmentHighlightLayers(part, highlightColor);
+            const highlightLayers = buildRiddenSegmentHighlightLayers(part, highlightColor);
 
-                highlightLayers.forEach(layer => {
-                    layer.addTo(railMapInstance);
-                    layer.on("click", handleRouteClick);
-                    mapRailGeometryLines.push(layer);
-                });
+            highlightLayers.forEach(layer => {
+                layer.addTo(railMapInstance);
+                layer.on("click", handleRouteClick);
+                mapRailGeometryLines.push(layer);
             });
         });
     });
