@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.32</title>
+<title>鉄道手帳 RAIL LOG V0.33</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:title" content="鉄道手帳 RAIL LOG">
 <meta property="og:description" content="乘車記錄、足跡地圖與車型相冊">
@@ -1799,7 +1799,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.32 成就佈局樣式
+   🟩 V0.24/V0.33 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -3941,7 +3941,7 @@ html, body {
 }
 
 
-/* ===== V0.32 Desktop Layout =====
+/* ===== V0.33 Desktop Layout =====
    Mobile keeps the existing one-column app. Desktop becomes a wide rail-control workspace. */
 @media (min-width: 900px) {
     :root {
@@ -5753,6 +5753,778 @@ html, body {
     }
 }
 
+/* ===== Mobile history record compact layout ===== */
+.trip-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trip-icon-svg {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip {
+        position: relative;
+        padding: 10px 0;
+        min-height: 0;
+    }
+
+    #tab-history .trip-content-wrap {
+        position: relative;
+        display: block;
+        padding-right: 70px;
+        min-width: 0;
+    }
+
+    #tab-history .trip-field-label {
+        display: none;
+    }
+
+    #tab-history .trip-route-block {
+        display: block;
+        margin-bottom: 4px;
+        min-width: 0;
+    }
+
+    #tab-history .trip-route-block .route {
+        display: inline;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    #tab-history .trip-route-block .trip-meta-line {
+        display: inline-flex;
+        min-height: 0;
+        margin: 0 0 0 6px;
+        vertical-align: 1px;
+    }
+
+    #tab-history .trip-train-block,
+    #tab-history .trip-station-block {
+        display: inline;
+        min-width: 0;
+    }
+
+    #tab-history .trip-train-block::after {
+        content: "|";
+        margin: 0 6px;
+        color: var(--border);
+        font-weight: 500;
+    }
+
+    #tab-history .trip-field-value,
+    #tab-history .trip-station-block .trip-field-value {
+        display: inline;
+        font-size: 12.5px;
+        line-height: 1.4;
+    }
+
+    #tab-history .trip-direction-chip {
+        display: inline-flex;
+        min-height: 16px;
+        margin: 0 0 0 6px;
+        padding: 2px 5px;
+        font-size: 9.5px;
+        vertical-align: 1px;
+    }
+
+    #tab-history .trip-actions {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px !important;
+        margin: 0;
+    }
+
+    #tab-history .trip-icon-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 7px 7px 2px 2px;
+        font-size: 13px;
+        line-height: 1;
+    }
+
+    #tab-history .trip-icon-svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    #tab-history .history-date-separator {
+        margin: 14px 0 8px;
+    }
+}
+
+/* ===== Unified one-line trip record layout ===== */
+#tab-history .trip-line-layout {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    grid-template-columns: none !important;
+    padding-right: 0 !important;
+    min-width: 0;
+}
+
+#tab-history .trip-main-line {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 7px;
+    color: var(--subtext);
+    font-size: 13px;
+    line-height: 1.42;
+}
+
+#tab-history .trip-route-inline {
+    min-width: 0;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+#tab-history .trip-train-inline,
+#tab-history .trip-station-inline {
+    min-width: 0;
+    color: var(--text);
+    font-size: 12.5px;
+    font-weight: 650;
+    line-height: 1.38;
+    overflow-wrap: anywhere;
+}
+
+#tab-history .trip-separator {
+    color: var(--border);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#tab-history .trip-line-layout .trip-actions {
+    position: static !important;
+    flex: 0 0 auto;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 5px !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+}
+
+#tab-history .trip-line-layout .trip-direction-chip {
+    margin: 0;
+}
+
+#tab-history .trip-line-layout .trip-photo-icon {
+    margin-left: 0;
+}
+
+@media (min-width: 900px) {
+    #tab-history .trip-line-layout {
+        gap: 14px !important;
+    }
+
+    #tab-history .trip-main-line {
+        flex-wrap: nowrap;
+        gap: 0 9px;
+    }
+
+    #tab-history .trip-route-inline {
+        font-size: 15px;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip-line-layout {
+        display: flex !important;
+        padding-right: 0 !important;
+    }
+
+    #tab-history .trip-main-line {
+        padding-right: 0;
+    }
+}
+
+/* ===== Compact ticket-style trip rows ===== */
+#tab-history .trip-ticket-layout {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    grid-template-columns: none !important;
+    min-width: 0;
+    padding-right: 0 !important;
+}
+
+#tab-history .trip-ticket-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+#tab-history .trip-ticket-section {
+    min-width: 0;
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 9px;
+    border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+    border-bottom: 2px solid color-mix(in srgb, var(--primary) 46%, transparent);
+    border-radius: 8px 8px 3px 3px;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 34%, transparent), transparent),
+        color-mix(in srgb, var(--card) 92%, var(--tag-bg));
+}
+
+#tab-history .trip-ticket-route {
+    position: relative;
+    padding-left: 12px;
+}
+
+#tab-history .trip-ticket-route::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--primary);
+    box-shadow: 0 0 7px rgba(99, 189, 15, 0.28);
+}
+
+#tab-history .trip-ticket-label {
+    flex: 0 0 auto;
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+#tab-history .trip-route-inline,
+#tab-history .trip-train-inline,
+#tab-history .trip-station-inline {
+    min-width: 0;
+    color: var(--text);
+    line-height: 1.32;
+    overflow-wrap: anywhere;
+}
+
+#tab-history .trip-route-inline {
+    font-size: 14px;
+    font-weight: 850;
+}
+
+#tab-history .trip-train-inline,
+#tab-history .trip-station-inline {
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+#tab-history .trip-ticket-layout .trip-service-badge,
+#tab-history .trip-ticket-layout .trip-direction-chip,
+#tab-history .trip-ticket-layout .trip-photo-icon {
+    flex: 0 0 auto;
+}
+
+#tab-history .trip-ticket-layout .trip-service-badge,
+#tab-history .trip-ticket-layout .trip-direction-chip {
+    min-height: 26px;
+    margin: 0;
+    padding: 5px 8px;
+    border-radius: 8px 8px 3px 3px;
+}
+
+#tab-history .trip-ticket-layout .trip-photo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+    border-bottom: 2px solid color-mix(in srgb, var(--primary) 42%, transparent);
+    border-radius: 8px 8px 3px 3px;
+    background: color-mix(in srgb, var(--tag-bg) 36%, transparent);
+    font-size: 12px;
+}
+
+#tab-history .trip-ticket-layout .trip-actions {
+    position: static !important;
+    flex: 0 0 auto;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 5px !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+}
+
+@media (min-width: 900px) {
+    #tab-history .trip-ticket-layout {
+        gap: 14px !important;
+    }
+
+    #tab-history .trip-ticket-main {
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    #tab-history .trip-ticket-route {
+        flex: 1 1 320px;
+    }
+
+    #tab-history .trip-ticket-train {
+        flex: 0 1 230px;
+    }
+
+    #tab-history .trip-ticket-stations {
+        flex: 0 1 300px;
+    }
+
+    #tab-history .trip-route-inline {
+        font-size: 15px;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip {
+        padding: 9px 0;
+    }
+
+    #tab-history .trip-ticket-layout {
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    #tab-history .trip-ticket-main {
+        gap: 5px;
+    }
+
+    #tab-history .trip-ticket-section {
+        min-height: 27px;
+        padding: 4px 7px;
+        gap: 5px;
+    }
+
+    #tab-history .trip-ticket-label {
+        font-size: 9px;
+    }
+
+    #tab-history .trip-route-inline {
+        font-size: 13px;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        font-size: 12px;
+    }
+
+    #tab-history .trip-ticket-layout .trip-service-badge,
+    #tab-history .trip-ticket-layout .trip-direction-chip {
+        min-height: 24px;
+        padding: 4px 7px;
+        font-size: 9.5px;
+    }
+
+    #tab-history .trip-ticket-layout .trip-actions {
+        padding-top: 0 !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #tab-history .trip-ticket-section {
+        background:
+            linear-gradient(180deg, rgba(99,189,15,0.04), transparent),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+    }
+}
+
+/* ===== Softer Japanese station-slip history rows ===== */
+#tab-history .trip {
+    border-bottom-color: color-mix(in srgb, var(--border) 54%, transparent);
+}
+
+#tab-history .trip-ticket-layout {
+    gap: 12px !important;
+}
+
+#tab-history .trip-ticket-main {
+    gap: 4px 10px;
+}
+
+#tab-history .trip-ticket-section {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+#tab-history .trip-ticket-section + .trip-ticket-section::before,
+#tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+    content: "・";
+    margin-right: 1px;
+    color: color-mix(in srgb, var(--subtext) 72%, transparent);
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+#tab-history .trip-ticket-route {
+    padding-left: 10px;
+}
+
+#tab-history .trip-ticket-route::before {
+    top: 1px;
+    bottom: 1px;
+    width: 4px;
+    border-radius: 1px;
+    background: var(--primary);
+    box-shadow: none;
+}
+
+#tab-history .trip-ticket-label {
+    min-width: 2.5em;
+    color: var(--subtext);
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    opacity: 0.78;
+}
+
+#tab-history .trip-route-inline {
+    font-size: 15px;
+    font-weight: 850;
+}
+
+#tab-history .trip-through-label {
+    color: var(--danger);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+#tab-history .trip-train-inline,
+#tab-history .trip-station-inline {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#tab-history .trip-ticket-layout .trip-service-badge,
+#tab-history .trip-ticket-layout .trip-direction-chip {
+    min-height: 20px;
+    padding: 3px 7px;
+    border: 0;
+    border-radius: 999px;
+}
+
+#tab-history .trip-ticket-layout .trip-direction-chip {
+    background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+#tab-history .trip-ticket-layout .trip-photo-icon {
+    width: auto;
+    height: auto;
+    border: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    background: transparent;
+    font-size: 12px;
+}
+
+#tab-history .trip-icon-btn {
+    border: 0;
+    border-bottom: 0;
+    background: transparent;
+    color: var(--subtext);
+}
+
+#tab-history .trip-icon-btn:active {
+    color: var(--primary);
+}
+
+@media (min-width: 900px) {
+    #tab-history .trip {
+        padding: 12px 14px;
+    }
+
+    #tab-history .trip-ticket-main {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip {
+        padding: 9px 0;
+    }
+
+    #tab-history .trip-ticket-main {
+        gap: 3px 8px;
+    }
+
+    #tab-history .trip-ticket-label {
+        min-width: auto;
+        font-size: 9px;
+    }
+
+    #tab-history .trip-route-inline {
+        font-size: 13.5px;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        font-size: 12px;
+    }
+
+    #tab-history .trip-ticket-section + .trip-ticket-section::before,
+    #tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #tab-history .trip-ticket-section {
+        background: transparent;
+    }
+}
+
+/* Narrow history rows: subtle paper-slip frame */
+@media (max-width: 899px) {
+    #tab-history #tripList {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #tab-history .trip {
+        position: relative;
+        margin: 0;
+        padding: 10px 10px;
+        border: 0;
+        border-radius: 10px;
+        background:
+            radial-gradient(circle at 18px 10px, color-mix(in srgb, var(--primary) 10%, transparent), transparent 28px),
+            linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 34%, transparent), transparent),
+            color-mix(in srgb, var(--card) 94%, var(--tag-bg));
+        box-shadow:
+            0 1px 0 color-mix(in srgb, var(--primary) 28%, transparent),
+            0 3px 9px rgba(0,0,0,0.035);
+    }
+
+    #tab-history .trip-ticket-layout {
+        align-items: flex-start !important;
+    }
+
+    #tab-history .trip-actions {
+        padding-top: 1px !important;
+    }
+
+    #tab-history .history-date-separator {
+        margin: 10px 0 2px;
+    }
+}
+
+@media (max-width: 899px) and (prefers-color-scheme: dark) {
+    #tab-history .trip {
+        background:
+            radial-gradient(circle at 18px 10px, rgba(99,189,15,0.08), transparent 28px),
+            linear-gradient(180deg, rgba(99,189,15,0.035), transparent),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+        box-shadow: 0 2px 10px rgba(0,0,0,0.22);
+    }
+}
+
+/* ===== Add form: quieter line work ===== */
+.design2-form-card h3 {
+    border-bottom-color: color-mix(in srgb, var(--border) 68%, transparent) !important;
+}
+
+.design2-form-card label:not(.map-icon-toggle):not([style*="display: flex"]) {
+    border-left-color: color-mix(in srgb, var(--primary) 42%, var(--border)) !important;
+}
+
+.design2-form-card .input-wrapper,
+.desktop-add-card .input-wrapper {
+    border-bottom-color: color-mix(in srgb, var(--border) 78%, transparent) !important;
+    box-shadow: none !important;
+}
+
+.design2-form-card .input-wrapper:focus-within,
+.desktop-add-card .input-wrapper:focus-within {
+    border-bottom-color: var(--primary) !important;
+    box-shadow: 0 1px 0 rgba(99, 189, 15, 0.16) !important;
+}
+
+.design2-form-card .through-block,
+.design2-form-card #mainLoopDirectionWrap,
+.design2-form-card [style*="background: var(--tag-bg)"],
+.desktop-through-row,
+.other-train-toggle {
+    border-bottom-color: color-mix(in srgb, var(--border) 74%, transparent) !important;
+}
+
+.design2-form-card .btn-small {
+    border-color: color-mix(in srgb, var(--border) 64%, transparent) !important;
+    border-bottom-color: color-mix(in srgb, var(--primary) 40%, var(--border)) !important;
+    background: color-mix(in srgb, var(--tag-bg) 36%, transparent) !important;
+}
+
+.design2-form-card .photo-upload-box,
+.desktop-add-card .photo-upload-box {
+    border-bottom-color: color-mix(in srgb, var(--border) 72%, transparent) !important;
+}
+
+@media (min-width: 1100px) {
+    .desktop-add-head {
+        background:
+            linear-gradient(135deg, color-mix(in srgb, var(--primary) 4%, transparent), transparent 54%),
+            color-mix(in srgb, var(--card) 94%, var(--tag-bg));
+    }
+
+    .desktop-section-heading span {
+        background: var(--rail-yamanote-green, #63BD0F);
+        color: #fff;
+        box-shadow: none;
+    }
+
+    .desktop-route-section {
+        background: color-mix(in srgb, var(--tag-bg) 16%, transparent);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .design2-form-card .input-wrapper,
+    .desktop-add-card .input-wrapper,
+    .other-train-toggle {
+        border-bottom-color: color-mix(in srgb, var(--border) 88%, transparent) !important;
+    }
+}
+
+/* Restore vertical accents and destination sign scale */
+:root {
+    --rail-yamanote-green: #63BD0F;
+    --rail-accent-line-soft: rgba(99, 189, 15, 0.42);
+    --rail-accent-line-softer: rgba(99, 189, 15, 0.28);
+}
+
+.design2-form-card label:not(.map-icon-toggle):not([style*="display: flex"]) {
+    border-left-color: var(--rail-yamanote-green) !important;
+}
+
+#tab-history .trip-ticket-route::before {
+    background: var(--rail-yamanote-green) !important;
+}
+
+.design2-form-card h3,
+.design2-form-card .input-wrapper,
+.desktop-add-card .input-wrapper,
+.design2-form-card .through-block,
+.design2-form-card #mainLoopDirectionWrap,
+.design2-form-card [style*="background: var(--tag-bg)"],
+.desktop-through-row,
+.other-train-toggle,
+.design2-form-card .photo-upload-box,
+.desktop-add-card .photo-upload-box {
+    border-bottom-color: var(--rail-accent-line-soft) !important;
+}
+
+.design2-form-card .btn-small {
+    border-bottom-color: var(--rail-accent-line-soft) !important;
+}
+
+#tab-history .trip {
+    border-bottom-color: var(--rail-accent-line-softer) !important;
+}
+
+#tab-history .trip-ticket-section,
+#tab-history .trip-icon-btn,
+#tab-history .trip-ticket-layout .trip-photo-icon {
+    border-bottom-color: var(--rail-accent-line-softer) !important;
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip {
+        box-shadow:
+            0 1px 0 var(--rail-accent-line-softer),
+            0 3px 9px rgba(0,0,0,0.035) !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --rail-accent-line-soft: rgba(99, 189, 15, 0.48);
+        --rail-accent-line-softer: rgba(99, 189, 15, 0.34);
+    }
+}
+
+@media (min-width: 900px) {
+    .final-panel .sign-type-box {
+        font-size: 15px;
+    }
+
+    .final-panel .sign-destination-text {
+        font-size: 25px;
+    }
+
+    .final-panel .sign-english-text {
+        font-size: 13px;
+    }
+}
+
+/* Keep each tab's scroll end close to its content instead of drifting below cards. */
+html,
+body {
+    overscroll-behavior-y: none;
+}
+
+body {
+    padding-bottom: 0 !important;
+}
+
+.container {
+    margin-bottom: 0 !important;
+    padding-bottom: calc(64px + env(safe-area-inset-bottom)) !important;
+}
+
+.tab-content.active > .card:last-child {
+    margin-bottom: 0 !important;
+}
+
+#tab-settings {
+    padding-bottom: 0 !important;
+}
+
+@media (min-width: 900px) {
+    .container {
+        padding-bottom: var(--desktop-page-pad, 24px) !important;
+    }
+}
+
 </style>
 </head>
 
@@ -5774,7 +6546,7 @@ html, body {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.32</div>
+                <div class="e235-arrival-version">V0.33</div>
             </div>
         </div>
 
@@ -5919,7 +6691,7 @@ html, body {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.32</div>
+    <div class="version-badge">V0.33</div>
 
     <div class="container">
 
@@ -7824,7 +8596,7 @@ window.addThrough = function() {
     updateThroughLoopDirectionUI(div);
 }
 
-// 🟩 V0.32 處理圖片上傳
+// 🟩 V0.33 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -7853,7 +8625,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.32 移除圖片
+// 🟩 V0.33 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -8592,15 +9364,16 @@ pagedTrips.forEach((t) => {
     routes.forEach((r, idx) => {
         let compName = getCompName(r.company_id);
         let lineName = getLineName(r.line_id);
+        const throughLabel = idx > 0 ? ` <span class="trip-through-label">直通</span>` : "";
 
         if (idx === 0) {
             routeHtml += `${compName} ${lineName}`;
             lastCompany = compName;
         } else {
             if (compName === lastCompany) {
-                routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}`;
+                routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${lineName}${throughLabel}`;
             } else {
-                routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}`;
+                routeHtml += ` <span style='color:var(--border); font-size:12px;'>▶</span> ${compName} ${lineName}${throughLabel}`;
                 lastCompany = compName;
             }
         }
@@ -8641,27 +9414,32 @@ pagedTrips.forEach((t) => {
 
     div.innerHTML = `
         ${dragHandleHtml}
-        <div class="trip-content-wrap">
-            <div class="trip-route-block">
-                <div class="trip-field-label">路線</div>
-                <div class="route">${routeHtml || "未設定路線"}</div>
-                ${serviceHtml || photoIconHtml ? `<div class="trip-meta-line">${serviceHtml}${photoIconHtml}</div>` : ""}
-            </div>
-
-            <div class="trip-train-block">
-                <div class="trip-field-label">車型</div>
-                <div class="trip-field-value">${getTripTrainDisplay(t)}</div>
-            </div>
-
-            <div class="trip-station-block">
-                <div class="trip-field-label">區間</div>
-                <div class="trip-field-value">${getStationName(t.from_id)} <span class="trip-arrow">→</span> ${getStationName(t.to_id)}</div>
-                ${directionSummary ? `<div class="trip-direction-chip">${directionSummary}</div>` : ""}
+        <div class="trip-content-wrap trip-ticket-layout">
+            <div class="trip-ticket-main">
+                <span class="trip-ticket-section trip-ticket-route">
+                    <span class="trip-ticket-label">路線</span>
+                    <span class="trip-route-inline">${routeHtml || "未設定路線"}</span>
+                </span>
+                ${serviceHtml}
+                <span class="trip-ticket-section trip-ticket-train">
+                    <span class="trip-ticket-label">車両</span>
+                    <span class="trip-train-inline">${getTripTrainDisplay(t)}</span>
+                </span>
+                <span class="trip-ticket-section trip-ticket-stations">
+                    <span class="trip-ticket-label">駅間</span>
+                    <span class="trip-station-inline">${getStationName(t.from_id)} <span class="trip-arrow">→</span> ${getStationName(t.to_id)}</span>
+                </span>
+                ${directionSummary ? `<span class="trip-direction-chip">${directionSummary}</span>` : ""}
+                ${photoIconHtml}
             </div>
 
             <div class="trip-header-row trip-actions">
                 <button class="trip-icon-btn" type="button" onclick="editTrip(${originalIndex})" aria-label="編輯記錄" title="編輯">✎</button>
-                <button class="trip-icon-btn" type="button" onclick="deleteTrip(${originalIndex})" aria-label="刪除記錄" title="刪除">⌫</button>
+                <button class="trip-icon-btn trip-delete-btn" type="button" onclick="deleteTrip(${originalIndex})" aria-label="刪除記錄" title="刪除">
+                    <svg class="trip-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     `;
@@ -10228,7 +11006,7 @@ window.editTrip = function(i) {
         updateThroughLoopDirectionUI(block, editSegments[idx + 1]?.direction || "forward");
     });
 
-    // 🟩 V0.32 編輯模式載入相片
+    // 🟩 V0.33 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -10281,7 +11059,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.32.json"; a.click();
+    a.download = "rail-log-V0.33.json"; a.click();
 }
 
 window.importData = function() {
@@ -10574,7 +11352,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.32 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.33 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function getStationLineThemeColors(stationData, fallbackCompanyId = "") {
@@ -10764,7 +11542,7 @@ const customIcon = L.divIcon({
 }
 
 // =========================================
-// 🟩 V0.32 相冊渲染邏輯
+// 🟩 V0.33 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -10945,7 +11723,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.32 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.33 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
