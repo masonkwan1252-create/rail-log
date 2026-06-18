@@ -7245,7 +7245,7 @@ function buildRoutePartBetweenPositions(latlngs, fromStation, toStation, fromPos
     const points = Array.isArray(latlngs) ? latlngs : [];
     if (points.length < 2 || !fromPos || !toPos) return [];
 
-    const snapToStation = options.snapToStation !== false;
+    const snapToStation = options.snapToStation === true;
     const fromPoint = snapToStation ? getStationLatLngPoint(fromStation) : fromPos.point;
     const toPoint = snapToStation ? getStationLatLngPoint(toStation) : toPos.point;
 
@@ -7272,7 +7272,7 @@ function buildLoopRoutePartBetweenPositions(points, fromStation, toStation, from
     const n = Array.isArray(points) ? points.length : 0;
     if (n < 2 || !fromPos || !toPos) return [];
 
-    const snapToStation = options.snapToStation !== false;
+    const snapToStation = options.snapToStation === true;
     const fromPoint = snapToStation ? getStationLatLngPoint(fromStation) : fromPos.point;
     const toPoint = snapToStation ? getStationLatLngPoint(toStation) : toPos.point;
 
@@ -8294,6 +8294,7 @@ function renderRailGeometries(selectedCategory = "all") {
         }
 
         // 2) 已乘搭 from → to highlight。
+        //    乘車 highlight 只沿 WKT / GeoJSON 本身嘅線段畫；站座標若有偏移，只取最近線段投影點，避免拉出離開數據線嘅直線。
         //    已搭乘路線入面未搭過嘅路段，只有開啟「顯示未搭乘路線」先會顯示灰線。
         //    已搭乘共同路段：只有同一共同區間內實際搭過 2 條或以上涉及路線，先會混色。
         if (riddenSegments.length === 0) return;
@@ -8310,7 +8311,7 @@ function renderRailGeometries(selectedCategory = "all") {
                 toStation,
                 seg.direction || "",
                 line,
-                { snapToStation: true }
+                { snapToStation: false }
             );
 
             if (part.length < 2) return;
