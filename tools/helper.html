@@ -1970,7 +1970,13 @@ function selectAllFieldText(el) {
   try { el.select(); } catch (_) {}
 }
 
+let pendingSelectAllField = null;
+
 function setupSelectAllInputs() {
+  document.addEventListener('mousedown', event => {
+    const el = event.target;
+    pendingSelectAllField = shouldSelectAllField(el) && document.activeElement !== el ? el : null;
+  });
   document.addEventListener('focusin', event => {
     const el = event.target;
     if (!shouldSelectAllField(el)) return;
@@ -1978,9 +1984,13 @@ function setupSelectAllInputs() {
   });
   document.addEventListener('mouseup', event => {
     const el = event.target;
-    if (!shouldSelectAllField(el)) return;
+    if (pendingSelectAllField !== el) {
+      pendingSelectAllField = null;
+      return;
+    }
     event.preventDefault();
     selectAllFieldText(el);
+    pendingSelectAllField = null;
   });
 }
 
