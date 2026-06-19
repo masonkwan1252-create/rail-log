@@ -428,6 +428,8 @@ let stationIssueFilter = 'all';
 let stationIdRepairHints = [];
 let stationIdRepairSourceMap = new WeakMap();
 let stationIssueRefreshPending = false;
+let stationFormRefreshTimer = null;
+let stationFormRefreshNeedsLineList = false;
 
 function toEditorIdToken(value) {
   return String(value || '')
@@ -1122,7 +1124,32 @@ function rememberStationIdRepairHint(oldId, newId, stationName = '', stationRef 
     existing.stationRef = stationRef || existing.stationRef;
     return;
   }
-  stationIdRepairHints.push({ oldId: fromId, newId: toId, stationName, stationRef });
+  stationIdRepairHints.push({ oldId: fromId, newId: toId, stationName, stationRef, doneRefs: [] });
+}
+
+function getStationRepairRefKey(ref) {
+  return `${ref.line?.id || ref.lineIndex}:${ref.seqIndex}`;
+}
+
+function dismissStationIdRepairRef(oldId, newId, lineIndex, seqIndex) {
+  const fromId = toEditorIdToken(oldId);
+  const toId = toEditorIdToken(newId);
+  const hint = stationIdRepairHints.find(item => item.oldId === fromId && item.newId === toId);
+  if (!hint) return;
+  const line = companyEditorData?.lines?.[lineIndex];
+  const key = `${line?.id || lineIndex}:${seqIndex}`;
+  hint.doneRefs = Array.isArray(hint.doneRefs) ? hint.doneRefs : [];
+  if (!hint.doneRefs.includes(key)) hint.doneRefs.push(key);
+  renderStationIssuePanel();
+  setCompanyEditorStatus(`已從 ID 指派清單剔走：${line?.name || line?.id || '路線'} #${seqIndex + 1}`, 'ok');
+}
+
+function dismissStationIdRepairHint(oldId, newId) {
+  const fromId = toEditorIdToken(oldId);
+  const toId = toEditorIdToken(newId);
+  stationIdRepairHints = stationIdRepairHints.filter(item => !(item.oldId === fromId && item.newId === toId));
+  renderStationIssuePanel();
+  setCompanyEditorStatus(`已完成並收起 ID 指派：${fromId} → ${toId}`, 'ok');
 }
 
 function assignSequenceRefToStation(lineIndex, seqIndex, stationId) {
@@ -1388,11 +1415,14 @@ function findStationIssueGroups() {
   stationIdRepairHints = stationIdRepairHints.filter(hint => {
     const newStation = stations.find(item => (hint.stationRef ? item.s === hint.stationRef : item.id === hint.newId) && item.id === hint.newId);
     const refs = usage.get(hint.oldId) || [];
-    return newStation && refs.length;
+    const doneRefs = new Set(Array.isArray(hint.doneRefs) ? hint.doneRefs : []);
+    const pendingRefs = refs.filter(ref => !doneRefs.has(getStationRepairRefKey(ref)));
+    return newStation && pendingRefs.length;
   });
   stationIdRepairHints.forEach(hint => {
     const newStation = stations.find(item => (hint.stationRef ? item.s === hint.stationRef : item.id === hint.newId) && item.id === hint.newId);
-    const refs = usage.get(hint.oldId) || [];
+    const doneRefs = new Set(Array.isArray(hint.doneRefs) ? hint.doneRefs : []);
+    const refs = (usage.get(hint.oldId) || []).filter(ref => !doneRefs.has(getStationRepairRefKey(ref)));
     groups.push({
       type: 'idRepair',
       count: refs.length,
@@ -1605,7 +1635,8 @@ function buildStationIdRepairRow(ref, group) {
       <div class="station-issue-row-meta">候選新站：${escapeEditorHtml(stationName)}｜${escapeEditorHtml(group.newId)}</div>
     </div>
     <div class="station-issue-row-actions">
-      <button class="ok mini-btn" onclick="assignSequenceRefToStation(${ref.lineIndex}, ${ref.seqIndex}, '${escapeEditorAttr(group.newId)}')">指派到此站</button>
+      <button class="ok mini-btn" onclick="assignSequenceRefToStation(${ref.lineIndex}, ${ref.seqIndex}, '${escapeEditorAttr(group.newId)}')">✅ 指派到此站</button>
+      <button class="ghost mini-btn" onclick="dismissStationIdRepairRef('${escapeEditorAttr(group.oldId)}', '${escapeEditorAttr(group.newId)}', ${ref.lineIndex}, ${ref.seqIndex})">✅ 完成</button>
       <button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(ref.line?.id || '')}')">跳到路線</button>
     </div>
   </div>`;
@@ -1674,7 +1705,7 @@ function renderStationIssueGroup(group, groupIndex) {
       ? group.refs.map(ref => buildStationIdRepairRow(ref, group)).join('')
       : group.items.map(item => buildStationIssueRow(item, group, groupIndex)).join('');
   const groupAction = group.type === 'idRepair'
-    ? `<div class="station-issue-brief"><button class="secondary mini-btn" onclick="assignAllSequenceRefsToStation('${escapeEditorAttr(group.oldId)}', '${escapeEditorAttr(group.newId)}')">全部指派到 ${escapeEditorHtml(group.newId)}</button></div>`
+    ? `<div class="station-issue-brief"><button class="secondary mini-btn" onclick="assignAllSequenceRefsToStation('${escapeEditorAttr(group.oldId)}', '${escapeEditorAttr(group.newId)}')">✅ 全部指派到 ${escapeEditorHtml(group.newId)}</button> <button class="ghost mini-btn" onclick="dismissStationIdRepairHint('${escapeEditorAttr(group.oldId)}', '${escapeEditorAttr(group.newId)}')">✅ 此站已完成</button></div>`
     : '';
 
   return `<div class="station-issue-card compact ${escapeEditorAttr(meta.tone)}">
@@ -1754,9 +1785,36 @@ function setupStationEditorDeferredAudit() {
   document.addEventListener('focusout', event => {
     if (!isStationEditFormField(event.target)) return;
     setTimeout(() => {
-      if (!isStationEditFormField(document.activeElement)) flushStationIssuePanelRefresh();
+      if (!isStationEditFormField(document.activeElement)) {
+        flushStationFormUiRefresh();
+        flushStationIssuePanelRefresh();
+      }
     }, 0);
   });
+}
+
+function flushStationFormUiRefresh() {
+  if (stationFormRefreshTimer) {
+    clearTimeout(stationFormRefreshTimer);
+    stationFormRefreshTimer = null;
+  }
+  renderCompanyStationList();
+  renderCompanyStationDatalist();
+  if (stationFormRefreshNeedsLineList) renderLineSequenceList();
+  stationFormRefreshNeedsLineList = false;
+  renderSelectedStationRouteRefs(getSelectedStation()?.id);
+  refreshCompanyJsonOutput();
+  if (!isStationEditFormField(document.activeElement)) flushStationIssuePanelRefresh();
+}
+
+function scheduleStationFormUiRefresh(options = {}) {
+  stationFormRefreshNeedsLineList = stationFormRefreshNeedsLineList || !!options.lineList;
+  if (stationFormRefreshTimer) clearTimeout(stationFormRefreshTimer);
+  const delay = isStationEditFormField(document.activeElement) ? 450 : 0;
+  stationFormRefreshTimer = setTimeout(() => {
+    stationFormRefreshTimer = null;
+    flushStationFormUiRefresh();
+  }, delay);
 }
 
 function renderSelectedStationRouteRefs(stationId) {
@@ -1867,6 +1925,7 @@ function renderSelectedStationForm() {
 function updateSelectedStationFromForm() {
   const st = getSelectedStation(); if (!st) return;
   const oldId = toEditorIdToken(st.id);
+  const oldName = String(st.name || '');
   const oldIdUseCount = countStationsUsingId(oldId);
   const existingRepairSourceId = stationIdRepairSourceMap.get(st);
   const companyId = toEditorIdToken(document.getElementById('editStationCompanyId').value || companyEditorData.company_id);
@@ -1897,7 +1956,8 @@ function updateSelectedStationFromForm() {
       idChangeStatus = `已修改車站 ID：${oldId} → ${st.id}，並同步更新相關路線停站。`;
     }
   }
-  renderCompanyStationList(); renderCompanyStationDatalist(); renderLineSequenceList(); scheduleStationIssuePanelRefresh(); renderSelectedStationRouteRefs(st.id); refreshCompanyJsonOutput();
+  scheduleStationIssuePanelRefresh();
+  scheduleStationFormUiRefresh({ lineList: oldId !== st.id || oldName !== st.name });
   if (idChangeStatus) setCompanyEditorStatus(idChangeStatus, idChangeStatusType);
 }
 function addCompanyStation() {
