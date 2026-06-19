@@ -241,7 +241,7 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
           <div id="companyStationList" class="editor-list"></div>
         </div>
         <div class="editor-detail-pane">
-          <div class="editor-form">
+          <div class="editor-form station-edit-form">
             <div class="input-group"><label>station id</label><div class="locked-id-row"><span id="editStationIdPrefix" class="id-prefix-chip">STN_COMPANY_</span><input id="editStationIdSuffix" placeholder="車站ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedStationFromForm()"><input id="editStationId" type="hidden"></div></div>
             <div class="input-group"><label>站名</label><input id="editStationName" oninput="updateSelectedStationFromForm()"></div>
             <div class="input-group"><label>lat</label><input id="editStationLat" oninput="updateSelectedStationFromForm()"></div>
@@ -427,6 +427,7 @@ let companyStationIssueGroups = [];
 let stationIssueFilter = 'all';
 let stationIdRepairHints = [];
 let stationIdRepairSourceMap = new WeakMap();
+let stationIssueRefreshPending = false;
 
 function toEditorIdToken(value) {
   return String(value || '')
@@ -1733,6 +1734,31 @@ function renderStationIssuePanel() {
   panel.innerHTML = summary + `<div class="station-audit-list">${visibleGroups.map((group, groupIndex) => renderStationIssueGroup(group, companyStationIssueGroups.indexOf(group))).join('')}</div>`;
 }
 
+function isStationEditFormField(el) {
+  return !!el?.closest?.('#companyEditorStations .station-edit-form');
+}
+
+function flushStationIssuePanelRefresh() {
+  if (!stationIssueRefreshPending) return;
+  stationIssueRefreshPending = false;
+  renderStationIssuePanel();
+}
+
+function scheduleStationIssuePanelRefresh() {
+  stationIssueRefreshPending = true;
+  if (isStationEditFormField(document.activeElement)) return;
+  flushStationIssuePanelRefresh();
+}
+
+function setupStationEditorDeferredAudit() {
+  document.addEventListener('focusout', event => {
+    if (!isStationEditFormField(event.target)) return;
+    setTimeout(() => {
+      if (!isStationEditFormField(document.activeElement)) flushStationIssuePanelRefresh();
+    }, 0);
+  });
+}
+
 function renderSelectedStationRouteRefs(stationId) {
   const box = document.getElementById('selectedStationRouteRefs');
   if (!box) return;
@@ -1871,7 +1897,7 @@ function updateSelectedStationFromForm() {
       idChangeStatus = `已修改車站 ID：${oldId} → ${st.id}，並同步更新相關路線停站。`;
     }
   }
-  renderCompanyStationList(); renderCompanyStationDatalist(); renderLineSequenceList(); renderStationIssuePanel(); renderSelectedStationRouteRefs(st.id); refreshCompanyJsonOutput();
+  renderCompanyStationList(); renderCompanyStationDatalist(); renderLineSequenceList(); scheduleStationIssuePanelRefresh(); renderSelectedStationRouteRefs(st.id); refreshCompanyJsonOutput();
   if (idChangeStatus) setCompanyEditorStatus(idChangeStatus, idChangeStatusType);
 }
 function addCompanyStation() {
@@ -1960,6 +1986,7 @@ function escapeEditorAttr(text) {
 
 function shouldSelectAllField(el) {
   if (!(el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement)) return false;
+  if (isStationEditFormField(el)) return false;
   if (el.disabled || el.readOnly) return false;
   const type = String(el.type || '').toLowerCase();
   return !['button','checkbox','color','file','hidden','image','radio','range','reset','submit'].includes(type) && typeof el.select === 'function';
@@ -1997,6 +2024,7 @@ function setupSelectAllInputs() {
 document.addEventListener('DOMContentLoaded', () => {
   setupGeometryAutomation();
   setupSelectAllInputs();
+  setupStationEditorDeferredAudit();
 });
 </script>
 </body>
