@@ -12,9 +12,9 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","Hiragino Sans","Noto Sans JP",sans-serif;background:radial-gradient(circle at top left,#eaf3ff 0,#f4f7f9 320px,var(--bg) 70%);color:var(--text);padding:20px}
-.container{max-width:1180px;margin:0 auto;background:rgba(255,255,255,.9);padding:24px;border-radius:18px;box-shadow:0 12px 34px rgba(15,23,42,.12);backdrop-filter:blur(10px)}
+.container{max-width:1780px;margin:0 auto;background:rgba(255,255,255,.9);padding:24px;border-radius:18px;box-shadow:0 12px 34px rgba(15,23,42,.12);backdrop-filter:blur(10px);display:grid;grid-template-columns:68px minmax(0,1fr);gap:14px;align-items:start}
 h1{color:var(--primary);font-size:21px;margin:0 0 14px}p{font-size:13px;color:var(--sub);line-height:1.6;margin:0 0 12px}code{background:rgba(26,115,232,.08);padding:1px 5px;border-radius:5px}
-.tabs{display:flex;gap:6px;margin-bottom:20px;border-bottom:2px solid #e0e7ef;flex-wrap:wrap}.tab-btn{padding:10px 18px;cursor:pointer;border:none;background:#eef2f7;border-radius:10px 10px 0 0;font-weight:800;color:#596579}.tab-btn.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff}.tab-content{display:none}.tab-content.active{display:block}
+.tabs{grid-column:1;grid-row:1 / span 20;display:flex;flex-direction:column;gap:8px;margin:0;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.82);padding:7px;position:sticky;top:20px;align-self:start;width:68px;overflow:hidden;z-index:20;transition:width .18s ease,box-shadow .18s ease}.tabs:hover,.tabs:focus-within,.tabs.expanded{width:220px;box-shadow:0 14px 32px rgba(15,23,42,.16)}.nav-toggle{width:52px;height:40px;padding:0;border-radius:10px;background:#fff;color:#334155;border:1px solid var(--border);display:grid;place-items:center;font-size:16px}.tabs.expanded .nav-toggle{background:var(--primary2);color:#fff}.tab-btn{width:100%;min-height:48px;padding:4px;cursor:pointer;border:none;background:#eef2f7;border-radius:10px;font-weight:900;color:#596579;text-align:left;display:grid;grid-template-columns:44px 1fr;gap:9px;align-items:center;white-space:nowrap;overflow:hidden}.tab-icon{width:44px;height:40px;border-radius:8px;background:rgba(255,255,255,.78);display:grid;place-items:center;position:relative;color:inherit}.tab-icon:before,.tab-icon:after{content:none!important}.tab-icon svg{width:25px;height:25px;display:block;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}.tab-icon .icon-fill{fill:currentColor;stroke:none}.tab-icon .icon-text{fill:currentColor;stroke:none;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:8px;font-weight:900}.tab-label{min-width:0;overflow:hidden;text-overflow:ellipsis;opacity:0;transform:translateX(-6px);transition:.15s ease}.tabs:hover .tab-label,.tabs:focus-within .tab-label,.tabs.expanded .tab-label{opacity:1;transform:none}.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-btn{grid-template-columns:44px 0}.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-label{width:0}.tab-btn.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff;box-shadow:0 8px 18px rgba(26,115,232,.22)}.tab-content{display:none;grid-column:2;min-width:0}.tab-content.active{display:block}.helper-output{grid-column:2}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 4px 16px rgba(15,23,42,.06)}
 .config-row{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:15px;background:var(--soft);padding:15px;border-radius:10px;margin-bottom:15px}.input-group{display:flex;flex-direction:column;gap:6px}.input-group label{font-size:12px;font-weight:800;color:var(--primary);letter-spacing:.02em}
 input,textarea{padding:10px;border:1px solid #cbd5e1;border-radius:10px;font-size:14px;background:#fff;color:var(--text);outline:none}input:focus,textarea:focus{border-color:var(--primary2);box-shadow:0 0 0 3px rgba(10,132,255,.12)}
@@ -25,41 +25,25 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
 /* Company JSON Editor */
 .editor-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#16213e,#263b77 55%,#5d7cff);color:#fff;border:0;padding:20px}.editor-hero h1{color:#fff;font-size:24px;margin:0 0 8px}.editor-hero p{color:rgba(255,255,255,.8)}
 .editor-toolbar{display:grid;grid-template-columns:1.2fr 1fr auto;gap:12px;align-items:end}.editor-summary{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.editor-chip{font-size:12px;font-weight:900;background:#eef6ff;color:#0a66c2;border-radius:999px;padding:6px 10px;border:1px solid #d8e9ff}.editor-chip.ok{background:#e9f8ee;color:#16883a}.editor-chip.warn{background:#fff6df;color:#b77900}
-.editor-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.editor-sidebar{display:flex;flex-direction:column;gap:10px}.editor-list{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;max-height:420px;overflow-y:auto}.editor-list button{width:100%;display:block;background:transparent;color:var(--text);border-radius:0;text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-weight:750}.editor-list button:hover{transform:none;background:#eef6ff}.editor-list button.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff}.editor-tabs{display:flex;gap:6px;flex-wrap:wrap}.editor-tabs button{background:#eef2f7;color:#334155}.editor-tabs button.active{background:var(--primary2);color:#fff}.editor-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-form .wide{grid-column:1/-1}.editor-form textarea{min-height:130px}.locked-id-row{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center}.id-prefix-chip{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:900;color:#475569;background:#eef2f7;border:1px solid #cbd5e1;border-radius:10px;padding:10px;white-space:nowrap}.locked-id-row input{text-transform:uppercase;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace}.seq-list{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto;border:1px solid var(--border);border-radius:12px;padding:8px;background:#f8fafc}.seq-item{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:6px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;padding:6px;transition:.15s}.seq-item[draggable="true"]{cursor:grab}.seq-item.dragging{opacity:.45;transform:scale(.99);border-color:var(--primary2);box-shadow:0 6px 18px rgba(10,132,255,.18)}.seq-item.drag-over{border-color:var(--primary2);background:#eef6ff;box-shadow:inset 4px 0 0 var(--primary2)}.seq-drag-handle{font-size:15px;color:#94a3b8;cursor:grab;user-select:none;padding:0 3px}.seq-no{font-size:11px;color:var(--sub);font-weight:900}.seq-name{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.seq-item button{padding:6px 8px;border-radius:8px}.editor-output{min-height:260px;background:#101827!important;color:#dbeafe!important}.editor-status{font-size:13px;color:var(--sub);font-weight:800;margin-top:8px}.mini-btn{padding:8px 10px;font-size:12px}.danger-text{color:#ff3b30}.station-issue-panel{display:flex;flex-direction:column;gap:8px;margin:10px 0}.station-issue-card{border:1px solid #fecaca;background:#fff1f2;color:#991b1b;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.station-issue-card.coord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-title{font-weight:900;margin-bottom:6px}.station-issue-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.station-mini-card{border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.72);border-radius:10px;padding:7px;min-width:190px}.station-mini-card button{margin-top:6px}.station-route-refs{margin:10px 0;padding:10px;border:1px dashed var(--border);border-radius:12px;background:#f8fafc;font-size:12px;color:var(--sub);line-height:1.55}.station-route-refs strong{color:var(--primary)}.editor-raw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-raw-grid textarea{min-height:320px}
-@media(max-width:860px){.editor-toolbar,.editor-layout,.editor-form,.editor-raw-grid{grid-template-columns:1fr}.editor-list{max-height:260px}}
-@media(prefers-color-scheme:dark){.station-issue-card{background:#3a171a;color:#fecaca;border-color:#7f1d1d}.station-issue-card.coord{background:#33260b;color:#fde68a;border-color:#92400e}.station-mini-card{background:rgba(31,31,34,.75);border-color:#38383a}.station-route-refs{background:#151515}.editor-list,.seq-item{background:#1f1f22}.seq-list{background:#151515}.editor-list button:hover{background:#14263a}.editor-chip{background:#14263a;color:#9fd3ff}.id-prefix-chip{background:#2c2c2e;color:#d1d5db;border-color:#38383a}}
+.editor-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.editor-sidebar{display:flex;flex-direction:column;gap:10px}.editor-list{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;max-height:420px;overflow-y:auto}.editor-list button{width:100%;display:block;background:transparent;color:var(--text);border-radius:0;text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-weight:750}.editor-list button:hover{transform:none;background:#eef6ff}.editor-list button.has-issue{background:#fffbeb;box-shadow:inset 4px 0 0 var(--warn)}.editor-list button.has-issue:hover{background:#fff4c2}.editor-list button.is-complete{background:#f0fdf4;box-shadow:inset 4px 0 0 var(--ok)}.editor-list button.is-complete:hover{background:#dcfce7}.editor-list button.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff}.editor-list button.has-issue.active{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#111827}.editor-list button.is-complete.active{background:linear-gradient(135deg,#22c55e,#86efac);color:#052e16}.line-name-row{display:flex;gap:7px;align-items:center;justify-content:space-between}.line-list-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.line-alert-icon,.line-ok-icon{font-size:15px;line-height:1;flex:0 0 auto}.editor-tabs{display:flex;gap:6px;flex-wrap:wrap}.editor-tabs button{background:#eef2f7;color:#334155}.editor-tabs button.active{background:var(--primary2);color:#fff}.editor-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-form .wide{grid-column:1/-1}.editor-form textarea{min-height:130px}.locked-id-row{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center}.id-prefix-chip{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:900;color:#475569;background:#eef2f7;border:1px solid #cbd5e1;border-radius:10px;padding:10px;white-space:nowrap}.locked-id-row input{text-transform:uppercase;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace}.seq-list{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto;border:1px solid var(--border);border-radius:12px;padding:8px;background:#f8fafc}.seq-item{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:6px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;padding:6px;transition:.15s}.seq-item[draggable="true"]{cursor:grab}.seq-item.dragging{opacity:.45;transform:scale(.99);border-color:var(--primary2);box-shadow:0 6px 18px rgba(10,132,255,.18)}.seq-item.drag-over{border-color:var(--primary2);background:#eef6ff;box-shadow:inset 4px 0 0 var(--primary2)}.seq-drag-handle{font-size:15px;color:#94a3b8;cursor:grab;user-select:none;padding:0 3px}.seq-no{font-size:11px;color:var(--sub);font-weight:900}.seq-name{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.seq-item button{padding:6px 8px;border-radius:8px}.editor-output{min-height:260px;background:#101827!important;color:#dbeafe!important}.editor-status{font-size:13px;color:var(--sub);font-weight:800;margin-top:8px}.mini-btn{padding:8px 10px;font-size:12px}.danger-text{color:#ff3b30}.station-issue-panel{display:flex;flex-direction:column;gap:8px;margin:10px 0}.station-issue-card{border:1px solid #fecaca;background:#fff1f2;color:#991b1b;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.station-issue-card.coord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-title{font-weight:900;margin-bottom:6px}.station-issue-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.station-mini-card{border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.72);border-radius:10px;padding:7px;min-width:190px}.station-mini-card button{margin-top:6px}.station-route-refs{margin:10px 0;padding:10px;border:1px dashed var(--border);border-radius:12px;background:#f8fafc;font-size:12px;color:var(--sub);line-height:1.55}.station-route-refs strong{color:var(--primary)}.editor-raw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-raw-grid textarea{min-height:320px}
+#json-editor-tab>.card{margin-bottom:16px}.editor-toolbar{grid-template-columns:minmax(280px,1.3fr) minmax(220px,.8fr) auto}.editor-layout{grid-template-columns:minmax(240px,300px) minmax(0,1fr);gap:18px;align-items:start}.editor-sidebar{position:sticky;top:12px}.editor-list{max-height:62vh}.editor-detail-pane{min-width:0}.line-workbench{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:start}.line-form-panel,.sequence-panel{min-width:0;border:1px solid var(--border);border-radius:14px;background:linear-gradient(180deg,#fbfdff,#f8fafc);padding:14px}.sequence-panel .row{margin-top:0}.seq-list{max-height:50vh}.seq-item.missing{border-color:#fecaca;background:#fff1f2}.seq-item.duplicate{border-color:#fde68a;background:#fffbeb}.seq-item .seq-name{min-width:0;text-align:left}.seq-jump{background:transparent;color:var(--text);font-weight:500;padding:6px 4px;border-radius:8px}.seq-jump:hover{background:#eef6ff;filter:none;transform:none}.seq-jump.missing{color:#b91c1c}.line-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}.overview-tile{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px;min-width:0}.overview-tile.ok{border-color:#bbf7d0;background:#f0fdf4}.overview-tile.warn{border-color:#fde68a;background:#fffbeb}.overview-label{font-size:11px;font-weight:900;color:var(--sub);letter-spacing:.04em;text-transform:uppercase}.overview-value{font-size:18px;font-weight:950;margin-top:3px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.overview-sub{font-size:12px;color:var(--sub);line-height:1.45;margin-top:4px}.line-debug-panel,.station-issue-panel{margin-top:12px}.debug-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:8px}.debug-pill{border:1px solid var(--border);background:#fff;border-radius:12px;padding:9px 10px;font-size:12px;color:var(--sub);font-weight:850}.debug-pill strong{display:block;font-size:18px;color:var(--text);line-height:1.1}.debug-pill.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.debug-pill.warn{border-color:#fde68a;background:#fffbeb;color:#92400e}.debug-pill.danger{border-color:#fecaca;background:#fff1f2;color:#991b1b}.line-debug-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}.line-debug-card,.station-issue-card{box-shadow:0 3px 12px rgba(15,23,42,.04)}.line-debug-card{border:1px solid #dbeafe;background:#f8fbff;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.line-debug-card.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.line-debug-card.warn{border-color:#fde68a;background:#fffbeb;color:#92400e}.line-debug-card.danger{border-color:#fecaca;background:#fff1f2;color:#991b1b}.issue-token-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.issue-token{display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:rgba(255,255,255,.72);padding:4px 8px;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}.issue-token button{padding:3px 6px;border-radius:999px}.station-issue-card.unused{border-color:#c7d2fe;background:#eef2ff;color:#3730a3}.station-issue-card.missing,.station-issue-card.id,.station-issue-card.basic{border-color:#fecaca;background:#fff1f2;color:#991b1b}.station-issue-card.name,.station-issue-card.badCoord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-card.details-card{padding:0;overflow:hidden}.station-issue-card details{padding:10px}.station-issue-card summary{cursor:pointer;font-weight:900}.station-issue-note{font-size:12px;line-height:1.55;margin:6px 0;color:inherit}.station-issue-actions.scrollable{max-height:340px;overflow:auto;padding-right:4px}.station-mini-card{flex:1 1 220px}.station-mini-card.unused{border-color:#c7d2fe}.station-mini-card.missing{border-color:#fecaca}.station-mini-card code{word-break:break-all}.station-route-refs .mini-btn{margin:3px}.audit-empty{border:1px solid #bbf7d0;background:#f0fdf4;color:#166534;border-radius:12px;padding:10px;font-size:12px;font-weight:850}
+@media(max-width:1180px){.editor-layout{grid-template-columns:1fr}.line-overview,.debug-summary-grid{grid-template-columns:1fr 1fr}.editor-sidebar{position:static}.editor-list{max-height:260px}}
+@media(max-width:860px){.editor-toolbar,.editor-layout,.editor-form,.editor-raw-grid,.line-workbench,.line-overview,.debug-summary-grid{grid-template-columns:1fr}.editor-list{max-height:260px}.sequence-panel{padding:10px}}
+@media(prefers-color-scheme:dark){.station-issue-card{background:#3a171a;color:#fecaca;border-color:#7f1d1d}.station-issue-card.coord{background:#33260b;color:#fde68a;border-color:#92400e}.station-mini-card{background:rgba(31,31,34,.75);border-color:#38383a}.station-route-refs{background:#151515}.editor-list,.seq-item{background:#1f1f22}.seq-list{background:#151515}.editor-list button:hover{background:#14263a}.editor-list button.is-complete{background:#10251a;color:#bbf7d0}.editor-list button.is-complete:hover{background:#12351f}.editor-list button.is-complete.active{background:linear-gradient(135deg,#15803d,#22c55e);color:#ecfdf5}.editor-chip{background:#14263a;color:#9fd3ff}.id-prefix-chip{background:#2c2c2e;color:#d1d5db;border-color:#38383a}}
+@media(prefers-color-scheme:dark){.tabs,.line-form-panel,.sequence-panel,.overview-tile,.debug-pill{background:#1f1f22;border-color:#38383a}.nav-toggle{background:#2c2c2e;color:#eee;border-color:#38383a}.seq-jump{color:#f5f5f7}.overview-tile.ok,.debug-pill.ok,.line-debug-card.ok,.audit-empty{background:#10251a;color:#bbf7d0;border-color:#166534}.overview-tile.warn,.debug-pill.warn,.line-debug-card.warn{background:#33260b;color:#fde68a;border-color:#92400e}.debug-pill.danger,.line-debug-card.danger{background:#3a171a;color:#fecaca;border-color:#7f1d1d}.line-debug-card{background:#151515;border-color:#38383a}}
 
-@media(max-width:860px){.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.container{padding:16px}body{padding:12px}.geo-hero h1{font-size:21px}}
+@media(max-width:860px){.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.container{display:block;padding:16px}.tabs,.tabs:hover,.tabs:focus-within,.tabs.expanded{position:sticky;top:8px;flex-direction:row;width:auto;margin-bottom:20px;overflow-x:auto;box-shadow:0 8px 22px rgba(15,23,42,.12)}.nav-toggle{display:none}.tab-btn,.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-btn{width:auto;flex:1 0 180px;grid-template-columns:44px 1fr;text-align:left;justify-items:start}.tab-label,.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-label{width:auto;opacity:1;transform:none}body{padding:12px}.geo-hero h1{font-size:21px}}
 @media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1c1c1e;--text:#f5f5f7;--sub:#aaa;--border:#38383a;--soft:#182235}.container{background:rgba(28,28,30,.92)}.config-row{background:#182235}.hint-box,.geo-toggle,.geo-statusbar{background:#151515}.drop-zone{background:#151515}.step-card{background:#1f1f22}input,textarea,.geo-card textarea{background:#111;color:#f5f5f7;border-color:#38383a}.metric{background:#111;color:#cbd5e1}.pill{background:#14263a;color:#9fd3ff}button.ghost{background:#2c2c2e;color:#eee}}
-
-
-/* ===== Helper v4 spacious studio polish ===== */
-:root{
-  --studioShadow:0 18px 42px rgba(15,23,42,.10);
-  --studioSoftBlue:#eef7ff;
-  --stationMerge:#16a34a;
-}
-body{padding:28px;background:
-  radial-gradient(circle at 0% 0%,rgba(10,132,255,.18),transparent 320px),
-  radial-gradient(circle at 100% 4%,rgba(52,199,89,.12),transparent 340px),
-  linear-gradient(180deg,#f7fbff,var(--bg));}
-.container{max-width:1480px;padding:30px;border-radius:26px;box-shadow:var(--studioShadow);}
-.tabs{position:sticky;top:10px;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);padding:10px 10px 0;border-radius:20px 20px 0 0;margin:-6px 0 26px;border-bottom:1px solid rgba(148,163,184,.45)}
-.tab-btn{border-radius:14px 14px 0 0;padding:12px 20px;letter-spacing:.02em}.tab-btn.active{box-shadow:0 10px 22px rgba(10,132,255,.22)}
-.card{padding:22px;border-radius:20px;margin-bottom:20px;box-shadow:0 12px 32px rgba(15,23,42,.075)}
-.editor-hero,.geo-hero{padding:28px;border-radius:24px}.editor-hero h1,.geo-hero h1{font-size:28px}.editor-toolbar{grid-template-columns:1.25fr 1fr auto;gap:16px}.editor-summary{gap:10px;margin-top:16px}.editor-chip{padding:8px 12px;border-radius:999px}.editor-layout{grid-template-columns:minmax(320px,360px) minmax(0,1fr);gap:22px}.editor-sidebar{gap:12px}.editor-list{border-radius:16px;max-height:560px}.editor-list button{padding:13px 14px;border-left:4px solid transparent}.editor-list button.active{border-left-color:#63bd0f}.editor-form{gap:16px}.row{gap:10px;margin:14px 0}input,textarea{border-radius:12px;padding:12px 13px}.locked-id-row{background:linear-gradient(180deg,#f8fbff,#eef6ff);border:1px solid #dbeafe;border-radius:14px;padding:5px}.locked-id-row input{border:0;background:transparent;box-shadow:none!important}.id-prefix-chip{background:#0f172a;color:#dff4ff;border-color:#1e293b;border-radius:10px}.seq-list{max-height:440px;padding:12px;border-radius:16px;gap:8px}.seq-item{padding:10px;border-radius:14px;grid-template-columns:24px 34px minmax(0,1fr) auto auto auto}.seq-item:hover{background:#f8fbff;border-color:#93c5fd}.station-issue-panel{gap:14px;margin:16px 0}.station-issue-card{position:relative;overflow:hidden;border-radius:18px;padding:16px 16px 16px 20px;box-shadow:0 12px 28px rgba(153,27,27,.08)}.station-issue-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#ef4444}.station-issue-card.coord:before{background:#f59e0b}.station-issue-card.id:before{background:#7c3aed}.station-issue-title{font-size:14px;margin-bottom:8px}.station-issue-actions{gap:12px;margin-top:12px}.station-mini-card{min-width:260px;flex:1;background:rgba(255,255,255,.88);border-radius:16px;padding:13px;box-shadow:0 8px 20px rgba(15,23,42,.07)}.station-mini-card strong{font-size:15px}.station-mini-id{display:inline-block;margin:6px 0;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;background:#e0f2fe;color:#075985;border-radius:999px;padding:4px 8px}.station-mini-meta{font-size:12px;color:#64748b;line-height:1.6}.station-mini-routes{font-size:12px;color:#334155;margin-top:5px}.merge-main-btn{background:linear-gradient(135deg,#16a34a,#22c55e)!important}.edit-station-btn,.route-ref-btn{background:#eef2f7!important;color:#334155!important}.station-route-refs{background:linear-gradient(180deg,#f8fafc,#eef6ff);border-style:solid;padding:13px;border-radius:16px}.station-route-refs button{margin:3px}.editor-raw-grid{gap:18px}.editor-raw-grid textarea{min-height:460px}.helper-output{border-radius:18px;min-height:210px}
-@media(max-width:900px){body{padding:12px}.container{padding:16px;border-radius:18px}.tabs{top:0;margin:0 0 16px}.editor-layout,.editor-toolbar,.editor-form,.editor-raw-grid,.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.editor-list{max-height:280px}.station-mini-card{min-width:100%}}
-@media(prefers-color-scheme:dark){.tabs{background:rgba(28,28,30,.82)}.locked-id-row{background:#111827;border-color:#374151}.station-mini-card{background:rgba(31,31,34,.88)}.station-mini-id{background:#082f49;color:#bae6fd}.station-mini-meta,.station-mini-routes{color:#cbd5e1}.edit-station-btn,.route-ref-btn{background:#2c2c2e!important;color:#eee!important}.station-route-refs{background:#151515}}
-
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="tabs">
-    <button class="tab-btn active" onclick="openTab(event,'stn-tab')">車站生成器</button>
-    <button class="tab-btn" onclick="openTab(event,'trn-tab')">車型生成器</button>
-    <button class="tab-btn" onclick="openTab(event,'geo-tab')">Rail Geometry Converter</button>
-    <button class="tab-btn" onclick="openTab(event,'json-editor-tab')">公司 JSON 編輯器</button>
+  <div class="tabs" id="mainToolTabs">
+    <button class="nav-toggle" type="button" onclick="toggleToolNav()" aria-label="展開工具選單" aria-expanded="false">☰</button>
+    <button class="tab-btn active" title="車站生成器" aria-label="車站生成器" onclick="openTab(event,'stn-tab')"><span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v10H6z"></path><path d="M9 8h6"></path><path d="M12 14v6"></path><path d="M8 20h8"></path></svg></span><span class="tab-label">車站生成器</span></button>
+    <button class="tab-btn" title="車型生成器" aria-label="車型生成器" onclick="openTab(event,'trn-tab')"><span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"></path><path d="M8 7h8"></path><path d="M7 18l-2 3"></path><path d="M17 18l2 3"></path><circle class="icon-fill" cx="8" cy="14" r="1.4"></circle><circle class="icon-fill" cx="16" cy="14" r="1.4"></circle></svg></span><span class="tab-label">車型生成器</span></button>
+    <button class="tab-btn" title="Rail Geometry Converter" aria-label="Rail Geometry Converter" onclick="openTab(event,'geo-tab')"><span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17c4-10 8 2 12-8 1-2 2-3 4-3"></path><circle cx="4" cy="17" r="2"></circle><circle cx="13" cy="12" r="2"></circle><circle cx="20" cy="6" r="2"></circle></svg></span><span class="tab-label">Rail Geometry Converter</span></button>
+    <button class="tab-btn" title="公司 JSON 編輯器" aria-label="公司 JSON 編輯器" onclick="openTab(event,'json-editor-tab')"><span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h4"></path><text class="icon-text" x="12" y="17" text-anchor="middle">{}</text></svg></span><span class="tab-label">公司 JSON 編輯器</span></button>
   </div>
 
   <div id="stn-tab" class="tab-content active">
@@ -196,7 +180,10 @@ body{padding:28px;background:
           <button class="ok" onclick="addCompanyLine()">+ 新增路線</button>
           <div id="companyLineList" class="editor-list"></div>
         </div>
-        <div>
+        <div class="editor-detail-pane">
+          <div id="lineOverviewPanel" class="line-overview"></div>
+          <div class="line-workbench">
+            <div class="line-form-panel">
           <div class="editor-form">
             <div class="input-group"><label>line id</label><div class="locked-id-row"><span id="editLineIdPrefix" class="id-prefix-chip">COMPANY_</span><input id="editLineIdSuffix" placeholder="路線ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedLineFromForm()"><input id="editLineId" type="hidden"></div></div>
             <div class="input-group"><label>路線名</label><input id="editLineName" oninput="updateSelectedLineFromForm()"></div>
@@ -223,6 +210,10 @@ body{padding:28px;background:
             </div>
             <div class="input-group wide"><label>geometry_wkt</label><textarea id="editLineGeometry" oninput="updateSelectedLineFromForm()" placeholder="MULTILINESTRING(...)"></textarea></div>
           </div>
+            </div>
+            <div id="lineDebugPanel" class="line-debug-panel"></div>
+            <div class="sequence-panel">
+              <div class="title"><strong>路線停站</strong><span class="small">按車站名可直接跳去修改頁</span></div>
           <div class="row">
             <input id="sequenceStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px">
             <button class="secondary mini-btn" onclick="addStationToSelectedLineSequence()">加入停車站</button>
@@ -231,6 +222,8 @@ body{padding:28px;background:
           <datalist id="companyStationIdList"></datalist>
           <div class="small" style="margin:4px 0 8px;">提示：可直接拖放停車站改變次序；↑↓ 按鈕仍然保留。</div>
           <div id="lineSequenceList" class="seq-list"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -244,7 +237,7 @@ body{padding:28px;background:
           <input id="stationSearchInput" placeholder="搜尋車站名 / ID" oninput="renderCompanyStationList()">
           <div id="companyStationList" class="editor-list"></div>
         </div>
-        <div>
+        <div class="editor-detail-pane">
           <div class="editor-form">
             <div class="input-group"><label>station id</label><div class="locked-id-row"><span id="editStationIdPrefix" class="id-prefix-chip">STN_COMPANY_</span><input id="editStationIdSuffix" placeholder="車站ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedStationFromForm()"><input id="editStationId" type="hidden"></div></div>
             <div class="input-group"><label>站名</label><input id="editStationName" oninput="updateSelectedStationFromForm()"></div>
@@ -266,7 +259,7 @@ body{padding:28px;background:
           <button class="ok" onclick="addCompanyTrain()">+ 新增車型</button>
           <div id="companyTrainList" class="editor-list"></div>
         </div>
-        <div>
+        <div class="editor-detail-pane">
           <div class="editor-form">
             <div class="input-group"><label>train id</label><div class="locked-id-row"><span id="editTrainIdPrefix" class="id-prefix-chip">TRN_COMPANY_</span><input id="editTrainIdSuffix" placeholder="車型ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedTrainFromForm()"><input id="editTrainId" type="hidden"></div></div>
             <div class="input-group"><label>車型名</label><input id="editTrainName" oninput="updateSelectedTrainFromForm()"></div>
@@ -300,7 +293,25 @@ body{padding:28px;background:
 </div>
 
 <script>
-function openTab(evt, tabId){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById(tabId).classList.add('active');evt.currentTarget.classList.add('active');}
+function toggleToolNav(){
+  const tabs = document.getElementById('mainToolTabs');
+  if (!tabs) return;
+  tabs.classList.toggle('expanded');
+  const btn = tabs.querySelector('.nav-toggle');
+  if (btn) btn.setAttribute('aria-expanded', String(tabs.classList.contains('expanded')));
+}
+function openTab(evt, tabId){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  evt.currentTarget.classList.add('active');
+  const tabs = document.getElementById('mainToolTabs');
+  if (tabs) {
+    tabs.classList.remove('expanded');
+    const btn = tabs.querySelector('.nav-toggle');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}
 function processStn(){const company=document.getElementById('stn-company').value.trim().toUpperCase();const name=document.getElementById('stn-name').value.trim();const routeId=document.getElementById('stn-id').value.trim().toUpperCase();const input=document.getElementById('stn-input').value;if(!company||!name||!routeId){showStatus('⚠️ 欄位未填齊！','#ea4335');return;}let normalized=input.normalize('NFD').replace(/[^\u0000-\u007F]/g,'');let cleaned=normalized.replace(/[\u4e00-\u9fa5]|[\u3040-\u309F]|[\u30A0-\u30FF]|駅|停留場|（.*?）|\(.*?\)|[\.\+\|▲▼●◇■□↓→キロ]/g,' ');let rawList=cleaned.split(/[\s\n,]+/).map(s=>s.trim().toUpperCase()).filter(s=>s!==''&&s.length>1&&!/^\d+$/.test(s));let finalList=[];for(let i=0;i<rawList.length;i++){if(rawList[i]==='JR'&&i+1<rawList.length){finalList.push(`JR_${rawList[i+1]}`);i++;}else if(rawList[i]!=='JR'){finalList.push(rawList[i]);}}const res={id:`${company}_${routeId}`,name:name,sequence:finalList.map(s=>`STN_${company}_${s}`)};finalizeOutput(JSON.stringify(res,null,2),'stn-input');}
 function processTrn(){const comp=document.getElementById('trn-company').value.trim().toUpperCase();const input=document.getElementById('trn-input').value.trim();if(!comp){showStatus('⚠️ 請先輸入公司 ID！','#ea4335');return;}if(!input)return;const lines=input.split('\n');let results=[];lines.forEach(line=>{const parts=line.trim().split(/\s+/);if(parts.length>=2){const trainName=parts[0];const code=parts[1].toUpperCase();results.push(`{ "id":"TRN_${comp}_${code}","company_id":"${comp}","name":"${trainName}","variants":[] },`);}});if(results.length>0){finalizeOutput(results.join('\n'),'trn-input');}else{showStatus('⚠️ 格式錯誤！請確保每行有：車型 代碼','#ea4335');}}
 function finalizeOutput(content,inputId){const output=document.getElementById('code-output');output.value=content;output.select();document.execCommand('copy');document.getElementById(inputId).value='';showStatus('🚀 已生成並自動複製！','#34a853');}
@@ -719,7 +730,18 @@ function renderCompanyLineList() {
   const box = document.getElementById('companyLineList');
   if (!box) return;
   const lines = companyEditorData?.lines || [];
-  box.innerHTML = lines.map((line, i) => `<button class="${i === companyEditorCurrent.line ? 'active' : ''}" onclick="selectCompanyLine(${i})">${escapeEditorHtml(line.name || line.id || '(未命名路線)')}<br><span class="small">${escapeEditorHtml(line.id || '')}</span></button>`).join('') || '<div class="status">未有路線</div>';
+  box.innerHTML = lines.map((line, i) => {
+    const issueCount = getLineIssueCount(line);
+    const isComplete = !issueCount && isLineComplete(line);
+    const classes = [
+      i === companyEditorCurrent.line ? 'active' : '',
+      issueCount ? 'has-issue' : '',
+      isComplete ? 'is-complete' : ''
+    ].filter(Boolean).join(' ');
+    const alertIcon = issueCount ? `<span class="line-alert-icon" title="此路線有 ${issueCount} 項需檢查" aria-label="警告">⚠️</span>` : '';
+    const okIcon = isComplete ? `<span class="line-ok-icon" title="此路線已完成基本資料" aria-label="完成">✅</span>` : '';
+    return `<button class="${classes}" onclick="selectCompanyLine(${i})"><span class="line-name-row"><span class="line-list-name">${escapeEditorHtml(line.name || line.id || '(未命名路線)')}</span>${alertIcon}${okIcon}</span><br><span class="small">${escapeEditorHtml(line.id || '')}</span></button>`;
+  }).join('') || '<div class="status">未有路線</div>';
 }
 
 function selectCompanyLine(index) { companyEditorCurrent.line = index; renderCompanyLineList(); renderSelectedLineForm(); }
@@ -793,20 +815,44 @@ function updateSelectedLineFromForm() {
     delete line.direction_labels;
   }
 
-  renderCompanyLineList(); refreshCompanyJsonOutput(); updateCompanyEditorBadges();
+  renderCompanyLineList();
+  renderSelectedLineOverview();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+  renderStationIssuePanel();
 }
 
 function renderLineSequenceList() {
   const box = document.getElementById('lineSequenceList');
   const line = getSelectedLine();
-  if (!box || !line) { if (box) box.innerHTML = '<div class="status">請先選擇路線</div>'; return; }
+  if (!box || !line) {
+    if (box) box.innerHTML = '<div class="status">請先選擇路線</div>';
+    renderSelectedLineOverview();
+    renderLineDebugPanel();
+    return;
+  }
   line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
-  const stMap = new Map((companyEditorData?.stations || []).map(s => [s.id, s]));
-  box.innerHTML = line.sequence.map((stId, i) => {
+  const stMap = new Map((companyEditorData?.stations || []).map(s => [toEditorIdToken(s.id), s]));
+  const idCounts = new Map();
+  line.sequence.forEach(rawId => {
+    const id = toEditorIdToken(rawId);
+    if (!id) return;
+    idCounts.set(id, (idCounts.get(id) || 0) + 1);
+  });
+  box.innerHTML = line.sequence.map((rawStId, i) => {
+    const stId = toEditorIdToken(rawStId);
     const st = stMap.get(stId);
-    const label = st ? `${st.name}｜${st.id}` : stId;
-    return `<div class="seq-item" draggable="true" data-seq-index="${i}" ondragstart="handleSequenceDragStart(event, ${i})" ondragover="handleSequenceDragOver(event, ${i})" ondragleave="handleSequenceDragLeave(event)" ondrop="handleSequenceDrop(event, ${i})" ondragend="handleSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${i+1}</span><span class="seq-name" title="${escapeEditorHtml(label)}">${escapeEditorHtml(label)}</span><button class="ghost mini-btn" onclick="moveSequenceStation(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveSequenceStation(${i},1)">↓</button><button class="danger mini-btn" onclick="removeSequenceStation(${i})">✕</button></div>`;
+    const label = getStationDisplay(st, stId || rawStId || '(空白 ID)');
+    const issueClass = !stId || !st ? 'missing' : (idCounts.get(stId) > 1 ? 'duplicate' : '');
+    const stationButton = stId
+      ? `<button type="button" class="seq-name seq-jump ${!st ? 'missing' : ''}" title="${escapeEditorAttr(label)}" onclick="${st ? `selectCompanyStationById('${escapeEditorAttr(stId)}')` : `focusMissingStationId('${escapeEditorAttr(stId)}')`}">${escapeEditorHtml(label)}</button>`
+      : `<span class="seq-name danger-text">(空白 ID)</span>`;
+    return `<div class="seq-item ${issueClass}" draggable="true" data-seq-index="${i}" ondragstart="handleSequenceDragStart(event, ${i})" ondragover="handleSequenceDragOver(event, ${i})" ondragleave="handleSequenceDragLeave(event)" ondrop="handleSequenceDrop(event, ${i})" ondragend="handleSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${i+1}</span>${stationButton}<button class="ghost mini-btn" onclick="moveSequenceStation(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveSequenceStation(${i},1)">↓</button><button class="danger mini-btn" onclick="removeSequenceStation(${i})">✕</button></div>`;
   }).join('') || '<div class="status">未有停車站 sequence</div>';
+  renderCompanyLineList();
+  renderSelectedLineOverview();
+  renderLineDebugPanel();
 }
 
 let companySequenceDragIndex = null;
@@ -865,6 +911,7 @@ function reorderSequenceStation(fromIndex, toIndex) {
   const [moved] = line.sequence.splice(fromIndex, 1);
   line.sequence.splice(toIndex, 0, moved);
   renderLineSequenceList();
+  renderStationIssuePanel();
   refreshCompanyJsonOutput();
 }
 
@@ -877,7 +924,7 @@ function addStationToSelectedLineSequence() {
   line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
   line.sequence.push(id);
   document.getElementById('sequenceStationPicker').value = '';
-  renderLineSequenceList(); refreshCompanyJsonOutput();
+  renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
 }
 
 function moveSequenceStation(index, delta) {
@@ -885,9 +932,9 @@ function moveSequenceStation(index, delta) {
   const next = index + delta;
   if (next < 0 || next >= line.sequence.length) return;
   [line.sequence[index], line.sequence[next]] = [line.sequence[next], line.sequence[index]];
-  renderLineSequenceList(); refreshCompanyJsonOutput();
+  renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
 }
-function removeSequenceStation(index) { const line = getSelectedLine(); if (!line?.sequence) return; line.sequence.splice(index,1); renderLineSequenceList(); refreshCompanyJsonOutput(); }
+function removeSequenceStation(index) { const line = getSelectedLine(); if (!line?.sequence) return; line.sequence.splice(index,1); renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput(); }
 
 function addCompanyLine() {
   if (!companyEditorData) return;
@@ -920,12 +967,7 @@ function renderCompanyStationDatalist() {
 
 
 function normalizeStationCompareName(name) {
-  return String(name || '')
-    .normalize('NFKC')
-    .trim()
-    .replace(/[\s\u3000]+/g, '')
-    .replace(/[・･·\.\-ー－（）()\[\]【】「」『』]/g, '')
-    .toLowerCase();
+  return String(name || '').normalize('NFKC').trim().replace(/\s+/g, '').toLowerCase();
 }
 
 function normalizeStationCoordValue(value) {
@@ -933,106 +975,374 @@ function normalizeStationCoordValue(value) {
   return Number.isFinite(n) ? n.toFixed(6) : '';
 }
 
-function getStationIssueKey(station, type) {
-  if (!station) return '';
-  if (type === 'id') return toEditorIdToken(station.id);
-  if (type === 'coord') {
-    const lat = normalizeStationCoordValue(station.lat);
-    const lng = normalizeStationCoordValue(station.lng);
-    return lat && lng ? `${lat},${lng}` : '';
+function getStationEntries() {
+  return (companyEditorData?.stations || []).map((s, i) => ({
+    s,
+    i,
+    id: toEditorIdToken(s.id)
+  }));
+}
+
+function getStationLookup() {
+  const map = new Map();
+  getStationEntries().forEach(item => {
+    if (item.id && !map.has(item.id)) map.set(item.id, item);
+  });
+  return map;
+}
+
+function getStationUsageMap() {
+  const usage = new Map();
+  (companyEditorData?.lines || []).forEach((line, lineIndex) => {
+    const sequence = Array.isArray(line.sequence) ? line.sequence : [];
+    sequence.forEach((rawId, seqIndex) => {
+      const id = toEditorIdToken(rawId);
+      if (!id) return;
+      if (!usage.has(id)) usage.set(id, []);
+      usage.get(id).push({ line, lineIndex, seqIndex });
+    });
+  });
+  return usage;
+}
+
+function getStationDisplay(station, fallbackId = '') {
+  if (!station) return fallbackId || '(無資料車站)';
+  const name = String(station.name || '').trim();
+  const id = String(station.id || fallbackId || '').trim();
+  return name && id ? `${name}｜${id}` : (name || id || '(未命名站)');
+}
+
+function getStationNameOnly(station, fallback = '-') {
+  const name = String(station?.name || '').trim();
+  return name || fallback;
+}
+
+function getLineDiagnostics(line) {
+  const stationLookup = getStationLookup();
+  const rawSequence = Array.isArray(line?.sequence) ? line.sequence : [];
+  const sequenceIds = rawSequence.map(id => toEditorIdToken(id));
+  const validIds = sequenceIds.filter(Boolean);
+  const counts = new Map();
+  const missing = [];
+  const blankPositions = [];
+
+  sequenceIds.forEach((id, index) => {
+    if (!id) {
+      blankPositions.push(index);
+      return;
+    }
+    if (!counts.has(id)) counts.set(id, []);
+    counts.get(id).push(index);
+    if (!stationLookup.has(id)) missing.push({ id, index });
+  });
+
+  const duplicates = Array.from(counts.entries())
+    .filter(([, positions]) => positions.length > 1)
+    .map(([id, positions]) => ({
+      id,
+      positions,
+      station: stationLookup.get(id)?.s || null,
+      stationIndex: stationLookup.get(id)?.i ?? -1
+    }));
+
+  const firstId = validIds[0] || '';
+  const lastId = validIds.length ? validIds[validIds.length - 1] : '';
+  return {
+    rawSequence,
+    sequenceIds,
+    validIds,
+    stationCount: validIds.length,
+    uniqueCount: new Set(validIds).size,
+    firstId,
+    lastId,
+    firstStation: stationLookup.get(firstId)?.s || null,
+    lastStation: stationLookup.get(lastId)?.s || null,
+    missing,
+    duplicates,
+    blankPositions
+  };
+}
+
+function getLineIssueCount(line) {
+  if (!line) return 0;
+  const diag = getLineDiagnostics(line);
+  let count = diag.missing.length + diag.duplicates.length + diag.blankPositions.length;
+  if (!diag.stationCount) count += 1;
+  if (!String(line.geometry_wkt || line.asWKT || line.geometry || '').trim()) count += 1;
+  return count;
+}
+
+function isLineComplete(line) {
+  if (!line) return false;
+  const hasColor = !!String(line.color || '').trim();
+  const hasGeometry = !!String(line.geometry_wkt || line.asWKT || line.geometry || '').trim();
+  return hasColor && hasGeometry;
+}
+
+function buildOverviewTile(label, value, sub = '', extraClass = '') {
+  return `<div class="overview-tile ${escapeEditorAttr(extraClass)}"><div class="overview-label">${escapeEditorHtml(label)}</div><div class="overview-value" title="${escapeEditorAttr(value)}">${escapeEditorHtml(value)}</div></div>`;
+}
+
+function renderSelectedLineOverview() {
+  const box = document.getElementById('lineOverviewPanel');
+  if (!box) return;
+  const line = getSelectedLine();
+  if (!companyEditorData || !line) {
+    box.innerHTML = buildOverviewTile('路線概覽', '未選擇路線', '載入 JSON 後選擇左側路線');
+    return;
   }
-  return normalizeStationCompareName(station.name);
+
+  const diag = getLineDiagnostics(line);
+  const startText = getStationNameOnly(diag.firstStation, diag.firstId ? '無車站資料' : '-');
+  const endText = getStationNameOnly(diag.lastStation, diag.lastId ? '無車站資料' : '-');
+  const issueCount = getLineIssueCount(line);
+  const healthClass = issueCount ? 'warn' : 'ok';
+  const healthText = issueCount ? `${issueCount} 項需檢查` : '未發現問題';
+  const routeText = diag.stationCount ? `${startText} - ${endText}` : '-';
+
+  box.innerHTML = [
+    buildOverviewTile('車站總數', String(diag.stationCount)),
+    buildOverviewTile('起點 - 終點', routeText),
+    buildOverviewTile('無資料車站 ID', String(diag.missing.length)),
+    buildOverviewTile('偵錯狀態', healthText, '', healthClass)
+  ].join('');
+}
+
+function buildIssueToken(label, actionHtml = '') {
+  return `<span class="issue-token">${label}${actionHtml}</span>`;
+}
+
+function renderLineDebugPanel() {
+  const panel = document.getElementById('lineDebugPanel');
+  if (!panel) return;
+  const line = getSelectedLine();
+  if (!companyEditorData || !line) { panel.innerHTML = ''; return; }
+
+  const diag = getLineDiagnostics(line);
+  const issueCards = [];
+  if (!diag.stationCount) {
+    issueCards.push('<div class="line-debug-card warn"><strong>sequence 未有停站</strong><br>此路線暫時未設定任何車站。</div>');
+  }
+  if (diag.blankPositions.length) {
+    const tokens = diag.blankPositions.map(pos => buildIssueToken(`#${pos + 1} 空白 ID`)).join('');
+    issueCards.push(`<div class="line-debug-card danger"><strong>空白停站 ID</strong><div class="issue-token-list">${tokens}</div></div>`);
+  }
+  if (diag.missing.length) {
+    const tokens = diag.missing.map(item => buildIssueToken(
+      `<span>#${item.index + 1}</span> ${escapeEditorHtml(item.id)}`,
+      `<button class="ghost mini-btn" onclick="focusMissingStationId('${escapeEditorAttr(item.id)}')">搜尋</button>`
+    )).join('');
+    issueCards.push(`<div class="line-debug-card danger"><strong>無數據車站 ID</strong><br>以下 ID 出現在此路線 sequence，但 stations 名單沒有資料。<div class="issue-token-list">${tokens}</div></div>`);
+  }
+  if (diag.duplicates.length) {
+    const tokens = diag.duplicates.map(item => {
+      const label = `${escapeEditorHtml(getStationDisplay(item.station, item.id))} @ ${item.positions.map(pos => '#' + (pos + 1)).join(', ')}`;
+      const action = item.station ? `<button class="ghost mini-btn" onclick="selectCompanyStationById('${escapeEditorAttr(item.id)}')">修改</button>` : '';
+      return buildIssueToken(label, action);
+    }).join('');
+    issueCards.push(`<div class="line-debug-card warn"><strong>重複停站</strong><br>同一 station id 在此路線出現多於一次，請確認是否支線 / 回環需要，或是否手誤。<div class="issue-token-list">${tokens}</div></div>`);
+  }
+  if (!String(line.geometry_wkt || '').trim()) {
+    issueCards.push('<div class="line-debug-card warn"><strong>geometry_wkt 空白</strong><br>路線仍可儲存，但地圖顯示可能沒有線形。</div>');
+  }
+  if (!issueCards.length) {
+    issueCards.push('<div class="line-debug-card ok"><strong>偵錯結果正常</strong><br>此路線沒有重複停站、空白 ID 或無資料車站 ID。</div>');
+  }
+
+  panel.innerHTML = `
+    <div class="title" style="margin-top:12px;"><strong>路線偵錯模式</strong><span class="small">重複停站 / 缺站資料 / geometry</span></div>
+    <div class="debug-summary-grid">
+      <div class="debug-pill ${diag.stationCount ? 'ok' : 'warn'}"><strong>${diag.stationCount}</strong>停站</div>
+      <div class="debug-pill ${diag.blankPositions.length ? 'danger' : 'ok'}"><strong>${diag.blankPositions.length}</strong>空白 ID</div>
+      <div class="debug-pill ${diag.missing.length ? 'danger' : 'ok'}"><strong>${diag.missing.length}</strong>缺站 ID</div>
+      <div class="debug-pill ${diag.duplicates.length ? 'warn' : 'ok'}"><strong>${diag.duplicates.length}</strong>重複組</div>
+    </div>
+    <div class="line-debug-list">${issueCards.join('')}</div>`;
 }
 
 function getStationRouteRefs(stationId) {
   if (!companyEditorData || !stationId) return [];
-  const targetId = toEditorIdToken(stationId);
-  return (companyEditorData.lines || []).filter(line =>
-    Array.isArray(line.sequence) && line.sequence.some(id => toEditorIdToken(id) === targetId)
-  );
+  const id = toEditorIdToken(stationId);
+  return (companyEditorData.lines || []).filter(line => Array.isArray(line.sequence) && line.sequence.some(seqId => toEditorIdToken(seqId) === id));
 }
 
-function getStationIssueTypeLabel(type) {
-  if (type === 'id') return '重複 ID';
-  if (type === 'coord') return '同座標';
-  return '同名';
-}
-
-function buildStationMiniHtml(station, index, groupType = 'name', groupKey = '', allowMerge = true) {
+function buildStationMiniHtml(station, index, groupIndex = -1, allowMerge = false, extraClass = '') {
   const routes = getStationRouteRefs(station.id);
   const routeText = routes.length ? routes.map(r => r.name || r.id).join('、') : '未有路線停靠';
-  const mergeBtn = allowMerge
-    ? `<button class="ok mini-btn merge-main-btn" onclick="mergeStationIssueGroupToTarget('${escapeEditorAttr(groupType)}', '${escapeEditorAttr(groupKey)}', '${escapeEditorAttr(station.id)}')">以此站為正本合併</button>`
-    : '';
-  return `<div class="station-mini-card">
-    <strong>${escapeEditorHtml(station.name || '(未命名站)')}</strong><br>
-    <span class="station-mini-id">${escapeEditorHtml(station.id || '')}</span>
-    <div class="station-mini-meta">座標：${escapeEditorHtml(station.lat ?? '')}, ${escapeEditorHtml(station.lng ?? '')}</div>
-    <div class="station-mini-routes">停靠：${escapeEditorHtml(routeText)}</div>
-    <div class="station-issue-actions">
-      <button class="ghost mini-btn edit-station-btn" onclick="selectCompanyStationById('${escapeEditorAttr(station.id)}')">修改此站</button>
-      ${mergeBtn}
-    </div>
-  </div>`;
+  const mergeBtn = allowMerge ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, '${escapeEditorAttr(station.id)}')">合併到此站</button>` : '';
+  const editBtn = index >= 0 ? `<button class="ghost mini-btn" onclick="selectCompanyStationById('${escapeEditorAttr(station.id)}')">修改此站</button>` : '';
+  return `<div class="station-mini-card ${escapeEditorAttr(extraClass)}"><strong>${escapeEditorHtml(station.name || '(未命名站)')}</strong><br><code>${escapeEditorHtml(station.id || '')}</code><br><span>座標：${escapeEditorHtml(station.lat ?? '')}, ${escapeEditorHtml(station.lng ?? '')}</span><br><span>停靠：${escapeEditorHtml(routeText)}</span><br>${editBtn}${mergeBtn}</div>`;
 }
 
 function findStationIssueGroups() {
-  const stations = (companyEditorData?.stations || []).map((s, i) => ({ s, i }));
+  const stations = getStationEntries();
   const groups = [];
-  const groupMaps = {
-    id: new Map(),
-    name: new Map(),
-    coord: new Map()
-  };
+  const byName = new Map();
+  const byCoord = new Map();
+  const byId = new Map();
+  const basicIssues = [];
+  const badCoordItems = [];
 
   stations.forEach(item => {
-    ['id', 'name', 'coord'].forEach(type => {
-      const key = getStationIssueKey(item.s, type);
-      if (!key) return;
-      if (!groupMaps[type].has(key)) groupMaps[type].set(key, []);
-      groupMaps[type].get(key).push(item);
+    if (!item.id) basicIssues.push(item);
+    if (!String(item.s.name || '').trim()) basicIssues.push(item);
+    if (item.id) {
+      if (!byId.has(item.id)) byId.set(item.id, []);
+      byId.get(item.id).push(item);
+    }
+    const nameKey = normalizeStationCompareName(item.s.name);
+    if (nameKey) {
+      if (!byName.has(nameKey)) byName.set(nameKey, []);
+      byName.get(nameKey).push(item);
+    }
+    const rawLat = String(item.s.lat ?? '').trim();
+    const rawLng = String(item.s.lng ?? '').trim();
+    const lat = normalizeStationCoordValue(item.s.lat);
+    const lng = normalizeStationCoordValue(item.s.lng);
+    if (!rawLat || !rawLng || !lat || !lng) badCoordItems.push(item);
+    if (lat && lng) {
+      const coordKey = `${lat},${lng}`;
+      if (!byCoord.has(coordKey)) byCoord.set(coordKey, []);
+      byCoord.get(coordKey).push(item);
+    }
+  });
+
+  const stationIdSet = new Set(stations.map(item => item.id).filter(Boolean));
+  const missingRefMap = new Map();
+  (companyEditorData?.lines || []).forEach((line, lineIndex) => {
+    const sequence = Array.isArray(line.sequence) ? line.sequence : [];
+    sequence.forEach((rawId, seqIndex) => {
+      const id = toEditorIdToken(rawId);
+      if (!id || stationIdSet.has(id)) return;
+      if (!missingRefMap.has(id)) missingRefMap.set(id, []);
+      missingRefMap.get(id).push({ line, lineIndex, seqIndex });
     });
   });
 
-  groupMaps.id.forEach((items, key) => {
-    if (items.length > 1) groups.push({ type: 'id', key, title: `重複 station_id：${key}`, items });
+  if (missingRefMap.size) {
+    groups.push({
+      type: 'missingRef',
+      title: `路線 sequence 找不到車站資料：${missingRefMap.size} 個 ID`,
+      count: missingRefMap.size,
+      items: Array.from(missingRefMap.entries()).map(([id, refs]) => ({ id, refs }))
+    });
+  }
+
+  byId.forEach((items, key) => {
+    if (items.length > 1) groups.push({ type: 'id', key, count: items.length, title: `重複 station id：${key}`, items });
   });
-  groupMaps.name.forEach((items, key) => {
-    if (items.length > 1) groups.push({ type: 'name', key, title: `同名車站：${items[0].s.name || key}`, items });
+  byName.forEach((items, key) => {
+    if (items.length > 1) groups.push({ type: 'name', key, count: items.length, title: `同名車站：${items[0].s.name || key}`, items });
   });
-  groupMaps.coord.forEach((items, key) => {
-    if (items.length > 1) groups.push({ type: 'coord', key, title: `同座標車站：${key}`, items });
+  byCoord.forEach((items, key) => {
+    if (items.length > 1) groups.push({ type: 'coord', key, count: items.length, title: `同座標車站：${key}`, items });
   });
+
+  const usage = getStationUsageMap();
+  const unused = stations.filter(item => item.id && !usage.has(item.id));
+  if (unused.length) {
+    groups.push({ type: 'unused', count: unused.length, title: `未有路線使用的車站：${unused.length} 個`, items: unused });
+  }
+
+  if (badCoordItems.length) {
+    groups.push({ type: 'badCoord', count: badCoordItems.length, title: `座標未完整 / 格式不正確：${badCoordItems.length} 個`, items: badCoordItems });
+  }
+  if (basicIssues.length) {
+    const unique = Array.from(new Map(basicIssues.map(item => [item.i, item])).values());
+    groups.push({ type: 'basic', count: unique.length, title: `基本資料未完整：${unique.length} 個`, items: unique });
+  }
   return groups;
+}
+
+function getStationIssueCardClass(type) {
+  if (type === 'coord') return 'coord';
+  if (type === 'name') return 'name';
+  if (type === 'unused') return 'unused';
+  if (type === 'badCoord') return 'badCoord';
+  if (type === 'missingRef') return 'missing';
+  if (type === 'id') return 'id';
+  if (type === 'basic') return 'basic';
+  return '';
+}
+
+function getStationIssueDetail(group) {
+  switch (group.type) {
+    case 'missingRef':
+      return '以下 station id 出現在路線 sequence，但 stations 名單沒有對應資料。先補車站或修正路線停站 ID。';
+    case 'id':
+      return '多個車站共用同一個 station id，儲存後會令路線引用變得不穩定，建議立即修正。';
+    case 'name':
+      return '以下車站名稱相同，請確認是否同一個站。可以揀其中一個作正確名稱並合併，系統會同步改寫所有路線 sequence。';
+    case 'coord':
+      return '以下車站座標完全相同，請檢查是否輸入錯誤或重複建立。';
+    case 'unused':
+      return '以下車站未被任何路線 sequence 使用；如果不是預留車站，可以刪除或加入相應路線。';
+    case 'badCoord':
+      return '以下車站 lat / lng 空白或不是有效數字，地圖定位可能失效。';
+    case 'basic':
+      return '以下車站缺少站名或 station id，請補回必要資料。';
+    default:
+      return '請檢查以下資料。';
+  }
+}
+
+function buildMissingStationRefHtml(item) {
+  const refs = item.refs.map(ref => {
+    const lineName = ref.line?.name || ref.line?.id || `路線 ${ref.lineIndex + 1}`;
+    return `<button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(ref.line?.id || '')}')">${escapeEditorHtml(lineName)} #${ref.seqIndex + 1}</button>`;
+  }).join(' ');
+  return `<div class="station-mini-card missing"><strong>無車站資料</strong><br><code>${escapeEditorHtml(item.id)}</code><br><span>出現於：</span><div>${refs}</div><button class="ghost mini-btn" onclick="focusMissingStationId('${escapeEditorAttr(item.id)}')">到車站搜尋</button></div>`;
+}
+
+function renderStationIssueGroup(group, groupIndex) {
+  const allowMerge = group.type === 'name';
+  const cardClass = getStationIssueCardClass(group.type);
+  const detail = getStationIssueDetail(group);
+  const openAttr = ' open';
+  const scrollClass = group.items.length > 8 ? ' scrollable' : '';
+  const cards = group.type === 'missingRef'
+    ? group.items.map(item => buildMissingStationRefHtml(item)).join('')
+    : group.items.map(({s, i}) => buildStationMiniHtml(s, i, groupIndex, allowMerge, cardClass)).join('');
+
+  return `<div class="station-issue-card ${cardClass} details-card"><details${openAttr}><summary>⚠️ ${escapeEditorHtml(group.title)}</summary><div class="station-issue-note">${escapeEditorHtml(detail)}</div><div class="station-issue-actions${scrollClass}">${cards}</div></details></div>`;
+}
+
+function countStationIssues(groups, type) {
+  return groups.filter(group => group.type === type).reduce((sum, group) => sum + (group.count || group.items.length), 0);
 }
 
 function renderStationIssuePanel() {
   const panel = document.getElementById('stationIssuePanel');
   if (!panel) return;
   if (!companyEditorData) { panel.innerHTML = ''; return; }
-
   companyStationIssueGroups = findStationIssueGroups();
 
+  const stationCount = companyEditorData?.stations?.length || 0;
+  const missingRefCount = countStationIssues(companyStationIssueGroups, 'missingRef');
+  const duplicateIdCount = countStationIssues(companyStationIssueGroups, 'id');
+  const unusedCount = countStationIssues(companyStationIssueGroups, 'unused');
+  const readableWarnCount =
+    countStationIssues(companyStationIssueGroups, 'name') +
+    countStationIssues(companyStationIssueGroups, 'coord') +
+    countStationIssues(companyStationIssueGroups, 'badCoord') +
+    countStationIssues(companyStationIssueGroups, 'basic');
+
+  const summary = `
+    <div class="title"><strong>車站偵錯模式</strong><span class="small">缺站 / 重複 / 未使用 / 座標</span></div>
+    <div class="debug-summary-grid">
+      <div class="debug-pill ok"><strong>${stationCount}</strong>車站總數</div>
+      <div class="debug-pill ${missingRefCount ? 'danger' : 'ok'}"><strong>${missingRefCount}</strong>路線缺站 ID</div>
+      <div class="debug-pill ${duplicateIdCount ? 'danger' : 'ok'}"><strong>${duplicateIdCount}</strong>重複 ID 涉及站</div>
+      <div class="debug-pill ${unusedCount ? 'warn' : 'ok'}"><strong>${unusedCount}</strong>未使用車站</div>
+    </div>`;
+
   if (!companyStationIssueGroups.length) {
-    panel.innerHTML = '<div class="station-route-refs"><strong>檢查結果：</strong>未發現重複 ID / 同名 / 同座標車站。</div>';
+    panel.innerHTML = summary + '<div class="audit-empty">檢查結果正常：未發現缺站引用、重複車站、未使用車站或座標問題。</div>';
     return;
   }
 
-  panel.innerHTML = companyStationIssueGroups.map(group => {
-    const affectedRouteCount = new Set(group.items.flatMap(({ s }) => getStationRouteRefs(s.id).map(r => r.id))).size;
-    const label = getStationIssueTypeLabel(group.type);
-    const detail = group.type === 'id'
-      ? `以下 ${group.items.length} 個車站使用同一個 station_id，輸出時會造成資料混亂。請選一個作正本，系統會刪除多餘車站資料。受影響路線：${affectedRouteCount} 條。`
-      : group.type === 'name'
-        ? `以下 ${group.items.length} 個車站名稱相同。請選一個作正本合併；系統會自動改寫所有路線 sequence，並刪除其餘重複車站。受影響路線：${affectedRouteCount} 條。`
-        : `以下 ${group.items.length} 個車站座標完全相同。多數情況代表重複建立；如確定係同一站，可選一個作正本合併。受影響路線：${affectedRouteCount} 條。`;
-    const cards = group.items.map(({s, i}) => buildStationMiniHtml(s, i, group.type, group.key, true)).join('');
-    return `<div class="station-issue-card ${group.type}">
-      <div class="station-issue-title">⚠️ ${escapeEditorHtml(label)}｜${escapeEditorHtml(group.title)}</div>
-      <div>${escapeEditorHtml(detail)}</div>
-      <div class="station-issue-actions">${cards}</div>
-    </div>`;
-  }).join('');
+  const readableNote = readableWarnCount ? `<div class="station-issue-note">另有 ${readableWarnCount} 個可讀性 / 座標相關項目需要人工確認。</div>` : '';
+  panel.innerHTML = summary + readableNote + companyStationIssueGroups.map((group, groupIndex) => renderStationIssueGroup(group, groupIndex)).join('');
 }
 
 function renderSelectedStationRouteRefs(stationId) {
@@ -1044,109 +1354,45 @@ function renderSelectedStationRouteRefs(stationId) {
     box.innerHTML = '<strong>停靠路線：</strong>未有路線 sequence 使用此站';
     return;
   }
-  box.innerHTML = '<strong>停靠路線：</strong>' + routes.map(route => `<button class="ghost mini-btn route-ref-btn" onclick="selectCompanyLineById('${escapeEditorAttr(route.id)}')">${escapeEditorHtml(route.name || route.id)}</button>`).join(' ');
+  box.innerHTML = '<strong>停靠路線：</strong>' + routes.map(route => `<button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(route.id)}')">${escapeEditorHtml(route.name || route.id)}</button>`).join(' ');
 }
 
 function selectCompanyLineById(lineId) {
-  const targetId = toEditorIdToken(lineId);
-  const index = (companyEditorData?.lines || []).findIndex(line => toEditorIdToken(line.id) === targetId);
+  const index = (companyEditorData?.lines || []).findIndex(line => line.id === lineId);
   if (index < 0) return;
   companyEditorCurrent.line = index;
   switchCompanyEditorSection('lines');
   renderCompanyLineList();
   renderSelectedLineForm();
-  document.getElementById('companyEditorLines')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  scrollCompanyEditorPanelIntoView('companyEditorLines');
+  const line = getSelectedLine();
+  setCompanyEditorStatus(`已切到路線：${line?.name || line?.id || lineId}`, 'ok');
 }
 
-function selectCompanyStationById(stationId) {
-  const targetId = toEditorIdToken(stationId);
-  const index = (companyEditorData?.stations || []).findIndex(st => toEditorIdToken(st.id) === targetId);
-  if (index < 0) return;
-  companyEditorCurrent.station = index;
-  switchCompanyEditorSection('stations');
-  renderCompanyStationList();
-  renderSelectedStationForm();
-  document.getElementById('companyEditorStations')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function removeConsecutiveStationDuplicates(sequence) {
-  const result = [];
-  let previous = null;
-  (sequence || []).forEach(rawId => {
-    const id = toEditorIdToken(rawId);
-    if (!id) return;
-    if (id === previous) return;
-    result.push(id);
-    previous = id;
-  });
-  return result;
-}
-
-function mergeStationIssueGroupToTarget(type, key, targetStationId) {
-  if (!companyEditorData) return;
-
-  const cleanType = String(type || 'name');
-  const cleanKey = String(key || '');
-  const targetId = toEditorIdToken(targetStationId);
-
-  const latestGroup = findStationIssueGroups().find(group => group.type === cleanType && group.key === cleanKey);
-  if (!latestGroup || latestGroup.items.length < 2) {
-    setCompanyEditorStatus('合併失敗：呢組重複車站已經不存在，請重新整理檢查結果。', 'warn');
-    renderStationIssuePanel();
-    return;
-  }
-
-  const targetItem = latestGroup.items.find(item => toEditorIdToken(item.s.id) === targetId) || latestGroup.items[0];
-  const target = targetItem.s;
-  const finalTargetId = toEditorIdToken(target.id);
-
-  const stationIdsInGroup = latestGroup.items.map(item => toEditorIdToken(item.s.id)).filter(Boolean);
-  const duplicateIds = [...new Set(stationIdsInGroup.filter(id => id !== finalTargetId))];
-  const affectedRoutes = (companyEditorData.lines || []).filter(line =>
-    Array.isArray(line.sequence) && line.sequence.some(id => duplicateIds.includes(toEditorIdToken(id)) || toEditorIdToken(id) === finalTargetId)
-  );
-
-  const ok = confirm(
-    `確定將「${latestGroup.title}」合併到「${target.name || finalTargetId}」？\n\n` +
-    `正本：${finalTargetId}\n` +
-    `會刪除 / 合併：${latestGroup.items.length - 1} 個車站資料\n` +
-    `受影響路線：${affectedRoutes.length} 條\n\n` +
-    `所有相關路線 sequence 會自動改用正本 station_id。`
-  );
+function mergeStationIssueGroup(groupIndex, targetId) {
+  const group = companyStationIssueGroups[groupIndex];
+  if (!companyEditorData || !group || group.type !== 'name') return;
+  const target = (companyEditorData.stations || []).find(st => st.id === targetId);
+  if (!target) return;
+  const duplicateIds = group.items.map(item => item.s.id).filter(id => id && id !== targetId);
+  if (!duplicateIds.length) return;
+  const ok = confirm(`確定合併 ${duplicateIds.length} 個同名車站到「${target.name}」？\n所有路線 sequence 會自動改用：${target.id}`);
   if (!ok) return;
 
   companyEditorData.lines.forEach(line => {
     if (!Array.isArray(line.sequence)) return;
-    line.sequence = removeConsecutiveStationDuplicates(line.sequence.map(rawId => {
-      const cleanId = toEditorIdToken(rawId);
-      return duplicateIds.includes(cleanId) ? finalTargetId : cleanId;
-    }));
-  });
-
-  let keptTarget = false;
-  companyEditorData.stations = (companyEditorData.stations || []).filter(st => {
-    const stId = toEditorIdToken(st.id);
-    const belongsToGroup = getStationIssueKey(st, cleanType) === cleanKey;
-    if (!belongsToGroup) return true;
-    if (stId === finalTargetId && !keptTarget) {
-      keptTarget = true;
+    const seen = new Set();
+    line.sequence = line.sequence.map(id => duplicateIds.includes(id) ? targetId : id).filter(id => {
+      if (seen.has(id)) return false;
+      seen.add(id);
       return true;
-    }
-    return false;
+    });
   });
-
-  const newIndex = companyEditorData.stations.findIndex(st => toEditorIdToken(st.id) === finalTargetId);
-  companyEditorCurrent.station = Math.max(0, newIndex);
+  companyEditorData.stations = companyEditorData.stations.filter(st => !duplicateIds.includes(st.id));
+  companyEditorCurrent.station = Math.max(0, companyEditorData.stations.findIndex(st => st.id === targetId));
   renderCompanyEditorAll();
   switchCompanyEditorSection('stations');
-  setCompanyEditorStatus(`已合併到 ${target.name || finalTargetId}，並改寫 ${affectedRoutes.length} 條路線 sequence`, 'ok');
-}
-
-// 舊版 inline onclick 相容層：如果舊 HTML 尚有 mergeStationIssueGroup(...)，仍然會轉去新版邏輯。
-function mergeStationIssueGroup(groupIndex, targetId) {
-  const group = companyStationIssueGroups[groupIndex];
-  if (!group) return;
-  mergeStationIssueGroupToTarget(group.type, group.key, targetId);
+  setCompanyEditorStatus(`已合併同名車站到 ${target.name}，並已改寫相關路線 sequence`, 'ok');
 }
 
 function renderCompanyStationList() {
@@ -1157,6 +1403,38 @@ function renderCompanyStationList() {
 }
 function selectCompanyStation(index) { companyEditorCurrent.station = index; renderCompanyStationList(); renderSelectedStationForm(); }
 function getSelectedStation() { return companyEditorData?.stations?.[companyEditorCurrent.station] || null; }
+
+function scrollCompanyEditorPanelIntoView(panelId) {
+  const panel = document.getElementById(panelId);
+  if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function selectCompanyStationById(stationId) {
+  const id = toEditorIdToken(stationId);
+  const index = (companyEditorData?.stations || []).findIndex(st => toEditorIdToken(st.id) === id);
+  if (index < 0) return focusMissingStationId(id);
+  const search = document.getElementById('stationSearchInput');
+  if (search) search.value = '';
+  companyEditorCurrent.station = index;
+  switchCompanyEditorSection('stations');
+  renderCompanyStationList();
+  renderSelectedStationForm();
+  scrollCompanyEditorPanelIntoView('companyEditorStations');
+  const st = getSelectedStation();
+  setCompanyEditorStatus(`已切到車站修改頁：${st?.name || id}`, 'ok');
+}
+
+function focusMissingStationId(stationId) {
+  const id = toEditorIdToken(stationId);
+  const search = document.getElementById('stationSearchInput');
+  if (search) search.value = id;
+  switchCompanyEditorSection('stations');
+  renderCompanyStationList();
+  renderSelectedStationForm();
+  scrollCompanyEditorPanelIntoView('companyEditorStations');
+  setCompanyEditorStatus(id ? `路線 sequence 使用了 ${id}，但車站名單未有此 ID。可以在搜尋欄確認後新增 / 修正。` : '路線 sequence 有空白車站 ID，請在路線頁修正。', 'warn');
+}
+
 function renderSelectedStationForm() {
   const st = getSelectedStation() || {};
   const companyId = toEditorIdToken(st.company_id || companyEditorData?.company_id || 'COMPANY');
