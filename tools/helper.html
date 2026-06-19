@@ -26,11 +26,14 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
 .editor-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#16213e,#263b77 55%,#5d7cff);color:#fff;border:0;padding:20px}.editor-hero h1{color:#fff;font-size:24px;margin:0 0 8px}.editor-hero p{color:rgba(255,255,255,.8)}
 .editor-toolbar{display:grid;grid-template-columns:1.2fr 1fr auto;gap:12px;align-items:end}.editor-summary{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.editor-chip{font-size:12px;font-weight:900;background:#eef6ff;color:#0a66c2;border-radius:999px;padding:6px 10px;border:1px solid #d8e9ff}.editor-chip.ok{background:#e9f8ee;color:#16883a}.editor-chip.warn{background:#fff6df;color:#b77900}
 .editor-layout{display:grid;grid-template-columns:280px 1fr;gap:14px}.editor-sidebar{display:flex;flex-direction:column;gap:10px}.editor-list{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;max-height:420px;overflow-y:auto}.editor-list button{width:100%;display:block;background:transparent;color:var(--text);border-radius:0;text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);font-weight:750}.editor-list button:hover{transform:none;background:#eef6ff}.editor-list button.has-issue{background:#fffbeb;box-shadow:inset 4px 0 0 var(--warn)}.editor-list button.has-issue:hover{background:#fff4c2}.editor-list button.is-complete{background:#f0fdf4;box-shadow:inset 4px 0 0 var(--ok)}.editor-list button.is-complete:hover{background:#dcfce7}.editor-list button.active{background:linear-gradient(135deg,var(--primary),#0a84ff);color:#fff}.editor-list button.has-issue.active{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#111827}.editor-list button.is-complete.active{background:linear-gradient(135deg,#22c55e,#86efac);color:#052e16}.line-name-row{display:flex;gap:7px;align-items:center;justify-content:space-between}.line-list-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.line-alert-icon,.line-ok-icon{font-size:15px;line-height:1;flex:0 0 auto}.editor-tabs{display:flex;gap:6px;flex-wrap:wrap}.editor-tabs button{background:#eef2f7;color:#334155}.editor-tabs button.active{background:var(--primary2);color:#fff}.editor-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-form .wide{grid-column:1/-1}.editor-form textarea{min-height:130px}.locked-id-row{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center}.id-prefix-chip{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;font-weight:900;color:#475569;background:#eef2f7;border:1px solid #cbd5e1;border-radius:10px;padding:10px;white-space:nowrap}.locked-id-row input{text-transform:uppercase;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace}.seq-list{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto;border:1px solid var(--border);border-radius:12px;padding:8px;background:#f8fafc}.seq-item{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:6px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:10px;padding:6px;transition:.15s}.seq-item[draggable="true"]{cursor:grab}.seq-item.dragging{opacity:.45;transform:scale(.99);border-color:var(--primary2);box-shadow:0 6px 18px rgba(10,132,255,.18)}.seq-item.drag-over{border-color:var(--primary2);background:#eef6ff;box-shadow:inset 4px 0 0 var(--primary2)}.seq-drag-handle{font-size:15px;color:#94a3b8;cursor:grab;user-select:none;padding:0 3px}.seq-no{font-size:11px;color:var(--sub);font-weight:900}.seq-name{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.seq-item button{padding:6px 8px;border-radius:8px}.editor-output{min-height:260px;background:#101827!important;color:#dbeafe!important}.editor-status{font-size:13px;color:var(--sub);font-weight:800;margin-top:8px}.mini-btn{padding:8px 10px;font-size:12px}.danger-text{color:#ff3b30}.station-issue-panel{display:flex;flex-direction:column;gap:8px;margin:10px 0}.station-issue-card{border:1px solid #fecaca;background:#fff1f2;color:#991b1b;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.station-issue-card.coord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-title{font-weight:900;margin-bottom:6px}.station-issue-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.station-mini-card{border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.72);border-radius:10px;padding:7px;min-width:190px}.station-mini-card button{margin-top:6px}.station-route-refs{margin:10px 0;padding:10px;border:1px dashed var(--border);border-radius:12px;background:#f8fafc;font-size:12px;color:var(--sub);line-height:1.55}.station-route-refs strong{color:var(--primary)}.editor-raw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.editor-raw-grid textarea{min-height:320px}
-#json-editor-tab>.card{margin-bottom:16px}.editor-toolbar{grid-template-columns:minmax(280px,1.3fr) minmax(220px,.8fr) auto}.editor-layout{grid-template-columns:minmax(240px,300px) minmax(0,1fr);gap:18px;align-items:start}.editor-sidebar{position:sticky;top:12px}.editor-list{max-height:62vh}.editor-detail-pane{min-width:0}.line-workbench{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:start}.line-form-panel,.sequence-panel{min-width:0;border:1px solid var(--border);border-radius:14px;background:linear-gradient(180deg,#fbfdff,#f8fafc);padding:14px}.sequence-panel .row{margin-top:0}.seq-list{max-height:50vh}.seq-item.missing{border-color:#fecaca;background:#fff1f2}.seq-item.duplicate{border-color:#fde68a;background:#fffbeb}.seq-item .seq-name{min-width:0;text-align:left}.seq-jump{background:transparent;color:var(--text);font-weight:500;padding:6px 4px;border-radius:8px}.seq-jump:hover{background:#eef6ff;filter:none;transform:none}.seq-jump.missing{color:#b91c1c}.line-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}.overview-tile{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px;min-width:0}.overview-tile.ok{border-color:#bbf7d0;background:#f0fdf4}.overview-tile.warn{border-color:#fde68a;background:#fffbeb}.overview-label{font-size:11px;font-weight:900;color:var(--sub);letter-spacing:.04em;text-transform:uppercase}.overview-value{font-size:18px;font-weight:950;margin-top:3px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.overview-sub{font-size:12px;color:var(--sub);line-height:1.45;margin-top:4px}.line-debug-panel,.station-issue-panel{margin-top:12px}.debug-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:8px}.debug-pill{border:1px solid var(--border);background:#fff;border-radius:12px;padding:9px 10px;font-size:12px;color:var(--sub);font-weight:850}.debug-pill strong{display:block;font-size:18px;color:var(--text);line-height:1.1}.debug-pill.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.debug-pill.warn{border-color:#fde68a;background:#fffbeb;color:#92400e}.debug-pill.danger{border-color:#fecaca;background:#fff1f2;color:#991b1b}.line-debug-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}.line-debug-card,.station-issue-card{box-shadow:0 3px 12px rgba(15,23,42,.04)}.line-debug-card{border:1px solid #dbeafe;background:#f8fbff;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.line-debug-card.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.line-debug-card.warn{border-color:#fde68a;background:#fffbeb;color:#92400e}.line-debug-card.danger{border-color:#fecaca;background:#fff1f2;color:#991b1b}.issue-token-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.issue-token{display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:rgba(255,255,255,.72);padding:4px 8px;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}.issue-token button{padding:3px 6px;border-radius:999px}.station-issue-card.unused{border-color:#c7d2fe;background:#eef2ff;color:#3730a3}.station-issue-card.missing,.station-issue-card.id,.station-issue-card.basic{border-color:#fecaca;background:#fff1f2;color:#991b1b}.station-issue-card.name,.station-issue-card.badCoord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-card.details-card{padding:0;overflow:hidden}.station-issue-card details{padding:10px}.station-issue-card summary{cursor:pointer;font-weight:900}.station-issue-note{font-size:12px;line-height:1.55;margin:6px 0;color:inherit}.station-issue-actions.scrollable{max-height:340px;overflow:auto;padding-right:4px}.station-mini-card{flex:1 1 220px}.station-mini-card.unused{border-color:#c7d2fe}.station-mini-card.missing{border-color:#fecaca}.station-mini-card code{word-break:break-all}.station-route-refs .mini-btn{margin:3px}.audit-empty{border:1px solid #bbf7d0;background:#f0fdf4;color:#166534;border-radius:12px;padding:10px;font-size:12px;font-weight:850}
+#json-editor-tab>.card{margin-bottom:16px}.editor-toolbar{grid-template-columns:minmax(280px,1.3fr) minmax(220px,.8fr) auto}.editor-layout{grid-template-columns:minmax(240px,300px) minmax(0,1fr);gap:18px;align-items:start}.editor-sidebar{position:sticky;top:12px}.editor-list{max-height:62vh}.editor-detail-pane{min-width:0}.line-workbench{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:start}.line-form-panel,.sequence-panel{min-width:0;border:1px solid var(--border);border-radius:14px;background:linear-gradient(180deg,#fbfdff,#f8fafc);padding:14px}.sequence-panel .row{margin-top:0}.seq-list{max-height:50vh}.seq-item.missing{border-color:#fecaca;background:#fff1f2}.seq-item.duplicate{border-color:#fde68a;background:#fffbeb}.seq-item.selected{border-color:var(--primary2);background:#eef6ff;box-shadow:inset 4px 0 0 var(--primary2)}.seq-item.selected.missing{background:#fff7ed;border-color:#fb923c;box-shadow:inset 4px 0 0 #fb923c}.seq-item .seq-name{min-width:0;text-align:left}.seq-jump{background:transparent;color:var(--text);font-weight:500;padding:6px 4px;border-radius:8px}.seq-jump:hover{background:#eef6ff;filter:none;transform:none}.seq-jump.missing{color:#b91c1c}.line-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}.overview-tile{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px;min-width:0}.overview-tile.ok{border-color:#bbf7d0;background:#f0fdf4}.overview-tile.warn{border-color:#fde68a;background:#fffbeb}.overview-label{font-size:11px;font-weight:900;color:var(--sub);letter-spacing:.04em;text-transform:uppercase}.overview-value{font-size:18px;font-weight:950;margin-top:3px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.overview-sub{font-size:12px;color:var(--sub);line-height:1.45;margin-top:4px}.line-debug-panel,.station-issue-panel{margin-top:12px}.debug-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:8px}.debug-pill{border:1px solid var(--border);background:#fff;border-radius:12px;padding:9px 10px;font-size:12px;color:var(--sub);font-weight:850}.debug-pill strong{display:block;font-size:18px;color:var(--text);line-height:1.1}.debug-pill.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.debug-pill.warn{border-color:#fde68a;background:#fffbeb;color:#92400e}.debug-pill.danger{border-color:#fecaca;background:#fff1f2;color:#991b1b}.line-debug-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}.line-debug-card,.station-issue-card{box-shadow:0 3px 12px rgba(15,23,42,.04)}.line-debug-card{border:1px solid #dbeafe;background:#f8fbff;border-radius:12px;padding:10px;font-size:12px;line-height:1.55}.line-debug-card.ok{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.line-debug-card.warn{border-color:#fde68a;background:#fffbeb;color:#92400e}.line-debug-card.danger{border-color:#fecaca;background:#fff1f2;color:#991b1b}.issue-token-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.issue-token{display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(0,0,0,.1);border-radius:999px;background:rgba(255,255,255,.72);padding:4px 8px;font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}.issue-token button{padding:3px 6px;border-radius:999px}.station-issue-card.unused{border-color:#c7d2fe;background:#eef2ff;color:#3730a3}.station-issue-card.missing,.station-issue-card.id,.station-issue-card.basic{border-color:#fecaca;background:#fff1f2;color:#991b1b}.station-issue-card.name,.station-issue-card.badCoord{border-color:#fde68a;background:#fffbeb;color:#92400e}.station-issue-card.details-card{padding:0;overflow:hidden}.station-issue-card details{padding:10px}.station-issue-card summary{cursor:pointer;font-weight:900}.station-issue-note{font-size:12px;line-height:1.55;margin:6px 0;color:inherit}.station-issue-actions.scrollable{max-height:340px;overflow:auto;padding-right:4px}.station-mini-card{flex:1 1 220px}.station-mini-card.unused{border-color:#c7d2fe}.station-mini-card.missing{border-color:#fecaca}.station-mini-card code{word-break:break-all}.station-route-refs .mini-btn{margin:3px}.audit-empty{border:1px solid #bbf7d0;background:#f0fdf4;color:#166534;border-radius:12px;padding:10px;font-size:12px;font-weight:850}
+.station-audit-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.station-audit-head strong{font-size:14px}.station-audit-head .small{margin-left:auto}.station-audit-filters{display:flex;gap:7px;flex-wrap:wrap}.station-filter-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:#fff;color:var(--text);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900}.station-filter-chip:hover{transform:none;filter:none;background:#eef6ff}.station-filter-chip.active{background:var(--primary2);border-color:var(--primary2);color:#fff}.station-filter-chip.danger:not(.active){border-color:#fecaca;background:#fff1f2;color:#991b1b}.station-filter-chip.warn:not(.active){border-color:#fde68a;background:#fffbeb;color:#92400e}.station-filter-chip.info:not(.active){border-color:#c7d2fe;background:#eef2ff;color:#3730a3}.station-audit-list{display:flex;flex-direction:column;gap:8px}.station-issue-card.compact{padding:0;overflow:hidden;background:#fff;border-color:var(--border);color:var(--text)}.station-issue-card.compact details{padding:0}.station-issue-card.compact summary{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;list-style:none;padding:10px 12px;cursor:pointer}.station-issue-card.compact summary::-webkit-details-marker{display:none}.station-issue-card.compact summary:after{content:"展開";font-size:11px;color:var(--sub);font-weight:900}.station-issue-card.compact details[open] summary:after{content:"收合"}.station-issue-card.compact.danger{border-color:#fecaca;box-shadow:inset 4px 0 0 #ef4444}.station-issue-card.compact.warn{border-color:#fde68a;box-shadow:inset 4px 0 0 #f59e0b}.station-issue-card.compact.info{border-color:#c7d2fe;box-shadow:inset 4px 0 0 #6366f1}.station-issue-summary-main{display:flex;align-items:center;gap:8px;min-width:0}.station-issue-icon{font-size:16px;line-height:1}.station-issue-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:950}.station-issue-count{border:1px solid rgba(0,0,0,.09);background:#f8fafc;color:var(--sub);border-radius:999px;padding:3px 8px;font-size:11px;font-weight:950}.station-issue-brief{border-top:1px solid var(--border);padding:7px 12px 0;color:var(--sub);font-size:12px;line-height:1.45}.station-issue-list{display:flex;flex-direction:column;gap:5px;padding:8px 10px 10px;max-height:360px;overflow:auto}.station-issue-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:8px}.station-issue-row-main{min-width:0}.station-issue-row-name{display:flex;gap:7px;align-items:center;min-width:0;font-weight:850}.station-issue-row-name strong,.station-issue-row-name code{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.station-issue-row-meta{margin-top:2px;color:var(--sub);font-size:11px;line-height:1.35;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.station-issue-row-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.station-issue-row-actions .mini-btn{padding:5px 8px}.station-audit-empty-filter{border:1px dashed var(--border);background:#f8fafc;color:var(--sub);border-radius:12px;padding:10px;font-size:12px;font-weight:850}
 @media(max-width:1180px){.editor-layout{grid-template-columns:1fr}.line-overview,.debug-summary-grid{grid-template-columns:1fr 1fr}.editor-sidebar{position:static}.editor-list{max-height:260px}}
 @media(max-width:860px){.editor-toolbar,.editor-layout,.editor-form,.editor-raw-grid,.line-workbench,.line-overview,.debug-summary-grid{grid-template-columns:1fr}.editor-list{max-height:260px}.sequence-panel{padding:10px}}
+@media(max-width:680px){.station-audit-head{align-items:flex-start;flex-direction:column}.station-audit-head .small{margin-left:0}.station-filter-chip{flex:1 1 130px;justify-content:center}.station-issue-row{grid-template-columns:1fr}.station-issue-row-actions{justify-content:flex-start}.station-issue-row-meta{white-space:normal}.station-issue-card.compact summary{grid-template-columns:minmax(0,1fr) auto auto}}
 @media(prefers-color-scheme:dark){.station-issue-card{background:#3a171a;color:#fecaca;border-color:#7f1d1d}.station-issue-card.coord{background:#33260b;color:#fde68a;border-color:#92400e}.station-mini-card{background:rgba(31,31,34,.75);border-color:#38383a}.station-route-refs{background:#151515}.editor-list,.seq-item{background:#1f1f22}.seq-list{background:#151515}.editor-list button:hover{background:#14263a}.editor-list button.is-complete{background:#10251a;color:#bbf7d0}.editor-list button.is-complete:hover{background:#12351f}.editor-list button.is-complete.active{background:linear-gradient(135deg,#15803d,#22c55e);color:#ecfdf5}.editor-chip{background:#14263a;color:#9fd3ff}.id-prefix-chip{background:#2c2c2e;color:#d1d5db;border-color:#38383a}}
 @media(prefers-color-scheme:dark){.tabs,.line-form-panel,.sequence-panel,.overview-tile,.debug-pill{background:#1f1f22;border-color:#38383a}.nav-toggle{background:#2c2c2e;color:#eee;border-color:#38383a}.seq-jump{color:#f5f5f7}.overview-tile.ok,.debug-pill.ok,.line-debug-card.ok,.audit-empty{background:#10251a;color:#bbf7d0;border-color:#166534}.overview-tile.warn,.debug-pill.warn,.line-debug-card.warn{background:#33260b;color:#fde68a;border-color:#92400e}.debug-pill.danger,.line-debug-card.danger{background:#3a171a;color:#fecaca;border-color:#7f1d1d}.line-debug-card{background:#151515;border-color:#38383a}}
+@media(prefers-color-scheme:dark){.station-filter-chip,.station-issue-card.compact{background:#1f1f22;color:var(--text);border-color:#38383a}.station-filter-chip:hover{background:#14263a}.station-filter-chip.active{background:var(--primary2);border-color:var(--primary2);color:#fff}.station-filter-chip.danger:not(.active){background:#3a171a;color:#fecaca;border-color:#7f1d1d}.station-filter-chip.warn:not(.active){background:#33260b;color:#fde68a;border-color:#92400e}.station-filter-chip.info:not(.active){background:#202044;color:#c7d2fe;border-color:#3730a3}.station-issue-row,.station-audit-empty-filter{background:#151515;border-color:#38383a}.station-issue-count{background:#151515;border-color:#38383a;color:var(--sub)}}
 
 @media(max-width:860px){.grid,.config-row,.geo-toolbar,.geo-steps{grid-template-columns:1fr}.container{display:block;padding:16px}.tabs,.tabs:hover,.tabs:focus-within,.tabs.expanded{position:sticky;top:8px;flex-direction:row;width:auto;margin-bottom:20px;overflow-x:auto;box-shadow:0 8px 22px rgba(15,23,42,.12)}.nav-toggle{display:none}.tab-btn,.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-btn{width:auto;flex:1 0 180px;grid-template-columns:44px 1fr;text-align:left;justify-items:start}.tab-label,.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-label{width:auto;opacity:1;transform:none}body{padding:12px}.geo-hero h1{font-size:21px}}
 @media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1c1c1e;--text:#f5f5f7;--sub:#aaa;--border:#38383a;--soft:#182235}.container{background:rgba(28,28,30,.92)}.config-row{background:#182235}.hint-box,.geo-toggle,.geo-statusbar{background:#151515}.drop-zone{background:#151515}.step-card{background:#1f1f22}input,textarea,.geo-card textarea{background:#111;color:#f5f5f7;border-color:#38383a}.metric{background:#111;color:#cbd5e1}.pill{background:#14263a;color:#9fd3ff}button.ghost{background:#2c2c2e;color:#eee}}
@@ -213,10 +216,10 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
             </div>
             <div id="lineDebugPanel" class="line-debug-panel"></div>
             <div class="sequence-panel">
-              <div class="title"><strong>路線停站</strong><span class="small">按車站名可直接跳去修改頁</span></div>
+              <div class="title"><strong>路線停站</strong><span class="small">單擊選取，雙擊修改</span></div>
           <div class="row">
-            <input id="sequenceStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px">
-            <button class="secondary mini-btn" onclick="addStationToSelectedLineSequence()">加入停車站</button>
+            <input id="sequenceStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px" oninput="updateSequenceStationActionLabel()" onchange="updateSequenceStationActionLabel()">
+            <button id="sequenceStationActionBtn" class="secondary mini-btn" onclick="addStationToSelectedLineSequence()">加入停車站</button>
             <button class="danger mini-btn" onclick="deleteSelectedLine()">刪除此路線</button>
           </div>
           <datalist id="companyStationIdList"></datalist>
@@ -421,6 +424,9 @@ let companyEditorData = null;
 let companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
 let companyEditorOriginalWrapped = true;
 let companyStationIssueGroups = [];
+let stationIssueFilter = 'all';
+let stationIdRepairHints = [];
+let stationIdRepairSourceMap = new WeakMap();
 
 function toEditorIdToken(value) {
   return String(value || '')
@@ -531,6 +537,8 @@ function setCompanyEditorStatus(msg, type='') {
 }
 
 function normalizeCompanyEditorData(raw) {
+  stationIdRepairHints = [];
+  stationIdRepairSourceMap = new WeakMap();
   companyEditorOriginalWrapped = Array.isArray(raw);
   const comp = Array.isArray(raw) ? (raw[0] || {}) : raw;
   if (!comp || typeof comp !== 'object') throw new Error('JSON 最外層格式錯誤');
@@ -744,7 +752,7 @@ function renderCompanyLineList() {
   }).join('') || '<div class="status">未有路線</div>';
 }
 
-function selectCompanyLine(index) { companyEditorCurrent.line = index; renderCompanyLineList(); renderSelectedLineForm(); }
+function selectCompanyLine(index) { companyEditorCurrent.line = index; companySelectedSequenceIndex = null; renderCompanyLineList(); renderSelectedLineForm(); }
 function getSelectedLine() { return companyEditorData?.lines?.[companyEditorCurrent.line] || null; }
 
 function renderSelectedLineForm() {
@@ -830,9 +838,13 @@ function renderLineSequenceList() {
     if (box) box.innerHTML = '<div class="status">請先選擇路線</div>';
     renderSelectedLineOverview();
     renderLineDebugPanel();
+    updateSequenceStationActionLabel();
     return;
   }
   line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
+  if (companySelectedSequenceIndex !== null && companySelectedSequenceIndex >= line.sequence.length) {
+    companySelectedSequenceIndex = null;
+  }
   const stMap = new Map((companyEditorData?.stations || []).map(s => [toEditorIdToken(s.id), s]));
   const idCounts = new Map();
   line.sequence.forEach(rawId => {
@@ -845,17 +857,77 @@ function renderLineSequenceList() {
     const st = stMap.get(stId);
     const label = getStationDisplay(st, stId || rawStId || '(空白 ID)');
     const issueClass = !stId || !st ? 'missing' : (idCounts.get(stId) > 1 ? 'duplicate' : '');
+    const selectedClass = i === companySelectedSequenceIndex ? 'selected' : '';
     const stationButton = stId
-      ? `<button type="button" class="seq-name seq-jump ${!st ? 'missing' : ''}" title="${escapeEditorAttr(label)}" onclick="${st ? `selectCompanyStationById('${escapeEditorAttr(stId)}')` : `focusMissingStationId('${escapeEditorAttr(stId)}')`}">${escapeEditorHtml(label)}</button>`
+      ? `<button type="button" class="seq-name seq-jump ${!st ? 'missing' : ''}" title="${escapeEditorAttr(label)}" onclick="selectLineSequenceStation(${i})" ondblclick="openSequenceStationForEdit(${i}, '${escapeEditorAttr(stId)}')">${escapeEditorHtml(label)}</button>`
       : `<span class="seq-name danger-text">(空白 ID)</span>`;
-    return `<div class="seq-item ${issueClass}" draggable="true" data-seq-index="${i}" ondragstart="handleSequenceDragStart(event, ${i})" ondragover="handleSequenceDragOver(event, ${i})" ondragleave="handleSequenceDragLeave(event)" ondrop="handleSequenceDrop(event, ${i})" ondragend="handleSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${i+1}</span>${stationButton}<button class="ghost mini-btn" onclick="moveSequenceStation(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveSequenceStation(${i},1)">↓</button><button class="danger mini-btn" onclick="removeSequenceStation(${i})">✕</button></div>`;
+    return `<div class="seq-item ${issueClass} ${selectedClass}" draggable="true" data-seq-index="${i}" ondragstart="handleSequenceDragStart(event, ${i})" ondragover="handleSequenceDragOver(event, ${i})" ondragleave="handleSequenceDragLeave(event)" ondrop="handleSequenceDrop(event, ${i})" ondragend="handleSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${i+1}</span>${stationButton}<button class="ghost mini-btn" onclick="moveSequenceStation(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveSequenceStation(${i},1)">↓</button><button class="danger mini-btn" onclick="removeSequenceStation(${i})">✕</button></div>`;
   }).join('') || '<div class="status">未有停車站 sequence</div>';
   renderCompanyLineList();
   renderSelectedLineOverview();
   renderLineDebugPanel();
+  updateSequenceStationActionLabel();
 }
 
 let companySequenceDragIndex = null;
+let companySelectedSequenceIndex = null;
+
+function selectLineSequenceStation(index) {
+  const line = getSelectedLine();
+  if (!line?.sequence || index < 0 || index >= line.sequence.length) return;
+  companySelectedSequenceIndex = companySelectedSequenceIndex === index ? null : index;
+  document.querySelectorAll('#lineSequenceList .seq-item').forEach(item => {
+    item.classList.toggle('selected', companySelectedSequenceIndex !== null && Number(item.dataset.seqIndex) === companySelectedSequenceIndex);
+  });
+  updateSequenceStationActionLabel();
+}
+
+function updateSequenceStationActionLabel() {
+  const btn = document.getElementById('sequenceStationActionBtn');
+  if (!btn) return;
+  const pickerValue = document.getElementById('sequenceStationPicker')?.value.trim();
+  const line = getSelectedLine();
+  const canReplace = !!pickerValue && line?.sequence && companySelectedSequenceIndex !== null && companySelectedSequenceIndex >= 0 && companySelectedSequenceIndex < line.sequence.length;
+  btn.textContent = canReplace ? '取代車站' : '加入停車站';
+}
+
+function openSequenceStationForEdit(index, stationId) {
+  const line = getSelectedLine();
+  const id = toEditorIdToken(stationId || line?.sequence?.[index]);
+  if (!id) return;
+  const exists = (companyEditorData?.stations || []).some(st => toEditorIdToken(st.id) === id);
+  if (exists) {
+    selectCompanyStationById(id);
+  } else {
+    createMissingStationFromSequence(id);
+  }
+}
+
+function createMissingStationFromSequence(stationId) {
+  if (!companyEditorData) return;
+  const id = toEditorIdToken(stationId);
+  if (!id) return;
+  const existingIndex = (companyEditorData.stations || []).findIndex(st => toEditorIdToken(st.id) === id);
+  if (existingIndex >= 0) return selectCompanyStationById(id);
+
+  const companyId = getCompanyIdForEditor();
+  const suffix = getLockedEditorSuffix(id, 'STN', companyId) || 'NEW';
+  companyEditorData.stations.push({
+    id,
+    company_id: companyId,
+    name: '',
+    lat: '',
+    lng: ''
+  });
+  companyEditorCurrent.station = companyEditorData.stations.length - 1;
+  renderCompanyEditorAll();
+  switchCompanyEditorSection('stations');
+  renderSelectedStationForm();
+  scrollCompanyEditorPanelIntoView('companyEditorStations');
+  setCompanyEditorStatus(`已新增缺漏車站 ID：${id}，請補回站名同座標。`, 'warn');
+  const suffixInput = document.getElementById('editStationIdSuffix');
+  if (suffixInput) suffixInput.value = suffix;
+}
 
 function clearSequenceDragClasses() {
   document.querySelectorAll('#lineSequenceList .seq-item').forEach(item => {
@@ -910,6 +982,12 @@ function reorderSequenceStation(fromIndex, toIndex) {
 
   const [moved] = line.sequence.splice(fromIndex, 1);
   line.sequence.splice(toIndex, 0, moved);
+  if (companySelectedSequenceIndex === fromIndex) {
+    companySelectedSequenceIndex = toIndex;
+  } else if (companySelectedSequenceIndex !== null) {
+    if (fromIndex < companySelectedSequenceIndex && toIndex >= companySelectedSequenceIndex) companySelectedSequenceIndex -= 1;
+    if (fromIndex > companySelectedSequenceIndex && toIndex <= companySelectedSequenceIndex) companySelectedSequenceIndex += 1;
+  }
   renderLineSequenceList();
   renderStationIssuePanel();
   refreshCompanyJsonOutput();
@@ -922,7 +1000,14 @@ function addStationToSelectedLineSequence() {
   const st = (companyEditorData.stations || []).find(s => s.id === toEditorIdToken(raw) || s.name === raw || `${s.name}｜${s.id}` === raw);
   const id = st?.id || toEditorIdToken(raw);
   line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
-  line.sequence.push(id);
+  if (companySelectedSequenceIndex !== null && companySelectedSequenceIndex >= 0 && companySelectedSequenceIndex < line.sequence.length) {
+    line.sequence[companySelectedSequenceIndex] = id;
+    setCompanyEditorStatus(`已取代第 ${companySelectedSequenceIndex + 1} 個停站：${id}`, 'ok');
+  } else {
+    line.sequence.push(id);
+    companySelectedSequenceIndex = line.sequence.length - 1;
+    setCompanyEditorStatus(`已加入停站：${id}`, 'ok');
+  }
   document.getElementById('sequenceStationPicker').value = '';
   renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
 }
@@ -932,15 +1017,24 @@ function moveSequenceStation(index, delta) {
   const next = index + delta;
   if (next < 0 || next >= line.sequence.length) return;
   [line.sequence[index], line.sequence[next]] = [line.sequence[next], line.sequence[index]];
+  if (companySelectedSequenceIndex === index) companySelectedSequenceIndex = next;
+  else if (companySelectedSequenceIndex === next) companySelectedSequenceIndex = index;
   renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
 }
-function removeSequenceStation(index) { const line = getSelectedLine(); if (!line?.sequence) return; line.sequence.splice(index,1); renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput(); }
+function removeSequenceStation(index) {
+  const line = getSelectedLine(); if (!line?.sequence) return;
+  line.sequence.splice(index,1);
+  if (companySelectedSequenceIndex === index) companySelectedSequenceIndex = null;
+  else if (companySelectedSequenceIndex !== null && companySelectedSequenceIndex > index) companySelectedSequenceIndex -= 1;
+  renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
+}
 
 function addCompanyLine() {
   if (!companyEditorData) return;
   const base = toEditorIdToken(companyEditorData.company_id || 'COMPANY');
   companyEditorData.lines.push({ id: buildLockedLineId(base, 'NEW_LINE'), company_id: base, name: '新路線', color: '#63BD0F', geometry_wkt: '', sequence: [] });
   companyEditorCurrent.line = companyEditorData.lines.length - 1;
+  companySelectedSequenceIndex = null;
   renderCompanyEditorAll();
 }
 function deleteSelectedLine() {
@@ -948,6 +1042,7 @@ function deleteSelectedLine() {
   if (!confirm('確定刪除此路線？')) return;
   companyEditorData.lines.splice(companyEditorCurrent.line,1);
   companyEditorCurrent.line = Math.max(0, companyEditorCurrent.line - 1);
+  companySelectedSequenceIndex = null;
   renderCompanyEditorAll();
 }
 
@@ -1003,6 +1098,66 @@ function getStationUsageMap() {
     });
   });
   return usage;
+}
+
+function countStationsUsingId(stationId) {
+  const id = toEditorIdToken(stationId);
+  if (!id) return 0;
+  return (companyEditorData?.stations || []).filter(st => toEditorIdToken(st.id) === id).length;
+}
+
+function getStationSequenceRefs(stationId) {
+  const id = toEditorIdToken(stationId);
+  return getStationUsageMap().get(id) || [];
+}
+
+function rememberStationIdRepairHint(oldId, newId, stationName = '', stationRef = null) {
+  const fromId = toEditorIdToken(oldId);
+  const toId = toEditorIdToken(newId);
+  if (!fromId || !toId || fromId === toId) return;
+  const existing = stationIdRepairHints.find(item => item.oldId === fromId && item.newId === toId && (!stationRef || item.stationRef === stationRef));
+  if (existing) {
+    existing.stationName = stationName || existing.stationName;
+    existing.stationRef = stationRef || existing.stationRef;
+    return;
+  }
+  stationIdRepairHints.push({ oldId: fromId, newId: toId, stationName, stationRef });
+}
+
+function assignSequenceRefToStation(lineIndex, seqIndex, stationId) {
+  if (!companyEditorData) return;
+  const line = companyEditorData.lines?.[lineIndex];
+  const id = toEditorIdToken(stationId);
+  if (!line || !Array.isArray(line.sequence) || !id || seqIndex < 0 || seqIndex >= line.sequence.length) return;
+  line.sequence[seqIndex] = id;
+  renderCompanyLineList();
+  renderLineSequenceList();
+  renderStationIssuePanel();
+  renderSelectedStationRouteRefs(getSelectedStation()?.id);
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus(`已將 ${line.name || line.id || '路線'} 第 ${seqIndex + 1} 個停站指派到 ${id}`, 'ok');
+}
+
+function assignAllSequenceRefsToStation(oldId, stationId) {
+  const fromId = toEditorIdToken(oldId);
+  const toId = toEditorIdToken(stationId);
+  if (!fromId || !toId || !companyEditorData) return;
+  let changed = 0;
+  (companyEditorData.lines || []).forEach(line => {
+    if (!Array.isArray(line.sequence)) return;
+    line.sequence = line.sequence.map(seqId => {
+      if (toEditorIdToken(seqId) !== fromId) return seqId;
+      changed += 1;
+      return toId;
+    });
+  });
+  stationIdRepairHints = stationIdRepairHints.filter(item => !(item.oldId === fromId && item.newId === toId));
+  renderCompanyLineList();
+  renderLineSequenceList();
+  renderStationIssuePanel();
+  renderSelectedStationRouteRefs(getSelectedStation()?.id);
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus(`已將 ${changed} 個舊停站 ID 指派到 ${toId}`, changed ? 'ok' : 'warn');
 }
 
 function getStationDisplay(station, fallbackId = '') {
@@ -1228,6 +1383,27 @@ function findStationIssueGroups() {
     });
   }
 
+  const usage = getStationUsageMap();
+  stationIdRepairHints = stationIdRepairHints.filter(hint => {
+    const newStation = stations.find(item => (hint.stationRef ? item.s === hint.stationRef : item.id === hint.newId) && item.id === hint.newId);
+    const refs = usage.get(hint.oldId) || [];
+    return newStation && refs.length;
+  });
+  stationIdRepairHints.forEach(hint => {
+    const newStation = stations.find(item => (hint.stationRef ? item.s === hint.stationRef : item.id === hint.newId) && item.id === hint.newId);
+    const refs = usage.get(hint.oldId) || [];
+    groups.push({
+      type: 'idRepair',
+      count: refs.length,
+      title: `重複 ID 待指派：${hint.oldId} → ${hint.newId}`,
+      oldId: hint.oldId,
+      newId: hint.newId,
+      station: newStation,
+      stationName: hint.stationName || newStation?.s?.name || hint.newId,
+      refs
+    });
+  });
+
   byId.forEach((items, key) => {
     if (items.length > 1) groups.push({ type: 'id', key, count: items.length, title: `重複 station id：${key}`, items });
   });
@@ -1238,7 +1414,6 @@ function findStationIssueGroups() {
     if (items.length > 1) groups.push({ type: 'coord', key, count: items.length, title: `同座標車站：${key}`, items });
   });
 
-  const usage = getStationUsageMap();
   const unused = stations.filter(item => item.id && !usage.has(item.id));
   if (unused.length) {
     groups.push({ type: 'unused', count: unused.length, title: `未有路線使用的車站：${unused.length} 個`, items: unused });
@@ -1294,7 +1469,7 @@ function buildMissingStationRefHtml(item) {
   return `<div class="station-mini-card missing"><strong>無車站資料</strong><br><code>${escapeEditorHtml(item.id)}</code><br><span>出現於：</span><div>${refs}</div><button class="ghost mini-btn" onclick="focusMissingStationId('${escapeEditorAttr(item.id)}')">到車站搜尋</button></div>`;
 }
 
-function renderStationIssueGroup(group, groupIndex) {
+function renderStationIssueGroupLegacy(group, groupIndex) {
   const allowMerge = group.type === 'name';
   const cardClass = getStationIssueCardClass(group.type);
   const detail = getStationIssueDetail(group);
@@ -1311,7 +1486,7 @@ function countStationIssues(groups, type) {
   return groups.filter(group => group.type === type).reduce((sum, group) => sum + (group.count || group.items.length), 0);
 }
 
-function renderStationIssuePanel() {
+function renderStationIssuePanelLegacy() {
   const panel = document.getElementById('stationIssuePanel');
   if (!panel) return;
   if (!companyEditorData) { panel.innerHTML = ''; return; }
@@ -1345,6 +1520,219 @@ function renderStationIssuePanel() {
   panel.innerHTML = summary + readableNote + companyStationIssueGroups.map((group, groupIndex) => renderStationIssueGroup(group, groupIndex)).join('');
 }
 
+function getStationIssueMeta(type) {
+  const map = {
+    missingRef: { label: '缺站 ID', icon: '⚠️', tone: 'danger', brief: '路線停站引用了不存在的 station id。' },
+    idRepair: { label: 'ID 指派', icon: '⚠️', tone: 'danger', brief: '此車站由重複 ID 拆出；請逐條確認哪些路線停站應改用新 ID。' },
+    id: { label: '重複 ID', icon: '⚠️', tone: 'danger', brief: '多個車站共用同一 station id；修改其中一個 ID 時不會自動改路線，請之後用「ID 指派」逐條確認。' },
+    basic: { label: '基本資料', icon: '⚠️', tone: 'danger', brief: '車站缺少站名或 station id。' },
+    badCoord: { label: '座標問題', icon: '📍', tone: 'warn', brief: 'lat / lng 空白或格式不正確。' },
+    name: { label: '同名車站', icon: '↔', tone: 'warn', brief: '站名相同，請確認是否同一個站。' },
+    coord: { label: '同座標', icon: '📍', tone: 'warn', brief: '座標完全相同，請確認是否重複建立。' },
+    unused: { label: '未使用', icon: '🚫', tone: 'info', brief: '未被任何路線停站使用，預設收合。' }
+  };
+  return map[type] || { label: '需檢查', icon: '⚠️', tone: 'warn', brief: '請檢查此組資料。' };
+}
+
+function countStationIssueItems(groups, types = null) {
+  const typeSet = types ? new Set(Array.isArray(types) ? types : [types]) : null;
+  return groups
+    .filter(group => !typeSet || typeSet.has(group.type))
+    .reduce((sum, group) => sum + (group.count || group.items?.length || group.refs?.length || 0), 0);
+}
+
+function stationIssueGroupMatchesFilter(group, filter) {
+  if (!filter || filter === 'all') return true;
+  if (filter === 'critical') return ['missingRef', 'idRepair', 'id', 'basic', 'badCoord'].includes(group.type);
+  if (filter === 'duplicate') return ['id', 'name', 'coord'].includes(group.type);
+  if (filter === 'coord') return ['coord', 'badCoord'].includes(group.type);
+  return group.type === filter;
+}
+
+function setStationIssueFilter(filter) {
+  stationIssueFilter = filter || 'all';
+  renderStationIssuePanel();
+}
+
+function buildStationIssueFilterChip(filter, label, count, tone = '') {
+  const active = stationIssueFilter === filter ? ' active' : '';
+  const toneClass = tone ? ` ${tone}` : '';
+  return `<button type="button" class="station-filter-chip${toneClass}${active}" onclick="setStationIssueFilter('${escapeEditorAttr(filter)}')">${escapeEditorHtml(label)} <strong>${count}</strong></button>`;
+}
+
+function getStationIssueGroupTitle(group) {
+  switch (group.type) {
+    case 'missingRef': return '缺站 ID';
+    case 'idRepair': return `ID 指派：${group.stationName || group.newId || ''}`;
+    case 'id': return `重複 ID：${group.key || ''}`;
+    case 'name': return `同名車站：${group.items?.[0]?.s?.name || group.key || ''}`;
+    case 'coord': return `同座標：${group.key || ''}`;
+    case 'unused': return '未使用車站';
+    case 'badCoord': return '座標未完整 / 格式不正確';
+    case 'basic': return '基本資料未完整';
+    default: return group.title || '需檢查';
+  }
+}
+
+function buildMissingStationIssueRow(item) {
+  const refs = item.refs || [];
+  const refText = refs.slice(0, 3).map(ref => `${ref.line?.name || ref.line?.id || `路線 ${ref.lineIndex + 1}`} #${ref.seqIndex + 1}`).join('、');
+  const more = refs.length > 3 ? `、+${refs.length - 3}` : '';
+  const routeBtns = refs.slice(0, 2).map(ref => {
+    const lineId = ref.line?.id || '';
+    const lineName = ref.line?.name || ref.line?.id || `路線 ${ref.lineIndex + 1}`;
+    return `<button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(lineId)}')">${escapeEditorHtml(lineName)} #${ref.seqIndex + 1}</button>`;
+  }).join('');
+  return `<div class="station-issue-row">
+    <div class="station-issue-row-main">
+      <div class="station-issue-row-name"><code>${escapeEditorHtml(item.id)}</code></div>
+      <div class="station-issue-row-meta">出現於：${escapeEditorHtml(refText + more || '-')}</div>
+    </div>
+    <div class="station-issue-row-actions">
+      <button class="ok mini-btn" onclick="createMissingStationFromSequence('${escapeEditorAttr(item.id)}')">新增車站</button>
+      ${routeBtns}
+    </div>
+  </div>`;
+}
+
+function buildStationIdRepairRow(ref, group) {
+  const lineName = ref.line?.name || ref.line?.id || `路線 ${ref.lineIndex + 1}`;
+  const stationName = group.stationName || group.newId;
+  return `<div class="station-issue-row">
+    <div class="station-issue-row-main">
+      <div class="station-issue-row-name"><strong>${escapeEditorHtml(lineName)} #${ref.seqIndex + 1}</strong><code>${escapeEditorHtml(group.oldId)}</code></div>
+      <div class="station-issue-row-meta">候選新站：${escapeEditorHtml(stationName)}｜${escapeEditorHtml(group.newId)}</div>
+    </div>
+    <div class="station-issue-row-actions">
+      <button class="ok mini-btn" onclick="assignSequenceRefToStation(${ref.lineIndex}, ${ref.seqIndex}, '${escapeEditorAttr(group.newId)}')">指派到此站</button>
+      <button class="ghost mini-btn" onclick="selectCompanyLineById('${escapeEditorAttr(ref.line?.id || '')}')">跳到路線</button>
+    </div>
+  </div>`;
+}
+
+function buildStationIssueRow(item, group, groupIndex) {
+  const station = item.s || {};
+  const id = toEditorIdToken(station.id);
+  const name = String(station.name || '').trim() || '(未命名站)';
+  const routes = getStationRouteRefs(station.id);
+  const routeText = routes.length ? routes.map(route => route.name || route.id).slice(0, 3).join('、') : '未使用';
+  const routeMore = routes.length > 3 ? `、+${routes.length - 3}` : '';
+  const coordText = `${station.lat ?? '-'}, ${station.lng ?? '-'}`;
+  const editAction = group.type === 'id' || !id
+    ? `selectCompanyStation(${Number(item.i) || 0})`
+    : `selectCompanyStationById('${escapeEditorAttr(id)}')`;
+  const mergeBtn = group.type === 'name' && id
+    ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, '${escapeEditorAttr(id)}')">合併到此站</button>`
+    : '';
+  return `<div class="station-issue-row">
+    <div class="station-issue-row-main">
+      <div class="station-issue-row-name"><strong>${escapeEditorHtml(name)}</strong><code>${escapeEditorHtml(id || '(無 ID)')}</code></div>
+      <div class="station-issue-row-meta">座標：${escapeEditorHtml(coordText)}　停靠：${escapeEditorHtml(routeText + routeMore)}</div>
+    </div>
+    <div class="station-issue-row-actions">
+      <button class="ghost mini-btn" onclick="${editAction}">修改</button>
+      ${mergeBtn}
+    </div>
+  </div>`;
+}
+
+function buildStationIssueRowLegacy(item, group, groupIndex) {
+  const station = item.s || {};
+  const id = toEditorIdToken(station.id);
+  const name = String(station.name || '').trim() || '(未命名站)';
+  const routes = getStationRouteRefs(station.id);
+  const routeText = routes.length ? routes.map(route => route.name || route.id).slice(0, 3).join('、') : '未使用';
+  const routeMore = routes.length > 3 ? `、+${routes.length - 3}` : '';
+  const coordText = `${station.lat ?? '-'}, ${station.lng ?? '-'}`;
+  const editAction = id
+    ? `selectCompanyStationById('${escapeEditorAttr(id)}')`
+    : `selectCompanyStation(${Number(item.i) || 0})`;
+  const mergeBtn = group.type === 'name' && id
+    ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, '${escapeEditorAttr(id)}')">合併到此站</button>`
+    : '';
+  return `<div class="station-issue-row">
+    <div class="station-issue-row-main">
+      <div class="station-issue-row-name"><strong>${escapeEditorHtml(name)}</strong><code>${escapeEditorHtml(id || '(無 ID)')}</code></div>
+      <div class="station-issue-row-meta">座標：${escapeEditorHtml(coordText)}　停靠：${escapeEditorHtml(routeText + routeMore)}</div>
+    </div>
+    <div class="station-issue-row-actions">
+      <button class="ghost mini-btn" onclick="${editAction}">修改</button>
+      ${mergeBtn}
+    </div>
+  </div>`;
+}
+
+function renderStationIssueGroup(group, groupIndex) {
+  const meta = getStationIssueMeta(group.type);
+  const title = getStationIssueGroupTitle(group);
+  const count = group.count || group.items?.length || group.refs?.length || 0;
+  const openAttr = stationIssueFilter !== 'all' || group.type !== 'unused' ? ' open' : '';
+  const rows = group.type === 'missingRef'
+    ? group.items.map(item => buildMissingStationIssueRow(item)).join('')
+    : group.type === 'idRepair'
+      ? group.refs.map(ref => buildStationIdRepairRow(ref, group)).join('')
+      : group.items.map(item => buildStationIssueRow(item, group, groupIndex)).join('');
+  const groupAction = group.type === 'idRepair'
+    ? `<div class="station-issue-brief"><button class="secondary mini-btn" onclick="assignAllSequenceRefsToStation('${escapeEditorAttr(group.oldId)}', '${escapeEditorAttr(group.newId)}')">全部指派到 ${escapeEditorHtml(group.newId)}</button></div>`
+    : '';
+
+  return `<div class="station-issue-card compact ${escapeEditorAttr(meta.tone)}">
+    <details${openAttr}>
+      <summary>
+        <span class="station-issue-summary-main"><span class="station-issue-icon">${meta.icon}</span><span class="station-issue-title">${escapeEditorHtml(title)}</span></span>
+        <span class="station-issue-count">${count}</span>
+      </summary>
+      <div class="station-issue-brief">${escapeEditorHtml(meta.brief)}</div>
+      ${groupAction}
+      <div class="station-issue-list">${rows}</div>
+    </details>
+  </div>`;
+}
+
+function renderStationIssuePanel() {
+  const panel = document.getElementById('stationIssuePanel');
+  if (!panel) return;
+  if (!companyEditorData) { panel.innerHTML = ''; return; }
+  companyStationIssueGroups = findStationIssueGroups();
+
+  const stationCount = companyEditorData?.stations?.length || 0;
+  const totalIssueCount = countStationIssueItems(companyStationIssueGroups);
+  const missingRefCount = countStationIssueItems(companyStationIssueGroups, 'missingRef');
+  const repairCount = countStationIssueItems(companyStationIssueGroups, 'idRepair');
+  const criticalCount = countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'id', 'basic', 'badCoord']);
+  const duplicateCount = countStationIssueItems(companyStationIssueGroups, ['id', 'name', 'coord']);
+  const coordCount = countStationIssueItems(companyStationIssueGroups, ['coord', 'badCoord']);
+  const unusedCount = countStationIssueItems(companyStationIssueGroups, 'unused');
+
+  const summary = `
+    <div class="station-audit-head">
+      <strong>車站偵錯</strong>
+      <span class="small">${stationCount} 車站 / ${totalIssueCount} 項需檢查</span>
+    </div>
+    <div class="station-audit-filters">
+      ${buildStationIssueFilterChip('all', '全部', totalIssueCount)}
+      ${buildStationIssueFilterChip('critical', '需處理', criticalCount, criticalCount ? 'danger' : '')}
+      ${buildStationIssueFilterChip('missingRef', '缺站 ID', missingRefCount, missingRefCount ? 'danger' : '')}
+      ${buildStationIssueFilterChip('idRepair', 'ID 指派', repairCount, repairCount ? 'danger' : '')}
+      ${buildStationIssueFilterChip('duplicate', '重複 / 可疑', duplicateCount, duplicateCount ? 'warn' : '')}
+      ${buildStationIssueFilterChip('coord', '座標', coordCount, coordCount ? 'warn' : '')}
+      ${buildStationIssueFilterChip('unused', '未使用', unusedCount, unusedCount ? 'info' : '')}
+    </div>`;
+
+  if (!companyStationIssueGroups.length) {
+    panel.innerHTML = summary + '<div class="audit-empty">檢查結果正常：未發現缺站引用、重複車站、未使用車站或座標問題。</div>';
+    return;
+  }
+
+  const visibleGroups = companyStationIssueGroups.filter(group => stationIssueGroupMatchesFilter(group, stationIssueFilter));
+  if (!visibleGroups.length) {
+    panel.innerHTML = summary + '<div class="station-audit-empty-filter">此分類暫時沒有項目。</div>';
+    return;
+  }
+
+  panel.innerHTML = summary + `<div class="station-audit-list">${visibleGroups.map((group, groupIndex) => renderStationIssueGroup(group, companyStationIssueGroups.indexOf(group))).join('')}</div>`;
+}
+
 function renderSelectedStationRouteRefs(stationId) {
   const box = document.getElementById('selectedStationRouteRefs');
   if (!box) return;
@@ -1361,6 +1749,7 @@ function selectCompanyLineById(lineId) {
   const index = (companyEditorData?.lines || []).findIndex(line => line.id === lineId);
   if (index < 0) return;
   companyEditorCurrent.line = index;
+  companySelectedSequenceIndex = null;
   switchCompanyEditorSection('lines');
   renderCompanyLineList();
   renderSelectedLineForm();
@@ -1452,6 +1841,8 @@ function renderSelectedStationForm() {
 function updateSelectedStationFromForm() {
   const st = getSelectedStation(); if (!st) return;
   const oldId = toEditorIdToken(st.id);
+  const oldIdUseCount = countStationsUsingId(oldId);
+  const existingRepairSourceId = stationIdRepairSourceMap.get(st);
   const companyId = toEditorIdToken(document.getElementById('editStationCompanyId').value || companyEditorData.company_id);
   const suffix = toEditorIdToken(document.getElementById('editStationIdSuffix').value || 'NEW');
   document.getElementById('editStationCompanyId').value = companyId;
@@ -1465,10 +1856,23 @@ function updateSelectedStationFromForm() {
   st.company_id = companyId;
   const nameEn = document.getElementById('editStationNameEn').value.trim();
   if (nameEn) st.name_en = nameEn; else delete st.name_en;
+  let idChangeStatus = '';
+  let idChangeStatusType = 'ok';
   if (oldId && oldId !== st.id) {
-    companyEditorData.lines.forEach(line => { if (Array.isArray(line.sequence)) line.sequence = line.sequence.map(id => toEditorIdToken(id) === oldId ? st.id : id); });
+    const oldIdHasRepairHints = stationIdRepairHints.some(hint => hint.oldId === oldId);
+    const repairSourceId = existingRepairSourceId || (oldIdUseCount > 1 || oldIdHasRepairHints ? oldId : '');
+    if (repairSourceId) {
+      stationIdRepairSourceMap.set(st, repairSourceId);
+      rememberStationIdRepairHint(repairSourceId, st.id, st.name || st.id, st);
+      idChangeStatus = `已修改車站 ID：${oldId} → ${st.id}。因為原 ID 曾經重複使用，未自動改路線停站；請在車站偵錯「ID 指派」逐條確認。`;
+      idChangeStatusType = 'warn';
+    } else {
+      companyEditorData.lines.forEach(line => { if (Array.isArray(line.sequence)) line.sequence = line.sequence.map(id => toEditorIdToken(id) === oldId ? st.id : id); });
+      idChangeStatus = `已修改車站 ID：${oldId} → ${st.id}，並同步更新相關路線停站。`;
+    }
   }
   renderCompanyStationList(); renderCompanyStationDatalist(); renderLineSequenceList(); renderStationIssuePanel(); renderSelectedStationRouteRefs(st.id); refreshCompanyJsonOutput();
+  if (idChangeStatus) setCompanyEditorStatus(idChangeStatus, idChangeStatusType);
 }
 function addCompanyStation() {
   if (!companyEditorData) return;
@@ -1554,7 +1958,36 @@ function escapeEditorAttr(text) {
   return String(text || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-document.addEventListener('DOMContentLoaded',setupGeometryAutomation);
+function shouldSelectAllField(el) {
+  if (!(el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement)) return false;
+  if (el.disabled || el.readOnly) return false;
+  const type = String(el.type || '').toLowerCase();
+  return !['button','checkbox','color','file','hidden','image','radio','range','reset','submit'].includes(type) && typeof el.select === 'function';
+}
+
+function selectAllFieldText(el) {
+  if (!shouldSelectAllField(el)) return;
+  try { el.select(); } catch (_) {}
+}
+
+function setupSelectAllInputs() {
+  document.addEventListener('focusin', event => {
+    const el = event.target;
+    if (!shouldSelectAllField(el)) return;
+    setTimeout(() => selectAllFieldText(el), 0);
+  });
+  document.addEventListener('mouseup', event => {
+    const el = event.target;
+    if (!shouldSelectAllField(el)) return;
+    event.preventDefault();
+    selectAllFieldText(el);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupGeometryAutomation();
+  setupSelectAllInputs();
+});
 </script>
 </body>
 </html>
