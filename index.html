@@ -2471,6 +2471,13 @@ body.history-touch-sorting {
     overflow: hidden;
     touch-action: none;
 }
+
+@media (hover: hover) and (pointer: fine) {
+    body.history-touch-sorting {
+        overflow-y: auto;
+        touch-action: auto;
+    }
+}
 @supports not (background: color-mix(in srgb, red 10%, transparent)) {
     .trip.sort-drag-over {
         background: rgba(99, 189, 15, 0.10);
@@ -6689,6 +6696,20 @@ body {
 }
 
 @media (min-width: 900px) {
+    html,
+    body {
+        height: auto !important;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto !important;
+    }
+
+    #main-app {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
+    }
+
     .container {
         padding-bottom: var(--desktop-page-pad, 24px) !important;
     }
@@ -8418,14 +8439,10 @@ function hideLoadingScreen() {
 
 async function loadData() {
     try {
-        const [compRes, trainRes] = await Promise.all([
-            fetch("companies.json"), fetch("traintypes.json")
-        ]);
-        if (compRes.ok && trainRes.ok) {
-            db.companies = await compRes.json(); db.trains = await trainRes.json();
-        }
-
-        db.lines = []; db.stations = [];
+        db.companies = [];
+        db.lines = [];
+        db.stations = [];
+        db.trains = [];
         const newCompanyFiles = [
             "meitetsu.json", "sagami.json", "keikyu.json", "keihan.json", "tokyo_metro.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
@@ -8446,9 +8463,21 @@ async function loadData() {
         const fetchPromises = newCompanyFiles.map(file => fetch(file).then(res => res.ok ? res.json() : null).catch(() => null));
         const results = await Promise.all(fetchPromises);
         
+        const loadedCompanyIds = new Set();
+
         results.forEach(data => {
     if (!data) return;
     let compData = Array.isArray(data) ? data[0] : data;
+    if (!compData?.company_id) return;
+
+    if (!loadedCompanyIds.has(compData.company_id)) {
+        db.companies.push({
+            id: compData.company_id,
+            name: compData.company_name || compData.name || compData.company_id,
+            categories: normalizeRailCompanyCategory(compData.categories || "")
+        });
+        loadedCompanyIds.add(compData.company_id);
+    }
 
     if (compData.geometries) {
         Object.entries(compData.geometries).forEach(([key, geo]) => {
@@ -11396,12 +11425,22 @@ window.importData = function() {
 // =========================================
 // 判斷公司類型，取顏色
 // =========================================
+function normalizeRailCompanyCategory(rawCategory = "") {
+    const category = String(rawCategory || "").trim();
+
+    if (category === "\u79c1\u9244") return "private";
+    if (category === "\u7b2c\u4e09\u30bb\u30af\u30bf\u30fc") return "third_sector";
+    if (category === "\u5730\u4e0b\u9244") return "private";
+
+    return category;
+}
+
 function getRailCompanyCategory(companyIdOrName = "") {
     const company =
         maps.company[companyIdOrName] ||
         Object.values(maps.company).find(c => c.name === companyIdOrName);
 
-    const category = company?.categories || "";
+    const category = normalizeRailCompanyCategory(company?.categories || "");
 
     if (category === "jr_west") return "jr_west";
 	if (category === "jr_central") return "jr_central";

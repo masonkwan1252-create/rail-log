@@ -1008,9 +1008,9 @@ function addStationToSelectedLineSequence() {
     setCompanyEditorStatus(`已取代第 ${companySelectedSequenceIndex + 1} 個停站：${id}`, 'ok');
   } else {
     line.sequence.push(id);
-    companySelectedSequenceIndex = line.sequence.length - 1;
     setCompanyEditorStatus(`已加入停站：${id}`, 'ok');
   }
+  companySelectedSequenceIndex = null;
   document.getElementById('sequenceStationPicker').value = '';
   renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
 }

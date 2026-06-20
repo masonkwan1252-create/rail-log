@@ -258,7 +258,7 @@
           "STN_JR_EAST_KOZUKUE",
           "STN_JR_EAST_KAMOI",
           "STN_JR_EAST_NAKAYAMA",
-          "STN_JR_EAST_TOKA_ICHIBA",
+          "STN_JR_EAST_TOKAICHIBA",
           "STN_JR_EAST_NAGATSUTA",
           "STN_JR_EAST_NARUSE",
           "STN_JR_EAST_MACHIDA",
@@ -295,7 +295,7 @@
           "STN_JR_EAST_MUSASHI_SHINJO",
           "STN_JR_EAST_MUSASHI_MIZUNOKUCHI",
           "STN_JR_EAST_TSUDAYAMA",
-          "STN_JR_EAST_KUJI",
+          "STN_JR_EAST_KUJI_JN12",
           "STN_JR_EAST_SHUKUGAWARA",
           "STN_JR_EAST_NOBORITO",
           "STN_JR_EAST_NAKANOSHIMA",
@@ -337,7 +337,7 @@
           "STN_JR_EAST_YOSHIKAWA",
           "STN_JR_EAST_YOSHIKAWA_MINAMI",
           "STN_JR_EAST_SHIN_MISATO",
-          "STN_JR_EAST_MISATO",
+          "STN_JR_EAST_MISATO_SAITAMA",
           "STN_JR_EAST_MINAMI_NAGAREYAMA",
           "STN_JR_EAST_SHIN_MATSUDO",
           "STN_JR_EAST_SHIN_YAHASHIRA",
@@ -564,8 +564,8 @@
           "STN_JR_EAST_IKUSABATA",
           "STN_JR_EAST_SAWAI",
           "STN_JR_EAST_MITAKE",
-          "STN_JR_EAST_KAWAI",
-          "STN_JR_EAST_KORI",
+          "STN_JR_EAST_KAWAI_OKUTAMA",
+          "STN_JR_EAST_KORI_OKUTAMA",
           "STN_JR_EAST_HATONOSU",
           "STN_JR_EAST_SHIROMARU",
           "STN_JR_EAST_OKUTAMA"
@@ -1072,7 +1072,7 @@
           "STN_JR_EAST_ISOHARA",
           "STN_JR_EAST_OTSUKO",
           "STN_JR_EAST_NAKOSO",
-          "STN_JR_EAST_UEDA",
+          "STN_JR_EAST_UEDA_FUKUSHIMA",
           "STN_JR_EAST_IZUMI",
           "STN_JR_EAST_YUMOTO",
           "STN_JR_EAST_UCHIGO",
@@ -1087,7 +1087,7 @@
           "STN_JR_EAST_TATSUTA",
           "STN_JR_EAST_TOMIOKA",
           "STN_JR_EAST_YONOMORI",
-          "STN_JR_EAST_ONO",
+          "STN_JR_EAST_ONO_FUKUSHIMA",
           "STN_JR_EAST_FUTABA",
           "STN_JR_EAST_NAMIE",
           "STN_JR_EAST_MOMOUCHI",
@@ -1304,7 +1304,7 @@
           "STN_JR_EAST_IWAI",
           "STN_JR_EAST_TOMIURA",
           "STN_JR_EAST_NAKO_FUNAGATA",
-          "STN_JR_EAST_TATEYAMA",
+          "STN_JR_EAST_TATEYAMA_CHIBA",
           "STN_JR_EAST_KOKONOE",
           "STN_JR_EAST_CHIKURA",
           "STN_JR_EAST_CHITOSE",
@@ -1784,7 +1784,6 @@
           "STN_JR_EAST_KANEKO",
           "STN_JR_EAST_HIGASHI_HANNO",
           "STN_JR_EAST_KOMAGAWA",
-          "STN_JR_EAST_KOMAGAWA",
           "STN_JR_EAST_MORO",
           "STN_JR_EAST_OGOSE",
           "STN_JR_EAST_MYOKAKU",
@@ -1914,7 +1913,6 @@
           "STN_JR_EAST_YATAGAWA",
           "STN_JR_EAST_IWAKI_MORIYAMA",
           "STN_JR_EAST_ASAKA_NAGAMORI",
-          "STN_JR_EAST_KAMI_SUGAYA",
           "STN_JR_EAST_MINAMI_SAKADE",
           "STN_JR_EAST_NUKADA",
           "STN_JR_EAST_KAWAI",
@@ -1932,13 +1930,14 @@
         "sequence": [
           "STN_JR_EAST_SAWARA",
           "STN_JR_EAST_KATORI",
-          "STN_JR_EAST_JUUNIKYOU",
+          "STN_JR_EAST_JUNIKYO",
           "STN_JR_EAST_ITAKO",
-          "STN_JR_EAST_NOBOKATA",
-          "STN_JR_EAST_KASHIMA_JINGU"
+          "STN_JR_EAST_NOBUKATA",
+          "STN_JR_EAST_KASHIMA_JINGU",
+          "STN_JR_EAST_KASHIMA_SOCCER_STADIUM"
         ],
         "company_id": "JR_EAST",
-        "color": ""
+        "color": "#c56e2e"
       },
       {
         "id": "JR_EAST_KURURI",
@@ -3529,7 +3528,7 @@
       },
       {
         "name": "久地",
-        "id": "STN_JR_EAST_KUJI",
+        "id": "STN_JR_EAST_KUJI_JN12",
         "lat": "35.610105",
         "lng": "139.593075",
         "company_id": "JR_EAST"
@@ -3767,7 +3766,7 @@
       },
       {
         "name": "三郷",
-        "id": "STN_JR_EAST_MISATO",
+        "id": "STN_JR_EAST_MISATO_SAITAMA",
         "lat": "35.844835",
         "lng": "139.886835",
         "company_id": "JR_EAST"
@@ -4747,14 +4746,14 @@
       },
       {
         "name": "川井",
-        "id": "STN_JR_EAST_KAWAI",
+        "id": "STN_JR_EAST_KAWAI_OKUTAMA",
         "lat": "35.813775",
         "lng": "139.164226",
         "company_id": "JR_EAST"
       },
       {
         "name": "古里",
-        "id": "STN_JR_EAST_KORI",
+        "id": "STN_JR_EAST_KORI_OKUTAMA",
         "lat": "35.81632",
         "lng": "139.15114",
         "company_id": "JR_EAST"
@@ -6650,8 +6649,8 @@
         "company_id": "JR_EAST"
       },
       {
-        "name": "植田",
-        "id": "STN_JR_EAST_UEDA",
+        "name": "植田 (福島県)",
+        "id": "STN_JR_EAST_UEDA_FUKUSHIMA",
         "lat": "36.92049",
         "lng": "140.796485",
         "company_id": "JR_EAST"
@@ -6756,7 +6755,7 @@
       },
       {
         "name": "大野",
-        "id": "STN_JR_EAST_ONO",
+        "id": "STN_JR_EAST_ONO_FUKUSHIMA",
         "lat": "37.409334",
         "lng": "140.984151",
         "company_id": "JR_EAST"
@@ -7631,7 +7630,7 @@
       },
       {
         "name": "館山",
-        "id": "STN_JR_EAST_TATEYAMA",
+        "id": "STN_JR_EAST_TATEYAMA_CHIBA",
         "lat": "34.995915",
         "lng": "139.86199",
         "company_id": "JR_EAST"
@@ -13613,6 +13612,293 @@
         "lat": "40.82781",
         "lng": "140.671495",
         "company_id": "JR_EAST"
+      },
+      {
+        "id": "STN_JR_EAST_KASHIMA_SOCCER_STADIUM",
+        "company_id": "JR_EAST",
+        "name": "鹿島サッカースタジアム",
+        "lat": "35.992061",
+        "lng": "140.636361"
+      },
+      {
+        "id": "STN_JR_EAST_KASHIMA_JINGU",
+        "company_id": "JR_EAST",
+        "name": "鹿島神宮",
+        "lat": "35.970608",
+        "lng": "140.625772"
+      },
+      {
+        "id": "STN_JR_EAST_NOBUKATA",
+        "company_id": "JR_EAST",
+        "name": "延方",
+        "lat": "35.958172",
+        "lng": "140.588625"
+      },
+      {
+        "id": "STN_JR_EAST_ITAKO",
+        "company_id": "JR_EAST",
+        "name": "潮来",
+        "lat": "35.937236",
+        "lng": "140.549567"
+      },
+      {
+        "id": "STN_JR_EAST_JUNIKYO",
+        "company_id": "JR_EAST",
+        "name": "十二橋",
+        "lat": "35.917611",
+        "lng": "140.545778"
+      },
+      {
+        "id": "STN_JR_EAST_KATORI",
+        "company_id": "JR_EAST",
+        "name": "香取",
+        "lat": "35.898",
+        "lng": "140.531972"
+      },
+      {
+        "id": "STN_JR_EAST_SAWARA",
+        "company_id": "JR_EAST",
+        "name": "佐原",
+        "lat": "35.894556",
+        "lng": "140.494056"
+      },
+      {
+        "id": "STN_JR_EAST_OGUCHI",
+        "company_id": "JR_EAST",
+        "name": "大口",
+        "lat": "35.492222",
+        "lng": "139.64625"
+      },
+      {
+        "id": "STN_JR_EAST_KIKUNA",
+        "company_id": "JR_EAST",
+        "name": "菊名",
+        "lat": "35.509722",
+        "lng": "139.630556"
+      },
+      {
+        "id": "STN_JR_EAST_SHIN_YOKOHAMA",
+        "company_id": "JR_EAST",
+        "name": "新横浜",
+        "lat": "35.506806",
+        "lng": "139.616944"
+      },
+      {
+        "id": "STN_JR_EAST_KOZUKUE",
+        "company_id": "JR_EAST",
+        "name": "小机",
+        "lat": "35.508611",
+        "lng": "139.6"
+      },
+      {
+        "id": "STN_JR_EAST_KAMOI",
+        "company_id": "JR_EAST",
+        "name": "鴨居",
+        "lat": "35.510833",
+        "lng": "139.566944"
+      },
+      {
+        "id": "STN_JR_EAST_NAKAYAMA",
+        "company_id": "JR_EAST",
+        "name": "中山",
+        "lat": "35.514722",
+        "lng": "139.539444"
+      },
+      {
+        "id": "STN_JR_EAST_TOKAICHIBA",
+        "company_id": "JR_EAST",
+        "name": "十日市場",
+        "lat": "35.52625",
+        "lng": "139.516667"
+      },
+      {
+        "id": "STN_JR_EAST_NAGATSUTA",
+        "company_id": "JR_EAST",
+        "name": "長津田",
+        "lat": "35.531667",
+        "lng": "139.495278"
+      },
+      {
+        "id": "STN_JR_EAST_NARUSE",
+        "company_id": "JR_EAST",
+        "name": "成瀬",
+        "lat": "35.5355",
+        "lng": "139.472917"
+      },
+      {
+        "id": "STN_JR_EAST_MACHIDA",
+        "company_id": "JR_EAST",
+        "name": "町田",
+        "lat": "35.541944",
+        "lng": "139.445556"
+      },
+      {
+        "id": "STN_JR_EAST_KOBUCHI",
+        "company_id": "JR_EAST",
+        "name": "古淵",
+        "lat": "35.555972",
+        "lng": "139.419306"
+      },
+      {
+        "id": "STN_JR_EAST_FUCHINOBE",
+        "company_id": "JR_EAST",
+        "name": "淵野辺",
+        "lat": "35.568611",
+        "lng": "139.395"
+      },
+      {
+        "id": "STN_JR_EAST_YABE",
+        "company_id": "JR_EAST",
+        "name": "矢部",
+        "lat": "35.573056",
+        "lng": "139.386806"
+      },
+      {
+        "id": "STN_JR_EAST_SAGAMIHARA",
+        "company_id": "JR_EAST",
+        "name": "相模原",
+        "lat": "35.581528",
+        "lng": "139.370583"
+      },
+      {
+        "id": "STN_JR_EAST_AIHARA",
+        "company_id": "JR_EAST",
+        "name": "相原",
+        "lat": "35.606944",
+        "lng": "139.331667"
+      },
+      {
+        "id": "STN_JR_EAST_HACHIOJI_MINAMINO",
+        "company_id": "JR_EAST",
+        "name": "八王子みなみ野",
+        "lat": "35.631389",
+        "lng": "139.330972"
+      },
+      {
+        "id": "STN_JR_EAST_KATAKURA",
+        "company_id": "JR_EAST",
+        "name": "片倉",
+        "lat": "35.639861",
+        "lng": "139.341667"
+      },
+      {
+        "id": "STN_JR_EAST_HIGASHI_ABIKO",
+        "company_id": "JR_EAST",
+        "name": "東我孫子",
+        "lat": "35.868972",
+        "lng": "140.047583"
+      },
+      {
+        "id": "STN_JR_EAST_KOHOKU",
+        "company_id": "JR_EAST",
+        "name": "湖北",
+        "lat": "35.867222",
+        "lng": "140.077778"
+      },
+      {
+        "id": "STN_JR_EAST_ARAKI",
+        "company_id": "JR_EAST",
+        "name": "新木",
+        "lat": "35.862361",
+        "lng": "140.106944"
+      },
+      {
+        "id": "STN_JR_EAST_FUSA",
+        "company_id": "JR_EAST",
+        "name": "布佐",
+        "lat": "35.849083",
+        "lng": "140.133056"
+      },
+      {
+        "id": "STN_JR_EAST_KIOROSHI",
+        "company_id": "JR_EAST",
+        "name": "木下",
+        "lat": "35.839",
+        "lng": "140.148056"
+      },
+      {
+        "id": "STN_JR_EAST_KOBAYASHI",
+        "company_id": "JR_EAST",
+        "name": "小林",
+        "lat": "35.830556",
+        "lng": "140.193278"
+      },
+      {
+        "id": "STN_JR_EAST_AJIKI",
+        "company_id": "JR_EAST",
+        "name": "安食",
+        "lat": "35.835694",
+        "lng": "140.242056"
+      },
+      {
+        "id": "STN_JR_EAST_SHIMOSA_MANZAKI",
+        "company_id": "JR_EAST",
+        "name": "下総松崎",
+        "lat": "35.808",
+        "lng": "140.2776"
+      },
+      {
+        "id": "STN_JR_EAST_KUZUMI",
+        "company_id": "JR_EAST",
+        "name": "久住",
+        "lat": "35.832389",
+        "lng": "140.338917"
+      },
+      {
+        "id": "STN_JR_EAST_NAMEGAWA",
+        "company_id": "JR_EAST",
+        "name": "滑河",
+        "lat": "35.877222",
+        "lng": "140.348111"
+      },
+      {
+        "id": "STN_JR_EAST_SHIMOSA_KOZAKI",
+        "company_id": "JR_EAST",
+        "name": "下総神崎",
+        "lat": "35.894917",
+        "lng": "140.410556"
+      },
+      {
+        "id": "STN_JR_EAST_OTO",
+        "company_id": "JR_EAST",
+        "name": "大戸",
+        "lat": "35.890472",
+        "lng": "140.458694"
+      },
+      {
+        "id": "STN_JR_EAST_SUIGO",
+        "company_id": "JR_EAST",
+        "name": "水郷",
+        "lat": "35.886278",
+        "lng": "140.56975"
+      },
+      {
+        "id": "STN_JR_EAST_SASAGAWA",
+        "company_id": "JR_EAST",
+        "name": "笹川",
+        "lat": "35.83975",
+        "lng": "140.655694"
+      },
+      {
+        "id": "STN_JR_EAST_SHIMOSA_TACHIBANA",
+        "company_id": "JR_EAST",
+        "name": "下総橘",
+        "lat": "35.818667",
+        "lng": "140.702278"
+      },
+      {
+        "id": "STN_JR_EAST_SHIMOSA_TOYOSATO",
+        "company_id": "JR_EAST",
+        "name": "下総豊里",
+        "lat": "35.793108",
+        "lng": "140.720689"
+      },
+      {
+        "id": "STN_JR_EAST_SHIISHIBA",
+        "company_id": "JR_EAST",
+        "name": "椎柴",
+        "lat": "35.765314",
+        "lng": "140.7588"
       }
     ],
     "trains": [
