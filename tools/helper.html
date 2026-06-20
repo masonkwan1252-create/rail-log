@@ -1363,6 +1363,7 @@ function findStationIssueGroups() {
   const byName = new Map();
   const byCoord = new Map();
   const byId = new Map();
+  const byExact = new Map();
   const basicIssues = [];
   const badCoordItems = [];
 
@@ -1383,6 +1384,11 @@ function findStationIssueGroups() {
     const lat = normalizeStationCoordValue(item.s.lat);
     const lng = normalizeStationCoordValue(item.s.lng);
     if (!rawLat || !rawLng || !lat || !lng) badCoordItems.push(item);
+    if (item.id && nameKey && lat && lng) {
+      const exactKey = `${item.id}|${nameKey}|${lat}|${lng}`;
+      if (!byExact.has(exactKey)) byExact.set(exactKey, []);
+      byExact.get(exactKey).push(item);
+    }
     if (lat && lng) {
       const coordKey = `${lat},${lng}`;
       if (!byCoord.has(coordKey)) byCoord.set(coordKey, []);
@@ -1391,6 +1397,7 @@ function findStationIssueGroups() {
   });
 
   const stationIdSet = new Set(stations.map(item => item.id).filter(Boolean));
+  const stationEntryByIndex = new Map(stations.map(item => [item.i, item]));
   const missingRefMap = new Map();
   (companyEditorData?.lines || []).forEach((line, lineIndex) => {
     const sequence = Array.isArray(line.sequence) ? line.sequence : [];
@@ -1435,13 +1442,46 @@ function findStationIssueGroups() {
     });
   });
 
+  const exactRepresentativeByIndex = new Map();
+  byExact.forEach((items, key) => {
+    if (items.length <= 1) return;
+    const representativeIndex = items[0].i;
+    items.forEach(item => exactRepresentativeByIndex.set(item.i, representativeIndex));
+    groups.push({
+      type: 'exact',
+      key,
+      count: items.length,
+      title: `完整重複車站資料：${items[0].s.name || items[0].id}`,
+      items
+    });
+  });
+
+  const collapseExactDuplicateItems = items => {
+    const collapsed = [];
+    const seenRepresentatives = new Set();
+    items.forEach(item => {
+      const representativeIndex = exactRepresentativeByIndex.get(item.i);
+      if (representativeIndex === undefined) {
+        collapsed.push(item);
+        return;
+      }
+      if (seenRepresentatives.has(representativeIndex)) return;
+      seenRepresentatives.add(representativeIndex);
+      collapsed.push(stationEntryByIndex.get(representativeIndex) || item);
+    });
+    return collapsed;
+  };
+
   byId.forEach((items, key) => {
+    items = collapseExactDuplicateItems(items);
     if (items.length > 1) groups.push({ type: 'id', key, count: items.length, title: `重複 station id：${key}`, items });
   });
   byName.forEach((items, key) => {
+    items = collapseExactDuplicateItems(items);
     if (items.length > 1) groups.push({ type: 'name', key, count: items.length, title: `同名車站：${items[0].s.name || key}`, items });
   });
   byCoord.forEach((items, key) => {
+    items = collapseExactDuplicateItems(items);
     if (items.length > 1) groups.push({ type: 'coord', key, count: items.length, title: `同座標車站：${key}`, items });
   });
 
@@ -1555,6 +1595,7 @@ function getStationIssueMeta(type) {
   const map = {
     missingRef: { label: '缺站 ID', icon: '⚠️', tone: 'danger', brief: '路線停站引用了不存在的 station id。' },
     idRepair: { label: 'ID 指派', icon: '⚠️', tone: 'danger', brief: '此車站由重複 ID 拆出；請逐條確認哪些路線停站應改用新 ID。' },
+    exact: { label: '完整重複', icon: '⚠️', tone: 'danger', brief: 'ID、站名、座標完全相同，通常是整筆車站資料重複，可合併保留其中一筆。' },
     id: { label: '重複 ID', icon: '⚠️', tone: 'danger', brief: '多個車站共用同一 station id；修改其中一個 ID 時不會自動改路線，請之後用「ID 指派」逐條確認。' },
     basic: { label: '基本資料', icon: '⚠️', tone: 'danger', brief: '車站缺少站名或 station id。' },
     badCoord: { label: '座標問題', icon: '📍', tone: 'warn', brief: 'lat / lng 空白或格式不正確。' },
@@ -1574,8 +1615,8 @@ function countStationIssueItems(groups, types = null) {
 
 function stationIssueGroupMatchesFilter(group, filter) {
   if (!filter || filter === 'all') return true;
-  if (filter === 'critical') return ['missingRef', 'idRepair', 'id', 'basic', 'badCoord'].includes(group.type);
-  if (filter === 'duplicate') return ['id', 'name', 'coord'].includes(group.type);
+  if (filter === 'critical') return ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord'].includes(group.type);
+  if (filter === 'duplicate') return ['exact', 'id', 'name', 'coord'].includes(group.type);
   if (filter === 'coord') return ['coord', 'badCoord'].includes(group.type);
   return group.type === filter;
 }
@@ -1595,6 +1636,7 @@ function getStationIssueGroupTitle(group) {
   switch (group.type) {
     case 'missingRef': return '缺站 ID';
     case 'idRepair': return `ID 指派：${group.stationName || group.newId || ''}`;
+    case 'exact': return `完整重複：${group.items?.[0]?.s?.name || group.key || ''}`;
     case 'id': return `重複 ID：${group.key || ''}`;
     case 'name': return `同名車站：${group.items?.[0]?.s?.name || group.key || ''}`;
     case 'coord': return `同座標：${group.key || ''}`;
@@ -1653,8 +1695,8 @@ function buildStationIssueRow(item, group, groupIndex) {
   const editAction = group.type === 'id' || !id
     ? `selectCompanyStation(${Number(item.i) || 0})`
     : `selectCompanyStationById('${escapeEditorAttr(id)}')`;
-  const mergeBtn = group.type === 'name' && id
-    ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, '${escapeEditorAttr(id)}')">合併到此站</button>`
+  const mergeBtn = ['exact', 'name'].includes(group.type) && id
+    ? `<button class="ok mini-btn" onclick="mergeStationIssueGroup(${groupIndex}, ${Number(item.i) || 0})">合併到此站</button>`
     : '';
   return `<div class="station-issue-row">
     <div class="station-issue-row-main">
@@ -1731,8 +1773,8 @@ function renderStationIssuePanel() {
   const totalIssueCount = countStationIssueItems(companyStationIssueGroups);
   const missingRefCount = countStationIssueItems(companyStationIssueGroups, 'missingRef');
   const repairCount = countStationIssueItems(companyStationIssueGroups, 'idRepair');
-  const criticalCount = countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'id', 'basic', 'badCoord']);
-  const duplicateCount = countStationIssueItems(companyStationIssueGroups, ['id', 'name', 'coord']);
+  const criticalCount = countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord']);
+  const duplicateCount = countStationIssueItems(companyStationIssueGroups, ['exact', 'id', 'name', 'coord']);
   const coordCount = countStationIssueItems(companyStationIssueGroups, ['coord', 'badCoord']);
   const unusedCount = countStationIssueItems(companyStationIssueGroups, 'unused');
 
@@ -1842,30 +1884,39 @@ function selectCompanyLineById(lineId) {
   setCompanyEditorStatus(`已切到路線：${line?.name || line?.id || lineId}`, 'ok');
 }
 
-function mergeStationIssueGroup(groupIndex, targetId) {
+function mergeStationIssueGroup(groupIndex, targetRef) {
   const group = companyStationIssueGroups[groupIndex];
-  if (!companyEditorData || !group || group.type !== 'name') return;
-  const target = (companyEditorData.stations || []).find(st => st.id === targetId);
+  if (!companyEditorData || !group || !['exact', 'name'].includes(group.type)) return;
+  const numericTarget = Number(targetRef);
+  const targetIndex = Number.isInteger(numericTarget)
+    ? numericTarget
+    : (group.items.find(item => toEditorIdToken(item.s.id) === toEditorIdToken(targetRef))?.i ?? -1);
+  const target = companyEditorData.stations?.[targetIndex];
   if (!target) return;
-  const duplicateIds = group.items.map(item => item.s.id).filter(id => id && id !== targetId);
-  if (!duplicateIds.length) return;
-  const ok = confirm(`確定合併 ${duplicateIds.length} 個同名車站到「${target.name}」？\n所有路線 sequence 會自動改用：${target.id}`);
+  const duplicateItems = group.items.filter(item => item.i !== targetIndex);
+  if (!duplicateItems.length) return;
+  const duplicateIndexes = new Set(duplicateItems.map(item => item.i));
+  const duplicateIds = Array.from(new Set(duplicateItems.map(item => toEditorIdToken(item.s.id)).filter(id => id && id !== toEditorIdToken(target.id))));
+  const kindText = group.type === 'exact' ? '完整重複車站' : '同名車站';
+  const ok = confirm(`確定合併 ${duplicateItems.length} 個${kindText}到「${target.name || target.id}」？\n不同 ID 的路線 sequence 會改用：${target.id}`);
   if (!ok) return;
 
-  companyEditorData.lines.forEach(line => {
-    if (!Array.isArray(line.sequence)) return;
-    const seen = new Set();
-    line.sequence = line.sequence.map(id => duplicateIds.includes(id) ? targetId : id).filter(id => {
-      if (seen.has(id)) return false;
-      seen.add(id);
-      return true;
+  if (duplicateIds.length) {
+    companyEditorData.lines.forEach(line => {
+      if (!Array.isArray(line.sequence)) return;
+      const seen = new Set();
+      line.sequence = line.sequence.map(id => duplicateIds.includes(toEditorIdToken(id)) ? target.id : id).filter(id => {
+        if (seen.has(id)) return false;
+        seen.add(id);
+        return true;
+      });
     });
-  });
-  companyEditorData.stations = companyEditorData.stations.filter(st => !duplicateIds.includes(st.id));
-  companyEditorCurrent.station = Math.max(0, companyEditorData.stations.findIndex(st => st.id === targetId));
+  }
+  companyEditorData.stations = companyEditorData.stations.filter((_, index) => !duplicateIndexes.has(index));
+  companyEditorCurrent.station = Math.max(0, companyEditorData.stations.indexOf(target));
   renderCompanyEditorAll();
   switchCompanyEditorSection('stations');
-  setCompanyEditorStatus(`已合併同名車站到 ${target.name}，並已改寫相關路線 sequence`, 'ok');
+  setCompanyEditorStatus(`已合併 ${duplicateItems.length} 個${kindText}到 ${target.name || target.id}`, 'ok');
 }
 
 function renderCompanyStationList() {

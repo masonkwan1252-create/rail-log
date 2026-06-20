@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.33</title>
+<title>鉄道手帳 RAIL LOG V0.34</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:title" content="鉄道手帳 RAIL LOG">
 <meta property="og:description" content="乘車記錄、足跡地圖與車型相冊">
@@ -1799,7 +1799,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.33 成就佈局樣式
+   🟩 V0.24/V0.34 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -3941,7 +3941,7 @@ html, body {
 }
 
 
-/* ===== V0.33 Desktop Layout =====
+/* ===== V0.34 Desktop Layout =====
    Mobile keeps the existing one-column app. Desktop becomes a wide rail-control workspace. */
 @media (min-width: 900px) {
     :root {
@@ -6467,6 +6467,175 @@ html, body {
     border-bottom-color: var(--rail-accent-line-softer) !important;
 }
 
+/* Add trip option rail: reuse the slim map-control language. */
+.add-option-area {
+    margin-top: 14px;
+}
+
+.add-option-rail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+    height: 30px;
+    padding: 0;
+    overflow-x: auto;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid rgba(99, 189, 15, 0.75);
+    border-radius: 0;
+    box-shadow: none;
+    scrollbar-width: none;
+}
+
+.add-option-rail::-webkit-scrollbar {
+    display: none;
+}
+
+.add-option-btn {
+    position: relative;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 24px;
+    height: 28px;
+    margin: 0 !important;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--subtext);
+    box-shadow: none;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.add-option-btn + .add-option-btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    opacity: 0.65;
+}
+
+.add-option-btn::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: -2px;
+    height: 2px;
+    background: transparent;
+    transition: background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.add-option-btn:active {
+    transform: translateY(1px);
+}
+
+.add-option-btn.is-active {
+    color: var(--primary);
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.30);
+}
+
+.add-option-btn.is-active::after {
+    background: var(--primary);
+    box-shadow: 0 0 7px rgba(99, 189, 15, 0.35);
+}
+
+.add-option-panel {
+    display: none !important;
+    margin-top: 11px !important;
+}
+
+.add-option-panel.open {
+    display: block !important;
+}
+
+.add-option-area .desktop-through-row {
+    display: none !important;
+    margin-top: 11px !important;
+    padding-top: 10px !important;
+}
+
+.add-option-area .desktop-through-row.open {
+    display: block !important;
+}
+
+.add-option-area .desktop-through-row > .btn-add {
+    display: none !important;
+}
+
+.add-option-area .desktop-through-container {
+    margin-top: 0 !important;
+}
+
+.add-option-area .other-train-panel .other-train-toggle {
+    display: none !important;
+}
+
+.add-option-area .other-train-panel #otherTrainCompanyWrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: 0 !important;
+}
+
+@media (max-width: 899px) {
+    html,
+    body,
+    #main-app {
+        min-height: 100dvh;
+    }
+
+    .bottom-nav {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        z-index: 2500 !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+
+    .add-option-area {
+        margin-top: 12px;
+        margin-bottom: 4px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .desktop-add-layout {
+        grid-template-areas:
+            "route options"
+            "route ride";
+        grid-template-rows: auto 1fr;
+        align-items: start;
+    }
+
+    .desktop-route-section {
+        grid-area: route;
+        align-self: stretch;
+    }
+
+    .add-option-area {
+        grid-area: options;
+        margin: 0;
+        padding: 22px 30px 4px;
+    }
+
+    .desktop-ride-section {
+        grid-area: ride;
+        padding-top: 12px;
+    }
+}
+
 @media (max-width: 899px) {
     #tab-history .trip {
         box-shadow:
@@ -6546,7 +6715,7 @@ body {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.33</div>
+                <div class="e235-arrival-version">V0.34</div>
             </div>
         </div>
 
@@ -6691,7 +6860,7 @@ body {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.33</div>
+    <div class="version-badge">V0.34</div>
 
     <div class="container">
 
@@ -6737,9 +6906,17 @@ body {
                     </div>
                 </div>
 
+                <div id="addOptionArea" class="add-option-area">
+                    <div class="add-option-rail" role="toolbar" aria-label="新增乘車進階輸入">
+                        <button id="btnAddThroughOption" type="button" class="add-option-btn" onclick="handleAddThroughClick()" aria-label="新增直通">新增直通</button>
+                        <button id="btnServiceTypeOption" type="button" class="add-option-btn" onclick="toggleServiceTypePanel()" aria-label="種別">種別</button>
+                        <button id="btnOtherTrainOption" type="button" class="add-option-btn" onclick="toggleOtherTrainCompanyPanel()" aria-label="其他公司車両">其他公司車両</button>
+                    </div>
+
                 <div class="desktop-through-row">
                     <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
                     <div id="throughContainer" class="desktop-through-container"></div>
+                </div>
                 </div>
                     </section>
 
@@ -8155,6 +8332,7 @@ window.clearInput = function(id) {
         el.value = '';
         el.dispatchEvent(new Event('input'));
         updateAllLoopDirectionUI();
+        if (typeof syncAddOptionControls === "function") syncAddOptionControls();
         el.focus();
     }
 }
@@ -8164,6 +8342,7 @@ window.clearSiblingInput = function(btn) {
     if (input) {
         input.value = '';
         input.dispatchEvent(new Event('input'));
+        if (typeof syncAddOptionControls === "function") syncAddOptionControls();
         input.focus();
     }
 }
@@ -8442,9 +8621,105 @@ document.getElementById("company").addEventListener("input", () => {
 
 window.toggleTrainCompanyUI = function() {
     const useOther = document.getElementById('useOtherTrainCompany').checked;
-    document.getElementById('otherTrainCompanyWrapper').style.display = useOther ? 'block' : 'none';
+    const wrapper = document.getElementById('otherTrainCompanyWrapper');
+    const panel = document.getElementById('useOtherTrainCompany')?.closest('.other-train-panel');
+    if (wrapper) wrapper.style.display = useOther ? 'block' : 'none';
+    if (panel) panel.classList.toggle('open', useOther);
     updateTrainDatalist();
+    if (typeof syncAddOptionControls === "function") syncAddOptionControls();
 }
+
+function setupAddOptionPanels() {
+    const optionArea = document.getElementById("addOptionArea");
+    if (!optionArea) return;
+
+    const layout = document.querySelector(".desktop-add-layout");
+    const rideSection = document.querySelector(".desktop-ride-section");
+    if (layout && rideSection && optionArea.parentElement !== layout) {
+        layout.insertBefore(optionArea, rideSection);
+    }
+
+    const serviceField = document.getElementById("serviceType")?.closest(".form-field");
+    if (serviceField) {
+        serviceField.classList.add("add-option-panel", "service-type-panel");
+        if (serviceField.parentElement !== optionArea) optionArea.appendChild(serviceField);
+    }
+
+    const otherField = document.getElementById("useOtherTrainCompany")?.closest(".form-field");
+    if (otherField) {
+        otherField.classList.add("add-option-panel", "other-train-panel");
+        if (otherField.parentElement !== optionArea) optionArea.appendChild(otherField);
+    }
+}
+
+function syncAddOptionControls() {
+    const throughContainer = document.getElementById("throughContainer");
+    const throughRow = document.querySelector(".desktop-through-row");
+    const throughBtn = document.getElementById("btnAddThroughOption");
+    const hasThrough = !!throughContainer && throughContainer.children.length > 0;
+
+    if (throughRow) throughRow.classList.toggle("open", hasThrough);
+    if (throughBtn) throughBtn.classList.toggle("is-active", hasThrough);
+
+    const serviceInput = document.getElementById("serviceType");
+    const servicePanel = serviceInput?.closest(".service-type-panel");
+    const serviceBtn = document.getElementById("btnServiceTypeOption");
+    const hasService = !!serviceInput?.value.trim();
+
+    if (servicePanel && hasService) servicePanel.classList.add("open");
+    if (serviceBtn) serviceBtn.classList.toggle("is-active", !!servicePanel?.classList.contains("open") || hasService);
+
+    const otherCheckbox = document.getElementById("useOtherTrainCompany");
+    const otherPanel = otherCheckbox?.closest(".other-train-panel");
+    const otherBtn = document.getElementById("btnOtherTrainOption");
+    const useOther = !!otherCheckbox?.checked;
+
+    if (otherPanel) otherPanel.classList.toggle("open", useOther);
+    if (otherBtn) otherBtn.classList.toggle("is-active", useOther);
+}
+
+window.handleAddThroughClick = function() {
+    setupAddOptionPanels();
+    addThrough();
+
+    const blocks = document.querySelectorAll(".through-block");
+    const lastBlock = blocks[blocks.length - 1];
+    const nextInput = lastBlock?.querySelector(".throughLine") || lastBlock?.querySelector(".throughCompany");
+    if (nextInput) setTimeout(() => nextInput.focus(), 0);
+
+    syncAddOptionControls();
+};
+
+window.toggleServiceTypePanel = function() {
+    setupAddOptionPanels();
+    const serviceInput = document.getElementById("serviceType");
+    const panel = serviceInput?.closest(".service-type-panel");
+    if (!panel) return;
+
+    panel.classList.toggle("open");
+    if (panel.classList.contains("open")) setTimeout(() => serviceInput.focus(), 0);
+    syncAddOptionControls();
+};
+
+window.toggleOtherTrainCompanyPanel = function() {
+    setupAddOptionPanels();
+    const checkbox = document.getElementById("useOtherTrainCompany");
+    if (!checkbox) return;
+
+    checkbox.checked = !checkbox.checked;
+    toggleTrainCompanyUI();
+    if (checkbox.checked) setTimeout(() => document.getElementById("trainOwnerCompany")?.focus(), 0);
+};
+
+window.removeThroughBlock = function(button) {
+    button.closest(".through-block")?.remove();
+    updateStationLists();
+    syncAddOptionControls();
+};
+
+setupAddOptionPanels();
+document.getElementById("serviceType")?.addEventListener("input", syncAddOptionControls);
+syncAddOptionControls();
 
 window.updateTrainDatalist = function() {
     const useOther = document.getElementById('useOtherTrainCompany').checked;
@@ -8588,15 +8863,16 @@ window.addThrough = function() {
 
     <datalist id="${uniqueId}_junction" class="throughJunctionList"></datalist>
 
-    <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="this.parentElement.remove(); updateStationLists();">移除此直通</button>
+    <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="removeThroughBlock(this)">移除此直通</button>
 `;
     document.getElementById("throughContainer").appendChild(div);
     if(lastCompName) updateLineList(lastCompName, uniqueId);
     updateStationLists();
     updateThroughLoopDirectionUI(div);
+    syncAddOptionControls();
 }
 
-// 🟩 V0.33 處理圖片上傳
+// 🟩 V0.34 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -8625,7 +8901,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.33 移除圖片
+// 🟩 V0.34 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -8910,7 +9186,9 @@ window.saveTrip = async function () {
         document.getElementById("useOtherTrainCompany").checked = false;
         document.getElementById("otherTrainCompanyWrapper").style.display = "none";
         document.getElementById("trainOwnerCompany").value = "";
+        document.getElementById("serviceType")?.closest(".service-type-panel")?.classList.remove("open");
         updateAllLoopDirectionUI();
+        syncAddOptionControls();
 
         clearAllPhotosUI();
         updateLineList("", "lineList");
@@ -11006,7 +11284,7 @@ window.editTrip = function(i) {
         updateThroughLoopDirectionUI(block, editSegments[idx + 1]?.direction || "forward");
     });
 
-    // 🟩 V0.33 編輯模式載入相片
+    // 🟩 V0.34 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -11020,6 +11298,8 @@ window.editTrip = function(i) {
 
     editIndex = i;
 editingTripId = t.id || null;
+setupAddOptionPanels();
+syncAddOptionControls();
 switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
 
@@ -11059,7 +11339,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.33.json"; a.click();
+    a.download = "rail-log-V0.34.json"; a.click();
 }
 
 window.importData = function() {
@@ -11352,7 +11632,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.33 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.34 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function getStationLineThemeColors(stationData, fallbackCompanyId = "") {
@@ -11542,7 +11822,7 @@ const customIcon = L.divIcon({
 }
 
 // =========================================
-// 🟩 V0.33 相冊渲染邏輯
+// 🟩 V0.34 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -11723,7 +12003,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.33 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.34 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
