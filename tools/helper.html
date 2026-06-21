@@ -63,6 +63,11 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
 .index-audit-empty{border:1px solid #bbf7d0;background:#f0fdf4;color:#166534;border-radius:12px;padding:12px;font-size:13px;font-weight:850}
 @media(max-width:860px){.index-audit-toolbar,.index-audit-summary-grid,.index-audit-card-head{grid-template-columns:1fr}.index-audit-card-actions{justify-content:flex-start}}
 @media(prefers-color-scheme:dark){.index-audit-note{background:#151515}.index-audit-card{background:#1f1f22;border-color:#38383a}.index-audit-card.ok{background:#10251a;border-color:#166534}.index-audit-card.warn{background:#33260b;border-color:#92400e}.index-audit-card.danger,.index-audit-card.error{background:#3a171a;border-color:#7f1d1d}.index-audit-meta span,.index-audit-chip{background:#151515;border-color:#38383a}}
+.debug-summary-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+@media(max-width:860px){.debug-summary-grid{grid-template-columns:1fr}}
+.line-path-builder{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px;margin-top:6px}.line-path-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.line-path-head strong{font-size:13px}.line-path-head .small{margin-right:auto}.line-path-list{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.line-path-list button{width:auto;margin:0;padding:7px 9px;border-radius:999px;background:#eef2f7;color:var(--text);font-size:12px}.line-path-list button.active{background:var(--primary2);color:#fff}.line-path-editor{border-top:1px dashed var(--border);padding-top:10px}.line-path-editor-grid{display:grid;grid-template-columns:minmax(160px,1fr) minmax(140px,.75fr);gap:10px}.line-path-sequence-tools{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.line-path-seq-list{max-height:240px}.line-path-seq-list .seq-item{grid-template-columns:auto minmax(0,1fr) auto auto auto}.line-path-seq-list .seq-jump{width:100%}.line-path-seq-list .seq-item .mini-btn{width:auto;min-width:34px}.line-path-raw{margin-top:8px}.line-path-raw summary{cursor:pointer;color:var(--sub);font-size:12px;font-weight:900}.line-path-raw textarea{margin-top:7px;min-height:120px}
+@media(max-width:860px){.line-path-editor-grid{grid-template-columns:1fr}.line-path-head .small{width:100%;margin-right:0}.line-path-sequence-tools input{min-width:0!important;width:100%}}
+@media(prefers-color-scheme:dark){.line-path-builder{background:#1f1f22;border-color:#38383a}.line-path-list button{background:#2c2c2e;color:var(--text)}}
 </style>
 </head>
 <body>
@@ -204,7 +209,7 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
     </div>
 
     <div id="companyEditorLines" class="card">
-      <div class="title"><strong>路線資料</strong><span class="small">修改名稱、顏色、geometry_wkt 同停車站 sequence</span></div>
+      <div class="title"><strong>路線資料</strong><span class="small">修改名稱、顏色、geometry_wkt、paths 同停車站 sequence</span></div>
       <div class="editor-layout">
         <div class="editor-sidebar">
           <button class="ok" onclick="addCompanyLine()">+ 新增路線</button>
@@ -239,6 +244,23 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
               </div>
             </div>
             <div class="input-group wide"><label>geometry_wkt</label><textarea id="editLineGeometry" oninput="updateSelectedLineFromForm()" placeholder="MULTILINESTRING(...)"></textarea></div>
+            <div class="input-group wide">
+              <label>支線 / paths</label>
+              <div class="line-path-builder">
+                <div class="line-path-head">
+                  <strong>支線 path 編輯</strong>
+                  <span id="linePathSummary" class="small">未有 path</span>
+                  <button type="button" class="ok mini-btn" onclick="addLinePath()">+ 新增支線 path</button>
+                </div>
+                <div id="linePathList" class="line-path-list"></div>
+                <div id="linePathEditor" class="line-path-editor"></div>
+              </div>
+              <details class="line-path-raw">
+                <summary>進階：直接編輯 paths JSON</summary>
+                <textarea id="editLinePaths" oninput="updateSelectedLineFromForm()" placeholder='[{"id":"MAIN","name":"本線","sequence":["STN_..."]}]'></textarea>
+              </details>
+              <div class="small" style="margin-top:6px;line-height:1.5;">可留空。未來有支線 / 多終點時，可用 <code>paths</code> 保存每條行路徑；helper 會檢查 path 內空白 ID、缺站 ID、重複停站同是否超出主 sequence。</div>
+            </div>
           </div>
             </div>
             <div id="lineDebugPanel" class="line-debug-panel"></div>
@@ -495,6 +517,8 @@ let stationIdRepairSourceMap = new WeakMap();
 let stationIssueRefreshPending = false;
 let stationFormRefreshTimer = null;
 let stationFormRefreshNeedsLineList = false;
+let companySelectedPathIndex = null;
+let companySelectedPathSequenceIndex = null;
 
 function toEditorIdToken(value) {
   return String(value || '')
@@ -604,6 +628,73 @@ function setCompanyEditorStatus(msg, type='') {
   el.className = 'editor-status ' + (type || '');
 }
 
+function normalizeLinePathEntry(path, index = 0, strict = false) {
+  if (!path || typeof path !== 'object' || Array.isArray(path)) {
+    if (strict) throw new Error(`paths[${index}] 必須係 object`);
+    return { id: `PATH_${index + 1}`, sequence: [] };
+  }
+  const normalized = { ...path };
+  normalized.id = toEditorIdToken(normalized.id || normalized.path_id || `PATH_${index + 1}`) || `PATH_${index + 1}`;
+  normalized.name = String(normalized.name || normalized.label || '').trim();
+  if (!Array.isArray(normalized.sequence)) normalized.sequence = [];
+  normalized.sequence = normalized.sequence.map(id => toEditorIdToken(id));
+  return normalized;
+}
+
+function normalizeLinePaths(paths, strict = false) {
+  if (!Array.isArray(paths)) return [];
+  return paths.map((path, index) => normalizeLinePathEntry(path, index, strict));
+}
+
+function parseLinePathsEditorValue(value) {
+  const text = String(value || '').trim();
+  if (!text) return [];
+  const parsed = JSON.parse(text);
+  if (!Array.isArray(parsed)) throw new Error('paths 必須係 array');
+  return normalizeLinePaths(parsed, true);
+}
+
+function formatLinePathsForEditor(paths) {
+  const normalized = normalizeLinePaths(paths);
+  return normalized.length ? JSON.stringify(normalized, null, 2) : '';
+}
+
+function mapLinePathSequences(line, mapper) {
+  if (!line || !Array.isArray(line.paths)) return 0;
+  let changed = 0;
+  line.paths = normalizeLinePaths(line.paths).map(path => {
+    path.sequence = (path.sequence || []).map(rawId => {
+      const oldId = toEditorIdToken(rawId);
+      const nextId = toEditorIdToken(mapper(oldId, rawId));
+      if (nextId !== oldId) changed += 1;
+      return nextId;
+    });
+    return path;
+  });
+  return changed;
+}
+
+function replaceStationIdInLinePaths(line, oldId, newId) {
+  const fromId = toEditorIdToken(oldId);
+  const toId = toEditorIdToken(newId);
+  if (!fromId || !toId) return 0;
+  return mapLinePathSequences(line, id => id === fromId ? toId : id);
+}
+
+function removeStationIdFromLinePaths(line, stationId) {
+  if (!line || !Array.isArray(line.paths)) return 0;
+  const targetId = toEditorIdToken(stationId);
+  if (!targetId) return 0;
+  let removed = 0;
+  line.paths = normalizeLinePaths(line.paths).map(path => {
+    const before = path.sequence.length;
+    path.sequence = path.sequence.filter(id => toEditorIdToken(id) !== targetId);
+    removed += before - path.sequence.length;
+    return path;
+  });
+  return removed;
+}
+
 function normalizeCompanyEditorData(raw) {
   stationIdRepairHints = [];
   stationIdRepairSourceMap = new WeakMap();
@@ -622,6 +713,11 @@ function normalizeCompanyEditorData(raw) {
     line.id = buildLockedLineId(line.company_id, suffix);
     if (!Array.isArray(line.sequence)) line.sequence = [];
     line.sequence = line.sequence.map(id => toEditorIdToken(id));
+    if (Array.isArray(line.paths)) {
+      line.paths = normalizeLinePaths(line.paths);
+    } else {
+      delete line.paths;
+    }
   });
   comp.stations.forEach(st => {
     st.company_id = toEditorIdToken(st.company_id || comp.company_id);
@@ -786,6 +882,10 @@ function updateCompanyMetaFromForm() {
           return id.startsWith(`STN_${oldId}_`) ? rebuildStationIdFromSuffix(suffix, companyEditorData.company_id) : id;
         });
       }
+      mapLinePathSequences(line, id => {
+        const suffix = getLockedEditorSuffix(id, 'STN', oldId);
+        return id.startsWith(`STN_${oldId}_`) ? rebuildStationIdFromSuffix(suffix, companyEditorData.company_id) : id;
+      });
     });
   }
   renderCompanyEditorAll();
@@ -820,7 +920,14 @@ function renderCompanyLineList() {
   }).join('') || '<div class="status">未有路線</div>';
 }
 
-function selectCompanyLine(index) { companyEditorCurrent.line = index; companySelectedSequenceIndex = null; renderCompanyLineList(); renderSelectedLineForm(); }
+function selectCompanyLine(index) {
+  companyEditorCurrent.line = index;
+  companySelectedSequenceIndex = null;
+  companySelectedPathIndex = null;
+  companySelectedPathSequenceIndex = null;
+  renderCompanyLineList();
+  renderSelectedLineForm();
+}
 function getSelectedLine() { return companyEditorData?.lines?.[companyEditorCurrent.line] || null; }
 
 function renderSelectedLineForm() {
@@ -834,6 +941,11 @@ function renderSelectedLineForm() {
   document.getElementById('editLineColor').value = line.color || '';
   document.getElementById('editLineCompanyId').value = companyId;
   document.getElementById('editLineGeometry').value = line.geometry_wkt || line.asWKT || line.geometry || '';
+  const pathsInput = document.getElementById('editLinePaths');
+  if (pathsInput) {
+    pathsInput.value = formatLinePathsForEditor(line.paths);
+    pathsInput.setCustomValidity('');
+  }
 
   const isLoopInput = document.getElementById('editLineIsLoop');
   const forwardInput = document.getElementById('editLineForwardLabel');
@@ -844,6 +956,7 @@ function renderSelectedLineForm() {
   if (reverseInput) reverseInput.value = line.direction_labels?.reverse || '';
 
   renderLineSequenceList();
+  renderLinePathBuilder();
 }
 
 function toggleLoopDirectionDefaults() {
@@ -872,6 +985,24 @@ function updateSelectedLineFromForm() {
   line.company_id = companyId;
   line.geometry_wkt = document.getElementById('editLineGeometry').value.trim();
 
+  const pathsInput = document.getElementById('editLinePaths');
+  if (pathsInput) {
+    try {
+      const paths = parseLinePathsEditorValue(pathsInput.value);
+      pathsInput.setCustomValidity('');
+      if (paths.length) {
+        line.paths = paths;
+      } else {
+        delete line.paths;
+      }
+    } catch (err) {
+      pathsInput.setCustomValidity(err.message || 'paths JSON 格式錯誤');
+      setCompanyEditorStatus(`paths JSON 格式錯誤：${err.message || err}`, 'err');
+      renderLineDebugPanel();
+      return;
+    }
+  }
+
   const isLoop = !!document.getElementById('editLineIsLoop')?.checked;
   const forwardLabel = (document.getElementById('editLineForwardLabel')?.value || '').trim();
   const reverseLabel = (document.getElementById('editLineReverseLabel')?.value || '').trim();
@@ -892,6 +1023,7 @@ function updateSelectedLineFromForm() {
   }
 
   renderCompanyLineList();
+  renderLinePathBuilder();
   renderSelectedLineOverview();
   renderLineDebugPanel();
   refreshCompanyJsonOutput();
@@ -915,6 +1047,7 @@ function renderLineSequenceList() {
   }
   const stMap = new Map((companyEditorData?.stations || []).map(s => [toEditorIdToken(s.id), s]));
   const idCounts = new Map();
+  const duplicateStopsChecked = isLineDuplicateStopsChecked(line);
   line.sequence.forEach(rawId => {
     const id = toEditorIdToken(rawId);
     if (!id) return;
@@ -924,7 +1057,7 @@ function renderLineSequenceList() {
     const stId = toEditorIdToken(rawStId);
     const st = stMap.get(stId);
     const label = getStationDisplay(st, stId || rawStId || '(空白 ID)');
-    const issueClass = !stId || !st ? 'missing' : (idCounts.get(stId) > 1 ? 'duplicate' : '');
+    const issueClass = !stId || !st ? 'missing' : (!duplicateStopsChecked && idCounts.get(stId) > 1 ? 'duplicate' : '');
     const selectedClass = i === companySelectedSequenceIndex ? 'selected' : '';
     const stationButton = stId
       ? `<button type="button" class="seq-name seq-jump ${!st ? 'missing' : ''}" title="${escapeEditorAttr(label)}" onclick="selectLineSequenceStation(${i})" ondblclick="openSequenceStationForEdit(${i}, '${escapeEditorAttr(stId)}')">${escapeEditorHtml(label)}</button>`
@@ -980,6 +1113,257 @@ function resolveSequencePickerStationId(rawValue) {
 
   if (matched?.id) return toEditorIdToken(matched.id);
   return normalizedDisplayId || normalizedRaw;
+}
+
+function ensureSelectedLinePaths(create = false) {
+  const line = getSelectedLine();
+  if (!line) return [];
+  const paths = Array.isArray(line.paths) ? normalizeLinePaths(line.paths) : [];
+  if (paths.length || create) {
+    line.paths = paths;
+  } else {
+    delete line.paths;
+  }
+  return paths;
+}
+
+function getSelectedLinePath() {
+  const paths = ensureSelectedLinePaths();
+  if (!paths.length) {
+    companySelectedPathIndex = null;
+    companySelectedPathSequenceIndex = null;
+    return null;
+  }
+  if (companySelectedPathIndex === null || companySelectedPathIndex < 0 || companySelectedPathIndex >= paths.length) {
+    companySelectedPathIndex = 0;
+    companySelectedPathSequenceIndex = null;
+  }
+  return paths[companySelectedPathIndex] || null;
+}
+
+function syncLinePathsTextareaFromData() {
+  const input = document.getElementById('editLinePaths');
+  if (!input) return;
+  input.value = formatLinePathsForEditor(getSelectedLine()?.paths);
+  input.setCustomValidity('');
+}
+
+function renderLinePathList() {
+  const list = document.getElementById('linePathList');
+  const summary = document.getElementById('linePathSummary');
+  const line = getSelectedLine();
+  const paths = line ? ensureSelectedLinePaths() : [];
+  if (summary) summary.textContent = paths.length ? `${paths.length} 個 path` : '未有 path';
+  if (!list) return;
+  list.innerHTML = paths.map((path, index) => {
+    const active = index === companySelectedPathIndex ? 'active' : '';
+    const label = path.name || path.id || `Path ${index + 1}`;
+    const stationCount = Array.isArray(path.sequence) ? path.sequence.filter(Boolean).length : 0;
+    return `<button type="button" class="${active}" onclick="selectLinePath(${index})">${escapeEditorHtml(label)} <span class="small">${stationCount}站</span></button>`;
+  }).join('') || '<div class="status">未有支線 path；按「+ 新增支線 path」開始。</div>';
+}
+
+function renderLinePathBuilder() {
+  const editor = document.getElementById('linePathEditor');
+  const path = getSelectedLinePath();
+  renderLinePathList();
+  if (!editor) return;
+  if (!path) {
+    editor.innerHTML = '<div class="status">未有 path。支線 / 多終點路線可以在此新增獨立停站次序。</div>';
+    updatePathSequenceActionLabel();
+    return;
+  }
+
+  editor.innerHTML = `
+    <div class="line-path-editor-grid">
+      <div class="input-group"><label>支線名 / path name</label><input id="editPathName" value="${escapeEditorAttr(path.name || '')}" placeholder="例：支線 / 空港線 / 西九条方面" oninput="updateSelectedLinePathFromForm()"></div>
+      <div class="input-group"><label>path id</label><input id="editPathId" value="${escapeEditorAttr(path.id || '')}" placeholder="PATH_1" oninput="this.value = toEditorIdToken(this.value); updateSelectedLinePathFromForm()"></div>
+    </div>
+    <div class="line-path-sequence-tools">
+      <input id="pathStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px" oninput="updatePathSequenceActionLabel()" onchange="updatePathSequenceActionLabel()">
+      <button id="pathSequenceActionBtn" class="secondary mini-btn" onclick="addStationToSelectedLinePathSequence()">加入停車站</button>
+      <button class="ghost mini-btn" onclick="copyMainSequenceToSelectedLinePath()">由主 sequence 複製</button>
+      <button class="danger mini-btn" onclick="deleteSelectedLinePath()">刪除此 path</button>
+    </div>
+    <div id="linePathSequenceList" class="seq-list line-path-seq-list"></div>
+  `;
+  renderLinePathSequenceList();
+}
+
+function selectLinePath(index) {
+  const paths = ensureSelectedLinePaths();
+  if (index < 0 || index >= paths.length) return;
+  companySelectedPathIndex = index;
+  companySelectedPathSequenceIndex = null;
+  renderLinePathBuilder();
+}
+
+function addLinePath() {
+  const line = getSelectedLine();
+  if (!line) return;
+  const paths = ensureSelectedLinePaths(true);
+  const nextIndex = paths.length + 1;
+  paths.push({ id: `PATH_${nextIndex}`, name: `支線 ${nextIndex}`, sequence: [] });
+  companySelectedPathIndex = paths.length - 1;
+  companySelectedPathSequenceIndex = null;
+  syncLinePathsTextareaFromData();
+  renderLinePathBuilder();
+  renderCompanyLineList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus(`已新增支線 path：支線 ${nextIndex}`, 'ok');
+}
+
+function deleteSelectedLinePath() {
+  const line = getSelectedLine();
+  const paths = ensureSelectedLinePaths();
+  const path = getSelectedLinePath();
+  if (!line || !path || companySelectedPathIndex === null) return;
+  if (!confirm(`確定刪除 path「${path.name || path.id || companySelectedPathIndex + 1}」？`)) return;
+  paths.splice(companySelectedPathIndex, 1);
+  if (!paths.length) {
+    delete line.paths;
+    companySelectedPathIndex = null;
+  } else {
+    companySelectedPathIndex = Math.min(companySelectedPathIndex, paths.length - 1);
+  }
+  companySelectedPathSequenceIndex = null;
+  syncLinePathsTextareaFromData();
+  renderLinePathBuilder();
+  renderCompanyLineList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus('已刪除支線 path', 'ok');
+}
+
+function updateSelectedLinePathFromForm() {
+  const path = getSelectedLinePath();
+  if (!path) return;
+  const nameInput = document.getElementById('editPathName');
+  const idInput = document.getElementById('editPathId');
+  path.name = String(nameInput?.value || '').trim();
+  path.id = toEditorIdToken(idInput?.value || path.id || `PATH_${(companySelectedPathIndex || 0) + 1}`) || `PATH_${(companySelectedPathIndex || 0) + 1}`;
+  if (idInput) idInput.value = path.id;
+  syncLinePathsTextareaFromData();
+  renderLinePathList();
+  renderCompanyLineList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+}
+
+function renderLinePathSequenceList() {
+  const box = document.getElementById('linePathSequenceList');
+  const path = getSelectedLinePath();
+  if (!box || !path) {
+    if (box) box.innerHTML = '<div class="status">未選擇 path</div>';
+    updatePathSequenceActionLabel();
+    return;
+  }
+
+  path.sequence = Array.isArray(path.sequence) ? path.sequence.map(id => toEditorIdToken(id)) : [];
+  if (companySelectedPathSequenceIndex !== null && companySelectedPathSequenceIndex >= path.sequence.length) {
+    companySelectedPathSequenceIndex = null;
+  }
+
+  const stMap = new Map((companyEditorData?.stations || []).map(s => [toEditorIdToken(s.id), s]));
+  const idCounts = new Map();
+  path.sequence.forEach(rawId => {
+    const id = toEditorIdToken(rawId);
+    if (!id) return;
+    idCounts.set(id, (idCounts.get(id) || 0) + 1);
+  });
+
+  box.innerHTML = path.sequence.map((rawStId, index) => {
+    const stId = toEditorIdToken(rawStId);
+    const st = stMap.get(stId);
+    const label = getStationDisplay(st, stId || rawStId || '(空白 ID)');
+    const issueClass = !stId || !st ? 'missing' : (idCounts.get(stId) > 1 ? 'duplicate' : '');
+    const selectedClass = index === companySelectedPathSequenceIndex ? 'selected' : '';
+    const stationButton = stId
+      ? `<button type="button" class="seq-name seq-jump ${!st ? 'missing' : ''}" title="${escapeEditorAttr(label)}" onclick="selectLinePathSequenceStation(${index})" ondblclick="openSequenceStationForEdit(-1, '${escapeEditorAttr(stId)}')">${escapeEditorHtml(label)}</button>`
+      : '<span class="seq-name danger-text">(空白 ID)</span>';
+    return `<div class="seq-item ${issueClass} ${selectedClass}" data-path-seq-index="${index}"><span class="seq-no">${index + 1}</span>${stationButton}<button class="ghost mini-btn" onclick="moveLinePathStation(${index},-1)">↑</button><button class="ghost mini-btn" onclick="moveLinePathStation(${index},1)">↓</button><button class="danger mini-btn" onclick="removeLinePathStation(${index})">✕</button></div>`;
+  }).join('') || '<div class="status">此 path 未有停車站 sequence</div>';
+  updatePathSequenceActionLabel();
+}
+
+function selectLinePathSequenceStation(index) {
+  const path = getSelectedLinePath();
+  if (!path?.sequence || index < 0 || index >= path.sequence.length) return;
+  companySelectedPathSequenceIndex = companySelectedPathSequenceIndex === index ? null : index;
+  document.querySelectorAll('#linePathSequenceList .seq-item').forEach(item => {
+    item.classList.toggle('selected', companySelectedPathSequenceIndex !== null && Number(item.dataset.pathSeqIndex) === companySelectedPathSequenceIndex);
+  });
+  updatePathSequenceActionLabel();
+}
+
+function updatePathSequenceActionLabel() {
+  const btn = document.getElementById('pathSequenceActionBtn');
+  if (!btn) return;
+  const pickerValue = document.getElementById('pathStationPicker')?.value.trim();
+  const path = getSelectedLinePath();
+  const canReplace = !!pickerValue && path?.sequence && companySelectedPathSequenceIndex !== null && companySelectedPathSequenceIndex >= 0 && companySelectedPathSequenceIndex < path.sequence.length;
+  btn.textContent = canReplace ? '取代停車站' : '加入停車站';
+}
+
+function finishLinePathSequenceEdit(message = '') {
+  companySelectedPathSequenceIndex = null;
+  const picker = document.getElementById('pathStationPicker');
+  if (picker) picker.value = '';
+  syncLinePathsTextareaFromData();
+  renderLinePathList();
+  renderLinePathSequenceList();
+  renderCompanyLineList();
+  renderLineDebugPanel();
+  renderSelectedLineOverview();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+  if (message) setCompanyEditorStatus(message, 'ok');
+}
+
+function addStationToSelectedLinePathSequence() {
+  const path = getSelectedLinePath();
+  if (!path) return;
+  const raw = document.getElementById('pathStationPicker')?.value.trim();
+  if (!raw) return;
+  const id = resolveSequencePickerStationId(raw);
+  if (!id) return;
+  path.sequence = Array.isArray(path.sequence) ? path.sequence : [];
+  if (companySelectedPathSequenceIndex !== null && companySelectedPathSequenceIndex >= 0 && companySelectedPathSequenceIndex < path.sequence.length) {
+    path.sequence[companySelectedPathSequenceIndex] = id;
+    finishLinePathSequenceEdit(`已取代 ${path.name || path.id} 第 ${companySelectedPathSequenceIndex + 1} 個停車站：${id}`);
+  } else {
+    path.sequence.push(id);
+    finishLinePathSequenceEdit(`已加入 ${path.name || path.id} 停車站：${id}`);
+  }
+}
+
+function moveLinePathStation(index, delta) {
+  const path = getSelectedLinePath();
+  if (!path?.sequence) return;
+  const next = index + delta;
+  if (next < 0 || next >= path.sequence.length) return;
+  [path.sequence[index], path.sequence[next]] = [path.sequence[next], path.sequence[index]];
+  finishLinePathSequenceEdit();
+}
+
+function removeLinePathStation(index) {
+  const path = getSelectedLinePath();
+  if (!path?.sequence || index < 0 || index >= path.sequence.length) return;
+  path.sequence.splice(index, 1);
+  finishLinePathSequenceEdit();
+}
+
+function copyMainSequenceToSelectedLinePath() {
+  const line = getSelectedLine();
+  const path = getSelectedLinePath();
+  if (!line || !path) return;
+  const mainSequence = Array.isArray(line.sequence) ? line.sequence.map(id => toEditorIdToken(id)).filter(Boolean) : [];
+  if (!mainSequence.length) return setCompanyEditorStatus('主 sequence 未有停車站，未能複製到 path。', 'warn');
+  if (path.sequence?.length && !confirm('此 path 已有停車站，要用主 sequence 覆蓋？')) return;
+  path.sequence = [...mainSequence];
+  finishLinePathSequenceEdit(`已由主 sequence 複製 ${path.sequence.length} 個停車站到 ${path.name || path.id}`);
 }
 
 function openSequenceStationForEdit(index, stationId) {
@@ -1073,6 +1457,7 @@ function reorderSequenceStation(fromIndex, toIndex) {
 
   const [moved] = line.sequence.splice(fromIndex, 1);
   line.sequence.splice(toIndex, 0, moved);
+  clearLineDuplicateStopsChecked(line);
   if (companySelectedSequenceIndex === fromIndex) {
     companySelectedSequenceIndex = toIndex;
   } else if (companySelectedSequenceIndex !== null) {
@@ -1093,9 +1478,11 @@ function addStationToSelectedLineSequence() {
   line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
   if (companySelectedSequenceIndex !== null && companySelectedSequenceIndex >= 0 && companySelectedSequenceIndex < line.sequence.length) {
     line.sequence[companySelectedSequenceIndex] = id;
+    clearLineDuplicateStopsChecked(line);
     setCompanyEditorStatus(`已取代第 ${companySelectedSequenceIndex + 1} 個停站：${id}`, 'ok');
   } else {
     line.sequence.push(id);
+    clearLineDuplicateStopsChecked(line);
     setCompanyEditorStatus(`已加入停站：${id}`, 'ok');
   }
   companySelectedSequenceIndex = null;
@@ -1108,6 +1495,7 @@ function moveSequenceStation(index, delta) {
   const next = index + delta;
   if (next < 0 || next >= line.sequence.length) return;
   [line.sequence[index], line.sequence[next]] = [line.sequence[next], line.sequence[index]];
+  clearLineDuplicateStopsChecked(line);
   if (companySelectedSequenceIndex === index) companySelectedSequenceIndex = next;
   else if (companySelectedSequenceIndex === next) companySelectedSequenceIndex = index;
   renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
@@ -1115,6 +1503,7 @@ function moveSequenceStation(index, delta) {
 function removeSequenceStation(index) {
   const line = getSelectedLine(); if (!line?.sequence) return;
   line.sequence.splice(index,1);
+  clearLineDuplicateStopsChecked(line);
   if (companySelectedSequenceIndex === index) companySelectedSequenceIndex = null;
   else if (companySelectedSequenceIndex !== null && companySelectedSequenceIndex > index) companySelectedSequenceIndex -= 1;
   renderLineSequenceList(); renderStationIssuePanel(); refreshCompanyJsonOutput();
@@ -1126,6 +1515,8 @@ function addCompanyLine() {
   companyEditorData.lines.push({ id: buildLockedLineId(base, 'NEW_LINE'), company_id: base, name: '新路線', color: '#63BD0F', geometry_wkt: '', sequence: [] });
   companyEditorCurrent.line = companyEditorData.lines.length - 1;
   companySelectedSequenceIndex = null;
+  companySelectedPathIndex = null;
+  companySelectedPathSequenceIndex = null;
   renderCompanyEditorAll();
 }
 function deleteSelectedLine() {
@@ -1134,6 +1525,8 @@ function deleteSelectedLine() {
   companyEditorData.lines.splice(companyEditorCurrent.line,1);
   companyEditorCurrent.line = Math.max(0, companyEditorCurrent.line - 1);
   companySelectedSequenceIndex = null;
+  companySelectedPathIndex = null;
+  companySelectedPathSequenceIndex = null;
   renderCompanyEditorAll();
 }
 
@@ -1246,6 +1639,7 @@ function assignSequenceRefToStation(lineIndex, seqIndex, stationId) {
   const id = toEditorIdToken(stationId);
   if (!line || !Array.isArray(line.sequence) || !id || seqIndex < 0 || seqIndex >= line.sequence.length) return;
   line.sequence[seqIndex] = id;
+  clearLineDuplicateStopsChecked(line);
   renderCompanyLineList();
   renderLineSequenceList();
   renderStationIssuePanel();
@@ -1260,16 +1654,23 @@ function assignAllSequenceRefsToStation(oldId, stationId) {
   if (!fromId || !toId || !companyEditorData) return;
   let changed = 0;
   (companyEditorData.lines || []).forEach(line => {
-    if (!Array.isArray(line.sequence)) return;
-    line.sequence = line.sequence.map(seqId => {
-      if (toEditorIdToken(seqId) !== fromId) return seqId;
-      changed += 1;
-      return toId;
-    });
+    let lineChanged = false;
+    if (Array.isArray(line.sequence)) {
+      line.sequence = line.sequence.map(seqId => {
+        if (toEditorIdToken(seqId) !== fromId) return seqId;
+        changed += 1;
+        lineChanged = true;
+        return toId;
+      });
+    }
+    const pathChanged = replaceStationIdInLinePaths(line, fromId, toId);
+    changed += pathChanged;
+    if (lineChanged || pathChanged) clearLineDuplicateStopsChecked(line);
   });
   stationIdRepairHints = stationIdRepairHints.filter(item => !(item.oldId === fromId && item.newId === toId));
   renderCompanyLineList();
   renderLineSequenceList();
+  renderLinePathBuilder();
   renderStationIssuePanel();
   renderSelectedStationRouteRefs(getSelectedStation()?.id);
   refreshCompanyJsonOutput();
@@ -1334,12 +1735,128 @@ function getLineDiagnostics(line) {
   };
 }
 
+function getLinePathDiagnostics(line, baseDiag = null) {
+  const stationLookup = getStationLookup();
+  const diag = baseDiag || getLineDiagnostics(line);
+  const baseIdSet = new Set((diag.validIds || []).map(id => toEditorIdToken(id)).filter(Boolean));
+  const paths = normalizeLinePaths(line?.paths || []);
+  const pathItems = paths.map((path, pathIndex) => {
+    const sequenceIds = Array.isArray(path.sequence) ? path.sequence.map(id => toEditorIdToken(id)) : [];
+    const validIds = sequenceIds.filter(Boolean);
+    const counts = new Map();
+    const blankPositions = [];
+    const missing = [];
+    const outsideMainSequence = [];
+
+    sequenceIds.forEach((id, seqIndex) => {
+      if (!id) {
+        blankPositions.push(seqIndex);
+        return;
+      }
+      if (!counts.has(id)) counts.set(id, []);
+      counts.get(id).push(seqIndex);
+      if (!stationLookup.has(id)) missing.push({ id, index: seqIndex });
+      if (baseIdSet.size && !baseIdSet.has(id)) outsideMainSequence.push({ id, index: seqIndex });
+    });
+
+    const duplicates = Array.from(counts.entries())
+      .filter(([, positions]) => positions.length > 1)
+      .map(([id, positions]) => ({ id, positions }));
+
+    const issueCount = (!validIds.length ? 1 : 0)
+      + blankPositions.length
+      + missing.length
+      + outsideMainSequence.length
+      + duplicates.length;
+
+    return {
+      path,
+      pathIndex,
+      sequenceIds,
+      validIds,
+      blankPositions,
+      missing,
+      outsideMainSequence,
+      duplicates,
+      issueCount
+    };
+  });
+
+  const issueCount = pathItems.reduce((sum, item) => sum + item.issueCount, 0);
+  const criticalCount = pathItems.reduce((sum, item) => sum + item.blankPositions.length + item.missing.length, 0);
+  return {
+    pathCount: pathItems.length,
+    paths: pathItems,
+    issueCount,
+    criticalCount
+  };
+}
+
+function getLineDuplicateSignatureFromDiagnostics(diag) {
+  return (diag?.duplicates || [])
+    .map(item => `${item.id}:${item.positions.join(',')}`)
+    .sort()
+    .join('|');
+}
+
+function isLineDuplicateStopsChecked(line, diag = null) {
+  if (!line) return false;
+  const currentDiag = diag || getLineDiagnostics(line);
+  const signature = getLineDuplicateSignatureFromDiagnostics(currentDiag);
+  return !!signature && line.sequence_review?.duplicate_stops_signature === signature;
+}
+
+function setLineDuplicateStopsChecked(line, diag = null) {
+  if (!line) return false;
+  const currentDiag = diag || getLineDiagnostics(line);
+  const signature = getLineDuplicateSignatureFromDiagnostics(currentDiag);
+  if (!signature) return false;
+  line.sequence_review = line.sequence_review && typeof line.sequence_review === 'object' && !Array.isArray(line.sequence_review)
+    ? line.sequence_review
+    : {};
+  line.sequence_review.duplicate_stops_checked = true;
+  line.sequence_review.duplicate_stops_signature = signature;
+  return true;
+}
+
+function clearLineDuplicateStopsChecked(line) {
+  if (!line?.sequence_review) return;
+  delete line.sequence_review.duplicate_stops_checked;
+  delete line.sequence_review.duplicate_stops_signature;
+  if (!Object.keys(line.sequence_review).length) delete line.sequence_review;
+}
+
+function markLineDuplicateStopsChecked() {
+  const line = getSelectedLine();
+  const diag = getLineDiagnostics(line);
+  if (!diag.duplicates.length) return setCompanyEditorStatus('此路線沒有重複停站需要確認。', 'warn');
+  setLineDuplicateStopsChecked(line, diag);
+  renderCompanyLineList();
+  renderLineSequenceList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus('已標記目前重複停站為「已檢查」。如果之後停站次序有變，helper 會重新提示。', 'ok');
+}
+
+function clearSelectedLineDuplicateStopsChecked() {
+  const line = getSelectedLine();
+  clearLineDuplicateStopsChecked(line);
+  renderCompanyLineList();
+  renderLineSequenceList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus('已取消重複停站「已檢查」標記。', 'warn');
+}
+
 function getLineIssueCount(line) {
   if (!line) return 0;
   const diag = getLineDiagnostics(line);
-  let count = diag.missing.length + diag.duplicates.length + diag.blankPositions.length;
+  const pathDiag = getLinePathDiagnostics(line, diag);
+  const duplicateIssueCount = isLineDuplicateStopsChecked(line, diag) ? 0 : diag.duplicates.length;
+  let count = diag.missing.length + duplicateIssueCount + diag.blankPositions.length;
   if (!diag.stationCount) count += 1;
   if (!String(line.geometry_wkt || line.asWKT || line.geometry || '').trim()) count += 1;
+  count += pathDiag.issueCount;
   return count;
 }
 
@@ -1390,6 +1907,7 @@ function renderLineDebugPanel() {
   if (!companyEditorData || !line) { panel.innerHTML = ''; return; }
 
   const diag = getLineDiagnostics(line);
+  const pathDiag = getLinePathDiagnostics(line, diag);
   const issueCards = [];
   if (!diag.stationCount) {
     issueCards.push('<div class="line-debug-card warn"><strong>sequence 未有停站</strong><br>此路線暫時未設定任何車站。</div>');
@@ -1406,12 +1924,32 @@ function renderLineDebugPanel() {
     issueCards.push(`<div class="line-debug-card danger"><strong>無數據車站 ID</strong><br>以下 ID 出現在此路線 sequence，但 stations 名單沒有資料。<div class="issue-token-list">${tokens}</div></div>`);
   }
   if (diag.duplicates.length) {
-    const tokens = diag.duplicates.map(item => {
+    const duplicateTokens = diag.duplicates.map(item => {
       const label = `${escapeEditorHtml(getStationDisplay(item.station, item.id))} @ ${item.positions.map(pos => '#' + (pos + 1)).join(', ')}`;
       const action = item.station ? `<button class="ghost mini-btn" onclick="selectCompanyStationById('${escapeEditorAttr(item.id)}')">修改</button>` : '';
       return buildIssueToken(label, action);
     }).join('');
-    issueCards.push(`<div class="line-debug-card warn"><strong>重複停站</strong><br>同一 station id 在此路線出現多於一次，請確認是否支線 / 回環需要，或是否手誤。<div class="issue-token-list">${tokens}</div></div>`);
+    if (isLineDuplicateStopsChecked(line, diag)) {
+      issueCards.push(`<div class="line-debug-card ok"><strong>重複停站已檢查</strong><br>目前呢組重複停站已確認為合理；如果停站次序有變，helper 會重新提示。<div class="issue-token-list">${duplicateTokens}</div><div class="station-issue-actions"><button class="ghost mini-btn" onclick="clearSelectedLineDuplicateStopsChecked()">重新列入檢查</button></div></div>`);
+    } else {
+      issueCards.push(`<div class="line-debug-card warn"><strong>重複停站</strong><br>同一 station id 在此路線出現多於一次，請確認是否支線 / 回環需要，或是否手誤。<div class="issue-token-list">${duplicateTokens}</div><div class="station-issue-actions"><button class="ok mini-btn" onclick="markLineDuplicateStopsChecked()">✅ 已檢查，保留重複停站</button></div></div>`);
+    }
+  }
+  if (pathDiag.pathCount && pathDiag.issueCount) {
+    const tokens = pathDiag.paths.filter(item => item.issueCount).map(item => {
+      const pathName = item.path.name || item.path.id || `path ${item.pathIndex + 1}`;
+      const details = [];
+      if (!item.validIds.length) details.push('沒有停站');
+      if (item.blankPositions.length) details.push(`空白 ID ${item.blankPositions.map(pos => '#' + (pos + 1)).join(', ')}`);
+      if (item.missing.length) details.push(`缺站 ${item.missing.map(m => `${m.id} (#${m.index + 1})`).join(', ')}`);
+      if (item.outsideMainSequence.length) details.push(`不在主 sequence ${item.outsideMainSequence.map(m => `${m.id} (#${m.index + 1})`).join(', ')}`);
+      if (item.duplicates.length) details.push(`重複 ${item.duplicates.map(d => `${d.id} @ ${d.positions.map(pos => '#' + (pos + 1)).join(', ')}`).join(' / ')}`);
+      return buildIssueToken(`<strong>${escapeEditorHtml(pathName)}</strong>: ${escapeEditorHtml(details.join(' / '))}`);
+    }).join('');
+    const tone = pathDiag.criticalCount ? 'danger' : 'warn';
+    issueCards.push(`<div class="line-debug-card ${tone}"><strong>支線 paths 需檢查</strong><br>path 可以用嚟保存支線 / 多終點嘅各條停站路徑；請確認每個 path 都有完整 station id。<div class="issue-token-list">${tokens}</div></div>`);
+  } else if (pathDiag.pathCount && !issueCards.length) {
+    issueCards.push(`<div class="line-debug-card ok"><strong>支線 paths 正常</strong><br>已設定 ${pathDiag.pathCount} 個 path，未發現空白 ID、缺站 ID、重複停站或超出主 sequence。</div>`);
   }
   if (!String(line.geometry_wkt || '').trim()) {
     issueCards.push('<div class="line-debug-card warn"><strong>geometry_wkt 空白</strong><br>路線仍可儲存，但地圖顯示可能沒有線形。</div>');
@@ -1421,12 +1959,13 @@ function renderLineDebugPanel() {
   }
 
   panel.innerHTML = `
-    <div class="title" style="margin-top:12px;"><strong>路線偵錯模式</strong><span class="small">重複停站 / 缺站資料 / geometry</span></div>
+    <div class="title" style="margin-top:12px;"><strong>路線偵錯模式</strong><span class="small">重複停站 / 缺站資料 / geometry / paths</span></div>
     <div class="debug-summary-grid">
       <div class="debug-pill ${diag.stationCount ? 'ok' : 'warn'}"><strong>${diag.stationCount}</strong>停站</div>
       <div class="debug-pill ${diag.blankPositions.length ? 'danger' : 'ok'}"><strong>${diag.blankPositions.length}</strong>空白 ID</div>
       <div class="debug-pill ${diag.missing.length ? 'danger' : 'ok'}"><strong>${diag.missing.length}</strong>缺站 ID</div>
-      <div class="debug-pill ${diag.duplicates.length ? 'warn' : 'ok'}"><strong>${diag.duplicates.length}</strong>重複組</div>
+      <div class="debug-pill ${diag.duplicates.length ? (isLineDuplicateStopsChecked(line, diag) ? 'ok' : 'warn') : 'ok'}"><strong>${diag.duplicates.length}</strong>重複組</div>
+      <div class="debug-pill ${pathDiag.issueCount ? (pathDiag.criticalCount ? 'danger' : 'warn') : 'ok'}"><strong>${pathDiag.pathCount}</strong>paths</div>
     </div>
     <div class="line-debug-list">${issueCards.join('')}</div>`;
 }
@@ -1994,8 +2533,16 @@ function mergeStationIssueGroup(groupIndex, targetRef) {
 
   if (duplicateIds.length) {
     companyEditorData.lines.forEach(line => {
-      if (!Array.isArray(line.sequence)) return;
-      line.sequence = line.sequence.map(id => duplicateIds.includes(toEditorIdToken(id)) ? target.id : id);
+      let lineChanged = false;
+      if (Array.isArray(line.sequence)) {
+        line.sequence = line.sequence.map(id => {
+          if (!duplicateIds.includes(toEditorIdToken(id))) return id;
+          lineChanged = true;
+          return target.id;
+        });
+      }
+      const pathChanged = mapLinePathSequences(line, id => duplicateIds.includes(toEditorIdToken(id)) ? target.id : id);
+      if (lineChanged || pathChanged) clearLineDuplicateStopsChecked(line);
     });
   }
   companyEditorData.stations = companyEditorData.stations.filter((_, index) => !duplicateIndexes.has(index));
@@ -2089,7 +2636,18 @@ function updateSelectedStationFromForm() {
       idChangeStatus = `已修改車站 ID：${oldId} → ${st.id}。因為原 ID 曾經重複使用，未自動改路線停站；請在車站偵錯「ID 指派」逐條確認。`;
       idChangeStatusType = 'warn';
     } else {
-      companyEditorData.lines.forEach(line => { if (Array.isArray(line.sequence)) line.sequence = line.sequence.map(id => toEditorIdToken(id) === oldId ? st.id : id); });
+      companyEditorData.lines.forEach(line => {
+        let lineChanged = false;
+        if (Array.isArray(line.sequence)) {
+          line.sequence = line.sequence.map(id => {
+            if (toEditorIdToken(id) !== oldId) return id;
+            lineChanged = true;
+            return st.id;
+          });
+        }
+        const pathChanged = replaceStationIdInLinePaths(line, oldId, st.id);
+        if (lineChanged || pathChanged) clearLineDuplicateStopsChecked(line);
+      });
       idChangeStatus = `已修改車站 ID：${oldId} → ${st.id}，並同步更新相關路線停站。`;
     }
   }
@@ -2120,7 +2678,16 @@ function deleteSelectedStation() {
   if (!companyEditorData || !getSelectedStation()) return;
   const st = getSelectedStation();
   if (!confirm('確定刪除此車站？\n如路線 sequence 有使用呢個 ID，會一併移除。')) return;
-  companyEditorData.lines.forEach(line => { if (Array.isArray(line.sequence)) line.sequence = line.sequence.filter(id => id !== st.id); });
+  companyEditorData.lines.forEach(line => {
+    let lineChanged = false;
+    if (Array.isArray(line.sequence)) {
+      const before = line.sequence.length;
+      line.sequence = line.sequence.filter(id => id !== st.id);
+      lineChanged = before !== line.sequence.length;
+    }
+    const pathChanged = removeStationIdFromLinePaths(line, st.id);
+    if (lineChanged || pathChanged) clearLineDuplicateStopsChecked(line);
+  });
   companyEditorData.stations.splice(companyEditorCurrent.station,1);
   companyEditorCurrent.station = Math.max(0, companyEditorCurrent.station - 1);
   renderCompanyEditorAll();
@@ -2274,6 +2841,42 @@ function getRequiredDatasetIssueGroups(data) {
     }));
 }
 
+function getLinePathIssueGroups(lines) {
+  const groups = [];
+  (lines || []).forEach(line => {
+    const diag = getLineDiagnostics(line);
+    const pathDiag = getLinePathDiagnostics(line, diag);
+    if (!pathDiag.pathCount || !pathDiag.issueCount) return;
+
+    const lineLabel = line.name || line.id || '未命名路線';
+    const criticalCount = pathDiag.criticalCount;
+    const warningCount = pathDiag.issueCount - criticalCount;
+    if (criticalCount) {
+      groups.push({
+        type: 'linePathMissing',
+        title: `path 缺站 / 空白 ID：${lineLabel}`,
+        count: criticalCount
+      });
+    }
+    if (warningCount) {
+      groups.push({
+        type: 'linePath',
+        title: `path 結構提示：${lineLabel}`,
+        count: warningCount
+      });
+    }
+  });
+  return groups;
+}
+
+function countIssueGroupsByType(groups, types = null) {
+  const typeSet = types ? new Set(types) : null;
+  return (groups || []).reduce((sum, group) => {
+    if (typeSet && !typeSet.has(group.type)) return sum;
+    return sum + (group.count || group.items?.length || group.refs?.length || 0);
+  }, 0);
+}
+
 function getAuditSortRank(result) {
   const tone = getAuditResultTone(result);
   if (tone === 'error') return 0;
@@ -2311,12 +2914,14 @@ function auditCompanyJsonText(fileName, text) {
       companyEditorData = normalized;
       companyStationIssueGroups = findStationIssueGroups();
       const requiredGroups = getRequiredDatasetIssueGroups(normalized);
+      const lineGroups = getLinePathIssueGroups(normalized.lines).map(summarizeAuditGroup);
       const stationGroups = companyStationIssueGroups.map(summarizeAuditGroup);
-      const groups = [...requiredGroups, ...stationGroups];
+      const groups = [...requiredGroups, ...lineGroups, ...stationGroups];
       const requiredIssueCount = countAuditSummaryGroupItems(requiredGroups);
-      const issueCount = requiredIssueCount + countStationIssueItems(companyStationIssueGroups);
-      const criticalCount = requiredIssueCount + countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord']);
-      const warningCount = countStationIssueItems(companyStationIssueGroups, ['name', 'coord', 'unused']);
+      const lineIssueCount = countAuditSummaryGroupItems(lineGroups);
+      const issueCount = requiredIssueCount + lineIssueCount + countStationIssueItems(companyStationIssueGroups);
+      const criticalCount = requiredIssueCount + countIssueGroupsByType(lineGroups, ['linePathMissing']) + countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord']);
+      const warningCount = countIssueGroupsByType(lineGroups, ['linePath']) + countStationIssueItems(companyStationIssueGroups, ['name', 'coord', 'unused']);
       return {
         ok: true,
         file: fileName,
@@ -2536,8 +3141,8 @@ function renderIndexAuditResultCard(result, index) {
   const stationMetaClass = !isManifestResult && !(result.stationCount || 0) ? ' class="danger"' : '';
   const trainMetaClass = !isManifestResult && !(result.trainCount || 0) ? ' class="danger"' : '';
   const issueChips = (result.groups || []).slice(0, 6).map(group => {
-    const chipTone = ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord', 'parse', 'fetch', 'missingFile', 'missingLines', 'missingStations', 'missingTrains'].includes(group.type) ? 'danger'
-      : ['name', 'coord', 'unused', 'manifest'].includes(group.type) ? 'warn'
+    const chipTone = ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord', 'parse', 'fetch', 'missingFile', 'missingLines', 'missingStations', 'missingTrains', 'linePathMissing'].includes(group.type) ? 'danger'
+      : ['name', 'coord', 'unused', 'manifest', 'linePath'].includes(group.type) ? 'warn'
       : 'info';
     return `<span class="index-audit-chip ${chipTone}">${escapeEditorHtml(group.title)} (${group.count || 0})</span>`;
   }).join('');

@@ -16,10 +16,48 @@
           "STN_KNT_SHIMIN_HIROBA",
           "STN_KNT_IRYO_CENTER",
           "STN_KNT_KEISAN_KAGAKU_CENTER",
-          "STN_KNT_KOBE_AUKPORT",
+          "STN_KNT_KOBE_AIRPORT",
           "STN_KNT_MINAMI_KOEN",
           "STN_KNT_NAKA_FUTO",
           "STN_KNT_KITA_FUTO"
+        ],
+        "paths": [
+          {
+            "id": "airport",
+            "name": "神戸空港方面",
+            "sequence": [
+              "STN_KNT_SANNOMIYA",
+              "STN_KNT_BOEKI_CENTER",
+              "STN_KNT_PORT_TERMINAL",
+              "STN_KNT_NAKA_KOEN",
+              "STN_KNT_MINATOJIMA",
+              "STN_KNT_SHIMIN_HIROBA",
+              "STN_KNT_IRYO_CENTER",
+              "STN_KNT_KEISAN_KAGAKU_CENTER",
+              "STN_KNT_KOBE_AIRPORT"
+            ]
+          },
+          {
+            "id": "kita_futo_loop",
+            "name": "北埠頭方面",
+            "is_loop": true,
+            "one_way": true,
+            "sequence": [
+              "STN_KNT_SANNOMIYA",
+              "STN_KNT_BOEKI_CENTER",
+              "STN_KNT_PORT_TERMINAL",
+              "STN_KNT_NAKA_KOEN",
+              "STN_KNT_MINATOJIMA",
+              "STN_KNT_SHIMIN_HIROBA",
+              "STN_KNT_MINAMI_KOEN",
+              "STN_KNT_NAKA_FUTO",
+              "STN_KNT_KITA_FUTO",
+              "STN_KNT_NAKA_KOEN",
+              "STN_KNT_PORT_TERMINAL",
+              "STN_KNT_BOEKI_CENTER",
+              "STN_KNT_SANNOMIYA"
+            ]
+          }
         ],
         "company_id": "KNT",
         "color": "#00b08f",
@@ -99,7 +137,7 @@
         "company_id": "KNT"
       },
       {
-        "id": "STN_KNT_KOBE_AUKPORT",
+        "id": "STN_KNT_KOBE_AIRPORT",
         "lat": "34.63728489",
         "lng": "135.22903199",
         "name": "神戸空港",

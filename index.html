@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>鉄道手帳 RAIL LOG V0.35</title>
+<title>鉄道手帳 RAIL LOG V0.36</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta property="og:title" content="鉄道手帳 RAIL LOG">
 <meta property="og:description" content="乘車記錄、足跡地圖與車型相冊">
@@ -2080,7 +2080,7 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 #railMap { height: 65vh; width: 100%; border-radius: 8px; z-index: 1; border: 1px solid var(--border); }
 
 /* =========================================
-   🟩 V0.24/V0.35 成就佈局樣式
+   🟩 V0.24/V0.36 成就佈局樣式
    ========================================= */
 .achieve-category-header { font-size: 14px; color: var(--subtext); margin: 15px 0 10px 0; font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 .achieve-category-section { margin-bottom: 10px; }
@@ -4229,7 +4229,7 @@ html, body {
 }
 
 
-/* ===== V0.35 Desktop Layout =====
+/* ===== V0.36 Desktop Layout =====
    Mobile keeps the existing one-column app. Desktop becomes a wide rail-control workspace. */
 @media (min-width: 900px) {
     :root {
@@ -6755,6 +6755,220 @@ html, body {
     border-bottom-color: var(--rail-accent-line-softer) !important;
 }
 
+/* Keep the V0.35 station-slip look while route tags stay inside the route column. */
+#tab-history .trip-ticket-section {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 7px;
+}
+
+#tab-history .trip-ticket-section + .trip-ticket-section::before,
+#tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+    content: "\30FB";
+}
+
+#tab-history .trip-route-stack {
+    min-width: 0;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+}
+
+#tab-history .trip-route-inline,
+#tab-history .trip-train-inline,
+#tab-history .trip-station-inline {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+}
+
+#tab-history .trip-route-meta {
+    flex: 0 0 auto;
+    min-height: 0;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
+#tab-history .trip-route-meta .trip-service-badge,
+#tab-history .trip-route-meta .trip-direction-chip,
+#tab-history .trip-route-meta .trip-photo-icon {
+    min-height: 20px;
+    margin: 0;
+    padding: 3px 7px;
+    font-size: 10px;
+    line-height: 1;
+}
+
+#tab-history .trip-route-meta .trip-photo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+@media (min-width: 900px) {
+    #tab-history .trip-ticket-layout {
+        display: grid !important;
+        grid-template-columns: minmax(250px, 1.25fr) minmax(150px, 0.58fr) minmax(220px, 1fr) 66px !important;
+        align-items: center !important;
+        gap: 0 18px !important;
+    }
+
+    #tab-history .trip-ticket-main {
+        display: contents !important;
+    }
+
+    #tab-history .trip-ticket-route,
+    #tab-history .trip-ticket-train,
+    #tab-history .trip-ticket-stations {
+        align-self: center;
+        align-items: center;
+        min-width: 0;
+        width: auto;
+    }
+
+    #tab-history .trip-route-stack {
+        align-items: center;
+        flex-wrap: wrap;
+        overflow: visible;
+        row-gap: 2px;
+    }
+
+    #tab-history .trip-route-inline {
+        flex: 0 1 auto;
+        max-width: 100%;
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+        line-height: 1.24;
+    }
+
+    #tab-history .trip-route-meta {
+        flex-wrap: wrap;
+        row-gap: 2px;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #tab-history .trip-ticket-route {
+        grid-column: 1;
+    }
+
+    #tab-history .trip-ticket-train {
+        grid-column: 2;
+    }
+
+    #tab-history .trip-ticket-stations {
+        grid-column: 3;
+    }
+
+    #tab-history .trip-actions {
+        grid-column: 4;
+        width: 66px;
+        min-width: 66px;
+        align-self: center;
+        justify-content: flex-end !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    #tab-history .trip-ticket-layout {
+        grid-template-columns: minmax(320px, 1.25fr) minmax(170px, 0.58fr) minmax(300px, 1fr) 78px !important;
+        gap: 0 18px !important;
+    }
+
+    #tab-history .trip-actions {
+        width: 78px;
+        min-width: 78px;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip-ticket-layout {
+        gap: 8px !important;
+    }
+
+    #tab-history .trip-ticket-main {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.18fr) minmax(5.2em, 0.56fr) minmax(7.6em, 0.86fr);
+        align-items: start;
+        gap: 4px 7px !important;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-section {
+        display: inline-flex !important;
+        align-items: flex-start;
+        gap: 0 3px;
+    }
+
+    #tab-history .trip-ticket-route {
+        padding-left: 8px;
+    }
+
+    #tab-history .trip-ticket-label {
+        font-size: 8.5px;
+        min-width: 0;
+        letter-spacing: 0;
+    }
+
+    #tab-history .trip-route-inline {
+        display: block;
+        overflow: visible;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+        font-size: 12.5px;
+        line-height: 1.22;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+        font-size: 11.5px;
+        line-height: 1.22;
+    }
+
+    #tab-history .trip-route-stack {
+        min-width: 0;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        overflow: visible;
+        gap: 3px;
+    }
+
+    #tab-history .trip-route-meta {
+        min-width: 0;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+
+    #tab-history .trip-route-meta .trip-service-badge,
+    #tab-history .trip-route-meta .trip-direction-chip,
+    #tab-history .trip-route-meta .trip-photo-icon {
+        min-height: 16px;
+        padding: 2px 5px;
+        font-size: 8.8px;
+    }
+}
+
 /* Add trip option rail: reuse the slim map-control language. */
 .add-option-area {
     margin-top: 14px;
@@ -6996,7 +7210,7 @@ body {
     }
 }
 
-/* ===== V0.35 E235 LCD loading refresh ===== */
+/* ===== V0.36 E235 LCD loading refresh ===== */
 #loading-screen {
     background:
         radial-gradient(circle at 50% 12%, rgba(255,255,255,0.72), transparent 34%),
@@ -8317,7 +8531,7 @@ body {
 
             <div class="e235-arrival-header-right">
                 <div id="e235-clock" class="e235-arrival-clock">--:--</div>
-                <div class="e235-arrival-version">V0.35</div>
+                <div class="e235-arrival-version">V0.36</div>
             </div>
         </div>
 
@@ -8463,7 +8677,7 @@ body {
     </header>
 
     <div id="appToast" class="toast-message">通知</div>
-    <div class="version-badge">V0.35</div>
+    <div class="version-badge">V0.36</div>
 
     <div class="container">
 
@@ -10481,8 +10695,8 @@ function fillStationDatalist(listId, compId, lineInput) {
 
     if (compId && lineInput) {
         let matchedLine = db.lines.find(l => l.company_id === compId && l.name === lineInput);
-        if (matchedLine && matchedLine.sequence) {
-            stationsToShow = matchedLine.sequence.map(stnId => maps.station[stnId]).filter(Boolean);
+        if (matchedLine && (matchedLine.sequence || matchedLine.paths)) {
+            stationsToShow = getLineSequenceStations(matchedLine);
         } else {
             stationsToShow = db.stations.filter(s => s.company_id === compId);
         }
@@ -10545,7 +10759,7 @@ window.addThrough = function() {
     syncAddOptionControls();
 }
 
-// 🟩 V0.35 處理圖片上傳
+// 🟩 V0.36 處理圖片上傳
 window.handlePhotoUpload = function(input, targetId) {
     const file = input.files[0];
     if (file) {
@@ -10574,7 +10788,7 @@ async function uploadBase64ToStorage(base64Data, path) {
     return await getDownloadURL(storageRef);
 }
 
-// 🟩 V0.35 移除圖片
+// 🟩 V0.36 移除圖片
 window.removePhoto = function(targetId, event) {
     event.stopPropagation();
     event.preventDefault();
@@ -10732,7 +10946,7 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
         const direction = getLoopDirectionForRoute(routes[0], 0);
         if (direction) segment.direction = direction;
 
-        return [segment];
+        return [applyInferredPathToSegment(segment)];
     }
 
     const junctionPairs = [...document.querySelectorAll(".throughJunctionStation")]
@@ -10762,7 +10976,7 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
         const direction = getLoopDirectionForRoute(route, index);
         if (direction) segment.direction = direction;
 
-        return segment;
+        return applyInferredPathToSegment(segment);
     });
 }
 
@@ -11342,6 +11556,7 @@ pagedTrips.forEach((t) => {
         }
     });
     
+    const directionSummary = getTripDirectionSummary(t);
     const serviceHtml = t.serviceType
         ? `<span class="trip-service-badge">${t.serviceType}</span>`
         : '';
@@ -11350,7 +11565,11 @@ pagedTrips.forEach((t) => {
         ? `<span class="trip-photo-icon" title="有相片">📸</span>`
         : '';
 
-    const directionSummary = getTripDirectionSummary(t);
+    const routeMetaHtml = [
+        serviceHtml,
+        directionSummary ? `<span class="trip-direction-chip">${directionSummary}</span>` : "",
+        photoIconHtml
+    ].filter(Boolean).join("");
 
     if (t.id) {
         div.dataset.tripId = t.id;
@@ -11381,9 +11600,11 @@ pagedTrips.forEach((t) => {
             <div class="trip-ticket-main">
                 <span class="trip-ticket-section trip-ticket-route">
                     <span class="trip-ticket-label">路線</span>
-                    <span class="trip-route-inline">${routeHtml || "未設定路線"}</span>
+                    <span class="trip-route-stack">
+                        <span class="trip-route-inline">${routeHtml || "未設定路線"}</span>
+                        ${routeMetaHtml ? `<span class="trip-route-meta">${routeMetaHtml}</span>` : ""}
+                    </span>
                 </span>
-                ${serviceHtml}
                 <span class="trip-ticket-section trip-ticket-train">
                     <span class="trip-ticket-label">車両</span>
                     <span class="trip-train-inline">${getTripTrainDisplay(t)}</span>
@@ -11392,8 +11613,6 @@ pagedTrips.forEach((t) => {
                     <span class="trip-ticket-label">駅間</span>
                     <span class="trip-station-inline">${getStationName(t.from_id)} <span class="trip-arrow">→</span> ${getStationName(t.to_id)}</span>
                 </span>
-                ${directionSummary ? `<span class="trip-direction-chip">${directionSummary}</span>` : ""}
-                ${photoIconHtml}
             </div>
 
             <div class="trip-header-row trip-actions">
@@ -11874,21 +12093,216 @@ function resolveLineObject(lineRef) {
     return db.lines.find(line => line.id === lineRef) || maps.line[lineRef] || null;
 }
 
+function normalizeLineSequenceArray(sequence) {
+    return Array.isArray(sequence)
+        ? sequence.filter(Boolean).map(String)
+        : [];
+}
+
+function isOneWayPath(path) {
+    return path?.one_way === true || path?.one_way === "true" || path?.oneWay === true || path?.oneWay === "true";
+}
+
+function isPathLoopLike(path) {
+    return isOneWayPath(path) || isLoopLine(path);
+}
+
+function getLinePathDefinitions(lineRef) {
+    const line = resolveLineObject(lineRef);
+    if (!line) return [];
+
+    const definedPaths = Array.isArray(line.paths)
+        ? line.paths.map((path, index) => {
+            const sequence = normalizeLineSequenceArray(path?.sequence);
+            if (!sequence.length) return null;
+
+            return {
+                ...path,
+                id: String(path.id || `path_${index + 1}`),
+                name: path.name || line.name || "",
+                company_id: path.company_id || line.company_id || "",
+                line_id: line.id || "",
+                sequence,
+                isDefinedPath: true
+            };
+        }).filter(Boolean)
+        : [];
+
+    if (definedPaths.length) return definedPaths;
+
+    const sequence = normalizeLineSequenceArray(line.sequence);
+    return sequence.length
+        ? [{
+            id: "__sequence",
+            name: line.name || "",
+            company_id: line.company_id || "",
+            line_id: line.id || "",
+            sequence,
+            is_loop: isLoopLine(line),
+            direction_steps: line.direction_steps || line.directionSteps || {},
+            isDefinedPath: false
+        }]
+        : [];
+}
+
+function getLineStationIds(lineRef) {
+    const stationIds = [];
+    const seen = new Set();
+
+    getLinePathDefinitions(lineRef).forEach(path => {
+        path.sequence.forEach(stationId => {
+            if (!stationId || seen.has(stationId)) return;
+            seen.add(stationId);
+            stationIds.push(stationId);
+        });
+    });
+
+    return stationIds;
+}
+
+function getStationIdIndices(sequence, stationId) {
+    const key = String(stationId || "");
+    const indices = [];
+    sequence.forEach((value, index) => {
+        if (value === key) indices.push(index);
+    });
+    return indices;
+}
+
+function getWrappedDistance(startIndex, endIndex, step, length, fullLoopOnSame) {
+    if (startIndex === endIndex) return fullLoopOnSame ? length : 0;
+    return step === -1
+        ? (startIndex - endIndex + length) % length
+        : (endIndex - startIndex + length) % length;
+}
+
+function getSequenceTraversalCandidate(sequence, fromId, toId, pathLike = {}, direction = "") {
+    if (!Array.isArray(sequence) || sequence.length === 0 || !fromId || !toId) return null;
+
+    const fromIndices = getStationIdIndices(sequence, fromId);
+    const toIndices = getStationIdIndices(sequence, toId);
+    if (!fromIndices.length || !toIndices.length) return null;
+
+    const wrap = isPathLoopLike(pathLike);
+    const oneWay = isOneWayPath(pathLike);
+    const candidates = [];
+
+    fromIndices.forEach(fromIndex => {
+        toIndices.forEach(toIndex => {
+            if (!wrap) {
+                const startIndex = Math.min(fromIndex, toIndex);
+                const endIndex = Math.max(fromIndex, toIndex);
+                candidates.push({
+                    startIndex,
+                    endIndex,
+                    step: 1,
+                    distance: endIndex - startIndex,
+                    score: endIndex - startIndex,
+                    wrap: false
+                });
+                return;
+            }
+
+            const steps = oneWay
+                ? [1]
+                : (direction === "forward" || direction === "reverse"
+                    ? [getLoopDirectionStep(pathLike, direction)]
+                    : [getLoopDirectionStep(pathLike, "forward"), getLoopDirectionStep(pathLike, "reverse")]);
+
+            Array.from(new Set(steps)).forEach(step => {
+                const distance = getWrappedDistance(fromIndex, toIndex, step, sequence.length, true);
+                candidates.push({
+                    startIndex: fromIndex,
+                    endIndex: toIndex,
+                    step,
+                    distance,
+                    score: distance,
+                    wrap: true
+                });
+            });
+        });
+    });
+
+    return candidates.sort((a, b) => a.score - b.score)[0] || null;
+}
+
+function collectSequenceTraversalKeys(sequence, traversal) {
+    const keys = new Set();
+    if (!traversal || !Array.isArray(sequence) || !sequence.length) return keys;
+
+    let index = traversal.startIndex;
+    keys.add(sequence[index]);
+
+    for (let i = 0; i < traversal.distance; i++) {
+        index = traversal.wrap
+            ? (index + traversal.step + sequence.length) % sequence.length
+            : index + traversal.step;
+
+        if (index < 0 || index >= sequence.length) break;
+        keys.add(sequence[index]);
+    }
+
+    return keys;
+}
+
+function getLinePathTraversalScore(path, fromId, toId, direction = "") {
+    const traversal = getSequenceTraversalCandidate(path?.sequence, fromId, toId, path, direction);
+    return traversal ? traversal.score : Infinity;
+}
+
+function inferLinePathForStations(lineRef, fromId, toId, direction = "", preferredPathId = "") {
+    const paths = getLinePathDefinitions(lineRef);
+    if (!paths.length) return null;
+
+    const preferredId = String(preferredPathId || "");
+    if (preferredId) {
+        const preferredPath = paths.find(path => path.id === preferredId);
+        if (preferredPath && Number.isFinite(getLinePathTraversalScore(preferredPath, fromId, toId, direction))) {
+            return preferredPath;
+        }
+    }
+
+    const candidates = paths
+        .map(path => ({
+            path,
+            score: getLinePathTraversalScore(path, fromId, toId, direction)
+        }))
+        .filter(item => Number.isFinite(item.score))
+        .sort((a, b) => a.score - b.score);
+
+    return candidates[0]?.path || null;
+}
+
+function getPathStationKeySet(path, fromId, toId, direction = "") {
+    const traversal = getSequenceTraversalCandidate(path?.sequence, fromId, toId, path, direction);
+    return collectSequenceTraversalKeys(path?.sequence || [], traversal);
+}
+
+function applyInferredPathToSegment(segment) {
+    const line = resolveLineObject(segment?.line_id);
+    if (!line || !Array.isArray(line.paths) || !line.paths.length) return segment;
+
+    const path = inferLinePathForStations(line, segment.from_id, segment.to_id, segment.direction || "");
+    if (path?.isDefinedPath && path.id) segment.path_id = path.id;
+    return segment;
+}
+
 function getLineSequenceStations(lineRef) {
     const line = resolveLineObject(lineRef);
-    if (!Array.isArray(line?.sequence)) return [];
 
-    return line.sequence
+    return getLineStationIds(line)
         .map(stnId => maps.station[stnId])
         .filter(Boolean);
 }
 
 function isLineEndpointStation(lineRef, stationId) {
     const line = resolveLineObject(lineRef);
-    const sequence = Array.isArray(line?.sequence) ? line.sequence.filter(Boolean) : [];
-    if (!stationId || sequence.length === 0) return false;
+    if (!line || !stationId) return false;
 
-    return sequence[0] === stationId || sequence[sequence.length - 1] === stationId;
+    return getLinePathDefinitions(line).some(path => {
+        const sequence = path.sequence || [];
+        return sequence[0] === stationId || sequence[sequence.length - 1] === stationId;
+    });
 }
 
 function stationDistanceSq(a, b) {
@@ -11985,10 +12399,11 @@ function getAutoJunctionCandidate(candidates) {
 function findJunctionStations(lineRefA, lineRefB) {
     const lineA = resolveLineObject(lineRefA);
     const lineB = resolveLineObject(lineRefB);
-    if (!lineA?.sequence || !lineB?.sequence) return [];
 
     const stationsA = getLineSequenceStations(lineA);
     const stationsB = getLineSequenceStations(lineB);
+    if (!stationsA.length || !stationsB.length) return [];
+
     const candidates = [];
     const seen = new Set();
 
@@ -12170,12 +12585,10 @@ function resolveStationIdForLine(value, lineId = "") {
     const clean = normalizeStationInputName(raw);
     const line = typeof lineId === "object" ? lineId : maps.line[lineId];
 
-    // 最重要：用目前路線 sequence 去解決「只輸入站名」嘅情況。
+    // 最重要：用目前路線 sequence / paths 去解決「只輸入站名」嘅情況。
     // 例如 JR神戸線入「西明石」/「大阪」，都會轉返正確 station id。
-    if (line && Array.isArray(line.sequence)) {
-        const matched = line.sequence
-            .map(stnId => maps.station[stnId])
-            .filter(Boolean)
+    if (line) {
+        const matched = getLineSequenceStations(line)
             .find(station => {
                 const companyName = maps.company[station.company_id]?.name || "";
                 const display = station._display || (companyName ? `${station.name} (${companyName})` : station.name);
@@ -12411,7 +12824,7 @@ function getTripSegments(trip) {
             to_id: trip.to_id
         };
         if (trip.direction) segment.direction = trip.direction;
-        return [segment];
+        return [applyInferredPathToSegment(segment)];
     }
 
     return [];
@@ -12441,7 +12854,8 @@ function getRiddenSegmentsForLine(lineId) {
             segments.push({
                 fromId,
                 toId,
-                direction: seg.direction || ""
+                direction: seg.direction || "",
+                pathId: seg.path_id || seg.pathId || ""
             });
         });
     });
@@ -12603,84 +13017,27 @@ function getRiddenSegmentKeySetForLine(lineId) {
 }
 
 function getNormalizedLineSequence(line) {
-    const sequence = Array.isArray(line?.sequence)
-        ? line.sequence.filter(Boolean).map(String)
-        : [];
-
-    if (sequence.length > 2 && sequence[0] === sequence[sequence.length - 1]) {
-        return sequence.slice(0, -1);
-    }
-
-    return sequence;
+    return getLineStationIds(line);
 }
 
 function getLineTotalStationKeySet(line) {
     const keys = new Set();
-    getNormalizedLineSequence(line).forEach(stationId => {
+    getLineStationIds(line).forEach(stationId => {
         const key = String(stationId || "");
         if (key) keys.add(key);
     });
     return keys;
 }
 
-function getSequencePathStationKeySet(line, fromId, toId, direction = "") {
+function getSequencePathStationKeySet(line, fromId, toId, direction = "", pathId = "") {
     const keys = new Set();
-    const sequence = getNormalizedLineSequence(line);
-    if (sequence.length === 0 || !fromId || !toId) return keys;
+    const path = inferLinePathForStations(line, fromId, toId, direction, pathId);
+    if (!path) return keys;
 
-    const fromKey = String(fromId);
-    const toKey = String(toId);
-    const fromIndex = sequence.indexOf(fromKey);
-    const toIndex = sequence.indexOf(toKey);
-    if (fromIndex < 0 || toIndex < 0) return keys;
-
-    if (fromIndex === toIndex) {
-        if (isLoopLine(line) && sequence.length > 1) {
-            sequence.forEach(stationId => {
-                if (stationId) keys.add(stationId);
-            });
-            return keys;
-        }
-
-        keys.add(sequence[fromIndex]);
-        return keys;
-    }
-
-    const addLinearRange = (start, end) => {
-        const low = Math.min(start, end);
-        const high = Math.max(start, end);
-        for (let i = low; i <= high; i++) {
-            keys.add(sequence[i]);
-        }
-    };
-
-    if (!isLoopLine(line)) {
-        addLinearRange(fromIndex, toIndex);
-        return keys;
-    }
-
-    const collectLoopStations = (step) => {
-        const loopKeys = new Set([sequence[fromIndex]]);
-        let index = fromIndex;
-        let safety = 0;
-
-        while (safety < sequence.length) {
-            index = (index + step + sequence.length) % sequence.length;
-            loopKeys.add(sequence[index]);
-            if (index === toIndex) break;
-            safety += 1;
-        }
-
-        return loopKeys;
-    };
-
-    if (direction === "reverse" || direction === "forward") {
-        return collectLoopStations(getLoopDirectionStep(line, direction));
-    }
-
-    const forwardKeys = collectLoopStations(getLoopDirectionStep(line, "forward"));
-    const reverseKeys = collectLoopStations(getLoopDirectionStep(line, "reverse"));
-    return forwardKeys.size <= reverseKeys.size ? forwardKeys : reverseKeys;
+    getPathStationKeySet(path, fromId, toId, direction).forEach(key => {
+        if (key) keys.add(key);
+    });
+    return keys;
 }
 
 function getRiddenStationKeySetForLine(lineId) {
@@ -12701,7 +13058,7 @@ function getRiddenStationKeySetForLine(lineId) {
 
             const fromId = resolveStationIdForLine(seg.from_id || seg.fromId || "", lineId);
             const toId = resolveStationIdForLine(seg.to_id || seg.toId || "", lineId);
-            const stationKeys = getSequencePathStationKeySet(line, fromId, toId, seg.direction || "");
+            const stationKeys = getSequencePathStationKeySet(line, fromId, toId, seg.direction || "", seg.path_id || seg.pathId || "");
             stationKeys.forEach(key => keys.add(key));
         });
     });
@@ -13536,7 +13893,7 @@ window.editTrip = function(i) {
         updateThroughLoopDirectionUI(block, editSegments[idx + 1]?.direction || "forward");
     });
 
-    // 🟩 V0.35 編輯模式載入相片
+    // 🟩 V0.36 編輯模式載入相片
     clearAllPhotosUI();
     ['photoTrain', 'photoFrom', 'photoTo'].forEach(photoType => {
         if (t[photoType]) {
@@ -13591,7 +13948,7 @@ window.deleteTrip = async function (i) {
 window.exportData = function() {
     const blob = new Blob([JSON.stringify(trips, null, 2)], {type: "application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "rail-log-V0.35.json"; a.click();
+    a.download = "rail-log-V0.36.json"; a.click();
 }
 
 window.importData = function() {
@@ -13905,7 +14262,7 @@ window.closeMapPhotoPreview = function() {
     captionEl.textContent = "";
 };
 // =========================================
-// 🟩 V0.35 地圖渲染邏輯 (分色標籤 + 顯示相片)
+// 🟩 V0.36 地圖渲染邏輯 (分色標籤 + 顯示相片)
 // =========================================
 
 function getStationLineThemeColors(stationData, fallbackCompanyId = "") {
@@ -14095,7 +14452,7 @@ const customIcon = L.divIcon({
 }
 
 // =========================================
-// 🟩 V0.35 相冊渲染邏輯
+// 🟩 V0.36 相冊渲染邏輯
 // =========================================
 function renderGallery() {
     const container = document.getElementById("galleryContainer");
@@ -14276,7 +14633,7 @@ function renderGallery() {
 }
 
 /* =========================================
-   🟩 V0.35 成就佈局邏輯 (加入點擊說明)
+   🟩 V0.36 成就佈局邏輯 (加入點擊說明)
    ========================================= */
 let achievementTooltipPinned = false;
 
