@@ -21,75 +21,87 @@
           "STN_HITACHINAKA_MINOHAMA_GAKUEN",
           "STN_HITACHINAKA_ISOZAKI",
           "STN_HITACHINAKA_AJIGAURA"
-        ]
+        ],
+        "company_id": "HITACHINAKA"
       }
     ],
     "stations": [
       {
-        "id": "STN_KANTO_KATSUTA",
+        "id": "STN_HITACHINAKA_KATSUTA",
         "lat": "36.39334769",
         "lng": "140.52425468",
-        "name": "勝田"
+        "name": "勝田",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_KOKIMAE",
+        "id": "STN_HITACHINAKA_KOKIMAE",
         "lat": "36.388128",
         "lng": "140.524649",
-        "name": "工機前"
+        "name": "工機前",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_KANEAGE",
+        "id": "STN_HITACHINAKA_KANEAGE",
         "lat": "36.382425",
         "lng": "140.533925",
-        "name": "金上"
+        "name": "金上",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_NAKANE",
+        "id": "STN_HITACHINAKA_NAKANE",
         "lat": "36.367452",
         "lng": "140.562094",
-        "name": "中根"
+        "name": "中根",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_TAKADANOTEKKYO",
+        "id": "STN_HITACHINAKA_TAKADANOTEKKYO",
         "lat": "36.35248007",
         "lng": "140.58021437",
-        "name": "高田の鉄橋"
+        "name": "高田の鉄橋",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_NAKAMINATO",
+        "id": "STN_HITACHINAKA_NAKAMINATO",
         "lat": "36.345534",
         "lng": "140.587663",
-        "name": "那珂湊"
+        "name": "那珂湊",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_DONOYAMA",
+        "id": "STN_HITACHINAKA_DONOYAMA",
         "lat": "36.349435",
         "lng": "140.601011",
-        "name": "殿山"
+        "name": "殿山",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_HIRAISO",
+        "id": "STN_HITACHINAKA_HIRAISO",
         "lat": "36.357515",
         "lng": "140.607584",
-        "name": "平磯"
+        "name": "平磯",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_MINOHAMA_GAKUEN",
+        "id": "STN_HITACHINAKA_MINOHAMA_GAKUEN",
         "lat": "36.37212813",
         "lng": "140.61687039",
-        "name": "美乃浜学園"
+        "name": "美乃浜学園",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_ISOZAKI",
+        "id": "STN_HITACHINAKA_ISOZAKI",
         "lat": "36.377749",
         "lng": "140.617934",
-        "name": "磯崎"
+        "name": "磯崎",
+        "company_id": "HITACHINAKA"
       },
       {
-        "id": "STN_KANTO_AJIGAURA",
+        "id": "STN_HITACHINAKA_AJIGAURA",
         "lat": "36.383434",
         "lng": "140.612345",
-        "name": "阿字ヶ浦"
+        "name": "阿字ヶ浦",
+        "company_id": "HITACHINAKA"
       }
     ],
     "trains": [

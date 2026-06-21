@@ -16,7 +16,8 @@
           "STN_CHIBA_MONO_SAKAEMACHI",
           "STN_CHIBA_MONO_YOSHIKAWA_KOEN",
           "STN_CHIBA_MONO_KENCHO_MAE"
-        ]
+        ],
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "CHIBA_MONO_2",
@@ -37,7 +38,8 @@
           "STN_CHIBA_MONO_OGURADAI",
           "STN_CHIBA_MONO_CHISHIRODAI_KITA",
           "STN_CHIBA_MONO_CHISHIRODAI"
-        ]
+        ],
+        "company_id": "CHIBA_MONO"
       }
     ],
     "stations": [
@@ -45,109 +47,127 @@
         "id": "STN_CHIBA_MONO_CHIBA_MINATO",
         "lat": "35.60760562",
         "lng": "140.10229661",
-        "name": "千葉みなと"
+        "name": "千葉みなと",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_SHIYAKUSHO_MAE",
+        "id": "STN_CHIBA_MONO_SHIYAKUSHO_MAE",
         "lat": "35.60722534",
         "lng": "140.1078072",
-        "name": "市役所前"
+        "name": "市役所前",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_CHIBA",
         "lat": "35.612092",
         "lng": "140.114028",
-        "name": "千葉"
+        "name": "千葉",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_SAKAEMACHI",
+        "id": "STN_CHIBA_MONO_SAKAEMACHI",
         "lat": "35.612965",
         "lng": "140.11867",
-        "name": "栄町"
+        "name": "栄町",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_YOSHIKAWA_KOEN",
         "lat": "35.608865",
         "lng": "140.120075",
-        "name": "葭川公園"
+        "name": "葭川公園",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_KENCHO_MAE",
+        "id": "STN_CHIBA_MONO_KENCHO_MAE",
         "lat": "35.60362455",
         "lng": "140.12224378",
-        "name": "県庁前"
+        "name": "県庁前",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_CHIBA_KOEN",
         "lat": "35.61971",
         "lng": "140.11798",
-        "name": "千葉公園"
+        "name": "千葉公園",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_SAKUSABE",
+        "id": "STN_CHIBA_MONO_SAKUSABE",
         "lat": "35.62572817",
         "lng": "140.11534831",
-        "name": "作草部"
+        "name": "作草部",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_TENDAI",
         "lat": "35.63147",
         "lng": "140.11284",
-        "name": "天台"
+        "name": "天台",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_ANAGAWA",
+        "id": "STN_CHIBA_MONO_ANAGAWA",
         "lat": "35.63954",
         "lng": "140.111885",
-        "name": "穴川"
+        "name": "穴川",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_SPORTS_CENTER",
         "lat": "35.64334",
         "lng": "140.116245",
-        "name": "スポーツセンター"
+        "name": "スポーツセンター",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_DOBUTSU_KOEN",
+        "id": "STN_CHIBA_MONO_DOBUTSU_KOEN",
         "lat": "35.642639",
         "lng": "140.125502",
-        "name": "動物公園"
+        "name": "動物公園",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_MITSUWADAI",
         "lat": "35.63865732",
         "lng": "140.13497334",
-        "name": "みつわ台"
+        "name": "みつわ台",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_TSUGA",
+        "id": "STN_CHIBA_MONO_TSUGA",
         "lat": "35.63538906",
         "lng": "140.14864324",
-        "name": "都賀"
+        "name": "都賀",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_SAKURAGI",
         "lat": "35.63127718",
         "lng": "140.1609966",
-        "name": "桜木"
+        "name": "桜木",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_OGURADAI",
+        "id": "STN_CHIBA_MONO_OGURADAI",
         "lat": "35.62774757",
         "lng": "140.17187153",
-        "name": "小倉台"
+        "name": "小倉台",
+        "company_id": "CHIBA_MONO"
       },
       {
         "id": "STN_CHIBA_MONO_CHISHIRODAI_KITA",
         "lat": "35.62743853",
         "lng": "140.18197219",
-        "name": "千城台北"
+        "name": "千城台北",
+        "company_id": "CHIBA_MONO"
       },
       {
-        "id": "STN_SHIBAYAMA_CHISHIRODAI",
+        "id": "STN_CHIBA_MONO_CHISHIRODAI",
         "lat": "35.62228087",
         "lng": "140.18860657",
-        "name": "千城台"
+        "name": "千城台",
+        "company_id": "CHIBA_MONO"
       }
     ],
     "trains": [
