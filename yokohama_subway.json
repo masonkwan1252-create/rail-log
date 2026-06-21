@@ -42,7 +42,8 @@
           "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
           "STN_YOKOHAMA_SUBWAY_NAKAGAWA",
           "STN_YOKOHAMA_SUBWAY_AZAMINO"
-        ]
+        ],
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "YOKOHAMA_SUBWAY_GREEN",
@@ -51,26 +52,17 @@
         "geometry_wkt": "MULTILINESTRING((139.54926 35.52872, 139.55061 35.53006, 139.552626 35.532141, 139.553381 35.532835, 139.554613 35.533757, 139.555938 35.534578, 139.556962 35.53506, 139.560705 35.536346), (139.64646 35.55342, 139.64722 35.55323), (139.632789 35.549617, 139.633879 35.550209), (139.633879 35.550209, 139.634928 35.550804, 139.636564 35.552164, 139.637073 35.55252, 139.637439 35.552701, 139.637855 35.552885, 139.639037 35.553245, 139.641756 35.55401, 139.642679 35.554146, 139.64377 35.554058, 139.64646 35.55342), (139.61977 35.54985, 139.62141 35.54925), (139.62141 35.54925, 139.62216 35.54897, 139.62465 35.54859, 139.62689 35.54836, 139.628609 35.548192, 139.62981 35.548391, 139.63177 35.54906, 139.632789 35.549617), (139.60565 35.55425, 139.60643 35.55417), (139.60643 35.55417, 139.60777 35.55403, 139.61093 35.55376, 139.61304 35.55257, 139.61604 35.55123, 139.61977 35.54985), (139.59218 35.56119, 139.59251 35.56115, 139.59355 35.56093), (139.59355 35.56093, 139.59523 35.56057, 139.59663 35.56, 139.59816 35.55914, 139.59985 35.55802, 139.60052 35.55713, 139.60123 35.55604, 139.60167 35.5554, 139.60241 35.55483, 139.60343 35.55448, 139.60565 35.55425), (139.57874 35.55382, 139.57991 35.55619, 139.58061 35.55662, 139.58642 35.55968, 139.58955 35.56127, 139.59047 35.56143, 139.59133 35.56131, 139.59218 35.56119), (139.57794 35.55219, 139.57874 35.55382), (139.57486 35.54591, 139.57794 35.55219), (139.57417 35.54452, 139.57486 35.54591), (139.54869 35.52817, 139.54926 35.52872), (139.54001 35.51435, 139.54052 35.51513), (139.54052 35.51513, 139.54352 35.51975, 139.54497 35.5222, 139.54538 35.52408, 139.54624 35.5259, 139.54869 35.52817), (139.560705 35.536346, 139.561897 35.536766), (139.561897 35.536766, 139.56622 35.53826, 139.56963 35.53941, 139.57282 35.54161, 139.57365 35.54346, 139.57417 35.54452))",
         "sequence": [
           "STN_YOKOHAMA_SUBWAY_NAKAYAMA",
-          "STN_YOKOHAMA_SUBWAY_AO_TAKE_IRO",
           "STN_YOKOHAMA_SUBWAY_KAWAWACHO",
-          "STN_YOKOHAMA_SUBWAY_TSUYUKUSA_IRO",
           "STN_YOKOHAMA_SUBWAY_TSUZUKI_FUREAI_NO_OKA",
-          "STN_YOKOHAMA_SUBWAY_FUJI_IRO",
           "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
-          "STN_YOKOHAMA_SUBWAY_SORA_IRO",
           "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
-          "STN_YOKOHAMA_SUBWAY_BABY_PINK",
           "STN_YOKOHAMA_SUBWAY_KITA_YAMATA",
-          "STN_YOKOHAMA_SUBWAY_TOMOROKOSHI_IRO",
           "STN_YOKOHAMA_SUBWAY_HIGASHI_YAMATA",
-          "STN_YOKOHAMA_SUBWAY_KOROHZEN",
           "STN_YOKOHAMA_SUBWAY_TAKATA",
-          "STN_YOKOHAMA_SUBWAY_KI_SUISEN",
           "STN_YOKOHAMA_SUBWAY_HIYOSHI_HONCHO",
-          "STN_YOKOHAMA_SUBWAY_WAKABA_IRO",
-          "STN_YOKOHAMA_SUBWAY_HIYOSHI",
-          "STN_YOKOHAMA_SUBWAY_ROSE_RED"
-        ]
+          "STN_YOKOHAMA_SUBWAY_HIYOSHI"
+        ],
+        "company_id": "YOKOHAMA_SUBWAY"
       }
     ],
     "stations": [
@@ -78,253 +70,281 @@
         "id": "STN_YOKOHAMA_SUBWAY_SHONANDAI",
         "lat": "35.39661614",
         "lng": "139.46778868",
-        "name": "湘南台"
+        "name": "湘南台",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_SHIMO_IIDA",
         "lat": "35.403375",
         "lng": "139.482885",
-        "name": "下飯田"
+        "name": "下飯田",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_TATEBA",
         "lat": "35.41438",
         "lng": "139.5007",
-        "name": "立場"
+        "name": "立場",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_NAKADA",
         "lat": "35.411155",
         "lng": "139.51122",
-        "name": "中田"
+        "name": "中田",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_ODORIBA",
         "lat": "35.405666",
         "lng": "139.518416",
-        "name": "踊場"
+        "name": "踊場",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_TOTSUKA",
         "lat": "35.401099",
         "lng": "139.534884",
-        "name": "戸塚"
+        "name": "戸塚",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_MAIOKA",
         "lat": "35.402535",
         "lng": "139.551265",
-        "name": "舞岡"
+        "name": "舞岡",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_SHIMO_NAGAYA",
         "lat": "35.40276",
         "lng": "139.559045",
-        "name": "下永谷"
+        "name": "下永谷",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KAMI_NAGAYA",
         "lat": "35.40137",
         "lng": "139.57279",
-        "name": "上永谷"
+        "name": "上永谷",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KONAN_CHUO",
         "lat": "35.40123",
         "lng": "139.591215",
-        "name": "港南中央"
+        "name": "港南中央",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KAMI_OOKA",
         "lat": "35.409205",
         "lng": "139.59598",
-        "name": "上大岡"
+        "name": "上大岡",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_GUMYOJI",
         "lat": "35.422975",
         "lng": "139.601981",
-        "name": "弘明寺"
+        "name": "弘明寺",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_MAITA",
         "lat": "35.43031",
         "lng": "139.61053",
-        "name": "蒔田"
+        "name": "蒔田",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_YOSHINOCHO",
         "lat": "35.435364",
         "lng": "139.61847",
-        "name": "吉野町"
+        "name": "吉野町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_BANDOBASHI",
         "lat": "35.437617",
         "lng": "139.625141",
-        "name": "阪東橋"
+        "name": "阪東橋",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_ISEZAKI_CHOJAMACHI",
         "lat": "35.440992",
         "lng": "139.632769",
-        "name": "伊勢佐木長者町"
+        "name": "伊勢佐木長者町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KANNAI",
         "lat": "35.44577",
         "lng": "139.63602",
-        "name": "関内"
+        "name": "関内",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_SAKURAGICHO",
         "lat": "35.449634",
         "lng": "139.630744",
-        "name": "桜木町"
+        "name": "桜木町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_TAKASHIMACHO",
         "lat": "35.458695",
         "lng": "139.62365",
-        "name": "高島町"
+        "name": "高島町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_YOKOHAMA",
         "lat": "35.465403",
         "lng": "139.620157",
-        "name": "横浜"
+        "name": "横浜",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_MITSUZAWA_SHIMOMACHI",
         "lat": "35.476485",
         "lng": "139.615215",
-        "name": "三ツ沢下町"
+        "name": "三ツ沢下町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_MITSUZAWA_KAMIMACHI",
         "lat": "35.476417",
         "lng": "139.605455",
-        "name": "三ツ沢上町"
+        "name": "三ツ沢上町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KATAKURACHO",
         "lat": "35.49",
         "lng": "139.60643",
-        "name": "片倉町"
+        "name": "片倉町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KISHINE_KOEN",
         "lat": "35.49551",
         "lng": "139.616545",
-        "name": "岸根公園"
+        "name": "岸根公園",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_SHIN_YOKOHAMA",
         "lat": "35.509055",
         "lng": "139.617245",
-        "name": "新横浜"
+        "name": "新横浜",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KITA_SHIN_YOKOHAMA",
         "lat": "35.519215",
         "lng": "139.61285",
-        "name": "北新横浜"
+        "name": "北新横浜",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_NIPPA",
         "lat": "35.527325",
         "lng": "139.61204",
-        "name": "新羽"
+        "name": "新羽",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_NAKAMACHIDAI",
         "lat": "35.535315",
         "lng": "139.589515",
-        "name": "仲町台"
+        "name": "仲町台",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
         "lat": "35.545334",
         "lng": "139.574302",
-        "name": "センター南"
+        "name": "センター南",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
         "lat": "35.553205",
         "lng": "139.578215",
-        "name": "センター北"
+        "name": "センター北",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_NAKAGAWA",
         "lat": "35.563085",
         "lng": "139.56968",
-        "name": "中川"
+        "name": "中川",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_AZAMINO",
         "lat": "35.56807358",
         "lng": "139.55368065",
-        "name": "あざみ野"
+        "name": "あざみ野",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_NAKAYAMA",
         "lat": "35.51521087",
         "lng": "139.54044895",
-        "name": "中山"
+        "name": "中山",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KAWAWACHO",
         "lat": "35.528445",
         "lng": "139.548975",
-        "name": "川和町"
+        "name": "川和町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_TSUZUKI_FUREAI_NO_OKA",
         "lat": "35.536556",
         "lng": "139.561301",
-        "name": "都筑ふれあいの丘"
-      },
-      {
-        "id": "STN_YOKOHAMA_SUBWAY_CENTER_MINAMI",
-        "lat": "35.545334",
-        "lng": "139.574302",
-        "name": "センター南"
-      },
-      {
-        "id": "STN_YOKOHAMA_SUBWAY_CENTER_KITA",
-        "lat": "35.553205",
-        "lng": "139.578215",
-        "name": "センター北"
+        "name": "都筑ふれあいの丘",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_KITA_YAMATA",
         "lat": "35.561074",
         "lng": "139.592867",
-        "name": "北山田"
+        "name": "北山田",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_HIGASHI_YAMATA",
         "lat": "35.55421",
         "lng": "139.60604",
-        "name": "東山田"
+        "name": "東山田",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_TAKATA",
         "lat": "35.54955",
         "lng": "139.62059",
-        "name": "高田"
+        "name": "高田",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_HIYOSHI_HONCHO",
         "lat": "35.549913",
         "lng": "139.633334",
-        "name": "日吉本町"
+        "name": "日吉本町",
+        "company_id": "YOKOHAMA_SUBWAY"
       },
       {
         "id": "STN_YOKOHAMA_SUBWAY_HIYOSHI",
         "lat": "35.553325",
         "lng": "139.64684",
-        "name": "日吉"
+        "name": "日吉",
+        "company_id": "YOKOHAMA_SUBWAY"
       }
     ],
     "trains": [

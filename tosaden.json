@@ -645,6 +645,13 @@
         "lng": "133.54366477",
         "name": "高知駅前",
         "company_id": "TOSADEN"
+      },
+      {
+        "id": "STN_TOSADEN_INO",
+        "company_id": "TOSADEN",
+        "name": "伊野",
+        "lat": "33.54845",
+        "lng": "133.428433"
       }
     ],
     "trains": [

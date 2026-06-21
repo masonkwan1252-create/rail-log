@@ -1788,6 +1788,9 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 .route-completion-panel {
     grid-column: 1 / -1;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
     padding: 14px 14px 12px;
     border-radius: 8px;
     background:
@@ -1896,7 +1899,8 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
     display: grid;
     gap: 6px;
     max-height: 310px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-right: 2px;
 }
 
@@ -1909,6 +1913,8 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 
 .line-completion-row {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     display: grid;
     grid-template-columns: minmax(120px, 1.1fr) auto minmax(82px, 0.8fr) 52px;
     align-items: center;
@@ -1945,10 +1951,15 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 }
 
 .line-completion-detail {
+    min-width: 0;
     display: inline-flex;
     align-items: center;
     gap: 5px;
     white-space: nowrap;
+}
+
+.line-completion-bar-cell {
+    min-width: 0;
 }
 
 .line-completion-badge {
@@ -2028,7 +2039,22 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
         padding: 8px;
     }
 
+    .line-completion-list,
+    .line-completion-list.is-compact {
+        overflow-x: hidden;
+    }
+
+    .line-completion-list.is-compact .line-completion-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 6px 8px;
+        padding: 8px;
+    }
+
     .line-completion-bar-cell {
+        grid-column: 1 / -1;
+    }
+
+    .line-completion-list.is-compact .line-completion-bar-cell {
         grid-column: 1 / -1;
     }
 
@@ -10207,11 +10233,46 @@ window.switchTab = function(tabId, navElement) {
     }
 }
 
+function isScrollableYAxisElement(el) {
+    if (!el || el === document.body || el === document.documentElement) return false;
+
+    const style = window.getComputedStyle(el);
+    const overflowY = style.overflowY;
+    return (overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay") &&
+        el.scrollHeight > el.clientHeight + 1;
+}
+
+function shouldLetInnerElementHandleWheel(target, deltaY) {
+    let el = target instanceof Element ? target : null;
+
+    while (el && el !== document.body && el !== document.documentElement) {
+        if (isScrollableYAxisElement(el)) {
+            const atTop = el.scrollTop <= 0;
+            const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+
+            if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) {
+                return true;
+            }
+        }
+
+        el = el.parentElement;
+    }
+
+    return false;
+}
+
 document.addEventListener("wheel", (event) => {
-    const achievementsTab = document.getElementById("tab-achievements");
-    if (!achievementsTab?.classList.contains("active")) return;
-    if (!achievementsTab.contains(event.target)) return;
+    if (!window.matchMedia("(min-width: 900px)").matches) return;
     if (!event.deltaY || Math.abs(event.deltaY) < Math.abs(event.deltaX)) return;
+    if (event.ctrlKey || event.metaKey) return;
+
+    const target = event.target instanceof Element ? event.target : null;
+    if (target?.closest("input, textarea, select, [contenteditable='true']")) return;
+    if (shouldLetInnerElementHandleWheel(target, event.deltaY)) return;
+
+    const pageCanScroll = document.documentElement.scrollHeight > document.documentElement.clientHeight + 1 ||
+        document.body.scrollHeight > window.innerHeight + 1;
+    if (!pageCanScroll) return;
 
     const scrollYBefore = window.scrollY;
     requestAnimationFrame(() => {
@@ -10219,7 +10280,7 @@ document.addEventListener("wheel", (event) => {
             window.scrollBy({ top: event.deltaY, left: 0, behavior: "auto" });
         }
     });
-}, { passive: true });
+}, { passive: true, capture: true });
 
 document.getElementById("line").addEventListener("input", () => { updateStationLists(); updateMainLoopDirectionUI(); });
 
@@ -10565,6 +10626,22 @@ function getLineDirectionLabels(lineOrId) {
     };
 }
 
+function getLoopDirectionStep(lineOrId, direction = "forward") {
+    const line = typeof lineOrId === "string" ? maps.line[lineOrId] : lineOrId;
+    const steps = line?.direction_steps || line?.directionSteps || {};
+    const configured = steps?.[direction];
+
+    if (configured === -1 || configured === "-1" || configured === "reverse" || configured === "backward") {
+        return -1;
+    }
+
+    if (configured === 1 || configured === "1" || configured === "forward") {
+        return 1;
+    }
+
+    return direction === "reverse" ? -1 : 1;
+}
+
 function renderDirectionSelectOptions(selectEl, line, selectedValue = "forward") {
     if (!selectEl || !line) return;
 
@@ -10658,23 +10735,19 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
         return [segment];
     }
 
-    const junctionIds = [...document.querySelectorAll(".throughJunctionStation")]
+    const junctionPairs = [...document.querySelectorAll(".throughJunctionStation")]
         .map((input, index) => {
             const prevLineId = routes[index]?.line_id || "";
             const nextLineId = routes[index + 1]?.line_id || "";
             const value = input.value;
+            const prevLine = resolveLineObject(prevLineId) || prevLineId;
+            const nextLine = resolveLineObject(nextLineId) || nextLineId;
 
-            const prevResolved = resolveStationIdForLine(value, prevLineId);
-            if (maps.station[prevResolved]) return prevResolved;
-
-            const nextResolved = resolveStationIdForLine(value, nextLineId);
-            if (maps.station[nextResolved]) return nextResolved;
-
-            return resolve.station[value] || value;
+            return resolveJunctionStationPair(value, prevLine, nextLine);
         })
-        .filter(Boolean);
+        .filter(pair => pair?.prevId && pair?.nextId);
 
-    if (junctionIds.length !== routes.length - 1) {
+    if (junctionPairs.length !== routes.length - 1) {
         return [];
     }
 
@@ -10682,8 +10755,8 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
         const segment = {
             company_id: route.company_id,
             line_id: route.line_id,
-            from_id: index === 0 ? fromId : junctionIds[index - 1],
-            to_id: index === routes.length - 1 ? toId : junctionIds[index]
+            from_id: index === 0 ? fromId : junctionPairs[index - 1].nextId,
+            to_id: index === routes.length - 1 ? toId : junctionPairs[index].prevId
         };
 
         const direction = getLoopDirectionForRoute(route, index);
@@ -11794,18 +11867,192 @@ function hasRiddenLine(lineId) {
     );
 }
 
-function findJunctionStations(lineIdA, lineIdB) {
-    const lineA = maps.line[lineIdA];
-    const lineB = maps.line[lineIdB];
+function resolveLineObject(lineRef) {
+    if (!lineRef) return null;
+    if (typeof lineRef === "object") return lineRef;
 
-    if (!lineA?.sequence || !lineB?.sequence) return [];
+    return db.lines.find(line => line.id === lineRef) || maps.line[lineRef] || null;
+}
 
-    const setB = new Set(lineB.sequence);
+function getLineSequenceStations(lineRef) {
+    const line = resolveLineObject(lineRef);
+    if (!Array.isArray(line?.sequence)) return [];
 
-    return lineA.sequence
-        .filter(stnId => setB.has(stnId))
+    return line.sequence
         .map(stnId => maps.station[stnId])
         .filter(Boolean);
+}
+
+function isLineEndpointStation(lineRef, stationId) {
+    const line = resolveLineObject(lineRef);
+    const sequence = Array.isArray(line?.sequence) ? line.sequence.filter(Boolean) : [];
+    if (!stationId || sequence.length === 0) return false;
+
+    return sequence[0] === stationId || sequence[sequence.length - 1] === stationId;
+}
+
+function stationDistanceSq(a, b) {
+    if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) {
+        return Infinity;
+    }
+
+    const dLat = Number(a.lat) - Number(b.lat);
+    const dLng = Number(a.lng) - Number(b.lng);
+    return dLat * dLat + dLng * dLng;
+}
+
+function getJunctionMatchScore(stationA, stationB) {
+    if (!stationA || !stationB) return Infinity;
+    if (stationA.id === stationB.id) return 0;
+
+    const nameA = normalizeStationInputName(stationA.name || stationA._display || "");
+    const nameB = normalizeStationInputName(stationB.name || stationB._display || "");
+    const sameName = !!nameA && nameA === nameB;
+    const dist = stationDistanceSq(stationA, stationB);
+    const closeEnough = Number.isFinite(dist) && dist <= 0.000001;
+
+    if (sameName && closeEnough) return 1 + dist;
+    if (sameName) return 5 + Math.min(dist, 1);
+    if (closeEnough) return 8 + dist;
+
+    return Infinity;
+}
+
+function getJunctionCandidateDisplay(candidate) {
+    const stationA = maps.station[candidate?.prevId] || candidate?.stationA;
+    const stationB = maps.station[candidate?.nextId] || candidate?.stationB;
+    if (!stationA && !stationB) return "";
+
+    if (!stationB || stationA?.id === stationB?.id) {
+        return stationA?._display || stationA?.name || stationA?.id || "";
+    }
+
+    const nameA = stationA?.name || stationA?._display || stationA?.id || "";
+    const nameB = stationB?.name || stationB?._display || stationB?.id || "";
+    if (normalizeStationInputName(nameA) === normalizeStationInputName(nameB)) {
+        return stationA?._display || stationB?._display || nameA;
+    }
+
+    return `${nameA} / ${nameB}`;
+}
+
+function getJunctionCandidateMatchValues(candidate) {
+    const stationA = maps.station[candidate?.prevId] || candidate?.stationA;
+    const stationB = maps.station[candidate?.nextId] || candidate?.stationB;
+
+    return [
+        candidate?.prevId,
+        candidate?.nextId,
+        getJunctionCandidateDisplay(candidate),
+        stationA?.id,
+        stationA?.name,
+        stationA?._display,
+        stationB?.id,
+        stationB?.name,
+        stationB?._display
+    ]
+        .filter(Boolean)
+        .map(value => String(value).trim());
+}
+
+function doesJunctionCandidateMatchValue(candidate, value) {
+    const raw = String(value || "").trim();
+    if (!raw) return false;
+
+    const clean = normalizeStationInputName(raw);
+    return getJunctionCandidateMatchValues(candidate).some(candidateValue =>
+        candidateValue === raw ||
+        normalizeStationInputName(candidateValue) === clean
+    );
+}
+
+function getAutoJunctionCandidate(candidates) {
+    if (!Array.isArray(candidates) || candidates.length === 0) return null;
+    if (candidates.length === 1) {
+        const candidate = candidates[0];
+        return !candidate.isCoordinateOnly || (candidate.isPrevEndpoint && candidate.isNextEndpoint)
+            ? candidate
+            : null;
+    }
+
+    const endpointCandidates = candidates.filter(candidate =>
+        candidate.isPrevEndpoint && candidate.isNextEndpoint
+    );
+
+    return endpointCandidates.length === 1 ? endpointCandidates[0] : null;
+}
+
+function findJunctionStations(lineRefA, lineRefB) {
+    const lineA = resolveLineObject(lineRefA);
+    const lineB = resolveLineObject(lineRefB);
+    if (!lineA?.sequence || !lineB?.sequence) return [];
+
+    const stationsA = getLineSequenceStations(lineA);
+    const stationsB = getLineSequenceStations(lineB);
+    const candidates = [];
+    const seen = new Set();
+
+    stationsA.forEach(stationA => {
+        stationsB.forEach(stationB => {
+            let score = getJunctionMatchScore(stationA, stationB);
+            if (!Number.isFinite(score)) return;
+
+            const key = `${stationA.id}:${stationB.id}`;
+            if (seen.has(key)) return;
+            seen.add(key);
+
+            const isPrevEndpoint = isLineEndpointStation(lineA, stationA.id);
+            const isNextEndpoint = isLineEndpointStation(lineB, stationB.id);
+            if (isPrevEndpoint) score -= 0.25;
+            if (isNextEndpoint) score -= 0.25;
+
+            const nameA = normalizeStationInputName(stationA.name || stationA._display || "");
+            const nameB = normalizeStationInputName(stationB.name || stationB._display || "");
+            const isCoordinateOnly = stationA.id !== stationB.id && (!nameA || nameA !== nameB);
+
+            candidates.push({
+                prevId: stationA.id,
+                nextId: stationB.id,
+                stationA,
+                stationB,
+                station: stationA,
+                isPrevEndpoint,
+                isNextEndpoint,
+                isCoordinateOnly,
+                score
+            });
+        });
+    });
+
+    return candidates.sort((a, b) => a.score - b.score);
+}
+
+function resolveJunctionStationPair(value, prevLineRef, nextLineRef) {
+    const raw = String(value || "").trim();
+    if (!raw) return { prevId: "", nextId: "" };
+
+    const candidates = findJunctionStations(prevLineRef, nextLineRef);
+    const matchedCandidates = candidates.filter(candidate =>
+        doesJunctionCandidateMatchValue(candidate, raw)
+    );
+    const matchedCandidate = getAutoJunctionCandidate(matchedCandidates) || matchedCandidates[0];
+
+    if (matchedCandidate) {
+        return {
+            prevId: matchedCandidate.prevId,
+            nextId: matchedCandidate.nextId
+        };
+    }
+
+    const prevResolved = resolveStationIdForLine(raw, prevLineRef);
+    const nextResolved = resolveStationIdForLine(raw, nextLineRef);
+    const prevExists = !!maps.station[prevResolved];
+    const nextExists = !!maps.station[nextResolved];
+
+    return {
+        prevId: prevExists ? prevResolved : (nextExists ? nextResolved : raw),
+        nextId: nextExists ? nextResolved : (prevExists ? prevResolved : raw)
+    };
 }
 
 function getLineIdFromBlock(block) {
@@ -11815,6 +12062,14 @@ function getLineIdFromBlock(block) {
     const compId = resolve.company[compName] || compName;
 
     return db.lines.find(l => l.company_id === compId && l.name === lineName)?.id || lineName;
+}
+
+function getLineFromBlock(block) {
+    const compName = block.querySelector(".throughCompany")?.value || "";
+    const lineName = block.querySelector(".throughLine")?.value || "";
+    const compId = resolve.company[compName] || compName;
+
+    return findLineByCompanyAndName(compId, lineName);
 }
 
 function getPreviousLineIdForBlock(block) {
@@ -11832,27 +12087,44 @@ function getPreviousLineIdForBlock(block) {
     return getLineIdFromBlock(blocks[index - 1]);
 }
 
+function getPreviousLineForBlock(block) {
+    const blocks = [...document.querySelectorAll(".through-block")];
+    const index = blocks.indexOf(block);
+
+    if (index <= 0) {
+        const compName = document.getElementById("company").value;
+        const lineName = document.getElementById("line").value;
+        const compId = resolve.company[compName] || compName;
+
+        return findLineByCompanyAndName(compId, lineName);
+    }
+
+    return getLineFromBlock(blocks[index - 1]);
+}
+
 window.autoFillThroughJunction = function(inputEl) {
     const block = inputEl.closest(".through-block");
     if (!block) return;
 
-    const currentLineId = getLineIdFromBlock(block);
-    const prevLineId = getPreviousLineIdForBlock(block);
+    const currentLine = getLineFromBlock(block) || getLineIdFromBlock(block);
+    const prevLine = getPreviousLineForBlock(block) || getPreviousLineIdForBlock(block);
 
     const junctionInput = block.querySelector(".throughJunctionStation");
     const junctionList = block.querySelector(".throughJunctionList");
 
     if (!junctionInput || !junctionList) return;
 
-    const candidates = findJunctionStations(prevLineId, currentLineId);
+    const candidates = findJunctionStations(prevLine, currentLine);
 
     junctionList.innerHTML = "";
-    candidates.forEach(stn => {
-        junctionList.appendChild(new Option(stn._display || stn.name));
+    candidates.forEach(candidate => {
+        const display = getJunctionCandidateDisplay(candidate);
+        if (display) junctionList.appendChild(new Option(display));
     });
 
-    if (candidates.length === 1) {
-        junctionInput.value = candidates[0]._display || candidates[0].name;
+    const autoCandidate = getAutoJunctionCandidate(candidates);
+    if (autoCandidate) {
+        junctionInput.value = getJunctionCandidateDisplay(autoCandidate);
     } else {
         junctionInput.value = "";
     }
@@ -11894,10 +12166,9 @@ function resolveStationIdForLine(value, lineId = "") {
     if (!raw) return "";
 
     if (maps.station[raw]) return raw;
-    if (resolve.station[raw]) return resolve.station[raw];
 
     const clean = normalizeStationInputName(raw);
-    const line = maps.line[lineId];
+    const line = typeof lineId === "object" ? lineId : maps.line[lineId];
 
     // 最重要：用目前路線 sequence 去解決「只輸入站名」嘅情況。
     // 例如 JR神戸線入「西明石」/「大阪」，都會轉返正確 station id。
@@ -11920,6 +12191,8 @@ function resolveStationIdForLine(value, lineId = "") {
     }
 
     // 如果全資料庫只有一個同名站，亦可以安全轉換。
+    if (resolve.station[raw]) return resolve.station[raw];
+
     if (clean) {
         const exactMatches = db.stations.filter(station =>
             station.id === raw ||
@@ -11945,7 +12218,7 @@ function isSameLatLngPoint(a, b, tolerance = 0.000001) {
         Math.abs(Number(a[1]) - Number(b[1])) <= tolerance;
 }
 
-function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward") {
+function extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction = "forward", line = null) {
     let points = Array.isArray(latlngs) ? latlngs.slice() : [];
     if (points.length < 2) return [];
 
@@ -11961,7 +12234,7 @@ function extractLoopLinePartByDirection(latlngs, fromStation, toStation, directi
     if (fromPointIndex === toPointIndex) return [points[fromPointIndex]];
 
     const part = [];
-    const step = direction === "reverse" ? -1 : 1;
+    const step = getLoopDirectionStep(line, direction);
     let index = fromPointIndex;
     let safety = 0;
 
@@ -11978,7 +12251,7 @@ function extractLoopLinePartByDirection(latlngs, fromStation, toStation, directi
 
 function extractLinePartByStations(latlngs, fromStation, toStation, direction = "", line = null) {
     if (isLoopLine(line) && (direction === "forward" || direction === "reverse")) {
-        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction);
+        return extractLoopLinePartByDirection(latlngs, fromStation, toStation, direction, line);
     }
 
     const fromPointIndex = findNearestPointIndex(latlngs, fromStation);
@@ -11988,8 +12261,8 @@ function extractLinePartByStations(latlngs, fromStation, toStation, direction = 
 
     // 舊記錄如果冇 direction，環狀線先揀較短嗰邊，避免山手線呢類 loop 被固定切錯大半圈。
     if (isLoopLine(line) && !direction) {
-        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward");
-        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse");
+        const forwardPart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "forward", line);
+        const reversePart = extractLoopLinePartByDirection(latlngs, fromStation, toStation, "reverse", line);
         if (forwardPart.length >= 2 && reversePart.length >= 2) {
             return forwardPart.length <= reversePart.length ? forwardPart : reversePart;
         }
@@ -12362,6 +12635,13 @@ function getSequencePathStationKeySet(line, fromId, toId, direction = "") {
     if (fromIndex < 0 || toIndex < 0) return keys;
 
     if (fromIndex === toIndex) {
+        if (isLoopLine(line) && sequence.length > 1) {
+            sequence.forEach(stationId => {
+                if (stationId) keys.add(stationId);
+            });
+            return keys;
+        }
+
         keys.add(sequence[fromIndex]);
         return keys;
     }
@@ -12394,11 +12674,12 @@ function getSequencePathStationKeySet(line, fromId, toId, direction = "") {
         return loopKeys;
     };
 
-    if (direction === "reverse") return collectLoopStations(-1);
-    if (direction === "forward") return collectLoopStations(1);
+    if (direction === "reverse" || direction === "forward") {
+        return collectLoopStations(getLoopDirectionStep(line, direction));
+    }
 
-    const forwardKeys = collectLoopStations(1);
-    const reverseKeys = collectLoopStations(-1);
+    const forwardKeys = collectLoopStations(getLoopDirectionStep(line, "forward"));
+    const reverseKeys = collectLoopStations(getLoopDirectionStep(line, "reverse"));
     return forwardKeys.size <= reverseKeys.size ? forwardKeys : reverseKeys;
 }
 

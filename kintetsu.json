@@ -34,7 +34,8 @@
           "STN_KINTETSU_YAMATO_SAIDAIJI",
           "STN_KINTETSU_SHIN_OMIYA",
           "STN_KINTETSU_KINTETSU_NARA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_IKOMA",
@@ -54,7 +55,8 @@
           "STN_KINTETSU_SEYA_KITAGUCHI",
           "STN_KINTETSU_SHIGISANSHITA",
           "STN_KINTETSU_OJI"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_KEIHANNA",
@@ -70,7 +72,8 @@
           "STN_KINTETSU_SHIRANIWADAI",
           "STN_KINTETSU_GAKKEN_KITA_IKOMA",
           "STN_KINTETSU_GAKKEN_NARA_TOMIGAOKA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_KYOTO",
@@ -104,7 +107,8 @@
           "STN_KINTETSU_TAKANOHARA",
           "STN_KINTETSU_HEIJO",
           "STN_KINTETSU_YAMATO_SAIDAIJI"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_KASHIHARA",
@@ -128,8 +132,9 @@
           "STN_KINTETSU_YAMATO_YAGI",
           "STN_KINTETSU_YAGI_NISHIGUCHI",
           "STN_KINTETSU_UNEBIGORYOMAE",
-          "STN_KINTETSU_KASHIHARAJINGU_MAE"
-        ]
+          "STN_KINTETSU_KASHIHARAJINGUMAE"
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_TENRI",
@@ -141,7 +146,8 @@
           "STN_KINTETSU_NIKAIDO",
           "STN_KINTETSU_SENZAI",
           "STN_KINTETSU_TENRI"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_TAWARAMOTO",
@@ -157,7 +163,8 @@
           "STN_KINTETSU_SAMITAGAWA",
           "STN_KINTETSU_OWADA",
           "STN_KINTETSU_SHIN_OJI"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_OSAKA",
@@ -213,7 +220,8 @@
           "STN_KINTETSU_ISE_ISHIBASHI",
           "STN_KINTETSU_KAWAI_TAKAOKA",
           "STN_KINTETSU_ISE_NAKAGAWA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_SHIGI",
@@ -224,7 +232,8 @@
           "STN_KINTETSU_KAWACHI_YAMAMOTO",
           "STN_KINTETSU_HATTORIGAWA",
           "STN_KINTETSU_SHIGISANGUCHI"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_NAGOYA",
@@ -276,7 +285,8 @@
           "STN_KINTETSU_HISAI",
           "STN_KINTETSU_MOMOZONO",
           "STN_KINTETSU_ISE_NAKAGAWA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_YUNOYAMA",
@@ -294,7 +304,8 @@
           "STN_KINTETSU_NAKA_KOMONO",
           "STN_KINTETSU_OBANE_EN",
           "STN_KINTETSU_YUNOYAMA_ONSEN"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_SUZUKA",
@@ -307,7 +318,8 @@
           "STN_KINTETSU_SUZUKASHI",
           "STN_KINTETSU_MIKKAICHI",
           "STN_KINTETSU_HIRATACHO"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_YAMADA",
@@ -315,7 +327,7 @@
         "color": "#00b3c1",
         "geometry_wkt": "MULTILINESTRING((136.71399 34.48779, 136.71402 34.48795, 136.71404 34.48865, 136.71404 34.48885), (136.69905 34.49759, 136.69808 34.4981), (136.68452 34.51306, 136.68423 34.51325, 136.683 34.5142, 136.68266 34.51446, 136.68136 34.51546, 136.68011 34.51638, 136.6792 34.517, 136.67853 34.51744, 136.67675 34.5184, 136.67656 34.51849, 136.67644 34.51854, 136.67634 34.51859, 136.67518 34.5191, 136.67354 34.51973, 136.67302 34.51993, 136.67081 34.52076, 136.66931 34.52132, 136.66919 34.52135), (136.71115 34.49175, 136.70982 34.49214), (136.6851 34.51261, 136.68452 34.51306), (136.69808 34.4981, 136.69776 34.49834, 136.69751 34.49859, 136.69702 34.49908, 136.69682 34.49936, 136.69658 34.49972, 136.69638 34.50004, 136.69623 34.50031, 136.69595 34.50102, 136.6958 34.50138, 136.69552 34.50214, 136.69516 34.50307, 136.69508 34.50326, 136.695 34.5033, 136.69446 34.50454, 136.69427 34.50496, 136.69408 34.50525, 136.69352 34.506, 136.693 34.50659, 136.69288 34.5067, 136.6927 34.50688, 136.69245 34.50708, 136.69197 34.50745, 136.69177 34.50757, 136.69163 34.50767, 136.69022 34.50873, 136.6885 34.51003, 136.68767 34.51065, 136.6871 34.51108, 136.68656 34.51148, 136.68573 34.5121, 136.68515 34.51253, 136.6851 34.51261), (136.66919 34.52135, 136.66845 34.52163), (136.64662 34.53004, 136.64659 34.53006), (136.70982 34.49214, 136.70889 34.49244, 136.70865 34.49256, 136.70851 34.49267, 136.70833 34.49287, 136.70822 34.49301, 136.70802 34.49347, 136.70774 34.49414, 136.70758 34.49439, 136.70734 34.49477, 136.70713 34.49505, 136.70668 34.49547, 136.70656 34.49557, 136.70628 34.49579, 136.70609 34.49588, 136.70561 34.49611, 136.70488 34.49637, 136.70468 34.49641, 136.70445 34.49647, 136.7033 34.49664, 136.70179 34.49686, 136.70163 34.49688, 136.70075 34.49703, 136.70052 34.49707, 136.69982 34.49726, 136.69966 34.49733, 136.69947 34.49741, 136.69905 34.49759), (136.53661 34.57684, 136.53645 34.57706, 136.53602 34.57752, 136.53579 34.57774), (136.49823 34.61451, 136.49765 34.61496), (136.51871 34.59674, 136.51818 34.5974, 136.51667 34.59931, 136.51597 34.6002, 136.5155 34.60079, 136.51518 34.60115, 136.5149 34.6014, 136.51395 34.60215, 136.51366 34.60238, 136.51219 34.60355, 136.51053 34.60482, 136.50951 34.60564, 136.50916 34.60591, 136.50903 34.60601, 136.50892 34.60609, 136.50872 34.60626, 136.50834 34.60655, 136.50819 34.60667, 136.50784 34.60695, 136.50666 34.60785, 136.5055 34.60877, 136.50408 34.60988, 136.50393 34.61001, 136.50345 34.61038, 136.50308 34.61068, 136.50188 34.61164, 136.5017 34.61179, 136.50158 34.61188, 136.50155 34.61191, 136.50137 34.61205, 136.50007 34.61307, 136.49939 34.61361, 136.49823 34.61451), (136.53579 34.57774, 136.53557 34.57795, 136.53504 34.5784, 136.53441 34.57889, 136.53392 34.57936, 136.53341 34.57988, 136.53285 34.58043, 136.53266 34.58059, 136.53208 34.581, 136.53176 34.58125, 136.53132 34.58151, 136.5312 34.58158, 136.5309 34.58177, 136.53083 34.58182, 136.53038 34.58207, 136.52984 34.58245, 136.52962 34.58264, 136.52844 34.58405, 136.52708 34.58579, 136.52642 34.58662, 136.52618 34.58697, 136.52495 34.58859, 136.52338 34.59064, 136.52181 34.5927, 136.5216 34.59296, 136.52065 34.5942, 136.52041 34.59451, 136.51912 34.5962), (136.5834 34.54873, 136.58268 34.54905), (136.60143 34.54083, 136.60068 34.54113), (136.66845 34.52163, 136.6669 34.52222, 136.6652 34.52286, 136.66407 34.52328, 136.66331 34.52357, 136.66306 34.52366, 136.66008 34.52478, 136.65975 34.5249, 136.65855 34.52535, 136.65565 34.52645, 136.65263 34.52758, 136.65078 34.52828, 136.64936 34.52881, 136.64751 34.52951, 136.6471 34.52966, 136.64288 34.53126), (136.64218 34.53153, 136.64017 34.53228, 136.63767 34.5332, 136.63686 34.5335, 136.63496 34.53422, 136.63433 34.53445, 136.63232 34.53521, 136.63189 34.53538, 136.63076 34.5358, 136.63054 34.53587, 136.63024 34.53597, 136.62983 34.53609, 136.62952 34.53616, 136.6277 34.53666, 136.62696 34.53678, 136.62608 34.53693, 136.62556 34.53698, 136.62386 34.53716, 136.62306 34.53725, 136.62209 34.53731, 136.62 34.53751, 136.61911 34.53758, 136.61774 34.53768, 136.61639 34.5378, 136.6157 34.53787), (136.54637 34.5653, 136.54583 34.5658), (136.61489 34.53792, 136.61343 34.53805, 136.6126 34.53812, 136.61028 34.53832, 136.60857 34.53853, 136.60794 34.53858, 136.60667 34.5388, 136.60604 34.53896, 136.60476 34.53938, 136.60363 34.53987, 136.60243 34.54041, 136.60217 34.54053, 136.60168 34.54073, 136.60154 34.54079, 136.60143 34.54083), (136.64288 34.53126, 136.64218 34.53153), (136.54583 34.5658, 136.54539 34.56627, 136.54375 34.56816, 136.54319 34.56877, 136.54296 34.56901, 136.54246 34.5696, 136.54079 34.57153, 136.54 34.57246, 136.53862 34.57396, 136.53788 34.57487, 136.5377 34.57516, 136.53738 34.57574, 136.53725 34.57594, 136.5369 34.57647, 136.53661 34.57684), (136.6157 34.53787, 136.61489 34.53792), (136.49765 34.61496, 136.49718 34.61534, 136.4971 34.61538, 136.49583 34.61636, 136.49521 34.61684, 136.49308 34.61848, 136.49124 34.61993, 136.49085 34.62027, 136.49043 34.62074, 136.48848 34.62306, 136.48609 34.62588, 136.4841 34.62826, 136.48323 34.62928, 136.48202 34.63069, 136.48055 34.63243, 136.4797 34.63346, 136.47867 34.63466), (136.60068 34.54113, 136.59759 34.54249, 136.59371 34.54419, 136.59347 34.54429, 136.59184 34.54501, 136.59159 34.54512, 136.59128 34.54525, 136.59001 34.5458, 136.58775 34.5468, 136.58754 34.5469, 136.5858 34.54766, 136.58561 34.54774, 136.58398 34.54848, 136.5834 34.54873), (136.58268 34.54905, 136.57811 34.55102, 136.57595 34.55198, 136.57532 34.55223, 136.57151 34.55388, 136.56933 34.55486, 136.56836 34.55526, 136.56657 34.55603, 136.56432 34.55704, 136.56105 34.55847, 136.55899 34.55937, 136.55891 34.55942, 136.55877 34.55947, 136.55849 34.55959, 136.55589 34.56073, 136.55567 34.56081, 136.55274 34.5621, 136.55253 34.56218, 136.55178 34.56252, 136.55032 34.56316, 136.5498 34.56337, 136.54949 34.56349, 136.54828 34.56407, 136.54778 34.56431, 136.54694 34.56486, 136.54649 34.56523, 136.54637 34.5653), (136.47867 34.63466, 136.47753 34.63597), (136.51912 34.5962, 136.51901 34.59634, 136.51871 34.59674), (136.71404 34.48885, 136.71402 34.48918, 136.71398 34.48937, 136.71396 34.48947, 136.71388 34.48973, 136.71383 34.48984, 136.71346 34.49051, 136.71326 34.49075, 136.71317 34.49083, 136.71276 34.49114, 136.71249 34.49129, 136.71236 34.49136, 136.7119 34.49154, 136.71115 34.49175))",
         "sequence": [
-          "STN_KINTETSU_ISE_NAKAGAWＡ",
+          "STN_KINTETSU_ISE_NAKAGAWA",
           "STN_KINTETSU_ISE_NAKAHARA",
           "STN_KINTETSU_MATSUGASAKI",
           "STN_KINTETSU_MATSUSAKA",
@@ -329,7 +341,8 @@
           "STN_KINTETSU_MIYAMACHI",
           "STN_KINTETSU_ISESHI",
           "STN_KINTETSU_UJIYAMADA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_TOBA",
@@ -342,7 +355,8 @@
           "STN_KINTETSU_ASAMA",
           "STN_KINTETSU_IKENOURA",
           "STN_KINTETSU_TOBA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_SHIMA",
@@ -366,7 +380,8 @@
           "STN_KINTETSU_UGATA",
           "STN_KINTETSU_SHIMA_SHIMMEI",
           "STN_KINTETSU_KASHIKOJIMA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_MINAMI_OSAKA",
@@ -402,7 +417,8 @@
           "STN_KINTETSU_BOJO",
           "STN_KINTETSU_KASHIHARAJINGU_NISHIGUCHI",
           "STN_KINTETSU_KASHIHARAJINGUMAE"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_DOMYOJI",
@@ -413,7 +429,8 @@
           "STN_KINTETSU_DOMYOJI",
           "STN_KINTETSU_KASHIWARA_MINAMIGUCHI",
           "STN_KINTETSU_KASHIWARA"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_NAGANO",
@@ -429,7 +446,8 @@
           "STN_KINTETSU_TAKI_DANI_FUDO",
           "STN_KINTETSU_SHIONOMIYA",
           "STN_KINTETSU_KAWACHI_NAGANO"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_GOSE",
@@ -441,7 +459,8 @@
           "STN_KINTETSU_KINTETSU_SHINJO",
           "STN_KINTETSU_OSHIMI",
           "STN_KINTETSU_KINTETSU_GOSE"
-        ]
+        ],
+        "company_id": "KINTETSU"
       },
       {
         "id": "KINTETSU_YOSHINO",
@@ -465,7 +484,8 @@
           "STN_KINTETSU_YAMATO_KAMIICHI",
           "STN_KINTETSU_YOSHINOJINGU",
           "STN_KINTETSU_YOSHINO"
-        ]
+        ],
+        "company_id": "KINTETSU"
       }
     ],
     "stations": [
@@ -473,1723 +493,1968 @@
         "id": "STN_KINTETSU_OSAKA_NAMBA",
         "lat": "34.667041",
         "lng": "135.499104",
-        "name": "大阪難波"
+        "name": "大阪難波",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_NIPPOMBASHI",
         "lat": "34.666825",
         "lng": "135.50623",
-        "name": "近鉄日本橋"
+        "name": "近鉄日本橋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OSAKA_UEHOMMACHI",
         "lat": "34.665475",
         "lng": "135.52131",
-        "name": "大阪上本町"
+        "name": "大阪上本町",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSURUHASHI",
         "lat": "34.665217",
         "lng": "135.531205",
-        "name": "鶴橋"
+        "name": "鶴橋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IMAZATO",
         "lat": "34.664725",
         "lng": "135.54991",
-        "name": "今里"
+        "name": "今里",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FUSE",
         "lat": "34.664085",
         "lng": "135.56357",
-        "name": "布施"
+        "name": "布施",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_EIWA",
         "lat": "34.664245",
         "lng": "135.57314",
-        "name": "河内永和"
+        "name": "河内永和",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_KOSAKA",
         "lat": "34.66398",
         "lng": "135.58132",
-        "name": "河内小阪"
+        "name": "河内小阪",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAENOSATO",
         "lat": "34.663725",
         "lng": "135.589415",
-        "name": "八戸ノ里"
+        "name": "八戸ノ里",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_WAKAE_IWADA",
         "lat": "34.66311",
         "lng": "135.608355",
-        "name": "若江岩田"
+        "name": "若江岩田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_HANAZONO",
         "lat": "34.662735",
         "lng": "135.61843",
-        "name": "河内花園"
+        "name": "河内花園",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIGASHI_HANAZONO",
         "lat": "34.662365",
         "lng": "135.62679",
-        "name": "東花園"
+        "name": "東花園",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HYOTANYAMA",
         "lat": "34.662128",
         "lng": "135.639756",
-        "name": "瓢簞山"
+        "name": "瓢簞山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIRAOKA",
         "lat": "34.66954",
         "lng": "135.648055",
-        "name": "枚岡"
+        "name": "枚岡",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NUKATA",
         "lat": "34.675195",
         "lng": "135.651115",
-        "name": "額田"
+        "name": "額田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISHIKIRI",
         "lat": "34.684785",
         "lng": "135.655008",
-        "name": "石切"
+        "name": "石切",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IKOMA",
         "lat": "34.6931",
         "lng": "135.698055",
-        "name": "生駒"
+        "name": "生駒",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIGASHI_IKOMA",
         "lat": "34.691823",
         "lng": "135.709929",
-        "name": "東生駒"
+        "name": "東生駒",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TOMIO",
         "lat": "34.694205",
         "lng": "135.73473",
-        "name": "富雄"
+        "name": "富雄",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_GAKUEN_MAE",
         "lat": "34.697015",
         "lng": "135.749805",
-        "name": "学園前"
+        "name": "学園前",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_AYAMEYOIKE",
         "lat": "34.697925",
         "lng": "135.761275",
-        "name": "菖蒲池"
+        "name": "菖蒲池",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAMATO_SAIDAIJI",
         "lat": "34.69365",
         "lng": "135.78307",
-        "name": "大和西大寺"
+        "name": "大和西大寺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIN_OMIYA",
         "lat": "34.685425",
         "lng": "135.810685",
-        "name": "新大宮"
+        "name": "新大宮",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_NARA",
         "lat": "34.68426909",
         "lng": "135.82789454",
-        "name": "近鉄奈良"
+        "name": "近鉄奈良",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NABATA",
         "lat": "34.68569952",
         "lng": "135.70675784",
-        "name": "菜畑"
+        "name": "菜畑",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ICHIBU",
         "lat": "34.675415",
         "lng": "135.707975",
-        "name": "一分"
+        "name": "一分",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MINAMI_IKOMA",
         "lat": "34.665505",
         "lng": "135.70887",
-        "name": "南生駒"
+        "name": "南生駒",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HAGINODAI",
         "lat": "34.65698",
         "lng": "135.70898",
-        "name": "萩の台"
+        "name": "萩の台",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIGASHIYAMA",
         "lat": "34.648705",
         "lng": "135.7086",
-        "name": "東山"
+        "name": "東山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MOTOSANJOGUCHI",
         "lat": "34.640605",
         "lng": "135.700795",
-        "name": "元山上口"
+        "name": "元山上口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HEGURI",
         "lat": "34.62927",
         "lng": "135.704365",
-        "name": "平群"
+        "name": "平群",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TATSUTAGAWA",
         "lat": "34.61719",
         "lng": "135.704665",
-        "name": "竜田川"
+        "name": "竜田川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SEYA_KITAGUCHI",
         "lat": "34.6061",
         "lng": "135.701015",
-        "name": "勢野北口"
+        "name": "勢野北口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIGISANSHITA",
         "lat": "34.600905",
         "lng": "135.695175",
-        "name": "信貴山下"
+        "name": "信貴山下",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OJI",
         "lat": "34.597715",
         "lng": "135.702735",
-        "name": "王寺"
+        "name": "王寺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NAGATA",
         "lat": "34.678755",
         "lng": "135.591965",
-        "name": "長田"
+        "name": "長田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ARAMOTO",
         "lat": "34.678625",
         "lng": "135.60499",
-        "name": "荒本"
+        "name": "荒本",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YOSHITA",
         "lat": "34.680335",
         "lng": "135.624515",
-        "name": "吉田"
+        "name": "吉田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIN_ISHIKIRI",
         "lat": "34.6801",
         "lng": "135.64082",
-        "name": "新石切"
+        "name": "新石切",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIRANIWADAI",
         "lat": "34.72103",
         "lng": "135.71683",
-        "name": "白庭台"
+        "name": "白庭台",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_GAKKEN_KITA_IKOMA",
         "lat": "34.724845",
         "lng": "135.72342",
-        "name": "学研北生駒"
+        "name": "学研北生駒",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_GAKKEN_NARA_TOMIGAOKA",
         "lat": "34.72656956",
         "lng": "135.75240824",
-        "name": "学研奈良登美ヶ丘"
+        "name": "学研奈良登美ヶ丘",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KYOTO",
         "lat": "34.984624",
         "lng": "135.759055",
-        "name": "京都"
+        "name": "京都",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TOJI",
         "lat": "34.979985",
         "lng": "135.752595",
-        "name": "東寺"
+        "name": "東寺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_JUJO",
         "lat": "34.973995",
         "lng": "135.75246",
-        "name": "十条"
+        "name": "十条",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAMITOBAGUCHI",
         "lat": "34.965015",
         "lng": "135.75273",
-        "name": "上鳥羽口"
+        "name": "上鳥羽口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKEDA",
         "lat": "34.95599",
         "lng": "135.75616",
-        "name": "竹田"
+        "name": "竹田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FUSHIMI",
         "lat": "34.94602",
         "lng": "135.76149",
-        "name": "伏見"
+        "name": "伏見",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_TAMBABASHI",
         "lat": "34.938105",
         "lng": "135.766425",
-        "name": "近鉄丹波橋"
+        "name": "近鉄丹波橋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MOMOYAMAGORYOMAE",
         "lat": "34.93333",
         "lng": "135.76555",
-        "name": "桃山御陵前"
+        "name": "桃山御陵前",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MUKAIJIMA",
         "lat": "34.914725",
         "lng": "135.76977",
-        "name": "向島"
+        "name": "向島",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OGURA",
         "lat": "34.893005",
         "lng": "135.78188",
-        "name": "小倉"
+        "name": "小倉",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISEDA",
         "lat": "34.88216",
         "lng": "135.778995",
-        "name": "伊勢田"
+        "name": "伊勢田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OKUBO",
         "lat": "34.87463",
         "lng": "135.77706",
-        "name": "大久保"
+        "name": "大久保",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUTSUKAWA",
         "lat": "34.864955",
         "lng": "135.774785",
-        "name": "久津川"
+        "name": "久津川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TERADA",
         "lat": "34.85327",
         "lng": "135.772085",
-        "name": "寺田"
+        "name": "寺田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TONOSHO",
         "lat": "34.84016",
         "lng": "135.772915",
-        "name": "富野荘"
+        "name": "富野荘",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIN_TANABE",
         "lat": "34.820706",
         "lng": "135.772816",
-        "name": "新田辺"
+        "name": "新田辺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KODO",
         "lat": "34.80832",
         "lng": "135.77868",
-        "name": "興戸"
+        "name": "興戸",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIYAMAKI",
         "lat": "34.79864",
         "lng": "135.78609",
-        "name": "三山木"
+        "name": "三山木",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_MIYAZU",
         "lat": "34.79162",
         "lng": "135.787515",
-        "name": "近鉄宮津"
+        "name": "近鉄宮津",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOMADA",
         "lat": "34.78044",
         "lng": "135.78952",
-        "name": "狛田"
+        "name": "狛田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIN_HOSONO",
         "lat": "34.760319",
         "lng": "135.792761",
-        "name": "新祝園"
+        "name": "新祝園",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KIZUGAWADAI",
         "lat": "34.746648",
         "lng": "135.796064",
-        "name": "木津川台"
+        "name": "木津川台",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAMADAGAWA",
         "lat": "34.737781",
         "lng": "135.793875",
-        "name": "山田川"
+        "name": "山田川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKANOHARA",
         "lat": "34.72371",
         "lng": "135.79186",
-        "name": "高の原"
+        "name": "高の原",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HEIJO",
         "lat": "34.701465",
         "lng": "135.78465",
-        "name": "平城"
+        "name": "平城",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_AMAGATSUJI",
         "lat": "34.681105",
         "lng": "135.783525",
-        "name": "尼ヶ辻"
+        "name": "尼ヶ辻",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NISHINOKYO",
         "lat": "34.67065",
         "lng": "135.78317",
-        "name": "西ノ京"
+        "name": "西ノ京",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUJO",
         "lat": "34.65941",
         "lng": "135.78296",
-        "name": "九条"
+        "name": "九条",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_KORIYAMA",
         "lat": "34.64605",
         "lng": "135.780725",
-        "name": "近鉄郡山"
+        "name": "近鉄郡山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSUTSUI",
         "lat": "34.62024",
         "lng": "135.78066",
-        "name": "筒井"
+        "name": "筒井",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIRAHATA",
         "lat": "34.60671",
         "lng": "135.78279",
-        "name": "平端"
+        "name": "平端",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FAMILY_KOEMMAE",
         "lat": "34.598065",
         "lng": "135.785045",
-        "name": "ファミリー公園前"
+        "name": "ファミリー公園前",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YUZAKI",
         "lat": "34.584525",
         "lng": "135.78484",
-        "name": "結崎"
+        "name": "結崎",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IWAMI",
         "lat": "34.57135",
         "lng": "135.78586",
-        "name": "石見"
+        "name": "石見",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAWARAMOTO",
         "lat": "34.553085",
         "lng": "135.790875",
-        "name": "田原本"
+        "name": "田原本",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASANUI",
         "lat": "34.541425",
         "lng": "135.79411",
-        "name": "笠縫"
+        "name": "笠縫",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NINOKUCHI",
         "lat": "34.525145",
         "lng": "135.79466",
-        "name": "新ノ口"
+        "name": "新ノ口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAMATO_YAGI",
         "lat": "34.513127",
         "lng": "135.792156",
-        "name": "大和八木"
+        "name": "大和八木",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAGI_NISHIGUCHI",
         "lat": "34.509665",
         "lng": "135.79075",
-        "name": "八木西口"
+        "name": "八木西口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_UNEBIGORYOMAE",
         "lat": "34.49277",
         "lng": "135.794235",
-        "name": "畝傍御陵前"
-      },
-      {
-        "id": "STN_KINTETSU_KASHIHARAJINGU_MAE",
-        "lat": "34.48405",
-        "lng": "135.79431",
-        "name": "橿原神宮前"
+        "name": "畝傍御陵前",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NIKAIDO",
         "lat": "34.60203",
         "lng": "135.79616",
-        "name": "二階堂"
+        "name": "二階堂",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SENZAI",
         "lat": "34.601145",
         "lng": "135.81609",
-        "name": "前栽"
+        "name": "前栽",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TENRI",
         "lat": "34.60117742",
         "lng": "135.82981074",
-        "name": "天理"
+        "name": "天理",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NISHI_TAWARAMOTO",
         "lat": "34.55391",
         "lng": "135.78955",
-        "name": "西田原本"
+        "name": "西田原本",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KURODA",
         "lat": "34.568428",
         "lng": "135.777773",
-        "name": "黒田"
+        "name": "黒田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAJIMA",
         "lat": "34.569425",
         "lng": "135.768335",
-        "name": "但馬"
+        "name": "但馬",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HASHIO",
         "lat": "34.57028",
         "lng": "135.75126",
-        "name": "箸尾"
+        "name": "箸尾",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IKEBE",
         "lat": "34.57877",
         "lng": "135.737185",
-        "name": "池部"
+        "name": "池部",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAMITAGAWA",
         "lat": "34.585205",
         "lng": "135.73108",
-        "name": "佐味田川"
+        "name": "佐味田川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OWADA",
         "lat": "34.58917",
         "lng": "135.72038",
-        "name": "大輪田"
+        "name": "大輪田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIN_OJI",
         "lat": "34.59768",
         "lng": "135.704705",
-        "name": "新王寺"
+        "name": "新王寺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHUNTOKUMICHI",
         "lat": "34.65858",
         "lng": "135.571615",
-        "name": "俊徳道"
+        "name": "俊徳道",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NAGASE",
         "lat": "34.649855",
         "lng": "135.57761",
-        "name": "長瀬"
+        "name": "長瀬",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MITO",
         "lat": "34.6414",
         "lng": "135.58339",
-        "name": "弥刀"
+        "name": "弥刀",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KYUHOJIGUCHI",
         "lat": "34.634585",
         "lng": "135.590565",
-        "name": "久宝寺口"
+        "name": "久宝寺口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_YAO",
         "lat": "34.62983",
         "lng": "135.603545",
-        "name": "近鉄八尾"
+        "name": "近鉄八尾",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_YAMAMOTO",
         "lat": "34.627925",
         "lng": "135.61917",
-        "name": "河内山本"
+        "name": "河内山本",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKAYASU",
         "lat": "34.61966",
         "lng": "135.624365",
-        "name": "高安"
+        "name": "高安",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ONJI",
         "lat": "34.609875",
         "lng": "135.62628",
-        "name": "恩智"
+        "name": "恩智",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HOZENJI",
         "lat": "34.59519",
         "lng": "135.626285",
-        "name": "法善寺"
+        "name": "法善寺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KATASHIMO",
         "lat": "34.58843",
         "lng": "135.627315",
-        "name": "堅下"
+        "name": "堅下",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ANDO",
         "lat": "34.5802",
         "lng": "135.629115",
-        "name": "安堂"
+        "name": "安堂",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_KOKUBU",
         "lat": "34.566715",
         "lng": "135.63573",
-        "name": "河内国分"
+        "name": "河内国分",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OSAKA_KYOIKUDAI_MAE",
         "lat": "34.555515",
         "lng": "135.64477",
-        "name": "大阪教育大前"
+        "name": "大阪教育大前",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SEKIYA",
         "lat": "34.553755",
         "lng": "135.66792",
-        "name": "関屋"
+        "name": "関屋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NIJO",
         "lat": "34.546565",
         "lng": "135.68812",
-        "name": "二上"
+        "name": "二上",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_SHIMODA",
         "lat": "34.541395",
         "lng": "135.70438",
-        "name": "近鉄下田"
+        "name": "近鉄下田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_GOIDO",
         "lat": "34.534685",
         "lng": "135.718195",
-        "name": "五位堂"
+        "name": "五位堂",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSUKIYAMA",
         "lat": "34.52633",
         "lng": "135.73273",
-        "name": "築山"
+        "name": "築山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAMATO_TAKADA",
         "lat": "34.51977",
         "lng": "135.742324",
-        "name": "大和高田"
+        "name": "大和高田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MATSUZUKA",
         "lat": "34.52059",
         "lng": "135.761195",
-        "name": "松塚"
+        "name": "松塚",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MASUGA",
         "lat": "34.51959",
         "lng": "135.772795",
-        "name": "真菅"
+        "name": "真菅",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIMINASHI",
         "lat": "34.512413",
         "lng": "135.815329",
-        "name": "耳成"
+        "name": "耳成",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_DAIFUKU",
         "lat": "34.512835",
         "lng": "135.82987",
-        "name": "大福"
+        "name": "大福",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAKURAI",
         "lat": "34.515556",
         "lng": "135.848889",
-        "name": "櫻井"
+        "name": "櫻井",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAMATO_ASAKURA",
         "lat": "34.515984",
         "lng": "135.868918",
-        "name": "大和朝倉"
+        "name": "大和朝倉",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HASEDERA",
         "lat": "34.52685",
         "lng": "135.90648",
-        "name": "長谷寺"
+        "name": "長谷寺",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HAIBARA",
         "lat": "34.52983",
         "lng": "135.954615",
-        "name": "榛原"
+        "name": "榛原",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MUROGUCHI_ONO",
         "lat": "34.566129",
         "lng": "136.015258",
-        "name": "室生口大野"
+        "name": "室生口大野",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAMBOMMATSU",
         "lat": "34.57855",
         "lng": "136.03585",
-        "name": "三本松"
+        "name": "三本松",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_AKAMEGUCHI",
         "lat": "34.599335",
         "lng": "136.0737",
-        "name": "赤目口"
+        "name": "赤目口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NABARI",
         "lat": "34.621615",
         "lng": "136.095745",
-        "name": "名張"
+        "name": "名張",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KIKYOGAOKA",
         "lat": "34.641185",
         "lng": "136.11276",
-        "name": "桔梗が丘"
+        "name": "桔梗が丘",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIHATA",
         "lat": "34.662995",
         "lng": "136.13301",
-        "name": "美旗"
+        "name": "美旗",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IGA_KAMBE",
         "lat": "34.67399",
         "lng": "136.15207",
-        "name": "伊賀神戸"
+        "name": "伊賀神戸",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_AOYAMACHO",
         "lat": "34.67306",
         "lng": "136.177725",
-        "name": "青山町"
+        "name": "青山町",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IGA_KOZU",
         "lat": "34.68256",
         "lng": "136.204305",
-        "name": "伊賀上津"
+        "name": "伊賀上津",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NISHI_AOYAMA",
         "lat": "34.67634",
         "lng": "136.238135",
-        "name": "西青山"
+        "name": "西青山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIGASHI_AOYAMA",
         "lat": "34.67564",
         "lng": "136.321635",
-        "name": "東青山"
+        "name": "東青山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAKAKIBARA_ONSENGUCHI",
         "lat": "34.674835",
         "lng": "136.348805",
-        "name": "榊原温泉口"
+        "name": "榊原温泉口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OMITSU",
         "lat": "34.664045",
         "lng": "136.36886",
-        "name": "大三"
+        "name": "大三",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_ISHIBASHI",
         "lat": "34.65689",
         "lng": "136.40852",
-        "name": "伊勢石橋"
+        "name": "伊勢石橋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWAI_TAKAOKA",
         "lat": "34.656405",
         "lng": "136.43677",
-        "name": "川合高岡"
+        "name": "川合高岡",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_NAKAGAWA",
         "lat": "34.635315",
         "lng": "136.4781",
-        "name": "伊勢中川"
+        "name": "伊勢中川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HATTORIGAWA",
         "lat": "34.626455",
         "lng": "135.64116",
-        "name": "服部川"
+        "name": "服部川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIGISANGUCHI",
         "lat": "34.619939",
         "lng": "135.642131",
-        "name": "信貴山口"
+        "name": "信貴山口",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_NAGOYA",
         "lat": "35.16936",
         "lng": "136.88375",
-        "name": "近鉄名古屋"
+        "name": "近鉄名古屋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOMENO",
         "lat": "35.16126",
         "lng": "136.87962",
-        "name": "米野"
+        "name": "米野",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOGANE",
         "lat": "35.156275",
         "lng": "136.870805",
-        "name": "黄金"
+        "name": "黄金",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASUMORI",
         "lat": "35.152815",
         "lng": "136.86381",
-        "name": "烏森"
+        "name": "烏森",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_HATTA",
         "lat": "35.149523",
         "lng": "136.854332",
-        "name": "近鉄八田"
+        "name": "近鉄八田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FUSHIYA",
         "lat": "35.14015",
         "lng": "136.827825",
-        "name": "伏屋"
+        "name": "伏屋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TODA",
         "lat": "35.132605",
         "lng": "136.807445",
-        "name": "戸田"
+        "name": "戸田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_KANIE",
         "lat": "35.12965",
         "lng": "136.795215",
-        "name": "近鉄蟹江"
+        "name": "近鉄蟹江",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TOMIYOSHI",
         "lat": "35.12349",
         "lng": "136.76937",
-        "name": "富吉"
+        "name": "富吉",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAKOGI",
         "lat": "35.11948",
         "lng": "136.752305",
-        "name": "佐古木"
+        "name": "佐古木",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_YATOMI",
         "lat": "35.113585",
         "lng": "136.727765",
-        "name": "近鉄弥富"
+        "name": "近鉄弥富",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_NAGASHIMA",
         "lat": "35.09763",
         "lng": "136.69608",
-        "name": "近鉄長島"
+        "name": "近鉄長島",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUWANA",
         "lat": "35.066975",
         "lng": "136.683375",
-        "name": "桑名"
+        "name": "桑名",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MASUO",
         "lat": "35.057785",
         "lng": "136.678585",
-        "name": "益生"
+        "name": "益生",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_ASAHI",
         "lat": "35.038255",
         "lng": "136.66887",
-        "name": "伊勢朝日"
+        "name": "伊勢朝日",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWAGOE_TOMISUHARA",
         "lat": "35.016245",
         "lng": "136.65976",
-        "name": "川越富洲原"
+        "name": "川越富洲原",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_TOMIDA",
         "lat": "35.00650219",
         "lng": "136.64934172",
-        "name": "近鉄富田"
+        "name": "近鉄富田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASUMIGAURA",
         "lat": "34.993393",
         "lng": "136.636881",
-        "name": "霞ヶ浦"
+        "name": "霞ヶ浦",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_AKURAGAWA",
         "lat": "34.985225",
         "lng": "136.62943",
-        "name": "阿倉川"
+        "name": "阿倉川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWARAMACHI",
         "lat": "34.977189",
         "lng": "136.623279",
-        "name": "川原町"
+        "name": "川原町",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_YOKKAICHI",
         "lat": "34.966965",
         "lng": "136.618572",
-        "name": "近鉄四日市"
+        "name": "近鉄四日市",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHINSHO",
         "lat": "34.956359",
         "lng": "136.618438",
-        "name": "新正"
+        "name": "新正",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIYAMADO",
         "lat": "34.943315",
         "lng": "136.622959",
-        "name": "海山道"
+        "name": "海山道",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIOHAMA",
         "lat": "34.93312",
         "lng": "136.622218",
-        "name": "塩浜"
+        "name": "塩浜",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KITA_KUSU",
         "lat": "34.9163",
         "lng": "136.62481",
-        "name": "北楠"
+        "name": "北楠",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUSU",
         "lat": "34.904885",
         "lng": "136.63117",
-        "name": "楠"
+        "name": "楠",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NAGONOURA",
         "lat": "34.89152",
         "lng": "136.62635",
-        "name": "長太ノ浦"
+        "name": "長太ノ浦",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIDA",
         "lat": "34.87957",
         "lng": "136.62203",
-        "name": "箕田"
+        "name": "箕田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_WAKAMATSU",
         "lat": "34.869495",
         "lng": "136.61679",
-        "name": "伊勢若松"
+        "name": "伊勢若松",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_CHIYOZAKI",
         "lat": "34.85485",
         "lng": "136.608355",
-        "name": "千代崎"
+        "name": "千代崎",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIROKO",
         "lat": "34.83386",
         "lng": "136.5895",
-        "name": "白子"
+        "name": "白子",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSUZUMIGAURA",
         "lat": "34.82619",
         "lng": "136.58126",
-        "name": "鼓ヶ浦"
+        "name": "鼓ヶ浦",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISOYAMA",
         "lat": "34.81265",
         "lng": "136.568875",
-        "name": "磯山"
+        "name": "磯山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_CHISATO",
         "lat": "34.798515",
         "lng": "136.556195",
-        "name": "千里"
+        "name": "千里",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TOYOTSU_UENO",
         "lat": "34.78525",
         "lng": "136.543085",
-        "name": "豊津上野"
+        "name": "豊津上野",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIRATSUKA",
         "lat": "34.770705",
         "lng": "136.532535",
-        "name": "白塚"
+        "name": "白塚",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKADAHONZAN",
         "lat": "34.755115",
         "lng": "136.516375",
-        "name": "高田本山"
+        "name": "高田本山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_EDOBASHI",
         "lat": "34.74444",
         "lng": "136.51402",
-        "name": "江戸橋"
+        "name": "江戸橋",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSU",
         "lat": "34.734415",
         "lng": "136.51023",
-        "name": "津"
+        "name": "津",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSU_SHIMMACHI",
         "lat": "34.715688",
         "lng": "136.499919",
-        "name": "津新町"
+        "name": "津新町",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MINAMIGAOKA",
         "lat": "34.692038",
         "lng": "136.496459",
-        "name": "南が丘"
+        "name": "南が丘",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HISAI",
         "lat": "34.675565",
         "lng": "136.477815",
-        "name": "久居"
+        "name": "久居",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MOMOZONO",
         "lat": "34.66338",
         "lng": "136.477465",
-        "name": "桃園"
+        "name": "桃園",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NAKAGAWARA",
         "lat": "34.969325",
         "lng": "136.603235",
-        "name": "中川原"
+        "name": "中川原",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_MATSUMOTO",
         "lat": "34.969635",
         "lng": "136.59073",
-        "name": "伊勢松本"
+        "name": "伊勢松本",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_KAWASHIMA",
         "lat": "34.97766",
         "lng": "136.56695",
-        "name": "伊勢川島"
+        "name": "伊勢川島",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKATSUNO",
         "lat": "34.983205",
         "lng": "136.55446",
-        "name": "高角"
+        "name": "高角",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAKURA",
         "lat": "34.996465",
         "lng": "136.541755",
-        "name": "桜"
+        "name": "桜",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOMONO",
         "lat": "35.00872",
         "lng": "136.517355",
-        "name": "菰野"
+        "name": "菰野",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NAKA_KOMONO",
         "lat": "35.0123",
         "lng": "136.504245",
-        "name": "中菰野"
+        "name": "中菰野",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OBANE_EN",
         "lat": "35.012555",
         "lng": "136.494205",
-        "name": "大羽根園"
+        "name": "大羽根園",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YUNOYAMA_ONSEN",
         "lat": "35.01171075",
         "lng": "136.4736294",
-        "name": "湯の山温泉"
+        "name": "湯の山温泉",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YANAGI",
         "lat": "34.87136",
         "lng": "136.595965",
-        "name": "柳"
+        "name": "柳",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SUZUKASHI",
         "lat": "34.88391",
         "lng": "136.58279",
-        "name": "鈴鹿市"
+        "name": "鈴鹿市",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIKKAICHI",
         "lat": "34.88024",
         "lng": "136.56223",
-        "name": "三日市"
+        "name": "三日市",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIRATACHO",
         "lat": "34.87514",
         "lng": "136.54238",
-        "name": "平田町"
-      },
-      {
-        "id": "STN_KINTETSU_ISE_NAKAGAWＡ",
-        "lat": "34.635315",
-        "lng": "136.4781",
-        "name": "伊勢中川"
+        "name": "平田町",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISE_NAKAHARA",
         "lat": "34.614735",
         "lng": "136.49794",
-        "name": "伊勢中原"
+        "name": "伊勢中原",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MATSUGASAKI",
         "lat": "34.596469",
         "lng": "136.518913",
-        "name": "松ヶ崎"
+        "name": "松ヶ崎",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MATSUSAKA",
         "lat": "34.577307",
         "lng": "136.536219",
-        "name": "松阪"
+        "name": "松阪",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HIGASHI_MATSUSAKA",
         "lat": "34.56555",
         "lng": "136.5461",
-        "name": "東松阪"
+        "name": "東松阪",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUSHIDA",
         "lat": "34.54889",
         "lng": "136.58304",
-        "name": "櫛田"
+        "name": "櫛田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOISHIRO",
         "lat": "34.54098",
         "lng": "136.601055",
-        "name": "漕代"
+        "name": "漕代",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SAIKU",
         "lat": "34.537895",
         "lng": "136.615295",
-        "name": "斎宮"
+        "name": "斎宮",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MYOJO",
         "lat": "34.531395",
         "lng": "136.64253",
-        "name": "明星"
+        "name": "明星",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_AKENO",
         "lat": "34.52149",
         "lng": "136.66882",
-        "name": "明野"
+        "name": "明野",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OBATA",
         "lat": "34.512835",
         "lng": "136.68481",
-        "name": "小俣"
+        "name": "小俣",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MIYAMACHI",
         "lat": "34.497845",
         "lng": "136.698565",
-        "name": "宮町"
+        "name": "宮町",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISESHI",
         "lat": "34.491945",
         "lng": "136.710485",
-        "name": "伊勢市"
+        "name": "伊勢市",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_UJIYAMADA",
         "lat": "34.488319",
         "lng": "136.714031",
-        "name": "宇治山田"
+        "name": "宇治山田",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ISUZUGAWA",
         "lat": "34.476435",
         "lng": "136.7273",
-        "name": "五十鈴川"
+        "name": "五十鈴川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ASAMA",
         "lat": "34.477241",
         "lng": "136.757401",
-        "name": "朝熊"
+        "name": "朝熊",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IKENOURA",
         "lat": "34.479089",
         "lng": "136.818356",
-        "name": "池の浦"
+        "name": "池の浦",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TOBA",
         "lat": "34.48725",
         "lng": "136.841725",
-        "name": "鳥羽"
+        "name": "鳥羽",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NAKANOGO",
         "lat": "34.47961",
         "lng": "136.84541",
-        "name": "中之郷"
+        "name": "中之郷",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIMA_AKASAKI",
         "lat": "34.469826",
         "lng": "136.841708",
-        "name": "志摩赤崎"
+        "name": "志摩赤崎",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FUNATSU",
         "lat": "34.45687",
         "lng": "136.842005",
-        "name": "船津"
+        "name": "船津",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAMO",
         "lat": "34.444205",
         "lng": "136.84656",
-        "name": "加茂"
+        "name": "加茂",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MATSUO",
         "lat": "34.432565",
         "lng": "136.84006",
-        "name": "松尾"
+        "name": "松尾",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIRAKI",
         "lat": "34.429205",
         "lng": "136.83116",
-        "name": "白木"
+        "name": "白木",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_GOCHI",
         "lat": "34.40668",
         "lng": "136.810095",
-        "name": "五知"
+        "name": "五知",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUTSUKAKE",
         "lat": "34.39413",
         "lng": "136.81443",
-        "name": "沓掛"
+        "name": "沓掛",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAMINOGO",
         "lat": "34.379325",
         "lng": "136.81152",
-        "name": "上之郷"
+        "name": "上之郷",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIMA_ISOBE",
         "lat": "34.36956",
         "lng": "136.805795",
-        "name": "志摩磯部"
+        "name": "志摩磯部",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ANAGAWA",
         "lat": "34.358895",
         "lng": "136.81588",
-        "name": "穴川"
+        "name": "穴川",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIMA_YOKOYAMA",
         "lat": "34.333975",
         "lng": "136.81836",
-        "name": "志摩横山"
+        "name": "志摩横山",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_UGATA",
         "lat": "34.329375",
         "lng": "136.82573",
-        "name": "鵜方"
+        "name": "鵜方",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIMA_SHIMMEI",
         "lat": "34.316205",
         "lng": "136.829985",
-        "name": "志摩神明"
+        "name": "志摩神明",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASHIKOJIMA",
         "lat": "34.30865472",
         "lng": "136.81957126",
-        "name": "賢島"
+        "name": "賢島",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OSAKA_ABENOBASHI",
         "name": "大阪阿部野橋",
         "lat": "34.645625",
-        "lng": "135.51451"
+        "lng": "135.51451",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOBORIGUCHI",
         "name": "河堀口",
         "lat": "34.64103",
-        "lng": "135.524245"
+        "lng": "135.524245",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KITATANABE",
         "name": "北田辺",
         "lat": "34.63203",
-        "lng": "135.52894"
+        "lng": "135.52894",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IMAGAWA",
         "name": "今川",
         "lat": "34.626305",
-        "lng": "135.531095"
+        "lng": "135.531095",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HARINAKANO",
         "name": "針中野",
         "lat": "34.617045",
-        "lng": "135.53305"
+        "lng": "135.53305",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YATA",
         "name": "矢田",
         "lat": "34.605905",
-        "lng": "135.532955"
+        "lng": "135.532955",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_AMAMI",
         "name": "河内天美",
         "lat": "34.585784",
-        "lng": "135.535564"
+        "lng": "135.535564",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NUNOSE",
         "name": "布忍",
         "lat": "34.577845",
-        "lng": "135.539415"
+        "lng": "135.539415",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKAMINOSATO",
         "name": "高見ノ里",
         "lat": "34.57518",
-        "lng": "135.546005"
+        "lng": "135.546005",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_MATSUBARA",
         "name": "河内松原",
         "lat": "34.575495",
-        "lng": "135.557415"
+        "lng": "135.557415",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_EGANOSHO",
         "name": "恵我ノ荘",
         "lat": "34.57356",
-        "lng": "135.57282"
+        "lng": "135.57282",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKAWASHI",
         "name": "高鷲",
         "lat": "34.57149",
-        "lng": "135.584515"
+        "lng": "135.584515",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FUJIIDERA",
         "name": "藤井寺",
         "lat": "34.571515",
-        "lng": "135.594"
+        "lng": "135.594",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_HAJINOSATO",
         "name": "土師ノ里",
         "lat": "34.571615",
-        "lng": "135.615615"
+        "lng": "135.615615",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_DOMYOJI",
         "name": "道明寺",
         "lat": "34.568364",
-        "lng": "135.62032684"
+        "lng": "135.62032684",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FURUICHI",
         "name": "古市",
         "lat": "34.554183",
-        "lng": "135.609166"
+        "lng": "135.609166",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOMAGATANI",
         "name": "駒ヶ谷",
         "lat": "34.545747",
-        "lng": "135.622022"
+        "lng": "135.622022",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAMINOTAISHI",
         "name": "上ノ太子",
         "lat": "34.532945",
-        "lng": "135.63765"
+        "lng": "135.63765",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NIJOSAN",
         "name": "二上山",
         "lat": "34.538734",
-        "lng": "135.686425"
+        "lng": "135.686425",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_NIJOJINJAGUCHI",
         "name": "二上神社口",
         "lat": "34.53202",
-        "lng": "135.69407"
+        "lng": "135.69407",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAIMADERA",
         "name": "当麻寺",
         "lat": "34.516485",
-        "lng": "135.70584"
+        "lng": "135.70584",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_IWAKI",
         "name": "磐城",
         "lat": "34.51129",
-        "lng": "135.710825"
+        "lng": "135.710825",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHAKUDO",
         "name": "尺土",
         "lat": "34.508545",
-        "lng": "135.72081"
+        "lng": "135.72081",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKADASHI",
         "name": "高田市",
         "lat": "34.506745",
-        "lng": "135.742913"
+        "lng": "135.742913",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_UKIANA",
         "name": "浮孔",
         "lat": "34.49801",
-        "lng": "135.75486"
+        "lng": "135.75486",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_BOJO",
         "name": "坊城",
         "lat": "34.49346",
-        "lng": "135.765155"
+        "lng": "135.765155",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASHIHARAJINGU_NISHIGUCHI",
         "name": "橿原神宮西口",
         "lat": "34.486215",
-        "lng": "135.78133"
+        "lng": "135.78133",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASHIHARAJINGUMAE",
         "name": "橿原神宮前",
         "lat": "34.48405",
-        "lng": "135.79431"
-      },
-      {
-        "id": "STN_KINTETSU_DOMYOJI",
-        "name": "道明寺",
-        "lat": "34.568364",
-        "lng": "135.62032684"
+        "lng": "135.79431",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASHIWARA_MINAMIGUCHI",
         "name": "柏原南口",
         "lat": "34.581625",
-        "lng": "135.624985"
+        "lng": "135.624985",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KASHIWARA",
         "name": "柏原",
         "lat": "34.586684",
-        "lng": "135.623175"
-      },
-      {
-        "id": "STN_KINTETSU_FURUICHI",
-        "name": "古市",
-        "lat": "34.554183",
-        "lng": "135.609166"
+        "lng": "135.623175",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KISHI",
         "name": "喜志",
         "lat": "34.522645",
-        "lng": "135.607245"
+        "lng": "135.607245",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TONDABAYASHI",
         "name": "富田林",
         "lat": "34.504335",
-        "lng": "135.60074"
+        "lng": "135.60074",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TONDABAYASHI_NISHIGUCHI",
         "name": "富田林西口",
         "lat": "34.500275",
-        "lng": "135.59628"
+        "lng": "135.59628",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWANISHI",
         "name": "川西",
         "lat": "34.491965",
-        "lng": "135.59066"
+        "lng": "135.59066",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TAKI_DANI_FUDO",
         "name": "滝谷不動",
         "lat": "34.48139",
-        "lng": "135.586685"
+        "lng": "135.586685",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIONOMIYA",
         "name": "汐ノ宮",
         "lat": "34.46701",
-        "lng": "135.57911"
+        "lng": "135.57911",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KAWACHI_NAGANO",
         "name": "河内長野",
         "lat": "34.451105",
-        "lng": "135.573155"
-      },
-      {
-        "id": "STN_KINTETSU_SHAKUDO",
-        "name": "尺土",
-        "lat": "34.508545",
-        "lng": "135.72081"
+        "lng": "135.573155",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_SHINJO",
         "name": "近鉄新庄",
         "lat": "34.4893",
-        "lng": "135.72728"
+        "lng": "135.72728",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OSHIMI",
         "name": "忍海",
         "lat": "34.475975",
-        "lng": "135.732015"
+        "lng": "135.732015",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KINTETSU_GOSE",
         "name": "近鉄御所",
         "lat": "34.46471",
-        "lng": "135.73238"
-      },
-      {
-        "id": "STN_KINTETSU_KASHIHARAJINGUMAE",
-        "name": "橿原神宮前",
-        "lat": "34.48405",
-        "lng": "135.79431"
+        "lng": "135.73238",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OKADERA",
         "name": "岡寺",
         "lat": "34.474235",
-        "lng": "135.795955"
+        "lng": "135.795955",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ASUKA",
         "name": "飛鳥",
         "lat": "34.465005",
-        "lng": "135.79817"
+        "lng": "135.79817",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_TSUBOSAKAYAMA",
         "name": "壺阪山",
         "lat": "34.44968",
-        "lng": "135.794815"
+        "lng": "135.794815",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_ICHIO",
         "name": "市尾",
         "lat": "34.441763",
-        "lng": "135.776327"
+        "lng": "135.776327",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KUZU",
         "name": "葛",
         "lat": "34.430975",
-        "lng": "135.75959"
+        "lng": "135.75959",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YOSHINOGUCHI",
         "name": "吉野口",
         "lat": "34.42069",
-        "lng": "135.75067"
+        "lng": "135.75067",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAKUSUI",
         "name": "薬水",
         "lat": "34.407775",
-        "lng": "135.74329"
+        "lng": "135.74329",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_FUKUGAMI",
         "name": "福神",
         "lat": "34.395425",
-        "lng": "135.75023"
+        "lng": "135.75023",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_OADA",
         "name": "大阿太",
         "lat": "34.3884",
-        "lng": "135.76643"
+        "lng": "135.76643",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_SHIMOICHIGUCHI",
         "name": "下市口",
         "lat": "34.38402",
-        "lng": "135.7869"
+        "lng": "135.7869",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_KOSHIBE",
         "name": "越部",
         "lat": "34.38612",
-        "lng": "135.80288"
+        "lng": "135.80288",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_MUDA",
         "name": "六田",
         "lat": "34.39008",
-        "lng": "135.822985"
+        "lng": "135.822985",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YAMATO_KAMIICHI",
         "name": "大和上市",
         "lat": "34.39563",
-        "lng": "135.845705"
+        "lng": "135.845705",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YOSHINOJINGU",
         "name": "吉野神宮",
         "lat": "34.390185",
-        "lng": "135.84817"
+        "lng": "135.84817",
+        "company_id": "KINTETSU"
       },
       {
         "id": "STN_KINTETSU_YOSHINO",
         "name": "吉野",
         "lat": "34.377005",
-        "lng": "135.85356"
+        "lng": "135.85356",
+        "company_id": "KINTETSU"
       }
     ],
     "trains": [

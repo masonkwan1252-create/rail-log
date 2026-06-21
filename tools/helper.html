@@ -53,6 +53,7 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
 .index-audit-file code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .index-audit-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
 .index-audit-meta span,.index-audit-chip{display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.68);border-radius:999px;padding:4px 8px;font-size:11px;font-weight:850;color:var(--sub)}
+.index-audit-meta span.danger{background:#fff1f2;border-color:#fecaca;color:#991b1b}
 .index-audit-card-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .index-audit-card-actions button{padding:7px 9px;font-size:12px}
 .index-audit-issues{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
@@ -958,6 +959,29 @@ function updateSequenceStationActionLabel() {
   btn.textContent = canReplace ? '取代車站' : '加入停車站';
 }
 
+function resolveSequencePickerStationId(rawValue) {
+  const raw = String(rawValue || '').trim();
+  if (!raw) return '';
+  const stations = companyEditorData?.stations || [];
+  const normalizedRaw = toEditorIdToken(raw);
+  const displayParts = raw.split(/[｜|]/).map(part => part.trim()).filter(Boolean);
+  const displayId = displayParts.length >= 2 ? displayParts[displayParts.length - 1] : '';
+  const normalizedDisplayId = toEditorIdToken(displayId);
+
+  const matched = stations.find(st => {
+    const stationId = toEditorIdToken(st.id);
+    const stationName = String(st.name || '').trim();
+    const displayValue = stationName && st.id ? `${stationName}｜${st.id}` : (st.id || stationName);
+    return stationId === normalizedRaw ||
+      (normalizedDisplayId && stationId === normalizedDisplayId) ||
+      stationName === raw ||
+      displayValue === raw;
+  });
+
+  if (matched?.id) return toEditorIdToken(matched.id);
+  return normalizedDisplayId || normalizedRaw;
+}
+
 function openSequenceStationForEdit(index, stationId) {
   const line = getSelectedLine();
   const id = toEditorIdToken(stationId || line?.sequence?.[index]);
@@ -1064,8 +1088,8 @@ function addStationToSelectedLineSequence() {
   const line = getSelectedLine(); if (!line) return;
   const raw = document.getElementById('sequenceStationPicker').value.trim();
   if (!raw) return;
-  const st = (companyEditorData.stations || []).find(s => s.id === toEditorIdToken(raw) || s.name === raw || `${s.name}｜${s.id}` === raw);
-  const id = st?.id || toEditorIdToken(raw);
+  const id = resolveSequencePickerStationId(raw);
+  if (!id) return;
   line.sequence = Array.isArray(line.sequence) ? line.sequence : [];
   if (companySelectedSequenceIndex !== null && companySelectedSequenceIndex >= 0 && companySelectedSequenceIndex < line.sequence.length) {
     line.sequence[companySelectedSequenceIndex] = id;
@@ -1951,7 +1975,10 @@ function selectCompanyLineById(lineId) {
 function mergeStationIssueGroup(groupIndex, targetRef) {
   const group = companyStationIssueGroups[groupIndex];
   if (!companyEditorData || !group || !['exact', 'name'].includes(group.type)) return;
-  const numericTarget = Number(targetRef);
+  const rawTargetRef = String(targetRef ?? '').trim();
+  const numericTarget = typeof targetRef === 'number'
+    ? targetRef
+    : (/^\d+$/.test(rawTargetRef) ? Number(rawTargetRef) : NaN);
   const targetIndex = Number.isInteger(numericTarget)
     ? numericTarget
     : (group.items.find(item => toEditorIdToken(item.s.id) === toEditorIdToken(targetRef))?.i ?? -1);
@@ -1968,12 +1995,7 @@ function mergeStationIssueGroup(groupIndex, targetRef) {
   if (duplicateIds.length) {
     companyEditorData.lines.forEach(line => {
       if (!Array.isArray(line.sequence)) return;
-      const seen = new Set();
-      line.sequence = line.sequence.map(id => duplicateIds.includes(toEditorIdToken(id)) ? target.id : id).filter(id => {
-        if (seen.has(id)) return false;
-        seen.add(id);
-        return true;
-      });
+      line.sequence = line.sequence.map(id => duplicateIds.includes(toEditorIdToken(id)) ? target.id : id);
     });
   }
   companyEditorData.stations = companyEditorData.stations.filter((_, index) => !duplicateIndexes.has(index));
@@ -2232,6 +2254,47 @@ function summarizeAuditGroup(group) {
   };
 }
 
+function countAuditSummaryGroupItems(groups) {
+  return (groups || []).reduce((sum, group) => sum + (group.count || group.items?.length || group.refs?.length || 0), 0);
+}
+
+function getRequiredDatasetIssueGroups(data) {
+  const checks = [
+    { type: 'missingLines', title: '沒有路線資料', count: data?.lines?.length || 0 },
+    { type: 'missingStations', title: '沒有車站資料', count: data?.stations?.length || 0 },
+    { type: 'missingTrains', title: '沒有車型資料', count: data?.trains?.length || 0 }
+  ];
+
+  return checks
+    .filter(item => item.count === 0)
+    .map(item => ({
+      type: item.type,
+      title: item.title,
+      count: 1
+    }));
+}
+
+function getAuditSortRank(result) {
+  const tone = getAuditResultTone(result);
+  if (tone === 'error') return 0;
+  if (tone === 'danger') return 1;
+  if (tone === 'warn') return 2;
+  if (tone === 'ok') return 3;
+  return 4;
+}
+
+function sortIndexAuditResultsForDisplay(results) {
+  return [...(results || [])].sort((a, b) => {
+    const rankDiff = getAuditSortRank(a) - getAuditSortRank(b);
+    if (rankDiff) return rankDiff;
+
+    const issueDiff = (b.issueCount || 0) - (a.issueCount || 0);
+    if (issueDiff) return issueDiff;
+
+    return String(a.file || '').localeCompare(String(b.file || ''), 'zh-Hant');
+  });
+}
+
 function getAuditResultTone(result) {
   if (!result.ok) return 'error';
   if (result.criticalCount > 0) return 'danger';
@@ -2247,9 +2310,12 @@ function auditCompanyJsonText(fileName, text) {
       const normalized = normalizeCompanyEditorData(cloneJsonValue(raw));
       companyEditorData = normalized;
       companyStationIssueGroups = findStationIssueGroups();
-      const groups = companyStationIssueGroups.map(summarizeAuditGroup);
-      const issueCount = countStationIssueItems(companyStationIssueGroups);
-      const criticalCount = countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord']);
+      const requiredGroups = getRequiredDatasetIssueGroups(normalized);
+      const stationGroups = companyStationIssueGroups.map(summarizeAuditGroup);
+      const groups = [...requiredGroups, ...stationGroups];
+      const requiredIssueCount = countAuditSummaryGroupItems(requiredGroups);
+      const issueCount = requiredIssueCount + countStationIssueItems(companyStationIssueGroups);
+      const criticalCount = requiredIssueCount + countStationIssueItems(companyStationIssueGroups, ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord']);
       const warningCount = countStationIssueItems(companyStationIssueGroups, ['name', 'coord', 'unused']);
       return {
         ok: true,
@@ -2427,7 +2493,7 @@ async function runIndexAuditFromSelectedFolder() {
 }
 
 function applyIndexAuditResults(results, manifestResult, sourceLabel) {
-  indexAuditResults = manifestResult ? [manifestResult, ...results] : results;
+  indexAuditResults = sortIndexAuditResultsForDisplay(manifestResult ? [manifestResult, ...results] : results);
   indexAuditLastSource = sourceLabel || '';
   renderIndexAuditResults();
   const errorCount = indexAuditResults.filter(item => !item.ok).length;
@@ -2465,8 +2531,12 @@ function renderIndexAuditResults() {
 function renderIndexAuditResultCard(result, index) {
   const tone = getAuditResultTone(result);
   const label = tone === 'ok' ? '正常' : tone === 'warn' ? '注意' : tone === 'danger' ? '需處理' : '讀取失敗';
+  const isManifestResult = result.companyId === 'MANIFEST';
+  const lineMetaClass = !isManifestResult && !(result.lineCount || 0) ? ' class="danger"' : '';
+  const stationMetaClass = !isManifestResult && !(result.stationCount || 0) ? ' class="danger"' : '';
+  const trainMetaClass = !isManifestResult && !(result.trainCount || 0) ? ' class="danger"' : '';
   const issueChips = (result.groups || []).slice(0, 6).map(group => {
-    const chipTone = ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord', 'parse', 'fetch', 'missingFile'].includes(group.type) ? 'danger'
+    const chipTone = ['missingRef', 'idRepair', 'exact', 'id', 'basic', 'badCoord', 'parse', 'fetch', 'missingFile', 'missingLines', 'missingStations', 'missingTrains'].includes(group.type) ? 'danger'
       : ['name', 'coord', 'unused', 'manifest'].includes(group.type) ? 'warn'
       : 'info';
     return `<span class="index-audit-chip ${chipTone}">${escapeEditorHtml(group.title)} (${group.count || 0})</span>`;
@@ -2481,9 +2551,9 @@ function renderIndexAuditResultCard(result, index) {
           <div class="index-audit-file"><span>${label}</span><code>${escapeEditorHtml(result.file || '-')}</code></div>
           <div class="index-audit-meta">
             <span>${escapeEditorHtml(result.companyName || result.companyId || '-')}</span>
-            <span>路線 ${result.lineCount || 0}</span>
-            <span>車站 ${result.stationCount || 0}</span>
-            <span>車型 ${result.trainCount || 0}</span>
+            <span${lineMetaClass}>路線 ${result.lineCount || 0}</span>
+            <span${stationMetaClass}>車站 ${result.stationCount || 0}</span>
+            <span${trainMetaClass}>車型 ${result.trainCount || 0}</span>
             <span>需檢查 ${result.issueCount || 0}</span>
           </div>
         </div>

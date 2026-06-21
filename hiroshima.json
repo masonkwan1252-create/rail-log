@@ -79,7 +79,6 @@
           "STN_HIROSHIMA_HIRODEN_HATSUKAICHI",
           "STN_HIROSHIMA_HATSUKAICHI_SHIYAKUSHOMAE",
           "STN_HIROSHIMA_MIYAUCHI",
-          "STN_HIROSHIMA_JA",
           "STN_HIROSHIMA_JA_HIROSHIMA_BYOIN_MAE",
           "STN_HIROSHIMA_JIGOZEN",
           "STN_HIROSHIMA_AJINA_HIGASHI",
@@ -842,6 +841,151 @@
         "company_id": "HIROSHIMA"
       }
     ],
-    "trains": []
+    "trains": [
+      {
+        "id": "TRN_HIROSHIMA_100",
+        "company_id": "HIROSHIMA",
+        "name": "100形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_150",
+        "company_id": "HIROSHIMA",
+        "name": "150形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_200",
+        "company_id": "HIROSHIMA",
+        "name": "200形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_350",
+        "company_id": "HIROSHIMA",
+        "name": "350形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_570",
+        "company_id": "HIROSHIMA",
+        "name": "570形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_600",
+        "company_id": "HIROSHIMA",
+        "name": "600形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_650",
+        "company_id": "HIROSHIMA",
+        "name": "650形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_700",
+        "company_id": "HIROSHIMA",
+        "name": "700形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_750",
+        "company_id": "HIROSHIMA",
+        "name": "750形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_800",
+        "company_id": "HIROSHIMA",
+        "name": "800形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_900",
+        "company_id": "HIROSHIMA",
+        "name": "900形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_1900",
+        "company_id": "HIROSHIMA",
+        "name": "1900形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_2000",
+        "company_id": "HIROSHIMA",
+        "name": "2000形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3000",
+        "company_id": "HIROSHIMA",
+        "name": "3000形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3100",
+        "company_id": "HIROSHIMA",
+        "name": "3100形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3500",
+        "company_id": "HIROSHIMA",
+        "name": "3500形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3700",
+        "company_id": "HIROSHIMA",
+        "name": "3700形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3800",
+        "company_id": "HIROSHIMA",
+        "name": "3800形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3900",
+        "company_id": "HIROSHIMA",
+        "name": "3900形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_3950",
+        "company_id": "HIROSHIMA",
+        "name": "3950形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_1000",
+        "company_id": "HIROSHIMA",
+        "name": "1000形",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_5000",
+        "company_id": "HIROSHIMA",
+        "name": "5000形グリーンムーバー",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_5100",
+        "company_id": "HIROSHIMA",
+        "name": "5100形グリーンムーバーマックス",
+        "variants": []
+      },
+      {
+        "id": "TRN_HIROSHIMA_5200",
+        "company_id": "HIROSHIMA",
+        "name": "5200形グリーンムーバーエイペックス",
+        "variants": []
+      }
+    ]
   }
 ]
