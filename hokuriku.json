@@ -22,8 +22,7 @@
           "STN_HOKURIKU_SOTANI",
           "STN_HOKURIKU_DOHOJI",
           "STN_HOKURIKU_INOKUCHI",
-          "STN_HOKURIKU_OYA",
-          "STN_HOKURIKU_NAGI",
+          "STN_HOKURIKU_OYANAGI",
           "STN_HOKURIKU_HIMIKO",
           "STN_HOKURIKU_TSURUGI"
         ],
@@ -153,13 +152,6 @@
         "company_id": "HOKURIKU"
       },
       {
-        "id": "STN_HOKURIKU_OYA_NAGI",
-        "lat": "36.4708716",
-        "lng": "136.61149473",
-        "name": "小柳",
-        "company_id": "HOKURIKU"
-      },
-      {
         "id": "STN_HOKURIKU_HIMIKO",
         "lat": "36.46493663",
         "lng": "136.61509395",
@@ -256,6 +248,13 @@
         "lng": "136.63395852",
         "name": "内灘",
         "company_id": "HOKURIKU"
+      },
+      {
+        "id": "STN_HOKURIKU_OYANAGI",
+        "company_id": "HOKURIKU",
+        "name": "小柳",
+        "lat": "36.471064",
+        "lng": "136.611492"
       }
     ],
     "trains": [
