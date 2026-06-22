@@ -6991,6 +6991,11 @@ html, body {
     min-width: 0;
 }
 
+.history-nowrap-token {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 #tab-history .trip-actions {
     min-width: 0;
     margin: 0;
@@ -7079,8 +7084,8 @@ html, body {
     #tab-history .trip-ticket-main {
         grid-column: 1;
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 4px 8px !important;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 5px 0 !important;
         align-items: center;
         width: 100%;
     }
@@ -7105,11 +7110,11 @@ html, body {
     }
 
     #tab-history .trip-ticket-train {
-        grid-column: 1;
+        grid-column: 1 / -1;
     }
 
     #tab-history .trip-ticket-stations {
-        grid-column: 2;
+        grid-column: 1 / -1;
     }
 
     #tab-history .trip-ticket-label {
@@ -7133,8 +7138,9 @@ html, body {
         overflow: visible;
         text-overflow: clip;
         white-space: normal;
-        word-break: normal;
-        overflow-wrap: anywhere;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        line-break: strict;
         line-height: 1.24;
     }
 
@@ -10415,6 +10421,17 @@ function getTripTrainDisplay(trip) {
     }
 }
 
+function formatHistoryTokenText(text) {
+    return String(text || "")
+        .split(/(\s+)/)
+        .map(part => {
+            if (!part) return "";
+            if (/^\s+$/.test(part)) return part;
+            return `<span class="history-nowrap-token">${escapeHtml(part)}</span>`;
+        })
+        .join("");
+}
+
 function getStatTrainDisplay(train_id, trips) {
     const trainObj = maps.train[train_id];
     if (!trainObj) return train_id;
@@ -11800,7 +11817,7 @@ pagedTrips.forEach((t) => {
                 </span>
                 <span class="trip-ticket-section trip-ticket-train">
                     <span class="trip-ticket-label">車両</span>
-                    <span class="trip-train-inline">${getTripTrainDisplay(t)}</span>
+                    <span class="trip-train-inline">${formatHistoryTokenText(getTripTrainDisplay(t))}</span>
                 </span>
                 <span class="trip-ticket-section trip-ticket-stations">
                     <span class="trip-ticket-label">駅間</span>
