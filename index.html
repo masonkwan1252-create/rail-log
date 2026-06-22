@@ -7055,6 +7055,73 @@ html, body {
     }
 }
 
+@media (min-width: 900px) and (max-width: 1099px) {
+    #tab-history .trip-ticket-layout {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(76px, 76px) !important;
+        gap: 0 12px !important;
+        align-items: center !important;
+        width: 100%;
+        min-width: 0;
+        overflow: visible;
+    }
+
+    #tab-history .trip-ticket-main {
+        grid-column: 1;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 5px 10px !important;
+        align-items: center;
+        min-width: 0;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-route {
+        grid-column: 1 / -1;
+    }
+
+    #tab-history .trip-ticket-train {
+        grid-column: 1;
+    }
+
+    #tab-history .trip-ticket-stations {
+        grid-column: 2;
+    }
+
+    #tab-history .trip-ticket-section {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-section + .trip-ticket-section::before,
+    #tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+        content: none !important;
+    }
+
+    #tab-history .trip-route-stack,
+    #tab-history .trip-route-inline,
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #tab-history .trip-actions {
+        grid-column: 2;
+        grid-row: 1;
+        width: 76px !important;
+        min-width: 76px !important;
+        max-width: 76px;
+        justify-self: end;
+        align-self: center;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 6px;
+        padding: 0 !important;
+        overflow: visible;
+    }
+}
+
 @media (min-width: 1100px) {
     #tab-history .trip-ticket-layout {
         grid-template-columns:
@@ -7072,17 +7139,83 @@ html, body {
     }
 }
 
-@media (max-width: 899px) {
+@media (min-width: 1100px) and (max-width: 1320px) {
     #tab-history .trip-ticket-layout {
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) 32px;
-        align-items: stretch !important;
-        gap: 0 8px !important;
+        grid-template-columns: minmax(0, 1fr) minmax(76px, 76px) !important;
+        gap: 0 12px !important;
+        align-items: center !important;
         width: 100%;
+        min-width: 0;
+        overflow: visible;
     }
 
     #tab-history .trip-ticket-main {
         grid-column: 1;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 5px 10px !important;
+        align-items: center;
+        min-width: 0;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-route {
+        grid-column: 1 / -1;
+    }
+
+    #tab-history .trip-ticket-train {
+        grid-column: 1;
+    }
+
+    #tab-history .trip-ticket-stations {
+        grid-column: 2;
+    }
+
+    #tab-history .trip-ticket-section {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-section + .trip-ticket-section::before,
+    #tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+        content: none !important;
+    }
+
+    #tab-history .trip-route-stack,
+    #tab-history .trip-route-inline,
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    #tab-history .trip-actions {
+        grid-column: 2;
+        grid-row: 1;
+        width: 76px !important;
+        min-width: 76px !important;
+        max-width: 76px;
+        justify-self: end;
+        align-self: center;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 6px;
+        padding: 0 !important;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip-ticket-layout {
+        position: relative;
+        display: block !important;
+        padding-right: 38px !important;
+        width: 100%;
+        min-height: 78px;
+    }
+
+    #tab-history .trip-ticket-main {
         display: grid !important;
         grid-template-columns: minmax(0, 1fr);
         gap: 5px 0 !important;
@@ -7145,12 +7278,13 @@ html, body {
     }
 
     #tab-history .trip-actions {
-        grid-column: 2;
-        grid-row: 1;
+        position: absolute !important;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
         width: 32px !important;
         min-width: 32px !important;
         max-width: 32px;
-        align-self: center;
         display: flex !important;
         flex-direction: column;
         justify-content: center !important;
@@ -7164,6 +7298,655 @@ html, body {
         height: 27px;
         min-width: 27px;
         flex-basis: 27px;
+    }
+}
+
+/* Gallery page: train-dex style catalogue layout. */
+#tab-gallery .gallery-page-card {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tab-gallery .gallery-card-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--rail-accent-line-soft, rgba(99, 189, 15, 0.42));
+}
+
+#tab-gallery .gallery-card-title {
+    position: relative;
+    padding-left: 12px;
+    font-size: clamp(20px, 2vw, 27px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+#tab-gallery .gallery-card-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    border-radius: 1px;
+    background: var(--rail-yamanote-green, #63BD0F);
+}
+
+#tab-gallery .gallery-page-desc {
+    margin: 0 0 13px;
+    color: var(--subtext);
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+#tab-gallery .gallery-filter-inline {
+    height: 30px;
+    border-bottom-color: var(--rail-accent-line-soft, rgba(99, 189, 15, 0.42));
+}
+
+#tab-gallery .gallery-filter-select {
+    min-width: 82px;
+    color: var(--text);
+}
+
+#tab-gallery .gallery-search-linebar {
+    margin-bottom: 14px;
+    border-bottom-color: var(--rail-accent-line-soft, rgba(99, 189, 15, 0.42));
+}
+
+#tab-gallery #galleryContainer {
+    display: grid;
+    gap: 18px;
+}
+
+#tab-gallery .gallery-summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 8px 0 10px;
+    border-bottom: 1px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+}
+
+#tab-gallery .gallery-summary-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    padding: 0 10px;
+    border-left: 4px solid var(--rail-yamanote-green, #63BD0F);
+}
+
+#tab-gallery .gallery-summary-label {
+    color: var(--subtext);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+#tab-gallery .gallery-summary-value {
+    color: var(--text);
+    font-size: clamp(18px, 2.2vw, 24px);
+    font-weight: 950;
+    line-height: 1;
+}
+
+#tab-gallery .gallery-section {
+    margin: 0;
+}
+
+#tab-gallery .gallery-comp-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 10px;
+    padding: 0 0 7px;
+    border-bottom: 1px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+    color: var(--text);
+}
+
+#tab-gallery .gallery-section-title-main {
+    min-width: 0;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.25;
+}
+
+#tab-gallery .gallery-section-badge,
+#tab-gallery .gallery-count {
+    flex: 0 0 auto;
+    border: 0;
+    background: color-mix(in srgb, var(--primary) 9%, transparent);
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+    padding: 5px 7px;
+    border-radius: 999px;
+}
+
+#tab-gallery .gallery-count {
+    color: var(--subtext);
+    background: color-mix(in srgb, var(--tag-bg) 42%, transparent);
+}
+
+#tab-gallery .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 12px;
+    overflow: visible;
+    padding-bottom: 0;
+}
+
+#tab-gallery .gallery-item {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-width: 0;
+    width: 100%;
+    border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+    border-bottom: 2px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+    border-radius: 8px 8px 3px 3px;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 34%, transparent), transparent 42%),
+        color-mix(in srgb, var(--card) 94%, var(--tag-bg));
+    box-shadow: 0 2px 8px rgba(0,0,0,0.045);
+    overflow: hidden;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+#tab-gallery .gallery-item:active {
+    transform: scale(0.99);
+}
+
+@media (hover: hover) {
+    #tab-gallery .gallery-item:hover {
+        transform: translateY(-2px);
+        border-bottom-color: var(--rail-yamanote-green, #63BD0F);
+        box-shadow: 0 7px 18px rgba(0,0,0,0.075);
+    }
+}
+
+#tab-gallery .gallery-img-wrap {
+    aspect-ratio: 4 / 3;
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--primary) 9%, transparent), transparent 48%),
+        var(--tag-bg);
+}
+
+#tab-gallery .gallery-img-wrap::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 38%;
+    background: linear-gradient(to top, rgba(0,0,0,0.38), transparent);
+    pointer-events: none;
+}
+
+#tab-gallery .gallery-photo-count {
+    top: 7px;
+    right: 7px;
+    padding: 4px 7px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    background: rgba(0,0,0,0.58);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+#tab-gallery .gallery-info {
+    position: static;
+    display: grid !important;
+    gap: 6px;
+    min-width: 0;
+    padding: 10px 11px 11px;
+    background: transparent;
+}
+
+#tab-gallery .gallery-company-badge {
+    display: block !important;
+    min-width: 0;
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tab-gallery .gallery-train-name {
+    min-height: 0;
+    color: var(--text);
+    font-size: clamp(15px, 1.45vw, 18px);
+    font-weight: 950;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-shadow: none;
+    overflow-wrap: break-word;
+}
+
+#tab-gallery .gallery-route-line {
+    color: var(--subtext);
+    font-size: 11px;
+    font-weight: 750;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tab-gallery .gallery-stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 1px;
+}
+
+#tab-gallery .gallery-stat-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 19px;
+    padding: 3px 6px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--tag-bg) 58%, transparent);
+    color: var(--subtext);
+    font-size: 10px;
+    font-weight: 850;
+    line-height: 1;
+}
+
+#tab-gallery .gallery-empty-panel {
+    display: grid;
+    gap: 6px;
+    min-height: 180px;
+    align-content: center;
+    border-bottom: 2px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+    background:
+        radial-gradient(circle at 18% 20%, color-mix(in srgb, var(--primary) 7%, transparent), transparent 26%),
+        color-mix(in srgb, var(--tag-bg) 24%, transparent);
+}
+
+#tab-gallery .gallery-empty-title {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#tab-gallery .gallery-empty-text {
+    color: var(--subtext);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media (min-width: 1100px) {
+    #tab-gallery .gallery-page-card {
+        padding: 24px 26px 28px;
+    }
+
+    #tab-gallery .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-gallery .gallery-card-head {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    #tab-gallery .gallery-filter-inline {
+        justify-self: start;
+        max-width: 100%;
+    }
+
+    #tab-gallery .gallery-summary-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    #tab-gallery .gallery-summary-item {
+        padding: 0 6px;
+        border-left-width: 3px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    #tab-gallery .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    #tab-gallery .gallery-info {
+        padding: 9px 9px 10px;
+    }
+
+    #tab-gallery .gallery-route-line {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    #tab-gallery .gallery-stat-chip {
+        font-size: 9.5px;
+        padding: 3px 5px;
+    }
+}
+
+@media (max-width: 380px) {
+    #tab-gallery .gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #tab-gallery .gallery-item {
+        box-shadow: 0 3px 12px rgba(0,0,0,0.22);
+        background:
+            linear-gradient(180deg, rgba(99,189,15,0.035), transparent 42%),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+    }
+}
+
+/* Gallery thumbnails: railway log-card treatment. */
+#tab-gallery .gallery-item {
+    position: relative;
+    grid-template-rows: auto minmax(122px, 1fr);
+    padding: 8px;
+    border: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+    border-bottom: 2px solid var(--rail-accent-line-soft, rgba(99, 189, 15, 0.42));
+    border-radius: 7px 7px 3px 3px;
+    background:
+        linear-gradient(90deg, var(--rail-yamanote-green, #63BD0F) 0 4px, transparent 4px),
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 26%, transparent), transparent 48%),
+        color-mix(in srgb, var(--card) 96%, var(--tag-bg));
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.54),
+        0 2px 8px rgba(0,0,0,0.04);
+}
+
+#tab-gallery .gallery-item::before {
+    content: "RAIL LOG";
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    z-index: 3;
+    padding: 2px 5px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.86);
+    color: var(--primary);
+    font-size: 8px;
+    font-weight: 950;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#tab-gallery .gallery-img-wrap {
+    aspect-ratio: 16 / 10;
+    border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+    border-radius: 4px 4px 2px 2px;
+    background:
+        linear-gradient(135deg, rgba(99,189,15,0.08), transparent 42%),
+        color-mix(in srgb, var(--tag-bg) 44%, transparent);
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--card) 82%, transparent);
+}
+
+#tab-gallery .gallery-img {
+    transform: scale(1.01);
+    transition: transform 0.22s ease;
+}
+
+@media (hover: hover) {
+    #tab-gallery .gallery-item:hover .gallery-img {
+        transform: scale(1.045);
+    }
+}
+
+#tab-gallery .gallery-img-wrap::after {
+    height: 34%;
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.34), transparent),
+        linear-gradient(90deg, rgba(99,189,15,0.34), transparent 28%);
+}
+
+#tab-gallery .gallery-photo-count {
+    top: auto;
+    right: 7px;
+    bottom: 7px;
+    min-width: 42px;
+    padding: 4px 6px;
+    border: 1px solid rgba(255,255,255,0.24);
+    border-radius: 3px;
+    background: rgba(12,12,12,0.70);
+    font-size: 10px;
+    font-weight: 950;
+    text-align: center;
+}
+
+#tab-gallery .gallery-info {
+    gap: 7px;
+    padding: 9px 4px 1px 9px;
+}
+
+#tab-gallery .gallery-company-badge {
+    position: relative;
+    padding-left: 8px;
+    color: var(--subtext);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+}
+
+#tab-gallery .gallery-company-badge::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    bottom: 1px;
+    width: 3px;
+    border-radius: 1px;
+    background: var(--rail-yamanote-green, #63BD0F);
+}
+
+#tab-gallery .gallery-train-name {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+    color: var(--text);
+    font-size: clamp(15px, 1.35vw, 17px);
+    line-height: 1.18;
+}
+
+#tab-gallery .gallery-route-line {
+    min-height: 1.25em;
+    color: var(--subtext);
+    font-size: 10.5px;
+    font-weight: 800;
+}
+
+#tab-gallery .gallery-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+}
+
+#tab-gallery .gallery-stat-chip {
+    min-width: 0;
+    min-height: 22px;
+    justify-content: center;
+    padding: 4px 3px;
+    border-radius: 3px;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 54%, transparent), transparent),
+        color-mix(in srgb, var(--card) 90%, var(--tag-bg));
+    color: var(--text);
+    font-size: 9.5px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.train-dex-thumb {
+    padding: 4px;
+    border: 1px solid color-mix(in srgb, var(--border) 62%, transparent);
+    border-bottom: 2px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+    border-radius: 6px 6px 2px 2px;
+    background:
+        linear-gradient(90deg, var(--rail-yamanote-green, #63BD0F) 0 3px, transparent 3px),
+        color-mix(in srgb, var(--card) 94%, var(--tag-bg));
+}
+
+.train-dex-thumb.active {
+    border-color: color-mix(in srgb, var(--primary) 76%, var(--border));
+    border-bottom-color: var(--rail-yamanote-green, #63BD0F);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+.train-dex-thumb img {
+    border-radius: 3px 3px 1px 1px;
+}
+
+@media (max-width: 899px) {
+    #tab-gallery .gallery-item {
+        grid-template-rows: auto minmax(112px, 1fr);
+        padding: 7px;
+    }
+
+    #tab-gallery .gallery-stat-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #tab-gallery .gallery-stat-chip:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #tab-gallery .gallery-item {
+        background:
+            linear-gradient(90deg, var(--rail-yamanote-green, #63BD0F) 0 4px, transparent 4px),
+            linear-gradient(180deg, rgba(99,189,15,0.035), transparent 48%),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+    }
+
+    #tab-gallery .gallery-item::before {
+        background: rgba(15,15,15,0.72);
+    }
+}
+
+/* Gallery thumbnails: softer frameless station-slip look. */
+#tab-gallery .gallery-item {
+    grid-template-rows: auto minmax(112px, 1fr);
+    padding: 9px 9px 10px 12px;
+    border: 0 !important;
+    border-radius: 10px;
+    background:
+        linear-gradient(90deg, var(--rail-yamanote-green, #63BD0F) 0 4px, transparent 4px),
+        radial-gradient(circle at 20px 12px, color-mix(in srgb, var(--primary) 10%, transparent), transparent 30px),
+        linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 34%, transparent), transparent 58%),
+        color-mix(in srgb, var(--card) 95%, var(--tag-bg));
+    box-shadow:
+        0 1px 0 var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28)),
+        0 3px 9px rgba(0,0,0,0.035);
+}
+
+#tab-gallery .gallery-item::before {
+    content: none;
+}
+
+#tab-gallery .gallery-img-wrap {
+    border: 0;
+    border-radius: 7px;
+    box-shadow: none;
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--primary) 8%, transparent), transparent 44%),
+        color-mix(in srgb, var(--tag-bg) 38%, transparent);
+}
+
+#tab-gallery .gallery-img-wrap::after {
+    height: 42%;
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.28), transparent 70%),
+        linear-gradient(90deg, rgba(99,189,15,0.22), transparent 34%);
+}
+
+#tab-gallery .gallery-photo-count {
+    right: 8px;
+    bottom: 8px;
+    min-width: 0;
+    padding: 3px 7px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.58);
+    font-size: 9.5px;
+}
+
+#tab-gallery .gallery-info {
+    gap: 6px;
+    padding: 9px 2px 0 6px;
+}
+
+#tab-gallery .gallery-company-badge {
+    padding-left: 0;
+    color: color-mix(in srgb, var(--subtext) 86%, var(--primary));
+}
+
+#tab-gallery .gallery-company-badge::before {
+    content: none;
+}
+
+#tab-gallery .gallery-train-name {
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28));
+}
+
+#tab-gallery .gallery-route-line {
+    color: var(--subtext);
+}
+
+#tab-gallery .gallery-stat-chip {
+    min-height: 20px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--tag-bg) 46%, transparent);
+    color: var(--subtext);
+}
+
+.train-dex-thumb {
+    border: 0;
+    border-radius: 9px;
+    background:
+        linear-gradient(90deg, var(--rail-yamanote-green, #63BD0F) 0 3px, transparent 3px),
+        color-mix(in srgb, var(--card) 94%, var(--tag-bg));
+    box-shadow:
+        0 1px 0 var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28)),
+        0 3px 8px rgba(0,0,0,0.045);
+}
+
+.train-dex-thumb.active {
+    border: 0;
+    box-shadow:
+        0 1px 0 var(--rail-yamanote-green, #63BD0F),
+        0 0 0 2px color-mix(in srgb, var(--primary) 18%, transparent),
+        0 4px 10px rgba(0,0,0,0.07);
+}
+
+@media (prefers-color-scheme: dark) {
+    #tab-gallery .gallery-item {
+        background:
+            linear-gradient(90deg, var(--rail-yamanote-green, #63BD0F) 0 4px, transparent 4px),
+            radial-gradient(circle at 20px 12px, rgba(99,189,15,0.08), transparent 30px),
+            linear-gradient(180deg, rgba(99,189,15,0.035), transparent 58%),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+        box-shadow: 0 3px 10px rgba(0,0,0,0.22);
     }
 }
 
@@ -7341,6 +8124,240 @@ html, body {
         box-shadow:
             0 1px 0 var(--rail-accent-line-softer),
             0 3px 9px rgba(0,0,0,0.035) !important;
+    }
+}
+
+/* Final narrow history guard: compact rows when desktop is squeezed to mobile width. */
+@media (max-width: 899px) {
+    #tab-history .history-desktop-card {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    #tab-history #tripList {
+        gap: 7px !important;
+    }
+
+    #tab-history .trip {
+        padding: 8px 8px !important;
+    }
+
+    #tab-history .trip-ticket-layout {
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 25px !important;
+        column-gap: 5px !important;
+        align-items: center !important;
+        min-height: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+    #tab-history .trip-ticket-main {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 3px 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+    }
+
+    #tab-history .trip-ticket-section {
+        display: grid !important;
+        grid-template-columns: 2.05em minmax(0, 1fr) !important;
+        gap: 0 5px !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    #tab-history .trip-ticket-route,
+    #tab-history .trip-ticket-train,
+    #tab-history .trip-ticket-stations {
+        grid-column: 1 / -1 !important;
+    }
+
+    #tab-history .trip-ticket-label {
+        min-width: 0 !important;
+        font-size: 8px !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
+    }
+
+    #tab-history .trip-route-stack,
+    #tab-history .trip-route-inline,
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    #tab-history .trip-route-inline {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+
+    #tab-history .trip-route-meta .trip-service-badge,
+    #tab-history .trip-route-meta .trip-direction-chip,
+    #tab-history .trip-route-meta .trip-photo-icon {
+        min-height: 15px !important;
+        padding: 2px 4px !important;
+        font-size: 8px !important;
+    }
+
+    #tab-history .trip-actions {
+        position: static !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        transform: none !important;
+        width: 25px !important;
+        min-width: 25px !important;
+        max-width: 25px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        justify-self: end !important;
+        align-self: center !important;
+        gap: 2px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 2;
+    }
+
+    #tab-history .trip-icon-btn {
+        width: 23px !important;
+        height: 23px !important;
+        min-width: 23px !important;
+        flex: 0 0 23px !important;
+        font-size: 11px !important;
+    }
+
+    #tab-history .trip-icon-svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+}
+
+/* Desktop history rows: unified frameless station-slip skin. */
+@media (min-width: 900px) {
+    #tab-history #tripList {
+        gap: 8px !important;
+    }
+
+    #tab-history .trip {
+        border: 0 !important;
+        border-radius: 10px !important;
+        padding: 11px 13px !important;
+        background:
+            radial-gradient(circle at 22px 11px, color-mix(in srgb, var(--primary) 8%, transparent), transparent 32px),
+            linear-gradient(180deg, color-mix(in srgb, var(--tag-bg) 28%, transparent), transparent 60%),
+            color-mix(in srgb, var(--card) 95%, var(--tag-bg));
+        box-shadow:
+            0 1px 0 var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28)),
+            0 3px 9px rgba(0,0,0,0.035) !important;
+        overflow: visible;
+    }
+
+    #tab-history .trip.manual-sort-active {
+        border-left: 0 !important;
+        padding-left: 13px !important;
+        box-shadow:
+            inset 3px 0 0 var(--rail-yamanote-green, #63BD0F),
+            0 1px 0 var(--rail-accent-line-softer, rgba(99, 189, 15, 0.28)),
+            0 3px 9px rgba(0,0,0,0.035) !important;
+    }
+
+    #tab-history .trip-ticket-layout {
+        min-height: 0;
+    }
+
+    #tab-history .trip-ticket-section {
+        border: 0 !important;
+        border-bottom: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        min-height: 0;
+    }
+
+    #tab-history .trip-ticket-route {
+        padding-left: 10px !important;
+    }
+
+    #tab-history .trip-ticket-route::before {
+        top: 1px !important;
+        bottom: 1px !important;
+        left: 0 !important;
+        width: 4px !important;
+        border-radius: 1px !important;
+        background: var(--rail-yamanote-green, #63BD0F) !important;
+        box-shadow: none !important;
+    }
+
+    #tab-history .trip-ticket-label {
+        color: var(--subtext) !important;
+        opacity: 0.78;
+    }
+
+    #tab-history .trip-ticket-section + .trip-ticket-section::before,
+    #tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+        color: color-mix(in srgb, var(--subtext) 64%, transparent) !important;
+    }
+
+    #tab-history .trip-route-inline {
+        color: var(--text);
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        color: var(--text);
+    }
+
+    #tab-history .trip-route-meta .trip-service-badge,
+    #tab-history .trip-route-meta .trip-direction-chip {
+        border: 0 !important;
+        background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
+        color: var(--primary) !important;
+    }
+
+    #tab-history .trip-route-meta .trip-photo-icon,
+    #tab-history .trip-ticket-layout .trip-photo-icon {
+        border: 0 !important;
+        background: transparent !important;
+    }
+
+    #tab-history .trip-icon-btn {
+        border: 0 !important;
+        border-bottom: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: var(--subtext) !important;
+        box-shadow: none !important;
+    }
+
+    #tab-history .trip-icon-btn:active {
+        color: var(--primary) !important;
+    }
+}
+
+@media (min-width: 900px) and (prefers-color-scheme: dark) {
+    #tab-history .trip {
+        background:
+            radial-gradient(circle at 22px 11px, rgba(99,189,15,0.08), transparent 32px),
+            linear-gradient(180deg, rgba(99,189,15,0.035), transparent 60%),
+            color-mix(in srgb, var(--card) 88%, var(--tag-bg));
+        box-shadow: 0 3px 10px rgba(0,0,0,0.22) !important;
     }
 }
 
@@ -9146,6 +10163,7 @@ body {
 
         <select id="gallerySortMode" class="gallery-filter-select" onchange="renderGallery()">
             <option value="train">名稱</option>
+            <option value="count">相片數</option>
             <option value="newest">最新</option>
             <option value="oldest">最早</option>
         </select>
@@ -14976,6 +15994,18 @@ function renderGallery() {
                item.companyName.toLowerCase().includes(searchKeyword);
     });
 }
+
+    if (filteredPhotos.length === 0) {
+        container.innerHTML = `
+            <div class="gallery-empty gallery-empty-panel">
+                <div class="gallery-empty-title">該当する写真はありません</div>
+                <div class="gallery-empty-text">会社フィルターまたは検索語を変えてください。</div>
+            </div>
+        `;
+        window.trainDexIndex = {};
+        return;
+    }
+
     let trainDex = {};
     filteredPhotos.forEach(item => {
         const key = item.trainId;
@@ -15031,30 +16061,59 @@ function renderGallery() {
         groupedData[item.companyName].push(item);
     });
 
+    const visibleCompanyCount = Object.keys(groupedData).length;
+    const visiblePhotoCount = filteredPhotos.length;
+    container.innerHTML = `
+        <div class="gallery-summary-strip">
+            <div class="gallery-summary-item">
+                <span class="gallery-summary-label">車型</span>
+                <span class="gallery-summary-value">${dexItems.length}</span>
+            </div>
+            <div class="gallery-summary-item">
+                <span class="gallery-summary-label">写真</span>
+                <span class="gallery-summary-value">${visiblePhotoCount}</span>
+            </div>
+            <div class="gallery-summary-item">
+                <span class="gallery-summary-label">会社</span>
+                <span class="gallery-summary-value">${visibleCompanyCount}</span>
+            </div>
+        </div>
+    `;
+
     Object.keys(groupedData).sort((a, b) => a.localeCompare(b, 'ja')).forEach(compName => {
         const items = groupedData[compName];
+        const sectionPhotoCount = items.reduce((sum, item) => sum + item.photos.length, 0);
 
         let sectionHtml = `
             <div class="gallery-section">
                 <div class="gallery-comp-title">
                     <div class="gallery-section-title-main">
-                        <span>${compName}</span>
+                        <span>${escapeHtml(compName)}</span>
                         <span class="gallery-section-badge">${items.length} 款車型</span>
                     </div>
-                    <span class="gallery-count">${items.reduce((sum, item) => sum + item.photos.length, 0)} 張</span>
+                    <span class="gallery-count">${sectionPhotoCount} 張</span>
                 </div>
                 <div class="gallery-grid">
         `;
 
         items.forEach(item => {
+    const latestDateText = item.latestDate || "-";
+    const routeSummaryText = item.routeNames?.slice(0, 2).join(" / ") || "-";
+    const extraRouteCount = Math.max(0, (item.routeNames?.length || 0) - 2);
     sectionHtml += `
         <div class="gallery-item" onclick="openTrainDexModal('${item.trainId}')">
             <div class="gallery-img-wrap">
-                <img src="${item.coverPhoto}" class="gallery-img" alt="${item.trainName}">
+                <img src="${item.coverPhoto}" class="gallery-img" alt="${escapeHtml(item.trainName)}">
                 <div class="gallery-photo-count">${item.photos.length} 張</div>
-
-                <div class="gallery-info">
-                    <div class="gallery-train-name">${item.trainName}</div>
+            </div>
+            <div class="gallery-info">
+                <div class="gallery-company-badge">${escapeHtml(item.companyName)}</div>
+                <div class="gallery-train-name">${escapeHtml(item.trainName)}</div>
+                <div class="gallery-route-line">${escapeHtml(routeSummaryText)}${extraRouteCount ? ` +${extraRouteCount}` : ""}</div>
+                <div class="gallery-stat-row">
+                    <span class="gallery-stat-chip">${item.tripCount || 0} 回</span>
+                    <span class="gallery-stat-chip">${item.routeCount || 0} 路線</span>
+                    <span class="gallery-stat-chip">${escapeHtml(latestDateText)}</span>
                 </div>
             </div>
         </div>
