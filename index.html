@@ -6969,6 +6969,198 @@ html, body {
     }
 }
 
+/* History rows: keep controls inside the slip and give train / station text room. */
+#tab-history .trip,
+#tab-history .trip-ticket-layout,
+#tab-history .trip-ticket-main,
+#tab-history .trip-ticket-section,
+#tab-history .trip-actions {
+    box-sizing: border-box;
+}
+
+#tab-history .trip {
+    overflow: hidden;
+}
+
+#tab-history .trip-ticket-layout {
+    width: 100%;
+    min-width: 0;
+}
+
+#tab-history .trip-ticket-main {
+    min-width: 0;
+}
+
+#tab-history .trip-actions {
+    min-width: 0;
+    margin: 0;
+}
+
+#tab-history .trip-icon-btn {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    flex: 0 0 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+}
+
+#tab-history .trip-icon-svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (min-width: 900px) {
+    #tab-history .trip-ticket-layout {
+        grid-template-columns:
+            minmax(230px, 1.08fr)
+            minmax(215px, 0.84fr)
+            minmax(250px, 1fr)
+            minmax(70px, 70px) !important;
+        gap: 0 14px !important;
+        align-items: center !important;
+    }
+
+    #tab-history .trip-ticket-train,
+    #tab-history .trip-ticket-stations {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        display: inline-block;
+        max-width: 100%;
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+        line-height: 1.25;
+    }
+
+    #tab-history .trip-actions {
+        width: 70px !important;
+        min-width: 70px !important;
+        max-width: 70px;
+        justify-self: end;
+        justify-content: flex-end !important;
+        gap: 6px;
+    }
+}
+
+@media (min-width: 1100px) {
+    #tab-history .trip-ticket-layout {
+        grid-template-columns:
+            minmax(300px, 1.05fr)
+            minmax(255px, 0.9fr)
+            minmax(300px, 1fr)
+            minmax(76px, 76px) !important;
+        gap: 0 16px !important;
+    }
+
+    #tab-history .trip-actions {
+        width: 76px !important;
+        min-width: 76px !important;
+        max-width: 76px;
+    }
+}
+
+@media (max-width: 899px) {
+    #tab-history .trip-ticket-layout {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 32px;
+        align-items: stretch !important;
+        gap: 0 8px !important;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-main {
+        grid-column: 1;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 4px 8px !important;
+        align-items: center;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-section {
+        display: grid !important;
+        grid-template-columns: 2.45em minmax(0, 1fr);
+        align-items: center !important;
+        gap: 0 6px !important;
+        min-width: 0;
+        width: 100%;
+    }
+
+    #tab-history .trip-ticket-section + .trip-ticket-section::before,
+    #tab-history .trip-ticket-main > .trip-service-badge + .trip-ticket-section::before {
+        content: none !important;
+    }
+
+    #tab-history .trip-ticket-route {
+        grid-column: 1 / -1;
+        padding-left: 8px;
+    }
+
+    #tab-history .trip-ticket-train {
+        grid-column: 1;
+    }
+
+    #tab-history .trip-ticket-stations {
+        grid-column: 2;
+    }
+
+    #tab-history .trip-ticket-label {
+        writing-mode: horizontal-tb !important;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    #tab-history .trip-route-stack,
+    #tab-history .trip-route-inline,
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        min-width: 0;
+        max-width: 100%;
+        writing-mode: horizontal-tb !important;
+    }
+
+    #tab-history .trip-route-inline,
+    #tab-history .trip-train-inline,
+    #tab-history .trip-station-inline {
+        overflow: visible;
+        text-overflow: clip;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.24;
+    }
+
+    #tab-history .trip-actions {
+        grid-column: 2;
+        grid-row: 1;
+        width: 32px !important;
+        min-width: 32px !important;
+        max-width: 32px;
+        align-self: center;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center;
+        gap: 3px;
+        padding: 0 !important;
+    }
+
+    #tab-history .trip-icon-btn {
+        width: 27px;
+        height: 27px;
+        min-width: 27px;
+        flex-basis: 27px;
+    }
+}
+
 /* Add trip option rail: reuse the slim map-control language. */
 .add-option-area {
     margin-top: 14px;
@@ -10146,6 +10338,7 @@ let isMapZoomRerendering = false;
 let railSegmentUsageIndex = new Map();
 let riddenSegmentKeySetCache = new Map();
 let lineGeometryPartsCache = new Map();
+let lineGeometryGraphCache = new Map();
 let riddenStationKeySetCache = new Map();
 
 const MAP_SETTINGS_KEYS = {
@@ -12079,6 +12272,146 @@ function parseWKTMultiLineString(wkt) {
     ).filter(line => line.length >= 2);
 }
 
+function getLineGeometryCacheKey(line) {
+    const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
+    return `${line?.id || ""}:${wkt.length}:${wkt.slice(0, 32)}:${wkt.slice(-32)}`;
+}
+
+function getLineGeometryGraph(line) {
+    const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
+    if (!wkt) return null;
+
+    const cacheKey = getLineGeometryCacheKey(line);
+    if (lineGeometryGraphCache.has(cacheKey)) {
+        return lineGeometryGraphCache.get(cacheKey);
+    }
+
+    const rawParts = parseWKTMultiLineString(wkt);
+    const nodes = new Map();
+
+    const ensureNode = (point) => {
+        const key = normalizeSegmentPoint(point, 6);
+        if (!nodes.has(key)) {
+            nodes.set(key, {
+                key,
+                point,
+                edges: []
+            });
+        }
+        return nodes.get(key);
+    };
+
+    rawParts.forEach(part => {
+        for (let i = 0; i < part.length - 1; i++) {
+            const a = ensureNode(part[i]);
+            const b = ensureNode(part[i + 1]);
+            const weight = Math.sqrt(pointDistanceSq(a.point, b.point));
+
+            a.edges.push({ key: b.key, weight });
+            b.edges.push({ key: a.key, weight });
+        }
+    });
+
+    const graph = { nodes, rawParts, shortestPathCache: new Map() };
+    lineGeometryGraphCache.set(cacheKey, graph);
+    return graph;
+}
+
+function findNearestGeometryNodeKey(graph, station) {
+    if (!graph?.nodes?.size || !station) return "";
+
+    let bestKey = "";
+    let bestDist = Infinity;
+
+    graph.nodes.forEach(node => {
+        const dist = stationPointDistanceSq(node.point, station);
+        if (dist < bestDist) {
+            bestDist = dist;
+            bestKey = node.key;
+        }
+    });
+
+    return bestKey;
+}
+
+function findShortestGeometryPath(line, fromStation, toStation) {
+    const graph = getLineGeometryGraph(line);
+    if (!graph?.nodes?.size) return [];
+
+    const pairKey = `${fromStation?.id || ""}->${toStation?.id || ""}`;
+    const reversePairKey = `${toStation?.id || ""}->${fromStation?.id || ""}`;
+    if (graph.shortestPathCache?.has(pairKey)) {
+        return graph.shortestPathCache.get(pairKey);
+    }
+    if (graph.shortestPathCache?.has(reversePairKey)) {
+        return graph.shortestPathCache.get(reversePairKey).slice().reverse();
+    }
+
+    const startKey = findNearestGeometryNodeKey(graph, fromStation);
+    const endKey = findNearestGeometryNodeKey(graph, toStation);
+    if (!startKey || !endKey) return [];
+
+    if (startKey === endKey) {
+        const point = graph.nodes.get(startKey)?.point;
+        const samePointPath = point ? [point] : [];
+        graph.shortestPathCache?.set(pairKey, samePointPath);
+        return samePointPath;
+    }
+
+    const distances = new Map();
+    const previous = new Map();
+    const unvisited = new Set(graph.nodes.keys());
+
+    distances.set(startKey, 0);
+
+    while (unvisited.size > 0) {
+        let currentKey = "";
+        let currentDist = Infinity;
+
+        unvisited.forEach(key => {
+            const dist = distances.get(key) ?? Infinity;
+            if (dist < currentDist) {
+                currentDist = dist;
+                currentKey = key;
+            }
+        });
+
+        if (!currentKey || currentDist === Infinity) break;
+        if (currentKey === endKey) break;
+
+        unvisited.delete(currentKey);
+
+        const node = graph.nodes.get(currentKey);
+        node?.edges.forEach(edge => {
+            if (!unvisited.has(edge.key)) return;
+            const nextDist = currentDist + edge.weight;
+            if (nextDist < (distances.get(edge.key) ?? Infinity)) {
+                distances.set(edge.key, nextDist);
+                previous.set(edge.key, currentKey);
+            }
+        });
+    }
+
+    if (!distances.has(endKey)) return [];
+
+    const keys = [];
+    let cursor = endKey;
+    while (cursor) {
+        keys.unshift(cursor);
+        if (cursor === startKey) break;
+        cursor = previous.get(cursor);
+    }
+
+    if (keys[0] !== startKey) return [];
+
+    const path = keys
+        .map(key => graph.nodes.get(key)?.point)
+        .filter(Boolean);
+
+    graph.shortestPathCache?.set(pairKey, path);
+    return path;
+}
+
 function hasRiddenLine(lineId) {
     return trips.some(t =>
         Array.isArray(t.routes) &&
@@ -12716,7 +13049,78 @@ function scoreLinePartCandidate(part, fromStation, toStation) {
     return Math.min(directScore, reverseScore);
 }
 
-function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null) {
+function getPathTraversalStationIds(path, fromId, toId, direction = "") {
+    const sequence = normalizeLineSequenceArray(path?.sequence);
+    const traversal = getSequenceTraversalCandidate(sequence, fromId, toId, path, direction);
+    if (!traversal) return [];
+
+    const ids = [];
+    let index = traversal.startIndex;
+    ids.push(sequence[index]);
+
+    for (let i = 0; i < traversal.distance; i++) {
+        index = traversal.wrap
+            ? (index + traversal.step + sequence.length) % sequence.length
+            : index + traversal.step;
+
+        if (index < 0 || index >= sequence.length) break;
+        ids.push(sequence[index]);
+    }
+
+    if (!traversal.wrap && ids[0] !== fromId && ids[ids.length - 1] === fromId) {
+        ids.reverse();
+    }
+
+    return ids;
+}
+
+function appendGeometryPart(target, part) {
+    if (!Array.isArray(part) || part.length < 2) return target;
+
+    const next = part.slice();
+    if (target.length === 0) return next;
+
+    const last = target[target.length - 1];
+    if (isSameLatLngPoint(last, next[0])) {
+        target.push(...next.slice(1));
+    } else if (isSameLatLngPoint(last, next[next.length - 1])) {
+        target.push(...next.slice(0, -1).reverse());
+    } else {
+        target.push(...next);
+    }
+
+    return target;
+}
+
+function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, direction = "", line = null, pathId = "") {
+    if (!line || !fromStation?.id || !toStation?.id) return [];
+
+    const path = inferLinePathForStations(line, fromStation.id, toStation.id, direction, pathId);
+    if (!path?.sequence?.length) return [];
+
+    const stationIds = getPathTraversalStationIds(path, fromStation.id, toStation.id, direction);
+    if (stationIds.length < 2) return [];
+
+    let points = [];
+
+    for (let i = 0; i < stationIds.length - 1; i++) {
+        const segmentFrom = maps.station[stationIds[i]];
+        const segmentTo = maps.station[stationIds[i + 1]];
+        if (!segmentFrom || !segmentTo) return [];
+
+        const graphPart = findShortestGeometryPath(line, segmentFrom, segmentTo);
+        const physicalPart = graphPart.length >= 2
+            ? graphPart
+            : extractBestPhysicalLinePartByStations(allLineParts, segmentFrom, segmentTo, "", null);
+
+        if (!Array.isArray(physicalPart) || physicalPart.length < 2) return [];
+        points = appendGeometryPart(points, physicalPart);
+    }
+
+    return points.length >= 2 ? points : [];
+}
+
+function extractBestPhysicalLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null) {
     if (!Array.isArray(allLineParts) || allLineParts.length === 0) return [];
 
     const candidates = allLineParts
@@ -12734,6 +13138,16 @@ function extractBestLinePartByStations(allLineParts, fromStation, toStation, dir
     });
 
     return candidates[0];
+}
+
+function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null, pathId = "") {
+    const pathPart = extractLinePartByDefinedPath(allLineParts, fromStation, toStation, direction, line, pathId);
+    if (Array.isArray(pathPart) && pathPart.length >= 2) return pathPart;
+
+    const graphPart = findShortestGeometryPath(line, fromStation, toStation);
+    if (Array.isArray(graphPart) && graphPart.length >= 2) return graphPart;
+
+    return extractBestPhysicalLinePartByStations(allLineParts, fromStation, toStation, direction, line);
 }
 
 function pointDistanceSq(a, b) {
@@ -12893,7 +13307,7 @@ function getLineGeometryParts(line) {
     const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
     if (!wkt) return [];
 
-    const cacheKey = `${line?.id || ""}:${wkt.length}:${wkt.slice(0, 32)}:${wkt.slice(-32)}`;
+    const cacheKey = getLineGeometryCacheKey(line);
     if (lineGeometryPartsCache.has(cacheKey)) {
         return lineGeometryPartsCache.get(cacheKey);
     }
@@ -12926,6 +13340,7 @@ function makeSegmentKey(a, b) {
 function buildRailSegmentUsageIndex() {
     railSegmentUsageIndex = new Map();
     lineGeometryPartsCache = new Map();
+    lineGeometryGraphCache = new Map();
     riddenStationKeySetCache = new Map();
 
     db.lines.forEach(line => {
@@ -13002,7 +13417,8 @@ function getRiddenSegmentKeySetForLine(lineId) {
             fromStation,
             toStation,
             seg.direction || "",
-            line
+            line,
+            seg.pathId || ""
         );
 
         if (!Array.isArray(part) || part.length < 2) return;
@@ -13796,7 +14212,8 @@ function renderRailGeometries(selectedCategory = "all") {
                 fromStation,
                 toStation,
                 seg.direction || "",
-                line
+                line,
+                seg.pathId || ""
             );
 
             if (!Array.isArray(part) || part.length < 2) return;
