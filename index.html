@@ -1772,6 +1772,28 @@ button:active { background: linear-gradient(#ccc, #b3b3b3); }
 .cal-day.has-record { background: var(--primary); color: white; font-weight: bold; }
 .cal-day.selected { border: 2px solid var(--text); }
 
+.history-date-group {
+    position: relative;
+}
+
+.history-native-date-input {
+    position: absolute !important;
+    right: 30px;
+    top: 50%;
+    width: 1px !important;
+    min-width: 1px !important;
+    height: 1px !important;
+    min-height: 1px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(-50%);
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+}
+
 .trip { border-bottom: 1px solid var(--border); padding: 10px 0; }
 .trip:last-child { border-bottom: none; padding-bottom: 0; }
 .trip-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
@@ -4215,6 +4237,23 @@ html, body {
     -webkit-appearance: auto !important;
     appearance: auto !important;
     background-image: none !important;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .design2-form-card input[list] {
+        -webkit-appearance: auto !important;
+        appearance: auto !important;
+    }
+
+    .design2-form-card input[list]::-webkit-calendar-picker-indicator,
+    .design2-form-card input[list]::-webkit-list-button {
+        display: block !important;
+        width: 28px !important;
+        height: 100% !important;
+        opacity: 0.01 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 }
 
 @supports not selector(:has(*)) {
@@ -9918,7 +9957,7 @@ body {
                     <div class="form-field">
                         <label>鉄道公司</label>
                         <div class="input-wrapper">
-                            <input id="company" list="companyList" placeholder="輸入公司" onclick="this.select()">
+                            <input id="company" list="companyList" placeholder="輸入公司" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
                         </div>
                     </div>
@@ -9926,7 +9965,7 @@ body {
                     <div class="form-field">
                         <label>路線</label>
                         <div class="input-wrapper">
-                            <input id="line" list="lineList" placeholder="輸入路線" onclick="this.select()">
+                            <input id="line" list="lineList" placeholder="輸入路線" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
                         </div>
                     </div>
@@ -9961,7 +10000,7 @@ body {
                     <div class="form-field">
                         <label>種別 / 列車名 (運行系統)</label>
                         <div class="input-wrapper">
-                            <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="this.select()">
+                            <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
                         </div>
                     </div>
@@ -9979,7 +10018,7 @@ body {
                             <div id="otherTrainCompanyWrapper" style="display: none; margin-top: 10px;">
                                 <label style="margin-top: 0;">車輛所屬公司</label>
                                 <div class="input-wrapper">
-                                    <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="updateTrainDatalist()" onclick="this.select()">
+                                    <input id="trainOwnerCompany" list="companyList" placeholder="選擇車輛真正所屬公司" oninput="scheduleUpdateTrainDatalist({ resetTrain: true })" onclick="handleDatalistInputTap(this, event)">
                                     <button class="clear-input-btn" onclick="clearInput('trainOwnerCompany')">✕</button>
                                 </div>
                             </div>
@@ -9989,7 +10028,7 @@ body {
                     <div class="form-field">
                         <label>車型</label>
                         <div class="input-wrapper">
-                            <input id="train" list="trainList" placeholder="輸入車型" onclick="this.select()">
+                            <input id="train" list="trainList" placeholder="輸入車型" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
                         </div>
                     </div>
@@ -9997,7 +10036,7 @@ body {
                     <div class="form-field">
                         <label>上車站</label>
                         <div class="input-wrapper">
-                            <input id="from" list="stationListFrom" placeholder="出發站" onclick="this.select()">
+                            <input id="from" list="stationListFrom" placeholder="出發站" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
                         </div>
                     </div>
@@ -10005,7 +10044,7 @@ body {
                     <div class="form-field">
                         <label>下車站</label>
                         <div class="input-wrapper">
-                            <input id="to" list="stationListTo" placeholder="到達站" onclick="this.select()">
+                            <input id="to" list="stationListTo" placeholder="到達站" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
                         </div>
                     </div>
@@ -10065,9 +10104,10 @@ body {
                 </div>
                 <div class="history-control-group history-date-group" aria-label="日期移動">
                     <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
-                    <button id="btnFilterDate" class="design2-line-btn history-function-btn history-calendar-btn" onclick="openCalendar()" aria-label="選擇日期" title="選擇日期">
+                    <button id="btnFilterDate" class="design2-line-btn history-function-btn history-calendar-btn" onclick="openCalendar(event)" aria-label="選擇日期" title="選擇日期">
                         <span class="history-calendar-icon" aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
                     </button>
+                    <input id="historyDateNativeInput" class="history-native-date-input" type="date" onchange="handleHistoryNativeDateChange(this.value)" tabindex="-1" aria-label="選擇日期">
                     <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
                 </div>
                 <button id="historyManualSortBtn" type="button" class="design2-line-btn history-function-btn history-sort-toggle-inline" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序">🔒</button>
@@ -11373,6 +11413,71 @@ const MAP_SETTINGS_KEYS = {
 
 document.getElementById("date").valueAsDate = new Date();
 
+function isAppleTouchDevice() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+
+function tryShowNativePicker(input) {
+    if (!input || typeof input.showPicker !== "function") return false;
+    try {
+        input.showPicker();
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+function focusInputSafely(input, preventScroll = false) {
+    if (!input || typeof input.focus !== "function") return;
+    try {
+        input.focus({ preventScroll });
+    } catch (error) {
+        input.focus();
+    }
+}
+
+window.handleDatalistInputTap = function(input, event) {
+    if (!input) return;
+
+    const isAppleTouch = isAppleTouchDevice();
+    focusInputSafely(input, false);
+
+    if (isAppleTouch) {
+        tryShowNativePicker(input);
+        return;
+    }
+
+    if (typeof input.select === "function") input.select();
+    tryShowNativePicker(input);
+}
+
+window.handleHistoryNativeDateChange = function(value) {
+    if (!value) return;
+    setDateFilter(value);
+}
+
+function getHistoryDatePickerValue() {
+    if (currentDateFilter === "all") return getTodayStr();
+    return /^\d{4}-\d{2}-\d{2}$/.test(String(currentDateFilter)) ? currentDateFilter : getTodayStr();
+}
+
+window.openHistoryDatePicker = function(event) {
+    if (event) event.preventDefault();
+
+    const input = document.getElementById("historyDateNativeInput");
+    if (!input) return;
+
+    input.value = getHistoryDatePickerValue();
+    focusInputSafely(input, true);
+
+    if (!tryShowNativePicker(input)) {
+        input.click();
+    }
+}
+
+window.openCalendar = window.openHistoryDatePicker;
+
 window.clearInput = function(id) {
     const el = document.getElementById(id);
     if (el) {
@@ -11729,7 +11834,7 @@ document.getElementById("line").addEventListener("input", () => { updateStationL
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
     updateLineList(compName, "lineList");
-    updateTrainDatalist(); 
+    scheduleUpdateTrainDatalist({ resetTrain: true });
     updateStationLists();
     updateMainLoopDirectionUI();
 });
@@ -11836,46 +11941,88 @@ setupAddOptionPanels();
 document.getElementById("serviceType")?.addEventListener("input", syncAddOptionControls);
 syncAddOptionControls();
 
-window.updateTrainDatalist = function() {
-    const useOther = document.getElementById('useOtherTrainCompany').checked;
-    const targetCompanyInputId = useOther ? 'trainOwnerCompany' : 'company';
-    const compName = document.getElementById(targetCompanyInputId).value;
-    
-    activeTrainCompanyId = resolve.company[compName] || null;
+const trainCompanyCache = new Map();
+let trainDatalistSignature = "";
+let trainFilterTimeout = null;
+let trainDatalistUpdateTimeout = null;
 
-    if (activeTrainCompanyId) { currentCompanyTrains = db.trains.filter(t => t.company_id === activeTrainCompanyId); } 
-    else { currentCompanyTrains = []; }
-    
-    document.getElementById('train').value = '';
-
-    const list = document.getElementById("trainList");
-    if(!list) return;
-    list.innerHTML = "";
-    const fragment = document.createDocumentFragment();
-    currentCompanyTrains.slice(0, 50).forEach(t => fragment.appendChild(new Option(t._display)));
-    list.appendChild(fragment);
+function getCachedCompanyTrains(companyId) {
+    if (!companyId) return [];
+    if (!trainCompanyCache.has(companyId)) {
+        trainCompanyCache.set(companyId, db.trains.filter(t => t.company_id === companyId));
+    }
+    return trainCompanyCache.get(companyId) || [];
 }
 
-let trainFilterTimeout = null;
+function renderTrainDatalistOptions(trains, limit = 50) {
+    const list = document.getElementById("trainList");
+    if (!list) return;
+
+    const values = (trains || [])
+        .slice(0, limit)
+        .map(t => t._display || t.name || t.id || "")
+        .filter(Boolean);
+    const signature = values.join("\u0001");
+
+    if (signature === trainDatalistSignature) return;
+
+    const fragment = document.createDocumentFragment();
+    values.forEach(value => fragment.appendChild(new Option(value)));
+    list.replaceChildren(fragment);
+    trainDatalistSignature = signature;
+}
+
+function getActiveTrainCompanyInputValue() {
+    const useOther = !!document.getElementById("useOtherTrainCompany")?.checked;
+    const targetCompanyInputId = useOther ? "trainOwnerCompany" : "company";
+    return document.getElementById(targetCompanyInputId)?.value || "";
+}
+
+window.updateTrainDatalist = function(options = {}) {
+    clearTimeout(trainDatalistUpdateTimeout);
+    clearTimeout(trainFilterTimeout);
+
+    const previousCompanyId = activeTrainCompanyId;
+    const compName = getActiveTrainCompanyInputValue();
+    activeTrainCompanyId = resolve.company[compName] || null;
+    currentCompanyTrains = getCachedCompanyTrains(activeTrainCompanyId);
+
+    const trainInput = document.getElementById("train");
+    const companyChanged = previousCompanyId !== activeTrainCompanyId;
+    const shouldResetTrain = options.resetTrain ?? (companyChanged && document.activeElement !== trainInput);
+
+    if (shouldResetTrain && trainInput) {
+        trainInput.value = "";
+    }
+
+    renderTrainDatalistOptions(currentCompanyTrains, options.limit || 50);
+}
+
+window.scheduleUpdateTrainDatalist = function(options = {}) {
+    clearTimeout(trainDatalistUpdateTimeout);
+    trainDatalistUpdateTimeout = setTimeout(() => {
+        updateTrainDatalist(options);
+    }, options.delay ?? 90);
+}
+
 document.getElementById("train").addEventListener("input", function() {
     clearTimeout(trainFilterTimeout);
-    const keyword = this.value.trim().toLowerCase();
-    const list = document.getElementById("trainList");
 
-    const isSelected = currentCompanyTrains.some(t => t._display.toLowerCase() === keyword);
-    if (isSelected) return; 
+    const keyword = this.value.trim().toLowerCase();
+    const isSelected = currentCompanyTrains.some(t =>
+        (t._display || "").toLowerCase() === keyword ||
+        (t.name || "").toLowerCase() === keyword
+    );
+
+    if (isSelected) return;
 
     trainFilterTimeout = setTimeout(() => {
-        let filtered = currentCompanyTrains;
-        if (keyword) {
-            filtered = currentCompanyTrains.filter(t => t._display.toLowerCase().includes(keyword));
-        }
-        const limitedResults = filtered.slice(0, 30);
-        const fragment = document.createDocumentFragment();
-        limitedResults.forEach(t => fragment.appendChild(new Option(t._display)));
-        list.innerHTML = "";
-        list.appendChild(fragment);
-    }, 150); 
+        const filtered = keyword
+            ? currentCompanyTrains.filter(t => (t._display || "").toLowerCase().includes(keyword))
+            : currentCompanyTrains;
+
+        renderTrainDatalistOptions(filtered, keyword ? 36 : 50);
+    }, keyword ? 110 : 0);
 });
 
 window.updateLineList = function(compName, targetListId) {
@@ -11952,7 +12099,7 @@ window.addThrough = function() {
     div.innerHTML = `
     <label style="margin-top:0;">直通公司</label>
     <div class="input-wrapper">
-        <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); const block=this.closest('.through-block'); if(block){ const lineInput=block.querySelector('.throughLine'); if(lineInput) lineInput.value=''; } updateStationLists(); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通公司" onclick="this.select()">
+        <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); const block=this.closest('.through-block'); if(block){ const lineInput=block.querySelector('.throughLine'); if(lineInput) lineInput.value=''; } updateStationLists(); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通公司" onclick="handleDatalistInputTap(this, event)">
         <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
     </div>
 
@@ -11960,7 +12107,7 @@ window.addThrough = function() {
 
     <label>直通路線 (實體路線)</label>
     <div class="input-wrapper">
-        <input class="throughLine" list="${uniqueId}" oninput="updateStationLists(); autoFillThroughJunction(this); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通路線" onclick="this.select()">
+        <input class="throughLine" list="${uniqueId}" oninput="updateStationLists(); autoFillThroughJunction(this); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通路線" onclick="handleDatalistInputTap(this, event)">
         <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
     </div>
 
@@ -11972,7 +12119,7 @@ window.addThrough = function() {
 
     <label>経由</label>
     <div class="input-wrapper">
-        <input class="throughJunctionStation" list="${uniqueId}_junction" placeholder="自動判斷或手動輸入" onclick="this.select()">
+        <input class="throughJunctionStation" list="${uniqueId}_junction" placeholder="自動判斷或手動輸入" onclick="handleDatalistInputTap(this, event)">
         <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
     </div>
 
@@ -12233,6 +12380,8 @@ window.saveTrip = async function () {
             routes.push({ company_id: tcId, line_id: tlId });
         }
     });
+
+    updateTrainDatalist({ resetTrain: false });
 
     let trainInput = getVal("train");
     let finalTrainId = trainInput;
@@ -12691,6 +12840,11 @@ function render() {
         btnFilterDate.classList.toggle('active', currentDateFilter !== 'all');
         btnFilterDate.title = currentDateFilter === 'all' ? '選擇日期' : currentDateFilter;
     }
+
+    const historyDateNativeInput = document.getElementById("historyDateNativeInput");
+    if (historyDateNativeInput) {
+        historyDateNativeInput.value = currentDateFilter === "all" ? "" : getHistoryDatePickerValue();
+    }
     syncHistorySearchDrawer();
 
     const listDiv = document.getElementById("tripList");
@@ -12871,16 +13025,7 @@ pagedTrips.forEach((t) => {
 
 window.render = render;
 
-window.openCalendar = function() {
-    if(currentDateFilter !== 'all') {
-        let parts = currentDateFilter.split('-');
-        calViewDate = new Date(parts[0], parts[1]-1, 1);
-    } else {
-        calViewDate = new Date();
-    }
-    buildCalendar();
-    document.getElementById("calendarModal").style.display = "flex";
-}
+window.openCalendar = window.openHistoryDatePicker;
 window.closeCalendar = function() { document.getElementById("calendarModal").style.display = "none"; }
 window.changeCalMonth = function(delta) { calViewDate.setMonth(calViewDate.getMonth() + delta); buildCalendar(); }
 function buildCalendar() {

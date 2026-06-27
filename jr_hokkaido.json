@@ -195,7 +195,40 @@
           "STN_JR_HOKKAIDO_NAEBO",
           "STN_JR_HOKKAIDO_SAPPORO"
         ],
-        "company_id": "JR_HOKKAIDO"
+        "company_id": "JR_HOKKAIDO",
+        "paths": [
+          {
+            "id": "AIRPORT_BRANCH",
+            "name": "支線",
+            "sequence": [
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+            ]
+          },
+          {
+            "id": "MAIN",
+            "name": "本線",
+            "sequence": [
+              "STN_JR_HOKKAIDO_TOMAKOMAI",
+              "STN_JR_HOKKAIDO_NUMANOHATA",
+              "STN_JR_HOKKAIDO_UENAE",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_CHITOSE",
+              "STN_JR_HOKKAIDO_OSATSU",
+              "STN_JR_HOKKAIDO_SAPPORO_BEER_TEIEN",
+              "STN_JR_HOKKAIDO_ENIWA",
+              "STN_JR_HOKKAIDO_MEGUMINO",
+              "STN_JR_HOKKAIDO_SHIMAMATSU",
+              "STN_JR_HOKKAIDO_KITA_HIROSHIMA",
+              "STN_JR_HOKKAIDO_KAMINOPPORO",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_HEIWA",
+              "STN_JR_HOKKAIDO_SHIROISHI",
+              "STN_JR_HOKKAIDO_NAEBO",
+              "STN_JR_HOKKAIDO_SAPPORO"
+            ]
+          }
+        ]
       },
       {
         "id": "JR_HOKKAIDO_MURORAN_HONSEN",

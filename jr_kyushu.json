@@ -233,10 +233,105 @@
           "STN_JR_KYUSHU_ICHINUNO",
           "STN_JR_KYUSHU_HIZEN_KOGA",
           "STN_JR_KYUSHU_UTSUTSUGAWA",
+          "STN_JR_KYUSHU_NEWHIGASHISONO",
+          "STN_JR_KYUSHU_OKUSA",
+          "STN_JR_KYUSHU_HONKAWACHI",
+          "STN_JR_KYUSHU_NAGAYO",
+          "STN_JR_KYUSHU_KODA",
+          "STN_JR_KYUSHU_MICHINOO",
+          "STN_JR_KYUSHU_NISHI_URAKAMI",
           "STN_JR_KYUSHU_URAKAMI",
           "STN_JR_KYUSHU_NAGASAKI"
         ],
-        "company_id": "JR_KYUSHU"
+        "company_id": "JR_KYUSHU",
+        "paths": [
+          {
+            "id": "NEW",
+            "name": "新線経由（市布経由）",
+            "sequence": [
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_SHIN_TOSU",
+              "STN_JR_KYUSHU_HIZEN_FUMOTO",
+              "STN_JR_KYUSHU_NAKABARU",
+              "STN_JR_KYUSHU_YOSHINOGARI_KOEN",
+              "STN_JR_KYUSHU_KANZAKI",
+              "STN_JR_KYUSHU_IGAYA",
+              "STN_JR_KYUSHU_SAGA",
+              "STN_JR_KYUSHU_NABESHIMA",
+              "STN_JR_KYUSHU_BALLOON_SAGA",
+              "STN_JR_KYUSHU_KUBOTA",
+              "STN_JR_KYUSHU_USHIZU",
+              "STN_JR_KYUSHU_KOHOKU",
+              "STN_JR_KYUSHU_HIZEN_SHIROISHI",
+              "STN_JR_KYUSHU_HIZEN_RYUO",
+              "STN_JR_KYUSHU_HIZEN_KASHIMA",
+              "STN_JR_KYUSHU_HIZEN_HAMA",
+              "STN_JR_KYUSHU_HIZEN_NANAURA",
+              "STN_JR_KYUSHU_HIZEN_IIDA",
+              "STN_JR_KYUSHU_TARA",
+              "STN_JR_KYUSHU_HIZEN_OURA",
+              "STN_JR_KYUSHU_KONAGAI",
+              "STN_JR_KYUSHU_NAGASATO",
+              "STN_JR_KYUSHU_YUE",
+              "STN_JR_KYUSHU_OE",
+              "STN_JR_KYUSHU_HIZEN_NAGATA",
+              "STN_JR_KYUSHU_HIGASHI_ISAHAYA",
+              "STN_JR_KYUSHU_ISAHAYA",
+              "STN_JR_KYUSHU_NISHI_ISAHAYA",
+              "STN_JR_KYUSHU_KIKITSU",
+              "STN_JR_KYUSHU_ICHINUNO",
+              "STN_JR_KYUSHU_HIZEN_KOGA",
+              "STN_JR_KYUSHU_UTSUTSUGAWA",
+              "STN_JR_KYUSHU_URAKAMI",
+              "STN_JR_KYUSHU_NAGASAKI"
+            ]
+          },
+          {
+            "id": "PATH_2",
+            "name": "旧線（長与経由）",
+            "sequence": [
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_SHIN_TOSU",
+              "STN_JR_KYUSHU_HIZEN_FUMOTO",
+              "STN_JR_KYUSHU_NAKABARU",
+              "STN_JR_KYUSHU_YOSHINOGARI_KOEN",
+              "STN_JR_KYUSHU_KANZAKI",
+              "STN_JR_KYUSHU_IGAYA",
+              "STN_JR_KYUSHU_SAGA",
+              "STN_JR_KYUSHU_NABESHIMA",
+              "STN_JR_KYUSHU_BALLOON_SAGA",
+              "STN_JR_KYUSHU_KUBOTA",
+              "STN_JR_KYUSHU_USHIZU",
+              "STN_JR_KYUSHU_KOHOKU",
+              "STN_JR_KYUSHU_HIZEN_SHIROISHI",
+              "STN_JR_KYUSHU_HIZEN_RYUO",
+              "STN_JR_KYUSHU_HIZEN_KASHIMA",
+              "STN_JR_KYUSHU_HIZEN_HAMA",
+              "STN_JR_KYUSHU_HIZEN_NANAURA",
+              "STN_JR_KYUSHU_HIZEN_IIDA",
+              "STN_JR_KYUSHU_TARA",
+              "STN_JR_KYUSHU_HIZEN_OURA",
+              "STN_JR_KYUSHU_KONAGAI",
+              "STN_JR_KYUSHU_NAGASATO",
+              "STN_JR_KYUSHU_YUE",
+              "STN_JR_KYUSHU_OE",
+              "STN_JR_KYUSHU_HIZEN_NAGATA",
+              "STN_JR_KYUSHU_HIGASHI_ISAHAYA",
+              "STN_JR_KYUSHU_ISAHAYA",
+              "STN_JR_KYUSHU_NISHI_ISAHAYA",
+              "STN_JR_KYUSHU_KIKITSU",
+              "STN_JR_KYUSHU_NEWHIGASHISONO",
+              "STN_JR_KYUSHU_OKUSA",
+              "STN_JR_KYUSHU_HONKAWACHI",
+              "STN_JR_KYUSHU_NAGAYO",
+              "STN_JR_KYUSHU_KODA",
+              "STN_JR_KYUSHU_MICHINOO",
+              "STN_JR_KYUSHU_NISHI_URAKAMI",
+              "STN_JR_KYUSHU_URAKAMI",
+              "STN_JR_KYUSHU_NAGASAKI"
+            ]
+          }
+        ]
       },
       {
         "id": "JR_KYUSHU_CHIKUHI",
@@ -4749,6 +4844,55 @@
         "lng": "130.767435",
         "name": "船尾",
         "company_id": "JR_KYUSHU"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NEWHIGASHISONO",
+        "company_id": "JR_KYUSHU",
+        "name": "東園",
+        "lat": "32.846497",
+        "lng": "129.96055"
+      },
+      {
+        "id": "STN_JR_KYUSHU_OKUSA",
+        "company_id": "JR_KYUSHU",
+        "name": "大草",
+        "lat": "32.860108",
+        "lng": "129.938342"
+      },
+      {
+        "id": "STN_JR_KYUSHU_HONKAWACHI",
+        "company_id": "JR_KYUSHU",
+        "name": "本川内",
+        "lat": "32.832722",
+        "lng": "129.899811"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NAGAYO",
+        "company_id": "JR_KYUSHU",
+        "name": "長与",
+        "lat": "32.818972",
+        "lng": "129.879444"
+      },
+      {
+        "id": "STN_JR_KYUSHU_KODA",
+        "company_id": "JR_KYUSHU",
+        "name": "高田",
+        "lat": "32.819475",
+        "lng": "129.869458"
+      },
+      {
+        "id": "STN_JR_KYUSHU_MICHINOO",
+        "company_id": "JR_KYUSHU",
+        "name": "道ノ尾",
+        "lat": "32.804397",
+        "lng": "129.852844"
+      },
+      {
+        "id": "STN_JR_KYUSHU_NISHI_URAKAMI",
+        "company_id": "JR_KYUSHU",
+        "name": "西浦上",
+        "lat": "32.790469",
+        "lng": "129.859008"
       }
     ],
     "trains": [
