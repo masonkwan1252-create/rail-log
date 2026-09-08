@@ -4296,6 +4296,9 @@ html, body {
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
     border: 1px solid color-mix(in srgb, var(--primary) 34%, var(--border));
     border-radius: 12px;
     background: color-mix(in srgb, var(--card) 96%, #fff);
@@ -4321,10 +4324,13 @@ html, body {
     font-size: 15px;
     font-weight: 700;
     line-height: 1.25;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .custom-datalist-option.is-active,
-.custom-datalist-option:active {
+.custom-datalist-option.is-pressing {
     background: color-mix(in srgb, var(--primary) 15%, transparent);
     color: var(--text);
 }
@@ -11510,26 +11516,27 @@ window.handleDatalistInputTap = function(input, event) {
     if (!input) return;
 
     const isAppleTouch = isAppleTouchDevice();
+    prepareCustomDatalistInput(input);
     focusInputSafely(input, false);
 
     if (isAppleTouch) {
-        prepareCustomDatalistInput(input);
         requestCustomDatalistFrame(() => showCustomDatalist(input));
         return;
     }
 
     if (typeof input.select === "function") input.select();
-    tryShowNativePicker(input);
 }
 
 const CUSTOM_DATALIST_LIMIT = 64;
+const CUSTOM_DATALIST_TAP_MOVE_LIMIT = 12;
 const customDatalistState = {
     input: null,
     menu: null,
     options: [],
     activeIndex: -1,
     committing: false,
-    setup: false
+    setup: false,
+    pointer: null
 };
 
 function customDatalistEnabled() {
@@ -11560,13 +11567,16 @@ function prepareCustomDatalistInput(input) {
     const listId = input.getAttribute("list") || input.dataset.nativeList;
     if (!listId) return false;
 
+    input.setAttribute("autocomplete", "off");
+
+    if (!customDatalistEnabled()) return true;
+
     input.dataset.nativeList = listId;
     input.dataset.customDatalist = "true";
-    input.setAttribute("autocomplete", "off");
     input.setAttribute("role", "combobox");
     input.setAttribute("aria-autocomplete", "list");
 
-    if (customDatalistEnabled() && input.hasAttribute("list")) {
+    if (input.hasAttribute("list")) {
         input.removeAttribute("list");
     }
 
@@ -11587,10 +11597,88 @@ function getCustomDatalistMenu() {
     menu.className = "custom-datalist-menu";
     menu.setAttribute("role", "listbox");
     menu.setAttribute("aria-label", "Input suggestions");
-    menu.addEventListener("pointerdown", event => event.preventDefault());
+    menu.addEventListener("pointerdown", handleCustomDatalistPointerDown, { passive: false });
+    menu.addEventListener("pointermove", handleCustomDatalistPointerMove, { passive: true });
+    menu.addEventListener("pointerup", handleCustomDatalistPointerUp, { passive: false });
+    menu.addEventListener("pointercancel", clearCustomDatalistPointerState, { passive: true });
+    menu.addEventListener("scroll", markCustomDatalistPointerAsMoved, { passive: true });
     document.body.appendChild(menu);
     customDatalistState.menu = menu;
     return menu;
+}
+
+function getCustomDatalistOptionFromTarget(target) {
+    if (!(target instanceof Element)) return null;
+    const option = target.closest(".custom-datalist-option");
+    const menu = customDatalistState.menu;
+    return option && menu?.contains(option) ? option : null;
+}
+
+function clearCustomDatalistPointerState() {
+    customDatalistState.pointer?.option?.classList.remove("is-pressing");
+    customDatalistState.pointer = null;
+}
+
+function markCustomDatalistPointerAsMoved() {
+    if (!customDatalistState.pointer) return;
+    customDatalistState.pointer.moved = true;
+    customDatalistState.pointer.option?.classList.remove("is-pressing");
+}
+
+function getPointerMovedTooFar(pointerState, event) {
+    const dx = Math.abs(event.clientX - pointerState.startX);
+    const dy = Math.abs(event.clientY - pointerState.startY);
+    const scrolled = Math.abs((customDatalistState.menu?.scrollTop || 0) - pointerState.startScrollTop) > 2;
+    return pointerState.moved || dx > CUSTOM_DATALIST_TAP_MOVE_LIMIT || dy > CUSTOM_DATALIST_TAP_MOVE_LIMIT || scrolled;
+}
+
+function handleCustomDatalistPointerDown(event) {
+    const option = getCustomDatalistOptionFromTarget(event.target);
+    if (event.pointerType === "mouse") {
+        event.preventDefault();
+    }
+
+    clearCustomDatalistPointerState();
+
+    if (!option) return;
+
+    customDatalistState.pointer = {
+        pointerId: event.pointerId,
+        option,
+        value: option.dataset.value || option.textContent || "",
+        startX: event.clientX,
+        startY: event.clientY,
+        startScrollTop: customDatalistState.menu?.scrollTop || 0,
+        moved: false
+    };
+
+    option.classList.add("is-pressing");
+}
+
+function handleCustomDatalistPointerMove(event) {
+    const pointerState = customDatalistState.pointer;
+    if (!pointerState || pointerState.pointerId !== event.pointerId) return;
+
+    if (getPointerMovedTooFar(pointerState, event)) {
+        markCustomDatalistPointerAsMoved();
+    }
+}
+
+function handleCustomDatalistPointerUp(event) {
+    const pointerState = customDatalistState.pointer;
+    if (!pointerState || pointerState.pointerId !== event.pointerId) return;
+
+    const shouldCommit = !getPointerMovedTooFar(pointerState, event);
+    const endTarget = document.elementFromPoint(event.clientX, event.clientY);
+    const endOption = getCustomDatalistOptionFromTarget(endTarget);
+    const value = pointerState.value;
+
+    clearCustomDatalistPointerState();
+
+    if (!shouldCommit || endOption !== pointerState.option) return;
+
+    event.preventDefault();
+    commitCustomDatalistValue(value);
 }
 
 function normalizeCustomDatalistText(value) {
@@ -11698,15 +11786,12 @@ function renderCustomDatalistMenu(input, matches) {
     menu.replaceChildren();
 
     matches.forEach((value, index) => {
-        const option = document.createElement("button");
-        option.type = "button";
+        const option = document.createElement("div");
         option.className = "custom-datalist-option";
         option.textContent = value;
+        option.dataset.value = value;
+        option.tabIndex = -1;
         option.setAttribute("role", "option");
-        option.addEventListener("pointerdown", event => {
-            event.preventDefault();
-            commitCustomDatalistValue(value);
-        });
         menu.appendChild(option);
     });
 
