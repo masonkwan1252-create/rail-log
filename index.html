@@ -4267,6 +4267,75 @@ html, body {
     }
 }
 
+/* iOS uses a real in-page menu because Safari shows datalist choices above the keyboard. */
+.design2-form-card input[data-custom-datalist="true"] {
+    padding-right: 56px !important;
+}
+
+.design2-form-card .input-wrapper:has(input[data-custom-datalist="true"])::after {
+    content: "⌄" !important;
+    position: absolute !important;
+    right: 33px !important;
+    top: 50% !important;
+    transform: translateY(-54%) !important;
+    color: var(--primary) !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    opacity: 0.92 !important;
+    pointer-events: none !important;
+    background: transparent !important;
+}
+
+.custom-datalist-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    display: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid color-mix(in srgb, var(--primary) 34%, var(--border));
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--card) 96%, #fff);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
+    padding: 6px;
+}
+
+.custom-datalist-menu.active {
+    display: block;
+}
+
+.custom-datalist-option {
+    width: 100%;
+    min-height: 40px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text);
+    display: block;
+    padding: 9px 11px;
+    text-align: left;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.custom-datalist-option.is-active,
+.custom-datalist-option:active {
+    background: color-mix(in srgb, var(--primary) 15%, transparent);
+    color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+    .custom-datalist-menu {
+        background: color-mix(in srgb, var(--card) 94%, #111);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.46);
+    }
+}
+
 
 /* ===== V0.36 Desktop Layout =====
    Mobile keeps the existing one-column app. Desktop becomes a wide rail-control workspace. */
@@ -11444,13 +11513,340 @@ window.handleDatalistInputTap = function(input, event) {
     focusInputSafely(input, false);
 
     if (isAppleTouch) {
-        tryShowNativePicker(input);
+        prepareCustomDatalistInput(input);
+        requestCustomDatalistFrame(() => showCustomDatalist(input));
         return;
     }
 
     if (typeof input.select === "function") input.select();
     tryShowNativePicker(input);
 }
+
+const CUSTOM_DATALIST_LIMIT = 64;
+const customDatalistState = {
+    input: null,
+    menu: null,
+    options: [],
+    activeIndex: -1,
+    committing: false,
+    setup: false
+};
+
+function customDatalistEnabled() {
+    return isAppleTouchDevice();
+}
+
+function requestCustomDatalistFrame(callback) {
+    if (typeof window.requestAnimationFrame === "function") {
+        window.requestAnimationFrame(callback);
+        return;
+    }
+
+    setTimeout(callback, 0);
+}
+
+function getCustomDatalistInputFromTarget(target) {
+    if (!(target instanceof Element)) return null;
+    return target.closest("input[list], input[data-native-list]");
+}
+
+function getCustomDatalistListId(input) {
+    return input?.dataset?.nativeList || input?.getAttribute?.("list") || "";
+}
+
+function prepareCustomDatalistInput(input) {
+    if (!input || input.tagName !== "INPUT") return false;
+
+    const listId = input.getAttribute("list") || input.dataset.nativeList;
+    if (!listId) return false;
+
+    input.dataset.nativeList = listId;
+    input.dataset.customDatalist = "true";
+    input.setAttribute("autocomplete", "off");
+    input.setAttribute("role", "combobox");
+    input.setAttribute("aria-autocomplete", "list");
+
+    if (customDatalistEnabled() && input.hasAttribute("list")) {
+        input.removeAttribute("list");
+    }
+
+    return true;
+}
+
+function prepareCustomDatalistInputs(root = document) {
+    root.querySelectorAll?.("input[list], input[data-native-list]").forEach(input => {
+        prepareCustomDatalistInput(input);
+    });
+}
+
+function getCustomDatalistMenu() {
+    if (customDatalistState.menu) return customDatalistState.menu;
+
+    const menu = document.createElement("div");
+    menu.id = "customDatalistMenu";
+    menu.className = "custom-datalist-menu";
+    menu.setAttribute("role", "listbox");
+    menu.setAttribute("aria-label", "Input suggestions");
+    menu.addEventListener("pointerdown", event => event.preventDefault());
+    document.body.appendChild(menu);
+    customDatalistState.menu = menu;
+    return menu;
+}
+
+function normalizeCustomDatalistText(value) {
+    return String(value || "").trim().toLowerCase();
+}
+
+function getCustomDatalistValues(input) {
+    const listId = getCustomDatalistListId(input);
+    const list = listId ? document.getElementById(listId) : null;
+    if (!list) return [];
+
+    const seen = new Set();
+    const values = [];
+
+    [...list.querySelectorAll("option")].forEach(option => {
+        const value = option.value || option.textContent || "";
+        const key = String(value).trim();
+        if (!key || seen.has(key)) return;
+        seen.add(key);
+        values.push(key);
+    });
+
+    return values;
+}
+
+function getCustomDatalistMatches(input) {
+    const query = normalizeCustomDatalistText(input.value);
+    const values = getCustomDatalistValues(input);
+
+    if (!query) return values.slice(0, CUSTOM_DATALIST_LIMIT);
+
+    const startsWith = [];
+    const contains = [];
+
+    values.forEach(value => {
+        const text = normalizeCustomDatalistText(value);
+        if (!text) return;
+        if (text.startsWith(query)) startsWith.push(value);
+        else if (text.includes(query)) contains.push(value);
+    });
+
+    return [...startsWith, ...contains].slice(0, CUSTOM_DATALIST_LIMIT);
+}
+
+function positionCustomDatalistMenu(input, menu) {
+    const anchor = input.closest(".input-wrapper") || input;
+    const rect = anchor.getBoundingClientRect();
+    const viewportHeight = window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight;
+    const viewportWidth = window.visualViewport?.width || window.innerWidth || document.documentElement.clientWidth;
+    const margin = 8;
+    const gap = 6;
+    const below = viewportHeight - rect.bottom - margin;
+    const above = rect.top - margin;
+    const placeAbove = below < 150 && above > below;
+    const available = Math.max(96, (placeAbove ? above : below) - gap);
+    const maxHeight = Math.min(280, available);
+    const width = Math.max(180, Math.min(rect.width, viewportWidth - margin * 2));
+    const left = Math.max(margin, Math.min(rect.left, viewportWidth - width - margin));
+    const top = placeAbove
+        ? Math.max(margin, rect.top - maxHeight - gap)
+        : Math.min(rect.bottom + gap, viewportHeight - maxHeight - margin);
+
+    menu.style.left = `${left}px`;
+    menu.style.top = `${top}px`;
+    menu.style.width = `${width}px`;
+    menu.style.maxHeight = `${maxHeight}px`;
+}
+
+function setCustomDatalistActiveIndex(index) {
+    const menu = customDatalistState.menu;
+    if (!menu) return;
+
+    const options = [...menu.querySelectorAll(".custom-datalist-option")];
+    if (!options.length) {
+        customDatalistState.activeIndex = -1;
+        return;
+    }
+
+    const next = Math.max(0, Math.min(index, options.length - 1));
+    customDatalistState.activeIndex = next;
+    options.forEach((option, optionIndex) => {
+        option.classList.toggle("is-active", optionIndex === next);
+    });
+    options[next]?.scrollIntoView({ block: "nearest" });
+}
+
+function commitCustomDatalistValue(value) {
+    const input = customDatalistState.input;
+    if (!input) return;
+
+    customDatalistState.committing = true;
+    try {
+        input.value = value;
+        hideCustomDatalist();
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+        focusInputSafely(input, false);
+    } finally {
+        customDatalistState.committing = false;
+    }
+}
+
+function renderCustomDatalistMenu(input, matches) {
+    const menu = getCustomDatalistMenu();
+    menu.replaceChildren();
+
+    matches.forEach((value, index) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.className = "custom-datalist-option";
+        option.textContent = value;
+        option.setAttribute("role", "option");
+        option.addEventListener("pointerdown", event => {
+            event.preventDefault();
+            commitCustomDatalistValue(value);
+        });
+        menu.appendChild(option);
+    });
+
+    customDatalistState.options = matches;
+    customDatalistState.activeIndex = matches.length ? 0 : -1;
+    if (matches.length) {
+        menu.firstElementChild?.classList.add("is-active");
+    }
+
+    return menu;
+}
+
+function showCustomDatalist(input) {
+    if (!customDatalistEnabled() || !prepareCustomDatalistInput(input)) return false;
+
+    const matches = getCustomDatalistMatches(input);
+    if (!matches.length) {
+        hideCustomDatalist();
+        return false;
+    }
+
+    customDatalistState.input = input;
+    const menu = renderCustomDatalistMenu(input, matches);
+    positionCustomDatalistMenu(input, menu);
+    menu.classList.add("active");
+    input.setAttribute("aria-expanded", "true");
+    return true;
+}
+
+function hideCustomDatalist() {
+    const input = customDatalistState.input;
+    if (input) input.setAttribute("aria-expanded", "false");
+
+    const menu = customDatalistState.menu;
+    if (menu) {
+        menu.classList.remove("active");
+        menu.replaceChildren();
+    }
+
+    customDatalistState.input = null;
+    customDatalistState.options = [];
+    customDatalistState.activeIndex = -1;
+}
+
+function refreshCustomDatalistForList(listId) {
+    if (customDatalistState.committing) return;
+
+    const input = customDatalistState.input || getCustomDatalistInputFromTarget(document.activeElement);
+    if (!input || getCustomDatalistListId(input) !== listId) return;
+
+    requestCustomDatalistFrame(() => showCustomDatalist(input));
+}
+
+function setupCustomDatalistInputs() {
+    if (customDatalistState.setup) return;
+    customDatalistState.setup = true;
+
+    prepareCustomDatalistInputs(document);
+
+    document.addEventListener("pointerdown", event => {
+        const menu = customDatalistState.menu;
+        if (menu && event.target instanceof Element && menu.contains(event.target)) return;
+
+        const input = getCustomDatalistInputFromTarget(event.target);
+        if (input) {
+            prepareCustomDatalistInput(input);
+            return;
+        }
+
+        hideCustomDatalist();
+    }, true);
+
+    document.addEventListener("focusin", event => {
+        const input = getCustomDatalistInputFromTarget(event.target);
+        if (!input || !customDatalistEnabled()) return;
+
+        requestCustomDatalistFrame(() => showCustomDatalist(input));
+    });
+
+    document.addEventListener("input", event => {
+        if (customDatalistState.committing) return;
+
+        const input = getCustomDatalistInputFromTarget(event.target);
+        if (!input || !customDatalistEnabled()) return;
+
+        requestCustomDatalistFrame(() => showCustomDatalist(input));
+    });
+
+    document.addEventListener("focusout", event => {
+        const input = getCustomDatalistInputFromTarget(event.target);
+        if (!input) return;
+
+        setTimeout(() => {
+            if (document.activeElement !== input) hideCustomDatalist();
+        }, 120);
+    });
+
+    document.addEventListener("keydown", event => {
+        const input = getCustomDatalistInputFromTarget(event.target);
+        if (!input || !customDatalistEnabled()) return;
+
+        const menu = customDatalistState.menu;
+        const menuOpen = !!menu?.classList.contains("active");
+
+        if (event.key === "ArrowDown") {
+            event.preventDefault();
+            if (!menuOpen) showCustomDatalist(input);
+            else setCustomDatalistActiveIndex(customDatalistState.activeIndex + 1);
+        } else if (event.key === "ArrowUp" && menuOpen) {
+            event.preventDefault();
+            setCustomDatalistActiveIndex(customDatalistState.activeIndex - 1);
+        } else if (event.key === "Enter" && menuOpen && customDatalistState.activeIndex >= 0) {
+            event.preventDefault();
+            commitCustomDatalistValue(customDatalistState.options[customDatalistState.activeIndex]);
+        } else if (event.key === "Escape" && menuOpen) {
+            event.preventDefault();
+            hideCustomDatalist();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (customDatalistState.input && customDatalistState.menu?.classList.contains("active")) {
+            positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
+        }
+    }, { passive: true });
+
+    window.addEventListener("scroll", () => {
+        if (customDatalistState.input && customDatalistState.menu?.classList.contains("active")) {
+            positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
+        }
+    }, { passive: true });
+
+    window.visualViewport?.addEventListener("resize", () => {
+        if (customDatalistState.input && customDatalistState.menu?.classList.contains("active")) {
+            positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
+        }
+    }, { passive: true });
+}
+
+setupCustomDatalistInputs();
 
 window.handleHistoryNativeDateChange = function(value) {
     if (!value) return;
@@ -11482,10 +11878,11 @@ window.clearInput = function(id) {
     const el = document.getElementById(id);
     if (el) {
         el.value = '';
-        el.dispatchEvent(new Event('input'));
+        el.dispatchEvent(new Event('input', { bubbles: true }));
         updateAllLoopDirectionUI();
         if (typeof syncAddOptionControls === "function") syncAddOptionControls();
         el.focus();
+        requestCustomDatalistFrame(() => showCustomDatalist(el));
     }
 }
 
@@ -11493,9 +11890,10 @@ window.clearSiblingInput = function(btn) {
     const input = btn.previousElementSibling;
     if (input) {
         input.value = '';
-        input.dispatchEvent(new Event('input'));
+        input.dispatchEvent(new Event('input', { bubbles: true }));
         if (typeof syncAddOptionControls === "function") syncAddOptionControls();
         input.focus();
+        requestCustomDatalistFrame(() => showCustomDatalist(input));
     }
 }
 
@@ -11755,6 +12153,7 @@ function fillList(listId, dataArray) {
     if(!list) return;
     list.innerHTML = "";
     dataArray.forEach(val => { list.appendChild(new Option(val)); });
+    refreshCustomDatalistForList(listId);
 }
 
 window.switchTab = function(tabId, navElement) {
@@ -11970,6 +12369,7 @@ function renderTrainDatalistOptions(trains, limit = 50) {
     values.forEach(value => fragment.appendChild(new Option(value)));
     list.replaceChildren(fragment);
     trainDatalistSignature = signature;
+    refreshCustomDatalistForList("trainList");
 }
 
 function getActiveTrainCompanyInputValue() {
@@ -12032,6 +12432,7 @@ window.updateLineList = function(compName, targetListId) {
     list.innerHTML = "";
     let linesToShow = compId ? db.lines.filter(l => l.company_id === compId) : db.lines;
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
+    refreshCustomDatalistForList(targetListId);
 }
 
 window.updateStationLists = function() {
@@ -12083,6 +12484,7 @@ function fillStationDatalist(listId, compId, lineInput) {
 
     stationsToShow = [...new Set(stationsToShow)];
     stationsToShow.forEach(s => list.appendChild(new Option(s._display)));
+    refreshCustomDatalistForList(listId);
 }
 
 window.addThrough = function() {
@@ -12128,6 +12530,7 @@ window.addThrough = function() {
     <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="removeThroughBlock(this)">移除此直通</button>
 `;
     document.getElementById("throughContainer").appendChild(div);
+    prepareCustomDatalistInputs(div);
     if(lastCompName) updateLineList(lastCompName, uniqueId);
     updateStationLists();
     updateThroughLoopDirectionUI(div);
@@ -14049,6 +14452,7 @@ window.autoFillThroughJunction = function(inputEl) {
         const display = getJunctionCandidateDisplay(candidate);
         if (display) junctionList.appendChild(new Option(display));
     });
+    refreshCustomDatalistForList(junctionList.id);
 
     const autoCandidate = getAutoJunctionCandidate(candidates);
     if (autoCandidate) {
