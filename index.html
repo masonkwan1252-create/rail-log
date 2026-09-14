@@ -14705,6 +14705,21 @@ function extractLinePartByStations(latlngs, fromStation, toStation, direction = 
     return latlngs.slice(start, end + 1);
 }
 
+function extractOrderedLinePartByStations(latlngs, fromStation, toStation) {
+    if (!Array.isArray(latlngs) || latlngs.length < 2) return [];
+
+    const fromPointIndex = findNearestPointIndex(latlngs, fromStation);
+    const toPointIndex = findNearestPointIndex(latlngs, toStation);
+    if (fromPointIndex === -1 || toPointIndex === -1) return [];
+    if (fromPointIndex === toPointIndex) return [latlngs[fromPointIndex]];
+
+    const start = Math.min(fromPointIndex, toPointIndex);
+    const end = Math.max(fromPointIndex, toPointIndex);
+    const part = latlngs.slice(start, end + 1);
+
+    return fromPointIndex > toPointIndex ? part.reverse() : part;
+}
+
 function stationPointDistanceSq(point, station) {
     if (!Array.isArray(point) || !station) return Infinity;
     const dLat = Number(point[0]) - Number(station.lat);
@@ -14732,6 +14747,33 @@ function scoreLinePartCandidate(part, fromStation, toStation) {
     const reverseScore = stationPointDistanceSq(first, toStation) + stationPointDistanceSq(last, fromStation);
 
     return Math.min(directScore, reverseScore);
+}
+
+function scoreOrderedLinePartCandidate(part, fromStation, toStation) {
+    if (!Array.isArray(part) || part.length < 2) return Infinity;
+
+    return stationPointDistanceSq(part[0], fromStation) +
+        stationPointDistanceSq(part[part.length - 1], toStation);
+}
+
+function extractBestOrderedLinePartByStations(lineParts, fromStation, toStation) {
+    if (!Array.isArray(lineParts) || lineParts.length === 0) return [];
+
+    const candidates = lineParts
+        .map(latlngs => extractOrderedLinePartByStations(latlngs, fromStation, toStation))
+        .filter(part => Array.isArray(part) && part.length >= 2);
+
+    if (candidates.length === 0) return [];
+
+    candidates.sort((a, b) => {
+        const scoreA = scoreOrderedLinePartCandidate(a, fromStation, toStation);
+        const scoreB = scoreOrderedLinePartCandidate(b, fromStation, toStation);
+
+        if (scoreA !== scoreB) return scoreA - scoreB;
+        return calculatePathLengthSqApprox(a) - calculatePathLengthSqApprox(b);
+    });
+
+    return candidates[0];
 }
 
 function getPathTraversalStationIds(path, fromId, toId, direction = "") {
@@ -14805,12 +14847,9 @@ function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, dire
         const segmentTo = maps.station[stationIds[i + 1]];
         if (!segmentFrom || !segmentTo) return [];
 
-        const pathGraphPart = pathGeometryLine
-            ? findShortestGeometryPath(pathGeometryLine, segmentFrom, segmentTo)
+        const pathPhysicalPart = pathGeometryLine
+            ? extractBestOrderedLinePartByStations(pathLineParts, segmentFrom, segmentTo)
             : [];
-        const pathPhysicalPart = pathGraphPart.length >= 2
-            ? pathGraphPart
-            : extractBestPhysicalLinePartByStations(pathLineParts, segmentFrom, segmentTo, "", null);
         const lineGraphPart = pathPhysicalPart.length >= 2
             ? []
             : findShortestGeometryPath(line, segmentFrom, segmentTo);
