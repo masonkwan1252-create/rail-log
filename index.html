@@ -13928,25 +13928,39 @@ function renderRideCategoryRatio() {
 function parseWKTMultiLineString(wkt) {
     if (!wkt || typeof wkt !== "string") return [];
 
-    const body = wkt
+    const text = wkt.trim();
+    const parseLineBody = (body) => body.split(",").map(pair => {
+        const [lng, lat] = pair.trim().split(/\s+/).map(Number);
+        return [lat, lng];
+    }).filter(p => Number.isFinite(p[0]) && Number.isFinite(p[1]));
+
+    if (/^LINESTRING\s*\(/i.test(text)) {
+        const body = text
+            .replace(/^LINESTRING\s*\(/i, "")
+            .replace(/\)\s*$/i, "");
+        const line = parseLineBody(body);
+        return line.length >= 2 ? [line] : [];
+    }
+
+    const body = text
         .replace(/^MULTILINESTRING\s*\(\(/i, "")
         .replace(/\)\)\s*$/i, "");
 
-    return body.split(/\),\s*\(/).map(line =>
-        line.split(",").map(pair => {
-            const [lng, lat] = pair.trim().split(/\s+/).map(Number);
-            return [lat, lng];
-        }).filter(p => Number.isFinite(p[0]) && Number.isFinite(p[1]))
-    ).filter(line => line.length >= 2);
+    return body.split(/\),\s*\(/).map(parseLineBody).filter(line => line.length >= 2);
+}
+
+function getGeometryWkt(source) {
+    const wkt = source?.geometry_wkt || source?.asWKT || source?.geometryWkt || source?.geometry || "";
+    return typeof wkt === "string" ? wkt.trim() : "";
 }
 
 function getLineGeometryCacheKey(line) {
-    const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
+    const wkt = getGeometryWkt(line);
     return `${line?.id || ""}:${wkt.length}:${wkt.slice(0, 32)}:${wkt.slice(-32)}`;
 }
 
 function getLineGeometryGraph(line) {
-    const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
+    const wkt = getGeometryWkt(line);
     if (!wkt) return null;
 
     const cacheKey = getLineGeometryCacheKey(line);
@@ -14191,14 +14205,16 @@ function getSequenceTraversalCandidate(sequence, fromId, toId, pathLike = {}, di
     fromIndices.forEach(fromIndex => {
         toIndices.forEach(toIndex => {
             if (!wrap) {
-                const startIndex = Math.min(fromIndex, toIndex);
-                const endIndex = Math.max(fromIndex, toIndex);
+                const step = fromIndex <= toIndex ? 1 : -1;
+                const distance = Math.abs(toIndex - fromIndex);
+                const expectedStep = direction === "reverse" ? -1 : 1;
+                const directionPenalty = step === expectedStep ? 0 : 0.05;
                 candidates.push({
-                    startIndex,
-                    endIndex,
-                    step: 1,
-                    distance: endIndex - startIndex,
-                    score: endIndex - startIndex,
+                    startIndex: fromIndex,
+                    endIndex: toIndex,
+                    step,
+                    distance,
+                    score: distance + directionPenalty,
                     wrap: false
                 });
                 return;
@@ -14761,6 +14777,16 @@ function appendGeometryPart(target, part) {
     return target;
 }
 
+function getPathGeometryLineObject(line, path) {
+    const wkt = getGeometryWkt(path);
+    if (!wkt) return null;
+
+    return {
+        id: `${line?.id || "line"}::path::${path?.id || path?.name || "geometry"}`,
+        geometry_wkt: wkt
+    };
+}
+
 function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, direction = "", line = null, pathId = "") {
     if (!line || !fromStation?.id || !toStation?.id) return [];
 
@@ -14770,6 +14796,8 @@ function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, dire
     const stationIds = getPathTraversalStationIds(path, fromStation.id, toStation.id, direction);
     if (stationIds.length < 2) return [];
 
+    const pathGeometryLine = getPathGeometryLineObject(line, path);
+    const pathLineParts = pathGeometryLine ? getLineGeometryParts(pathGeometryLine) : [];
     let points = [];
 
     for (let i = 0; i < stationIds.length - 1; i++) {
@@ -14777,10 +14805,20 @@ function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, dire
         const segmentTo = maps.station[stationIds[i + 1]];
         if (!segmentFrom || !segmentTo) return [];
 
-        const graphPart = findShortestGeometryPath(line, segmentFrom, segmentTo);
-        const physicalPart = graphPart.length >= 2
-            ? graphPart
-            : extractBestPhysicalLinePartByStations(allLineParts, segmentFrom, segmentTo, "", null);
+        const pathGraphPart = pathGeometryLine
+            ? findShortestGeometryPath(pathGeometryLine, segmentFrom, segmentTo)
+            : [];
+        const pathPhysicalPart = pathGraphPart.length >= 2
+            ? pathGraphPart
+            : extractBestPhysicalLinePartByStations(pathLineParts, segmentFrom, segmentTo, "", null);
+        const lineGraphPart = pathPhysicalPart.length >= 2
+            ? []
+            : findShortestGeometryPath(line, segmentFrom, segmentTo);
+        const physicalPart = pathPhysicalPart.length >= 2
+            ? pathPhysicalPart
+            : lineGraphPart.length >= 2
+                ? lineGraphPart
+                : extractBestPhysicalLinePartByStations(allLineParts, segmentFrom, segmentTo, "", null);
 
         if (!Array.isArray(physicalPart) || physicalPart.length < 2) return [];
         points = appendGeometryPart(points, physicalPart);
@@ -14973,7 +15011,7 @@ function escapeHtml(text) {
 }
 
 function getLineGeometryParts(line) {
-    const wkt = line?.geometry_wkt || line?.asWKT || line?.geometry || "";
+    const wkt = getGeometryWkt(line);
     if (!wkt) return [];
 
     const cacheKey = getLineGeometryCacheKey(line);
