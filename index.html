@@ -10713,6 +10713,8 @@ window.logout = async function () {
 };
 
 onAuthStateChanged(auth, async (user) => {
+    setRailLoaderPreset("auth");
+
     const authGuestView = document.getElementById("authGuestView");
     const authUserView = document.getElementById("authUserView");
     const authUserEmail = document.getElementById("authUserEmail");
@@ -10726,6 +10728,7 @@ onAuthStateChanged(auth, async (user) => {
         if (authLoginStateBadge) authLoginStateBadge.textContent = "已登入";
         if (authUserEmail) authUserEmail.textContent = user.email || "";
 
+        setRailLoaderPreset("tripsCloud");
         subscribeTrips();
 
         closeAuthForm();
@@ -10745,7 +10748,20 @@ onAuthStateChanged(auth, async (user) => {
         }
 
         trips = getLocalTripsForMigration();
-        render();
+        setRailLoaderPreset("tripsLocal", {
+            status: trips.length > 0
+                ? `已讀取 ${trips.length} 筆本機乘車記録，正在準備畫面...`
+                : "未登入雲端，使用本機乘車記録準備畫面..."
+        });
+        markBootstrapTaskReady("trips");
+
+        if (isAppDataReady) {
+            if (typeof clearRiddenSegmentKeySetCache === "function") {
+                clearRiddenSegmentKeySetCache();
+            }
+            render();
+            updateStationLists();
+        }
 
         closeAuthForm();
     }
@@ -11051,6 +11067,123 @@ if (safariColorSchemeMedia.addEventListener) {
 // =========================================
 // V0.21 E235系 Loading 頁面控制邏輯
 // =========================================
+const RAIL_LOADER_STAGE_PRESETS = {
+    start: {
+        code: "JY 00",
+        zh: "讀取資料",
+        en: "Loading Rail Log...",
+        progress: 0.08,
+        status: "正在確認登入狀態與本機資料..."
+    },
+    auth: {
+        code: "JY 00",
+        zh: "確認記録",
+        en: "Checking Trip Records...",
+        progress: 0.16,
+        status: "正在確認登入狀態..."
+    },
+    dbFetch: {
+        code: "JY 01",
+        zh: "準備路線資料",
+        en: "Preparing Railway Database...",
+        progress: 0.24,
+        status: "正在讀取各公司路線、車站與車両資料..."
+    },
+    tripsCloud: {
+        code: "JY 02",
+        zh: "同步乘車記録",
+        en: "Syncing Trip Records...",
+        progress: 0.36,
+        status: "正在同步雲端乘車記録..."
+    },
+    tripsLocal: {
+        code: "JY 02",
+        zh: "讀取本機記録",
+        en: "Loading Local Records...",
+        progress: 0.42,
+        status: "正在讀取本機乘車記録..."
+    },
+    dbParse: {
+        code: "JY 03",
+        zh: "整理路線資料",
+        en: "Organising Rail Data...",
+        progress: 0.56,
+        status: "正在整理公司、路線、車站與車両索引..."
+    },
+    dbIndex: {
+        code: "JY 04",
+        zh: "建立地図資料",
+        en: "Building Map Index...",
+        progress: 0.70,
+        status: "正在建立地圖、統計與完成率索引..."
+    },
+    tripsReady: {
+        code: "JY 05",
+        zh: "整理乘車記録",
+        en: "Preparing Trip Records...",
+        progress: 0.80,
+        status: "乘車記録已讀取，正在準備畫面..."
+    },
+    rendering: {
+        code: "JY 06",
+        zh: "建立畫面",
+        en: "Rendering Rail Log...",
+        progress: 0.92,
+        status: "正在建立乘車記録、統計、相冊與成就..."
+    },
+    ready: {
+        code: "JY RL",
+        zh: "鉄道手帳",
+        en: "RAIL LOG",
+        progress: 1,
+        status: "資料載入完成，準備出發。"
+    }
+};
+
+let railLoaderController = null;
+let railLoaderPendingStage = null;
+let railLoaderCurrentProgress = 0;
+
+function setRailLoaderStage(stage = {}) {
+    const nextStage = {
+        ...RAIL_LOADER_STAGE_PRESETS.start,
+        ...stage
+    };
+
+    const progress = Number(nextStage.progress);
+    if (Number.isFinite(progress)) {
+        railLoaderCurrentProgress = Math.max(
+            railLoaderCurrentProgress,
+            Math.max(0, Math.min(progress, 1))
+        );
+        nextStage.progress = railLoaderCurrentProgress;
+    }
+
+    if (railLoaderController) {
+        railLoaderController.setStage(nextStage);
+    } else {
+        railLoaderPendingStage = nextStage;
+    }
+}
+
+function setRailLoaderPreset(name, overrides = {}) {
+    setRailLoaderStage({
+        ...(RAIL_LOADER_STAGE_PRESETS[name] || RAIL_LOADER_STAGE_PRESETS.start),
+        ...overrides
+    });
+}
+
+function waitForRailLoaderPaint() {
+    return new Promise(resolve => {
+        if (typeof requestAnimationFrame !== "function") {
+            setTimeout(resolve, 0);
+            return;
+        }
+
+        requestAnimationFrame(() => requestAnimationFrame(resolve));
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 const stationFade = document.getElementById("e235-station-fade");
 const clockDisplay = document.getElementById("e235-clock");
@@ -11081,38 +11214,7 @@ let loaderSlideTimer = null;
     updateClock();
     const clockInterval = setInterval(updateClock, 1000);
 
-    const loadingStages = [
-        {
-            code: "JY 00",
-            zh: "讀取乘車記錄",
-            en: "Loading Trip Records...",
-            progress: 0.08,
-            status: "正在讀取本地與雲端資料..."
-        },
-        {
-            code: "JY 01",
-            zh: "準備路線資料",
-            en: "Preparing Railway Database...",
-            progress: 0.38,
-            status: "正在整理公司、路線、車站資料..."
-        },
-        {
-            code: "JY 02",
-            zh: "載入地圖與統計",
-            en: "Preparing Maps and Stats...",
-            progress: 0.70,
-            status: "正在建立地圖、統計、相冊與成就資料..."
-        },
-        {
-            code: "JY RL",
-            zh: "鉄道手帳",
-            en: "RAIL LOG",
-            progress: 1,
-            status: "列車即將到站，請稍候。"
-        }
-    ];
-
-    let currentStage = 0;
+    const loadingStages = [RAIL_LOADER_STAGE_PRESETS.start];
 
     function placeTrainAndFill(progress) {
         const track = document.querySelector(".e235-arrival-track-wrap");
@@ -11216,7 +11318,6 @@ function updateLoaderStage(stage) {
     }
 
 function finishLoadingAnimation() {
-        if (stationCode) stationCode.classList.add("is-arrived");
         isLoaderAnimationDone = true;
         tryEnterMainApp();
     }
@@ -11238,32 +11339,100 @@ progressTextB.className = "e235-arrival-status-text pos-below";
     placeTrainAndFill(loadingStages[0].progress);
     if (stationCode) stationCode.textContent = loadingStages[0].code;
 
-    const stepDurations = [600, 700, 800, 900];
-    let totalDelay = 0;
+    railLoaderController = {
+        setStage: updateLoaderStage,
+        stop: () => clearInterval(clockInterval)
+    };
 
-    loadingStages.slice(1).forEach((stage, index) => {
-        totalDelay += stepDurations[index] || 1300;
-
-        setTimeout(() => {
-            updateLoaderStage(stage);
-        }, totalDelay);
-    });
+    if (railLoaderPendingStage) {
+        const pendingStage = railLoaderPendingStage;
+        railLoaderPendingStage = null;
+        updateLoaderStage(pendingStage);
+    }
 
     setTimeout(() => {
-        clearInterval(clockInterval);
-
-        // 最後站多停頓 700ms，模擬進站顯示器停留
-        setTimeout(() => {
-            finishLoadingAnimation();
-        }, 700);
-    }, totalDelay + 200);
+        finishLoadingAnimation();
+    }, 900);
 });
 
 let isAppDataReady = false;
 let isLoaderAnimationDone = false;
+let hasEnteredMainApp = false;
+let bootstrapRailDbReady = false;
+let bootstrapTripsReady = false;
+let bootstrapFinalizeStarted = false;
+
+function markBootstrapTaskReady(taskName) {
+    if (taskName === "railDb") bootstrapRailDbReady = true;
+    if (taskName === "trips") bootstrapTripsReady = true;
+
+    finalizeAppBootstrap();
+}
+
+function reconcileTripTrainIds() {
+    let dataModified = false;
+
+    trips.forEach(t => {
+        if (!t || maps.train[t.train_id]) return;
+
+        let realId = resolve.train[t.train_id];
+
+        if (!realId) {
+            const cleanName = String(t.train_id || "").replace(/\s*\(.*?\)$/, "").trim();
+            const found = db.trains.find(tr => tr.name === cleanName || tr._display === t.train_id);
+            if (found) realId = found.id;
+        }
+
+        if (realId) {
+            t.train_id = realId;
+            dataModified = true;
+        }
+    });
+
+    if (dataModified) {
+        localStorage.setItem("railTrips_V2", JSON.stringify(trips));
+    }
+}
+
+async function finalizeAppBootstrap() {
+    if (bootstrapFinalizeStarted || isAppDataReady) return;
+    if (!bootstrapRailDbReady || !bootstrapTripsReady) return;
+
+    bootstrapFinalizeStarted = true;
+    setRailLoaderPreset("rendering");
+
+    try {
+        trips = trips.map(normalizeTrip);
+        reconcileTripTrainIds();
+
+        if (typeof clearRiddenSegmentKeySetCache === "function") {
+            clearRiddenSegmentKeySetCache();
+        }
+
+        render();
+        updateStationLists();
+
+        if (typeof renderGallery === "function") renderGallery();
+        if (typeof renderAchievements === "function") renderAchievements();
+    } catch (error) {
+        console.error("首次畫面建立失敗", error);
+        if (typeof showToast === "function") {
+            showToast("部分畫面建立失敗，請稍後重新整理", "var(--danger)");
+        }
+    }
+
+    await waitForRailLoaderPaint();
+
+    setRailLoaderPreset("ready");
+    isAppDataReady = true;
+    tryEnterMainApp();
+}
 
 function tryEnterMainApp() {
-    if (!isAppDataReady || !isLoaderAnimationDone) return;
+    if (!isAppDataReady || !isLoaderAnimationDone || hasEnteredMainApp) return;
+    hasEnteredMainApp = true;
+    setRailLoaderPreset("ready");
+    if (railLoaderController?.stop) railLoaderController.stop();
 
     const loader = document.getElementById("loading-screen");
     const app = document.getElementById("main-app");
@@ -11329,7 +11498,11 @@ function subscribeTrips() {
     const user = auth.currentUser;
     if (!user) {
         trips = [];
-        render();
+        markBootstrapTaskReady("trips");
+        if (isAppDataReady) {
+            render();
+            updateStationLists();
+        }
         return;
     }
 
@@ -11342,6 +11515,8 @@ function subscribeTrips() {
         collection(dbCloud, "users", user.uid, "trips"),
         orderBy("date", "desc")
     );
+
+    setRailLoaderPreset("tripsCloud");
 
     unsubscribeTrips = onSnapshot(q, (snapshot) => {
         tripSnapshotCounter = 0;
@@ -11357,11 +11532,29 @@ function subscribeTrips() {
             });
         });
 
+        if (typeof clearRiddenSegmentKeySetCache === "function") {
+            clearRiddenSegmentKeySetCache();
+        }
+
+        if (!bootstrapTripsReady) {
+            setRailLoaderPreset("tripsReady", {
+                status: `已同步 ${trips.length} 筆乘車記録，正在準備畫面...`
+            });
+            markBootstrapTaskReady("trips");
+            return;
+        }
+
         render();
         updateStationLists();
     }, (error) => {
         console.error(error);
         showToast("讀取雲端資料失敗", "var(--danger)");
+        if (!bootstrapTripsReady) {
+            setRailLoaderPreset("tripsReady", {
+                status: "雲端乘車記録暫時未能讀取，先以現有資料開啟..."
+            });
+            markBootstrapTaskReady("trips");
+        }
     });
 }
 let editIndex = null;
@@ -12064,6 +12257,8 @@ function hideLoadingScreen() {
 
 async function loadData() {
     try {
+        setRailLoaderPreset("dbFetch");
+
         db.companies = [];
         db.lines = [];
         db.stations = [];
@@ -12087,6 +12282,8 @@ async function loadData() {
         
         const fetchPromises = newCompanyFiles.map(file => fetch(file).then(res => res.ok ? res.json() : null).catch(() => null));
         const results = await Promise.all(fetchPromises);
+
+        setRailLoaderPreset("dbParse");
         
         const loadedCompanyIds = new Set();
 
@@ -12148,42 +12345,21 @@ async function loadData() {
         });
 
     } catch (e) { 
-        console.log("資料庫載入失敗。", e); 
+        console.log("資料庫載入失敗。", e);
+        setRailLoaderStage({
+            code: "JY ER",
+            zh: "資料載入失敗",
+            en: "Railway Data Error",
+            progress: 0.62,
+            status: "部分路線資料未能讀取，正在以可用資料開啟..."
+        });
     } 
     finally {
-buildMaps();
-buildRailSegmentUsageIndex();
-initUILists();
-
-trips = trips.map(normalizeTrip);
-
-render();
-console.log("目前 trips:", trips);
-trips.forEach((t, i) => {
-    if (!Array.isArray(t.routes)) {
-        console.log("第 " + i + " 筆資料 routes 有問題：", t);
-    }
-});
-updateStationLists();
-
-        let dataModified = false;
-        trips.forEach(t => {
-            if (!maps.train[t.train_id]) {
-                let realId = resolve.train[t.train_id];
-                if (!realId) {
-                    let cleanName = t.train_id.replace(/\s*\(.*?\)$/, '').trim();
-                    let found = db.trains.find(tr => tr.name === cleanName || tr._display === t.train_id);
-                    if (found) realId = found.id;
-                }
-                if (realId) { t.train_id = realId; dataModified = true; }
-            }
-        });
-        
-        if (dataModified) localStorage.setItem("railTrips_V2", JSON.stringify(trips));
-
-        render(); updateStationLists();
-        isAppDataReady = true;
-    tryEnterMainApp();
+        setRailLoaderPreset("dbIndex");
+        buildMaps();
+        buildRailSegmentUsageIndex();
+        initUILists();
+        markBootstrapTaskReady("railDb");
     }
 }
 
