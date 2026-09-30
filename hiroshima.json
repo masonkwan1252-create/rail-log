@@ -280,8 +280,7 @@
           "STN_HIROSHIMA_CHUDEN_MAE",
           "STN_HIROSHIMA_SHIYAKUSHO_MAE",
           "STN_HIROSHIMA_TAKANOBASHI",
-          "STN_HIROSHIMA_NISSEKI_BYOIN_MAE",
-          "STN_HIROSHIMA_HIRODEN_HONSHA_MAE"
+          "STN_HIROSHIMA_NISSEKI_BYOIN_MAE"
         ],
         "company_id": "HIROSHIMA",
         "color": "#763d8c",

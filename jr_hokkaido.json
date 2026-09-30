@@ -2694,6 +2694,12 @@
         "name": "737系",
         "variants": []
       },
+	  {
+        "id": "TRN_JR_HOKKAIDO_739",
+        "company_id": "JR_HOKKAIDO",
+        "name": "739系",
+        "variants": []
+      },
       {
         "id": "TRN_JR_HOKKAIDO_KIHA261",
         "company_id": "JR_HOKKAIDO",
