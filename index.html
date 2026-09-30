@@ -1249,8 +1249,50 @@ header { background: linear-gradient(135deg, #ddd 0%, #aaa 100%); padding: calc(
 .sign-main-content { margin: 0px 5px 0px 0px; text-align: center; align-self: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: #001f5c; flex: 1; }
 .sign-destination-text { font-size: clamp(20px, 6vw, 25px); font-weight: 800; line-height: 1; letter-spacing: 0.2em; margin: 0; width: 100%; }
 .sign-english-text { font-size: clamp(10px, 3vw, 13px); width: 100%; margin: 0; line-height: 1; text-align-last: center; font-weight: 800; letter-spacing: 0.3em; }
-.toast-message { display: none; position: fixed; top: calc(75px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; z-index: 2000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: fadeInOut 2.5s ease; }
-@keyframes fadeInOut { 0% { opacity: 0; transform: translate(-50%, -10px); } 10% { opacity: 1; transform: translate(-50%, 0); } 90% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, -10px); } }
+.toast-message {
+    display: none;
+    position: fixed;
+    top: var(--toast-top, calc(96px + env(safe-area-inset-top)));
+    left: 50%;
+    width: min(var(--toast-width, 250px), calc(100vw - 20px));
+    min-height: 38px;
+    transform: translateX(-50%);
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    overflow: hidden;
+    border: 1px solid #3c423b;
+    border-radius: 4px;
+    background: #10130f;
+    color: #8cff3f;
+    font-family: "MS Gothic", "Cascadia Mono", "SFMono-Regular", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-shadow: 0 0 2px #8cff3f, 0 0 7px rgba(140,255,63,.72);
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+    z-index: 2700;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), inset 0 -8px 16px rgba(0,0,0,.32), 0 5px 14px rgba(0,0,0,.22);
+}
+.toast-message::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .17;
+    background-image: radial-gradient(circle, rgba(210,255,164,.52) .55px, transparent .75px);
+    background-size: 4px 4px;
+}
+.toast-message.is-visible { display: flex; animation: ledBoardInOut var(--toast-duration, 2.45s) ease both; }
+.toast-led-code { position: relative; z-index: 1; flex: 0 0 auto; color: inherit; font-size: 10px; font-weight: 900; white-space: nowrap; }
+.toast-led-text { position: relative; z-index: 1; flex: 1 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; color: inherit; }
+.toast-led-text-track { display: inline-block; min-width: max-content; white-space: nowrap; transform: translateX(0); }
+.toast-message.is-error { color: #ff4b40; border-color: #57302d; text-shadow: 0 0 2px #ff4b40, 0 0 7px rgba(255,75,64,.74); }
+.toast-message.is-warning { color: #ffae32; border-color: #5b4b28; text-shadow: 0 0 2px #ffae32, 0 0 7px rgba(255,174,50,.74); }
+@keyframes ledBoardInOut { 0% { opacity: 0; transform: translate(-50%, -5px) scaleY(.86); } 10% { opacity: 1; transform: translate(-50%, 0) scaleY(1); } 86% { opacity: 1; transform: translate(-50%, 0) scaleY(1); } 100% { opacity: 0; transform: translate(-50%, -3px) scaleY(.94); } }
+@media (max-width: 520px) { .toast-message { min-height: 36px; padding: 5px 9px; gap: 8px; font-size: 12px; } .toast-led-code { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { .toast-message.is-visible { animation: none; } }
 .version-badge { position: fixed; bottom: calc(env(safe-area-inset-bottom) + 65px); right: 8px; font-size: 10px; color: var(--subtext); background: var(--nav-bg); border: 1px solid var(--border); border-radius: 10px; padding: 2px 6px; z-index: 1001; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 
 .container {
@@ -4268,23 +4310,93 @@ html, body {
 }
 
 /* iOS uses a real in-page menu because Safari shows datalist choices above the keyboard. */
+.design2-form-card input[list],
 .design2-form-card input[data-custom-datalist="true"] {
-    padding-right: 56px !important;
+    padding-right: 66px !important;
 }
 
+.design2-form-card .clear-input-btn {
+    right: 6px !important;
+    top: 50% !important;
+    width: 26px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    z-index: 3 !important;
+    display: grid !important;
+    place-items: center !important;
+    color: var(--subtext) !important;
+    font-size: 12.5px !important;
+    line-height: 1 !important;
+    background: transparent !important;
+    transform: translateY(-50%) !important;
+    opacity: 0.72 !important;
+}
+
+.design2-form-card .clear-input-btn:hover,
+.design2-form-card .clear-input-btn:focus-visible {
+    color: var(--primary) !important;
+    background: transparent !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: translateY(-50%) !important;
+}
+
+.design2-form-card .clear-input-btn:active {
+    transform: translateY(calc(-50% + 1px)) !important;
+}
+
+.design2-form-card .input-wrapper:has(input[list])::after,
 .design2-form-card .input-wrapper:has(input[data-custom-datalist="true"])::after {
     content: "⌄" !important;
     position: absolute !important;
-    right: 33px !important;
+    right: 35px !important;
     top: 50% !important;
-    transform: translateY(-54%) !important;
-    color: var(--primary) !important;
-    font-size: 15px !important;
+    width: 22px !important;
+    height: 30px !important;
+    transform: translateY(-50%) !important;
+    color: color-mix(in srgb, var(--primary) 80%, var(--subtext)) !important;
+    font-size: 19px !important;
     font-weight: 900 !important;
     line-height: 1 !important;
-    opacity: 0.92 !important;
+    opacity: 0.76 !important;
     pointer-events: none !important;
+    display: grid !important;
+    place-items: center !important;
+    border: none !important;
+    border-radius: 0 !important;
     background: transparent !important;
+    box-shadow: none !important;
+}
+
+.design2-form-card .input-wrapper:has(input[list]):focus-within::after,
+.design2-form-card .input-wrapper:has(input[data-custom-datalist="true"]):focus-within::after {
+    opacity: 1 !important;
+    color: var(--primary) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: 0 0 6px rgba(99, 189, 15, 0.20) !important;
+}
+
+@media (max-width: 520px) {
+    .design2-form-card input[list],
+    .design2-form-card input[data-custom-datalist="true"] {
+        padding-right: 70px !important;
+    }
+
+    .design2-form-card .clear-input-btn {
+        right: 6px !important;
+        width: 28px !important;
+        height: 32px !important;
+    }
+
+    .design2-form-card .input-wrapper:has(input[list])::after,
+    .design2-form-card .input-wrapper:has(input[data-custom-datalist="true"])::after {
+        right: 38px !important;
+        width: 24px !important;
+        height: 32px !important;
+        font-size: 20px !important;
+    }
 }
 
 .custom-datalist-menu {
@@ -4304,6 +4416,9 @@ html, body {
     background: color-mix(in srgb, var(--card) 96%, #fff);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
     padding: 6px;
+    max-width: calc(100vw - 16px);
+    transform: translateZ(0);
+    will-change: left, top, width, max-height;
 }
 
 .custom-datalist-menu.active {
@@ -8154,6 +8269,40 @@ html, body {
     display: block !important;
 }
 
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(112px, 0.45fr) minmax(0, 1.55fr);
+    gap: 10px;
+    align-items: end;
+}
+
+.service-detail-item {
+    min-width: 0;
+}
+
+.service-detail-label {
+    display: block;
+    margin: 0 0 6px;
+    color: var(--subtext);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.service-type-panel.shinkansen-mode .service-type-field {
+    display: none;
+}
+
+.service-type-panel.shinkansen-mode .service-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 520px) {
+    .service-detail-grid {
+        grid-template-columns: minmax(96px, 0.45fr) minmax(0, 1.55fr);
+        gap: 8px;
+    }
+}
+
 .add-option-area .desktop-through-row {
     display: none !important;
     margin-top: 11px !important;
@@ -8171,6 +8320,30 @@ html, body {
 .add-option-area .desktop-through-container {
     margin-top: 0 !important;
 }
+
+.auto-service-through-summary {
+    display: none;
+    width: 100%;
+    min-height: 36px;
+    padding: 5px 2px 7px;
+    align-items: center;
+    gap: 9px;
+    border: 0;
+    border-bottom: 1px solid rgba(99, 189, 15, 0.42);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+    box-shadow: none;
+}
+.auto-service-through-summary.visible { display: flex; }
+.auto-service-through-summary:hover { transform: none; filter: none; background: rgba(99, 189, 15, 0.05); }
+.auto-service-through-mark { flex: 0 0 auto; width: 4px; height: 22px; background: var(--primary); }
+.auto-service-through-text { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 800; }
+.auto-service-through-count { flex: 0 0 auto; color: var(--primary); font-size: 11px; font-weight: 900; }
+.auto-service-through-chevron { flex: 0 0 auto; color: var(--subtext); font-size: 17px; transition: transform .16s ease; }
+.auto-service-through-summary[aria-expanded="true"] .auto-service-through-chevron { transform: rotate(90deg); }
+.add-option-area .desktop-through-container.auto-collapsed { display: none !important; }
 
 .add-option-area .other-train-panel .other-train-toggle {
     display: none !important;
@@ -9839,6 +10012,55 @@ body {
     }
 }
 
+#tab-history .trip-route-stack { min-width: 0; }
+#tab-history .trip-route-details { min-width: 0; font-size: 12px; font-weight: 400; }
+#tab-history .trip-route-details summary { cursor: pointer; color: var(--subtext); overflow-wrap: anywhere; line-height: 1.7; }
+#tab-history .trip-route-details summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+#tab-history .trip-route-count { color: var(--primary); font-weight: 600; }
+#tab-history .trip-route-timeline { margin: 8px 0 2px 8px; padding-left: 18px; border-left: 2px solid var(--border); display: grid; gap: 8px; list-style: none; }
+#tab-history .trip-route-timeline li { position: relative; overflow-wrap: anywhere; line-height: 1.5; }
+#tab-history .trip-route-timeline li::before { content: ''; position: absolute; left: -23px; top: 5px; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+#tab-history .trip-service-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+#tab-history .trip-route-stack.has-service-layout { display: flex; flex-direction: column; align-items: stretch; width: 100%; overflow: visible; }
+#tab-history .trip-service-layout { display: grid; grid-template-columns: fit-content(34%) minmax(0, 1fr); gap: 8px; align-items: start; align-content: start; min-width: 0; font-size: 12px; }
+#tab-history .trip-service-content { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 8px; }
+#tab-history .trip-service-content > .trip-route-details { max-width: 100%; }
+#tab-history .trip-service-content > details.trip-route-details[open] { flex-basis: 100%; width: 100%; }
+#tab-history .trip-service-label,
+#tab-history .trip-route-meta .trip-service-badge.trip-service-label {
+    display: inline-block; min-width: 0; max-width: 100%;
+    padding: 4px 8px !important; border-radius: 5px;
+    background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
+    border: 0 !important; box-shadow: none;
+    font-size: 14px !important; line-height: 1.45 !important; font-weight: 600;
+    white-space: normal; overflow-wrap: anywhere; word-break: normal;
+}
+#tab-history .trip-service-label .trip-service-type { color: #ff3b30; font-weight: 800; }
+#tab-history .trip-service-label .trip-service-name { color: var(--primary); }
+#tab-history .trip-service-operators { position: relative; display: inline-block; max-width: 100%; }
+#tab-history .trip-service-company-roll { display: inline-flex; align-items: baseline; gap: 5px; max-width: 100%; }
+#tab-history .trip-service-company-faces { display: inline-grid; min-width: 0; overflow: hidden; perspective: 180px; }
+#tab-history .trip-service-company-face { grid-area: 1 / 1; visibility: hidden; overflow-wrap: anywhere; }
+#tab-history .trip-service-company-face.is-current { visibility: inherit; }
+#tab-history .trip-service-company-count { color: var(--subtext); font-size: 10px; font-weight: 400; font-variant-numeric: tabular-nums; }
+#tab-history .trip-service-company-list {
+    display: grid; gap: 6px; color: var(--text);
+    font-size: inherit; line-height: 1.5; white-space: normal; overflow-wrap: anywhere;
+}
+#tab-history .trip-service-company-roll[hidden],
+#tab-history .trip-service-company-list[hidden] { display: none; }
+#tab-history .trip-service-operators { min-width: 0; padding-top: 4px; }
+#tab-history .trip-service-operators:has(.trip-service-company-roll) { display: inline-grid; }
+#tab-history .trip-service-company-roll,
+#tab-history .trip-service-company-list { grid-area: 1 / 1; }
+#tab-history .trip-service-operators.is-expanded .trip-service-company-roll { display: inline-flex; visibility: hidden; }
+@media (min-width: 701px) {
+    #tab-history .trip-route-details.mobile-route-fold:not([open]) summary { display: none; }
+    #tab-history .trip-route-details.mobile-route-fold:not([open]) { display: none; }
+}
+@media (max-width: 700px) {
+    #tab-history .trip-route-full-mobile { display: none; }
+}
 </style>
 </head>
 
@@ -10005,7 +10227,7 @@ body {
         <div class="header-band" onclick="scrollSign('next')" title="向下捲一格"></div>
     </header>
 
-    <div id="appToast" class="toast-message">通知</div>
+    <div id="appToast" class="toast-message" role="status" aria-live="polite"><span id="appToastCode" class="toast-led-code">処理完了</span><span id="appToastTextWindow" class="toast-led-text"><span id="appToastText" class="toast-led-text-track">通知</span></span></div>
     <div class="version-badge">V0.36</div>
 
     <div class="container">
@@ -10032,7 +10254,7 @@ body {
                     <div class="form-field">
                         <label>鉄道公司</label>
                         <div class="input-wrapper">
-                            <input id="company" list="companyList" placeholder="輸入公司" onclick="handleDatalistInputTap(this, event)">
+                            <input id="company" list="companyList" placeholder="輸入公司" required aria-required="true" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('company')">✕</button>
                         </div>
                     </div>
@@ -10040,7 +10262,7 @@ body {
                     <div class="form-field">
                         <label>路線</label>
                         <div class="input-wrapper">
-                            <input id="line" list="lineList" placeholder="輸入路線" onclick="handleDatalistInputTap(this, event)">
+                            <input id="line" list="lineList" placeholder="輸入路線" required aria-required="true" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('line')">✕</button>
                         </div>
                     </div>
@@ -10061,6 +10283,7 @@ body {
 
                 <div class="desktop-through-row">
                     <button class="btn-small btn-add" onclick="addThrough()">+ 新增直通</button>
+                    <button id="autoServiceThroughSummary" type="button" class="auto-service-through-summary" aria-expanded="false" onclick="toggleAutoServiceThroughDetails()"><span class="auto-service-through-mark" aria-hidden="true"></span><span id="autoServiceThroughText" class="auto-service-through-text"></span><span id="autoServiceThroughCount" class="auto-service-through-count"></span><span class="auto-service-through-chevron" aria-hidden="true">›</span></button>
                     <div id="throughContainer" class="desktop-through-container"></div>
                 </div>
                 </div>
@@ -10073,10 +10296,22 @@ body {
                         </div>
                 <div class="desktop-form-grid secondary-trip-grid">
                     <div class="form-field">
-                        <label>種別 / 列車名 (運行系統)</label>
-                        <div class="input-wrapper">
-                            <input id="serviceType" list="serviceTypeList" placeholder="例如：関空快速、新快速" onclick="handleDatalistInputTap(this, event)">
-                            <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
+                        <label>行車資料</label>
+                        <div class="service-detail-grid">
+                            <div class="service-detail-item service-type-field">
+                                <span class="service-detail-label">種別</span>
+                                <div class="input-wrapper">
+                                    <input id="serviceType" list="serviceTypeList" placeholder="選擇或自行輸入" onclick="handleDatalistInputTap(this, event)">
+                                    <button class="clear-input-btn" onclick="clearInput('serviceType')">✕</button>
+                                </div>
+                            </div>
+                            <div class="service-detail-item service-name-field">
+                                <span class="service-detail-label">列車名（可留空）</span>
+                                <div class="input-wrapper">
+                                    <input id="serviceName" list="serviceNameList" placeholder="例如：富士回遊" autocomplete="off" onclick="handleDatalistInputTap(this, event)">
+                                    <button class="clear-input-btn" onclick="clearInput('serviceName')">✕</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -10111,7 +10346,7 @@ body {
                     <div class="form-field">
                         <label>上車站</label>
                         <div class="input-wrapper">
-                            <input id="from" list="stationListFrom" placeholder="出發站" onclick="handleDatalistInputTap(this, event)">
+                            <input id="from" list="stationListFrom" placeholder="出發站" required aria-required="true" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('from')">✕</button>
                         </div>
                     </div>
@@ -10119,13 +10354,13 @@ body {
                     <div class="form-field">
                         <label>下車站</label>
                         <div class="input-wrapper">
-                            <input id="to" list="stationListTo" placeholder="到達站" onclick="handleDatalistInputTap(this, event)">
+                            <input id="to" list="stationListTo" placeholder="到達站" required aria-required="true" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('to')">✕</button>
                         </div>
                     </div>
 
                     <div class="form-field form-field-wide photo-field">
-                        <label style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">📸 附加照片 (選填)</label>
+                        <label style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">照片</label>
                         <div class="photo-upload-container">
                             <div class="photo-upload-box">
                                 <span style="font-size: 24px;">🚈</span>
@@ -10490,6 +10725,7 @@ body {
         <option value="大和路快速"></option>
         <option value="特急"></option>
     </datalist>
+    <datalist id="serviceNameList"></datalist>
 
 </div> 
 <div id="galleryPreviewModal" class="gallery-preview-modal" onclick="closeGalleryPreview()">
@@ -10591,6 +10827,9 @@ async function migrateLocalTripsToCloud(user) {
         await addDoc(tripsRef, {
             date: cleanTrip.date || "",
             serviceType: cleanTrip.serviceType || "",
+            serviceName: cleanTrip.serviceName || "",
+            service_id: cleanTrip.service_id || "",
+            service_pattern_id: cleanTrip.service_pattern_id || "",
             routes: Array.isArray(cleanTrip.routes) ? cleanTrip.routes : [],
             train_id: cleanTrip.train_id || "",
             from_id: cleanTrip.from_id || "",
@@ -11560,6 +11799,7 @@ function subscribeTrips() {
 let editIndex = null;
 let lastTo = "";
 let toastTimer = null;
+let toastMarqueeAnimation = null;
 let editingTripId = null;
 let isHistoryManualSortUnlocked = false;
 let isHistorySearchOpen = false;
@@ -11569,14 +11809,54 @@ function showToast(message, bgColor = "var(--success)") {
     const toast = document.getElementById("appToast");
     if (!toast) return;
 
-    toast.textContent = message;
-    toast.style.background = bgColor;
-    toast.style.display = "block";
+    const colorToken = String(bgColor || "").toLowerCase();
+    const isError = colorToken.includes("danger") || colorToken.includes("error") || colorToken.includes("ff3b30");
+    const isWarning = !isError && (colorToken.includes("warn") || colorToken.includes("orange") || colorToken.includes("ff9f0a"));
+    const text = document.getElementById("appToastText");
+    const textWindow = document.getElementById("appToastTextWindow");
+    const code = document.getElementById("appToastCode");
+    if (text) text.textContent = message;
+    if (code) code.textContent = isError ? "異常案内" : (isWarning ? "お知らせ" : "処理完了");
+    toast.classList.toggle("is-error", isError);
+    toast.classList.toggle("is-warning", isWarning);
+
+    const headerBottom = document.querySelector("header")?.getBoundingClientRect().bottom || 88;
+    const signWidth = document.querySelector(".destination-sign-frame")?.getBoundingClientRect().width || 210;
+    toast.style.setProperty("--toast-top", `${Math.ceil(headerBottom + 8)}px`);
+    toast.style.setProperty("--toast-width", `${Math.ceil(signWidth + 40)}px`);
+    toast.style.setProperty("--toast-duration", "2.45s");
+    toast.style.setProperty("--toast-marquee-distance", "0px");
+    toastMarqueeAnimation?.cancel();
+    toastMarqueeAnimation = null;
+    if (text) text.style.transform = "translateX(0)";
+    toast.classList.remove("is-visible", "is-marquee");
+    void toast.offsetWidth;
+    toast.classList.add("is-visible");
+
+    const overflowWidth = Math.max(0, (text?.scrollWidth || 0) - (textWindow?.clientWidth || 0));
+    const marqueePauseMs = 1500;
+    const marqueeMoveMs = Math.min(7000, Math.max(650, (overflowWidth / 72) * 1000));
+    const durationMs = overflowWidth > 2 ? marqueePauseMs + marqueeMoveMs + marqueePauseMs : 2450;
+    if (overflowWidth > 2) {
+        toast.style.setProperty("--toast-marquee-distance", `${Math.ceil(overflowWidth)}px`);
+        toast.style.setProperty("--toast-duration", `${durationMs}ms`);
+        toast.classList.add("is-marquee");
+        const moveEndOffset = (marqueePauseMs + marqueeMoveMs) / durationMs;
+        const moveStartOffset = marqueePauseMs / durationMs;
+        toastMarqueeAnimation = text?.animate([
+            { transform: "translateX(0)", offset: 0 },
+            { transform: "translateX(0)", offset: moveStartOffset },
+            { transform: `translateX(-${Math.ceil(overflowWidth)}px)`, offset: moveEndOffset },
+            { transform: `translateX(-${Math.ceil(overflowWidth)}px)`, offset: 1 }
+        ], { duration: durationMs, easing: "linear", fill: "both" }) || null;
+    }
 
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
-        toast.style.display = "none";
-    }, 2200);
+        toast.classList.remove("is-visible", "is-marquee");
+        toastMarqueeAnimation?.cancel();
+        toastMarqueeAnimation = null;
+    }, durationMs);
 }
 
 function normalizeTrip(trip) {
@@ -11597,6 +11877,9 @@ function normalizeTrip(trip) {
     // 補齊其他欄位，避免之後再出錯
     normalized.date = normalized.date || "";
     normalized.serviceType = normalized.serviceType || "";
+    normalized.serviceName = normalized.serviceName || "";
+    normalized.service_id = normalized.service_id || "";
+    normalized.service_pattern_id = normalized.service_pattern_id || "";
     normalized.train_id = normalized.train_id || "";
     normalized.from_id = normalized.from_id || "";
     normalized.to_id = normalized.to_id || "";
@@ -11642,7 +11925,7 @@ window.closeGalleryPreview = function() {
     captionEl.textContent = "";
 };
 
-let db = { companies: [], lines: [], stations: [], trains: [] };
+let db = { companies: [], lines: [], stations: [], trains: [], services: [] };
 let maps = { company: {}, line: {}, station: {}, train: {} };
 let resolve = { company: {}, station: {}, train: {} };
 let railGeometries = {};
@@ -11667,6 +11950,10 @@ let activeRoutePopup = null;
 let ignoreNextMapClickClear = false;
 let selectedMapRouteState = null;
 let isMapZoomRerendering = false;
+let railMapBaseLayer = null;
+let railMapTileProviderIndex = 0;
+let railMapTileErrorCount = 0;
+let railMapTileFallbackNotified = false;
 let railSegmentUsageIndex = new Map();
 let riddenSegmentKeySetCache = new Map();
 let lineGeometryPartsCache = new Map();
@@ -11708,16 +11995,14 @@ function focusInputSafely(input, preventScroll = false) {
 window.handleDatalistInputTap = function(input, event) {
     if (!input) return;
 
-    const isAppleTouch = isAppleTouchDevice();
     prepareCustomDatalistInput(input);
     focusInputSafely(input, false);
 
-    if (isAppleTouch) {
-        requestCustomDatalistFrame(() => showCustomDatalist(input));
-        return;
+    if (!isAppleTouchDevice() && typeof input.select === "function") {
+        input.select();
     }
 
-    if (typeof input.select === "function") input.select();
+    requestCustomDatalistFrame(() => showCustomDatalist(input));
 }
 
 const CUSTOM_DATALIST_LIMIT = 64;
@@ -11729,11 +12014,12 @@ const customDatalistState = {
     activeIndex: -1,
     committing: false,
     setup: false,
-    pointer: null
+    pointer: null,
+    positionFrame: null
 };
 
 function customDatalistEnabled() {
-    return isAppleTouchDevice();
+    return true;
 }
 
 function requestCustomDatalistFrame(callback) {
@@ -11743,6 +12029,73 @@ function requestCustomDatalistFrame(callback) {
     }
 
     setTimeout(callback, 0);
+}
+
+function getCustomDatalistViewportBox() {
+    const visualViewport = window.visualViewport;
+    const width = visualViewport?.width || window.innerWidth || document.documentElement.clientWidth;
+    const height = visualViewport?.height || window.innerHeight || document.documentElement.clientHeight;
+    const left = visualViewport?.offsetLeft || 0;
+    const top = visualViewport?.offsetTop || 0;
+
+    return {
+        left,
+        top,
+        width,
+        height,
+        right: left + width,
+        bottom: top + height
+    };
+}
+
+function getCustomDatalistAnchorRect(input) {
+    const anchor = input?.closest?.(".input-wrapper") || input;
+    if (!anchor) return null;
+
+    const rect = anchor.getBoundingClientRect();
+    const visualViewport = window.visualViewport;
+    const offsetLeft = visualViewport?.offsetLeft || 0;
+    const offsetTop = visualViewport?.offsetTop || 0;
+
+    return {
+        left: rect.left + offsetLeft,
+        top: rect.top + offsetTop,
+        right: rect.right + offsetLeft,
+        bottom: rect.bottom + offsetTop,
+        width: rect.width,
+        height: rect.height
+    };
+}
+
+function isCustomDatalistOpen() {
+    return !!customDatalistState.input &&
+        !!customDatalistState.menu?.classList.contains("active");
+}
+
+function scheduleCustomDatalistPositionUpdate() {
+    if (!isCustomDatalistOpen() || customDatalistState.positionFrame) return;
+
+    customDatalistState.positionFrame = window.requestAnimationFrame?.(() => {
+        customDatalistState.positionFrame = null;
+        if (!isCustomDatalistOpen()) return;
+        positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
+    }) || setTimeout(() => {
+        customDatalistState.positionFrame = null;
+        if (!isCustomDatalistOpen()) return;
+        positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
+    }, 0);
+}
+
+function settleCustomDatalistPosition() {
+    scheduleCustomDatalistPositionUpdate();
+    setTimeout(scheduleCustomDatalistPositionUpdate, 80);
+    setTimeout(scheduleCustomDatalistPositionUpdate, 220);
+}
+
+function handleCustomDatalistViewportChange(event) {
+    const menu = customDatalistState.menu;
+    if (menu && event?.target instanceof Element && menu.contains(event.target)) return;
+    settleCustomDatalistPosition();
 }
 
 function getCustomDatalistInputFromTarget(target) {
@@ -11901,6 +12254,11 @@ function getCustomDatalistMatches(input) {
     const query = normalizeCustomDatalistText(input.value);
     const values = getCustomDatalistValues(input);
 
+    // Service candidates already match all translated names and aliases.
+    if (getCustomDatalistListId(input) === "serviceNameList") {
+        return values.slice(0, CUSTOM_DATALIST_LIMIT);
+    }
+
     if (!query) return values.slice(0, CUSTOM_DATALIST_LIMIT);
 
     const startsWith = [];
@@ -11917,22 +12275,29 @@ function getCustomDatalistMatches(input) {
 }
 
 function positionCustomDatalistMenu(input, menu) {
-    const anchor = input.closest(".input-wrapper") || input;
-    const rect = anchor.getBoundingClientRect();
-    const viewportHeight = window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight;
-    const viewportWidth = window.visualViewport?.width || window.innerWidth || document.documentElement.clientWidth;
+    if (!input || !menu) return;
+
+    const rect = getCustomDatalistAnchorRect(input);
+    if (!rect) return;
+
+    const viewport = getCustomDatalistViewportBox();
     const margin = 8;
     const gap = 6;
-    const below = viewportHeight - rect.bottom - margin;
-    const above = rect.top - margin;
+    const viewportLeft = viewport.left + margin;
+    const viewportRight = viewport.right - margin;
+    const viewportTop = viewport.top + margin;
+    const viewportBottom = viewport.bottom - margin;
+    const below = viewportBottom - rect.bottom;
+    const above = rect.top - viewportTop;
     const placeAbove = below < 150 && above > below;
     const available = Math.max(96, (placeAbove ? above : below) - gap);
     const maxHeight = Math.min(280, available);
-    const width = Math.max(180, Math.min(rect.width, viewportWidth - margin * 2));
-    const left = Math.max(margin, Math.min(rect.left, viewportWidth - width - margin));
-    const top = placeAbove
-        ? Math.max(margin, rect.top - maxHeight - gap)
-        : Math.min(rect.bottom + gap, viewportHeight - maxHeight - margin);
+    const width = Math.max(180, Math.min(rect.width, viewport.width - margin * 2));
+    const left = Math.max(viewportLeft, Math.min(rect.left, viewportRight - width));
+    const preferredTop = placeAbove
+        ? rect.top - maxHeight - gap
+        : rect.bottom + gap;
+    const top = Math.max(viewportTop, Math.min(preferredTop, viewportBottom - maxHeight));
 
     menu.style.left = `${left}px`;
     menu.style.top = `${top}px`;
@@ -12011,6 +12376,7 @@ function showCustomDatalist(input) {
     positionCustomDatalistMenu(input, menu);
     menu.classList.add("active");
     input.setAttribute("aria-expanded", "true");
+    settleCustomDatalistPosition();
     return true;
 }
 
@@ -12024,9 +12390,18 @@ function hideCustomDatalist() {
         menu.replaceChildren();
     }
 
+    if (customDatalistState.positionFrame) {
+        if (typeof window.cancelAnimationFrame === "function") {
+            window.cancelAnimationFrame(customDatalistState.positionFrame);
+        } else {
+            clearTimeout(customDatalistState.positionFrame);
+        }
+    }
+
     customDatalistState.input = null;
     customDatalistState.options = [];
     customDatalistState.activeIndex = -1;
+    customDatalistState.positionFrame = null;
 }
 
 function refreshCustomDatalistForList(listId) {
@@ -12051,6 +12426,13 @@ function setupCustomDatalistInputs() {
         const input = getCustomDatalistInputFromTarget(event.target);
         if (input) {
             prepareCustomDatalistInput(input);
+            requestCustomDatalistFrame(() => {
+                if (customDatalistState.input !== input || !customDatalistState.menu?.classList.contains("active")) {
+                    showCustomDatalist(input);
+                } else {
+                    positionCustomDatalistMenu(input, customDatalistState.menu);
+                }
+            });
             return;
         }
 
@@ -12078,7 +12460,11 @@ function setupCustomDatalistInputs() {
         if (!input) return;
 
         setTimeout(() => {
-            if (document.activeElement !== input) hideCustomDatalist();
+            const activeInput = getCustomDatalistInputFromTarget(document.activeElement);
+            if (activeInput && activeInput !== input) return;
+            if (customDatalistState.input === input && document.activeElement !== input) {
+                hideCustomDatalist();
+            }
         }, 120);
     });
 
@@ -12105,23 +12491,23 @@ function setupCustomDatalistInputs() {
         }
     });
 
-    window.addEventListener("resize", () => {
-        if (customDatalistState.input && customDatalistState.menu?.classList.contains("active")) {
-            positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
-        }
-    }, { passive: true });
+    window.addEventListener("resize", handleCustomDatalistViewportChange, { passive: true });
+    window.addEventListener("scroll", handleCustomDatalistViewportChange, { passive: true });
+    document.addEventListener("scroll", handleCustomDatalistViewportChange, {
+        passive: true,
+        capture: true
+    });
 
-    window.addEventListener("scroll", () => {
-        if (customDatalistState.input && customDatalistState.menu?.classList.contains("active")) {
-            positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
-        }
-    }, { passive: true });
-
-    window.visualViewport?.addEventListener("resize", () => {
-        if (customDatalistState.input && customDatalistState.menu?.classList.contains("active")) {
-            positionCustomDatalistMenu(customDatalistState.input, customDatalistState.menu);
-        }
-    }, { passive: true });
+    window.visualViewport?.addEventListener("resize", handleCustomDatalistViewportChange, { passive: true });
+    window.visualViewport?.addEventListener("scroll", handleCustomDatalistViewportChange, { passive: true });
+    document.addEventListener("touchmove", handleCustomDatalistViewportChange, {
+        passive: true,
+        capture: true
+    });
+    document.addEventListener("touchend", handleCustomDatalistViewportChange, {
+        passive: true,
+        capture: true
+    });
 }
 
 setupCustomDatalistInputs();
@@ -12263,6 +12649,7 @@ async function loadData() {
         db.lines = [];
         db.stations = [];
         db.trains = [];
+        db.services = [];
         const newCompanyFiles = [
             "meitetsu.json", "sagami.json", "keikyu.json", "keihan.json", "tokyo_metro.json", "hojo.json", "sanyo.json", "osaka_metro.json", "hankyu.json", 
             "city_kobe.json", "kintetsu.json", "eizan.json", "hankai.json", "hanshin.json", 
@@ -12280,7 +12667,7 @@ async function loadData() {
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
             "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"]; 
         
-        const fetchPromises = newCompanyFiles.map(file => fetch(file).then(res => res.ok ? res.json() : null).catch(() => null));
+        const fetchPromises = newCompanyFiles.map(file => fetch(file, { cache: "no-cache" }).then(res => res.ok ? res.json() : null).catch(() => null));
         const results = await Promise.all(fetchPromises);
 
         setRailLoaderPreset("dbParse");
@@ -12341,7 +12728,13 @@ async function loadData() {
 
         db.trains.push(trainData);
     });
-}	
+}
+            if (Array.isArray(compData.services)) {
+                compData.services.forEach(service => {
+                    if (!service || typeof service !== "object") return;
+                    db.services.push({ ...service, company_id: service.company_id || compData.company_id });
+                });
+            }
         });
 
     } catch (e) { 
@@ -12404,8 +12797,9 @@ function buildMaps() {
 
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
-    fillList("lineList", db.lines.map(l => l.name));
+    fillList("lineList", db.lines.filter(l => l.selectable !== false).map(l => l.name));
     updateTrainDatalist();
+    updateServiceNameDatalist();
     updateMainLoopDirectionUI();
 }
 
@@ -12489,7 +12883,12 @@ document.addEventListener("wheel", (event) => {
     });
 }, { passive: true, capture: true });
 
-document.getElementById("line").addEventListener("input", () => { updateStationLists(); updateMainLoopDirectionUI(); });
+document.getElementById("line").addEventListener("input", () => {
+    updateStationLists();
+    updateMainLoopDirectionUI();
+    syncServiceDetailsForLine();
+    updateServiceNameDatalist();
+});
 
 document.getElementById("company").addEventListener("input", () => {
     let compName = document.getElementById("company").value;
@@ -12497,6 +12896,8 @@ document.getElementById("company").addEventListener("input", () => {
     scheduleUpdateTrainDatalist({ resetTrain: true });
     updateStationLists();
     updateMainLoopDirectionUI();
+    syncServiceDetailsForLine();
+    updateServiceNameDatalist();
 });
 
 window.toggleTrainCompanyUI = function() {
@@ -12542,12 +12943,14 @@ function syncAddOptionControls() {
     if (throughBtn) throughBtn.classList.toggle("is-active", hasThrough);
 
     const serviceInput = document.getElementById("serviceType");
+    const serviceNameInput = document.getElementById("serviceName");
     const servicePanel = serviceInput?.closest(".service-type-panel");
     const serviceBtn = document.getElementById("btnServiceTypeOption");
-    const hasService = !!serviceInput?.value.trim();
+    const isShinkansen = !!servicePanel?.classList.contains("shinkansen-mode");
+    const hasService = !!serviceInput?.value.trim() || !!serviceNameInput?.value.trim();
 
-    if (servicePanel && hasService) servicePanel.classList.add("open");
-    if (serviceBtn) serviceBtn.classList.toggle("is-active", !!servicePanel?.classList.contains("open") || hasService);
+    if (servicePanel && (hasService || isShinkansen)) servicePanel.classList.add("open");
+    if (serviceBtn) serviceBtn.classList.toggle("is-active", !!servicePanel?.classList.contains("open") || hasService || isShinkansen);
 
     const otherCheckbox = document.getElementById("useOtherTrainCompany");
     const otherPanel = otherCheckbox?.closest(".other-train-panel");
@@ -12558,8 +12961,281 @@ function syncAddOptionControls() {
     if (otherBtn) otherBtn.classList.toggle("is-active", useOther);
 }
 
+function isCurrentLineShinkansen() {
+    const lineInput = document.getElementById("line")?.value.trim() || "";
+    const line = getCurrentMainLine();
+    return String(line?.name || lineInput).includes("新幹線");
+}
+
+function syncServiceDetailsForLine() {
+    setupAddOptionPanels();
+    const serviceInput = document.getElementById("serviceType");
+    const serviceNameInput = document.getElementById("serviceName");
+    const panel = serviceInput?.closest(".service-type-panel");
+    const button = document.getElementById("btnServiceTypeOption");
+    if (!panel) return;
+
+    const isShinkansen = isCurrentLineShinkansen();
+    panel.classList.toggle("shinkansen-mode", isShinkansen);
+    if (isShinkansen) panel.classList.add("open");
+
+    if (button) {
+        button.textContent = isShinkansen ? "列車名" : "種別";
+        button.setAttribute("aria-label", isShinkansen ? "列車名" : "種別");
+    }
+
+    if (isShinkansen && document.activeElement === serviceInput) {
+        serviceNameInput?.focus();
+    }
+    syncAddOptionControls();
+}
+
+let activeServicePattern = null;
+let activeServiceDefinition = null;
+let servicePatternApplyTimer = null;
+
+function normalizeServiceLookupText(value) {
+    return String(value || "").normalize("NFKC").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function getServiceNames(service) {
+    return [service?.name, service?.name_zh, service?.name_en, ...(Array.isArray(service?.aliases) ? service.aliases : [])]
+        .map(value => String(value || "").trim())
+        .filter(Boolean);
+}
+
+function getServiceOperatorCompanyIds(service) {
+    const declared = Array.isArray(service?.operator_company_ids)
+        ? service.operator_company_ids.map(value => String(value || "").trim().toUpperCase()).filter(Boolean)
+        : [];
+    const owner = String(service?.company_id || "").trim().toUpperCase();
+    return [...new Set(declared.length ? declared : [owner].filter(Boolean))];
+}
+
+function isServiceAvailableForCompany(service, companyId) {
+    const target = String(companyId || "").trim().toUpperCase();
+    return !target || getServiceOperatorCompanyIds(service).includes(target);
+}
+
+function isServicePatternDateValid(pattern, dateValue) {
+    const date = String(dateValue || "").trim();
+    if (!date) return true;
+    if (pattern?.valid_from && date < String(pattern.valid_from)) return false;
+    if (pattern?.valid_to && date > String(pattern.valid_to)) return false;
+    return true;
+}
+
+function updateServiceTypeDatalist() {
+    const list = document.getElementById("serviceTypeList");
+    if (!list) return;
+    if (!list.dataset.defaultTypes) {
+        list.dataset.defaultTypes = JSON.stringify([...list.options].map(option => option.value));
+    }
+    const companyName = document.getElementById("company")?.value || "";
+    const companyId = resolve.company[companyName] || companyName;
+    const types = new Set(JSON.parse(list.dataset.defaultTypes));
+    (db.services || []).forEach(service => {
+        if (!isServiceAvailableForCompany(service, companyId)) return;
+        const type = String(service.service_type || "").trim();
+        if (type) types.add(type);
+    });
+    list.replaceChildren(...[...types].map(type => new Option(type)));
+    refreshCustomDatalistForList("serviceTypeList");
+}
+
+function updateServiceNameDatalist() {
+    updateServiceTypeDatalist();
+    const list = document.getElementById("serviceNameList");
+    if (!list) return;
+    const companyName = document.getElementById("company")?.value || "";
+    const companyId = resolve.company[companyName] || companyName;
+    const type = normalizeServiceLookupText(document.getElementById("serviceType")?.value);
+    const query = normalizeServiceLookupText(document.getElementById("serviceName")?.value);
+    const services = (db.services || []).filter(service => {
+        if (!isServiceAvailableForCompany(service, companyId)) return false;
+        if (type && service.service_type && normalizeServiceLookupText(service.service_type) !== type) return false;
+        if (query && !getServiceNames(service).some(name => normalizeServiceLookupText(name).includes(query))) return false;
+        return true;
+    });
+    const names = [...new Set(services.map(service => String(service?.name || "").trim()).filter(Boolean))];
+    list.innerHTML = "";
+    names.forEach(name => list.appendChild(new Option(name)));
+    refreshCustomDatalistForList("serviceNameList");
+}
+
+function resolveServicePatternStationId(value) {
+    const companyName = document.getElementById("company")?.value || "";
+    const companyId = resolve.company[companyName] || companyName;
+    const lineName = document.getElementById("line")?.value || "";
+    const lineId = db.lines.find(line => line.company_id === companyId && line.name === lineName)?.id || lineName;
+    const datedLine = resolveLineVersionForDate(lineId, document.getElementById("date")?.value || "") || lineId;
+    return resolveStationIdForLine(value, datedLine);
+}
+
+function findSelectedServicePattern() {
+    const nameKey = normalizeServiceLookupText(document.getElementById("serviceName")?.value);
+    if (!nameKey) return null;
+    const companyName = document.getElementById("company")?.value || "";
+    const companyId = resolve.company[companyName] || companyName;
+    const typeKey = normalizeServiceLookupText(document.getElementById("serviceType")?.value);
+    const dateValue = document.getElementById("date")?.value || "";
+    const fromId = resolveServicePatternStationId(document.getElementById("from")?.value);
+    const toId = resolveServicePatternStationId(document.getElementById("to")?.value);
+
+    const matches = (db.services || []).filter(service => {
+        if (!isServiceAvailableForCompany(service, companyId)) return false;
+        if (typeKey && service.service_type && normalizeServiceLookupText(service.service_type) !== typeKey) return false;
+        return getServiceNames(service).some(name => normalizeServiceLookupText(name) === nameKey);
+    });
+
+    const candidates = matches.flatMap(service => (Array.isArray(service.patterns) ? service.patterns : [])
+        .filter(pattern => isServicePatternDateValid(pattern, dateValue))
+        .filter(pattern => {
+            const stops = Array.isArray(pattern.stops) ? pattern.stops : [];
+            if (fromId && !stops.includes(fromId)) return false;
+            if (toId && !stops.includes(toId)) return false;
+            return true;
+        })
+        .map(pattern => ({ service, pattern })));
+
+    return candidates.length === 1 ? candidates[0] : null;
+}
+
+function getServiceJourneySegments(pattern) {
+    return resolveServiceJourneySegments(pattern,
+        resolveServicePatternStationId(document.getElementById("from")?.value),
+        resolveServicePatternStationId(document.getElementById("to")?.value),
+        document.getElementById("date")?.value || "");
+}
+
+function resolveServiceJourneySegments(pattern, fromId, toId, dateValue = "") {
+    const segments = Array.isArray(pattern?.segments) ? pattern.segments : [];
+    if (!fromId || !toId) return segments;
+    // Junctions can be pass-through stations, absent from the passenger stop list.
+    let offset = 0;
+    const spans = segments.map(segment => {
+        const line = resolveLineVersionForDate(segment.line_id, dateValue);
+        const path = inferLinePathForStations(line, segment.from_id, segment.to_id, segment.direction || "", segment.path_id || "");
+        const ids = path ? getPathTraversalStationIds(path, segment.from_id, segment.to_id, segment.direction || "") : [];
+        const start = offset;
+        offset += Math.max(0, ids.length - 1);
+        return { segment, ids, start, end: offset };
+    });
+    if (spans.some(span => span.ids.length < 2)) return [];
+    const locate = id => {
+        for (const span of spans) {
+            const index = span.ids.indexOf(id);
+            if (index >= 0) return span.start + index;
+        }
+        return -1;
+    };
+    const from = locate(fromId), to = locate(toId);
+    if (from < 0 || to < 0 || from === to) return [];
+    const low = Math.min(from, to), high = Math.max(from, to);
+    const result = spans.filter(span => span.start < high && span.end > low).map(span => ({
+        ...span.segment,
+        from_id: span.ids[Math.max(low, span.start) - span.start],
+        to_id: span.ids[Math.min(high, span.end) - span.start]
+    }));
+    return from < to ? result : result.reverse().map(segment => ({
+        ...segment, from_id: segment.to_id, to_id: segment.from_id,
+        ...(segment.direction ? { direction: segment.direction === "forward" ? "reverse" : "forward" } : {})
+    }));
+}
+
+function setAutoServiceThroughSummary(segments) {
+    const summary = document.getElementById("autoServiceThroughSummary");
+    const container = document.getElementById("throughContainer");
+    const text = document.getElementById("autoServiceThroughText");
+    const count = document.getElementById("autoServiceThroughCount");
+    const routeSegments = Array.isArray(segments) ? segments : [];
+    const visible = routeSegments.length > 1;
+    if (!summary || !container) return;
+
+    summary.classList.toggle("visible", visible);
+    summary.setAttribute("aria-expanded", "false");
+    container.classList.toggle("auto-collapsed", visible);
+    container.hidden = visible;
+    container.dataset.autoService = visible ? "true" : "";
+    if (text) text.textContent = routeSegments.map(segment => maps.line[segment.line_id]?.name || segment.line_id || "路線").join(" → ");
+    if (count) count.textContent = visible ? `${routeSegments.length} 路線` : "";
+}
+
+window.toggleAutoServiceThroughDetails = function() {
+    const summary = document.getElementById("autoServiceThroughSummary");
+    const container = document.getElementById("throughContainer");
+    if (!summary || !container) return;
+    const expanded = summary.getAttribute("aria-expanded") === "true";
+    summary.setAttribute("aria-expanded", String(!expanded));
+    container.classList.toggle("auto-collapsed", expanded);
+    container.hidden = expanded;
+};
+
+function applySelectedServicePattern() {
+    const selected = findSelectedServicePattern();
+    if (!selected) {
+        activeServicePattern = null;
+        activeServiceDefinition = null;
+        const container = document.getElementById("throughContainer");
+        if (container?.dataset.autoService === "true") container.innerHTML = "";
+        setAutoServiceThroughSummary([]);
+        updateStationLists();
+        syncAddOptionControls();
+        return;
+    }
+
+    const segments = getServiceJourneySegments(selected.pattern);
+    if (!segments.length) return;
+    activeServicePattern = selected.pattern;
+    activeServiceDefinition = selected.service;
+    document.getElementById("serviceName").value = selected.service.name || "";
+    document.getElementById("serviceType").value = selected.service.service_type || "";
+
+    const first = segments[0];
+    const firstCompany = maps.company[first.company_id]?.name || first.company_id || "";
+    const firstLine = maps.line[first.line_id]?.name || first.line_id || "";
+    document.getElementById("company").value = firstCompany;
+    updateLineList(firstCompany, "lineList");
+    document.getElementById("line").value = firstLine;
+    updateServiceNameDatalist();
+
+    const container = document.getElementById("throughContainer");
+    if (container) {
+        container.innerHTML = "";
+        setAutoServiceThroughSummary([]);
+    }
+    segments.slice(1).forEach((segment, index) => {
+        addThrough();
+        const blocks = document.querySelectorAll(".through-block");
+        const block = blocks[blocks.length - 1];
+        if (!block) return;
+        const companyName = maps.company[segment.company_id]?.name || segment.company_id || "";
+        block.querySelector(".throughCompany").value = companyName;
+        const lineList = block.querySelector("datalist:not(.throughJunctionList)");
+        if (lineList) updateLineList(companyName, lineList.id);
+        block.querySelector(".throughLine").value = maps.line[segment.line_id]?.name || segment.line_id || "";
+        const junctionId = segment.from_id || segments[index]?.to_id || "";
+        const junction = maps.station[junctionId];
+        const junctionInput = block.querySelector(".throughJunctionStation");
+        if (junctionInput && junctionId) junctionInput.value = junction?._display || junction?.name || junctionId;
+        autoFillThroughJunction(block.querySelector(".throughLine"));
+    });
+    setAutoServiceThroughSummary(segments);
+
+    updateStationLists();
+    updateAllLoopDirectionUI();
+    syncAddOptionControls();
+    showToast(`已套用「${selected.service.name}」運行路線`);
+}
+
+function scheduleApplySelectedServicePattern() {
+    clearTimeout(servicePatternApplyTimer);
+    servicePatternApplyTimer = setTimeout(applySelectedServicePattern, 120);
+}
+
 window.handleAddThroughClick = function() {
     setupAddOptionPanels();
+    setAutoServiceThroughSummary([]);
     addThrough();
 
     const blocks = document.querySelectorAll(".through-block");
@@ -12573,8 +13249,16 @@ window.handleAddThroughClick = function() {
 window.toggleServiceTypePanel = function() {
     setupAddOptionPanels();
     const serviceInput = document.getElementById("serviceType");
+    const serviceNameInput = document.getElementById("serviceName");
     const panel = serviceInput?.closest(".service-type-panel");
     if (!panel) return;
+
+    if (panel.classList.contains("shinkansen-mode")) {
+        panel.classList.add("open");
+        setTimeout(() => serviceNameInput?.focus(), 0);
+        syncAddOptionControls();
+        return;
+    }
 
     panel.classList.toggle("open");
     if (panel.classList.contains("open")) setTimeout(() => serviceInput.focus(), 0);
@@ -12593,12 +13277,31 @@ window.toggleOtherTrainCompanyPanel = function() {
 
 window.removeThroughBlock = function(button) {
     button.closest(".through-block")?.remove();
+    setAutoServiceThroughSummary([]);
     updateStationLists();
     syncAddOptionControls();
 };
 
 setupAddOptionPanels();
-document.getElementById("serviceType")?.addEventListener("input", syncAddOptionControls);
+document.getElementById("serviceType")?.addEventListener("input", () => {
+    syncAddOptionControls();
+    updateServiceNameDatalist();
+    scheduleApplySelectedServicePattern();
+});
+document.getElementById("serviceName")?.addEventListener("input", () => {
+    syncAddOptionControls();
+    updateServiceNameDatalist();
+    scheduleApplySelectedServicePattern();
+});
+document.getElementById("date")?.addEventListener("change", () => {
+    updateStationLists();
+    updateAllLoopDirectionUI();
+    scheduleApplySelectedServicePattern();
+});
+document.getElementById("from")?.addEventListener("change", scheduleApplySelectedServicePattern);
+document.getElementById("to")?.addEventListener("change", scheduleApplySelectedServicePattern);
+syncServiceDetailsForLine();
+updateServiceNameDatalist();
 syncAddOptionControls();
 
 const trainCompanyCache = new Map();
@@ -12691,7 +13394,7 @@ window.updateLineList = function(compName, targetListId) {
     const list = document.getElementById(targetListId);
     if(!list) return;
     list.innerHTML = "";
-    let linesToShow = compId ? db.lines.filter(l => l.company_id === compId) : db.lines;
+    let linesToShow = db.lines.filter(l => l.selectable !== false && (!compId || l.company_id === compId));
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
     refreshCustomDatalistForList(targetListId);
 }
@@ -12730,8 +13433,16 @@ function fillStationDatalist(listId, compId, lineInput) {
     list.innerHTML = "";
     let stationsToShow = [];
 
+    if ((listId === "stationListFrom" || listId === "stationListTo") && Array.isArray(activeServicePattern?.stops)) {
+        stationsToShow = activeServicePattern.stops.map(id => maps.station[id]).filter(Boolean);
+        stationsToShow.forEach(s => list.appendChild(new Option(s._display || s.name || s.id)));
+        refreshCustomDatalistForList(listId);
+        return;
+    }
+
     if (compId && lineInput) {
         let matchedLine = db.lines.find(l => l.company_id === compId && l.name === lineInput);
+        matchedLine = resolveLineVersionForDate(matchedLine, document.getElementById("date")?.value || "");
         if (matchedLine && (matchedLine.sequence || matchedLine.paths)) {
             stationsToShow = getLineSequenceStations(matchedLine);
         } else {
@@ -12847,8 +13558,6 @@ function clearAllPhotosUI() {
         document.querySelector(`#preview-${id}`).parentElement.querySelector('input[type="file"]').value = "";
     });
 }
-
-
 function findLineByCompanyAndName(companyId, lineInput) {
     return db.lines.find(l =>
         l.company_id === companyId &&
@@ -12860,13 +13569,27 @@ function getCurrentMainLine() {
     const compName = document.getElementById("company")?.value || "";
     const lineInput = document.getElementById("line")?.value || "";
     const compId = resolve.company[compName] || compName;
-    return findLineByCompanyAndName(compId, lineInput);
+    return resolveLineVersionForDate(
+        findLineByCompanyAndName(compId, lineInput),
+        document.getElementById("date")?.value || ""
+    );
 }
 
 function isLoopLine(lineOrId) {
     const line = typeof lineOrId === "string" ? maps.line[lineOrId] : lineOrId;
     if (!line) return false;
     return line.is_loop === true || line.is_loop === "true" || line.loop === true || line.loop === "true";
+}
+
+function isOneWayLoopLine(lineOrId) {
+    const line = typeof lineOrId === "string" ? maps.line[lineOrId] : lineOrId;
+    if (!line || !isLoopLine(line)) return false;
+    if (isOneWayPath(line)) return true;
+
+    const paths = Array.isArray(line.paths)
+        ? line.paths.filter(path => Array.isArray(path?.sequence) && path.sequence.length >= 2)
+        : [];
+    return paths.length > 0 && paths.every(path => isOneWayPath(path));
 }
 
 function getLineDirectionLabels(lineOrId) {
@@ -12913,7 +13636,7 @@ function updateMainLoopDirectionUI(selectedValue = null) {
 
     const line = getCurrentMainLine();
 
-    if (isLoopLine(line)) {
+    if (isLoopLine(line) && !isOneWayLoopLine(line)) {
         wrap.style.display = "block";
         renderDirectionSelectOptions(select, line, selectedValue || select.value || "forward");
     } else {
@@ -12929,7 +13652,10 @@ function getThroughBlockLine(block) {
     const lineInput = block.querySelector(".throughLine")?.value || "";
     const compId = resolve.company[compName] || compName;
 
-    return findLineByCompanyAndName(compId, lineInput);
+    return resolveLineVersionForDate(
+        findLineByCompanyAndName(compId, lineInput),
+        document.getElementById("date")?.value || ""
+    );
 }
 
 function updateThroughLoopDirectionUI(block, selectedValue = null) {
@@ -12939,7 +13665,7 @@ function updateThroughLoopDirectionUI(block, selectedValue = null) {
 
     const line = getThroughBlockLine(block);
 
-    if (isLoopLine(line)) {
+    if (isLoopLine(line) && !isOneWayLoopLine(line)) {
         wrap.style.display = "block";
         renderDirectionSelectOptions(select, line, selectedValue || select.value || "forward");
     } else {
@@ -12956,6 +13682,7 @@ function updateAllLoopDirectionUI() {
 function getLoopDirectionForRoute(route, routeIndex) {
     const line = maps.line[route?.line_id];
     if (!isLoopLine(line)) return "";
+    if (isOneWayLoopLine(line)) return "forward";
 
     if (routeIndex === 0) {
         return document.getElementById("mainLoopDirection")?.value || "forward";
@@ -12971,8 +13698,15 @@ function getLoopDirectionLabel(lineId, direction) {
     return direction === "reverse" ? labels.reverse : labels.forward;
 }
 
-function buildTripSegmentsFromForm(routes, fromId, toId) {
+function buildTripSegmentsFromForm(routes, fromId, toId, dateValue = "") {
     if (!Array.isArray(routes) || routes.length === 0) return [];
+
+    if (activeServicePattern) {
+        const serviceSegments = resolveServiceJourneySegments(activeServicePattern, fromId, toId, dateValue);
+        if (serviceSegments.length === routes.length && serviceSegments.every((segment, index) => segment.line_id === routes[index].line_id)) {
+            return serviceSegments.map(segment => applyInferredPathToSegment({ ...segment }, dateValue));
+        }
+    }
 
     if (routes.length === 1) {
         const segment = {
@@ -12985,7 +13719,7 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
         const direction = getLoopDirectionForRoute(routes[0], 0);
         if (direction) segment.direction = direction;
 
-        return [applyInferredPathToSegment(segment)];
+        return [applyInferredPathToSegment(segment, dateValue)];
     }
 
     const junctionPairs = [...document.querySelectorAll(".throughJunctionStation")]
@@ -12993,8 +13727,8 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
             const prevLineId = routes[index]?.line_id || "";
             const nextLineId = routes[index + 1]?.line_id || "";
             const value = input.value;
-            const prevLine = resolveLineObject(prevLineId) || prevLineId;
-            const nextLine = resolveLineObject(nextLineId) || nextLineId;
+            const prevLine = resolveLineVersionForDate(prevLineId, dateValue) || prevLineId;
+            const nextLine = resolveLineVersionForDate(nextLineId, dateValue) || nextLineId;
 
             return resolveJunctionStationPair(value, prevLine, nextLine);
         })
@@ -13015,18 +13749,33 @@ function buildTripSegmentsFromForm(routes, fromId, toId) {
         const direction = getLoopDirectionForRoute(route, index);
         if (direction) segment.direction = direction;
 
-        return applyInferredPathToSegment(segment);
+        return applyInferredPathToSegment(segment, dateValue);
     });
 }
 
 window.saveTrip = async function () {
+    const getVal = (id) => document.getElementById(id)?.value || "";
+    const requiredFields = [
+        { id: "company", label: "公司" },
+        { id: "line", label: "路線" },
+        { id: "from", label: "上車站" },
+        { id: "to", label: "下車站" }
+    ];
+    requiredFields.forEach(field => document.getElementById(field.id)?.removeAttribute("aria-invalid"));
+    const missingFields = requiredFields.filter(field => !getVal(field.id).trim());
+    if (missingFields.length) {
+        missingFields.forEach(field => document.getElementById(field.id)?.setAttribute("aria-invalid", "true"));
+        document.getElementById(missingFields[0].id)?.focus();
+        showToast(`請填寫${missingFields.map(field => field.label).join("、")}`, "var(--danger)");
+        return;
+    }
+
     const user = auth.currentUser;
     if (!user) {
         showToast("請先登入先可以同步資料", "var(--danger)");
         return;
     }
 
-    const getVal = (id) => document.getElementById(id).value;
     const companyInput = getVal("company");
     const lineInput = getVal("line");
 
@@ -13083,10 +13832,13 @@ window.saveTrip = async function () {
             ? await uploadBase64ToStorage(photoToInput, `users/${user.uid}/trips/${tripId}/photoTo.jpg`)
             : (existingTrip?.photoToUrl || existingTrip?.photoTo || "");
 		
-		const fromId = resolveStationIdForLine(getVal("from"), mainLineId);
+		const tripDate = getVal("date");
+        const mainLineForDate = resolveLineVersionForDate(mainLineId, tripDate);
+		const fromId = resolveStationIdForLine(getVal("from"), mainLineForDate || mainLineId);
 		const lastRouteLineId = routes.length > 1 ? routes[routes.length - 1].line_id : mainLineId;
-		const toId = resolveStationIdForLine(getVal("to"), lastRouteLineId);
-		const segments = buildTripSegmentsFromForm(routes, fromId, toId);
+        const lastLineForDate = resolveLineVersionForDate(lastRouteLineId, tripDate);
+		const toId = resolveStationIdForLine(getVal("to"), lastLineForDate || lastRouteLineId);
+		const segments = buildTripSegmentsFromForm(routes, fromId, toId, tripDate);
 
 		if (routes.length > 1 && segments.length === 0) {
 			showToast("請確認直通交界站", "var(--danger)");
@@ -13096,6 +13848,9 @@ window.saveTrip = async function () {
         const trip = {
             date: getVal("date"),
             serviceType: getVal("serviceType"),
+            serviceName: getVal("serviceName"),
+            service_id: activeServiceDefinition?.id || existingTrip?.service_id || "",
+            service_pattern_id: activeServicePattern?.id || existingTrip?.service_pattern_id || "",
             routes: routes,
             train_id: finalTrainId,
             from_id: fromId,
@@ -13117,9 +13872,12 @@ window.saveTrip = async function () {
 
         lastTo = trip.to_id;
 
-        ["company", "line", "serviceType", "train", "to"].forEach(id => {
+        ["company", "line", "serviceType", "serviceName", "train", "to"].forEach(id => {
             document.getElementById(id).value = "";
         });
+        activeServicePattern = null;
+        activeServiceDefinition = null;
+        syncServiceDetailsForLine();
 
         document.getElementById("from").value = maps.station[lastTo]?._display || lastTo;
         document.getElementById("throughContainer").innerHTML = "";
@@ -13477,6 +14235,113 @@ function getTripDirectionSummary(trip) {
     return [...new Set(labels)].join(" / ");
 }
 
+function resolveTripServiceDefinition(trip) {
+    const services = db.services || [];
+    const byId = trip.service_id && services.find(service => service.id === trip.service_id);
+    if (byId) return byId;
+    const name = normalizeServiceLookupText(trip.serviceName);
+    if (!name) return null;
+    const type = normalizeServiceLookupText(trip.serviceType);
+    const matches = services.filter(service =>
+        (!type || normalizeServiceLookupText(service.service_type) === type) &&
+        getServiceNames(service).some(value => normalizeServiceLookupText(value) === name));
+    return matches.length === 1 ? matches[0] : null;
+}
+
+function getTripServiceOperatorIds(trip, service = resolveTripServiceDefinition(trip)) {
+    if (!service) return [];
+    let segments = getTripSegments(trip);
+    if (!segments.length && trip.from_id && trip.to_id) {
+        const patterns = (service.patterns || []).filter(pattern => isServicePatternDateValid(pattern, trip.date));
+        const selected = patterns.find(pattern => pattern.id === trip.service_pattern_id);
+        const journeys = (selected ? [selected] : patterns)
+            .map(pattern => resolveServiceJourneySegments(pattern, trip.from_id, trip.to_id, trip.date))
+            .filter(journey => journey.length);
+        if (journeys.length === 1) segments = journeys[0];
+    }
+    if (!segments.length || segments.some(segment => !segment.from_id || !segment.to_id)) return [];
+    const declared = new Set(getServiceOperatorCompanyIds(service));
+    // Count travelled sections, excluding the zero-length side of a boundary station.
+    return [...new Set(segments.filter(segment => segment.from_id !== segment.to_id)
+        .map(segment => String(segment.company_id || maps.line[segment.line_id]?.company_id || '').trim().toUpperCase())
+        .filter(companyId => declared.has(companyId)))];
+}
+
+function buildTripServiceCompanyHtml(companyIds) {
+    const names = companyIds.map(getCompName);
+    if (names.length < 2) return `<span class="trip-route-inline">${escapeHtml(names[0] || '')}</span>`;
+    return `<span class="trip-service-operators trip-route-inline">
+        <span class="trip-service-company-roll" aria-label="${escapeHtml(names.join('、'))}">
+            <span class="trip-service-company-faces" aria-hidden="true">${names.map((name, index) => `<span class="trip-service-company-face${index === 0 ? ' is-current' : ''}">${escapeHtml(name)}</span>`).join('')}</span>
+            <span class="trip-service-company-count" aria-hidden="true">1/${names.length}</span>
+        </span>
+        <span class="trip-service-company-list" role="list" hidden>${names.map(name => `<span role="listitem">${escapeHtml(name)}</span>`).join('')}</span>
+    </span>`;
+}
+
+let historyServiceCompanyTimer = null;
+
+function setupHistoryRouteDetails(list) {
+    list.querySelectorAll('details.trip-route-details').forEach(details => {
+        const layout = details.closest('.trip-service-layout');
+        const region = layout || details;
+        const summary = details.querySelector('summary');
+        const companies = layout?.querySelector('.trip-service-operators');
+        const roll = companies?.querySelector('.trip-service-company-roll');
+        const names = companies?.querySelector('.trip-service-company-list');
+        let targetOpen = details.open;
+        let animation = null;
+        const setOpen = open => {
+            details.open = open;
+            companies?.classList.toggle('is-expanded', open);
+            if (roll) { roll.hidden = open; roll.setAttribute('aria-hidden', String(open)); }
+            if (names) names.hidden = !open;
+        };
+        setOpen(targetOpen);
+        summary.setAttribute('aria-expanded', String(targetOpen));
+        summary.addEventListener('click', event => {
+            event.preventDefault();
+            const fromHeight = region.getBoundingClientRect().height;
+            animation?.cancel();
+            targetOpen = !targetOpen;
+            setOpen(targetOpen);
+            const toHeight = region.getBoundingClientRect().height;
+            // Keep both lists present until the closing animation has finished.
+            if (!targetOpen) setOpen(true);
+            summary.setAttribute('aria-expanded', String(targetOpen));
+            animation = region.animate([
+                { height: `${fromHeight}px`, overflow: 'hidden' },
+                { height: `${toHeight}px`, overflow: 'hidden' }
+            ], { duration: 280, easing: 'cubic-bezier(.2, .7, .2, 1)' });
+            animation.onfinish = () => { setOpen(targetOpen); animation = null; };
+        });
+    });
+}
+
+function setupHistoryServiceCompanyRotation(list) {
+    clearInterval(historyServiceCompanyTimer);
+    historyServiceCompanyTimer = null;
+    const controls = [...list.querySelectorAll('.trip-service-operators')];
+    if (!controls.length) return;
+    historyServiceCompanyTimer = setInterval(() => {
+        if (document.hidden) return;
+        controls.forEach(control => {
+            const rect = control.getBoundingClientRect();
+            if (!rect.width || rect.bottom < 0 || rect.top > window.innerHeight ||
+                control.classList.contains('is-expanded')) return;
+            const faces = [...control.querySelectorAll('.trip-service-company-face')];
+            const current = faces.findIndex(face => face.classList.contains('is-current'));
+            const next = (current + 1) % faces.length;
+            faces.forEach((face, index) => face.classList.toggle('is-current', index === next));
+            faces[next].animate([
+                { opacity: 0, transform: 'translateY(35%) rotateX(-35deg)' },
+                { opacity: 1, transform: 'translateY(0) rotateX(0)' }
+            ], { duration: 320, easing: 'ease-out' });
+            control.querySelector('.trip-service-company-count').textContent = `${next + 1}/${faces.length}`;
+        });
+    }, 4000);
+}
+
 function render() {
 	console.log("render triggered");
     const orderedTrips = getOrderedTripsForDisplay(trips);
@@ -13536,7 +14401,7 @@ let tripsToDisplay = orderedTrips.filter(t => {
     const trainText = getTripTrainDisplay(t) || "";
     const fromText = getStationName(t.from_id) || "";
     const toText = getStationName(t.to_id) || "";
-    const serviceText = t.serviceType || "";
+    const serviceText = [t.serviceType, t.serviceName].filter(Boolean).join(" ");
 
     const haystack = [
         routeTexts,
@@ -13603,16 +14468,51 @@ pagedTrips.forEach((t) => {
     });
     
     const directionSummary = getTripDirectionSummary(t);
-    const serviceHtml = t.serviceType
-        ? `<span class="trip-service-badge">${t.serviceType}</span>`
-        : '';
+    const serviceDefinition = resolveTripServiceDefinition(t);
+    const serviceOperatorIds = getTripServiceOperatorIds(t, serviceDefinition);
+    const hasServiceCompany = serviceOperatorIds.length > 0;
+    const foldRoutes = routes.length >= 3 || (hasServiceCompany && routes.length > 1);
+    const mobileFoldRoutes = !foldRoutes && routes.length === 2 && routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(' ').length > 28;
+    const serviceHeading = hasServiceCompany || (foldRoutes && t.serviceName);
+    let serviceLayoutHtml = '';
+    let routeDetailsHtml = '';
+    if (foldRoutes || mobileFoldRoutes) {
+        const hiddenRouteMatch = historySearchKeyword && routes.some(r =>
+            `${getCompName(r.company_id)} ${getLineName(r.line_id)}`.toLowerCase().includes(historySearchKeyword));
+        let previousCompanyId = null;
+        const routeItems = routes.map(r => {
+            const companyLabel = r.company_id !== previousCompanyId
+                ? `${escapeHtml(getCompName(r.company_id))} · ` : '';
+            previousCompanyId = r.company_id;
+            return `<li>${companyLabel}${escapeHtml(getLineName(r.line_id))}</li>`;
+        }).join('');
+        const countLabel = `${routes.length}路線経由`;
+        routeDetailsHtml = `<details class="trip-route-details${mobileFoldRoutes ? ' mobile-route-fold' : ''}" ${hiddenRouteMatch ? 'open' : ''}>
+            <summary><span class="trip-route-count">${countLabel}</span></summary>
+            <ol class="trip-route-timeline">${routeItems}</ol>
+        </details>`;
+    }
+    const serviceParts = [
+        t.serviceType ? `<span class="trip-service-type">${escapeHtml(t.serviceType)}</span>` : '',
+        t.serviceName ? `<span class="trip-service-name">${escapeHtml(t.serviceName)}</span>` : ''
+    ].filter(Boolean).join(' ');
+    const serviceHtml = serviceParts
+        ? `<span class="trip-service-badge trip-service-label">${serviceParts}</span>` : '';
+    if (serviceHeading) {
+        const companyHtml = hasServiceCompany ? buildTripServiceCompanyHtml(serviceOperatorIds)
+            : `<span class="trip-route-inline">${escapeHtml(getCompName(routes[0].company_id))}</span>`;
+        if (hasServiceCompany && routes.length === 1) {
+            routeDetailsHtml = `<span class="trip-route-details">${escapeHtml(getLineName(routes[0].line_id))}</span>`;
+        }
+        serviceLayoutHtml = `<div class="trip-service-layout">${companyHtml}<div class="trip-service-content">${serviceHtml}${routeDetailsHtml}</div></div>`;
+    }
 
     const photoIconHtml = (t.photoTrain || t.photoFrom || t.photoTo)
         ? `<span class="trip-photo-icon" title="有相片">📸</span>`
         : '';
 
     const routeMetaHtml = [
-        serviceHtml,
+        serviceHeading ? '' : serviceHtml,
         directionSummary ? `<span class="trip-direction-chip">${directionSummary}</span>` : "",
         photoIconHtml
     ].filter(Boolean).join("");
@@ -13644,13 +14544,13 @@ pagedTrips.forEach((t) => {
         ${dragHandleHtml}
         <div class="trip-content-wrap trip-ticket-layout">
             <div class="trip-ticket-main">
-                <span class="trip-ticket-section trip-ticket-route">
+                <div class="trip-ticket-section trip-ticket-route">
                     <span class="trip-ticket-label">路線</span>
-                    <span class="trip-route-stack">
-                        <span class="trip-route-inline">${routeHtml || "未設定路線"}</span>
+                    <div class="trip-route-stack${serviceHeading ? ' has-service-layout' : ''}">
+                        ${serviceHeading ? serviceLayoutHtml : `${!foldRoutes ? `<span class="trip-route-inline${mobileFoldRoutes ? ' trip-route-full-mobile' : ''}">${routeHtml || "未設定路線"}</span>` : ''}${routeDetailsHtml}`}
                         ${routeMetaHtml ? `<span class="trip-route-meta">${routeMetaHtml}</span>` : ""}
-                    </span>
-                </span>
+                    </div>
+                </div>
                 <span class="trip-ticket-section trip-ticket-train">
                     <span class="trip-ticket-label">車両</span>
                     <span class="trip-train-inline">${formatHistoryTokenText(getTripTrainDisplay(t))}</span>
@@ -13673,6 +14573,8 @@ pagedTrips.forEach((t) => {
     `;
     listDiv.appendChild(div);
 });
+    setupHistoryRouteDetails(listDiv);
+    setupHistoryServiceCompanyRotation(listDiv);
 
     if (totalPages > 1) {
         paginationDiv.innerHTML = `
@@ -13929,7 +14831,7 @@ function renderStats() {
 
     let completionText = "";
     if (activeStatFilter.type === 'company' && db.lines.length > 0) {
-        let totalLinesInDb = db.lines.filter(l => l.company_id === activeStatFilter.id).length;
+        let totalLinesInDb = db.lines.filter(l => l.selectable !== false && l.company_id === activeStatFilter.id).length;
         if (totalLinesInDb > 0) {
             let percentage = ((lSet.size / totalLinesInDb) * 100).toFixed(0);
             completionText = `<span class="completion-rate">(完成率：${lSet.size}/${totalLinesInDb} 條，${percentage}%)</span>`;
@@ -14132,7 +15034,7 @@ function getGeometryWkt(source) {
 
 function getLineGeometryCacheKey(line) {
     const wkt = getGeometryWkt(line);
-    return `${line?.id || ""}:${wkt.length}:${wkt.slice(0, 32)}:${wkt.slice(-32)}`;
+    return `${line?.id || ""}:${line?._line_version_id || ""}:${wkt.length}:${wkt.slice(0, 32)}:${wkt.slice(-32)}`;
 }
 
 function getLineGeometryGraph(line) {
@@ -14271,10 +15173,7 @@ function findShortestGeometryPath(line, fromStation, toStation) {
 }
 
 function hasRiddenLine(lineId) {
-    return trips.some(t =>
-        Array.isArray(t.routes) &&
-        t.routes.some(r => r.line_id === lineId)
-    );
+    return trips.some(t => getTripSegments(t).some(segment => segment.line_id === lineId));
 }
 
 function resolveLineObject(lineRef) {
@@ -14282,6 +15181,60 @@ function resolveLineObject(lineRef) {
     if (typeof lineRef === "object") return lineRef;
 
     return db.lines.find(line => line.id === lineRef) || maps.line[lineRef] || null;
+}
+
+function getLineVersionEntries(lineRef) {
+    const line = resolveLineObject(lineRef);
+    return line && Array.isArray(line.versions) ? line.versions.filter(version => version && typeof version === "object") : [];
+}
+
+function isLineVersionDateValid(version, dateValue) {
+    const date = String(dateValue || "").trim();
+    if (!date) return false;
+    if (version?.valid_from && date < String(version.valid_from)) return false;
+    if (version?.valid_to && date > String(version.valid_to)) return false;
+    return true;
+}
+
+function resolveLineVersionForDate(lineRef, dateValue = "", preferredVersionId = "") {
+    const line = resolveLineObject(lineRef);
+    if (!line) return null;
+
+    const versions = getLineVersionEntries(line);
+    const preferredId = String(preferredVersionId || "").trim();
+    let selected = preferredId
+        ? versions.find(version => String(version.id || "") === preferredId)
+        : null;
+
+    if (!selected && dateValue) {
+        selected = versions
+            .filter(version => isLineVersionDateValid(version, dateValue))
+            .sort((a, b) => String(b.valid_from || "").localeCompare(String(a.valid_from || "")))[0] || null;
+    }
+
+    if (!selected) return line;
+
+    return {
+        ...line,
+        ...selected,
+        id: line.id,
+        company_id: line.company_id,
+        name: line.name,
+        color: selected.color || line.color,
+        _base_line_id: line.id,
+        _line_version_id: String(selected.id || ""),
+        _line_version_valid_from: String(selected.valid_from || ""),
+        _line_version_valid_to: String(selected.valid_to || "")
+    };
+}
+
+function isHistoricalLineVersion(lineRef) {
+    const line = resolveLineObject(lineRef);
+    if (!line?._line_version_id) return false;
+    const status = String(line.status || line.state || "").trim().toLowerCase();
+    if (["closed", "abandoned", "discontinued", "historic"].includes(status)) return true;
+    const validTo = String(line._line_version_valid_to || line.valid_to || "").trim();
+    return !!validTo && validTo < new Date().toISOString().slice(0, 10);
 }
 
 function normalizeLineSequenceArray(sequence) {
@@ -14295,7 +15248,7 @@ function isOneWayPath(path) {
 }
 
 function isPathLoopLike(path) {
-    return isOneWayPath(path) || isLoopLine(path);
+    return isLoopLine(path);
 }
 
 function getLinePathDefinitions(lineRef) {
@@ -14383,6 +15336,8 @@ function getSequenceTraversalCandidate(sequence, fromId, toId, pathLike = {}, di
             if (!wrap) {
                 const step = fromIndex <= toIndex ? 1 : -1;
                 const distance = Math.abs(toIndex - fromIndex);
+                if (oneWay && step !== 1) return;
+                if (oneWay && fromId === toId && fromIndices.length > 1 && distance === 0) return;
                 const expectedStep = direction === "reverse" ? -1 : 1;
                 const directionPenalty = step === expectedStep ? 0 : 0.05;
                 candidates.push({
@@ -14439,6 +15394,14 @@ function collectSequenceTraversalKeys(sequence, traversal) {
 }
 
 function getLinePathTraversalScore(path, fromId, toId, direction = "") {
+    const requestedDirection = direction === "reverse" ? "reverse" : (direction === "forward" ? "forward" : "");
+    const pathDirectionRaw = path?.direction ?? path?.loop_direction ?? path?.travel_direction ?? "";
+    const pathDirection = pathDirectionRaw === "reverse" ? "reverse" : (pathDirectionRaw === "forward" ? "forward" : "");
+
+    // A line may define separate station/geometry paths for each travel direction.
+    // Do not let two reversed sequences tie and silently select whichever is listed first.
+    if (requestedDirection && pathDirection && requestedDirection !== pathDirection) return Infinity;
+
     const traversal = getSequenceTraversalCandidate(path?.sequence, fromId, toId, path, direction);
     return traversal ? traversal.score : Infinity;
 }
@@ -14471,9 +15434,12 @@ function getPathStationKeySet(path, fromId, toId, direction = "") {
     return collectSequenceTraversalKeys(path?.sequence || [], traversal);
 }
 
-function applyInferredPathToSegment(segment) {
-    const line = resolveLineObject(segment?.line_id);
-    if (!line || !Array.isArray(line.paths) || !line.paths.length) return segment;
+function applyInferredPathToSegment(segment, dateValue = "") {
+    const line = resolveLineVersionForDate(segment?.line_id, dateValue, segment?.line_version_id || segment?.lineVersionId || "");
+    if (!line) return segment;
+
+    if (line._line_version_id) segment.line_version_id = line._line_version_id;
+    if (!Array.isArray(line.paths) || !line.paths.length) return segment;
 
     const path = inferLinePathForStations(line, segment.from_id, segment.to_id, segment.direction || "");
     if (path?.isDefinedPath && path.id) segment.path_id = path.id;
@@ -14677,7 +15643,10 @@ function getLineFromBlock(block) {
     const lineName = block.querySelector(".throughLine")?.value || "";
     const compId = resolve.company[compName] || compName;
 
-    return findLineByCompanyAndName(compId, lineName);
+    return resolveLineVersionForDate(
+        findLineByCompanyAndName(compId, lineName),
+        document.getElementById("date")?.value || ""
+    );
 }
 
 function getPreviousLineIdForBlock(block) {
@@ -14704,7 +15673,10 @@ function getPreviousLineForBlock(block) {
         const lineName = document.getElementById("line").value;
         const compId = resolve.company[compName] || compName;
 
-        return findLineByCompanyAndName(compId, lineName);
+        return resolveLineVersionForDate(
+            findLineByCompanyAndName(compId, lineName),
+            document.getElementById("date")?.value || ""
+        );
     }
 
     return getLineFromBlock(blocks[index - 1]);
@@ -14773,11 +15745,12 @@ function normalizeStationInputName(value = "") {
 function resolveStationIdForLine(value, lineId = "") {
     const raw = String(value || "").trim();
     if (!raw) return "";
+    const line = typeof lineId === "object" ? lineId : maps.line[lineId];
+    const directStation = maps.station[raw];
 
-    if (maps.station[raw]) return raw;
+    if (directStation && (!line || getLineStationIds(line).includes(raw))) return raw;
 
     const clean = normalizeStationInputName(raw);
-    const line = typeof lineId === "object" ? lineId : maps.line[lineId];
 
     // 最重要：用目前路線 sequence / paths 去解決「只輸入站名」嘅情況。
     // 例如 JR神戸線入「西明石」/「大阪」，都會轉返正確 station id。
@@ -14796,6 +15769,8 @@ function resolveStationIdForLine(value, lineId = "") {
 
         if (matched) return matched.id;
     }
+
+    if (directStation) return directStation.id;
 
     // 如果全資料庫只有一個同名站，亦可以安全轉換。
     if (resolve.station[raw]) return resolve.station[raw];
@@ -14995,6 +15970,129 @@ function appendGeometryPart(target, part) {
     return target;
 }
 
+function isLatLngCoordinate(value) {
+    return Array.isArray(value) &&
+        value.length >= 2 &&
+        Number.isFinite(Number(value[0])) &&
+        Number.isFinite(Number(value[1]));
+}
+
+function isGeometryPart(value) {
+    return Array.isArray(value) &&
+        value.length >= 2 &&
+        isLatLngCoordinate(value[0]);
+}
+
+function normalizeGeometryPartResult(value) {
+    if (isGeometryPart(value)) return [value];
+    if (!Array.isArray(value)) return [];
+
+    return value.filter(part => isGeometryPart(part));
+}
+
+function compactGeometryPartResult(parts) {
+    const normalized = normalizeGeometryPartResult(parts);
+    if (normalized.length === 0) return [];
+    return normalized.length === 1 ? normalized[0] : normalized;
+}
+
+function distanceLatLngPointToSegmentSq(point, a, b) {
+    if (!isLatLngCoordinate(point) || !isLatLngCoordinate(a) || !isLatLngCoordinate(b)) {
+        return Infinity;
+    }
+
+    const px = Number(point[1]);
+    const py = Number(point[0]);
+    const ax = Number(a[1]);
+    const ay = Number(a[0]);
+    const bx = Number(b[1]);
+    const by = Number(b[0]);
+
+    const dx = bx - ax;
+    const dy = by - ay;
+
+    if (dx === 0 && dy === 0) return pointDistanceSq(point, a);
+
+    let t = ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy);
+    t = Math.max(0, Math.min(1, t));
+
+    const cx = ax + t * dx;
+    const cy = ay + t * dy;
+
+    const ex = px - cx;
+    const ey = py - cy;
+
+    return ex * ex + ey * ey;
+}
+
+function distancePointToGeometryPartsSq(point, parts) {
+    let best = Infinity;
+
+    normalizeGeometryPartResult(parts).forEach(part => {
+        for (let i = 0; i < part.length - 1; i++) {
+            best = Math.min(best, distanceLatLngPointToSegmentSq(point, part[i], part[i + 1]));
+        }
+    });
+
+    return best;
+}
+
+function addGeometryPartSegmentKeys(target, part) {
+    if (!isGeometryPart(part)) return target;
+
+    for (let i = 0; i < part.length - 1; i++) {
+        target.add(makeSegmentKey(part[i], part[i + 1]));
+    }
+
+    return target;
+}
+
+function geometryPartHasKnownSegment(part, knownKeys) {
+    if (!isGeometryPart(part) || !knownKeys?.size) return false;
+
+    for (let i = 0; i < part.length - 1; i++) {
+        if (knownKeys.has(makeSegmentKey(part[i], part[i + 1]))) return true;
+    }
+
+    return false;
+}
+
+function isClosedGeometryPart(part, tolerance = 0.00005) {
+    if (!isGeometryPart(part) || part.length < 4) return false;
+    const toleranceSq = tolerance * tolerance;
+    return pointDistanceSq(part[0], part[part.length - 1]) <= toleranceSq;
+}
+
+function getAttachedLoopGeometryParts(path, mainParts) {
+    const mainGeometryParts = normalizeGeometryPartResult(mainParts);
+    if (!mainGeometryParts.length) return [];
+
+    const wkt = getGeometryWkt(path);
+    if (!wkt) return [];
+
+    const attachedParts = [];
+    const knownKeys = new Set();
+    mainGeometryParts.forEach(part => addGeometryPartSegmentKeys(knownKeys, part));
+
+    // 上越線土合一帶呢類螺旋路段會以閉合 component 存在。
+    // 只要閉合 component 接近已切出的主路徑，就視為同一乘車區間一併 highlight。
+    const attachToleranceSq = 0.0012 * 0.0012;
+
+    parseWKTMultiLineString(wkt).forEach(part => {
+        if (!isClosedGeometryPart(part)) return;
+        if (geometryPartHasKnownSegment(part, knownKeys)) return;
+
+        const attachPoint = part[0];
+        const attachDistanceSq = distancePointToGeometryPartsSq(attachPoint, mainGeometryParts);
+        if (attachDistanceSq > attachToleranceSq) return;
+
+        attachedParts.push(part);
+        addGeometryPartSegmentKeys(knownKeys, part);
+    });
+
+    return attachedParts;
+}
+
 function getPathGeometryLineObject(line, path) {
     const wkt = getGeometryWkt(path);
     if (!wkt) return null;
@@ -15016,6 +16114,7 @@ function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, dire
 
     const pathGeometryLine = getPathGeometryLineObject(line, path);
     const pathLineParts = pathGeometryLine ? getLineGeometryParts(pathGeometryLine) : [];
+    const hasExplicitPathDirection = path.direction === "forward" || path.direction === "reverse";
     let points = [];
 
     for (let i = 0; i < stationIds.length - 1; i++) {
@@ -15023,13 +16122,24 @@ function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, dire
         const segmentTo = maps.station[stationIds[i + 1]];
         if (!segmentFrom || !segmentTo) return [];
 
-        const pathPhysicalPart = pathGeometryLine
+        // Direction-specific paths (for example Oedo's two sides) can share one
+        // full geometry WKT. Follow their station order, but resolve each adjacent
+        // station pair on the physical graph so a junction cannot pull in the
+        // remainder of the loop.
+        const directGraphPart = hasExplicitPathDirection
+            ? findShortestGeometryPath(line, segmentFrom, segmentTo)
+            : [];
+        const pathPhysicalPart = directGraphPart.length >= 2
+            ? []
+            : pathGeometryLine
             ? extractBestOrderedLinePartByStations(pathLineParts, segmentFrom, segmentTo)
             : [];
-        const lineGraphPart = pathPhysicalPart.length >= 2
+        const lineGraphPart = directGraphPart.length >= 2 || pathPhysicalPart.length >= 2
             ? []
             : findShortestGeometryPath(line, segmentFrom, segmentTo);
-        const physicalPart = pathPhysicalPart.length >= 2
+        const physicalPart = directGraphPart.length >= 2
+            ? directGraphPart
+            : pathPhysicalPart.length >= 2
             ? pathPhysicalPart
             : lineGraphPart.length >= 2
                 ? lineGraphPart
@@ -15039,7 +16149,14 @@ function extractLinePartByDefinedPath(allLineParts, fromStation, toStation, dire
         points = appendGeometryPart(points, physicalPart);
     }
 
-    return points.length >= 2 ? points : [];
+    if (points.length < 2) return [];
+
+    const parts = [points];
+    if (!hasExplicitPathDirection) {
+        parts.push(...getAttachedLoopGeometryParts(path, parts));
+    }
+
+    return compactGeometryPartResult(parts);
 }
 
 function extractBestPhysicalLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null) {
@@ -15064,7 +16181,8 @@ function extractBestPhysicalLinePartByStations(allLineParts, fromStation, toStat
 
 function extractBestLinePartByStations(allLineParts, fromStation, toStation, direction = "", line = null, pathId = "") {
     const pathPart = extractLinePartByDefinedPath(allLineParts, fromStation, toStation, direction, line, pathId);
-    if (Array.isArray(pathPart) && pathPart.length >= 2) return pathPart;
+    const pathParts = normalizeGeometryPartResult(pathPart);
+    if (pathParts.length > 0) return compactGeometryPartResult(pathParts);
 
     const graphPart = findShortestGeometryPath(line, fromStation, toStation);
     if (Array.isArray(graphPart) && graphPart.length >= 2) return graphPart;
@@ -15146,6 +16264,17 @@ function stitchLineParts(parts, tolerance = 0.00015) {
 }
 
 function getTripSegments(trip) {
+    // Earlier Haruka entries used the surface Osaka connection. Resolve that
+    // known legacy itinerary for display without rewriting the saved record.
+    if (trip.service_id === "SVC_JR_WEST_HARUKA" &&
+        (trip.segments || trip.routes || []).some(segment => segment.line_id === "JR_WEST_OSAKA_HIGASHI")) {
+        const service = db.services.find(item => item.id === trip.service_id);
+        const pattern = service?.patterns?.find(item => item.id === trip.service_pattern_id);
+        if (pattern && isServicePatternDateValid(pattern, trip.date)) {
+            const corrected = resolveServiceJourneySegments(pattern, trip.from_id, trip.to_id, trip.date);
+            if (corrected.length) return corrected.map(segment => applyInferredPathToSegment({ ...segment }, trip.date));
+        }
+    }
     if (Array.isArray(trip.segments) && trip.segments.length > 0) {
         return trip.segments;
     }
@@ -15160,7 +16289,7 @@ function getTripSegments(trip) {
             to_id: trip.to_id
         };
         if (trip.direction) segment.direction = trip.direction;
-        return [applyInferredPathToSegment(segment)];
+        return [applyInferredPathToSegment(segment, trip.date || "")];
     }
 
     return [];
@@ -15173,8 +16302,9 @@ function getRiddenSegmentsForLine(lineId) {
         getTripSegments(t).forEach(seg => {
             if (seg.line_id !== lineId) return;
 
-            const fromId = resolveStationIdForLine(seg.from_id || seg.fromId || "", lineId);
-            const toId = resolveStationIdForLine(seg.to_id || seg.toId || "", lineId);
+            const line = resolveLineVersionForDate(lineId, t.date || "", seg.line_version_id || seg.lineVersionId || "");
+            const fromId = resolveStationIdForLine(seg.from_id || seg.fromId || "", line);
+            const toId = resolveStationIdForLine(seg.to_id || seg.toId || "", line);
 
             if (!maps.station[fromId] || !maps.station[toId]) {
                 console.warn("Map segment station could not be resolved", {
@@ -15191,7 +16321,9 @@ function getRiddenSegmentsForLine(lineId) {
                 fromId,
                 toId,
                 direction: seg.direction || "",
-                pathId: seg.path_id || seg.pathId || ""
+                pathId: seg.path_id || seg.pathId || "",
+                line,
+                isHistorical: isHistoricalLineVersion(line)
             });
         });
     });
@@ -15244,6 +16376,21 @@ function getLineGeometryParts(line) {
     return parts;
 }
 
+function getLineMapGeometryParts(line) {
+    const lineObject = resolveLineObject(line);
+    if (!lineObject) return [];
+
+    const pathParts = getLinePathDefinitions(lineObject)
+        .filter(path => getGeometryWkt(path))
+        .flatMap(path => {
+            const pathLine = getPathGeometryLineObject(lineObject, path);
+            return pathLine ? getLineGeometryParts(pathLine) : [];
+        })
+        .filter(part => Array.isArray(part) && part.length >= 2);
+
+    return pathParts.length ? pathParts : getLineGeometryParts(lineObject);
+}
+
 function normalizeSegmentPoint(point, precision = 5) {
     // point = [lat, lng]
     const lat = Number(point[0]).toFixed(precision);
@@ -15266,7 +16413,7 @@ function buildRailSegmentUsageIndex() {
     riddenStationKeySetCache = new Map();
 
     db.lines.forEach(line => {
-        const parts = getLineGeometryParts(line);
+        const parts = getLineMapGeometryParts(line);
 
         parts.forEach(latlngs => {
             for (let i = 0; i < latlngs.length - 1; i++) {
@@ -15325,29 +16472,36 @@ function getRiddenSegmentKeySetForLine(lineId) {
         return keys;
     }
 
-    const allLineParts = getLineGeometryParts(line);
+    const allLineParts = getLineMapGeometryParts(line);
     const riddenSegments = getRiddenSegmentsForLine(lineId);
 
     riddenSegments.forEach(seg => {
+        if (seg.isHistorical) return;
         const fromStation = maps.station[seg.fromId];
         const toStation = maps.station[seg.toId];
 
         if (!fromStation || !toStation) return;
 
+        const segmentLine = seg.line || line;
+        const segmentLineParts = getLineMapGeometryParts(segmentLine);
+
         const part = extractBestLinePartByStations(
-            allLineParts,
+            segmentLineParts.length ? segmentLineParts : allLineParts,
             fromStation,
             toStation,
             seg.direction || "",
-            line,
+            segmentLine,
             seg.pathId || ""
         );
 
-        if (!Array.isArray(part) || part.length < 2) return;
+        const parts = normalizeGeometryPartResult(part);
+        if (parts.length === 0) return;
 
-        for (let i = 0; i < part.length - 1; i++) {
-            keys.add(makeSegmentKey(part[i], part[i + 1]));
-        }
+        parts.forEach(latlngs => {
+            for (let i = 0; i < latlngs.length - 1; i++) {
+                keys.add(makeSegmentKey(latlngs[i], latlngs[i + 1]));
+            }
+        });
     });
 
     riddenSegmentKeySetCache.set(lineId, keys);
@@ -15394,9 +16548,10 @@ function getRiddenStationKeySetForLine(lineId) {
         getTripSegments(t).forEach(seg => {
             if (seg.line_id !== lineId) return;
 
-            const fromId = resolveStationIdForLine(seg.from_id || seg.fromId || "", lineId);
-            const toId = resolveStationIdForLine(seg.to_id || seg.toId || "", lineId);
-            const stationKeys = getSequencePathStationKeySet(line, fromId, toId, seg.direction || "", seg.path_id || seg.pathId || "");
+            const segmentLine = resolveLineVersionForDate(lineId, t.date || "", seg.line_version_id || seg.lineVersionId || "") || line;
+            const fromId = resolveStationIdForLine(seg.from_id || seg.fromId || "", segmentLine);
+            const toId = resolveStationIdForLine(seg.to_id || seg.toId || "", segmentLine);
+            const stationKeys = getSequencePathStationKeySet(segmentLine, fromId, toId, seg.direction || "", seg.path_id || seg.pathId || "");
             stationKeys.forEach(key => keys.add(key));
         });
     });
@@ -15463,7 +16618,7 @@ function getCompanyCompletionStats(companyId) {
 }
 
 function getOverallCompletionStats() {
-    const lineStats = db.lines.map(line => getLineCompletionStats(line.id));
+    const lineStats = db.lines.filter(line => line.selectable !== false).map(line => getLineCompletionStats(line.id));
     const totalLines = lineStats.length;
     const riddenLines = lineStats.filter(stat => stat.isRidden).length;
     const completedLines = lineStats.filter(stat => stat.isComplete).length;
@@ -15863,6 +17018,19 @@ function buildRiddenSegmentHighlightLayers(latlngs, fallbackColor) {
     );
 }
 
+function buildHistoricalSegmentHighlightLayers(latlngs) {
+    if (!Array.isArray(latlngs) || latlngs.length < 2) return [];
+    return [L.polyline(latlngs, {
+        color: "#4a4f54",
+        weight: 7,
+        opacity: 0.9,
+        lineCap: "round",
+        lineJoin: "round",
+        smoothFactor: 1,
+        interactive: true
+    })];
+}
+
 function buildRoutePopupHtml(line, clickedSegment = null) {
     const isSharedSegment =
         clickedSegment?.segmentKey &&
@@ -16026,11 +17194,15 @@ function renderRailGeometries(selectedCategory = "all") {
     mapRailGeometryLines = [];
 
     const showUnriddenLines = getMapShowUnriddenLines();
+    const riddenHighlightLayers = [];
     clearRiddenSegmentKeySetCache();
 
     db.lines.forEach(line => {
-        const allLineParts = getLineGeometryParts(line);
-        if (allLineParts.length === 0) return;
+        const allLineParts = getLineMapGeometryParts(line);
+        const riddenSegments = getRiddenSegmentsForLine(line.id);
+        // An abolished line can deliberately keep its geometry only inside an
+        // expired version. It must still be visible when the old trip is shown.
+        if (allLineParts.length === 0 && riddenSegments.length === 0) return;
 
         const companyId = line.company_id || "";
         const companyCategory = normalizeMapFilterCategory(getRailCompanyCategory(companyId));
@@ -16042,7 +17214,6 @@ function renderRailGeometries(selectedCategory = "all") {
             return;
         }
 
-        const riddenSegments = getRiddenSegmentsForLine(line.id);
         const lineHasRidden = riddenSegments.length > 0 || hasRiddenLine(line.id);
 
         if (!showUnriddenLines && !lineHasRidden) {
@@ -16129,26 +17300,36 @@ function renderRailGeometries(selectedCategory = "all") {
 
             if (!fromStation || !toStation) return;
 
+            const segmentLine = seg.line || line;
+            const segmentLineParts = getLineMapGeometryParts(segmentLine);
             const part = extractBestLinePartByStations(
-                allLineParts,
+                segmentLineParts.length ? segmentLineParts : allLineParts,
                 fromStation,
                 toStation,
                 seg.direction || "",
-                line,
+                segmentLine,
                 seg.pathId || ""
             );
 
-            if (!Array.isArray(part) || part.length < 2) return;
+            const parts = normalizeGeometryPartResult(part);
+            if (parts.length === 0) return;
 
-            const highlightLayers = buildRiddenSegmentHighlightLayers(part, highlightColor);
+            const highlightLayers = parts.flatMap(latlngs => seg.isHistorical
+                ? buildHistoricalSegmentHighlightLayers(latlngs)
+                : buildRiddenSegmentHighlightLayers(latlngs, highlightColor)
+            );
 
             highlightLayers.forEach(layer => {
                 layer.addTo(railMapInstance);
                 layer.on("click", handleRouteClick);
                 mapRailGeometryLines.push(layer);
+                riddenHighlightLayers.push(layer);
             });
         });
     });
+
+    // Keep completed and historical segments above every route's gray base layer.
+    riddenHighlightLayers.forEach(layer => layer.bringToFront?.());
 
     if (routeToRestore && routeRestoreData) {
         showSelectedMapRoute(
@@ -16165,6 +17346,8 @@ function renderRailGeometries(selectedCategory = "all") {
 
 window.editTrip = function(i) {
     const t = trips[i];
+    activeServicePattern = null;
+    activeServiceDefinition = null;
     let setVal = (id, val) => document.getElementById(id).value = val || "";
     setVal("date", t.date);
     
@@ -16208,7 +17391,8 @@ window.editTrip = function(i) {
 });
 
     updateStationLists(); 
-    setVal("serviceType", t.serviceType); 
+    setVal("serviceType", t.serviceType);
+    setVal("serviceName", t.serviceName);
     
     const trainObj = maps.train[t.train_id];
     if (trainObj && trainObj.company_id !== firstCompId) {
@@ -16247,6 +17431,7 @@ window.editTrip = function(i) {
     editIndex = i;
 editingTripId = t.id || null;
 setupAddOptionPanels();
+syncServiceDetailsForLine();
 syncAddOptionControls();
 switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 }
@@ -16308,6 +17493,9 @@ window.importData = function() {
                     await addDoc(tripsRef, {
                         date: trip.date || "",
                         serviceType: trip.serviceType || "",
+                        serviceName: trip.serviceName || "",
+                        service_id: trip.service_id || "",
+                        service_pattern_id: trip.service_pattern_id || "",
                         routes: Array.isArray(trip.routes) ? trip.routes : [],
                         train_id: trip.train_id || "",
                         from_id: trip.from_id || "",
@@ -16377,6 +17565,59 @@ function getRailCompanyCategory(companyIdOrName = "") {
 function normalizeMapFilterCategory(rawCategory = "") {
     if (String(rawCategory).startsWith("jr_")) return "jr";
     return rawCategory;
+}
+
+const RAIL_MAP_TILE_PROVIDERS = [
+    {
+        name: "OpenStreetMap",
+        url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        options: {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }
+    },
+    {
+        name: "Esri Light Gray",
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+        options: {
+            maxZoom: 18,
+            attribution: "Tiles &copy; Esri &mdash; Sources: Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors"
+        }
+    }
+];
+
+function addRailMapBaseLayer(providerIndex = 0) {
+    if (!railMapInstance || typeof L === "undefined") return;
+
+    const provider = RAIL_MAP_TILE_PROVIDERS[providerIndex] || RAIL_MAP_TILE_PROVIDERS[0];
+    if (!provider) return;
+
+    railMapTileProviderIndex = providerIndex;
+    railMapTileErrorCount = 0;
+
+    if (railMapBaseLayer) {
+        railMapInstance.removeLayer(railMapBaseLayer);
+        railMapBaseLayer = null;
+    }
+
+    railMapBaseLayer = L.tileLayer(provider.url, provider.options);
+
+    railMapBaseLayer.on("tileerror", () => {
+        railMapTileErrorCount += 1;
+
+        const nextProviderIndex = railMapTileProviderIndex + 1;
+        if (railMapTileErrorCount < 4 || nextProviderIndex >= RAIL_MAP_TILE_PROVIDERS.length) return;
+
+        console.warn(`Base map ${provider.name} failed; switching to ${RAIL_MAP_TILE_PROVIDERS[nextProviderIndex].name}.`);
+        if (!railMapTileFallbackNotified && typeof showToast === "function") {
+            railMapTileFallbackNotified = true;
+            showToast("底圖來源被擋，已自動切換備用地圖", "var(--warn)");
+        }
+
+        addRailMapBaseLayer(nextProviderIndex);
+    });
+
+    railMapBaseLayer.addTo(railMapInstance);
 }
 
 function getLineThemeColor(lineOrLineId, fallbackCompanyId = "") {
@@ -16651,9 +17892,7 @@ function renderMap() {
     clearSelectedMapRoute();
 	});
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(railMapInstance);
+        addRailMapBaseLayer();
 
         railMapInstance.on("zoomend", () => {
     const keepCenter = railMapInstance.getCenter();

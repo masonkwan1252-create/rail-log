@@ -65,9 +65,341 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
 @media(prefers-color-scheme:dark){.index-audit-note{background:#151515}.index-audit-card{background:#1f1f22;border-color:#38383a}.index-audit-card.ok{background:#10251a;border-color:#166534}.index-audit-card.warn{background:#33260b;border-color:#92400e}.index-audit-card.danger,.index-audit-card.error{background:#3a171a;border-color:#7f1d1d}.index-audit-meta span,.index-audit-chip{background:#151515;border-color:#38383a}}
 .debug-summary-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
 @media(max-width:860px){.debug-summary-grid{grid-template-columns:1fr}}
-.line-path-builder{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px;margin-top:6px}.line-path-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.line-path-head strong{font-size:13px}.line-path-head .small{margin-right:auto}.line-path-list{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.line-path-list button{width:auto;margin:0;padding:7px 9px;border-radius:999px;background:#eef2f7;color:var(--text);font-size:12px}.line-path-list button.active{background:var(--primary2);color:#fff}.line-path-editor{border-top:1px dashed var(--border);padding-top:10px}.line-path-editor-grid{display:grid;grid-template-columns:minmax(160px,1fr) minmax(140px,.75fr);gap:10px}.line-path-sequence-tools{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.line-path-seq-list{max-height:240px}.line-path-seq-list .seq-item{grid-template-columns:auto minmax(0,1fr) auto auto auto}.line-path-seq-list .seq-jump{width:100%}.line-path-seq-list .seq-item .mini-btn{width:auto;min-width:34px}.line-path-raw{margin-top:8px}.line-path-raw summary{cursor:pointer;color:var(--sub);font-size:12px;font-weight:900}.line-path-raw textarea{margin-top:7px;min-height:120px}
-@media(max-width:860px){.line-path-editor-grid{grid-template-columns:1fr}.line-path-head .small{width:100%;margin-right:0}.line-path-sequence-tools input{min-width:0!important;width:100%}}
+.line-path-builder{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px;margin-top:6px}.line-path-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.line-path-head strong{font-size:13px}.line-path-head .small{margin-right:auto}.line-path-list{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}.line-path-list button{width:auto;margin:0;padding:7px 9px;border-radius:999px;background:#eef2f7;color:var(--text);font-size:12px}.line-path-list button.active{background:var(--primary2);color:#fff}.line-path-editor{border-top:1px dashed var(--border);padding-top:10px}.line-path-editor-grid{display:grid;grid-template-columns:minmax(160px,1fr) minmax(140px,.75fr);gap:10px}.line-path-geometry-field{grid-column:1/-1}.line-path-geometry-field textarea{min-height:92px;resize:vertical}.line-path-geometry-note{color:var(--sub);font-size:11px;line-height:1.45}.line-path-geometry-badge{display:inline-flex;align-items:center;margin-left:5px;padding:1px 6px;border-radius:999px;background:#dcfce7;color:#166534;font-size:10px;font-weight:900}.line-path-sequence-tools{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.line-path-sequence-tools select{width:auto;min-width:180px;flex:0 1 240px}.line-path-seq-list{max-height:240px}.line-path-seq-list .seq-item{grid-template-columns:auto auto minmax(0,1fr) auto auto auto}.line-path-seq-list .seq-jump{width:100%}.line-path-seq-list .seq-item .mini-btn{width:auto;min-width:34px}.line-path-raw{margin-top:8px}.line-path-raw summary{cursor:pointer;color:var(--sub);font-size:12px;font-weight:900}.line-path-raw textarea{margin-top:7px;min-height:120px}
+.service-name-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.service-search-row{display:flex;gap:7px;margin:8px 0}.service-search-row input{min-width:0;flex:1}.service-search-row button{flex:0 0 auto;white-space:nowrap}.service-segment-row{display:grid;grid-template-columns:minmax(180px,1.2fr) minmax(145px,.9fr) minmax(145px,.9fr) auto;gap:8px;align-items:center}.service-segment-actions{display:flex;gap:4px}.service-segment-actions button{width:auto;white-space:nowrap}.service-stop-item{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto auto auto;gap:6px;align-items:center}.service-stop-item.dragging{opacity:.45}.service-stop-item.drag-over{border-color:var(--rail-green);background:var(--rail-green-soft)}
+@media(max-width:860px){.line-path-editor-grid,.service-name-grid{grid-template-columns:1fr}.line-path-head .small{width:100%;margin-right:0}.line-path-sequence-tools input{min-width:0!important;width:100%}.service-segment-row{grid-template-columns:1fr 1fr}.service-segment-actions{grid-column:1/-1}}
 @media(prefers-color-scheme:dark){.line-path-builder{background:#1f1f22;border-color:#38383a}.line-path-list button{background:#2c2c2e;color:var(--text)}}
+
+/* Rail Log visual refresh */
+:root{
+  --bg:#f4f7f1;
+  --card:#fff;
+  --text:#172114;
+  --sub:#6d7569;
+  --border:#d9e2d3;
+  --primary:#63bd0f;
+  --primary2:#43a800;
+  --ok:#34a853;
+  --danger:#e53935;
+  --warn:#f59e0b;
+  --soft:#f4faef;
+  --rail:#10233f;
+  --rail2:#63bd0f;
+  --rail-green:#63bd0f;
+  --rail-green-dark:#2f8500;
+  --rail-green-soft:#edf8e6;
+  --rail-green-line:#d6efc8;
+  --rail-silver:#f7f8f6;
+  --rail-shadow:0 12px 28px rgba(28,45,21,.09);
+}
+body{
+  min-height:100vh;
+  padding:18px;
+  background:
+    linear-gradient(90deg,rgba(99,189,15,.22) 0 5px,transparent 5px),
+    linear-gradient(180deg,#fbfcfa 0,#f4f7f1 46%,#eef4ea 100%);
+  color:var(--text);
+}
+.container{
+  max-width:1680px;
+  padding:0;
+  gap:22px;
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
+  backdrop-filter:none;
+  grid-template-columns:74px minmax(0,1fr);
+}
+.tabs{
+  width:74px;
+  top:18px;
+  padding:8px;
+  gap:7px;
+  border-color:rgba(23,33,20,.16);
+  border-radius:10px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 10px 26px rgba(28,45,21,.10);
+}
+.tabs:hover,.tabs:focus-within,.tabs.expanded{
+  width:228px;
+  box-shadow:0 16px 34px rgba(28,45,21,.14);
+}
+.nav-toggle{
+  width:56px;
+  height:40px;
+  border-radius:8px;
+  border-color:var(--rail-green-line);
+  background:#fff;
+  color:var(--rail-green-dark);
+}
+.tabs.expanded .nav-toggle{
+  background:var(--rail-green);
+  color:#fff;
+}
+.tab-btn{
+  min-height:54px;
+  padding:5px;
+  border-radius:8px;
+  background:transparent;
+  color:#707a6b;
+  box-shadow:inset 0 0 0 1px transparent;
+}
+.tab-btn:hover{
+  background:var(--rail-green-soft);
+  color:var(--rail-green-dark);
+  filter:none;
+  transform:none;
+}
+.tab-icon{
+  width:44px;
+  height:42px;
+  border-radius:7px;
+  background:#f6f8f4;
+}
+.tab-btn.active{
+  background:#f6fbf1;
+  color:var(--rail-green-dark);
+  box-shadow:inset 4px 0 0 var(--rail-green),inset 0 0 0 1px var(--rail-green-line);
+}
+.tab-btn.active .tab-icon{
+  background:var(--rail-green);
+  color:#fff;
+}
+.tab-content{
+  min-height:calc(100vh - 36px);
+  padding:22px;
+  border:1px solid rgba(23,33,20,.18);
+  border-bottom:2px solid var(--rail-green-line);
+  border-radius:14px;
+  background:rgba(255,255,255,.94);
+  box-shadow:var(--rail-shadow);
+}
+.tab-content>h1{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 16px;
+  color:var(--text);
+  font-size:22px;
+  letter-spacing:.01em;
+}
+.tab-content>h1:before{
+  content:"";
+  width:5px;
+  height:24px;
+  border-radius:999px;
+  background:var(--rail-green);
+  box-shadow:0 0 0 4px var(--rail-green-soft);
+}
+p,.hint,.small,.status,.overview-sub,.station-issue-row-meta{
+  color:var(--sub);
+}
+code{
+  background:var(--rail-green-soft);
+  color:var(--rail-green-dark);
+}
+.card,.step-card,.overview-tile,.debug-pill,.index-audit-card,.station-issue-card.compact,.line-debug-card,.station-mini-card{
+  border-color:var(--border);
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 5px 18px rgba(28,45,21,.055);
+}
+.config-row,.hint-box,.geo-toggle,.geo-statusbar,.station-route-refs,.seq-list,.line-form-panel,.sequence-panel,.line-path-builder,.index-audit-note,.station-audit-empty-filter{
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--rail-silver);
+}
+.input-group label,.station-route-refs strong{
+  color:var(--rail-green-dark);
+}
+input,textarea,select{
+  border-color:#d7dfd1;
+  border-radius:8px;
+  background:#fff;
+  color:var(--text);
+}
+input:focus,textarea:focus,select:focus{
+  border-color:var(--rail-green);
+  box-shadow:0 0 0 3px rgba(99,189,15,.14);
+}
+button,.btn-main{
+  border-radius:8px;
+  background:var(--rail-green);
+  color:#fff;
+  box-shadow:none;
+}
+button:hover,.btn-main:hover{
+  filter:brightness(.98);
+  transform:translateY(-1px);
+}
+button.secondary{
+  background:#59635a;
+}
+button.ok{
+  background:#2fa64a;
+}
+button.danger{
+  background:var(--danger);
+}
+button.ghost,.editor-tabs button,.line-path-list button,.station-filter-chip{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--text);
+}
+button.ghost:hover,.editor-tabs button:hover,.line-path-list button:hover,.station-filter-chip:hover{
+  background:var(--rail-green-soft);
+  color:var(--rail-green-dark);
+  filter:none;
+  transform:none;
+}
+.editor-tabs button.active,.line-path-list button.active,.station-filter-chip.active{
+  border-color:var(--rail-green);
+  background:var(--rail-green);
+  color:#fff;
+}
+.helper-output,.editor-output,.wkt-final{
+  border:1px solid #263449!important;
+  border-radius:12px;
+  background:#101827!important;
+  color:#dbeafe!important;
+}
+.geo-hero,.editor-hero,.index-audit-hero{
+  color:var(--text);
+  border:1px solid var(--border);
+  border-left:6px solid var(--rail-green);
+  background:
+    linear-gradient(90deg,var(--rail-green-soft),rgba(255,255,255,.92) 42%),
+    #fff;
+  box-shadow:0 7px 22px rgba(28,45,21,.06);
+}
+.geo-hero:before{
+  display:none;
+}
+.geo-hero h1,.editor-hero h1,.index-audit-hero h1{
+  color:var(--text);
+}
+.geo-hero p,.editor-hero p,.index-audit-hero p{
+  color:var(--sub);
+}
+.geo-chip,.editor-chip,.pill,.metric,.index-audit-chip,.issue-token,.index-audit-meta span{
+  border-color:var(--rail-green-line);
+  background:var(--rail-green-soft);
+  color:var(--rail-green-dark);
+}
+.step-no{
+  background:var(--rail-green);
+}
+.editor-list{
+  border-color:var(--border);
+  border-radius:12px;
+  background:#fff;
+}
+.editor-list button{
+  border-bottom-color:var(--border);
+}
+.editor-list button:hover,.seq-jump:hover{
+  background:var(--rail-green-soft);
+}
+.editor-list button.active{
+  background:var(--rail-green);
+  color:#fff;
+}
+.seq-item,.station-issue-row{
+  border-color:var(--border);
+  border-radius:10px;
+  background:#fff;
+}
+.seq-item.selected,.seq-item.drag-over{
+  border-color:var(--rail-green);
+  background:var(--rail-green-soft);
+  box-shadow:inset 4px 0 0 var(--rail-green);
+}
+.debug-pill.ok,.overview-tile.ok,.line-debug-card.ok,.audit-empty,.index-audit-empty,.index-audit-card.ok{
+  border-color:#bfe7b5;
+  background:#f2fbef;
+  color:#256b12;
+}
+.debug-pill.warn,.overview-tile.warn,.line-debug-card.warn,.index-audit-card.warn{
+  border-color:#f7dfa7;
+  background:#fffaf0;
+  color:#8a5c00;
+}
+.debug-pill.danger,.line-debug-card.danger,.index-audit-card.danger,.index-audit-card.error,.station-issue-card.compact.danger{
+  border-color:#f2c2c2;
+  background:#fff7f7;
+  color:#9b1c1c;
+}
+.station-issue-card.compact.warn{
+  border-color:#f7dfa7;
+  background:#fffaf0;
+  box-shadow:inset 4px 0 0 var(--warn);
+}
+.station-issue-card.compact.info{
+  border-color:#cdddc6;
+  background:#f6fbf1;
+  box-shadow:inset 4px 0 0 var(--rail-green);
+}
+@media(max-width:860px){
+  body{padding:12px}
+  .container{display:block}
+  .tab-content{
+    min-height:auto;
+    padding:16px;
+    border-radius:12px;
+  }
+  .tabs,.tabs:hover,.tabs:focus-within,.tabs.expanded{
+    top:8px;
+    padding:6px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(28,45,21,.10);
+  }
+  .tab-btn,.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-btn{
+    flex:1 0 166px;
+  }
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#111510;
+    --card:#1f241d;
+    --text:#f4f7f1;
+    --sub:#aab4a4;
+    --border:#3a4635;
+    --soft:#172112;
+    --rail-silver:#171d15;
+    --rail-green-soft:#1f3318;
+    --rail-green-line:#365c28;
+  }
+  body{
+    background:
+      linear-gradient(90deg,rgba(99,189,15,.30) 0 5px,transparent 5px),
+      linear-gradient(180deg,#10150f 0,#151b13 100%);
+  }
+  .container{background:transparent}
+  .tab-content,.tabs,.card,.step-card,.overview-tile,.debug-pill,.index-audit-card,.editor-list,.seq-item,.station-issue-row,.station-issue-card.compact,.line-debug-card,.station-mini-card{
+    background:#1f241d;
+    border-color:var(--border);
+  }
+  .config-row,.hint-box,.geo-toggle,.geo-statusbar,.station-route-refs,.seq-list,.line-form-panel,.sequence-panel,.line-path-builder,.index-audit-note,.station-audit-empty-filter{
+    background:#171d15;
+    border-color:var(--border);
+  }
+  .geo-hero,.editor-hero,.index-audit-hero{
+    background:linear-gradient(90deg,#1f3318,rgba(31,36,29,.96) 42%);
+    border-color:var(--border);
+  }
+  input,textarea,select{
+    background:#111510;
+    color:var(--text);
+    border-color:var(--border);
+  }
+  button.ghost,.editor-tabs button,.line-path-list button,.station-filter-chip,.metric{
+    background:#171d15;
+    color:var(--text);
+    border-color:var(--border);
+  }
+  .tab-btn{color:#adb7a7}
+  .tab-icon,.nav-toggle{background:#171d15;border-color:var(--border)}
+}
 </style>
 </head>
 <body>
@@ -204,6 +536,7 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
         <button id="jsonEditTabLines" class="active" onclick="switchCompanyEditorSection('lines')">路線</button>
         <button id="jsonEditTabStations" onclick="switchCompanyEditorSection('stations')">車站</button>
         <button id="jsonEditTabTrains" onclick="switchCompanyEditorSection('trains')">車型</button>
+        <button id="jsonEditTabServices" onclick="switchCompanyEditorSection('services')">運行列車</button>
         <button id="jsonEditTabRaw" onclick="switchCompanyEditorSection('raw')">原始 / 輸出 JSON</button>
       </div>
     </div>
@@ -223,6 +556,7 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
             <div class="input-group"><label>line id</label><div class="locked-id-row"><span id="editLineIdPrefix" class="id-prefix-chip">COMPANY_</span><input id="editLineIdSuffix" placeholder="路線ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedLineFromForm()"><input id="editLineId" type="hidden"></div></div>
             <div class="input-group"><label>路線名</label><input id="editLineName" oninput="updateSelectedLineFromForm()"></div>
             <div class="input-group"><label>路線色</label><input id="editLineColor" placeholder="#da0442" oninput="updateSelectedLineFromForm()"></div>
+            <div class="input-group"><label><input id="editLineServiceOnly" type="checkbox" onchange="updateSelectedLineFromForm()" style="width:auto"> 運行用線路（隱藏一般乘車選單）</label></div>
             <div class="input-group"><label>公司 ID</label><input id="editLineCompanyId" oninput="this.value = toEditorIdToken(this.value); updateSelectedLineFromForm()"></div>
             <div class="input-group wide" style="background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:12px;">
               <label style="display:flex;align-items:center;gap:8px;margin:0 0 10px;color:var(--primary);font-weight:900;">
@@ -257,9 +591,23 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
               </div>
               <details class="line-path-raw">
                 <summary>進階：直接編輯 paths JSON</summary>
-                <textarea id="editLinePaths" oninput="updateSelectedLineFromForm()" placeholder='[{"id":"MAIN","name":"本線","sequence":["STN_..."]}]'></textarea>
+                <textarea id="editLinePaths" oninput="updateSelectedLineFromForm()" placeholder='[{"id":"UP_TRACK","name":"上り線","sequence":["STN_..."],"geometry_wkt":"LINESTRING(...)"}]'></textarea>
               </details>
-              <div class="small" style="margin-top:6px;line-height:1.5;">可留空。未來有支線 / 多終點時，可用 <code>paths</code> 保存每條行路徑；helper 會檢查 path 內空白 ID、缺站 ID、重複停站同是否超出主 sequence。</div>
+              <div class="small" style="margin-top:6px;line-height:1.5;">可留空。支線 / 多終點 / 上下行不同路軌時，可用 <code>paths</code> 保存每條行路徑；<code>sequence</code> 管停站次序，選填 <code>geometry_wkt</code> 管實際行駛線形。helper 會檢查 path 內空白 ID、缺站 ID、重複停站、是否超出主 sequence，同已填 geometry 格式。</div>
+            </div>
+            <div class="input-group wide">
+              <label>運行版本</label>
+              <div class="line-path-builder">
+                <div class="line-path-head">
+                  <strong>路線運行版本</strong>
+                  <span id="lineVersionSummary" class="small">未有版本</span>
+                  <button type="button" class="ok mini-btn" onclick="addLineVersion(false)">+ 新增版本</button>
+                  <button type="button" class="ghost mini-btn" onclick="addLineVersion(true)">複製現行路線</button>
+                </div>
+                <div id="lineVersionList" class="line-path-list"></div>
+                <div id="lineVersionEditor" class="line-path-editor"></div>
+              </div>
+              <div class="small" style="margin-top:6px;line-height:1.5;">現行資料留在上方。版本可為改線、廢站、廢線或未來延伸各自設定適用日期、停站、paths 和 geometry；Rail Log 會依乘車日期讀取相應版本。</div>
             </div>
           </div>
             </div>
@@ -319,6 +667,46 @@ textarea{font-family:"Cascadia Code",ui-monospace,SFMono-Regular,Menlo,monospace
             <div class="input-group wide"><label>variants（一行一個）</label><textarea id="editTrainVariants" oninput="updateSelectedTrainFromForm()"></textarea></div>
           </div>
           <div class="row"><button class="danger" onclick="deleteSelectedTrain()">刪除此車型</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="companyEditorServices" class="card" style="display:none;">
+      <div class="title"><strong>運行列車資料</strong><span class="small">管理列車種別、列車名、使用路線同停靠站；資料保存於公司 JSON 嘅 services</span></div>
+      <div id="serviceEditorStatus" class="editor-status">請先讀取公司 JSON，再新增運行列車。</div>
+      <div class="row" style="margin:10px 0 14px;align-items:center;">
+        <label class="secondary mini-btn" style="cursor:pointer;">+ 載入參考公司 JSON<input id="serviceReferenceCompanyFiles" type="file" accept=".json,application/json" multiple style="display:none" onchange="loadServiceReferenceCompanyFiles(this)"></label>
+        <button type="button" class="ghost mini-btn" onclick="clearServiceReferenceCompanies()">清除參考公司</button>
+        <span id="serviceReferenceCompanySummary" class="small">未載入參考公司</span>
+      </div>
+      <div class="editor-layout">
+        <div class="editor-sidebar">
+          <button class="ok" onclick="addServiceDefinition()">+ 新增運行列車</button>
+          <div id="serviceDefinitionList" class="editor-list"></div>
+        </div>
+        <div class="editor-detail-pane">
+          <div id="serviceDefinitionEmpty" class="status">未有運行列車資料。</div>
+          <div id="serviceDefinitionForm" class="editor-form" style="display:none">
+            <div class="input-group"><label>service id</label><div class="locked-id-row"><span id="editServiceIdPrefix" class="id-prefix-chip">SVC_COMPANY_</span><input id="editServiceIdSuffix" readonly aria-readonly="true" title="自動跟隨英文名" placeholder="THUNDERBIRD"><input id="editServiceId" type="hidden"></div></div>
+            <div class="input-group"><label>種別</label><input id="editServiceType" list="serviceTypeEditorList" oninput="updateSelectedServiceDefinition()" placeholder="特急 / 快速 / 自行輸入"><datalist id="serviceTypeEditorList"><option value="特急"></option><option value="快速"></option></datalist></div>
+            <div class="input-group wide"><div class="service-name-grid"><div class="input-group"><label>列車名</label><input id="editServiceName" oninput="updateSelectedServiceDefinition()" placeholder="雷鳥"></div><div class="input-group"><label>中文名</label><input id="editServiceNameZh" oninput="updateSelectedServiceDefinition()" placeholder="雷鳥號"></div><div class="input-group"><label>英文名</label><input id="editServiceNameEn" oninput="updateSelectedServiceDefinition()" placeholder="Thunderbird"></div></div></div>
+            <div class="input-group wide">
+              <label>運營公司</label>
+              <div class="service-search-row"><select id="serviceOperatorCompany"></select><button type="button" class="secondary mini-btn" onclick="addServiceOperatorCompany()">加入運營公司</button></div>
+              <div id="serviceOperatorCompanyList" class="issue-token-list"></div>
+              <div class="small" style="margin-top:6px">此欄決定新增乘車時在哪些公司下可選到此列車；行駛路段途經其他公司，則在下方「行駛路線」加入對應路段。</div>
+            </div>
+            <div class="input-group wide">
+              <label>運行版本 / 行駛路線 / 停靠站</label>
+              <div class="line-path-builder">
+                <div class="line-path-head"><strong>運行版本</strong><span class="small">按日期保存歷史走線</span><button type="button" class="ok mini-btn" onclick="addServicePattern(false)">+ 新增版本</button><button type="button" class="secondary mini-btn" onclick="addServicePattern(true)">複製目前版本</button></div>
+                <div id="servicePatternDateEditor" class="line-path-list"></div>
+                <div id="servicePatternEditor" class="line-path-editor"></div>
+              </div>
+            </div>
+            <div class="input-group wide"><details class="line-path-raw"><summary>進階：patterns JSON</summary><textarea id="editServicePatterns" style="min-height:300px" oninput="updateServicePatternsFromRaw()" placeholder='[{"id":"OSAKA_TSURUGA","valid_from":"2024-03-16","segments":[],"stops":[]}]'></textarea></details></div>
+          </div>
+          <div class="row"><button class="danger" onclick="deleteSelectedServiceDefinition()">刪除此運行列車</button></div>
         </div>
       </div>
     </div>
@@ -519,6 +907,15 @@ let stationFormRefreshTimer = null;
 let stationFormRefreshNeedsLineList = false;
 let companySelectedPathIndex = null;
 let companySelectedPathSequenceIndex = null;
+let companyPathSequenceDragIndex = null;
+let companyPathMetaRefreshTimer = null;
+let companySelectedLineVersionIndex = null;
+let companySelectedLineVersionSequenceIndex = null;
+let companyLineVersionSequenceDragIndex = null;
+let selectedServiceDefinitionIndex = 0;
+let selectedServicePatternIndex = 0;
+let serviceStopDragIndex = null;
+let serviceReferenceCompanies = new Map();
 
 function toEditorIdToken(value) {
   return String(value || '')
@@ -628,6 +1025,15 @@ function setCompanyEditorStatus(msg, type='') {
   el.className = 'editor-status ' + (type || '');
 }
 
+function getLinePathGeometryWkt(path) {
+  const value = path?.geometry_wkt ?? path?.geometryWkt ?? path?.asWKT ?? path?.geometry ?? '';
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function isLikelyWktGeometry(value) {
+  return /^(MULTILINESTRING|LINESTRING)\s*\(/i.test(String(value || '').trim());
+}
+
 function normalizeLinePathEntry(path, index = 0, strict = false) {
   if (!path || typeof path !== 'object' || Array.isArray(path)) {
     if (strict) throw new Error(`paths[${index}] 必須係 object`);
@@ -636,6 +1042,12 @@ function normalizeLinePathEntry(path, index = 0, strict = false) {
   const normalized = { ...path };
   normalized.id = toEditorIdToken(normalized.id || normalized.path_id || `PATH_${index + 1}`) || `PATH_${index + 1}`;
   normalized.name = String(normalized.name || normalized.label || '').trim();
+  const geometryWkt = getLinePathGeometryWkt(normalized);
+  delete normalized.geometryWkt;
+  delete normalized.asWKT;
+  delete normalized.geometry;
+  if (geometryWkt) normalized.geometry_wkt = geometryWkt;
+  else delete normalized.geometry_wkt;
   if (!Array.isArray(normalized.sequence)) normalized.sequence = [];
   normalized.sequence = normalized.sequence.map(id => toEditorIdToken(id));
   return normalized;
@@ -660,17 +1072,23 @@ function formatLinePathsForEditor(paths) {
 }
 
 function mapLinePathSequences(line, mapper) {
-  if (!line || !Array.isArray(line.paths)) return 0;
+  if (!line) return 0;
   let changed = 0;
-  line.paths = normalizeLinePaths(line.paths).map(path => {
-    path.sequence = (path.sequence || []).map(rawId => {
+  const mapSequence = sequence => (Array.isArray(sequence) ? sequence : []).map(rawId => {
       const oldId = toEditorIdToken(rawId);
       const nextId = toEditorIdToken(mapper(oldId, rawId));
       if (nextId !== oldId) changed += 1;
       return nextId;
-    });
-    return path;
-  });
+    }).filter(Boolean);
+  const mapPaths = paths => normalizeLinePaths(paths).map(path => ({ ...path, sequence: mapSequence(path.sequence) }));
+  if (Array.isArray(line.paths)) line.paths = mapPaths(line.paths);
+  if (Array.isArray(line.versions)) {
+    line.versions = line.versions.map(version => ({
+      ...version,
+      sequence: mapSequence(version.sequence),
+      ...(Array.isArray(version.paths) ? { paths: mapPaths(version.paths) } : {})
+    }));
+  }
   return changed;
 }
 
@@ -682,16 +1100,29 @@ function replaceStationIdInLinePaths(line, oldId, newId) {
 }
 
 function removeStationIdFromLinePaths(line, stationId) {
-  if (!line || !Array.isArray(line.paths)) return 0;
+  if (!line) return 0;
   const targetId = toEditorIdToken(stationId);
   if (!targetId) return 0;
   let removed = 0;
-  line.paths = normalizeLinePaths(line.paths).map(path => {
+  const removeFromPaths = paths => normalizeLinePaths(paths).map(path => {
     const before = path.sequence.length;
     path.sequence = path.sequence.filter(id => toEditorIdToken(id) !== targetId);
     removed += before - path.sequence.length;
     return path;
   });
+  if (Array.isArray(line.paths)) line.paths = removeFromPaths(line.paths);
+  if (Array.isArray(line.versions)) {
+    line.versions = line.versions.map(version => {
+      const sequence = Array.isArray(version.sequence) ? version.sequence : [];
+      const nextSequence = sequence.filter(id => toEditorIdToken(id) !== targetId);
+      removed += sequence.length - nextSequence.length;
+      return {
+        ...version,
+        sequence: nextSequence,
+        ...(Array.isArray(version.paths) ? { paths: removeFromPaths(version.paths) } : {})
+      };
+    });
+  }
   return removed;
 }
 
@@ -704,6 +1135,7 @@ function normalizeCompanyEditorData(raw) {
   comp.lines = Array.isArray(comp.lines) ? comp.lines : [];
   comp.stations = Array.isArray(comp.stations) ? comp.stations : [];
   comp.trains = Array.isArray(comp.trains) ? comp.trains : [];
+  comp.services = Array.isArray(comp.services) ? comp.services : [];
   comp.company_id = toEditorIdToken(comp.company_id || comp.id || '');
   comp.company_name = comp.company_name || comp.name || '';
   comp.categories = comp.categories || '';
@@ -718,6 +1150,32 @@ function normalizeCompanyEditorData(raw) {
     } else {
       delete line.paths;
     }
+    if (Array.isArray(line.versions) && line.versions.length) {
+      line.versions = line.versions.map((version, index) => {
+        const normalized = { ...version };
+        normalized.id = toEditorIdToken(normalized.id || `VERSION_${index + 1}`) || `VERSION_${index + 1}`;
+        normalized.name = String(normalized.name || '').trim();
+        normalized.valid_from = String(normalized.valid_from || '').trim();
+        normalized.valid_to = String(normalized.valid_to || '').trim();
+        normalized.sequence = Array.isArray(normalized.sequence)
+          ? normalized.sequence.map(id => toEditorIdToken(id)).filter(Boolean)
+          : [];
+        if (Array.isArray(normalized.paths)) normalized.paths = normalizeLinePaths(normalized.paths);
+        else delete normalized.paths;
+        const geometryWkt = getLinePathGeometryWkt(normalized);
+        delete normalized.asWKT;
+        delete normalized.geometryWkt;
+        delete normalized.geometry;
+        if (geometryWkt) normalized.geometry_wkt = geometryWkt;
+        else delete normalized.geometry_wkt;
+        if (!normalized.name) delete normalized.name;
+        if (!normalized.valid_from) delete normalized.valid_from;
+        if (!normalized.valid_to) delete normalized.valid_to;
+        return normalized;
+      });
+    } else {
+      delete line.versions;
+    }
   });
   comp.stations.forEach(st => {
     st.company_id = toEditorIdToken(st.company_id || comp.company_id);
@@ -728,7 +1186,487 @@ function normalizeCompanyEditorData(raw) {
     tr.id = toEditorIdToken(tr.id || rebuildTrainIdFromSuffix(tr.name || 'NEW', tr.company_id));
     if (!Array.isArray(tr.variants)) tr.variants = [];
   });
+  comp.services = comp.services.map((service, index) => ({
+    ...service,
+    id: toEditorIdToken(service?.id || `SVC_${comp.company_id}_${index + 1}`),
+    company_id: toEditorIdToken(service?.company_id || comp.company_id),
+    service_type: String(service?.service_type || '').trim(),
+    name: String(service?.name || '').trim(),
+    name_zh: String(service?.name_zh || '').trim(),
+    name_en: String(service?.name_en || '').trim(),
+    aliases: Array.isArray(service?.aliases) ? service.aliases.map(value => String(value || '').trim()).filter(Boolean) : [],
+    operator_company_ids: Array.isArray(service?.operator_company_ids)
+      ? [...new Set(service.operator_company_ids.map(value => toEditorIdToken(value)).filter(Boolean))]
+      : undefined,
+    patterns: Array.isArray(service?.patterns) ? service.patterns : []
+  }));
   return comp;
+}
+
+function setServiceEditorStatus(message, type = '') {
+  const el = document.getElementById('serviceEditorStatus');
+  if (!el) return;
+  el.textContent = message;
+  el.className = 'editor-status ' + type;
+}
+
+function normalizeServiceReferenceCompany(raw) {
+  const source = Array.isArray(raw) ? raw[0] : raw;
+  if (!source || typeof source !== 'object') throw new Error('參考公司 JSON 格式錯誤');
+  const companyId = toEditorIdToken(source.company_id || source.id || '');
+  if (!companyId) throw new Error('參考公司缺少 company_id');
+  return {
+    company_id: companyId,
+    company_name: String(source.company_name || source.name || companyId).trim(),
+    lines: (Array.isArray(source.lines) ? source.lines : []).map(line => ({
+      ...line,
+      id: toEditorIdToken(line?.id || ''),
+      company_id: toEditorIdToken(line?.company_id || companyId),
+      sequence: Array.isArray(line?.sequence) ? line.sequence.map(id => toEditorIdToken(id)).filter(Boolean) : [],
+      ...(Array.isArray(line?.paths) ? { paths: normalizeLinePaths(line.paths) } : {})
+    })).filter(line => line.id),
+    stations: (Array.isArray(source.stations) ? source.stations : []).map(station => ({
+      ...station,
+      id: toEditorIdToken(station?.id || ''),
+      company_id: toEditorIdToken(station?.company_id || companyId)
+    })).filter(station => station.id)
+  };
+}
+
+function getServiceEditorCompanySources() {
+  if (!companyEditorData) return [];
+  return [companyEditorData, ...serviceReferenceCompanies.values()];
+}
+
+function getServiceEditorCompanyLabel(companyId) {
+  const source = getServiceEditorCompanySources().find(item => item.company_id === companyId);
+  return source?.company_name || companyId;
+}
+
+function getServiceEditorLineCatalog() {
+  return getServiceEditorCompanySources().flatMap(source => (source.lines || []).map(line => ({
+    line,
+    company_id: line.company_id || source.company_id,
+    company_name: source.company_name || source.company_id
+  })));
+}
+
+function getServiceEditorStationCatalog() {
+  return getServiceEditorCompanySources().flatMap(source => (source.stations || []).map(station => ({
+    station,
+    company_id: station.company_id || source.company_id,
+    company_name: source.company_name || source.company_id
+  })));
+}
+
+function getServiceEditorStationMap() {
+  return new Map(getServiceEditorStationCatalog().map(item => [item.station.id, item.station]));
+}
+
+function getServicePatternDateToken(pattern) {
+  return String(pattern?.valid_from || '').trim().replace(/-/g, '_');
+}
+
+function getServicePatternEndpointNames(pattern) {
+  const stops = Array.isArray(pattern?.stops) ? pattern.stops.filter(Boolean) : [];
+  const segments = Array.isArray(pattern?.segments) ? pattern.segments : [];
+  const firstId = stops[0] || segments[0]?.from_id || '';
+  const lastId = stops[stops.length - 1] || segments[segments.length - 1]?.to_id || '';
+  const stationMap = getServiceEditorStationMap();
+  const getName = id => {
+    const station = stationMap.get(toEditorIdToken(id));
+    return String(station?.name || station?.name_zh || id || '').trim();
+  };
+  const firstName = getName(firstId);
+  const lastName = getName(lastId);
+  return firstName && lastName && firstName !== lastName
+    ? [firstName, lastName]
+    : [firstName || lastName].filter(Boolean);
+}
+
+function syncServicePatternGeneratedFields(service, pattern) {
+  if (!service || !pattern) return false;
+  const dateToken = getServicePatternDateToken(pattern);
+  const englishToken = toEditorIdToken(service.name_en || '');
+  const endpointNames = getServicePatternEndpointNames(pattern);
+  let changed = false;
+
+  if (dateToken && englishToken) {
+    const nextId = `${dateToken}_${englishToken}`;
+    if (pattern.id !== nextId) { pattern.id = nextId; changed = true; }
+  }
+  if (dateToken && endpointNames.length) {
+    const nextName = [dateToken, ...endpointNames].join('_');
+    if (pattern.name !== nextName) { pattern.name = nextName; changed = true; }
+  }
+  return changed;
+}
+
+function syncServiceGeneratedFields(service) {
+  if (!service || !companyEditorData) return false;
+  const prefix = `SVC_${toEditorIdToken(companyEditorData.company_id)}_`;
+  const englishToken = toEditorIdToken(service.name_en || '');
+  let changed = false;
+
+  if (englishToken) {
+    const nextId = prefix + englishToken;
+    if (service.id !== nextId) { service.id = nextId; changed = true; }
+  }
+  (Array.isArray(service.patterns) ? service.patterns : []).forEach(pattern => {
+    if (syncServicePatternGeneratedFields(service, pattern)) changed = true;
+  });
+  return changed;
+}
+
+function getServiceLineStationIds(line) {
+  if (!line) return [];
+  const pathIds = normalizeLinePaths(line.paths || []).flatMap(path => path.sequence || []);
+  const versionIds = (line.versions || []).flatMap(version => [
+    ...(version?.sequence || []),
+    ...normalizeLinePaths(version?.paths || []).flatMap(path => path.sequence || [])
+  ]);
+  return [...new Set([...(line.sequence || []), ...pathIds, ...versionIds].map(id => toEditorIdToken(id)).filter(Boolean))];
+}
+
+function getServiceOperatorCompanyIds(service) {
+  const declared = Array.isArray(service?.operator_company_ids)
+    ? service.operator_company_ids.map(value => toEditorIdToken(value)).filter(Boolean)
+    : [];
+  return [...new Set(declared.length ? declared : [toEditorIdToken(service?.company_id || companyEditorData?.company_id || '')])];
+}
+
+function renderServiceReferenceCompanySummary() {
+  const summary = document.getElementById('serviceReferenceCompanySummary');
+  if (!summary) return;
+  const names = [...serviceReferenceCompanies.values()].map(source => source.company_name || source.company_id);
+  summary.textContent = names.length ? `參考：${names.join('、')}` : '未載入參考公司';
+}
+
+function renderServiceOperatorCompanies() {
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex];
+  const picker = document.getElementById('serviceOperatorCompany');
+  const list = document.getElementById('serviceOperatorCompanyList');
+  if (!service || !picker || !list) return;
+  const operators = getServiceOperatorCompanyIds(service);
+  const sources = getServiceEditorCompanySources();
+  picker.innerHTML = sources.map(source => `<option value="${escapeEditorAttr(source.company_id)}">${escapeEditorHtml(source.company_name || source.company_id)}</option>`).join('') || '<option value="">請先載入公司資料</option>';
+  list.innerHTML = operators.map(companyId => `<span class="issue-token"><strong>${escapeEditorHtml(getServiceEditorCompanyLabel(companyId))}</strong><button type="button" class="ghost mini-btn" onclick="removeServiceOperatorCompany('${escapeEditorAttr(companyId)}')">移除</button></span>`).join('');
+}
+
+function addServiceOperatorCompany() {
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex];
+  const companyId = toEditorIdToken(document.getElementById('serviceOperatorCompany')?.value || '');
+  if (!service || !companyId) return;
+  service.operator_company_ids = [...new Set([...getServiceOperatorCompanyIds(service), companyId])];
+  renderServiceOperatorCompanies();
+  refreshCompanyJsonOutput();
+  setServiceEditorStatus(`已加入運營公司：${getServiceEditorCompanyLabel(companyId)}`, 'ok');
+}
+
+function removeServiceOperatorCompany(companyId) {
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex];
+  if (!service) return;
+  const next = getServiceOperatorCompanyIds(service).filter(id => id !== toEditorIdToken(companyId));
+  if (!next.length) return setServiceEditorStatus('至少要保留一間運營公司。', 'warn');
+  service.operator_company_ids = next;
+  renderServiceOperatorCompanies();
+  refreshCompanyJsonOutput();
+}
+
+function loadServiceReferenceCompanyFiles(input) {
+  const files = [...(input?.files || [])];
+  if (!files.length) return;
+  Promise.all(files.map(file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try { resolve(normalizeServiceReferenceCompany(JSON.parse(String(reader.result || '')))); }
+      catch (error) { reject(error); }
+    };
+    reader.onerror = () => reject(reader.error || new Error('未能讀取參考公司 JSON'));
+    reader.readAsText(file);
+  }))).then(sources => {
+    sources.forEach(source => {
+      if (source.company_id !== companyEditorData?.company_id) serviceReferenceCompanies.set(source.company_id, source);
+    });
+    if (input) input.value = '';
+    renderServiceReferenceCompanySummary();
+    renderServiceEditor();
+    setServiceEditorStatus(`已載入 ${sources.length} 份參考公司 JSON`, 'ok');
+  }).catch(error => setServiceEditorStatus(`參考公司 JSON：${error.message || error}`, 'err'));
+}
+
+function clearServiceReferenceCompanies(showStatus = true) {
+  serviceReferenceCompanies.clear();
+  const input = document.getElementById('serviceReferenceCompanyFiles');
+  if (input) input.value = '';
+  renderServiceReferenceCompanySummary();
+  if (companyEditorData) renderServiceEditor();
+  if (showStatus) setServiceEditorStatus('已清除參考公司資料。', 'ok');
+}
+
+function renderServiceEditor() {
+  const list = document.getElementById('serviceDefinitionList');
+  const form = document.getElementById('serviceDefinitionForm');
+  const empty = document.getElementById('serviceDefinitionEmpty');
+  renderServiceReferenceCompanySummary();
+  if (!list || !form || !empty) return;
+  const services = Array.isArray(companyEditorData?.services) ? companyEditorData.services : [];
+  if (!companyEditorData) {
+    list.innerHTML = '<div class="status">未載入公司 JSON</div>';
+    form.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  if (selectedServiceDefinitionIndex >= services.length) selectedServiceDefinitionIndex = Math.max(0, services.length - 1);
+  list.innerHTML = services.map((service, index) => `<button type="button" class="${index === selectedServiceDefinitionIndex ? 'active' : ''}" onclick="selectServiceDefinition(${index})">${escapeEditorHtml(service.name || service.id || `Service ${index + 1}`)}<span class="small">${escapeEditorHtml(service.service_type || '')}</span></button>`).join('') || '<div class="status">未有運行列車</div>';
+  const service = services[selectedServiceDefinitionIndex];
+  if (!service) {
+    form.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  if (syncServiceGeneratedFields(service)) refreshCompanyJsonOutput();
+  empty.style.display = 'none';
+  form.style.display = 'grid';
+  const idPrefix = `SVC_${toEditorIdToken(companyEditorData.company_id)}_`;
+  document.getElementById('editServiceIdPrefix').textContent = idPrefix;
+  document.getElementById('editServiceIdSuffix').value = String(service.id || '').startsWith(idPrefix) ? String(service.id).slice(idPrefix.length) : toEditorIdToken(service.id || 'SERVICE');
+  document.getElementById('editServiceId').value = service.id || '';
+  document.getElementById('editServiceType').value = service.service_type || '';
+  document.getElementById('editServiceName').value = service.name || '';
+  document.getElementById('editServiceNameZh').value = service.name_zh || '';
+  document.getElementById('editServiceNameEn').value = service.name_en || '';
+  document.getElementById('editServicePatterns').value = JSON.stringify(service.patterns || [], null, 2);
+  renderServiceOperatorCompanies();
+  renderServicePatternDateEditor();
+  setServiceEditorStatus(`已載入 ${companyEditorData.company_name || companyEditorData.company_id}：${services.length} 個運行列車`, 'ok');
+}
+
+function renderServicePatternDateEditor() {
+  const box = document.getElementById('servicePatternDateEditor');
+  const editor = document.getElementById('servicePatternEditor');
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex];
+  if (!box || !editor) return;
+  const patterns = Array.isArray(service?.patterns) ? service.patterns : [];
+  if (!patterns.length) {
+    box.innerHTML = '<div class="status">未有運行版本</div>';
+    editor.innerHTML = '<div class="status">按「新增版本」開始加入行駛路線同停靠站。</div>';
+    return;
+  }
+  if (selectedServicePatternIndex >= patterns.length) selectedServicePatternIndex = patterns.length - 1;
+  box.innerHTML = patterns.map((pattern, index) => `<button type="button" class="${index === selectedServicePatternIndex ? 'active' : ''}" onclick="selectServicePattern(${index})">${escapeEditorHtml(pattern.name || pattern.id || `版本 ${index + 1}`)}</button>`).join('');
+  const pattern = patterns[selectedServicePatternIndex];
+  const lineCatalog = getServiceEditorLineCatalog();
+  const stationMap = getServiceEditorStationMap();
+  const lineRef = item => `${item.company_id}::${item.line.id}`;
+  const findLine = (companyId, lineId) => lineCatalog.find(item => item.company_id === companyId && item.line.id === lineId)
+    || lineCatalog.find(item => item.line.id === lineId)
+    || null;
+  const makeLineOptions = segment => {
+    const selected = findLine(segment.company_id || '', segment.line_id || '');
+    const selectedValue = selected ? lineRef(selected) : '';
+    const fallback = segment.line_id && !selected
+      ? `<option value="" selected>${escapeEditorHtml(segment.line_id)}（未載入參考公司）</option>`
+      : '';
+    return `${fallback}${lineCatalog.map(item => `<option value="${escapeEditorAttr(lineRef(item))}" ${lineRef(item) === selectedValue ? 'selected' : ''}>${escapeEditorHtml(`${item.company_name}｜${item.line.name || item.line.id}`)}</option>`).join('')}`;
+  };
+  const makeStationOptions = (selectedId, segment) => {
+    const selectedLine = findLine(segment.company_id || '', segment.line_id || '');
+    if (!selectedLine) return '<option value="" selected>請先選擇已載入的路線</option>';
+    const stationIds = getServiceLineStationIds(selectedLine.line);
+    const known = stationIds.includes(selectedId);
+    const items = stationIds.map(id => stationMap.get(id) || { id, name: id });
+    return `<option value="">請選擇車站</option>${selectedId && !known ? `<option value="${escapeEditorAttr(selectedId)}" selected>${escapeEditorHtml(stationMap.get(selectedId)?.name || selectedId)}</option>` : ''}${items.map(st => `<option value="${escapeEditorAttr(st.id)}" ${st.id === selectedId ? 'selected' : ''}>${escapeEditorHtml(st.name || st.id)}</option>`).join('')}`;
+  };
+  const lineSearchOptions = lineCatalog.map(item => `<option value="${escapeEditorAttr(`${item.company_name}｜${item.line.name || item.line.id}`)}"></option>`).join('');
+  const stationSearchOptions = getServiceEditorStationCatalog().map(item => `<option value="${escapeEditorAttr(`${item.company_name}｜${item.station.name || item.station.id}`)}"></option>`).join('');
+  const segments = Array.isArray(pattern.segments) ? pattern.segments : [];
+  const stops = Array.isArray(pattern.stops) ? pattern.stops : [];
+  editor.innerHTML = `
+    <div class="line-path-editor-grid">
+      <div class="input-group"><label>版本 ID</label><input value="${escapeEditorHtml(pattern.id || '')}" readonly aria-readonly="true" title="自動使用開始日期與英文名組合"></div>
+      <div class="input-group"><label>版本名</label><input value="${escapeEditorHtml(pattern.name || '')}" readonly aria-readonly="true" title="自動使用開始日期與頭尾車站組合"></div>
+      <div class="input-group"><label>開始日期</label><input type="date" value="${escapeEditorHtml(pattern.valid_from || '')}" onchange="updateServicePatternField('valid_from',this.value)"></div>
+      <div class="input-group"><label>結束日期</label><input type="date" value="${escapeEditorHtml(pattern.valid_to || '')}" onchange="updateServicePatternField('valid_to',this.value)"></div>
+    </div>
+    <div class="title" style="margin-top:12px"><strong>行駛路線</strong></div>
+    <div class="service-search-row"><input id="serviceRouteSearch" list="serviceRouteSearchList" placeholder="搜尋公司｜路線名後加入"><datalist id="serviceRouteSearchList">${lineSearchOptions}</datalist><button type="button" class="ok mini-btn" onclick="addServiceSegmentFromSearch()">加入路段</button></div>
+    <div class="small" style="margin:5px 0 8px">外部公司路線請先在上方載入其 JSON；路段的起點與終點會按該路線的停站資料篩選。</div>
+    <div class="station-issue-list">${segments.map((segment, i) => `<div class="service-segment-row"><select aria-label="路線" onchange="updateServiceSegmentRoute(${i},this.value)"><option value="">請由路線資料揀選</option>${makeLineOptions(segment)}</select><select aria-label="起點" onchange="updateServiceSegment(${i},'from_id',this.value)">${makeStationOptions(segment.from_id || '', segment)}</select><select aria-label="終點" onchange="updateServiceSegment(${i},'to_id',this.value)">${makeStationOptions(segment.to_id || '', segment)}</select><span class="service-segment-actions"><button class="ghost mini-btn" onclick="moveServiceSegment(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveServiceSegment(${i},1)">↓</button><button class="danger mini-btn" onclick="deleteServiceSegment(${i})">刪除</button></span></div>`).join('') || '<div class="status">未有行駛路段</div>'}</div>
+    <div class="title" style="margin-top:12px"><strong>停靠站次序</strong></div>
+    <div class="service-search-row"><input id="serviceStopPicker" list="serviceStationSearchList" placeholder="搜尋公司｜車站名後加入"><datalist id="serviceStationSearchList">${stationSearchOptions}</datalist><button class="secondary mini-btn" onclick="addServiceStop()">加入停靠站</button></div>
+    <div class="seq-list">${stops.map((id, i) => { const st = stationMap.get(id); return `<div class="seq-item service-stop-item" draggable="true" ondragstart="startServiceStopDrag(${i},event)" ondragover="overServiceStopDrag(${i},event)" ondrop="dropServiceStopDrag(${i},event)" ondragend="endServiceStopDrag()"><span class="seq-drag-handle" title="拖曳排序">⋮⋮</span><span class="seq-no">${i + 1}</span><span class="seq-name">${escapeEditorHtml(st?.name || id)}</span><button class="ghost mini-btn" onclick="moveServiceStop(${i},-1)">↑</button><button class="ghost mini-btn" onclick="moveServiceStop(${i},1)">↓</button><button class="danger mini-btn" onclick="deleteServiceStop(${i})">刪除</button></div>`; }).join('') || '<div class="status">未有停靠站</div>'}</div>
+    <div class="row"><button class="danger mini-btn" onclick="deleteServicePattern()">刪除此運行版本</button></div>`;
+}
+
+function syncServicePatternEditor(message = '運行版本已更新') {
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex];
+  if (!service) return;
+  syncServicePatternGeneratedFields(service, service.patterns?.[selectedServicePatternIndex]);
+  const patternsInput = document.getElementById('editServicePatterns');
+  if (patternsInput) patternsInput.value = JSON.stringify(service.patterns, null, 2);
+  refreshCompanyJsonOutput();
+  setServiceEditorStatus(message, 'ok');
+}
+
+function selectServicePattern(index) { selectedServicePatternIndex = index; renderServicePatternDateEditor(); }
+function addServicePattern(copyCurrent) {
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex]; if (!service) return;
+  const source = service.patterns?.[selectedServicePatternIndex];
+  const pattern = copyCurrent && source ? JSON.parse(JSON.stringify(source)) : { id: `PATTERN_${(service.patterns || []).length + 1}`, name: '新運行版本', segments: [], stops: [] };
+  pattern.id = `${toEditorIdToken(pattern.id || 'PATTERN')}_${(service.patterns || []).length + 1}`;
+  if (copyCurrent) { delete pattern.valid_from; delete pattern.valid_to; pattern.name = `${pattern.name || '運行版本'} 複製`; }
+  service.patterns = Array.isArray(service.patterns) ? service.patterns : []; service.patterns.push(pattern); selectedServicePatternIndex = service.patterns.length - 1;
+  syncServicePatternEditor('已新增運行版本'); renderServicePatternDateEditor();
+}
+function deleteServicePattern() { const service=companyEditorData?.services?.[selectedServiceDefinitionIndex]; if(!service?.patterns?.length)return; service.patterns.splice(selectedServicePatternIndex,1); selectedServicePatternIndex=Math.max(0,selectedServicePatternIndex-1); syncServicePatternEditor('已刪除運行版本'); renderServicePatternDateEditor(); }
+function updateServicePatternField(field,value) { const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; if(!p)return; const clean=field==='id'?toEditorIdToken(value):String(value||'').trim(); if(clean)p[field]=clean; else delete p[field]; syncServicePatternEditor(); if(field==='valid_from')renderServicePatternDateEditor(); }
+function resolveServiceEditorLineReference(value) {
+  const key = String(value || '').trim();
+  if (!key) return null;
+  const catalog = getServiceEditorLineCatalog();
+  const direct = key.match(/^([A-Z0-9_]+)::([A-Z0-9_]+)$/);
+  if (direct) return catalog.find(item => item.company_id === direct[1] && item.line.id === direct[2]) || null;
+  const matches = catalog.filter(item => key === item.line.id || key === item.line.name || key === `${item.company_name}｜${item.line.name || item.line.id}`);
+  return matches.length === 1 ? matches[0] : null;
+}
+function addServiceSegmentFromSearch() {
+  const input = document.getElementById('serviceRouteSearch');
+  const match = resolveServiceEditorLineReference(input?.value);
+  if (!match) return setServiceEditorStatus('請從「公司｜路線」搜尋結果選擇路線；外部公司要先載入參考 JSON。', 'warn');
+  const pattern = companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex];
+  if (!pattern) return;
+  pattern.segments = Array.isArray(pattern.segments) ? pattern.segments : [];
+  pattern.segments.push({ company_id: match.company_id, line_id: match.line.id, from_id: '', to_id: '' });
+  syncServicePatternEditor('已加入行駛路段');
+  renderServicePatternDateEditor();
+}
+function getServiceSegmentLine(companyId, lineId) {
+  return getServiceEditorLineCatalog().find(item => item.company_id === toEditorIdToken(companyId) && item.line.id === toEditorIdToken(lineId))
+    || getServiceEditorLineCatalog().find(item => item.line.id === toEditorIdToken(lineId))
+    || null;
+}
+function getServiceSegmentRouteStationIds(companyId, lineId) {
+  return getServiceLineStationIds(getServiceSegmentLine(companyId, lineId)?.line);
+}
+function updateServiceSegmentRoute(index, value) {
+  const segment = companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]?.segments?.[index];
+  const match = resolveServiceEditorLineReference(value);
+  if (!segment || !match) return;
+  segment.company_id = match.company_id;
+  segment.line_id = match.line.id;
+  const allowed = getServiceSegmentRouteStationIds(segment.company_id, segment.line_id);
+  if (!allowed.includes(segment.from_id)) segment.from_id = '';
+  if (!allowed.includes(segment.to_id)) segment.to_id = '';
+  syncServicePatternEditor('已更新行駛路線');
+  renderServicePatternDateEditor();
+}
+function updateServiceSegment(index,field,value) {
+  const segment = companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]?.segments?.[index];
+  if (!segment) return;
+  segment[field] = (field === 'from_id' || field === 'to_id') ? resolveServiceEditorStationId(value) : toEditorIdToken(value);
+  syncServicePatternEditor();
+}
+function deleteServiceSegment(index) { const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; if(!p)return; p.segments.splice(index,1); syncServicePatternEditor('已刪除行駛路段'); renderServicePatternDateEditor(); }
+function moveServiceSegment(index,delta) { const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; const next=index+delta; if(!p||next<0||next>=p.segments.length)return; [p.segments[index],p.segments[next]]=[p.segments[next],p.segments[index]]; syncServicePatternEditor(); renderServicePatternDateEditor(); }
+function resolveServiceEditorStationId(value) {
+  const key = String(value || '').trim();
+  if (!key) return '';
+  const catalog = getServiceEditorStationCatalog();
+  const matches = catalog.filter(item => key === item.station.id || key === item.station.name || key === `${item.company_name}｜${item.station.name || item.station.id}`);
+  return matches.length === 1 ? matches[0].station.id : toEditorIdToken(key);
+}
+function addServiceStop() { const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; const input=document.getElementById('serviceStopPicker'); if(!p||!input?.value)return; p.stops=Array.isArray(p.stops)?p.stops:[]; p.stops.push(resolveServiceEditorStationId(input.value)); syncServicePatternEditor('已加入停靠站'); renderServicePatternDateEditor(); }
+function moveServiceStop(index,delta) { const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; const next=index+delta; if(!p||next<0||next>=p.stops.length)return; [p.stops[index],p.stops[next]]=[p.stops[next],p.stops[index]]; syncServicePatternEditor(); renderServicePatternDateEditor(); }
+function deleteServiceStop(index) { const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; if(!p)return; p.stops.splice(index,1); syncServicePatternEditor('已刪除停靠站'); renderServicePatternDateEditor(); }
+function startServiceStopDrag(index,event) { serviceStopDragIndex=index; event.dataTransfer.effectAllowed='move'; event.currentTarget.classList.add('dragging'); }
+function overServiceStopDrag(index,event) { event.preventDefault(); document.querySelectorAll('.service-stop-item.drag-over').forEach(el=>el.classList.remove('drag-over')); if(index!==serviceStopDragIndex)event.currentTarget.classList.add('drag-over'); }
+function dropServiceStopDrag(index,event) { event.preventDefault(); const p=companyEditorData?.services?.[selectedServiceDefinitionIndex]?.patterns?.[selectedServicePatternIndex]; if(!p||serviceStopDragIndex===null||serviceStopDragIndex===index)return endServiceStopDrag(); const [moved]=p.stops.splice(serviceStopDragIndex,1); p.stops.splice(index,0,moved); serviceStopDragIndex=null; syncServicePatternEditor('停靠站次序已更新'); renderServicePatternDateEditor(); }
+function endServiceStopDrag() { serviceStopDragIndex=null; document.querySelectorAll('.service-stop-item.dragging,.service-stop-item.drag-over').forEach(el=>el.classList.remove('dragging','drag-over')); }
+function updateServicePatternsFromRaw() { const service=companyEditorData?.services?.[selectedServiceDefinitionIndex]; const input=document.getElementById('editServicePatterns'); if(!service||!input)return; try{const patterns=JSON.parse(input.value||'[]');if(!Array.isArray(patterns))throw new Error('patterns 必須係 array');service.patterns=patterns;syncServiceGeneratedFields(service);input.setCustomValidity('');selectedServicePatternIndex=0;renderServicePatternDateEditor();refreshCompanyJsonOutput();setServiceEditorStatus('patterns JSON 已套用','ok');}catch(error){input.setCustomValidity(error.message);setServiceEditorStatus(`patterns JSON：${error.message}`,'err');} }
+
+function selectServiceDefinition(index) {
+  selectedServiceDefinitionIndex = index;
+  selectedServicePatternIndex = 0;
+  renderServiceEditor();
+}
+
+function addServiceDefinition() {
+  if (!companyEditorData) return setServiceEditorStatus('請先讀取公司 JSON', 'warn');
+  companyEditorData.services = Array.isArray(companyEditorData.services) ? companyEditorData.services : [];
+  const number = companyEditorData.services.length + 1;
+  companyEditorData.services.push({
+    id: `SVC_${companyEditorData.company_id}_${number}`,
+    company_id: companyEditorData.company_id,
+    operator_company_ids: [companyEditorData.company_id],
+    service_type: '特急',
+    name: `運行列車 ${number}`,
+    name_zh: '',
+    name_en: '',
+    aliases: [],
+    patterns: []
+  });
+  selectedServiceDefinitionIndex = companyEditorData.services.length - 1;
+  renderServiceEditor();
+  refreshCompanyJsonOutput();
+}
+
+function updateSelectedServiceDefinition() {
+  const service = companyEditorData?.services?.[selectedServiceDefinitionIndex];
+  if (!service) return;
+  const prefix = `SVC_${toEditorIdToken(companyEditorData.company_id)}_`;
+  service.company_id = companyEditorData.company_id;
+  service.service_type = String(document.getElementById('editServiceType')?.value || '').trim();
+  service.name = String(document.getElementById('editServiceName')?.value || '').trim();
+  service.name_zh = String(document.getElementById('editServiceNameZh')?.value || '').trim();
+  service.name_en = String(document.getElementById('editServiceNameEn')?.value || '').trim();
+  syncServiceGeneratedFields(service);
+  const suffix = String(service.id || '').startsWith(prefix) ? String(service.id).slice(prefix.length) : toEditorIdToken(service.name_en || 'SERVICE');
+  const suffixInput = document.getElementById('editServiceIdSuffix');
+  if (suffixInput) suffixInput.value = suffix;
+  const hiddenId = document.getElementById('editServiceId');
+  if (hiddenId) hiddenId.value = service.id;
+  setServiceEditorStatus('運行列車資料已更新', 'ok');
+  const list = document.getElementById('serviceDefinitionList');
+  if (list) {
+    const button = list.children[selectedServiceDefinitionIndex];
+    if (button) button.innerHTML = `${escapeEditorHtml(service.name || service.id)}<span class="small">${escapeEditorHtml(service.service_type || '')}</span>`;
+  }
+  renderServicePatternDateEditor();
+  refreshCompanyJsonOutput();
+}
+
+function deleteSelectedServiceDefinition() {
+  const services = companyEditorData?.services;
+  if (!Array.isArray(services) || !services[selectedServiceDefinitionIndex]) return;
+  if (!confirm(`確定刪除「${services[selectedServiceDefinitionIndex].name || services[selectedServiceDefinitionIndex].id}」？`)) return;
+  services.splice(selectedServiceDefinitionIndex, 1);
+  selectedServiceDefinitionIndex = Math.max(0, selectedServiceDefinitionIndex - 1);
+  renderServiceEditor();
+  refreshCompanyJsonOutput();
+}
+
+function loadServiceCompanyJsonFile(input) {
+  const file = input?.files?.[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const text = String(reader.result || '');
+      companyEditorData = normalizeCompanyEditorData(JSON.parse(text));
+      serviceReferenceCompanies.clear();
+      selectedServiceDefinitionIndex = 0;
+      const raw = document.getElementById('companyRawInput');
+      if (raw) raw.value = text;
+      document.getElementById('companyJsonOutputName').value = sanitizeFilename(file.name.replace(/\.json$/i, ''));
+      refreshCompanyJsonOutput();
+      refreshCompanyJsonSaveLabel();
+      renderServiceEditor();
+    } catch (error) {
+      setServiceEditorStatus(error.message, 'err');
+    }
+  };
+  reader.readAsText(file);
 }
 
 function loadCompanyJsonFile() {
@@ -741,6 +1679,7 @@ function loadCompanyJsonFile() {
       document.getElementById('companyRawInput').value = text;
       const raw = JSON.parse(text);
       companyEditorData = normalizeCompanyEditorData(raw);
+      serviceReferenceCompanies.clear();
       companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
       document.getElementById('companyJsonOutputName').value = sanitizeFilename(file.name.replace(/\.json$/i, ''));
       renderCompanyEditorAll();
@@ -758,6 +1697,7 @@ function applyRawCompanyJson() {
     const text = document.getElementById('companyRawInput').value.trim();
     if (!text) throw new Error('請先貼入公司 JSON');
     companyEditorData = normalizeCompanyEditorData(JSON.parse(text));
+    serviceReferenceCompanies.clear();
     companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
     renderCompanyEditorAll();
     setCompanyEditorStatus('已由原始 JSON 套用到編輯器', 'ok');
@@ -799,6 +1739,7 @@ async function saveCompanyJsonFile() {
 
 function clearCompanyJsonEditor() {
   companyEditorData = null;
+  serviceReferenceCompanies.clear();
   companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
   companyStationIssueGroups = [];
   const fileInput = document.getElementById('companyJsonFileInput');
@@ -821,6 +1762,7 @@ function renderCompanyEditorAll() {
   renderSelectedStationForm();
   renderCompanyTrainList();
   renderSelectedTrainForm();
+  renderServiceEditor();
   renderCompanyStationDatalist();
   renderStationIssuePanel();
   updateCompanyEditorBadges();
@@ -875,6 +1817,20 @@ function updateCompanyMetaFromForm() {
         tr.id = rebuildTrainIdFromSuffix(suffix, companyEditorData.company_id);
       }
     });
+    companyEditorData.services.forEach(service => {
+      const oldPrefix = `SVC_${oldId}_`;
+      const suffix = String(service.id || '').startsWith(oldPrefix) ? String(service.id).slice(oldPrefix.length) : toEditorIdToken(service.id || 'SERVICE');
+      service.id = `SVC_${companyEditorData.company_id}_${suffix}`;
+      service.company_id = companyEditorData.company_id;
+      if (Array.isArray(service.operator_company_ids)) {
+        service.operator_company_ids = [...new Set(service.operator_company_ids
+          .map(companyId => toEditorIdToken(companyId) === oldId ? companyEditorData.company_id : toEditorIdToken(companyId))
+          .filter(Boolean))];
+      }
+      (service.patterns || []).forEach(pattern => (pattern.segments || []).forEach(segment => {
+        if (toEditorIdToken(segment.company_id || '') === oldId) segment.company_id = companyEditorData.company_id;
+      }));
+    });
     companyEditorData.lines.forEach(line => {
       if (Array.isArray(line.sequence)) {
         line.sequence = line.sequence.map(id => {
@@ -893,12 +1849,13 @@ function updateCompanyMetaFromForm() {
 
 function switchCompanyEditorSection(section) {
   companyEditorCurrent.section = section;
-  ['lines','stations','trains','raw'].forEach(s => {
+  ['lines','stations','trains','services','raw'].forEach(s => {
     const panel = document.getElementById('companyEditor' + s.charAt(0).toUpperCase() + s.slice(1));
     const btn = document.getElementById('jsonEditTab' + s.charAt(0).toUpperCase() + s.slice(1));
     if (panel) panel.style.display = s === section ? 'block' : 'none';
     if (btn) btn.classList.toggle('active', s === section);
   });
+  if (section === 'services') renderServiceEditor();
   if (section === 'raw') refreshCompanyJsonOutput();
 }
 
@@ -925,6 +1882,8 @@ function selectCompanyLine(index) {
   companySelectedSequenceIndex = null;
   companySelectedPathIndex = null;
   companySelectedPathSequenceIndex = null;
+  companySelectedLineVersionIndex = null;
+  companySelectedLineVersionSequenceIndex = null;
   renderCompanyLineList();
   renderSelectedLineForm();
 }
@@ -939,6 +1898,7 @@ function renderSelectedLineForm() {
   document.getElementById('editLineId').value = buildLockedLineId(companyId, lineSuffix);
   document.getElementById('editLineName').value = line.name || '';
   document.getElementById('editLineColor').value = line.color || '';
+  document.getElementById('editLineServiceOnly').checked = line.selectable === false;
   document.getElementById('editLineCompanyId').value = companyId;
   document.getElementById('editLineGeometry').value = line.geometry_wkt || line.asWKT || line.geometry || '';
   const pathsInput = document.getElementById('editLinePaths');
@@ -957,6 +1917,7 @@ function renderSelectedLineForm() {
 
   renderLineSequenceList();
   renderLinePathBuilder();
+  renderLineVersionBuilder();
 }
 
 function toggleLoopDirectionDefaults() {
@@ -982,6 +1943,13 @@ function updateSelectedLineFromForm() {
   document.getElementById('editLineId').value = line.id;
   line.name = document.getElementById('editLineName').value.trim();
   line.color = document.getElementById('editLineColor').value.trim();
+  if (document.getElementById('editLineServiceOnly').checked) {
+    line.selectable = false;
+    line.line_kind = 'operational';
+  } else {
+    delete line.selectable;
+    if (line.line_kind === 'operational') delete line.line_kind;
+  }
   line.company_id = companyId;
   line.geometry_wkt = document.getElementById('editLineGeometry').value.trim();
 
@@ -1024,6 +1992,7 @@ function updateSelectedLineFromForm() {
 
   renderCompanyLineList();
   renderLinePathBuilder();
+  renderLineVersionBuilder();
   renderSelectedLineOverview();
   renderLineDebugPanel();
   refreshCompanyJsonOutput();
@@ -1159,8 +2128,30 @@ function renderLinePathList() {
     const active = index === companySelectedPathIndex ? 'active' : '';
     const label = path.name || path.id || `Path ${index + 1}`;
     const stationCount = Array.isArray(path.sequence) ? path.sequence.filter(Boolean).length : 0;
-    return `<button type="button" class="${active}" onclick="selectLinePath(${index})">${escapeEditorHtml(label)} <span class="small">${stationCount}站</span></button>`;
+    const geometryBadge = getLinePathGeometryWkt(path) ? '<span class="line-path-geometry-badge">geometry</span>' : '';
+    return `<button type="button" class="${active}" onclick="selectLinePath(${index})">${escapeEditorHtml(label)} <span class="small">${stationCount}站</span>${geometryBadge}</button>`;
   }).join('') || '<div class="status">未有支線 path；按「+ 新增支線 path」開始。</div>';
+}
+
+function buildLinePathCopySourceOptions() {
+  const line = getSelectedLine();
+  if (!line) return '<option value="">未有可複製來源</option>';
+
+  const options = [];
+  const mainSequence = Array.isArray(line.sequence) ? line.sequence.map(id => toEditorIdToken(id)).filter(Boolean) : [];
+  if (mainSequence.length) {
+    options.push(`<option value="main">主 sequence（${mainSequence.length}站）</option>`);
+  }
+
+  ensureSelectedLinePaths().forEach((sourcePath, index) => {
+    if (index === companySelectedPathIndex) return;
+    const sequence = Array.isArray(sourcePath.sequence) ? sourcePath.sequence.filter(Boolean) : [];
+    if (!sequence.length) return;
+    const label = sourcePath.name || sourcePath.id || `Path ${index + 1}`;
+    options.push(`<option value="path:${index}">${escapeEditorHtml(label)}（${sequence.length}站）</option>`);
+  });
+
+  return options.join('') || '<option value="">未有可複製來源</option>';
 }
 
 function renderLinePathBuilder() {
@@ -1178,11 +2169,23 @@ function renderLinePathBuilder() {
     <div class="line-path-editor-grid">
       <div class="input-group"><label>支線名 / path name</label><input id="editPathName" value="${escapeEditorAttr(path.name || '')}" placeholder="例：支線 / 空港線 / 西九条方面" oninput="updateSelectedLinePathFromForm()"></div>
       <div class="input-group"><label>path id</label><input id="editPathId" value="${escapeEditorAttr(path.id || '')}" placeholder="PATH_1" oninput="this.value = toEditorIdToken(this.value); updateSelectedLinePathFromForm()"></div>
+      <div class="input-group">
+        <label>行駛規則</label>
+        <label class="check"><input id="editPathIsLoop" type="checkbox" ${path.is_loop === true || path.is_loop === 'true' ? 'checked' : ''} onchange="updateSelectedLinePathFromForm()"> 環狀 path</label>
+        <label class="check"><input id="editPathOneWay" type="checkbox" ${path.one_way === true || path.one_way === 'true' ? 'checked' : ''} onchange="updateSelectedLinePathFromForm()"> 單向行駛</label>
+      </div>
+      <div class="input-group line-path-geometry-field">
+        <label>行駛 geometry_wkt（選填）</label>
+        <textarea id="editPathGeometry" placeholder="LINESTRING(...) / MULTILINESTRING(...)" oninput="updateSelectedLinePathFromForm()">${escapeEditorHtml(getLinePathGeometryWkt(path))}</textarea>
+        <div class="line-path-geometry-note">上下行不同路軌、隧道 loop、支線分岐等，可以喺呢度放此 path 實際行車線形；留空就沿用路線本身 geometry_wkt。</div>
+      </div>
     </div>
     <div class="line-path-sequence-tools">
       <input id="pathStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px" oninput="updatePathSequenceActionLabel()" onchange="updatePathSequenceActionLabel()">
       <button id="pathSequenceActionBtn" class="secondary mini-btn" onclick="addStationToSelectedLinePathSequence()">加入停車站</button>
-      <button class="ghost mini-btn" onclick="copyMainSequenceToSelectedLinePath()">由主 sequence 複製</button>
+      <select id="pathSequenceCopySource" aria-label="複製 sequence 來源">${buildLinePathCopySourceOptions()}</select>
+      <button class="ghost mini-btn" onclick="copySequenceToSelectedLinePath()">複製 sequence</button>
+      <button class="ghost mini-btn" onclick="reverseSelectedLinePathSequence()">上下倒轉</button>
       <button class="danger mini-btn" onclick="deleteSelectedLinePath()">刪除此 path</button>
     </div>
     <div id="linePathSequenceList" class="seq-list line-path-seq-list"></div>
@@ -1236,20 +2239,37 @@ function deleteSelectedLinePath() {
   setCompanyEditorStatus('已刪除支線 path', 'ok');
 }
 
+function scheduleLinePathMetaRefresh() {
+  clearTimeout(companyPathMetaRefreshTimer);
+  companyPathMetaRefreshTimer = setTimeout(() => {
+    syncLinePathsTextareaFromData();
+    renderLinePathList();
+    renderCompanyLineList();
+    renderLineDebugPanel();
+    refreshCompanyJsonOutput();
+    updateCompanyEditorBadges();
+  }, 220);
+}
+
 function updateSelectedLinePathFromForm() {
   const path = getSelectedLinePath();
   if (!path) return;
   const nameInput = document.getElementById('editPathName');
   const idInput = document.getElementById('editPathId');
+  const geometryInput = document.getElementById('editPathGeometry');
+  const isLoopInput = document.getElementById('editPathIsLoop');
+  const oneWayInput = document.getElementById('editPathOneWay');
   path.name = String(nameInput?.value || '').trim();
   path.id = toEditorIdToken(idInput?.value || path.id || `PATH_${(companySelectedPathIndex || 0) + 1}`) || `PATH_${(companySelectedPathIndex || 0) + 1}`;
   if (idInput) idInput.value = path.id;
-  syncLinePathsTextareaFromData();
-  renderLinePathList();
-  renderCompanyLineList();
-  renderLineDebugPanel();
-  refreshCompanyJsonOutput();
-  updateCompanyEditorBadges();
+  if (isLoopInput?.checked) path.is_loop = true;
+  else delete path.is_loop;
+  if (oneWayInput?.checked) path.one_way = true;
+  else delete path.one_way;
+  const geometryWkt = String(geometryInput?.value || '').trim();
+  if (geometryWkt) path.geometry_wkt = geometryWkt;
+  else delete path.geometry_wkt;
+  scheduleLinePathMetaRefresh();
 }
 
 function renderLinePathSequenceList() {
@@ -1283,7 +2303,7 @@ function renderLinePathSequenceList() {
     const stationButton = stId
       ? `<button type="button" class="seq-name seq-jump ${!st ? 'missing' : ''}" title="${escapeEditorAttr(label)}" onclick="selectLinePathSequenceStation(${index})" ondblclick="openSequenceStationForEdit(-1, '${escapeEditorAttr(stId)}')">${escapeEditorHtml(label)}</button>`
       : '<span class="seq-name danger-text">(空白 ID)</span>';
-    return `<div class="seq-item ${issueClass} ${selectedClass}" data-path-seq-index="${index}"><span class="seq-no">${index + 1}</span>${stationButton}<button class="ghost mini-btn" onclick="moveLinePathStation(${index},-1)">↑</button><button class="ghost mini-btn" onclick="moveLinePathStation(${index},1)">↓</button><button class="danger mini-btn" onclick="removeLinePathStation(${index})">✕</button></div>`;
+    return `<div class="seq-item ${issueClass} ${selectedClass}" draggable="true" data-path-seq-index="${index}" ondragstart="handlePathSequenceDragStart(event, ${index})" ondragover="handlePathSequenceDragOver(event, ${index})" ondragleave="handlePathSequenceDragLeave(event)" ondrop="handlePathSequenceDrop(event, ${index})" ondragend="handlePathSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${index + 1}</span>${stationButton}<button class="ghost mini-btn" onclick="moveLinePathStation(${index},-1)">↑</button><button class="ghost mini-btn" onclick="moveLinePathStation(${index},1)">↓</button><button class="danger mini-btn" onclick="removeLinePathStation(${index})">✕</button></div>`;
   }).join('') || '<div class="status">此 path 未有停車站 sequence</div>';
   updatePathSequenceActionLabel();
 }
@@ -1307,8 +2327,8 @@ function updatePathSequenceActionLabel() {
   btn.textContent = canReplace ? '取代停車站' : '加入停車站';
 }
 
-function finishLinePathSequenceEdit(message = '') {
-  companySelectedPathSequenceIndex = null;
+function finishLinePathSequenceEdit(message = '', options = {}) {
+  if (!options.keepSelection) companySelectedPathSequenceIndex = null;
   const picker = document.getElementById('pathStationPicker');
   if (picker) picker.value = '';
   syncLinePathsTextareaFromData();
@@ -1345,7 +2365,9 @@ function moveLinePathStation(index, delta) {
   const next = index + delta;
   if (next < 0 || next >= path.sequence.length) return;
   [path.sequence[index], path.sequence[next]] = [path.sequence[next], path.sequence[index]];
-  finishLinePathSequenceEdit();
+  if (companySelectedPathSequenceIndex === index) companySelectedPathSequenceIndex = next;
+  else if (companySelectedPathSequenceIndex === next) companySelectedPathSequenceIndex = index;
+  finishLinePathSequenceEdit('', { keepSelection: true });
 }
 
 function removeLinePathStation(index) {
@@ -1355,15 +2377,409 @@ function removeLinePathStation(index) {
   finishLinePathSequenceEdit();
 }
 
-function copyMainSequenceToSelectedLinePath() {
-  const line = getSelectedLine();
+function reverseSelectedLinePathSequence() {
   const path = getSelectedLinePath();
-  if (!line || !path) return;
-  const mainSequence = Array.isArray(line.sequence) ? line.sequence.map(id => toEditorIdToken(id)).filter(Boolean) : [];
-  if (!mainSequence.length) return setCompanyEditorStatus('主 sequence 未有停車站，未能複製到 path。', 'warn');
-  if (path.sequence?.length && !confirm('此 path 已有停車站，要用主 sequence 覆蓋？')) return;
-  path.sequence = [...mainSequence];
-  finishLinePathSequenceEdit(`已由主 sequence 複製 ${path.sequence.length} 個停車站到 ${path.name || path.id}`);
+  if (!path?.sequence?.length) return setCompanyEditorStatus('此 path 未有停車站，未能上下倒轉。', 'warn');
+  path.sequence.reverse();
+  if (companySelectedPathSequenceIndex !== null) {
+    companySelectedPathSequenceIndex = path.sequence.length - 1 - companySelectedPathSequenceIndex;
+  }
+  finishLinePathSequenceEdit(`已上下倒轉 ${path.name || path.id} 嘅停車站次序。`, { keepSelection: true });
+}
+
+function getSelectedPathCopySourceSequence() {
+  const line = getSelectedLine();
+  const rawSource = document.getElementById('pathSequenceCopySource')?.value || 'main';
+  if (!line) return { sequence: [], label: '' };
+
+  if (rawSource.startsWith('path:')) {
+    const sourceIndex = Number(rawSource.slice(5));
+    const sourcePath = ensureSelectedLinePaths()[sourceIndex];
+    const sequence = Array.isArray(sourcePath?.sequence)
+      ? sourcePath.sequence.map(id => toEditorIdToken(id)).filter(Boolean)
+      : [];
+    return {
+      sequence,
+      label: sourcePath?.name || sourcePath?.id || `Path ${sourceIndex + 1}`
+    };
+  }
+
+  return {
+    sequence: Array.isArray(line.sequence) ? line.sequence.map(id => toEditorIdToken(id)).filter(Boolean) : [],
+    label: '主 sequence'
+  };
+}
+
+function copySequenceToSelectedLinePath() {
+  const line = getSelectedLine();
+  if (!line) return;
+  const { sequence, label } = getSelectedPathCopySourceSequence();
+  if (!sequence.length) return setCompanyEditorStatus('所選來源未有停車站，未能複製到 path。', 'warn');
+  // Reading a source normalizes line.paths and replaces its object entries.
+  // Resolve the target afterwards so the copied sequence is written to the
+  // current path object instead of a stale reference.
+  const path = getSelectedLinePath();
+  if (!path) return;
+  if (path.sequence?.length && !confirm(`此 path 已有停車站，要用「${label}」覆蓋？`)) return;
+  path.sequence = [...sequence];
+  finishLinePathSequenceEdit(`已由 ${label} 複製 ${path.sequence.length} 個停車站到 ${path.name || path.id}`);
+}
+
+function copyMainSequenceToSelectedLinePath() {
+  const select = document.getElementById('pathSequenceCopySource');
+  if (select) select.value = 'main';
+  copySequenceToSelectedLinePath();
+}
+
+function clearPathSequenceDragClasses() {
+  document.querySelectorAll('#linePathSequenceList .seq-item').forEach(item => {
+    item.classList.remove('dragging', 'drag-over');
+  });
+}
+
+function handlePathSequenceDragStart(event, index) {
+  companyPathSequenceDragIndex = index;
+  event.currentTarget.classList.add('dragging');
+  if (event.dataTransfer) {
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', String(index));
+  }
+}
+
+function handlePathSequenceDragOver(event, index) {
+  event.preventDefault();
+  if (event.dataTransfer) event.dataTransfer.dropEffect = 'move';
+  document.querySelectorAll('#linePathSequenceList .seq-item.drag-over').forEach(item => {
+    if (item !== event.currentTarget) item.classList.remove('drag-over');
+  });
+  if (companyPathSequenceDragIndex !== null && companyPathSequenceDragIndex !== index) {
+    event.currentTarget.classList.add('drag-over');
+  }
+}
+
+function handlePathSequenceDragLeave(event) {
+  event.currentTarget.classList.remove('drag-over');
+}
+
+function handlePathSequenceDrop(event, targetIndex) {
+  event.preventDefault();
+  const rawIndex = event.dataTransfer?.getData('text/plain');
+  const fromIndex = Number.isInteger(companyPathSequenceDragIndex) ? companyPathSequenceDragIndex : Number(rawIndex);
+  reorderLinePathStation(fromIndex, targetIndex);
+  companyPathSequenceDragIndex = null;
+  clearPathSequenceDragClasses();
+}
+
+function handlePathSequenceDragEnd() {
+  companyPathSequenceDragIndex = null;
+  clearPathSequenceDragClasses();
+}
+
+function reorderLinePathStation(fromIndex, toIndex) {
+  const path = getSelectedLinePath();
+  if (!path?.sequence) return;
+  if (!Number.isInteger(fromIndex) || !Number.isInteger(toIndex)) return;
+  if (fromIndex < 0 || fromIndex >= path.sequence.length || toIndex < 0 || toIndex >= path.sequence.length) return;
+  if (fromIndex === toIndex) return;
+
+  const [moved] = path.sequence.splice(fromIndex, 1);
+  path.sequence.splice(toIndex, 0, moved);
+  if (companySelectedPathSequenceIndex === fromIndex) {
+    companySelectedPathSequenceIndex = toIndex;
+  } else if (companySelectedPathSequenceIndex !== null) {
+    if (fromIndex < companySelectedPathSequenceIndex && toIndex >= companySelectedPathSequenceIndex) companySelectedPathSequenceIndex -= 1;
+    if (fromIndex > companySelectedPathSequenceIndex && toIndex <= companySelectedPathSequenceIndex) companySelectedPathSequenceIndex += 1;
+  }
+  finishLinePathSequenceEdit('', { keepSelection: true });
+}
+
+function ensureSelectedLineVersions(create = false) {
+  const line = getSelectedLine();
+  if (!line) return [];
+  const versions = Array.isArray(line.versions) ? line.versions : [];
+  if (versions.length || create) line.versions = versions;
+  else delete line.versions;
+  return versions;
+}
+
+function getSelectedLineVersion() {
+  const versions = ensureSelectedLineVersions();
+  if (!versions.length) return null;
+  if (companySelectedLineVersionIndex === null || companySelectedLineVersionIndex < 0 || companySelectedLineVersionIndex >= versions.length) {
+    companySelectedLineVersionIndex = 0;
+  }
+  return versions[companySelectedLineVersionIndex] || null;
+}
+
+function getLineVersionLabel(version, index) {
+  const name = String(version?.name || '').trim();
+  const id = String(version?.id || `VERSION_${index + 1}`).trim();
+  const from = String(version?.valid_from || '').trim();
+  const to = String(version?.valid_to || '').trim();
+  const period = from || to ? `${from || '開始前'} 至 ${to || '現行'}` : '未設定日期';
+  return { title: name || id, period };
+}
+
+function renderLineVersionList() {
+  const list = document.getElementById('lineVersionList');
+  const summary = document.getElementById('lineVersionSummary');
+  const versions = ensureSelectedLineVersions();
+  if (summary) summary.textContent = versions.length ? `${versions.length} 個版本` : '未有版本';
+  if (!list) return;
+  if (!versions.length) {
+    list.innerHTML = '<div class="status">未有額外版本，會使用上方現行路線資料。</div>';
+    return;
+  }
+  list.innerHTML = versions.map((version, index) => {
+    const label = getLineVersionLabel(version, index);
+    return `<button type="button" class="line-path-item ${index === companySelectedLineVersionIndex ? 'active' : ''}" onclick="selectLineVersion(${index})"><span>${escapeEditorHtml(label.title)}</span><small>${escapeEditorHtml(label.period)}</small></button>`;
+  }).join('');
+}
+
+function renderLineVersionBuilder() {
+  const editor = document.getElementById('lineVersionEditor');
+  const versions = ensureSelectedLineVersions();
+  renderLineVersionList();
+  if (!editor) return;
+  if (!versions.length) {
+    editor.innerHTML = '<div class="status">可新增舊走線、已廢車站或未來延伸的版本；「複製現行路線」會預先帶入現行 sequence、paths 和 geometry。</div>';
+    return;
+  }
+  const version = getSelectedLineVersion();
+  if (!version) return;
+  const pathsText = formatLinePathsForEditor(version.paths);
+  editor.innerHTML = `
+    <div class="line-path-editor-grid">
+      <div class="input-group"><label>版本名稱</label><input id="editLineVersionName" value="${escapeEditorAttr(version.name || '')}" placeholder="例：2015 年廢站前" oninput="updateSelectedLineVersionFromForm()"></div>
+      <div class="input-group"><label>版本 ID</label><input id="editLineVersionId" value="${escapeEditorAttr(version.id || '')}" placeholder="PRE_2015" oninput="this.value = toEditorIdToken(this.value); updateSelectedLineVersionFromForm()"></div>
+      <div class="input-group"><label>適用開始日</label><input id="editLineVersionFrom" type="date" value="${escapeEditorAttr(version.valid_from || '')}" onchange="updateSelectedLineVersionFromForm()"></div>
+      <div class="input-group"><label>適用結束日</label><input id="editLineVersionTo" type="date" value="${escapeEditorAttr(version.valid_to || '')}" onchange="updateSelectedLineVersionFromForm()"></div>
+      <div class="input-group line-path-geometry-field"><label>此版本 geometry_wkt（選填）</label><textarea id="editLineVersionGeometry" placeholder="LINESTRING(...) / MULTILINESTRING(...)" oninput="updateSelectedLineVersionFromForm()">${escapeEditorHtml(getLinePathGeometryWkt(version))}</textarea><div class="line-path-geometry-note">只有走線不同才需填寫；留空會沿用上方現行 geometry。</div></div>
+      <div class="input-group line-path-geometry-field"><label>此版本 paths（選填）</label><textarea id="editLineVersionPaths" placeholder='[{"id":"OLD_ROUTE","sequence":["STN_..."]}]' oninput="updateSelectedLineVersionFromForm()">${escapeEditorHtml(pathsText)}</textarea><div class="line-path-geometry-note">支線、上下行不同走線或舊 loop 可在版本內獨立定義；留空沿用上方 paths。</div></div>
+    </div>
+    <div class="line-path-sequence-tools">
+      <input id="lineVersionStationPicker" list="companyStationIdList" placeholder="加入 station id / station name" style="flex:1;min-width:220px">
+      <button class="secondary mini-btn" onclick="addStationToSelectedLineVersionSequence()">加入停車站</button>
+      <button class="ghost mini-btn" onclick="copyCurrentRouteToLineVersion()">複製現行資料</button>
+      <button class="ghost mini-btn" onclick="reverseSelectedLineVersionSequence()">上下倒轉</button>
+      <button class="danger mini-btn" onclick="deleteSelectedLineVersion()">刪除此版本</button>
+    </div>
+    <div id="lineVersionSequenceList" class="seq-list line-path-seq-list"></div>
+  `;
+  renderLineVersionSequenceList();
+}
+
+function selectLineVersion(index) {
+  const versions = ensureSelectedLineVersions();
+  if (index < 0 || index >= versions.length) return;
+  companySelectedLineVersionIndex = index;
+  companySelectedLineVersionSequenceIndex = null;
+  renderLineVersionBuilder();
+}
+
+function makeLineVersionFromCurrent(line, index) {
+  const geometryWkt = getLinePathGeometryWkt(line);
+  const version = {
+    id: `VERSION_${index + 1}`,
+    name: `路線版本 ${index + 1}`,
+    sequence: []
+  };
+  if (Array.isArray(line.sequence)) version.sequence = [...line.sequence];
+  if (Array.isArray(line.paths) && line.paths.length) version.paths = JSON.parse(JSON.stringify(line.paths));
+  if (geometryWkt) version.geometry_wkt = geometryWkt;
+  return version;
+}
+
+function addLineVersion(copyCurrent = false) {
+  const line = getSelectedLine();
+  if (!line) return;
+  const versions = ensureSelectedLineVersions(true);
+  versions.push(copyCurrent ? makeLineVersionFromCurrent(line, versions.length) : {
+    id: `VERSION_${versions.length + 1}`,
+    name: `路線版本 ${versions.length + 1}`,
+    sequence: []
+  });
+  companySelectedLineVersionIndex = versions.length - 1;
+  companySelectedLineVersionSequenceIndex = null;
+  renderLineVersionBuilder();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+  setCompanyEditorStatus(copyCurrent ? '已複製現行路線到新版本。' : '已新增空白路線版本。', 'ok');
+}
+
+function updateSelectedLineVersionFromForm() {
+  const version = getSelectedLineVersion();
+  if (!version) return;
+  const idInput = document.getElementById('editLineVersionId');
+  const name = String(document.getElementById('editLineVersionName')?.value || '').trim();
+  const id = toEditorIdToken(idInput?.value || version.id || `VERSION_${(companySelectedLineVersionIndex || 0) + 1}`) || `VERSION_${(companySelectedLineVersionIndex || 0) + 1}`;
+  version.id = id;
+  if (idInput) idInput.value = id;
+  if (name) version.name = name;
+  else delete version.name;
+  ['valid_from', 'valid_to'].forEach(field => {
+    const sourceId = field === 'valid_from' ? 'editLineVersionFrom' : 'editLineVersionTo';
+    const value = String(document.getElementById(sourceId)?.value || '').trim();
+    if (value) version[field] = value;
+    else delete version[field];
+  });
+  const geometryWkt = String(document.getElementById('editLineVersionGeometry')?.value || '').trim();
+  if (geometryWkt) version.geometry_wkt = geometryWkt;
+  else delete version.geometry_wkt;
+  const pathsInput = document.getElementById('editLineVersionPaths');
+  try {
+    const paths = parseLinePathsEditorValue(pathsInput?.value || '');
+    if (pathsInput) pathsInput.setCustomValidity('');
+    if (paths.length) version.paths = paths;
+    else delete version.paths;
+  } catch (error) {
+    if (pathsInput) pathsInput.setCustomValidity(error.message || 'paths JSON 格式錯誤');
+    setCompanyEditorStatus(`版本 paths JSON 格式錯誤：${error.message || error}`, 'err');
+    return;
+  }
+  renderLineVersionList();
+  renderCompanyLineList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+}
+
+function copyCurrentRouteToLineVersion() {
+  const line = getSelectedLine();
+  const version = getSelectedLineVersion();
+  if (!line || !version) return;
+  if (version.sequence?.length && !confirm('此版本已有停站資料，要用現行路線資料覆蓋？')) return;
+  const fresh = makeLineVersionFromCurrent(line, companySelectedLineVersionIndex || 0);
+  version.sequence = fresh.sequence;
+  if (fresh.paths) version.paths = fresh.paths;
+  else delete version.paths;
+  if (fresh.geometry_wkt) version.geometry_wkt = fresh.geometry_wkt;
+  else delete version.geometry_wkt;
+  renderLineVersionBuilder();
+  refreshCompanyJsonOutput();
+  setCompanyEditorStatus('已複製現行 sequence、paths 和 geometry。', 'ok');
+}
+
+function deleteSelectedLineVersion() {
+  const versions = ensureSelectedLineVersions();
+  const version = getSelectedLineVersion();
+  if (!version || companySelectedLineVersionIndex === null) return;
+  if (!confirm(`確定刪除版本「${version.name || version.id}」？`)) return;
+  versions.splice(companySelectedLineVersionIndex, 1);
+  if (!versions.length) {
+    const line = getSelectedLine();
+    if (line) delete line.versions;
+    companySelectedLineVersionIndex = null;
+  } else {
+    companySelectedLineVersionIndex = Math.min(companySelectedLineVersionIndex, versions.length - 1);
+  }
+  companySelectedLineVersionSequenceIndex = null;
+  renderLineVersionBuilder();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+  setCompanyEditorStatus('已刪除路線版本。', 'ok');
+}
+
+function renderLineVersionSequenceList() {
+  const box = document.getElementById('lineVersionSequenceList');
+  const version = getSelectedLineVersion();
+  if (!box || !version) return;
+  version.sequence = Array.isArray(version.sequence) ? version.sequence.map(id => toEditorIdToken(id)).filter(Boolean) : [];
+  const stations = new Map((companyEditorData?.stations || []).map(st => [toEditorIdToken(st.id), st]));
+  box.innerHTML = version.sequence.map((stationId, index) => {
+    const station = stations.get(stationId);
+    const label = getStationDisplay(station, stationId);
+    const missing = !station ? 'missing' : '';
+    return `<div class="seq-item ${missing}" draggable="true" data-version-seq-index="${index}" ondragstart="handleLineVersionSequenceDragStart(event, ${index})" ondragover="handleLineVersionSequenceDragOver(event, ${index})" ondragleave="handleLineVersionSequenceDragLeave(event)" ondrop="handleLineVersionSequenceDrop(event, ${index})" ondragend="handleLineVersionSequenceDragEnd(event)"><span class="seq-drag-handle" title="拖放排序">☰</span><span class="seq-no">${index + 1}</span><span class="seq-name ${missing}">${escapeEditorHtml(label)}</span><button class="ghost mini-btn" onclick="moveLineVersionStation(${index}, -1)">↑</button><button class="ghost mini-btn" onclick="moveLineVersionStation(${index}, 1)">↓</button><button class="danger mini-btn" onclick="removeLineVersionStation(${index})">✕</button></div>`;
+  }).join('') || '<div class="status">此版本未有停車站 sequence</div>';
+}
+
+function finishLineVersionSequenceEdit(message = '') {
+  companySelectedLineVersionSequenceIndex = null;
+  const picker = document.getElementById('lineVersionStationPicker');
+  if (picker) picker.value = '';
+  renderLineVersionSequenceList();
+  renderCompanyLineList();
+  renderLineDebugPanel();
+  refreshCompanyJsonOutput();
+  updateCompanyEditorBadges();
+  if (message) setCompanyEditorStatus(message, 'ok');
+}
+
+function addStationToSelectedLineVersionSequence() {
+  const version = getSelectedLineVersion();
+  const raw = String(document.getElementById('lineVersionStationPicker')?.value || '').trim();
+  if (!version || !raw) return;
+  const stationId = resolveSequencePickerStationId(raw);
+  if (!stationId) return;
+  version.sequence = Array.isArray(version.sequence) ? version.sequence : [];
+  version.sequence.push(stationId);
+  finishLineVersionSequenceEdit(`已加入版本停車站：${stationId}`);
+}
+
+function moveLineVersionStation(index, delta) {
+  const version = getSelectedLineVersion();
+  const next = index + delta;
+  if (!version?.sequence || next < 0 || next >= version.sequence.length) return;
+  [version.sequence[index], version.sequence[next]] = [version.sequence[next], version.sequence[index]];
+  finishLineVersionSequenceEdit();
+}
+
+function removeLineVersionStation(index) {
+  const version = getSelectedLineVersion();
+  if (!version?.sequence || index < 0 || index >= version.sequence.length) return;
+  version.sequence.splice(index, 1);
+  finishLineVersionSequenceEdit();
+}
+
+function reverseSelectedLineVersionSequence() {
+  const version = getSelectedLineVersion();
+  if (!version?.sequence?.length) return setCompanyEditorStatus('此版本未有停車站，未能上下倒轉。', 'warn');
+  version.sequence.reverse();
+  finishLineVersionSequenceEdit(`已上下倒轉 ${version.name || version.id} 嘅停車站次序。`);
+}
+
+function clearLineVersionSequenceDragClasses() {
+  document.querySelectorAll('#lineVersionSequenceList .seq-item').forEach(item => item.classList.remove('dragging', 'drag-over'));
+}
+
+function handleLineVersionSequenceDragStart(event, index) {
+  companyLineVersionSequenceDragIndex = index;
+  event.currentTarget.classList.add('dragging');
+  if (event.dataTransfer) {
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', String(index));
+  }
+}
+
+function handleLineVersionSequenceDragOver(event, index) {
+  event.preventDefault();
+  if (event.dataTransfer) event.dataTransfer.dropEffect = 'move';
+  document.querySelectorAll('#lineVersionSequenceList .seq-item.drag-over').forEach(item => {
+    if (item !== event.currentTarget) item.classList.remove('drag-over');
+  });
+  if (companyLineVersionSequenceDragIndex !== null && companyLineVersionSequenceDragIndex !== index) event.currentTarget.classList.add('drag-over');
+}
+
+function handleLineVersionSequenceDragLeave(event) { event.currentTarget.classList.remove('drag-over'); }
+
+function handleLineVersionSequenceDrop(event, targetIndex) {
+  event.preventDefault();
+  const rawIndex = event.dataTransfer?.getData('text/plain');
+  const fromIndex = Number.isInteger(companyLineVersionSequenceDragIndex) ? companyLineVersionSequenceDragIndex : Number(rawIndex);
+  const version = getSelectedLineVersion();
+  if (version?.sequence && Number.isInteger(fromIndex) && Number.isInteger(targetIndex) && fromIndex >= 0 && targetIndex >= 0 && fromIndex < version.sequence.length && targetIndex < version.sequence.length && fromIndex !== targetIndex) {
+    const [moved] = version.sequence.splice(fromIndex, 1);
+    version.sequence.splice(targetIndex, 0, moved);
+    finishLineVersionSequenceEdit();
+  }
+  companyLineVersionSequenceDragIndex = null;
+  clearLineVersionSequenceDragClasses();
+}
+
+function handleLineVersionSequenceDragEnd() {
+  companyLineVersionSequenceDragIndex = null;
+  clearLineVersionSequenceDragClasses();
 }
 
 function openSequenceStationForEdit(index, stationId) {
@@ -1517,6 +2933,8 @@ function addCompanyLine() {
   companySelectedSequenceIndex = null;
   companySelectedPathIndex = null;
   companySelectedPathSequenceIndex = null;
+  companySelectedLineVersionIndex = null;
+  companySelectedLineVersionSequenceIndex = null;
   renderCompanyEditorAll();
 }
 function deleteSelectedLine() {
@@ -1747,6 +3165,8 @@ function getLinePathDiagnostics(line, baseDiag = null) {
     const blankPositions = [];
     const missing = [];
     const outsideMainSequence = [];
+    const geometryWkt = getLinePathGeometryWkt(path);
+    const invalidGeometry = !!geometryWkt && !isLikelyWktGeometry(geometryWkt);
 
     sequenceIds.forEach((id, seqIndex) => {
       if (!id) {
@@ -1767,7 +3187,8 @@ function getLinePathDiagnostics(line, baseDiag = null) {
       + blankPositions.length
       + missing.length
       + outsideMainSequence.length
-      + duplicates.length;
+      + duplicates.length
+      + (invalidGeometry ? 1 : 0);
 
     return {
       path,
@@ -1778,6 +3199,8 @@ function getLinePathDiagnostics(line, baseDiag = null) {
       missing,
       outsideMainSequence,
       duplicates,
+      geometryWkt,
+      invalidGeometry,
       issueCount
     };
   });
@@ -1789,6 +3212,31 @@ function getLinePathDiagnostics(line, baseDiag = null) {
     paths: pathItems,
     issueCount,
     criticalCount
+  };
+}
+
+function getLineVersionDiagnostics(line) {
+  const versions = Array.isArray(line?.versions) ? line.versions : [];
+  const items = versions.map((version, index) => {
+    const effectiveLine = { ...line, ...version };
+    const diag = getLineDiagnostics(effectiveLine);
+    const pathDiag = getLinePathDiagnostics(effectiveLine, diag);
+    const geometryWkt = getLinePathGeometryWkt(version);
+    const invalidGeometry = !!geometryWkt && !isLikelyWktGeometry(geometryWkt);
+    const invalidDateRange = !!version.valid_from && !!version.valid_to && String(version.valid_from) > String(version.valid_to);
+    const issueCount = (!diag.stationCount ? 1 : 0)
+      + diag.blankPositions.length
+      + diag.missing.length
+      + diag.duplicates.length
+      + pathDiag.issueCount
+      + (invalidGeometry ? 1 : 0)
+      + (invalidDateRange ? 1 : 0);
+    return { version, index, diag, pathDiag, invalidGeometry, invalidDateRange, issueCount };
+  });
+  return {
+    versionCount: items.length,
+    items,
+    issueCount: items.reduce((sum, item) => sum + item.issueCount, 0)
   };
 }
 
@@ -1852,11 +3300,13 @@ function getLineIssueCount(line) {
   if (!line) return 0;
   const diag = getLineDiagnostics(line);
   const pathDiag = getLinePathDiagnostics(line, diag);
+  const versionDiag = getLineVersionDiagnostics(line);
   const duplicateIssueCount = isLineDuplicateStopsChecked(line, diag) ? 0 : diag.duplicates.length;
   let count = diag.missing.length + duplicateIssueCount + diag.blankPositions.length;
   if (!diag.stationCount) count += 1;
   if (!String(line.geometry_wkt || line.asWKT || line.geometry || '').trim()) count += 1;
   count += pathDiag.issueCount;
+  count += versionDiag.issueCount;
   return count;
 }
 
@@ -1908,6 +3358,7 @@ function renderLineDebugPanel() {
 
   const diag = getLineDiagnostics(line);
   const pathDiag = getLinePathDiagnostics(line, diag);
+  const versionDiag = getLineVersionDiagnostics(line);
   const issueCards = [];
   if (!diag.stationCount) {
     issueCards.push('<div class="line-debug-card warn"><strong>sequence 未有停站</strong><br>此路線暫時未設定任何車站。</div>');
@@ -1944,15 +3395,34 @@ function renderLineDebugPanel() {
       if (item.missing.length) details.push(`缺站 ${item.missing.map(m => `${m.id} (#${m.index + 1})`).join(', ')}`);
       if (item.outsideMainSequence.length) details.push(`不在主 sequence ${item.outsideMainSequence.map(m => `${m.id} (#${m.index + 1})`).join(', ')}`);
       if (item.duplicates.length) details.push(`重複 ${item.duplicates.map(d => `${d.id} @ ${d.positions.map(pos => '#' + (pos + 1)).join(', ')}`).join(' / ')}`);
+      if (item.invalidGeometry) details.push('geometry_wkt 格式疑似不正確');
       return buildIssueToken(`<strong>${escapeEditorHtml(pathName)}</strong>: ${escapeEditorHtml(details.join(' / '))}`);
     }).join('');
     const tone = pathDiag.criticalCount ? 'danger' : 'warn';
-    issueCards.push(`<div class="line-debug-card ${tone}"><strong>支線 paths 需檢查</strong><br>path 可以用嚟保存支線 / 多終點嘅各條停站路徑；請確認每個 path 都有完整 station id。<div class="issue-token-list">${tokens}</div></div>`);
+    issueCards.push(`<div class="line-debug-card ${tone}"><strong>支線 paths 需檢查</strong><br>path 可以用嚟保存支線 / 多終點 / 上下行不同路軌嘅各條行路徑；請確認每個 path 都有完整 station id，已填 geometry 時亦要係 WKT。<div class="issue-token-list">${tokens}</div></div>`);
   } else if (pathDiag.pathCount && !issueCards.length) {
-    issueCards.push(`<div class="line-debug-card ok"><strong>支線 paths 正常</strong><br>已設定 ${pathDiag.pathCount} 個 path，未發現空白 ID、缺站 ID、重複停站或超出主 sequence。</div>`);
+    const geometryCount = pathDiag.paths.filter(item => item.geometryWkt).length;
+    const geometryText = geometryCount ? `；其中 ${geometryCount} 個已設定專用 geometry_wkt` : '';
+    issueCards.push(`<div class="line-debug-card ok"><strong>支線 paths 正常</strong><br>已設定 ${pathDiag.pathCount} 個 path${geometryText}，未發現空白 ID、缺站 ID、重複停站、超出主 sequence 或 geometry 格式問題。</div>`);
   }
   if (!String(line.geometry_wkt || '').trim()) {
     issueCards.push('<div class="line-debug-card warn"><strong>geometry_wkt 空白</strong><br>路線仍可儲存，但地圖顯示可能沒有線形。</div>');
+  }
+  if (versionDiag.versionCount) {
+    const tokens = versionDiag.items.map(item => {
+      const version = item.version || {};
+      const label = version.name || version.id || `版本 ${item.index + 1}`;
+      const details = [];
+      if (!item.diag.stationCount) details.push('沒有停站');
+      if (item.diag.blankPositions.length) details.push(`空白 ID ${item.diag.blankPositions.length}`);
+      if (item.diag.missing.length) details.push(`缺站 ${item.diag.missing.length}`);
+      if (item.diag.duplicates.length) details.push(`重複 ${item.diag.duplicates.length} 組`);
+      if (item.pathDiag.issueCount) details.push(`paths 問題 ${item.pathDiag.issueCount}`);
+      if (item.invalidGeometry) details.push('geometry 格式');
+      if (item.invalidDateRange) details.push('日期範圍倒轉');
+      return buildIssueToken(`<strong>${escapeEditorHtml(label)}</strong>: ${escapeEditorHtml(details.length ? details.join(' / ') : '正常')}`);
+    }).join('');
+    issueCards.push(`<div class="line-debug-card ${versionDiag.issueCount ? 'warn' : 'ok'}"><strong>運行版本 ${versionDiag.versionCount} 個</strong><br>${versionDiag.issueCount ? '以下版本需要檢查。' : '已檢查版本的停站、paths、geometry 和日期範圍。'}<div class="issue-token-list">${tokens}</div></div>`);
   }
   if (!issueCards.length) {
     issueCards.push('<div class="line-debug-card ok"><strong>偵錯結果正常</strong><br>此路線沒有重複停站、空白 ID 或無資料車站 ID。</div>');
@@ -1966,6 +3436,7 @@ function renderLineDebugPanel() {
       <div class="debug-pill ${diag.missing.length ? 'danger' : 'ok'}"><strong>${diag.missing.length}</strong>缺站 ID</div>
       <div class="debug-pill ${diag.duplicates.length ? (isLineDuplicateStopsChecked(line, diag) ? 'ok' : 'warn') : 'ok'}"><strong>${diag.duplicates.length}</strong>重複組</div>
       <div class="debug-pill ${pathDiag.issueCount ? (pathDiag.criticalCount ? 'danger' : 'warn') : 'ok'}"><strong>${pathDiag.pathCount}</strong>paths</div>
+      <div class="debug-pill ${versionDiag.issueCount ? 'warn' : 'ok'}"><strong>${versionDiag.versionCount}</strong>版本</div>
     </div>
     <div class="line-debug-list">${issueCards.join('')}</div>`;
 }
@@ -1973,7 +3444,13 @@ function renderLineDebugPanel() {
 function getStationRouteRefs(stationId) {
   if (!companyEditorData || !stationId) return [];
   const id = toEditorIdToken(stationId);
-  return (companyEditorData.lines || []).filter(line => Array.isArray(line.sequence) && line.sequence.some(seqId => toEditorIdToken(seqId) === id));
+  return (companyEditorData.lines || []).filter(line => {
+    const hasStation = sequence => Array.isArray(sequence) && sequence.some(seqId => toEditorIdToken(seqId) === id);
+    if (hasStation(line.sequence) || normalizeLinePaths(line.paths || []).some(path => hasStation(path.sequence))) return true;
+    return (line.versions || []).some(version =>
+      hasStation(version?.sequence) || normalizeLinePaths(version?.paths || []).some(path => hasStation(path.sequence))
+    );
+  });
 }
 
 function buildStationMiniHtml(station, index, groupIndex = -1, allowMerge = false, extraClass = '') {
