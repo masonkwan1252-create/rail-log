@@ -10075,6 +10075,18 @@ body {
 .ride-date-time input { min-width: 0; width: 100%; box-sizing: border-box; }
 .ride-native-field { position: relative; min-width: 0; }
 .ride-native-value { display: none; }
+.mobile-route-pages { display: none; }
+@media(max-width:899px) {
+    #tab-history .route-pages-active .trip-route-stack { display: block; }
+    #tab-history .route-pages-active .trip-route-stack > :not(.mobile-route-pages) { display: none !important; }
+    #tab-history .route-pages-active .mobile-route-pages { display: block; min-width: 0; overflow: hidden; font-size: 12px; line-height: 1.4; font-weight: 800; }
+    #tab-history .mobile-route-page { display: none; width: max-content; white-space: nowrap; }
+    #tab-history .mobile-route-page.is-current { display: block; }
+    #tab-history .route-pages-active .trip-ticket-stations > details,
+    #tab-history .route-pages-active .trip-ticket-stations > .trip-route-timeline { display: none !important; }
+    #tab-history .route-pages-active .trip-ticket-stations { grid-template-columns: 2.05em minmax(0,1fr) !important; }
+    #tab-history .mobile-route-page .trip-service-type { color: #ff3b30; }
+}
 .history-sync-light { width: 8px; height: 8px; border-radius: 50%; margin-left: 10px; flex: 0 0 8px; background: var(--primary); }
 #tab-history .history-title { justify-content: flex-start; }
 #tab-history .history-title .history-sync-light { margin-left: auto; }
@@ -10129,6 +10141,25 @@ body {
 }
 #tab-history .trip-service-label .trip-service-type { color: #ff3b30; font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif; font-size: inherit; line-height: inherit; font-weight: 800; }
 #tab-history .trip-service-label .trip-service-name { color: var(--primary); }
+@media (max-width: 899px) {
+    #tab-history .trip-route-inline,
+    #tab-history .trip-service-label,
+    #tab-history .trip-service-label .trip-service-type,
+    #tab-history .trip-service-label .trip-service-name {
+        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+    }
+    #tab-history .trip-service-label .trip-service-text { display: block; line-height: 1.2; }
+    #tab-history .trip-ticket-stations > .trip-station-inline {
+        white-space: normal !important;
+        overflow: visible !important;
+        overflow-wrap: anywhere;
+        min-height: 0;
+        height: auto;
+        max-height: none;
+    }
+}
 #tab-history .trip-service-operators { position: relative; display: inline-block; max-width: 100%; }
 #tab-history .trip-service-company-roll { display: inline-flex; align-items: baseline; gap: 5px; max-width: 100%; }
 #tab-history .trip-service-company-faces { display: inline-grid; min-width: 0; overflow: hidden; perspective: 180px; }
@@ -14749,6 +14780,48 @@ function setupHistoryServiceMarquees(list) {
     });
 }
 
+let historyRoutePageTimer = null;
+let historyRoutePageObserver = null;
+function setupHistoryRoutePages(list) {
+    clearInterval(historyRoutePageTimer);
+    historyRoutePageObserver?.disconnect();
+    const pages = [...list.querySelectorAll('.mobile-route-pages')];
+    const measure = document.createElement('canvas').getContext('2d');
+    const update = panel => {
+        const trip = panel.closest('.trip');
+        const stack = panel.parentElement;
+        const style = getComputedStyle(panel);
+        measure.font = `800 12px ${style.fontFamily}`;
+        const fullWidth = measure.measureText(panel.dataset.fullText).width;
+        const active = window.innerWidth < 900 && fullWidth > stack.clientWidth;
+        trip.classList.toggle('route-pages-active', active);
+        panel.querySelectorAll('.mobile-route-page').forEach(page => {
+            page.getAnimations().forEach(animation => animation.cancel());
+            if (!active || !page.classList.contains('is-current')) return;
+            const distance = page.scrollWidth - panel.clientWidth;
+            if (distance > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                page.animate([{transform:'translateX(0)',offset:0},{transform:'translateX(0)',offset:.15},{transform:`translateX(-${distance}px)`,offset:.85},{transform:`translateX(-${distance}px)`,offset:1}],{duration:Math.max(3500,distance*35),fill:'forwards'});
+            }
+        });
+    };
+    historyRoutePageObserver = new ResizeObserver(entries => entries.forEach(entry => update(entry.target.querySelector('.mobile-route-pages'))));
+    pages.forEach(panel => { update(panel); historyRoutePageObserver.observe(panel.parentElement); });
+    if (!pages.length) return;
+    historyRoutePageTimer = setInterval(() => {
+        if (document.hidden) return;
+        pages.forEach(panel => {
+            if (!panel.closest('.trip').classList.contains('route-pages-active')) return;
+            const rect = panel.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+            const items = [...panel.children];
+            const current = items.findIndex(item => item.classList.contains('is-current'));
+            if (items[current]?.getAnimations().some(animation => animation.playState === 'running')) return;
+            items.forEach((item,index) => item.classList.toggle('is-current',index === (current+1)%items.length));
+            update(panel);
+        });
+    }, 4500);
+}
+
 function render() {
 	console.log("render triggered");
     const orderedTrips = getOrderedTripsForDisplay(trips);
@@ -14882,6 +14955,8 @@ pagedTrips.forEach((t) => {
     const foldRoutes = routes.length >= 3 || (hasServiceCompany && routes.length > 1);
     const mobileFoldRoutes = !foldRoutes && routes.length === 2 && routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(' ').length > 28;
     const serviceHeading = hasServiceCompany || (foldRoutes && t.serviceName);
+    const mobileRoutePages = !serviceHeading && routes.length > 1
+        ? `<span class="mobile-route-pages" data-full-text="${escapeHtml(routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(' ') + ' ' + (t.serviceType || ''))}">${routes.map((r,index) => `<span class="mobile-route-page${index === 0 ? ' is-current' : ''}">${escapeHtml(getCompName(r.company_id))} ${escapeHtml(getLineName(r.line_id))}${index === 0 && t.serviceType ? ` <span class="trip-service-type">${escapeHtml(t.serviceType)}</span>` : ''}</span>`).join('')}</span>` : '';
     let serviceLayoutHtml = '';
     let routeDetailsHtml = '';
     if (foldRoutes || mobileFoldRoutes) {
@@ -14955,6 +15030,7 @@ pagedTrips.forEach((t) => {
                 <div class="trip-ticket-section trip-ticket-route">
                     <span class="trip-ticket-label">路線</span>
                     <div class="trip-route-stack${serviceHeading ? ' has-service-layout' : ''}">
+                        ${mobileRoutePages}
                         ${serviceHeading ? serviceLayoutHtml : `${!foldRoutes ? `<span class="trip-route-inline${mobileFoldRoutes ? ' trip-route-full-mobile' : ''}">${routeHtml || "未設定路線"}</span>` : ''}${routeDetailsHtml}`}
                         ${routeMetaHtml ? `<span class="trip-route-meta">${routeMetaHtml}</span>` : ""}
                     </div>
@@ -14982,6 +15058,7 @@ pagedTrips.forEach((t) => {
     listDiv.appendChild(div);
 });
     setupHistoryRouteDetails(listDiv);
+    setupHistoryRoutePages(listDiv);
     setupHistoryServiceCompanyRotation(listDiv);
     setupHistoryServiceMarquees(listDiv);
 
