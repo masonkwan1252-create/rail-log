@@ -10029,18 +10029,24 @@ body {
 #tab-history .trip-route-stack.has-service-layout { display: flex; flex-direction: column; align-items: stretch; width: 100%; overflow: visible; }
 #tab-history .trip-service-layout { display: grid; grid-template-columns: fit-content(34%) minmax(0, 1fr); gap: 8px; align-items: center; align-content: start; min-width: 0; font-size: 12px; }
 #tab-history .trip-service-content { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 8px; }
+#tab-history .trip-service-layout:not(:has(.trip-service-operators)) { grid-template-columns: max-content minmax(0, 1fr); }
+#tab-history .trip-service-layout > .trip-route-inline:not(.trip-service-operators) { white-space: nowrap; }
 #tab-history .trip-service-content > .trip-route-details { max-width: 100%; }
 #tab-history .trip-service-content > details.trip-route-details[open] { flex-basis: 100%; width: 100%; }
 #tab-history .trip-service-label,
 #tab-history .trip-route-meta .trip-service-badge.trip-service-label {
     display: inline-block; min-width: 0; max-width: 100%;
-    padding: 4px 8px !important; border-radius: 3px !important;
+    padding: 4px 8px !important; border-radius: 5px !important;
     background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
     border: 0 !important; box-shadow: none;
     font-size: 15px !important; line-height: 1.45 !important; font-weight: 600;
     white-space: nowrap; overflow: hidden; flex: 0 1 auto;
 }
-#tab-history .trip-service-text { display: inline-block; width: max-content; white-space: nowrap; }
+#tab-history .trip-service-text { display: block; width: max-content; white-space: nowrap; }
+#tab-history .trip-route-inline:has(> .trip-route-leg) { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 6px; }
+#tab-history .trip-route-leg { display: inline-flex; align-items: center; gap: 5px; min-width: 0; }
+#tab-history .trip-route-leg > .trip-through-label { align-self: center; margin-block: 0; }
+#tab-history .trip-route-name { display: block; }
 @media (max-width: 899px) {
     #tab-history .trip-ticket-main {
         align-content: start !important;
@@ -10079,13 +10085,18 @@ body {
 @media(max-width:899px) {
     #tab-history .route-pages-active .trip-route-stack { display: block; }
     #tab-history .route-pages-active .trip-route-stack > :not(.mobile-route-pages) { display: none !important; }
-    #tab-history .route-pages-active .mobile-route-pages { display: block; min-width: 0; overflow: hidden; font-size: 12px; line-height: 1.4; font-weight: 800; }
-    #tab-history .mobile-route-page { display: none; width: max-content; white-space: nowrap; }
-    #tab-history .mobile-route-page.is-current { display: block; }
+    #tab-history .route-pages-active .mobile-route-pages { display: flex; align-items: center; gap: 5px; min-width: 0; overflow: hidden; font-size: 12px; line-height: 1.4; font-weight: 800; }
+    .mobile-route-company { flex: 0 0 auto; }
+    .mobile-route-window { display: grid; align-items: center; min-width: 0; overflow: hidden; }
+    #tab-history .mobile-route-page .trip-service-label { vertical-align: middle; }
+    .mobile-route-next { margin-left: 4px; font-size: 9px; color: var(--subtext); }
+    #tab-history .mobile-route-page { display: flex; align-items: center; gap: 4px; grid-area: 1 / 1; visibility: hidden; pointer-events: none; width: max-content; white-space: nowrap; }
+    #tab-history .mobile-route-page.is-current { visibility: visible; pointer-events: auto; }
     #tab-history .route-pages-active .trip-ticket-stations > details,
     #tab-history .route-pages-active .trip-ticket-stations > .trip-route-timeline { display: none !important; }
     #tab-history .route-pages-active .trip-ticket-stations { grid-template-columns: 2.05em minmax(0,1fr) !important; }
     #tab-history .mobile-route-page .trip-service-type { color: #ff3b30; }
+    #tab-history .mobile-route-page .trip-through-label { margin-left: 4px; font-size: 9px; font-weight: 600; color: #ff3b30; }
 }
 .history-sync-light { width: 8px; height: 8px; border-radius: 50%; margin-left: 10px; flex: 0 0 8px; background: var(--primary); }
 #tab-history .history-title { justify-content: flex-start; }
@@ -10093,8 +10104,8 @@ body {
 .history-status-led { display: inline-grid; margin-left: auto; width: calc(6em + 16px); min-width: calc(6em + 16px); font-size: 14px; height: 32px; align-items: center; overflow: hidden; background: #111; border: 2px solid #222; border-radius: 4px; color: #ff9500; font-family: 'DotGothic16', monospace; text-align: center; }
 #tab-history .history-status-led > span { grid-area: 1 / 1; margin: 0; padding: 4px 8px; width: auto; height: auto; border: 0; border-radius: 0; background: transparent; font-size: 14px; line-height: 1.3; white-space: nowrap; }
 #tab-history .history-status-led > span { min-width: 0; max-width: 100%; overflow: hidden; text-align: center; }
-#tab-history .history-status-led #totalCount { font-size: 18px; animation: historyLedCount 8s steps(1, end) infinite; }
-#tab-history .history-status-led .history-sync-light { margin-left: 0; color: #ff9500; animation: historyLedStatus 8s steps(1, end) infinite; }
+#tab-history .history-status-led #totalCount { font-size: 18px; animation: historyLedCount 6s steps(1, end) infinite; }
+#tab-history .history-status-led .history-sync-light { margin-left: 0; color: #ff9500; animation: historyLedStatus 6s steps(1, end) infinite; }
 .history-led-track { display: inline-block; white-space: nowrap; }
 @keyframes historyLedCount { 0%,100% { visibility: visible; } 50% { visibility: hidden; } }
 @keyframes historyLedStatus { 0%,100% { visibility: hidden; } 50% { visibility: visible; } }
@@ -10183,6 +10194,58 @@ body {
 }
 @media (max-width: 700px) {
     #tab-history .trip-route-full-mobile { display: none; }
+}
+</style>
+<style>
+#tab-history .history-function-linebar {
+    display: flex !important; align-items: center; justify-content: flex-end;
+    gap: 10px !important; width: auto !important; padding: 0 !important;
+    border: 0 !important; background: transparent !important; box-shadow: none !important;
+}
+#tab-history .history-control-group {
+    display: inline-flex; align-items: center; gap: 2px; padding: 3px;
+    border: 1px solid var(--border); border-radius: 6px; background: var(--input-bg);
+}
+#tab-history .history-function-linebar .history-function-btn {
+    display: inline-flex !important; align-items: center; justify-content: center;
+    flex: 0 0 auto; width: auto !important; min-width: 36px !important; height: 36px !important;
+    margin: 0 !important; padding: 0 10px !important; border: 0 !important;
+    border-radius: 4px !important; background: transparent !important;
+    color: var(--subtext) !important; font-size: 13px !important; font-weight: 600 !important;
+    line-height: 1 !important; letter-spacing: 0 !important; box-shadow: none !important;
+    text-shadow: none !important; transition: background .15s, color .15s;
+}
+#tab-history .history-function-linebar .history-function-btn:hover { background: var(--tag-bg) !important; color: var(--text) !important; }
+#tab-history .history-function-linebar .history-function-btn.active { background: color-mix(in srgb, var(--primary) 15%, var(--input-bg)) !important; color: var(--primary) !important; }
+#tab-history .history-function-linebar .history-function-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+#tab-history .history-function-linebar .history-function-btn::before,
+#tab-history .history-function-linebar .history-function-btn::after,
+#tab-history .history-function-linebar .history-control-group::before { content: none !important; }
+#tab-history .history-function-linebar > .history-function-btn { border: 1px solid var(--border) !important; background: var(--input-bg) !important; width: 42px !important; height: 42px !important; padding: 0 !important; border-radius: 6px !important; }
+#tab-history .history-function-linebar svg { width: 17px; height: 17px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+#tab-history .history-calendar-btn { gap: 7px; min-width: 90px !important; }
+#tab-history .history-calendar-text { display: inline !important; font-size: 13px !important; }
+#tab-history .history-sort-toggle-inline .lock-open,
+#tab-history .history-sort-toggle-inline.active .lock-closed { display: none; }
+#tab-history .history-sort-toggle-inline.active .lock-open { display: block; }
+.history-tools-toggle { display: none; }
+@media(max-width:899px) {
+    #tab-history .history-tools-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 5px; width: auto; min-height: 36px; margin: 0 0 0 8px; padding: 0 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--input-bg); color: var(--text); font-size: 12px; }
+    #tab-history .history-tools-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+    #tab-history .history-tools-toggle[aria-expanded="true"] { color: var(--primary); background: var(--tag-bg); }
+    #tab-history .history-desktop-head:not(.tools-open) .history-compact-controls { display: none !important; }
+    #tab-history .history-desktop-head.tools-open .history-compact-controls { display: block !important; margin-top: 8px; }
+    #tab-history .history-desktop-head { display: block !important; }
+    #tab-history .history-title { width: 100%; }
+}
+@media(max-width:600px) {
+    #tab-history .history-compact-controls { width: 100%; min-width: 0; }
+    #tab-history .history-function-linebar { display: grid !important; grid-template-columns: 42px minmax(0,1fr) 42px; gap: 8px !important; width: 100% !important; }
+    #tab-history .history-range-group { justify-content: center; }
+    #tab-history .history-range-group button { flex: 1 1 auto !important; }
+    #tab-history .history-date-group { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
+    #tab-history .history-sort-toggle-inline { grid-column: 3; grid-row: 1; }
+    #tab-history .history-calendar-btn { flex: 1 1 auto !important; }
 }
 </style>
 </head>
@@ -10524,27 +10587,27 @@ body {
     <div class="card history-desktop-card">
         <div class="history-desktop-head">
         <h3 class="history-title" style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
-            乘車記錄 <span class="history-status-led"><span id="totalCount" class="led-counter">0</span><span id="historySyncLight" class="history-sync-light" role="status" aria-label="資料同步中" title="資料同步中" data-state="syncing">資料同步中</span></span>
+            乘車記錄 <span class="history-status-led"><span id="totalCount" class="led-counter">0</span><span id="historySyncLight" class="history-sync-light" role="status" aria-label="資料同步中" title="資料同步中" data-state="syncing">資料同步中</span></span><button type="button" id="historyToolsToggle" class="history-tools-toggle" aria-expanded="false" aria-controls="historyToolsPanel" onclick="toggleHistoryTools()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6M15 14v6"/></svg>工具</button>
         </h3>
 
-        <div class="history-compact-controls">
+        <div class="history-compact-controls" id="historyToolsPanel">
             <div class="history-function-linebar history-map-style-controls" role="toolbar" aria-label="乘車記錄篩選工具列">
                 <button id="historySearchToggle" type="button" class="design2-line-btn history-function-btn history-search-toggle" onclick="toggleHistorySearch()" aria-label="搜尋" title="搜尋">
-                    <span aria-hidden="true">⌕</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
                 </button>
                 <div class="history-control-group history-range-group" aria-label="日期篩選">
-                    <button id="btnFilterAll" class="design2-line-btn history-function-btn" onclick="setDateFilter('all')">全</button>
-                    <button id="btnFilterToday" class="design2-line-btn history-function-btn" onclick="setDateFilter('today')">今</button>
+                    <button id="btnFilterAll" class="design2-line-btn history-function-btn" onclick="setDateFilter('all')">全部</button>
+                    <button id="btnFilterToday" class="design2-line-btn history-function-btn" onclick="setDateFilter('today')">今日</button>
                 </div>
                 <div class="history-control-group history-date-group" aria-label="日期移動">
                     <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(-1)" aria-label="上一日">‹</button>
                     <button id="btnFilterDate" class="design2-line-btn history-function-btn history-calendar-btn" onclick="openCalendar(event)" aria-label="選擇日期" title="選擇日期">
-                        <span class="history-calendar-icon" aria-hidden="true">▣</span><span id="btnFilterDateText" class="history-calendar-text"></span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18"/></svg><span id="btnFilterDateText" class="history-calendar-text">日期</span>
                     </button>
                     <input id="historyDateNativeInput" class="history-native-date-input" type="date" onchange="handleHistoryNativeDateChange(this.value)" tabindex="-1" aria-label="選擇日期">
                     <button class="design2-line-btn history-function-btn history-date-step" onclick="changeDay(1)" aria-label="下一日">›</button>
                 </div>
-                <button id="historyManualSortBtn" type="button" class="design2-line-btn history-function-btn history-sort-toggle-inline" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序">🔒</button>
+                <button id="historyManualSortBtn" type="button" class="design2-line-btn history-function-btn history-sort-toggle-inline" onclick="toggleHistoryManualSort()" aria-label="解鎖排序" title="解鎖排序"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path class="lock-closed" d="M8 10V7a4 4 0 0 1 8 0v3"/><path class="lock-open" d="M8 10V7a4 4 0 0 1 7.5-2"/><path d="M12 14v3"/></svg></button>
             </div>
 
             <div id="historySearchDrawer" class="history-search-drawer">
@@ -11170,6 +11233,19 @@ function syncHistorySearchDrawer() {
     }
 }
 
+window.toggleHistoryTools = function() {
+    const button = document.getElementById('historyToolsToggle');
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(open));
+    button.closest('.history-desktop-head').classList.toggle('tools-open', open);
+    if (!open && document.getElementById('historyToolsPanel').contains(document.activeElement)) button.focus();
+};
+document.getElementById('historyToolsPanel').addEventListener('keydown', event => {
+    if (event.key === 'Escape' && window.innerWidth <= 899) {
+        event.preventDefault();
+        if (document.getElementById('historyToolsToggle').getAttribute('aria-expanded') === 'true') toggleHistoryTools();
+    }
+});
 window.toggleHistorySearch = function() {
     isHistorySearchOpen = !isHistorySearchOpen;
     syncHistorySearchDrawer();
@@ -12250,6 +12326,7 @@ window.handleDatalistInputTap = function(input, event) {
     if (customDatalistState.inputGesture?.moved || Date.now() < customDatalistState.suppressInputClickUntil) return;
     customDatalistState.inputGesture = null;
     customDatalistState.committedInput = null;
+    if (input.id === 'train') updateTrainDatalist({ resetTrain: false });
 
     prepareCustomDatalistInput(input);
     focusInputSafely(input, false);
@@ -13085,6 +13162,8 @@ function buildMaps() {
         }
     });
     db.trains = expandedTrains;
+    trainCompanyCache.clear();
+    trainDatalistSignature = '';
 }
 
 function initUILists() {
@@ -13510,6 +13589,7 @@ function applySelectedServicePattern(options = {}) {
     updateLineList(firstCompany, "lineList");
     document.getElementById("line").value = firstLine;
     updateServiceNameDatalist();
+    updateTrainDatalist({companyId:first.company_id, ...(options.silent ? {resetTrain:false} : {})});
 
     const container = document.getElementById("throughContainer");
     if (container) {
@@ -13660,7 +13740,8 @@ window.updateTrainDatalist = function(options = {}) {
 
     const previousCompanyId = activeTrainCompanyId;
     const compName = getActiveTrainCompanyInputValue();
-    activeTrainCompanyId = resolve.company[compName] || null;
+    const useOther = !!document.getElementById('useOtherTrainCompany')?.checked;
+    activeTrainCompanyId = (!useOther && options.companyId) || resolve.company[compName] || (maps.company[compName] ? compName : null);
     currentCompanyTrains = getCachedCompanyTrains(activeTrainCompanyId);
 
     const trainInput = document.getElementById("train");
@@ -14592,7 +14673,7 @@ function updateHistoryManualSortToolbar() {
     const listDiv = document.getElementById("tripList");
 
     if (btn) {
-        btn.textContent = isHistoryManualSortUnlocked ? "🔓" : "🔒";
+        btn.setAttribute('aria-pressed', String(isHistoryManualSortUnlocked));
         btn.setAttribute("aria-label", isHistoryManualSortUnlocked ? "鎖定排序" : "解鎖排序");
         btn.setAttribute("title", isHistoryManualSortUnlocked ? "鎖定排序" : "解鎖排序");
         btn.classList.toggle("active", isHistoryManualSortUnlocked);
@@ -14747,7 +14828,7 @@ function setupHistoryServiceCompanyRotation(list) {
             ], { duration: 320, easing: 'ease-out' });
             control.querySelector('.trip-service-company-count').textContent = `${next + 1}/${faces.length}`;
         });
-    }, 4000);
+    }, 3000);
 }
 
 let historyServiceMarqueeObserver = null;
@@ -14796,11 +14877,12 @@ function setupHistoryRoutePages(list) {
         const active = window.innerWidth < 900 && fullWidth > stack.clientWidth;
         trip.classList.toggle('route-pages-active', active);
         panel.querySelectorAll('.mobile-route-page').forEach(page => {
+            page.setAttribute('aria-hidden', String(!active || !page.classList.contains('is-current')));
             page.getAnimations().forEach(animation => animation.cancel());
             if (!active || !page.classList.contains('is-current')) return;
-            const distance = page.scrollWidth - panel.clientWidth;
+            const distance = page.scrollWidth - page.parentElement.clientWidth;
             if (distance > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                page.animate([{transform:'translateX(0)',offset:0},{transform:'translateX(0)',offset:.15},{transform:`translateX(-${distance}px)`,offset:.85},{transform:`translateX(-${distance}px)`,offset:1}],{duration:Math.max(3500,distance*35),fill:'forwards'});
+                page.animate([{transform:'translateX(0)',offset:0},{transform:'translateX(0)',offset:.15},{transform:`translateX(-${distance}px)`,offset:.85},{transform:`translateX(-${distance}px)`,offset:1}],{duration:2800,fill:'forwards'});
             }
         });
     };
@@ -14813,13 +14895,24 @@ function setupHistoryRoutePages(list) {
             if (!panel.closest('.trip').classList.contains('route-pages-active')) return;
             const rect = panel.getBoundingClientRect();
             if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-            const items = [...panel.children];
+            const items = [...panel.querySelectorAll('.mobile-route-page')];
             const current = items.findIndex(item => item.classList.contains('is-current'));
-            if (items[current]?.getAnimations().some(animation => animation.playState === 'running')) return;
             items.forEach((item,index) => item.classList.toggle('is-current',index === (current+1)%items.length));
+            const next = items[(current+1)%items.length];
+            const company = panel.querySelector('.mobile-route-company');
+            const changedCompany = company.textContent !== next.dataset.company;
+            company.textContent = next.dataset.company;
             update(panel);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const frames = [
+                    {opacity:0,transform:'translateY(35%) rotateX(-35deg)'},
+                    {opacity:1,transform:'translateY(0) rotateX(0)'}
+                ];
+                panel.querySelector('.mobile-route-window').animate(frames,{duration:320,easing:'ease-out'});
+                if (changedCompany) company.animate(frames,{duration:320,easing:'ease-out'});
+            }
         });
-    }, 4500);
+    }, 3000);
 }
 
 function render() {
@@ -14842,7 +14935,7 @@ function render() {
     const btnFilterDateText = document.getElementById('btnFilterDateText');
 
     if (btnFilterDateText) {
-        btnFilterDateText.textContent = displayDate;
+        btnFilterDateText.textContent = displayDate || '日期';
     }
 
     if (btnFilterDate) {
@@ -14952,11 +15045,9 @@ pagedTrips.forEach((t) => {
     const serviceDefinition = resolveTripServiceDefinition(t);
     const serviceOperatorIds = getTripServiceOperatorIds(t, serviceDefinition);
     const hasServiceCompany = serviceOperatorIds.length > 0;
-    const foldRoutes = routes.length >= 3 || (hasServiceCompany && routes.length > 1);
+    const foldRoutes = (routes.length >= 3 && !!(hasServiceCompany || t.serviceName)) || (hasServiceCompany && routes.length > 1);
     const mobileFoldRoutes = !foldRoutes && routes.length === 2 && routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(' ').length > 28;
     const serviceHeading = hasServiceCompany || (foldRoutes && t.serviceName);
-    const mobileRoutePages = !serviceHeading && routes.length > 1
-        ? `<span class="mobile-route-pages" data-full-text="${escapeHtml(routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(' ') + ' ' + (t.serviceType || ''))}">${routes.map((r,index) => `<span class="mobile-route-page${index === 0 ? ' is-current' : ''}">${escapeHtml(getCompName(r.company_id))} ${escapeHtml(getLineName(r.line_id))}${index === 0 && t.serviceType ? ` <span class="trip-service-type">${escapeHtml(t.serviceType)}</span>` : ''}</span>`).join('')}</span>` : '';
     let serviceLayoutHtml = '';
     let routeDetailsHtml = '';
     if (foldRoutes || mobileFoldRoutes) {
@@ -14981,6 +15072,9 @@ pagedTrips.forEach((t) => {
     ].filter(Boolean).join(' ');
     const serviceHtml = serviceParts
         ? `<span class="trip-service-badge trip-service-label"><span class="trip-service-text">${serviceParts}</span></span>` : '';
+    if (!serviceHeading) routeHtml = routes.map((r,index) => `<span class="trip-route-leg"><span class="trip-route-name">${index === 0 || r.company_id !== routes[index-1].company_id ? escapeHtml(getCompName(r.company_id)) + ' ' : ''}${escapeHtml(getLineName(r.line_id))}</span>${index === 0 ? serviceHtml : '<span class="trip-through-label">直通</span>'}</span>`).join(' <span class="trip-arrow">▶</span> ');
+    const mobileRoutePages = !serviceHeading && routes.length > 1
+        ? `<span class="mobile-route-pages" data-full-text="${escapeHtml(routes.map(r => `${getCompName(r.company_id)} ${getLineName(r.line_id)}`).join(' ') + ' ' + (t.serviceType || '') + ' ' + (t.serviceName || ''))}"><span class="mobile-route-company">${escapeHtml(getCompName(routes[0].company_id))}</span><span class="mobile-route-window">${routes.map((r,index) => `<span class="mobile-route-page${index === 0 ? ' is-current' : ''}" data-company="${escapeHtml(getCompName(r.company_id))}"><span class="trip-route-name">${escapeHtml(getLineName(r.line_id))}</span>${index > 0 ? '<span class="trip-through-label">直通</span>' : serviceHtml}${index < routes.length-1 ? '<span class="mobile-route-next" aria-hidden="true">▶</span>' : ''}</span>`).join('')}</span></span>` : '';
     if (serviceHeading) {
         const companyHtml = hasServiceCompany ? buildTripServiceCompanyHtml(serviceOperatorIds)
             : `<span class="trip-route-inline">${escapeHtml(getCompName(routes[0].company_id))}</span>`;
@@ -14995,7 +15089,6 @@ pagedTrips.forEach((t) => {
         : '';
 
     const routeMetaHtml = [
-        serviceHeading ? '' : serviceHtml,
         directionSummary && !serviceDefinition ? `<span class="trip-direction-chip">${directionSummary}</span>` : "",
         photoIconHtml
     ].filter(Boolean).join("");
