@@ -6284,6 +6284,11 @@ html, body {
 }
 
 @media (max-width: 899px) {
+    .ride-date-time { align-items: stretch; }
+    .ride-date-time input { height: 44px !important; min-height: 44px; margin: 0 !important; padding: 10px 12px; line-height: 22px; appearance: none; }
+    .ride-date-time input::-webkit-date-and-time-value { text-align: left; }
+    #tab-history .trip-ticket-stations { flex-wrap: wrap; align-items: baseline; }
+    #tab-history .trip-ticket-stations > .trip-route-details { flex: 1 1 90px; min-width: 0; }
     #tab-history .trip {
         position: relative;
         padding: 10px 0;
@@ -8298,7 +8303,7 @@ html, body {
 
 @media (max-width: 520px) {
     .service-detail-grid {
-        grid-template-columns: minmax(96px, 0.45fr) minmax(0, 1.55fr);
+        grid-template-columns: minmax(0, 1fr);
         gap: 8px;
     }
 }
@@ -8672,7 +8677,7 @@ html, body {
 /* Keep each tab's scroll end close to its content instead of drifting below cards. */
 html,
 body {
-    overscroll-behavior-y: none;
+    overscroll-behavior-y: auto;
 }
 
 body {
@@ -10022,20 +10027,107 @@ body {
 #tab-history .trip-route-timeline li::before { content: ''; position: absolute; left: -23px; top: 5px; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
 #tab-history .trip-service-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 #tab-history .trip-route-stack.has-service-layout { display: flex; flex-direction: column; align-items: stretch; width: 100%; overflow: visible; }
-#tab-history .trip-service-layout { display: grid; grid-template-columns: fit-content(34%) minmax(0, 1fr); gap: 8px; align-items: start; align-content: start; min-width: 0; font-size: 12px; }
+#tab-history .trip-service-layout { display: grid; grid-template-columns: fit-content(34%) minmax(0, 1fr); gap: 8px; align-items: center; align-content: start; min-width: 0; font-size: 12px; }
 #tab-history .trip-service-content { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 8px; }
 #tab-history .trip-service-content > .trip-route-details { max-width: 100%; }
 #tab-history .trip-service-content > details.trip-route-details[open] { flex-basis: 100%; width: 100%; }
 #tab-history .trip-service-label,
 #tab-history .trip-route-meta .trip-service-badge.trip-service-label {
     display: inline-block; min-width: 0; max-width: 100%;
-    padding: 4px 8px !important; border-radius: 5px;
+    padding: 4px 8px !important; border-radius: 3px !important;
     background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
     border: 0 !important; box-shadow: none;
-    font-size: 14px !important; line-height: 1.45 !important; font-weight: 600;
-    white-space: normal; overflow-wrap: anywhere; word-break: normal;
+    font-size: 15px !important; line-height: 1.45 !important; font-weight: 600;
+    white-space: nowrap; overflow: hidden; flex: 0 1 auto;
 }
-#tab-history .trip-service-label .trip-service-type { color: #ff3b30; font-weight: 800; }
+#tab-history .trip-service-text { display: inline-block; width: max-content; white-space: nowrap; }
+@media (max-width: 899px) {
+    #tab-history .trip-ticket-main {
+        align-content: start !important;
+        align-items: start !important;
+        grid-auto-rows: max-content;
+        row-gap: 3px !important;
+        min-height: 0 !important;
+    }
+    #tab-history .trip-ticket-main > .trip-ticket-section {
+        align-self: start;
+        margin-block: 0 !important;
+        padding-block: 0 !important;
+        min-height: 0 !important;
+    }
+    #tab-history .trip-route-meta:empty { display: none; }
+    #tab-history .trip-ticket-stations:has(> details.trip-route-details) {
+        display: grid !important;
+        grid-template-columns: 2.05em fit-content(55%) minmax(0, 1fr) !important;
+        align-items: baseline !important;
+        gap: 0 5px !important;
+    }
+    #tab-history .trip-ticket-stations > .trip-station-inline { white-space: nowrap !important; overflow: auto; }
+    #tab-history .trip-ticket-stations > details.trip-route-details { display: block !important; grid-column: 3; grid-row: 1; min-width: 0; align-self: center; }
+    #tab-history .trip-ticket-stations > details.trip-route-details > summary { grid-column: 3; grid-row: 1; white-space: nowrap; font-size: 11px; line-height: 1.2; }
+    #tab-history .trip-ticket-stations > details.trip-route-details > .trip-route-timeline { grid-column: 3; grid-row: 2; margin-left: 0; padding-left: 0; list-style: none; overflow-wrap: anywhere; }
+    #tab-history .trip-ticket-stations > details.trip-route-details > .trip-route-timeline li { padding-left: 8px; }
+    #tab-history .trip-ticket-stations > details.trip-route-details > .trip-route-timeline li::before { left: -5px; }
+    #tab-history .trip-ticket-stations > details.trip-route-details:not([open]) > .trip-route-timeline { display: none; }
+    .toast-message { top: auto !important; bottom: calc(var(--toast-keyboard-offset, 0px) + 80px + env(safe-area-inset-bottom)); z-index: 30000; pointer-events: none; }
+}
+.ride-date-time { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 8px; }
+.ride-date-time input { min-width: 0; width: 100%; box-sizing: border-box; }
+.ride-native-field { position: relative; min-width: 0; }
+.ride-native-value { display: none; }
+.history-sync-light { width: 8px; height: 8px; border-radius: 50%; margin-left: 10px; flex: 0 0 8px; background: var(--primary); }
+#tab-history .history-title { justify-content: flex-start; }
+#tab-history .history-title .history-sync-light { margin-left: auto; }
+.history-status-led { display: inline-grid; margin-left: auto; width: calc(6em + 16px); min-width: calc(6em + 16px); font-size: 14px; height: 32px; align-items: center; overflow: hidden; background: #111; border: 2px solid #222; border-radius: 4px; color: #ff9500; font-family: 'DotGothic16', monospace; text-align: center; }
+#tab-history .history-status-led > span { grid-area: 1 / 1; margin: 0; padding: 4px 8px; width: auto; height: auto; border: 0; border-radius: 0; background: transparent; font-size: 14px; line-height: 1.3; white-space: nowrap; }
+#tab-history .history-status-led > span { min-width: 0; max-width: 100%; overflow: hidden; text-align: center; }
+#tab-history .history-status-led #totalCount { font-size: 18px; animation: historyLedCount 8s steps(1, end) infinite; }
+#tab-history .history-status-led .history-sync-light { margin-left: 0; color: #ff9500; animation: historyLedStatus 8s steps(1, end) infinite; }
+.history-led-track { display: inline-block; white-space: nowrap; }
+@keyframes historyLedCount { 0%,100% { visibility: visible; } 50% { visibility: hidden; } }
+@keyframes historyLedStatus { 0%,100% { visibility: hidden; } 50% { visibility: visible; } }
+#tab-history .history-status-led:has([hidden]) #totalCount { animation: none; }
+.history-sync-light[data-state="syncing"] { background: #d5a522; animation: historySyncPulse 1s ease-in-out infinite; }
+.history-sync-light[data-state="error"], .history-sync-light[data-state="offline"] { background: #cf663b; }
+.history-sync-light[hidden] { display: none; }
+@keyframes historySyncPulse { 50% { opacity: .25; } }
+@media (prefers-reduced-motion: reduce) { .history-sync-light[data-state="syncing"] { animation: none; } }
+@media (max-width: 899px) {
+    #tab-history .trip-ticket-stations:has(> details.trip-route-details) { grid-template-columns: 2.05em minmax(0, max-content) max-content !important; justify-content: start; align-items: center !important; }
+    #tab-history .trip-train-inline { white-space: nowrap !important; overflow: auto; }
+    #tab-history .trip-ticket-stations > .trip-route-timeline { grid-column: 2 / -1; margin: 4px 0 0; padding-left: 8px; min-width: 0; font-size: 11px; }
+    #tab-history .trip-ticket-stations > .trip-route-timeline[hidden] { display: none; }
+    #tab-history .trip-ticket-stations > .trip-route-timeline li::before { left: -13px; }
+}
+@media (max-width: 899px) {
+    #tab-history .trip-ticket-main.has-mobile-via { display: grid !important; }
+    #tab-history .trip-ticket-main.has-mobile-via { grid-template-columns: minmax(0, var(--via-left, 48%)) minmax(0, 1fr) !important; grid-template-rows: auto 22px auto; gap: 4px 8px !important; }
+    #tab-history .has-mobile-via > .trip-ticket-route { grid-column: 1 / -1 !important; grid-row: 1; }
+    #tab-history .has-mobile-via > .trip-ticket-train { grid-column: 1 !important; grid-row: 2; }
+    #tab-history .has-mobile-via > .trip-ticket-stations { grid-column: 1 !important; grid-row: 3; align-self: start; }
+    #tab-history .has-mobile-via > details.trip-route-details { grid-column: 2; grid-row: 2 / 4; display: grid; grid-template-rows: 22px auto; gap: 4px; align-self: start; min-width: 0; }
+    #tab-history .has-mobile-via > details.trip-route-details > summary { white-space: nowrap; line-height: 22px; font-size: 11px; }
+    #tab-history .has-mobile-via > details.trip-route-details > ol { margin: 0; padding-left: 8px; }
+    #tab-history .has-mobile-via > details.trip-route-details > ol li::before { left: -13px; }
+    #tab-history .has-mobile-via > details.trip-route-details:not([open]) > ol { display: none; }
+    #tab-history .has-mobile-via .trip-train-inline,
+    #tab-history .has-mobile-via .trip-station-inline { white-space: nowrap !important; overflow: auto; }
+    #tab-history .trip-ticket-main.via-stacked { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: auto auto auto auto; }
+    #tab-history .via-stacked > details.trip-route-details { grid-column: 1; grid-row: 4; }
+    #tab-history .trip-service-layout:has(.trip-service-operators.is-expanded) { align-items: center; }
+    #tab-history .trip-service-layout:has(.trip-service-operators.is-expanded) > .trip-service-content { align-self: center; }
+    #tab-history .trip-service-operators.is-expanded { padding-top: 0; }
+}
+@media (max-width: 899px) {
+    .ride-native-field { height: 44px; }
+    .ride-native-value { display: flex; align-items: center; height: 44px; padding: 0 10px; border: 1px solid var(--border); border-radius: 4px; background: var(--input-bg); color: var(--text); font-size: 16px; line-height: 1; white-space: nowrap; }
+    .ride-native-field:focus-within .ride-native-value { border-color: var(--primary); }
+    .design2-form-card .ride-native-field input { position: absolute !important; inset: 0; width: 100% !important; height: 44px !important; margin: 0 !important; opacity: .01; cursor: pointer; }
+    #tab-history .trip-service-label,
+    #tab-history .trip-route-meta .trip-service-badge.trip-service-label { font-size: 12px !important; padding: 2px 8px !important; }
+    .service-detail-grid { grid-template-columns: minmax(0, 1fr); }
+}
+#tab-history .trip-service-label .trip-service-type { color: #ff3b30; font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif; font-size: inherit; line-height: inherit; font-weight: 800; }
 #tab-history .trip-service-label .trip-service-name { color: var(--primary); }
 #tab-history .trip-service-operators { position: relative; display: inline-block; max-width: 100%; }
 #tab-history .trip-service-company-roll { display: inline-flex; align-items: baseline; gap: 5px; max-width: 100%; }
@@ -10049,7 +10141,7 @@ body {
 }
 #tab-history .trip-service-company-roll[hidden],
 #tab-history .trip-service-company-list[hidden] { display: none; }
-#tab-history .trip-service-operators { min-width: 0; padding-top: 4px; }
+#tab-history .trip-service-operators { min-width: 0; padding-top: 0; }
 #tab-history .trip-service-operators:has(.trip-service-company-roll) { display: inline-grid; }
 #tab-history .trip-service-company-roll,
 #tab-history .trip-service-company-list { grid-area: 1 / 1; }
@@ -10247,8 +10339,8 @@ body {
                         </div>
                 <div class="desktop-form-grid primary-trip-grid">
                     <div class="form-field form-field-date">
-                        <label>日期</label>
-                        <input type="date" id="date">
+                        <label for="rideDateTime">日期／時間</label>
+                        <input type="datetime-local" id="rideDateTime" aria-label="乘車日期及時間"><input type="hidden" id="date"><input type="hidden" id="tripTime">
                     </div>
 
                     <div class="form-field">
@@ -10392,7 +10484,8 @@ body {
                     </section>
                 </div>
 
-                <button onclick="saveTrip()" class="btn-primary desktop-save-btn">儲存記錄</button>
+                <button id="saveTripButton" type="button" onclick="saveTrip()" class="btn-primary desktop-save-btn">儲存記錄</button>
+                <div id="tripSaveStatus" role="status" aria-live="polite" hidden style="grid-column:1/-1;font-size:13px;line-height:1.5;overflow-wrap:anywhere;"></div>
             </div>
         </div>
 
@@ -10400,7 +10493,7 @@ body {
     <div class="card history-desktop-card">
         <div class="history-desktop-head">
         <h3 class="history-title" style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
-            乘車記錄 <span id="totalCount" class="led-counter">0</span>
+            乘車記錄 <span class="history-status-led"><span id="totalCount" class="led-counter">0</span><span id="historySyncLight" class="history-sync-light" role="status" aria-label="資料同步中" title="資料同步中" data-state="syncing">資料同步中</span></span>
         </h3>
 
         <div class="history-compact-controls">
@@ -10826,6 +10919,7 @@ async function migrateLocalTripsToCloud(user) {
 
         await addDoc(tripsRef, {
             date: cleanTrip.date || "",
+            time: cleanTrip.time || "",
             serviceType: cleanTrip.serviceType || "",
             serviceName: cleanTrip.serviceName || "",
             service_id: cleanTrip.service_id || "",
@@ -10987,6 +11081,7 @@ onAuthStateChanged(auth, async (user) => {
         }
 
         trips = getLocalTripsForMigration();
+        setHistorySyncState('local');
         setRailLoaderPreset("tripsLocal", {
             status: trips.length > 0
                 ? `已讀取 ${trips.length} 筆本機乘車記録，正在準備畫面...`
@@ -11635,7 +11730,7 @@ function reconcileTripTrainIds() {
 
 async function finalizeAppBootstrap() {
     if (bootstrapFinalizeStarted || isAppDataReady) return;
-    if (!bootstrapRailDbReady || !bootstrapTripsReady) return;
+    if (!bootstrapRailDbReady) return;
 
     bootstrapFinalizeStarted = true;
     setRailLoaderPreset("rendering");
@@ -11682,7 +11777,38 @@ function tryEnterMainApp() {
     if (loader) loader.style.display = "none";
     if (app) app.classList.add("show");
     syncSafariThemeAfterMainApp();
+    setTimeout(() => { preloadRailMap().catch(error => console.error('背景地圖預載失敗', error)); }, 0);
 }, 650);
+}
+
+async function preloadRailMap() {
+    const panel = document.getElementById('tab-map');
+    if (!panel) return;
+    const previousStyle = panel.getAttribute('style');
+    Object.assign(panel.style, { display: 'block', position: 'absolute', inset: '0', visibility: 'hidden', pointerEvents: 'none' });
+    try {
+        renderMap();
+        railMapInstance.invalidateSize({ animate: false });
+        if (previousStyle === null) panel.removeAttribute('style');
+        else panel.setAttribute('style', previousStyle);
+        const loaded = await new Promise(resolve => {
+            const started = Date.now();
+            const timer = setInterval(() => {
+                const settled = railMapBaseLayer && !railMapBaseLayer.isLoading();
+                if (settled || Date.now() - started > 12000) {
+                    clearInterval(timer);
+                    resolve(!!settled);
+                }
+            }, 100);
+        });
+        if (!loaded) showToast('地圖載入較慢，將於背景繼續載入', 'var(--warn)');
+    } finally {
+        // Do not leave an opened map tab hidden while network tiles are pending.
+        if (panel.style.visibility === 'hidden') {
+            if (previousStyle === null) panel.removeAttribute('style');
+            else panel.setAttribute('style', previousStyle);
+        }
+    }
 }
 
 let currentSignIndex = 0;
@@ -11732,11 +11858,44 @@ function getLocalTripsForMigration() {
 
 let trips = [];
 let unsubscribeTrips = null;
+let historySyncState = 'syncing';
+function updateHistoryLed() {
+    document.querySelectorAll('.history-status-led > span').forEach(face => {
+        const text = face.textContent;
+        const track = document.createElement('span');
+        track.className = 'history-led-track';
+        track.textContent = text;
+        face.replaceChildren(track);
+        const available = face.clientWidth - 16;
+        const overflow = track.scrollWidth - available;
+        if (overflow > 1 && available > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            face.style.textAlign = 'left';
+            track.animate([{transform:'translateX(0)'},{transform:`translateX(-${overflow}px)`}], {duration:Math.max(3000,overflow*50),iterations:Infinity,direction:'alternate',easing:'linear'});
+        } else face.style.textAlign = 'center';
+    });
+}
+window.addEventListener('resize', updateHistoryLed);
+function setHistorySyncState(state) {
+    historySyncState = state;
+    const light = document.getElementById('historySyncLight');
+    if (!light) return;
+    const displayState = navigator.onLine === false && state !== 'local' ? 'offline' : state;
+    const labels = {syncing:'資料同步中', ready:'資料已同步', offline:'離線，等待同步', error:'資料同步失敗', local:'本機資料'};
+    light.dataset.state = displayState;
+    light.hidden = state === 'local';
+    light.title = labels[displayState];
+    light.textContent = labels[displayState];
+    light.setAttribute('aria-label', labels[displayState]);
+    updateHistoryLed();
+}
+window.addEventListener('offline', () => setHistorySyncState(historySyncState));
+window.addEventListener('online', () => { if (auth.currentUser) subscribeTrips(); });
 
 function subscribeTrips() {
     const user = auth.currentUser;
     if (!user) {
         trips = [];
+        setHistorySyncState('local');
         markBootstrapTaskReady("trips");
         if (isAppDataReady) {
             render();
@@ -11756,8 +11915,11 @@ function subscribeTrips() {
     );
 
     setRailLoaderPreset("tripsCloud");
+    setHistorySyncState('syncing');
 
-    unsubscribeTrips = onSnapshot(q, (snapshot) => {
+    unsubscribeTrips = onSnapshot(q, { includeMetadataChanges: true }, (snapshot) => {
+        if (auth.currentUser?.uid !== user.uid) return;
+        setHistorySyncState(snapshot.metadata.fromCache || snapshot.metadata.hasPendingWrites ? 'syncing' : 'ready');
         tripSnapshotCounter = 0;
         trips = snapshot.docs.map(docSnap => {
             const data = docSnap.data();
@@ -11780,12 +11942,19 @@ function subscribeTrips() {
                 status: `已同步 ${trips.length} 筆乘車記録，正在準備畫面...`
             });
             markBootstrapTaskReady("trips");
-            return;
         }
 
-        render();
-        updateStationLists();
+        if (isAppDataReady) {
+            reconcileTripTrainIds();
+            render();
+            updateStationLists();
+            if (document.getElementById('tab-map')?.classList.contains('active')) renderMap();
+            if (typeof renderGallery === 'function') renderGallery();
+            if (typeof renderAchievements === 'function') renderAchievements();
+        }
     }, (error) => {
+        if (auth.currentUser?.uid !== user.uid) return;
+        setHistorySyncState('error');
         console.error(error);
         showToast("讀取雲端資料失敗", "var(--danger)");
         if (!bootstrapTripsReady) {
@@ -11808,6 +11977,18 @@ let tripSnapshotCounter = 0;
 function showToast(message, bgColor = "var(--success)") {
     const toast = document.getElementById("appToast");
     if (!toast) return;
+    if (toast.parentElement !== document.body) document.body.appendChild(toast);
+    const positionInViewport = () => {
+        const viewport = window.visualViewport;
+        const offset = viewport ? Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop) : 0;
+        toast.style.setProperty('--toast-keyboard-offset', `${offset}px`);
+    };
+    if (!toast.dataset.viewportBound) {
+        window.visualViewport?.addEventListener('resize', positionInViewport);
+        window.visualViewport?.addEventListener('scroll', positionInViewport);
+        toast.dataset.viewportBound = 'true';
+    }
+    positionInViewport();
 
     const colorToken = String(bgColor || "").toLowerCase();
     const isError = colorToken.includes("danger") || colorToken.includes("error") || colorToken.includes("ff3b30");
@@ -11822,7 +12003,7 @@ function showToast(message, bgColor = "var(--success)") {
 
     const headerBottom = document.querySelector("header")?.getBoundingClientRect().bottom || 88;
     const signWidth = document.querySelector(".destination-sign-frame")?.getBoundingClientRect().width || 210;
-    toast.style.setProperty("--toast-top", `${Math.ceil(headerBottom + 8)}px`);
+    toast.style.setProperty("--toast-top", `max(env(safe-area-inset-top), ${Math.max(12, Math.min(96, Math.ceil(headerBottom + 8)))}px)`);
     toast.style.setProperty("--toast-width", `${Math.ceil(signWidth + 40)}px`);
     toast.style.setProperty("--toast-duration", "2.45s");
     toast.style.setProperty("--toast-marquee-distance", "0px");
@@ -11876,6 +12057,7 @@ function normalizeTrip(trip) {
 
     // 補齊其他欄位，避免之後再出錯
     normalized.date = normalized.date || "";
+    normalized.time = normalized.time || "";
     normalized.serviceType = normalized.serviceType || "";
     normalized.serviceName = normalized.serviceName || "";
     normalized.service_id = normalized.service_id || "";
@@ -11966,7 +12148,47 @@ const MAP_SETTINGS_KEYS = {
     unriddenLines: "railLog.map.showUnriddenLines"
 };
 
-document.getElementById("date").valueAsDate = new Date();
+document.getElementById("date").value = getTodayStr();
+function syncRideDateTimeDisplay() {
+    const date = document.getElementById('date')?.value || '';
+    const time = document.getElementById('tripTime')?.value || '';
+    const dateDisplay = document.getElementById('rideDateDisplay');
+    const timeDisplay = document.getElementById('rideTimeDisplay');
+    if (dateDisplay) dateDisplay.textContent = date ? date.split('-').reverse().join('/') : '日期';
+    if (timeDisplay) timeDisplay.textContent = time || '時間';
+    const combined = document.getElementById('rideDateTime');
+    if (combined) {
+        combined.value = date ? `${date}T${time || '00:00'}` : '';
+        document.getElementById('tripTime').value = date ? (time || '00:00') : '';
+    }
+}
+function updateRideDateTimeValue(event) {
+    const [date = '', time = ''] = event.target.value.split('T');
+    document.getElementById('date').value = date;
+    document.getElementById('tripTime').value = time;
+    rideDateTimeManual = !!date && date < getTodayStr();
+}
+let rideDateTimeManual = false;
+function refreshLiveRideDateTime() {
+    if (rideDateTimeManual || editIndex !== null || document.activeElement?.id === 'rideDateTime') return;
+    const now = new Date();
+    document.getElementById('date').value = getTodayStr();
+    document.getElementById('tripTime').value = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    syncRideDateTimeDisplay();
+}
+document.getElementById('rideDateTime').addEventListener('input', updateRideDateTimeValue);
+document.getElementById('rideDateTime').addEventListener('change', updateRideDateTimeValue);
+['date', 'tripTime'].forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener('input', syncRideDateTimeDisplay);
+    input.addEventListener('change', syncRideDateTimeDisplay);
+});
+window.addEventListener('pageshow', syncRideDateTimeDisplay);
+syncRideDateTimeDisplay();
+refreshLiveRideDateTime();
+setInterval(refreshLiveRideDateTime, 1000);
+window.addEventListener('pageshow', refreshLiveRideDateTime);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshLiveRideDateTime(); });
 
 function isAppleTouchDevice() {
     return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
@@ -11994,6 +12216,9 @@ function focusInputSafely(input, preventScroll = false) {
 
 window.handleDatalistInputTap = function(input, event) {
     if (!input) return;
+    if (customDatalistState.inputGesture?.moved || Date.now() < customDatalistState.suppressInputClickUntil) return;
+    customDatalistState.inputGesture = null;
+    customDatalistState.committedInput = null;
 
     prepareCustomDatalistInput(input);
     focusInputSafely(input, false);
@@ -12015,7 +12240,10 @@ const customDatalistState = {
     committing: false,
     setup: false,
     pointer: null,
-    positionFrame: null
+    positionFrame: null,
+    inputGesture: null,
+    suppressInputClickUntil: 0,
+    pendingOption: null
 };
 
 function customDatalistEnabled() {
@@ -12146,6 +12374,14 @@ function getCustomDatalistMenu() {
     menu.addEventListener("pointerdown", handleCustomDatalistPointerDown, { passive: false });
     menu.addEventListener("pointermove", handleCustomDatalistPointerMove, { passive: true });
     menu.addEventListener("pointerup", handleCustomDatalistPointerUp, { passive: false });
+    menu.addEventListener("click", event => {
+        event.preventDefault();
+        event.stopPropagation();
+        const option = getCustomDatalistOptionFromTarget(event.target);
+        const pending = customDatalistState.pendingOption;
+        customDatalistState.pendingOption = null;
+        if (option && pending?.option === option) commitCustomDatalistValue(pending.value);
+    });
     menu.addEventListener("pointercancel", clearCustomDatalistPointerState, { passive: true });
     menu.addEventListener("scroll", markCustomDatalistPointerAsMoved, { passive: true });
     document.body.appendChild(menu);
@@ -12179,6 +12415,7 @@ function getPointerMovedTooFar(pointerState, event) {
 }
 
 function handleCustomDatalistPointerDown(event) {
+    customDatalistState.pendingOption = null;
     const option = getCustomDatalistOptionFromTarget(event.target);
     if (event.pointerType === "mouse") {
         event.preventDefault();
@@ -12223,8 +12460,8 @@ function handleCustomDatalistPointerUp(event) {
 
     if (!shouldCommit || endOption !== pointerState.option) return;
 
-    event.preventDefault();
-    commitCustomDatalistValue(value);
+    // Keep the menu in place until click has a target, avoiding touch click-through.
+    customDatalistState.pendingOption = { option: endOption, value };
 }
 
 function normalizeCustomDatalistText(value) {
@@ -12330,6 +12567,8 @@ function commitCustomDatalistValue(value) {
     customDatalistState.committing = true;
     try {
         input.value = value;
+        customDatalistState.committedInput = input;
+        customDatalistState.committedValue = value;
         hideCustomDatalist();
         input.dispatchEvent(new Event("input", { bubbles: true }));
         input.dispatchEvent(new Event("change", { bubbles: true }));
@@ -12363,6 +12602,7 @@ function renderCustomDatalistMenu(input, matches) {
 }
 
 function showCustomDatalist(input) {
+    if (customDatalistState.committedInput === input && customDatalistState.committedValue === input.value) return false;
     if (!customDatalistEnabled() || !prepareCustomDatalistInput(input)) return false;
 
     const matches = getCustomDatalistMatches(input);
@@ -12407,10 +12647,12 @@ function hideCustomDatalist() {
 function refreshCustomDatalistForList(listId) {
     if (customDatalistState.committing) return;
 
-    const input = customDatalistState.input || getCustomDatalistInputFromTarget(document.activeElement);
+    const input = customDatalistState.input;
     if (!input || getCustomDatalistListId(input) !== listId) return;
 
-    requestCustomDatalistFrame(() => showCustomDatalist(input));
+    requestCustomDatalistFrame(() => {
+        if (customDatalistState.input === input && document.activeElement === input) showCustomDatalist(input);
+    });
 }
 
 function setupCustomDatalistInputs() {
@@ -12426,22 +12668,38 @@ function setupCustomDatalistInputs() {
         const input = getCustomDatalistInputFromTarget(event.target);
         if (input) {
             prepareCustomDatalistInput(input);
-            requestCustomDatalistFrame(() => {
-                if (customDatalistState.input !== input || !customDatalistState.menu?.classList.contains("active")) {
-                    showCustomDatalist(input);
-                } else {
-                    positionCustomDatalistMenu(input, customDatalistState.menu);
-                }
-            });
+            customDatalistState.inputGesture = { input, pointerId: event.pointerId, x: event.clientX, y: event.clientY, moved: false };
             return;
         }
 
         hideCustomDatalist();
     }, true);
 
+    document.addEventListener('pointermove', event => {
+        const gesture = customDatalistState.inputGesture;
+        if (!gesture || gesture.pointerId !== event.pointerId) return;
+        if (Math.abs(event.clientX - gesture.x) > CUSTOM_DATALIST_TAP_MOVE_LIMIT || Math.abs(event.clientY - gesture.y) > CUSTOM_DATALIST_TAP_MOVE_LIMIT) {
+            gesture.moved = true;
+            hideCustomDatalist();
+        }
+    }, { capture: true, passive: true });
+    document.addEventListener('pointercancel', () => {
+        if (customDatalistState.inputGesture) {
+            customDatalistState.suppressInputClickUntil = Date.now() + 500;
+            customDatalistState.inputGesture = null;
+        }
+    }, true);
+    document.addEventListener('pointerup', () => {
+        if (customDatalistState.inputGesture?.moved) {
+            customDatalistState.suppressInputClickUntil = Date.now() + 500;
+            customDatalistState.inputGesture = null;
+        }
+    }, true);
+    document.addEventListener('keydown', () => { customDatalistState.inputGesture = null; }, true);
+
     document.addEventListener("focusin", event => {
         const input = getCustomDatalistInputFromTarget(event.target);
-        if (!input || !customDatalistEnabled()) return;
+        if (!input || !customDatalistEnabled() || customDatalistState.committing || customDatalistState.inputGesture || Date.now() < customDatalistState.suppressInputClickUntil) return;
 
         requestCustomDatalistFrame(() => showCustomDatalist(input));
     });
@@ -12460,6 +12718,7 @@ function setupCustomDatalistInputs() {
         if (!input) return;
 
         setTimeout(() => {
+            if (customDatalistState.pointer || customDatalistState.pendingOption) return;
             const activeInput = getCustomDatalistInputFromTarget(document.activeElement);
             if (activeInput && activeInput !== input) return;
             if (customDatalistState.input === input && document.activeElement !== input) {
@@ -12477,6 +12736,7 @@ function setupCustomDatalistInputs() {
 
         if (event.key === "ArrowDown") {
             event.preventDefault();
+            customDatalistState.committedInput = null;
             if (!menuOpen) showCustomDatalist(input);
             else setCustomDatalistActiveIndex(customDatalistState.activeIndex + 1);
         } else if (event.key === "ArrowUp" && menuOpen) {
@@ -12511,6 +12771,7 @@ function setupCustomDatalistInputs() {
 }
 
 setupCustomDatalistInputs();
+
 
 window.handleHistoryNativeDateChange = function(value) {
     if (!value) return;
@@ -13074,10 +13335,10 @@ function resolveServicePatternStationId(value) {
 
 function findSelectedServicePattern() {
     const nameKey = normalizeServiceLookupText(document.getElementById("serviceName")?.value);
-    if (!nameKey) return null;
     const companyName = document.getElementById("company")?.value || "";
     const companyId = resolve.company[companyName] || companyName;
     const typeKey = normalizeServiceLookupText(document.getElementById("serviceType")?.value);
+    if (!nameKey && !typeKey) return null;
     const dateValue = document.getElementById("date")?.value || "";
     const fromId = resolveServicePatternStationId(document.getElementById("from")?.value);
     const toId = resolveServicePatternStationId(document.getElementById("to")?.value);
@@ -13085,6 +13346,7 @@ function findSelectedServicePattern() {
     const matches = (db.services || []).filter(service => {
         if (!isServiceAvailableForCompany(service, companyId)) return false;
         if (typeKey && service.service_type && normalizeServiceLookupText(service.service_type) !== typeKey) return false;
+        if (!nameKey) return !String(service.name || '').trim() && normalizeServiceLookupText(service.service_type) === typeKey;
         return getServiceNames(service).some(name => normalizeServiceLookupText(name) === nameKey);
     });
 
@@ -13109,7 +13371,25 @@ function getServiceJourneySegments(pattern) {
 }
 
 function resolveServiceJourneySegments(pattern, fromId, toId, dateValue = "") {
-    const segments = Array.isArray(pattern?.segments) ? pattern.segments : [];
+    const segments = (Array.isArray(pattern?.segments) ? pattern.segments : []).map(segment => {
+        if (segment.direction) return segment;
+        const stops = pattern.stops || [];
+        const start = stops.indexOf(segment.from_id), end = stops.indexOf(segment.to_id);
+        if (start < 0 || end <= start + 1) return segment;
+        const expected = stops.slice(start, end + 1);
+        const line = resolveLineVersionForDate(segment.line_id, dateValue);
+        const candidates = ['forward', 'reverse'].flatMap(direction => {
+            const path = inferLinePathForStations(line, segment.from_id, segment.to_id, direction, segment.path_id || '');
+            if (!path) return [];
+            const ids = getPathTraversalStationIds(path, segment.from_id, segment.to_id, direction);
+            let previous = -1;
+            const matches = expected.every(id => { const index = ids.indexOf(id, previous + 1); if (index < 0) return false; previous = index; return true; });
+            return matches ? [{direction, path}] : [];
+        });
+        if (candidates.length !== 1) return segment;
+        const {direction, path} = candidates[0];
+        return {...segment, direction, ...(path.isDefinedPath && path.id ? {path_id:path.id} : {})};
+    });
     if (!fromId || !toId) return segments;
     // Junctions can be pass-through stations, absent from the passenger stop list.
     let offset = 0;
@@ -13171,8 +13451,8 @@ window.toggleAutoServiceThroughDetails = function() {
     container.hidden = expanded;
 };
 
-function applySelectedServicePattern() {
-    const selected = findSelectedServicePattern();
+function applySelectedServicePattern(options = {}) {
+    const selected = options.selected || findSelectedServicePattern();
     if (!selected) {
         activeServicePattern = null;
         activeServiceDefinition = null;
@@ -13180,6 +13460,7 @@ function applySelectedServicePattern() {
         if (container?.dataset.autoService === "true") container.innerHTML = "";
         setAutoServiceThroughSummary([]);
         updateStationLists();
+        updateAllLoopDirectionUI();
         syncAddOptionControls();
         return;
     }
@@ -13225,7 +13506,7 @@ function applySelectedServicePattern() {
     updateStationLists();
     updateAllLoopDirectionUI();
     syncAddOptionControls();
-    showToast(`已套用「${selected.service.name}」運行路線`);
+    if (!options.silent) showToast(`已套用「${selected.service.name || selected.service.service_type}」運行路線`);
 }
 
 function scheduleApplySelectedServicePattern() {
@@ -13636,7 +13917,8 @@ function updateMainLoopDirectionUI(selectedValue = null) {
 
     const line = getCurrentMainLine();
 
-    if (isLoopLine(line) && !isOneWayLoopLine(line)) {
+    const serviceControlsDirection = activeServicePattern?.segments?.some(segment => segment.line_id === line?.id);
+    if (isLoopLine(line) && !isOneWayLoopLine(line) && !serviceControlsDirection) {
         wrap.style.display = "block";
         renderDirectionSelectOptions(select, line, selectedValue || select.value || "forward");
     } else {
@@ -13665,7 +13947,8 @@ function updateThroughLoopDirectionUI(block, selectedValue = null) {
 
     const line = getThroughBlockLine(block);
 
-    if (isLoopLine(line) && !isOneWayLoopLine(line)) {
+    const serviceControlsDirection = activeServicePattern?.segments?.some(segment => segment.line_id === line?.id);
+    if (isLoopLine(line) && !isOneWayLoopLine(line) && !serviceControlsDirection) {
         wrap.style.display = "block";
         renderDirectionSelectOptions(select, line, selectedValue || select.value || "forward");
     } else {
@@ -13753,7 +14036,35 @@ function buildTripSegmentsFromForm(routes, fromId, toId, dateValue = "") {
     });
 }
 
+let tripSaveInProgress = false;
+
 window.saveTrip = async function () {
+    if (tripSaveInProgress) return;
+    tripSaveInProgress = true;
+    const saveButton = document.getElementById('saveTripButton');
+    const saveStatus = document.getElementById('tripSaveStatus');
+    const buttonText = saveButton?.textContent || '儲存記錄';
+    let waitTimer = null;
+    let cloudSaved = false;
+    const report = (message, isError = false) => {
+        if (saveStatus) {
+            saveStatus.hidden = false;
+            saveStatus.textContent = message;
+            saveStatus.style.color = isError ? 'var(--danger)' : 'var(--subtext)';
+        }
+    };
+    const stage = message => {
+        clearTimeout(waitTimer);
+        if (saveButton) saveButton.textContent = message;
+        report(message);
+        waitTimer = setTimeout(() => report(`${message}：仍在等待網絡回應，請勿重複提交。`), 15000);
+    };
+    if (saveButton) {
+        saveButton.disabled = true;
+        saveButton.setAttribute('aria-busy', 'true');
+    }
+    try {
+    stage('檢查資料中…');
     const getVal = (id) => document.getElementById(id)?.value || "";
     const requiredFields = [
         { id: "company", label: "公司" },
@@ -13765,13 +14076,21 @@ window.saveTrip = async function () {
     const missingFields = requiredFields.filter(field => !getVal(field.id).trim());
     if (missingFields.length) {
         missingFields.forEach(field => document.getElementById(field.id)?.setAttribute("aria-invalid", "true"));
-        document.getElementById(missingFields[0].id)?.focus();
-        showToast(`請填寫${missingFields.map(field => field.label).join("、")}`, "var(--danger)");
+        if (window.matchMedia?.('(max-width: 899px), (pointer: coarse)').matches) {
+            document.activeElement?.blur?.();
+            hideCustomDatalist();
+        } else {
+            document.getElementById(missingFields[0].id)?.focus();
+        }
+        const message = `請填寫${missingFields.map(field => field.label).join("、")}`;
+        report(message, true);
+        showToast(message, "var(--danger)");
         return;
     }
 
     const user = auth.currentUser;
     if (!user) {
+        report('請先登入先可以同步資料', true);
         showToast("請先登入先可以同步資料", "var(--danger)");
         return;
     }
@@ -13806,7 +14125,6 @@ window.saveTrip = async function () {
         finalTrainId = resolve.train[trainInput] || trainInput;
     }
 
-    try {
         // 編輯模式：找回舊 trip
         const existingTrip = editingTripId ? trips.find(t => t.id === editingTripId) : null;
 
@@ -13818,6 +14136,7 @@ window.saveTrip = async function () {
         const photoTrainInput = getVal("photoTrain");
         const photoFromInput = getVal("photoFrom");
         const photoToInput = getVal("photoTo");
+        if (photoTrainInput || photoFromInput || photoToInput) stage('上載相片中…');
 
         // 有新相就 upload；冇新相就沿用舊 URL
         const photoTrainUrl = photoTrainInput
@@ -13841,12 +14160,14 @@ window.saveTrip = async function () {
 		const segments = buildTripSegmentsFromForm(routes, fromId, toId, tripDate);
 
 		if (routes.length > 1 && segments.length === 0) {
+			report('請確認直通交界站', true);
 			showToast("請確認直通交界站", "var(--danger)");
 			return;
 		}
 		
         const trip = {
             date: getVal("date"),
+            time: getVal("tripTime"),
             serviceType: getVal("serviceType"),
             serviceName: getVal("serviceName"),
             service_id: activeServiceDefinition?.id || existingTrip?.service_id || "",
@@ -13868,13 +14189,17 @@ window.saveTrip = async function () {
             updatedAt: serverTimestamp()
         };
 
+        stage('同步記錄中…');
         await setDoc(tripRef, trip);
+        cloudSaved = true;
+        clearTimeout(waitTimer);
 
         lastTo = trip.to_id;
 
         ["company", "line", "serviceType", "serviceName", "train", "to"].forEach(id => {
             document.getElementById(id).value = "";
         });
+        syncRideDateTimeDisplay();
         activeServicePattern = null;
         activeServiceDefinition = null;
         syncServiceDetailsForLine();
@@ -13896,11 +14221,24 @@ window.saveTrip = async function () {
         // 清除編輯狀態
         editingTripId = null;
         editIndex = null;
+        refreshLiveRideDateTime();
 
-        showToast(existingTrip ? "記錄已更新！" : "已同步到雲端！");
+        const successMessage = existingTrip ? "記錄已更新！" : "已同步到雲端！";
+        report(successMessage);
+        showToast(successMessage);
     } catch (error) {
         console.error(error);
-        showToast("上傳失敗", "var(--danger)");
+        const message = cloudSaved ? '記錄已儲存，但畫面更新失敗，請重新整理' : '儲存失敗';
+        report(`${message}：${error?.code || error?.name || 'Error'}${error?.message ? ` - ${error.message}` : ''}`, true);
+        showToast(message, "var(--danger)");
+    } finally {
+        clearTimeout(waitTimer);
+        tripSaveInProgress = false;
+        if (saveButton) {
+            saveButton.disabled = false;
+            saveButton.removeAttribute('aria-busy');
+            saveButton.textContent = buttonText;
+        }
     }
 };
 
@@ -13967,6 +14305,13 @@ function getTripInputOrderValue(trip) {
 function compareTripsByDateAndInputOrder(a, b) {
     const dateCompare = String(b?.date || "").localeCompare(String(a?.date || ""));
     if (dateCompare !== 0) return dateCompare;
+    const manualA = Number(a?.sortOrder) > 0;
+    const manualB = Number(b?.sortOrder) > 0;
+    if (manualA !== manualB) return manualA ? -1 : 1;
+    if (!manualA && !manualB) {
+        const timeCompare = String(b?.time || '').localeCompare(String(a?.time || ''));
+        if (timeCompare !== 0) return timeCompare;
+    }
 
     const orderA = getTripInputOrderValue(a);
     const orderB = getTripInputOrderValue(b);
@@ -14280,11 +14625,42 @@ function buildTripServiceCompanyHtml(companyIds) {
 }
 
 let historyServiceCompanyTimer = null;
+let historyRouteLayoutCleanups = [];
 
 function setupHistoryRouteDetails(list) {
+    historyRouteLayoutCleanups.forEach(cleanup => cleanup());
+    historyRouteLayoutCleanups = [];
     list.querySelectorAll('details.trip-route-details').forEach(details => {
         const layout = details.closest('.trip-service-layout');
-        const region = layout || details;
+        const ticket = details.closest('.trip-ticket-main');
+        const originalParent = details.parentElement;
+        const anchor = document.createComment('route-details');
+        details.before(anchor);
+        const narrow = window.matchMedia('(max-width: 899px)');
+        const timeline = details.querySelector('.trip-route-timeline');
+        const placeDetails = () => {
+            if (narrow.matches && ticket) {
+                const stations = ticket.querySelector('.trip-ticket-stations');
+                stations.append(details, timeline);
+            }
+            else {
+                originalParent.insertBefore(details, anchor.nextSibling);
+                details.appendChild(timeline);
+            }
+            timeline.hidden = !details.open;
+        };
+        placeDetails();
+        const onResize = () => {
+            if (!details.isConnected) { narrow.removeEventListener('change', onResize); return; }
+            placeDetails();
+        };
+        narrow.addEventListener('change', onResize);
+        window.addEventListener('resize', onResize);
+        historyRouteLayoutCleanups.push(() => {
+            narrow.removeEventListener('change', onResize);
+            window.removeEventListener('resize', onResize);
+        });
+        const region = ticket || layout || details;
         const summary = details.querySelector('summary');
         const companies = layout?.querySelector('.trip-service-operators');
         const roll = companies?.querySelector('.trip-service-company-roll');
@@ -14292,7 +14668,9 @@ function setupHistoryRouteDetails(list) {
         let targetOpen = details.open;
         let animation = null;
         const setOpen = open => {
+            companies?.querySelectorAll('.trip-service-company-face').forEach(face => face.getAnimations().forEach(effect => effect.cancel()));
             details.open = open;
+            timeline.hidden = !open;
             companies?.classList.toggle('is-expanded', open);
             if (roll) { roll.hidden = open; roll.setAttribute('aria-hidden', String(open)); }
             if (names) names.hidden = !open;
@@ -14306,8 +14684,7 @@ function setupHistoryRouteDetails(list) {
             targetOpen = !targetOpen;
             setOpen(targetOpen);
             const toHeight = region.getBoundingClientRect().height;
-            // Keep both lists present until the closing animation has finished.
-            if (!targetOpen) setOpen(true);
+            // Closed content stays hidden while the surrounding row settles.
             summary.setAttribute('aria-expanded', String(targetOpen));
             animation = region.animate([
                 { height: `${fromHeight}px`, overflow: 'hidden' },
@@ -14340,6 +14717,36 @@ function setupHistoryServiceCompanyRotation(list) {
             control.querySelector('.trip-service-company-count').textContent = `${next + 1}/${faces.length}`;
         });
     }, 4000);
+}
+
+let historyServiceMarqueeObserver = null;
+
+function setupHistoryServiceMarquees(list) {
+    historyServiceMarqueeObserver?.disconnect();
+    const update = label => {
+        const text = label.querySelector('.trip-service-text');
+        if (!text) return;
+        const style = getComputedStyle(label);
+        const available = label.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+        const distance = Math.max(0, text.scrollWidth - available);
+        if (label.dataset.marqueeDistance === String(distance)) return;
+        label.dataset.marqueeDistance = String(distance);
+        text.getAnimations().forEach(animation => animation.cancel());
+        if (distance < 2 || available <= 0) return;
+        const travel = Math.max(1200, distance / 32 * 1000);
+        const duration = travel + 2400;
+        text.animate([
+            { transform: 'translateX(0)', offset: 0 },
+            { transform: 'translateX(0)', offset: 1200 / duration },
+            { transform: `translateX(-${distance}px)`, offset: 1 - 1200 / duration },
+            { transform: `translateX(-${distance}px)`, offset: 1 }
+        ], { duration, iterations: Infinity, direction: 'alternate', easing: 'linear' });
+    };
+    historyServiceMarqueeObserver = new ResizeObserver(entries => entries.forEach(entry => update(entry.target)));
+    list.querySelectorAll('.trip-service-label').forEach(label => {
+        update(label);
+        historyServiceMarqueeObserver.observe(label);
+    });
 }
 
 function render() {
@@ -14415,6 +14822,7 @@ let tripsToDisplay = orderedTrips.filter(t => {
 });
 
 document.getElementById("totalCount").innerText = tripsToDisplay.length;
+if (typeof updateHistoryLed === 'function') updateHistoryLed();
 
     let totalPages = Math.ceil(tripsToDisplay.length / recordsPerPage) || 1;
     if (currentRecordPage > totalPages) currentRecordPage = totalPages;
@@ -14497,7 +14905,7 @@ pagedTrips.forEach((t) => {
         t.serviceName ? `<span class="trip-service-name">${escapeHtml(t.serviceName)}</span>` : ''
     ].filter(Boolean).join(' ');
     const serviceHtml = serviceParts
-        ? `<span class="trip-service-badge trip-service-label">${serviceParts}</span>` : '';
+        ? `<span class="trip-service-badge trip-service-label"><span class="trip-service-text">${serviceParts}</span></span>` : '';
     if (serviceHeading) {
         const companyHtml = hasServiceCompany ? buildTripServiceCompanyHtml(serviceOperatorIds)
             : `<span class="trip-route-inline">${escapeHtml(getCompName(routes[0].company_id))}</span>`;
@@ -14513,7 +14921,7 @@ pagedTrips.forEach((t) => {
 
     const routeMetaHtml = [
         serviceHeading ? '' : serviceHtml,
-        directionSummary ? `<span class="trip-direction-chip">${directionSummary}</span>` : "",
+        directionSummary && !serviceDefinition ? `<span class="trip-direction-chip">${directionSummary}</span>` : "",
         photoIconHtml
     ].filter(Boolean).join("");
 
@@ -14575,6 +14983,7 @@ pagedTrips.forEach((t) => {
 });
     setupHistoryRouteDetails(listDiv);
     setupHistoryServiceCompanyRotation(listDiv);
+    setupHistoryServiceMarquees(listDiv);
 
     if (totalPages > 1) {
         paginationDiv.innerHTML = `
@@ -16264,6 +16673,14 @@ function stitchLineParts(parts, tolerance = 0.00015) {
 }
 
 function getTripSegments(trip) {
+    if (trip.service_id && trip.from_id && trip.to_id) {
+        const service = db.services.find(item => item.id === trip.service_id);
+        const pattern = service?.patterns?.find(item => item.id === trip.service_pattern_id);
+        if (pattern && isServicePatternDateValid(pattern, trip.date)) {
+            const resolved = resolveServiceJourneySegments(pattern, trip.from_id, trip.to_id, trip.date);
+            if (resolved.length) return resolved;
+        }
+    }
     // Earlier Haruka entries used the surface Osaka connection. Resolve that
     // known legacy itinerary for display without rewriting the saved record.
     if (trip.service_id === "SVC_JR_WEST_HARUKA" &&
@@ -17350,6 +17767,9 @@ window.editTrip = function(i) {
     activeServiceDefinition = null;
     let setVal = (id, val) => document.getElementById(id).value = val || "";
     setVal("date", t.date);
+    rideDateTimeManual = !!t.date && t.date < getTodayStr();
+    setVal("tripTime", t.time);
+    syncRideDateTimeDisplay();
     
     let firstCompId = t.routes[0].company_id;
     let firstCompName = maps.company[firstCompId]?.name || firstCompId;
@@ -17434,6 +17854,10 @@ setupAddOptionPanels();
 syncServiceDetailsForLine();
 syncAddOptionControls();
 switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
+clearTimeout(servicePatternApplyTimer);
+const service = resolveTripServiceDefinition(t);
+const pattern = service?.patterns?.find(item => item.id === t.service_pattern_id && isServicePatternDateValid(item, t.date));
+if (service) applySelectedServicePattern({silent:true, ...(pattern ? {selected:{service, pattern}} : {})});
 }
 
 window.deleteTrip = async function (i) {
@@ -17492,6 +17916,7 @@ window.importData = function() {
                 for (const [index, trip] of importedTrips.entries()) {
                     await addDoc(tripsRef, {
                         date: trip.date || "",
+                        time: trip.time || "",
                         serviceType: trip.serviceType || "",
                         serviceName: trip.serviceName || "",
                         service_id: trip.service_id || "",

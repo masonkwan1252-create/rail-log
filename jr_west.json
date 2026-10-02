@@ -10215,7 +10215,8 @@
               "STN_JR_WEST_TSURUGA"
             ]
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SHIRASAGI",
@@ -10259,7 +10260,8 @@
               "STN_JR_WEST_TSURUGA"
             ]
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_NOTO_KAGARIBI",
@@ -10294,7 +10296,8 @@
               "STN_JR_WEST_WAKURA_ONSEN"
             ]
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_RAKURAKU_BIWAKO",
@@ -10341,7 +10344,8 @@
               "STN_JR_WEST_OSAKA"
             ]
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_RAKURAKU_HARIMA",
@@ -10395,7 +10399,8 @@
               "STN_JR_WEST_ABOSHI"
             ]
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_RAKURAKU_YAMATO",
@@ -10446,7 +10451,8 @@
             ],
             "name": "奈良_大阪"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_HARUKA",
@@ -10528,7 +10534,8 @@
               "STN_JR_WEST_KANSAI_AIRPORT"
             ]
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_MAHOROBA",
@@ -10567,7 +10574,8 @@
             ],
             "valid_from": "2025-03-15"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_KUROSHIO",
@@ -10642,7 +10650,8 @@
             ],
             "valid_from": "2025-03-15"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_KOUNOTORI",
@@ -10715,7 +10724,8 @@
             ],
             "valid_from": "2026-03-14"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_KINOSAKI",
@@ -10762,7 +10772,8 @@
             "valid_from": "2026-03-14",
             "name": "2026_03_14_京都_城崎温泉"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_HASHIDATE",
@@ -10826,7 +10837,8 @@
             ],
             "valid_from": "1996-03-16"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_MAIZURU",
@@ -10875,7 +10887,8 @@
             ],
             "valid_from": "1999-10-02"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_HAMAKAZE",
@@ -10937,7 +10950,8 @@
             ],
             "valid_from": "1972-03-15"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SUPER_HAKUTO",
@@ -11013,7 +11027,8 @@
             ],
             "valid_from": "2025-03-15"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SUPER_INABA",
@@ -11061,7 +11076,8 @@
             ],
             "valid_from": "1997-11-29"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_YAKUMO",
@@ -11110,7 +11126,8 @@
             ],
             "valid_from": "1972-03-15"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SUPER_OKI",
@@ -11168,7 +11185,8 @@
             ],
             "valid_from": "2024-03-16"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SUPER_MATSUKAZE",
@@ -11216,7 +11234,8 @@
             ],
             "valid_from": "2003-10-01"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SUNRISE_SETO",
@@ -11310,7 +11329,8 @@
             ],
             "valid_from": "1998-07-10"
           }
-        ]
+        ],
+        "service_code": ""
       },
       {
         "id": "SVC_JR_WEST_SUNRISE_IZUMO",
@@ -11402,7 +11422,69 @@
             ],
             "valid_from": "1998-07-10"
           }
-        ]
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_WEST_AIRPORT_RAPID",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "関空快速",
+        "name": "",
+        "name_zh": "関空快速",
+        "name_en": "",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1994_09_04_AIRPORT_RAPID",
+            "name": "1994_09_04_京橋_関西空港",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_OSAKA_LOOP",
+                "from_id": "STN_JR_WEST_KYOBASHI",
+                "to_id": "STN_JR_WEST_TENNOJI"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_HANWA",
+                "from_id": "STN_JR_WEST_TENNOJI",
+                "to_id": "STN_JR_WEST_HINENO"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_KANSAI_AIRPORT",
+                "from_id": "STN_JR_WEST_HINENO",
+                "to_id": "STN_JR_WEST_KANSAI_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_KYOBASHI",
+              "STN_JR_WEST_SAKURANOMIYA",
+              "STN_JR_WEST_TEMMA",
+              "STN_JR_WEST_OSAKA",
+              "STN_JR_WEST_FUKUSHIMA",
+              "STN_JR_WEST_NISHIKUJO",
+              "STN_JR_WEST_BENTENCHO",
+              "STN_JR_WEST_TAISHO",
+              "STN_JR_WEST_SHIN_IMAMIYA",
+              "STN_JR_WEST_TENNOJI",
+              "STN_JR_WEST_SAKAISHI",
+              "STN_JR_WEST_MIKUNIGAOKA",
+              "STN_JR_WEST_OTORI",
+              "STN_JR_WEST_IZUMI_FUCHU",
+              "STN_JR_WEST_HIGASHI_KISHIWADA",
+              "STN_JR_WEST_KUMATORI",
+              "STN_JR_WEST_HINENO",
+              "STN_JR_WEST_RINKU_TOWN",
+              "STN_JR_WEST_KANSAI_AIRPORT"
+            ],
+            "valid_from": "1994-09-04"
+          }
+        ],
+        "service_code": "AIRPORT_RAPID"
       }
     ]
   }
