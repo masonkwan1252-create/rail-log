@@ -10089,14 +10089,14 @@ body {
     .mobile-route-company { flex: 0 0 auto; }
     .mobile-route-window { display: grid; align-items: center; min-width: 0; overflow: hidden; }
     #tab-history .mobile-route-page .trip-service-label { vertical-align: middle; }
-    .mobile-route-next { margin-left: 4px; font-size: 9px; color: var(--subtext); }
+    .mobile-route-next { margin-left: 0; font-size: 12px; font-weight: 900; color: var(--primary); }
     #tab-history .mobile-route-page { display: flex; align-items: center; gap: 4px; grid-area: 1 / 1; visibility: hidden; pointer-events: none; width: max-content; white-space: nowrap; }
     #tab-history .mobile-route-page.is-current { visibility: visible; pointer-events: auto; }
     #tab-history .route-pages-active .trip-ticket-stations > details,
     #tab-history .route-pages-active .trip-ticket-stations > .trip-route-timeline { display: none !important; }
     #tab-history .route-pages-active .trip-ticket-stations { grid-template-columns: 2.05em minmax(0,1fr) !important; }
     #tab-history .mobile-route-page .trip-service-type { color: #ff3b30; }
-    #tab-history .mobile-route-page .trip-through-label { margin-left: 4px; font-size: 9px; font-weight: 600; color: #ff3b30; }
+    #tab-history .mobile-route-page .trip-through-label { margin-left: 0; font-size: 10px; font-weight: 900; color: #ff3b30; }
 }
 .history-sync-light { width: 8px; height: 8px; border-radius: 50%; margin-left: 10px; flex: 0 0 8px; background: var(--primary); }
 #tab-history .history-title { justify-content: flex-start; }
@@ -10147,7 +10147,7 @@ body {
     .ride-native-field:focus-within .ride-native-value { border-color: var(--primary); }
     .design2-form-card .ride-native-field input { position: absolute !important; inset: 0; width: 100% !important; height: 44px !important; margin: 0 !important; opacity: .01; cursor: pointer; }
     #tab-history .trip-service-label,
-    #tab-history .trip-route-meta .trip-service-badge.trip-service-label { font-size: 12px !important; padding: 2px 8px !important; }
+    #tab-history .trip-route-meta .trip-service-badge.trip-service-label { font-size: 12px !important; min-height: 0 !important; padding: 0 4px !important; }
     .service-detail-grid { grid-template-columns: minmax(0, 1fr); }
 }
 #tab-history .trip-service-label .trip-service-type { color: #ff3b30; font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif; font-size: inherit; line-height: inherit; font-weight: 800; }
@@ -14867,13 +14867,23 @@ function setupHistoryRoutePages(list) {
     clearInterval(historyRoutePageTimer);
     historyRoutePageObserver?.disconnect();
     const pages = [...list.querySelectorAll('.mobile-route-pages')];
-    const measure = document.createElement('canvas').getContext('2d');
     const update = panel => {
         const trip = panel.closest('.trip');
         const stack = panel.parentElement;
-        const style = getComputedStyle(panel);
-        measure.font = `800 12px ${style.fontFamily}`;
-        const fullWidth = measure.measureText(panel.dataset.fullText).width;
+        // Measure the complete unwrapped row, including badges, arrows and gaps.
+        const row = stack.querySelector(':scope > .trip-route-inline');
+        let fullWidth = 0;
+        if (row && window.innerWidth < 900) {
+            const probe = row.cloneNode(true);
+            probe.setAttribute('aria-hidden', 'true');
+            const styles = {display:'inline-flex', position:'absolute', visibility:'hidden',
+                width:'max-content', maxWidth:'none', flexWrap:'nowrap', whiteSpace:'nowrap', pointerEvents:'none'};
+            Object.assign(probe.style, styles);
+            probe.style.setProperty('display', 'inline-flex', 'important');
+            stack.appendChild(probe);
+            fullWidth = probe.getBoundingClientRect().width;
+            probe.remove();
+        }
         const active = window.innerWidth < 900 && fullWidth > stack.clientWidth;
         trip.classList.toggle('route-pages-active', active);
         panel.querySelectorAll('.mobile-route-page').forEach(page => {
