@@ -11348,7 +11348,7 @@
         "patterns": [
           {
             "id": "1998_07_10_SUNRISE_IZUMO",
-            "name": "1998_07_10_東京_出雲市",
+            "name": "1998_07_10_STN_JR_EAST_TOKYO_出雲市",
             "segments": [
               {
                 "company_id": "JR_EAST",
@@ -11485,6 +11485,312 @@
           }
         ],
         "service_code": "AIRPORT_RAPID"
+      },
+      {
+        "id": "SVC_JR_WEST_KISHUJI_RAPID",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "紀州路快速",
+        "name": "",
+        "name_zh": "紀州路快速",
+        "name_en": "",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1995_05_10_KISHUJI_RAPID",
+            "name": "1995_05_10_京橋_和歌山",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_OSAKA_LOOP",
+                "from_id": "STN_JR_WEST_KYOBASHI",
+                "to_id": "STN_JR_WEST_TENNOJI"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_HANWA",
+                "from_id": "STN_JR_WEST_TENNOJI",
+                "to_id": "STN_JR_WEST_HINENO"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_KYOBASHI",
+              "STN_JR_WEST_SAKURANOMIYA",
+              "STN_JR_WEST_TEMMA",
+              "STN_JR_WEST_OSAKA",
+              "STN_JR_WEST_FUKUSHIMA",
+              "STN_JR_WEST_NISHIKUJO",
+              "STN_JR_WEST_BENTENCHO",
+              "STN_JR_WEST_TAISHO",
+              "STN_JR_WEST_SHIN_IMAMIYA",
+              "STN_JR_WEST_TENNOJI",
+              "STN_JR_WEST_SAKAISHI",
+              "STN_JR_WEST_MIKUNIGAOKA",
+              "STN_JR_WEST_OTORI",
+              "STN_JR_WEST_IZUMI_FUCHU",
+              "STN_JR_WEST_HIGASHI_KISHIWADA",
+              "STN_JR_WEST_KUMATORI",
+              "STN_JR_WEST_HINENO",
+              "STN_JR_WEST_NAGATAKI",
+              "STN_JR_WEST_SHINGE",
+              "STN_JR_WEST_IZUMI_SUNAGAWA",
+              "STN_JR_WEST_IZUMI_TOTTORI",
+              "STN_JR_WEST_YAMANAKADANI",
+              "STN_JR_WEST_KII",
+              "STN_JR_WEST_MUSOTA",
+              "STN_JR_WEST_KII_NAKANOSHIMA",
+              "STN_JR_WEST_WAKAYAMA"
+            ],
+            "valid_from": "1995-05-10"
+          }
+        ],
+        "service_code": "KISHUJI_RAPID"
+      },
+      {
+        "id": "SVC_JR_WEST_YAMATOJI_RAPID",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "大和路快速",
+        "name": "",
+        "name_zh": "大和路快速",
+        "name_en": "",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1989_04_10_YAMATOJI_RAPID",
+            "name": "1989_04_10_大阪_加茂",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_OSAKA_LOOP",
+                "from_id": "STN_JR_WEST_OSAKA",
+                "to_id": "STN_JR_WEST_TENNOJI"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_YAMATOJI",
+                "from_id": "STN_JR_WEST_TENNOJI",
+                "to_id": "STN_JR_WEST_KAMO"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_OSAKA",
+              "STN_JR_WEST_FUKUSHIMA",
+              "STN_JR_WEST_NISHIKUJO",
+              "STN_JR_WEST_BENTENCHO",
+              "STN_JR_WEST_TAISHO",
+              "STN_JR_WEST_SHIN_IMAMIYA",
+              "STN_JR_WEST_TENNOJI",
+              "STN_JR_WEST_KYUHOJI",
+              "STN_JR_WEST_OJI",
+              "STN_JR_WEST_HORYUJI",
+              "STN_JR_WEST_YAMATO_KOIZUMI",
+              "STN_JR_WEST_KORIYAMA",
+              "STN_JR_WEST_NARA",
+              "STN_JR_WEST_NARAYAMA",
+              "STN_JR_WEST_KIZU",
+              "STN_JR_WEST_KAMO"
+            ],
+            "valid_from": "1989-04-10"
+          }
+        ],
+        "service_code": "YAMATOJI_RAPID"
+      },
+      {
+        "id": "SVC_JR_WEST_MIYAJOJI_RAPID",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "みやこ路快速",
+        "name": "",
+        "name_zh": "みやこ路快速",
+        "name_en": "",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2001_03_03_MIYAJOJI_RAPID",
+            "name": "2001_03_03_奈良_京都",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_NARA",
+                "from_id": "STN_JR_WEST_KYOTO",
+                "to_id": "STN_JR_WEST_NARA"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_NARA",
+              "STN_JR_WEST_KIZU",
+              "STN_JR_WEST_TAMAMIZU",
+              "STN_JR_WEST_JOYO",
+              "STN_JR_WEST_SHINDEN",
+              "STN_JR_WEST_JR_OGURA",
+              "STN_JR_WEST_UJI",
+              "STN_JR_WEST_ROKUJIZO",
+              "STN_JR_WEST_INARI",
+              "STN_JR_WEST_TOFUKUJI",
+              "STN_JR_WEST_KYOTO"
+            ],
+            "valid_from": "2001-03-03"
+          }
+        ],
+        "service_code": "MIYAJOJI_RAPID"
+      },
+      {
+        "id": "SVC_JR_WEST_TOTTORI_LINER",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "快速",
+        "name": "とっとりライナー",
+        "name_zh": "鳥取Liner",
+        "name_en": "Tottori Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2001_07_07_TOTTORI_LINER",
+            "name": "2001_07_07_米子_鳥取",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_SANIN",
+                "from_id": "STN_JR_WEST_TOTTORI",
+                "to_id": "STN_JR_WEST_YONAGO"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_YONAGO",
+              "STN_JR_WEST_HOKI_DAISEN",
+              "STN_JR_WEST_YODOE",
+              "STN_JR_WEST_DAISANGUCHI",
+              "STN_JR_WEST_AKASAKI",
+              "STN_JR_WEST_URAYASU",
+              "STN_JR_WEST_YURA",
+              "STN_JR_WEST_SHIMOHOJO",
+              "STN_JR_WEST_KURAYOSHI",
+              "STN_JR_WEST_MATSUZAKI",
+              "STN_JR_WEST_AOYI",
+              "STN_JR_WEST_HAMAMURA",
+              "STN_JR_WEST_TOTTORI_DAIGAKUMAE",
+              "STN_JR_WEST_KOYAMA",
+              "STN_JR_WEST_TOTTORI"
+            ],
+            "valid_from": "2001-07-07"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_WEST_CITY_LINER",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "快速",
+        "name": "シティライナー",
+        "name_zh": "",
+        "name_en": "City Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2020_03_14_CITY_LINER",
+            "name": "2020_03_14_広島_岩国",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_SANYO",
+                "from_id": "STN_JR_WEST_HIROSHIMA",
+                "to_id": "STN_JR_WEST_IWAKUNI"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_HIROSHIMA",
+              "STN_JR_WEST_YOKOGAWA",
+              "STN_JR_WEST_ITSUKAICHI",
+              "STN_JR_WEST_MIYAJIMAGUCHI",
+              "STN_JR_WEST_ONOURA",
+              "STN_JR_WEST_KUBA",
+              "STN_JR_WEST_OTAKE",
+              "STN_JR_WEST_WAKI",
+              "STN_JR_WEST_IWAKUNI"
+            ],
+            "valid_from": "2020-03-14"
+          }
+        ],
+        "service_code": "CITY_LINER"
+      },
+      {
+        "id": "SVC_JR_WEST_AKIJI_LINER",
+        "company_id": "JR_WEST",
+        "operator_company_ids": [
+          "JR_WEST"
+        ],
+        "service_type": "快速",
+        "name": "安芸路ライナー",
+        "name_zh": "",
+        "name_en": "Akiji Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1999_02_07_AKIJI_LINER",
+            "name": "1999_02_07_三原_岩国",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_KURE",
+                "from_id": "STN_JR_WEST_MIHARA",
+                "to_id": "STN_JR_WEST_HIROSHIMA"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_SANYO",
+                "from_id": "STN_JR_WEST_HIROSHIMA",
+                "to_id": "STN_JR_WEST_IWAKUNI"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_MIHARA",
+              "STN_JR_WEST_SUNAMI",
+              "STN_JR_WEST_AKI_SAIZAKI",
+              "STN_JR_WEST_TADANOUMI",
+              "STN_JR_WEST_AKI_NAGAHAMA",
+              "STN_JR_WEST_DAIJO",
+              "STN_JR_WEST_TAKEHARA",
+              "STN_JR_WEST_YOSHINA",
+              "STN_JR_WEST_AKITSU",
+              "STN_JR_WEST_KAZAHAYA",
+              "STN_JR_WEST_YASUURA",
+              "STN_JR_WEST_ATO",
+              "STN_JR_WEST_AKI_KAWAJIRI",
+              "STN_JR_WEST_NIGATA",
+              "STN_JR_WEST_HIRO",
+              "STN_JR_WEST_SHIN_HIRO",
+              "STN_JR_WEST_AKI_AGA",
+              "STN_JR_WEST_KURE",
+              "STN_JR_WEST_YOSHIURA",
+              "STN_JR_WEST_SAKA",
+              "STN_JR_WEST_YANO",
+              "STN_JR_WEST_KAITAICHI",
+              "STN_JR_WEST_HIROSHIMA",
+              "STN_JR_WEST_YOKOGAWA",
+              "STN_JR_WEST_ITSUKAICHI",
+              "STN_JR_WEST_MIYAJIMAGUCHI",
+              "STN_JR_WEST_ONOURA",
+              "STN_JR_WEST_KUBA",
+              "STN_JR_WEST_OTAKE",
+              "STN_JR_WEST_WAKI",
+              "STN_JR_WEST_IWAKUNI"
+            ],
+            "valid_from": "1999-02-07"
+          }
+        ],
+        "service_code": ""
       }
     ]
   }

@@ -2932,6 +2932,519 @@
         "name": "9820系",
         "variants": []
       }
+    ],
+    "services": [
+      {
+        "id": "SVC_KINTETSU_HINOTORI",
+        "company_id": "KINTETSU",
+        "operator_company_ids": [
+          "KINTETSU"
+        ],
+        "service_type": "特急",
+        "name": "ひのとり",
+        "name_zh": "火鳥",
+        "name_en": "Hinotori",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2020_03_14_HINOTORI",
+            "name": "2020_03_14_大阪難波_近鉄名古屋",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NARA",
+                "from_id": "STN_KINTETSU_OSAKA_NAMBA",
+                "to_id": "STN_KINTETSU_OSAKA_UEHOMMACHI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_OSAKA_UEHOMMACHI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NAGOYA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_KINTETSU_NAGOYA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_OSAKA_NAMBA",
+              "STN_KINTETSU_OSAKA_UEHOMMACHI",
+              "STN_KINTETSU_TSURUHASHI",
+              "STN_KINTETSU_YAMATO_YAGI",
+              "STN_KINTETSU_TSU",
+              "STN_KINTETSU_SHIROKO",
+              "STN_KINTETSU_KINTETSU_YOKKAICHI",
+              "STN_KINTETSU_KUWANA",
+              "STN_KINTETSU_KINTETSU_NAGOYA"
+            ],
+            "valid_from": "2020-03-14"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_KINTETSU_URBAN_LINER",
+        "company_id": "KINTETSU",
+        "operator_company_ids": [
+          "KINTETSU"
+        ],
+        "service_type": "特急",
+        "name": "アーバンライナー",
+        "name_zh": "",
+        "name_en": "Urban Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2020_03_01_URBAN_LINER",
+            "name": "2020_03_01_大阪難波_近鉄名古屋",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NARA",
+                "from_id": "STN_KINTETSU_OSAKA_NAMBA",
+                "to_id": "STN_KINTETSU_OSAKA_UEHOMMACHI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_OSAKA_UEHOMMACHI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NAGOYA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_KINTETSU_NAGOYA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_OSAKA_NAMBA",
+              "STN_KINTETSU_OSAKA_UEHOMMACHI",
+              "STN_KINTETSU_TSURUHASHI",
+              "STN_KINTETSU_YAMATO_YAGI",
+              "STN_KINTETSU_NABARI",
+              "STN_KINTETSU_KIKYOGAOKA",
+              "STN_KINTETSU_IGA_KAMBE",
+              "STN_KINTETSU_TSU",
+              "STN_KINTETSU_SHIROKO",
+              "STN_KINTETSU_KINTETSU_YOKKAICHI",
+              "STN_KINTETSU_KUWANA",
+              "STN_KINTETSU_KINTETSU_NAGOYA"
+            ],
+            "valid_from": "2020-03-01"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_KINTETSU_ISE_SHIMA_LINER",
+        "company_id": "KINTETSU",
+        "operator_company_ids": [
+          "KINTETSU"
+        ],
+        "service_type": "特急",
+        "name": "伊勢志摩ライナー",
+        "name_zh": "伊勢志摩Liner",
+        "name_en": "Ise Shima Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2026_03_14_ISE_SHIMA_LINER",
+            "name": "2026_03_14_大阪難波_賢島",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NARA",
+                "from_id": "STN_KINTETSU_OSAKA_NAMBA",
+                "to_id": "STN_KINTETSU_OSAKA_UEHOMMACHI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_OSAKA_UEHOMMACHI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_YAMADA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_UJIYAMADA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_TOBA",
+                "from_id": "STN_KINTETSU_UJIYAMADA",
+                "to_id": "STN_KINTETSU_TOBA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_SHIMA",
+                "from_id": "STN_KINTETSU_TOBA",
+                "to_id": "STN_KINTETSU_KASHIKOJIMA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_OSAKA_NAMBA",
+              "STN_KINTETSU_OSAKA_UEHOMMACHI",
+              "STN_KINTETSU_TSURUHASHI",
+              "STN_KINTETSU_FUSE",
+              "STN_KINTETSU_GOIDO",
+              "STN_KINTETSU_YAMATO_TAKADA",
+              "STN_KINTETSU_YAMATO_YAGI",
+              "STN_KINTETSU_HAIBARA",
+              "STN_KINTETSU_NABARI",
+              "STN_KINTETSU_KIKYOGAOKA",
+              "STN_KINTETSU_IGA_KAMBE",
+              "STN_KINTETSU_SAKAKIBARA_ONSENGUCHI",
+              "STN_KINTETSU_ISE_NAKAGAWA",
+              "STN_KINTETSU_MATSUSAKA",
+              "STN_KINTETSU_ISESHI",
+              "STN_KINTETSU_UJIYAMADA",
+              "STN_KINTETSU_ISUZUGAWA",
+              "STN_KINTETSU_TOBA",
+              "STN_KINTETSU_SHIMA_ISOBE",
+              "STN_KINTETSU_UGATA",
+              "STN_KINTETSU_KASHIKOJIMA"
+            ],
+            "valid_from": "2026-03-14"
+          },
+          {
+            "id": "2026_03_14_ISE_SHIMA_LINER_2",
+            "name": "2026_03_14_京都_賢島",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_KYOTO",
+                "from_id": "STN_KINTETSU_KYOTO",
+                "to_id": "STN_KINTETSU_YAMATO_SAIDAIJI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_KASHIHARA",
+                "from_id": "STN_KINTETSU_YAMATO_SAIDAIJI",
+                "to_id": "STN_KINTETSU_YAMATO_YAGI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_YAMATO_YAGI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_YAMADA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_UJIYAMADA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_TOBA",
+                "from_id": "STN_KINTETSU_UJIYAMADA",
+                "to_id": "STN_KINTETSU_TOBA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_SHIMA",
+                "from_id": "STN_KINTETSU_TOBA",
+                "to_id": "STN_KINTETSU_KASHIKOJIMA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_KYOTO",
+              "STN_KINTETSU_NABARI",
+              "STN_KINTETSU_ISE_NAKAGAWA",
+              "STN_KINTETSU_MATSUSAKA",
+              "STN_KINTETSU_ISESHI",
+              "STN_KINTETSU_UJIYAMADA",
+              "STN_KINTETSU_ISUZUGAWA",
+              "STN_KINTETSU_TOBA",
+              "STN_KINTETSU_SHIMA_ISOBE",
+              "STN_KINTETSU_UGATA",
+              "STN_KINTETSU_KASHIKOJIMA"
+            ],
+            "valid_from": "2026-03-14"
+          },
+          {
+            "id": "2026_03_14_ISE_SHIMA_LINER_3",
+            "name": "2026_03_14_近鉄名古屋_賢島",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NAGOYA",
+                "from_id": "STN_KINTETSU_KINTETSU_NAGOYA",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_KASHIHARA",
+                "from_id": "STN_KINTETSU_YAMATO_SAIDAIJI",
+                "to_id": "STN_KINTETSU_YAMATO_YAGI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_YAMATO_YAGI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_YAMADA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_UJIYAMADA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_TOBA",
+                "from_id": "STN_KINTETSU_UJIYAMADA",
+                "to_id": "STN_KINTETSU_TOBA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_SHIMA",
+                "from_id": "STN_KINTETSU_TOBA",
+                "to_id": "STN_KINTETSU_KASHIKOJIMA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_KINTETSU_NAGOYA",
+              "STN_KINTETSU_KINTETSU_YOKKAICHI",
+              "STN_KINTETSU_TSU",
+              "STN_KINTETSU_ISE_NAKAGAWA",
+              "STN_KINTETSU_MATSUSAKA",
+              "STN_KINTETSU_ISESHI",
+              "STN_KINTETSU_UJIYAMADA",
+              "STN_KINTETSU_ISUZUGAWA",
+              "STN_KINTETSU_TOBA",
+              "STN_KINTETSU_SHIMA_ISOBE",
+              "STN_KINTETSU_UGATA",
+              "STN_KINTETSU_KASHIKOJIMA"
+            ],
+            "valid_from": "2026-03-14"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_KINTETSU_SHIMAKAZE",
+        "company_id": "KINTETSU",
+        "operator_company_ids": [
+          "KINTETSU"
+        ],
+        "service_type": "特急",
+        "name": "しまかぜ",
+        "name_zh": "島風",
+        "name_en": "Shimakaze",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2013_03_21_SHIMAKAZE",
+            "name": "2013_03_21_大阪難波_賢島",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NARA",
+                "from_id": "STN_KINTETSU_OSAKA_NAMBA",
+                "to_id": "STN_KINTETSU_OSAKA_UEHOMMACHI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_OSAKA_UEHOMMACHI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_YAMADA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_UJIYAMADA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_TOBA",
+                "from_id": "STN_KINTETSU_UJIYAMADA",
+                "to_id": "STN_KINTETSU_TOBA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_SHIMA",
+                "from_id": "STN_KINTETSU_TOBA",
+                "to_id": "STN_KINTETSU_KASHIKOJIMA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_OSAKA_NAMBA",
+              "STN_KINTETSU_OSAKA_UEHOMMACHI",
+              "STN_KINTETSU_TSURUHASHI",
+              "STN_KINTETSU_YAMATO_YAGI",
+              "STN_KINTETSU_ISESHI",
+              "STN_KINTETSU_UJIYAMADA",
+              "STN_KINTETSU_TOBA",
+              "STN_KINTETSU_UGATA",
+              "STN_KINTETSU_KASHIKOJIMA"
+            ],
+            "valid_from": "2013-03-21"
+          },
+          {
+            "id": "2013_03_21_SHIMAKAZE_2",
+            "name": "2013_03_21_京都_賢島",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_KYOTO",
+                "from_id": "STN_KINTETSU_KYOTO",
+                "to_id": "STN_KINTETSU_YAMATO_SAIDAIJI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_KASHIHARA",
+                "from_id": "STN_KINTETSU_YAMATO_SAIDAIJI",
+                "to_id": "STN_KINTETSU_YAMATO_YAGI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_OSAKA",
+                "from_id": "STN_KINTETSU_YAMATO_YAGI",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_YAMADA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_UJIYAMADA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_TOBA",
+                "from_id": "STN_KINTETSU_UJIYAMADA",
+                "to_id": "STN_KINTETSU_TOBA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_SHIMA",
+                "from_id": "STN_KINTETSU_TOBA",
+                "to_id": "STN_KINTETSU_KASHIKOJIMA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_KYOTO",
+              "STN_KINTETSU_KINTETSU_TAMBABASHI",
+              "STN_KINTETSU_YAMATO_SAIDAIJI",
+              "STN_KINTETSU_YAMATO_YAGI",
+              "STN_KINTETSU_ISESHI",
+              "STN_KINTETSU_UJIYAMADA",
+              "STN_KINTETSU_TOBA",
+              "STN_KINTETSU_UGATA",
+              "STN_KINTETSU_KASHIKOJIMA"
+            ],
+            "valid_from": "2013-03-21"
+          },
+          {
+            "id": "2013_03_21_SHIMAKAZE_3",
+            "name": "2013_03_21_近鉄名古屋_賢島",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NAGOYA",
+                "from_id": "STN_KINTETSU_KINTETSU_NAGOYA",
+                "to_id": "STN_KINTETSU_ISE_NAKAGAWA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_YAMADA",
+                "from_id": "STN_KINTETSU_ISE_NAKAGAWA",
+                "to_id": "STN_KINTETSU_UJIYAMADA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_TOBA",
+                "from_id": "STN_KINTETSU_UJIYAMADA",
+                "to_id": "STN_KINTETSU_TOBA"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_SHIMA",
+                "from_id": "STN_KINTETSU_TOBA",
+                "to_id": "STN_KINTETSU_KASHIKOJIMA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_KINTETSU_NAGOYA",
+              "STN_KINTETSU_KINTETSU_YOKKAICHI",
+              "STN_KINTETSU_ISESHI",
+              "STN_KINTETSU_UJIYAMADA",
+              "STN_KINTETSU_TOBA",
+              "STN_KINTETSU_UGATA",
+              "STN_KINTETSU_KASHIKOJIMA"
+            ],
+            "valid_from": "2013-03-21"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_KINTETSU_AONIYOSHI",
+        "company_id": "KINTETSU",
+        "operator_company_ids": [
+          "KINTETSU"
+        ],
+        "service_type": "特急",
+        "name": "あをによし",
+        "name_zh": "",
+        "name_en": "Aoniyoshi",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_AONIYOSHI",
+            "name": "2024_03_16_大阪難波_近鉄奈良",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NARA",
+                "from_id": "STN_KINTETSU_OSAKA_NAMBA",
+                "to_id": "STN_KINTETSU_KINTETSU_NARA"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_OSAKA_NAMBA",
+              "STN_KINTETSU_OSAKA_UEHOMMACHI",
+              "STN_KINTETSU_TSURUHASHI",
+              "STN_KINTETSU_IKOMA",
+              "STN_KINTETSU_GAKUEN_MAE",
+              "STN_KINTETSU_KINTETSU_NARA"
+            ],
+            "valid_from": "2024-03-16"
+          },
+          {
+            "id": "2024_03_16_AONIYOSHI_2",
+            "name": "2024_03_16_近鉄奈良_京都",
+            "segments": [
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_NARA",
+                "from_id": "STN_KINTETSU_KINTETSU_NARA",
+                "to_id": "STN_KINTETSU_YAMATO_SAIDAIJI"
+              },
+              {
+                "company_id": "KINTETSU",
+                "line_id": "KINTETSU_KYOTO",
+                "from_id": "STN_KINTETSU_YAMATO_SAIDAIJI",
+                "to_id": "STN_KINTETSU_KYOTO"
+              }
+            ],
+            "stops": [
+              "STN_KINTETSU_KINTETSU_NARA",
+              "STN_KINTETSU_YAMATO_SAIDAIJI",
+              "STN_KINTETSU_KINTETSU_TAMBABASHI",
+              "STN_KINTETSU_KYOTO"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      }
     ]
   }
 ]

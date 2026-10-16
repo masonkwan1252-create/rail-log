@@ -5081,6 +5081,1091 @@
         "company_id": "JR_KYUSHU",
         "name": "307系",
         "variants": []
+      },
+      {
+        "id": "TRN_JR_KYUSHU_501",
+        "company_id": "JR_KYUSHU",
+        "name": "501系",
+        "variants": []
+      },
+      {
+        "id": "TRN_JR_KYUSHU_307",
+        "company_id": "JR_KYUSHU",
+        "name": "307系",
+        "variants": []
+      }
+    ],
+    "services": [
+      {
+        "id": "SVC_JR_KYUSHU_KIRAMEKI",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "きらめき",
+        "name_zh": "閃耀",
+        "name_en": "Kirameki",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2000_03_11_KIRAMEKI",
+            "name": "2000_03_11_行橋_博多",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_YUKUHASHI",
+                "to_id": "STN_JR_KYUSHU_KOKURA"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_MOJIKO",
+                "to_id": "STN_JR_KYUSHU_HAKATA"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_YUKUHASHI",
+              "STN_JR_KYUSHU_KUSAMI",
+              "STN_JR_KYUSHU_SHIMOSONE",
+              "STN_JR_KYUSHU_KOKURA",
+              "STN_JR_KYUSHU_MOJIKO",
+              "STN_JR_KYUSHU_MOJI",
+              "STN_JR_KYUSHU_TOBATA",
+              "STN_JR_KYUSHU_YAHATA",
+              "STN_JR_KYUSHU_KUROSAKI",
+              "STN_JR_KYUSHU_ORIO",
+              "STN_JR_KYUSHU_AKAMA",
+              "STN_JR_KYUSHU_TOGO",
+              "STN_JR_KYUSHU_FUKUMA",
+              "STN_JR_KYUSHU_KASHII",
+              "STN_JR_KYUSHU_YOSHIZUKA",
+              "STN_JR_KYUSHU_HAKATA"
+            ],
+            "valid_from": "2000-03-11"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_SONIC",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "ソニック",
+        "name_zh": "音速",
+        "name_en": "Sonic",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1997_03_22_SONIC",
+            "name": "1997_03_22_大分_博多",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_OITA",
+                "to_id": "STN_JR_KYUSHU_KOKURA"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KOKURA",
+                "to_id": "STN_JR_KYUSHU_HAKATA"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_OITA",
+              "STN_JR_KYUSHU_BEPPU",
+              "STN_JR_KYUSHU_KAMEGAWA",
+              "STN_JR_KYUSHU_KITSUKI",
+              "STN_JR_KYUSHU_USA",
+              "STN_JR_KYUSHU_YANAGIGAURA",
+              "STN_JR_KYUSHU_NAKATSU",
+              "STN_JR_KYUSHU_UNOSHIMA",
+              "STN_JR_KYUSHU_YUKUHASHI",
+              "STN_JR_KYUSHU_SHIMOSONE",
+              "STN_JR_KYUSHU_KOKURA",
+              "STN_JR_KYUSHU_TOBATA",
+              "STN_JR_KYUSHU_SPACE_WORLD",
+              "STN_JR_KYUSHU_YAHATA",
+              "STN_JR_KYUSHU_KUROSAKI",
+              "STN_JR_KYUSHU_ORIO",
+              "STN_JR_KYUSHU_AKAMA",
+              "STN_JR_KYUSHU_TOGO",
+              "STN_JR_KYUSHU_FUKUMA",
+              "STN_JR_KYUSHU_KASHII",
+              "STN_JR_KYUSHU_YOSHIZUKA",
+              "STN_JR_KYUSHU_HAKATA"
+            ],
+            "valid_from": "1997-03-22"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_NICHIRIN",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "にちりん",
+        "name_zh": "日輪",
+        "name_en": "Nichirin",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1968_10_01_NICHIRIN",
+            "name": "1968_10_01_小倉_宮崎空港",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KOKURA",
+                "to_id": "STN_JR_KYUSHU_MIYAZAKI"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_MIYAZAKI_KUKO",
+                "from_id": "STN_JR_KYUSHU_MIYAZAKI",
+                "to_id": "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_KOKURA",
+              "STN_JR_KYUSHU_YUKUHASHI",
+              "STN_JR_KYUSHU_UNOSHIMA",
+              "STN_JR_KYUSHU_NAKATSU",
+              "STN_JR_KYUSHU_YANAGIGAURA",
+              "STN_JR_KYUSHU_USA",
+              "STN_JR_KYUSHU_KITSUKI",
+              "STN_JR_KYUSHU_KAMEGAWA",
+              "STN_JR_KYUSHU_BEPPU",
+              "STN_JR_KYUSHU_OITA",
+              "STN_JR_KYUSHU_TSURUSAKI",
+              "STN_JR_KYUSHU_OZAI",
+              "STN_JR_KYUSHU_KOZAKI",
+              "STN_JR_KYUSHU_USUKI_OITA",
+              "STN_JR_KYUSHU_TSUKUMI",
+              "STN_JR_KYUSHU_SAIKI",
+              "STN_JR_KYUSHU_NOBEOKA",
+              "STN_JR_KYUSHU_MINAMI_NOBEOKA",
+              "STN_JR_KYUSHU_KADOGAWA",
+              "STN_JR_KYUSHU_HYUGASHI",
+              "STN_JR_KYUSHU_TSUNO",
+              "STN_JR_KYUSHU_TAKANABE",
+              "STN_JR_KYUSHU_SADOWARA",
+              "STN_JR_KYUSHU_MIYAZAKI_JINGU",
+              "STN_JR_KYUSHU_MIYAZAKI",
+              "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+              "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+            ],
+            "valid_from": "1968-10-01"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_NICHIRIN_SEA_GAIA",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "にちりんシーガイア",
+        "name_zh": "日輪喜凱亞",
+        "name_en": "Nichirin Sea Gaia",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1993_03_18_NICHIRIN_SEA_GAIA",
+            "name": "1993_03_18_博多_宮崎空港",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_HAKATA",
+                "to_id": "STN_JR_KYUSHU_KOKURA"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KOKURA",
+                "to_id": "STN_JR_KYUSHU_MIYAZAKI"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_MIYAZAKI_KUKO",
+                "from_id": "STN_JR_KYUSHU_MIYAZAKI",
+                "to_id": "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_YOSHIZUKA",
+              "STN_JR_KYUSHU_KASHII",
+              "STN_JR_KYUSHU_FUKUMA",
+              "STN_JR_KYUSHU_AKAMA",
+              "STN_JR_KYUSHU_ORIO",
+              "STN_JR_KYUSHU_KUROSAKI",
+              "STN_JR_KYUSHU_KOKURA",
+              "STN_JR_KYUSHU_KUSAMI",
+              "STN_JR_KYUSHU_YUKUHASHI",
+              "STN_JR_KYUSHU_NAKATSU",
+              "STN_JR_KYUSHU_KITSUKI",
+              "STN_JR_KYUSHU_BEPPU",
+              "STN_JR_KYUSHU_OITA",
+              "STN_JR_KYUSHU_TSURUSAKI",
+              "STN_JR_KYUSHU_USUKI_OITA",
+              "STN_JR_KYUSHU_TSUKUMI",
+              "STN_JR_KYUSHU_SAIKI",
+              "STN_JR_KYUSHU_NOBEOKA",
+              "STN_JR_KYUSHU_MINAMI_NOBEOKA",
+              "STN_JR_KYUSHU_HYUGASHI",
+              "STN_JR_KYUSHU_TAKANABE",
+              "STN_JR_KYUSHU_SADOWARA",
+              "STN_JR_KYUSHU_MIYAZAKI",
+              "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+              "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+            ],
+            "valid_from": "1993-03-18"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_HYUGA",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "ひゅうが",
+        "name_zh": "日向",
+        "name_en": "Hyuga",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2000_03_11_HYUGA",
+            "name": "2000_03_11_延岡_宮崎空港",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_NOBEOKA",
+                "to_id": "STN_JR_KYUSHU_MIYAZAKI"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_MIYAZAKI_KUKO",
+                "from_id": "STN_JR_KYUSHU_MIYAZAKI",
+                "to_id": "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_NOBEOKA",
+              "STN_JR_KYUSHU_MINAMI_NOBEOKA",
+              "STN_JR_KYUSHU_KADOGAWA",
+              "STN_JR_KYUSHU_HYUGASHI",
+              "STN_JR_KYUSHU_TSUNO",
+              "STN_JR_KYUSHU_TAKANABE",
+              "STN_JR_KYUSHU_SADOWARA",
+              "STN_JR_KYUSHU_MIYAZAKI_JINGU",
+              "STN_JR_KYUSHU_MIYAZAKI",
+              "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+              "STN_JR_KYUSHU_MIYAZAKI_AIRPORT"
+            ],
+            "valid_from": "2000-03-11"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_KIRISHIMA",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "きりしま",
+        "name_zh": "霧島",
+        "name_en": "Kirishima",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1995_04_20_KIRISHIMA",
+            "name": "1995_04_20_宮崎_鹿児島中央",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_MIYAZAKI",
+                "to_id": "STN_JR_KYUSHU_KAGOSHIMA_CHUO"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_MIYAZAKI",
+              "STN_JR_KYUSHU_MINAMI_MIYAZAKI",
+              "STN_JR_KYUSHU_KIYOTAKE",
+              "STN_JR_KYUSHU_TANO",
+              "STN_JR_KYUSHU_YAMANOKUCHI",
+              "STN_JR_KYUSHU_MIMATA",
+              "STN_JR_KYUSHU_MIYAKONOJO",
+              "STN_JR_KYUSHU_NISHI_MIYAKONOJO",
+              "STN_JR_KYUSHU_KIRISHIMA_JINGU",
+              "STN_JR_KYUSHU_KOKUBU",
+              "STN_JR_KYUSHU_HAYATO",
+              "STN_JR_KYUSHU_KAJIKI",
+              "STN_JR_KYUSHU_CHOSA",
+              "STN_JR_KYUSHU_AIRA",
+              "STN_JR_KYUSHU_SHIGETOMI",
+              "STN_JR_KYUSHU_KAGOSHIMA",
+              "STN_JR_KYUSHU_KAGOSHIMA_CHUO"
+            ],
+            "valid_from": "1995-04-20"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_RELAY_KAMOME",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "リレーかもめ",
+        "name_zh": "接力海鷗",
+        "name_en": "Relay Kamome",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_09_23_RELAY_KAMOME",
+            "name": "2022_09_23_門司港_武雄温泉",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_MOJIKO",
+                "to_id": "STN_JR_KYUSHU_TOSU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NAGASAKI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_TOSU",
+                "to_id": "STN_JR_KYUSHU_KOHOKU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_SASEBO",
+                "from_id": "STN_JR_KYUSHU_KOHOKU",
+                "to_id": "STN_JR_KYUSHU_TAKEO_ONSEN"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_MOJIKO",
+              "STN_JR_KYUSHU_MOJI",
+              "STN_JR_KYUSHU_KOKURA",
+              "STN_JR_KYUSHU_TOBATA",
+              "STN_JR_KYUSHU_YAHATA",
+              "STN_JR_KYUSHU_KUROSAKI",
+              "STN_JR_KYUSHU_ORIO",
+              "STN_JR_KYUSHU_AKAMA",
+              "STN_JR_KYUSHU_TOGO",
+              "STN_JR_KYUSHU_FUKUMA",
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_FUTSUKAICHI",
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_SHIN_TOSU",
+              "STN_JR_KYUSHU_SAGA",
+              "STN_JR_KYUSHU_KOHOKU",
+              "STN_JR_KYUSHU_TAKEO_ONSEN"
+            ],
+            "valid_from": "2022-09-23"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_KASASAGI",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "かささぎ",
+        "name_zh": "喜鵲",
+        "name_en": "Kasasagi",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_09_23_KASASAGI",
+            "name": "2022_09_23_門司港_肥前鹿島",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_MOJIKO",
+                "to_id": "STN_JR_KYUSHU_TOSU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NAGASAKI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_TOSU",
+                "to_id": "STN_JR_KYUSHU_HIZEN_KASHIMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_MOJIKO",
+              "STN_JR_KYUSHU_MOJI",
+              "STN_JR_KYUSHU_KOKURA",
+              "STN_JR_KYUSHU_TOBATA",
+              "STN_JR_KYUSHU_KUROSAKI",
+              "STN_JR_KYUSHU_ORIO",
+              "STN_JR_KYUSHU_AKAMA",
+              "STN_JR_KYUSHU_FUKUMA",
+              "STN_JR_KYUSHU_KASHII",
+              "STN_JR_KYUSHU_YOSHIZUKA",
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_FUTSUKAICHI",
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_SHIN_TOSU",
+              "STN_JR_KYUSHU_SAGA",
+              "STN_JR_KYUSHU_KOHOKU",
+              "STN_JR_KYUSHU_HIZEN_KASHIMA"
+            ],
+            "valid_from": "2022-09-23"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_MIDORI",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "みどり",
+        "name_zh": "綠",
+        "name_en": "Midori",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2005_03_05_MIDORI",
+            "name": "2005_03_05_博多_佐世保",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_HAKATA",
+                "to_id": "STN_JR_KYUSHU_TOSU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NAGASAKI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_TOSU",
+                "to_id": "STN_JR_KYUSHU_KOHOKU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_SASEBO",
+                "from_id": "STN_JR_KYUSHU_KOHOKU",
+                "to_id": "STN_JR_KYUSHU_SASEBO"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_FUTSUKAICHI",
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_YOSHINOGARI_KOEN",
+              "STN_JR_KYUSHU_SAGA",
+              "STN_JR_KYUSHU_KOHOKU",
+              "STN_JR_KYUSHU_TAKEO_ONSEN",
+              "STN_JR_KYUSHU_ARITA",
+              "STN_JR_KYUSHU_HAIKI",
+              "STN_JR_KYUSHU_SASEBO"
+            ],
+            "valid_from": "2005-03-05"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_HUIS_TEN_BOSCH",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "ハウステンボス",
+        "name_zh": "豪斯登堡",
+        "name_en": "Huis Ten Bosch",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1992_03_25_HUIS_TEN_BOSCH",
+            "name": "1992_03_25_博多_ハウステンボス",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_HAKATA",
+                "to_id": "STN_JR_KYUSHU_TOSU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NAGASAKI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_TOSU",
+                "to_id": "STN_JR_KYUSHU_KOHOKU"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_SASEBO",
+                "from_id": "STN_JR_KYUSHU_KOHOKU",
+                "to_id": "STN_JR_KYUSHU_HAIKI"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_OMURA",
+                "from_id": "STN_JR_KYUSHU_HAIKI",
+                "to_id": "STN_JR_KYUSHU_HUIS_TEN_BOSCH"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_FUTSUKAICHI",
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_SHIN_TOSU",
+              "STN_JR_KYUSHU_YOSHINOGARI_KOEN",
+              "STN_JR_KYUSHU_SAGA",
+              "STN_JR_KYUSHU_KOHOKU",
+              "STN_JR_KYUSHU_TAKEO_ONSEN",
+              "STN_JR_KYUSHU_ARITA",
+              "STN_JR_KYUSHU_HAIKI",
+              "STN_JR_KYUSHU_HUIS_TEN_BOSCH"
+            ],
+            "valid_from": "1992-03-25"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_KAIO",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "かいおう",
+        "name_zh": "魁皇",
+        "name_en": "Kaio",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2001_10_16_KAIO",
+            "name": "2001_10_16_博多_直方",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_FUKUHOKU_YUTAKA",
+                "from_id": "STN_JR_KYUSHU_HAKATA",
+                "to_id": "STN_JR_KYUSHU_NOGATA"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_YOSHIZUKA",
+              "STN_JR_KYUSHU_KEISEN",
+              "STN_JR_KYUSHU_IIZUKA",
+              "STN_JR_KYUSHU_SHIN_IIZUKA",
+              "STN_JR_KYUSHU_NOGATA"
+            ],
+            "valid_from": "2001-10-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_YUFU",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "ゆふ",
+        "name_zh": "由布",
+        "name_en": "Yufu",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1992_07_15_YUFU",
+            "name": "1992_07_15_博多_別府",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_HAKATA",
+                "to_id": "STN_JR_KYUSHU_KURUME"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KYUDAI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KURUME",
+                "to_id": "STN_JR_KYUSHU_OITA"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_OITA",
+                "to_id": "STN_JR_KYUSHU_BEPPU"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_FUTSUKAICHI",
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_KURUME",
+              "STN_JR_KYUSHU_KURUME_DAIGAKU_MAE",
+              "STN_JR_KYUSHU_TANUSHIMARU",
+              "STN_JR_KYUSHU_CHIKUGO_YOSHII",
+              "STN_JR_KYUSHU_UKIHA",
+              "STN_JR_KYUSHU_HITA",
+              "STN_JR_KYUSHU_AMAGASE",
+              "STN_JR_KYUSHU_BUNGO_MORI",
+              "STN_JR_KYUSHU_BUNGO_NAKAMURA",
+              "STN_JR_KYUSHU_YUFUIN",
+              "STN_JR_KYUSHU_YUNOHIRA",
+              "STN_JR_KYUSHU_MUKAINOHARU",
+              "STN_JR_KYUSHU_OITA",
+              "STN_JR_KYUSHU_BEPPU"
+            ],
+            "valid_from": "1992-07-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_YUFUIN_NO_MORI",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "ゆふいんの森",
+        "name_zh": "由布院之森",
+        "name_en": "Yufuin No Mori",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1989_03_11_YUFUIN_NO_MORI",
+            "name": "1989_03_11_博多_別府",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_HAKATA",
+                "to_id": "STN_JR_KYUSHU_KURUME"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KYUDAI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KURUME",
+                "to_id": "STN_JR_KYUSHU_OITA"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_OITA",
+                "to_id": "STN_JR_KYUSHU_BEPPU"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_HAKATA",
+              "STN_JR_KYUSHU_TOSU",
+              "STN_JR_KYUSHU_KURUME",
+              "STN_JR_KYUSHU_HITA",
+              "STN_JR_KYUSHU_AMAGASE",
+              "STN_JR_KYUSHU_BUNGO_MORI",
+              "STN_JR_KYUSHU_YUFUIN",
+              "STN_JR_KYUSHU_OITA",
+              "STN_JR_KYUSHU_BEPPU"
+            ],
+            "valid_from": "1989-03-11"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_TRANS_KYUSHU_LIMITED_EXPRESS",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "九州横断特急",
+        "name_zh": "九州橫斷特急",
+        "name_en": "Trans-Kyushu Limited Express",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2004_03_03_TRANS_KYUSHU_LIMITED_EXPRESS",
+            "name": "2004_03_03_熊本_別府",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_HOHI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KUMAMOTO",
+                "to_id": "STN_JR_KYUSHU_OITA"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NIPPO_HONSEN",
+                "from_id": "STN_JR_KYUSHU_OITA",
+                "to_id": "STN_JR_KYUSHU_BEPPU"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_KUMAMOTO",
+              "STN_JR_KYUSHU_SHIN_SUIZENJI",
+              "STN_JR_KYUSHU_HIGO_OZU",
+              "STN_JR_KYUSHU_TATE_NO",
+              "STN_JR_KYUSHU_MIYAJI",
+              "STN_JR_KYUSHU_BUNGO_OGI",
+              "STN_JR_KYUSHU_BUNGO_TAKEDA",
+              "STN_JR_KYUSHU_OGATA",
+              "STN_JR_KYUSHU_MIE_MACHI",
+              "STN_JR_KYUSHU_OITA",
+              "STN_JR_KYUSHU_BEPPU"
+            ],
+            "valid_from": "2004-03-03"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_ASO_BOY",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "あそぼーい!",
+        "name_zh": "阿蘇男孩！",
+        "name_en": "Aso Boy!",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_ASO_BOY",
+            "name": "2025_03_15_熊本_宮地",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_HOHI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KUMAMOTO",
+                "to_id": "STN_JR_KYUSHU_MIYAJI"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_KUMAMOTO",
+              "STN_JR_KYUSHU_SHIN_SUIZENJI",
+              "STN_JR_KYUSHU_HIGO_OZU",
+              "STN_JR_KYUSHU_TATE_NO",
+              "STN_JR_KYUSHU_ASO",
+              "STN_JR_KYUSHU_MIYAJI"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_A_TRAIN",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "A列車で行こう",
+        "name_zh": "坐A列車去吧",
+        "name_en": "A Train",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2011_10_08_A_TRAIN",
+            "name": "2011_10_08_熊本_三角",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_MISUMI",
+                "from_id": "STN_JR_KYUSHU_KUMAMOTO",
+                "to_id": "STN_JR_KYUSHU_MISUMI"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_KUMAMOTO",
+              "STN_JR_KYUSHU_UTO",
+              "STN_JR_KYUSHU_ODA",
+              "STN_JR_KYUSHU_MISUMI"
+            ],
+            "valid_from": "2011-10-08"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_IBUSUKI_NO_TAMATEBAKO",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "特急",
+        "name": "指宿のたまて箱",
+        "name_zh": "指宿之玉手箱",
+        "name_en": "Ibusuki no Tamatebako",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2011_03_12_IBUSUKI_NO_TAMATEBAKO",
+            "name": "2011_03_12_鹿児島中央_指宿",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_IBUSUKI_MAKURAZAKI",
+                "from_id": "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+                "to_id": "STN_JR_KYUSHU_IBUSUKI"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+              "STN_JR_KYUSHU_IBUSUKI"
+            ],
+            "valid_from": "2011-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_NANOHANA",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "快速",
+        "name": "なのはな",
+        "name_zh": "油菜花",
+        "name_en": "Nanohana",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "PATTERN_1_1",
+            "name": "新運行版本",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_KAGOSHIMA_HONSEN",
+                "from_id": "STN_JR_KYUSHU_KAGOSHIMA",
+                "to_id": "STN_JR_KYUSHU_KAGOSHIMA_CHUO"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_IBUSUKI_MAKURAZAKI",
+                "from_id": "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+                "to_id": "STN_JR_KYUSHU_YAMAKAWA"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_KAGOSHIMA_CHUO",
+              "STN_JR_KYUSHU_KAGOSHIMA",
+              "STN_JR_KYUSHU_KORIMOTO",
+              "STN_JR_KYUSHU_MINAMI_KAGOSHIMA",
+              "STN_JR_KYUSHU_USUKI",
+              "STN_JR_KYUSHU_TANIYAMA",
+              "STN_JR_KYUSHU_JIGENJI",
+              "STN_JR_KYUSHU_SAKANOUE",
+              "STN_JR_KYUSHU_GOINO",
+              "STN_JR_KYUSHU_HIRAKAWA",
+              "STN_JR_KYUSHU_KIRE",
+              "STN_JR_KYUSHU_SATSUMA_IMAIZUMI",
+              "STN_JR_KYUSHU_NIGATSU_DEN",
+              "STN_JR_KYUSHU_IBUSUKI",
+              "STN_JR_KYUSHU_YAMAKAWA"
+            ]
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_REGIONAL_RAPID_SEA_SIDE_LINER",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "区間快速",
+        "name": "シーサイドライナー",
+        "name_zh": "濱海快線",
+        "name_en": "Regional Rapid Sea Side Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1988_03_11_REGIONAL_RAPID_SEA_SIDE_LINER",
+            "name": "1988_03_11_長崎_佐世保",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NAGASAKI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_NAGASAKI",
+                "to_id": "STN_JR_KYUSHU_ISAHAYA",
+                "path_id": "NEW"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_OMURA",
+                "from_id": "STN_JR_KYUSHU_ISAHAYA",
+                "to_id": "STN_JR_KYUSHU_HAIKI"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_SASEBO",
+                "from_id": "STN_JR_KYUSHU_HAIKI",
+                "to_id": "STN_JR_KYUSHU_SASEBO"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_NAGASAKI",
+              "STN_JR_KYUSHU_URAKAMI",
+              "STN_JR_KYUSHU_KIKITSU",
+              "STN_JR_KYUSHU_ISAHAYA",
+              "STN_JR_KYUSHU_OMURA",
+              "STN_JR_KYUSHU_SHIN_OMURA",
+              "STN_JR_KYUSHU_TAKEMATSU",
+              "STN_JR_KYUSHU_OMURA_SHARYOKICHI",
+              "STN_JR_KYUSHU_MATSUBARA",
+              "STN_JR_KYUSHU_CHIWATA",
+              "STN_JR_KYUSHU_SONOGI",
+              "STN_JR_KYUSHU_KAWATANA",
+              "STN_JR_KYUSHU_OGUSHIGO",
+              "STN_JR_KYUSHU_HAE_NO_SAKI",
+              "STN_JR_KYUSHU_HUIS_TEN_BOSCH",
+              "STN_JR_KYUSHU_HAIKI",
+              "STN_JR_KYUSHU_DAITO",
+              "STN_JR_KYUSHU_HIU",
+              "STN_JR_KYUSHU_SASEBO"
+            ],
+            "valid_from": "1988-03-11"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_RAPID_SEA_SIDE_LINER",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "快速",
+        "name": "シーサイドライナー",
+        "name_zh": "濱海快線",
+        "name_en": "Rapid Sea Side Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "1988_03_11_RAPID_SEA_SIDE_LINER",
+            "name": "1988_03_11_長崎_佐世保",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NAGASAKI_HONSEN",
+                "from_id": "STN_JR_KYUSHU_NAGASAKI",
+                "to_id": "STN_JR_KYUSHU_ISAHAYA",
+                "path_id": "NEW"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_OMURA",
+                "from_id": "STN_JR_KYUSHU_ISAHAYA",
+                "to_id": "STN_JR_KYUSHU_HAIKI"
+              },
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_SASEBO",
+                "from_id": "STN_JR_KYUSHU_HAIKI",
+                "to_id": "STN_JR_KYUSHU_SASEBO"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_NAGASAKI",
+              "STN_JR_KYUSHU_URAKAMI",
+              "STN_JR_KYUSHU_UTSUTSUGAWA",
+              "STN_JR_KYUSHU_HIZEN_KOGA",
+              "STN_JR_KYUSHU_ICHINUNO",
+              "STN_JR_KYUSHU_KIKITSU",
+              "STN_JR_KYUSHU_NISHI_ISAHAYA",
+              "STN_JR_KYUSHU_ISAHAYA",
+              "STN_JR_KYUSHU_OMURA",
+              "STN_JR_KYUSHU_SHIN_OMURA",
+              "STN_JR_KYUSHU_TAKEMATSU",
+              "STN_JR_KYUSHU_OMURA_SHARYOKICHI",
+              "STN_JR_KYUSHU_SONOGI",
+              "STN_JR_KYUSHU_KAWATANA",
+              "STN_JR_KYUSHU_HUIS_TEN_BOSCH",
+              "STN_JR_KYUSHU_HAIKI",
+              "STN_JR_KYUSHU_DAITO",
+              "STN_JR_KYUSHU_HIU",
+              "STN_JR_KYUSHU_SASEBO"
+            ],
+            "valid_from": "1988-03-11"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_KYUSHU_NICHINAN_MARINE",
+        "company_id": "JR_KYUSHU",
+        "operator_company_ids": [
+          "JR_KYUSHU"
+        ],
+        "service_type": "快速",
+        "name": "日南マリーン",
+        "name_zh": "日南Marine",
+        "name_en": "Nichinan Marine",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "PATTERN_1_1",
+            "name": "新運行版本",
+            "segments": [
+              {
+                "company_id": "JR_KYUSHU",
+                "line_id": "JR_KYUSHU_NICHINAN",
+                "from_id": "STN_JR_KYUSHU_SHIBUSHI",
+                "to_id": "STN_JR_KYUSHU_MINAMI_MIYAZAKI"
+              }
+            ],
+            "stops": [
+              "STN_JR_KYUSHU_SHIBUSHI",
+              "STN_JR_KYUSHU_FUKUSHIMA_IMAMACHI",
+              "STN_JR_KYUSHU_HYUGA_OTSUKA",
+              "STN_JR_KYUSHU_YOWARA",
+              "STN_JR_KYUSHU_NANGO",
+              "STN_JR_KYUSHU_ODOTSU",
+              "STN_JR_KYUSHU_ABURATSU",
+              "STN_JR_KYUSHU_NICHINAN",
+              "STN_JR_KYUSHU_OBI",
+              "STN_JR_KYUSHU_KITAGO",
+              "STN_JR_KYUSHU_IBII",
+              "STN_JR_KYUSHU_AOSHIMA",
+              "STN_JR_KYUSHU_KIBANA",
+              "STN_JR_KYUSHU_TAYOSHI",
+              "STN_JR_KYUSHU_MINAMI_MIYAZAKI"
+            ]
+          }
+        ],
+        "service_code": ""
       }
     ]
   }

@@ -2694,7 +2694,7 @@
         "name": "737系",
         "variants": []
       },
-	  {
+      {
         "id": "TRN_JR_HOKKAIDO_739",
         "company_id": "JR_HOKKAIDO",
         "name": "739系",
@@ -2747,6 +2747,996 @@
         "company_id": "JR_HOKKAIDO",
         "name": "キハ201系",
         "variants": []
+      }
+    ],
+    "services": [
+      {
+        "id": "SVC_JR_HOKKAIDO_KAMUI",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "カムイ",
+        "name_zh": "神威",
+        "name_en": "Kamui",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_03_12_KAMUI",
+            "name": "2022_03_12_札幌_旭川",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_ASAHIKAWA"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_IWAMIZAWA",
+              "STN_JR_HOKKAIDO_BIBAI",
+              "STN_JR_HOKKAIDO_SUNAGAWA",
+              "STN_JR_HOKKAIDO_TAKIKAWA",
+              "STN_JR_HOKKAIDO_FUKAGAWA",
+              "STN_JR_HOKKAIDO_ASAHIKAWA"
+            ],
+            "valid_from": "2022-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_RAIRAKKU",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "ライラック",
+        "name_zh": "丁香",
+        "name_en": "Rairakku",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_03_12_RAIRAKKU",
+            "name": "2022_03_12_札幌_旭川",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_ASAHIKAWA"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_IWAMIZAWA",
+              "STN_JR_HOKKAIDO_BIBAI",
+              "STN_JR_HOKKAIDO_SUNAGAWA",
+              "STN_JR_HOKKAIDO_TAKIKAWA",
+              "STN_JR_HOKKAIDO_FUKAGAWA",
+              "STN_JR_HOKKAIDO_ASAHIKAWA"
+            ],
+            "valid_from": "2022-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_SOYA",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "宗谷",
+        "name_zh": "宗谷",
+        "name_en": "Soya",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2023_04_01_SOYA",
+            "name": "2023_04_01_札幌_稚内",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_ASAHIKAWA"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SOYA_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+                "to_id": "STN_JR_HOKKAIDO_WAKKANAI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_IWAMIZAWA",
+              "STN_JR_HOKKAIDO_BIBAI",
+              "STN_JR_HOKKAIDO_SUNAGAWA",
+              "STN_JR_HOKKAIDO_TAKIKAWA",
+              "STN_JR_HOKKAIDO_FUKAGAWA",
+              "STN_JR_HOKKAIDO_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_WASSAMU",
+              "STN_JR_HOKKAIDO_SHIBETSU",
+              "STN_JR_HOKKAIDO_NAYORO",
+              "STN_JR_HOKKAIDO_BIFUKA",
+              "STN_JR_HOKKAIDO_OTOINEPPU",
+              "STN_JR_HOKKAIDO_TESHIO_NAKAGAWA",
+              "STN_JR_HOKKAIDO_HORONOBE",
+              "STN_JR_HOKKAIDO_TOYOTOMI",
+              "STN_JR_HOKKAIDO_MINAMI_WAKKANAI",
+              "STN_JR_HOKKAIDO_WAKKANAI"
+            ],
+            "valid_from": "2023-04-01"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_SAROBETSU",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "サロベツ",
+        "name_zh": "佐呂別",
+        "name_en": "Sarobetsu",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2017_03_04_SAROBETSU",
+            "name": "2017_03_04_旭川_稚内",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SOYA_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+                "to_id": "STN_JR_HOKKAIDO_WAKKANAI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_WASSAMU",
+              "STN_JR_HOKKAIDO_SHIBETSU",
+              "STN_JR_HOKKAIDO_NAYORO",
+              "STN_JR_HOKKAIDO_BIFUKA",
+              "STN_JR_HOKKAIDO_OTOINEPPU",
+              "STN_JR_HOKKAIDO_TESHIO_NAKAGAWA",
+              "STN_JR_HOKKAIDO_HORONOBE",
+              "STN_JR_HOKKAIDO_TOYOTOMI",
+              "STN_JR_HOKKAIDO_MINAMI_WAKKANAI",
+              "STN_JR_HOKKAIDO_WAKKANAI"
+            ],
+            "valid_from": "2017-03-04"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_OKHOTSK",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "オホーツク",
+        "name_zh": "鄂霍次克",
+        "name_en": "Okhotsk",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2015_03_15_OKHOTSK",
+            "name": "2015_03_15_札幌_網走",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_ASAHIKAWA"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SEKIHOKU_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+                "to_id": "STN_JR_HOKKAIDO_ABASHIRI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_IWAMIZAWA",
+              "STN_JR_HOKKAIDO_BIBAI",
+              "STN_JR_HOKKAIDO_SUNAGAWA",
+              "STN_JR_HOKKAIDO_TAKIKAWA",
+              "STN_JR_HOKKAIDO_FUKAGAWA",
+              "STN_JR_HOKKAIDO_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_KAMIKAWA",
+              "STN_JR_HOKKAIDO_SHIRATAKI",
+              "STN_JR_HOKKAIDO_MARUSEPPU",
+              "STN_JR_HOKKAIDO_ENGARU",
+              "STN_JR_HOKKAIDO_IKUTAHARA",
+              "STN_JR_HOKKAIDO_RUBE_SHIBE",
+              "STN_JR_HOKKAIDO_KITAMI",
+              "STN_JR_HOKKAIDO_BIHORO",
+              "STN_JR_HOKKAIDO_MEMAMBETSU",
+              "STN_JR_HOKKAIDO_ABASHIRI"
+            ],
+            "valid_from": "2015-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_SUZURAN",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "すずらん",
+        "name_zh": "鈴蘭",
+        "name_en": "Suzuran",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_SUZURAN",
+            "name": "2024_03_16_札幌_室蘭",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_NUMANOHATA",
+                "path_id": "MAIN"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_MURORAN_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_NUMANOHATA",
+                "to_id": "STN_JR_HOKKAIDO_MURORAN"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_CHITOSE",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_NUMANOHATA",
+              "STN_JR_HOKKAIDO_TOMAKOMAI",
+              "STN_JR_HOKKAIDO_SHIRAOI",
+              "STN_JR_HOKKAIDO_NOBORIBETSU",
+              "STN_JR_HOKKAIDO_HOROBETSU",
+              "STN_JR_HOKKAIDO_HIGASHI_MURORAN",
+              "STN_JR_HOKKAIDO_WANISHI",
+              "STN_JR_HOKKAIDO_MISAKI",
+              "STN_JR_HOKKAIDO_BOKOI",
+              "STN_JR_HOKKAIDO_MURORAN"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_HOKUTO",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "北斗",
+        "name_zh": "北斗",
+        "name_en": "Hokuto",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_HOKUTO",
+            "name": "2024_03_16_札幌_函館",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_NUMANOHATA",
+                "path_id": "MAIN"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_MURORAN_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_NUMANOHATA",
+                "to_id": "STN_JR_HOKKAIDO_OSHAMAMBE"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_OSHAMAMBE",
+                "to_id": "STN_JR_HOKKAIDO_HAKODATE"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_TOMAKOMAI",
+              "STN_JR_HOKKAIDO_SHIRAOI",
+              "STN_JR_HOKKAIDO_NOBORIBETSU",
+              "STN_JR_HOKKAIDO_HIGASHI_MURORAN",
+              "STN_JR_HOKKAIDO_DATE_MONBETSU",
+              "STN_JR_HOKKAIDO_TOYA_LAKE",
+              "STN_JR_HOKKAIDO_OSHAMAMBE",
+              "STN_JR_HOKKAIDO_YAKUMO",
+              "STN_JR_HOKKAIDO_MORI",
+              "STN_JR_HOKKAIDO_ONUMA_KOEN",
+              "STN_JR_HOKKAIDO_SHIN_HAKODATE_HOKUTO",
+              "STN_JR_HOKKAIDO_GORYOKAKU",
+              "STN_JR_HOKKAIDO_HAKODATE"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_OZORA",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "おおぞら",
+        "name_zh": "大空",
+        "name_en": "Ōzora",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_OZORA",
+            "name": "2025_03_15_札幌_釧路",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_MINAMI_CHITOSE"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SEKISHO",
+                "from_id": "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+                "to_id": "STN_JR_HOKKAIDO_SHINTOKU"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_NEMURO_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SHINTOKU",
+                "to_id": "STN_JR_HOKKAIDO_KUSHIRO"
+              }
+            ],
+            "stops": [],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_TOKACHI",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "とかち",
+        "name_zh": "十勝",
+        "name_en": "Tokachi",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2015_03_15_TOKACHI",
+            "name": "2015_03_15_札幌_帯広",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_MINAMI_CHITOSE"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SEKISHO",
+                "from_id": "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+                "to_id": "STN_JR_HOKKAIDO_SHINTOKU"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_NEMURO_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SHINTOKU",
+                "to_id": "STN_JR_HOKKAIDO_OBIHIRO"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_OIWAKE",
+              "STN_JR_HOKKAIDO_SHIN_YUBARI",
+              "STN_JR_HOKKAIDO_SHIMUKAPPU",
+              "STN_JR_HOKKAIDO_TOMAMU",
+              "STN_JR_HOKKAIDO_SHINTOKU",
+              "STN_JR_HOKKAIDO_TOKACHI_SHIMIZU",
+              "STN_JR_HOKKAIDO_MEMURO",
+              "STN_JR_HOKKAIDO_OBIHIRO"
+            ],
+            "valid_from": "2015-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_SPECIAL_RAPID_AIRPORT",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特別快速",
+        "name": "エアポート",
+        "name_zh": "特別快速機場",
+        "name_en": "Special Rapid Airport",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_SPECIAL_RAPID_AIRPORT",
+            "name": "2024_03_16_小樽_新千歳空港",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_OTARU",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_OTARU",
+              "STN_JR_HOKKAIDO_MINAMI_OTARU",
+              "STN_JR_HOKKAIDO_OTARU_CHIKKO",
+              "STN_JR_HOKKAIDO_TEINE",
+              "STN_JR_HOKKAIDO_SOEN",
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_RAPID_AIRPORT",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "エアポート",
+        "name_zh": "快速機場",
+        "name_en": "Rapid Airport",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_RAPID_AIRPORT",
+            "name": "2024_03_16_小樽_新千歳空港",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_OTARU",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_OTARU",
+              "STN_JR_HOKKAIDO_MINAMI_OTARU",
+              "STN_JR_HOKKAIDO_OTARU_CHIKKO",
+              "STN_JR_HOKKAIDO_ASARI",
+              "STN_JR_HOKKAIDO_ZENIBAKO",
+              "STN_JR_HOKKAIDO_HOSHIMI",
+              "STN_JR_HOKKAIDO_HOSHI_OKI",
+              "STN_JR_HOKKAIDO_INAHO",
+              "STN_JR_HOKKAIDO_TEINE",
+              "STN_JR_HOKKAIDO_INAZUMI_KOEN",
+              "STN_JR_HOKKAIDO_HASSAMU",
+              "STN_JR_HOKKAIDO_HASSAMU_CHUO",
+              "STN_JR_HOKKAIDO_KOTONI",
+              "STN_JR_HOKKAIDO_SOEN",
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_SHIROISHI",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_KITA_HIROSHIMA",
+              "STN_JR_HOKKAIDO_ENIWA",
+              "STN_JR_HOKKAIDO_CHITOSE",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_SEMI_RAPID_AIRPORT",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "区間快速",
+        "name": "エアポート",
+        "name_zh": "區間快速機場",
+        "name_en": "Semi Rapid Airport",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_SEMI_RAPID_AIRPORT",
+            "name": "2024_03_16_札幌_新千歳空港",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_SHIROISHI"
+              },
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_CHITOSE",
+                "from_id": "STN_JR_HOKKAIDO_SHIROISHI",
+                "to_id": "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_SHIN_SAPPORO",
+              "STN_JR_HOKKAIDO_KITA_HIROSHIMA",
+              "STN_JR_HOKKAIDO_SHIMAMATSU",
+              "STN_JR_HOKKAIDO_MEGUMINO",
+              "STN_JR_HOKKAIDO_ENIWA",
+              "STN_JR_HOKKAIDO_SAPPORO_BEER_TEIEN",
+              "STN_JR_HOKKAIDO_OSATSU",
+              "STN_JR_HOKKAIDO_CHITOSE",
+              "STN_JR_HOKKAIDO_MINAMI_CHITOSE",
+              "STN_JR_HOKKAIDO_SHIN_CHITOSE_AIRPORT"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_NISEKO_LINER",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "ニセコライナー",
+        "name_zh": "新雪谷快車",
+        "name_en": "Niseko Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_NISEKO_LINER",
+            "name": "2024_03_16_札幌_蘭越",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_SAPPORO",
+                "to_id": "STN_JR_HOKKAIDO_RANKOSHI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_SAPPORO",
+              "STN_JR_HOKKAIDO_KOTONI",
+              "STN_JR_HOKKAIDO_TEINE",
+              "STN_JR_HOKKAIDO_OTARU_CHIKKO",
+              "STN_JR_HOKKAIDO_MINAMI_OTARU",
+              "STN_JR_HOKKAIDO_OTARU",
+              "STN_JR_HOKKAIDO_SHIOYA",
+              "STN_JR_HOKKAIDO_RANSHIMA",
+              "STN_JR_HOKKAIDO_YOICHI",
+              "STN_JR_HOKKAIDO_NIKI",
+              "STN_JR_HOKKAIDO_SHIKARIBETSU",
+              "STN_JR_HOKKAIDO_GINZAN",
+              "STN_JR_HOKKAIDO_OZAWA",
+              "STN_JR_HOKKAIDO_KUTCHAN",
+              "STN_JR_HOKKAIDO_HIRAFU",
+              "STN_JR_HOKKAIDO_NISEKO",
+              "STN_JR_HOKKAIDO_KOMBU",
+              "STN_JR_HOKKAIDO_RANKOSHI"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_NAYORO",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "なよろ",
+        "name_zh": "名寄",
+        "name_en": "Nayoro",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_03_12_NAYORO",
+            "name": "2022_03_12_旭川_名寄",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SOYA_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+                "to_id": "STN_JR_HOKKAIDO_NAYORO"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_ASAHIKAWA_YOJO",
+              "STN_JR_HOKKAIDO_NAGAYAMA",
+              "STN_JR_HOKKAIDO_PIPPU",
+              "STN_JR_HOKKAIDO_RANRUI",
+              "STN_JR_HOKKAIDO_SHIOKARI",
+              "STN_JR_HOKKAIDO_WASSAMU",
+              "STN_JR_HOKKAIDO_KENBUCHI",
+              "STN_JR_HOKKAIDO_SHIBETSU",
+              "STN_JR_HOKKAIDO_TAYORO",
+              "STN_JR_HOKKAIDO_FUREN",
+              "STN_JR_HOKKAIDO_NAYORO_KOKO",
+              "STN_JR_HOKKAIDO_NAYORO"
+            ],
+            "valid_from": "2022-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_TAISETSU",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特別快速",
+        "name": "大雪",
+        "name_zh": "大雪",
+        "name_en": "Taisetsu",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_TAISETSU",
+            "name": "2025_03_15_旭川_網走",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SEKIHOKU_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+                "to_id": "STN_JR_HOKKAIDO_ABASHIRI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_KAMIKAWA",
+              "STN_JR_HOKKAIDO_SHIRATAKI",
+              "STN_JR_HOKKAIDO_MARUSEPPU",
+              "STN_JR_HOKKAIDO_SETOSE",
+              "STN_JR_HOKKAIDO_ENGARU",
+              "STN_JR_HOKKAIDO_IKUTAHARA",
+              "STN_JR_HOKKAIDO_RUBE_SHIBE",
+              "STN_JR_HOKKAIDO_KITAMI",
+              "STN_JR_HOKKAIDO_BIHORO",
+              "STN_JR_HOKKAIDO_MEMAMBETSU",
+              "STN_JR_HOKKAIDO_ABASHIRI"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_KITAMI",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "きたみ",
+        "name_zh": "",
+        "name_en": "Kitami",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_KITAMI",
+            "name": "2025_03_15_旭川_網走",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SEKIHOKU_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_ASAHIKAWA",
+                "to_id": "STN_JR_HOKKAIDO_ABASHIRI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_ASAHIKAWA_YOJO",
+              "STN_JR_HOKKAIDO_SHIN_ASAHIKAWA",
+              "STN_JR_HOKKAIDO_MINAMI_NAGAYAMA",
+              "STN_JR_HOKKAIDO_SAKURAOKA",
+              "STN_JR_HOKKAIDO_TOUMA",
+              "STN_JR_HOKKAIDO_KAMIKAWA",
+              "STN_JR_HOKKAIDO_SHIRATAKI",
+              "STN_JR_HOKKAIDO_MARUSEPPU",
+              "STN_JR_HOKKAIDO_ENGARU",
+              "STN_JR_HOKKAIDO_YASUKUNI",
+              "STN_JR_HOKKAIDO_IKUTAHARA",
+              "STN_JR_HOKKAIDO_RUBE_SHIBE",
+              "STN_JR_HOKKAIDO_AINONAI",
+              "STN_JR_HOKKAIDO_HIGASHI_AINONAI",
+              "STN_JR_HOKKAIDO_NISHI_KITAMI",
+              "STN_JR_HOKKAIDO_KITAMI",
+              "STN_JR_HOKKAIDO_HAKUYO",
+              "STN_JR_HOKKAIDO_ITOSHINO",
+              "STN_JR_HOKKAIDO_TANNO",
+              "STN_JR_HOKKAIDO_HIGYUNAI",
+              "STN_JR_HOKKAIDO_BIHORO",
+              "STN_JR_HOKKAIDO_NISHI_MEMAMBETSU",
+              "STN_JR_HOKKAIDO_MEMAMBETSU",
+              "STN_JR_HOKKAIDO_ABASHIRI"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_NOSAPPU",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "ノサップ",
+        "name_zh": "納沙布",
+        "name_en": "Nosappu",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2016_03_26_NOSAPPU",
+            "name": "2016_03_26_釧路_根室",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HANASAKI",
+                "from_id": "STN_JR_HOKKAIDO_KUSHIRO",
+                "to_id": "STN_JR_HOKKAIDO_NEMURO"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_KUSHIRO",
+              "STN_JR_HOKKAIDO_HIGASHI_KUSHIRO",
+              "STN_JR_HOKKAIDO_MUSA",
+              "STN_JR_HOKKAIDO_BEPPO",
+              "STN_JR_HOKKAIDO_KAMI_OBORO",
+              "STN_JR_HOKKAIDO_OBORO",
+              "STN_JR_HOKKAIDO_CHANAI",
+              "STN_JR_HOKKAIDO_HAMANAKA",
+              "STN_JR_HOKKAIDO_ATOKO",
+              "STN_JR_HOKKAIDO_OCHIISHI",
+              "STN_JR_HOKKAIDO_NEMURO"
+            ],
+            "valid_from": "2016-03-26"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_HANASAKI",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "特急",
+        "name": "はなさき",
+        "name_zh": "花咲",
+        "name_en": "Hanasaki",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_HANASAKI",
+            "name": "2025_03_15_根室_釧路",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HANASAKI",
+                "from_id": "STN_JR_HOKKAIDO_NEMURO",
+                "to_id": "STN_JR_HOKKAIDO_KUSHIRO"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_NEMURO",
+              "STN_JR_HOKKAIDO_NISHIWADA",
+              "STN_JR_HOKKAIDO_KONBUMORI",
+              "STN_JR_HOKKAIDO_OCHIISHI",
+              "STN_JR_HOKKAIDO_BETTOGA",
+              "STN_JR_HOKKAIDO_ATOKO",
+              "STN_JR_HOKKAIDO_HAMANAKA",
+              "STN_JR_HOKKAIDO_CHANAI",
+              "STN_JR_HOKKAIDO_AKKESHI",
+              "STN_JR_HOKKAIDO_KUSHIRO"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_HAKODATE_LINER",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "はこだてライナー",
+        "name_zh": "函館Liner",
+        "name_en": "Hakodate Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2016_03_26_HAKODATE_LINER",
+            "name": "2016_03_26_函館_新函館北斗",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_HAKODATE",
+                "to_id": "STN_JR_HOKKAIDO_SHIN_HAKODATE_HOKUTO"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_HAKODATE",
+              "STN_JR_HOKKAIDO_GORYOKAKU",
+              "STN_JR_HOKKAIDO_SHIN_HAKODATE_HOKUTO"
+            ],
+            "valid_from": "2016-03-26"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_HOME_LINER",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "快速",
+        "name": "ホームライナー",
+        "name_zh": "",
+        "name_en": "Home Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2023_03_18_HOME_LINER",
+            "name": "2023_03_18_手稲_札幌",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_HAKODATE_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_TEINE",
+                "to_id": "STN_JR_HOKKAIDO_SAPPORO"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_TEINE",
+              "STN_JR_HOKKAIDO_SAPPORO"
+            ],
+            "valid_from": "2023-03-18"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_HOKKAIDO_SHIRETOKO_MASHU",
+        "company_id": "JR_HOKKAIDO",
+        "operator_company_ids": [
+          "JR_HOKKAIDO"
+        ],
+        "service_type": "普通",
+        "name": "しれとこ摩周号",
+        "name_zh": "知床摩周號",
+        "name_en": "Shiretoko Mashū",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_SHIRETOKO_MASHU",
+            "name": "2024_03_16_釧路_網走",
+            "segments": [
+              {
+                "company_id": "JR_HOKKAIDO",
+                "line_id": "JR_HOKKAIDO_SENMO_HONSEN",
+                "from_id": "STN_JR_HOKKAIDO_KUSHIRO",
+                "to_id": "STN_JR_HOKKAIDO_ABASHIRI"
+              }
+            ],
+            "stops": [
+              "STN_JR_HOKKAIDO_KUSHIRO",
+              "STN_JR_HOKKAIDO_HIGASHI_KUSHIRO",
+              "STN_JR_HOKKAIDO_TOYA",
+              "STN_JR_HOKKAIDO_KUSHIROSHITSUGEN",
+              "STN_JR_HOKKAIDO_HOSOOKA",
+              "STN_JR_HOKKAIDO_TORO",
+              "STN_JR_HOKKAIDO_KAYANUMA",
+              "STN_JR_HOKKAIDO_SHIBECHA",
+              "STN_JR_HOKKAIDO_ISOBUNNAI",
+              "STN_JR_HOKKAIDO_MASHU",
+              "STN_JR_HOKKAIDO_BIRUWA",
+              "STN_JR_HOKKAIDO_KAWAYU_ONSEN",
+              "STN_JR_HOKKAIDO_MIDORI",
+              "STN_JR_HOKKAIDO_SATTSURU",
+              "STN_JR_HOKKAIDO_KIYOSATOCHO",
+              "STN_JR_HOKKAIDO_NAKA_SHARI",
+              "STN_JR_HOKKAIDO_SHIRETOKO_SHARI",
+              "STN_JR_HOKKAIDO_YAMUBETSU",
+              "STN_JR_HOKKAIDO_HAMA_KOSHIMIZU",
+              "STN_JR_HOKKAIDO_GENSEIKAEN",
+              "STN_JR_HOKKAIDO_KITAHAMA",
+              "STN_JR_HOKKAIDO_MOKOTO",
+              "STN_JR_HOKKAIDO_MASUURA",
+              "STN_JR_HOKKAIDO_KATSURADAI",
+              "STN_JR_HOKKAIDO_ABASHIRI"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
       }
     ]
   }

@@ -2302,6 +2302,763 @@
         "name": "1500形",
         "variants": []
       }
+    ],
+    "services": [
+      {
+        "id": "SVC_JR_SHIKOKU_SHIOKAZE",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU",
+          "JR_WEST"
+        ],
+        "service_type": "特急",
+        "name": "しおかぜ",
+        "name_zh": "潮風",
+        "name_en": "Shiokaze",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_03_12_SHIOKAZE",
+            "name": "2022_03_12_岡山_松山",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_SETO_OHASHI",
+                "from_id": "STN_JR_WEST_OKAYAMA",
+                "to_id": "STN_JR_WEST_KOJIMA"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_HONSHI_BISAN",
+                "from_id": "STN_JR_SHIKOKU_KOJIMA",
+                "to_id": "STN_JR_SHIKOKU_UTAZU"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_UTAZU",
+                "to_id": "STN_JR_SHIKOKU_MATSUYAMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_OKAYAMA",
+              "STN_JR_WEST_KOJIMA",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_TAKUMA",
+              "STN_JR_SHIKOKU_TAKASE",
+              "STN_JR_SHIKOKU_KANONJI",
+              "STN_JR_SHIKOKU_KAWANOE",
+              "STN_JR_SHIKOKU_IYO_MISHIMA",
+              "STN_JR_SHIKOKU_NIIHAMA",
+              "STN_JR_SHIKOKU_IYO_SAIJO",
+              "STN_JR_SHIKOKU_NYUGAWA",
+              "STN_JR_SHIKOKU_IMABARI",
+              "STN_JR_SHIKOKU_IYO_HOJO",
+              "STN_JR_SHIKOKU_MATSUYAMA"
+            ],
+            "valid_from": "2022-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_ISHIZUCHI",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "特急",
+        "name": "いしづち",
+        "name_zh": "石鎚",
+        "name_en": "Ishizuchi",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_03_12_ISHIZUCHI",
+            "name": "2022_03_12_高松_松山",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_TAKAMATSU",
+                "to_id": "STN_JR_SHIKOKU_MATSUYAMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TAKAMATSU",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_TAKUMA",
+              "STN_JR_SHIKOKU_TAKASE",
+              "STN_JR_SHIKOKU_KANONJI",
+              "STN_JR_SHIKOKU_KAWANOE",
+              "STN_JR_SHIKOKU_IYO_MISHIMA",
+              "STN_JR_SHIKOKU_NIIHAMA",
+              "STN_JR_SHIKOKU_IYO_SAIJO",
+              "STN_JR_SHIKOKU_NYUGAWA",
+              "STN_JR_SHIKOKU_IMABARI",
+              "STN_JR_SHIKOKU_IYO_HOJO",
+              "STN_JR_SHIKOKU_MATSUYAMA"
+            ],
+            "valid_from": "2022-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_MORNING_EXP_TAKAMATSU",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "特急",
+        "name": "モーニングEXP高松",
+        "name_zh": "早上EXP高松",
+        "name_en": "Morning EXP Takamatsu",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2014_03_15_MORNING_EXP_TAKAMATSU",
+            "name": "2014_03_15_伊予西条_高松",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_IYO_SAIJO",
+                "to_id": "STN_JR_SHIKOKU_TAKAMATSU"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_IYO_SAIJO",
+              "STN_JR_SHIKOKU_NIIHAMA",
+              "STN_JR_SHIKOKU_IYO_MISHIMA",
+              "STN_JR_SHIKOKU_KAWANOE",
+              "STN_JR_SHIKOKU_KANONJI",
+              "STN_JR_SHIKOKU_TAKASE",
+              "STN_JR_SHIKOKU_TAKUMA",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_TAKAMATSU"
+            ],
+            "valid_from": "2014-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_MORNING_EXP_MATSUYAMA",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "特急",
+        "name": "モーニングEXP松山",
+        "name_zh": "早上EXP松山",
+        "name_en": "Morning EXP Matsuyama",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2014_03_12_MORNING_EXP_MATSUYAMA",
+            "name": "2014_03_12_新居浜_松山",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_NIIHAMA",
+                "to_id": "STN_JR_SHIKOKU_MATSUYAMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_NIIHAMA",
+              "STN_JR_SHIKOKU_IYO_SAIJO",
+              "STN_JR_SHIKOKU_NYUGAWA",
+              "STN_JR_SHIKOKU_IMABARI",
+              "STN_JR_SHIKOKU_IYO_HOJO",
+              "STN_JR_SHIKOKU_MATSUYAMA"
+            ],
+            "valid_from": "2014-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_UWAKAI",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "特急",
+        "name": "宇和海",
+        "name_zh": "宇和海",
+        "name_en": "Uwakai",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_UWAKAI",
+            "name": "2025_03_15_松山_宇和島",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_MATSUYAMA",
+                "to_id": "STN_JR_SHIKOKU_UCHIKO"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_UCHIKO",
+                "from_id": "STN_JR_SHIKOKU_UCHIKO",
+                "to_id": "STN_JR_SHIKOKU_NIYA"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_NIYA",
+                "to_id": "STN_JR_SHIKOKU_UWAJIMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_MATSUYAMA",
+              "STN_JR_SHIKOKU_IYOSHI",
+              "STN_JR_SHIKOKU_IYO_NAKAYAMA",
+              "STN_JR_SHIKOKU_UCHIKO",
+              "STN_JR_SHIKOKU_IYO_OZU",
+              "STN_JR_SHIKOKU_YAWATAHAMA",
+              "STN_JR_SHIKOKU_UNOMACHI",
+              "STN_JR_SHIKOKU_IYO_YOSHIDA",
+              "STN_JR_SHIKOKU_UWAJIMA"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_NANPU",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU",
+          "JR_WEST"
+        ],
+        "service_type": "特急",
+        "name": "南風",
+        "name_zh": "南風",
+        "name_en": "Nanpu",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_NANPU",
+            "name": "2025_03_15_岡山_高知",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_SETO_OHASHI",
+                "from_id": "STN_JR_WEST_OKAYAMA",
+                "to_id": "STN_JR_WEST_KOJIMA"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_HONSHI_BISAN",
+                "from_id": "STN_JR_SHIKOKU_KOJIMA",
+                "to_id": "STN_JR_SHIKOKU_UTAZU"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_UTAZU",
+                "to_id": "STN_JR_SHIKOKU_TADOTSU"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_DOSAN",
+                "from_id": "STN_JR_SHIKOKU_TADOTSU",
+                "to_id": "STN_JR_SHIKOKU_KOCHI"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_OKAYAMA",
+              "STN_JR_WEST_KOJIMA",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_ZENTSUJI",
+              "STN_JR_SHIKOKU_KOTOHIRA",
+              "STN_JR_SHIKOKU_AWA_IKEDA",
+              "STN_JR_SHIKOKU_OBOKE",
+              "STN_JR_SHIKOKU_OSUGI",
+              "STN_JR_SHIKOKU_TOSA_YAMADA",
+              "STN_JR_SHIKOKU_GOMEN",
+              "STN_JR_SHIKOKU_KOCHI"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_SHIMANTO",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU",
+          "TOSA"
+        ],
+        "service_type": "特急",
+        "name": "しまんと",
+        "name_zh": "",
+        "name_en": "Shimanto",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_SHIMANTO",
+            "name": "2025_03_15_高松_宿毛",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_TAKAMATSU",
+                "to_id": "STN_JR_SHIKOKU_TADOTSU"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_DOSAN",
+                "from_id": "STN_JR_SHIKOKU_TADOTSU",
+                "to_id": "STN_JR_SHIKOKU_KUBOKAWA"
+              },
+              {
+                "company_id": "TOSA",
+                "line_id": "TOSA_NAKAMURA",
+                "from_id": "STN_TOSA_KUBOKAWA",
+                "to_id": "STN_TOSA_NAKAMURA"
+              },
+              {
+                "company_id": "TOSA",
+                "line_id": "TOSA_SUKUMO",
+                "from_id": "STN_TOSA_NAKAMURA",
+                "to_id": "STN_TOSA_SUKUMO"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TAKAMATSU",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_ZENTSUJI",
+              "STN_JR_SHIKOKU_KOTOHIRA",
+              "STN_JR_SHIKOKU_AWA_IKEDA",
+              "STN_JR_SHIKOKU_OBOKE",
+              "STN_JR_SHIKOKU_OSUGI",
+              "STN_JR_SHIKOKU_TOSA_YAMADA",
+              "STN_JR_SHIKOKU_GOMEN",
+              "STN_JR_SHIKOKU_KOCHI",
+              "STN_JR_SHIKOKU_ASAHI",
+              "STN_JR_SHIKOKU_ASAKURA",
+              "STN_JR_SHIKOKU_INO",
+              "STN_JR_SHIKOKU_SAKAWA",
+              "STN_JR_SHIKOKU_SUSAKI",
+              "STN_JR_SHIKOKU_TOSA_KURE",
+              "STN_TOSA_KUBOKAWA",
+              "STN_TOSA_TOSA_SAGA",
+              "STN_TOSA_TOSA_KAMIKAWAGUCHI",
+              "STN_TOSA_TOSA_IRINO",
+              "STN_TOSA_NAKAMURA",
+              "STN_TOSA_HIRATA",
+              "STN_TOSA_SUKUMO"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_ASHIZURI",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU",
+          "TOSA"
+        ],
+        "service_type": "特急",
+        "name": "あしずり",
+        "name_zh": "足摺",
+        "name_en": "Ashizuri",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_ASHIZURI",
+            "name": "2025_03_15_高知_宿毛",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_DOSAN",
+                "from_id": "STN_JR_SHIKOKU_KOCHI",
+                "to_id": "STN_JR_SHIKOKU_KUBOKAWA"
+              },
+              {
+                "company_id": "TOSA",
+                "line_id": "TOSA_NAKAMURA",
+                "from_id": "STN_TOSA_KUBOKAWA",
+                "to_id": "STN_TOSA_NAKAMURA"
+              },
+              {
+                "company_id": "TOSA",
+                "line_id": "TOSA_SUKUMO",
+                "from_id": "STN_TOSA_NAKAMURA",
+                "to_id": "STN_TOSA_SUKUMO"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_KOCHI",
+              "STN_JR_SHIKOKU_ASAHI",
+              "STN_JR_SHIKOKU_ASAKURA",
+              "STN_JR_SHIKOKU_INO",
+              "STN_JR_SHIKOKU_SAKAWA",
+              "STN_JR_SHIKOKU_ONOGO",
+              "STN_JR_SHIKOKU_SUSAKI",
+              "STN_JR_SHIKOKU_TOSA_KURE",
+              "STN_TOSA_KUBOKAWA",
+              "STN_TOSA_TOSA_SAGA",
+              "STN_TOSA_TOSA_KAMIKAWAGUCHI",
+              "STN_TOSA_KOTSUKA",
+              "STN_TOSA_NAKAMURA",
+              "STN_TOSA_HIRATA",
+              "STN_TOSA_SUKUMO"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_UZUSHIO",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "特急",
+        "name": "うずしお",
+        "name_zh": "渦潮",
+        "name_en": "Uzushio",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_UZUSHIO",
+            "name": "2025_03_15_高松_徳島",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_KOTOKU",
+                "from_id": "STN_JR_SHIKOKU_TAKAMATSU",
+                "to_id": "STN_JR_SHIKOKU_TOKUSHIMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TAKAMATSU",
+              "STN_JR_SHIKOKU_RITSURIN",
+              "STN_JR_SHIKOKU_YASHIMA",
+              "STN_JR_SHIKOKU_SHIDO",
+              "STN_JR_SHIKOKU_ORANGE_TOWN",
+              "STN_JR_SHIKOKU_SANUKI_TSUDA",
+              "STN_JR_SHIKOKU_SAMBOMMATSU",
+              "STN_JR_SHIKOKU_SANUKI_SHIROTORI",
+              "STN_JR_SHIKOKU_HIKETA",
+              "STN_JR_SHIKOKU_ITANO",
+              "STN_JR_SHIKOKU_IKENOTANI",
+              "STN_JR_SHIKOKU_SHOZUI",
+              "STN_JR_SHIKOKU_TOKUSHIMA"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_TSURUGISAN",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "特急",
+        "name": "剣山",
+        "name_zh": "劍山",
+        "name_en": "Tsurugisan",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2014_03_15_TSURUGISAN",
+            "name": "2014_03_15_徳島_阿波池田",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_TOKUSHIMA",
+                "from_id": "STN_JR_SHIKOKU_TOKUSHIMA",
+                "to_id": "STN_JR_SHIKOKU_TSUKUDA"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_DOSAN",
+                "from_id": "STN_JR_SHIKOKU_TSUKUDA",
+                "to_id": "STN_JR_SHIKOKU_AWA_IKEDA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TOKUSHIMA",
+              "STN_JR_SHIKOKU_KURAMOTO",
+              "STN_JR_SHIKOKU_ISHII",
+              "STN_JR_SHIKOKU_KAMOJIMA",
+              "STN_JR_SHIKOKU_AWA_KAWASHIMA",
+              "STN_JR_SHIKOKU_AWA_YAMAKAWA",
+              "STN_JR_SHIKOKU_ANABUKI",
+              "STN_JR_SHIKOKU_SADAMITSU",
+              "STN_JR_SHIKOKU_AWA_KAMO",
+              "STN_JR_SHIKOKU_AWA_IKEDA"
+            ],
+            "valid_from": "2014-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_MARINE_LINER",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU",
+          "JR_WEST"
+        ],
+        "service_type": "快速",
+        "name": "マリンライナー",
+        "name_zh": "Marine Liner",
+        "name_en": "Marine Liner",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2025_03_15_MARINE_LINER",
+            "name": "2025_03_15_岡山_高松",
+            "segments": [
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_SETO_OHASHI",
+                "from_id": "STN_JR_WEST_OKAYAMA",
+                "to_id": "STN_JR_WEST_KOJIMA"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_HONSHI_BISAN",
+                "from_id": "STN_JR_SHIKOKU_KOJIMA",
+                "to_id": "STN_JR_SHIKOKU_UTAZU"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_UTAZU",
+                "to_id": "STN_JR_SHIKOKU_TAKAMATSU"
+              }
+            ],
+            "stops": [
+              "STN_JR_WEST_OKAYAMA",
+              "STN_JR_WEST_OMOTO",
+              "STN_JR_WEST_BIZEN_NISHIICHI",
+              "STN_JR_WEST_SENOO",
+              "STN_JR_WEST_HAYASHIMA",
+              "STN_JR_WEST_CHAYAMACHI",
+              "STN_JR_WEST_UEMATSU",
+              "STN_JR_WEST_KIMI",
+              "STN_JR_WEST_UGENOMACHI",
+              "STN_JR_WEST_KOJIMA",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_KAMOGAWA",
+              "STN_JR_SHIKOKU_KOKUBU",
+              "STN_JR_SHIKOKU_HASHIOKA",
+              "STN_JR_SHIKOKU_KINA",
+              "STN_JR_SHIKOKU_TAKAMATSU"
+            ],
+            "valid_from": "2025-03-15"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_SUNPORT",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "快速",
+        "name": "サンポート",
+        "name_zh": "Sunport",
+        "name_en": "Sunport",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2011_03_12_SUNPORT",
+            "name": "2011_03_12_高松_伊予西条",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_TAKAMATSU",
+                "to_id": "STN_JR_SHIKOKU_IYO_SAIJO"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TAKAMATSU",
+              "STN_JR_SHIKOKU_KINA",
+              "STN_JR_SHIKOKU_HASHIOKA",
+              "STN_JR_SHIKOKU_KOKUBU",
+              "STN_JR_SHIKOKU_KAMOGAWA",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_SANUKI_SHIOYA",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_KAIGANJI",
+              "STN_JR_SHIKOKU_TSUSHIMANOMIYA",
+              "STN_JR_SHIKOKU_TAKUMA",
+              "STN_JR_SHIKOKU_MINO",
+              "STN_JR_SHIKOKU_TAKASE",
+              "STN_JR_SHIKOKU_HIJIDAI",
+              "STN_JR_SHIKOKU_MOTOYAMA",
+              "STN_JR_SHIKOKU_KANONJI",
+              "STN_JR_SHIKOKU_TOYOHAMA",
+              "STN_JR_SHIKOKU_MINOURA",
+              "STN_JR_SHIKOKU_KAWANOE",
+              "STN_JR_SHIKOKU_IYO_MISHIMA",
+              "STN_JR_SHIKOKU_IYO_SANGAWA",
+              "STN_JR_SHIKOKU_AKABOSHI",
+              "STN_JR_SHIKOKU_IYO_DOI",
+              "STN_JR_SHIKOKU_SEKIGAWA",
+              "STN_JR_SHIKOKU_TAKIHAMA",
+              "STN_JR_SHIKOKU_NIIHAMA",
+              "STN_JR_SHIKOKU_NAKAHAGI",
+              "STN_JR_SHIKOKU_IYO_SAIJO"
+            ],
+            "valid_from": "2011-03-12"
+          },
+          {
+            "id": "2011_03_12_SUNPORT_2",
+            "name": "2011_03_12_高松_琴平",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_TAKAMATSU",
+                "to_id": "STN_JR_SHIKOKU_TADOTSU"
+              },
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_DOSAN",
+                "from_id": "STN_JR_SHIKOKU_TADOTSU",
+                "to_id": "STN_JR_SHIKOKU_KOTOHIRA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TAKAMATSU",
+              "STN_JR_SHIKOKU_KINA",
+              "STN_JR_SHIKOKU_HASHIOKA",
+              "STN_JR_SHIKOKU_KOKUBU",
+              "STN_JR_SHIKOKU_KAMOGAWA",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_SANUKI_SHIOYA",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_KONZOJI",
+              "STN_JR_SHIKOKU_ZENTSUJI",
+              "STN_JR_SHIKOKU_KOTOHIRA"
+            ],
+            "valid_from": "2011-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_SHIKOKU_SUNPORT_NANPU_RELAY",
+        "company_id": "JR_SHIKOKU",
+        "operator_company_ids": [
+          "JR_SHIKOKU"
+        ],
+        "service_type": "快速",
+        "name": "サンポート南風リレー号",
+        "name_zh": "",
+        "name_en": "Sunport Nanpu Relay",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2015_03_15_SUNPORT_NANPU_RELAY",
+            "name": "2015_03_15_高松_松山",
+            "segments": [
+              {
+                "company_id": "JR_SHIKOKU",
+                "line_id": "JR_SHIKOKU_YOSAN",
+                "from_id": "STN_JR_SHIKOKU_TAKAMATSU",
+                "to_id": "STN_JR_SHIKOKU_MATSUYAMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_SHIKOKU_TAKAMATSU",
+              "STN_JR_SHIKOKU_KINA",
+              "STN_JR_SHIKOKU_HASHIOKA",
+              "STN_JR_SHIKOKU_KOKUBU",
+              "STN_JR_SHIKOKU_KAMOGAWA",
+              "STN_JR_SHIKOKU_SAKAIDE",
+              "STN_JR_SHIKOKU_UTAZU",
+              "STN_JR_SHIKOKU_MARUGAME",
+              "STN_JR_SHIKOKU_SANUKI_SHIOYA",
+              "STN_JR_SHIKOKU_TADOTSU",
+              "STN_JR_SHIKOKU_KAIGANJI",
+              "STN_JR_SHIKOKU_TSUSHIMANOMIYA",
+              "STN_JR_SHIKOKU_TAKUMA",
+              "STN_JR_SHIKOKU_MINO",
+              "STN_JR_SHIKOKU_TAKASE",
+              "STN_JR_SHIKOKU_HIJIDAI",
+              "STN_JR_SHIKOKU_MOTOYAMA",
+              "STN_JR_SHIKOKU_KANONJI",
+              "STN_JR_SHIKOKU_TOYOHAMA",
+              "STN_JR_SHIKOKU_MINOURA",
+              "STN_JR_SHIKOKU_KAWANOE",
+              "STN_JR_SHIKOKU_IYO_MISHIMA",
+              "STN_JR_SHIKOKU_IYO_SANGAWA",
+              "STN_JR_SHIKOKU_AKABOSHI",
+              "STN_JR_SHIKOKU_IYO_DOI",
+              "STN_JR_SHIKOKU_SEKIGAWA",
+              "STN_JR_SHIKOKU_TAKIHAMA",
+              "STN_JR_SHIKOKU_NIIHAMA",
+              "STN_JR_SHIKOKU_NAKAHAGI",
+              "STN_JR_SHIKOKU_IYO_SAIJO",
+              "STN_JR_SHIKOKU_ISHIZUCHIYAMA",
+              "STN_JR_SHIKOKU_IYO_HIMI",
+              "STN_JR_SHIKOKU_IYO_KOMATSU",
+              "STN_JR_SHIKOKU_TAMANOE",
+              "STN_JR_SHIKOKU_NYUGAWA",
+              "STN_JR_SHIKOKU_IYO_MIYOSHI",
+              "STN_JR_SHIKOKU_IYO_SAKURAI",
+              "STN_JR_SHIKOKU_IYO_TOMIDA",
+              "STN_JR_SHIKOKU_IMABARI",
+              "STN_JR_SHIKOKU_HASHIHAMA",
+              "STN_JR_SHIKOKU_NAMIKATA",
+              "STN_JR_SHIKOKU_ONISHI",
+              "STN_JR_SHIKOKU_IYO_KAMEOKA",
+              "STN_JR_SHIKOKU_KIKUMA",
+              "STN_JR_SHIKOKU_ASANAMI",
+              "STN_JR_SHIKOKU_OURA",
+              "STN_JR_SHIKOKU_IYO_HOJO",
+              "STN_JR_SHIKOKU_YANAGIHARA",
+              "STN_JR_SHIKOKU_AWAI",
+              "STN_JR_SHIKOKU_KOYODAI",
+              "STN_JR_SHIKOKU_HORIE",
+              "STN_JR_SHIKOKU_IYO_WAKE",
+              "STN_JR_SHIKOKU_MITSUBAMA",
+              "STN_JR_SHIKOKU_MATSUYAMA"
+            ],
+            "valid_from": "2015-03-15"
+          }
+        ],
+        "service_code": ""
+      }
     ]
   }
 ]

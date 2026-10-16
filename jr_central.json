@@ -3524,6 +3524,338 @@
         "name": "HC35形",
         "variants": []
       }
+    ],
+    "services": [
+      {
+        "id": "SVC_JR_CENTRAL_FUJIKAWA",
+        "company_id": "JR_CENTRAL",
+        "operator_company_ids": [
+          "JR_CENTRAL"
+        ],
+        "service_type": "特急",
+        "name": "ふじかわ",
+        "name_zh": "富士川",
+        "name_en": "Fujikawa",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2006_03_18_FUJIKAWA",
+            "name": "2006_03_18_静岡_甲府",
+            "segments": [
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_TOKAIDO",
+                "from_id": "STN_JR_CENTRAL_SHIZUOKA",
+                "to_id": "STN_JR_CENTRAL_FUJI"
+              },
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_MINOBU",
+                "from_id": "STN_JR_CENTRAL_FUJI",
+                "to_id": "STN_JR_CENTRAL_KOFU"
+              }
+            ],
+            "stops": [
+              "STN_JR_CENTRAL_SHIZUOKA",
+              "STN_JR_CENTRAL_SHIMIZU",
+              "STN_JR_CENTRAL_FUJI",
+              "STN_JR_CENTRAL_FUJINOMIYA",
+              "STN_JR_CENTRAL_UTSUBUNA",
+              "STN_JR_CENTRAL_MINOBU",
+              "STN_JR_CENTRAL_SHIMOBE_ONSEN",
+              "STN_JR_CENTRAL_KAI_IWAMA",
+              "STN_JR_CENTRAL_KAJIKAZAWAGUCHI",
+              "STN_JR_CENTRAL_ICHIKAWA_DAIMON",
+              "STN_JR_CENTRAL_MINAMI_KOFU",
+              "STN_JR_CENTRAL_KOFU"
+            ],
+            "valid_from": "2006-03-18"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_CENTRAL_INAJI",
+        "company_id": "JR_CENTRAL",
+        "operator_company_ids": [
+          "JR_CENTRAL"
+        ],
+        "service_type": "特急",
+        "name": "伊那路",
+        "name_zh": "伊那路",
+        "name_en": "Inaji",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2017_04_18_INAJI",
+            "name": "2017_04_18_豊橋_飯田",
+            "segments": [
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_IIDA",
+                "from_id": "STN_JR_CENTRAL_TOYOHASHI",
+                "to_id": "STN_JR_CENTRAL_IIDA"
+              }
+            ],
+            "stops": [
+              "STN_JR_CENTRAL_TOYOHASHI",
+              "STN_JR_CENTRAL_TOYOKAWA",
+              "STN_JR_CENTRAL_SHINSHIRO",
+              "STN_JR_CENTRAL_HON_NAGASHINO",
+              "STN_JR_CENTRAL_YUYA_ONSEN",
+              "STN_JR_CENTRAL_CHUBU_TENRYU",
+              "STN_JR_CENTRAL_MISAKUBO",
+              "STN_JR_CENTRAL_HIRAOKA",
+              "STN_JR_CENTRAL_NUKUTA",
+              "STN_JR_CENTRAL_TENRYUKYO",
+              "STN_JR_CENTRAL_IIDA"
+            ],
+            "valid_from": "2017-04-18"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_CENTRAL_SHINANO",
+        "company_id": "JR_CENTRAL",
+        "operator_company_ids": [
+          "JR_CENTRAL",
+          "JR_EAST"
+        ],
+        "service_type": "特急",
+        "name": "しなの",
+        "name_zh": "信濃",
+        "name_en": "Shinano",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2018_03_17_SHINANO",
+            "name": "2018_03_17_名古屋_長野",
+            "segments": [
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_CHOU_HONSEN",
+                "from_id": "STN_JR_CENTRAL_NAGOYA",
+                "to_id": "STN_JR_CENTRAL_SHIOJIRI"
+              },
+              {
+                "company_id": "JR_EAST",
+                "line_id": "JR_EAST_SHINONOI",
+                "from_id": "STN_JR_EAST_SHIOJIRI",
+                "to_id": "STN_JR_EAST_NAGANO"
+              }
+            ],
+            "stops": [
+              "STN_JR_CENTRAL_NAGOYA",
+              "STN_JR_CENTRAL_KANAYAMA",
+              "STN_JR_CENTRAL_CHIKUSA",
+              "STN_JR_CENTRAL_TAJIMI",
+              "STN_JR_CENTRAL_ENA",
+              "STN_JR_CENTRAL_NAKATSUGAWA",
+              "STN_JR_CENTRAL_NAGISO",
+              "STN_JR_CENTRAL_AGEMATSU",
+              "STN_JR_CENTRAL_KISO_FUKUSHIMA",
+              "STN_JR_EAST_SHIOJIRI",
+              "STN_JR_EAST_MATSUMOTO",
+              "STN_JR_EAST_AKASHINA",
+              "STN_JR_EAST_HIJIRI_KOGEN",
+              "STN_JR_EAST_SHINONOI",
+              "STN_JR_EAST_NAGANO"
+            ],
+            "valid_from": "2018-03-17"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_CENTRAL_HIDA",
+        "company_id": "JR_CENTRAL",
+        "operator_company_ids": [
+          "JR_CENTRAL",
+          "JR_WEST"
+        ],
+        "service_type": "特急",
+        "name": "ひだ",
+        "name_zh": "飛驒",
+        "name_en": "Hida",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2024_03_16_HIDA",
+            "name": "2024_03_16_名古屋_富山",
+            "segments": [
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_TOKAIDO",
+                "from_id": "STN_JR_CENTRAL_NAGOYA",
+                "to_id": "STN_JR_CENTRAL_GIFU"
+              },
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_TAKAYAMA",
+                "from_id": "STN_JR_CENTRAL_GIFU",
+                "to_id": "STN_JR_CENTRAL_INOTANI"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_TAKAYAMA",
+                "from_id": "STN_JR_WEST_INOTANI",
+                "to_id": "STN_JR_WEST_TOYAMA"
+              }
+            ],
+            "stops": [
+              "STN_JR_CENTRAL_NAGOYA",
+              "STN_JR_CENTRAL_OWARI_ICHINOMIYA",
+              "STN_JR_CENTRAL_GIFU",
+              "STN_JR_CENTRAL_UNUMA",
+              "STN_JR_CENTRAL_MINO_OTA",
+              "STN_JR_CENTRAL_SHIRAKAWAGUCHI",
+              "STN_JR_CENTRAL_HIDA_KANAYAMA",
+              "STN_JR_CENTRAL_GERO",
+              "STN_JR_CENTRAL_HIDA_HAGIWARA",
+              "STN_JR_CENTRAL_HIDA_OSAKA",
+              "STN_JR_CENTRAL_KUGUNO",
+              "STN_JR_CENTRAL_TAKAYAMA",
+              "STN_JR_CENTRAL_HIDA_FURUKAWA",
+              "STN_JR_CENTRAL_INOTANI",
+              "STN_JR_WEST_ETCHU_YATSUO",
+              "STN_JR_WEST_HAYAHOSHI",
+              "STN_JR_WEST_TOYAMA"
+            ],
+            "valid_from": "2024-03-16"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_CENTRAL_NANKI",
+        "company_id": "JR_CENTRAL",
+        "operator_company_ids": [
+          "JR_CENTRAL",
+          "JR_WEST",
+          "ISE"
+        ],
+        "service_type": "特急",
+        "name": "南紀",
+        "name_zh": "南紀",
+        "name_en": "Nanki",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2022_03_12_NANKI",
+            "name": "2022_03_12_名古屋_紀伊勝浦",
+            "segments": [
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_KANSAI",
+                "from_id": "STN_JR_CENTRAL_NAGOYA",
+                "to_id": "STN_JR_CENTRAL_KAWARADA"
+              },
+              {
+                "company_id": "ISE",
+                "line_id": "ISE_LINE",
+                "from_id": "STN_ISE_KAWARADA",
+                "to_id": "STN_ISE_TSU"
+              },
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_KISEI",
+                "from_id": "STN_JR_CENTRAL_TSU",
+                "to_id": "STN_JR_CENTRAL_SHINGU"
+              },
+              {
+                "company_id": "JR_WEST",
+                "line_id": "JR_WEST_KINOKUNI",
+                "from_id": "STN_JR_WEST_SHINGU",
+                "to_id": "STN_JR_WEST_KII_KATSUURA"
+              }
+            ],
+            "stops": [
+              "STN_JR_CENTRAL_NAGOYA",
+              "STN_JR_CENTRAL_KUWANA",
+              "STN_JR_CENTRAL_YOKKAICHI",
+              "STN_ISE_SUZUKA",
+              "STN_ISE_TSU",
+              "STN_JR_CENTRAL_MATSUZAKA",
+              "STN_JR_CENTRAL_TAKI",
+              "STN_JR_CENTRAL_MITSEDANI",
+              "STN_JR_CENTRAL_KII_NAGASHIMA",
+              "STN_JR_CENTRAL_OWASE",
+              "STN_JR_CENTRAL_KUMANOSHI",
+              "STN_JR_WEST_SHINGU",
+              "STN_JR_WEST_KII_KATSUURA"
+            ],
+            "valid_from": "2022-03-12"
+          }
+        ],
+        "service_code": ""
+      },
+      {
+        "id": "SVC_JR_CENTRAL_MIE",
+        "company_id": "JR_CENTRAL",
+        "operator_company_ids": [
+          "JR_CENTRAL",
+          "ISE"
+        ],
+        "service_type": "快速",
+        "name": "みえ",
+        "name_zh": "三重",
+        "name_en": "Mie",
+        "aliases": [],
+        "patterns": [
+          {
+            "id": "2011_03_12_MIE",
+            "name": "2011_03_12_名古屋_鳥羽",
+            "segments": [
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_KANSAI",
+                "from_id": "STN_JR_CENTRAL_NAGOYA",
+                "to_id": "STN_JR_CENTRAL_KAWARADA"
+              },
+              {
+                "company_id": "ISE",
+                "line_id": "ISE_LINE",
+                "from_id": "STN_ISE_KAWARADA",
+                "to_id": "STN_ISE_TSU"
+              },
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_KISEI",
+                "from_id": "STN_JR_CENTRAL_TSU",
+                "to_id": "STN_JR_CENTRAL_TAKI"
+              },
+              {
+                "company_id": "JR_CENTRAL",
+                "line_id": "JR_CENTRAL_SANGU",
+                "from_id": "STN_JR_CENTRAL_TAKI",
+                "to_id": "STN_JR_CENTRAL_TOBA"
+              }
+            ],
+            "stops": [
+              "STN_JR_CENTRAL_NAGOYA",
+              "STN_JR_CENTRAL_KUWANA",
+              "STN_JR_CENTRAL_YOKKAICHI",
+              "STN_ISE_SUZUKA",
+              "STN_ISE_NAKASEKO",
+              "STN_ISE_TSU",
+              "STN_JR_CENTRAL_MATSUZAKA",
+              "STN_JR_CENTRAL_TAKI",
+              "STN_JR_CENTRAL_TOKIWA",
+              "STN_JR_CENTRAL_TAMARU",
+              "STN_JR_CENTRAL_MIYAGAWA",
+              "STN_JR_CENTRAL_YAMADA_KAMIGUCHI",
+              "STN_JR_CENTRAL_ISESHI",
+              "STN_JR_CENTRAL_ISUZUGAOKA",
+              "STN_JR_CENTRAL_FUTAMIURA",
+              "STN_JR_CENTRAL_MATSUSHITA",
+              "STN_JR_CENTRAL_TOBA"
+            ],
+            "valid_from": "2011-03-12"
+          }
+        ],
+        "service_code": ""
+      }
     ]
   }
 ]
