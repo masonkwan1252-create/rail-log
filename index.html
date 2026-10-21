@@ -10036,7 +10036,7 @@ body {
 #tab-history .trip-service-label,
 #tab-history .trip-route-meta .trip-service-badge.trip-service-label {
     display: inline-block; min-width: 0; max-width: 100%;
-    padding: 4px 8px !important; border-radius: 5px !important;
+    padding: 1px 4px !important; border-radius: 5px !important;
     background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
     border: 0 !important; box-shadow: none;
     font-size: 15px !important; line-height: 1.45 !important; font-weight: 600;
@@ -10172,11 +10172,12 @@ body {
     }
 }
 #tab-history .trip-service-operators { position: relative; display: inline-block; max-width: 100%; }
-#tab-history .trip-service-company-roll { display: inline-flex; align-items: baseline; gap: 5px; max-width: 100%; }
+#tab-history .trip-service-company-roll { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; }
 #tab-history .trip-service-company-faces { display: inline-grid; min-width: 0; overflow: hidden; perspective: 180px; }
-#tab-history .trip-service-company-face { grid-area: 1 / 1; visibility: hidden; overflow-wrap: anywhere; }
+#tab-history .trip-service-company-face { grid-area: 1 / 1; visibility: hidden; white-space: nowrap; min-width: 0; overflow-wrap: normal; }
+#tab-history .trip-service-company-name { display:inline-block; white-space:nowrap; transform-origin:left center; }
 #tab-history .trip-service-company-face.is-current { visibility: inherit; }
-#tab-history .trip-service-company-count { color: var(--subtext); font-size: 10px; font-weight: 400; font-variant-numeric: tabular-nums; }
+#tab-history .trip-service-company-count { color: var(--subtext); font-size: 8px !important; line-height:1; flex-shrink:0; font-weight: 400; font-variant-numeric: tabular-nums; }
 #tab-history .trip-service-company-list {
     display: grid; gap: 6px; color: var(--text);
     font-size: inherit; line-height: 1.5; white-space: normal; overflow-wrap: anywhere;
@@ -10228,9 +10229,212 @@ body {
 #tab-history .history-sort-toggle-inline .lock-open,
 #tab-history .history-sort-toggle-inline.active .lock-closed { display: none; }
 #tab-history .history-sort-toggle-inline.active .lock-open { display: block; }
-.history-tools-toggle { display: none; }
+#tab-history .trip.trip-closed-line { background: color-mix(in srgb, var(--subtext) 16%, var(--input-bg)) !important; border-color: var(--subtext) !important; }
+#tab-history .trip.trip-closed-line .trip-ticket-route { border-left-color: var(--subtext) !important; }
+#tab-history .closed-station { color: var(--subtext); }
+#tab-history .closure-tag { display: inline-block; color: var(--subtext); font-size: 10px; font-weight: 600; margin-left: 4px; white-space: nowrap; }
+.input-wrapper.no-options::after { display: none !important; }
+.input-wrapper .clear-input-btn[hidden] { display: none !important; }
+#tripSaveStatus { display: none !important; }
+#tab-add .desktop-add-layout.ride-step-layout { display:block !important; }
+#tab-add .ride-step { margin:0; padding:14px 0 !important; border:0; border-bottom:1px solid var(--border); background:transparent; box-shadow:none; }
+#tab-add .ride-step-heading { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+#tab-add .ride-step-heading > strong { display:inline-flex; align-items:center; gap:8px; padding:0; background:none; color:var(--text); font-size:14px; font-weight:700; letter-spacing:0; }
+#tab-add .ride-number { display:inline-block; padding:4px 7px; border-radius:3px; background:#80c241; color:white; font-size:12px; font-weight:800; }
+@media(prefers-color-scheme:dark) { #tab-add .ride-number { color:#111; } }
+#tab-add .ride-photo-section { grid-column:1/-1; padding:12px 0; border-top:1px solid var(--border); }
+#tab-add .ride-photo-section > summary { display:flex; align-items:center; gap:8px; cursor:pointer; font-size:14px; font-weight:700; }
+#tab-add .ride-photo-section > summary { list-style:none; }
+#tab-add .ride-photo-section > summary::-webkit-details-marker { display:none; }
+#tab-add .ride-step-next { display:flex; margin-left:auto; }
+#tab-add .desktop-add-head { position:relative; padding-right:58px !important; box-sizing:border-box; }
+#tab-add .ride-reset { position:absolute; top:12px; right:14px; margin:0; }
+#tab-add .desktop-add-head h3 { width:100%; }
+#tab-add .vehicle-options { grid-column:1/-1; margin:0; }
+@media(min-width:900px) {
+    #tab-add #addOptionArea { width:100%; min-width:0; padding:0 !important; margin:0 !important; box-sizing:border-box; }
+    #tab-add #addOptionArea .add-option-panel, #tab-add #addOptionArea .desktop-through-row { width:100%; min-width:0; padding-left:0 !important; padding-right:0 !important; box-sizing:border-box; }
+    #tab-add .ride-step .ride-step-body > .desktop-form-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+    #tab-add .vehicle-options { order:1; }
+    #tab-add .desktop-ride-section .form-field:has(#train) { order:2; grid-column:1/-1; }
+    #tab-add .desktop-ride-section .ride-extra { order:3; }
+    #tab-add .vehicle-options { min-height:30px; margin-bottom:6px; }
+}
+@media(min-width:900px) {
+    #tab-add .ride-step-layout .ride-step.desktop-route-section, #tab-add .ride-step-layout .ride-step.desktop-ride-section { border:0; border-top:2px solid var(--border); padding:14px 0 !important; }
+    #tab-add .desktop-add-layout.ride-step-layout { column-gap:32px !important; }
+}
 @media(max-width:899px) {
-    #tab-history .history-tools-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 5px; width: auto; min-height: 36px; margin: 0 0 0 8px; padding: 0 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--input-bg); color: var(--text); font-size: 12px; }
+    #tab-add .desktop-add-head { padding-right:44px !important; }
+    #tab-add .desktop-add-head .ride-reset { top:0; right:0; border:0 !important; background:transparent !important; box-shadow:none !important; }
+    #tab-add .ride-step-heading { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:4px; }
+    #tab-add .ride-step-heading > strong { grid-column:1; grid-row:1; cursor:pointer; }
+    #tab-add .ride-step-heading > button { grid-column:3; grid-row:1; justify-self:end; }
+    #tab-add .ride-step-heading #rideDateTime { grid-column:2; grid-row:1; width:100% !important; text-align:center; }
+    #tab-add .ride-step-heading #rideDateTime::-webkit-date-and-time-value { text-align:center; margin:0 auto; }
+    #tab-add .ride-step-summary { grid-column:1/-1; grid-row:2; }
+}
+#tab-add .ride-photo-section .photo-field > label { display:none; }
+@media(max-width:899px) {
+    #tab-add .ride-step-heading { flex-wrap:wrap; }
+    #tab-add .ride-step-heading #rideDateTime { width:auto; min-width:0; flex:1; height:34px; padding:4px; border:0; background:transparent; font-size:12px; }
+    #tab-add .form-field-date { display:none !important; }
+}
+#tab-add .ride-step-heading button { margin:0; flex-shrink:0; }
+#tab-add .ride-icon-button { width:36px; height:36px; padding:8px; display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:4px; background:transparent; color:var(--primary); }
+#tab-add .ride-icon-button svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+#tab-add .desktop-add-head { display:flex !important; align-items:center; justify-content:space-between; width:100%; }
+#tab-add .desktop-add-head h3 { margin:0; }
+@media(min-width:900px) {
+    #tab-add .ride-step .ride-step-body[hidden], #tab-add button#saveTripButton[hidden] { display:block !important; }
+    #tab-add .ride-step-heading button, #tab-add .ride-step-summary, #tab-add .ride-step-next { display:none !important; }
+}
+#tab-add .ride-step-summary { flex:1; min-width:0; overflow-wrap:anywhere; font-size:13px; color:var(--subtext); }
+#tab-add .ride-step-body[hidden], #tab-add #saveTripButton[hidden] { display:none !important; }
+#tab-add .ride-step-body > .desktop-form-grid { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:14px; }
+#tab-add .ride-step-body .form-field { min-width:0; }
+#tab-add .ride-step-next { margin-top:14px; }
+#tab-add .ride-extra { grid-column:1/-1; padding:10px 0; border-top:1px solid var(--border); }
+#tab-add .ride-extra > summary { cursor:pointer; color:var(--subtext); font-size:13px; }
+#tab-add .ride-extra-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
+#tab-add .ride-reset { margin-left:auto; width:36px; height:36px; padding:0; font-size:20px; background:transparent; color:var(--subtext); border:1px solid var(--border); border-radius:4px; }
+@media(max-width:599px) { #tab-add .ride-step-body > .desktop-form-grid, #tab-add .ride-extra-grid { grid-template-columns:minmax(0,1fr) !important; } }
+@media(min-width:900px) {
+    #tab-add .desktop-add-card { width:100%; max-width:none !important; }
+    #tab-add .desktop-add-layout.ride-step-layout { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-areas:none !important; grid-template-rows:auto !important; gap:16px 20px; padding:16px 20px; }
+    #tab-add .ride-step { grid-area:auto !important; align-self:start; min-width:0; }
+    #tab-add .ride-step.desktop-route-section { grid-column:1 !important; grid-row:1; }
+    #tab-add .ride-step.desktop-ride-section { grid-column:2 !important; grid-row:1; border-left:1px solid var(--border); padding-left:20px !important; }
+    #tab-add .ride-step.station-step { display:none; }
+    #tab-add .desktop-route-section .ride-step-body > .desktop-form-grid + .desktop-form-grid { margin-top:12px; }
+    #tab-add .ride-step { padding-top:0 !important; padding-bottom:12px !important; }
+    #tab-add .ride-step-heading { min-height:30px; margin-bottom:12px; }
+    #tab-add .ride-step-body > .desktop-form-grid { grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr)) !important; gap:12px !important; align-items:start; }
+    #tab-add .form-field { margin:0; }
+    #tab-add .form-field > label { margin:0 0 6px !important; line-height:18px; }
+    #tab-add .input-wrapper { min-height:42px; }
+    #tab-add .form-field input:not([type="hidden"]):not([type="checkbox"]):not([type="file"]) { height:42px; box-sizing:border-box; }
+    #tab-add .form-field:has(.service-detail-grid), #tab-add .form-field-date { grid-column:1/-1; }
+    #tab-add .service-detail-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    #tab-add .ride-extra { padding:8px 0 0; }
+    #tab-add .ride-extra-grid { margin-top:8px; gap:12px; }
+    #tab-add .ride-extra .photo-field > label { display:none; }
+    #tab-add .photo-upload-container { margin-top:8px; gap:10px; }
+    #tab-add .ride-extra-grid { grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); }
+    #tab-add .ride-extra > summary { list-style:none; cursor:default; pointer-events:none; }
+    #tab-add .ride-extra > summary::-webkit-details-marker { display:none; }
+    #tab-add .ride-extra .photo-field { width:100%; }
+    #tab-add .add-option-area { grid-area:auto !important; grid-column:1/-1; }
+}
+.history-tools-toggle { display: none; }
+.route-info-popup .leaflet-popup-content-wrapper { background:linear-gradient(180deg,rgba(255,255,255,.58),rgba(255,255,255,.40)); backdrop-filter:blur(8px) saturate(1.12); -webkit-backdrop-filter:blur(8px) saturate(1.12); border-radius:10px; border:1px solid rgba(255,255,255,.44); border-bottom-color:rgba(0,0,0,.055); box-shadow:0 2px 6px rgba(0,0,0,.105),0 1px 0 rgba(255,255,255,.42) inset; color:#141416; }
+.route-info-popup .leaflet-popup-content { margin:7px 10px; }
+.route-info-popup { max-width:calc(100vw - 32px); }
+.route-info-popup .leaflet-popup-content { max-width:calc(100vw - 54px); overflow-wrap:anywhere; }
+.route-info-popup .map-route-company, .route-info-popup .map-route-name { white-space:normal !important; overflow-wrap:anywhere; word-break:normal; }
+.route-info-popup .leaflet-popup-content > div { min-width:130px !important; }
+.route-info-popup .leaflet-popup-tip { background:rgba(255,255,255,.40); }
+.route-info-popup .map-route-entry { flex-direction:column; align-items:stretch !important; gap:4px !important; padding:5px 0 !important; }
+.route-info-popup .map-route-color { order:2; width:100% !important; height:3.795px !important; border-radius:1px !important; }
+.route-info-popup .map-route-names { display:flex; flex-direction:column; gap:2px; }
+.route-info-popup .map-route-company { order:-1; font-size:14px !important; line-height:1.35 !important; font-weight:800; color:inherit !important; margin:0 !important; }
+.route-info-popup .map-route-name { font-size:13px !important; line-height:1.35 !important; font-weight:600 !important; color:inherit !important; }
+.route-info-popup .leaflet-popup-content > div > div:first-child:not(.map-route-entry):not(:has(> div:not([style*="display:none"]))) { display:none !important; }
+.route-info-popup .leaflet-popup-content > div > div:first-child:not(.map-route-entry) > div:first-child { background:transparent !important; color:inherit !important; opacity:.65; padding:0 !important; font-size:10px !important; font-weight:400 !important; }
+.route-info-popup .leaflet-popup-content > div > div:first-child:not(.map-route-entry) > div:first-child:empty { display:none; }
+@media(prefers-color-scheme:dark) {
+    .route-info-popup .leaflet-popup-content-wrapper { background:linear-gradient(180deg,rgba(30,30,32,.56),rgba(20,20,22,.38)); border-color:rgba(255,255,255,.12); border-bottom-color:rgba(255,255,255,.08); box-shadow:0 2px 7px rgba(0,0,0,.24),0 1px 0 rgba(255,255,255,.05) inset; color:#f5f5f7; }
+    .route-info-popup .leaflet-popup-tip { background:rgba(20,20,22,.38); }
+}
+@media(max-width:899px) {
+    #tab-history .trip { padding-top:11px !important; }
+    #tab-history .trip-ticket-main { align-content:start; overflow-anchor:none; }
+    #tab-history .trip-ticket-layout > .trip-ticket-main { align-self:start !important; }
+    #tab-history .trip-service-operators { grid-template-rows:minmax(0,1fr); align-self:start; }
+    #tab-history .trip-service-company-list, #tab-history .trip-service-company-roll { align-self:start; }
+}
+.ride-category-icon { display:none; }
+@media(max-width:899px) {
+    #tab-add .desktop-add-head { padding-right:0 !important; }
+    #tab-add .desktop-add-head h3 { box-sizing:border-box; min-height:48px; padding-right:44px; padding-bottom:12px; border-bottom:1px solid var(--primary); }
+    #tab-add .desktop-add-head .ride-reset { top:0; right:0; border:1px solid var(--border) !important; border-radius:4px; background:var(--input-bg) !important; }
+    #tab-add .ride-step-heading { cursor:pointer; min-height:44px; }
+    #tab-add .ride-step-heading .ride-icon-button { pointer-events:auto; }
+    #tab-add .ride-icon-button[aria-expanded="false"] { opacity:.6; }
+    #tab-add .ride-photo-section > summary { min-height:44px; }
+    #tab-add .ride-category-icon { display:inline-flex; margin-left:auto; width:36px; height:36px; align-items:center; justify-content:center; color:var(--primary); opacity:.6; }
+    #tab-add .ride-photo-section[open] .ride-category-icon { opacity:1; }
+    #tab-add .ride-category-icon svg { width:23px; height:23px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    #tab-add .ride-step-heading .ride-icon-button { padding:6.5px; }
+    #tab-add .ride-step-heading .ride-icon-button svg { width:23px; height:23px; flex-shrink:0; }
+    #tab-add .ride-photo-section { padding:14px 0; border-top:0; }
+    #tab-add .ride-photo-section > summary { margin:0 0 12px; padding:0; width:100%; box-sizing:border-box; }
+    #tab-add .ride-category-icon { flex:0 0 36px; }
+    #tab-add .ride-photo-body { display:flow-root; overflow-anchor:none; }
+    #tab-add .ride-photo-body .photo-field { margin:0; padding:0; min-width:0; }
+    #tab-add .ride-photo-body .photo-upload-container { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:0; padding:8px 0; overflow:visible; }
+    #tab-add .ride-photo-body .photo-upload-box { box-sizing:border-box; width:100%; min-width:0; height:88px; margin:0; }
+    #tab-add .ride-step-layout, #tab-add #saveTripButton { overflow-anchor:none; }
+    #tab-add #saveTripButton, #tab-add #saveTripButton[hidden] { display:block !important; width:100%; box-sizing:border-box; margin:16px 0 0; }
+}
+@media(max-width:359px) {
+    #tab-add .ride-step-heading:has(#rideDateTime) { grid-template-columns:max-content minmax(0,1fr) 36px; gap:4px; }
+    #tab-add .ride-step-heading #rideDateTime { grid-column:2; grid-row:1; width:100% !important; min-width:0; padding:4px 0; font-size:10px; }
+    #tab-add .ride-step-heading:has(#rideDateTime) > strong { white-space:nowrap; }
+}
+#tab-add .through-block { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 12px; padding:12px !important; border:1px solid var(--border); border-left:3px solid var(--primary); border-radius:6px; background:var(--tag-bg); box-shadow:none; }
+#tab-add .through-card-head { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; color:var(--primary); font-size:12px; font-weight:700; }
+#tab-add .through-remove { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; padding:6px; margin:0; border:0; background:transparent; color:var(--subtext); }
+#tab-add .through-remove:hover { color:var(--danger); }
+#tab-add .through-remove svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+#tab-add .through-card-field { min-width:0; }
+#tab-add .through-card-field label { margin:0 0 5px; font-size:11px; }
+#tab-add .through-card-field .input-wrapper { margin:0; }
+#tab-add .through-card-station, #tab-add .throughLoopDirectionWrap { grid-column:1/-1; }
+#tab-add .through-block > datalist { display:none; }
+@media(min-width:900px) {
+    #tab-add #addOptionArea { grid-column:1/-1 !important; }
+    #tab-add #addOptionArea .service-type-panel { width:100% !important; max-width:none; box-sizing:border-box; }
+    #tab-add #addOptionArea .service-detail-grid { width:100%; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+}
+@media(max-width:899px) {
+    #tab-add .through-remove { width:44px; height:44px; }
+    #tab-add .through-card-line { grid-column:1/-1; }
+    #tab-add .through-card-company { grid-column:1/-1; }
+}
+.mobile-nav-more { display: none; }
+.mobile-nav-sheet { position: fixed; inset: auto 10px calc(64px + max(env(safe-area-inset-bottom), 6px)); box-sizing: border-box; width: auto; max-width: none; margin: 0; padding: 5px; border: 1px solid var(--border); border-bottom: 2px solid var(--primary); border-radius: 6px; background: var(--nav-bg); color: var(--text); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 4px 16px rgb(0 0 0 / 10%); }
+.mobile-nav-sheet::backdrop { background: transparent; }
+.mobile-nav-sheet[open] { animation: mobileNavReveal .18s ease-out; }
+.mobile-nav-options { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+.mobile-nav-options button { min-width: 0; min-height: 48px; margin: 0; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 7px; padding: 6px 4px; color: var(--subtext); background: transparent; border: 0; border-radius: 4px; font: inherit; box-shadow: none; }
+.mobile-nav-options button + button { border-top: 1px solid var(--border); }
+.mobile-nav-sheet { left: auto; width: min(220px, calc(100vw - 20px)); max-height: calc(100dvh - 100px); overflow-y: auto; }
+.mobile-nav-options button { justify-content: flex-start; padding: 10px 14px; gap: 12px; }
+.mobile-nav-options .nav-label { font-size: 12px; line-height: 1.3; letter-spacing: 0; }
+.mobile-nav-options .nav-icon, .mobile-nav-options .nav-icon-svg { width: 20px; height: 20px; }
+.mobile-nav-options button.active, .mobile-nav-options button:hover { color: var(--primary); background: var(--tag-bg); }
+.mobile-nav-options button:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+@keyframes mobileNavReveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media(prefers-reduced-motion:reduce) { .mobile-nav-sheet[open] { animation: none; } }
+@media(max-width:899px) {
+    .bottom-nav > .nav-secondary { display: none; }
+    .bottom-nav > .mobile-nav-more { display: flex; flex: 1; min-width: 0; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 6px 0 4px; margin: 0; color: var(--subtext); background: transparent; border: 0; border-top: 2px solid transparent; border-radius: 0; font: inherit; }
+    .bottom-nav > .mobile-nav-more.active { color: var(--primary); border-top-color: var(--primary); }
+    .bottom-nav > .nav-item:not(.nav-secondary), .bottom-nav > .mobile-nav-more {
+        box-sizing: border-box; height: 50px; min-height: 44px; padding: 3px 0; gap: 3px;
+        transition: height .2s ease, gap .2s ease, color .2s ease;
+    }
+    .bottom-nav .nav-icon, .bottom-nav .nav-icon-svg { width: 19.2px; height: 19.2px; flex-shrink: 0; }
+    .bottom-nav .nav-label { font-size: 8.8px; line-height: 14px; max-height: 14px; opacity: 1; overflow: hidden; transition: max-height .2s ease, opacity .15s ease; }
+    .bottom-nav.is-compact > .nav-item:not(.nav-secondary), .bottom-nav.is-compact > .mobile-nav-more { height: 44px; gap: 0; }
+    .bottom-nav.is-compact .nav-label { max-height: 0; opacity: 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+    .bottom-nav > .nav-item, .bottom-nav > .mobile-nav-more, .bottom-nav .nav-label { transition: none !important; }
+}
+@media(max-width:899px) {
+    #tab-history .history-tools-toggle { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 36px; width: 36px; min-height: 36px; margin: 0 0 0 8px; padding: 0; border: 1px solid var(--border); border-radius: 6px; background: var(--input-bg); color: var(--text); font-size: 12px; }
     #tab-history .history-tools-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
     #tab-history .history-tools-toggle[aria-expanded="true"] { color: var(--primary); background: var(--tag-bg); }
     #tab-history .history-desktop-head:not(.tools-open) .history-compact-controls { display: none !important; }
@@ -10422,7 +10626,7 @@ body {
             <div class="card design2-form-card desktop-add-card">
                 <div class="desktop-add-head">
                     <h3>新增乘車</h3>
-                    <span class="desktop-add-kicker">RAIL LOG ENTRY</span>
+                    <button type="button" class="ride-reset" title="清除全部" aria-label="清除全部" onclick="clearRideForm()">↺</button>
                 </div>
 
                 <div class="desktop-add-layout">
@@ -10524,11 +10728,21 @@ body {
                     <div class="form-field">
                         <label>車型</label>
                         <div class="input-wrapper">
-                            <input id="train" list="trainList" placeholder="輸入車型" onclick="handleDatalistInputTap(this, event)">
+                            <input id="train" list="trainList" placeholder="輸入車系" onclick="handleDatalistInputTap(this, event)">
                             <button class="clear-input-btn" onclick="clearInput('train')">✕</button>
                         </div>
                     </div>
 
+                    <div class="form-field">
+                        <label for="trainSubseries">番台（選填）</label>
+                        <div class="input-wrapper"><input id="trainSubseries" list="trainSubseriesList" placeholder="未指定" oninput="updateTrainDetailOptions(false,true)" onclick="handleDatalistInputTap(this, event)"><button type="button" class="clear-input-btn" aria-label="清除番台" onclick="clearInput('trainSubseries')">✕</button></div>
+                        <datalist id="trainSubseriesList"></datalist>
+                    </div>
+                    <div class="form-field">
+                        <label for="trainFormation">編成（選填）</label>
+                        <div class="input-wrapper"><input id="trainFormation" list="trainFormationList" placeholder="編成編號" oninput="inferTrainSubseriesFromFormation()" onclick="handleDatalistInputTap(this, event)"><button type="button" class="clear-input-btn" aria-label="清除編成" onclick="clearInput('trainFormation')">✕</button></div>
+                        <datalist id="trainFormationList"></datalist>
+                    </div>
                     <div class="form-field">
                         <label>上車站</label>
                         <div class="input-wrapper">
@@ -10587,7 +10801,7 @@ body {
     <div class="card history-desktop-card">
         <div class="history-desktop-head">
         <h3 class="history-title" style="border-bottom:none; margin-bottom:8px; padding-bottom:0; display:flex; align-items:center;">
-            乘車記錄 <span class="history-status-led"><span id="totalCount" class="led-counter">0</span><span id="historySyncLight" class="history-sync-light" role="status" aria-label="資料同步中" title="資料同步中" data-state="syncing">資料同步中</span></span><button type="button" id="historyToolsToggle" class="history-tools-toggle" aria-expanded="false" aria-controls="historyToolsPanel" onclick="toggleHistoryTools()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6M15 14v6"/></svg>工具</button>
+            乘車記錄 <span class="history-status-led"><span id="totalCount" class="led-counter">0</span><span id="historySyncLight" class="history-sync-light" role="status" aria-label="資料同步中" title="資料同步中" data-state="syncing">資料同步中</span></span><button type="button" id="historyToolsToggle" class="history-tools-toggle" aria-label="篩選工具" title="篩選工具" aria-expanded="false" aria-controls="historyToolsPanel" onclick="toggleHistoryTools()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6M15 14v6"/></svg></button>
         </h3>
 
         <div class="history-compact-controls" id="historyToolsPanel">
@@ -10847,6 +11061,16 @@ body {
         <span class="nav-label">記錄</span>
     </div>
 
+    <div class="nav-item" onclick="switchTab('tab-map', this)">
+        <span class="nav-icon" aria-hidden="true">
+            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M12 20s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" />
+                <circle cx="12" cy="10" r="2.2" />
+            </svg>
+        </span>
+        <span class="nav-label">地圖</span>
+    </div>
+
     <div class="nav-item" onclick="switchTab('tab-stats', this)">
         <span class="nav-icon" aria-hidden="true">
             <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
@@ -10858,17 +11082,7 @@ body {
         <span class="nav-label">統計</span>
     </div>
 
-    <div class="nav-item" onclick="switchTab('tab-map', this)">
-        <span class="nav-icon" aria-hidden="true">
-            <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
-                <path d="M12 20s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" />
-                <circle cx="12" cy="10" r="2.2" />
-            </svg>
-        </span>
-        <span class="nav-label">地圖</span>
-    </div>
-
-    <div class="nav-item" onclick="switchTab('tab-gallery', this)">
+    <div class="nav-item nav-secondary" onclick="switchTab('tab-gallery', this)">
         <span class="nav-icon" aria-hidden="true">
             <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
                 <rect x="4" y="6" width="16" height="12" rx="2" />
@@ -10879,7 +11093,7 @@ body {
         <span class="nav-label">相冊</span>
     </div>
 
-    <div class="nav-item" onclick="switchTab('tab-achievements', this)">
+    <div class="nav-item nav-secondary" onclick="switchTab('tab-achievements', this)">
         <span class="nav-icon" aria-hidden="true">
             <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
                 <path d="M12 4l2.2 4.5 5 .7-3.6 3.4.9 4.9L12 15.8 7.5 17.5l.9-4.9L4.8 9.2l5-.7L12 4z" />
@@ -10888,7 +11102,7 @@ body {
         <span class="nav-label">成就</span>
     </div>
 
-    <div class="nav-item" onclick="switchTab('tab-settings', this)">
+    <div class="nav-item nav-secondary" onclick="switchTab('tab-settings', this)">
         <span class="nav-icon" aria-hidden="true">
             <svg class="nav-icon-svg" viewBox="0 0 24 24" fill="none">
                 <path d="M4 7h16M7 12h10M10 17h4" />
@@ -10896,7 +11110,13 @@ body {
         </span>
         <span class="nav-label">管理</span>
     </div>
+    <button type="button" class="mobile-nav-more" id="mobileNavMore" aria-label="更多" aria-haspopup="dialog" aria-controls="mobileNavSheet" onclick="openMobileNav()">
+        <span class="nav-icon" aria-hidden="true"><svg class="nav-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg></span><span class="nav-label">更多</span>
+    </button>
 </nav>
+<dialog id="mobileNavSheet" class="mobile-nav-sheet" aria-label="更多功能" onclick="if(event.target===this)this.close()">
+    <div class="mobile-nav-options"></div>
+</dialog>
 
     <datalist id="companyList"></datalist>
     <datalist id="lineList"></datalist>
@@ -10933,6 +11153,7 @@ body {
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+import {readCompanyCache,mergeCompanySources,watchCompanyUpdates} from './cloud/client.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -11020,6 +11241,8 @@ async function migrateLocalTripsToCloud(user) {
             service_pattern_id: cleanTrip.service_pattern_id || "",
             routes: Array.isArray(cleanTrip.routes) ? cleanTrip.routes : [],
             train_id: cleanTrip.train_id || "",
+            train_subseries: cleanTrip.train_subseries || "",
+            train_formation: cleanTrip.train_formation || "",
             from_id: cleanTrip.from_id || "",
             to_id: cleanTrip.to_id || "",
 
@@ -12592,6 +12815,21 @@ function getCustomDatalistValues(input) {
         values.push(key);
     });
 
+    if (list.dataset?.sortOrder !== 'service' && (listId === 'companyList' || /^stationList/.test(listId))) {
+        const companies = listId === 'companyList';
+        const catalog = companies ? db.companies : db.stations;
+        const byDisplay = new Map((catalog || []).map(item => [item._display || item.name || item.id, item]));
+        values.sort((a,b) => {
+            const left = byDisplay.get(a), right = byDisplay.get(b);
+            if (companies) {
+                const jr = item => /^JR(?:_|$)/i.test(item?.id || item?.company_id || '') || /^JR/i.test(item?.name || '');
+                const priority = Number(jr(right)) - Number(jr(left));
+                if (priority) return priority;
+            }
+            const key = (item, fallback) => item?.name_en || item?.name || fallback;
+            return key(left,a).localeCompare(key(right,b), 'en', {numeric:true,sensitivity:'base'}) || a.localeCompare(b,'ja');
+        });
+    }
     return values;
 }
 
@@ -12605,6 +12843,12 @@ function getCustomDatalistMatches(input) {
     }
 
     if (!query) return values.slice(0, CUSTOM_DATALIST_LIMIT);
+
+    if (getCustomDatalistListId(input) === 'companyList') {
+        return values.filter(value => db.companies.some(company => company.name === value &&
+            getCompanySearchNames(company).some(name => normalizeCustomDatalistText(name).includes(query))))
+            .slice(0, CUSTOM_DATALIST_LIMIT);
+    }
 
     const startsWith = [];
     const contains = [];
@@ -12723,6 +12967,7 @@ function showCustomDatalist(input) {
     const menu = renderCustomDatalistMenu(input, matches);
     positionCustomDatalistMenu(input, menu);
     menu.classList.add("active");
+    menu.scrollTop = 0;
     input.setAttribute("aria-expanded", "true");
     settleCustomDatalistPosition();
     return true;
@@ -12753,6 +12998,7 @@ function hideCustomDatalist() {
 }
 
 function refreshCustomDatalistForList(listId) {
+    refreshInputAffordances();
     if (customDatalistState.committing) return;
 
     const input = customDatalistState.input;
@@ -12958,8 +13204,10 @@ function getRouteBadgeColor(routeName = "") {
 }
 
 function getTripTrainDisplay(trip) {
+    const details = [trip.train_subseries, trip.train_formation ? `${trip.train_formation} 編成` : ''].filter(Boolean).join(' ');
+    const suffix = details ? ` ${details}` : '';
     const trainObj = maps.train[trip.train_id];
-    if (!trainObj) return trip.train_id;
+    if (!trainObj) return (trip.train_id || '') + suffix;
     const trainCompanyId = trainObj.company_id;
     const rideCompanyId = trip.company_id; 
     const throughCompanyId = trip.throughCompany_id; 
@@ -12968,10 +13216,10 @@ function getTripTrainDisplay(trip) {
          isSameCompany = false;
     }
     if (isSameCompany) {
-        return trainObj.name; 
+        return trainObj.name + suffix; 
     } else {
         const companyName = maps.company[trainCompanyId]?.name || trainCompanyId;
-        return `${companyName} ${trainObj.name}`; 
+        return `${companyName} ${trainObj.name}${suffix}`; 
     }
 }
 
@@ -13010,9 +13258,26 @@ function hideLoadingScreen() {
     mainApp.classList.add('show');
 }
 
-async function loadData() {
+let companyLocalSources = null;
+let companyCloudPending = false;
+let companyDataRefreshing = false;
+function canRefreshCompanyData() {
+    return !tripSaveInProgress && !editingTripId && editIndex === null &&
+        !document.querySelector('#tab-add input:focus, #tab-add textarea:focus, #tab-add select:focus') &&
+        !document.querySelector('#throughContainer .through-block') &&
+        !['company','line','serviceName','serviceType','from','to','train','trainSubseries','trainFormation','trainOwnerCompany','photoTrain','photoFrom','photoTo'].some(id=>document.getElementById(id)?.value.trim());
+}
+async function applyPendingCompanyUpdate() {
+    if(!companyCloudPending||companyDataRefreshing||!canRefreshCompanyData())return;
+    companyDataRefreshing=true;
+    try{const applied=await loadData({background:true});if(applied===false)return;companyCloudPending=false;render();if(railMapInstance)renderMap();}
+    finally{companyDataRefreshing=false;}
+}
+async function loadData({background=false}={}) {
+    const cloudCache=await readCompanyCache();
+    if(background&&!canRefreshCompanyData())return false;
     try {
-        setRailLoaderPreset("dbFetch");
+        if(!background)setRailLoaderPreset("dbFetch");
 
         db.companies = [];
         db.lines = [];
@@ -13036,10 +13301,13 @@ async function loadData() {
             "nagoya.json", "kumamoto_city.json", "kagoshima.json", "kyoto_subway.json", "fukuoka_subway.json", "krt.json", "kanto.json", "hitachinaka.json", "utsunomiya_lrt.json", "moka.json", "yagantetsudo.json", "joshin.json", "jomo.json", "watarase.json", "saitama.json", "saitama_urban.json", "chichibu.json", "isumi.json", "kominato.json", "shibayama.json", "chiba_mono.json", "choshi.json", "toyo.json", "hokuso.json", "ryutetsu.json", "tsukuba.json", "tama_mono.json", "tokyo_mono.json", "twr.json", 
             "yurikamome.json", "enoshima.json", "odakyu_hakone.json", "shonan_mono.json", "yokohama.json", "yokohama_seaside.json", "jr_east.json", "odakyu.json", "tobu.json", "tokyu.json", "seibu.json", "keio.json", "keisei.json", "nishitetsu.json", "jr_central.json", "jr_shikoku.json", "jr_kyushu.json", "jr_hokkaido.json", "echigo.json", "hokuetsu.json", "ainokaze.json", "toyamachiho.json", "manyosen.json", "ir.json", "noto.json", "hokuriku.json", "echizen.json", "hapi.json", "fukui.json", "fujikyu.json", "alpico.json", "uedadentetsu.json", "shinano.json", "nagano.json", "akechi.json", "tarumi.json", "nagaragawa.json", "yoro.json", "izukyu.json", "izuhakone.json", "enshu.json", "oigawa.json", "gakunan.json", "shizu.json", "tenryu.json", "aichi_loop.json", "tkj.json", "toyohashi.json", "nagoya_rinkai.json", "iga.json", "ise.json", "sangi.json", "yokkaichi.json"]; 
         
-        const fetchPromises = newCompanyFiles.map(file => fetch(file, { cache: "no-cache" }).then(res => res.ok ? res.json() : null).catch(() => null));
-        const results = await Promise.all(fetchPromises);
+        if(!background||!companyLocalSources){
+            const fetchPromises = newCompanyFiles.map(file => fetch(file, { cache: "no-cache" }).then(res => res.ok ? res.json() : null).catch(() => null));
+            companyLocalSources = await Promise.all(fetchPromises);
+        }
+        const results = mergeCompanySources(companyLocalSources,cloudCache);
 
-        setRailLoaderPreset("dbParse");
+        if(!background)setRailLoaderPreset("dbParse");
         
         const loadedCompanyIds = new Set();
 
@@ -13051,7 +13319,10 @@ async function loadData() {
     if (!loadedCompanyIds.has(compData.company_id)) {
         db.companies.push({
             id: compData.company_id,
-            name: compData.company_name || compData.name || compData.company_id,
+            name: String(compData.display_name || '').trim() || compData.company_name || compData.name || compData.company_id,
+            official_name: compData.official_name || compData.company_name || compData.name || '',
+            legacy_name: compData.company_name || compData.name || '',
+            aliases: Array.isArray(compData.aliases) ? compData.aliases.filter(name => typeof name === 'string') : [],
             categories: normalizeRailCompanyCategory(compData.categories || "")
         });
         loadedCompanyIds.add(compData.company_id);
@@ -13117,11 +13388,13 @@ async function loadData() {
         });
     } 
     finally {
-        setRailLoaderPreset("dbIndex");
+        if(!background)setRailLoaderPreset("dbIndex");
+        maps = {company:{},line:{},station:{},train:{}};
+        resolve = {company:{},station:{},train:{}};
         buildMaps();
         buildRailSegmentUsageIndex();
         initUILists();
-        markBootstrapTaskReady("railDb");
+        if(!background)markBootstrapTaskReady("railDb");
     }
 }
 
@@ -13133,7 +13406,15 @@ function buildMaps() {
     });
     db.trains = Object.values(trainById);
 	
-    db.companies.forEach(c => { maps.company[c.id] = c; resolve.company[c.name] = c.id; });
+    const companyNameIds = new Map();
+    db.companies.forEach(c => {
+        maps.company[c.id] = c;
+        getCompanySearchNames(c).forEach(name => {
+            if (!companyNameIds.has(name)) companyNameIds.set(name,new Set());
+            companyNameIds.get(name).add(c.id);
+        });
+    });
+    companyNameIds.forEach((ids,name) => { if(ids.size===1) resolve.company[name]=[...ids][0]; });
     db.lines.forEach(l => { maps.line[l.id] = l; });
     db.stations.forEach(s => {
         maps.station[s.id] = s;
@@ -13168,7 +13449,7 @@ function buildMaps() {
 
 function initUILists() {
     fillList("companyList", db.companies.map(c => c.name));
-    fillList("lineList", db.lines.filter(l => l.selectable !== false).map(l => l.name));
+    fillList("lineList", db.lines.filter(l => l.selectable !== false && isRailItemAvailableOnDate(l)).map(l => l.name));
     updateTrainDatalist();
     updateServiceNameDatalist();
     updateMainLoopDirectionUI();
@@ -13182,7 +13463,56 @@ function fillList(listId, dataArray) {
     refreshCustomDatalistForList(listId);
 }
 
+function initMobileNavScroll() {
+    const nav = document.querySelector('.bottom-nav');
+    if (!nav) return;
+    const mobile = window.matchMedia('(max-width:899px)');
+    const scrollPosition = () => Math.max(0, Math.min(window.scrollY,
+        Math.max(0, document.documentElement.scrollHeight - window.innerHeight)));
+    let previous = scrollPosition();
+    let travel = 0;
+    nav.querySelectorAll('.nav-item').forEach(item => {
+        const label = item.querySelector('.nav-label').textContent;
+        item.setAttribute('aria-label', label);
+        item.setAttribute('title', label);
+    });
+    const reset = () => { nav.classList.remove('is-compact'); previous = scrollPosition(); travel = 0; };
+    mobile.addEventListener('change', reset);
+    nav.addEventListener('click', reset);
+    window.addEventListener('scroll', () => {
+        const current = scrollPosition();
+        const delta = current - previous;
+        previous = current;
+        if (!mobile.matches || current < 24) { reset(); return; }
+        if (document.querySelector('dialog[open]') || document.activeElement?.matches('input, textarea, select, [contenteditable="true"]')) { travel = 0; return; }
+        // Ignore small direction changes and clamp Safari overscroll at both ends.
+        if (delta === 0) return;
+        travel = Math.sign(delta) === Math.sign(travel) ? travel + delta : delta;
+        if (Math.abs(travel) >= 12) {
+            nav.classList.toggle('is-compact', travel > 0);
+            travel = 0;
+        }
+    }, {passive:true});
+}
+initMobileNavScroll();
+
+window.openMobileNav = function() {
+    const sheet = document.getElementById('mobileNavSheet');
+    const options = sheet.querySelector('.mobile-nav-options');
+    options.replaceChildren();
+    document.querySelectorAll('.bottom-nav > .nav-secondary').forEach(nav => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.innerHTML = nav.innerHTML;
+        button.classList.toggle('active', nav.classList.contains('active'));
+        button.addEventListener('click', () => nav.click());
+        options.appendChild(button);
+    });
+    sheet.showModal();
+};
 window.switchTab = function(tabId, navElement) {
+    document.getElementById('mobileNavSheet')?.close();
+    document.getElementById('mobileNavMore')?.classList.toggle('active', navElement.classList.contains('nav-secondary'));
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
@@ -13287,7 +13617,7 @@ function setupAddOptionPanels() {
 
     const layout = document.querySelector(".desktop-add-layout");
     const rideSection = document.querySelector(".desktop-ride-section");
-    if (layout && rideSection && optionArea.parentElement !== layout) {
+    if (layout && rideSection && !layout.classList.contains('ride-step-layout') && optionArea.parentElement !== layout) {
         layout.insertBefore(optionArea, rideSection);
     }
 
@@ -13300,7 +13630,8 @@ function setupAddOptionPanels() {
     const otherField = document.getElementById("useOtherTrainCompany")?.closest(".form-field");
     if (otherField) {
         otherField.classList.add("add-option-panel", "other-train-panel");
-        if (otherField.parentElement !== optionArea) optionArea.appendChild(otherField);
+        const vehicleOptions = document.getElementById('vehicleOptions');
+        if (otherField.parentElement !== (vehicleOptions || optionArea)) (vehicleOptions || optionArea).appendChild(otherField);
     }
 }
 
@@ -13443,17 +13774,19 @@ function resolveServicePatternStationId(value) {
     return resolveStationIdForLine(value, datedLine);
 }
 
-function findSelectedServicePattern() {
+function findSelectedServicePattern(options = {}) {
     const nameKey = normalizeServiceLookupText(document.getElementById("serviceName")?.value);
     const companyName = document.getElementById("company")?.value || "";
     const companyId = resolve.company[companyName] || companyName;
     const typeKey = normalizeServiceLookupText(document.getElementById("serviceType")?.value);
-    if (!nameKey && !typeKey) return null;
+    if (!nameKey && !typeKey) return options.all ? [] : null;
     const dateValue = document.getElementById("date")?.value || "";
     const fromId = resolveServicePatternStationId(document.getElementById("from")?.value);
     const toId = resolveServicePatternStationId(document.getElementById("to")?.value);
 
+    const exactNamedServices = nameKey ? (db.services || []).filter(service => getServiceNames(service).some(name => normalizeServiceLookupText(name) === nameKey)) : [];
     const matches = (db.services || []).filter(service => {
+        if (exactNamedServices.length === 1) return service === exactNamedServices[0];
         if (!isServiceAvailableForCompany(service, companyId)) return false;
         if (typeKey && service.service_type && normalizeServiceLookupText(service.service_type) !== typeKey) return false;
         if (!nameKey) return !String(service.name || '').trim() && normalizeServiceLookupText(service.service_type) === typeKey;
@@ -13463,6 +13796,7 @@ function findSelectedServicePattern() {
     const candidates = matches.flatMap(service => (Array.isArray(service.patterns) ? service.patterns : [])
         .filter(pattern => isServicePatternDateValid(pattern, dateValue))
         .filter(pattern => {
+            if (options.all) return true;
             const stops = Array.isArray(pattern.stops) ? pattern.stops : [];
             if (fromId && !stops.includes(fromId)) return false;
             if (toId && !stops.includes(toId)) return false;
@@ -13470,7 +13804,18 @@ function findSelectedServicePattern() {
         })
         .map(pattern => ({ service, pattern })));
 
-    return candidates.length === 1 ? candidates[0] : null;
+    if (options.all) return candidates;
+    if (!fromId || !toId || fromId === toId) return null;
+    if (candidates.length === 1) return candidates[0];
+    if (fromId && toId && candidates.length > 1) {
+        const endpointMatches = candidates.filter(({pattern}) => {
+            const stops = pattern.stops || [];
+            return (stops[0] === fromId && stops[stops.length-1] === toId)
+                || (stops[0] === toId && stops[stops.length-1] === fromId);
+        });
+        if (endpointMatches.length === 1) return endpointMatches[0];
+    }
+    return null;
 }
 
 function getServiceJourneySegments(pattern) {
@@ -13562,7 +13907,29 @@ window.toggleAutoServiceThroughDetails = function() {
 };
 
 function applySelectedServicePattern(options = {}) {
-    const selected = options.selected || findSelectedServicePattern();
+    const nameKey = normalizeServiceLookupText(document.getElementById('serviceName')?.value);
+    const named = nameKey ? (db.services || []).filter(service => getServiceNames(service).some(name => normalizeServiceLookupText(name) === nameKey)) : [];
+    if (named.length === 1) {
+        const service = named[0];
+        const patterns = (service.patterns || []).filter(pattern => isServicePatternDateValid(pattern,document.getElementById('date')?.value || ''));
+        if (patterns.length) {
+            document.getElementById('serviceType').value = service.service_type || '';
+            const first = patterns[0].segments?.[0];
+            if (first && patterns.every(pattern => pattern.segments?.[0]?.company_id === first.company_id && pattern.segments?.[0]?.line_id === first.line_id)
+                && !findSelectedServicePattern()) {
+                const companyName = maps.company[first.company_id]?.name || first.company_id;
+                document.getElementById('company').value = companyName;
+                updateLineList(companyName,'lineList');
+                document.getElementById('line').value = maps.line[first.line_id]?.name || first.line_id;
+                updateTrainDatalist({companyId:first.company_id,resetTrain:false});
+            }
+        }
+    }
+    let selected = options.selected || findSelectedServicePattern();
+    if (!selected && (!document.getElementById('from')?.value.trim() || !document.getElementById('to')?.value.trim())) {
+        const available = findSelectedServicePattern({all:true});
+        if (available.length === 1) selected = available[0];
+    }
     if (!selected) {
         activeServicePattern = null;
         activeServiceDefinition = null;
@@ -13684,8 +14051,19 @@ document.getElementById("serviceName")?.addEventListener("input", () => {
     syncAddOptionControls();
     updateServiceNameDatalist();
     scheduleApplySelectedServicePattern();
+    updateStationLists();
+});
+document.getElementById('serviceName')?.addEventListener('change', () => {
+    clearTimeout(servicePatternApplyTimer);
+    applySelectedServicePattern({silent:true});
 });
 document.getElementById("date")?.addEventListener("change", () => {
+    validateRideClosureSelection(true);
+    updateLineList(document.getElementById('company').value, 'lineList');
+    document.querySelectorAll('.through-block').forEach(block => {
+        const list = block.querySelector('datalist:not(.throughJunctionList)');
+        if (list) updateLineList(block.querySelector('.throughCompany').value, list.id);
+    });
     updateStationLists();
     updateAllLoopDirectionUI();
     scheduleApplySelectedServicePattern();
@@ -13750,6 +14128,7 @@ window.updateTrainDatalist = function(options = {}) {
 
     if (shouldResetTrain && trainInput) {
         trainInput.value = "";
+        updateTrainDetailOptions(true);
     }
 
     renderTrainDatalistOptions(currentCompanyTrains, options.limit || 50);
@@ -13762,7 +14141,241 @@ window.scheduleUpdateTrainDatalist = function(options = {}) {
     }, options.delay ?? 90);
 }
 
+function initRideSteps() {
+    const layout = document.querySelector('#tab-add .desktop-add-layout');
+    if (!layout || layout.classList.contains('ride-step-layout')) return;
+    layout.classList.add('ride-step-layout');
+    const route = layout.querySelector('.desktop-route-section');
+    const vehicle = layout.querySelector('.desktop-ride-section');
+    const stations = document.createElement('section');
+    stations.className='desktop-add-section station-step';
+    const stationGrid=document.createElement('div'); stationGrid.className='desktop-form-grid';
+    stations.appendChild(stationGrid); layout.insertBefore(stations,vehicle);
+    for (const id of ['from','to']) stationGrid.appendChild(document.getElementById(id).closest('.form-field'));
+    route.querySelector('.desktop-form-grid').appendChild(document.getElementById('serviceName').closest('.form-field'));
+    const vehicleGrid=vehicle.querySelector('.desktop-form-grid');
+    const extras=document.createElement('details'); extras.className='ride-extra';
+    extras.innerHTML='<summary>番台／編成（選填）</summary><div class="ride-extra-grid"></div>';
+    for(const id of ['trainSubseries','trainFormation']) extras.lastElementChild.appendChild(document.getElementById(id).closest('.form-field'));
+    vehicleGrid.appendChild(extras);
+    const photos=document.createElement('details'); photos.className='ride-photo-section'; photos.innerHTML='<summary><span class="ride-number">04</span> 相片</summary>';
+    photos.appendChild(vehicleGrid.querySelector('.photo-field')); layout.appendChild(photos);
+    const sectionIcons = [
+        '<path d="M6 3v18M6 12h7a5 5 0 0 0 5-5V3M3 6l3-3 3 3m6 0 3-3 3 3"/>',
+        '<circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/><path d="M8 12h8"/>',
+        '<rect x="5" y="3" width="14" height="15" rx="3"/><path d="M5 11h14M12 3v8M8 18l-2 3m10-3 2 3M8 15h1m6 0h1"/>',
+        '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/>'
+    ];
+    const photoIcon=document.createElement('span');photoIcon.className='ride-category-icon';photoIcon.innerHTML=`<svg viewBox="0 0 24 24" aria-hidden="true">${sectionIcons[3]}</svg>`;
+    photos.querySelector('summary').appendChild(photoIcon);
+    const photoBody=document.createElement('div');photoBody.className='ride-photo-body';
+    photoBody.appendChild(photos.querySelector('.photo-field'));photos.appendChild(photoBody);
+    let photoAnimation=null, photoTargetOpen=false;
+    photos.querySelector('summary').addEventListener('click',event=>{
+        if(!window.matchMedia('(max-width:899px)').matches)return;
+        event.preventDefault();layout.dataset.manualSections='true';
+        const start=photos.open?photoBody.getBoundingClientRect().height:0;
+        photoAnimation?.cancel();photoTargetOpen=!photoTargetOpen;
+        photos.open=true;photoBody.style.overflow='hidden';
+        const finish=()=>{photos.open=photoTargetOpen;photoBody.style.overflow='';photoAnimation=null;};
+        if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){finish();return;}
+        photoAnimation=photoBody.animate([{height:`${start}px`,opacity:photoTargetOpen ? 0.4 : 1},{height:`${photoTargetOpen?photoBody.scrollHeight:0}px`,opacity:photoTargetOpen?1:0}],{duration:220,easing:'ease-in-out'});
+        photoAnimation.onfinish=finish;
+    });
+    [route,stations,vehicle].forEach((section,index)=>{
+        section.querySelector('.desktop-section-heading')?.remove();
+        section.classList.add('ride-step');
+        const body=document.createElement('div'); body.className='ride-step-body'; body.id=`rideStepBody${index}`;
+        while(section.firstChild) body.appendChild(section.firstChild);
+        const heading=document.createElement('div');heading.className='ride-step-heading';
+        heading.innerHTML=`<strong><span class="ride-number">0${index+1}</span>${['行程','站間','車両'][index]}</strong><span class="ride-step-summary"></span><button type="button" class="ride-icon-button" title="修改${['行程','站間','車両'][index]}" aria-label="修改${['行程','站間','車両'][index]}" aria-controls="${body.id}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15z"/></svg></button>`;
+        const toggle=()=>{ if(window.matchMedia('(max-width:899px)').matches) {layout.dataset.manualSections='true';animateRideSection(section,body.hidden || body.dataset.closing==='true');} };
+        const iconButton=heading.querySelector('button');
+        iconButton.querySelector('svg').innerHTML=sectionIcons[index];
+        iconButton.title=`展開／收合${['路線','區間','車両'][index]}`;
+        if(index===1)heading.querySelector('strong').innerHTML='<span class="ride-number">02</span>區間';
+        iconButton.setAttribute('aria-label',iconButton.title);
+        heading.addEventListener('click',event=>{if(event.target.closest('input'))return;toggle();});
+        const summary=heading.querySelector('.ride-step-summary');
+        summary.tabIndex=0; summary.setAttribute('role','button');summary.setAttribute('aria-label','展開資料');
+        const openSummary=()=>{layout.dataset.manualSections='true';animateRideSection(section,true);};
+        summary.addEventListener('click',event=>{event.stopPropagation();toggle();});
+        summary.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openSummary();}});
+        section.append(heading,body);
+    });
+    setRideStep(0);
+    const desktop = window.matchMedia('(min-width:900px)');
+    const dateField=document.querySelector('#tab-add .form-field-date');
+    const dateInput=document.getElementById('rideDateTime');
+    const syncDetails = () => {
+        layout.querySelectorAll('.ride-extra').forEach(details => { details.open=desktop.matches; });
+        photoAnimation?.cancel();photoAnimation=null;photoBody.style.overflow='';
+        photos.open=desktop.matches;photoTargetOpen=photos.open;
+        photos.querySelector('.ride-number').textContent=desktop.matches?'03':'04';
+        const optionArea=document.getElementById('addOptionArea');
+        if(optionArea) route.querySelector('.desktop-form-grid').appendChild(optionArea);
+        let vehicleOptions=document.getElementById('vehicleOptions');
+        if(!vehicleOptions){vehicleOptions=document.createElement('div');vehicleOptions.id='vehicleOptions';vehicleOptions.className='vehicle-options';vehicleGrid.prepend(vehicleOptions);}
+        const otherButton=document.getElementById('btnOtherTrainOption');
+        if(otherButton)vehicleOptions.appendChild(otherButton);
+        const otherField=document.getElementById('useOtherTrainCompany')?.closest('.form-field');
+        if(otherField)vehicleOptions.appendChild(otherField);
+        const serviceField = document.getElementById('serviceName').closest('.form-field');
+        if (desktop.matches) {
+            route.querySelector('.ride-step-body').insertBefore(stationGrid,route.querySelector('.ride-step-next'));
+            dateField.appendChild(dateInput);
+        } else {
+            stations.querySelector('.ride-step-body').insertBefore(stationGrid,stations.querySelector('.ride-step-next'));
+            route.querySelector('.ride-step-heading').appendChild(dateInput);
+        }
+        if(optionArea) optionArea.appendChild(serviceField); else route.querySelector('.desktop-form-grid').appendChild(serviceField);
+        route.querySelector('.ride-step-heading > strong').innerHTML=`<span class="ride-number">01</span>${desktop.matches?'路線資料':'路線'}`;
+        vehicle.querySelector('.ride-step-heading > strong').innerHTML=`<span class="ride-number">${desktop.matches?'02':'03'}</span>${desktop.matches?'列車資料':'車両'}`;
+    };
+    layout.querySelectorAll('.ride-extra > summary').forEach(summary => summary.addEventListener('click',event=>{if(desktop.matches)event.preventDefault();}));
+    desktop.addEventListener('change',syncDetails);
+    syncDetails();
+    const autoAdvance = event => {
+        if (!window.matchMedia('(max-width:899px)').matches) return;
+        if (layout.dataset.manualSections === 'true') return;
+        const id=event.target.id;
+        const index=['line','serviceName','serviceType'].includes(id)?0:['from','to'].includes(id)?1:-1;
+        if(index<0 || document.getElementById(`rideStepBody${index}`)?.hidden) return;
+        if(layout.dataset[`completed${index}`])return;
+        requestAnimationFrame(()=>{
+            if(layout.dataset.manualSections === 'true' || layout.dataset[`completed${index}`])return;
+            const val=id=>document.getElementById(id)?.value.trim();
+            if(index===0) {
+                const company=resolve.company[val('company')] || val('company');
+                const knownLine=db.lines.some(line=>line.company_id===company && (line.name===val('line') || line.id===val('line')));
+                if(val('company') && (knownLine || findSelectedServicePattern({all:true}).length)) advanceRideStep(0);
+            } else if(val('from') && val('to') && maps.station[resolveServicePatternStationId(val('from'))] && maps.station[resolveServicePatternStationId(val('to'))]) advanceRideStep(1);
+        });
+    };
+    layout.addEventListener('change',autoAdvance);
+}
+function animateRideSection(section, open) {
+    const body=section.querySelector('.ride-step-body');
+    const start=body.hidden?0:body.getBoundingClientRect().height;
+    body.getAnimations().forEach(animation=>animation.cancel());
+    body.hidden=false; body.dataset.closing=String(!open);
+    const end=open?body.scrollHeight:0;
+    const button=section.querySelector('.ride-step-heading button');
+    button.setAttribute('aria-expanded',String(open));
+    const finish=()=>{body.hidden=!open;body.style.overflow='';delete body.dataset.closing;};
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){finish();return;}
+    body.style.overflow='hidden';
+    const animation=body.animate([{height:`${start}px`,opacity:open?0.4:1},{height:`${end}px`,opacity:open?1:0}],{duration:220,easing:'ease-in-out'});
+    animation.onfinish=finish;
+    if(open && section.classList.contains('desktop-ride-section'))document.getElementById('saveTripButton').hidden=false;
+}
+function setRideStep(index, animate = false) {
+    const layout=document.querySelector('#tab-add .ride-step-layout');
+    if(index===0 && !animate && layout){delete layout.dataset.manualSections;delete layout.dataset.completed0;delete layout.dataset.completed1;}
+    const val=id=>document.getElementById(id)?.value.trim() || '';
+    const summaries=[ [val('company'),val('serviceName') || val('line')].filter(Boolean).join(' · '),
+        [val('from'),val('to')].filter(Boolean).join(' → '),[val('train'),val('trainSubseries'),val('trainFormation')].filter(Boolean).join(' · ') ];
+    document.querySelectorAll('#tab-add .ride-step').forEach((section,i)=>{
+        if(animate && window.matchMedia('(max-width:899px)').matches) animateRideSection(section,i===index);
+        else { const body=section.querySelector('.ride-step-body');body.getAnimations().forEach(animation=>animation.cancel());body.hidden=i!==index;body.style.overflow='';delete body.dataset.closing; }
+        section.querySelector('.ride-step-summary').textContent=summaries[i];
+        const button=section.querySelector('.ride-step-heading button');button.disabled=false;button.hidden=false;button.setAttribute('aria-expanded',String(i===index));
+    });
+    const save=document.getElementById('saveTripButton');if(save)save.hidden=false;
+    hideCustomDatalist();
+}
+function advanceRideStep(index) {
+    clearTimeout(servicePatternApplyTimer);
+    const value=id=>document.getElementById(id)?.value.trim();
+    if(index===0 && (!value('company') || (!value('line') && !findSelectedServicePattern({all:true}).length))) {showToast('請先選擇公司及路線或運行列車','var(--danger)');return;}
+    if(index===1 && (!value('from') || !value('to') || value('from')===value('to'))) {showToast('請選擇不同的上下車站','var(--danger)');return;}
+    if(index===1 && findSelectedServicePattern({all:true}).length && !findSelectedServicePattern()) {showToast('上下車站未能對應唯一運行版本，請重新選擇','var(--danger)');return;}
+    if(validateRideClosureSelection(true))return;
+    applySelectedServicePattern({silent:true});
+    updateStationLists();
+    const layout=document.querySelector('#tab-add .ride-step-layout');
+    if(layout)layout.dataset[`completed${index}`]='true';
+    setRideStep(index+1,true);
+}
+initRideSteps();
+function inferTrainSubseriesFromFormation() {
+    const subseries = document.getElementById('trainSubseries');
+    if (!subseries || (subseries.value.trim() && !subseries.dataset.autoFormation)) return;
+    const value = document.getElementById('train')?.value || '';
+    const train = db.trains.find(item => item.id === value || item._display === value || item.name === value);
+    const formation = document.getElementById('trainFormation')?.value.trim();
+    const matches = Object.entries(train?.formations_by_subseries || {}).filter(([,ids]) => Array.isArray(ids) && ids.includes(formation));
+    subseries.value = formation && matches.length === 1 ? matches[0][0] : '';
+    if (subseries.value) subseries.dataset.autoFormation='true'; else delete subseries.dataset.autoFormation;
+    updateTrainDetailOptions();
+}
+window.inferTrainSubseriesFromFormation = inferTrainSubseriesFromFormation;
+function refreshInputAffordances() {
+    document.querySelectorAll('#tab-add .form-field input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="date"]):not([type="time"]):not([type="datetime-local"]):not([readonly]), #tab-add .form-field textarea').forEach(input => {
+        let wrapper = input.closest('.input-wrapper');
+        if (!wrapper) {
+            wrapper = document.createElement('div'); wrapper.className='input-wrapper';
+            input.before(wrapper); wrapper.appendChild(input);
+        }
+        if (!wrapper.querySelector('.clear-input-btn')) {
+            const button = document.createElement('button'); button.type='button'; button.className='clear-input-btn';
+            button.textContent='✕'; button.setAttribute('aria-label','清除輸入');
+            button.addEventListener('click',() => { input.value=''; input.dispatchEvent(new Event('input',{bubbles:true})); input.dispatchEvent(new Event('change',{bubbles:true})); });
+            wrapper.appendChild(button);
+        }
+    });
+    document.querySelectorAll('.input-wrapper').forEach(wrapper => {
+        const input = wrapper.querySelector('input,textarea');
+        if (!input) return;
+        const button = wrapper.querySelector('.clear-input-btn');
+        if (button) button.hidden = !input.value;
+        const list = input.getAttribute('list') || input.dataset.nativeList;
+        wrapper.classList.toggle('no-options', !list || !document.getElementById(list)?.querySelector('option'));
+    });
+}
+document.addEventListener('input',refreshInputAffordances);
+document.addEventListener('change',refreshInputAffordances);
+document.addEventListener('focusin',refreshInputAffordances);
+document.addEventListener('click',() => requestAnimationFrame(refreshInputAffordances));
+requestAnimationFrame(refreshInputAffordances);
+window.clearRideForm = function() {
+    if (tripSaveInProgress || !confirm('清除全部乘車輸入資料？')) return;
+    clearTimeout(servicePatternApplyTimer);
+    document.querySelectorAll('#tab-add input, #tab-add textarea').forEach(input => {
+        if (input.type === 'checkbox' || input.type === 'radio') input.checked=false;
+        else input.value='';
+        input.removeAttribute('aria-invalid'); input.removeAttribute('data-closure-invalid');
+    });
+    document.getElementById('throughContainer').replaceChildren();
+    activeServicePattern=null; activeServiceDefinition=null;
+    editingTripId=null; editIndex=null;
+    clearAllPhotosUI(); setAutoServiceThroughSummary([]);
+    hideCustomDatalist();
+    syncAddOptionControls(); updateAllLoopDirectionUI();
+    updateLineList('','lineList'); updateTrainDatalist(); updateStationLists(); updateServiceNameDatalist();
+    updateTrainDetailOptions(true); refreshLiveRideDateTime(); syncRideDateTimeDisplay();
+    setRideStep(0);
+    refreshInputAffordances(); showToast('已清除乘車輸入資料');
+};
+function updateTrainDetailOptions(reset = false, subseriesChanged = false) {
+    const value = document.getElementById('train')?.value || '';
+    const train = db.trains.find(item => item.id === value || item._display === value || item.name === value);
+    const subseries = document.getElementById('trainSubseries');
+    const formation = document.getElementById('trainFormation');
+    if ((reset || subseriesChanged) && subseries) delete subseries.dataset.autoFormation;
+    if (reset) { if (subseries) subseries.value=''; if (formation) formation.value=''; }
+    const groups = train?.formations_by_subseries || {};
+    const names = [...new Set([...(train?.subseries || []), ...Object.keys(groups)])];
+    const selected = subseries?.value.trim() || '';
+    const choices = selected && !subseries?.dataset.autoFormation ? (Array.isArray(groups[selected]) ? groups[selected] : [])
+        : [...(train?.formations || []), ...Object.values(groups).filter(Array.isArray).flat()];
+    if (subseriesChanged && selected && formation?.value && !choices.includes(formation.value.trim())) formation.value='';
+    fillList('trainSubseriesList',names);
+    fillList('trainFormationList',[...new Set(choices)]);
+}
+window.updateTrainDetailOptions = updateTrainDetailOptions;
 document.getElementById("train").addEventListener("input", function() {
+    updateTrainDetailOptions(true);
     clearTimeout(trainFilterTimeout);
 
     const keyword = this.value.trim().toLowerCase();
@@ -13782,12 +14395,54 @@ document.getElementById("train").addEventListener("input", function() {
     }, keyword ? 110 : 0);
 });
 
+function isRailItemAvailableOnDate(item, date = document.getElementById('date')?.value || '') {
+    if (!item || item.is_closed !== true) return true;
+    return /^\d{4}-\d{2}-\d{2}$/.test(item.closed_on || '') && !!date && date < item.closed_on;
+}
+function validateRideClosureSelection(notify = false) {
+    const date = document.getElementById('date')?.value || '';
+    const errors = [];
+    document.querySelectorAll('[data-closure-invalid]').forEach(input => {
+        input.removeAttribute('aria-invalid');
+        input.removeAttribute('data-closure-invalid');
+    });
+    const check = (input, item) => {
+        if (!input?.value || !item || isRailItemAvailableOnDate(item,date)) return;
+        input.setAttribute('aria-invalid','true');
+        input.setAttribute('data-closure-invalid','true');
+        errors.push(`${item.name || item.id}（${item.closed_on || '日期未設定'}廢止）`);
+    };
+    const checkLine = (companyInput,lineInput) => {
+        const company = resolve.company[companyInput?.value] || companyInput?.value;
+        const line = db.lines.find(item => (item.id === lineInput?.value || item.name === lineInput?.value) && (!company || item.company_id === company));
+        check(lineInput,line);
+        return line;
+    };
+    let lastLine = checkLine(document.getElementById('company'),document.getElementById('line'));
+    const from = document.getElementById('from');
+    check(from,maps.station[resolveStationIdForLine(from?.value,lastLine)]);
+    document.querySelectorAll('.through-block').forEach(block => {
+        lastLine = checkLine(block.querySelector('.throughCompany'),block.querySelector('.throughLine'));
+        const junction = block.querySelector('.throughJunctionStation');
+        check(junction,maps.station[resolveStationIdForLine(junction?.value,lastLine)]);
+    });
+    const to = document.getElementById('to');
+    check(to,maps.station[resolveStationIdForLine(to?.value,lastLine)]);
+    const message = errors.length ? `乘車日期不可使用：${[...new Set(errors)].join('、')}` : '';
+    const status = document.getElementById('tripSaveStatus');
+    if (notify && status) {
+        if (message) { status.hidden=false; status.textContent=message; status.style.color='var(--danger)'; status.dataset.closureError='true'; }
+        else if (status.dataset.closureError) { status.hidden=true; delete status.dataset.closureError; }
+    }
+    if (notify && message) showToast(message,'var(--danger)');
+    return message;
+}
 window.updateLineList = function(compName, targetListId) {
     const compId = resolve.company[compName];
     const list = document.getElementById(targetListId);
     if(!list) return;
     list.innerHTML = "";
-    let linesToShow = db.lines.filter(l => l.selectable !== false && (!compId || l.company_id === compId));
+    let linesToShow = db.lines.filter(l => l.selectable !== false && isRailItemAvailableOnDate(l) && (!compId || l.company_id === compId));
     linesToShow.forEach(l => list.appendChild(new Option(l.name)));
     refreshCustomDatalistForList(targetListId);
 }
@@ -13826,8 +14481,11 @@ function fillStationDatalist(listId, compId, lineInput) {
     list.innerHTML = "";
     let stationsToShow = [];
 
-    if ((listId === "stationListFrom" || listId === "stationListTo") && Array.isArray(activeServicePattern?.stops)) {
-        stationsToShow = activeServicePattern.stops.map(id => maps.station[id]).filter(Boolean);
+    const serviceCandidates = (listId === "stationListFrom" || listId === "stationListTo") ? findSelectedServicePattern({all:true}) : [];
+    list.dataset.sortOrder = serviceCandidates.length ? 'service' : '';
+    if (serviceCandidates.length) {
+        const ids = [...new Set(serviceCandidates.flatMap(({pattern}) => pattern.stops || []))];
+        stationsToShow = ids.map(id => maps.station[id]).filter(s => s && isRailItemAvailableOnDate(s));
         stationsToShow.forEach(s => list.appendChild(new Option(s._display || s.name || s.id)));
         refreshCustomDatalistForList(listId);
         return;
@@ -13847,7 +14505,7 @@ function fillStationDatalist(listId, compId, lineInput) {
         stationsToShow = db.stations;
     }
 
-    stationsToShow = [...new Set(stationsToShow)];
+    stationsToShow = [...new Set(stationsToShow)].filter(s => isRailItemAvailableOnDate(s));
     stationsToShow.forEach(s => list.appendChild(new Option(s._display)));
     refreshCustomDatalistForList(listId);
 }
@@ -13864,7 +14522,8 @@ window.addThrough = function() {
     const uniqueId = "throughLineList_" + Date.now();
     
     div.innerHTML = `
-    <label style="margin-top:0;">直通公司</label>
+    <div class="through-card-head"><span>直通</span><button type="button" class="through-remove" title="移除此直通" aria-label="移除此直通" onclick="removeThroughBlock(this)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 10v7m4-7v7"/></svg></button></div>
+    <label class="through-field-label" for="${uniqueId}_company">公司</label>
     <div class="input-wrapper">
         <input class="throughCompany" list="companyList" value="${lastCompName}" oninput="updateLineList(this.value, '${uniqueId}'); const block=this.closest('.through-block'); if(block){ const lineInput=block.querySelector('.throughLine'); if(lineInput) lineInput.value=''; } updateStationLists(); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通公司" onclick="handleDatalistInputTap(this, event)">
         <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
@@ -13872,19 +14531,18 @@ window.addThrough = function() {
 
     <datalist id="${uniqueId}"></datalist>
 
-    <label>直通路線 (實體路線)</label>
+    <label class="through-field-label" for="${uniqueId}_line">路線</label>
     <div class="input-wrapper">
         <input class="throughLine" list="${uniqueId}" oninput="updateStationLists(); autoFillThroughJunction(this); updateThroughLoopDirectionUI(this.closest('.through-block'));" placeholder="直通路線" onclick="handleDatalistInputTap(this, event)">
         <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
     </div>
 
     <div class="loop-direction-wrap throughLoopDirectionWrap">
-        <div class="loop-direction-title">環狀線乘車方向</div>
+        <div class="loop-direction-title">方向</div>
         <select class="loop-direction-select throughLoopDirectionSelect"></select>
-        <div class="loop-direction-note">呢段直通路線如果係環狀線，會用呢個方向切地圖 highlight。</div>
     </div>
 
-    <label>経由</label>
+    <label class="through-field-label" for="${uniqueId}_station">接續站</label>
     <div class="input-wrapper">
         <input class="throughJunctionStation" list="${uniqueId}_junction" placeholder="自動判斷或手動輸入" onclick="handleDatalistInputTap(this, event)">
         <button class="clear-input-btn" onclick="clearSiblingInput(this)">✕</button>
@@ -13892,8 +14550,16 @@ window.addThrough = function() {
 
     <datalist id="${uniqueId}_junction" class="throughJunctionList"></datalist>
 
-    <button class="btn-small" style="background:var(--card); width:100%; border:1px solid #ddd; margin-top:10px; text-align:center;" onclick="removeThroughBlock(this)">移除此直通</button>
 `;
+    ['company','line','station'].forEach((suffix,index) => {
+        const input=div.querySelectorAll('.input-wrapper input')[index];
+        input.id=`${uniqueId}_${suffix}`;
+        const label=div.querySelector(`label[for="${input.id}"]`);
+        const field=document.createElement('div');
+        field.className=`through-card-field through-card-${suffix}`;
+        label.before(field);
+        field.append(label,input.closest('.input-wrapper'));
+    });
     document.getElementById("throughContainer").appendChild(div);
     prepareCustomDatalistInputs(div);
     if(lastCompName) updateLineList(lastCompName, uniqueId);
@@ -14159,6 +14825,7 @@ window.saveTrip = async function () {
     let waitTimer = null;
     let cloudSaved = false;
     const report = (message, isError = false) => {
+        showToast(message, isError ? 'var(--danger)' : 'var(--success)');
         if (saveStatus) {
             saveStatus.hidden = false;
             saveStatus.textContent = message;
@@ -14177,6 +14844,8 @@ window.saveTrip = async function () {
     }
     try {
     stage('檢查資料中…');
+    const closureError = validateRideClosureSelection(true);
+    if (closureError) { report(closureError,true); return; }
     const getVal = (id) => document.getElementById(id)?.value || "";
     const requiredFields = [
         { id: "company", label: "公司" },
@@ -14286,6 +14955,8 @@ window.saveTrip = async function () {
             service_pattern_id: activeServicePattern?.id || existingTrip?.service_pattern_id || "",
             routes: routes,
             train_id: finalTrainId,
+            train_subseries: getVal('trainSubseries').trim(),
+            train_formation: getVal('trainFormation').trim(),
             from_id: fromId,
 			to_id: toId,
 			segments: segments,
@@ -14308,7 +14979,7 @@ window.saveTrip = async function () {
 
         lastTo = trip.to_id;
 
-        ["company", "line", "serviceType", "serviceName", "train", "to"].forEach(id => {
+        ["company", "line", "serviceType", "serviceName", "train", "trainSubseries", "trainFormation", "to"].forEach(id => {
             document.getElementById(id).value = "";
         });
         syncRideDateTimeDisplay();
@@ -14333,6 +15004,7 @@ window.saveTrip = async function () {
         // 清除編輯狀態
         editingTripId = null;
         editIndex = null;
+        setRideStep(0);
         refreshLiveRideDateTime();
 
         const successMessage = existingTrip ? "記錄已更新！" : "已同步到雲端！";
@@ -14355,6 +15027,10 @@ window.saveTrip = async function () {
 };
 
 function getCompName(id) { return maps.company[id]?.name || id; }
+function getCompanySearchNames(company) {
+    return [...new Set([company?.name,company?.official_name,company?.legacy_name,company?.id,...(company?.aliases || [])]
+        .filter(value=>typeof value==='string').map(value=>value.trim()).filter(Boolean))];
+}
 function getLineName(id) { return maps.line[id]?.name || id; }
 function getStationName(id) { return maps.station[id]?.name || id; }
 function getTrainName(id) { return maps.train[id]?.name || id; }
@@ -14737,6 +15413,7 @@ function buildTripServiceCompanyHtml(companyIds) {
 }
 
 let historyServiceCompanyTimer = null;
+let historyServiceCompanyObserver = null;
 let historyRouteLayoutCleanups = [];
 
 function setupHistoryRouteDetails(list) {
@@ -14779,6 +15456,7 @@ function setupHistoryRouteDetails(list) {
         const names = companies?.querySelector('.trip-service-company-list');
         let targetOpen = details.open;
         let animation = null;
+        let movementAnimations = [];
         const setOpen = open => {
             companies?.querySelectorAll('.trip-service-company-face').forEach(face => face.getAnimations().forEach(effect => effect.cancel()));
             details.open = open;
@@ -14792,26 +15470,54 @@ function setupHistoryRouteDetails(list) {
         summary.addEventListener('click', event => {
             event.preventDefault();
             const fromHeight = region.getBoundingClientRect().height;
+            const companyHeight = companies?.getBoundingClientRect().height;
+            movementAnimations.forEach(effect => effect.cancel());
+            movementAnimations = [];
             animation?.cancel();
             targetOpen = !targetOpen;
             setOpen(targetOpen);
             const toHeight = region.getBoundingClientRect().height;
+            if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+                if (companies && narrow.matches) {
+                    const targetHeight=companies.getBoundingClientRect().height;
+                    movementAnimations.push(companies.animate([
+                        {height:`${companyHeight}px`,overflow:'hidden'},
+                        {height:`${targetHeight}px`,overflow:'hidden'}
+                    ],{duration:280,easing:'cubic-bezier(.2, .7, .2, 1)'}));
+                }
+            }
             // Closed content stays hidden while the surrounding row settles.
             summary.setAttribute('aria-expanded', String(targetOpen));
             animation = region.animate([
                 { height: `${fromHeight}px`, overflow: 'hidden' },
                 { height: `${toHeight}px`, overflow: 'hidden' }
             ], { duration: 280, easing: 'cubic-bezier(.2, .7, .2, 1)' });
-            animation.onfinish = () => { setOpen(targetOpen); animation = null; };
+            animation.onfinish = () => { movementAnimations.forEach(effect => effect.cancel()); movementAnimations=[]; setOpen(targetOpen); animation = null; };
         });
     });
 }
 
 function setupHistoryServiceCompanyRotation(list) {
     clearInterval(historyServiceCompanyTimer);
+    historyServiceCompanyObserver?.disconnect();
     historyServiceCompanyTimer = null;
     const controls = [...list.querySelectorAll('.trip-service-operators')];
     if (!controls.length) return;
+    const fitCompanyNames = control => {
+        control.querySelectorAll('.trip-service-company-face, .trip-service-company-list > span').forEach(face => {
+            let text = face.querySelector('.trip-service-company-name');
+            if (!text) {
+                text = document.createElement('span');
+                text.className = 'trip-service-company-name';
+                text.textContent = face.textContent;
+                face.replaceChildren(text);
+            }
+            const available = face.clientWidth;
+            if (available > 0) text.style.transform = `scaleX(${Math.min(1, available / Math.max(1, text.scrollWidth))})`;
+        });
+    };
+    historyServiceCompanyObserver = new ResizeObserver(entries => entries.forEach(entry => fitCompanyNames(entry.target)));
+    controls.forEach(control => { fitCompanyNames(control); historyServiceCompanyObserver.observe(control); });
     historyServiceCompanyTimer = setInterval(() => {
         if (document.hidden) return;
         controls.forEach(control => {
@@ -14978,7 +15684,7 @@ let tripsToDisplay = orderedTrips.filter(t => {
     if (!historySearchKeyword) return true;
 
     const routeTexts = (Array.isArray(t.routes) ? t.routes : []).map(r => {
-        return `${getCompName(r.company_id)} ${getLineName(r.line_id)}`;
+        return `${getCompName(r.company_id)} ${getCompanySearchNames(maps.company[r.company_id]).join(' ')} ${getLineName(r.line_id)}`;
     }).join(" ");
 
     const trainText = getTripTrainDisplay(t) || "";
@@ -15032,6 +15738,11 @@ pagedTrips.forEach((t) => {
     let routeHtml = "";
     let lastCompany = "";
     const routes = Array.isArray(t.routes) ? t.routes : [];
+    const closedLines = [...routes, ...(t.segments || [])].some(route => maps.line[route.line_id]?.is_closed === true);
+    div.classList.toggle('trip-closed-line', closedLines);
+    const stationHistoryHtml = id => maps.station?.[id]?.is_closed === true
+        ? `<span class="closed-station">${escapeHtml(getStationName(id))}<span class="closure-tag">已廢站</span></span>`
+        : escapeHtml(getStationName(id));
 
     routes.forEach((r, idx) => {
         let compName = getCompName(r.company_id);
@@ -15099,6 +15810,7 @@ pagedTrips.forEach((t) => {
         : '';
 
     const routeMetaHtml = [
+        closedLines ? '<span class="closure-tag">已廢線</span>' : '',
         directionSummary && !serviceDefinition ? `<span class="trip-direction-chip">${directionSummary}</span>` : "",
         photoIconHtml
     ].filter(Boolean).join("");
@@ -15144,7 +15856,7 @@ pagedTrips.forEach((t) => {
                 </span>
                 <span class="trip-ticket-section trip-ticket-stations">
                     <span class="trip-ticket-label">駅間</span>
-                    <span class="trip-station-inline">${getStationName(t.from_id)} <span class="trip-arrow">→</span> ${getStationName(t.to_id)}</span>
+                    <span class="trip-station-inline">${stationHistoryHtml(t.from_id)} <span class="trip-arrow">→</span> ${stationHistoryHtml(t.to_id)}</span>
                 </span>
             </div>
 
@@ -15375,6 +16087,28 @@ function buildStatsCompletionHtml(lineIdSet = new Set()) {
     `;
 }
 
+function buildFrequentRideStats(records) {
+    const groups = {model:new Map(), formation:new Map(), line:new Map()};
+    const add = (group,key,label) => {
+        const entry = group.get(key) || {label,count:0};
+        entry.count++; group.set(key,entry);
+    };
+    for (const trip of records) {
+        if (trip.train_id) {
+            const model = getTripTrainDisplay({...trip,train_formation:''});
+            add(groups.model,JSON.stringify([trip.train_id,trip.train_subseries || '']),model);
+            if (trip.train_formation) add(groups.formation,JSON.stringify([trip.train_id,trip.train_formation]),`${getTripTrainDisplay({...trip,train_subseries:'',train_formation:''})} ${trip.train_formation}`);
+        }
+        for (const id of new Set((trip.routes || []).map(route => route.line_id).filter(Boolean))) {
+            const line = maps.line[id];
+            add(groups.line,id,`${line?.company_id ? getCompName(line.company_id) + ' ' : ''}${getLineName(id)}`);
+        }
+    }
+    return [['model','最常乘搭車型'],['formation','最常乘搭編成'],['line','最常乘搭路線']].map(([key,title]) => {
+        const entries = [...groups[key].values()].filter(item => item.count > 1).sort((a,b) => b.count-a.count || a.label.localeCompare(b.label,'ja')).slice(0,5);
+        return entries.length ? `<div class="stat-group"><div class="stat-group-title">${title}</div><div class="tags-container">${entries.map(item => `<span class="tag">${escapeHtml(item.label)} <strong>${item.count} 次</strong></span>`).join('')}</div>` : '';
+    }).join('');
+}
 function renderStats() {
     clearRiddenSegmentKeySetCache();
 
@@ -15395,7 +16129,8 @@ function renderStats() {
     let cSet = new Set(), lSet = new Set(), tSet = new Set(), sSet = new Set();
     filteredTrips.forEach(t => {
         t.routes.forEach(r => { cSet.add(r.company_id); lSet.add(r.line_id); });
-        tSet.add(t.train_id); sSet.add(t.from_id); sSet.add(t.to_id);
+        if (String(t.train_id || '').trim()) tSet.add(t.train_id);
+        sSet.add(t.from_id); sSet.add(t.to_id);
     });
 
     let allCompaniesSet = new Set();
@@ -15431,6 +16166,7 @@ function renderStats() {
 
     const statsHTML = `
         ${completionPanelHtml}
+        ${buildFrequentRideStats(filteredTrips)}
         <div class="stat-group">
             <div class="stat-group-title">${titlePrefix}已乘搭路線 (${lSet.size} 條) ${completionText}</div>
             <div class="tags-container">${sortedLines.map(id => `<span class="tag ${activeStatFilter.type === 'line' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('line', '${id}')">${getLineName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
@@ -17646,14 +18382,14 @@ function buildRoutePopupHtml(line, clickedSegment = null) {
         const routeColor = getLineThemeColor(route, companyId);
 
         return `
-            <div style="
+            <div class="map-route-entry" style="
                 display:flex;
                 align-items:center;
                 gap:7px;
                 padding:5px 0;
                 border-top:1px solid rgba(0,0,0,0.08);
             ">
-                <span style="
+                <span class="map-route-color" style="
                     width:7px;
                     height:22px;
                     border-radius:2px;
@@ -17661,8 +18397,8 @@ function buildRoutePopupHtml(line, clickedSegment = null) {
                     flex:0 0 auto;
                 "></span>
 
-                <div style="min-width:0;">
-                    <div style="
+                <div class="map-route-names" style="min-width:0;">
+                    <div class="map-route-name" style="
                         font-size:14px;
                         font-weight:800;
                         color:#1d1d1f;
@@ -17672,7 +18408,7 @@ function buildRoutePopupHtml(line, clickedSegment = null) {
                         ${escapeHtml(lineName)}
                     </div>
 
-                    <div style="
+                    <div class="map-route-company" style="
                         font-size:11px;
                         color:#666;
                         margin-top:2px;
@@ -17702,11 +18438,11 @@ function buildRoutePopupHtml(line, clickedSegment = null) {
                     font-weight:800;
                     color:#fff;
                     background:${categoryColor};
-                    display:inline-block;
+                    display:${/^JR(?:_|$)/i.test(mainCompanyId) ? 'none' : 'inline-block'};
                     padding:3px 7px;
                     border-radius:999px;
                 ">
-                    ${escapeHtml(categoryLabel)}
+                    ${/^JR(?:_|$)/i.test(mainCompanyId) ? '' : escapeHtml(categoryLabel)}
                 </div>
 
                 ${isSharedSegment ? `
@@ -17756,7 +18492,10 @@ function showSelectedMapRoute(line, allLineParts, latlng, saveState = true, clic
         closeButton: false,
         autoClose: false,
         closeOnClick: false,
-        autoPan: false,
+        autoPan: true,
+        keepInView: true,
+        autoPanPadding: [16, 24],
+        maxWidth: Math.max(120, Math.min(280, railMapInstance.getSize().x - 54)),
         offset: [0, -6]
     })
         .setLatLng(latlng)
@@ -18007,6 +18746,13 @@ window.editTrip = function(i) {
     updateTrainDatalist();
 
     setVal("train", trainObj ? trainObj._display : t.train_id);
+    updateTrainDetailOptions();
+    setVal('trainSubseries', t.train_subseries || '');
+    delete document.getElementById('trainSubseries').dataset.autoFormation;
+    setVal('trainFormation', t.train_formation || '');
+    updateTrainDetailOptions();
+    setRideStep(0);
+    document.querySelector('#tab-add .ride-step-layout').dataset.manualSections='true';
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
     setVal("to", maps.station[t.to_id]?._display || t.to_id);
 
@@ -18036,8 +18782,7 @@ syncAddOptionControls();
 switchTab('tab-add', document.querySelectorAll('.nav-item')[0]);
 clearTimeout(servicePatternApplyTimer);
 const service = resolveTripServiceDefinition(t);
-const pattern = service?.patterns?.find(item => item.id === t.service_pattern_id && isServicePatternDateValid(item, t.date));
-if (service) applySelectedServicePattern({silent:true, ...(pattern ? {selected:{service, pattern}} : {})});
+if (service) applySelectedServicePattern({silent:true});
 }
 
 window.deleteTrip = async function (i) {
@@ -18103,6 +18848,8 @@ window.importData = function() {
                         service_pattern_id: trip.service_pattern_id || "",
                         routes: Array.isArray(trip.routes) ? trip.routes : [],
                         train_id: trip.train_id || "",
+                        train_subseries: trip.train_subseries || "",
+                        train_formation: trip.train_formation || "",
                         from_id: trip.from_id || "",
                         to_id: trip.to_id || "",
                         segments: Array.isArray(trip.segments) ? trip.segments : [],
@@ -19059,7 +19806,14 @@ function renderAchievements() {
     document.getElementById('achievementList').innerHTML = finalHtml;
 }
 
-loadData();
+loadData().then(()=>{
+    watchCompanyUpdates(async()=>{
+        companyCloudPending=true;
+        if(!canRefreshCompanyData())showToast('公司資料已更新，完成目前輸入後自動套用');
+        await applyPendingCompanyUpdate();
+    },error=>console.warn('公司雲端未能更新，沿用JSON／快取',error));
+    setInterval(()=>applyPendingCompanyUpdate().catch(console.error),10000);
+});
 
 window.updateImportFileLabel = function() {
     const input = document.getElementById("importFile");
