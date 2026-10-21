@@ -401,6 +401,92 @@ button.ghost:hover,.editor-tabs button:hover,.line-path-list button:hover,.stati
   .tab-icon,.nav-toggle{background:#171d15;border-color:var(--border)}
 }
 </style>
+<style id="workspace-design">
+body{background:var(--bg);padding:16px}
+.container{max-width:none;padding:0;gap:16px;border:0;box-shadow:none;background:none;backdrop-filter:none}
+.tabs{border-radius:8px}
+.tab-content{border-radius:8px;box-shadow:none}
+#json-editor-tab{padding:20px;min-width:0}
+#json-editor-tab>.card{border:0;border-bottom:1px solid var(--border);border-radius:0;box-shadow:none;background:transparent;padding:16px 0;margin:0}
+#json-editor-tab>#companyCloudPanel{padding-top:0}
+.cloud-heading,.cloud-primary-actions,.cloud-company-row,.cloud-status-row{display:flex;align-items:center;gap:8px;min-width:0}
+.cloud-heading{justify-content:space-between;margin-bottom:16px}
+.cloud-heading h1{margin:0;font-size:20px;color:var(--text)}
+.cloud-primary-actions button{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-size:13px}
+.cloud-company-row select{flex:1;min-width:0;height:40px;padding:0 10px;max-width:560px}
+.cloud-status-row{justify-content:space-between;min-height:38px;font-size:12px;color:var(--sub);margin-top:6px}
+.cloud-status-row [data-status]{overflow-wrap:anywhere}
+#companyCloudPanel [data-login-form]{grid-template-columns:auto minmax(0,1fr) minmax(0,1fr) auto;padding:12px 0}
+[hidden]{display:none!important}
+.workspace-fold{min-width:0}
+.workspace-fold>summary{display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;min-height:40px;font-size:13px;font-weight:700;color:var(--text)}
+.workspace-fold>summary::-webkit-details-marker{display:none}
+.workspace-fold>summary:after{content:'+';margin-left:auto;font-size:20px;font-weight:400;color:var(--rail-green-dark)}
+.workspace-fold[open]>summary:after{content:'\2212'}
+.workspace-fold[open]>summary{margin-bottom:10px}
+.workspace-fold[open]>.fold-body{animation:workspace-reveal .18s ease-out}
+@keyframes workspace-reveal{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+.workspace-files .editor-toolbar{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}
+.workspace-files .download-group{grid-column:1/-1}
+.editor-summary{gap:6px}
+.editor-chip{border:0;border-radius:4px;font-size:12px;padding:5px 8px}
+.editor-status:empty{display:none}
+.editor-tabs{gap:4px;flex-wrap:nowrap;overflow-x:auto;padding:2px}
+.editor-tabs button{flex:0 0 auto;border:0;border-radius:4px;padding:9px 14px;font-size:13px}
+.editor-tabs #jsonEditTabRaw{margin-left:auto}
+#json-editor-tab .editor-layout{grid-template-columns:minmax(180px,240px) minmax(0,1fr);gap:24px}
+#json-editor-tab .editor-sidebar{top:16px;min-width:0}
+#json-editor-tab .editor-list{border-radius:6px;max-height:65vh;box-shadow:none}
+#json-editor-tab .editor-list button{padding:12px;min-height:48px}
+#json-editor-tab .editor-list button .small{font-size:10px;overflow-wrap:anywhere}
+#json-editor-tab .editor-detail-pane{min-width:0}
+#json-editor-tab .editor-form{gap:12px 16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+#json-editor-tab input,#json-editor-tab select,#json-editor-tab textarea{max-width:100%;min-width:0;font-size:14px}
+#json-editor-tab input:not([type=checkbox]):not([type=hidden]),#json-editor-tab select{min-height:40px}
+#json-editor-tab .input-group label{letter-spacing:0;font-size:12px;font-weight:600}
+#json-editor-tab .input-group{min-width:0}
+#json-editor-tab .line-form-panel,#json-editor-tab .sequence-panel,#json-editor-tab .line-path-builder{padding:12px;border-radius:6px;box-shadow:none;background:transparent}
+#json-editor-tab .line-form-panel{padding:0;border:0}
+#json-editor-tab .line-overview{gap:8px}
+#json-editor-tab .overview-tile{border:0;border-radius:4px;background:var(--rail-silver);box-shadow:none;padding:9px}
+#json-editor-tab .overview-value{font-size:16px}
+#json-editor-tab .workspace-advanced{grid-column:1/-1;border-top:1px solid var(--border);padding-top:4px}
+#json-editor-tab .workspace-advanced .fold-body{padding-bottom:8px}
+#json-editor-tab .workspace-advanced .input-group{margin-bottom:10px}
+#json-editor-tab .workspace-help{margin:8px 0;color:var(--sub);font-size:12px}
+#json-editor-tab .workspace-help summary{font-size:12px;min-height:28px;font-weight:400}
+.workspace-icon{width:19px;height:19px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#json-editor-tab button.icon-action{display:inline-flex;align-items:center;justify-content:center;width:36px;min-width:36px;height:36px;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--text);vertical-align:middle;box-shadow:none}
+#json-editor-tab button.icon-action.danger{color:var(--danger)}
+#json-editor-tab button.icon-action.ok{color:var(--rail-green-dark);background:var(--rail-green-soft)}
+#json-editor-tab button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+#json-editor-tab button:hover{transform:none}
+#json-editor-tab button:focus-visible,summary:focus-visible{outline:2px solid var(--rail-green);outline-offset:3px}
+#json-editor-tab .editor-sidebar>button{width:100%;gap:6px}
+#json-editor-tab .seq-item{border-radius:5px;gap:4px}
+#json-editor-tab .seq-item button.icon-action{width:30px;min-width:30px;height:30px;padding:5px}
+#json-editor-tab .seq-list{border-radius:6px}
+.container:has(#json-editor-tab.active)>.helper-output,.container:has(#json-editor-tab.active)>#status{display:none}
+@media(min-width:1200px){#json-editor-tab .line-workbench{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr)}#json-editor-tab .line-form-panel{grid-row:1/3}#json-editor-tab .line-workbench>.workspace-fold{grid-column:2}#json-editor-tab .sequence-panel{grid-column:2}}
+@media(max-width:860px){
+ body{padding:8px}.container{display:block}.tabs,.tabs:hover,.tabs:focus-within,.tabs.expanded{position:relative;top:0;width:100%;display:flex;flex-direction:row;flex-wrap:nowrap;gap:4px;margin-bottom:8px;padding:4px;overflow:visible;box-shadow:none}
+ .tabs .nav-toggle{display:none}.tabs .tab-btn,.tabs:not(:hover):not(:focus-within):not(.expanded) .tab-btn{flex:1 1 0;width:0;min-width:0;display:flex;justify-content:center;padding:3px;min-height:44px;border-radius:5px}
+ .tabs .tab-label{display:none}.tabs .tab-icon{width:32px;height:32px;background:transparent}.tabs .tab-icon svg{width:23px;height:23px}
+ #json-editor-tab{padding:12px}.cloud-heading{flex-wrap:wrap;gap:12px}.cloud-heading h1{font-size:18px}.cloud-primary-actions{margin-left:auto}
+ #companyCloudPanel [data-login-form]{grid-template-columns:minmax(0,1fr) auto}#companyCloudPanel [data-google-login]{grid-column:1/-1}#companyCloudPanel [type=email]{grid-column:1/-1}
+ #json-editor-tab .editor-layout{grid-template-columns:minmax(0,1fr);gap:16px}#json-editor-tab .editor-sidebar{position:static;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+ #json-editor-tab .editor-sidebar>.editor-list{grid-column:1/-1;max-height:180px}#json-editor-tab .editor-sidebar>button{width:auto;grid-column:2;grid-row:1}#json-editor-tab .editor-sidebar>input{grid-column:1;grid-row:1}
+ .editor-tabs button{padding:9px 11px}.workspace-files .editor-toolbar{grid-template-columns:minmax(0,1fr)}
+ #json-editor-tab .line-overview{grid-template-columns:repeat(2,minmax(0,1fr))}#json-editor-tab .row>input{min-width:0!important;flex-basis:150px!important}
+ #json-editor-tab .locked-id-row{grid-template-columns:minmax(0,auto) minmax(0,1fr)}#json-editor-tab .id-prefix-chip{font-size:10px;max-width:130px;overflow:hidden;text-overflow:ellipsis}
+ #json-editor-tab .debug-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #json-editor-tab .editor-raw-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:480px){#json-editor-tab .editor-form{grid-template-columns:minmax(0,1fr)!important}.cloud-primary-actions button{font-size:12px;padding:9px}.cloud-primary-actions{gap:6px}#json-editor-tab .service-name-grid{grid-template-columns:minmax(0,1fr)}.cloud-heading h1{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.workspace-fold[open]>.fold-body{animation:none}}
+#json-editor-tab .editor-form.route-identity-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+@media(prefers-color-scheme:dark){#json-editor-tab .input-group label,#json-editor-tab .workspace-fold>summary:after,#json-editor-tab button.icon-action.ok{color:#a1d76f}#json-editor-tab input[type=date]{color-scheme:dark}}
+</style>
 </head>
 <body>
 <div class="container">
@@ -489,29 +575,29 @@ button.ghost:hover,.editor-tabs button:hover,.line-path-list button:hover,.stati
 
   <div id="json-editor-tab" class="tab-content">
     <section class="card" id="companyCloudPanel">
-      <div class="title"><strong>公司雲端</strong><span data-status role="status">正在準備雲端功能</span></div>
+      <div class="cloud-heading"><h1>公司編輯器</h1><div class="cloud-primary-actions">
+        <button type="button" data-admin data-draft disabled>儲存草稿</button>
+        <button type="button" class="ok" data-admin data-publish disabled>發佈</button>
+      </div></div>
+      <div class="cloud-company-row">
+        <select aria-label="雲端公司"><option value="">選擇雲端公司</option></select>
+        <button type="button" data-admin data-load disabled>載入草稿</button>
+        <button type="button" data-admin data-refresh disabled>更新目錄</button>
+      </div>
+      <div class="cloud-status-row"><span data-status role="status">正在準備雲端功能</span><button type="button" data-signout hidden>登出</button></div>
+      <details class="workspace-fold cloud-account" open><summary>帳戶</summary>
       <form data-login-form class="editor-toolbar">
         <button type="button" data-google-login>使用 Google 登入</button>
         <input type="email" aria-label="登入電郵" placeholder="電郵" autocomplete="username" required>
         <input type="password" aria-label="登入密碼" placeholder="密碼" autocomplete="current-password" required>
         <button type="submit">登入</button>
       </form>
-      <div class="editor-toolbar">
-        <select aria-label="雲端公司"><option value="">選擇雲端公司</option></select>
-        <button type="button" data-admin data-refresh disabled>更新目錄</button>
-        <button type="button" data-admin data-load disabled>載入草稿</button>
-        <button type="button" data-admin data-draft disabled>儲存草稿</button>
-        <button type="button" class="ok" data-admin data-publish disabled>發佈</button>
-        <button type="button" data-signout hidden>登出</button>
-      </div>
-      <details><summary>修改日誌</summary><button type="button" data-admin data-log-refresh disabled>更新日誌</button><ol data-log></ol></details>
+      </details>
+      <details class="workspace-fold"><summary>修改日誌</summary><button type="button" data-admin data-log-refresh disabled>更新日誌</button><ol data-log></ol></details>
     </section>
-    <div class="card editor-hero">
-      <h1>公司 JSON 編輯器</h1>
-      <p>讀取 <code>tokyu.json</code> 呢類公司資料後，可以用表單修改公司資料、路線、<code>geometry_wkt</code>、停車站 sequence、車站名單同車型，最後輸出成新 JSON。</p>
-    </div>
 
-    <div class="card">
+    <div class="card workspace-files">
+      <details class="workspace-fold"><summary>本機檔案與備份</summary>
       <div class="editor-toolbar">
         <div class="input-group">
           <label>讀取公司 JSON</label>
@@ -527,17 +613,18 @@ button.ghost:hover,.editor-tabs button:hover,.line-path-list button:hover,.stati
           <button id="saveCompanyJsonBtn" class="ok" onclick="saveCompanyJsonFile()">儲存 company_updated.json</button>
         </div>
       </div>
+      </details>
       <div class="editor-summary">
         <span id="companyEditorNameBadge" class="editor-chip">公司：未載入</span>
         <span id="companyEditorLineBadge" class="editor-chip">路線：0</span>
         <span id="companyEditorStationBadge" class="editor-chip">車站：0</span>
         <span id="companyEditorTrainBadge" class="editor-chip">車型：0</span>
       </div>
-      <div id="companyEditorStatus" class="editor-status">先選擇一個公司 JSON，例如 TOKYU。</div>
+      <div id="companyEditorStatus" class="editor-status" role="status">未載入公司</div>
     </div>
 
-    <div class="card">
-      <div class="title"><strong>公司基本資料</strong><span class="small">會直接寫入 JSON 最外層</span></div>
+    <details class="card workspace-fold company-settings">
+      <summary>公司設定</summary>
       <div class="editor-form">
         <div class="input-group"><label>company_id</label><input id="editCompanyId" oninput="this.value = toEditorIdToken(this.value); updateCompanyMetaFromForm()"></div>
         <div class="input-group"><label>顯示名稱</label><input id="editCompanyName" oninput="updateCompanyMetaFromForm()"></div>
@@ -549,7 +636,7 @@ button.ghost:hover,.editor-tabs button:hover,.line-path-list button:hover,.stati
       <datalist id="companyCategoryList">
         <option value="jr"></option><option value="major_private"></option><option value="private"></option><option value="third_sector"></option><option value="subway"></option><option value="tram"></option><option value="monorail"></option><option value="new_transit"></option><option value="tourist"></option>
       </datalist>
-    </div>
+    </details>
 
     <div class="card">
       <div class="editor-tabs">
@@ -4924,6 +5011,121 @@ document.addEventListener('DOMContentLoaded', () => {
   setupStationEditorDeferredAudit();
 });
 </script>
-<script type="module" src="../COMPANIES/cloud/helper.js"></script>
+<script>
+function setupCompanyWorkspace(){
+  const root=document.getElementById('json-editor-tab');
+  const paths={
+    add:'M12 5v14M5 12h14',
+    trash:'M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7',
+    copy:'M8 8h12v12H8zM16 8V4H4v12h4',
+    refresh:'M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-2l2 3M4 16l2 3a7 7 0 0 0 12-2',
+    download:'M12 3v12M7 10l5 5 5-5M4 16v5h16v-5',
+    load:'M3 7h7l2 3h9l-3 10H3zM3 7V4h7l2 3h7v3',
+    logout:'M9 4H4v16h5M9 12h12M17 8l4 4-4 4',
+    save:'M4 3h13l4 4v14H3V3zM7 3v6h10V3M7 21v-8h10v8',
+    publish:'M12 16V3M7 8l5-5 5 5M4 14v7h16v-7',
+    up:'M12 20V4M6 10l6-6 6 6',down:'M12 4v16M6 14l6 6 6-6',
+    check:'M5 12l4 4L19 6',swap:'M4 7h16M16 3l4 4-4 4M20 17H4M8 13l-4 4 4 4'
+  };
+  function icon(name){
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.classList.add('workspace-icon');
+    const path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d',paths[name]);svg.append(path);return svg;
+  }
+  function decorate(button,name,keepText=false){
+    if(button.querySelector('.workspace-icon'))return;
+    const label=button.textContent.trim();
+    button.title=label;button.setAttribute('aria-label',label);
+    button.replaceChildren(icon(name));
+    if(keepText){const text=document.createElement('span');text.textContent=label;button.append(text);}
+    else button.classList.add('icon-action');
+  }
+  function fold(element,label,open=false){
+    if(!element)return;
+    const details=document.createElement('details');details.className='workspace-fold workspace-advanced';details.open=open;
+    const summary=document.createElement('summary');summary.textContent=label;
+    const body=document.createElement('div');body.className='fold-body';
+    element.before(details);details.append(summary,body);body.append(element);return details;
+  }
+  fold(document.getElementById('editLineGeometry').closest('.input-group'),'路線圖形');
+  fold(document.getElementById('linePathList').closest('.input-group'),'支線與走線');
+  const versions=fold(document.getElementById('lineVersionList').closest('.input-group'),'歷史與未來版本');
+  const closure=document.createElement('div');closure.className='editor-form';
+  closure.append(...['editLineClosed','editLineClosedOn'].map(id=>document.getElementById(id).closest('.input-group')));
+  versions.querySelector('.fold-body').prepend(closure);
+  fold(document.getElementById('editLineIsLoop').closest('.input-group'),'環狀線與方向');
+  const identityFields=['editLineIdSuffix','editLineName'].map(id=>document.getElementById(id).closest('.input-group'));
+  const identityRow=document.createElement('div');identityRow.className='editor-form wide route-identity-row';
+  identityFields[0].before(identityRow);identityRow.append(...identityFields);
+  document.getElementById('editLineCompanyId').closest('.input-group').hidden=true;
+  const operationalFields=['editLineServiceOnly'].map(id=>document.getElementById(id).closest('.input-group'));
+  const operational=document.createElement('div');operational.className='editor-form wide';
+  operationalFields[0].parentNode.append(operational);
+  operational.append(...operationalFields);
+  fold(operational,'營運設定');
+  fold(document.getElementById('editTrainVariants').closest('.input-group'),'其他車型資料');
+  const lineAudit=fold(document.getElementById('lineDebugPanel'),'路線檢查');
+  const stationAudit=fold(document.getElementById('stationIssuePanel'),'車站檢查');
+  const reference=document.getElementById('serviceReferenceCompanyFiles').closest('.row');
+  fold(reference,'參考公司');
+  root.querySelectorAll('.title>.small').forEach(el=>el.remove());
+  root.querySelectorAll('.small[style]').forEach(el=>{
+    if(el.id||el.querySelector('input,button,select'))return;
+    const details=fold(el,'說明');details.classList.add('workspace-help');
+  });
+  function updateActions(){
+    const selectors={'[data-refresh]':'refresh','[data-load]':'load','[data-log-refresh]':'refresh','[data-signout]':'logout','#saveCompanyJsonBtn':'download'};
+    for(const [selector,name] of Object.entries(selectors))root.querySelectorAll(selector).forEach(button=>decorate(button,name));
+    root.querySelectorAll('[data-draft]').forEach(button=>decorate(button,'save',true));
+    root.querySelectorAll('[data-publish]').forEach(button=>decorate(button,'publish',true));
+    root.querySelectorAll('button[onclick]').forEach(button=>{
+      if(button.closest('.editor-tabs,.editor-list'))return;
+      const action=button.getAttribute('onclick'),text=button.textContent.trim();
+      let name;
+      if(/^(delete|remove|clear)/.test(action))name='trash';
+      else if(/^(copy)/.test(action)||/^複製/.test(text))name='copy';
+      else if(/^add/.test(action))name=text.includes('取代')?'swap':'add';
+      else if(/^refresh/.test(action))name='refresh';
+      else if(/^applyRaw/.test(action))name='check';
+      else if(text==='↑')name='up';else if(text==='↓')name='down';
+      if(name)decorate(button,name);
+    });
+    for(const [details,panel,label,selector] of [[lineAudit,'lineDebugPanel','路線檢查','.line-debug-card.warn,.line-debug-card.danger'],[stationAudit,'stationIssuePanel','車站檢查','.station-issue-card']]){
+      const count=document.getElementById(panel).querySelectorAll(selector).length;
+      const text=label+(count?` · ${count}`:'');
+      if(details.firstElementChild.textContent!==text)details.firstElementChild.textContent=text;
+    }
+  }
+  updateActions();
+  let pending=false;
+  new MutationObserver(()=>{
+    if(pending)return;pending=true;
+    queueMicrotask(()=>{pending=false;updateActions();});
+  }).observe(root,{childList:true,subtree:true});
+  // Start in the company workspace; generators remain available in the tool rail.
+  const tab=document.querySelector('[onclick="openTab(event,\'json-editor-tab\')"]');
+  openTab({currentTarget:tab},'json-editor-tab');
+}
+setupCompanyWorkspace();
+</script>
+<script type="module">
+// Published site keeps cloud at its root; the local workspace nests it in COMPANIES.
+const cloudStatus = document.querySelector('#companyCloudPanel [data-status]');
+try {
+  let cloudModule;
+  for (const path of ['../cloud/helper.js', '../COMPANIES/cloud/helper.js']) {
+    const url = new URL(path, import.meta.url);
+    const response = await fetch(url);
+    if (response.status === 404) continue;
+    if (!response.ok) throw new Error(`HTTP ${response.status}: ${url.pathname}`);
+    cloudModule = url.href;
+    break;
+  }
+  if (!cloudModule) throw new Error('找不到 cloud/helper.js，請檢查上傳目錄');
+  await import(cloudModule);
+} catch (error) {
+  cloudStatus.textContent = `雲端功能載入失敗：${error.message}`;
+}
+</script>
 </body>
 </html>
