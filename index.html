@@ -11192,7 +11192,14 @@ body {
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import {readCompanyCache,mergeCompanySources,watchCompanyUpdates} from './cloud/client.js';
-import {tripFormationAge} from './cloud/formation-dates.js';
+let tripFormationAge=()=>null;
+let formationDatesAvailable=false;
+try {
+    ({tripFormationAge}=await import('./cloud/formation-dates.js'));
+    formationDatesAvailable=true;
+} catch(error) {
+    console.warn('Formation age statistics unavailable; continuing startup.',error);
+}
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -16140,6 +16147,7 @@ function buildStatsCompletionHtml(lineIdSet = new Set()) {
 }
 
 function buildFormationAgeStats(records) {
+    if(!formationDatesAvailable)return '<p class="stats-caption">車齡統計暫未載入，請確認 cloud/formation-dates.js 已上傳。</p>';
     const entries=records.map(trip=>{
         const age=tripFormationAge(trip,maps.train[trip.train_id]);
         return age?{...age,label:getTripTrainDisplay(trip)}:null;
