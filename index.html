@@ -14642,8 +14642,13 @@ window.handlePhotoUpload = function(input, targetId) {
 
 async function uploadBase64ToStorage(base64Data, path) {
     if (!base64Data) return "";
-
+    // Existing download URLs are already stored; only local image data needs uploading.
+    if (/^https:\/\//i.test(base64Data)) return base64Data;
+    if (!/^data:image\//i.test(base64Data) && !/^blob:/i.test(base64Data)) {
+        throw new Error('相片格式無效，請重新選擇相片');
+    }
     const response = await fetch(base64Data);
+    if (!response.ok) throw new Error('無法讀取所選相片，請重新選擇');
     const blob = await response.blob();
 
     const storageRef = ref(storage, path);
@@ -15069,7 +15074,6 @@ window.saveTrip = async function () {
         console.error(error);
         const message = cloudSaved ? '記錄已儲存，但畫面更新失敗，請重新整理' : '儲存失敗';
         report(`${message}：${error?.code || error?.name || 'Error'}${error?.message ? ` - ${error.message}` : ''}`, true);
-        showToast(message, "var(--danger)");
     } finally {
         clearTimeout(waitTimer);
         tripSaveInProgress = false;
