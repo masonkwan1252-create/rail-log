@@ -10452,6 +10452,45 @@ body {
     #tab-history .history-calendar-btn { flex: 1 1 auto !important; }
 }
 </style>
+<style>
+#tab-stats.active{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-areas:"stats stats" "ratio chart"!important;gap:16px;max-width:1500px;margin-inline:auto;align-items:start}
+#tab-stats .stats-filter-card{grid-area:stats;padding:20px}
+#tab-stats .ride-ratio-card{grid-area:ratio}
+#tab-stats .design2-chart-card{grid-area:chart}
+#tab-stats .card{min-width:0;margin-bottom:0}
+#filteredStatsContainer{display:block!important}
+#tab-stats .stats-overview,#tab-stats .stats-favourites{display:grid;gap:12px;align-items:start;margin:16px 0}
+#tab-stats .stats-overview{grid-template-columns:repeat(4,minmax(0,1fr))}
+#tab-stats .stats-age{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+#tab-stats .stats-age .stats-number{font-size:30px}
+@media(max-width:480px){#tab-stats .stats-age{grid-template-columns:minmax(0,1fr)}}
+#tab-stats .stats-favourites{grid-template-columns:repeat(3,minmax(0,1fr));padding-top:16px;border-top:1px solid var(--border)}
+#tab-stats .stats-metric{min-width:0;border:1px solid var(--border);border-radius:6px;background:var(--card);overflow:hidden}
+#tab-stats .stats-metric summary{position:relative;display:flex;flex-direction:column;gap:6px;list-style:none;cursor:pointer;padding:18px;min-height:120px}
+#tab-stats summary::-webkit-details-marker{display:none}
+#tab-stats .stats-metric summary:after{content:'+';position:absolute;right:14px;top:12px;color:var(--primary);font-size:20px}
+#tab-stats .stats-metric[open] summary:after{content:'\2212'}
+#tab-stats .stats-number{font-size:38px;line-height:1.1;font-weight:800;color:var(--primary);font-variant-numeric:tabular-nums;padding-right:18px}
+#tab-stats .stats-label{font-size:13px;font-weight:700;color:var(--text)}
+#tab-stats .stats-caption{font-size:12px;color:var(--subtext);overflow-wrap:anywhere;line-height:1.5}
+#tab-stats .stats-detail{padding:12px 16px;border-top:1px solid var(--border);font-size:13px}
+#tab-stats .stats-ranking{padding:0;margin:0;list-style:none}
+#tab-stats .stats-ranking li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)}
+#tab-stats .stats-ranking li:last-child{border-bottom:0}
+#tab-stats .stats-ranking li>span{min-width:0;overflow-wrap:anywhere}
+#tab-stats .stats-ranking strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+#tab-stats .stats-ranking small{font-weight:400;color:var(--subtext)}
+#tab-stats .stats-secondary>summary{cursor:pointer;list-style:none;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:space-between;min-height:36px}
+#tab-stats .stats-secondary>summary:after{content:'+';color:var(--primary);font-size:20px}
+#tab-stats .stats-secondary[open]>summary:after{content:'\2212'}
+#tab-stats .stats-secondary[open]>summary{margin-bottom:14px}
+#tab-stats .stats-company-filter{border-bottom:1px solid var(--border);padding-bottom:8px}
+#tab-stats .stats-active-filter{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;margin-top:12px}
+#tab-stats .stats-active-filter button{width:32px;height:32px;font-size:20px;padding:0}
+#tab-stats summary:focus-visible{outline:2px solid var(--primary);outline-offset:-3px}
+#tab-stats .stats-detail .tag{white-space:normal;overflow-wrap:anywhere;max-width:100%;font-family:inherit;cursor:pointer}
+@media(max-width:700px){#tab-stats.active{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"stats" "ratio" "chart"!important;gap:10px}#tab-stats .stats-filter-card{padding:14px}#tab-stats .stats-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#tab-stats .stats-favourites{grid-template-columns:minmax(0,1fr);gap:8px}#tab-stats .stats-metric summary{padding:14px;min-height:106px}#tab-stats .stats-favourites summary{display:grid;grid-template-columns:68px minmax(0,1fr);align-items:center;min-height:90px;padding-right:32px}#tab-stats .stats-favourites .stats-number{grid-row:1/3;font-size:30px;padding:0}#tab-stats .stats-favourites .stats-caption{grid-column:2}#tab-stats .stats-number{font-size:32px}}
+</style>
 </head>
 
 <body>
@@ -10846,31 +10885,30 @@ body {
 </div>
        
 <div id="tab-stats" class="tab-content">
-		<div class="card ride-ratio-card">
-    <h3 class="ride-ratio-title">乘搭類別比例</h3>
+        <details class="card ride-ratio-card stats-secondary">
+    <summary>乘搭類別</summary>
     <div id="rideCategoryStackedBar" class="ride-ratio-stacked-wrap"></div>
-</div>
+</details>
 		
             <div class="card stats-filter-card">
-                <h3>統計與完成率</h3>
-                <p class="stats-card-desc" style="font-size:13px; color:var(--subtext); margin-top:-10px;">點擊公司、路線或車型以進行交叉篩選。</p>
-                <div class="stat-group">
-                    <div class="stat-group-title" id="companyStatTitle">鉄道公司</div>
+                <h3>乘車統計</h3>
+                <details class="stats-company-filter stats-secondary">
+                    <summary id="companyStatTitle">鉄道公司</summary>
                     <div id="filterCompanies" class="tags-container"></div>
-                </div>
+                </details>
                 <div id="filteredStatsContainer"></div>
             </div>
             
-            <div class="card design2-chart-card">
-                <h3>乘搭排行榜 (Top 10)</h3>
+            <details class="card design2-chart-card stats-secondary">
+                <summary>公司／車站排行</summary>
                 <div class="chart-tabs">
-                    <button id="btnChartCompany" class="active" onclick="switchChartTab('company')">Top 10 公司</button>
-                    <button id="btnChartStation" onclick="switchChartTab('station')">Top 10 車站</button>
+                    <button id="btnChartCompany" class="active" onclick="switchChartTab('company')">公司</button>
+                    <button id="btnChartStation" onclick="switchChartTab('station')">車站</button>
                 </div>
                 <div id="chartDisplayArea" class="bar-chart-container"></div>
 				<div style="margin-top:18px;">
 </div>
-            </div>
+            </details>
         </div>
 
         <div id="tab-map" class="tab-content">
@@ -11154,6 +11192,7 @@ body {
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import {readCompanyCache,mergeCompanySources,watchCompanyUpdates} from './cloud/client.js';
+import {tripFormationAge} from './cloud/formation-dates.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -12818,7 +12857,7 @@ function getCustomDatalistValues(input) {
     if (list.dataset?.sortOrder !== 'service' && (listId === 'companyList' || /^stationList/.test(listId))) {
         const companies = listId === 'companyList';
         const catalog = companies ? db.companies : db.stations;
-        const byDisplay = new Map((catalog || []).map(item => [item._display || item.name || item.id, item]));
+        const byDisplay = new Map((catalog || []).map(item => [companies ? getCompanyInputName(item) : item._display || item.name || item.id, item]));
         values.sort((a,b) => {
             const left = byDisplay.get(a), right = byDisplay.get(b);
             if (companies) {
@@ -12845,7 +12884,7 @@ function getCustomDatalistMatches(input) {
     if (!query) return values.slice(0, CUSTOM_DATALIST_LIMIT);
 
     if (getCustomDatalistListId(input) === 'companyList') {
-        return values.filter(value => db.companies.some(company => company.name === value &&
+        return values.filter(value => db.companies.some(company => getCompanyInputName(company) === value &&
             getCompanySearchNames(company).some(name => normalizeCustomDatalistText(name).includes(query))))
             .slice(0, CUSTOM_DATALIST_LIMIT);
     }
@@ -13448,7 +13487,7 @@ function buildMaps() {
 }
 
 function initUILists() {
-    fillList("companyList", db.companies.map(c => c.name));
+    fillList("companyList", db.companies.map(c => getCompanyInputName(c)));
     fillList("lineList", db.lines.filter(l => l.selectable !== false && isRailItemAvailableOnDate(l)).map(l => l.name));
     updateTrainDatalist();
     updateServiceNameDatalist();
@@ -13917,7 +13956,7 @@ function applySelectedServicePattern(options = {}) {
             const first = patterns[0].segments?.[0];
             if (first && patterns.every(pattern => pattern.segments?.[0]?.company_id === first.company_id && pattern.segments?.[0]?.line_id === first.line_id)
                 && !findSelectedServicePattern()) {
-                const companyName = maps.company[first.company_id]?.name || first.company_id;
+                const companyName = getCompanyInputName(first.company_id);
                 document.getElementById('company').value = companyName;
                 updateLineList(companyName,'lineList');
                 document.getElementById('line').value = maps.line[first.line_id]?.name || first.line_id;
@@ -13950,7 +13989,7 @@ function applySelectedServicePattern(options = {}) {
     document.getElementById("serviceType").value = selected.service.service_type || "";
 
     const first = segments[0];
-    const firstCompany = maps.company[first.company_id]?.name || first.company_id || "";
+    const firstCompany = getCompanyInputName(first.company_id);
     const firstLine = maps.line[first.line_id]?.name || first.line_id || "";
     document.getElementById("company").value = firstCompany;
     updateLineList(firstCompany, "lineList");
@@ -13968,7 +14007,7 @@ function applySelectedServicePattern(options = {}) {
         const blocks = document.querySelectorAll(".through-block");
         const block = blocks[blocks.length - 1];
         if (!block) return;
-        const companyName = maps.company[segment.company_id]?.name || segment.company_id || "";
+        const companyName = getCompanyInputName(segment.company_id);
         block.querySelector(".throughCompany").value = companyName;
         const lineList = block.querySelector("datalist:not(.throughJunctionList)");
         if (lineList) updateLineList(companyName, lineList.id);
@@ -15036,6 +15075,10 @@ window.saveTrip = async function () {
 };
 
 function getCompName(id) { return maps.company[id]?.name || id; }
+function getCompanyInputName(value) {
+    const company = typeof value === 'object' && value ? value : maps.company[value];
+    return company?.official_name?.trim() || company?.name || company?.id || String(value || '');
+}
 function getCompanySearchNames(company) {
     return [...new Set([company?.name,company?.official_name,company?.legacy_name,company?.id,...(company?.aliases || [])]
         .filter(value=>typeof value==='string').map(value=>value.trim()).filter(Boolean))];
@@ -16096,6 +16139,24 @@ function buildStatsCompletionHtml(lineIdSet = new Set()) {
     `;
 }
 
+function buildFormationAgeStats(records) {
+    const entries=records.map(trip=>{
+        const age=tripFormationAge(trip,maps.train[trip.train_id]);
+        return age?{...age,label:getTripTrainDisplay(trip)}:null;
+    }).filter(Boolean);
+    const ordered=entries.slice().sort((a,b)=>a.days-b.days||a.label.localeCompare(b.label,'ja'));
+    return [['youngest','乘搭時最新',ordered[0]],['oldest','乘搭時最舊',ordered.at(-1)]].map(([key,title,item])=>{
+        if(!item)return buildStatsMetric(key,title,'—','未有可計算車齡的編成日期');
+        const years=days=>(days/365.2425).toFixed(1);
+        const value=(item.approximate?'約 ':'')+years(item.days)+' 年';
+        const precisionLabel=item.precision==='month'?'年月':item.approximate?'年份':'日期';
+        const detail=`<ul class="stats-ranking"><li><span>乘車日期</span><strong>${escapeHtml(item.date.replaceAll('-','/'))}</strong></li><li><span>出廠${precisionLabel}</span><strong>${escapeHtml(item.built.replaceAll('-','/'))}</strong></li><li><span>當日車齡</span><strong>${item.approximate?`${years(item.minDays)}–${years(item.maxDays)}`:years(item.days)} 年</strong></li></ul>${item.approximate?`<p class="stats-caption">只知${precisionLabel}，以可能車齡範圍中點估算排名。</p>`:''}`;
+        return buildStatsMetric(key,title,value,detail,item.label);
+    }).join('');
+}
+function buildStatsMetric(key,label,value,body,subtitle='') {
+    return `<details class="stats-metric" data-stats-key="${key}"><summary><span class="stats-number">${escapeHtml(String(value))}</span><span class="stats-label">${escapeHtml(label)}</span>${subtitle?`<span class="stats-caption">${escapeHtml(subtitle)}</span>`:''}</summary><div class="stats-detail">${body}</div></details>`;
+}
 function buildFrequentRideStats(records) {
     const groups = {model:new Map(), formation:new Map(), line:new Map()};
     const add = (group,key,label) => {
@@ -16103,7 +16164,7 @@ function buildFrequentRideStats(records) {
         entry.count++; group.set(key,entry);
     };
     for (const trip of records) {
-        if (trip.train_id) {
+        if (String(trip.train_id || '').trim()) {
             const model = getTripTrainDisplay({...trip,train_formation:''});
             add(groups.model,JSON.stringify([trip.train_id,trip.train_subseries || '']),model);
             if (trip.train_formation) add(groups.formation,JSON.stringify([trip.train_id,trip.train_formation]),`${getTripTrainDisplay({...trip,train_subseries:'',train_formation:''})} ${trip.train_formation}`);
@@ -16114,11 +16175,16 @@ function buildFrequentRideStats(records) {
         }
     }
     return [['model','最常乘搭車型'],['formation','最常乘搭編成'],['line','最常乘搭路線']].map(([key,title]) => {
-        const entries = [...groups[key].values()].filter(item => item.count > 1).sort((a,b) => b.count-a.count || a.label.localeCompare(b.label,'ja')).slice(0,5);
-        return entries.length ? `<div class="stat-group"><div class="stat-group-title">${title}</div><div class="tags-container">${entries.map(item => `<span class="tag">${escapeHtml(item.label)} <strong>${item.count} 次</strong></span>`).join('')}</div>` : '';
+        const ranked = [...groups[key].values()].filter(item => item.count > 1).sort((a,b) => b.count-a.count || a.label.localeCompare(b.label,'ja'));
+        const entries=ranked.slice(0,5);
+        const ties=ranked.filter(item=>item.count===entries[0]?.count).length;
+        return buildStatsMetric(`frequent-${key}`,title,entries[0]?.count || 0,
+            entries.length?`<ol class="stats-ranking">${entries.map(item=>`<li><span>${escapeHtml(item.label)}</span><strong>${item.count}<small> 次</small></strong></li>`).join('')}</ol>`:'<span class="stats-empty">暫無重複乘搭</span>',
+            entries.length?entries[0].label+(ties>1?` · 並列 ${ties}`:''):'暫無重複乘搭');
     }).join('');
 }
 function renderStats() {
+    const openSections=new Set([...document.querySelectorAll('#filteredStatsContainer details[open][data-stats-key]')].map(el=>el.dataset.statsKey));
     clearRiddenSegmentKeySetCache();
 
     let filteredTrips = trips;
@@ -16139,12 +16205,12 @@ function renderStats() {
     filteredTrips.forEach(t => {
         t.routes.forEach(r => { cSet.add(r.company_id); lSet.add(r.line_id); });
         if (String(t.train_id || '').trim()) tSet.add(t.train_id);
-        sSet.add(t.from_id); sSet.add(t.to_id);
+        if(t.from_id)sSet.add(t.from_id); if(t.to_id)sSet.add(t.to_id);
     });
 
     let allCompaniesSet = new Set();
     trips.forEach(t => t.routes.forEach(r => allCompaniesSet.add(r.company_id)));
-    document.getElementById("companyStatTitle").innerText = `鉄道公司 (${allCompaniesSet.size} 間)`;
+    document.getElementById("companyStatTitle").innerText = `公司篩選 · ${allCompaniesSet.size}`;
     
     const filterContainer = document.getElementById("filterCompanies");
     filterContainer.innerHTML = "";
@@ -16173,24 +16239,27 @@ function renderStats() {
 
     const completionPanelHtml = buildStatsCompletionHtml(lSet);
 
+    const years=new Map();
+    filteredTrips.forEach(trip=>{const year=/^\d{4}/.exec(trip.date||'')?.[0]||'未註明日期';years.set(year,(years.get(year)||0)+1);});
+    const yearRows=[...years].sort((a,b)=>b[0].localeCompare(a[0])).map(([year,count])=>`<li><span>${escapeHtml(year)}</span><strong>${count}</strong></li>`).join('');
+    const lineTags=sortedLines.map(id=>`<button type="button" class="tag" data-stat-type="line" data-stat-id="${escapeHtml(id)}">${escapeHtml(getLineName(id))}</button>`).join('');
+    const trainTags=sortedTrains.map(id=>`<button type="button" class="tag" data-stat-type="train" data-stat-id="${escapeHtml(id)}">${escapeHtml(getStatTrainDisplay(id,trips))}</button>`).join('');
+    const stationTags=sortedStations.map(id=>`<span class="tag">${escapeHtml(getStatStationDisplay(id))}</span>`).join('');
     const statsHTML = `
-        ${completionPanelHtml}
-        ${buildFrequentRideStats(filteredTrips)}
-        <div class="stat-group">
-            <div class="stat-group-title">${titlePrefix}已乘搭路線 (${lSet.size} 條) ${completionText}</div>
-            <div class="tags-container">${sortedLines.map(id => `<span class="tag ${activeStatFilter.type === 'line' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('line', '${id}')">${getLineName(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
+        ${activeStatFilter.type?`<div class="stats-active-filter"><span>${escapeHtml(titlePrefix.replace(/ 的 $/,''))}</span><button type="button" class="btn-small" onclick="setStatFilter(null,null)" aria-label="清除篩選" title="清除篩選">&#215;</button></div>`:''}
+        <div class="stats-overview">
+        ${buildStatsMetric('trips',activeStatFilter.type?'篩選乘車數':'總乘車數',filteredTrips.length,`<ul class="stats-ranking">${yearRows||'<li>無記錄</li>'}</ul>`,activeStatFilter.type?`全部 ${trips.length} 次`:'')}
+        ${buildStatsMetric('lines','已乘路線',lSet.size,`<div class="tags-container">${lineTags||'無記錄'}</div>`)}
+        ${buildStatsMetric('trains','已乘車型',tSet.size,`<div class="tags-container">${trainTags||'無記錄'}</div>`)}
+        ${buildStatsMetric('stations','到訪車站',sSet.size,`<div class="tags-container">${stationTags||'無記錄'}</div>`)}
         </div>
-        <div class="stat-group">
-            <div class="stat-group-title">${titlePrefix}已乘搭車型 (${tSet.size} 款)</div>
-            <div class="tags-container">${sortedTrains.map(id => `<span class="tag ${activeStatFilter.type === 'train' && activeStatFilter.id === id ? 'active' : ''}" onclick="setStatFilter('train', '${id}')">${getStatTrainDisplay(id, trips)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
-        </div>
-        <div class="stat-group">
-            <div class="stat-group-title">${titlePrefix}已造訪車站 (${sSet.size} 個)</div>
-            <div class="tags-container">${sortedStations.map(id => `<span class="tag">${getStatStationDisplay(id)}</span>`).join('') || '<span class="tag">無記錄</span>'}</div>
-        </div>
-        ${activeStatFilter.type ? `<button class="btn-small btn-clear-stats" onclick="setStatFilter(null, null)">清除所有篩選</button>` : ''}
+        <div class="stats-favourites">${buildFrequentRideStats(filteredTrips)}</div>
+        <div class="stats-age">${buildFormationAgeStats(filteredTrips)}</div>
+        <details class="stats-secondary" data-stats-key="completion"><summary>完成率</summary>${completionPanelHtml}</details>
     `;
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
+    document.querySelectorAll('#filteredStatsContainer [data-stat-id]').forEach(button=>button.onclick=()=>setStatFilter(button.dataset.statType,button.dataset.statId));
+    document.querySelectorAll('#filteredStatsContainer details[data-stats-key]').forEach(el=>{el.open=openSections.has(el.dataset.statsKey);});
 }
 
 window.switchChartTab = function(type) {
@@ -18700,7 +18769,7 @@ window.editTrip = function(i) {
     syncRideDateTimeDisplay();
     
     let firstCompId = t.routes[0].company_id;
-    let firstCompName = maps.company[firstCompId]?.name || firstCompId;
+    let firstCompName = getCompanyInputName(firstCompId);
     setVal("company", firstCompName);
     
     updateLineList(firstCompName, "lineList");
@@ -18713,7 +18782,7 @@ window.editTrip = function(i) {
     const blocks = document.querySelectorAll(".through-block");
     const lastBlock = blocks[blocks.length - 1];
 
-    const cName = maps.company[r.company_id]?.name || r.company_id;
+    const cName = getCompanyInputName(r.company_id);
     lastBlock.querySelector(".throughCompany").value = cName;
 
     const lineList = lastBlock.querySelector("datalist:not(.throughJunctionList)");
@@ -18746,7 +18815,7 @@ window.editTrip = function(i) {
     if (trainObj && trainObj.company_id !== firstCompId) {
         document.getElementById('useOtherTrainCompany').checked = true;
         document.getElementById('otherTrainCompanyWrapper').style.display = 'block';
-        document.getElementById('trainOwnerCompany').value = maps.company[trainObj.company_id]?.name || trainObj.company_id;
+        document.getElementById('trainOwnerCompany').value = getCompanyInputName(trainObj.company_id);
     } else {
         document.getElementById('useOtherTrainCompany').checked = false;
         document.getElementById('otherTrainCompanyWrapper').style.display = 'none';
