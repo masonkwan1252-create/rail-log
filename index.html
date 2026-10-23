@@ -11894,7 +11894,7 @@ function waitForRailLoaderPaint() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializeRailLoader() {
 const stationFade = document.getElementById("e235-station-fade");
 const clockDisplay = document.getElementById("e235-clock");
 const stationLayerA = document.getElementById("station-layer-a");
@@ -12063,7 +12063,9 @@ progressTextB.className = "e235-arrival-status-text pos-below";
     setTimeout(() => {
         finishLoadingAnimation();
     }, 900);
-});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initializeRailLoader,{once:true});
+else initializeRailLoader();
 
 let isAppDataReady = false;
 let isLoaderAnimationDone = false;
