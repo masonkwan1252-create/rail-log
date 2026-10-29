@@ -5536,6 +5536,7 @@ html, body {
         font-size: 10px;
     }
 
+    #tab-add .desktop-add-card,
     #tab-history .history-desktop-card {
         max-width: 1460px;
     }
@@ -10300,7 +10301,9 @@ body {
 #tab-add .ride-reset { margin-left:auto; width:36px; height:36px; padding:0; font-size:20px; background:transparent; color:var(--subtext); border:1px solid var(--border); border-radius:4px; }
 @media(max-width:599px) { #tab-add .ride-step-body > .desktop-form-grid, #tab-add .ride-extra-grid { grid-template-columns:minmax(0,1fr) !important; } }
 @media(min-width:900px) {
-    #tab-add .desktop-add-card { width:100%; max-width:none !important; }
+    #tab-add { width:100%; max-width:none; min-width:0; box-sizing:border-box; }
+    #tab-add .desktop-add-card { width:100%; margin-inline:auto; box-sizing:border-box; }
+    #tab-add .desktop-add-layout { width:100%; min-width:0; box-sizing:border-box; }
     #tab-add .desktop-add-layout.ride-step-layout { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-areas:none !important; grid-template-rows:auto !important; gap:16px 20px; padding:16px 20px; }
     #tab-add .ride-step { grid-area:auto !important; align-self:start; min-width:0; }
     #tab-add .ride-step.desktop-route-section { grid-column:1 !important; grid-row:1; }
@@ -10460,7 +10463,7 @@ body {
 #tab-stats .card{min-width:0;margin-bottom:0}
 #filteredStatsContainer{display:block!important}
 #tab-stats .stats-overview,#tab-stats .stats-favourites{display:grid;gap:12px;align-items:start;margin:16px 0}
-#tab-stats .stats-overview{grid-template-columns:repeat(4,minmax(0,1fr))}
+#tab-stats .stats-overview{grid-template-columns:repeat(5,minmax(0,1fr))}
 #tab-stats .stats-age{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
 #tab-stats .stats-age .stats-number{font-size:30px}
 @media(max-width:480px){#tab-stats .stats-age{grid-template-columns:minmax(0,1fr)}}
@@ -10490,6 +10493,47 @@ body {
 #tab-stats summary:focus-visible{outline:2px solid var(--primary);outline-offset:-3px}
 #tab-stats .stats-detail .tag{white-space:normal;overflow-wrap:anywhere;max-width:100%;font-family:inherit;cursor:pointer}
 @media(max-width:700px){#tab-stats.active{grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"stats" "ratio" "chart"!important;gap:10px}#tab-stats .stats-filter-card{padding:14px}#tab-stats .stats-overview{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#tab-stats .stats-favourites{grid-template-columns:minmax(0,1fr);gap:8px}#tab-stats .stats-metric summary{padding:14px;min-height:106px}#tab-stats .stats-favourites summary{display:grid;grid-template-columns:68px minmax(0,1fr);align-items:center;min-height:90px;padding-right:32px}#tab-stats .stats-favourites .stats-number{grid-row:1/3;font-size:30px;padding:0}#tab-stats .stats-favourites .stats-caption{grid-column:2}#tab-stats .stats-number{font-size:32px}}
+</style>
+<style>
+#tab-stats .stats-metric[open]{border-color:var(--primary)}
+#tab-stats .stats-shared-detail{overflow:hidden;min-width:0}
+#tab-stats .stats-detail-clip{padding:0 0 16px}
+#tab-stats .stats-detail-clip h3{font-size:14px;margin:0;padding:12px 0;color:var(--primary);border-top:2px solid var(--primary)}
+#tab-stats .stats-shared-detail .stats-detail{padding:0;border:0}
+#tab-stats .stats-shared-detail .tags-container{display:flex;flex-wrap:wrap;gap:8px;max-height:none;overflow:visible}
+#tab-stats .stats-shared-detail .tags-container>.tag{display:inline-flex;flex:0 1 auto;width:auto!important;min-width:0;max-width:100%;margin:0;padding:5px 10px;line-height:1.4;text-align:left;border-radius:4px}
+#tab-stats .stats-inline-ratio{margin:0 0 16px}
+#tab-stats .stats-completion-card{grid-area:ratio}
+#tab-stats .stats-shared-detail .tag{box-sizing:border-box;overflow-wrap:anywhere}
+#tab-stats .stats-inline-ratio .ride-ratio-legend{display:flex;flex-wrap:wrap;gap:6px 14px}
+#tab-stats .stats-inline-ratio .ride-ratio-segment{min-width:0;overflow:hidden}
+#tab-stats .stats-completion-card .route-completion-head>div:first-child{min-width:0}
+#tab-stats .stats-completion-card .route-completion-title{overflow-wrap:anywhere}
+#tab-stats .stats-completion-card .route-completion-score{flex-shrink:0}
+#tab-stats .stats-completion-card .route-completion-summary{flex-wrap:wrap}
+#tab-stats .stats-shared-detail .stats-ranking{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0 24px}
+#tab-stats .stats-overview{align-items:stretch}
+#tab-stats .stats-overview summary{height:100%;box-sizing:border-box}
+#tab-stats .stats-detail .tags-container{width:100%;max-height:none;box-sizing:border-box}
+#tab-stats .stats-favourites summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;padding-right:38px}
+#tab-stats .stats-favourites .stats-caption{grid-column:1;grid-row:1;font-size:20px;font-weight:700;color:var(--primary)}
+#tab-stats .stats-favourites .stats-label{grid-column:1;grid-row:2}
+#tab-stats .stats-favourites .stats-number{grid-column:2;grid-row:1/3;font-size:22px;padding:0;color:var(--subtext)}
+#tab-stats .stats-favourites .stats-number:after{content:' 次';font-size:12px}
+@media(max-width:899px){header{padding-top:calc(env(safe-area-inset-top,0px) + 16px)!important}header .destination-sign-frame{flex-shrink:0}}
+</style>
+<style>
+/* Keep each desktop tab on the same outer page rail; inner grids remain independent. */
+@media(min-width:900px){
+    #main-app .container > .tab-content{
+        width:100%;max-width:1460px!important;min-width:0;
+        margin-left:auto!important;margin-right:auto!important;box-sizing:border-box;
+    }
+    #main-app .container > .tab-content > .card{
+        width:100%;max-width:none!important;min-width:0;
+        margin-left:0!important;margin-right:0!important;box-sizing:border-box;
+    }
+}
 </style>
 </head>
 
@@ -10885,17 +10929,13 @@ body {
 </div>
        
 <div id="tab-stats" class="tab-content">
-        <details class="card ride-ratio-card stats-secondary">
-    <summary>乘搭類別</summary>
-    <div id="rideCategoryStackedBar" class="ride-ratio-stacked-wrap"></div>
-</details>
+        <details class="card stats-completion-card stats-secondary">
+            <summary>完成率</summary>
+            <div id="statsCompletionContent"></div>
+        </details>
 		
             <div class="card stats-filter-card">
                 <h3>乘車統計</h3>
-                <details class="stats-company-filter stats-secondary">
-                    <summary id="companyStatTitle">鉄道公司</summary>
-                    <div id="filterCompanies" class="tags-container"></div>
-                </details>
                 <div id="filteredStatsContainer"></div>
             </div>
             
@@ -15700,7 +15740,6 @@ function render() {
 	console.log("render triggered");
     const orderedTrips = getOrderedTripsForDisplay(trips);
     
-	renderRideCategoryRatio();
     const btnFilterAll = document.getElementById('btnFilterAll');
     const btnFilterToday = document.getElementById('btnFilterToday');
 
@@ -15951,7 +15990,6 @@ pagedTrips.forEach((t) => {
     }
 
     renderStats();
-	renderRideCategoryRatio();
 	drawBarChart();
 }
 
@@ -16162,9 +16200,9 @@ function buildFormationAgeStats(records) {
     return [['youngest','乘搭時最新',ordered[0]],['oldest','乘搭時最舊',ordered.at(-1)]].map(([key,title,item])=>{
         if(!item)return buildStatsMetric(key,title,'—','未有可計算車齡的編成日期');
         const years=days=>(days/365.2425).toFixed(1);
-        const value=(item.approximate?'約 ':'')+years(item.days)+' 年';
+        const value=years(item.days)+' 年';
         const precisionLabel=item.precision==='month'?'年月':item.approximate?'年份':'日期';
-        const detail=`<ul class="stats-ranking"><li><span>乘車日期</span><strong>${escapeHtml(item.date.replaceAll('-','/'))}</strong></li><li><span>出廠${precisionLabel}</span><strong>${escapeHtml(item.built.replaceAll('-','/'))}</strong></li><li><span>當日車齡</span><strong>${item.approximate?`${years(item.minDays)}–${years(item.maxDays)}`:years(item.days)} 年</strong></li></ul>${item.approximate?`<p class="stats-caption">只知${precisionLabel}，以可能車齡範圍中點估算排名。</p>`:''}`;
+        const detail=`<ul class="stats-ranking"><li><span>乘車日期</span><strong>${escapeHtml(item.date.replaceAll('-','/'))}</strong></li><li><span>出廠${precisionLabel}</span><strong>${escapeHtml(item.built.replaceAll('-','/'))}</strong></li></ul>${item.approximate?`<p class="stats-caption">只知${precisionLabel}，以可能車齡範圍中點估算排名。</p>`:''}`;
         return buildStatsMetric(key,title,value,detail,item.label);
     }).join('');
 }
@@ -16210,6 +16248,9 @@ function renderStats() {
     } else if (activeStatFilter.type === 'line') {
         filteredTrips = trips.filter(t => t.routes.some(r => r.line_id === activeStatFilter.id));
         titlePrefix = `[${getLineName(activeStatFilter.id)}] 的 `;
+    } else if (activeStatFilter.type === 'station') {
+        filteredTrips = trips.filter(t => t.from_id === activeStatFilter.id || t.to_id === activeStatFilter.id);
+        titlePrefix = `[${getStatStationDisplay(activeStatFilter.id)}] 的 `;
     } else if (activeStatFilter.type === 'train') {
         filteredTrips = trips.filter(t => t.train_id === activeStatFilter.id);
         titlePrefix = `[${getTrainName(activeStatFilter.id)}] 的 `;
@@ -16220,22 +16261,6 @@ function renderStats() {
         t.routes.forEach(r => { cSet.add(r.company_id); lSet.add(r.line_id); });
         if (String(t.train_id || '').trim()) tSet.add(t.train_id);
         if(t.from_id)sSet.add(t.from_id); if(t.to_id)sSet.add(t.to_id);
-    });
-
-    let allCompaniesSet = new Set();
-    trips.forEach(t => t.routes.forEach(r => allCompaniesSet.add(r.company_id)));
-    document.getElementById("companyStatTitle").innerText = `公司篩選 · ${allCompaniesSet.size}`;
-    
-    const filterContainer = document.getElementById("filterCompanies");
-    filterContainer.innerHTML = "";
-    let sortedCompanies = Array.from(allCompaniesSet).sort((a, b) => getCompName(a).localeCompare(getCompName(b), 'ja'));
-    
-    sortedCompanies.forEach(compId => {
-        const tag = document.createElement("span");
-        tag.className = `tag ${activeStatFilter.type === 'company' && activeStatFilter.id === compId ? "active" : ""}`;
-        if(activeStatFilter.type && !cSet.has(compId)) tag.style.opacity = "0.4";
-        tag.innerText = getCompName(compId); tag.onclick = () => setStatFilter('company', compId);
-        filterContainer.appendChild(tag);
     });
 
     let sortedLines = Array.from(lSet).sort((a, b) => getLineName(a).localeCompare(getLineName(b), 'ja'));
@@ -16258,22 +16283,62 @@ function renderStats() {
     const yearRows=[...years].sort((a,b)=>b[0].localeCompare(a[0])).map(([year,count])=>`<li><span>${escapeHtml(year)}</span><strong>${count}</strong></li>`).join('');
     const lineTags=sortedLines.map(id=>`<button type="button" class="tag" data-stat-type="line" data-stat-id="${escapeHtml(id)}">${escapeHtml(getLineName(id))}</button>`).join('');
     const trainTags=sortedTrains.map(id=>`<button type="button" class="tag" data-stat-type="train" data-stat-id="${escapeHtml(id)}">${escapeHtml(getStatTrainDisplay(id,trips))}</button>`).join('');
-    const stationTags=sortedStations.map(id=>`<span class="tag">${escapeHtml(getStatStationDisplay(id))}</span>`).join('');
+    const stationTags=sortedStations.map(id=>`<button type="button" class="tag" data-stat-type="station" data-stat-id="${escapeHtml(id)}">${escapeHtml(getStatStationDisplay(id))}</button>`).join('');
+    const companyTags=[...cSet].sort((a,b)=>getCompName(a).localeCompare(getCompName(b),'ja')).map(id=>`<button type="button" class="tag" data-stat-type="company" data-stat-id="${escapeHtml(id)}">${escapeHtml(getCompName(id))}</button>`).join('');
     const statsHTML = `
         ${activeStatFilter.type?`<div class="stats-active-filter"><span>${escapeHtml(titlePrefix.replace(/ 的 $/,''))}</span><button type="button" class="btn-small" onclick="setStatFilter(null,null)" aria-label="清除篩選" title="清除篩選">&#215;</button></div>`:''}
         <div class="stats-overview">
         ${buildStatsMetric('trips',activeStatFilter.type?'篩選乘車數':'總乘車數',filteredTrips.length,`<ul class="stats-ranking">${yearRows||'<li>無記錄</li>'}</ul>`,activeStatFilter.type?`全部 ${trips.length} 次`:'')}
+        ${buildStatsMetric('companies','已乘公司',cSet.size,`<div class="tags-container">${companyTags||'無記錄'}</div>`)}
         ${buildStatsMetric('lines','已乘路線',lSet.size,`<div class="tags-container">${lineTags||'無記錄'}</div>`)}
         ${buildStatsMetric('trains','已乘車型',tSet.size,`<div class="tags-container">${trainTags||'無記錄'}</div>`)}
         ${buildStatsMetric('stations','到訪車站',sSet.size,`<div class="tags-container">${stationTags||'無記錄'}</div>`)}
         </div>
+        <div class="stats-inline-ratio" aria-label="乘搭類別"><div id="rideCategoryStackedBar" class="ride-ratio-stacked-wrap"></div></div>
         <div class="stats-favourites">${buildFrequentRideStats(filteredTrips)}</div>
         <div class="stats-age">${buildFormationAgeStats(filteredTrips)}</div>
-        <details class="stats-secondary" data-stats-key="completion"><summary>完成率</summary>${completionPanelHtml}</details>
     `;
     document.getElementById("filteredStatsContainer").innerHTML = statsHTML;
+    document.getElementById('statsCompletionContent').innerHTML=completionPanelHtml;
+    renderRideCategoryRatio(filteredTrips);
     document.querySelectorAll('#filteredStatsContainer [data-stat-id]').forEach(button=>button.onclick=()=>setStatFilter(button.dataset.statType,button.dataset.statId));
     document.querySelectorAll('#filteredStatsContainer details[data-stats-key]').forEach(el=>{el.open=openSections.has(el.dataset.statsKey);});
+    setupStatsAnimations();
+}
+function setupStatsAnimations(){
+    document.querySelectorAll('#filteredStatsContainer .stats-overview,#filteredStatsContainer .stats-favourites,#filteredStatsContainer .stats-age').forEach((group,index)=>{
+        const cards=[...group.querySelectorAll('.stats-metric')];
+        if(!cards.length)return;
+        const panel=document.createElement('div');panel.className='stats-shared-detail';panel.id=`stats-detail-${index}`;
+        const clip=document.createElement('div');clip.className='stats-detail-clip';panel.append(clip);
+        (group.nextElementSibling?.classList.contains('stats-inline-ratio')?group.nextElementSibling:group).after(panel);
+        const contents=new Map(cards.map(card=>{const content=card.querySelector('.stats-detail');content.remove();return [card,content];}));
+        let active=null,animation=null;
+        const select=(card,animate=true)=>{
+            const start=panel.getBoundingClientRect().height;
+            if(animation){animation.onfinish=null;animation.cancel();}
+            active=active===card?null:card;
+            cards.forEach(item=>{item.open=item===active;item.querySelector('summary').setAttribute('aria-expanded',String(item===active));});
+            if(active){
+                const title=document.createElement('h3');title.textContent=active.querySelector('.stats-label').textContent;
+                clip.replaceChildren(title,contents.get(active));
+            }
+            panel.inert=!active;panel.setAttribute('aria-hidden',String(!active));
+            panel.style.height=active?'auto':'0px';
+            const end=active?panel.getBoundingClientRect().height:0;
+            if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+                animation=panel.animate([{height:`${start}px`,opacity:start?1:0},{height:`${end}px`,opacity:active?1:0}],{duration:240,easing:'ease-in-out'});
+                animation.onfinish=()=>{animation=null;};
+            }
+        };
+        const initial=cards.find(card=>card.open);
+        cards.forEach(card=>{
+            const summary=card.querySelector('summary');summary.setAttribute('aria-controls',panel.id);summary.setAttribute('aria-expanded','false');
+            card.open=false;summary.onclick=event=>{event.preventDefault();select(card);};
+        });
+        panel.style.height='0px';panel.inert=true;panel.setAttribute('aria-hidden','true');
+        if(initial)select(initial,false);
+    });
 }
 
 window.switchChartTab = function(type) {
@@ -16327,11 +16392,11 @@ function drawBarChart() {
         setTimeout(() => { row.querySelector('.bar-fill').style.width = `${pct}%`; }, 50);
     });
 }
-function renderRideCategoryRatio() {
+function renderRideCategoryRatio(records=trips) {
     const stackedContainer = document.getElementById("rideCategoryStackedBar");
     if (!stackedContainer) return;
 
-    if (!trips || trips.length === 0) {
+    if (!records || records.length === 0) {
         stackedContainer.innerHTML = "<div style='font-size:13px; color:var(--subtext);'>暫無資料</div>";
         return;
     }
@@ -16343,7 +16408,7 @@ function renderRideCategoryRatio() {
     };
 
     // 以主公司計
-    trips.forEach(t => {
+    records.forEach(t => {
         const mainCompanyId = Array.isArray(t.routes) && t.routes[0]
             ? t.routes[0].company_id
             : null;
