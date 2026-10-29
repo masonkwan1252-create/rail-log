@@ -500,6 +500,26 @@ body{background:var(--bg);padding:16px}
 #json-editor-tab .editor-form.route-identity-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 @media(prefers-color-scheme:dark){#json-editor-tab .input-group label,#json-editor-tab .workspace-fold>summary:after,#json-editor-tab button.icon-action.ok{color:#a1d76f}#json-editor-tab input[type=date]{color-scheme:dark}}
 </style>
+<style>
+#formationBuildEditor .formation-workspace{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;padding-top:12px}
+#formationBuildEditor .formation-register,#formationBuildEditor .formation-tools{min-width:0}
+#formationBuildEditor .formation-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:10px;margin-bottom:12px}
+#formationBuildEditor .formation-register>.row{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+#formationBuildEditor #formationTableDate{width:170px;flex:1 1 150px;min-width:0}
+#formationBuildEditor #formationTableCount{flex-basis:100%}
+#formationBuildEditor th{position:sticky;top:0;background:var(--card,#fff);z-index:1;text-align:left;padding:8px 4px}
+#formationBuildEditor td{padding:4px;border-bottom:1px solid var(--border,#ddd)}
+#formationBuildEditor .formation-tools>details{border-top:1px solid var(--border,#ddd);padding:12px 0}
+#formationBuildEditor .formation-tools summary{cursor:pointer;font-weight:700;margin-bottom:10px}
+#formationBuildEditor .formation-import-entry{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,1fr);align-items:center;gap:4px 8px;min-width:0}
+#formationBuildEditor .formation-import-entry strong{overflow-wrap:anywhere;font-size:13px}
+#formationBuildEditor .formation-import-entry input{width:100%;min-width:0;margin:0;padding:6px}
+#formationBuildEditor .formation-import-entry .small,#formationBuildEditor .formation-import-entry details{grid-column:1/-1}
+#formationBuildEditor .formation-tools input,#formationBuildEditor .formation-tools textarea{box-sizing:border-box;max-width:100%}
+#formationBuildEditor .formation-tools .editor-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1400px){#formationBuildEditor .formation-workspace{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}#formationBuildEditor .formation-tools{border-left:1px solid var(--border,#ddd);padding-left:18px}}
+@media(max-width:420px){#formationBuildEditor .formation-filters{grid-template-columns:minmax(0,1fr)}}
+</style>
 </head>
 <body>
 <div class="container">
@@ -642,6 +662,7 @@ body{background:var(--bg);padding:16px}
         <div class="input-group">
           <label>讀取公司 JSON</label>
           <input id="companyJsonFileInput" type="file" accept=".json" onchange="loadCompanyJsonFile()">
+          <button type="button" class="ghost" onclick="openLastCompanyFile()" title="開啟上次成功載入的本機 JSON 副本">開啟上次文件</button>
         </div>
         <div class="input-group">
           <label>輸出文件名</label>
@@ -815,10 +836,14 @@ body{background:var(--bg);padding:16px}
             <div class="input-group"><label>train id</label><div class="locked-id-row"><span id="editTrainIdPrefix" class="id-prefix-chip">TRN_COMPANY_</span><input id="editTrainIdSuffix" placeholder="車型ID最後部分" oninput="this.value = toEditorIdToken(this.value); updateSelectedTrainFromForm()"><input id="editTrainId" type="hidden"></div></div>
             <div class="input-group"><label>車系名</label><input id="editTrainName" oninput="updateSelectedTrainFromForm()"></div>
             <div class="input-group wide"><label>番台（一行一個，例如 0番台、5000番台）</label><textarea id="editTrainSubseries" oninput="updateSelectedTrainFromForm()" onchange="renderTrainFormationGroups();renderFormationBuildScopes()"></textarea></div>
-            <details class="workspace-fold workspace-advanced wide" id="formationBuildEditor">
+            <details class="workspace-fold workspace-advanced wide" id="formationBuildEditor" open>
               <summary>編成 / 出廠日期</summary>
-              <div class="input-group"><label>番台範圍</label><select id="formationBuildScope" onchange="loadFormationBuildSheet()"></select></div>
+              <div class="formation-workspace">
+              <section class="formation-register">
+              <div class="formation-filters">
+              <div class="input-group"><label>番台範圍</label><select id="formationBuildScope" onchange="changeFormationScope()"></select></div>
               <input type="search" id="formationTableSearch" aria-label="搜尋編成或出廠年份" placeholder="編成編號 / 出廠年份" oninput="filterFormationTable()">
+              </div>
               <div class="row">
                 <input id="formationTableDate" aria-label="所選編成出廠日期" placeholder="年、年/月、年/月/日" onchange="normalizeFormationDateInput(this)">
                 <button type="button" onclick="batchFormationTable('date')">套用日期</button>
@@ -829,6 +854,16 @@ body{background:var(--bg);padding:16px}
               <div style="max-height:420px;overflow:auto">
                 <table style="width:100%;table-layout:fixed"><thead><tr><th style="width:36px"><input type="checkbox" id="formationTableAll" aria-label="全選編成" onchange="selectAllFormationRows(this.checked)"></th><th>編成</th><th>出廠日期</th></tr></thead><tbody id="formationTableRows"></tbody></table>
               </div>
+              </section>
+              <aside class="formation-tools">
+              <details><summary>4號車編成表匯入</summary>
+                <input id="formationImportSource" type="url" aria-label="來源網址" placeholder="https://4gousya.net/pu_e/5310.php" oninput="clearFormationImport()">
+                <textarea id="formationImportText" rows="6" aria-label="貼上4號車編成表" placeholder="貼上包含編成編號及全車新製日期的表格" oninput="clearFormationImport()"></textarea>
+                <div class="row"><button type="button" onclick="previewFormationImport()">預覽匯入</button><button type="button" id="formationImportApply" onclick="applyFormationImport()" disabled>套用所選</button></div>
+                <div class="row"><label><input type="checkbox" id="formationImportAll" style="width:auto" onchange="selectFormationImportAll(this.checked)" disabled> 全選可匯入項目</label><button type="button" id="formationImportCentury19" onclick="confirmFormationImportCentury(19)" disabled>所選確認為 19xx</button><button type="button" id="formationImportCentury" onclick="confirmFormationImportCentury(20)" disabled>所選確認為 20xx</button></div>
+                <div id="formationImportStatus" role="status" class="small"></div>
+                <div id="formationImportRows" style="max-height:420px;overflow:auto"></div>
+              </details>
               <details><summary>Excel 貼上 / 範圍生成</summary>
               <div class="editor-form">
                 <div class="input-group"><label>空白日期統一套用</label><input id="formationBuildDefault" placeholder="2020、2020/04、2020/04/15" oninput="clearFormationBuildPreview()" onchange="normalizeFormationDateInput(this)"></div>
@@ -842,6 +877,8 @@ body{background:var(--bg);padding:16px}
               <div id="formationBuildStatus" role="status" class="small"></div>
               <ul id="formationBuildPreview" class="batch-results"></ul>
               </details>
+              </aside>
+              </div>
             </details>
             <div class="input-group"><label>company_id</label><input id="editTrainCompanyId" oninput="this.value = toEditorIdToken(this.value); updateSelectedTrainFromForm()"></div>
             <div class="input-group wide"><label>variants（一行一個）</label><textarea id="editTrainVariants" oninput="updateSelectedTrainFromForm()"></textarea></div>
@@ -1957,6 +1994,7 @@ function loadCompanyJsonFile() {
       document.getElementById('companyRawInput').value = text;
       const raw = JSON.parse(text);
       companyEditorData = normalizeCompanyEditorData(raw);
+      try{localStorage.setItem('rail-helper-last-file',JSON.stringify({name:file.name,data:companyEditorData}));}catch{setCompanyEditorStatus('瀏覽器無法保留上次文件副本','err');}
       window.dispatchEvent(new Event('rail-company-local-load'));
       serviceReferenceCompanies.clear();
       companyEditorCurrent = { section: 'lines', line: 0, station: 0, train: 0 };
@@ -1985,6 +2023,16 @@ function applyRawCompanyJson() {
   } catch (err) {
     setCompanyEditorStatus('套用失敗：' + err.message, 'err');
   }
+}
+function openLastCompanyFile(){
+  if(window.railCompanyConfirmDiscard&&!window.railCompanyConfirmDiscard())return;
+  try{
+    const saved=JSON.parse(localStorage.getItem('rail-helper-last-file')||'null');
+    if(!saved?.data)throw new Error('未有上次文件，請先載入本機 JSON');
+    window.railCompanyEditor.load(saved.data);
+    window.dispatchEvent(new Event('rail-company-local-load'));
+    setCompanyEditorStatus(`已開啟 ${saved.name} 的本機副本（不會讀取磁碟後續修改）`,'ok');
+  }catch(error){setCompanyEditorStatus(error.message,'err');}
 }
 
 function getCompanyOutputObject() {
@@ -4523,6 +4571,90 @@ function renderSelectedTrainForm() {
   document.getElementById('editTrainVariants').value = Array.isArray(tr.variants) ? tr.variants.join('\n') : '';
 }
 let formationBuildPreview=null;
+let formationImportPreview=null;
+let formationScopeLoaded='',formationSheetLoaded='';
+function changeFormationScope(){
+  const select=document.getElementById('formationBuildScope');
+  const pending=!!document.getElementById('formationImportText').value.trim()||document.getElementById('formationBuildSheet').value!==formationSheetLoaded||!!formationBuildPreview;
+  if(pending&&!confirm('目前有未套用的匯入／編成編輯，切換番台會清除預覽，繼續？')){select.value=formationScopeLoaded;return;}
+  document.getElementById('formationImportText').value='';loadFormationBuildSheet();
+}
+function clearFormationImport(){
+  formationImportPreview=null;document.getElementById('formationImportRows').replaceChildren();
+  document.getElementById('formationImportApply').disabled=true;document.getElementById('formationImportStatus').textContent='';
+  updateFormationImportSelection();
+}
+function updateFormationImportSelection(){
+  const rows=(formationImportPreview?.rows||[]).filter(item=>!item.check.disabled);
+  const eligible=rows.filter(item=>!item.row.reason||item.row.centuryOnly||item.confirmed);
+  const all=document.getElementById('formationImportAll'),selected=eligible.filter(item=>item.check.checked).length;
+  all.disabled=!eligible.length;all.checked=eligible.length>0&&selected===eligible.length;all.indeterminate=selected>0&&selected<eligible.length;
+  const canConfirm=rows.some(item=>item.row.centuryOnly&&item.check.checked);
+  document.getElementById('formationImportCentury').disabled=!canConfirm;
+  document.getElementById('formationImportCentury19').disabled=!canConfirm;
+}
+function selectFormationImportAll(checked){
+  for(const item of formationImportPreview?.rows||[])if(!item.check.disabled&&(!item.row.reason||item.row.centuryOnly||item.confirmed))item.check.checked=checked;
+  updateFormationImportSelection();
+}
+function confirmFormationImportCentury(century){
+  if(![19,20].includes(century))return;
+  const rows=(formationImportPreview?.rows||[]).filter(item=>!item.check.disabled&&item.row.centuryOnly&&item.check.checked);
+  if(!rows.length||!confirm(`確認所選 ${rows.length} 個編成的兩位年份代表 ${century}00–${century}99 年？`))return;
+  const dates=rows.map(item=>window.RailFormationDates.parseBuildDate(`${century}${item.row.built.slice(2)}`));
+  if(dates.some(date=>!date)){document.getElementById('formationImportStatus').textContent='所選世紀產生無效日期，請個別核對；未套用確認';return;}
+  rows.forEach((item,index)=>{
+    item.date.value=dates[index].text.replaceAll('-','/');item.confirmed=true;
+    item.note.textContent=`已確認 ${century}xx 年份`;
+  });
+  updateFormationImportSelection();
+}
+function previewFormationImport(){
+  clearFormationImport();const train=getSelectedTrain(),api=window.RailFormationDates;if(!train||!api)return;
+  const scope=document.getElementById('formationBuildScope').value;
+  let source;
+  try{source=new URL(document.getElementById('formationImportSource').value);if(source.protocol!=='https:'||!['4gousya.net','www.4gousya.net'].includes(source.hostname))throw new Error();}
+  catch{document.getElementById('formationImportStatus').textContent='請填寫有效的4號車 HTTPS 來源網址';return;}
+  const rows=api.parseFourGousya(document.getElementById('formationImportText').value);
+  formationImportPreview={train,scope,source:source.href,rows:[]};
+  for(const row of rows){
+    const saved=(train.formation_build_dates||[]).find(item=>item.formation===row.formation&&(item.subseries||'')===scope)?.built;
+    const box=document.createElement('div');box.style.cssText='display:grid;grid-template-columns:24px minmax(0,1fr);gap:6px;padding:8px 0;border-bottom:1px solid var(--border)';
+    const check=document.createElement('input');check.type='checkbox';check.style.width='auto';check.disabled=!!saved;check.checked=!saved&&!row.reason;check.setAttribute('aria-label',`匯入 ${row.formation}`);
+    const content=document.createElement('div'),title=document.createElement('strong'),date=document.createElement('input'),note=document.createElement('div');
+    content.className='formation-import-entry';
+    title.textContent=row.formation;title.title=row.dateBasis==='first_vehicle'?'第一卡新製日期':'全車新製日期';date.value=(saved||row.built).replaceAll('-','/');date.disabled=!!saved;date.setAttribute('aria-label',`${row.formation} 新製日期`);date.onchange=()=>normalizeFormationDateInput(date);
+    note.textContent=saved?'已有日期，保留不覆蓋':row.reason?`需要確認：${row.reason}；核對日期後勾選`:'新製日期已辨識';note.className='small';
+    const evidence=document.createElement('details'),summary=document.createElement('summary'),raw=document.createElement('pre');summary.textContent='原文';raw.textContent=row.raw;raw.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere';evidence.append(summary,raw);
+    content.append(title,date);if(row.reason&&!saved)content.append(note,evidence);else if(saved){note.textContent='保留已有日期';content.append(note);}
+    box.append(check,content);document.getElementById('formationImportRows').append(box);
+    const item={row,check,date,note,confirmed:!row.reason};
+    check.onchange=()=>{if(check.checked&&!row.centuryOnly)item.confirmed=true;updateFormationImportSelection();};
+    date.oninput=()=>{item.confirmed=false;check.checked=false;updateFormationImportSelection();};
+    formationImportPreview.rows.push(item);
+  }
+  document.getElementById('formationImportStatus').textContent=rows.length?`${rows.length} 個編成；需確認項目預設不選取`:'未辨識到編成，請複製含編成編號（例如001-A1F）及全車新製日期的完整表格';
+  document.getElementById('formationImportApply').disabled=!rows.length;
+  updateFormationImportSelection();
+}
+function applyFormationImport(){
+  const preview=formationImportPreview,api=window.RailFormationDates;
+  if(!preview||preview.train!==getSelectedTrain()||preview.scope!==document.getElementById('formationBuildScope').value){clearFormationImport();return;}
+  const changes=[],seen=new Set();
+  for(const {row,check,date,confirmed} of preview.rows){
+    if(!check.checked||check.disabled)continue;
+    if(row.centuryOnly&&!confirmed){document.getElementById('formationImportStatus').textContent=`${row.formation}：請先確認為 19xx 或 20xx，未套用`;return;}
+    if((preview.train.formation_build_dates||[]).some(item=>item.formation===row.formation&&(item.subseries||'')===preview.scope&&item.built))continue;
+    const parsed=api.parseBuildDate(date.value);
+    if(!parsed||seen.has(row.formation)){document.getElementById('formationImportStatus').textContent=`${row.formation}：日期無效或重複勾選，未套用`;return;}
+    seen.add(row.formation);changes.push({formation:row.formation,subseries:preview.scope,built:parsed.text,source_url:preview.source,date_basis:row.dateBasis});
+  }
+  if(!changes.length){document.getElementById('formationImportStatus').textContent='未有可匯入的已選編成';return;}
+  const names=[...new Set([...api.formationNames(preview.train,preview.scope),...changes.map(row=>row.formation)])];
+  if(preview.scope)preview.train.formations_by_subseries={...(preview.train.formations_by_subseries||{}),[preview.scope]:names};else preview.train.formations=names;
+  api.applyBuildDates(preview.train,changes);refreshCompanyJsonOutput();loadFormationBuildSheet();clearFormationImport();
+  document.getElementById('formationImportStatus').textContent=`已匯入 ${changes.length} 個，來源網址已保留；尚未儲存草稿`;
+}
 function normalizeFormationDateInput(input){
   const parsed=window.RailFormationDates?.parseBuildDate(input.value);
   if(parsed)input.value=parsed.text.replaceAll('-','/');
@@ -4576,6 +4708,7 @@ function renderFormationBuildScopes(){
   loadFormationBuildSheet();
 }
 function loadFormationBuildSheet(){
+  clearFormationImport();
   clearFormationBuildPreview();
   const train=getSelectedTrain(),scope=document.getElementById('formationBuildScope').value;
   const names=[...new Set((scope?train?.formations_by_subseries?.[scope]:train?.formations)||[])];
@@ -4583,17 +4716,20 @@ function loadFormationBuildSheet(){
   document.getElementById('formationBuildSheet').value=names.map(name=>`${name}\t${((train?.formation_build_dates||[]).find(row=>row.formation===name&&(row.subseries||'')===scope)?.built||'').replaceAll('-','/')}`).join('\n');
   document.getElementById('formationBuildStatus').textContent=`${names.length} 個編成`;
   renderFormationTable();
+  formationScopeLoaded=scope;formationSheetLoaded=document.getElementById('formationBuildSheet').value;
 }
 function renderFormationTable(){
   const train=getSelectedTrain(),scope=document.getElementById('formationBuildScope').value;
   const names=[...new Set((scope?train?.formations_by_subseries?.[scope]:train?.formations)||[])];
   const body=document.getElementById('formationTableRows');body.replaceChildren();
+  const dates=new Map((train?.formation_build_dates||[]).filter(item=>(item.subseries||'')===scope).map(item=>[item.formation,item.built]));
+  const fragment=document.createDocumentFragment();
   for(const name of names){
     const row=document.createElement('tr'),checkCell=document.createElement('td'),nameCell=document.createElement('td'),dateCell=document.createElement('td');
     const check=document.createElement('input');check.type='checkbox';check.dataset.formation=name;check.setAttribute('aria-label',`選取 ${name}`);check.onchange=updateFormationSelection;
     check.style.width='auto';checkCell.append(check);nameCell.textContent=name;nameCell.style.overflowWrap='anywhere';
     const input=document.createElement('input');input.setAttribute('aria-label',`${name} 出廠日期`);input.placeholder='年/月/日';input.style.cssText='width:100%;min-width:0;box-sizing:border-box';
-    const built=(train.formation_build_dates||[]).find(item=>item.formation===name&&(item.subseries||'')===scope)?.built||'';
+    const built=dates.get(name)||'';
     input.value=built.replaceAll('-','/');
     input.onchange=()=>{
       if(!window.RailFormationDates)return;
@@ -4607,8 +4743,9 @@ function renderFormationTable(){
       row.dataset.built=parsed?.text||'';filterFormationTable();
     };
     row.dataset.formation=name;row.dataset.built=built;
-    input.oninput=()=>input.setCustomValidity('');dateCell.append(input);row.append(checkCell,nameCell,dateCell);body.append(row);
+    input.oninput=()=>input.setCustomValidity('');dateCell.append(input);row.append(checkCell,nameCell,dateCell);fragment.append(row);
   }
+  body.append(fragment);
   filterFormationTable();
 }
 function filterFormationTable(){
