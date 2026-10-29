@@ -1,5 +1,6 @@
 export function parseBuildDate(value) {
   let text=String(value||'').trim();
+  text=text.replace(/^(\d{2})(?=[\/-]|$)/,(_,year)=>(Number(year)>=50?'19':'20')+year);
   const parts=text.match(/^(\d{4})[\/-](\d{1,2})(?:[\/-](\d{1,2}))?$/);
   if(parts)text=`${parts[1]}-${parts[2].padStart(2,'0')}${parts[3]?'-'+parts[3].padStart(2,'0'):''}`;
   if(!/^\d{4}(?:-\d{2}(?:-\d{2})?)?$/.test(text))return null;
@@ -13,6 +14,31 @@ export function parseBuildDate(value) {
 }
 export function formationNames(train,subseries='') {
   return [...new Set((subseries?train?.formations_by_subseries?.[subseries]:train?.formations)||[])];
+}
+export function parseFourGousya(text) {
+  const blocks=[];let current=null;
+  for(const line of String(text).normalize('NFKC').split(/\r?\n/)){
+    const match=line.trim().match(/^([A-Za-z0-9][A-Za-z0-9_-]*(?:F|編成))(?=\s|\d{2}\/|$)/);
+    if(match){current={formation:match[1],raw:line};blocks.push(current);}
+    else if(current)current.raw+='\n'+line;
+  }
+  const seen=new Set();
+  return blocks.map(row=>{
+    const matches=[...row.raw.matchAll(/全車新製\s*(\d{2,4}[\/-]\d{1,2}(?:[\/-]\d{1,2})?)/g)];
+    // Numeric formations identify the first vehicle independently of later conversion dates.
+    const vehicle=/^(\d+)F$/.exec(row.formation)?.[1];
+    const firstCar=vehicle?new RegExp(`(?:^|[\\s|])${vehicle}[\\s\\u25a0\\u25a1]*[\\r\\n\\t ]+(\\d{2,4}[/-]\\d{1,2}[/-]\\d{1,2})(?=\\s|[|]|$)`).exec(row.raw):null;
+    const firstCarSource=matches.length===0&&!!firstCar;
+    const rawDate=matches.length===1?matches[0][1]:firstCarSource?firstCar[1]:'';
+    const short=/^\d{2}\//.test(rawDate)||/^\d{2}-/.test(rawDate);
+    const candidate=rawDate;
+    const parsed=parseBuildDate(candidate);
+    let reason=!parsed?'全車新製日期未能確認':'';
+    if(matches.length>1||(!firstCarSource&&/改造|組成変更|一部新製/.test(row.raw)))reason='涉及多個日期／改造，請核對新製資料';
+    if(seen.has(row.formation))reason='重複編成，請核對';
+    seen.add(row.formation);
+    return {...row,built:parsed?.text||'',reason,centuryOnly:short&&!reason,dateBasis:firstCarSource?'first_vehicle':'whole_formation'};
+  });
 }
 export function previewBuildDates(train,subseries,text,defaultDate='',allowNew=false) {
   const known=new Set(formationNames(train,subseries)),seen=new Set(),changes=[],errors=[];
@@ -36,7 +62,7 @@ export function applyBuildDates(train,changes) {
   const rows=Array.isArray(train.formation_build_dates)?train.formation_build_dates:[];
   const keys=new Set(changes.map(row=>JSON.stringify([row.subseries,row.formation])));
   const next=rows.filter(row=>!keys.has(JSON.stringify([row.subseries||'',row.formation])));
-  next.push(...changes.filter(row=>row.built&&row.built!=='-').map(row=>({...row})));
+  next.push(...changes.filter(row=>row.built&&row.built!=='-').map(row=>({...rows.find(old=>old.formation===row.formation&&(old.subseries||'')===(row.subseries||'')),...row})));
   if(next.length)train.formation_build_dates=next;else delete train.formation_build_dates;
 }
 export function formationRange(from,to) {
