@@ -17,17 +17,32 @@ export function formationNames(train,subseries='') {
 }
 export function parseFourGousya(text) {
   const blocks=[];let current=null;
-  for(const line of String(text).normalize('NFKC').split(/\r?\n/)){
-    const match=line.trim().match(/^([A-Za-z0-9][A-Za-z0-9_-]*(?:F|編成))(?=\s|\d{2}\/|$)/);
+  const datePattern='\\d{2,4}[/-]\\d{1,2}[/-]\\d{1,2}';
+  const vehiclePattern='\\d+(?:-\\d+)?';
+  const separator='[\\s|]+';
+  const headerPattern='(?:[A-Za-z0-9][A-Za-z0-9_-]*(?:F|編成)|\\d+)';
+  const firstVehicleDate=new RegExp(`^${headerPattern}(?:[ \\t]*${datePattern})?${separator}${vehiclePattern}[\\s|\\u25a0\\u25a1]+(${datePattern})(?=[\\s|]|$)`,'i');
+  const lines=String(text).normalize('NFKC').replace(/[‐‑−–]/g,'-').split(/\r?\n/).map(rawLine=>rawLine.replace(/\[([^\]]+)\]\(https?:\/\/[^\s)]+\)/g,'$1 ').replace(/\*\*/g,'').replace(/^\s*\|\s*/,'').replace(/\\\s*$/,'')).filter(line=>line.trim());
+  // A dated note can be copied immediately after a four-digit formation link.
+  for(let i=0;i<lines.length;i++)lines[i]=lines[i].replace(/^(\s*\d{4})(\d{2}\/\d{1,2}\/\d{1,2})/,'$1 $2');
+  for(const [index,line] of lines.entries()){
+    if(/^[\s|:\-]+$/.test(line))continue;
+    const numeric=line.trim().match(/^(\d+)(?=[\s|]|$)/);
+    // Browser copies can put the formation, vehicle numbers and build date on separate lines.
+    const nextContent=lines[index+1]||'';
+    const numericRow=numeric&&(new RegExp(`^${numeric[1]}[\\s|]+${numeric[1]}-\\d+(?=[\\s|]|$)`).test(line.trim())
+      ||new RegExp(`^${numeric[1]}\\s*[|]?\\s*$`).test(line.trim())&&new RegExp(`^${numeric[1]}-\\d+(?=[\\s|]|$)`).test(nextContent.trim())
+      ||/全車新製/.test(line)||firstVehicleDate.test(lines.slice(index,index+4).join('\n').trim()));
+    const match=line.trim().match(/^([A-Za-z0-9][A-Za-z0-9_-]*(?:F|編成))(?=[\s|]|\d{2,4}[/-]|$)/i)
+      || (numericRow?numeric:null);
     if(match){current={formation:match[1],raw:line};blocks.push(current);}
     else if(current)current.raw+='\n'+line;
   }
-  const seen=new Set();
-  return blocks.map(row=>{
+  const parsedRows=blocks.map(row=>{
     const matches=[...row.raw.matchAll(/全車新製\s*(\d{2,4}[\/-]\d{1,2}(?:[\/-]\d{1,2})?)/g)];
-    // Numeric formations identify the first vehicle independently of later conversion dates.
-    const vehicle=/^(\d+)F$/.exec(row.formation)?.[1];
-    const firstCar=vehicle?new RegExp(`(?:^|[\\s|])${vehicle}[\\s\\u25a0\\u25a1]*[\\r\\n\\t ]+(\\d{2,4}[/-]\\d{1,2}[/-]\\d{1,2})(?=\\s|[|]|$)`).exec(row.raw):null;
+    // Only the first vehicle after the formation header supplies an inferred build date.
+    const knownVehicle=/^(\d+)F$/i.exec(row.formation)?.[1];
+    const firstCar=firstVehicleDate.exec(row.raw.trim())||(knownVehicle?new RegExp(`(?:^|[\\s|])${knownVehicle}[\\s|\\u25a0\\u25a1]+(${datePattern})(?=[\\s|]|$)`).exec(row.raw):null);
     const firstCarSource=matches.length===0&&!!firstCar;
     const rawDate=matches.length===1?matches[0][1]:firstCarSource?firstCar[1]:'';
     const short=/^\d{2}\//.test(rawDate)||/^\d{2}-/.test(rawDate);
@@ -35,9 +50,26 @@ export function parseFourGousya(text) {
     const parsed=parseBuildDate(candidate);
     let reason=!parsed?'全車新製日期未能確認':'';
     if(matches.length>1||(!firstCarSource&&/改造|組成変更|一部新製/.test(row.raw)))reason='涉及多個日期／改造，請核對新製資料';
-    if(seen.has(row.formation))reason='重複編成，請核對';
-    seen.add(row.formation);
+    const headerEnd=row.raw.indexOf(row.formation)+row.formation.length;
+    const vehicles=row.raw.slice(headerEnd).replace(new RegExp(`^\\s*${datePattern}(?=[\\s|]|$)`),'');
+    const vehicleDates=[...vehicles.matchAll(new RegExp(`(?:^|[\\s|])${vehiclePattern}[\\s|\\u25a0\\u25a1]+(${datePattern})(?=[\\s|]|$)`,'g'))].map(match=>parseBuildDate(match[1])?.text||match[1]);
+    if(firstCarSource&&new Set(vehicleDates).size>1)reason='各車廂新製日期不同；目前採用第一卡日期，請確認';
     return {...row,built:parsed?.text||'',reason,centuryOnly:short&&!reason,dateBasis:firstCarSource?'first_vehicle':'whole_formation'};
+  });
+  const groups=new Map();
+  for(const row of parsedRows){
+    if(!groups.has(row.formation))groups.set(row.formation,[]);
+    groups.get(row.formation).push(row);
+  }
+  return [...groups.values()].map(rows=>{
+    if(rows.length===1)return rows[0];
+    const dates=[...new Set(rows.map(row=>row.built).filter(Boolean))];
+    const reasons=[...new Set(rows.map(row=>row.reason).filter(Boolean))];
+    const representative=rows.find(row=>row.built)||rows[0];
+    const reason=dates.length>1?`同一編成新製日期有衝突：${dates.map(date=>date.replaceAll('-','/')).join('、')}，請確認`:reasons.join('；');
+    return {...representative,raw:rows.map(row=>row.raw).join('\n\n'),
+      built:dates.length===1?dates[0]:'',reason,
+      centuryOnly:!reason&&rows.some(row=>row.centuryOnly),mergedCount:rows.length};
   });
 }
 export function previewBuildDates(train,subseries,text,defaultDate='',allowNew=false) {
@@ -86,8 +118,9 @@ export function tripFormationAge(trip,train) {
   }
   let matches=rows.filter(row=>(row.subseries||'')===subseries);
   if(!matches.length&&subseries)matches=rows.filter(row=>!row.subseries);
-  if(matches.length!==1)return null;
-  const build=parseBuildDate(matches[0].built);
+  if(matches.length>1)return null;
+  const manualYear=String(trip.train_manufacture_year||'');
+  const build=parseBuildDate(matches.length===1?matches[0].built:/^\d{4}$/.test(manualYear)?manualYear:'');
   if(!build||build.start>ride.start)return null;
   const minimum=Math.max(0,(ride.start-build.end)/86400000),maximum=(ride.start-build.start)/86400000;
   return {formation,subseries,built:build.text,date:trip.date,precision:build.precision,approximate:build.approximate,minDays:minimum,maxDays:maximum,days:(minimum+maximum)/2};
