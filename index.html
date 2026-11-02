@@ -10826,6 +10826,10 @@ body {
                         <div class="input-wrapper"><input id="trainFormation" list="trainFormationList" placeholder="編成編號" oninput="inferTrainSubseriesFromFormation()" onclick="handleDatalistInputTap(this, event)"><button type="button" class="clear-input-btn" aria-label="清除編成" onclick="clearInput('trainFormation')">✕</button></div>
                         <datalist id="trainFormationList"></datalist>
                     </div>
+                    <div class="form-field" id="trainManufactureYearField" hidden>
+                        <label for="trainManufactureYear">製造年份（選填）</label>
+                        <input id="trainManufactureYear" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY">
+                    </div>
                     <div class="form-field">
                         <label>上車站</label>
                         <div class="input-wrapper">
@@ -11329,6 +11333,7 @@ async function migrateLocalTripsToCloud(user) {
             train_id: cleanTrip.train_id || "",
             train_subseries: cleanTrip.train_subseries || "",
             train_formation: cleanTrip.train_formation || "",
+            train_manufacture_year: cleanTrip.train_manufacture_year || "",
             from_id: cleanTrip.from_id || "",
             to_id: cleanTrip.to_id || "",
 
@@ -14253,7 +14258,7 @@ function initRideSteps() {
     const vehicleGrid=vehicle.querySelector('.desktop-form-grid');
     const extras=document.createElement('details'); extras.className='ride-extra';
     extras.innerHTML='<summary>番台／編成（選填）</summary><div class="ride-extra-grid"></div>';
-    for(const id of ['trainSubseries','trainFormation']) extras.lastElementChild.appendChild(document.getElementById(id).closest('.form-field'));
+    for(const id of ['trainSubseries','trainFormation','trainManufactureYear']) extras.lastElementChild.appendChild(document.getElementById(id).closest('.form-field'));
     vehicleGrid.appendChild(extras);
     const photos=document.createElement('details'); photos.className='ride-photo-section'; photos.innerHTML='<summary><span class="ride-number">04</span> 相片</summary>';
     photos.appendChild(vehicleGrid.querySelector('.photo-field')); layout.appendChild(photos);
@@ -14396,6 +14401,7 @@ function advanceRideStep(index) {
 }
 initRideSteps();
 function inferTrainSubseriesFromFormation() {
+    updateManufactureYearField();
     const subseries = document.getElementById('trainSubseries');
     if (!subseries || (subseries.value.trim() && !subseries.dataset.autoFormation)) return;
     const value = document.getElementById('train')?.value || '';
@@ -14407,6 +14413,19 @@ function inferTrainSubseriesFromFormation() {
     updateTrainDetailOptions();
 }
 window.inferTrainSubseriesFromFormation = inferTrainSubseriesFromFormation;
+function updateManufactureYearField() {
+    const input=document.getElementById('trainManufactureYear');
+    const value=document.getElementById('train')?.value||'';
+    const train=db.trains.find(item=>item.id===value||item._display===value||item.name===value);
+    const formation=document.getElementById('trainFormation')?.value.trim()||'';
+    const key=JSON.stringify([value,formation]);
+    if(input.dataset.formationKey!==key)input.value='';
+    input.dataset.formationKey=key;
+    const known=[...(train?.formations||[]),...Object.values(train?.formations_by_subseries||{}).filter(Array.isArray).flat(),...(train?.formation_build_dates||[]).map(row=>row.formation)];
+    const visible=!!formation&&(!known.includes(formation)||!!input.value);
+    document.getElementById('trainManufactureYearField').hidden=!visible;
+    input.disabled=!visible;
+}
 function refreshInputAffordances() {
     document.querySelectorAll('#tab-add .form-field input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="date"]):not([type="time"]):not([type="datetime-local"]):not([readonly]), #tab-add .form-field textarea').forEach(input => {
         let wrapper = input.closest('.input-wrapper');
@@ -14469,6 +14488,7 @@ function updateTrainDetailOptions(reset = false, subseriesChanged = false) {
     if (subseriesChanged && selected && formation?.value && !choices.includes(formation.value.trim())) formation.value='';
     fillList('trainSubseriesList',names);
     fillList('trainFormationList',[...new Set(choices)]);
+    updateManufactureYearField();
 }
 window.updateTrainDetailOptions = updateTrainDetailOptions;
 document.getElementById("train").addEventListener("input", function() {
@@ -14946,6 +14966,11 @@ window.saveTrip = async function () {
     }
     try {
     stage('檢查資料中…');
+    const manufactureYearInput=document.getElementById('trainManufactureYear');
+    const manufactureYear=manufactureYearInput.disabled?'':manufactureYearInput.value.trim();
+    if(manufactureYear&&(!/^\d{4}$/.test(manufactureYear)||Number(manufactureYear)<1800||Number(manufactureYear)>Number(getVal('date').slice(0,4)))) {
+        report('製造年份須為四位數，並且不遲於乘車年份',true);return;
+    }
     const closureError = validateRideClosureSelection(true);
     if (closureError) { report(closureError,true); return; }
     const getVal = (id) => document.getElementById(id)?.value || "";
@@ -15059,6 +15084,7 @@ window.saveTrip = async function () {
             train_id: finalTrainId,
             train_subseries: getVal('trainSubseries').trim(),
             train_formation: getVal('trainFormation').trim(),
+            train_manufacture_year: manufactureYear,
             from_id: fromId,
 			to_id: toId,
 			segments: segments,
@@ -15081,7 +15107,7 @@ window.saveTrip = async function () {
 
         lastTo = trip.to_id;
 
-        ["company", "line", "serviceType", "serviceName", "train", "trainSubseries", "trainFormation", "to"].forEach(id => {
+        ["company", "line", "serviceType", "serviceName", "train", "trainSubseries", "trainFormation", "trainManufactureYear", "to"].forEach(id => {
             document.getElementById(id).value = "";
         });
         syncRideDateTimeDisplay();
@@ -18908,6 +18934,8 @@ window.editTrip = function(i) {
     delete document.getElementById('trainSubseries').dataset.autoFormation;
     setVal('trainFormation', t.train_formation || '');
     updateTrainDetailOptions();
+    setVal('trainManufactureYear',t.train_manufacture_year||'');
+    updateManufactureYearField();
     setRideStep(0);
     document.querySelector('#tab-add .ride-step-layout').dataset.manualSections='true';
     setVal("from", maps.station[t.from_id]?._display || t.from_id);
@@ -19007,6 +19035,7 @@ window.importData = function() {
                         train_id: trip.train_id || "",
                         train_subseries: trip.train_subseries || "",
                         train_formation: trip.train_formation || "",
+                        train_manufacture_year: trip.train_manufacture_year || "",
                         from_id: trip.from_id || "",
                         to_id: trip.to_id || "",
                         segments: Array.isArray(trip.segments) ? trip.segments : [],
