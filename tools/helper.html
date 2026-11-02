@@ -513,6 +513,9 @@ body{background:var(--bg);padding:16px}
 #formationBuildEditor .formation-tools summary{cursor:pointer;font-weight:700;margin-bottom:10px}
 #formationBuildEditor .formation-import-entry{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,1fr);align-items:center;gap:4px 8px;min-width:0}
 #formationBuildEditor .formation-import-entry strong{overflow-wrap:anywhere;font-size:13px}
+#formationImportRows .import-row-error{background:color-mix(in srgb,#e3a008 16%,transparent);border-left:3px solid #d99a00;padding-left:6px!important;box-sizing:border-box}
+#formationImportRows input[aria-invalid="true"]{outline:2px solid #d99a00;outline-offset:-2px}
+#formationImportRows .import-error-message{grid-column:1/-1;color:var(--text);font-size:12px;overflow-wrap:anywhere}
 #formationBuildEditor .formation-import-entry input{width:100%;min-width:0;margin:0;padding:6px}
 #formationBuildEditor .formation-import-entry .small,#formationBuildEditor .formation-import-entry details{grid-column:1/-1}
 #formationBuildEditor .formation-tools input,#formationBuildEditor .formation-tools textarea{box-sizing:border-box;max-width:100%}
@@ -657,12 +660,12 @@ body{background:var(--bg);padding:16px}
     </section>
 
     <div class="card workspace-files">
+      <button type="button" class="ghost" onclick="openLastCompanyFile()" title="載入上次成功讀取的本機 JSON 副本">載入上次檔案</button>
       <details class="workspace-fold"><summary>本機檔案與備份</summary>
       <div class="editor-toolbar">
         <div class="input-group">
           <label>讀取公司 JSON</label>
           <input id="companyJsonFileInput" type="file" accept=".json" onchange="loadCompanyJsonFile()">
-          <button type="button" class="ghost" onclick="openLastCompanyFile()" title="開啟上次成功載入的本機 JSON 副本">開啟上次文件</button>
         </div>
         <div class="input-group">
           <label>輸出文件名</label>
@@ -714,6 +717,7 @@ body{background:var(--bg);padding:16px}
       <div class="editor-layout">
         <div class="editor-sidebar">
           <button class="ok" onclick="addCompanyLine()">+ 新增路線</button>
+          <input type="search" id="lineSearchInput" aria-label="搜尋路線" placeholder="搜尋路線名稱 / ID" oninput="renderCompanyLineList()">
           <div id="companyLineList" class="editor-list"></div>
         </div>
         <div class="editor-detail-pane">
@@ -829,6 +833,7 @@ body{background:var(--bg);padding:16px}
       <div class="editor-layout">
         <div class="editor-sidebar">
           <button class="ok" onclick="addCompanyTrain()">+ 新增車型</button>
+          <input type="search" id="trainSearchInput" aria-label="搜尋車型" placeholder="搜尋車型名稱 / ID" oninput="renderCompanyTrainList()">
           <div id="companyTrainList" class="editor-list"></div>
         </div>
         <div class="editor-detail-pane">
@@ -862,6 +867,7 @@ body{background:var(--bg);padding:16px}
                 <div class="row"><button type="button" onclick="previewFormationImport()">預覽匯入</button><button type="button" id="formationImportApply" onclick="applyFormationImport()" disabled>套用所選</button></div>
                 <div class="row"><label><input type="checkbox" id="formationImportAll" style="width:auto" onchange="selectFormationImportAll(this.checked)" disabled> 全選可匯入項目</label><button type="button" id="formationImportCentury19" onclick="confirmFormationImportCentury(19)" disabled>所選確認為 19xx</button><button type="button" id="formationImportCentury" onclick="confirmFormationImportCentury(20)" disabled>所選確認為 20xx</button></div>
                 <div id="formationImportStatus" role="status" class="small"></div>
+                <label><input type="checkbox" id="formationImportProblemsOnly" style="width:auto" onchange="filterFormationImportProblems()"> 只顯示有問題 <span id="formationImportProblemCount">0</span></label>
                 <div id="formationImportRows" style="max-height:420px;overflow:auto"></div>
               </details>
               <details><summary>Excel 貼上 / 範圍生成</summary>
@@ -899,6 +905,7 @@ body{background:var(--bg);padding:16px}
       <div class="editor-layout">
         <div class="editor-sidebar">
           <button class="ok" onclick="addServiceDefinition()">+ 新增運行列車</button>
+          <input type="search" id="serviceSearchInput" aria-label="搜尋運行列車" placeholder="搜尋名稱 / 種別 / ID" oninput="filterServiceDefinitionList()">
           <div id="serviceDefinitionList" class="editor-list"></div>
         </div>
         <div class="editor-detail-pane">
@@ -1644,6 +1651,7 @@ function renderServiceEditor() {
   if (selectedServiceDefinitionIndex >= services.length) selectedServiceDefinitionIndex = Math.max(0, services.length - 1);
   list.innerHTML = services.map((service, index) => `<button type="button" class="${index === selectedServiceDefinitionIndex ? 'active' : ''}" onclick="selectServiceDefinition(${index})">${escapeEditorHtml(service.name || service.service_type || service.id || `Service ${index + 1}`)}<span class="small">${escapeEditorHtml(service.name ? service.service_type || '' : '')}</span></button>`).join('') || '<div class="status">未有運行列車</div>';
   const service = services[selectedServiceDefinitionIndex];
+  filterServiceDefinitionList();
   if (!service) {
     form.style.display = 'none';
     empty.style.display = 'block';
@@ -1948,6 +1956,7 @@ function updateSelectedServiceDefinition() {
   }
   renderServicePatternDateEditor();
   refreshCompanyJsonOutput();
+  filterServiceDefinitionList();
 }
 
 function deleteSelectedServiceDefinition() {
@@ -2202,6 +2211,7 @@ function renderCompanyLineList() {
   if (!box) return;
   const lines = companyEditorData?.lines || [];
   box.innerHTML = lines.map((line, i) => {
+    if(!matchesEditorSearch(line,'lineSearchInput'))return '';
     const issueCount = getLineIssueCount(line);
     const isComplete = !issueCount && isLineComplete(line);
     const classes = [
@@ -4393,8 +4403,7 @@ function mergeStationIssueGroup(groupIndex, targetRef) {
 
 function renderCompanyStationList() {
   const box = document.getElementById('companyStationList'); if (!box) return;
-  const kw = (document.getElementById('stationSearchInput')?.value || '').toLowerCase();
-  const stations = (companyEditorData?.stations || []).map((s,i)=>({s,i})).filter(x => !kw || `${x.s.id} ${x.s.name}`.toLowerCase().includes(kw));
+  const stations = (companyEditorData?.stations || []).map((s,i)=>({s,i})).filter(x => matchesEditorSearch(x.s,'stationSearchInput'));
   box.innerHTML = stations.map(({s,i}) => `<button class="${i === companyEditorCurrent.station ? 'active' : ''}" onclick="selectCompanyStation(${i})">${escapeEditorHtml(s.name || s.id || '(未命名站)')}<br><span class="small">${escapeEditorHtml(s.id || '')}</span></button>`).join('') || '<div class="status">找不到車站；按「+ 新增車站」會使用搜尋欄內容自動填入站名 / ID。</div>';
 }
 function selectCompanyStation(index) { companyEditorCurrent.station = index; renderCompanyStationList(); renderSelectedStationForm(); }
@@ -4537,7 +4546,22 @@ function deleteSelectedStation() {
 function renderCompanyTrainList() {
   const box = document.getElementById('companyTrainList'); if (!box) return;
   const trains = companyEditorData?.trains || [];
-  box.innerHTML = trains.map((tr,i) => `<button class="${i === companyEditorCurrent.train ? 'active' : ''}" onclick="selectCompanyTrain(${i})">${escapeEditorHtml(tr.name || tr.id || '(未命名車型)')}<br><span class="small">${escapeEditorHtml(tr.id || '')}</span></button>`).join('') || '<div class="status">未有車型</div>';
+  box.innerHTML = trains.map((tr,i)=>({tr,i})).filter(({tr})=>matchesEditorSearch(tr,'trainSearchInput')).sort((a,b)=>compareEditorTrainNames(a.tr.name||a.tr.id,b.tr.name||b.tr.id)).map(({tr,i}) => `<button class="${i === companyEditorCurrent.train ? 'active' : ''}" onclick="selectCompanyTrain(${i})">${escapeEditorHtml(tr.name || tr.id || '(未命名車型)')}<br><span class="small">${escapeEditorHtml(tr.id || '')}</span></button>`).join('') || '<div class="status">沒有符合的車型</div>';
+}
+function compareEditorTrainNames(left,right){
+  const a=String(left??'').normalize('NFKC').trim(),b=String(right??'').normalize('NFKC').trim();
+  const group=name=>/^\d/.test(name)?0:/^[a-z]/i.test(name)?1:2;
+  return group(a)-group(b)||a.localeCompare(b,'en',{numeric:true,sensitivity:'base'});
+}
+function matchesEditorSearch(item,inputId){
+  const normalize=value=>String(value||'').normalize('NFKC').toLowerCase();
+  const query=normalize(document.getElementById(inputId)?.value).trim();
+  const text=[item.id,item.name,item.name_zh,item.name_en,item.service_type,...(Array.isArray(item.aliases)?item.aliases:[])].map(normalize).join(' ');
+  return !query||query.split(/\s+/).every(word=>text.includes(word));
+}
+function filterServiceDefinitionList(){
+  const list=document.getElementById('serviceDefinitionList');if(!list)return;
+  [...list.children].forEach((button,index)=>{if(button.tagName==='BUTTON')button.hidden=!matchesEditorSearch(companyEditorData.services[index]||{},'serviceSearchInput');});
 }
 function selectCompanyTrain(index) { companyEditorCurrent.train = index; renderCompanyTrainList(); renderSelectedTrainForm(); }
 function getSelectedTrain() { return companyEditorData?.trains?.[companyEditorCurrent.train] || null; }
@@ -4583,6 +4607,18 @@ function clearFormationImport(){
   formationImportPreview=null;document.getElementById('formationImportRows').replaceChildren();
   document.getElementById('formationImportApply').disabled=true;document.getElementById('formationImportStatus').textContent='';
   updateFormationImportSelection();
+  filterFormationImportProblems();
+}
+function filterFormationImportProblems(){
+  const rows=formationImportPreview?.rows||[],only=document.getElementById('formationImportProblemsOnly').checked;
+  let count=0;
+  for(const item of rows){
+    const problem=!item.check.disabled&&!!(item.error||(item.row.reason&&!item.confirmed));
+    if(problem)count++;
+    item.box.hidden=only&&!problem;
+    item.box.style.display=item.box.hidden?'none':'grid';
+  }
+  document.getElementById('formationImportProblemCount').textContent=`${count} 項`;
 }
 function updateFormationImportSelection(){
   const rows=(formationImportPreview?.rows||[]).filter(item=>!item.check.disabled);
@@ -4610,12 +4646,21 @@ function confirmFormationImportCentury(century){
   updateFormationImportSelection();
 }
 function previewFormationImport(){
-  clearFormationImport();const train=getSelectedTrain(),api=window.RailFormationDates;if(!train||!api)return;
+  try{buildFormationImportPreview();}catch(error){
+    clearFormationImport();document.getElementById('formationImportStatus').textContent=`預覽失敗：${error.message||error}。原始貼上內容已保留，可修改後重新預覽。`;
+  }
+}
+function buildFormationImportPreview(){
+  clearFormationImport();const train=getSelectedTrain(),api=window.RailFormationDates;
+  if(!train)throw new Error('未選擇車型，請先選擇或新增車型');
+  if(typeof api?.parseFourGousya!=='function')throw new Error('匯入模組未載入或版本過舊，請確認 cloud/formation-dates.js 已更新並重新整理');
   const scope=document.getElementById('formationBuildScope').value;
   let source;
   try{source=new URL(document.getElementById('formationImportSource').value);if(source.protocol!=='https:'||!['4gousya.net','www.4gousya.net'].includes(source.hostname))throw new Error();}
   catch{document.getElementById('formationImportStatus').textContent='請填寫有效的4號車 HTTPS 來源網址';return;}
-  const rows=api.parseFourGousya(document.getElementById('formationImportText').value);
+  const text=document.getElementById('formationImportText').value;
+  if(!text.trim())throw new Error('未貼上編成表；來源網址本身不會自動下載表格');
+  const rows=api.parseFourGousya(text);
   formationImportPreview={train,scope,source:source.href,rows:[]};
   for(const row of rows){
     const saved=(train.formation_build_dates||[]).find(item=>item.formation===row.formation&&(item.subseries||'')===scope)?.built;
@@ -4628,31 +4673,53 @@ function previewFormationImport(){
     const evidence=document.createElement('details'),summary=document.createElement('summary'),raw=document.createElement('pre');summary.textContent='原文';raw.textContent=row.raw;raw.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere';evidence.append(summary,raw);
     content.append(title,date);if(row.reason&&!saved)content.append(note,evidence);else if(saved){note.textContent='保留已有日期';content.append(note);}
     box.append(check,content);document.getElementById('formationImportRows').append(box);
-    const item={row,check,date,note,confirmed:!row.reason};
-    check.onchange=()=>{if(check.checked&&!row.centuryOnly)item.confirmed=true;updateFormationImportSelection();};
-    date.oninput=()=>{item.confirmed=false;check.checked=false;updateFormationImportSelection();};
+    const errorLabel=document.createElement('div');errorLabel.className='import-error-message';errorLabel.hidden=true;content.append(errorLabel);
+    const item={row,check,date,note,box,errorLabel,error:'',confirmed:!row.reason};
+    check.onchange=()=>{if(check.checked)item.confirmed=true;updateFormationImportSelection();};
+    date.oninput=()=>{item.confirmed=false;date.removeAttribute('aria-invalid');updateFormationImportSelection();};
     formationImportPreview.rows.push(item);
   }
-  document.getElementById('formationImportStatus').textContent=rows.length?`${rows.length} 個編成；需確認項目預設不選取`:'未辨識到編成，請複製含編成編號（例如001-A1F）及全車新製日期的完整表格';
+  document.getElementById('formationImportStatus').textContent=rows.length?`${rows.length} 個編成；需確認項目預設不選取`:`未辨識到編成（已讀取 ${text.split(/\r?\n/).length} 行）。目前支援行首 001-A1F、6151F 等編成；請連編成欄複製完整表格。可修改後重新預覽。`;
   document.getElementById('formationImportApply').disabled=!rows.length;
   updateFormationImportSelection();
+  filterFormationImportProblems();
+}
+function setFormationImportError(item,message){
+  item.error=message;item.box.classList.toggle('import-row-error',!!message);
+  item.errorLabel.textContent=message;item.errorLabel.hidden=!message;
+  if(message)item.date.setAttribute('aria-invalid','true');else item.date.removeAttribute('aria-invalid');
 }
 function applyFormationImport(){
   const preview=formationImportPreview,api=window.RailFormationDates;
-  if(!preview||preview.train!==getSelectedTrain()||preview.scope!==document.getElementById('formationBuildScope').value){clearFormationImport();return;}
-  const changes=[],seen=new Set();
-  for(const {row,check,date,confirmed} of preview.rows){
+  if(!preview||preview.train!==getSelectedTrain()||preview.scope!==document.getElementById('formationBuildScope').value){clearFormationImport();document.getElementById('formationImportStatus').textContent='預覽已失效，請在目前車型／番台重新預覽；貼上內容仍保留';return;}
+  const changes=[],seen=new Set(),errors=[];
+  for(const item of preview.rows){
+    const {row,check,date}=item;
     if(!check.checked||check.disabled)continue;
-    if(row.centuryOnly&&!confirmed){document.getElementById('formationImportStatus').textContent=`${row.formation}：請先確認為 19xx 或 20xx，未套用`;return;}
+    setFormationImportError(item,'');
     if((preview.train.formation_build_dates||[]).some(item=>item.formation===row.formation&&(item.subseries||'')===preview.scope&&item.built))continue;
     const parsed=api.parseBuildDate(date.value);
-    if(!parsed||seen.has(row.formation)){document.getElementById('formationImportStatus').textContent=`${row.formation}：日期無效或重複勾選，未套用`;return;}
+    if(!parsed){const message=`${row.formation}：日期「${date.value.trim()||'空白'}」無效，請填年、年/月或年/月/日`;errors.push(message);setFormationImportError(item,message);continue;}
+    if(seen.has(row.formation)){const message=`${row.formation}：重複勾選，請只保留一項`;errors.push(message);setFormationImportError(item,message);continue;}
     seen.add(row.formation);changes.push({formation:row.formation,subseries:preview.scope,built:parsed.text,source_url:preview.source,date_basis:row.dateBasis});
+  }
+  if(errors.length){
+    const list=document.getElementById('formationImportRows');
+    [...preview.rows.filter(item=>item.error),...preview.rows.filter(item=>!item.error)].forEach(item=>list.append(item.box));
+    list.scrollTop=0;
+    filterFormationImportProblems();
+    document.getElementById('formationImportStatus').textContent=`未套用任何資料：${errors.length} 項問題已標示並置頂。${errors.join('；')}。修正後直接重試，其他勾選及日期保留。`;return;
   }
   if(!changes.length){document.getElementById('formationImportStatus').textContent='未有可匯入的已選編成';return;}
   const names=[...new Set([...api.formationNames(preview.train,preview.scope),...changes.map(row=>row.formation)])];
   if(preview.scope)preview.train.formations_by_subseries={...(preview.train.formations_by_subseries||{}),[preview.scope]:names};else preview.train.formations=names;
-  api.applyBuildDates(preview.train,changes);refreshCompanyJsonOutput();loadFormationBuildSheet();clearFormationImport();
+  api.applyBuildDates(preview.train,changes);refreshCompanyJsonOutput();loadFormationBuildSheet(true);
+  const imported=new Set(changes.map(row=>row.formation));
+  for(const item of preview.rows)if(imported.has(item.row.formation)&&item.check.checked&&!item.check.disabled){
+    setFormationImportError(item,'');item.confirmed=true;item.check.checked=false;item.check.disabled=true;item.date.disabled=true;
+    item.note.textContent='已套用';if(!item.note.isConnected)item.date.parentElement.append(item.note);
+  }
+  updateFormationImportSelection();filterFormationImportProblems();
   document.getElementById('formationImportStatus').textContent=`已匯入 ${changes.length} 個，來源網址已保留；尚未儲存草稿`;
 }
 function normalizeFormationDateInput(input){
@@ -4707,8 +4774,8 @@ function renderFormationBuildScopes(){
   [...new Set([...(train?.subseries||[]),...Object.keys(train?.formations_by_subseries||{})])].forEach(name=>select.add(new Option(name,name)));
   loadFormationBuildSheet();
 }
-function loadFormationBuildSheet(){
-  clearFormationImport();
+function loadFormationBuildSheet(preserveImport=false){
+  if(!preserveImport)clearFormationImport();
   clearFormationBuildPreview();
   const train=getSelectedTrain(),scope=document.getElementById('formationBuildScope').value;
   const names=[...new Set((scope?train?.formations_by_subseries?.[scope]:train?.formations)||[])];
@@ -5471,7 +5538,7 @@ try {
     break;
   }
   if (!cloudModule) throw new Error('找不到 cloud/helper.js，請檢查上傳目錄');
-  window.RailFormationDates=await import(new URL('./formation-dates.js',cloudModule).href);
+  window.RailFormationDates=await import(new URL('./formation-dates.js?v=20261031-merge-history',cloudModule).href);
   await import(cloudModule);
 } catch (error) {
   cloudStatus.textContent = `雲端功能載入失敗：${error.message}`;
